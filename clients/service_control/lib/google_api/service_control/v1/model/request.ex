@@ -25,7 +25,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Request do
 
   *   `auth` (*type:* `GoogleApi.ServiceControl.V1.Model.Auth.t`, *default:* `nil`) - The request authentication. May be absent for unauthenticated requests.
       Derived from the HTTP request `Authorization` header or equivalent.
-  *   `fragment` (*type:* `String.t`, *default:* `nil`) - The HTTP URL fragment. No URL decoding is performed.
   *   `headers` (*type:* `map()`, *default:* `nil`) - The HTTP request headers. If multiple headers share the same key, they
       must be merged according to the HTTP spec. All header keys must be
       lowercased, because HTTP header keys are case-insensitive.
@@ -53,7 +52,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Request do
 
   @type t :: %__MODULE__{
           :auth => GoogleApi.ServiceControl.V1.Model.Auth.t(),
-          :fragment => String.t(),
           :headers => map(),
           :host => String.t(),
           :id => String.t(),
@@ -68,7 +66,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Request do
         }
 
   field(:auth, as: GoogleApi.ServiceControl.V1.Model.Auth)
-  field(:fragment)
   field(:headers, type: :map)
   field(:host)
   field(:id)

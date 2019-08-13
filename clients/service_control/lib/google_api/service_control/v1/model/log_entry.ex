@@ -36,6 +36,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.LogEntry do
       AuditLog.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the log entry. The default value is
       `LogSeverity.DEFAULT`.
+  *   `sourceLocation` (*type:* `GoogleApi.ServiceControl.V1.Model.LogEntrySourceLocation.t`, *default:* `nil`) - Optional. Source code location information associated with the log entry,
+      if any.
   *   `structPayload` (*type:* `map()`, *default:* `nil`) - The log entry payload, represented as a structure that
       is expressed as a JSON object.
   *   `textPayload` (*type:* `String.t`, *default:* `nil`) - The log entry payload, represented as a Unicode string (UTF-8).
@@ -57,6 +59,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.LogEntry do
           :operation => GoogleApi.ServiceControl.V1.Model.LogEntryOperation.t(),
           :protoPayload => map(),
           :severity => String.t(),
+          :sourceLocation => GoogleApi.ServiceControl.V1.Model.LogEntrySourceLocation.t(),
           :structPayload => map(),
           :textPayload => String.t(),
           :timestamp => DateTime.t(),
@@ -70,6 +73,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.LogEntry do
   field(:operation, as: GoogleApi.ServiceControl.V1.Model.LogEntryOperation)
   field(:protoPayload, type: :map)
   field(:severity)
+  field(:sourceLocation, as: GoogleApi.ServiceControl.V1.Model.LogEntrySourceLocation)
   field(:structPayload, type: :map)
   field(:textPayload)
   field(:timestamp, as: DateTime)

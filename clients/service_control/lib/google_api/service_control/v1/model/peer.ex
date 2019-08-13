@@ -19,8 +19,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.Peer do
   @moduledoc """
   This message defines attributes for a node that handles a network request.
   The node can be either a service or an application that sends, forwards,
-  or receives the request. Service peers should fill in the `service`,
-  `principal`, and `labels` as appropriate.
+  or receives the request. Service peers should fill in
+  `principal` and `labels` as appropriate.
 
   ## Attributes
 
@@ -33,9 +33,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Peer do
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - The CLDR country/region code associated with the above IP address.
       If the IP address is private, the `region_code` should reflect the
       physical location where this peer is running.
-  *   `service` (*type:* `String.t`, *default:* `nil`) - The canonical service name of the peer.
-
-      NOTE: different systems may have different service naming schemes.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,8 +42,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Peer do
           :labels => map(),
           :port => String.t(),
           :principal => String.t(),
-          :regionCode => String.t(),
-          :service => String.t()
+          :regionCode => String.t()
         }
 
   field(:ip)
@@ -54,7 +50,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Peer do
   field(:port)
   field(:principal)
   field(:regionCode)
-  field(:service)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V1.Model.Peer do
