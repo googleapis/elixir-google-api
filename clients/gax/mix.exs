@@ -1,7 +1,7 @@
 defmodule GoogleApi.Gax.MixProject do
   use Mix.Project
 
-  @version "0.1.3"
+  @version "0.2.0"
 
   def project do
     [
@@ -26,7 +26,7 @@ defmodule GoogleApi.Gax.MixProject do
 
   defp deps() do
     [
-      {:tesla, "~> 1.0"},
+      {:tesla, "~> 1.2"},
       {:poison, ">= 1.0.0 and < 4.0.0"},
       {:ex_doc, "~> 0.16", only: :dev},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
@@ -42,7 +42,7 @@ defmodule GoogleApi.Gax.MixProject do
   defp package() do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
-      maintainers: ["Jeff Ching"],
+      maintainers: ["Jeff Ching", "Daniel Azuma"],
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" =>

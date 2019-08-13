@@ -26,7 +26,15 @@ defmodule Gax.ApiTest do
   """
 
   test "basic request" do
-    mock(fn %{method: :get, url: "https://example.com/v1/stores/store-1/pets"} ->
+    elixir_version = System.version()
+    gax_version = Application.spec(:google_gax, :vsn)
+    api_client = "gl-elixir/#{elixir_version} gax/#{gax_version} gdcl/1.2.3"
+
+    mock(fn %{
+              method: :get,
+              url: "https://example.com/v1/stores/store-1/pets",
+              headers: [{"x-goog-api-client", ^api_client}]
+            } ->
       %Tesla.Env{status: 200, body: @pets_json}
     end)
 

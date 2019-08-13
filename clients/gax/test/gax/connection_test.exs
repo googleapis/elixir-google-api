@@ -80,4 +80,66 @@ defmodule Gax.ConnectionTest do
     body = %Tesla.Multipart{} = Keyword.get(request, :body)
     assert 4 == length(body.parts)
   end
+
+  test "creates api client header without library version" do
+    request =
+      Request.new()
+      |> Connection.build_request()
+
+    elixir_version = System.version()
+    gax_version = Application.spec(:google_gax, :vsn)
+
+    assert [{"x-goog-api-client", "gl-elixir/#{elixir_version} gax/#{gax_version} gdcl/"}] ==
+             Keyword.get(request, :headers)
+  end
+
+  test "creates api client header with library version" do
+    request =
+      Request.new()
+      |> Request.library_version("1.2.3")
+      |> Connection.build_request()
+
+    elixir_version = System.version()
+    gax_version = Application.spec(:google_gax, :vsn)
+
+    assert [{"x-goog-api-client", "gl-elixir/#{elixir_version} gax/#{gax_version} gdcl/1.2.3"}] ==
+             Keyword.get(request, :headers)
+  end
+
+  test "Appends existing api client header" do
+    request =
+      Request.new()
+      |> Map.put(:header, [{"user-agent", "hello"}, {"x-goog-api-client", "whoops/3.2.1"}])
+      |> Connection.build_request()
+
+    elixir_version = System.version()
+    gax_version = Application.spec(:google_gax, :vsn)
+
+    assert [
+             {"x-goog-api-client",
+              "gl-elixir/#{elixir_version} gax/#{gax_version} gdcl/ whoops/3.2.1"},
+             {"user-agent", "hello"}
+           ] == Keyword.get(request, :headers)
+  end
+
+  test "Appends multiple existing api client headers" do
+    request =
+      Request.new()
+      |> Map.put(:header, [
+        {"user-agent", "hello"},
+        {"X-Goog-Api-Client", "foo/4.3.2"},
+        {"x-goog-api-client", "whoops/3.2.1"}
+      ])
+      |> Request.library_version("0.1.1")
+      |> Connection.build_request()
+
+    elixir_version = System.version()
+    gax_version = Application.spec(:google_gax, :vsn)
+
+    assert [
+             {"x-goog-api-client",
+              "gl-elixir/#{elixir_version} gax/#{gax_version} gdcl/0.1.1 foo/4.3.2 whoops/3.2.1"},
+             {"user-agent", "hello"}
+           ] == Keyword.get(request, :headers)
+  end
 end

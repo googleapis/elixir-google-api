@@ -33,7 +33,6 @@ defmodule GoogleApi.Gax.Connection do
         )
       )
 
-      plug(Tesla.Middleware.Headers, [{"user-agent", "Elixir"}])
       plug(Tesla.Middleware.EncodeJson, engine: Poison)
 
       @doc """
@@ -41,15 +40,15 @@ defmodule GoogleApi.Gax.Connection do
 
       ## Parameters
 
-      - token (String): Bearer token
+      *   `token` (*type:* `String.t`) - Bearer token
 
       ## Returns
 
-      Tesla.Env.client
+      *   `Tesla.Env.client`
       """
       @spec new(String.t()) :: Tesla.Client.t()
       def new(token) when is_binary(token) do
-        Tesla.build_client([
+        Tesla.client([
           {Tesla.Middleware.Headers, [{"authorization", "Bearer #{token}"}]}
         ])
       end
@@ -59,12 +58,12 @@ defmodule GoogleApi.Gax.Connection do
 
       ## Parameters
 
-      - token_fetcher (function arity of 1): Callback which provides an OAuth2 token
-        given a list of scopes
+      *   `token_fetcher` (*type:* `list(String.t()) -> String.t()`) - Callback
+          which provides an OAuth2 token given a list of scopes
 
       ## Returns
 
-      Tesla.Env.client
+      *   `Tesla.Env.client`
       """
       @spec new((list(String.t()) -> String.t())) :: Tesla.Client.t()
       def new(token_fetcher) when is_function(token_fetcher) do
@@ -75,21 +74,22 @@ defmodule GoogleApi.Gax.Connection do
       @doc """
       Configure an authless client connection
 
-      # Returns
+      ## Returns
 
-      Tesla.Client.t
+      *   `Tesla.Env.client`
       """
       @spec new() :: Tesla.Client.t()
       def new do
-        Tesla.build_client([])
+        Tesla.client([])
       end
 
       @doc """
       Execute a request on this connection
 
-      # Returns
+      ## Returns
 
-      Tesla.Env
+      *   `{:ok, Tesla.Env.t}` - If the call was successful
+      *   `{:error, reason}` - If the call failed
       """
       @spec execute(Tesla.Client.t(), GoogleApi.Gax.Request.t()) :: {:ok, Tesla.Env.t()}
       def execute(connection, request) do
@@ -108,7 +108,7 @@ defmodule GoogleApi.Gax.Connection do
   def build_request(request) do
     [url: request.url, method: request.method]
     |> build_query(request.query)
-    |> build_headers(request.header)
+    |> build_headers(request.header, request.library_version)
     |> build_body(request.body, request.file)
   end
 
@@ -118,10 +118,38 @@ defmodule GoogleApi.Gax.Connection do
     Keyword.put(output, :query, query_params)
   end
 
-  defp build_headers(output, []), do: output
+  @gax_version Mix.Project.config() |> Keyword.get(:version, "")
 
-  defp build_headers(output, header_params) do
-    Keyword.put(output, :headers, header_params)
+  defp build_headers(output, header_params, library_version) do
+    {other_api_client, other_headers} = find_api_client_headers(header_params, [], [])
+
+    api_client =
+      Enum.join(
+        [
+          "gl-elixir/#{System.version()}",
+          "gax/#{@gax_version}",
+          "gdcl/#{library_version}"
+          | other_api_client
+        ],
+        " "
+      )
+
+    headers = [{"x-goog-api-client", api_client} | other_headers]
+    Keyword.put(output, :headers, headers)
+  end
+
+  defp find_api_client_headers([], found, other_headers) do
+    {Enum.reverse(found), Enum.reverse(other_headers)}
+  end
+
+  defp find_api_client_headers([{name, value} | remaining], found, other_headers) do
+    normalized_name = name |> to_string() |> String.downcase()
+
+    if normalized_name == "x-goog-api-client" do
+      find_api_client_headers(remaining, [value | found], other_headers)
+    else
+      find_api_client_headers(remaining, found, [{name, value} | other_headers])
+    end
   end
 
   # If no body or file fields and the request is a POST, set an empty body
