@@ -48,6 +48,8 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     |> write_connection
     |> write_mix_exs
     |> write_readme
+    |> write_license
+    |> write_gitignore
   end
 
   defp load_models(token) do
@@ -93,17 +95,41 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     token
   end
 
+  defp write_license(token) do
+    path = Path.join(token.root_dir, "LICENSE")
+    IO.puts("Writing LICENSE")
+    File.write!(path, Renderer.license())
+
+    token
+  end
+
+  defp write_gitignore(token) do
+    path = Path.join(token.root_dir, ".gitignore")
+    IO.puts("Writing .gitignore")
+    File.write!(path, Renderer.gitignore())
+
+    token
+  end
+
   defp write_mix_exs(token) do
     path = Path.join(token.root_dir, "mix.exs")
     IO.puts("Writing mix.exs")
 
     api_title = api_title_for(token.rest_description)
     docs_link = docs_link_for(token.rest_description)
+    description = description_for(token.rest_description)
     version = version_from_mix_exs(path)
 
     File.write!(
       path,
-      Renderer.mix_exs(token.root_namespace, token.library_name, api_title, docs_link, version)
+      Renderer.mix_exs(
+        token.root_namespace,
+        token.library_name,
+        api_title,
+        docs_link,
+        version,
+        description
+      )
     )
 
     token

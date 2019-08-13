@@ -43,7 +43,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     :library_name,
     :api_title,
     :docs_link,
-    :version
+    :version,
+    :description
   ])
 
   EEx.function_from_file(:def, :readme, Path.expand("./template/elixir/README.md.eex"), [
@@ -54,6 +55,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     :version_requirement,
     :description
   ])
+
+  EEx.function_from_file(:def, :license, Path.expand("./template/elixir/LICENSE.eex"), [])
+
+  EEx.function_from_file(:def, :gitignore, Path.expand("./template/elixir/gitignore.eex"), [])
 
   defp render_description(nil, _args), do: nil
 
