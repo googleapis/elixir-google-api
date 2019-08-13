@@ -30,7 +30,7 @@ defmodule <%= namespace %>.Mixfile do
       description: description(),
       package: package(),
       deps: deps(),
-      source_url: "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/<%= library_name %>"
+      source_url: "https://github.com/googleapis/elixir-google-api/tree/master/clients/<%= library_name %>"
     ]
   end
 
@@ -58,7 +58,7 @@ defmodule <%= namespace %>.Mixfile do
       maintainers: ["Jeff Ching", "Daniel Azuma"],
       licenses: ["Apache 2.0"],
       links: %{
-        "GitHub" => "https://github.com/GoogleCloudPlatform/elixir-google-api/tree/master/clients/<%= library_name %>",
+        "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/<%= library_name %>",
         "Homepage" => "<%= docs_link %>"
       }
     ]
