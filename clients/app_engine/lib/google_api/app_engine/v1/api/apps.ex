@@ -23,6 +23,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
   alias GoogleApi.AppEngine.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates an App Engine application for a Google Cloud Platform project. Required fields:
   id - The ID of the target Cloud Platform project.
@@ -74,6 +76,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
       |> Request.method(:post)
       |> Request.url("/v1/apps", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -130,6 +133,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -192,6 +196,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -250,6 +255,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -318,6 +324,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -388,6 +395,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           URI.encode(authorized_certificates_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -461,6 +469,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           URI.encode(authorized_certificates_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -534,6 +543,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -611,6 +621,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
           URI.encode(authorized_certificates_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -682,6 +693,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -753,6 +765,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -822,6 +835,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "domainMappingsId" => URI.encode(domain_mappings_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -891,6 +905,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "domainMappingsId" => URI.encode(domain_mappings_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -952,6 +967,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1027,6 +1043,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "domainMappingsId" => URI.encode(domain_mappings_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1096,6 +1113,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1165,6 +1183,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1234,6 +1253,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "ingressRulesId" => URI.encode(ingress_rules_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1303,6 +1323,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "ingressRulesId" => URI.encode(ingress_rules_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1376,6 +1397,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1449,6 +1471,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "ingressRulesId" => URI.encode(ingress_rules_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1518,6 +1541,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1580,6 +1604,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1649,6 +1674,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1711,6 +1737,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1780,6 +1807,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1849,6 +1877,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1909,6 +1938,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "appsId" => URI.encode(apps_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1984,6 +2014,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2055,6 +2086,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2128,6 +2160,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2203,6 +2236,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2279,6 +2313,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2369,6 +2404,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2451,6 +2487,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2531,6 +2568,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2611,6 +2649,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2689,6 +2728,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Apps do
         "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
