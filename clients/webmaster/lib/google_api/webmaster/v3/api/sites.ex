@@ -23,6 +23,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
   alias GoogleApi.Webmaster.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Adds a site to the set of the user's sites in Search Console.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
         "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
         "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -161,6 +165,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
         "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -206,6 +211,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sites do
       |> Request.method(:get)
       |> Request.url("/sites", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
