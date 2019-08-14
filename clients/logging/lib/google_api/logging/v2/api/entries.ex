@@ -23,6 +23,8 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
   alias GoogleApi.Logging.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists log entries. Use this method to retrieve log entries that originated from a project/folder/organization/billing account. For ways to export log entries, see Exporting Logs.
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
       |> Request.method(:post)
       |> Request.url("/v2/entries:list", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -127,6 +130,7 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
       |> Request.method(:post)
       |> Request.url("/v2/entries:write", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
