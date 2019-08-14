@@ -23,6 +23,8 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Api.AmpUrls do
   alias GoogleApi.AcceleratedMobilePageUrl.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns AMP URL(s) and equivalent
   [AMP Cache URL(s)](/amp/cache/overview#amp-cache-url-format).
@@ -74,6 +76,7 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Api.AmpUrls do
       |> Request.method(:post)
       |> Request.url("/v1/ampUrls:batchGet", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
