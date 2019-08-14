@@ -1,18 +1,23 @@
-# GoogleApi.People.V1
+# GoogleApi.People
+
+Client library for People API from Google.
 
 Provides access to information about profiles and contacts.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_people` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_people` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_people, "~> 0.0.1"}]
+  [{:google_api_people, "~> 0.11"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_people](https://hexdocs.pm/google_api_people).
+## For more information
+
+Product documentation is available at [https://developers.google.com/people/](https://developers.google.com/people/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_people](https://hexdocs.pm/google_api_people).
