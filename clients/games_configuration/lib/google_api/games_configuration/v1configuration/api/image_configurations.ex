@@ -23,6 +23,8 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
   alias GoogleApi.GamesConfiguration.V1configuration.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Uploads an image for a resource with the given ID and image type.
 
@@ -80,6 +82,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
         "imageType" => URI.encode(image_type, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -150,6 +153,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
       )
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -225,6 +229,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
