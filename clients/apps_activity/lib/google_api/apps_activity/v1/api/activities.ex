@@ -23,6 +23,8 @@ defmodule GoogleApi.AppsActivity.V1.Api.Activities do
   alias GoogleApi.AppsActivity.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns a list of activities visible to the current logged in user. Visible activities are determined by the visibility settings of the object that was acted on, e.g. Drive files a user can see. An activity is a record of past events. Multiple events may be merged if they are similar. A request is scoped to activities from a given Google service using the source parameter.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.AppsActivity.V1.Api.Activities do
       |> Request.method(:get)
       |> Request.url("/activities", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
