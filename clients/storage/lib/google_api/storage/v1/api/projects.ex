@@ -23,6 +23,8 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
   alias GoogleApi.Storage.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a new HMAC key for the specified service account.
 
@@ -80,6 +82,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
       })
       |> Request.add_param(:query, :serviceAccountEmail, service_account_email)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -143,6 +146,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
         "accessId" => URI.encode(access_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -206,6 +210,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
         "accessId" => URI.encode(access_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -264,6 +269,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -329,6 +335,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
         "accessId" => URI.encode(access_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -386,6 +393,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

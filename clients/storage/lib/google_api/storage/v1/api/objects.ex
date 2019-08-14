@@ -23,6 +23,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   alias GoogleApi.Storage.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Concatenates a list of existing objects into a new object in the same bucket.
 
@@ -87,6 +89,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "destinationObject" => URI.encode(destination_object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -187,6 +190,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -251,6 +255,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -317,6 +322,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -384,6 +390,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -456,6 +463,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -541,6 +549,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -632,6 +641,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -698,6 +708,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -768,6 +779,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -874,6 +886,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -943,6 +956,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1016,6 +1030,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       })
       |> Request.add_param(:query, :permissions, permissions)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1086,6 +1101,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1154,6 +1170,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
