@@ -23,6 +23,8 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.ViolatingSites do
   alias GoogleApi.AdExperienceReport.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists sites with Ad Experience Report statuses of "Failing" or "Warning".
 
@@ -71,6 +73,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.ViolatingSites do
       |> Request.method(:get)
       |> Request.url("/v1/violatingSites", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
