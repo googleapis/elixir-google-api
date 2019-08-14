@@ -23,6 +23,8 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
   alias GoogleApi.CivicInfo.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Looks up political geography and representative information for a single address.
 
@@ -81,6 +83,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
       |> Request.method(:get)
       |> Request.url("/representatives", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -149,6 +152,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
         "ocdId" => URI.encode(ocd_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
