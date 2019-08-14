@@ -1,19 +1,24 @@
-# GoogleApi.Translate.V2
+# GoogleApi.Translate
+
+Client library for Google Cloud Translation API from Google.
 
 The Google Cloud Translation API lets websites and programs integrate with
-Google Translate programmatically.
+    Google Translate programmatically.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_translate` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_translate` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_translate, "~> 0.0.4"}]
+  [{:google_api_translate, "~> 0.3"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_translate](https://hexdocs.pm/google_api_translate).
+## For more information
+
+Product documentation is available at [https://code.google.com/apis/language/translate/v2/getting_started.html](https://code.google.com/apis/language/translate/v2/getting_started.html).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_translate](https://hexdocs.pm/google_api_translate).
