@@ -23,6 +23,8 @@ defmodule GoogleApi.Mirror.V1.Api.Locations do
   alias GoogleApi.Mirror.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets a single location by ID.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.Mirror.V1.Api.Locations do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -110,6 +113,7 @@ defmodule GoogleApi.Mirror.V1.Api.Locations do
       |> Request.method(:get)
       |> Request.url("/mirror/v1/locations", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
