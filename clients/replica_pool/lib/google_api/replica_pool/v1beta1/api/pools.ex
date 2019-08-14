@@ -23,6 +23,8 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Pools do
   alias GoogleApi.ReplicaPool.V1beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes a replica pool.
 
@@ -84,6 +86,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Pools do
         "poolName" => URI.encode(pool_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -149,6 +152,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Pools do
         "poolName" => URI.encode(pool_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -201,6 +205,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Pools do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -256,6 +261,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Pools do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -323,6 +329,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Pools do
         "poolName" => URI.encode(pool_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -390,6 +397,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Pools do
         "poolName" => URI.encode(pool_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
