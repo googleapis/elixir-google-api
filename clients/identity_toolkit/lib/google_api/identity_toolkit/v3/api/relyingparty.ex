@@ -23,6 +23,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   alias GoogleApi.IdentityToolkit.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates the URI used by the IdP to authenticate the user.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/createAuthUri", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -115,6 +118,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/deleteAccount", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -165,6 +169,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/downloadAccount", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -219,6 +224,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/emailLinkSignin", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -269,6 +275,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/getAccountInfo", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -327,6 +334,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/getOobConfirmationCode", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -384,6 +392,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:get)
       |> Request.url("/getProjectConfig", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -437,6 +446,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:get)
       |> Request.url("/publicKeys", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -493,6 +503,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:get)
       |> Request.url("/getRecaptchaParam", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -543,6 +554,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/resetPassword", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -602,6 +614,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/sendVerificationCode", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -656,6 +669,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/setAccountInfo", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -711,6 +725,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/setProjectConfig", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -766,6 +781,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/signOutUser", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -820,6 +836,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/signupNewUser", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -870,6 +887,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/uploadAccount", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -920,6 +938,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/verifyAssertion", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -974,6 +993,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/verifyCustomToken", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1024,6 +1044,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/verifyPassword", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1079,6 +1100,7 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
       |> Request.method(:post)
       |> Request.url("/verifyPhoneNumber", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
