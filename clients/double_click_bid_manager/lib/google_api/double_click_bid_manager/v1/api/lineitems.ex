@@ -23,6 +23,8 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Lineitems do
   alias GoogleApi.DoubleClickBidManager.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves line items in CSV format. TrueView line items are not supported.
 
@@ -73,6 +75,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Lineitems do
       |> Request.method(:post)
       |> Request.url("/lineitems/downloadlineitems", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -127,6 +130,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Lineitems do
       |> Request.method(:post)
       |> Request.url("/lineitems/uploadlineitems", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
