@@ -23,6 +23,8 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Namespaces do
   alias GoogleApi.ProximityBeacon.V1beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists all attachment namespaces owned by your Google Developers Console
   project. Attachment data associated with a beacon must include a
@@ -80,6 +82,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Namespaces do
       |> Request.method(:get)
       |> Request.url("/v1beta1/namespaces", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -152,6 +155,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Namespaces do
         "namespaceName" => URI.encode(namespace_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

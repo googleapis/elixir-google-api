@@ -23,6 +23,8 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   alias GoogleApi.ProximityBeacon.V1beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Activates a beacon. A beacon that is active will return information
   and attachment data when queried via `beaconinfo.getforobserved`.
@@ -91,6 +93,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -170,6 +173,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -249,6 +253,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -321,6 +326,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -398,6 +404,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -535,6 +542,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       |> Request.method(:get)
       |> Request.url("/v1beta1/beacons", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -602,6 +610,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
       |> Request.method(:post)
       |> Request.url("/v1beta1/beacons:register", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -681,6 +690,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -776,6 +786,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -873,6 +884,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -957,6 +969,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "attachmentName" => URI.encode(attachment_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1051,6 +1064,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1139,6 +1153,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
         "beaconName" => URI.encode(beacon_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
