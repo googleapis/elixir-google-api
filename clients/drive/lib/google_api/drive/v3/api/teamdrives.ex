@@ -23,6 +23,8 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
   alias GoogleApi.Drive.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deprecated use drives.create instead.
 
@@ -66,6 +68,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
       |> Request.url("/drive/v3/teamdrives", %{})
       |> Request.add_param(:query, :requestId, request_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -114,6 +117,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
         "teamDriveId" => URI.encode(team_drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -164,6 +168,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
         "teamDriveId" => URI.encode(team_drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -217,6 +222,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
       |> Request.method(:get)
       |> Request.url("/drive/v3/teamdrives", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -269,6 +275,7 @@ defmodule GoogleApi.Drive.V3.Api.Teamdrives do
         "teamDriveId" => URI.encode(team_drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

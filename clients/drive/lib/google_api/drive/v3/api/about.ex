@@ -23,6 +23,8 @@ defmodule GoogleApi.Drive.V3.Api.About do
   alias GoogleApi.Drive.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets information about the user, the user's Drive, and system capabilities.
 
@@ -62,6 +64,7 @@ defmodule GoogleApi.Drive.V3.Api.About do
       |> Request.method(:get)
       |> Request.url("/drive/v3/about", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
