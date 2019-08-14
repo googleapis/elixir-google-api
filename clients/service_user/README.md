@@ -1,18 +1,23 @@
-# GoogleApi.ServiceUser.V1
+# GoogleApi.ServiceUser
+
+Client library for Service User API from Google.
 
 Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_service_user` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_service_user` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_service_user, "~> 0.0.1"}]
+  [{:google_api_service_user, "~> 0.13"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_service_user](https://hexdocs.pm/google_api_service_user).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/service-management/](https://cloud.google.com/service-management/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_service_user](https://hexdocs.pm/google_api_service_user).
