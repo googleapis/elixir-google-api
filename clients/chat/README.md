@@ -1,18 +1,23 @@
-# GoogleApi.Chat.V1
+# GoogleApi.Chat
+
+Client library for Hangouts Chat API from Google.
 
 Enables bots to fetch information and perform actions in Hangouts Chat.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_chat` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_chat` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_chat, "~> 0.1.0"}]
+  [{:google_api_chat, "~> 0.8"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_chat](https://hexdocs.pm/google_api_chat).
+## For more information
+
+Product documentation is available at [https://developers.google.com/hangouts/chat](https://developers.google.com/hangouts/chat).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_chat](https://hexdocs.pm/google_api_chat).
