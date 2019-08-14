@@ -23,6 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
   alias GoogleApi.BigQuery.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Streams data into BigQuery one record at a time without needing to run a load job. Requires the WRITER dataset role.
 
@@ -89,6 +91,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -167,6 +170,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

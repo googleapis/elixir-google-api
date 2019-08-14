@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
 
   ## Attributes
 
-  *   `clusterInfos` (*type:* `list(GoogleApi.BigQuery.V2.Model.ClusterInfo.t)`, *default:* `nil`) - [Beta] Information about top clusters for clustering models.
+  *   `clusterInfos` (*type:* `list(GoogleApi.BigQuery.V2.Model.ClusterInfo.t)`, *default:* `nil`) - Information about top clusters for clustering models.
   *   `durationMs` (*type:* `String.t`, *default:* `nil`) - Time taken to run the iteration in milliseconds.
   *   `evalLoss` (*type:* `float()`, *default:* `nil`) - Loss computed on the eval data at the end of iteration.
   *   `index` (*type:* `integer()`, *default:* `nil`) - Index of the iteration, 0 based.

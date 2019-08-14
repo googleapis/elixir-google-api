@@ -23,6 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   alias GoogleApi.BigQuery.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes the dataset specified by the datasetId value. Before you can delete a dataset, you must delete all its tables, either manually or by specifying deleteContents. Immediately after deletion, you can create another dataset with the same name.
 
@@ -75,6 +77,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -125,6 +128,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -175,6 +179,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -231,6 +236,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -289,6 +295,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -347,6 +354,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

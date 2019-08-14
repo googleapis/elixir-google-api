@@ -23,6 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   alias GoogleApi.BigQuery.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Requests that a job be cancelled. This call will return immediately, and the client will need to poll for the job status to see if the cancel completed successfully. Cancelled jobs may still incur costs.
 
@@ -69,6 +71,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -121,6 +124,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -193,6 +197,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -243,6 +248,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -306,6 +312,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -375,6 +382,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -401,6 +409,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
       *   `:minCreationTime` (*type:* `String.t`) - Min value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created after or at this timestamp are returned
       *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results
+      *   `:parentJobId` (*type:* `String.t`) - If set, retrieves only jobs whose parent is this job. Otherwise, retrieves only jobs which have no parent
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields
       *   `:stateFilter` (*type:* `list(String.t)`) - Filter for job state
   *   `opts` (*type:* `keyword()`) - Call options
@@ -426,6 +435,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       :maxResults => :query,
       :minCreationTime => :query,
       :pageToken => :query,
+      :parentJobId => :query,
       :projection => :query,
       :stateFilter => :query
     }
@@ -437,6 +447,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -487,6 +498,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
