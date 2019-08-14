@@ -23,6 +23,8 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
   alias GoogleApi.TestClient.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Batch write object metadata
 
@@ -56,6 +58,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -94,6 +97,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
         "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -134,6 +138,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
         "id" => id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -176,6 +181,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -220,6 +226,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -279,6 +286,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -317,6 +325,7 @@ defmodule GoogleApi.TestClient.V2.Api.Objects do
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
