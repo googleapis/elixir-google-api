@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.GroupItems do
   alias GoogleApi.YouTubeAnalytics.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Removes an item from a group.
 
@@ -85,6 +87,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.GroupItems do
       |> Request.method(:delete)
       |> Request.url("/v2/groupItems", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -152,6 +155,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.GroupItems do
       |> Request.method(:post)
       |> Request.url("/v2/groupItems", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -221,6 +225,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.GroupItems do
       |> Request.method(:get)
       |> Request.url("/v2/groupItems", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
