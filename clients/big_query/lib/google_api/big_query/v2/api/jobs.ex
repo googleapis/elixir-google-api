@@ -23,6 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   alias GoogleApi.BigQuery.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Requests that a job be cancelled. This call will return immediately, and the client will need to poll for the job status to see if the cancel completed successfully. Cancelled jobs may still incur costs.
 
@@ -69,6 +71,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -121,6 +124,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -193,6 +197,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -243,6 +248,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -306,6 +312,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -375,6 +382,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -437,6 +445,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -487,6 +496,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
