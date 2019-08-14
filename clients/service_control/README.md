@@ -1,18 +1,23 @@
-# GoogleApi.ServiceControl.V1
+# GoogleApi.ServiceControl
 
-Google Service Control provides control plane functionality to managed services, such as logging, monitoring, and status checks.
+Client library for Service Control API from Google.
+
+Provides control plane functionality to managed services, such as logging, monitoring, and status checks.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_service_control` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_service_control` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_service_control, "~> 0.0.1"}]
+  [{:google_api_service_control, "~> 0.11"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_service_control](https://hexdocs.pm/google_api_service_control).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/service-control/](https://cloud.google.com/service-control/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_service_control](https://hexdocs.pm/google_api_service_control).
