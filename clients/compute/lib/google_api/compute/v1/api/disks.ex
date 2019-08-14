@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Adds existing resource policies to a disk. You can only add one policy which will be applied to this disk for scheduling snapshot creation.
 
@@ -90,6 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -156,6 +159,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -231,6 +235,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -295,6 +300,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -353,6 +359,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -418,6 +425,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -478,6 +486,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -546,6 +555,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -619,6 +629,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -685,6 +696,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "disk" => URI.encode(disk, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -752,6 +764,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -825,6 +838,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -893,6 +907,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns the details for the specified interconnect location. Gets a list of available interconnect locations by making a list() request.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
         "interconnectLocation" => URI.encode(interconnect_location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -144,6 +147,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

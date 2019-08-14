@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Adds specified number of nodes to the node group.
 
@@ -90,6 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -156,6 +159,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -227,6 +231,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -300,6 +305,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -365,6 +371,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -430,6 +437,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -503,6 +511,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
       })
       |> Request.add_param(:query, :initialNodeCount, initial_node_count)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -571,6 +580,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -654,6 +664,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -721,6 +732,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -794,6 +806,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "nodeGroup" => URI.encode(node_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -862,6 +875,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

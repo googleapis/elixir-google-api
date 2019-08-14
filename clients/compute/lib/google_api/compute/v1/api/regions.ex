@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns the specified Region resource. Gets a list of available regions by making a list() request.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -133,6 +136,7 @@ defmodule GoogleApi.Compute.V1.Api.Regions do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Adds a key for validating requests with signed URLs for this backend bucket.
 
@@ -86,6 +88,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -153,6 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -224,6 +228,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
       })
       |> Request.add_param(:query, :keyName, key_name)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -285,6 +290,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -341,6 +347,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -407,6 +414,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -476,6 +484,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -545,6 +554,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         "backendBucket" => URI.encode(backend_bucket, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
