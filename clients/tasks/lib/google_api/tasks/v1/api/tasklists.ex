@@ -23,6 +23,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   alias GoogleApi.Tasks.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes the authenticated user's specified task list.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
         "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
         "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -160,6 +164,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       |> Request.method(:post)
       |> Request.url("/users/@me/lists", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -209,6 +214,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
       |> Request.method(:get)
       |> Request.url("/users/@me/lists", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -259,6 +265,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
         "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -309,6 +316,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
         "tasklist" => URI.encode(tasklist, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
