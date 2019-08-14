@@ -23,6 +23,8 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
   alias GoogleApi.Genomics.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Starts asynchronous cancellation on a long-running operation.
   The server makes a best effort to cancel the operation, but success is not
@@ -83,6 +85,7 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -144,6 +147,7 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -238,6 +242,7 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
