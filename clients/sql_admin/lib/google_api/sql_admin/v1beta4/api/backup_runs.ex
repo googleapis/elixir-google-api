@@ -23,6 +23,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   alias GoogleApi.SQLAdmin.V1beta4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes the backup taken by a backup run.
 
@@ -75,6 +77,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -133,6 +136,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -185,6 +189,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -240,6 +245,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

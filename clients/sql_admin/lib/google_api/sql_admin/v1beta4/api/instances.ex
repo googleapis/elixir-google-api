@@ -23,6 +23,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   alias GoogleApi.SQLAdmin.V1beta4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Add a new trusted Certificate Authority (CA) version for the specified instance. Required to prepare for a certificate rotation. If a CA version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one CA version waiting to be rotated in.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -130,6 +133,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -180,6 +184,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -243,6 +248,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -295,6 +301,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -347,6 +354,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -397,6 +405,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -449,6 +458,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -499,6 +509,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -554,6 +565,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -619,6 +631,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -673,6 +686,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -734,6 +748,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -795,6 +810,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -845,6 +861,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -908,6 +925,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -971,6 +989,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1032,6 +1051,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1087,6 +1107,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1144,6 +1165,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1196,6 +1218,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
