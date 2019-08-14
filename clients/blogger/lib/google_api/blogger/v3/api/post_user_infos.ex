@@ -23,6 +23,8 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
   alias GoogleApi.Blogger.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets one post and user info pair, by post ID and user ID. The post user info contains per-user information about the post, such as access rights, specific to the user.
 
@@ -84,6 +86,7 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -163,6 +166,7 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
