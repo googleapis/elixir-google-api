@@ -23,6 +23,8 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
   alias GoogleApi.Content.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Updates price and availability for multiple products or stores in a single request. This operation does not update the expiration date of the products.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
       |> Request.method(:post)
       |> Request.url("/inventory/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -138,6 +141,7 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
