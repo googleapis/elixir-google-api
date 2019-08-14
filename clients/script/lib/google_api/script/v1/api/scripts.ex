@@ -23,6 +23,8 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
   alias GoogleApi.Script.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Runs a function in an Apps Script project. The script project must be
   deployed for use with the Apps Script API and the calling application must
@@ -89,6 +91,7 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
         "scriptId" => URI.encode(script_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
