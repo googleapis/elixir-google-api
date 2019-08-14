@@ -23,6 +23,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   alias GoogleApi.DoubleClickSearch.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Generates and returns a report immediately.
 
@@ -64,6 +66,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
       |> Request.method(:post)
       |> Request.url("/reports/generate", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -112,6 +115,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
         "reportId" => URI.encode(report_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -173,6 +177,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
         "reportFragment" => report_fragment
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -220,6 +225,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
       |> Request.method(:post)
       |> Request.url("/reports", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
