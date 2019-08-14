@@ -23,6 +23,8 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   alias GoogleApi.Calendar.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes an access control rule.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "ruleId" => URI.encode(rule_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -117,6 +120,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "ruleId" => URI.encode(rule_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -169,6 +173,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -228,6 +233,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -282,6 +288,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "ruleId" => URI.encode(rule_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -336,6 +343,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "ruleId" => URI.encode(rule_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -397,6 +405,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
