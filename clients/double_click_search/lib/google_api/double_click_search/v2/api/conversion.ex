@@ -23,6 +23,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   alias GoogleApi.DoubleClickSearch.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves a list of conversions from a DoubleClick Search engine account.
 
@@ -110,6 +112,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :startRow, start_row)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -157,6 +160,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       |> Request.method(:post)
       |> Request.url("/conversion", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -240,6 +244,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :startRow, start_row)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -287,6 +292,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       |> Request.method(:put)
       |> Request.url("/conversion", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -339,6 +345,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       |> Request.method(:post)
       |> Request.url("/conversion/updateAvailability", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
