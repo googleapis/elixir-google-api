@@ -23,6 +23,8 @@ defmodule GoogleApi.Poly.V1.Api.Users do
   alias GoogleApi.Poly.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists assets authored by the given user. Only the value 'me', representing
   the currently-authenticated user, is supported. May include assets with an
@@ -100,6 +102,7 @@ defmodule GoogleApi.Poly.V1.Api.Users do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -175,6 +178,7 @@ defmodule GoogleApi.Poly.V1.Api.Users do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
