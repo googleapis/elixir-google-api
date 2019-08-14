@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
   alias GoogleApi.AndroidPublisher.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Uploads an APK to internal app sharing. If you are using the Google API client libraries, please increase the timeout of the http request before calling this endpoint (a timeout of 2 minutes is recommended). See: https://developers.google.com/api-client-library/java/google-api-java-client/errors for an example in java.
 
@@ -79,6 +81,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -145,6 +148,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
       )
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -219,6 +223,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -283,6 +288,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -349,6 +355,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
       )
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -423,6 +430,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Internalappsharingartifacts do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

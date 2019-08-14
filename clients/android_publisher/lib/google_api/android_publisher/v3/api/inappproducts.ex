@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   alias GoogleApi.AndroidPublisher.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Delete an in-app product for an app.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         "sku" => URI.encode(sku, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -139,6 +142,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         "sku" => URI.encode(sku, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -200,6 +204,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -260,6 +265,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -327,6 +333,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         "sku" => URI.encode(sku, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -392,6 +399,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         "sku" => URI.encode(sku, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
