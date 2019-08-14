@@ -1,18 +1,24 @@
-# GoogleApi.CloudDebugger.V2
+# GoogleApi.CloudDebugger
+
+Client library for Stackdriver Debugger API from Google.
 
 Examines the call stack and variables of a running application without stopping or slowing it down.
 
+
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_cloud_debugger` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_cloud_debugger` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_cloud_debugger, "~> 0.0.1"}]
+  [{:google_api_cloud_debugger, "~> 0.6"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_cloud_debugger](https://hexdocs.pm/google_api_cloud_debugger).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/debugger](https://cloud.google.com/debugger).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_cloud_debugger](https://hexdocs.pm/google_api_cloud_debugger).
