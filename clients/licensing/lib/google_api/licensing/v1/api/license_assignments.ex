@@ -23,6 +23,8 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   alias GoogleApi.Licensing.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Revoke License.
 
@@ -82,6 +84,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -147,6 +150,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -210,6 +214,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "skuId" => URI.encode(sku_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -276,6 +281,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       })
       |> Request.add_param(:query, :customerId, customer_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -346,6 +352,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       })
       |> Request.add_param(:query, :customerId, customer_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -413,6 +420,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -480,6 +488,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
