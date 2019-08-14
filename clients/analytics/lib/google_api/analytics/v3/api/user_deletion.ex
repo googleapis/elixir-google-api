@@ -23,6 +23,8 @@ defmodule GoogleApi.Analytics.V3.Api.UserDeletion do
   alias GoogleApi.Analytics.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Insert or update a user deletion requests.
 
@@ -71,6 +73,7 @@ defmodule GoogleApi.Analytics.V3.Api.UserDeletion do
       |> Request.method(:post)
       |> Request.url("/analytics/v3/userDeletion/userDeletionRequests:upsert", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

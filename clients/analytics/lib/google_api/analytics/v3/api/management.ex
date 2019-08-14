@@ -23,6 +23,8 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   alias GoogleApi.Analytics.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists account summaries (lightweight tree comprised of accounts/properties/profiles) to which the user has access.
 
@@ -66,6 +68,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:get)
       |> Request.url("/analytics/v3/management/accountSummaries", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -127,6 +130,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -186,6 +190,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -247,6 +252,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -310,6 +316,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "linkId" => URI.encode(link_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -359,6 +366,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:get)
       |> Request.url("/analytics/v3/management/accounts", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -406,6 +414,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:post)
       |> Request.url("/analytics/v3/management/clientId:hashClientId", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -474,6 +483,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -542,6 +552,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -608,6 +619,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -676,6 +688,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -748,6 +761,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -820,6 +834,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -888,6 +903,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -954,6 +970,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1022,6 +1039,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1094,6 +1112,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1166,6 +1185,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1238,6 +1258,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1310,6 +1331,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1380,6 +1402,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1452,6 +1475,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1526,6 +1550,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1600,6 +1625,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1661,6 +1687,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "filterId" => URI.encode(filter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1722,6 +1749,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "filterId" => URI.encode(filter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1777,6 +1805,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1829,6 +1858,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1892,6 +1922,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "filterId" => URI.encode(filter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1955,6 +1986,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "filterId" => URI.encode(filter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2027,6 +2059,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2097,6 +2130,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2169,6 +2203,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2243,6 +2278,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2317,6 +2353,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2389,6 +2426,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2461,6 +2499,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2531,6 +2570,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2603,6 +2643,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2677,6 +2718,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2751,6 +2793,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2823,6 +2866,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2893,6 +2937,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2965,6 +3010,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3039,6 +3085,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3107,6 +3154,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3175,6 +3223,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3241,6 +3290,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3309,6 +3359,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3379,6 +3430,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3449,6 +3501,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3517,6 +3570,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3585,6 +3639,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3651,6 +3706,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3722,6 +3778,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3792,6 +3849,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3862,6 +3920,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3911,6 +3970,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.method(:get)
       |> Request.url("/analytics/v3/management/segments", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3983,6 +4043,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4055,6 +4116,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4125,6 +4187,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4197,6 +4260,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4267,6 +4331,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4339,6 +4404,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4411,6 +4477,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4479,6 +4546,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4551,6 +4619,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       )
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4631,6 +4700,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4700,6 +4770,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4769,6 +4840,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4835,6 +4907,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4903,6 +4976,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4974,6 +5048,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5045,6 +5120,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5109,6 +5185,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5168,6 +5245,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5229,6 +5307,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5295,6 +5374,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5361,6 +5441,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5429,6 +5510,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5495,6 +5577,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5563,6 +5646,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -5633,6 +5717,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
