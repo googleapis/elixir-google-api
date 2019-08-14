@@ -23,6 +23,8 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
   alias GoogleApi.OAuth2.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
 
 
@@ -62,6 +64,7 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
       |> Request.method(:get)
       |> Request.url("/oauth2/v2/userinfo", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -107,6 +110,7 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
       |> Request.method(:get)
       |> Request.url("/userinfo/v2/me", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
