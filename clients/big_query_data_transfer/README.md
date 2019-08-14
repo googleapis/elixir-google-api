@@ -1,18 +1,23 @@
-# GoogleApi.BigQueryDataTransfer.V1
+# GoogleApi.BigQueryDataTransfer
 
-Transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
+Client library for BigQuery Data Transfer API from Google.
+
+Schedule queries or transfer external data from SaaS applications to Google BigQuery on a regular basis.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_big_query_data_transfer` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_big_query_data_transfer` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_big_query_data_transfer, "~> 0.0.1"}]
+  [{:google_api_big_query_data_transfer, "~> 0.11"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_big_query_data_transfer](https://hexdocs.pm/google_api_big_query_data_transfer).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/bigquery/](https://cloud.google.com/bigquery/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_big_query_data_transfer](https://hexdocs.pm/google_api_big_query_data_transfer).
