@@ -1,18 +1,24 @@
-# GoogleApi.Jobs.V2
+# GoogleApi.Jobs
 
-Cloud Talent Solution provides the capability to create, read, update, and delete job postings, as well as search jobs based on keywords and filters. 
+Client library for Cloud Talent Solution API from Google.
+
+Cloud Talent Solution provides the capability to create, read, update, and delete job postings, as well as search jobs based on keywords and filters.
+
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_jobs` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_jobs` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_jobs, "~> 0.0.1"}]
+  [{:google_api_jobs, "~> 0.5"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_jobs](https://hexdocs.pm/google_api_jobs).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/talent-solution/job-search/docs/](https://cloud.google.com/talent-solution/job-search/docs/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_jobs](https://hexdocs.pm/google_api_jobs).

@@ -23,6 +23,8 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
   alias GoogleApi.Jobs.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Completes the specified prefix with job keyword suggestions.
   Intended for use by a job search auto-complete search box.
@@ -98,6 +100,7 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
       |> Request.method(:get)
       |> Request.url("/v2:complete", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

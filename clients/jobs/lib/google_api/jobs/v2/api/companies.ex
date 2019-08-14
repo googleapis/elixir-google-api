@@ -23,6 +23,8 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
   alias GoogleApi.Jobs.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a new company entity.
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       |> Request.method(:post)
       |> Request.url("/v2/companies", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -129,6 +132,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -186,6 +190,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -251,6 +256,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
       |> Request.method(:get)
       |> Request.url("/v2/companies", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -337,6 +343,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -426,6 +433,7 @@ defmodule GoogleApi.Jobs.V2.Api.Companies do
         "companyName" => URI.encode(company_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

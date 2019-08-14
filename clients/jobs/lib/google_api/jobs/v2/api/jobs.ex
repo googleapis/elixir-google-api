@@ -23,6 +23,8 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   alias GoogleApi.Jobs.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes a list of Job postings by filter.
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
       |> Request.method(:post)
       |> Request.url("/v2/jobs:batchDelete", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -130,6 +133,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
       |> Request.method(:post)
       |> Request.url("/v2/jobs", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -197,6 +201,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -256,6 +261,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
       |> Request.method(:post)
       |> Request.url("/v2/jobs:deleteByFilter", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -313,6 +319,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -381,6 +388,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
       |> Request.method(:post)
       |> Request.url("/v2/jobs:histogram", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -464,6 +472,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
       |> Request.method(:get)
       |> Request.url("/v2/jobs", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -529,6 +538,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -588,6 +598,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
       |> Request.method(:post)
       |> Request.url("/v2/jobs:search", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -652,6 +663,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
       |> Request.method(:post)
       |> Request.url("/v2/jobs:searchForAlert", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
