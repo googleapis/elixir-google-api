@@ -23,6 +23,8 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
   alias GoogleApi.FusionTables.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes a template
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
         "templateId" => template_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -134,6 +137,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
         "templateId" => template_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -184,6 +188,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
         "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -236,6 +241,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
         "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -299,6 +305,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
         "templateId" => template_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -362,6 +369,7 @@ defmodule GoogleApi.FusionTables.V2.Api.Template do
         "templateId" => template_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
