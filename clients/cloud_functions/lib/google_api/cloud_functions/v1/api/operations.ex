@@ -23,6 +23,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
   alias GoogleApi.CloudFunctions.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the latest state of a long-running operation.  Clients can use this
   method to poll the operation result at intervals as recommended by the API
@@ -75,6 +77,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
         "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -146,6 +149,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
       |> Request.method(:get)
       |> Request.url("/v1/operations", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
