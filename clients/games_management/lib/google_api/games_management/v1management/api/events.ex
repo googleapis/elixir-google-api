@@ -23,6 +23,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
   alias GoogleApi.GamesManagement.V1management.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Resets all player progress on the event with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player that use the event will also be reset.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
         "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -110,6 +113,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
       |> Request.method(:post)
       |> Request.url("/events/reset", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -162,6 +166,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
       |> Request.method(:post)
       |> Request.url("/events/resetAllForAllPlayers", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -219,6 +224,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
         "eventId" => URI.encode(event_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -273,6 +279,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
       |> Request.method(:post)
       |> Request.url("/events/resetMultipleForAllPlayers", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

@@ -23,6 +23,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.TurnBasedMatches do
   alias GoogleApi.GamesManagement.V1management.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Reset all turn-based match data for a user. This method is only accessible to whitelisted tester accounts for your application.
 
@@ -62,6 +64,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.TurnBasedMatches do
       |> Request.method(:post)
       |> Request.url("/turnbasedmatches/reset", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -114,6 +117,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.TurnBasedMatches do
       |> Request.method(:post)
       |> Request.url("/turnbasedmatches/resetForAllPlayers", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
