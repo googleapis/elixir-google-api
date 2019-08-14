@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
   alias GoogleApi.YouTube.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource.
 
@@ -138,6 +140,7 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
       |> Request.url("/youtube/v3/search", %{})
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

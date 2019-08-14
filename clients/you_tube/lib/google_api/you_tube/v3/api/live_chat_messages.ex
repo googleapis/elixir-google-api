@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
   alias GoogleApi.YouTube.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes a chat message.
 
@@ -64,6 +66,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
       |> Request.url("/youtube/v3/liveChat/messages", %{})
       |> Request.add_param(:query, :id, id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
       |> Request.url("/youtube/v3/liveChat/messages", %{})
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -185,6 +189,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
       |> Request.add_param(:query, :liveChatId, live_chat_id)
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

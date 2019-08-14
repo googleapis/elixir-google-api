@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
   alias GoogleApi.YouTube.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Posts a bulletin for a specific channel. (The user submitting the request must be authorized to act on the channel's behalf.)
 
@@ -68,6 +70,7 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
       |> Request.url("/youtube/v3/activities", %{})
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -133,6 +136,7 @@ defmodule GoogleApi.YouTube.V3.Api.Activities do
       |> Request.url("/youtube/v3/activities", %{})
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

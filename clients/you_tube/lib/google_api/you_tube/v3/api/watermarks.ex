@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
   alias GoogleApi.YouTube.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Uploads a watermark image to YouTube and sets it for a channel.
 
@@ -70,6 +72,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
       |> Request.url("/youtube/v3/watermarks/set", %{})
       |> Request.add_param(:query, :channelId, channel_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -136,6 +139,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
       |> Request.add_param(:query, :channelId, channel_id)
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -208,6 +212,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -259,6 +264,7 @@ defmodule GoogleApi.YouTube.V3.Api.Watermarks do
       |> Request.url("/youtube/v3/watermarks/unset", %{})
       |> Request.add_param(:query, :channelId, channel_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
