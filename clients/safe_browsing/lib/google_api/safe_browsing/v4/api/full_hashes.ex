@@ -23,6 +23,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.FullHashes do
   alias GoogleApi.SafeBrowsing.V4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Finds the full hashes that match the requested hash prefixes.
 
@@ -73,6 +75,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.FullHashes do
       |> Request.method(:post)
       |> Request.url("/v4/fullHashes:find", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

@@ -23,6 +23,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatHits do
   alias GoogleApi.SafeBrowsing.V4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Reports a Safe Browsing threat list hit to Google. Only projects with
   TRUSTED_REPORTER visibility can use this method.
@@ -73,6 +75,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatHits do
       |> Request.method(:post)
       |> Request.url("/v4/threatHits", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

@@ -1,18 +1,23 @@
-# GoogleApi.SafeBrowsing.V4
+# GoogleApi.SafeBrowsing
+
+Client library for Safe Browsing API from Google.
 
 Enables client applications to check web resources (most commonly URLs) against Google-generated lists of unsafe web resources.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_safe_browsing` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_safe_browsing` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_safe_browsing, "~> 0.0.1"}]
+  [{:google_api_safe_browsing, "~> 0.6"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_safe_browsing](https://hexdocs.pm/google_api_safe_browsing).
+## For more information
+
+Product documentation is available at [https://developers.google.com/safe-browsing/](https://developers.google.com/safe-browsing/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_safe_browsing](https://hexdocs.pm/google_api_safe_browsing).
