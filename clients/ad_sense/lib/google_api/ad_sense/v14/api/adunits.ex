@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
   alias GoogleApi.AdSense.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the specified ad unit in the specified ad client.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
         "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -128,6 +131,7 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
         "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -182,6 +186,7 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -247,6 +252,7 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
         "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

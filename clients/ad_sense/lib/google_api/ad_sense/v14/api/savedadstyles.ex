@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
   alias GoogleApi.AdSense.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Get a specific saved ad style from the user's account.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
         "savedAdStyleId" => URI.encode(saved_ad_style_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -114,6 +117,7 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
       |> Request.method(:get)
       |> Request.url("/savedadstyles", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

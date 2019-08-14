@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSense.V14.Api.Adclients do
   alias GoogleApi.AdSense.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   List all ad clients in this AdSense account.
 
@@ -66,6 +68,7 @@ defmodule GoogleApi.AdSense.V14.Api.Adclients do
       |> Request.method(:get)
       |> Request.url("/adclients", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
