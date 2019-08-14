@@ -1,18 +1,23 @@
-# GoogleApi.TPU.V1
+# GoogleApi.TPU
+
+Client library for Cloud TPU API from Google.
 
 TPU API provides customers with access to Google TPU technology.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_tpu` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_tpu` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_tpu, "~> 0.0.1"}]
+  [{:google_api_tpu, "~> 0.4"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_tpu](https://hexdocs.pm/google_api_tpu).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/tpu/](https://cloud.google.com/tpu/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_tpu](https://hexdocs.pm/google_api_tpu).
