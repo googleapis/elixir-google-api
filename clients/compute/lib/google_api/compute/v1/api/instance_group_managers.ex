@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Flags the specified instances to be removed from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces the targetSize of the managed instance group by the number of instances that you abandon. This operation is marked as DONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with the listmanagedinstances method.
 
@@ -97,6 +99,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -174,6 +177,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -247,6 +251,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -327,6 +332,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -392,6 +398,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -463,6 +470,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -543,6 +551,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -631,6 +640,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -707,6 +717,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         "instanceGroupManager" => URI.encode(instance_group_manager, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -787,6 +798,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -873,6 +885,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
       )
       |> Request.add_param(:query, :size, size)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -949,6 +962,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1025,6 +1039,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

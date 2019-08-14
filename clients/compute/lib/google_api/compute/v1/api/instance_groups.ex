@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Adds a list of instances to the specified instance group. All of the instances in the instance group must be in the same network/subnetwork. Read  Adding instances for more information.
 
@@ -90,6 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -167,6 +170,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -240,6 +244,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -305,6 +310,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -368,6 +374,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -441,6 +448,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -528,6 +536,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -605,6 +614,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -678,6 +688,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         "instanceGroup" => URI.encode(instance_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

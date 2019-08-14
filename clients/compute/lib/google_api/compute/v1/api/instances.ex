@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves aggregated list of all of the instances in your project across all regions and zones.
 
@@ -83,6 +85,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -151,6 +154,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -222,6 +226,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -295,6 +300,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -368,6 +374,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -444,6 +451,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -515,6 +523,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -592,6 +601,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       })
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -657,6 +667,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -724,6 +735,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -797,6 +809,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -870,6 +883,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -943,6 +957,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1008,6 +1023,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1081,6 +1097,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1152,6 +1169,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1227,6 +1245,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       })
       |> Request.add_param(:query, :deviceName, device_name)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1300,6 +1319,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1377,6 +1397,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       })
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1442,6 +1463,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1511,6 +1533,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1590,6 +1613,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       |> Request.add_param(:query, :accessConfig, access_config)
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1663,6 +1687,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1732,6 +1757,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1803,6 +1829,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1876,6 +1903,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1959,6 +1987,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2034,6 +2063,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2107,6 +2137,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2172,6 +2203,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2248,6 +2280,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2325,6 +2358,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       })
       |> Request.add_param(:query, :networkInterface, network_interface)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2404,6 +2438,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       |> Request.add_param(:query, :autoDelete, auto_delete)
       |> Request.add_param(:query, :deviceName, device_name)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2473,6 +2508,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2541,6 +2577,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

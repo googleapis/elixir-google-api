@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves an aggregated list of target VPN gateways.
 
@@ -94,6 +96,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -167,6 +170,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
         "targetVpnGateway" => URI.encode(target_vpn_gateway, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -232,6 +236,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
         "targetVpnGateway" => URI.encode(target_vpn_gateway, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -301,6 +306,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -380,6 +386,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

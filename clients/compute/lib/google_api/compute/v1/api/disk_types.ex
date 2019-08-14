@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves an aggregated list of disk types.
 
@@ -83,6 +85,7 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -148,6 +151,7 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
         "diskType" => URI.encode(disk_type, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -216,6 +220,7 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
