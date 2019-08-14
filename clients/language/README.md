@@ -1,19 +1,23 @@
-# GoogleApi.Language.V1
+# GoogleApi.Language
 
-Provides natural language understanding technologies to developers.
-Examples include sentiment analysis, entity recognition, entity sentiment analysis, and text annotations
+Client library for Cloud Natural Language API from Google.
+
+Provides natural language understanding technologies, such as sentiment analysis, entity recognition, entity sentiment analysis, and other text annotations, to developers.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_language` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_language` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_language, "~> 0.0.1"}]
+  [{:google_api_language, "~> 0.7"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_language](https://hexdocs.pm/google_api_language).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/natural-language/](https://cloud.google.com/natural-language/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_language](https://hexdocs.pm/google_api_language).
