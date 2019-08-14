@@ -23,6 +23,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Tiers do
   alias GoogleApi.SQLAdmin.V1beta4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists all available machine types (tiers) for Cloud SQL, for example, db-n1-standard-1. For related information, see Pricing.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Tiers do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

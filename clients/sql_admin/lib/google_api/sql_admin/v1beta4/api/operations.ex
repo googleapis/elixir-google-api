@@ -23,6 +23,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
   alias GoogleApi.SQLAdmin.V1beta4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves an instance operation that has been performed on an instance.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
         "operation" => URI.encode(operation, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -122,6 +125,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
       })
       |> Request.add_param(:query, :instance, instance)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
