@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
   alias GoogleApi.YouTube.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Removes a chat moderator.
 
@@ -64,6 +66,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
       |> Request.url("/youtube/v3/liveChat/moderators", %{})
       |> Request.add_param(:query, :id, id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
       |> Request.url("/youtube/v3/liveChat/moderators", %{})
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -179,6 +183,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
       |> Request.add_param(:query, :liveChatId, live_chat_id)
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   alias GoogleApi.YouTube.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Uploads a custom video thumbnail to YouTube and sets it for a video.
 
@@ -68,6 +70,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
       |> Request.url("/youtube/v3/thumbnails/set", %{})
       |> Request.add_param(:query, :videoId, video_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -132,6 +135,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
       |> Request.add_param(:query, :videoId, video_id)
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -204,6 +208,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

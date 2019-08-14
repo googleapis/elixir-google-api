@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelBanners do
   alias GoogleApi.YouTube.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Uploads a channel banner image to YouTube. This method represents the first two steps in a three-step process to update the banner image for a channel:
 
@@ -74,6 +76,7 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelBanners do
       |> Request.method(:post)
       |> Request.url("/youtube/v3/channelBanners/insert", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -142,6 +145,7 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelBanners do
       |> Request.url("/resumable/upload/youtube/v3/channelBanners/insert", %{})
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -216,6 +220,7 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelBanners do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

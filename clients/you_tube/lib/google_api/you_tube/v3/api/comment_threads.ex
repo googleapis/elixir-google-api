@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   alias GoogleApi.YouTube.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a new top-level comment. To add a reply to an existing comment, use the comments.insert method instead.
 
@@ -66,6 +68,7 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
       |> Request.url("/youtube/v3/commentThreads", %{})
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -144,6 +147,7 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
       |> Request.url("/youtube/v3/commentThreads", %{})
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -193,6 +197,7 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
       |> Request.url("/youtube/v3/commentThreads", %{})
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
