@@ -23,6 +23,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   alias GoogleApi.StreetViewPublish.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   After the client finishes uploading the photo with the returned
   UploadRef,
@@ -90,6 +92,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
       |> Request.method(:post)
       |> Request.url("/v1/photo", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -152,6 +155,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
         "photoId" => URI.encode(photo_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -227,6 +231,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
         "photoId" => URI.encode(photo_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -301,6 +306,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
       |> Request.method(:post)
       |> Request.url("/v1/photo:startUpload", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -402,6 +408,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
