@@ -16,6 +16,8 @@ defmodule GoogleApis.Generator do
   @callback generate_client(GoogleApis.ApiConfig.t()) :: any()
   alias GoogleApis.ApiConfig
 
+  require Logger
+
   def bump_version(api_config) do
     version = api_config |> current_hex_version() |> bump_version_string()
     set_mix_version(api_config, version)
@@ -37,7 +39,12 @@ defmodule GoogleApis.Generator do
          [%{"version" => version} | _] <- Map.get(info, "releases") do
       version
     else
-      _ -> current_mix_version(api_config)
+      _ ->
+        Logger.warn(
+          "Failed to get hex version for #{package_name}. Falling back on reading mix.exs."
+        )
+
+        current_mix_version(api_config)
     end
   end
 
