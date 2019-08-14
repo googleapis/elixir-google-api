@@ -128,6 +128,6 @@ defmodule GoogleApis.Generator do
 
   defp version_requirement_string(str) do
     v = Version.parse!(str)
-    "~> #{v.major}.#{v.minor}"
+    "#{v.major}.#{v.minor}"
   end
 end
