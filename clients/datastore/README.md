@@ -1,18 +1,24 @@
-# GoogleApi.Datastore.V1
+# GoogleApi.Datastore
+
+Client library for Cloud Datastore API from Google.
 
 Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application.
 
+
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_datastore` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_datastore` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_datastore, "~> 0.0.1"}]
+  [{:google_api_datastore, "~> 0.6"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_datastore](https://hexdocs.pm/google_api_datastore).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/datastore/](https://cloud.google.com/datastore/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_datastore](https://hexdocs.pm/google_api_datastore).
