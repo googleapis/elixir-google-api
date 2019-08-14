@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   alias GoogleApi.AdSense.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify "alt=csv" as a query parameter.
 
@@ -93,6 +95,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :endDate, end_date)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -155,6 +158,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
         "savedReportId" => URI.encode(saved_report_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -206,6 +210,7 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
       |> Request.method(:get)
       |> Request.url("/reports/saved", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

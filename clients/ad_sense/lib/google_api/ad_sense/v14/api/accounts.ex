@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   alias GoogleApi.AdSense.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Get information about the selected AdSense account.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -116,6 +119,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/accounts", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -177,6 +181,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -229,6 +234,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -294,6 +300,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -359,6 +366,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "adUnitId" => URI.encode(ad_unit_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -426,6 +434,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -498,6 +507,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -559,6 +569,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "alertId" => URI.encode(alert_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -609,6 +620,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -677,6 +689,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -742,6 +755,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -816,6 +830,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -864,6 +879,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -949,6 +965,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
       |> Request.add_param(:query, :startDate, start_date)
       |> Request.add_param(:query, :endDate, end_date)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1020,6 +1037,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "savedReportId" => URI.encode(saved_report_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1079,6 +1097,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1140,6 +1159,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "savedAdStyleId" => URI.encode(saved_ad_style_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1197,6 +1217,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1262,6 +1283,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

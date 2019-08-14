@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSense.V14.Api.Metadata do
   alias GoogleApi.AdSense.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   List the metadata for the dimensions available to this AdSense account.
 
@@ -62,6 +64,7 @@ defmodule GoogleApi.AdSense.V14.Api.Metadata do
       |> Request.method(:get)
       |> Request.url("/metadata/dimensions", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -107,6 +110,7 @@ defmodule GoogleApi.AdSense.V14.Api.Metadata do
       |> Request.method(:get)
       |> Request.url("/metadata/metrics", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
