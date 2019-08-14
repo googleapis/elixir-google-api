@@ -23,6 +23,8 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   alias GoogleApi.Reseller.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns all the details of the watch corresponding to the reseller.
 
@@ -63,6 +65,7 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
       |> Request.method(:get)
       |> Request.url("/resellernotify/getwatchdetails", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -112,6 +115,7 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
       |> Request.method(:post)
       |> Request.url("/resellernotify/register", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -159,6 +163,7 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
       |> Request.method(:post)
       |> Request.url("/resellernotify/unregister", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
