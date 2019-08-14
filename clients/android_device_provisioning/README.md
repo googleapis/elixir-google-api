@@ -1,18 +1,23 @@
-# GoogleApi.AndroidDeviceProvisioning.V1
+# GoogleApi.AndroidDeviceProvisioning
 
-Automates reseller integration into Zero Touch Provisioning by assigning devices to customers and creating device reports.
+Client library for Android Device Provisioning Partner API from Google.
+
+Automates Android zero-touch enrollment for device resellers, customers, and EMMs.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_android_device_provisioning` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_android_device_provisioning` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_android_device_provisioning, "~> 0.0.1"}]
+  [{:google_api_android_device_provisioning, "~> 0.9"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_android_device_provisioning](https://hexdocs.pm/google_api_android_device_provisioning).
+## For more information
+
+Product documentation is available at [https://developers.google.com/zero-touch/](https://developers.google.com/zero-touch/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_android_device_provisioning](https://hexdocs.pm/google_api_android_device_provisioning).
