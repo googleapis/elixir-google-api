@@ -1,18 +1,23 @@
-# GoogleApi.PlayCustomApp.V1
+# GoogleApi.PlayCustomApp
+
+Client library for Google Play Custom App Publishing API from Google.
 
 An API to publish custom Android apps.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_play_custom_app` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_play_custom_app` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_play_custom_app, "~> 0.0.1"}]
+  [{:google_api_play_custom_app, "~> 0.2"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_play_custom_app](https://hexdocs.pm/google_api_play_custom_app).
+## For more information
+
+Product documentation is available at [https://developers.google.com/android/work/play/custom-app-api](https://developers.google.com/android/work/play/custom-app-api).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_play_custom_app](https://hexdocs.pm/google_api_play_custom_app).

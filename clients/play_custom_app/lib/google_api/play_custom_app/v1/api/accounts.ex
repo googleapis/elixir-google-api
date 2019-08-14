@@ -23,6 +23,8 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
   alias GoogleApi.PlayCustomApp.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Create and publish a new custom app.
 
@@ -76,6 +78,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
         "account" => URI.encode(account, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -139,6 +142,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -208,6 +212,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
