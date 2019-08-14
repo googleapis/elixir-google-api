@@ -23,6 +23,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   alias GoogleApi.AdExchangeBuyer.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Add a deal id association for the creative.
 
@@ -82,6 +84,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         "dealId" => URI.encode(deal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -143,6 +146,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         "buyerCreativeId" => URI.encode(buyer_creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -190,6 +194,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
       |> Request.method(:post)
       |> Request.url("/creatives", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -247,6 +252,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
       |> Request.method(:get)
       |> Request.url("/creatives", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -309,6 +315,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         "buyerCreativeId" => URI.encode(buyer_creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -374,6 +381,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
         "dealId" => URI.encode(deal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
