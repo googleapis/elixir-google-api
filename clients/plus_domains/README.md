@@ -1,18 +1,23 @@
-# GoogleApi.PlusDomains.V1
+# GoogleApi.PlusDomains
+
+Client library for Google+ Domains API from Google.
 
 Builds on top of the Google+ platform for Google Apps Domains.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_plus_domains` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_plus_domains` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_plus_domains, "~> 0.0.1"}]
+  [{:google_api_plus_domains, "~> 0.3"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_plus_domains](https://hexdocs.pm/google_api_plus_domains).
+## For more information
+
+Product documentation is available at [https://developers.google.com/+/domains/](https://developers.google.com/+/domains/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_plus_domains](https://hexdocs.pm/google_api_plus_domains).
