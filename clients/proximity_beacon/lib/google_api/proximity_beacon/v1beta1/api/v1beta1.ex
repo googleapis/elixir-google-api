@@ -23,6 +23,8 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.V1beta1 do
   alias GoogleApi.ProximityBeacon.V1beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the Proximity Beacon API's current public key and associated
   parameters used to initiate the Diffie-Hellman key exchange required to
@@ -77,6 +79,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.V1beta1 do
       |> Request.method(:get)
       |> Request.url("/v1beta1/eidparams", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
