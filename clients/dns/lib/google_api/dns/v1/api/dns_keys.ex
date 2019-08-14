@@ -23,6 +23,8 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   alias GoogleApi.DNS.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Fetch the representation of an existing DnsKey.
 
@@ -86,6 +88,7 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
         "dnsKeyId" => URI.encode(dns_key_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -142,6 +145,7 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
         "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
