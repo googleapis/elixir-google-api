@@ -23,6 +23,8 @@ defmodule GoogleApi.Games.V1.Api.Quests do
   alias GoogleApi.Games.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Indicates that the currently authorized user will participate in the quest.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.Games.V1.Api.Quests do
         "questId" => URI.encode(quest_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -121,6 +124,7 @@ defmodule GoogleApi.Games.V1.Api.Quests do
         "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
