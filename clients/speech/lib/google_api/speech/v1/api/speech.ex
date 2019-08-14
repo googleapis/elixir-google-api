@@ -23,6 +23,8 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
   alias GoogleApi.Speech.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Performs asynchronous speech recognition: receive results via the
   google.longrunning.Operations interface. Returns either an
@@ -77,6 +79,7 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
       |> Request.method(:post)
       |> Request.url("/v1/speech:longrunningrecognize", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -133,6 +136,7 @@ defmodule GoogleApi.Speech.V1.Api.Speech do
       |> Request.method(:post)
       |> Request.url("/v1/speech:recognize", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
