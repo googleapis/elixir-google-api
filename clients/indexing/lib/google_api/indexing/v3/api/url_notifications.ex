@@ -23,6 +23,8 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
   alias GoogleApi.Indexing.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets metadata about a Web Document. This method can _only_ be used to query
   URLs that were previously seen in successful Indexing API notifications.
@@ -74,6 +76,7 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
       |> Request.method(:get)
       |> Request.url("/v3/urlNotifications/metadata", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -130,6 +133,7 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
       |> Request.method(:post)
       |> Request.url("/v3/urlNotifications:publish", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
