@@ -23,6 +23,8 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   alias GoogleApi.Books.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes an annotation.
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         "annotationId" => URI.encode(annotation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -127,6 +130,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.method(:post)
       |> Request.url("/mylibrary/annotations", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -192,6 +196,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.method(:get)
       |> Request.url("/mylibrary/annotations", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -252,6 +257,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.add_param(:query, :layerIds, layer_ids)
       |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -309,6 +315,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         "annotationId" => URI.encode(annotation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -374,6 +381,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       })
       |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -433,6 +441,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -483,6 +492,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -530,6 +540,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.method(:get)
       |> Request.url("/mylibrary/bookshelves", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -597,6 +608,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_param(:query, :volumePosition, volume_position)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -662,6 +674,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       })
       |> Request.add_param(:query, :volumeId, volume_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -733,6 +746,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -790,6 +804,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
         "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -863,6 +878,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       |> Request.add_param(:query, :timestamp, timestamp)
       |> Request.add_param(:query, :position, position)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

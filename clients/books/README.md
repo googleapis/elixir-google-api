@@ -1,18 +1,23 @@
-# GoogleApi.Books.V1
+# GoogleApi.Books
+
+Client library for Books API from Google.
 
 Searches for books and manages your Google Books library.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_books` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_books` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_books, "~> 0.2.0"}]
+  [{:google_api_books, "~> 0.6"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_books](https://hexdocs.pm/google_api_books).
+## For more information
+
+Product documentation is available at [https://developers.google.com/books/docs/v1/getting_started](https://developers.google.com/books/docs/v1/getting_started).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_books](https://hexdocs.pm/google_api_books).

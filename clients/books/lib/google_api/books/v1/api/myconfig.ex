@@ -23,6 +23,8 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   alias GoogleApi.Books.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the current settings for the user.
 
@@ -62,6 +64,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       |> Request.method(:get)
       |> Request.url("/myconfig/getUserSettings", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -126,6 +129,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       |> Request.add_param(:query, :volumeIds, volume_ids)
       |> Request.add_param(:query, :cpksver, cpksver)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -198,6 +202,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       |> Request.add_param(:query, :nonce, nonce)
       |> Request.add_param(:query, :cpksver, cpksver)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -272,6 +277,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       |> Request.add_param(:query, :nonce, nonce)
       |> Request.add_param(:query, :cpksver, cpksver)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -319,6 +325,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       |> Request.method(:post)
       |> Request.url("/myconfig/updateUserSettings", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

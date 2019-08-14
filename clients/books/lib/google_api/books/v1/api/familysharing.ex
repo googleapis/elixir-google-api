@@ -23,6 +23,8 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
   alias GoogleApi.Books.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets information regarding the family that the user is part of.
 
@@ -64,6 +66,7 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
       |> Request.method(:get)
       |> Request.url("/familysharing/getFamilyInfo", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -115,6 +118,7 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
       |> Request.method(:post)
       |> Request.url("/familysharing/share", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -166,6 +170,7 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
       |> Request.method(:post)
       |> Request.url("/familysharing/unshare", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
