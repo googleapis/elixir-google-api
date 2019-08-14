@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
   alias GoogleApi.YouTubeReporting.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a job and returns it.
 
@@ -75,6 +77,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
       |> Request.method(:post)
       |> Request.url("/v1/jobs", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -134,6 +137,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -193,6 +197,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -262,6 +267,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
       |> Request.method(:get)
       |> Request.url("/v1/jobs", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -334,6 +340,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
         "reportId" => URI.encode(report_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -411,6 +418,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

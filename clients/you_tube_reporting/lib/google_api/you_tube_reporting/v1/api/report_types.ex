@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
   alias GoogleApi.YouTubeReporting.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists report types.
 
@@ -86,6 +88,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
       |> Request.method(:get)
       |> Request.url("/v1/reportTypes", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
