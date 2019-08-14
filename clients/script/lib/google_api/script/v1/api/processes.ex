@@ -23,6 +23,8 @@ defmodule GoogleApi.Script.V1.Api.Processes do
   alias GoogleApi.Script.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   List information about processes made by or on behalf of a user,
   such as process type and current status.
@@ -104,6 +106,7 @@ defmodule GoogleApi.Script.V1.Api.Processes do
       |> Request.method(:get)
       |> Request.url("/v1/processes", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -188,6 +191,7 @@ defmodule GoogleApi.Script.V1.Api.Processes do
       |> Request.method(:get)
       |> Request.url("/v1/processes:listScriptProcesses", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
