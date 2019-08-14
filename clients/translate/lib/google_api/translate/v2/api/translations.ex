@@ -23,6 +23,8 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
   alias GoogleApi.Translate.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Translates input text, returning translated text.
 
@@ -100,6 +102,7 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
       |> Request.add_param(:query, :q, q)
       |> Request.add_param(:query, :target, target)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -163,6 +166,7 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
       |> Request.method(:post)
       |> Request.url("/v2", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

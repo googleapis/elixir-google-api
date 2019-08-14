@@ -23,6 +23,8 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
   alias GoogleApi.Translate.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns a list of supported languages for translation.
 
@@ -79,6 +81,7 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
       |> Request.method(:get)
       |> Request.url("/v2/languages", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
