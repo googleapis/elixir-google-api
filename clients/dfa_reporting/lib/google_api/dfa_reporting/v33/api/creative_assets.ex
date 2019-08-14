@@ -23,6 +23,8 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
   alias GoogleApi.DFAReporting.V33.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Inserts a new creative asset.
 
@@ -85,6 +87,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -157,6 +160,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
       )
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -235,6 +239,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

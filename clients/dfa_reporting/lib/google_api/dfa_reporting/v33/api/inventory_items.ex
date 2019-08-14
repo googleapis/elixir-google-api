@@ -23,6 +23,8 @@ defmodule GoogleApi.DFAReporting.V33.Api.InventoryItems do
   alias GoogleApi.DFAReporting.V33.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets one inventory item by ID.
 
@@ -85,6 +87,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.InventoryItems do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -169,6 +172,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.InventoryItems do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

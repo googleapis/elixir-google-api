@@ -23,6 +23,8 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
   alias GoogleApi.DFAReporting.V33.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets one subaccount by ID.
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -122,6 +125,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -183,6 +187,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -248,6 +253,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
       })
       |> Request.add_param(:query, :id, id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -298,6 +304,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
