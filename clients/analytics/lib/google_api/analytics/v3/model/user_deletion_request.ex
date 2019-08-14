@@ -25,6 +25,7 @@ defmodule GoogleApi.Analytics.V3.Model.UserDeletionRequest do
   *   `firebaseProjectId` (*type:* `String.t`, *default:* `nil`) - Firebase Project Id
   *   `id` (*type:* `GoogleApi.Analytics.V3.Model.UserDeletionRequestId.t`, *default:* `nil`) - User ID.
   *   `kind` (*type:* `String.t`, *default:* `analytics#userDeletionRequest`) - Value is "analytics#userDeletionRequest".
+  *   `propertyId` (*type:* `String.t`, *default:* `nil`) - Property ID
   *   `webPropertyId` (*type:* `String.t`, *default:* `nil`) - Web property ID of the form UA-XXXXX-YY.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Analytics.V3.Model.UserDeletionRequest do
           :firebaseProjectId => String.t(),
           :id => GoogleApi.Analytics.V3.Model.UserDeletionRequestId.t(),
           :kind => String.t(),
+          :propertyId => String.t(),
           :webPropertyId => String.t()
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Analytics.V3.Model.UserDeletionRequest do
   field(:firebaseProjectId)
   field(:id, as: GoogleApi.Analytics.V3.Model.UserDeletionRequestId)
   field(:kind)
+  field(:propertyId)
   field(:webPropertyId)
 end
 
