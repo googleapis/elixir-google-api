@@ -1,18 +1,24 @@
-# GoogleApi.CloudIot.V1
+# GoogleApi.CloudIot
+
+Client library for Cloud IoT API from Google.
 
 Registers and manages IoT (Internet of Things) devices that connect to the Google Cloud Platform.
 
+
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_cloud_iot` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_cloud_iot` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_cloud_iot, "~> 0.1.0"}]
+  [{:google_api_cloud_iot, "~> 0.13"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_cloud_iot](https://hexdocs.pm/google_api_cloud_iot).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/iot](https://cloud.google.com/iot).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_cloud_iot](https://hexdocs.pm/google_api_cloud_iot).

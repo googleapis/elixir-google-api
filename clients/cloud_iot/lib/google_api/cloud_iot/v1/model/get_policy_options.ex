@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudIot.V1.Model.GetPolicyOptions do
   ## Attributes
 
   *   `requestedPolicyVersion` (*type:* `integer()`, *default:* `nil`) - Optional. The policy format version to be returned.
-      Acceptable values are 0, 1, and 3.
+      Acceptable values are 0 and 1.
       If the value is 0, or the field is omitted, policy format version 1 will be
       returned.
   """
