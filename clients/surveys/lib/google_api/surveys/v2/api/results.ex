@@ -23,6 +23,8 @@ defmodule GoogleApi.Surveys.V2.Api.Results do
   alias GoogleApi.Surveys.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves any survey results that have been produced so far. Results are formatted as an Excel file. You must add "?alt=media" to the URL as an argument to get results.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.Surveys.V2.Api.Results do
         "surveyUrlId" => URI.encode(survey_url_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
