@@ -23,6 +23,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   alias GoogleApi.CloudBuild.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Cancels a build in progress.
 
@@ -88,6 +90,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -150,6 +153,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -222,6 +226,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -287,6 +292,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -384,6 +390,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -449,6 +456,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -520,6 +528,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "triggerId" => URI.encode(trigger_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -591,6 +600,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "triggerId" => URI.encode(trigger_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -654,6 +664,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -729,6 +740,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "triggerId" => URI.encode(trigger_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -800,6 +812,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
         "triggerId" => URI.encode(trigger_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
