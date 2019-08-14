@@ -23,6 +23,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   alias GoogleApi.MachineLearning.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Get the service account information associated with your project. You need
   this information in order to grant the service account permissions for
@@ -77,6 +79,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -143,6 +146,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -206,6 +210,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -267,6 +272,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -328,6 +334,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -409,6 +416,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -492,6 +500,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -577,6 +586,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -654,6 +664,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -736,6 +747,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -811,6 +823,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -882,6 +895,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -948,6 +962,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1025,6 +1040,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1094,6 +1110,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1175,6 +1192,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1253,6 +1271,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1341,6 +1360,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1418,6 +1438,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1500,6 +1521,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1583,6 +1605,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1668,6 +1691,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1750,6 +1774,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1843,6 +1868,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "modelsId" => URI.encode(models_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1939,6 +1965,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2030,6 +2057,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2112,6 +2140,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2187,6 +2216,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2261,6 +2291,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
