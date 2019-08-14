@@ -1,18 +1,23 @@
-# GoogleApi.AdExperienceReport.V1
+# GoogleApi.AdExperienceReport
 
-View Ad Experience Report data, and get a list of sites that have a significant number of annoying ads.
+Client library for Ad Experience Report API from Google.
+
+Views Ad Experience Report data, and gets a list of sites that have a significant number of annoying ads.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_ad_experience_report` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_ad_experience_report` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_ad_experience_report, "~> 0.0.1"}]
+  [{:google_api_ad_experience_report, "~> 0.7"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_ad_experience_report](https://hexdocs.pm/google_api_ad_experience_report).
+## For more information
+
+Product documentation is available at [https://developers.google.com/ad-experience-report/](https://developers.google.com/ad-experience-report/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_ad_experience_report](https://hexdocs.pm/google_api_ad_experience_report).
