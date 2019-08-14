@@ -23,6 +23,8 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Assetlinks do
   alias GoogleApi.DigitalAssetLinks.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Determines whether the specified (directional) relationship exists between
   the specified source and target assets.
@@ -231,6 +233,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Assetlinks do
       |> Request.method(:get)
       |> Request.url("/v1/assetlinks:check", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
