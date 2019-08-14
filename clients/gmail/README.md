@@ -1,18 +1,23 @@
-# GoogleApi.Gmail.V1
+# GoogleApi.Gmail
+
+Client library for Gmail API from Google.
 
 Access Gmail mailboxes including sending user email.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_gmail` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_gmail` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_gmail, "~> 0.0.1"}]
+  [{:google_api_gmail, "~> 0.2"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_gmail](https://hexdocs.pm/google_api_gmail).
+## For more information
+
+Product documentation is available at [https://developers.google.com/gmail/api/](https://developers.google.com/gmail/api/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_gmail](https://hexdocs.pm/google_api_gmail).
