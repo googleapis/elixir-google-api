@@ -23,6 +23,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   alias GoogleApi.CloudResourceManager.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Create a Lien which applies to the resource denoted by the `parent` field.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
       |> Request.method(:post)
       |> Request.url("/v1/liens", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -138,6 +141,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
         "liensId" => URI.encode(liens_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -199,6 +203,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
         "liensId" => URI.encode(liens_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -264,6 +269,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
       |> Request.method(:get)
       |> Request.url("/v1/liens", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
