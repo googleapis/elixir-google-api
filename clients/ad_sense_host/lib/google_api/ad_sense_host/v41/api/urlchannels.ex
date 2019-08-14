@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
   alias GoogleApi.AdSenseHost.V41.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Delete a URL channel from the host AdSense account.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
         "urlChannelId" => URI.encode(url_channel_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -128,6 +131,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -180,6 +184,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
