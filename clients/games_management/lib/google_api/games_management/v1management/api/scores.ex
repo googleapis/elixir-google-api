@@ -23,6 +23,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
   alias GoogleApi.GamesManagement.V1management.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Resets scores for the leaderboard with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
 
@@ -66,6 +68,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
         "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -114,6 +117,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       |> Request.method(:post)
       |> Request.url("/scores/reset", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -169,6 +173,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       |> Request.method(:post)
       |> Request.url("/scores/resetAllForAllPlayers", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -226,6 +231,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
         "leaderboardId" => URI.encode(leaderboard_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -280,6 +286,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Scores do
       |> Request.method(:post)
       |> Request.url("/scores/resetMultipleForAllPlayers", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

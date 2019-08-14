@@ -23,6 +23,8 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
   alias GoogleApi.GamesManagement.V1management.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Reset all rooms for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
 
@@ -62,6 +64,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
       |> Request.method(:post)
       |> Request.url("/rooms/reset", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -107,6 +110,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Rooms do
       |> Request.method(:post)
       |> Request.url("/rooms/resetForAllPlayers", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
