@@ -23,6 +23,8 @@ defmodule GoogleApi.Monitoring.V3.Api.UptimeCheckIps do
   alias GoogleApi.Monitoring.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns the list of IPs that checkers run from
 
@@ -75,6 +77,7 @@ defmodule GoogleApi.Monitoring.V3.Api.UptimeCheckIps do
       |> Request.method(:get)
       |> Request.url("/v3/uptimeCheckIps", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
