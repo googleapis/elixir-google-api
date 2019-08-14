@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
   alias GoogleApi.AndroidEnterprise.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Requests to remove an app from a device. A call to get or list will still show the app as installed on the device until it is actually removed.
 
@@ -89,6 +91,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -161,6 +164,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -228,6 +232,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
         "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -304,6 +309,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -378,6 +384,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
