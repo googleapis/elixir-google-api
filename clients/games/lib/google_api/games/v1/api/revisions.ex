@@ -23,6 +23,8 @@ defmodule GoogleApi.Games.V1.Api.Revisions do
   alias GoogleApi.Games.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Checks whether the games client is out of date.
 
@@ -69,6 +71,7 @@ defmodule GoogleApi.Games.V1.Api.Revisions do
       |> Request.url("/revisions/check", %{})
       |> Request.add_param(:query, :clientRevision, client_revision)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

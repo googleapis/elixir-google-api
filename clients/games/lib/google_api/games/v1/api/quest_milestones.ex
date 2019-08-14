@@ -23,6 +23,8 @@ defmodule GoogleApi.Games.V1.Api.QuestMilestones do
   alias GoogleApi.Games.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Report that a reward for the milestone corresponding to milestoneId for the quest corresponding to questId has been claimed by the currently authorized user.
 
@@ -82,6 +84,7 @@ defmodule GoogleApi.Games.V1.Api.QuestMilestones do
       })
       |> Request.add_param(:query, :requestId, request_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
