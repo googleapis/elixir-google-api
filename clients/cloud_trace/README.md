@@ -1,20 +1,24 @@
-# GoogleApi.CloudTrace.V1
+# GoogleApi.CloudTrace
 
-Send and retrieve trace data from Stackdriver Trace. Data is generated and available by default
-for all App Engine applications. Data from other applications can be written to Stackdriver Trace
-for display, reporting, and analysis.
+Client library for Stackdriver Trace API from Google.
+
+Sends application trace data to Stackdriver Trace for viewing. Trace data is collected for all App Engine applications by default. Trace data from other applications can be provided using this API. This library is used to interact with the Trace API directly. If you are looking to instrument your application for Stackdriver Trace, we recommend using OpenCensus.
+
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_cloud_trace` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_cloud_trace` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_cloud_trace, "~> 0.0.1"}]
+  [{:google_api_cloud_trace, "~> 0.10"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_cloud_trace](https://hexdocs.pm/google_api_cloud_trace).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/trace](https://cloud.google.com/trace).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_cloud_trace](https://hexdocs.pm/google_api_cloud_trace).

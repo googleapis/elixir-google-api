@@ -23,6 +23,8 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   alias GoogleApi.CloudTrace.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Sends new traces to Stackdriver Trace or updates existing traces. If the ID
   of a trace that you send matches that of an existing trace, any fields
@@ -79,6 +81,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -148,6 +151,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
         "traceId" => URI.encode(trace_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -265,6 +269,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
