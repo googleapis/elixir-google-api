@@ -23,6 +23,8 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   alias GoogleApi.IAM.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets a Role definition.
 
@@ -99,6 +101,7 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
         "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -191,6 +194,7 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
       |> Request.method(:get)
       |> Request.url("/v1/roles", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -248,6 +252,7 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
       |> Request.method(:post)
       |> Request.url("/v1/roles:queryGrantableRoles", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
