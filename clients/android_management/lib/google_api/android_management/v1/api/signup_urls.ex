@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidManagement.V1.Api.SignupUrls do
   alias GoogleApi.AndroidManagement.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates an enterprise signup URL.
 
@@ -74,6 +76,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.SignupUrls do
       |> Request.method(:post)
       |> Request.url("/v1/signupUrls", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
