@@ -23,6 +23,8 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   alias GoogleApi.Classroom.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Accepts an invitation, removing it and adding the invited user to the
   teachers or students (as appropriate) of the specified course. Only the
@@ -86,6 +88,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -152,6 +155,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       |> Request.method(:post)
       |> Request.url("/v1/invitations", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -214,6 +218,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -276,6 +281,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -360,6 +366,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       |> Request.method(:get)
       |> Request.url("/v1/invitations", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
