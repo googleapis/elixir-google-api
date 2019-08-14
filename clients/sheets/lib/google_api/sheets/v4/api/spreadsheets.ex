@@ -23,6 +23,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   alias GoogleApi.Sheets.V4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Applies one or more updates to the spreadsheet.
 
@@ -99,6 +101,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -156,6 +159,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       |> Request.method(:post)
       |> Request.url("/v4/spreadsheets", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -237,6 +241,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -325,6 +330,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -396,6 +402,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "metadataId" => metadata_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -469,6 +476,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -543,6 +551,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "sheetId" => sheet_id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -644,6 +653,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "range" => URI.encode(range, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -715,6 +725,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -788,6 +799,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -870,6 +882,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -942,6 +955,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1015,6 +1029,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1087,6 +1102,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "spreadsheetId" => URI.encode(spreadsheet_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1163,6 +1179,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "range" => URI.encode(range, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1249,6 +1266,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "range" => URI.encode(range, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1340,6 +1358,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
         "range" => URI.encode(range, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
