@@ -23,6 +23,8 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   alias GoogleApi.Drive.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a copy of a file and applies any requested updates with patch semantics.
 
@@ -77,6 +79,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -136,6 +139,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       |> Request.method(:post)
       |> Request.url("/drive/v3/files", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -197,6 +201,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       |> Request.url("/resumable/upload/drive/v3/files", %{})
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -273,6 +278,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -325,6 +331,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -370,6 +377,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       |> Request.method(:delete)
       |> Request.url("/drive/v3/files/trash", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -420,6 +428,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       })
       |> Request.add_param(:query, :mimeType, mime_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -469,6 +478,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       |> Request.method(:get)
       |> Request.url("/drive/v3/files/generateIds", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -523,6 +533,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -594,6 +605,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       |> Request.method(:get)
       |> Request.url("/drive/v3/files", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -658,6 +670,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -735,6 +748,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -818,6 +832,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -874,6 +889,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

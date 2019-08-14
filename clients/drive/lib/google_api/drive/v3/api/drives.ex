@@ -23,6 +23,8 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
   alias GoogleApi.Drive.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a new shared drive.
 
@@ -66,6 +68,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
       |> Request.url("/drive/v3/drives", %{})
       |> Request.add_param(:query, :requestId, request_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -114,6 +117,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
         "driveId" => URI.encode(drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -164,6 +168,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
         "driveId" => URI.encode(drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -212,6 +217,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
         "driveId" => URI.encode(drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -265,6 +271,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
       |> Request.method(:get)
       |> Request.url("/drive/v3/drives", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -313,6 +320,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
         "driveId" => URI.encode(drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -365,6 +373,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
         "driveId" => URI.encode(drive_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
