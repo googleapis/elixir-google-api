@@ -23,6 +23,8 @@ defmodule GoogleApi.Vision.V1.Api.Images do
   alias GoogleApi.Vision.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Run image detection and annotation for a batch of images.
 
@@ -73,6 +75,7 @@ defmodule GoogleApi.Vision.V1.Api.Images do
       |> Request.method(:post)
       |> Request.url("/v1/images:annotate", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -136,6 +139,7 @@ defmodule GoogleApi.Vision.V1.Api.Images do
       |> Request.method(:post)
       |> Request.url("/v1/images:asyncBatchAnnotate", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
