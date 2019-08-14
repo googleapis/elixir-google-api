@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
   alias GoogleApi.AndroidPublisher.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns a single review.
 
@@ -80,6 +82,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
         "reviewId" => URI.encode(review_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -137,6 +140,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
         "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -207,6 +211,7 @@ defmodule GoogleApi.AndroidPublisher.V2.Api.Reviews do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
