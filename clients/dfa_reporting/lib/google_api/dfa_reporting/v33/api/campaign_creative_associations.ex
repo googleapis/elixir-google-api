@@ -23,6 +23,8 @@ defmodule GoogleApi.DFAReporting.V33.Api.CampaignCreativeAssociations do
   alias GoogleApi.DFAReporting.V33.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Associates a creative with the specified campaign. This method creates a default ad with dimensions matching the creative in the campaign if such a default ad does not exist already.
 
@@ -85,6 +87,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CampaignCreativeAssociations do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -159,6 +162,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CampaignCreativeAssociations do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
