@@ -1,18 +1,23 @@
-# GoogleApi.OSLogin.V1alpha
+# GoogleApi.OSLogin
 
-Manages OS login configuration for Directory API users.
+Client library for Cloud OS Login API from Google.
+
+You can use OS Login to manage access to your VM instances using IAM roles. For more information, read [OS Login](/compute/docs/oslogin/).
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_os_login` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_os_login` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_os_login, "~> 0.0.1"}]
+  [{:google_api_os_login, "~> 0.11"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_os_login](https://hexdocs.pm/google_api_os_login).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/compute/docs/oslogin/](https://cloud.google.com/compute/docs/oslogin/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_os_login](https://hexdocs.pm/google_api_os_login).
