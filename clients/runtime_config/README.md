@@ -1,18 +1,23 @@
-# GoogleApi.RuntimeConfig.V1
+# GoogleApi.RuntimeConfig
+
+Client library for Cloud Runtime Configuration API from Google.
 
 The Runtime Configurator allows you to dynamically configure and expose variables through Google Cloud Platform. In addition, you can also set Watchers and Waiters that will watch for changes to your data and return based on certain conditions.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_runtime_config` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_runtime_config` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_runtime_config, "~> 0.0.1"}]
+  [{:google_api_runtime_config, "~> 0.7"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_runtime_config](https://hexdocs.pm/google_api_runtime_config).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/deployment-manager/runtime-configurator/](https://cloud.google.com/deployment-manager/runtime-configurator/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_runtime_config](https://hexdocs.pm/google_api_runtime_config).
