@@ -23,6 +23,8 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Replicas do
   alias GoogleApi.ReplicaPool.V1beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes a replica from the pool.
 
@@ -88,6 +90,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Replicas do
         "replicaName" => URI.encode(replica_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -157,6 +160,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Replicas do
         "replicaName" => URI.encode(replica_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -228,6 +232,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Replicas do
         "poolName" => URI.encode(pool_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -302,6 +307,7 @@ defmodule GoogleApi.ReplicaPool.V1beta1.Api.Replicas do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
