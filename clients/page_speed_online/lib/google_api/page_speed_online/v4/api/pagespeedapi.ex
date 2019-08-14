@@ -23,6 +23,8 @@ defmodule GoogleApi.PageSpeedOnline.V4.Api.Pagespeedapi do
   alias GoogleApi.PageSpeedOnline.V4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Runs PageSpeed analysis on the page at the specified URL, and returns PageSpeed scores, a list of suggestions to make that page faster, and other information.
 
@@ -91,6 +93,7 @@ defmodule GoogleApi.PageSpeedOnline.V4.Api.Pagespeedapi do
       |> Request.url("/runPagespeed", %{})
       |> Request.add_param(:query, :url, url)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
