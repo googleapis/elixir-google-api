@@ -23,6 +23,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
   alias GoogleApi.CloudBilling.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the billing information for a project. The current authenticated user
   must have [permission to view the
@@ -82,6 +84,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -181,6 +184,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
