@@ -23,6 +23,8 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
   alias GoogleApi.SiteVerification.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Relinquish ownership of a website or domain.
 
@@ -69,6 +71,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -118,6 +121,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -169,6 +173,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       |> Request.method(:post)
       |> Request.url("/token", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -235,6 +240,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       |> Request.url("/webResource", %{})
       |> Request.add_param(:query, :verificationMethod, verification_method)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -283,6 +289,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
       |> Request.method(:get)
       |> Request.url("/webResource", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -337,6 +344,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -395,6 +403,7 @@ defmodule GoogleApi.SiteVerification.V1.Api.WebResource do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
