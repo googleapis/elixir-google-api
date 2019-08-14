@@ -1,18 +1,23 @@
-# GoogleApi.Spanner.V1
+# GoogleApi.Spanner
+
+Client library for Cloud Spanner API from Google.
 
 Cloud Spanner is a managed, mission-critical, globally consistent and scalable relational database service.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_spanner` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_spanner` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_spanner, "~> 0.0.1"}]
+  [{:google_api_spanner, "~> 0.8"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_spanner](https://hexdocs.pm/google_api_spanner).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/spanner/](https://cloud.google.com/spanner/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_spanner](https://hexdocs.pm/google_api_spanner).
