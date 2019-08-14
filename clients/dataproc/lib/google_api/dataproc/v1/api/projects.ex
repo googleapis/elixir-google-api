@@ -23,6 +23,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   alias GoogleApi.Dataproc.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates new workflow template.
 
@@ -88,6 +90,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -166,6 +169,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -244,6 +248,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -322,6 +327,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -400,6 +406,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -476,6 +483,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -551,6 +559,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -631,6 +640,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -711,6 +721,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -791,6 +802,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -864,6 +876,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -941,6 +954,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1019,6 +1033,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1092,6 +1107,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1170,6 +1186,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1245,6 +1262,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1342,6 +1360,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "clusterName" => URI.encode(cluster_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1420,6 +1439,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1500,6 +1520,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1577,6 +1598,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1650,6 +1672,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1723,6 +1746,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1801,6 +1825,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1880,6 +1905,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1957,6 +1983,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2035,6 +2062,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2106,6 +2134,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2186,6 +2215,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2264,6 +2294,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2337,6 +2368,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2410,6 +2442,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2488,6 +2521,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2564,6 +2598,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2642,6 +2677,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2722,6 +2758,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2795,6 +2832,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2873,6 +2911,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2951,6 +2990,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3029,6 +3069,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3107,6 +3148,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3183,6 +3225,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3258,6 +3301,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3338,6 +3382,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3418,6 +3463,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3498,6 +3544,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
