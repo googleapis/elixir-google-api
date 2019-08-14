@@ -1,18 +1,24 @@
-# GoogleApi.Poly.V1
+# GoogleApi.Poly
 
-The Poly API provides read access to assets hosted on &lt;a href&#x3D;\&quot;https://poly.google.com\&quot;&gt;poly.google.com&lt;/a&gt; to all, and upload access to &lt;a href&#x3D;\&quot;https://poly.google.com\&quot;&gt;poly.google.com&lt;/a&gt; for whitelisted accounts. 
+Client library for Poly API from Google.
+
+The Poly API provides read access to assets hosted on <a href="https://poly.google.com">poly.google.com</a> to all, and upload access to <a href="https://poly.google.com">poly.google.com</a> for whitelisted accounts.
+
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_poly` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_poly` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_poly, "~> 0.0.1"}]
+  [{:google_api_poly, "~> 0.3"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_poly](https://hexdocs.pm/google_api_poly).
+## For more information
+
+Product documentation is available at [https://developers.google.com/poly/](https://developers.google.com/poly/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_poly](https://hexdocs.pm/google_api_poly).

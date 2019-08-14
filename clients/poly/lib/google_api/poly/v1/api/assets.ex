@@ -23,6 +23,8 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
   alias GoogleApi.Poly.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns detailed information about an asset given its name.
   PRIVATE assets are returned only if
@@ -76,6 +78,7 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -162,6 +165,7 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
       |> Request.method(:get)
       |> Request.url("/v1/assets", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
