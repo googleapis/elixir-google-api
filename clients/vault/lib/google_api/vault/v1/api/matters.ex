@@ -23,6 +23,8 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   alias GoogleApi.Vault.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Adds an account as a matter collaborator.
 
@@ -75,6 +77,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -133,6 +136,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -190,6 +194,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.method(:post)
       |> Request.url("/v1/matters", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -246,6 +251,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -304,6 +310,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -367,6 +374,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
       |> Request.method(:get)
       |> Request.url("/v1/matters", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -425,6 +433,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -483,6 +492,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -541,6 +551,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -602,6 +613,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -660,6 +672,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -729,6 +742,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "exportId" => URI.encode(export_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -798,6 +812,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "exportId" => URI.encode(export_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -858,6 +873,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -931,6 +947,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -989,6 +1006,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1058,6 +1076,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1118,6 +1137,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1183,6 +1203,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1257,6 +1278,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1330,6 +1352,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1403,6 +1426,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1477,6 +1501,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1550,6 +1575,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "holdId" => URI.encode(hold_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1609,6 +1635,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1679,6 +1706,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "savedQueryId" => URI.encode(saved_query_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1749,6 +1777,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "savedQueryId" => URI.encode(saved_query_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1812,6 +1841,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
         "matterId" => URI.encode(matter_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

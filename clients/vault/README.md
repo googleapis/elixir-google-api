@@ -1,18 +1,23 @@
-# GoogleApi.Vault.V1
+# GoogleApi.Vault
 
-Add archiving and eDiscovery to G Suite. Manage, retain, search and export your organization’s email and on-the-record chats. Vault is included with G Suite's Business and Enterprise editions.
+Client library for G Suite Vault API from Google.
+
+Archiving and eDiscovery for G Suite.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_vault` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_vault` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_vault, "~> 0.0.1"}]
+  [{:google_api_vault, "~> 0.9"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_vault](https://hexdocs.pm/google_api_vault).
+## For more information
+
+Product documentation is available at [https://developers.google.com/vault](https://developers.google.com/vault).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_vault](https://hexdocs.pm/google_api_vault).
