@@ -23,6 +23,8 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   alias GoogleApi.Container.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists subnetworks that are usable for creating clusters in a project.
 
@@ -98,6 +100,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -174,6 +177,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -242,6 +246,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -322,6 +327,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -408,6 +414,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -486,6 +493,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -556,6 +564,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -634,6 +643,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -702,6 +712,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -770,6 +781,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -838,6 +850,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -906,6 +919,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -975,6 +989,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1045,6 +1060,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1113,6 +1129,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1181,6 +1198,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1249,6 +1267,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1317,6 +1336,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1385,6 +1405,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1453,6 +1474,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1522,6 +1544,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1604,6 +1627,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1686,6 +1710,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1765,6 +1790,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1835,6 +1861,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1904,6 +1931,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1973,6 +2001,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2042,6 +2071,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2111,6 +2141,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2177,6 +2208,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2245,6 +2277,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2323,6 +2356,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2399,6 +2433,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2475,6 +2510,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2556,6 +2592,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2640,6 +2677,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2728,6 +2766,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2818,6 +2857,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2900,6 +2940,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2981,6 +3022,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3061,6 +3103,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3142,6 +3185,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3223,6 +3267,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3304,6 +3349,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3385,6 +3431,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3469,6 +3516,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3550,6 +3598,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3636,6 +3685,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3720,6 +3770,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3804,6 +3855,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3885,6 +3937,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3974,6 +4027,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4055,6 +4109,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4146,6 +4201,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4237,6 +4293,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4320,6 +4377,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "clusterId" => URI.encode(cluster_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4410,6 +4468,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4499,6 +4558,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4588,6 +4648,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4677,6 +4738,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4757,6 +4819,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "operationId" => URI.encode(operation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4839,6 +4902,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "operationId" => URI.encode(operation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4917,6 +4981,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

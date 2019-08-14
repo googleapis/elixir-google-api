@@ -22,6 +22,8 @@ defmodule GoogleApi.Container.V1.Model.GetOpenIDConfigResponse do
 
   ## Attributes
 
+  *   `cacheHeader` (*type:* `GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t`, *default:* `nil`) - OnePlatform automatically extracts this field and uses it to set the HTTP
+      Cache-Control header.
   *   `claims_supported` (*type:* `list(String.t)`, *default:* `nil`) - Supported claims.
   *   `grant_types` (*type:* `list(String.t)`, *default:* `nil`) - Supported grant types.
   *   `id_token_signing_alg_values_supported` (*type:* `list(String.t)`, *default:* `nil`) - supported ID Token signing Algorithms.
@@ -34,6 +36,7 @@ defmodule GoogleApi.Container.V1.Model.GetOpenIDConfigResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cacheHeader => GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t(),
           :claims_supported => list(String.t()),
           :grant_types => list(String.t()),
           :id_token_signing_alg_values_supported => list(String.t()),
@@ -43,6 +46,7 @@ defmodule GoogleApi.Container.V1.Model.GetOpenIDConfigResponse do
           :subject_types_supported => list(String.t())
         }
 
+  field(:cacheHeader, as: GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader)
   field(:claims_supported, type: :list)
   field(:grant_types, type: :list)
   field(:id_token_signing_alg_values_supported, type: :list)
