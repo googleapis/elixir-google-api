@@ -1,18 +1,23 @@
-# GoogleApi.ToolResults.V1beta3
+# GoogleApi.ToolResults
+
+Client library for Cloud Tool Results API from Google.
 
 Reads and publishes results from Firebase Test Lab.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_tool_results` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_tool_results` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_tool_results, "~> 0.0.1"}]
+  [{:google_api_tool_results, "~> 0.13"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_tool_results](https://hexdocs.pm/google_api_tool_results).
+## For more information
+
+Product documentation is available at [https://firebase.google.com/docs/test-lab/](https://firebase.google.com/docs/test-lab/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_tool_results](https://hexdocs.pm/google_api_tool_results).
