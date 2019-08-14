@@ -23,6 +23,8 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   alias GoogleApi.Content.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes, fetches, gets, inserts and updates multiple datafeeds in a single request.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
       |> Request.method(:post)
       |> Request.url("/datafeeds/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -127,6 +130,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -192,6 +196,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -248,6 +253,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -300,6 +306,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -352,6 +359,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -412,6 +420,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -472,6 +481,7 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
         "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
