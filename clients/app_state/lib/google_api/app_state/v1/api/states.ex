@@ -23,6 +23,8 @@ defmodule GoogleApi.AppState.V1.Api.States do
   alias GoogleApi.AppState.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Clears (sets to empty) the data for the passed key if and only if the passed version matches the currently stored version. This method results in a conflict error on version mismatch.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
         "stateKey" => state_key
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -115,6 +118,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
         "stateKey" => state_key
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -163,6 +167,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
         "stateKey" => state_key
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -210,6 +215,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
       |> Request.method(:get)
       |> Request.url("/states", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -262,6 +268,7 @@ defmodule GoogleApi.AppState.V1.Api.States do
         "stateKey" => state_key
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
