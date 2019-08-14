@@ -22,8 +22,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   ## Attributes
 
   *   `awsS3DataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.AwsS3Data.t`, *default:* `nil`) - An AWS S3 data source.
-  *   `gcsDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Google Cloud Storage data sink.
-  *   `gcsDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Google Cloud Storage data source.
+  *   `gcsDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Cloud Storage data sink.
+  *   `gcsDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Cloud Storage data source.
   *   `httpDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.HttpData.t`, *default:* `nil`) - An HTTP URL data source.
   *   `objectConditions` (*type:* `GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t`, *default:* `nil`) - Only objects that satisfy these object conditions are included in the set
       of data source and data sink objects.  Object conditions based on

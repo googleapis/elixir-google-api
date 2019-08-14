@@ -23,6 +23,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   alias GoogleApi.StorageTransfer.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a transfer job that runs periodically.
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       |> Request.method(:post)
       |> Request.url("/v1/transferJobs", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -131,6 +134,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
         "jobName" => URI.encode(job_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -198,6 +202,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       |> Request.method(:get)
       |> Request.url("/v1/transferJobs", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -260,6 +265,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
         "jobName" => URI.encode(job_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

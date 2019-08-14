@@ -18,7 +18,7 @@
 defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
   @moduledoc """
   Conditions that determine which objects will be transferred. Applies only
-  to S3 and GCS objects.
+  to S3 and Cloud Storage objects.
 
   ## Attributes
 
@@ -68,7 +68,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
       `NOW` refers to the `start_time` of the 'TransferOperation`. Also,
       `lastModificationTime` refers to the time of the last change to the
       object's content or metadata - specifically, this would be the `updated`
-      property of GCS objects and the `LastModified` field of S3 objects.
+      property of Cloud Storage objects and the `LastModified` field of S3
+      objects.
   *   `minTimeElapsedSinceLastModification` (*type:* `String.t`, *default:* `nil`) - If specified, only objects with a `lastModificationTime` before
       `NOW` - `minTimeElapsedSinceLastModification` and objects that don't have a
       `lastModificationTime` are transferred.
@@ -77,7 +78,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
       `NOW` refers to the `start_time` of the 'TransferOperation`. Also,
       `lastModificationTime` refers to the time of the last change to the
       object's content or metadata - specifically, this would be the `updated`
-      property of GCS objects and the `LastModified` field of S3 objects.
+      property of Cloud Storage objects and the `LastModified` field of S3
+      objects.
   """
 
   use GoogleApi.Gax.ModelBase
