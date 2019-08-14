@@ -23,6 +23,8 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   alias GoogleApi.Firestore.V1beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Exports a copy of all or a subset of documents from Google Cloud Firestore
   to another storage system, such as Google Cloud Storage. Recent updates to
@@ -94,6 +96,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -170,6 +173,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -245,6 +249,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -317,6 +322,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -387,6 +393,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -467,6 +474,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "collectionId" => URI.encode(collection_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -539,6 +547,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -613,6 +622,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -712,6 +722,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "collectionId" => URI.encode(collection_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -786,6 +797,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -856,6 +868,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -936,6 +949,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1004,6 +1018,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1077,6 +1092,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1146,6 +1162,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1228,6 +1245,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1296,6 +1314,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1364,6 +1383,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1441,6 +1461,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
