@@ -23,6 +23,8 @@ defmodule GoogleApi.Books.V1.Api.Notification do
   alias GoogleApi.Books.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns notification details for a given notification id.
 
@@ -68,6 +70,7 @@ defmodule GoogleApi.Books.V1.Api.Notification do
       |> Request.url("/notification/get", %{})
       |> Request.add_param(:query, :notification_id, notification_id)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
