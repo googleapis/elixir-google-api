@@ -23,6 +23,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   alias GoogleApi.Monitoring.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a new alerting policy.
 
@@ -84,6 +86,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -155,6 +158,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "alertPoliciesId" => URI.encode(alert_policies_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -226,6 +230,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "alertPoliciesId" => URI.encode(alert_policies_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -303,6 +308,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -382,6 +388,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "alertPoliciesId" => URI.encode(alert_policies_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -451,6 +458,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -518,6 +526,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -589,6 +598,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -658,6 +668,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -724,6 +735,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -797,6 +809,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -880,6 +893,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -949,6 +963,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1018,6 +1033,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "metricDescriptorsId" => URI.encode(metric_descriptors_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1087,6 +1103,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "metricDescriptorsId" => URI.encode(metric_descriptors_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1162,6 +1179,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1239,6 +1257,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1316,6 +1335,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1393,6 +1413,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1468,6 +1489,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1541,6 +1563,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1612,6 +1635,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "notificationChannelsId" => URI.encode(notification_channels_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1682,6 +1706,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "notificationChannelsId" => URI.encode(notification_channels_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1759,6 +1784,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1837,6 +1863,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1915,6 +1942,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "notificationChannelsId" => URI.encode(notification_channels_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1990,6 +2018,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2066,6 +2095,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2133,6 +2163,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2220,6 +2251,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2287,6 +2319,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2356,6 +2389,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "uptimeCheckConfigsId" => URI.encode(uptime_check_configs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2425,6 +2459,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "uptimeCheckConfigsId" => URI.encode(uptime_check_configs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2496,6 +2531,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2571,6 +2607,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         "uptimeCheckConfigsId" => URI.encode(uptime_check_configs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
