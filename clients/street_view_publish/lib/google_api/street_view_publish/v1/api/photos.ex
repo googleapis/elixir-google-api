@@ -23,6 +23,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
   alias GoogleApi.StreetViewPublish.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes a list of Photos and their
   metadata.
@@ -88,6 +90,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
       |> Request.method(:post)
       |> Request.url("/v1/photos:batchDelete", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -172,6 +175,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
       |> Request.method(:get)
       |> Request.url("/v1/photos:batchGet", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -262,6 +266,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
       |> Request.method(:post)
       |> Request.url("/v1/photos:batchUpdate", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -347,6 +352,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
       |> Request.method(:get)
       |> Request.url("/v1/photos", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
