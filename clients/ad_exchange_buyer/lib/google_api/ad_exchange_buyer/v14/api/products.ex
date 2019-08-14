@@ -23,6 +23,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
   alias GoogleApi.AdExchangeBuyer.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the requested product by id.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
       |> Request.method(:get)
       |> Request.url("/products/search", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

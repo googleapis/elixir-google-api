@@ -23,6 +23,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
   alias GoogleApi.AdExchangeBuyer.V2beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a new client buyer.
 
@@ -85,6 +87,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -154,6 +157,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -235,6 +239,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -309,6 +314,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -384,6 +390,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -465,6 +472,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -554,6 +562,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -632,6 +641,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -719,6 +729,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "clientAccountId" => URI.encode(client_account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -799,6 +810,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -872,6 +884,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -941,6 +954,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1036,6 +1050,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1111,6 +1126,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1188,6 +1204,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1264,6 +1281,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1338,6 +1356,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1433,6 +1452,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "creativeId" => URI.encode(creative_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1509,6 +1529,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1591,6 +1612,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1662,6 +1684,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1742,6 +1765,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1818,6 +1842,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1892,6 +1917,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1965,6 +1991,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2041,6 +2068,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2109,6 +2137,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2179,6 +2208,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2264,6 +2294,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2344,6 +2375,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2425,6 +2457,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2508,6 +2541,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2579,6 +2613,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "publisherProfileId" => URI.encode(publisher_profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2652,6 +2687,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

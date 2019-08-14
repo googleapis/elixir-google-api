@@ -1,18 +1,23 @@
-# GoogleApi.AdExchangeBuyer.V14
+# GoogleApi.AdExchangeBuyer
 
-Accesses your bidding-account information, submits creatives for validation, finds available direct deals, and retrieves performance reports.
+Client library for Ad Exchange Buyer API II from Google.
+
+Accesses the latest features for managing Authorized Buyers accounts, Real-Time Bidding configurations and auction metrics, and Marketplace programmatic deals.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_ad_exchange_buyer` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_ad_exchange_buyer` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_ad_exchange_buyer, "~> 0.0.1"}]
+  [{:google_api_ad_exchange_buyer, "~> 0.21"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_ad_exchange_buyer](https://hexdocs.pm/google_api_ad_exchange_buyer).
+## For more information
+
+Product documentation is available at [https://developers.google.com/authorized-buyers/apis/reference/rest/](https://developers.google.com/authorized-buyers/apis/reference/rest/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_ad_exchange_buyer](https://hexdocs.pm/google_api_ad_exchange_buyer).

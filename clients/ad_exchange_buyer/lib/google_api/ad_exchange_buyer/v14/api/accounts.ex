@@ -23,6 +23,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
   alias GoogleApi.AdExchangeBuyer.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets one account by ID.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
         "id" => id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -110,6 +113,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/accounts", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -162,6 +166,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
         "id" => id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -214,6 +219,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
         "id" => id
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

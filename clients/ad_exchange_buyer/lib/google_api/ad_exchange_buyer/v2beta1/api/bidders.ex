@@ -23,6 +23,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
   alias GoogleApi.AdExchangeBuyer.V2beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates the specified filter set for the account with the given account ID.
 
@@ -102,6 +104,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -189,6 +192,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -277,6 +281,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -367,6 +372,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         "accountsId" => URI.encode(accounts_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -466,6 +472,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -566,6 +573,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -666,6 +674,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -767,6 +776,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -867,6 +877,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -975,6 +986,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1087,6 +1099,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1190,6 +1203,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1290,6 +1304,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1390,6 +1405,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1474,6 +1490,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1554,6 +1571,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1635,6 +1653,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1721,6 +1740,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         "biddersId" => URI.encode(bidders_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1813,6 +1833,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1909,6 +1930,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2005,6 +2027,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2102,6 +2125,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2195,6 +2219,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2299,6 +2324,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2407,6 +2433,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2506,6 +2533,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2599,6 +2627,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         "filterSetsId" => URI.encode(filter_sets_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2695,6 +2724,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

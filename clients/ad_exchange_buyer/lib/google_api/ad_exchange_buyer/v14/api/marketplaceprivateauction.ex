@@ -23,6 +23,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplaceprivateauction do
   alias GoogleApi.AdExchangeBuyer.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Update a given private auction proposal
 
@@ -76,6 +78,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplaceprivateauction do
         "privateAuctionId" => URI.encode(private_auction_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
