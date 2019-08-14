@@ -23,6 +23,8 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
   alias GoogleApi.DLP.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns a list of the sensitive information types that the DLP API
   supports. See https://cloud.google.com/dlp/docs/infotypes-reference to
@@ -80,6 +82,7 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
       |> Request.method(:get)
       |> Request.url("/v2/infoTypes", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
