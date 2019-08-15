@@ -23,6 +23,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   alias GoogleApi.Webmaster.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes a sitemap from this site.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
         "feedpath" => URI.encode(feedpath, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -128,6 +131,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
         "feedpath" => URI.encode(feedpath, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -178,6 +182,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
         "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -239,6 +244,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
         "feedpath" => URI.encode(feedpath, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

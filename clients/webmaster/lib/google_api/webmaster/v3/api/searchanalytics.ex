@@ -23,6 +23,8 @@ defmodule GoogleApi.Webmaster.V3.Api.Searchanalytics do
   alias GoogleApi.Webmaster.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Query your data with filters and parameters that you define. Returns zero or more rows grouped by the row keys that you define. You must define a date range of one or more days.
 
@@ -70,6 +72,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Searchanalytics do
         "siteUrl" => URI.encode(site_url, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
