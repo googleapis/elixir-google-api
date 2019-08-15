@@ -23,6 +23,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
   alias GoogleApi.CloudBilling.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists all public cloud services.
 
@@ -77,6 +79,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
       |> Request.method(:get)
       |> Request.url("/v1/services", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -158,6 +161,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
