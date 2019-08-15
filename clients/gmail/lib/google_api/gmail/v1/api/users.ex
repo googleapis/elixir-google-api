@@ -23,6 +23,8 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   alias GoogleApi.Gmail.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the current user's Gmail profile.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -163,6 +167,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -213,6 +218,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -276,6 +282,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -345,6 +352,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -400,6 +408,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -452,6 +461,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -508,6 +518,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -558,6 +569,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -621,6 +633,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -690,6 +703,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -747,6 +761,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -814,6 +829,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -887,6 +903,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -945,6 +962,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -995,6 +1013,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1050,6 +1069,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1100,6 +1120,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1148,6 +1169,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1200,6 +1222,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1257,6 +1280,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1307,6 +1331,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1357,6 +1382,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1412,6 +1438,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1466,6 +1493,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1524,6 +1552,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1595,6 +1624,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1672,6 +1702,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1726,6 +1757,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1793,6 +1825,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1866,6 +1899,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1924,6 +1958,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1981,6 +2016,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2031,6 +2067,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2094,6 +2131,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2163,6 +2201,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2218,6 +2257,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2273,6 +2313,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2338,6 +2379,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2395,6 +2437,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2443,6 +2486,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2491,6 +2535,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2539,6 +2584,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2587,6 +2633,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2648,6 +2695,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2698,6 +2746,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2750,6 +2799,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2800,6 +2850,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2850,6 +2901,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2917,6 +2969,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2982,6 +3035,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "delegateEmail" => URI.encode(delegate_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3047,6 +3101,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "delegateEmail" => URI.encode(delegate_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3097,6 +3152,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3147,6 +3203,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3208,6 +3265,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3263,6 +3321,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3311,6 +3370,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3372,6 +3432,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3435,6 +3496,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "forwardingEmail" => URI.encode(forwarding_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3496,6 +3558,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "forwardingEmail" => URI.encode(forwarding_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3555,6 +3618,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3609,6 +3673,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3672,6 +3737,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3733,6 +3799,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3781,6 +3848,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3846,6 +3914,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3911,6 +3980,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3974,6 +4044,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4039,6 +4110,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4104,6 +4176,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4167,6 +4240,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4228,6 +4302,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "sendAsEmail" => URI.encode(send_as_email, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4296,6 +4371,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4351,6 +4427,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4405,6 +4482,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4463,6 +4541,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4520,6 +4599,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4575,6 +4655,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4630,6 +4711,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
