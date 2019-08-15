@@ -23,6 +23,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   alias GoogleApi.Spanner.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets information about a particular instance configuration.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -154,6 +157,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -248,6 +252,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -315,6 +320,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -372,6 +378,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -443,6 +450,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -527,6 +535,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -627,6 +636,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -698,6 +708,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -772,6 +783,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -847,6 +859,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -912,6 +925,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -978,6 +992,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1046,6 +1061,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1118,6 +1134,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1191,6 +1208,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1262,6 +1280,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1336,6 +1355,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1409,6 +1429,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1483,6 +1504,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1551,6 +1573,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1618,6 +1641,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1699,6 +1723,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1769,6 +1794,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1843,6 +1869,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1928,6 +1955,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1995,6 +2023,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2073,6 +2102,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2150,6 +2180,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2221,6 +2252,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2288,6 +2320,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2371,6 +2404,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "database" => URI.encode(database, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2448,6 +2482,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2527,6 +2562,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2606,6 +2642,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2680,6 +2717,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2751,6 +2789,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "session" => URI.encode(session, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2825,6 +2864,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2893,6 +2933,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2960,6 +3001,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3041,6 +3083,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
