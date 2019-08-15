@@ -21,11 +21,19 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageQuality do
 
   ## Attributes
 
+  *   `qualityScore` (*type:* `number()`, *default:* `nil`) - A score representing the aesthetic/technical quality of the image. The
+      score is in range [0, 1]. Higher value corresponds to more professional
+      looking photos. 0 means the image looks very bad, 1 means the image with
+      very high quality.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :qualityScore => number()
+        }
+
+  field(:qualityScore)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImageQuality do
