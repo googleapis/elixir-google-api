@@ -23,6 +23,8 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
   alias GoogleApi.ServiceControl.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Attempts to allocate quota for the specified consumer. It should be called
   before the operation is executed.
@@ -99,6 +101,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -179,6 +182,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -255,6 +259,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
