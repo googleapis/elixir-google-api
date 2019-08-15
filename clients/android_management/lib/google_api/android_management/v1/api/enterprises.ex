@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   alias GoogleApi.AndroidManagement.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates an enterprise. This is the last step in the enterprise signup flow.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
       |> Request.method(:post)
       |> Request.url("/v1/enterprises", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -134,6 +137,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -194,6 +198,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -261,6 +266,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -328,6 +334,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -393,6 +400,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -460,6 +468,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -531,6 +540,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -602,6 +612,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -667,6 +678,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -732,6 +744,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -797,6 +810,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -870,6 +884,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -941,6 +956,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1006,6 +1022,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1071,6 +1088,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1136,6 +1154,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1207,6 +1226,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1278,6 +1298,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1345,6 +1366,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1410,6 +1432,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1475,6 +1498,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1546,6 +1570,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1617,6 +1642,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1684,6 +1710,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
