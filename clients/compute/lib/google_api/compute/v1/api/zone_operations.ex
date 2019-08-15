@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes the specified zone-specific Operations resource.
 
@@ -82,6 +84,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
         "operation" => URI.encode(operation, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -147,6 +150,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
         "operation" => URI.encode(operation, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -220,6 +224,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

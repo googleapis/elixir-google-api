@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Inserts a rule into a security policy.
 
@@ -80,6 +82,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -147,6 +150,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -208,6 +212,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -271,6 +276,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -327,6 +333,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -393,6 +400,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -462,6 +470,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -527,6 +536,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -590,6 +600,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         "securityPolicy" => URI.encode(security_policy, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

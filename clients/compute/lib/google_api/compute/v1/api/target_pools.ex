@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Adds health check URLs to a target pool.
 
@@ -90,6 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -163,6 +166,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -229,6 +233,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -300,6 +305,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -365,6 +371,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -433,6 +440,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -496,6 +504,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -569,6 +578,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "region" => URI.encode(region, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -642,6 +652,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -715,6 +726,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -790,6 +802,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
         "targetPool" => URI.encode(target_pool, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

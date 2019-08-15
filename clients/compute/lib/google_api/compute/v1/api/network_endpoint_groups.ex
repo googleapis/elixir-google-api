@@ -23,6 +23,8 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   alias GoogleApi.Compute.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves the list of network endpoint groups and sorts them by zone.
 
@@ -94,6 +96,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -172,6 +175,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -243,6 +247,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
         "networkEndpointGroup" => URI.encode(network_endpoint_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -319,6 +324,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -384,6 +390,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
         "networkEndpointGroup" => URI.encode(network_endpoint_group, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -453,6 +460,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -533,6 +541,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
         "zone" => URI.encode(zone, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -623,6 +632,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -696,6 +706,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
