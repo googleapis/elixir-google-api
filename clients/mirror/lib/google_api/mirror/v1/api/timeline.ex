@@ -23,6 +23,8 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   alias GoogleApi.Mirror.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes a timeline item.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -160,6 +164,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       |> Request.method(:post)
       |> Request.url("/mirror/v1/timeline", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -209,6 +214,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       |> Request.url("/resumable/upload/mirror/v1/timeline", %{})
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -273,6 +279,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -332,6 +339,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       |> Request.method(:get)
       |> Request.url("/mirror/v1/timeline", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -382,6 +390,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -432,6 +441,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -495,6 +505,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -564,6 +575,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -625,6 +637,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
         "attachmentId" => URI.encode(attachment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -686,6 +699,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
         "attachmentId" => URI.encode(attachment_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -734,6 +748,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
         "itemId" => URI.encode(item_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -795,6 +810,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       })
       |> Request.add_param(:query, :uploadType, upload_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -864,6 +880,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
       |> Request.add_param(:body, :metadata, metadata)
       |> Request.add_param(:file, :data, data)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -912,6 +929,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
         "itemId" => URI.encode(item_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
