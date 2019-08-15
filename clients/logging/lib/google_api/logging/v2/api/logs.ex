@@ -23,6 +23,8 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
   alias GoogleApi.Logging.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries written shortly before the delete operation might not be deleted.
 
@@ -88,6 +90,7 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
         "logsId" => URI.encode(logs_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -155,6 +158,7 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
         "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

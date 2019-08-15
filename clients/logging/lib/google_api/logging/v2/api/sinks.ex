@@ -23,6 +23,8 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   alias GoogleApi.Logging.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a sink that exports specified log entries to a destination. The export of newly-ingested log entries begins immediately, unless the sink's writer_identity is not permitted to write to the destination. A sink can export log entries only from the resource owning the sink.
 
@@ -84,6 +86,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
         "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -155,6 +158,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
         "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -226,6 +230,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
         "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -293,6 +298,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
         "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -373,6 +379,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
         "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

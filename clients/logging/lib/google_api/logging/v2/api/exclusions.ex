@@ -23,6 +23,8 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   alias GoogleApi.Logging.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a new exclusion in a specified parent resource. Only log entries belonging to that resource can be excluded. You can have up to 10 exclusions in a resource.
 
@@ -87,6 +89,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -165,6 +168,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -243,6 +247,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -310,6 +315,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -392,6 +398,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
