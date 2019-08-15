@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
   alias GoogleApi.AndroidEnterprise.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Removes and invalidates the specified credentials for the service account associated with this enterprise. The calling service account must have been retrieved by calling Enterprises.GetServiceAccount and must have been set as the enterprise service account by calling Enterprises.SetAccount.
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
         "keyId" => URI.encode(key_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -141,6 +144,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -202,6 +206,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

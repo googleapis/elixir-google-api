@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   alias GoogleApi.AndroidEnterprise.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Acknowledges notifications that were received from Enterprises.PullNotificationSet to prevent subsequent calls from returning the same notifications.
 
@@ -71,6 +73,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.method(:post)
       |> Request.url("/enterprises/acknowledgeNotificationSet", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -120,6 +123,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.method(:post)
       |> Request.url("/enterprises/completeSignup", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -181,6 +185,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -232,6 +237,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises/enroll", %{})
       |> Request.add_param(:query, :token, token)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -287,6 +293,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.method(:post)
       |> Request.url("/enterprises/signupUrl", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -340,6 +347,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -406,6 +414,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -463,6 +472,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -511,6 +521,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.url("/enterprises", %{})
       |> Request.add_param(:query, :domain, domain)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -576,6 +587,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       |> Request.method(:post)
       |> Request.url("/enterprises/pullNotificationSet", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -636,6 +648,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -703,6 +716,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -764,6 +778,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -821,6 +836,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

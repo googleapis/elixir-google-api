@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
   alias GoogleApi.AndroidEnterprise.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Removes a per-device managed configuration for an app for the specified device.
 
@@ -90,6 +92,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -165,6 +168,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -238,6 +242,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -321,6 +326,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -400,6 +406,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

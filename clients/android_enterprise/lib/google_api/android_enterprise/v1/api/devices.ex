@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   alias GoogleApi.AndroidEnterprise.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Uploads a report containing any changes in app states on the device since the last report was generated. You can call this method up to 3 times every 24 hours for a given device.
 
@@ -85,6 +87,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -150,6 +153,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -215,6 +219,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -278,6 +283,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -351,6 +357,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -418,6 +425,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -489,6 +497,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

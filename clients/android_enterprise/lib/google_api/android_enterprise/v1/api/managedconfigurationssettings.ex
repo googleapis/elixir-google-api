@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationssettings do
   alias GoogleApi.AndroidEnterprise.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists all the managed configurations settings for the specified app. Only the ID and the name is set.
 
@@ -84,6 +86,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationssettings do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
