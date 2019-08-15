@@ -27,6 +27,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Connection do
       # View and manage your data in Google BigQuery
       "https://www.googleapis.com/auth/bigquery",
 
+      # View your data in Google BigQuery
+      "https://www.googleapis.com/auth/bigquery.readonly",
+
       # View and manage your data across Google Cloud Platform services
       "https://www.googleapis.com/auth/cloud-platform",
 
