@@ -23,6 +23,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Videos do
   alias GoogleApi.VideoIntelligence.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Performs asynchronous video annotation. Progress and results can be
   retrieved through the `google.longrunning.Operations` interface.
@@ -76,6 +78,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Videos do
       |> Request.method(:post)
       |> Request.url("/v1/videos:annotate", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
