@@ -23,6 +23,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
   alias GoogleApi.FirebaseDynamicLinks.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Fetches analytics stats of a short Dynamic Link for a given
   duration. Metrics include number of clicks, redirects, installs,
@@ -85,6 +87,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
         "dynamicLink" => URI.encode(dynamic_link, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -143,6 +146,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
       |> Request.method(:post)
       |> Request.url("/v1/installAttribution", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -202,6 +206,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
       |> Request.method(:post)
       |> Request.url("/v1/reopenAttribution", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

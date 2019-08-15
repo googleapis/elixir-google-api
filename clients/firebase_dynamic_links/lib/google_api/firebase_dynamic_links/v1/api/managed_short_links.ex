@@ -23,6 +23,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.ManagedShortLinks do
   alias GoogleApi.FirebaseDynamicLinks.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a managed short Dynamic Link given either a valid long Dynamic Link
   or details such as Dynamic Link domain, Android and iOS app information.
@@ -89,6 +91,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.ManagedShortLinks do
       |> Request.method(:post)
       |> Request.url("/v1/managedShortLinks:create", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
