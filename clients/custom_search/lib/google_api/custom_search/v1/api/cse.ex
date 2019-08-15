@@ -23,6 +23,8 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
   alias GoogleApi.CustomSearch.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns metadata about the search performed, metadata about the custom search engine used for the search, and the search results.
 
@@ -124,6 +126,7 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       |> Request.url("/v1", %{})
       |> Request.add_param(:query, :q, q)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -231,6 +234,7 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       |> Request.url("/v1/siterestrict", %{})
       |> Request.add_param(:query, :q, q)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
