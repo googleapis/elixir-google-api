@@ -23,6 +23,8 @@ defmodule GoogleApi.SearchConsole.V1.Api.UrlTestingTools do
   alias GoogleApi.SearchConsole.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Runs Mobile-Friendly Test for a given URL.
 
@@ -81,6 +83,7 @@ defmodule GoogleApi.SearchConsole.V1.Api.UrlTestingTools do
       |> Request.method(:post)
       |> Request.url("/v1/urlTestingTools/mobileFriendlyTest:run", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
