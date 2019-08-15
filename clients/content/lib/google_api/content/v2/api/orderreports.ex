@@ -23,6 +23,8 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
   alias GoogleApi.Content.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves a report for disbursements from your Merchant Center account.
 
@@ -86,6 +88,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
       })
       |> Request.add_param(:query, :disbursementStartDate, disbursement_start_date)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -161,6 +164,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
       })
       |> Request.add_param(:query, :transactionStartDate, transaction_start_date)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

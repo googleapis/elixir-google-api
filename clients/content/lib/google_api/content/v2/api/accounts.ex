@@ -23,6 +23,8 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   alias GoogleApi.Content.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns information about the authenticated user.
 
@@ -62,6 +64,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/accounts/authinfo", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -127,6 +130,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -179,6 +183,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
       |> Request.method(:post)
       |> Request.url("/accounts/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -241,6 +246,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -291,6 +297,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -343,6 +350,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -401,6 +409,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -453,6 +462,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -513,6 +523,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -573,6 +584,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

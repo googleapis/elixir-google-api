@@ -23,6 +23,8 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
   alias GoogleApi.Content.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves and/or updates the LIA settings of multiple accounts in a single request.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       |> Request.method(:post)
       |> Request.url("/liasettings/batch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -125,6 +128,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -188,6 +192,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -242,6 +247,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -288,6 +294,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       |> Request.method(:get)
       |> Request.url("/liasettings/posdataproviders", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -355,6 +362,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -422,6 +430,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       })
       |> Request.add_param(:query, :gmbEmail, gmb_email)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -494,6 +503,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -576,6 +586,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       |> Request.add_param(:query, :country, country)
       |> Request.add_param(:query, :language, language)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -650,6 +661,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
       })
       |> Request.add_param(:query, :country, country)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -717,6 +729,7 @@ defmodule GoogleApi.Content.V2.Api.Liasettings do
         "accountId" => URI.encode(account_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
