@@ -1,18 +1,23 @@
-# GoogleApi.AppEngine.V1
+# GoogleApi.AppEngine
 
-The App Engine Admin API enables developers to provision and manage their App Engine applications.
+Client library for App Engine Admin API from Google.
+
+Provisions and manages developers' App Engine applications.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_app_engine` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_app_engine` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_app_engine, "~> 0.0.1"}]
+  [{:google_api_app_engine, "~> 0.12"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_app_engine](https://hexdocs.pm/google_api_app_engine).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/appengine/docs/admin-api/](https://cloud.google.com/appengine/docs/admin-api/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_app_engine](https://hexdocs.pm/google_api_app_engine).
