@@ -23,6 +23,8 @@ defmodule GoogleApi.Games.V1.Api.Pushtokens do
   alias GoogleApi.Games.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Removes a push token for the current user and application. Removing a non-existent push token will report success.
 
@@ -64,6 +66,7 @@ defmodule GoogleApi.Games.V1.Api.Pushtokens do
       |> Request.method(:post)
       |> Request.url("/pushtokens/remove", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -111,6 +114,7 @@ defmodule GoogleApi.Games.V1.Api.Pushtokens do
       |> Request.method(:put)
       |> Request.url("/pushtokens", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

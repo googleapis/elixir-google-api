@@ -23,6 +23,8 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   alias GoogleApi.Games.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Increments the steps of the achievement with the given ID for the currently authenticated player.
 
@@ -82,6 +84,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       })
       |> Request.add_param(:query, :stepsToIncrement, steps_to_increment)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -139,6 +142,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
         "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -189,6 +193,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
         "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -252,6 +257,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       })
       |> Request.add_param(:query, :steps, steps)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -304,6 +310,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
         "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -354,6 +361,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       |> Request.method(:post)
       |> Request.url("/achievements/updateMultiple", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

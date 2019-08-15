@@ -23,6 +23,8 @@ defmodule GoogleApi.Games.V1.Api.Events do
   alias GoogleApi.Games.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns a list showing the current progress on events in this application for the currently authenticated user.
 
@@ -68,6 +70,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
       |> Request.method(:get)
       |> Request.url("/events", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -120,6 +123,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
       |> Request.method(:get)
       |> Request.url("/eventDefinitions", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -169,6 +173,7 @@ defmodule GoogleApi.Games.V1.Api.Events do
       |> Request.method(:post)
       |> Request.url("/events", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

@@ -23,6 +23,8 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   alias GoogleApi.Games.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Cancel a turn-based match.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode(match_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -114,6 +117,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.method(:post)
       |> Request.url("/turnbasedmatches/create", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -164,6 +168,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode(match_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -212,6 +217,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode(match_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -264,6 +270,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode(match_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -316,6 +323,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode(match_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -366,6 +374,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode(match_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -416,6 +425,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode(match_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -481,6 +491,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       })
       |> Request.add_param(:query, :matchVersion, match_version)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -536,6 +547,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.method(:get)
       |> Request.url("/turnbasedmatches", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -588,6 +600,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode(match_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -643,6 +656,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
       |> Request.method(:get)
       |> Request.url("/turnbasedmatches/sync", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -695,6 +709,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         "matchId" => URI.encode(match_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

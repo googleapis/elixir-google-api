@@ -23,6 +23,8 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   alias GoogleApi.Games.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves the metadata of the application with the given ID. If the requested application is not available for the specified platformType, the returned response will not include any instance data.
 
@@ -69,6 +71,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
         "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -116,6 +119,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
       |> Request.method(:post)
       |> Request.url("/applications/played", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -164,6 +168,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
         "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

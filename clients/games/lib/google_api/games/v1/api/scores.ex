@@ -23,6 +23,8 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   alias GoogleApi.Games.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Get high scores, and optionally ranks, in leaderboards for the currently authenticated player. For a specific time span, leaderboardId can be set to ALL to retrieve data for all leaderboards in a given time span.
   NOTE: You cannot ask for 'ALL' leaderboards and 'ALL' timeSpans in the same request; only one parameter may be set to 'ALL'.
@@ -93,6 +95,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
         "timeSpan" => URI.encode(time_span, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -166,6 +169,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       })
       |> Request.add_param(:query, :timeSpan, time_span)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -241,6 +245,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       })
       |> Request.add_param(:query, :timeSpan, time_span)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -295,6 +300,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       })
       |> Request.add_param(:query, :score, score)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -344,6 +350,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
       |> Request.method(:post)
       |> Request.url("/leaderboards/scores", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
