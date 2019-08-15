@@ -23,6 +23,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Flags do
   alias GoogleApi.SQLAdmin.V1beta4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   List all available database flags for Cloud SQL instances.
 
@@ -64,6 +66,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Flags do
       |> Request.method(:get)
       |> Request.url("/flags", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
