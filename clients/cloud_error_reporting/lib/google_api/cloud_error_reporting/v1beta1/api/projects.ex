@@ -23,6 +23,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   alias GoogleApi.CloudErrorReporting.V1beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes all error events of a given project.
 
@@ -88,6 +90,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -178,6 +181,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -261,6 +265,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -367,6 +372,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -447,6 +453,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -524,6 +531,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
