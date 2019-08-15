@@ -21,15 +21,29 @@ defmodule GoogleApi.Vision.V1.Model.BatchAnnotateImagesRequest do
 
   ## Attributes
 
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - Optional. Target project and location to make a call.
+
+      Format: `projects/{project-id}/locations/{location-id}`.
+
+      If no parent is specified, a region will be chosen automatically.
+
+      Supported location-ids:
+          `us`: USA country only,
+          `asia`: East asia areas, like Japan, Taiwan,
+          `eu`: The European Union.
+
+      Example: `projects/project-A/locations/eu`.
   *   `requests` (*type:* `list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t)`, *default:* `nil`) - Individual image annotation requests for this batch.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :parent => String.t(),
           :requests => list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t())
         }
 
+  field(:parent)
   field(:requests, as: GoogleApi.Vision.V1.Model.AnnotateImageRequest, type: :list)
 end
 
