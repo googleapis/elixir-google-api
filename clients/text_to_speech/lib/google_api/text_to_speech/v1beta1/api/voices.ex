@@ -23,6 +23,8 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Api.Voices do
   alias GoogleApi.TextToSpeech.V1beta1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns a list of Voice supported for synthesis.
 
@@ -80,6 +82,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Api.Voices do
       |> Request.method(:get)
       |> Request.url("/v1beta1/voices", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
