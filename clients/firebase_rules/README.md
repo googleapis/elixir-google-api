@@ -1,18 +1,24 @@
-# GoogleApi.FirebaseRules.V1
+# GoogleApi.FirebaseRules
 
-Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request. 
+Client library for Firebase Rules API from Google.
+
+Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request.
+
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_firebase_rules` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_firebase_rules` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_firebase_rules, "~> 0.0.1"}]
+  [{:google_api_firebase_rules, "~> 0.7"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_firebase_rules](https://hexdocs.pm/google_api_firebase_rules).
+## For more information
+
+Product documentation is available at [https://firebase.google.com/docs/storage/security](https://firebase.google.com/docs/storage/security).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_firebase_rules](https://hexdocs.pm/google_api_firebase_rules).
