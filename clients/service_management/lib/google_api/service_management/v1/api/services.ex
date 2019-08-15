@@ -23,6 +23,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   alias GoogleApi.ServiceManagement.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a new managed service.
   Please note one producer project can own no more than 20 services.
@@ -75,6 +77,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.method(:post)
       |> Request.url("/v1/services", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -142,6 +145,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -210,6 +214,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -279,6 +284,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -353,6 +359,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.method(:post)
       |> Request.url("/v1/services:generateConfigReport", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -413,6 +420,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -487,6 +495,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -557,6 +566,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -633,6 +643,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       |> Request.method(:get)
       |> Request.url("/v1/services", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -704,6 +715,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -780,6 +792,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -849,6 +862,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -924,6 +938,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1000,6 +1015,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "configId" => URI.encode(config_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1074,6 +1090,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1156,6 +1173,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1226,6 +1244,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1295,6 +1314,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1371,6 +1391,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1463,6 +1484,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1533,6 +1555,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "rolloutId" => URI.encode(rollout_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1616,6 +1639,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         "serviceName" => URI.encode(service_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
