@@ -17,9 +17,10 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DeleteDuplicatesRequest do
   @moduledoc """
-  Removes rows within this range containing duplicate values in the specified
-  columns. Rows with identical values but different letter cases, formatting,
-  or formulas are considered to be duplicates.
+  Removes rows within this range that contain values in the specified columns
+  that are duplicates of values in any previous row. Rows with identical values
+  but different letter cases, formatting, or formulas are considered to be
+  duplicates.
 
   This request also removes duplicate rows hidden from view (for example, due
   to a filter). When removing duplicates, the first instance of each duplicate
