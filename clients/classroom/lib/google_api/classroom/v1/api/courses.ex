@@ -23,6 +23,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   alias GoogleApi.Classroom.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a course.
 
@@ -86,6 +88,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       |> Request.method(:post)
       |> Request.url("/v1/courses", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -150,6 +153,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -214,6 +218,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -305,6 +310,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       |> Request.method(:get)
       |> Request.url("/v1/courses", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -395,6 +401,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -463,6 +470,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -533,6 +541,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -614,6 +623,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "alias" => URI.encode(alias, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -692,6 +702,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -773,6 +784,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -858,6 +870,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -936,6 +949,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1032,6 +1046,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1117,6 +1132,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1213,6 +1229,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1295,6 +1312,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1380,6 +1398,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1458,6 +1477,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1549,6 +1569,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1632,6 +1653,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1744,6 +1766,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1829,6 +1852,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1945,6 +1969,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseWorkId" => URI.encode(course_work_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2044,6 +2069,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2150,6 +2176,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2250,6 +2277,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2351,6 +2379,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2450,6 +2479,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2528,6 +2558,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2611,6 +2642,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2694,6 +2726,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2770,6 +2803,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2844,6 +2878,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2929,6 +2964,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3012,6 +3048,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3088,6 +3125,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3156,6 +3194,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3235,6 +3274,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3305,6 +3345,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3383,6 +3424,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "courseId" => URI.encode(course_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3469,6 +3511,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
