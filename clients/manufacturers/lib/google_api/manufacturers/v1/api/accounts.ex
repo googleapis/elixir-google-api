@@ -23,6 +23,8 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   alias GoogleApi.Manufacturers.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Deletes the product from a Manufacturer Center account.
 
@@ -97,6 +99,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -186,6 +189,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -253,6 +257,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -349,6 +354,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
