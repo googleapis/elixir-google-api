@@ -23,6 +23,8 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Sdf do
   alias GoogleApi.DoubleClickBidManager.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Retrieves entities in SDF format.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Sdf do
       |> Request.method(:post)
       |> Request.url("/sdf/download", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
