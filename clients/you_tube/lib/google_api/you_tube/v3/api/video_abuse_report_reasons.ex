@@ -23,6 +23,8 @@ defmodule GoogleApi.YouTube.V3.Api.VideoAbuseReportReasons do
   alias GoogleApi.YouTube.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns a list of abuse reasons that can be used for reporting abusive videos.
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.YouTube.V3.Api.VideoAbuseReportReasons do
       |> Request.url("/youtube/v3/videoAbuseReportReasons", %{})
       |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
