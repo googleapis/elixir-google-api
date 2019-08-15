@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
   alias GoogleApi.AdSense.V14.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Dismiss (delete) the specified alert from the publisher's AdSense account.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
         "alertId" => URI.encode(alert_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -112,6 +115,7 @@ defmodule GoogleApi.AdSense.V14.Api.Alerts do
       |> Request.method(:get)
       |> Request.url("/alerts", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
