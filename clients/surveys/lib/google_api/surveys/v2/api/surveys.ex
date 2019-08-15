@@ -23,6 +23,8 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
   alias GoogleApi.Surveys.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Removes a survey from view in all user GET requests.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
         "surveyUrlId" => URI.encode(survey_url_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
         "surveyUrlId" => URI.encode(survey_url_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -160,6 +164,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       |> Request.method(:post)
       |> Request.url("/surveys", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -211,6 +216,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
       |> Request.method(:get)
       |> Request.url("/surveys", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -261,6 +267,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
         "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -309,6 +316,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
         "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -359,6 +367,7 @@ defmodule GoogleApi.Surveys.V2.Api.Surveys do
         "surveyUrlId" => URI.encode(survey_url_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
