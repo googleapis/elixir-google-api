@@ -23,6 +23,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
   alias GoogleApi.BigQuery.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns the email address of the service account for your project used for interactions with Google Cloud KMS.
 
@@ -76,6 +78,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -125,6 +128,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

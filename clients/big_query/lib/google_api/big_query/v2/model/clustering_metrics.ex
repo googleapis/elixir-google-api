@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ClusteringMetrics do
 
   ## Attributes
 
+  *   `clusters` (*type:* `list(GoogleApi.BigQuery.V2.Model.Cluster.t)`, *default:* `nil`) - [Beta] Information for all clusters.
   *   `daviesBouldinIndex` (*type:* `float()`, *default:* `nil`) - Davies-Bouldin index.
   *   `meanSquaredDistance` (*type:* `float()`, *default:* `nil`) - Mean of squared distances between each sample to its cluster centroid.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.BigQuery.V2.Model.ClusteringMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clusters => list(GoogleApi.BigQuery.V2.Model.Cluster.t()),
           :daviesBouldinIndex => float(),
           :meanSquaredDistance => float()
         }
 
+  field(:clusters, as: GoogleApi.BigQuery.V2.Model.Cluster, type: :list)
   field(:daviesBouldinIndex)
   field(:meanSquaredDistance)
 end

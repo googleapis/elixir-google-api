@@ -36,13 +36,16 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
       Accurate to two decimal places.
       Default value is 0.2.
   *   `dataSplitMethod` (*type:* `String.t`, *default:* `nil`) - The data split type for training and evaluation, e.g. RANDOM.
-  *   `distanceType` (*type:* `String.t`, *default:* `nil`) - [Beta] Distance type for clustering models.
+  *   `distanceType` (*type:* `String.t`, *default:* `nil`) - Distance type for clustering models.
   *   `earlyStop` (*type:* `boolean()`, *default:* `nil`) - Whether to stop early when the loss doesn't improve significantly
       any more (compared to min_relative_progress). Used only for iterative
       training algorithms.
   *   `initialLearnRate` (*type:* `float()`, *default:* `nil`) - Specifies the initial learning rate for the line search learn rate
       strategy.
   *   `inputLabelColumns` (*type:* `list(String.t)`, *default:* `nil`) - Name of input label columns in training data.
+  *   `kmeansInitializationColumn` (*type:* `String.t`, *default:* `nil`) - The column used to provide the initial centroids for kmeans algorithm
+      when kmeans_initialization_method is CUSTOM.
+  *   `kmeansInitializationMethod` (*type:* `String.t`, *default:* `nil`) - The method used to initialize the centroids for kmeans algorithm.
   *   `l1Regularization` (*type:* `float()`, *default:* `nil`) - L1 regularization coefficient.
   *   `l2Regularization` (*type:* `float()`, *default:* `nil`) - L2 regularization coefficient.
   *   `labelClassWeights` (*type:* `map()`, *default:* `nil`) - Weights associated with each label class, for rebalancing the
@@ -57,7 +60,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
       algorithms.
   *   `modelUri` (*type:* `String.t`, *default:* `nil`) - [Beta] Google Cloud Storage URI from which the model was imported. Only
       applicable for imported models.
-  *   `numClusters` (*type:* `String.t`, *default:* `nil`) - [Beta] Number of clusters for clustering models.
+  *   `numClusters` (*type:* `String.t`, *default:* `nil`) - Number of clusters for clustering models.
   *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
   *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - Whether to train a model from the last checkpoint.
   """
@@ -72,6 +75,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :earlyStop => boolean(),
           :initialLearnRate => float(),
           :inputLabelColumns => list(String.t()),
+          :kmeansInitializationColumn => String.t(),
+          :kmeansInitializationMethod => String.t(),
           :l1Regularization => float(),
           :l2Regularization => float(),
           :labelClassWeights => map(),
@@ -93,6 +98,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:earlyStop)
   field(:initialLearnRate)
   field(:inputLabelColumns, type: :list)
+  field(:kmeansInitializationColumn)
+  field(:kmeansInitializationMethod)
   field(:l1Regularization)
   field(:l2Regularization)
   field(:labelClassWeights, type: :map)
