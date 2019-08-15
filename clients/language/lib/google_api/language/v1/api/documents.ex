@@ -23,6 +23,8 @@ defmodule GoogleApi.Language.V1.Api.Documents do
   alias GoogleApi.Language.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Finds named entities (currently proper names and common nouns) in the text
   along with entity types, salience, mentions for each entity, and
@@ -74,6 +76,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
       |> Request.method(:post)
       |> Request.url("/v1/documents:analyzeEntities", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -131,6 +134,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
       |> Request.method(:post)
       |> Request.url("/v1/documents:analyzeEntitySentiment", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -189,6 +193,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
       |> Request.method(:post)
       |> Request.url("/v1/documents:analyzeSentiment", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -246,6 +251,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
       |> Request.method(:post)
       |> Request.url("/v1/documents:analyzeSyntax", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -302,6 +308,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
       |> Request.method(:post)
       |> Request.url("/v1/documents:annotateText", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -357,6 +364,7 @@ defmodule GoogleApi.Language.V1.Api.Documents do
       |> Request.method(:post)
       |> Request.url("/v1/documents:classifyText", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
