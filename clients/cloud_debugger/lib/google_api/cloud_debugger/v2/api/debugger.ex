@@ -23,6 +23,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   alias GoogleApi.CloudDebugger.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Lists all the debuggees that the user has access to.
 
@@ -79,6 +81,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       |> Request.method(:get)
       |> Request.url("/v2/debugger/debuggees", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -153,6 +156,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         "breakpointId" => URI.encode(breakpoint_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -227,6 +231,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         "breakpointId" => URI.encode(breakpoint_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -316,6 +321,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         "debuggeeId" => URI.encode(debuggee_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -390,6 +396,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
         "debuggeeId" => URI.encode(debuggee_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

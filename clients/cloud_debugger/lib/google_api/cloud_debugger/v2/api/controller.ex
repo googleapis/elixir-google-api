@@ -23,6 +23,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
   alias GoogleApi.CloudDebugger.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Registers the debuggee with the controller service.
 
@@ -82,6 +84,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
       |> Request.method(:post)
       |> Request.url("/v2/controller/debuggees/register", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -175,6 +178,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
         "debuggeeId" => URI.encode(debuggee_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -257,6 +261,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
         "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
