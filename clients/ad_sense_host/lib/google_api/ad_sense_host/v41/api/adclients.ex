@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Adclients do
   alias GoogleApi.AdSenseHost.V41.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Get information about one of the ad clients in the Host AdSense account.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Adclients do
         "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -114,6 +117,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Adclients do
       |> Request.method(:get)
       |> Request.url("/adclients", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

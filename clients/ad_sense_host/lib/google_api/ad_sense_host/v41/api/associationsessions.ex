@@ -23,6 +23,8 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
   alias GoogleApi.AdSenseHost.V41.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Create an association session for initiating an association with an AdSense user.
 
@@ -82,6 +84,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
       |> Request.add_param(:query, :productCode, product_code)
       |> Request.add_param(:query, :websiteUrl, website_url)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -134,6 +137,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
       |> Request.url("/associationsessions/verify", %{})
       |> Request.add_param(:query, :token, token)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
