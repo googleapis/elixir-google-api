@@ -23,6 +23,8 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
   alias GoogleApi.Drive.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Permanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can't be deleted.
 
@@ -67,6 +69,7 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
         "revisionId" => URI.encode(revision_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -119,6 +122,7 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
         "revisionId" => URI.encode(revision_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -171,6 +175,7 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -223,6 +228,7 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
         "revisionId" => URI.encode(revision_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

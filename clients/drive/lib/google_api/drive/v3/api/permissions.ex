@@ -23,6 +23,8 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   alias GoogleApi.Drive.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a permission for a file or shared drive.
 
@@ -79,6 +81,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -141,6 +144,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
         "permissionId" => URI.encode(permission_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -197,6 +201,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
         "permissionId" => URI.encode(permission_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -255,6 +260,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
         "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -323,6 +329,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
         "permissionId" => URI.encode(permission_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
