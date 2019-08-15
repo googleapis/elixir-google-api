@@ -23,6 +23,8 @@ defmodule GoogleApi.ServiceUser.V1.Api.Services do
   alias GoogleApi.ServiceUser.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Search available services.
 
@@ -80,6 +82,7 @@ defmodule GoogleApi.ServiceUser.V1.Api.Services do
       |> Request.method(:get)
       |> Request.url("/v1/services:search", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
