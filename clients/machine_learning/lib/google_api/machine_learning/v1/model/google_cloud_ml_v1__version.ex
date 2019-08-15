@@ -165,6 +165,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   *   `pythonVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Python used in prediction. If not set, the default
       version is '2.7'. Python '3.5' is available when `runtime_version` is set
       to '1.4' and above. Python '2.7' works with all supported runtime versions.
+  *   `requestLoggingConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__RequestLoggingConfig.t`, *default:* `nil`) - Optional. Configures the request-response pair logging on predictions from
+      this Version.
   *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The AI Platform runtime version to use for this deployment.
       If not set, AI Platform uses the default stable version, 1.0. For more
       information, see the
@@ -193,6 +195,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
           :packageUris => list(String.t()),
           :predictionClass => String.t(),
           :pythonVersion => String.t(),
+          :requestLoggingConfig =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__RequestLoggingConfig.t(),
           :runtimeVersion => String.t(),
           :serviceAccount => String.t(),
           :state => String.t()
@@ -214,6 +218,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   field(:packageUris, type: :list)
   field(:predictionClass)
   field(:pythonVersion)
+
+  field(
+    :requestLoggingConfig,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__RequestLoggingConfig
+  )
+
   field(:runtimeVersion)
   field(:serviceAccount)
   field(:state)
