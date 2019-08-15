@@ -23,6 +23,8 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
   alias GoogleApi.KnowledgeGraphSearch.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Searches Knowledge Graph for entities that match the constraints.
   A list of matched entities will be returned in response, which will be in
@@ -92,6 +94,7 @@ defmodule GoogleApi.KnowledgeGraphSearch.V1.Api.Entities do
       |> Request.method(:get)
       |> Request.url("/v1/entities:search", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
