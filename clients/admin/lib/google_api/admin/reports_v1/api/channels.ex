@@ -23,6 +23,8 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Channels do
   alias GoogleApi.Admin.Reports_v1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Stop watching resources through this channel
 
@@ -64,6 +66,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Channels do
       |> Request.method(:post)
       |> Request.url("/admin/reports_v1/channels/stop", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
