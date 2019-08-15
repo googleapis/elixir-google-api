@@ -23,6 +23,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatMatches do
   alias GoogleApi.SafeBrowsing.V4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Finds the threat entries that match the Safe Browsing lists.
 
@@ -73,6 +75,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatMatches do
       |> Request.method(:post)
       |> Request.url("/v4/threatMatches:find", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

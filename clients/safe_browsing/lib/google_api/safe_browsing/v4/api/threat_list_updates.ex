@@ -23,6 +23,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatListUpdates do
   alias GoogleApi.SafeBrowsing.V4.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Fetches the most recent threat list updates. A client can request updates
   for multiple lists at once.
@@ -74,6 +76,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatListUpdates do
       |> Request.method(:post)
       |> Request.url("/v4/threatListUpdates:fetch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
