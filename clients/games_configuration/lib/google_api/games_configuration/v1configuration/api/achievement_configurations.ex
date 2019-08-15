@@ -23,6 +23,8 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
   alias GoogleApi.GamesConfiguration.V1configuration.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Delete the achievement configuration with the given ID.
 
@@ -74,6 +76,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
         "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -133,6 +136,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
         "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -197,6 +201,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
         "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -264,6 +269,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
         "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -331,6 +337,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
         "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -395,6 +402,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
         "achievementId" => URI.encode(achievement_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
