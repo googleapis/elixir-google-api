@@ -23,6 +23,8 @@ defmodule GoogleApi.Calendar.V3.Api.Calendars do
   alias GoogleApi.Calendar.V3.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Clears a primary calendar. This operation deletes all events associated with the primary calendar of an account.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.Calendar.V3.Api.Calendars do
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.Calendar.V3.Api.Calendars do
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -161,6 +165,7 @@ defmodule GoogleApi.Calendar.V3.Api.Calendars do
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -208,6 +213,7 @@ defmodule GoogleApi.Calendar.V3.Api.Calendars do
       |> Request.method(:post)
       |> Request.url("/calendars", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -258,6 +264,7 @@ defmodule GoogleApi.Calendar.V3.Api.Calendars do
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -308,6 +315,7 @@ defmodule GoogleApi.Calendar.V3.Api.Calendars do
         "calendarId" => URI.encode(calendar_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
