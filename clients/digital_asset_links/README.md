@@ -1,18 +1,23 @@
-# GoogleApi.DigitalAssetLinks.V1
+# GoogleApi.DigitalAssetLinks
 
-API for discovering relationships between online assets such as web sites or mobile apps.
+Client library for Digital Asset Links API from Google.
+
+Discovers relationships between online assets such as websites or mobile apps.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_digital_asset_links` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_digital_asset_links` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_digital_asset_links, "~> 0.1.0"}]
+  [{:google_api_digital_asset_links, "~> 0.4"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_digital_asset_links](https://hexdocs.pm/google_api_digital_asset_links).
+## For more information
+
+Product documentation is available at [https://developers.google.com/digital-asset-links/](https://developers.google.com/digital-asset-links/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_digital_asset_links](https://hexdocs.pm/google_api_digital_asset_links).
