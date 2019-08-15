@@ -1,18 +1,23 @@
-# GoogleApi.Composer.V1beta1
+# GoogleApi.Composer
+
+Client library for Cloud Composer API from Google.
 
 Manages Apache Airflow environments on Google Cloud Platform.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `google_api_composer` to your list of dependencies in `mix.exs`:
+Install this package from [Hex](https://hex.pm) by adding
+`google_api_composer` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:google_api_composer, "~> 0.1.0"}]
+  [{:google_api_composer, "~> 0.8"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/google_api_composer](https://hexdocs.pm/google_api_composer).
+## For more information
+
+Product documentation is available at [https://cloud.google.com/composer/](https://cloud.google.com/composer/).
+
+Library reference documentation is published on Hexdocs at
+[https://hexdocs.pm/google_api_composer](https://hexdocs.pm/google_api_composer).
