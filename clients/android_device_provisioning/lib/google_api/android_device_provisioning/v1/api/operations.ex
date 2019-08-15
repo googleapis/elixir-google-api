@@ -23,6 +23,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Operations do
   alias GoogleApi.AndroidDeviceProvisioning.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the latest state of a long-running operation.  Clients can use this
   method to poll the operation result at intervals as recommended by the API
@@ -86,6 +88,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Operations do
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
