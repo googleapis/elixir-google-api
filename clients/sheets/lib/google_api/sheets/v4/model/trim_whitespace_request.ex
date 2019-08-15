@@ -19,9 +19,9 @@ defmodule GoogleApi.Sheets.V4.Model.TrimWhitespaceRequest do
   @moduledoc """
   Trims the whitespace (such as spaces, tabs, or new lines) in every cell in
   the specified range. This request removes all whitespace from the start and
-  end of each cell's text, and reduces any sub-sequence of remaining whitespace
+  end of each cell's text, and reduces any subsequence of remaining whitespace
   characters to a single space. If the resulting trimmed text starts with a '+'
-  or '=' character, the text remains as a string value and is not interpreted
+  or '=' character, the text remains as a string value and isn't interpreted
   as a formula.
 
   ## Attributes
