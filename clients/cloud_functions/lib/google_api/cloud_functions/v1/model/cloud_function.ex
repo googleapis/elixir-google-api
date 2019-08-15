@@ -19,7 +19,6 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   @moduledoc """
   Describes a Cloud Function that contains user computation executed in
   response to an event. It encapsulate function and triggers configurations.
-  LINT.IfChange
 
   ## Attributes
 
@@ -54,17 +53,13 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
 
       See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
       more information on connecting Cloud projects.
-
-      This feature is currently in alpha, available only for whitelisted users.
-  *   `runtime` (*type:* `String.t`, *default:* `nil`) - Required. The runtime in which the function is going to run. Choices:
-
-      * `nodejs6`: Node.js 6
-      * `nodejs8`: Node.js 8
-      * `nodejs10`: Node.js 10
-      * `python37`: Python 3.7
-      * `go111`: Go 1.11
+  *   `runtime` (*type:* `String.t`, *default:* `nil`) - The runtime in which to run the function. Required when deploying a new
+      function, optional when updating an existing function. For a complete
+      list of possible choices, see the
+      [`gcloud` command
+      reference](/sdk/gcloud/reference/functions/deploy#--runtime).
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The email of the function's service account. If empty, defaults to
-      {project_id}@appspot.gserviceaccount.com.
+      `{project_id}@appspot.gserviceaccount.com`.
   *   `sourceArchiveUrl` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URL, starting with gs://, pointing to the zip
       archive which contains the function.
   *   `sourceRepository` (*type:* `GoogleApi.CloudFunctions.V1.Model.SourceRepository.t`, *default:* `nil`) - **Beta Feature**
@@ -77,8 +72,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
       can be terminated if the function is not completed at the end of the
       timeout period. Defaults to 60 seconds.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a Cloud Function.
-  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The version identifier of the Cloud Function. Each deployment attempt
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Output only. The version identifier of the Cloud Function. Each deployment attempt
       results in a new version of a function being created.
   *   `vpcConnector` (*type:* `String.t`, *default:* `nil`) - The VPC Network Connector that this cloud function can connect to. It can
       be either the fully-qualified URI, or the short name of the network
@@ -90,8 +84,6 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
 
       See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
       more information on connecting Cloud projects.
-
-      This feature is currently in alpha, available only for whitelisted users.
   """
 
   use GoogleApi.Gax.ModelBase
