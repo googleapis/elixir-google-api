@@ -24,8 +24,8 @@ defmodule GoogleApi.IAM.V1.Model.BindingDelta do
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - The action that was performed on a Binding.
       Required
-  *   `condition` (*type:* `GoogleApi.IAM.V1.Model.Expr.t`, *default:* `nil`) - Unimplemented. The condition that is associated with this binding.
-      This field is logged only for Cloud Audit Logging.
+  *   `condition` (*type:* `GoogleApi.IAM.V1.Model.Expr.t`, *default:* `nil`) - The condition that is associated with this binding. This field is logged
+      only for Cloud Audit Logging.
   *   `member` (*type:* `String.t`, *default:* `nil`) - A single identity requesting access for a Cloud Platform resource.
       Follows the same format of Binding.members.
       Required
