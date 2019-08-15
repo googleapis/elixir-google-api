@@ -23,6 +23,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.GoogleServiceAccounts do
   alias GoogleApi.StorageTransfer.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Returns the Google service account that is used by Storage Transfer
   Service to access buckets in the project where transfers
@@ -92,6 +94,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.GoogleServiceAccounts do
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

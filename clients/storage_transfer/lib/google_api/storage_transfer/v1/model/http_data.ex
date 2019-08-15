@@ -48,7 +48,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.HttpData do
   [Generating MD5 hashes](https://cloud.google.com/storage/transfer/#md5)
 
   * Ensure that each URL you specify is publicly accessible. For
-  example, in Google Cloud Storage you can
+  example, in Cloud Storage you can
   [share an object publicly]
   (https://cloud.google.com/storage/docs/cloud-console#_sharingdata) and get
   a link to it.
