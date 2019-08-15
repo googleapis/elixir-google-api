@@ -23,6 +23,8 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
   alias GoogleApi.ServiceBroker.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the access control policy for a resource.
   Returns an empty policy if the resource exists and does not have a policy
@@ -82,6 +84,7 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
         "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -143,6 +146,7 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
         "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -209,6 +213,7 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
         "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
