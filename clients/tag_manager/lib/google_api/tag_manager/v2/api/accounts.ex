@@ -23,6 +23,8 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   alias GoogleApi.TagManager.V2.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets a GTM Account.
 
@@ -65,6 +67,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -112,6 +115,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       |> Request.method(:get)
       |> Request.url("/accounts", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -164,6 +168,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -218,6 +223,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -270,6 +276,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -318,6 +325,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -369,6 +377,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -425,6 +434,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -484,6 +494,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -541,6 +552,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -598,6 +610,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -659,6 +672,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -720,6 +734,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -781,6 +796,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -840,6 +856,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -903,6 +920,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -962,6 +980,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1021,6 +1040,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1078,6 +1098,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1139,6 +1160,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1198,6 +1220,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1255,6 +1278,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1316,6 +1340,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1375,6 +1400,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1436,6 +1462,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1495,6 +1522,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1552,6 +1580,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1611,6 +1640,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1674,6 +1704,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1732,6 +1763,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1793,6 +1825,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1851,6 +1884,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1912,6 +1946,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1973,6 +2008,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2034,6 +2070,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2095,6 +2132,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2158,6 +2196,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2219,6 +2258,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2276,6 +2316,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2335,6 +2376,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2392,6 +2434,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2452,6 +2495,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2517,6 +2561,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2577,6 +2622,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2638,6 +2684,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2697,6 +2744,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2754,6 +2802,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2811,6 +2860,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2870,6 +2920,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2929,6 +2980,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2990,6 +3042,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3049,6 +3102,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3106,6 +3160,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3163,6 +3218,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3223,6 +3279,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3284,6 +3341,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3345,6 +3403,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3404,6 +3463,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3461,6 +3521,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3518,6 +3579,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3578,6 +3640,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3638,6 +3701,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3699,6 +3763,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3758,6 +3823,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3815,6 +3881,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3872,6 +3939,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3932,6 +4000,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -3993,6 +4062,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4054,6 +4124,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4113,6 +4184,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4170,6 +4242,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4227,6 +4300,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4286,6 +4360,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4345,6 +4420,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4406,6 +4482,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4465,6 +4542,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4522,6 +4600,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4579,6 +4658,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4640,6 +4720,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -4701,6 +4782,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
         "path" => URI.encode(path, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
