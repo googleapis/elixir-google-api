@@ -23,6 +23,8 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
   alias GoogleApi.UrlShortener.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Expands a short URL or gets creation time and analytics.
 
@@ -66,6 +68,7 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
       |> Request.url("/url", %{})
       |> Request.add_param(:query, :shortUrl, short_url)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -113,6 +116,7 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
       |> Request.method(:post)
       |> Request.url("/url", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -162,6 +166,7 @@ defmodule GoogleApi.UrlShortener.V1.Api.Url do
       |> Request.method(:get)
       |> Request.url("/url/history", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
