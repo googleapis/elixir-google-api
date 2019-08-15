@@ -23,6 +23,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   alias GoogleApi.PubSub.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Creates a snapshot from the requested subscription. Snapshots are used in
   <a href="https://cloud.google.com/pubsub/docs/replay-overview">Seek</a>
@@ -111,6 +113,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -190,6 +193,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -264,6 +268,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -294,7 +299,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-          Acceptable values are 0 and 1.
+          Acceptable values are 0, 1, and 3.
           If the value is 0, or the field is omitted, policy format version 1 will be
           returned.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -341,6 +346,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -409,6 +415,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -485,6 +492,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -558,6 +566,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -638,6 +647,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -716,6 +726,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -804,6 +815,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -878,6 +890,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -948,6 +961,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -978,7 +992,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-          Acceptable values are 0 and 1.
+          Acceptable values are 0, 1, and 3.
           If the value is 0, or the field is omitted, policy format version 1 will be
           returned.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1025,6 +1039,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1093,6 +1108,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1172,6 +1188,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1252,6 +1269,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1329,6 +1347,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1403,6 +1422,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1481,6 +1501,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1554,6 +1575,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1637,6 +1659,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1715,6 +1738,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1789,6 +1813,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1859,6 +1884,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1889,7 +1915,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-          Acceptable values are 0 and 1.
+          Acceptable values are 0, 1, and 3.
           If the value is 0, or the field is omitted, policy format version 1 will be
           returned.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1936,6 +1962,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -1999,6 +2026,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2076,6 +2104,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2149,6 +2178,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2222,6 +2252,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2302,6 +2333,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2385,6 +2417,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -2463,6 +2496,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
