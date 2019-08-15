@@ -23,6 +23,8 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
   alias GoogleApi.Books.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
 
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
       |> Request.method(:post)
       |> Request.url("/promooffer/accept", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -137,6 +140,7 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
       |> Request.method(:post)
       |> Request.url("/promooffer/dismiss", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -194,6 +198,7 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
       |> Request.method(:get)
       |> Request.url("/promooffer/get", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

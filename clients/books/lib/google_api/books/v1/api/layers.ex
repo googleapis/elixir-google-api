@@ -23,6 +23,8 @@ defmodule GoogleApi.Books.V1.Api.Layers do
   alias GoogleApi.Books.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Gets the layer summary for a volume.
 
@@ -71,6 +73,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "summaryId" => URI.encode(summary_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -127,6 +130,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -208,6 +212,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       })
       |> Request.add_param(:query, :contentVersion, content_version)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -293,6 +298,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       })
       |> Request.add_param(:query, :contentVersion, content_version)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -362,6 +368,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         "annotationId" => URI.encode(annotation_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -451,6 +458,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       })
       |> Request.add_param(:query, :contentVersion, content_version)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)

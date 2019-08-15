@@ -23,6 +23,8 @@ defmodule GoogleApi.Books.V1.Api.Onboarding do
   alias GoogleApi.Books.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   List categories for onboarding experience.
 
@@ -64,6 +66,7 @@ defmodule GoogleApi.Books.V1.Api.Onboarding do
       |> Request.method(:get)
       |> Request.url("/onboarding/listCategories", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -119,6 +122,7 @@ defmodule GoogleApi.Books.V1.Api.Onboarding do
       |> Request.method(:get)
       |> Request.url("/onboarding/listCategoryVolumes", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
