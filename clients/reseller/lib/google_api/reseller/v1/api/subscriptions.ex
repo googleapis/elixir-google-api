@@ -23,6 +23,8 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
   alias GoogleApi.Reseller.V1.Connection
   alias GoogleApi.Gax.{Request, Response}
 
+  @library_version Mix.Project.config() |> Keyword.get(:version, "")
+
   @doc """
   Activates a subscription previously suspended by the reseller
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -141,6 +144,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -207,6 +211,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -270,6 +275,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -335,6 +341,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       })
       |> Request.add_param(:query, :deletionType, deletion_type)
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -396,6 +403,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -448,6 +456,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -505,6 +514,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       |> Request.method(:get)
       |> Request.url("/subscriptions", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -566,6 +576,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
@@ -627,6 +638,7 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
         "subscriptionId" => URI.encode(subscription_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
