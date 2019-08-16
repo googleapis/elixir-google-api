@@ -1,6 +1,6 @@
 # GoogleApi.Calendar
 
-Client library for Calendar API from Google.
+Calendar API client library.
 
 Manipulates events and other calendar data.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_calendar, "~> 0.7"}]
+  [{:google_api_calendar, "~> 0.8"}]
 end
 ```
 
