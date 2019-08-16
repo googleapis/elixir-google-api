@@ -13,7 +13,7 @@
 # limitations under the License.
 
 defmodule GoogleApi.Drive.FilesTest do
-  use GoogleApi.Drive.V3.TestHelper
+  use GoogleApi.Drive.TestHelper
   alias GoogleApi.Drive.V3.Connection
   alias GoogleApi.Drive.V3.Model.File
   alias GoogleApi.Drive.V3.Model.FileList
