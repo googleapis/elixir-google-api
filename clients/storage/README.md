@@ -1,6 +1,6 @@
 # GoogleApi.Storage
 
-Client library for Cloud Storage JSON API from Google.
+Cloud Storage JSON API client library.
 
 Stores and retrieves potentially large, immutable data objects.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_storage, "~> 0.10"}]
+  [{:google_api_storage, "~> 0.11"}]
 end
 ```
 

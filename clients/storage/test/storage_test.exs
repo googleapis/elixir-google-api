@@ -1,5 +1,5 @@
 defmodule GoogleApi.Storage.StorageTest do
-  use GoogleApi.Storage.V1.TestHelper
+  use GoogleApi.Storage.TestHelper
   alias GoogleApi.Storage.V1.Model.Object
 
   test "storage" do
