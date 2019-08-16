@@ -1,6 +1,6 @@
 # GoogleApi.ServiceConsumerManagement
 
-Client library for Service Consumer Management API from Google.
+Service Consumer Management API client library.
 
 Manages the service consumers of a Service Infrastructure service.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_service_consumer_management, "~> 0.8"}]
+  [{:google_api_service_consumer_management, "~> 0.9"}]
 end
 ```
 
