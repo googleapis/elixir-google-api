@@ -1,6 +1,6 @@
 # GoogleApi.DoubleClickSearch
 
-Client library for DoubleClick Search API from Google.
+DoubleClick Search API client library.
 
 Reports and modifies your advertising data in DoubleClick Search (for example, campaigns, ad groups, keywords, and conversions).
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_double_click_search, "~> 0.4"}]
+  [{:google_api_double_click_search, "~> 0.5"}]
 end
 ```
 
