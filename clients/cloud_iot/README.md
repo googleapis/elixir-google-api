@@ -1,6 +1,6 @@
 # GoogleApi.CloudIot
 
-Client library for Cloud IoT API from Google.
+Cloud IoT API client library.
 
 Registers and manages IoT (Internet of Things) devices that connect to the Google Cloud Platform.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_iot, "~> 0.14"}]
+  [{:google_api_cloud_iot, "~> 0.15"}]
 end
 ```
 
