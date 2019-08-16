@@ -1,6 +1,6 @@
 # GoogleApi.CloudTasks
 
-Client library for Cloud Tasks API from Google.
+Cloud Tasks API client library.
 
 Manages the execution of large numbers of distributed requests.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_tasks, "~> 0.1"}]
+  [{:google_api_cloud_tasks, "~> 0.2"}]
 end
 ```
 
