@@ -1,6 +1,6 @@
 # GoogleApi.Monitoring
 
-Client library for Stackdriver Monitoring API from Google.
+Stackdriver Monitoring API client library.
 
 Manages your Stackdriver Monitoring data and configurations. Most projects must be associated with a Stackdriver account, with a few exceptions as noted on the individual method pages. The table entries below are presented in alphabetical order, not in order of common use. For explanations of the concepts found in the table entries, read the Stackdriver Monitoring documentation.
 
