@@ -1,6 +1,6 @@
 # GoogleApi.Script
 
-Client library for Apps Script API from Google.
+Apps Script API client library.
 
 Manages and executes Google Apps Script projects.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_script, "~> 0.8"}]
+  [{:google_api_script, "~> 0.9"}]
 end
 ```
 
