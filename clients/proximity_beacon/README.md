@@ -1,6 +1,6 @@
 # GoogleApi.ProximityBeacon
 
-Client library for Proximity Beacon API from Google.
+Proximity Beacon API client library.
 
 Registers, manages, indexes, and searches beacons.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_proximity_beacon, "~> 0.5"}]
+  [{:google_api_proximity_beacon, "~> 0.6"}]
 end
 ```
 
