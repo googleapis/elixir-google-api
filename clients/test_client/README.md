@@ -1,6 +1,6 @@
 # GoogleApi.TestClient
 
-Client library for Test Client from Google.
+Test Client client library.
 
 Test client for testing generated clients
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_test_client, "~> 0.4"}]
+  [{:google_api_test_client, "~> 0.6"}]
 end
 ```
 
