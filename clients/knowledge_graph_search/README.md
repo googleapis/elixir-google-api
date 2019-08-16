@@ -1,6 +1,6 @@
 # GoogleApi.KnowledgeGraphSearch
 
-Client library for Knowledge Graph Search API from Google.
+Knowledge Graph Search API client library.
 
 Searches the Google Knowledge Graph for entities.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_knowledge_graph_search, "~> 0.6"}]
+  [{:google_api_knowledge_graph_search, "~> 0.7"}]
 end
 ```
 
