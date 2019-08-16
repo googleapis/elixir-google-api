@@ -1,5 +1,5 @@
 defmodule GoogleApi.Translate.TranslateTest do
-  use GoogleApi.Translate.V2.TestHelper
+  use GoogleApi.Translate.TestHelper
 
   test "translate" do
     conn = GoogleApi.Translate.V2.Connection.new(&for_scope/1)
