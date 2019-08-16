@@ -1,6 +1,6 @@
 # GoogleApi.VideoIntelligence
 
-Client library for Cloud Video Intelligence API from Google.
+Cloud Video Intelligence API client library.
 
 Detects objects, explicit content, and scene changes in videos. It also specifies the region for annotation and transcribes speech to text. Supports both asynchronous API and streaming API.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_video_intelligence, "~> 0.11"}]
+  [{:google_api_video_intelligence, "~> 0.12"}]
 end
 ```
 
