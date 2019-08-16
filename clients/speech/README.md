@@ -1,6 +1,6 @@
 # GoogleApi.Speech
 
-Client library for Cloud Speech-to-Text API from Google.
+Cloud Speech-to-Text API client library.
 
 Converts audio to text by applying powerful neural network models.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_speech, "~> 0.12"}]
+  [{:google_api_speech, "~> 0.13"}]
 end
 ```
 
