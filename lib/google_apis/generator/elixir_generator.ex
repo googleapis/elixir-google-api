@@ -161,7 +161,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
 
   defp generate_hex_description(rest_info) do
     api_title = api_title_for(rest_info)
-    description_start = "Client library for #{api_title} from Google."
+    description_start = "#{api_title} client library."
     rest_description = description_for(rest_info)
 
     if String.length(description_start) + String.length(rest_description) > 298 do
