@@ -1,6 +1,6 @@
 # GoogleApi.PageSpeedOnline
 
-Client library for PageSpeed Insights API from Google.
+PageSpeed Insights API client library.
 
 Analyzes the performance of a web page and provides tailored suggestions to make that page faster.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_page_speed_online, "~> 0.3"}]
+  [{:google_api_page_speed_online, "~> 0.4"}]
 end
 ```
 
