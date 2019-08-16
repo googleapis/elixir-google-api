@@ -1,6 +1,6 @@
 # GoogleApi.Container
 
-Client library for Kubernetes Engine API from Google.
+Kubernetes Engine API client library.
 
 Builds and manages container-based applications, powered by the open source Kubernetes technology.
 
