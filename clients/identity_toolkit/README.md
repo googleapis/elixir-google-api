@@ -1,6 +1,6 @@
 # GoogleApi.IdentityToolkit
 
-Client library for Google Identity Toolkit API from Google.
+Google Identity Toolkit API client library.
 
 Help the third party sites to implement federated login.
 
