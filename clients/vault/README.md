@@ -1,6 +1,6 @@
 # GoogleApi.Vault
 
-Client library for G Suite Vault API from Google.
+G Suite Vault API client library.
 
 Archiving and eDiscovery for G Suite.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_vault, "~> 0.9"}]
+  [{:google_api_vault, "~> 0.10"}]
 end
 ```
 
