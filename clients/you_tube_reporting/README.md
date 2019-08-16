@@ -1,6 +1,6 @@
 # GoogleApi.YouTubeReporting
 
-Client library for YouTube Reporting API from Google.
+YouTube Reporting API client library.
 
 Schedules reporting jobs containing your YouTube Analytics data and downloads the resulting bulk data reports in the form of CSV files.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_you_tube_reporting, "~> 0.7"}]
+  [{:google_api_you_tube_reporting, "~> 0.8"}]
 end
 ```
 
