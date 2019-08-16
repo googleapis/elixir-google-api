@@ -1,6 +1,6 @@
 # GoogleApi.Genomics
 
-Client library for Genomics API from Google.
+Genomics API client library.
 
 Uploads, processes, queries, and searches Genomics data in the cloud.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_genomics, "~> 0.9"}]
+  [{:google_api_genomics, "~> 0.10"}]
 end
 ```
 
