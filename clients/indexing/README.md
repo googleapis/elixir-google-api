@@ -1,6 +1,6 @@
 # GoogleApi.Indexing
 
-Client library for Indexing API from Google.
+Indexing API client library.
 
 Notifies Google when your web pages change.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_indexing, "~> 0.4"}]
+  [{:google_api_indexing, "~> 0.5"}]
 end
 ```
 
