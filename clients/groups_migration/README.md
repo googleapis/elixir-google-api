@@ -1,6 +1,6 @@
 # GoogleApi.GroupsMigration
 
-Client library for Groups Migration API from Google.
+Groups Migration API client library.
 
 Groups Migration Api.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_groups_migration, "~> 0.3"}]
+  [{:google_api_groups_migration, "~> 0.4"}]
 end
 ```
 
