@@ -1,6 +1,6 @@
 # GoogleApi.BigQuery
 
-Client library for BigQuery API from Google.
+BigQuery API client library.
 
 A data platform for customers to create, manage, share and query data.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_big_query, "~> 0.20"}]
+  [{:google_api_big_query, "~> 0.21"}]
 end
 ```
 
