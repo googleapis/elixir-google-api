@@ -1,6 +1,6 @@
 # GoogleApi.YouTubeAnalytics
 
-Client library for YouTube Analytics API from Google.
+YouTube Analytics API client library.
 
 Retrieves your YouTube Analytics data.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_you_tube_analytics, "~> 0.8"}]
+  [{:google_api_you_tube_analytics, "~> 0.9"}]
 end
 ```
 
