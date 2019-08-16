@@ -1,6 +1,6 @@
 # GoogleApi.Dialogflow
 
-Client library for Dialogflow API from Google.
+Dialogflow API client library.
 
 Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices).
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_dialogflow, "~> 0.15"}]
+  [{:google_api_dialogflow, "~> 0.16"}]
 end
 ```
 
