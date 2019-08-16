@@ -1,6 +1,6 @@
 # GoogleApi.CloudResourceManager
 
-Client library for Cloud Resource Manager API from Google.
+Cloud Resource Manager API client library.
 
 Creates, reads, and updates metadata for Google Cloud Platform resource containers.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_resource_manager, "~> 0.13"}]
+  [{:google_api_cloud_resource_manager, "~> 0.14"}]
 end
 ```
 
