@@ -1,6 +1,6 @@
 # GoogleApi.Testing
 
-Client library for Cloud Testing API from Google.
+Cloud Testing API client library.
 
 Allows developers to run automated tests for their mobile applications on Google infrastructure.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_testing, "~> 0.4"}]
+  [{:google_api_testing, "~> 0.5"}]
 end
 ```
 
