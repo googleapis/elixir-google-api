@@ -1,6 +1,6 @@
 # GoogleApi.Surveys
 
-Client library for Surveys API from Google.
+Surveys API client library.
 
 Creates and conducts surveys, lists the surveys that an authenticated user owns, and retrieves survey results and information about specified surveys.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_surveys, "~> 0.4"}]
+  [{:google_api_surveys, "~> 0.5"}]
 end
 ```
 
