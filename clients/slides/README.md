@@ -1,6 +1,6 @@
 # GoogleApi.Slides
 
-Client library for Google Slides API from Google.
+Google Slides API client library.
 
 Reads and writes Google Slides presentations.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_slides, "~> 0.8"}]
+  [{:google_api_slides, "~> 0.9"}]
 end
 ```
 
