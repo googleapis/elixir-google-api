@@ -1,6 +1,6 @@
 # GoogleApi.Language
 
-Client library for Cloud Natural Language API from Google.
+Cloud Natural Language API client library.
 
 Provides natural language understanding technologies, such as sentiment analysis, entity recognition, entity sentiment analysis, and other text annotations, to developers.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_language, "~> 0.7"}]
+  [{:google_api_language, "~> 0.8"}]
 end
 ```
 
