@@ -1,6 +1,6 @@
 # GoogleApi.Sheets
 
-Client library for Google Sheets API from Google.
+Google Sheets API client library.
 
 Reads and writes Google Sheets.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_sheets, "~> 0.10"}]
+  [{:google_api_sheets, "~> 0.11"}]
 end
 ```
 
