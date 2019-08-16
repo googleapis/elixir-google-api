@@ -1,6 +1,6 @@
 # GoogleApi.AdSense
 
-Client library for AdSense Management API from Google.
+AdSense Management API client library.
 
 Accesses AdSense publishers' inventory and generates performance reports.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_ad_sense, "~> 0.5"}]
+  [{:google_api_ad_sense, "~> 0.6"}]
 end
 ```
 
