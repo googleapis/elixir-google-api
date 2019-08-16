@@ -1,6 +1,6 @@
 # GoogleApi.Redis
 
-Client library for Google Cloud Memorystore for Redis API from Google.
+Google Cloud Memorystore for Redis API client library.
 
 Creates and manages Redis instances on the Google Cloud Platform.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_redis, "~> 0.4"}]
+  [{:google_api_redis, "~> 0.5"}]
 end
 ```
 
