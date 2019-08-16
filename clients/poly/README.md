@@ -1,6 +1,6 @@
 # GoogleApi.Poly
 
-Client library for Poly API from Google.
+Poly API client library.
 
 The Poly API provides read access to assets hosted on <a href="https://poly.google.com">poly.google.com</a> to all, and upload access to <a href="https://poly.google.com">poly.google.com</a> for whitelisted accounts.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_poly, "~> 0.4"}]
+  [{:google_api_poly, "~> 0.5"}]
 end
 ```
 
