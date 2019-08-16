@@ -1,6 +1,6 @@
 # <%= namespace %>
 
-Client library for <%= api_title %> from Google.
+<%= api_title %> client library.
 
 <%= description %>
 

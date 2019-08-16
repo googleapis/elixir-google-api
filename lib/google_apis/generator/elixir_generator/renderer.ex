@@ -56,6 +56,17 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     :description
   ])
 
+  EEx.function_from_file(
+    :def,
+    :test_helper_exs,
+    Path.expand("./template/elixir/test_helper.exs.eex"),
+    [
+      :namespace
+    ]
+  )
+
+  EEx.function_from_file(:def, :config_exs, Path.expand("./template/elixir/config.exs.eex"), [])
+
   EEx.function_from_file(:def, :license, Path.expand("./template/elixir/LICENSE.eex"), [])
 
   EEx.function_from_file(:def, :gitignore, Path.expand("./template/elixir/gitignore.eex"), [])
