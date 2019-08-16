@@ -1,6 +1,6 @@
 # GoogleApi.AdExchangeBuyer
 
-Client library for Ad Exchange Buyer API II from Google.
+Ad Exchange Buyer API II client library.
 
 Accesses the latest features for managing Authorized Buyers accounts, Real-Time Bidding configurations and auction metrics, and Marketplace programmatic deals.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_ad_exchange_buyer, "~> 0.21"}]
+  [{:google_api_ad_exchange_buyer, "~> 0.22"}]
 end
 ```
 
