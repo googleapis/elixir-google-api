@@ -1,6 +1,6 @@
 # GoogleApi.Fitness
 
-Client library for Fitness from Google.
+Fitness client library.
 
 Stores and accesses user data in the fitness store from apps on any platform.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_fitness, "~> 0.6"}]
+  [{:google_api_fitness, "~> 0.7"}]
 end
 ```
 
