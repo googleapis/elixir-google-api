@@ -1,6 +1,6 @@
 # GoogleApi.StreetViewPublish
 
-Client library for Street View Publish API from Google.
+Street View Publish API client library.
 
 Publishes 360 photos to Google Maps, along with position, orientation, and connectivity metadata. Apps can offer an interface for positioning, connecting, and uploading user-generated Street View images.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_street_view_publish, "~> 0.8"}]
+  [{:google_api_street_view_publish, "~> 0.9"}]
 end
 ```
 
