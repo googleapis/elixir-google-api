@@ -1,6 +1,6 @@
 # GoogleApi.Chat
 
-Client library for Hangouts Chat API from Google.
+Hangouts Chat API client library.
 
 Enables bots to fetch information and perform actions in Hangouts Chat.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_chat, "~> 0.9"}]
+  [{:google_api_chat, "~> 0.10"}]
 end
 ```
 
