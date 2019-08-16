@@ -1,6 +1,6 @@
 # GoogleApi.Dataflow
 
-Client library for Dataflow API from Google.
+Dataflow API client library.
 
 Manages Google Cloud Dataflow projects on Google Cloud Platform.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_dataflow, "~> 0.12"}]
+  [{:google_api_dataflow, "~> 0.13"}]
 end
 ```
 
