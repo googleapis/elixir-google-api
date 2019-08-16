@@ -1,6 +1,6 @@
 # GoogleApi.GamesManagement
 
-Client library for Google Play Game Services Management API from Google.
+Google Play Game Services Management API client library.
 
 The Management API for Google Play Game Services.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_games_management, "~> 0.6"}]
+  [{:google_api_games_management, "~> 0.7"}]
 end
 ```
 
