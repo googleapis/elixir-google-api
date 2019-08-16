@@ -1,6 +1,6 @@
 # GoogleApi.Gmail
 
-Client library for Gmail API from Google.
+Gmail API client library.
 
 Access Gmail mailboxes including sending user email.
 
