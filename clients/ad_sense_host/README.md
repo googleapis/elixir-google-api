@@ -1,6 +1,6 @@
 # GoogleApi.AdSenseHost
 
-Client library for AdSense Host API from Google.
+AdSense Host API client library.
 
 Generates performance reports, generates ad codes, and provides publisher management capabilities for AdSense Hosts.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_ad_sense_host, "~> 0.5"}]
+  [{:google_api_ad_sense_host, "~> 0.6"}]
 end
 ```
 
