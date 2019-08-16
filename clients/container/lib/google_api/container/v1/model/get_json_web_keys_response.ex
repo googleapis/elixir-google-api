@@ -21,6 +21,8 @@ defmodule GoogleApi.Container.V1.Model.GetJSONWebKeysResponse do
 
   ## Attributes
 
+  *   `cacheHeader` (*type:* `GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t`, *default:* `nil`) - OnePlatform automatically extracts this field and uses it to set the HTTP
+      Cache-Control header.
   *   `keys` (*type:* `list(GoogleApi.Container.V1.Model.Jwk.t)`, *default:* `nil`) - The public component of the keys used by the cluster to sign token
       requests.
   """
@@ -28,9 +30,11 @@ defmodule GoogleApi.Container.V1.Model.GetJSONWebKeysResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cacheHeader => GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t(),
           :keys => list(GoogleApi.Container.V1.Model.Jwk.t())
         }
 
+  field(:cacheHeader, as: GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader)
   field(:keys, as: GoogleApi.Container.V1.Model.Jwk, type: :list)
 end
 
