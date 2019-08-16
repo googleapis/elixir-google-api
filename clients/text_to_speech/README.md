@@ -1,6 +1,6 @@
 # GoogleApi.TextToSpeech
 
-Client library for Cloud Text-to-Speech API from Google.
+Cloud Text-to-Speech API client library.
 
 Synthesizes natural-sounding speech by applying powerful neural network models.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_text_to_speech, "~> 0.4"}]
+  [{:google_api_text_to_speech, "~> 0.5"}]
 end
 ```
 
