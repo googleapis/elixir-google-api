@@ -1,6 +1,6 @@
 # GoogleApi.CloudKMS
 
-Client library for Cloud Key Management Service (KMS) API from Google.
+Cloud Key Management Service (KMS) API client library.
 
 Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_kms, "~> 0.14"}]
+  [{:google_api_cloud_kms, "~> 0.15"}]
 end
 ```
 
