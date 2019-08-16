@@ -1,6 +1,6 @@
 # GoogleApi.YouTube
 
-Client library for YouTube Data API from Google.
+YouTube Data API client library.
 
 Supports core YouTube features, such as uploading videos, creating and managing playlists, searching for content, and much more.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_you_tube, "~> 0.9"}]
+  [{:google_api_you_tube, "~> 0.10"}]
 end
 ```
 
