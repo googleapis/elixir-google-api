@@ -1,6 +1,6 @@
 # GoogleApi.WebSecurityScanner
 
-Client library for Web Security Scanner API from Google.
+Web Security Scanner API client library.
 
 Scans your Compute and App Engine apps for common web vulnerabilities.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_web_security_scanner, "~> 0.5"}]
+  [{:google_api_web_security_scanner, "~> 0.6"}]
 end
 ```
 
