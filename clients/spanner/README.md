@@ -1,6 +1,6 @@
 # GoogleApi.Spanner
 
-Client library for Cloud Spanner API from Google.
+Cloud Spanner API client library.
 
 Cloud Spanner is a managed, mission-critical, globally consistent and scalable relational database service.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_spanner, "~> 0.10"}]
+  [{:google_api_spanner, "~> 0.11"}]
 end
 ```
 
