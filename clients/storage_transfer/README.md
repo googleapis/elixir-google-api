@@ -1,6 +1,6 @@
 # GoogleApi.StorageTransfer
 
-Client library for Storage Transfer API from Google.
+Storage Transfer API client library.
 
 Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_storage_transfer, "~> 0.9"}]
+  [{:google_api_storage_transfer, "~> 0.10"}]
 end
 ```
 
