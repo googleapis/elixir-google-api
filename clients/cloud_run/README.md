@@ -1,6 +1,6 @@
 # GoogleApi.CloudRun
 
-Client library for Cloud Run API from Google.
+Cloud Run API client library.
 
 Deploy and manage user provided container images that scale automatically based on HTTP traffic.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_run, "~> 0.9"}]
+  [{:google_api_cloud_run, "~> 0.10"}]
 end
 ```
 
