@@ -1,6 +1,6 @@
 # GoogleApi.FirebaseRules
 
-Client library for Firebase Rules API from Google.
+Firebase Rules API client library.
 
 Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_firebase_rules, "~> 0.7"}]
+  [{:google_api_firebase_rules, "~> 0.8"}]
 end
 ```
 
