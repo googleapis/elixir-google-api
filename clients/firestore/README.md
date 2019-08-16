@@ -1,6 +1,6 @@
 # GoogleApi.Firestore
 
-Client library for Cloud Firestore API from Google.
+Cloud Firestore API client library.
 
 Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_firestore, "~> 0.6"}]
+  [{:google_api_firestore, "~> 0.7"}]
 end
 ```
 
