@@ -1,6 +1,6 @@
 # GoogleApi.SafeBrowsing
 
-Client library for Safe Browsing API from Google.
+Safe Browsing API client library.
 
 Enables client applications to check web resources (most commonly URLs) against Google-generated lists of unsafe web resources.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_safe_browsing, "~> 0.6"}]
+  [{:google_api_safe_browsing, "~> 0.7"}]
 end
 ```
 
