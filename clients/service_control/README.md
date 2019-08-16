@@ -1,6 +1,6 @@
 # GoogleApi.ServiceControl
 
-Client library for Service Control API from Google.
+Service Control API client library.
 
 Provides control plane functionality to managed services, such as logging, monitoring, and status checks.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_service_control, "~> 0.12"}]
+  [{:google_api_service_control, "~> 0.13"}]
 end
 ```
 
