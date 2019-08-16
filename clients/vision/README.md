@@ -1,6 +1,6 @@
 # GoogleApi.Vision
 
-Client library for Cloud Vision API from Google.
+Cloud Vision API client library.
 
 Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_vision, "~> 0.11"}]
+  [{:google_api_vision, "~> 0.12"}]
 end
 ```
 
