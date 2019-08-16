@@ -1,6 +1,6 @@
 # GoogleApi.SiteVerification
 
-Client library for Google Site Verification API from Google.
+Google Site Verification API client library.
 
 Verifies ownership of websites or domains with Google.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_site_verification, "~> 0.4"}]
+  [{:google_api_site_verification, "~> 0.5"}]
 end
 ```
 
