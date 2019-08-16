@@ -1,6 +1,6 @@
 # GoogleApi.Logging
 
-Client library for Stackdriver Logging API from Google.
+Stackdriver Logging API client library.
 
 Writes log entries and manages your Stackdriver Logging configuration. The table entries below are presented in alphabetical order, not in order of common use. For explanations of the concepts found in the table entries, read the Stackdriver Logging documentation.
 
