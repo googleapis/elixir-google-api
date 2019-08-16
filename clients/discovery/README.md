@@ -1,6 +1,6 @@
 # GoogleApi.Discovery
 
-Client library for API Discovery Service from Google.
+API Discovery Service client library.
 
 Provides information about other Google APIs, such as what APIs are available, the resource, and method details for each API.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_discovery, "~> 0.5"}]
+  [{:google_api_discovery, "~> 0.6"}]
 end
 ```
 
