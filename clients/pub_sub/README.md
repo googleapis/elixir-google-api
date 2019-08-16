@@ -1,6 +1,6 @@
 # GoogleApi.PubSub
 
-Client library for Cloud Pub/Sub API from Google.
+Cloud Pub/Sub API client library.
 
 Provides reliable, many-to-many, asynchronous messaging between applications.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_pub_sub, "~> 0.11"}]
+  [{:google_api_pub_sub, "~> 0.12"}]
 end
 ```
 
