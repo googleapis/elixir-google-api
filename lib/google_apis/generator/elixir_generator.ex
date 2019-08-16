@@ -112,7 +112,8 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   defp write_config_exs(token) do
     path = Path.join(token.root_dir, "config/config.exs")
     IO.puts("Writing config/config.exs")
-    File.write!(path, Renderer.config_exs())
+    has_env_config = token.root_dir |> Path.join("config/dev.exs") |> File.regular?()
+    File.write!(path, Renderer.config_exs(has_env_config))
 
     token
   end
