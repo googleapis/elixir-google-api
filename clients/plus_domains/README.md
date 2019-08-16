@@ -1,6 +1,6 @@
 # GoogleApi.PlusDomains
 
-Client library for Google+ Domains API from Google.
+Google+ Domains API client library.
 
 Builds on top of the Google+ platform for Google Apps Domains.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_plus_domains, "~> 0.3"}]
+  [{:google_api_plus_domains, "~> 0.4"}]
 end
 ```
 
