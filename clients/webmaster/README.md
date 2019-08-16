@@ -1,6 +1,6 @@
 # GoogleApi.Webmaster
 
-Client library for Search Console API from Google.
+Search Console API client library.
 
 View Google Search Console data for your verified sites.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_webmaster, "~> 0.6"}]
+  [{:google_api_webmaster, "~> 0.7"}]
 end
 ```
 
