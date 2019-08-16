@@ -1,6 +1,6 @@
 # GoogleApi.RuntimeConfig
 
-Client library for Cloud Runtime Configuration API from Google.
+Cloud Runtime Configuration API client library.
 
 The Runtime Configurator allows you to dynamically configure and expose variables through Google Cloud Platform. In addition, you can also set Watchers and Waiters that will watch for changes to your data and return based on certain conditions.
 
