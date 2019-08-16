@@ -48,7 +48,7 @@ defmodule <%= namespace %>.Mixfile do
 
   defp description() do
     """
-    Client library for <%= api_title %> from Google. <%= description %>
+    <%= description %>
     """
   end
 

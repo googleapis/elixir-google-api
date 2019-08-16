@@ -41,7 +41,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
   EEx.function_from_file(:def, :mix_exs, Path.expand("./template/elixir/mix.exs.eex"), [
     :namespace,
     :library_name,
-    :api_title,
     :docs_link,
     :version,
     :description

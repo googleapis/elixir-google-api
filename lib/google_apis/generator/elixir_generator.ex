@@ -115,9 +115,8 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     path = Path.join(token.root_dir, "mix.exs")
     IO.puts("Writing mix.exs")
 
-    api_title = api_title_for(token.rest_description)
+    description = generate_hex_description(token.rest_description)
     docs_link = docs_link_for(token.rest_description)
-    description = description_for(token.rest_description)
     version = version_from_mix_exs(path)
 
     File.write!(
@@ -125,7 +124,6 @@ defmodule GoogleApis.Generator.ElixirGenerator do
       Renderer.mix_exs(
         token.root_namespace,
         token.library_name,
-        api_title,
         docs_link,
         version,
         description
@@ -159,6 +157,18 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     )
 
     token
+  end
+
+  defp generate_hex_description(rest_info) do
+    api_title = api_title_for(rest_info)
+    description_start = "Client library for #{api_title} from Google."
+    rest_description = description_for(rest_info)
+
+    if String.length(description_start) + String.length(rest_description) > 298 do
+      description_start
+    else
+      "#{description_start} #{rest_description}"
+    end
   end
 
   defp scopes_for(%{auth: nil}), do: []
