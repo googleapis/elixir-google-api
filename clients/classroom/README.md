@@ -1,6 +1,6 @@
 # GoogleApi.Classroom
 
-Client library for Google Classroom API from Google.
+Google Classroom API client library.
 
 Manages classes, rosters, and invitations in Google Classroom.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_classroom, "~> 0.8"}]
+  [{:google_api_classroom, "~> 0.9"}]
 end
 ```
 
