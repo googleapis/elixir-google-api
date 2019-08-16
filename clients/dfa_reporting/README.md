@@ -1,6 +1,6 @@
 # GoogleApi.DFAReporting
 
-Client library for DCM/DFA Reporting And Trafficking API from Google.
+DCM/DFA Reporting And Trafficking API client library.
 
 Manages your DoubleClick Campaign Manager ad campaigns and reports.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_dfa_reporting, "~> 0.4"}]
+  [{:google_api_dfa_reporting, "~> 0.5"}]
 end
 ```
 
