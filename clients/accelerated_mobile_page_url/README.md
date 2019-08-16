@@ -1,6 +1,6 @@
 # GoogleApi.AcceleratedMobilePageUrl
 
-Client library for Accelerated Mobile Pages (AMP) URL API from Google.
+Accelerated Mobile Pages (AMP) URL API client library.
 
 Retrieves the list of AMP URLs (and equivalent AMP Cache URLs) for a given list of public URL(s).
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_accelerated_mobile_page_url, "~> 0.5"}]
+  [{:google_api_accelerated_mobile_page_url, "~> 0.6"}]
 end
 ```
 
