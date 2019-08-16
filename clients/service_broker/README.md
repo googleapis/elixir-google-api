@@ -1,6 +1,6 @@
 # GoogleApi.ServiceBroker
 
-Client library for Service Broker API from Google.
+Service Broker API client library.
 
 The Google Cloud Platform Service Broker API provides Google hosted
 implementation of the Open Service Broker API
@@ -14,7 +14,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_service_broker, "~> 0.7"}]
+  [{:google_api_service_broker, "~> 0.8"}]
 end
 ```
 
