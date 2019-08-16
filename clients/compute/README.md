@@ -1,6 +1,6 @@
 # GoogleApi.Compute
 
-Client library for Compute Engine API from Google.
+Compute Engine API client library.
 
 Creates and runs virtual machines on Google Cloud Platform.
 
