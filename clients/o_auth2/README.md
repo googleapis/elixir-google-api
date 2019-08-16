@@ -1,6 +1,6 @@
 # GoogleApi.OAuth2
 
-Client library for Google OAuth2 API from Google.
+Google OAuth2 API client library.
 
 Obtains end-user authorization grants for use with other Google APIs.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_o_auth2, "~> 0.6"}]
+  [{:google_api_o_auth2, "~> 0.7"}]
 end
 ```
 

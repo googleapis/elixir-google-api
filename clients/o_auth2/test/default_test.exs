@@ -1,5 +1,5 @@
 defmodule GoogleApi.Storage.StorageTest do
-  use GoogleApi.OAuth2.V2.TestHelper
+  use GoogleApi.OAuth2.TestHelper
 
   test "oauth" do
     scopes = [
