@@ -1,6 +1,6 @@
 # GoogleApi.SourceRepo
 
-Client library for Cloud Source Repositories API from Google.
+Cloud Source Repositories API client library.
 
 Accesses source code repositories hosted by Google.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_source_repo, "~> 0.8"}]
+  [{:google_api_source_repo, "~> 0.9"}]
 end
 ```
 
