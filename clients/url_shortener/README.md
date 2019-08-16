@@ -1,6 +1,6 @@
 # GoogleApi.UrlShortener
 
-Client library for URL Shortener API from Google.
+URL Shortener API client library.
 
 Lets you create, inspect, and manage goo.gl short URLs
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_url_shortener, "~> 0.5"}]
+  [{:google_api_url_shortener, "~> 0.6"}]
 end
 ```
 
