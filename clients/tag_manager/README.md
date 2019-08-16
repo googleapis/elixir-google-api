@@ -1,6 +1,6 @@
 # GoogleApi.TagManager
 
-Client library for Tag Manager API from Google.
+Tag Manager API client library.
 
 Accesses Tag Manager accounts and containers.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_tag_manager, "~> 0.6"}]
+  [{:google_api_tag_manager, "~> 0.7"}]
 end
 ```
 
