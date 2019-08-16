@@ -1,6 +1,6 @@
 # GoogleApi.Admin
 
-Client library for Admin Reports API from Google.
+Admin Reports API client library.
 
 Fetches reports for the administrators of G Suite customers about the usage, collaboration, security, and risk for their users.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_admin, "~> 0.6"}]
+  [{:google_api_admin, "~> 0.7"}]
 end
 ```
 
