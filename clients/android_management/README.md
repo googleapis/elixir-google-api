@@ -1,6 +1,6 @@
 # GoogleApi.AndroidManagement
 
-Client library for Android Management API from Google.
+Android Management API client library.
 
 The Android Management API provides remote enterprise management of Android devices and apps.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_android_management, "~> 0.15"}]
+  [{:google_api_android_management, "~> 0.16"}]
 end
 ```
 
