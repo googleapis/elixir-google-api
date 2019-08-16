@@ -1,6 +1,6 @@
 # GoogleApi.TPU
 
-Client library for Cloud TPU API from Google.
+Cloud TPU API client library.
 
 TPU API provides customers with access to Google TPU technology.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_tpu, "~> 0.4"}]
+  [{:google_api_tpu, "~> 0.5"}]
 end
 ```
 
