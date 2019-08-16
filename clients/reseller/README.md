@@ -1,6 +1,6 @@
 # GoogleApi.Reseller
 
-Client library for Enterprise Apps Reseller API from Google.
+Enterprise Apps Reseller API client library.
 
 Creates and manages your customers and their subscriptions.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_reseller, "~> 0.5"}]
+  [{:google_api_reseller, "~> 0.6"}]
 end
 ```
 
