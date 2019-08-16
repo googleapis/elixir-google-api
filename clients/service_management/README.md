@@ -1,6 +1,6 @@
 # GoogleApi.ServiceManagement
 
-Client library for Service Management API from Google.
+Service Management API client library.
 
 Google Service Management allows service producers to publish their services on Google Cloud Platform so that they can be discovered and used by service consumers.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_service_management, "~> 0.19"}]
+  [{:google_api_service_management, "~> 0.20"}]
 end
 ```
 
