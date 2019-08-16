@@ -1,6 +1,6 @@
 # GoogleApi.Drive
 
-Client library for Drive API from Google.
+Drive API client library.
 
 Manages files in Drive including uploading, downloading, searching, detecting changes, and updating sharing permissions.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_drive, "~> 0.3"}]
+  [{:google_api_drive, "~> 0.4"}]
 end
 ```
 
