@@ -50,6 +50,8 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     |> write_readme
     |> write_license
     |> write_gitignore
+    |> write_config_exs
+    |> write_test_helper_exs
   end
 
   defp load_models(token) do
@@ -75,8 +77,12 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   defp create_directories(token) do
     IO.puts("Creating leading directories")
     File.rm_rf!(token.base_dir)
+    File.rm_rf!(Path.join(token.root_dir, ".swagger-codegen"))
+    File.rm_rf!(Path.join(token.root_dir, ".swagger-codegen-ignore"))
     File.mkdir_p!(Path.join(token.base_dir, "api"))
     File.mkdir_p!(Path.join(token.base_dir, "model"))
+    File.mkdir_p!(Path.join(token.root_dir, "config"))
+    File.mkdir_p!(Path.join(token.root_dir, "test"))
     token
   end
 
@@ -99,6 +105,23 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     path = Path.join(token.root_dir, "LICENSE")
     IO.puts("Writing LICENSE")
     File.write!(path, Renderer.license())
+
+    token
+  end
+
+  defp write_config_exs(token) do
+    path = Path.join(token.root_dir, "config/config.exs")
+    IO.puts("Writing config/config.exs")
+    has_env_config = token.root_dir |> Path.join("config/dev.exs") |> File.regular?()
+    File.write!(path, Renderer.config_exs(has_env_config))
+
+    token
+  end
+
+  defp write_test_helper_exs(token) do
+    path = Path.join(token.root_dir, "test/test_helper.exs")
+    IO.puts("Writing test/test_helper.exs")
+    File.write!(path, Renderer.test_helper_exs(token.root_namespace))
 
     token
   end
