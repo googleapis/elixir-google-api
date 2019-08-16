@@ -1,6 +1,6 @@
 # GoogleApi.Mirror
 
-Client library for Google Mirror API from Google.
+Google Mirror API client library.
 
 Interacts with Glass users via the timeline.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_mirror, "~> 0.4"}]
+  [{:google_api_mirror, "~> 0.5"}]
 end
 ```
 
