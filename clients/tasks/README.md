@@ -1,6 +1,6 @@
 # GoogleApi.Tasks
 
-Client library for Tasks API from Google.
+Tasks API client library.
 
 Manages your tasks and task lists.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_tasks, "~> 0.5"}]
+  [{:google_api_tasks, "~> 0.6"}]
 end
 ```
 
