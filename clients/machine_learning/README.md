@@ -1,6 +1,6 @@
 # GoogleApi.MachineLearning
 
-Client library for Cloud Machine Learning Engine from Google.
+Cloud Machine Learning Engine client library.
 
 An API to enable creating and using machine learning models.
 
