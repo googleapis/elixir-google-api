@@ -1,6 +1,6 @@
 # GoogleApi.CloudFunctions
 
-Client library for Cloud Functions API from Google.
+Cloud Functions API client library.
 
 Manages lightweight user-provided functions executed in response to events.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_functions, "~> 0.11"}]
+  [{:google_api_cloud_functions, "~> 0.12"}]
 end
 ```
 
