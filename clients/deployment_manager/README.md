@@ -1,6 +1,6 @@
 # GoogleApi.DeploymentManager
 
-Client library for Google Cloud Deployment Manager API from Google.
+Google Cloud Deployment Manager API client library.
 
 Declares, configures, and deploys complex solutions on Google Cloud Platform.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_deployment_manager, "~> 0.5"}]
+  [{:google_api_deployment_manager, "~> 0.6"}]
 end
 ```
 
