@@ -1,6 +1,6 @@
 # GoogleApi.CloudBuild
 
-Client library for Cloud Build API from Google.
+Cloud Build API client library.
 
 Creates and manages builds on Google Cloud Platform.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_build, "~> 0.11"}]
+  [{:google_api_cloud_build, "~> 0.12"}]
 end
 ```
 
