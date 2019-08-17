@@ -1,6 +1,6 @@
 # GoogleApi.AppState
 
-Client library for Google App State API from Google.
+Google App State API client library.
 
 The Google App State API.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_app_state, "~> 0.5"}]
+  [{:google_api_app_state, "~> 0.6"}]
 end
 ```
 
