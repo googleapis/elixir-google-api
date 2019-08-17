@@ -1,6 +1,6 @@
 # GoogleApi.IAM
 
-Client library for Identity and Access Management (IAM) API from Google.
+Identity and Access Management (IAM) API client library.
 
 Manages identity and access control for Google Cloud Platform resources, including the creation of service accounts, which you can use to authenticate to Google and make API calls.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_iam, "~> 0.12"}]
+  [{:google_api_iam, "~> 0.13"}]
 end
 ```
 
