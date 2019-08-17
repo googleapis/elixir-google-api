@@ -1,6 +1,6 @@
 # GoogleApi.FusionTables
 
-Client library for Fusion Tables API from Google.
+Fusion Tables API client library.
 
 API for working with Fusion Tables data.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_fusion_tables, "~> 0.3"}]
+  [{:google_api_fusion_tables, "~> 0.4"}]
 end
 ```
 
