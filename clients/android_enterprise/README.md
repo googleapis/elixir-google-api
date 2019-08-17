@@ -1,6 +1,6 @@
 # GoogleApi.AndroidEnterprise
 
-Client library for Google Play EMM API from Google.
+Google Play EMM API client library.
 
 Manages the deployment of apps to Android for Work users.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_android_enterprise, "~> 0.10"}]
+  [{:google_api_android_enterprise, "~> 0.11"}]
 end
 ```
 
