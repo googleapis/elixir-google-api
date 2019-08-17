@@ -1,6 +1,6 @@
 # GoogleApi.CloudBilling
 
-Client library for Cloud Billing API from Google.
+Cloud Billing API client library.
 
 Allows developers to manage billing for their Google Cloud Platform projects
     programmatically.
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_billing, "~> 0.11"}]
+  [{:google_api_cloud_billing, "~> 0.12"}]
 end
 ```
 
