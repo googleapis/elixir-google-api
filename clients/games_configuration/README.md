@@ -1,6 +1,6 @@
 # GoogleApi.GamesConfiguration
 
-Client library for Google Play Game Services Publishing API from Google.
+Google Play Game Services Publishing API client library.
 
 The Publishing API for Google Play Game Services.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_games_configuration, "~> 0.3"}]
+  [{:google_api_games_configuration, "~> 0.4"}]
 end
 ```
 
