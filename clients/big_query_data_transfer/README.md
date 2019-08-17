@@ -1,6 +1,6 @@
 # GoogleApi.BigQueryDataTransfer
 
-Client library for BigQuery Data Transfer API from Google.
+BigQuery Data Transfer API client library.
 
 Schedule queries or transfer external data from SaaS applications to Google BigQuery on a regular basis.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_big_query_data_transfer, "~> 0.13"}]
+  [{:google_api_big_query_data_transfer, "~> 0.14"}]
 end
 ```
 
