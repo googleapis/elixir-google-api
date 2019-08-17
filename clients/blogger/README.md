@@ -1,6 +1,6 @@
 # GoogleApi.Blogger
 
-Client library for Blogger API from Google.
+Blogger API client library.
 
 API for access to the data within Blogger.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_blogger, "~> 0.5"}]
+  [{:google_api_blogger, "~> 0.6"}]
 end
 ```
 
