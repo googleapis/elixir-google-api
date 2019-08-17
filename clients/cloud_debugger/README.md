@@ -1,6 +1,6 @@
 # GoogleApi.CloudDebugger
 
-Client library for Stackdriver Debugger API from Google.
+Stackdriver Debugger API client library.
 
 Examines the call stack and variables of a running application without stopping or slowing it down.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_debugger, "~> 0.7"}]
+  [{:google_api_cloud_debugger, "~> 0.8"}]
 end
 ```
 
