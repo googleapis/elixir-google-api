@@ -1,6 +1,6 @@
 # GoogleApi.Datastore
 
-Client library for Cloud Datastore API from Google.
+Cloud Datastore API client library.
 
 Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_datastore, "~> 0.8"}]
+  [{:google_api_datastore, "~> 0.9"}]
 end
 ```
 
