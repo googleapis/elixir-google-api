@@ -1,6 +1,6 @@
 # GoogleApi.DigitalAssetLinks
 
-Client library for Digital Asset Links API from Google.
+Digital Asset Links API client library.
 
 Discovers relationships between online assets such as websites or mobile apps.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_digital_asset_links, "~> 0.4"}]
+  [{:google_api_digital_asset_links, "~> 0.5"}]
 end
 ```
 
