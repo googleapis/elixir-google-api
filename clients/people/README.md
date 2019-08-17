@@ -1,6 +1,6 @@
 # GoogleApi.People
 
-Client library for People API from Google.
+People API client library.
 
 Provides access to information about profiles and contacts.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_people, "~> 0.11"}]
+  [{:google_api_people, "~> 0.12"}]
 end
 ```
 
