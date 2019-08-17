@@ -1,6 +1,6 @@
 # GoogleApi.CustomSearch
 
-Client library for CustomSearch API from Google.
+CustomSearch API client library.
 
 Searches over a website or collection of websites
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_custom_search, "~> 0.5"}]
+  [{:google_api_custom_search, "~> 0.6"}]
 end
 ```
 
