@@ -1,6 +1,6 @@
 # GoogleApi.CivicInfo
 
-Client library for Google Civic Information API from Google.
+Google Civic Information API client library.
 
 Provides polling places, early vote locations, contest data, election officials, and government representatives for U.S. residential addresses.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_civic_info, "~> 0.6"}]
+  [{:google_api_civic_info, "~> 0.7"}]
 end
 ```
 
