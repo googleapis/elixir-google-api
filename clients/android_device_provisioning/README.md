@@ -1,6 +1,6 @@
 # GoogleApi.AndroidDeviceProvisioning
 
-Client library for Android Device Provisioning Partner API from Google.
+Android Device Provisioning Partner API client library.
 
 Automates Android zero-touch enrollment for device resellers, customers, and EMMs.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_android_device_provisioning, "~> 0.10"}]
+  [{:google_api_android_device_provisioning, "~> 0.11"}]
 end
 ```
 
