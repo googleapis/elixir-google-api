@@ -1,6 +1,6 @@
 # GoogleApi.AppEngine
 
-Client library for App Engine Admin API from Google.
+App Engine Admin API client library.
 
 Provisions and manages developers' App Engine applications.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_app_engine, "~> 0.12"}]
+  [{:google_api_app_engine, "~> 0.13"}]
 end
 ```
 
