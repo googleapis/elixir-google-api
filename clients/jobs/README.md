@@ -1,6 +1,6 @@
 # GoogleApi.Jobs
 
-Client library for Cloud Talent Solution API from Google.
+Cloud Talent Solution API client library.
 
 Cloud Talent Solution provides the capability to create, read, update, and delete job postings, as well as search jobs based on keywords and filters.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_jobs, "~> 0.6"}]
+  [{:google_api_jobs, "~> 0.7"}]
 end
 ```
 
