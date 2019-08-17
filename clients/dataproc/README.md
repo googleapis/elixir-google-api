@@ -1,6 +1,6 @@
 # GoogleApi.Dataproc
 
-Client library for Cloud Dataproc API from Google.
+Cloud Dataproc API client library.
 
 Manages Hadoop-based clusters and jobs on Google Cloud Platform.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_dataproc, "~> 0.14"}]
+  [{:google_api_dataproc, "~> 0.15"}]
 end
 ```
 
