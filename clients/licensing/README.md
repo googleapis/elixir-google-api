@@ -1,6 +1,6 @@
 # GoogleApi.Licensing
 
-Client library for Enterprise License Manager API from Google.
+Enterprise License Manager API client library.
 
 Views and manages licenses for your domain.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_licensing, "~> 0.5"}]
+  [{:google_api_licensing, "~> 0.6"}]
 end
 ```
 
