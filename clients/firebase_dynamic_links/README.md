@@ -1,6 +1,6 @@
 # GoogleApi.FirebaseDynamicLinks
 
-Client library for Firebase Dynamic Links API from Google.
+Firebase Dynamic Links API client library.
 
 Programmatically creates and manages Firebase Dynamic Links.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_firebase_dynamic_links, "~> 0.9"}]
+  [{:google_api_firebase_dynamic_links, "~> 0.10"}]
 end
 ```
 
