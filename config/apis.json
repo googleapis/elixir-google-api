@@ -296,6 +296,11 @@
   },
   {
     "version": "v1",
+    "name": "Firestore",
+    "url": "https://firestore.googleapis.com/$discovery/rest?version=v1"
+  },
+  {
+    "version": "v1",
     "name": "Fitness",
     "url": "https://www.googleapis.com/discovery/v1/apis/fitness/v1/rest"
   },
@@ -468,11 +473,6 @@
     "version": "v1beta1",
     "name": "Redis",
     "url": "https://redis.googleapis.com/$discovery/rest?version=v1beta1"
-  },
-  {
-    "version": "v1beta1",
-    "name": "ReplicaPool",
-    "url": "https://www.googleapis.com/discovery/v1/apis/replicapool/v1beta1/rest"
   },
   {
     "version": "v1",
