@@ -1,6 +1,6 @@
 # GoogleApi.Books
 
-Client library for Books API from Google.
+Books API client library.
 
 Searches for books and manages your Google Books library.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_books, "~> 0.7"}]
+  [{:google_api_books, "~> 0.8"}]
 end
 ```
 
