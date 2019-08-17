@@ -1,6 +1,6 @@
 # GoogleApi.GroupsSettings
 
-Client library for Groups Settings API from Google.
+Groups Settings API client library.
 
 Manages permission levels and related settings of a group.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_groups_settings, "~> 0.6"}]
+  [{:google_api_groups_settings, "~> 0.7"}]
 end
 ```
 
