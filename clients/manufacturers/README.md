@@ -1,6 +1,6 @@
 # GoogleApi.Manufacturers
 
-Client library for Manufacturer Center API from Google.
+Manufacturer Center API client library.
 
 Public API for managing Manufacturer Center related data.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_manufacturers, "~> 0.6"}]
+  [{:google_api_manufacturers, "~> 0.7"}]
 end
 ```
 
