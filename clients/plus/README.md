@@ -1,6 +1,6 @@
 # GoogleApi.Plus
 
-Client library for Google+ API from Google.
+Google+ API client library.
 
 Builds on top of the Google+ platform.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_plus, "~> 0.6"}]
+  [{:google_api_plus, "~> 0.7"}]
 end
 ```
 
