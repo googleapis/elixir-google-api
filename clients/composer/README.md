@@ -1,6 +1,6 @@
 # GoogleApi.Composer
 
-Client library for Cloud Composer API from Google.
+Cloud Composer API client library.
 
 Manages Apache Airflow environments on Google Cloud Platform.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_composer, "~> 0.8"}]
+  [{:google_api_composer, "~> 0.9"}]
 end
 ```
 
