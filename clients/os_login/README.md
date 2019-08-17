@@ -1,6 +1,6 @@
 # GoogleApi.OSLogin
 
-Client library for Cloud OS Login API from Google.
+Cloud OS Login API client library.
 
 You can use OS Login to manage access to your VM instances using IAM roles. For more information, read [OS Login](/compute/docs/oslogin/).
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_os_login, "~> 0.11"}]
+  [{:google_api_os_login, "~> 0.12"}]
 end
 ```
 
