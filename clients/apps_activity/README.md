@@ -1,6 +1,6 @@
 # GoogleApi.AppsActivity
 
-Client library for Drive Activity API from Google.
+Drive Activity API client library.
 
 Provides a historical view of activity.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_apps_activity, "~> 0.7"}]
+  [{:google_api_apps_activity, "~> 0.8"}]
 end
 ```
 
