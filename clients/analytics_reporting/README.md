@@ -1,6 +1,6 @@
 # GoogleApi.AnalyticsReporting
 
-Client library for Analytics Reporting API from Google.
+Analytics Reporting API client library.
 
 Accesses Analytics report data.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_analytics_reporting, "~> 0.8"}]
+  [{:google_api_analytics_reporting, "~> 0.9"}]
 end
 ```
 
