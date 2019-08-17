@@ -1,6 +1,6 @@
 # GoogleApi.Analytics
 
-Client library for Google Analytics API from Google.
+Google Analytics API client library.
 
 Views and manages your Google Analytics data.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_analytics, "~> 0.4"}]
+  [{:google_api_analytics, "~> 0.5"}]
 end
 ```
 
