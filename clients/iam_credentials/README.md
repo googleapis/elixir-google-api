@@ -1,6 +1,6 @@
 # GoogleApi.IAMCredentials
 
-Client library for IAM Service Account Credentials API from Google.
+IAM Service Account Credentials API client library.
 
 Creates short-lived, limited-privilege credentials for IAM service accounts.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_iam_credentials, "~> 0.5"}]
+  [{:google_api_iam_credentials, "~> 0.6"}]
 end
 ```
 
