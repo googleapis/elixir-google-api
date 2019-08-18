@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.AuditLogConfig do
           {
             "log_type": "DATA_READ",
             "exempted_members": [
-              "user:jose@example.com"
+              "user:foo@gmail.com"
             ]
           },
           {
@@ -35,7 +35,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.AuditLogConfig do
       }
 
   This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting
-  jose@example.com from DATA_READ logging.
+  foo@gmail.com from DATA_READ logging.
 
   ## Attributes
 

@@ -37,7 +37,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.AuditConfig do
               {
                 "log_type": "DATA_READ",
                 "exempted_members": [
-                  "user:jose@example.com"
+                  "user:foo@gmail.com"
                 ]
               },
               {
@@ -49,7 +49,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.AuditConfig do
             ]
           },
           {
-            "service": "sampleservice.googleapis.com"
+            "service": "fooservice.googleapis.com"
             "audit_log_configs": [
               {
                 "log_type": "DATA_READ",
@@ -57,7 +57,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.AuditConfig do
               {
                 "log_type": "DATA_WRITE",
                 "exempted_members": [
-                  "user:aliya@example.com"
+                  "user:bar@gmail.com"
                 ]
               }
             ]
@@ -65,9 +65,9 @@ defmodule GoogleApi.CloudFunctions.V1.Model.AuditConfig do
         ]
       }
 
-  For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ
-  logging. It also exempts jose@example.com from DATA_READ logging, and
-  aliya@example.com from DATA_WRITE logging.
+  For fooservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ
+  logging. It also exempts foo@gmail.com from DATA_READ logging, and
+  bar@gmail.com from DATA_WRITE logging.
 
   ## Attributes
 
