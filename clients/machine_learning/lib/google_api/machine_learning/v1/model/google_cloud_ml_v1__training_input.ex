@@ -157,7 +157,6 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
       types](/ml-engine/docs/tensorflow/machine-types#compute-engine-machine-types).
 
       You must set this value when `scaleTier` is set to `CUSTOM`.
-  *   `maxRunningTime` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum job running time. The default is 7 days.
   *   `packageUris` (*type:* `list(String.t)`, *default:* `nil`) - Required. The Google Cloud Storage location of the packages with
       the training program and any additional dependencies.
       The maximum number of package URIs is 100.
@@ -255,7 +254,6 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
           :jobDir => String.t(),
           :masterConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t(),
           :masterType => String.t(),
-          :maxRunningTime => String.t(),
           :packageUris => list(String.t()),
           :parameterServerConfig =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t(),
@@ -281,7 +279,6 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   field(:jobDir)
   field(:masterConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig)
   field(:masterType)
-  field(:maxRunningTime)
   field(:packageUris, type: :list)
 
   field(
