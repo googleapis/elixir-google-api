@@ -33,6 +33,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestCase do
   *   `functionMocks` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.FunctionMock.t)`, *default:* `nil`) - Optional function mocks for service-defined functions. If not set, any
       service defined function is expected to return an error, which may or may
       not influence the test outcome.
+  *   `pathEncoding` (*type:* `String.t`, *default:* `nil`) - Specifies whether paths (such as request.path) are encoded and how.
   *   `request` (*type:* `any()`, *default:* `nil`) - Request context.
 
       The exact format of the request context is service-dependent. See the
@@ -63,12 +64,14 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestCase do
   @type t :: %__MODULE__{
           :expectation => String.t(),
           :functionMocks => list(GoogleApi.FirebaseRules.V1.Model.FunctionMock.t()),
+          :pathEncoding => String.t(),
           :request => any(),
           :resource => any()
         }
 
   field(:expectation)
   field(:functionMocks, as: GoogleApi.FirebaseRules.V1.Model.FunctionMock, type: :list)
+  field(:pathEncoding)
   field(:request)
   field(:resource)
 end

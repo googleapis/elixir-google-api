@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_firebase_rules, "~> 0.8"}]
+  [{:google_api_firebase_rules, "~> 0.9"}]
 end
 ```
 
