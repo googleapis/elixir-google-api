@@ -21,8 +21,9 @@ defmodule GoogleApi.PubSub.V1.Model.PullRequest do
 
   ## Attributes
 
-  *   `maxMessages` (*type:* `integer()`, *default:* `nil`) - The maximum number of messages returned for this request. The Pub/Sub
-      system may return fewer than the number specified.
+  *   `maxMessages` (*type:* `integer()`, *default:* `nil`) - The maximum number of messages to return for this request. Must be a
+      positive integer. The Pub/Sub system may return fewer than the number
+      specified.
   *   `returnImmediately` (*type:* `boolean()`, *default:* `nil`) - If this field set to true, the system will respond immediately even if
       it there are no messages available to return in the `Pull` response.
       Otherwise, the system may wait (for a bounded amount of time) until at
