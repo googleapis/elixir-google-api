@@ -28,7 +28,9 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.Activity do
 
   ## Attributes
 
-  *   `activityTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the activity.
+  *   `activityTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the activity. If activities for a visit cross midnight and
+      occur in two separate dates, then two sessions (one per date)
+      share the session identifier.
   *   `activityType` (*type:* `String.t`, *default:* `nil`) - Type of this activity.
   *   `appview` (*type:* `GoogleApi.AnalyticsReporting.V4.Model.ScreenviewData.t`, *default:* `nil`) - This will be set if `activity_type` equals `SCREEN_VIEW`.
   *   `campaign` (*type:* `String.t`, *default:* `nil`) - For manual campaign tracking, it is the value of the utm_campaign campaign
