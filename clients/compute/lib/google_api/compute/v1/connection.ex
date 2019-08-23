@@ -43,5 +43,5 @@ defmodule GoogleApi.Compute.V1.Connection do
       "https://www.googleapis.com/auth/devstorage.read_write"
     ],
     otp_app: :google_api_compute,
-    base_url: "https://www.googleapis.com/compute/v1/projects/"
+    base_url: "https://compute.googleapis.com/compute/v1/projects/"
 end
