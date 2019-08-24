@@ -33,9 +33,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.CreateTaskRequest do
       Authorization for FULL requires
       `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
       permission on the Task resource.
-  *   `task` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.Task.t`, *default:* `nil`) - Required.
-
-      The task to add.
+  *   `task` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.Task.t`, *default:* `nil`) - Required. The task to add.
 
       Task names have the following format:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.

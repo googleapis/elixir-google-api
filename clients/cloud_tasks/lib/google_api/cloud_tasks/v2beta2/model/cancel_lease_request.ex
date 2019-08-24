@@ -34,9 +34,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.CancelLeaseRequest do
       Authorization for FULL requires
       `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
       permission on the Task resource.
-  *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Required.
-
-      The task's current schedule time, available in the
+  *   `scheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The task's current schedule time, available in the
       schedule_time returned by
       LeaseTasks response or
       RenewLease response. This restriction is

@@ -21,11 +21,17 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.GetIamPolicyRequest do
 
   ## Attributes
 
+  *   `options` (*type:* `GoogleApi.CloudTasks.V2beta2.Model.GetPolicyOptions.t`, *default:* `nil`) - OPTIONAL: A `GetPolicyOptions` object for specifying options to
+      `GetIamPolicy`. This field is only used by Cloud IAM.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :options => GoogleApi.CloudTasks.V2beta2.Model.GetPolicyOptions.t()
+        }
+
+  field(:options, as: GoogleApi.CloudTasks.V2beta2.Model.GetPolicyOptions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudTasks.V2beta2.Model.GetIamPolicyRequest do

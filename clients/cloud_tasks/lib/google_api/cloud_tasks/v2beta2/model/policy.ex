@@ -76,7 +76,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.Policy do
       ensure that their change will be applied to the same version of the policy.
 
       If no `etag` is provided in the call to `setIamPolicy`, then the existing
-      policy is overwritten blindly.
+      policy is overwritten.
   *   `version` (*type:* `integer()`, *default:* `nil`) - Deprecated.
   """
 

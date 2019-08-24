@@ -165,9 +165,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-
-      The location name in which the queue will be created.
+  *   `parent` (*type:* `String.t`) - Required. The location name in which the queue will be created.
       For example: `projects/PROJECT_ID/locations/LOCATION_ID`
 
       The list of allowed locations can be obtained by calling Cloud
@@ -252,9 +250,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The queue name. For example:
+  *   `name` (*type:* `String.t`) - Required. The queue name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -321,9 +317,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The resource name of the queue. For example:
+  *   `name` (*type:* `String.t`) - Required. The resource name of the queue. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -469,9 +463,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-
-      The location name.
+  *   `parent` (*type:* `String.t`) - Required. The location name.
       For example: `projects/PROJECT_ID/locations/LOCATION_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -679,9 +671,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The queue name. For example:
+  *   `name` (*type:* `String.t`) - Required. The queue name. For example:
       `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -755,9 +745,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The queue name. For example:
+  *   `name` (*type:* `String.t`) - Required. The queue name. For example:
       `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -838,9 +826,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The queue name. For example:
+  *   `name` (*type:* `String.t`) - Required. The queue name. For example:
       `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1079,9 +1065,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The task name. For example:
+  *   `name` (*type:* `String.t`) - Required. The task name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1155,9 +1139,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The task name. For example:
+  *   `name` (*type:* `String.t`) - Required. The task name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1232,9 +1214,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-
-      The queue name. For example:
+  *   `parent` (*type:* `String.t`) - Required. The queue name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
 
       The queue must already exist.
@@ -1309,9 +1289,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The task name. For example:
+  *   `name` (*type:* `String.t`) - Required. The task name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1378,9 +1356,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The task name. For example:
+  *   `name` (*type:* `String.t`) - Required. The task name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1481,9 +1457,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-
-      The queue name. For example:
+  *   `parent` (*type:* `String.t`) - Required. The queue name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1562,9 +1536,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required.
-
-      The queue name. For example:
+  *   `parent` (*type:* `String.t`) - Required. The queue name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1669,9 +1641,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The task name. For example:
+  *   `name` (*type:* `String.t`) - Required. The task name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1766,9 +1736,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTasks.V2beta2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required.
-
-      The task name. For example:
+  *   `name` (*type:* `String.t`) - Required. The task name. For example:
       `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
