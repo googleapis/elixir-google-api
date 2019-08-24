@@ -454,10 +454,11 @@ defmodule GoogleApi.People.V1.Api.People do
   The request throws a 400 error if `person.metadata.sources` is not
   specified for the contact to be updated.
   <br>
-  The request throws a 412 error if `person.metadata.sources.etag` is
-  different than the contact's etag, which indicates the contact has changed
-  since its data was read. Clients should get the latest person and re-apply
-  their updates to the latest person.
+  The request throws a 400 error with an error with reason
+  `"failedPrecondition"` if `person.metadata.sources.etag` is different than
+  the contact's etag, which indicates the contact has changed since its data
+  was read. Clients should get the latest person and re-apply their updates
+  to the latest person.
 
   ## Parameters
 
