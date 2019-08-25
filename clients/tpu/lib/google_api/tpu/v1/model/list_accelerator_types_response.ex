@@ -23,17 +23,20 @@ defmodule GoogleApi.TPU.V1.Model.ListAcceleratorTypesResponse do
 
   *   `acceleratorTypes` (*type:* `list(GoogleApi.TPU.V1.Model.AcceleratorType.t)`, *default:* `nil`) - The listed nodes.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next page token or empty if none.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :acceleratorTypes => list(GoogleApi.TPU.V1.Model.AcceleratorType.t()),
-          :nextPageToken => String.t()
+          :nextPageToken => String.t(),
+          :unreachable => list(String.t())
         }
 
   field(:acceleratorTypes, as: GoogleApi.TPU.V1.Model.AcceleratorType, type: :list)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.TPU.V1.Model.ListAcceleratorTypesResponse do
