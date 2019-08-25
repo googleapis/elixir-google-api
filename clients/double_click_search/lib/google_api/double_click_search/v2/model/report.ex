@@ -21,7 +21,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Report do
 
   ## Attributes
 
-  *   `files` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.ReportFiles.t)`, *default:* `nil`) - Asynchronous report only. Contains a list of generated report files once the report has succesfully completed.
+  *   `files` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.ReportFiles.t)`, *default:* `nil`) - Asynchronous report only. Contains a list of generated report files once the report has successfully completed.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Asynchronous report only. Id of the report.
   *   `isReportReady` (*type:* `boolean()`, *default:* `nil`) - Asynchronous report only. True if and only if the report has completed successfully and the report files are ready to be downloaded.
   *   `kind` (*type:* `String.t`, *default:* `doubleclicksearch#report`) - Identifies this as a Report resource. Value: the fixed string doubleclicksearch#report.
