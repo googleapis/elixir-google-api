@@ -21,8 +21,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexConfig do
 
   ## Attributes
 
-  *   `ancestorField` (*type:* `String.t`, *default:* `nil`) - Output only.
-      Specifies the resource name of the `Field` from which this field's
+  *   `ancestorField` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the resource name of the `Field` from which this field's
       index configuration is set (when `uses_ancestor_config` is true),
       or from which it *would* be set if this field had no index configuration
       (when `uses_ancestor_config` is false).
@@ -32,8 +31,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexConfig do
       reverted. Once complete, the index config will transition to the same
       state as the field specified by `ancestor_field`, at which point
       `uses_ancestor_config` will be `true` and `reverting` will be `false`.
-  *   `usesAncestorConfig` (*type:* `boolean()`, *default:* `nil`) - Output only.
-      When true, the `Field`'s index configuration is set from the
+  *   `usesAncestorConfig` (*type:* `boolean()`, *default:* `nil`) - Output only. When true, the `Field`'s index configuration is set from the
       configuration specified by the `ancestor_field`.
       When false, the `Field`'s index configuration is defined explicitly.
   """

@@ -41,11 +41,7 @@ defmodule GoogleApi.Firestore.V1.Model.TargetChange do
 
       If empty, the change applies to all targets.
 
-      For `target_change_type=ADD`, the order of the target IDs matches the order
-      of the requests to add the targets. This allows clients to unambiguously
-      associate server-assigned target IDs with added targets.
-
-      For other states, the order of the target IDs is not defined.
+      The order of the target IDs is not defined.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -30,14 +30,8 @@ defmodule GoogleApi.Firestore.V1.Model.Target do
   *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - A resume token from a prior TargetChange for an identical target.
 
       Using a resume token with a different target is unsupported and may fail.
-  *   `targetId` (*type:* `integer()`, *default:* `nil`) - A client provided target ID.
-
-      If not set, the server will assign an ID for the target.
-
-      Used for resuming a target without changing IDs. The IDs can either be
-      client-assigned or be server-assigned in a previous stream. All targets
-      with client provided IDs must be added before adding a target that needs
-      a server-assigned id.
+  *   `targetId` (*type:* `integer()`, *default:* `nil`) - The target ID that identifies the target on the stream. Must be a positive
+      number and non-zero.
   """
 
   use GoogleApi.Gax.ModelBase
