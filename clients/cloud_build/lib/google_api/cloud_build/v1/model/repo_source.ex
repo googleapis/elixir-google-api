@@ -21,7 +21,10 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
 
   ## Attributes
 
-  *   `branchName` (*type:* `String.t`, *default:* `nil`) - Name of the branch to build.
+  *   `branchName` (*type:* `String.t`, *default:* `nil`) - Regex matching branches to build.
+
+      The syntax of the regular expressions accepted is the syntax accepted by
+      RE2 and described at https://github.com/google/re2/wiki/Syntax
   *   `commitSha` (*type:* `String.t`, *default:* `nil`) - Explicit commit SHA to build.
   *   `dir` (*type:* `String.t`, *default:* `nil`) - Directory, relative to the source root, in which to run the build.
 
@@ -31,7 +34,10 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
       project ID requesting the build is assumed.
   *   `repoName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Source Repository. If omitted, the name "default" is
       assumed.
-  *   `tagName` (*type:* `String.t`, *default:* `nil`) - Name of the tag to build.
+  *   `tagName` (*type:* `String.t`, *default:* `nil`) - Regex matching tags to build.
+
+      The syntax of the regular expressions accepted is the syntax accepted by
+      RE2 and described at https://github.com/google/re2/wiki/Syntax
   """
 
   use GoogleApi.Gax.ModelBase

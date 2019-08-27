@@ -48,6 +48,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
       filter and included_files is not empty, then we make sure that at
       least one of those files matches a included_files glob. If not,
       then we do not trigger a build.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - User assigned name of the trigger. Must be unique within the project.
   *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions data for Build resource.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for annotation of a `BuildTrigger`
   *   `triggerTemplate` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - Template describing the types of source changes to trigger a build.
@@ -69,6 +70,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
           :id => String.t(),
           :ignoredFiles => list(String.t()),
           :includedFiles => list(String.t()),
+          :name => String.t(),
           :substitutions => map(),
           :tags => list(String.t()),
           :triggerTemplate => GoogleApi.CloudBuild.V1.Model.RepoSource.t()
@@ -83,6 +85,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   field(:id)
   field(:ignoredFiles, type: :list)
   field(:includedFiles, type: :list)
+  field(:name)
   field(:substitutions, type: :map)
   field(:tags, type: :list)
   field(:triggerTemplate, as: GoogleApi.CloudBuild.V1.Model.RepoSource)
