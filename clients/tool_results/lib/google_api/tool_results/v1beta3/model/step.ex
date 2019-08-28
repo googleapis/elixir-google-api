@@ -25,6 +25,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Step do
 
   A Step can be updated until its state is set to COMPLETE at which points it becomes immutable.
 
+  Next tag: 23
+
   ## Attributes
 
   *   `completionTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - The time when the step status was set to complete.
