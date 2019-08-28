@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
   *   `acknowledged` (*type:* `boolean()`, *default:* `nil`) - Whether the order was acknowledged.
   *   `channelType` (*type:* `String.t`, *default:* `nil`) - Deprecated.
   *   `customer` (*type:* `GoogleApi.Content.V2.Model.OrderCustomer.t`, *default:* `nil`) - The details of the customer who placed the order.
-  *   `deliveryDetails` (*type:* `GoogleApi.Content.V2.Model.OrderDeliveryDetails.t`, *default:* `nil`) - Delivery details for shipments.
+  *   `deliveryDetails` (*type:* `GoogleApi.Content.V2.Model.OrderDeliveryDetails.t`, *default:* `nil`) - Delivery details for shipments of type delivery.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the order. Globally unique.
   *   `kind` (*type:* `String.t`, *default:* `content#order`) - Identifies what kind of resource this is. Value: the fixed string "content#order".
   *   `lineItems` (*type:* `list(GoogleApi.Content.V2.Model.OrderLineItem.t)`, *default:* `nil`) - Line items that are ordered.

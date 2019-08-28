@@ -24,6 +24,7 @@ defmodule GoogleApi.Content.V2.Model.OrderCustomer do
   *   `email` (*type:* `String.t`, *default:* `nil`) - Deprecated.
   *   `explicitMarketingPreference` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Please use marketingRightsInfo instead.
   *   `fullName` (*type:* `String.t`, *default:* `nil`) - Full name of the customer.
+  *   `invoiceReceivingEmail` (*type:* `String.t`, *default:* `nil`) - Email address for receiving merchant issued value-added tax or invoice documentation of this order.
   *   `marketingRightsInfo` (*type:* `GoogleApi.Content.V2.Model.OrderCustomerMarketingRightsInfo.t`, *default:* `nil`) - Customer's marketing preferences. Contains the marketing opt-in information that is current at the time that the merchant call. User preference selections can change from one order to the next so preferences must be checked with every order.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Content.V2.Model.OrderCustomer do
           :email => String.t(),
           :explicitMarketingPreference => boolean(),
           :fullName => String.t(),
+          :invoiceReceivingEmail => String.t(),
           :marketingRightsInfo => GoogleApi.Content.V2.Model.OrderCustomerMarketingRightsInfo.t()
         }
 
   field(:email)
   field(:explicitMarketingPreference)
   field(:fullName)
+  field(:invoiceReceivingEmail)
   field(:marketingRightsInfo, as: GoogleApi.Content.V2.Model.OrderCustomerMarketingRightsInfo)
 end
 

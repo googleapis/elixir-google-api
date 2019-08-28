@@ -48,7 +48,7 @@ defmodule GoogleApi.Content.V2.Model.OrderShipment do
       - "gls" 
       - "dpd" 
       - "bpost" 
-      - "colis priv�" 
+      - "colis prive" 
       - "boxtal" 
       - "geodis"
   *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been created, in ISO 8601 format.
