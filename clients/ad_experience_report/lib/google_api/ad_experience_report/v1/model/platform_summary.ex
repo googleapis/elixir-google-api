@@ -22,7 +22,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Model.PlatformSummary do
   ## Attributes
 
   *   `betterAdsStatus` (*type:* `String.t`, *default:* `nil`) - The status of the site reviewed for the Better Ads Standards.
-  *   `enforcementTime` (*type:* `DateTime.t`, *default:* `nil`) - The date on which ad filtering begins.
+  *   `enforcementTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which ad filtering begins.
   *   `filterStatus` (*type:* `String.t`, *default:* `nil`) - The ad filtering status of the site.
   *   `lastChangeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time that the site changed status.
   *   `region` (*type:* `list(String.t)`, *default:* `nil`) - The assigned regions for the site and platform.

@@ -26,7 +26,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.ViolatingSites do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists sites with Ad Experience Report statuses of "Failing" or "Warning".
+  Lists sites with failing Ad Experience Report statuses.
 
   ## Parameters
 
