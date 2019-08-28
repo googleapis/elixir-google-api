@@ -55,6 +55,9 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
       Stackdriver Trace is unable to take advantage of this helpful
       information.
   *   `spanId` (*type:* `String.t`, *default:* `nil`) - The [SPAN_ID] portion of the span's resource name.
+  *   `spanKind` (*type:* `String.t`, *default:* `nil`) - Distinguishes between spans generated in a particular context. For example,
+      two spans with the same name may be distinguished using `CLIENT` (caller)
+      and `SERVER` (callee) to identify an RPC call.
   *   `stackTrace` (*type:* `GoogleApi.CloudTrace.V2.Model.StackTrace.t`, *default:* `nil`) - Stack trace captured at the start of the span.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the span. On the client side, this is the time kept by
       the local machine where the span execution starts. On the server side, this
@@ -76,6 +79,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
           :parentSpanId => String.t(),
           :sameProcessAsParentSpan => boolean(),
           :spanId => String.t(),
+          :spanKind => String.t(),
           :stackTrace => GoogleApi.CloudTrace.V2.Model.StackTrace.t(),
           :startTime => DateTime.t(),
           :status => GoogleApi.CloudTrace.V2.Model.Status.t(),
@@ -91,6 +95,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
   field(:parentSpanId)
   field(:sameProcessAsParentSpan)
   field(:spanId)
+  field(:spanKind)
   field(:stackTrace, as: GoogleApi.CloudTrace.V2.Model.StackTrace)
   field(:startTime, as: DateTime)
   field(:status, as: GoogleApi.CloudTrace.V2.Model.Status)
