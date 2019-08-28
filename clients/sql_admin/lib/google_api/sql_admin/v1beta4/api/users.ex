@@ -216,7 +216,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:host` (*type:* `String.t`) - Host of the user in the instance.
+      *   `:host` (*type:* `String.t`) - Host of the user in the instance. For a MySQL instance, it's required; For a PostgreSQL instance, it's optional.
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.User.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

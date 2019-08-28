@@ -22,6 +22,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this run, only applicable to on-demand backups.
+  *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Disk encryption configuration specific to a backup. Applies only to Second Generation instances.
+  *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Disk encryption status specific to a backup. Applies only to Second Generation instances.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation completed in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
   *   `enqueuedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the run was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
   *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t`, *default:* `nil`) - Information about why the backup operation failed. This is only present if the run has the FAILED status.
@@ -40,6 +42,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
 
   @type t :: %__MODULE__{
           :description => String.t(),
+          :diskEncryptionConfiguration =>
+            GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t(),
+          :diskEncryptionStatus => GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t(),
           :endTime => DateTime.t(),
           :enqueuedTime => DateTime.t(),
           :error => GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t(),
@@ -55,6 +60,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
         }
 
   field(:description)
+
+  field(
+    :diskEncryptionConfiguration,
+    as: GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration
+  )
+
+  field(:diskEncryptionStatus, as: GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus)
   field(:endTime, as: DateTime)
   field(:enqueuedTime, as: DateTime)
   field(:error, as: GoogleApi.SQLAdmin.V1beta4.Model.OperationError)
