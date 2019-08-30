@@ -29,8 +29,9 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   *   `canDelete` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can delete this file.
   *   `canDeleteChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can delete children of this folder. This is false when the item is not a folder. Only populated for items in shared drives.
   *   `canDownload` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can download this file.
-  *   `canEdit` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can edit this file.
+  *   `canEdit` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can edit this file. Other factors may limit the type of changes a user can make to a file. For example, see canChangeCopyRequiresWriterPermission or canModifyContent.
   *   `canListChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can list the children of this folder. This is always false when the item is not a folder.
+  *   `canModifyContent` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can modify the content of this file.
   *   `canMoveChildrenOutOfDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move children of this folder outside of the shared drive. This is false when the item is not a folder. Only populated for items in shared drives.
   *   `canMoveChildrenOutOfTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use canMoveChildrenOutOfDrive instead.
   *   `canMoveChildrenWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move children of this folder within the shared drive. This is false when the item is not a folder. Only populated for items in shared drives.
@@ -65,6 +66,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
           :canDownload => boolean(),
           :canEdit => boolean(),
           :canListChildren => boolean(),
+          :canModifyContent => boolean(),
           :canMoveChildrenOutOfDrive => boolean(),
           :canMoveChildrenOutOfTeamDrive => boolean(),
           :canMoveChildrenWithinDrive => boolean(),
@@ -96,6 +98,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   field(:canDownload)
   field(:canEdit)
   field(:canListChildren)
+  field(:canModifyContent)
   field(:canMoveChildrenOutOfDrive)
   field(:canMoveChildrenOutOfTeamDrive)
   field(:canMoveChildrenWithinDrive)
