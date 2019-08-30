@@ -50,9 +50,7 @@ defmodule GoogleApi.CloudTasks.V2beta2.Model.LeaseTasksRequest do
       aren't UTF-8 encoded can't be used in the
       filter and the task's
       tag will be displayed as empty in Cloud Tasks.
-  *   `leaseDuration` (*type:* `String.t`, *default:* `nil`) - Required.
-
-      The duration of the lease.
+  *   `leaseDuration` (*type:* `String.t`, *default:* `nil`) - Required. The duration of the lease.
 
       Each task returned in the response will
       have its schedule_time set to the current
