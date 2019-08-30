@@ -33,8 +33,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index do
 
       For single field indexes, this will always be exactly one entry with a
       field path equal to the field path of the associated field.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only.
-      A server defined name for this index.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. A server defined name for this index.
       The form of this name for composite indexes will be:
       `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
       For single field indexes, this field will be empty.
@@ -45,8 +44,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index do
       Indexes with a collection group query scope specified allow queries against
       all collections descended from a specific document, specified at query
       time, and that have the same collection id as this index.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The serving state of the index.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The serving state of the index.
   """
 
   use GoogleApi.Gax.ModelBase
