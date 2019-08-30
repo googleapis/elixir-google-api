@@ -90,7 +90,7 @@ Token: [your-oauth-token]
 You can then use this token for your testing:
 
 ```elixir
-connection = GoogleApis.Drive.V3.Connection.new("your-oauth-token")
+connection = GoogleApi.Drive.V3.Connection.new("your-oauth-token")
 {:ok, file_list} = GoogleApi.Drive.V3.Api.Files.drive_files_list(conn)
 ```
 
