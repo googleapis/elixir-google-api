@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudBuild.V1.Model.PushFilter do
 
   ## Attributes
 
-  *   `branch` (*type:* `String.t`, *default:* `nil`) - Regexes of branches to match.
+  *   `branch` (*type:* `String.t`, *default:* `nil`) - Regexes matching branches to build.
 
       The syntax of the regular expressions accepted is the syntax accepted by
       RE2 and described at https://github.com/google/re2/wiki/Syntax
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - Regexes of tags to match.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Regexes matching tags to build.
 
       The syntax of the regular expressions accepted is the syntax accepted by
       RE2 and described at https://github.com/google/re2/wiki/Syntax
