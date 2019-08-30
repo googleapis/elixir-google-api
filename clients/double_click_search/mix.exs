@@ -18,7 +18,7 @@
 defmodule GoogleApi.DoubleClickSearch.Mixfile do
   use Mix.Project
 
-  @version "0.5.0"
+  @version "0.6.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.DoubleClickSearch.Mixfile do
 
   defp description() do
     """
-    DoubleClick Search API client library. Reports and modifies your advertising data in DoubleClick Search (for example, campaigns, ad groups, keywords, and conversions).
+    Search Ads 360 API client library. Reports and modifies your advertising data in DoubleClick Search (for example, campaigns, ad groups, keywords, and conversions).
     """
   end
 
