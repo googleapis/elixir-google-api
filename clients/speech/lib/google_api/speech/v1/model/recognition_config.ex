@@ -54,8 +54,9 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - *Required* The language of the supplied audio as a
       [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
       Example: "en-US".
-      See [Language Support](/speech-to-text/docs/languages)
-      for a list of the currently supported language codes.
+      See [Language
+      Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+      of the currently supported language codes.
   *   `maxAlternatives` (*type:* `integer()`, *default:* `nil`) - *Optional* Maximum number of recognition hypotheses to be returned.
       Specifically, the maximum number of `SpeechRecognitionAlternative` messages
       within each `SpeechRecognitionResult`.
@@ -109,7 +110,8 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
   *   `speechContexts` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechContext.t)`, *default:* `nil`) - *Optional* array of SpeechContext.
       A means to provide context to assist the speech recognition. For more
       information, see
-      [speech adaptation](/speech-to-text/docs/context-strength).
+      [speech
+      adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
   *   `useEnhanced` (*type:* `boolean()`, *default:* `nil`) - *Optional* Set to true to use an enhanced model for speech recognition.
       If `use_enhanced` is set to true and the `model` field is not set, then
       an appropriate enhanced model is chosen if an enhanced model exists for

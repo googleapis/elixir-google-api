@@ -27,7 +27,7 @@ defmodule GoogleApi.Speech.V1.Model.SpeechContext do
       to improve the accuracy for specific words and phrases, for example, if
       specific commands are typically spoken by the user. This can also be used
       to add additional words to the vocabulary of the recognizer. See
-      [usage limits](/speech-to-text/quotas#content).
+      [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
 
       List items can also be set to classes for groups of words that represent
       common concepts that occur in natural language. For example, rather than
