@@ -22,6 +22,8 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateFileResponse do
 
   ## Attributes
 
+  *   `error` (*type:* `GoogleApi.Vision.V1.Model.Status.t`, *default:* `nil`) - If set, represents the error message for the failed request. The
+      `responses` field will not be set in this case.
   *   `inputConfig` (*type:* `GoogleApi.Vision.V1.Model.InputConfig.t`, *default:* `nil`) - Information about the file for which this response is generated.
   *   `responses` (*type:* `list(GoogleApi.Vision.V1.Model.AnnotateImageResponse.t)`, *default:* `nil`) - Individual responses to images found within the file. This field will be
       empty if the `error` field is set.
@@ -31,11 +33,13 @@ defmodule GoogleApi.Vision.V1.Model.AnnotateFileResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :error => GoogleApi.Vision.V1.Model.Status.t(),
           :inputConfig => GoogleApi.Vision.V1.Model.InputConfig.t(),
           :responses => list(GoogleApi.Vision.V1.Model.AnnotateImageResponse.t()),
           :totalPages => integer()
         }
 
+  field(:error, as: GoogleApi.Vision.V1.Model.Status)
   field(:inputConfig, as: GoogleApi.Vision.V1.Model.InputConfig)
   field(:responses, as: GoogleApi.Vision.V1.Model.AnnotateImageResponse, type: :list)
   field(:totalPages)

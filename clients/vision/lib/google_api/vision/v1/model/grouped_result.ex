@@ -23,6 +23,7 @@ defmodule GoogleApi.Vision.V1.Model.GroupedResult do
   ## Attributes
 
   *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.BoundingPoly.t`, *default:* `nil`) - The bounding polygon around the product detected in the query image.
+  *   `objectAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.ObjectAnnotation.t)`, *default:* `nil`) - List of generic predictions for the object in the bounding box.
   *   `results` (*type:* `list(GoogleApi.Vision.V1.Model.Result.t)`, *default:* `nil`) - List of results, one for each product match.
   """
 
@@ -30,10 +31,12 @@ defmodule GoogleApi.Vision.V1.Model.GroupedResult do
 
   @type t :: %__MODULE__{
           :boundingPoly => GoogleApi.Vision.V1.Model.BoundingPoly.t(),
+          :objectAnnotations => list(GoogleApi.Vision.V1.Model.ObjectAnnotation.t()),
           :results => list(GoogleApi.Vision.V1.Model.Result.t())
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.BoundingPoly)
+  field(:objectAnnotations, as: GoogleApi.Vision.V1.Model.ObjectAnnotation, type: :list)
   field(:results, as: GoogleApi.Vision.V1.Model.Result, type: :list)
 end
 
