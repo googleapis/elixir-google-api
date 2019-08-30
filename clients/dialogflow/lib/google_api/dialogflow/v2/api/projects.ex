@@ -2386,6 +2386,10 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   If the specified session entity type already exists, overrides the session
   entity type.
 
+  This method doesn't work with Google Assistant integration.
+  Contact Dialogflow support if you need to use session entities
+  with Google Assistant integration.
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
@@ -2459,6 +2463,10 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @doc """
   Deletes the specified session entity type.
 
+  This method doesn't work with Google Assistant integration.
+  Contact Dialogflow support if you need to use session entities
+  with Google Assistant integration.
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
@@ -2527,6 +2535,10 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
 
   @doc """
   Retrieves the specified session entity type.
+
+  This method doesn't work with Google Assistant integration.
+  Contact Dialogflow support if you need to use session entities
+  with Google Assistant integration.
 
   ## Parameters
 
@@ -2599,6 +2611,10 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
 
   @doc """
   Returns the list of all session entity types in the specified session.
+
+  This method doesn't work with Google Assistant integration.
+  Contact Dialogflow support if you need to use session entities
+  with Google Assistant integration.
 
   ## Parameters
 
@@ -2680,6 +2696,10 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
 
   @doc """
   Updates the specified session entity type.
+
+  This method doesn't work with Google Assistant integration.
+  Contact Dialogflow support if you need to use session entities
+  with Google Assistant integration.
 
   ## Parameters
 
