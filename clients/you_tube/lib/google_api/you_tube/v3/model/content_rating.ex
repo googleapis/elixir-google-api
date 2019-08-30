@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ContentRating do
   @moduledoc """
-  Ratings schemes. The country-specific ratings are mostly for movies and shows. NEXT_ID: 71
+  Ratings schemes. The country-specific ratings are mostly for movies and shows. NEXT_ID: 72
 
   ## Attributes
 
   *   `incaaRating` (*type:* `String.t`, *default:* `nil`) - The video's INCAA (Instituto Nacional de Cine y Artes Audiovisuales - Argentina) rating.
   *   `tvpgRating` (*type:* `String.t`, *default:* `nil`) - The video's TV Parental Guidelines (TVPG) rating.
   *   `menaMpaaRating` (*type:* `String.t`, *default:* `nil`) - The rating system for MENA countries, a clone of MPAA. It is needed to
+  *   `nmcRating` (*type:* `String.t`, *default:* `nil`) - 
   *   `mccaaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Malta's Film Age-Classification Board.
   *   `fmocRating` (*type:* `String.t`, *default:* `nil`) - This property has been deprecated. Use the contentDetails.contentRating.cncRating instead.
   *   `fpbRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from South Africa's Film and Publication Board.
@@ -99,6 +100,7 @@ defmodule GoogleApi.YouTube.V3.Model.ContentRating do
           :incaaRating => String.t(),
           :tvpgRating => String.t(),
           :menaMpaaRating => String.t(),
+          :nmcRating => String.t(),
           :mccaaRating => String.t(),
           :fmocRating => String.t(),
           :fpbRating => String.t(),
@@ -171,6 +173,7 @@ defmodule GoogleApi.YouTube.V3.Model.ContentRating do
   field(:incaaRating)
   field(:tvpgRating)
   field(:menaMpaaRating)
+  field(:nmcRating)
   field(:mccaaRating)
   field(:fmocRating)
   field(:fpbRating)
