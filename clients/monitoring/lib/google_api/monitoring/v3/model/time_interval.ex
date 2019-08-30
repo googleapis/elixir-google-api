@@ -19,7 +19,7 @@ defmodule GoogleApi.Monitoring.V3.Model.TimeInterval do
   @moduledoc """
   A closed time interval. It extends from the start time to the end time, and includes both: [startTime, endTime]. Valid time intervals depend on the MetricKind of the metric value. In no case can the end time be earlier than the start time.
   For a GAUGE metric, the startTime value is technically optional; if  no value is specified, the start time defaults to the value of the  end time, and the interval represents a single point in time. Such an  interval is valid only for GAUGE metrics, which are point-in-time  measurements.
-  For DELTA and CUMULATIVE metrics, the start time must be later than  the end time.
+  For DELTA and CUMULATIVE metrics, the start time must be earlier  than the end time.
   In all cases, the start time of the next interval must be  at least a microsecond after the end time of the previous interval.  Because the interval is closed, if the start time of a new interval  is the same as the end time of the previous interval, data written  at the new start time could overwrite data written at the previous  end time.
 
   ## Attributes
