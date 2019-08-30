@@ -23,6 +23,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductSearchResul
   ## Attributes
 
   *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1BoundingPoly.t`, *default:* `nil`) - The bounding polygon around the product detected in the query image.
+  *   `objectAnnotations` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotation.t)`, *default:* `nil`) - List of generic predictions for the object in the bounding box.
   *   `results` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductSearchResultsResult.t)`, *default:* `nil`) - List of results, one for each product match.
   """
 
@@ -30,6 +31,10 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductSearchResul
 
   @type t :: %__MODULE__{
           :boundingPoly => GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1BoundingPoly.t(),
+          :objectAnnotations =>
+            list(
+              GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotation.t()
+            ),
           :results =>
             list(
               GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductSearchResultsResult.t()
@@ -37,6 +42,12 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductSearchResul
         }
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1BoundingPoly)
+
+  field(
+    :objectAnnotations,
+    as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotation,
+    type: :list
+  )
 
   field(
     :results,
