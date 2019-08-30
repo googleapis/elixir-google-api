@@ -23,17 +23,20 @@ defmodule GoogleApi.TPU.V1.Model.ListTensorFlowVersionsResponse do
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next page token or empty if none.
   *   `tensorflowVersions` (*type:* `list(GoogleApi.TPU.V1.Model.TensorFlowVersion.t)`, *default:* `nil`) - The listed nodes.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nextPageToken => String.t(),
-          :tensorflowVersions => list(GoogleApi.TPU.V1.Model.TensorFlowVersion.t())
+          :tensorflowVersions => list(GoogleApi.TPU.V1.Model.TensorFlowVersion.t()),
+          :unreachable => list(String.t())
         }
 
   field(:nextPageToken)
   field(:tensorflowVersions, as: GoogleApi.TPU.V1.Model.TensorFlowVersion, type: :list)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.TPU.V1.Model.ListTensorFlowVersionsResponse do
