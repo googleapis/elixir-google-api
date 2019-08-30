@@ -29,6 +29,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentRequest do
       template. Repeated fields are appended. Singular sub-messages and groups
       are recursively merged.
   *   `item` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t`, *default:* `nil`) - The item to inspect.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location to process content inspection. Reserved for future
+      extensions.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,12 +38,14 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentRequest do
   @type t :: %__MODULE__{
           :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t(),
           :inspectTemplateName => String.t(),
-          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t()
+          :item => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t(),
+          :location => String.t()
         }
 
   field(:inspectConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig)
   field(:inspectTemplateName)
   field(:item, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem)
+  field(:location)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentRequest do
