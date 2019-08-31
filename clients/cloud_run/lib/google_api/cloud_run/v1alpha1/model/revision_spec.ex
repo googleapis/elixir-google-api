@@ -30,12 +30,16 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec do
       this Container, including: name, ports, and volumeMounts.
       The runtime contract is documented here:
       https://github.com/knative/serving/blob/master/docs/runtime-contract.md
-  *   `containerConcurrency` (*type:* `integer()`, *default:* `nil`) - ContainerConcurrency specifies the maximum allowed in-flight (concurrent)
-      requests per container of the Revision. Values are:
-      - `0` thread-safe, the system should manage the max concurrency. This is
-         the default value.
-      - `1` not-thread-safe. Single concurrency
-      - `2-N` thread-safe, max concurrency of N
+  *   `containerConcurrency` (*type:* `integer()`, *default:* `nil`) - (Optional)
+
+      ContainerConcurrency specifies the maximum allowed in-flight (concurrent)
+      requests per container instance of the Revision.
+
+      Cloud Run fully managed: supported, defaults to 80
+
+      Cloud Run on GKE: supported, defaults to 0, which means concurrency
+      to the application is not limited, and the system decides the
+      target concurrency for the autoscaler.
   *   `containers` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Container.t)`, *default:* `nil`) - Containers holds the single container that defines the unit of execution
       for this Revision. In the context of a Revision, we disallow a number of
       fields on this Container, including: name and lifecycle.
