@@ -21,6 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
 
   ## Attributes
 
+  *   `bakImportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions.t`, *default:* `nil`) - Import parameters specific to SQL Server .BAK files
   *   `csvImportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions.t`, *default:* `nil`) - Options for importing data as CSV.
   *   `database` (*type:* `String.t`, *default:* `nil`) - The target database for the import. If fileType is SQL, this field is required only if the import file does not specify a database, and is overridden by any database specification in the import file. If fileType is CSV, one database must be specified.
   *   `fileType` (*type:* `String.t`, *default:* `nil`) - The file type for the specified uri.
@@ -34,6 +35,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bakImportOptions => GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions.t(),
           :csvImportOptions => GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions.t(),
           :database => String.t(),
           :fileType => String.t(),
@@ -42,6 +44,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
           :uri => String.t()
         }
 
+  field(:bakImportOptions, as: GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptions)
   field(:csvImportOptions, as: GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions)
   field(:database)
   field(:fileType)
