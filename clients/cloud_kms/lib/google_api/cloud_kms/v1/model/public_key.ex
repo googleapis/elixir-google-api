@@ -24,8 +24,6 @@ defmodule GoogleApi.CloudKMS.V1.Model.PublicKey do
 
   *   `algorithm` (*type:* `String.t`, *default:* `nil`) - The Algorithm associated
       with this key.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the CryptoKeyVersion public key.
-      Provided here for verification.
   *   `pem` (*type:* `String.t`, *default:* `nil`) - The public key, encoded in PEM format. For more information, see the
       [RFC 7468](https://tools.ietf.org/html/rfc7468) sections for
       [General Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
@@ -37,12 +35,10 @@ defmodule GoogleApi.CloudKMS.V1.Model.PublicKey do
 
   @type t :: %__MODULE__{
           :algorithm => String.t(),
-          :name => String.t(),
           :pem => String.t()
         }
 
   field(:algorithm)
-  field(:name)
   field(:pem)
 end
 
