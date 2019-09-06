@@ -27,7 +27,9 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationExtract do
   *   `destinationUris` (*type:* `list(String.t)`, *default:* `nil`) - [Pick one] A list of fully-qualified Google Cloud Storage URIs where the extracted table should be written.
   *   `fieldDelimiter` (*type:* `String.t`, *default:* `nil`) - [Optional] Delimiter to use between fields in the exported data. Default is ','
   *   `printHeader` (*type:* `boolean()`, *default:* `true`) - [Optional] Whether to print out a header row in the results. Default is true.
-  *   `sourceTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] A reference to the table being exported.
+  *   `sourceModel` (*type:* `GoogleApi.BigQuery.V2.Model.ModelReference.t`, *default:* `nil`) - A reference to the model being exported.
+  *   `sourceTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - A reference to the table being exported.
+  *   `useAvroLogicalTypes` (*type:* `boolean()`, *default:* `nil`) - [Optional] If destinationFormat is set to "AVRO", this flag indicates whether to enable extracting applicable column types (such as TIMESTAMP) to their corresponding AVRO logical types (timestamp-micros), instead of only using their raw types (avro-long).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +41,9 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationExtract do
           :destinationUris => list(String.t()),
           :fieldDelimiter => String.t(),
           :printHeader => boolean(),
-          :sourceTable => GoogleApi.BigQuery.V2.Model.TableReference.t()
+          :sourceModel => GoogleApi.BigQuery.V2.Model.ModelReference.t(),
+          :sourceTable => GoogleApi.BigQuery.V2.Model.TableReference.t(),
+          :useAvroLogicalTypes => boolean()
         }
 
   field(:compression)
@@ -48,7 +52,9 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationExtract do
   field(:destinationUris, type: :list)
   field(:fieldDelimiter)
   field(:printHeader)
+  field(:sourceModel, as: GoogleApi.BigQuery.V2.Model.ModelReference)
   field(:sourceTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
+  field(:useAvroLogicalTypes)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobConfigurationExtract do

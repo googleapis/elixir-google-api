@@ -24,6 +24,9 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this model was created, in millisecs since the
       epoch.
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] A user-friendly description of this model.
+  *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys). This shows the
+      encryption configuration of the model data while stored in BigQuery
+      storage.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of this resource.
   *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - [Optional] The time when this model expires, in milliseconds since the
       epoch. If not present, the model will persist indefinitely. Expired models
@@ -55,6 +58,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
   @type t :: %__MODULE__{
           :creationTime => String.t(),
           :description => String.t(),
+          :encryptionConfiguration => GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t(),
           :etag => String.t(),
           :expirationTime => String.t(),
           :featureColumns => list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t()),
@@ -70,6 +74,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
 
   field(:creationTime)
   field(:description)
+  field(:encryptionConfiguration, as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration)
   field(:etag)
   field(:expirationTime)
   field(:featureColumns, as: GoogleApi.BigQuery.V2.Model.StandardSqlField, type: :list)
