@@ -26,7 +26,8 @@ defmodule GoogleApi.Calendar.V3.Model.ConferenceData do
       Values for solution types:  
       - "eventHangout": unset.
       - "eventNamedHangout": the name of the Hangout.
-      - "hangoutsMeet": the 10-letter meeting code, for example "aaa-bbbb-ccc".  Optional.
+      - "hangoutsMeet": the 10-letter meeting code, for example "aaa-bbbb-ccc".
+      - "addOn": defined by 3P conference provider.  Optional.
   *   `conferenceSolution` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceSolution.t`, *default:* `nil`) - The conference solution, such as Hangouts or Hangouts Meet.
       Unset for a conference with a failed create request.
       Either conferenceSolution and at least one entryPoint, or createRequest is required.
