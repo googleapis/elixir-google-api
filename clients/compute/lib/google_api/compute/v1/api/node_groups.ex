@@ -246,7 +246,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID for this request.
   *   `zone` (*type:* `String.t`) - The name of the zone for this request.
-  *   `node_group` (*type:* `String.t`) - Name of the NodeGroup resource to delete.
+  *   `node_group` (*type:* `String.t`) - Name of the NodeGroup resource whose nodes will be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.

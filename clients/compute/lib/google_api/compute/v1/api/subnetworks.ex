@@ -504,7 +504,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Retrieves an aggregated list of usable subnetworks.
+  Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of the subnetworks in the project and the subnetworks that were shared by a Shared VPC host project.
 
   ## Parameters
 

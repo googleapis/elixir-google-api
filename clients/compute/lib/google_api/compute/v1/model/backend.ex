@@ -27,17 +27,17 @@ defmodule GoogleApi.Compute.V1.Model.Backend do
 
        
       - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-      The CONNECTION balancing mode is only available if the protocol for the backend service is SSL, TCP, or UDP.
+      You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
 
       If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
 
       If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP load balancers), you cannot specify any additional parameters.
        
-      - If the load balancing mode is RATE, then the load is spread based on the rate of HTTP requests per second (RPS).
-      The RATE balancing mode is only available if the protocol for the backend service is HTTP or HTTPS. You must specify exactly one of the following parameters: maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+      - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
+      You can use the RATE balancing mode if the protocol for the backend service is HTTP or HTTPS. You must specify exactly one of the following parameters: maxRate, maxRatePerInstance, or maxRatePerEndpoint.
        
-      - If the load balancing mode is UTILIZATION, then the load is spread based on the CPU utilization of instances in an instance group.
-      The UTILIZATION balancing mode is only available if the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backend is made up of instance groups. There are no restrictions on the backend service protocol.
+      - If the load balancing mode is UTILIZATION, the load is spread based on the CPU utilization of instances in an instance group.
+      You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
   *   `capacityScaler` (*type:* `number()`, *default:* `nil`) - A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available Capacity. Valid range is [0.0,1.0].
 
       This cannot be used for internal load balancing.

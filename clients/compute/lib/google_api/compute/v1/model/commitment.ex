@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `plan` (*type:* `String.t`, *default:* `nil`) - The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where this commitment may be used.
-  *   `reservations` (*type:* `list(GoogleApi.Compute.V1.Model.Reservation.t)`, *default:* `nil`) - List of reservations for this commitment.
+  *   `reservations` (*type:* `list(GoogleApi.Compute.V1.Model.Reservation.t)`, *default:* `nil`) - List of reservations in this commitment.
   *   `resources` (*type:* `list(GoogleApi.Compute.V1.Model.ResourceCommitment.t)`, *default:* `nil`) - A list of commitment amounts for particular resources. Note that VCPU and MEMORY resource commitments must occur together.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `startTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Commitment start time in RFC3339 text format.

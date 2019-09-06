@@ -31,6 +31,9 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
   *   `kind` (*type:* `String.t`, *default:* `compute#vpnTunnel`) - [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
   *   `localTrafficSelector` (*type:* `list(String.t)`, *default:* `nil`) - Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `peerExternalGateway` (*type:* `String.t`, *default:* `nil`) - URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
+  *   `peerExternalGatewayInterface` (*type:* `integer()`, *default:* `nil`) - The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
+  *   `peerGcpGateway` (*type:* `String.t`, *default:* `nil`) - URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
   *   `peerIp` (*type:* `String.t`, *default:* `nil`) - IP address of the peer VPN gateway. Only IPv4 is supported.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `remoteTrafficSelector` (*type:* `list(String.t)`, *default:* `nil`) - Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
@@ -49,6 +52,8 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
       - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. 
       - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
   *   `targetVpnGateway` (*type:* `String.t`, *default:* `nil`) - URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
+  *   `vpnGateway` (*type:* `String.t`, *default:* `nil`) - URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
+  *   `vpnGatewayInterface` (*type:* `integer()`, *default:* `nil`) - The interface ID of the VPN gateway with which this VPN tunnel is associated.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -62,6 +67,9 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
           :kind => String.t(),
           :localTrafficSelector => list(String.t()),
           :name => String.t(),
+          :peerExternalGateway => String.t(),
+          :peerExternalGatewayInterface => integer(),
+          :peerGcpGateway => String.t(),
           :peerIp => String.t(),
           :region => String.t(),
           :remoteTrafficSelector => list(String.t()),
@@ -70,7 +78,9 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
           :sharedSecret => String.t(),
           :sharedSecretHash => String.t(),
           :status => String.t(),
-          :targetVpnGateway => String.t()
+          :targetVpnGateway => String.t(),
+          :vpnGateway => String.t(),
+          :vpnGatewayInterface => integer()
         }
 
   field(:creationTimestamp)
@@ -81,6 +91,9 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
   field(:kind)
   field(:localTrafficSelector, type: :list)
   field(:name)
+  field(:peerExternalGateway)
+  field(:peerExternalGatewayInterface)
+  field(:peerGcpGateway)
   field(:peerIp)
   field(:region)
   field(:remoteTrafficSelector, type: :list)
@@ -90,6 +103,8 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
   field(:sharedSecretHash)
   field(:status)
   field(:targetVpnGateway)
+  field(:vpnGateway)
+  field(:vpnGatewayInterface)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.VpnTunnel do

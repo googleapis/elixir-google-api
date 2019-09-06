@@ -37,10 +37,10 @@ defmodule GoogleApi.Compute.V1.Model.Operation do
   *   `error` (*type:* `GoogleApi.Compute.V1.Model.OperationError.t`, *default:* `nil`) - [Output Only] If errors are generated during processing of the operation, this field will be populated.
   *   `httpErrorMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as NOT FOUND.
   *   `httpErrorStatusCode` (*type:* `integer()`, *default:* `nil`) - [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a 404 means the resource was not found.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the operation. This identifier is defined by the server.
   *   `insertTime` (*type:* `String.t`, *default:* `nil`) - [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
   *   `kind` (*type:* `String.t`, *default:* `compute#operation`) - [Output Only] Type of the resource. Always compute#operation for Operation resources.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the resource.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the operation.
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of operation, such as insert, update, or delete, and so on.
   *   `progress` (*type:* `integer()`, *default:* `nil`) - [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.

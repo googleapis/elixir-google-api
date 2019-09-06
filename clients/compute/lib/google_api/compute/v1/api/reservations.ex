@@ -166,7 +166,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Retrieves all information of the specified reservation.
+  Retrieves information about the specified reservation.
 
   ## Parameters
 
@@ -362,7 +362,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  A list all the reservations that have been configured for the specified project in specified zone.
+  A list of all the reservations that have been configured for the specified project in specified zone.
 
   ## Parameters
 
@@ -436,7 +436,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Resizes the reservation (applicable to standalone reservations only)
+  Resizes the reservation (applicable to standalone reservations only). For more information, read Modifying reservations.
 
   ## Parameters
 

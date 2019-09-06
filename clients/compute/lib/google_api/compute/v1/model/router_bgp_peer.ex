@@ -33,7 +33,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
   *   `managementType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource that configures and manages this BGP peer. 
       - MANAGED_BY_USER is the default value and can be managed by you or other users 
       - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this BGP peer. The name must be 1-63 characters long and comply with RFC1035.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `peerAsn` (*type:* `integer()`, *default:* `nil`) - Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
   *   `peerIpAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
   """

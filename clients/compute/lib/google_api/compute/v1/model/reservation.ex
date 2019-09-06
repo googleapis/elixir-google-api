@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Compute.V1.Model.Reservation do
   @moduledoc """
-  Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read  Reserving zonal resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==) (== NextID: 13 ==)
+  Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read  Reserving zonal resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==)
 
   ## Attributes
 
-  *   `commitment` (*type:* `String.t`, *default:* `nil`) - [OutputOnly] Full or partial url for parent commitment for reservations which are tied to a commitment.
+  *   `commitment` (*type:* `String.t`, *default:* `nil`) - [OutputOnly] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
   *   `specificReservation` (*type:* `GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation.t`, *default:* `nil`) - Reservation for instances with specific machine shapes.
   *   `specificReservationRequired` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the reservation.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Zone in which the reservation resides, must be provided if reservation is created with commitment creation.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
   """
 
   use GoogleApi.Gax.ModelBase

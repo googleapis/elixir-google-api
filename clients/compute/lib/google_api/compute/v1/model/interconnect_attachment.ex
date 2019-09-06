@@ -34,7 +34,9 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectAttachment do
       - BPS_1G: 1 Gbit/s 
       - BPS_2G: 2 Gbit/s 
       - BPS_5G: 5 Gbit/s 
-      - BPS_10G: 10 Gbit/s
+      - BPS_10G: 10 Gbit/s 
+      - BPS_20G: 20 Gbit/s 
+      - BPS_50G: 50 Gbit/s
   *   `candidateSubnets` (*type:* `list(String.t)`, *default:* `nil`) - Up to 16 candidate prefixes that can be used to restrict the allocation of cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc). Google will attempt to select an unused /29 from the supplied candidate prefix(es). The request will fail if all possible /29s are in use on Google?s edge. If not supplied, Google will randomly select an unused /29 from all of link-local space.
   *   `cloudRouterIpAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
