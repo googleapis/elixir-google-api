@@ -25,7 +25,7 @@ defmodule GoogleApi.Slides.V1.Model.ReplaceImageRequest do
 
   *   `imageObjectId` (*type:* `String.t`, *default:* `nil`) - The ID of the existing image that will be replaced.
   *   `imageReplaceMethod` (*type:* `String.t`, *default:* `nil`) - The replacement method.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the new image.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The image URL.
 
       The image is fetched once at insertion time and a copy is stored for
       display inside the presentation. Images must be less than 50MB in size,
