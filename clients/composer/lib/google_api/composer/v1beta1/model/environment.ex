@@ -22,8 +22,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.Environment do
   ## Attributes
 
   *   `config` (*type:* `GoogleApi.Composer.V1beta1.Model.EnvironmentConfig.t`, *default:* `nil`) - Configuration parameters for this environment.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only.
-      The time at which this environment was created.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this environment was created.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels for this environment.
       The labels map can contain no more than 64 entries. Entries of the labels
       map are UTF8 strings that comply with the following restrictions:
@@ -35,10 +34,8 @@ defmodule GoogleApi.Composer.V1beta1.Model.Environment do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the environment, in the form:
       "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the environment.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only.
-      The time at which this environment was last modified.
-  *   `uuid` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The UUID (Universally Unique IDentifier) associated with this environment.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this environment was last modified.
+  *   `uuid` (*type:* `String.t`, *default:* `nil`) - Output only. The UUID (Universally Unique IDentifier) associated with this environment.
       This value is generated when the environment is created.
   """
 

@@ -21,20 +21,14 @@ defmodule GoogleApi.Composer.V1beta1.Model.OperationMetadata do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only.
-      The time the operation was submitted to the server.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only.
-      The time when the operation terminated, regardless of its success.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation was submitted to the server.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the operation terminated, regardless of its success.
       This field is unset if the operation is still ongoing.
-  *   `operationType` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The type of operation being performed.
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The resource being operated on, as a [relative resource name](
+  *   `operationType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of operation being performed.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - Output only. The resource being operated on, as a [relative resource name](
       /apis/design/resource_names#relative_resource_name).
-  *   `resourceUuid` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The UUID of the resource being operated on.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only.
-      The current operation state.
+  *   `resourceUuid` (*type:* `String.t`, *default:* `nil`) - Output only. The UUID of the resource being operated on.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current operation state.
   """
 
   use GoogleApi.Gax.ModelBase

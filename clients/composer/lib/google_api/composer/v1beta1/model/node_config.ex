@@ -55,6 +55,9 @@ defmodule GoogleApi.Composer.V1beta1.Model.NodeConfig do
       specified, the location information from the specified field will be
       propagated to the unspecified field.
 
+      The `machineTypeId` must not be a [shared-core machine
+      type](/compute/docs/machine-types#sharedcore).
+
       If this field is unspecified, the `machineTypeId` defaults
       to "n1-standard-1".
   *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine network to be used for machine
