@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySnapsho
 
   *   `guestFlush` (*type:* `boolean()`, *default:* `nil`) - Indication to perform a ?guest aware? snapshot.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
-  *   `storageLocations` (*type:* `list(String.t)`, *default:* `nil`) - GCS bucket storage location of the auto snapshot (regional or multi-regional).
+  *   `storageLocations` (*type:* `list(String.t)`, *default:* `nil`) - Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
   """
 
   use GoogleApi.Gax.ModelBase

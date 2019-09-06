@@ -50,7 +50,7 @@ defmodule GoogleApi.Compute.V1.Model.Snapshot do
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
   *   `storageBytes` (*type:* `String.t`, *default:* `nil`) - [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
   *   `storageBytesStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
-  *   `storageLocations` (*type:* `list(String.t)`, *default:* `nil`) - GCS bucket storage location of the snapshot (regional or multi-regional).
+  *   `storageLocations` (*type:* `list(String.t)`, *default:* `nil`) - Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
   """
 
   use GoogleApi.Gax.ModelBase

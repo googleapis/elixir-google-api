@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description. Provide this property when creating the disk.
   *   `diskName` (*type:* `String.t`, *default:* `nil`) - Specifies the disk name. If not specified, the default is to use the name of the instance. If the disk with the instance name exists already in the given zone/region, a new name will be automatically generated.
-  *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Specifies the size of the disk in base-2 GB.
+  *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Specifies the size of the disk in base-2 GB. If not specified, the disk will be the same size as the image (usually 10GB). If specified, the size must be equal to or larger than 10GB.
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
       https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
 

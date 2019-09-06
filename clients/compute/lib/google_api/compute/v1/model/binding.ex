@@ -28,7 +28,7 @@ defmodule GoogleApi.Compute.V1.Model.Binding do
 
       * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account.
 
-      * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@gmail.com` .
+      * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` .
 
 
 

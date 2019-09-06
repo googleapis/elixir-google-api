@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
   *   `instance` (*type:* `String.t`, *default:* `nil`) - The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
 
       The name must be 1-63 characters long, and comply with RFC1035.
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Optional IPv4 address of network endpoint. The IP address must belong to a VM in GCE (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Optional port number of network endpoint. If not specified and the NetworkEndpointGroup.network_endpoint_type is GCE_IP_PORT, the defaultPort for the network endpoint group will be used.
   """
 

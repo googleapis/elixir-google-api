@@ -46,23 +46,13 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
 
   ## Attributes
 
-  *   `IPAddress` (*type:* `String.t`, *default:* `nil`) - The IP address that this forwarding rule is serving on behalf of.
+  *   `IPAddress` (*type:* `String.t`, *default:* `nil`) - IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
 
-      Addresses are restricted based on the forwarding rule's load balancing scheme (EXTERNAL or INTERNAL) and scope (global or regional).
+      If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
 
-      When the load balancing scheme is EXTERNAL, for global forwarding rules, the address must be a global IP, and for regional forwarding rules, the address must live in the same region as the forwarding rule. If this field is empty, an ephemeral IPv4 address from the same scope (global or regional) will be assigned. A regional forwarding rule supports IPv4 only. A global forwarding rule supports either IPv4 or IPv6.
+      * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in: * projects/project_id/regions/region/addresses/address-name * regions/region/addresses/address-name * global/addresses/address-name * address-name 
 
-      When the load balancing scheme is INTERNAL_SELF_MANAGED, this must be a URL reference to an existing Address resource ( internal regional static IP address), with a purpose of GCE_END_POINT and address_type of INTERNAL.
-
-      When the load balancing scheme is INTERNAL, this can only be an RFC 1918 IP address belonging to the network/subnet configured for the forwarding rule. By default, if this field is empty, an ephemeral internal IP address will be automatically allocated from the IP range of the subnet or network configured for this forwarding rule.
-
-      An address can be specified either by a literal IP address or a URL reference to an existing Address resource. The following examples are all valid:  
-      - 100.1.2.3 
-      - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address 
-      - projects/project/regions/region/addresses/address 
-      - regions/region/addresses/address 
-      - global/addresses/address 
-      - address
+      The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
   *   `IPProtocol` (*type:* `String.t`, *default:* `nil`) - The IP protocol to which this rule applies. Valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
 
       When the load balancing scheme is INTERNAL, only TCP and UDP are valid. When the load balancing scheme is INTERNAL_SELF_MANAGED, only TCPis valid.
@@ -87,24 +77,29 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
 
       If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
-  *   `portRange` (*type:* `String.t`, *default:* `nil`) - This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+  *   `portRange` (*type:* `String.t`, *default:* `nil`) - This field is deprecated. See the port
+      field.
+  *   `ports` (*type:* `list(String.t)`, *default:* `nil`) - List of comma-separated ports. The forwarding rule forwards packets with matching destination ports. If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule references a target pool, specifying ports is optional. You can specify an unlimited number of ports, but they must be contiguous. If you omit ports, GCP forwards traffic on any port of the forwarding rule's protocol.
 
-      Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+      If the forwarding rule's loadBalancingScheme is EXTERNAL, and the forwarding rule references a target HTTP proxy, target HTTPS proxy, target TCP proxy, target SSL proxy, or target VPN gateway, you must specify ports using the following constraints:
 
-      Some types of forwarding target have constraints on the acceptable ports:  
+       
       - TargetHttpProxy: 80, 8080 
       - TargetHttpsProxy: 443 
       - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 
       - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 
-      - TargetVpnGateway: 500, 4500
-  *   `ports` (*type:* `list(String.t)`, *default:* `nil`) - This field is used along with the backend_service field for internal load balancing.
+      - TargetVpnGateway: 500, 4500  
 
-      When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000'] etc. Only packets addressed to these ports will be forwarded to the backends configured with this forwarding rule.
+      If the forwarding rule's loadBalancingScheme is INTERNAL, you must specify ports in one of the following ways:
 
-      You may specify a maximum of up to 5 ports.
+      * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+
+      The ports field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+
+      Applicable only when IPProtocol is TCP, UDP, or SCTP. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `serviceLabel` (*type:* `String.t`, *default:* `nil`) - An optional prefix to the service name for this Forwarding Rule. If specified, will be the first label of the fully qualified service name.
+  *   `serviceLabel` (*type:* `String.t`, *default:* `nil`) - An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is the first label of the fully qualified service name.
 
       The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 
