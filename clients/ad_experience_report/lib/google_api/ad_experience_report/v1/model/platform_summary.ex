@@ -17,19 +17,35 @@
 
 defmodule GoogleApi.AdExperienceReport.V1.Model.PlatformSummary do
   @moduledoc """
-  Summary of the ad experience rating of a site for a specific platform.
+  A site's Ad Experience Report summary on a single platform.
 
   ## Attributes
 
-  *   `betterAdsStatus` (*type:* `String.t`, *default:* `nil`) - The status of the site reviewed for the Better Ads Standards.
-  *   `enforcementTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which ad filtering begins.
-  *   `filterStatus` (*type:* `String.t`, *default:* `nil`) - The ad filtering status of the site.
-  *   `lastChangeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time that the site changed status.
-  *   `region` (*type:* `list(String.t)`, *default:* `nil`) - The assigned regions for the site and platform.
+  *   `betterAdsStatus` (*type:* `String.t`, *default:* `nil`) - The site's Ad Experience Report status on this platform.
+  *   `enforcementTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which
+      [enforcement](https://support.google.com/webtools/answer/7308033) against
+      the site began or will begin on this platform.
+
+      Not set when the
+      filter_status
+      is OFF.
+  *   `filterStatus` (*type:* `String.t`, *default:* `nil`) - The site's [enforcement
+      status](https://support.google.com/webtools/answer/7308033) on this
+      platform.
+  *   `lastChangeTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the site's status last changed on this platform.
+  *   `region` (*type:* `list(String.t)`, *default:* `nil`) - The site's regions on this platform.
+
       No longer populated, because there is no longer any semantic difference
       between sites in different regions.
-  *   `reportUrl` (*type:* `String.t`, *default:* `nil`) - A link that leads to a full ad experience report.
-  *   `underReview` (*type:* `boolean()`, *default:* `nil`) - Whether the site is currently under review.
+  *   `reportUrl` (*type:* `String.t`, *default:* `nil`) - A link to the full Ad Experience Report for the site on this platform..
+
+      Not set in
+      ViolatingSitesResponse.
+
+      Note that you must complete the [Search Console verification
+      process](https://support.google.com/webmasters/answer/9008080) for the site
+      before you can access the full report.
+  *   `underReview` (*type:* `boolean()`, *default:* `nil`) - Whether the site is currently under review on this platform.
   """
 
   use GoogleApi.Gax.ModelBase
