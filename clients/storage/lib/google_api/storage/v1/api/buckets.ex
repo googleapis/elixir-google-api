@@ -156,6 +156,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:optionsRequestedPolicyVersion` (*type:* `integer()`) - The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails.
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -176,6 +177,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :optionsRequestedPolicyVersion => :query,
       :provisionalUserProject => :query,
       :userProject => :query
     }

@@ -25,6 +25,7 @@ defmodule GoogleApi.Storage.V1.Model.Policy do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - HTTP 1.1  Entity tag for the policy.
   *   `kind` (*type:* `String.t`, *default:* `storage#policy`) - The kind of item this is. For policies, this is always storage#policy. This field is ignored on input.
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The ID of the resource to which this policy belongs. Will be of the form projects/_/buckets/bucket for buckets, and projects/_/buckets/bucket/objects/object for objects. A specific generation may be specified by appending #generationNumber to the end of the object name, e.g. projects/_/buckets/my-bucket/objects/data.txt#17. The current generation can be denoted with #0. This field is ignored on input.
+  *   `version` (*type:* `integer()`, *default:* `nil`) - The IAM policy format version.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Storage.V1.Model.Policy do
           :bindings => list(GoogleApi.Storage.V1.Model.PolicyBindings.t()),
           :etag => String.t(),
           :kind => String.t(),
-          :resourceId => String.t()
+          :resourceId => String.t(),
+          :version => integer()
         }
 
   field(:bindings, as: GoogleApi.Storage.V1.Model.PolicyBindings, type: :list)
   field(:etag)
   field(:kind)
   field(:resourceId)
+  field(:version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Policy do
