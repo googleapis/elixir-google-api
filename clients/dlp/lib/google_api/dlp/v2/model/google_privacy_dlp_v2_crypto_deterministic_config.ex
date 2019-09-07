@@ -56,6 +56,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig do
       custom info type 'Surrogate'. This facilitates reversal of the
       surrogate when it occurs in free text.
 
+      Note: For record transformations where the entire cell in a table is being
+      transformed, surrogates are optional to use. Surrogates are used to denote
+      the location of the token and are necessary for re-identification in free
+      form text.
+
       In order for inspection to work properly, the name of this info type must
       not occur naturally anywhere in your data; otherwise, inspection may either
 
@@ -68,7 +73,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig do
       that are highly improbable to exist in your data.
       For example, assuming your data is entered from a regular ASCII keyboard,
       the symbol with the hex code point 29DD might be used like so:
-      ⧝MY_TOKEN_TYPE
+      ⧝MY_TOKEN_TYPE.
   """
 
   use GoogleApi.Gax.ModelBase
