@@ -18,6 +18,7 @@
 defmodule GoogleApi.Testing.V1.Model.IosModel do
   @moduledoc """
   A description of an iOS device tests may be run on.
+  Next tag: 10
 
   ## Attributes
 
@@ -29,6 +30,9 @@ defmodule GoogleApi.Testing.V1.Model.IosModel do
       Use this for invoking the TestExecutionService.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable name for this device model.
       Examples: "iPhone 4s", "iPad Mini 2".
+  *   `screenDensity` (*type:* `integer()`, *default:* `nil`) - Screen density in DPI.
+  *   `screenX` (*type:* `integer()`, *default:* `nil`) - Screen size in the horizontal (X) dimension measured in pixels.
+  *   `screenY` (*type:* `integer()`, *default:* `nil`) - Screen size in the vertical (Y) dimension measured in pixels.
   *   `supportedVersionIds` (*type:* `list(String.t)`, *default:* `nil`) - The set of iOS major software versions this device supports.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension.
       Examples: "default", "preview", "deprecated".
@@ -41,6 +45,9 @@ defmodule GoogleApi.Testing.V1.Model.IosModel do
           :formFactor => String.t(),
           :id => String.t(),
           :name => String.t(),
+          :screenDensity => integer(),
+          :screenX => integer(),
+          :screenY => integer(),
           :supportedVersionIds => list(String.t()),
           :tags => list(String.t())
         }
@@ -49,6 +56,9 @@ defmodule GoogleApi.Testing.V1.Model.IosModel do
   field(:formFactor)
   field(:id)
   field(:name)
+  field(:screenDensity)
+  field(:screenX)
+  field(:screenY)
   field(:supportedVersionIds, type: :list)
   field(:tags, type: :list)
 end
