@@ -22,13 +22,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.GetPolicyOptions do
   ## Attributes
 
   *   `requestedPolicyVersion` (*type:* `integer()`, *default:* `nil`) - Optional. The policy format version to be returned.
-
-      Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-      rejected.
-
-      Requests for policies with any conditional bindings must specify version 3.
-      Policies without any conditional bindings may specify any valid value or
-      leave the field unset.
+      Acceptable values are 0, 1, and 3.
+      If the value is 0, or the field is omitted, policy format version 1 will be
+      returned.
   """
 
   use GoogleApi.Gax.ModelBase
