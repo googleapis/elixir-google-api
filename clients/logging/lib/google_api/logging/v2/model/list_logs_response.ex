@@ -21,7 +21,7 @@ defmodule GoogleApi.Logging.V2.Model.ListLogsResponse do
 
   ## Attributes
 
-  *   `logNames` (*type:* `list(String.t)`, *default:* `nil`) - A list of log names. For example, "projects/my-project/syslog" or "organizations/123/cloudresourcemanager.googleapis.com%2Factivity".
+  *   `logNames` (*type:* `list(String.t)`, *default:* `nil`) - A list of log names. For example, "projects/my-project/logs/syslog" or "organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than those appearing in this response, then nextPageToken is included. To get the next set of results, call this method again using the value of nextPageToken as pageToken.
   """
 
