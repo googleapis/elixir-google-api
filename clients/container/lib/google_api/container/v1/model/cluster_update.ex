@@ -26,7 +26,6 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredAddonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
   *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool.
       NOTE: Set the "desired_node_pool" field as well.
-  *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
   *   `desiredLocations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine
       [zones](/compute/docs/zones#available) in which the cluster's nodes
       should be located. Changing the locations a cluster is in will result
@@ -86,8 +85,6 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   @type t :: %__MODULE__{
           :desiredAddonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t(),
           :desiredImageType => String.t(),
-          :desiredIntraNodeVisibilityConfig =>
-            GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t(),
           :desiredLocations => list(String.t()),
           :desiredLoggingService => String.t(),
           :desiredMasterAuthorizedNetworksConfig =>
@@ -103,12 +100,6 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   field(:desiredAddonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
   field(:desiredImageType)
-
-  field(
-    :desiredIntraNodeVisibilityConfig,
-    as: GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig
-  )
-
   field(:desiredLocations, type: :list)
   field(:desiredLoggingService)
 
