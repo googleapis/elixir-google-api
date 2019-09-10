@@ -21,6 +21,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
 
   ## Attributes
 
+  *   `commitStreamChunkSizeBytes` (*type:* `String.t`, *default:* `nil`) - Chunk size for commit streams from the harness to windmill.
+  *   `getDataStreamChunkSizeBytes` (*type:* `String.t`, *default:* `nil`) - Chunk size for get data streams from the harness to windmill.
   *   `maxWorkItemCommitBytes` (*type:* `String.t`, *default:* `nil`) - Maximum size for work item commit supported windmill storage layer.
   *   `streamingComputationConfigs` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig.t)`, *default:* `nil`) - Set of computation configuration information.
   *   `userStepToStateFamilyNameMap` (*type:* `map()`, *default:* `nil`) - Map from user step names to state families.
@@ -35,6 +37,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :commitStreamChunkSizeBytes => String.t(),
+          :getDataStreamChunkSizeBytes => String.t(),
           :maxWorkItemCommitBytes => String.t(),
           :streamingComputationConfigs =>
             list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig.t()),
@@ -43,6 +47,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
           :windmillServicePort => String.t()
         }
 
+  field(:commitStreamChunkSizeBytes)
+  field(:getDataStreamChunkSizeBytes)
   field(:maxWorkItemCommitBytes)
 
   field(
