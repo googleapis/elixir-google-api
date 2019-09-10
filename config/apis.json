@@ -80,11 +80,6 @@
     "url": "https://www.googleapis.com/discovery/v1/apis/appsactivity/v1/rest"
   },
   {
-    "version": "v1",
-    "name": "AppState",
-    "url": "https://www.googleapis.com/discovery/v1/apis/appstate/v1/rest"
-  },
-  {
     "version": "v2",
     "name": "BigQuery",
     "url": "https://www.googleapis.com/discovery/v1/apis/bigquery/v2/rest"
