@@ -26,6 +26,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `passwordRequirements` (*type:* `GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t`, *default:* `nil`) - Password requirements. DEPRECATED - Use password_policies
   *   `shareLocationDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether location sharing is disabled.
   *   `modifyAccountsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adding or removing accounts is disabled.
+  *   `permittedAccessibilityServices` (*type:* `GoogleApi.AndroidManagement.V1.Model.PackageNameList.t`, *default:* `nil`) - Specifies permitted accessibility services. If the field is not set, any accessibility service can be used. If the field is set, only the accessibility services in this list and the system's built-in accessibility services can be used. In particular, if the field is set to empty, only the system's built-in accessibility services can be used.
   *   `mobileNetworksConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring mobile networks is disabled.
   *   `privateKeySelectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Allows showing UI on a device for a user to choose a private key alias if there are no matching rules in ChoosePrivateKeyRules. For devices below Android P, setting this may leave enterprise keys vulnerable.
   *   `blockApplicationsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether applications other than the ones configured in applications are blocked from being installed. When set, applications that were installed under a previous policy but no longer appear in the policy are automatically uninstalled.
@@ -108,6 +109,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :passwordRequirements => GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t(),
           :shareLocationDisabled => boolean(),
           :modifyAccountsDisabled => boolean(),
+          :permittedAccessibilityServices =>
+            GoogleApi.AndroidManagement.V1.Model.PackageNameList.t(),
           :mobileNetworksConfigDisabled => boolean(),
           :privateKeySelectionEnabled => boolean(),
           :blockApplicationsEnabled => boolean(),
@@ -193,6 +196,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:passwordRequirements, as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements)
   field(:shareLocationDisabled)
   field(:modifyAccountsDisabled)
+  field(:permittedAccessibilityServices, as: GoogleApi.AndroidManagement.V1.Model.PackageNameList)
   field(:mobileNetworksConfigDisabled)
   field(:privateKeySelectionEnabled)
   field(:blockApplicationsEnabled)

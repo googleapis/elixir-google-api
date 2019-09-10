@@ -21,6 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Application do
 
   ## Attributes
 
+  *   `appTracks` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.AppTrackInfo.t)`, *default:* `nil`) - Application tracks visible to the enterprise.
   *   `managedProperties` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The set of managed properties available to be pre-configured for the app.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the app in the form enterprises/{enterpriseId}/applications/{package_name}.
   *   `permissions` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationPermission.t)`, *default:* `nil`) - The permissions required by the app.
@@ -30,12 +31,14 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Application do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appTracks => list(GoogleApi.AndroidManagement.V1.Model.AppTrackInfo.t()),
           :managedProperties => list(GoogleApi.AndroidManagement.V1.Model.ManagedProperty.t()),
           :name => String.t(),
           :permissions => list(GoogleApi.AndroidManagement.V1.Model.ApplicationPermission.t()),
           :title => String.t()
         }
 
+  field(:appTracks, as: GoogleApi.AndroidManagement.V1.Model.AppTrackInfo, type: :list)
   field(:managedProperties, as: GoogleApi.AndroidManagement.V1.Model.ManagedProperty, type: :list)
   field(:name)
   field(:permissions, as: GoogleApi.AndroidManagement.V1.Model.ApplicationPermission, type: :list)

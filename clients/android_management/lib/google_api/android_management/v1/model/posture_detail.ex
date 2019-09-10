@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.PostureDetail do
   @moduledoc """
-  Detail that provides further information if the device is not in the most secure state.
+  Additional details regarding the security posture of the device.
 
   ## Attributes
 
-  *   `advice` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t)`, *default:* `nil`) - Corresponding pieces of advice to mitigate the security risk.
-  *   `securityRisk` (*type:* `String.t`, *default:* `nil`) - The risk that makes the device not in the most secure state.
+  *   `advice` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t)`, *default:* `nil`) - Corresponding admin-facing advice to mitigate this security risk and improve the security posture of the device.
+  *   `securityRisk` (*type:* `String.t`, *default:* `nil`) - A specific security risk that negatively affects the security posture of the device.
   """
 
   use GoogleApi.Gax.ModelBase
