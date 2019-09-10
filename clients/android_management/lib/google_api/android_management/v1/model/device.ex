@@ -50,7 +50,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   *   `securityPosture` (*type:* `GoogleApi.AndroidManagement.V1.Model.SecurityPosture.t`, *default:* `nil`) - Device's security posture value that reflects how secure the device is.
   *   `softwareInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.SoftwareInfo.t`, *default:* `nil`) - Detailed information about the device software. This information is only available if softwareInfoEnabled is true in the device's policy.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state to be applied to the device. This field can be modified by a patch request. Note that when calling enterprises.devices.patch, ACTIVE and DISABLED are the only allowable values. To enter the device into a DELETED state, call enterprises.devices.delete.
-  *   `systemProperties` (*type:* `map()`, *default:* `nil`) - Map of selected system properties name and value related to the device.
+  *   `systemProperties` (*type:* `map()`, *default:* `nil`) - Map of selected system properties name and value related to the device. This information is only available if systemPropertiesEnabled is true in the device's policy.
   *   `user` (*type:* `GoogleApi.AndroidManagement.V1.Model.User.t`, *default:* `nil`) - The user who owns the device.
   *   `userName` (*type:* `String.t`, *default:* `nil`) - The resource name of the user that owns this device in the form enterprises/{enterpriseId}/users/{userId}.
   """

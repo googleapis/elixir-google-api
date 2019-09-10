@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.SecurityPosture do
   @moduledoc """
-  . Device's security posture value that reflects how secure the device is.
+  The security posture of the device, as determined by the current device state and the policies applied.
 
   ## Attributes
 
   *   `devicePosture` (*type:* `String.t`, *default:* `nil`) - Device's security posture value.
-  *   `postureDetails` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PostureDetail.t)`, *default:* `nil`) - Details that provide further information if the device is not in the most secure state.
+  *   `postureDetails` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PostureDetail.t)`, *default:* `nil`) - Additional details regarding the security posture of the device.
   """
 
   use GoogleApi.Gax.ModelBase
