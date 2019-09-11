@@ -170,6 +170,11 @@
     "url": "https://cloudshell.googleapis.com/$discovery/rest?version=v1"
   },
   {
+    "version": "v2",
+    "name": "CloudTasks",
+    "url": "https://cloudtasks.googleapis.com/$discovery/rest?version=v2"
+  },
+  {
     "version": "v2beta2",
     "name": "CloudTasks",
     "url": "https://cloudtasks.googleapis.com/$discovery/rest?version=v2beta2"
