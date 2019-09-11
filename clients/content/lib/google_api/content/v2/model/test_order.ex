@@ -28,6 +28,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrder do
   *   `notificationMode` (*type:* `String.t`, *default:* `nil`) - Determines if test order must be pulled by merchant or pushed to merchant via push integration.
   *   `paymentMethod` (*type:* `GoogleApi.Content.V2.Model.TestOrderPaymentMethod.t`, *default:* `nil`) - The details of the payment method.
   *   `predefinedDeliveryAddress` (*type:* `String.t`, *default:* `nil`) - Identifier of one of the predefined delivery addresses for the delivery.
+  *   `predefinedPickupDetails` (*type:* `String.t`, *default:* `nil`) - Identifier of one of the predefined pickup details. Required for orders containing line items with shipping type pickup.
   *   `promotions` (*type:* `list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t)`, *default:* `nil`) - Deprecated. Ignored if provided.
   *   `shippingCost` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The price of shipping for all items. Shipping tax is automatically calculated for orders where marketplace facilitator tax laws are applicable. Otherwise, tax settings from Merchant Center are applied. Note that shipping is not taxed in certain states.
   *   `shippingCostTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Deprecated. Ignored if provided.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrder do
           :notificationMode => String.t(),
           :paymentMethod => GoogleApi.Content.V2.Model.TestOrderPaymentMethod.t(),
           :predefinedDeliveryAddress => String.t(),
+          :predefinedPickupDetails => String.t(),
           :promotions => list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t()),
           :shippingCost => GoogleApi.Content.V2.Model.Price.t(),
           :shippingCostTax => GoogleApi.Content.V2.Model.Price.t(),
@@ -57,6 +59,7 @@ defmodule GoogleApi.Content.V2.Model.TestOrder do
   field(:notificationMode)
   field(:paymentMethod, as: GoogleApi.Content.V2.Model.TestOrderPaymentMethod)
   field(:predefinedDeliveryAddress)
+  field(:predefinedPickupDetails)
   field(:promotions, as: GoogleApi.Content.V2.Model.OrderLegacyPromotion, type: :list)
   field(:shippingCost, as: GoogleApi.Content.V2.Model.Price)
   field(:shippingCostTax, as: GoogleApi.Content.V2.Model.Price)

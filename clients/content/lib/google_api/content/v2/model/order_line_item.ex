@@ -30,6 +30,7 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItem do
   *   `quantityDelivered` (*type:* `integer()`, *default:* `nil`) - Number of items delivered.
   *   `quantityOrdered` (*type:* `integer()`, *default:* `nil`) - Number of items ordered.
   *   `quantityPending` (*type:* `integer()`, *default:* `nil`) - Number of items pending.
+  *   `quantityReadyForPickup` (*type:* `integer()`, *default:* `nil`) - Number of items ready for pickup.
   *   `quantityReturned` (*type:* `integer()`, *default:* `nil`) - Number of items returned.
   *   `quantityShipped` (*type:* `integer()`, *default:* `nil`) - Number of items shipped.
   *   `returnInfo` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t`, *default:* `nil`) - Details of the return policy for the line item.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItem do
           :quantityDelivered => integer(),
           :quantityOrdered => integer(),
           :quantityPending => integer(),
+          :quantityReadyForPickup => integer(),
           :quantityReturned => integer(),
           :quantityShipped => integer(),
           :returnInfo => GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t(),
@@ -67,6 +69,7 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItem do
   field(:quantityDelivered)
   field(:quantityOrdered)
   field(:quantityPending)
+  field(:quantityReadyForPickup)
   field(:quantityReturned)
   field(:quantityShipped)
   field(:returnInfo, as: GoogleApi.Content.V2.Model.OrderLineItemReturnInfo)
