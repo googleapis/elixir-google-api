@@ -25,6 +25,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   *   `description` (*type:* `String.t`, *default:* `nil`) - A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the managed zone's function.
   *   `dnsName` (*type:* `String.t`, *default:* `nil`) - The DNS name of this managed zone, for instance "example.com.".
   *   `dnssecConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZoneDnsSecConfig.t`, *default:* `nil`) - DNSSEC configuration.
+  *   `forwardingConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfig.t`, *default:* `nil`) - The presence for this field indicates that outbound forwarding is enabled for this zone. The value of this field contains the set of destinations to forward to.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the resource; defined by the server (output only)
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZone`) - Identifies what kind of resource this is. Value: the fixed string "dns#managedZone".
   *   `labels` (*type:* `map()`, *default:* `nil`) - User labels.
@@ -42,6 +43,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
           :description => String.t(),
           :dnsName => String.t(),
           :dnssecConfig => GoogleApi.DNS.V1.Model.ManagedZoneDnsSecConfig.t(),
+          :forwardingConfig => GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfig.t(),
           :id => String.t(),
           :kind => String.t(),
           :labels => map(),
@@ -57,6 +59,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   field(:description)
   field(:dnsName)
   field(:dnssecConfig, as: GoogleApi.DNS.V1.Model.ManagedZoneDnsSecConfig)
+  field(:forwardingConfig, as: GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfig)
   field(:id)
   field(:kind)
   field(:labels, type: :map)
