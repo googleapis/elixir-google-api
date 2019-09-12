@@ -76,7 +76,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
       There can be at most 25 attachments per event,
   *   `hangoutLink` (*type:* `String.t`, *default:* `nil`) - An absolute link to the Google+ hangout associated with this event. Read-only.
   *   `conferenceData` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceData.t`, *default:* `nil`) - The conference-related information, such as details of a Hangouts Meet conference. To create new conference details use the createRequest field. To persist your changes, remember to set the conferenceDataVersion request parameter to 1 for all event modification requests.
-  *   `privateCopy` (*type:* `boolean()`, *default:* `false`) - Whether this is a private event copy where changes are not shared with other copies on other calendars. Optional. Immutable. The default is False.
+  *   `privateCopy` (*type:* `boolean()`, *default:* `false`) - If set to True, Event propagation is disabled. Note that it is not the same thing as Private event properties. Optional. Immutable. The default is False.
   *   `summary` (*type:* `String.t`, *default:* `nil`) - Title of the event.
   *   `guestsCanSeeOtherGuests` (*type:* `boolean()`, *default:* `true`) - Whether attendees other than the organizer can see who the event's attendees are. Optional. The default is True.
   *   `reminders` (*type:* `GoogleApi.Calendar.V3.Model.EventReminders.t`, *default:* `nil`) - Information about the event's reminders for the authenticated user.
