@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
 
   ## Attributes
 
+  *   `autoscalingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.AutoscalingConfig.t`, *default:* `nil`) - Optional. Autoscaling config for the policy associated with the cluster. Cluster does not autoscale if this field is unset.
   *   `configBucket` (*type:* `String.t`, *default:* `nil`) - Optional. A Google Cloud Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Google Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Cloud Dataproc staging bucket).
   *   `encryptionConfig` (*type:* `GoogleApi.Dataproc.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. Encryption settings for the cluster.
   *   `gceClusterConfig` (*type:* `GoogleApi.Dataproc.V1.Model.GceClusterConfig.t`, *default:* `nil`) - Optional. The shared Compute Engine config settings for all instances in a cluster.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoscalingConfig => GoogleApi.Dataproc.V1.Model.AutoscalingConfig.t(),
           :configBucket => String.t(),
           :encryptionConfig => GoogleApi.Dataproc.V1.Model.EncryptionConfig.t(),
           :gceClusterConfig => GoogleApi.Dataproc.V1.Model.GceClusterConfig.t(),
@@ -57,6 +59,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
           :workerConfig => GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t()
         }
 
+  field(:autoscalingConfig, as: GoogleApi.Dataproc.V1.Model.AutoscalingConfig)
   field(:configBucket)
   field(:encryptionConfig, as: GoogleApi.Dataproc.V1.Model.EncryptionConfig)
   field(:gceClusterConfig, as: GoogleApi.Dataproc.V1.Model.GceClusterConfig)
