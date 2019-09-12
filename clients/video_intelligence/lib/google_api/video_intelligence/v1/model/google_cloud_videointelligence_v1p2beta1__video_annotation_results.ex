@@ -32,9 +32,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoSegment.t`, *default:* `nil`) - Video segment on which the annotation is run.
   *   `segmentLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on video level or user specified segment level.
       There is exactly one element for each unique label.
+  *   `segmentPresenceLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t)`, *default:* `nil`) - Presence label annotations on video level or user specified segment level.
+      There is exactly one element for each unique label.
   *   `shotAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoSegment.t)`, *default:* `nil`) - Shot annotations. Each shot is represented as a video segment.
   *   `shotLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on shot level.
       There is exactly one element for each unique label.
+  *   `shotPresenceLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t)`, *default:* `nil`) - Presence label annotations on shot level. There is exactly one element for
+      each unique label.
   *   `speechTranscriptions` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_SpeechTranscription.t)`, *default:* `nil`) - Speech transcription.
   *   `textAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_TextAnnotation.t)`, *default:* `nil`) - OCR text detection and tracking.
       Annotations for list of detected text snippets. Each will have list of
@@ -62,11 +66,19 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t()
             ),
+          :segmentPresenceLabelAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t()
+            ),
           :shotAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoSegment.t()
             ),
           :shotLabelAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t()
+            ),
+          :shotPresenceLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t()
             ),
@@ -117,6 +129,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   )
 
   field(
+    :segmentPresenceLabelAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation,
+    type: :list
+  )
+
+  field(
     :shotAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoSegment,
     type: :list
@@ -124,6 +143,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
 
   field(
     :shotLabelAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation,
+    type: :list
+  )
+
+  field(
+    :shotPresenceLabelAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation,
     type: :list
