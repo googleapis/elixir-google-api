@@ -22,18 +22,15 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Testers do
   ## Attributes
 
   *   `googleGroups` (*type:* `list(String.t)`, *default:* `nil`) - A list of all Google Groups, as email addresses, that define testers for this track.
-  *   `googlePlusCommunities` (*type:* `list(String.t)`, *default:* `nil`) - A list of all Google+ Communities, as URLs, that define testers for this track.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :googleGroups => list(String.t()),
-          :googlePlusCommunities => list(String.t())
+          :googleGroups => list(String.t())
         }
 
   field(:googleGroups, type: :list)
-  field(:googlePlusCommunities, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.Testers do
