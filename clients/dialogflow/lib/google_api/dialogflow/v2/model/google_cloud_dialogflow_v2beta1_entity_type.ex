@@ -26,6 +26,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityType d
   *   `autoExpansionMode` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates whether the entity type can be automatically
       expanded.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the entity type.
+  *   `enableFuzzyExtraction` (*type:* `boolean()`, *default:* `nil`) - Optional. Enables fuzzy entity extraction during classification.
   *   `entities` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityTypeEntity.t)`, *default:* `nil`) - Optional. The collection of entity entries associated with the entity type.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Required. Indicates the kind of entity type.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the entity type.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityType d
   @type t :: %__MODULE__{
           :autoExpansionMode => String.t(),
           :displayName => String.t(),
+          :enableFuzzyExtraction => boolean(),
           :entities =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityTypeEntity.t()),
           :kind => String.t(),
@@ -47,6 +49,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityType d
 
   field(:autoExpansionMode)
   field(:displayName)
+  field(:enableFuzzyExtraction)
 
   field(
     :entities,

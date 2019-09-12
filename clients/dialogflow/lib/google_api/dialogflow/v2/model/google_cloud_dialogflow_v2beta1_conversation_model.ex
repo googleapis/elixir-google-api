@@ -27,6 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Conversation
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the model. At most 64 bytes long.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. ConversationModel resource name. Format:
       `projects/<Project ID>/conversationModels/<Conversation Model ID>`
+  *   `smartReplyModelMetadata` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SmartReplyModelMetadata.t`, *default:* `nil`) - Metadata for smart reply models.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the model. A model can only serve prediction requests
       after it gets deployed.
   """
@@ -41,6 +42,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Conversation
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1InputDataset.t()),
           :displayName => String.t(),
           :name => String.t(),
+          :smartReplyModelMetadata =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SmartReplyModelMetadata.t(),
           :state => String.t()
         }
 
@@ -59,6 +62,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Conversation
 
   field(:displayName)
   field(:name)
+
+  field(
+    :smartReplyModelMetadata,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SmartReplyModelMetadata
+  )
+
   field(:state)
 end
 
