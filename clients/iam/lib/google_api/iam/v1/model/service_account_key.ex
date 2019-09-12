@@ -58,6 +58,9 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
   *   `publicKeyData` (*type:* `String.t`, *default:* `nil`) - The public key data. Only provided in `GetServiceAccountKey` responses.
   *   `validAfterTime` (*type:* `DateTime.t`, *default:* `nil`) - The key can be used after this timestamp.
   *   `validBeforeTime` (*type:* `DateTime.t`, *default:* `nil`) - The key can be used before this timestamp.
+      For system-managed key pairs, this timestamp is the end time for the
+      private key signing operation. The public key could still be used
+      for verification for a few hours after this time.
   """
 
   use GoogleApi.Gax.ModelBase
