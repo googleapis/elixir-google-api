@@ -26,10 +26,14 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   *   `managedZones` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones in the project.
   *   `managedZonesPerNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a network.
   *   `networksPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks to which a privately scoped zone can be attached.
+  *   `networksPerPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks per policy.
+  *   `policies` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of policies per project.
   *   `resourceRecordsPerRrset` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecords per ResourceRecordSet.
   *   `rrsetAdditionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest.
   *   `rrsetDeletionsPerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest.
   *   `rrsetsPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of ResourceRecordSets per zone in the project.
+  *   `targetNameServersPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of target name servers per managed forwarding zone.
+  *   `targetNameServersPerPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of alternative target name servers per policy.
   *   `totalRrdataSizePerChange` (*type:* `integer()`, *default:* `nil`) - Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes.
   *   `whitelistedKeySpecs` (*type:* `list(GoogleApi.DNS.V1.Model.DnsKeySpec.t)`, *default:* `nil`) - DNSSEC algorithm and key length types that can be used for DnsKeys.
   """
@@ -42,10 +46,14 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
           :managedZones => integer(),
           :managedZonesPerNetwork => integer(),
           :networksPerManagedZone => integer(),
+          :networksPerPolicy => integer(),
+          :policies => integer(),
           :resourceRecordsPerRrset => integer(),
           :rrsetAdditionsPerChange => integer(),
           :rrsetDeletionsPerChange => integer(),
           :rrsetsPerManagedZone => integer(),
+          :targetNameServersPerManagedZone => integer(),
+          :targetNameServersPerPolicy => integer(),
           :totalRrdataSizePerChange => integer(),
           :whitelistedKeySpecs => list(GoogleApi.DNS.V1.Model.DnsKeySpec.t())
         }
@@ -55,10 +63,14 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   field(:managedZones)
   field(:managedZonesPerNetwork)
   field(:networksPerManagedZone)
+  field(:networksPerPolicy)
+  field(:policies)
   field(:resourceRecordsPerRrset)
   field(:rrsetAdditionsPerChange)
   field(:rrsetDeletionsPerChange)
   field(:rrsetsPerManagedZone)
+  field(:targetNameServersPerManagedZone)
+  field(:targetNameServersPerPolicy)
   field(:totalRrdataSizePerChange)
   field(:whitelistedKeySpecs, as: GoogleApi.DNS.V1.Model.DnsKeySpec, type: :list)
 end
