@@ -33,6 +33,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
   *   `netAmount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The net amount for the order. For example, if an order was originally for a grand total of $100 and a refund was issued for $20, the net amount will be $80.
   *   `paymentMethod` (*type:* `GoogleApi.Content.V2.Model.OrderPaymentMethod.t`, *default:* `nil`) - The details of the payment method.
   *   `paymentStatus` (*type:* `String.t`, *default:* `nil`) - The status of the payment.
+  *   `pickupDetails` (*type:* `GoogleApi.Content.V2.Model.OrderPickupDetails.t`, *default:* `nil`) - Pickup details for shipments of type pickup.
   *   `placedDate` (*type:* `String.t`, *default:* `nil`) - The date when the order was placed, in ISO 8601 format.
   *   `promotions` (*type:* `list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t)`, *default:* `nil`) - The details of the merchant provided promotions applied to the order. More details about the program are here.
   *   `refunds` (*type:* `list(GoogleApi.Content.V2.Model.OrderRefund.t)`, *default:* `nil`) - Refunds for the order.
@@ -59,6 +60,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
           :netAmount => GoogleApi.Content.V2.Model.Price.t(),
           :paymentMethod => GoogleApi.Content.V2.Model.OrderPaymentMethod.t(),
           :paymentStatus => String.t(),
+          :pickupDetails => GoogleApi.Content.V2.Model.OrderPickupDetails.t(),
           :placedDate => String.t(),
           :promotions => list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t()),
           :refunds => list(GoogleApi.Content.V2.Model.OrderRefund.t()),
@@ -82,6 +84,7 @@ defmodule GoogleApi.Content.V2.Model.Order do
   field(:netAmount, as: GoogleApi.Content.V2.Model.Price)
   field(:paymentMethod, as: GoogleApi.Content.V2.Model.OrderPaymentMethod)
   field(:paymentStatus)
+  field(:pickupDetails, as: GoogleApi.Content.V2.Model.OrderPickupDetails)
   field(:placedDate)
   field(:promotions, as: GoogleApi.Content.V2.Model.OrderLegacyPromotion, type: :list)
   field(:refunds, as: GoogleApi.Content.V2.Model.OrderRefund, type: :list)

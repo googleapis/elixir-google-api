@@ -24,6 +24,7 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemShippingDetails do
   *   `deliverByDate` (*type:* `String.t`, *default:* `nil`) - The delivery by date, in ISO 8601 format.
   *   `method` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod.t`, *default:* `nil`) - Details of the shipping method.
   *   `shipByDate` (*type:* `String.t`, *default:* `nil`) - The ship by date, in ISO 8601 format.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of shipment. Indicates whether deliveryDetails or pickupDetails is applicable for this shipment.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemShippingDetails do
   @type t :: %__MODULE__{
           :deliverByDate => String.t(),
           :method => GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod.t(),
-          :shipByDate => String.t()
+          :shipByDate => String.t(),
+          :type => String.t()
         }
 
   field(:deliverByDate)
   field(:method, as: GoogleApi.Content.V2.Model.OrderLineItemShippingDetailsMethod)
   field(:shipByDate)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.OrderLineItemShippingDetails do
