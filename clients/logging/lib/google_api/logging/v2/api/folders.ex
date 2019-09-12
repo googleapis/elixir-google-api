@@ -330,7 +330,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A nonempty list of fields to change in the existing exclusion. New values for the fields are taken from the corresponding fields in the LogExclusion included in this request. Fields not mentioned in update_mask are not changed and are ignored in the request.For example, to change the filter and description of an exclusion, specify an update_mask of "filter,description".
+      *   `:updateMask` (*type:* `String.t`) - Required. A non-empty list of fields to change in the existing exclusion. New values for the fields are taken from the corresponding fields in the LogExclusion included in this request. Fields not mentioned in update_mask are not changed and are ignored in the request.For example, to change the filter and description of an exclusion, specify an update_mask of "filter,description".
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogExclusion.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -465,12 +465,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name that owns the logs:
-      "projects/[PROJECT_ID]"
-      "organizations/[ORGANIZATION_ID]"
-      "billingAccounts/[BILLING_ACCOUNT_ID]"
-      "folders/[FOLDER_ID]"
-
+  *   `folders_id` (*type:* `String.t`) - Part of `parent`. Required. To be deprecated in Logging Data Model V2.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -485,6 +480,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
       *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
+      *   `:resourceNames` (*type:* `list(String.t)`) - Required for Logging Data Model V2. The resource name that owns the logs:  "projects/PROJECT_ID"  "organizations/ORGANIZATION_ID"  "billingAccounts/BILLING_ACCOUNT_ID"  "folders/FOLDER_ID"
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -508,7 +504,8 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :resourceNames => :query
     }
 
     request =
