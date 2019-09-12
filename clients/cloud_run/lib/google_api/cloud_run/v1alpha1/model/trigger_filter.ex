@@ -21,15 +21,34 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter do
 
   ## Attributes
 
-  *   `sourceAndType` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType.t`, *default:* `nil`) - 
+  *   `attributes` (*type:* `map()`, *default:* `nil`) - Cloud Run fully managed: not supported
+
+      Cloud Run on GKE: supported
+
+      Attributes filters events by exact match on event context attributes.
+      Each key in the map is compared with the equivalent key in the event
+      context. An event passes the filter if all values are equal to the
+      specified values.
+
+      Nested context attributes are not supported as keys.
+      Only string values are supported.
+
+      +optional
+  *   `sourceAndType` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType.t`, *default:* `nil`) - SourceAndType filters events based on exact matches on the
+      CloudEvents type and source attributes. This field has been replaced by the
+      Attributes field.
+
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :attributes => map(),
           :sourceAndType => GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType.t()
         }
 
+  field(:attributes, type: :map)
   field(:sourceAndType, as: GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType)
 end
 
