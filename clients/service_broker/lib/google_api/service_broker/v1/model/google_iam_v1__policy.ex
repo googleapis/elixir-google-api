@@ -77,7 +77,14 @@ defmodule GoogleApi.ServiceBroker.V1.Model.GoogleIamV1_Policy do
 
       If no `etag` is provided in the call to `setIamPolicy`, then the existing
       policy is overwritten.
-  *   `version` (*type:* `integer()`, *default:* `nil`) - Deprecated.
+  *   `version` (*type:* `integer()`, *default:* `nil`) - Specifies the format of the policy.
+
+      Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+      rejected.
+
+      Policies with any conditional bindings must specify version 3. Policies
+      without any conditional bindings may specify any valid value or leave the
+      field unset.
   """
 
   use GoogleApi.Gax.ModelBase
