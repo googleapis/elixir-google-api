@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationssettings do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists all the managed configurations settings for the specified app. Only the ID and the name is set.
+  Lists all the managed configurations settings for the specified app.
 
   ## Parameters
 
