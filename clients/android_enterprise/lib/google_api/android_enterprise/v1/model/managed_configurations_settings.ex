@@ -23,7 +23,6 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
 
   *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfigurationsSettings`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsSettings".
   *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The last updated time of the managed configuration settings in milliseconds since 1970-01-01T00:00:00Z.
-  *   `managedProperty` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The set of managed properties for this configuration.
   *   `mcmId` (*type:* `String.t`, *default:* `nil`) - The ID of the managed configurations settings.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the managed configurations settings.
   """
@@ -33,14 +32,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
   @type t :: %__MODULE__{
           :kind => String.t(),
           :lastUpdatedTimestampMillis => String.t(),
-          :managedProperty => list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t()),
           :mcmId => String.t(),
           :name => String.t()
         }
 
   field(:kind)
   field(:lastUpdatedTimestampMillis)
-  field(:managedProperty, as: GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty, type: :list)
   field(:mcmId)
   field(:name)
 end
