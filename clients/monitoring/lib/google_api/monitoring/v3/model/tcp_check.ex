@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.TcpCheck do
   @moduledoc """
-  Information required for a TCP uptime check request.
+  Information required for a TCP Uptime check request.
 
   ## Attributes
 
-  *   `port` (*type:* `integer()`, *default:* `nil`) - The port to the page to run the check against. Will be combined with host (specified within the MonitoredResource) to construct the full URL. Required.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - The TCP port on the server against which to run the check. Will be combined with host (specified within the monitored_resource) to construct the full URL. Required.
   """
 
   use GoogleApi.Gax.ModelBase
