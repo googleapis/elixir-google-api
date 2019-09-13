@@ -31,9 +31,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Models do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the model to delete.
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the model to delete.
-  *   `model_id` (*type:* `String.t`) - Model ID of the model to delete.
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the model to delete.
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the model to delete.
+  *   `model_id` (*type:* `String.t`) - Required. Model ID of the model to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -100,9 +100,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Models do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the requested model.
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the requested model.
-  *   `model_id` (*type:* `String.t`) - Model ID of the requested model.
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the requested model.
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the requested model.
+  *   `model_id` (*type:* `String.t`) - Required. Model ID of the requested model.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -170,8 +170,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Models do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the models to list.
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the models to list.
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the models to list.
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the models to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -227,9 +227,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Models do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the model to patch.
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the model to patch.
-  *   `model_id` (*type:* `String.t`) - Model ID of the model to patch.
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the model to patch.
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the model to patch.
+  *   `model_id` (*type:* `String.t`) - Required. Model ID of the model to patch.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.

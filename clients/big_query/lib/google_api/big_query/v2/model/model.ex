@@ -21,36 +21,33 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
 
   ## Attributes
 
-  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this model was created, in millisecs since the
-      epoch.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] A user-friendly description of this model.
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this model was created, in millisecs since the epoch.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A user-friendly description of this model.
   *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys). This shows the
       encryption configuration of the model data while stored in BigQuery
       storage.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of this resource.
-  *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - [Optional] The time when this model expires, in milliseconds since the
-      epoch. If not present, the model will persist indefinitely. Expired models
+  *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - Optional. The time when this model expires, in milliseconds since the epoch.
+      If not present, the model will persist indefinitely. Expired models
       will be deleted and their storage reclaimed.  The defaultTableExpirationMs
       property of the encapsulating dataset can be used to set a default
       expirationTime on newly created models.
   *   `featureColumns` (*type:* `list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t)`, *default:* `nil`) - Output only. Input feature columns that were used to train this model.
-  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - [Optional] A descriptive name for this model.
+  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive name for this model.
   *   `labelColumns` (*type:* `list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t)`, *default:* `nil`) - Output only. Label columns that were used to train this model.
       The output of the model will have a "predicted_" prefix to these columns.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - [Optional] The labels associated with this model. You can use these to
-      organize and group your models. Label keys and values can be no longer
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this model. You can use these to organize
+      and group your models. Label keys and values can be no longer
       than 63 characters, can only contain lowercase letters, numeric
       characters, underscores and dashes. International characters are allowed.
       Label values are optional. Label keys must start with a letter and each
       label in the list must have a different key.
-  *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this model was last modified, in millisecs
-      since the epoch.
+  *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this model was last modified, in millisecs since the epoch.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. The geographic location where the model resides. This value
       is inherited from the dataset.
   *   `modelReference` (*type:* `GoogleApi.BigQuery.V2.Model.ModelReference.t`, *default:* `nil`) - Required. Unique identifier for this model.
   *   `modelType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of the model resource.
-  *   `trainingRuns` (*type:* `list(GoogleApi.BigQuery.V2.Model.TrainingRun.t)`, *default:* `nil`) - Output only. Information for all training runs in increasing order of
-      start_time.
+  *   `trainingRuns` (*type:* `list(GoogleApi.BigQuery.V2.Model.TrainingRun.t)`, *default:* `nil`) - Output only. Information for all training runs in increasing order of start_time.
   """
 
   use GoogleApi.Gax.ModelBase

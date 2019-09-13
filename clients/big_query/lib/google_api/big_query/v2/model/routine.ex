@@ -47,6 +47,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
       `return "\\n";\\n`
 
       Note that both \\n are replaced with linebreaks.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. [Experimental] The description of the routine if defined.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of this resource.
   *   `importedLibraries` (*type:* `list(String.t)`, *default:* `nil`) - Optional. If language = "JAVASCRIPT", this field stores the path of the
       imported JAVASCRIPT libraries.
@@ -76,7 +77,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
       Then the inferred return type of `Increment` is automatically changed to
       INT64 at query time, while the return type of `Decrement` remains FLOAT64.
   *   `routineReference` (*type:* `GoogleApi.BigQuery.V2.Model.RoutineReference.t`, *default:* `nil`) - Required. Reference describing the ID of this routine.
-  *   `routineType` (*type:* `String.t`, *default:* `nil`) - Required.
+  *   `routineType` (*type:* `String.t`, *default:* `nil`) - Required. The type of routine.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -85,6 +86,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
           :arguments => list(GoogleApi.BigQuery.V2.Model.Argument.t()),
           :creationTime => String.t(),
           :definitionBody => String.t(),
+          :description => String.t(),
           :etag => String.t(),
           :importedLibraries => list(String.t()),
           :language => String.t(),
@@ -97,6 +99,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
   field(:arguments, as: GoogleApi.BigQuery.V2.Model.Argument, type: :list)
   field(:creationTime)
   field(:definitionBody)
+  field(:description)
   field(:etag)
   field(:importedLibraries, type: :list)
   field(:language)
