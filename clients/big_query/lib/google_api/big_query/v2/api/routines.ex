@@ -31,9 +31,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the routine to delete
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the routine to delete
-  *   `routine_id` (*type:* `String.t`) - Routine ID of the routine to delete
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the routine to delete
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the routine to delete
+  *   `routine_id` (*type:* `String.t`) - Required. Routine ID of the routine to delete
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -100,9 +100,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the requested routine
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the requested routine
-  *   `routine_id` (*type:* `String.t`) - Routine ID of the requested routine
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the requested routine
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the requested routine
+  *   `routine_id` (*type:* `String.t`) - Required. Routine ID of the requested routine
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -172,8 +172,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the new routine
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the new routine
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the new routine
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the new routine
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -232,8 +232,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the routines to list
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the routines to list
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the routines to list
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the routines to list
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -296,9 +296,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the routine to update
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the routine to update
-  *   `routine_id` (*type:* `String.t`) - Routine ID of the routine to update
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the routine to update
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the routine to update
+  *   `routine_id` (*type:* `String.t`) - Required. Routine ID of the routine to update
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
