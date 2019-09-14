@@ -30,6 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificate do
   *   `kind` (*type:* `String.t`, *default:* `compute#sslCertificate`) - [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `privateKey` (*type:* `String.t`, *default:* `nil`) - A write-only private key in PEM format. Only insert requests will include this field.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined URL for the resource.
   """
 
@@ -43,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificate do
           :kind => String.t(),
           :name => String.t(),
           :privateKey => String.t(),
+          :region => String.t(),
           :selfLink => String.t()
         }
 
@@ -53,6 +55,7 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificate do
   field(:kind)
   field(:name)
   field(:privateKey)
+  field(:region)
   field(:selfLink)
 end
 

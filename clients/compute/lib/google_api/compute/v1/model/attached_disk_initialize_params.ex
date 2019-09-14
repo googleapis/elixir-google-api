@@ -36,7 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
       - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
   *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies applied to this disk for automatic snapshot creations. Specified using the full or partial URL. For instance template, specify only the resource policy name.
-  *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or disks.source is required except for local SSD.
+  *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
 
       To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
       projects/debian-cloud/global/images/family/debian-9
@@ -58,7 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   *   `sourceImageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
 
       Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
-  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
 
       To create a disk with a snapshot that you created, specify the snapshot name in the following format:
       global/snapshots/my-backup

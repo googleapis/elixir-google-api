@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
   *   `kind` (*type:* `String.t`, *default:* `compute#targetHttpsProxy`) - [Output Only] Type of resource. Always compute#targetHttpsProxy for target HTTPS proxies.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `quicOverride` (*type:* `String.t`, *default:* `nil`) - Specifies the QUIC override policy for this TargetHttpsProxy resource. This determines whether the load balancer will attempt to negotiate QUIC with clients or not. Can specify one of NONE, ENABLE, or DISABLE. Specify ENABLE to always enable QUIC, Enables QUIC when set to ENABLE, and disables QUIC when set to DISABLE. If NONE is specified, uses the QUIC policy with no user overrides, which is equivalent to DISABLE. Not specifying this field is equivalent to specifying NONE.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional TargetHttpsProxy resides. This field is not applicable to global TargetHttpsProxies.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `sslCertificates` (*type:* `list(String.t)`, *default:* `nil`) - URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
   *   `sslPolicy` (*type:* `String.t`, *default:* `nil`) - URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource will not have any SSL policy configured.
@@ -47,6 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
           :kind => String.t(),
           :name => String.t(),
           :quicOverride => String.t(),
+          :region => String.t(),
           :selfLink => String.t(),
           :sslCertificates => list(String.t()),
           :sslPolicy => String.t(),
@@ -59,6 +61,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
   field(:kind)
   field(:name)
   field(:quicOverride)
+  field(:region)
   field(:selfLink)
   field(:sslCertificates, type: :list)
   field(:sslPolicy)

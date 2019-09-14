@@ -37,9 +37,12 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
   *   `privateIpGoogleAccess` (*type:* `boolean()`, *default:* `nil`) - Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+  *   `purpose` (*type:* `String.t`, *default:* `nil`) - The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918.
   *   `region` (*type:* `String.t`, *default:* `nil`) - URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The role of subnetwork. Currenly, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
   *   `secondaryIpRanges` (*type:* `list(GoogleApi.Compute.V1.Model.SubnetworkSecondaryRange.t)`, *default:* `nil`) - An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -57,9 +60,12 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
           :name => String.t(),
           :network => String.t(),
           :privateIpGoogleAccess => boolean(),
+          :purpose => String.t(),
           :region => String.t(),
+          :role => String.t(),
           :secondaryIpRanges => list(GoogleApi.Compute.V1.Model.SubnetworkSecondaryRange.t()),
-          :selfLink => String.t()
+          :selfLink => String.t(),
+          :state => String.t()
         }
 
   field(:creationTimestamp)
@@ -74,9 +80,12 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   field(:name)
   field(:network)
   field(:privateIpGoogleAccess)
+  field(:purpose)
   field(:region)
+  field(:role)
   field(:secondaryIpRanges, as: GoogleApi.Compute.V1.Model.SubnetworkSecondaryRange, type: :list)
   field(:selfLink)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Subnetwork do
