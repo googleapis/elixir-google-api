@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.BasicAuthentication do
   @moduledoc """
-  A type of authentication to perform against the specified resource or URL that uses username and password. Currently, only Basic authentication is supported in Uptime Monitoring.
+  The authentication parameters to provide to the specified resource or URL that requires a username and password. Currently, only Basic HTTP authentication (https://tools.ietf.org/html/rfc7617) is supported in Uptime checks.
 
   ## Attributes
 
-  *   `password` (*type:* `String.t`, *default:* `nil`) - The password to authenticate.
-  *   `username` (*type:* `String.t`, *default:* `nil`) - The username to authenticate.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - The password to use when authenticating with the HTTP server.
+  *   `username` (*type:* `String.t`, *default:* `nil`) - The username to use when authenticating with the HTTP server.
   """
 
   use GoogleApi.Gax.ModelBase

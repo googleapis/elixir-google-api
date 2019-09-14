@@ -22,7 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ContentMatcher do
   ## Attributes
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - String or regex content to match (max 1024 bytes)
-  *   `matcher` (*type:* `String.t`, *default:* `nil`) - The matcher representing content match options which the check will run with. If the field is not specified (in previous versions), the option is set to be CONTAINS_STRING which performs content substring matching.
+  *   `matcher` (*type:* `String.t`, *default:* `nil`) - The type of content matcher that will be applied to the server output, compared to the content string when the check is run.
   """
 
   use GoogleApi.Gax.ModelBase

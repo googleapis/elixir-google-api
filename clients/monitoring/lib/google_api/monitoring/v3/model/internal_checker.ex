@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.InternalChecker do
   @moduledoc """
-  An internal checker allows uptime checks to run on private/internal GCP resources.
+  An internal checker allows Uptime checks to run on private/internal GCP resources.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The checker's human-readable name. The display name should be unique within a Stackdriver Workspace in order to make it easier to identify; however, uniqueness is not enforced.
-  *   `gcpZone` (*type:* `String.t`, *default:* `nil`) - The GCP zone the uptime check should egress from. Only respected for internal uptime checks, where internal_network is specified.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A unique resource name for this InternalChecker. The format is:projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID].PROJECT_ID is the stackdriver workspace project for the uptime check config associated with the internal checker.
+  *   `gcpZone` (*type:* `String.t`, *default:* `nil`) - The GCP zone the Uptime check should egress from. Only respected for internal Uptime checks, where internal_network is specified.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - A unique resource name for this InternalChecker. The format is:projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID].[PROJECT_ID] is the Stackdriver Workspace project for the Uptime check config associated with the internal checker.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The GCP VPC network (https://cloud.google.com/vpc/docs/vpc) where the internal resource lives (ex: "default").
-  *   `peerProjectId` (*type:* `String.t`, *default:* `nil`) - The GCP project_id where the internal checker lives. Not necessary the same as the workspace project.
+  *   `peerProjectId` (*type:* `String.t`, *default:* `nil`) - The GCP project ID where the internal checker lives. Not necessary the same as the Workspace project.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current operational state of the internal checker.
   """
 

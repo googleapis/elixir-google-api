@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ResourceGroup do
 
   ## Attributes
 
-  *   `groupId` (*type:* `String.t`, *default:* `nil`) - The group of resources being monitored. Should be only the group_id, not projects/<project_id>/groups/<group_id>.
+  *   `groupId` (*type:* `String.t`, *default:* `nil`) - The group of resources being monitored. Should be only the [GROUP_ID], and not the full-path projects/[PROJECT_ID]/groups/[GROUP_ID].
   *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The resource type of the group members.
   """
 
