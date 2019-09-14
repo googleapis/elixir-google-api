@@ -35,6 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#healthCheck`) - Type of the resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] Region where the health check resides. Not applicable to global health checks.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `sslHealthCheck` (*type:* `GoogleApi.Compute.V1.Model.SSLHealthCheck.t`, *default:* `nil`) - 
   *   `tcpHealthCheck` (*type:* `GoogleApi.Compute.V1.Model.TCPHealthCheck.t`, *default:* `nil`) - 
@@ -56,6 +57,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
           :id => String.t(),
           :kind => String.t(),
           :name => String.t(),
+          :region => String.t(),
           :selfLink => String.t(),
           :sslHealthCheck => GoogleApi.Compute.V1.Model.SSLHealthCheck.t(),
           :tcpHealthCheck => GoogleApi.Compute.V1.Model.TCPHealthCheck.t(),
@@ -74,6 +76,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   field(:id)
   field(:kind)
   field(:name)
+  field(:region)
   field(:selfLink)
   field(:sslHealthCheck, as: GoogleApi.Compute.V1.Model.SSLHealthCheck)
   field(:tcpHealthCheck, as: GoogleApi.Compute.V1.Model.TCPHealthCheck)
