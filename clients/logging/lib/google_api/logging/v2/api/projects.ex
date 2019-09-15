@@ -470,7 +470,12 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. To be deprecated in Logging Data Model V2.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name that owns the logs:
+      "projects/[PROJECT_ID]"
+      "organizations/[ORGANIZATION_ID]"
+      "billingAccounts/[BILLING_ACCOUNT_ID]"
+      "folders/[FOLDER_ID]"
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -485,7 +490,6 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
       *   `:pageToken` (*type:* `String.t`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
-      *   `:resourceNames` (*type:* `list(String.t)`) - Required for Logging Data Model V2. The resource name that owns the logs:  "projects/PROJECT_ID"  "organizations/ORGANIZATION_ID"  "billingAccounts/BILLING_ACCOUNT_ID"  "folders/FOLDER_ID"
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -509,8 +513,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query,
-      :resourceNames => :query
+      :pageToken => :query
     }
 
     request =
