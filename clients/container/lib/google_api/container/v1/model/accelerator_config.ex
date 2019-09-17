@@ -23,7 +23,7 @@ defmodule GoogleApi.Container.V1.Model.AcceleratorConfig do
 
   *   `acceleratorCount` (*type:* `String.t`, *default:* `nil`) - The number of the accelerator cards exposed to an instance.
   *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - The accelerator type resource name. List of supported accelerators
-      [here](/compute/docs/gpus/#Introduction)
+      [here](/compute/docs/gpus)
   """
 
   use GoogleApi.Gax.ModelBase

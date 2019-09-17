@@ -43,9 +43,9 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *   `localSsdCount` (*type:* `integer()`, *default:* `nil`) - The number of local SSD disks to be attached to the node.
 
-      The limit for this value is dependant upon the maximum number of
+      The limit for this value is dependent upon the maximum number of
       disks available on a machine per zone. See:
-      https://cloud.google.com/compute/docs/disks/local-ssd#local_ssd_limits
+      https://cloud.google.com/compute/docs/disks/local-ssd
       for more information.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The name of a Google Compute Engine [machine
       type](/compute/docs/machine-types) (e.g.
