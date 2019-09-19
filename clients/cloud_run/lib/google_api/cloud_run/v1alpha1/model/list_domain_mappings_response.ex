@@ -27,6 +27,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListDomainMappingsResponse do
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this DomainMapping list.
   *   `regionDetails` (*type:* `%{optional(String.t) => GoogleApi.CloudRun.V1alpha1.Model.RegionDetails.t}`, *default:* `nil`) - Details for the regions used during a global call including any failures.
       This is not populated when targeting a specific region.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,7 +39,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListDomainMappingsResponse do
           :metadata => GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t(),
           :regionDetails => %{
             optional(String.t()) => GoogleApi.CloudRun.V1alpha1.Model.RegionDetails.t()
-          }
+          },
+          :unreachable => list(String.t())
         }
 
   field(:apiVersion)
@@ -46,6 +48,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListDomainMappingsResponse do
   field(:kind)
   field(:metadata, as: GoogleApi.CloudRun.V1alpha1.Model.ListMeta)
   field(:regionDetails, as: GoogleApi.CloudRun.V1alpha1.Model.RegionDetails, type: :map)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.ListDomainMappingsResponse do
