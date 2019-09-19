@@ -25,13 +25,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ImportAgentReques
 
       Example for how to import an agent via the command line:
       <pre>curl \\
-        'https://dialogflow.googleapis.com/v2/projects/&lt;project_name&gt;/agent:import\\
+        'https://dialogflow.googleapis.com/v2/projects/&lt;project_id&gt;/agent:import'\\
          -X POST \\
-         -H 'Authorization: Bearer '$(gcloud auth application-default
-         print-access-token) \\
+         -H 'Authorization: Bearer'\\
+         $(gcloud auth application-default print-access-token) \\
          -H 'Accept: application/json' \\
          -H 'Content-Type: application/json' \\
-         --compressed \\
          --data-binary "{
             'agentContent': '$(cat &lt;agent zip file&gt; | base64 -w 0)'
          }"</pre>
