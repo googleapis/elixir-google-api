@@ -196,7 +196,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
           http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
           If language_code is unspecified, the user's language preference for Google
           services is used.
-      *   `:view` (*type:* `String.t`) - Specifies if a download URL for the photo bytes should be returned in the
+      *   `:view` (*type:* `String.t`) - Required. Specifies if a download URL for the photo bytes should be returned in the
           Photo response.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -348,7 +348,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Mask that identifies fields on the photo metadata to update.
+      *   `:updateMask` (*type:* `String.t`) - Required. Mask that identifies fields on the photo metadata to update.
           If not present, the old Photo
           metadata is entirely replaced with the
           new Photo metadata in this request.
