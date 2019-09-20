@@ -22,18 +22,18 @@ defmodule GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAcc
   ## Attributes
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - If set, access is controlled only by bucket-level or above IAM policies.
-  *   `lockedTime` (*type:* `String.t`, *default:* `nil`) - The deadline for changing iamConfiguration.uniformBucketLevelAccess.enabled from true to false in RFC 3339  format. iamConfiguration.uniformBucketLevelAccess.enabled may be changed from true to false until the locked time, after which the field is immutable.
+  *   `lockedTime` (*type:* `DateTime.t`, *default:* `nil`) - The deadline for changing iamConfiguration.uniformBucketLevelAccess.enabled from true to false in RFC 3339  format. iamConfiguration.uniformBucketLevelAccess.enabled may be changed from true to false until the locked time, after which the field is immutable.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :enabled => boolean(),
-          :lockedTime => String.t()
+          :lockedTime => DateTime.t()
         }
 
   field(:enabled)
-  field(:lockedTime)
+  field(:lockedTime, as: DateTime)
 end
 
 defimpl Poison.Decoder,
