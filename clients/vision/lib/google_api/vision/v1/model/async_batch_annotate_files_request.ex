@@ -34,7 +34,7 @@ defmodule GoogleApi.Vision.V1.Model.AsyncBatchAnnotateFilesRequest do
           `eu`: The European Union.
 
       Example: `projects/project-A/locations/eu`.
-  *   `requests` (*type:* `list(GoogleApi.Vision.V1.Model.AsyncAnnotateFileRequest.t)`, *default:* `nil`) - Individual async file annotation requests for this batch.
+  *   `requests` (*type:* `list(GoogleApi.Vision.V1.Model.AsyncAnnotateFileRequest.t)`, *default:* `nil`) - Required. Individual async file annotation requests for this batch.
   """
 
   use GoogleApi.Gax.ModelBase

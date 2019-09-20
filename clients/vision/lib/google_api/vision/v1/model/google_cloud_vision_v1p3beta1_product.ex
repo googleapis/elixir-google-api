@@ -31,12 +31,10 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1Product do
       `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
 
       This field is ignored when creating a product.
-  *   `productCategory` (*type:* `String.t`, *default:* `nil`) - The category for the product identified by the reference image. This should
+  *   `productCategory` (*type:* `String.t`, *default:* `nil`) - Immutable. The category for the product identified by the reference image. This should
       be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
       "homegoods", "apparel", and "toys" are still supported, but these should
       not be used for new products.
-
-      This field is immutable.
   *   `productLabels` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p3beta1ProductKeyValue.t)`, *default:* `nil`) - Key-value pairs that can be attached to a product. At query time,
       constraints can be specified based on the product_labels.
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.ImportProductSetsRequest do
 
   ## Attributes
 
-  *   `inputConfig` (*type:* `GoogleApi.Vision.V1.Model.ImportProductSetsInputConfig.t`, *default:* `nil`) - The input content for the list of requests.
+  *   `inputConfig` (*type:* `GoogleApi.Vision.V1.Model.ImportProductSetsInputConfig.t`, *default:* `nil`) - Required. The input content for the list of requests.
   """
 
   use GoogleApi.Gax.ModelBase

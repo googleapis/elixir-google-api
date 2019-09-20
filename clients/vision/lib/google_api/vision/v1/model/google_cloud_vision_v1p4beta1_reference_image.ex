@@ -22,8 +22,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ReferenceImage do
 
   ## Attributes
 
-  *   `boundingPolys` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t)`, *default:* `nil`) - Bounding polygons around the areas of interest in the reference image.
-      Optional. If this field is empty, the system will try to detect regions of
+  *   `boundingPolys` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly.t)`, *default:* `nil`) - Optional. Bounding polygons around the areas of interest in the reference image.
+      If this field is empty, the system will try to detect regions of
       interest. At most 10 bounding polygons will be used.
 
       The provided shape is converted into a non-rotated rectangle. Once
@@ -37,11 +37,9 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ReferenceImage do
       `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
 
       This field is ignored when creating a reference image.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URI of the reference image.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The Google Cloud Storage URI of the reference image.
 
       The URI must start with `gs://`.
-
-      Required.
   """
 
   use GoogleApi.Gax.ModelBase

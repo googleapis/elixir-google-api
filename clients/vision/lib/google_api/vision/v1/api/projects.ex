@@ -764,7 +764,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name for the ProductSet to modify.
+  *   `name` (*type:* `String.t`) - Required. The resource name for the ProductSet to modify.
 
       Format is:
       `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -840,7 +840,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The project in which the ProductSet should be created.
+  *   `parent` (*type:* `String.t`) - Required. The project in which the ProductSet should be created.
 
       Format is `projects/PROJECT_ID/locations/LOC_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -918,7 +918,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the ProductSet to delete.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the ProductSet to delete.
 
       Format is:
       `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -991,7 +991,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the ProductSet to get.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the ProductSet to get.
 
       Format is:
       `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
@@ -1070,7 +1070,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The project in which the ProductSets should be imported.
+  *   `parent` (*type:* `String.t`) - Required. The project in which the ProductSets should be imported.
 
       Format is `projects/PROJECT_ID/locations/LOC_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1145,7 +1145,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The project from which ProductSets should be listed.
+  *   `parent` (*type:* `String.t`) - Required. The project from which ProductSets should be listed.
 
       Format is `projects/PROJECT_ID/locations/LOC_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1303,7 +1303,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name for the ProductSet to modify.
+  *   `name` (*type:* `String.t`) - Required. The resource name for the ProductSet to modify.
 
       Format is:
       `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -1380,7 +1380,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The ProductSet resource for which to retrieve Products.
+  *   `name` (*type:* `String.t`) - Required. The ProductSet resource for which to retrieve Products.
 
       Format is:
       `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -1464,7 +1464,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The project in which the Product should be created.
+  *   `parent` (*type:* `String.t`) - Required. The project in which the Product should be created.
 
       Format is
       `projects/PROJECT_ID/locations/LOC_ID`.
@@ -1544,7 +1544,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of product to delete.
+  *   `name` (*type:* `String.t`) - Required. Resource name of product to delete.
 
       Format is:
       `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
@@ -1617,7 +1617,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the Product to get.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the Product to get.
 
       Format is:
       `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
@@ -1685,7 +1685,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The project OR ProductSet from which Products should be listed.
+  *   `parent` (*type:* `String.t`) - Required. The project OR ProductSet from which Products should be listed.
 
       Format:
       `projects/PROJECT_ID/locations/LOC_ID`
@@ -1874,7 +1874,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The project and location in which the Products should be deleted.
+  *   `parent` (*type:* `String.t`) - Required. The project and location in which the Products should be deleted.
 
       Format is `projects/PROJECT_ID/locations/LOC_ID`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1962,7 +1962,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Resource name of the product in which to create the reference image.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the product in which to create the reference image.
 
       Format is
       `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -2044,7 +2044,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the reference image to delete.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the reference image to delete.
 
       Format is:
 
@@ -2118,7 +2118,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the ReferenceImage to get.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the ReferenceImage to get.
 
       Format is:
 
@@ -2194,7 +2194,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vision.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Resource name of the product containing the reference images.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the product containing the reference images.
 
       Format is
       `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.

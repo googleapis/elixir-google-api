@@ -21,7 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.RemoveProductFromProductSetRequest do
 
   ## Attributes
 
-  *   `product` (*type:* `String.t`, *default:* `nil`) - The resource name for the Product to be removed from this ProductSet.
+  *   `product` (*type:* `String.t`, *default:* `nil`) - Required. The resource name for the Product to be removed from this ProductSet.
 
       Format is:
       `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
