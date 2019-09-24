@@ -21,8 +21,8 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeRequest do
 
   ## Attributes
 
-  *   `audio` (*type:* `GoogleApi.Speech.V1.Model.RecognitionAudio.t`, *default:* `nil`) - *Required* The audio data to be recognized.
-  *   `config` (*type:* `GoogleApi.Speech.V1.Model.RecognitionConfig.t`, *default:* `nil`) - *Required* Provides information to the recognizer that specifies how to
+  *   `audio` (*type:* `GoogleApi.Speech.V1.Model.RecognitionAudio.t`, *default:* `nil`) - Required. The audio data to be recognized.
+  *   `config` (*type:* `GoogleApi.Speech.V1.Model.RecognitionConfig.t`, *default:* `nil`) - Required. Provides information to the recognizer that specifies how to
       process the request.
   """
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.Speech.V1.Model.SpeechContext do
 
   ## Attributes
 
-  *   `phrases` (*type:* `list(String.t)`, *default:* `nil`) - *Optional* A list of strings containing words and phrases "hints" so that
+  *   `phrases` (*type:* `list(String.t)`, *default:* `nil`) - A list of strings containing words and phrases "hints" so that
       the speech recognition is more likely to recognize them. This can be used
       to improve the accuracy for specific words and phrases, for example, if
       specific commands are typically spoken by the user. This can also be used

@@ -25,7 +25,7 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeResponse do
 
   ## Attributes
 
-  *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Output only. Sequential list of transcription results corresponding to
+  *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to
       sequential portions of audio.
   """
 

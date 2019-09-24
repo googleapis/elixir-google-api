@@ -21,30 +21,37 @@ defmodule GoogleApi.Speech.V1.Model.WordInfo do
 
   ## Attributes
 
-  *   `endTime` (*type:* `String.t`, *default:* `nil`) - Output only. Time offset relative to the beginning of the audio,
+  *   `endTime` (*type:* `String.t`, *default:* `nil`) - Time offset relative to the beginning of the audio,
       and corresponding to the end of the spoken word.
       This field is only set if `enable_word_time_offsets=true` and only
       in the top hypothesis.
       This is an experimental feature and the accuracy of the time offset can
       vary.
-  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Output only. Time offset relative to the beginning of the audio,
+  *   `speakerTag` (*type:* `integer()`, *default:* `nil`) - A distinct integer value is assigned for every speaker within
+      the audio. This field specifies which one of those speakers was detected to
+      have spoken this word. Value ranges from '1' to diarization_speaker_count.
+      speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+      top alternative.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Time offset relative to the beginning of the audio,
       and corresponding to the start of the spoken word.
       This field is only set if `enable_word_time_offsets=true` and only
       in the top hypothesis.
       This is an experimental feature and the accuracy of the time offset can
       vary.
-  *   `word` (*type:* `String.t`, *default:* `nil`) - Output only. The word corresponding to this set of information.
+  *   `word` (*type:* `String.t`, *default:* `nil`) - The word corresponding to this set of information.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :endTime => String.t(),
+          :speakerTag => integer(),
           :startTime => String.t(),
           :word => String.t()
         }
 
   field(:endTime)
+  field(:speakerTag)
   field(:startTime)
   field(:word)
 end
