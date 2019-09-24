@@ -34,7 +34,7 @@ defmodule GoogleApi.Vision.V1.Model.AsyncBatchAnnotateImagesRequest do
           `eu`: The European Union.
 
       Example: `projects/project-A/locations/eu`.
-  *   `requests` (*type:* `list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t)`, *default:* `nil`) - Individual image annotation requests for this batch.
+  *   `requests` (*type:* `list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t)`, *default:* `nil`) - Required. Individual image annotation requests for this batch.
   """
 
   use GoogleApi.Gax.ModelBase

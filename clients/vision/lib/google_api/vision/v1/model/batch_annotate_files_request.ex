@@ -33,7 +33,7 @@ defmodule GoogleApi.Vision.V1.Model.BatchAnnotateFilesRequest do
           `eu`: The European Union.
 
       Example: `projects/project-A/locations/eu`.
-  *   `requests` (*type:* `list(GoogleApi.Vision.V1.Model.AnnotateFileRequest.t)`, *default:* `nil`) - The list of file annotation requests. Right now we support only one
+  *   `requests` (*type:* `list(GoogleApi.Vision.V1.Model.AnnotateFileRequest.t)`, *default:* `nil`) - Required. The list of file annotation requests. Right now we support only one
       AnnotateFileRequest in BatchAnnotateFilesRequest.
   """
 
