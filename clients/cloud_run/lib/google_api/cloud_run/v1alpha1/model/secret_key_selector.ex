@@ -30,7 +30,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector do
       Cloud Run on GKE: supported
 
       The key of the secret to select from.  Must be a valid secret key.
-  *   `localObjectReference` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t`, *default:* `nil`) - Cloud Run fully managed: not supported
+  *   `localObjectReference` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined
+      directly into the message. Use the "name" field instead.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
 
       Cloud Run on GKE: supported
 
@@ -48,11 +50,13 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector do
   @type t :: %__MODULE__{
           :key => String.t(),
           :localObjectReference => GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t(),
+          :name => String.t(),
           :optional => boolean()
         }
 
   field(:key)
   field(:localObjectReference, as: GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference)
+  field(:name)
   field(:optional)
 end
 
