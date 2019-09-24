@@ -71,7 +71,7 @@ defmodule GoogleApi.CloudTrace.V1.Model.TraceSpan do
       For the same executable and the same call point, a best practice is
       to use a consistent name, which makes it easier to correlate
       cross-trace spans.
-  *   `parentSpanId` (*type:* `String.t`, *default:* `nil`) - ID of the parent span, if any. Optional.
+  *   `parentSpanId` (*type:* `String.t`, *default:* `nil`) - Optional. ID of the parent span, if any.
   *   `spanId` (*type:* `String.t`, *default:* `nil`) - Identifier for the span. Must be a 64-bit integer other than 0 and
       unique within a trace. For example, `2205310701640571284`.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of the span in nanoseconds from the UNIX epoch.
