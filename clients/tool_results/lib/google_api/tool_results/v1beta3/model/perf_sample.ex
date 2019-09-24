@@ -21,7 +21,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PerfSample do
 
   ## Attributes
 
-  *   `sampleTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - Timestamp of collection
+  *   `sampleTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - Timestamp of collection.
   *   `value` (*type:* `float()`, *default:* `nil`) - Value observed
   """
 
