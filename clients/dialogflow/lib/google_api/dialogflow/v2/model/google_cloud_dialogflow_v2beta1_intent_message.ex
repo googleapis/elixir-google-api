@@ -22,11 +22,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   ## Attributes
 
   *   `basicCard` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCard.t`, *default:* `nil`) - Displays a basic card for Actions on Google.
+  *   `browseCarouselCard` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard.t`, *default:* `nil`) - Browse carousel card for Actions on Google.
   *   `card` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCard.t`, *default:* `nil`) - Displays a card.
   *   `carouselSelect` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect.t`, *default:* `nil`) - Displays a carousel card for Actions on Google.
   *   `image` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageImage.t`, *default:* `nil`) - Displays an image.
   *   `linkOutSuggestion` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion.t`, *default:* `nil`) - Displays a link out suggestion chip for Actions on Google.
   *   `listSelect` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageListSelect.t`, *default:* `nil`) - Displays a list card for Actions on Google.
+  *   `mediaContent` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageMediaContent.t`, *default:* `nil`) - The media content card for Actions on Google.
   *   `payload` (*type:* `map()`, *default:* `nil`) - Returns a response containing a custom, platform-specific payload.
       See the Intent.Message.Platform type for a description of the
       structure that may be required for your platform.
@@ -40,6 +42,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
       https://jibe.google.com/business-messaging.
   *   `simpleResponses` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses.t`, *default:* `nil`) - Returns a voice or text-only response for Actions on Google.
   *   `suggestions` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSuggestions.t`, *default:* `nil`) - Displays suggestion chips for Actions on Google.
+  *   `tableCard` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTableCard.t`, *default:* `nil`) - Table card for Actions on Google.
   *   `telephonyPlayAudio` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio.t`, *default:* `nil`) - Plays audio from a file in Telephony Gateway.
   *   `telephonySynthesizeSpeech` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech.t`, *default:* `nil`) - Synthesizes speech in Telephony Gateway.
   *   `telephonyTransferCall` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall.t`, *default:* `nil`) - Transfers the call in Telephony Gateway.
@@ -51,6 +54,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   @type t :: %__MODULE__{
           :basicCard =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCard.t(),
+          :browseCarouselCard =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard.t(),
           :card =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCard.t(),
           :carouselSelect =>
@@ -61,6 +66,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion.t(),
           :listSelect =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageListSelect.t(),
+          :mediaContent =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageMediaContent.t(),
           :payload => map(),
           :platform => String.t(),
           :quickReplies =>
@@ -75,6 +82,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses.t(),
           :suggestions =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSuggestions.t(),
+          :tableCard =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTableCard.t(),
           :telephonyPlayAudio =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio.t(),
           :telephonySynthesizeSpeech =>
@@ -87,6 +96,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   field(
     :basicCard,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCard
+  )
+
+  field(
+    :browseCarouselCard,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard
   )
 
   field(:card, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCard)
@@ -106,6 +120,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   field(
     :listSelect,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageListSelect
+  )
+
+  field(
+    :mediaContent,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageMediaContent
   )
 
   field(:payload, type: :map)
@@ -139,6 +158,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   field(
     :suggestions,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSuggestions
+  )
+
+  field(
+    :tableCard,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTableCard
   )
 
   field(

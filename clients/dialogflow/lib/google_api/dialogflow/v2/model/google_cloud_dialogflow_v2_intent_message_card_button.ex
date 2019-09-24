@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCardButton do
   @moduledoc """
-  Optional. Contains information about a button.
+  Contains information about a button.
 
   ## Attributes
 

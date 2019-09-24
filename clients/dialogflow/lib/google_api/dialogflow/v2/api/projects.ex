@@ -439,7 +439,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
           default 100 and at most 1000.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
