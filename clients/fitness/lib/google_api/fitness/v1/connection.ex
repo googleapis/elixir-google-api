@@ -24,58 +24,58 @@ defmodule GoogleApi.Fitness.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Use Google Fit to see and store your physical activity data
+      # View your activity information in Google Fit
       "https://www.googleapis.com/auth/fitness.activity.read",
 
-      # See and add to your Google Fit physical activity data
+      # View and store your activity information in Google Fit
       "https://www.googleapis.com/auth/fitness.activity.write",
 
-      # See info about your blood glucose in Google Fit
+      # View blood glucose data in Google Fit
       "https://www.googleapis.com/auth/fitness.blood_glucose.read",
 
-      # See and add info about your blood glucose to Google Fit
+      # View and store blood glucose data in Google Fit
       "https://www.googleapis.com/auth/fitness.blood_glucose.write",
 
-      # See info about your blood pressure in Google Fit
+      # View blood pressure data in Google Fit
       "https://www.googleapis.com/auth/fitness.blood_pressure.read",
 
-      # See and add info about your blood pressure in Google Fit
+      # View and store blood pressure data in Google Fit
       "https://www.googleapis.com/auth/fitness.blood_pressure.write",
 
-      # See info about your body measurements and heart rate in Google Fit
+      # View body sensor information in Google Fit
       "https://www.googleapis.com/auth/fitness.body.read",
 
-      # See and add info about your body measurements and heart rate to Google Fit
+      # View and store body sensor data in Google Fit
       "https://www.googleapis.com/auth/fitness.body.write",
 
-      # See info about your body temperature in Google Fit
+      # View body temperature data in Google Fit
       "https://www.googleapis.com/auth/fitness.body_temperature.read",
 
-      # See and add to info about your body temperature in Google Fit
+      # View and store body temperature data in Google Fit
       "https://www.googleapis.com/auth/fitness.body_temperature.write",
 
-      # See your Google Fit speed and distance data
+      # View your stored location data in Google Fit
       "https://www.googleapis.com/auth/fitness.location.read",
 
-      # See and add to your Google Fit location data
+      # View and store your location data in Google Fit
       "https://www.googleapis.com/auth/fitness.location.write",
 
-      # See info about your nutrition in Google Fit
+      # View nutrition information in Google Fit
       "https://www.googleapis.com/auth/fitness.nutrition.read",
 
-      # See and add to info about your nutrition in Google Fit
+      # View and store nutrition information in Google Fit
       "https://www.googleapis.com/auth/fitness.nutrition.write",
 
-      # See info about your oxygen saturation in Google Fit
+      # View oxygen saturation data in Google Fit
       "https://www.googleapis.com/auth/fitness.oxygen_saturation.read",
 
-      # See and add info about your oxygen saturation in Google Fit
+      # View and store oxygen saturation data in Google Fit
       "https://www.googleapis.com/auth/fitness.oxygen_saturation.write",
 
-      # See info about your reproductive health in Google Fit
+      # View reproductive health data in Google Fit
       "https://www.googleapis.com/auth/fitness.reproductive_health.read",
 
-      # See and add info about your reproductive health in Google Fit
+      # View and store reproductive health data in Google Fit
       "https://www.googleapis.com/auth/fitness.reproductive_health.write"
     ],
     otp_app: :google_api_fitness,
