@@ -38,6 +38,11 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptor do
   *   `metadata` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptorMetadata.t`, *default:* `nil`) - Optional. Metadata which can be used to guide usage of the metric.
   *   `metricKind` (*type:* `String.t`, *default:* `nil`) - Whether the metric records instantaneous values, changes to a value, etc.
       Some combinations of `metric_kind` and `value_type` might not be supported.
+  *   `monitoredResourceTypes` (*type:* `list(String.t)`, *default:* `nil`) - Read-only. If present, then a time
+      series, which is identified partially by
+      a metric type and a MonitoredResourceDescriptor, that is associated
+      with this metric type can only be associated with one of the monitored
+      resource types listed here.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the metric descriptor.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The metric type, including its DNS name prefix. The type is not
       URL-encoded.  All user-defined metric types have the DNS name
@@ -125,6 +130,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptor do
           :launchStage => String.t(),
           :metadata => GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptorMetadata.t(),
           :metricKind => String.t(),
+          :monitoredResourceTypes => list(String.t()),
           :name => String.t(),
           :type => String.t(),
           :unit => String.t(),
@@ -137,6 +143,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptor do
   field(:launchStage)
   field(:metadata, as: GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptorMetadata)
   field(:metricKind)
+  field(:monitoredResourceTypes, type: :list)
   field(:name)
   field(:type)
   field(:unit)
