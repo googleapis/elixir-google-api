@@ -25,7 +25,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Step do
 
   A Step can be updated until its state is set to COMPLETE at which points it becomes immutable.
 
-  Next tag: 23
+  Next tag: 25
 
   ## Attributes
 
