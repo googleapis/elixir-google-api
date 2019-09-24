@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleTransferRunsRequest do
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the range of transfer runs. For example,
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. End time of the range of transfer runs. For example,
       `"2017-05-30T00:00:00+00:00"`.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of the range of transfer runs. For example,
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. Start time of the range of transfer runs. For example,
       `"2017-05-25T00:00:00+00:00"`.
   """
 
