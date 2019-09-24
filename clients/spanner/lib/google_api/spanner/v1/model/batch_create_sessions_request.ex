@@ -26,7 +26,6 @@ defmodule GoogleApi.Spanner.V1.Model.BatchCreateSessionsRequest do
       specific number of sessions are desired, the client can make additional
       calls to BatchCreateSessions (adjusting
       session_count as necessary).
-      The maximum allowed sessions are documented at https://goo.gl/hBUQED.
   *   `sessionTemplate` (*type:* `GoogleApi.Spanner.V1.Model.Session.t`, *default:* `nil`) - Parameters to be applied to each created session.
   """
 
