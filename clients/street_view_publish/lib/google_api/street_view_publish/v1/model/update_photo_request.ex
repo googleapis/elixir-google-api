@@ -25,7 +25,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.UpdatePhotoRequest do
 
   *   `photo` (*type:* `GoogleApi.StreetViewPublish.V1.Model.Photo.t`, *default:* `nil`) - Required. Photo object containing the
       new metadata.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Mask that identifies fields on the photo metadata to update.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. Mask that identifies fields on the photo metadata to update.
       If not present, the old Photo
       metadata is entirely replaced with the
       new Photo metadata in this request.
