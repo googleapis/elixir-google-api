@@ -25,8 +25,18 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigMapEnvSource do
 
   ## Attributes
 
-  *   `localObjectReference` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t`, *default:* `nil`) - The ConfigMap to select from.
-  *   `optional` (*type:* `boolean()`, *default:* `nil`) - Specify whether the ConfigMap must be defined
+  *   `localObjectReference` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined
+      directly into the message. Use the "name" field instead.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
+
+      Cloud Run for Anthos: supported
+
+      The ConfigMap to select from.
+  *   `optional` (*type:* `boolean()`, *default:* `nil`) - Cloud Run fully managed: not supported
+
+      Cloud Run for Anthos: supported
+
+      Specify whether the ConfigMap must be defined
       +optional
   """
 
@@ -34,10 +44,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigMapEnvSource do
 
   @type t :: %__MODULE__{
           :localObjectReference => GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t(),
+          :name => String.t(),
           :optional => boolean()
         }
 
   field(:localObjectReference, as: GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference)
+  field(:name)
   field(:optional)
 end
 
