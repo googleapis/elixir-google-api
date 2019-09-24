@@ -28,7 +28,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
 
   *   `attributes` (*type:* `GoogleApi.CloudTrace.V2.Model.Attributes.t`, *default:* `nil`) - A set of attributes on the span. You can have up to 32 attributes per
       span.
-  *   `childSpanCount` (*type:* `integer()`, *default:* `nil`) - An optional number of child spans that were generated while this span
+  *   `childSpanCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of child spans that were generated while this span
       was active. If set, allows implementation to detect missing child spans.
   *   `displayName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - A description of the span's operation (up to 128 bytes).
       Stackdriver Trace displays the description in the
@@ -50,7 +50,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
       is a 16-character hexadecimal encoding of an 8-byte array.
   *   `parentSpanId` (*type:* `String.t`, *default:* `nil`) - The [SPAN_ID] of this span's parent span. If this is a root span,
       then this field must be empty.
-  *   `sameProcessAsParentSpan` (*type:* `boolean()`, *default:* `nil`) - (Optional) Set this parameter to indicate whether this span is in
+  *   `sameProcessAsParentSpan` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this parameter to indicate whether this span is in
       the same process as its parent. If you do not set this parameter,
       Stackdriver Trace is unable to take advantage of this helpful
       information.
@@ -62,7 +62,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the span. On the client side, this is the time kept by
       the local machine where the span execution starts. On the server side, this
       is the time when the server's application handler starts running.
-  *   `status` (*type:* `GoogleApi.CloudTrace.V2.Model.Status.t`, *default:* `nil`) - An optional final status for this span.
+  *   `status` (*type:* `GoogleApi.CloudTrace.V2.Model.Status.t`, *default:* `nil`) - Optional. The final status for this span.
   *   `timeEvents` (*type:* `GoogleApi.CloudTrace.V2.Model.TimeEvents.t`, *default:* `nil`) - A set of time events. You can have up to 32 annotations and 128 message
       events per span.
   """

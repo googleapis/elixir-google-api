@@ -35,7 +35,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTrace.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the Cloud project where the trace data is stored.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the Cloud project where the trace data is stored.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -94,8 +94,8 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTrace.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the Cloud project where the trace data is stored.
-  *   `trace_id` (*type:* `String.t`) - ID of the trace to return.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the Cloud project where the trace data is stored.
+  *   `trace_id` (*type:* `String.t`) - Required. ID of the trace to return.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -164,7 +164,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTrace.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the Cloud project where the trace data is stored.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the Cloud project where the trace data is stored.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -179,7 +179,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:endTime` (*type:* `DateTime.t`) - End of the time interval (inclusive) during which the trace data was
           collected from the application.
-      *   `:filter` (*type:* `String.t`) - An optional filter against labels for the request.
+      *   `:filter` (*type:* `String.t`) - Optional. A filter against labels for the request.
 
           By default, searches use prefix matching. To specify exact match, prepend
           a plus symbol (`+`) to the search term.
@@ -209,7 +209,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
               specified.
           *   `method:VALUE`: Equivalent to `/http/method:VALUE`.
           *   `url:VALUE`: Equivalent to `/http/url:VALUE`.
-      *   `:orderBy` (*type:* `String.t`) - Field used to sort the returned traces. Optional.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Field used to sort the returned traces.
           Can be one of the following:
 
           *   `trace_id`
@@ -222,14 +222,14 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
           (for example, `name desc`).
 
           Only one sort field is permitted.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of traces to return. If not specified or <= 0, the
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of traces to return. If not specified or <= 0, the
           implementation selects a reasonable value.  The implementation may
-          return fewer traces than the requested page size. Optional.
+          return fewer traces than the requested page size.
       *   `:pageToken` (*type:* `String.t`) - Token identifying the page of results to return. If provided, use the
-          value of the `next_page_token` field from a previous request. Optional.
+          value of the `next_page_token` field from a previous request.
       *   `:startTime` (*type:* `DateTime.t`) - Start of the time interval (inclusive) during which the trace data was
           collected from the application.
-      *   `:view` (*type:* `String.t`) - Type of data returned for traces in the list. Optional. Default is
+      *   `:view` (*type:* `String.t`) - Optional. Type of data returned for traces in the list. Default is
           `MINIMAL`.
   *   `opts` (*type:* `keyword()`) - Call options
 
