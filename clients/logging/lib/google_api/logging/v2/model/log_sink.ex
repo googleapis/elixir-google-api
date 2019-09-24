@@ -21,6 +21,7 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
 
   ## Attributes
 
+  *   `bigqueryOptions` (*type:* `GoogleApi.Logging.V2.Model.BigQueryOptions.t`, *default:* `nil`) - Optional. Options that affect sinks exporting data to BigQuery.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the sink.This field may not be present for older sinks.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. The export destination:
       "storage.googleapis.com/[GCS_BUCKET]"
@@ -43,6 +44,7 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bigqueryOptions => GoogleApi.Logging.V2.Model.BigQueryOptions.t(),
           :createTime => DateTime.t(),
           :destination => String.t(),
           :filter => String.t(),
@@ -53,6 +55,7 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
           :writerIdentity => String.t()
         }
 
+  field(:bigqueryOptions, as: GoogleApi.Logging.V2.Model.BigQueryOptions)
   field(:createTime, as: DateTime)
   field(:destination)
   field(:filter)
