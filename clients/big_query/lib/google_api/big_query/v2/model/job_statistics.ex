@@ -32,6 +32,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   *   `quotaDeferments` (*type:* `list(String.t)`, *default:* `nil`) - [Output-only] Quotas which delayed this job's start time.
   *   `reservationUsage` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t)`, *default:* `nil`) - [Output-only] Job resource usage breakdown by reservation.
   *   `reservation_id` (*type:* `String.t`, *default:* `nil`) - [Output-only] Name of the primary reservation assigned to this job. Note that this could be different than reservations reported in the reservation usage field if parent reservations were used to execute this job.
+  *   `scriptStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.ScriptStatistics.t`, *default:* `nil`) - [Output-only] Statistics for a child job of a script.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE.
   *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output-only] [Deprecated] Use the bytes processed in the query statistics instead.
   *   `totalSlotMs` (*type:* `String.t`, *default:* `nil`) - [Output-only] Slot-milliseconds for the job.
@@ -52,6 +53,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
           :reservationUsage =>
             list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t()),
           :reservation_id => String.t(),
+          :scriptStatistics => GoogleApi.BigQuery.V2.Model.ScriptStatistics.t(),
           :startTime => String.t(),
           :totalBytesProcessed => String.t(),
           :totalSlotMs => String.t()
@@ -74,6 +76,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   )
 
   field(:reservation_id)
+  field(:scriptStatistics, as: GoogleApi.BigQuery.V2.Model.ScriptStatistics)
   field(:startTime)
   field(:totalBytesProcessed)
   field(:totalSlotMs)
