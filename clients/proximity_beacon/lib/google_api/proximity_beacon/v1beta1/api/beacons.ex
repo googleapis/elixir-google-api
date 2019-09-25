@@ -31,9 +31,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   Calling this method on an already active beacon will do nothing (but
   will return a successful response code).
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **Is owner** or **Can edit** permissions in the
-  Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **Is owner** or **Can edit** permissions in the Google
+  Developers Console project.
 
   ## Parameters
 
@@ -106,9 +107,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   `beaconinfo.getforobserved`. Calling this method on an already inactive
   beacon will do nothing (but will return a successful response code).
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **Is owner** or **Can edit** permissions in the
-  Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **Is owner** or **Can edit** permissions in the Google
+  Developers Console project.
 
   ## Parameters
 
@@ -186,9 +188,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   permanent -- you will not be able to re-register a beacon with this ID
   again.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **Is owner** or **Can edit** permissions in the
-  Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **Is owner** or **Can edit** permissions in the Google
+  Developers Console project.
 
   ## Parameters
 
@@ -265,9 +268,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   as well as any attachments on the beacon (including those belonging to
   other projects). This operation cannot be undone.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **Is owner** or **Can edit** permissions in the
-  Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **Is owner** or **Can edit** permissions in the Google
+  Developers Console project.
 
   ## Parameters
 
@@ -336,9 +340,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   @doc """
   Returns detailed information about the specified beacon.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **viewer**, **Is owner** or **Can edit**
-  permissions in the Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **viewer**, **Is owner** or **Can edit** permissions in
+  the Google Developers Console project.
 
   Requests may supply an Eddystone-EID beacon name in the form:
   `beacons/4!beaconId` where the `beaconId` is the base16 ephemeral ID
@@ -416,9 +421,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   criteria. Only those beacons that the client has permission to list
   will be returned.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **viewer**, **Is owner** or **Can edit**
-  permissions in the Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **viewer**, **Is owner** or **Can edit** permissions in
+  the Google Developers Console project.
 
   ## Parameters
 
@@ -507,7 +513,8 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
           be URL-encoded.
 
           Example REST request:
-          `GET /v1beta1/beacons?q=status:active%20lat:51.123%20lng:-1.095%20radius:1000`
+          `GET
+          /v1beta1/beacons?q=status:active%20lat:51.123%20lng:-1.095%20radius:1000`
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -555,9 +562,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   Registers a previously unregistered beacon given its `advertisedId`.
   These IDs are unique within the system. An ID can be registered only once.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **Is owner** or **Can edit** permissions in the
-  Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **Is owner** or **Can edit** permissions in the Google
+  Developers Console project.
 
   ## Parameters
 
@@ -626,9 +634,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   Changes to the beacon status via this method will be  silently ignored.
   To update beacon status, use the separate methods on this API for
   activation, deactivation, and decommissioning.
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **Is owner** or **Can edit** permissions in the
-  Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **Is owner** or **Can edit** permissions in the Google
+  Developers Console project.
 
   ## Parameters
 
@@ -706,9 +715,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   attachments on the given beacon will be deleted. You also may explicitly
   specify `*/*` to delete all.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **Is owner** or **Can edit** permissions in the
-  Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **Is owner** or **Can edit** permissions in the Google
+  Developers Console project.
 
   ## Parameters
 
@@ -809,9 +819,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
 
   Attachment data can be up to 1024 bytes long.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **Is owner** or **Can edit** permissions in the
-  Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **Is owner** or **Can edit** permissions in the Google
+  Developers Console project.
 
   ## Parameters
 
@@ -900,9 +911,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   request to control which attachment is removed. This operation cannot be
   undone.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **Is owner** or **Can edit** permissions in the
-  Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **Is owner** or **Can edit** permissions in the Google
+  Developers Console project.
 
   ## Parameters
 
@@ -985,9 +997,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   `*/*`, to return all attachments, or the namespace must be one of
   the ones returned from the  `namespaces` endpoint.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **viewer**, **Is owner** or **Can edit**
-  permissions in the Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **viewer**, **Is owner** or **Can edit** permissions in
+  the Google Developers Console project.
 
   ## Parameters
 
@@ -1078,9 +1091,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   all the beacons owned by your Google Developers Console project by using
   the beacon name `beacons/-`.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **viewer**, **Is owner** or **Can edit**
-  permissions in the Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **viewer**, **Is owner** or **Can edit** permissions in
+  the Google Developers Console project.
 
   ## Parameters
 

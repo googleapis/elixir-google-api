@@ -30,9 +30,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Namespaces do
   project. Attachment data associated with a beacon must include a
   namespaced type, and the namespace must be owned by your project.
 
-  Authenticate using an [OAuth access token](https://developers.google.com/identity/protocols/OAuth2)
-  from a signed-in user with **viewer**, **Is owner** or **Can edit**
-  permissions in the Google Developers Console project.
+  Authenticate using an [OAuth access
+  token](https://developers.google.com/identity/protocols/OAuth2) from a
+  signed-in user with **viewer**, **Is owner** or **Can edit** permissions in
+  the Google Developers Console project.
 
   ## Parameters
 
