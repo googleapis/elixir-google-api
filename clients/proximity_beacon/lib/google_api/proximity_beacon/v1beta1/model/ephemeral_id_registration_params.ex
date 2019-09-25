@@ -20,14 +20,18 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams 
   Information a client needs to provision and register beacons that
   broadcast Eddystone-EID format beacon IDs, using Elliptic curve
   Diffie-Hellman key exchange. See
-  [the Eddystone specification](https://github.com/google/eddystone/tree/master/eddystone-eid) at GitHub.
+  [the Eddystone
+  specification](https://github.com/google/eddystone/tree/master/eddystone-eid)
+  at GitHub.
 
   ## Attributes
 
   *   `maxRotationPeriodExponent` (*type:* `integer()`, *default:* `nil`) - Indicates the maximum rotation period supported by the service.
-      See EddystoneEidRegistration.rotation_period_exponent
+      See
+      EddystoneEidRegistration.rotation_period_exponent
   *   `minRotationPeriodExponent` (*type:* `integer()`, *default:* `nil`) - Indicates the minimum rotation period supported by the service.
-      See EddystoneEidRegistration.rotation_period_exponent
+      See
+      EddystoneEidRegistration.rotation_period_exponent
   *   `serviceEcdhPublicKey` (*type:* `String.t`, *default:* `nil`) - The beacon service's public key for use by a beacon to derive its
       Identity Key using Elliptic Curve Diffie-Hellman key exchange.
   """
