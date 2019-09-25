@@ -31,7 +31,7 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - ID of the user for the per-user information to be fetched. Either the word 'self' (sans quote marks) or the user's profile identifier.
+  *   `user_id` (*type:* `String.t`) - ID of the user for the per-user information to be fetched. Either the word 'self' or the user's profile identifier.
   *   `blog_id` (*type:* `String.t`) - The ID of the blog.
   *   `post_id` (*type:* `String.t`) - The ID of the post to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -99,7 +99,7 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - ID of the user for the per-user information to be fetched. Either the word 'self' (sans quote marks) or the user's profile identifier.
+  *   `user_id` (*type:* `String.t`) - ID of the user for the per-user information to be fetched. Either the word 'self' or the user's profile identifier.
   *   `blog_id` (*type:* `String.t`) - ID of the blog to fetch posts from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.

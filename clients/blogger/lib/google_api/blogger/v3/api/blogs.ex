@@ -134,7 +134,7 @@ defmodule GoogleApi.Blogger.V3.Api.Blogs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the user's profile identifier.
+  *   `user_id` (*type:* `String.t`) - ID of the user whose blogs are to be fetched. Either the word 'self' or the user's profile identifier.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
