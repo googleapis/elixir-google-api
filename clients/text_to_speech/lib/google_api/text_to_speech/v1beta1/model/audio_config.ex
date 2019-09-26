@@ -31,7 +31,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.AudioConfig do
   *   `pitch` (*type:* `float()`, *default:* `nil`) - Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means
       increase 20 semitones from the original pitch. -20 means decrease 20
       semitones from the original pitch.
-  *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - The synthesis sample rate (in hertz) for this audio. Optional. When this is
+  *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - Optional. The synthesis sample rate (in hertz) for this audio. When this is
       specified in SynthesizeSpeechRequest, if this is different from the voice's
       natural sample rate, then the synthesizer will honor this request by
       converting to the desired sample rate (which might result in worse audio
