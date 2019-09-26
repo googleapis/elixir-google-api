@@ -18,7 +18,7 @@
 defmodule GoogleApi.SafeBrowsing.Mixfile do
   use Mix.Project
 
-  @version "0.7.0"
+  @version "0.8.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.SafeBrowsing.Mixfile do
 
   defp description() do
     """
-    Safe Browsing API client library. Enables client applications to check web resources (most commonly URLs) against Google-generated lists of unsafe web resources.
+    Safe Browsing API client library.
     """
   end
 
