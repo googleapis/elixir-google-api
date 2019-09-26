@@ -44,7 +44,11 @@ defmodule GoogleApi.Compute.V1.Model.Policy do
       If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is overwritten.
   *   `iamOwned` (*type:* `boolean()`, *default:* `nil`) - 
   *   `rules` (*type:* `list(GoogleApi.Compute.V1.Model.Rule.t)`, *default:* `nil`) - If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
-  *   `version` (*type:* `integer()`, *default:* `nil`) - Deprecated.
+  *   `version` (*type:* `integer()`, *default:* `nil`) - Specifies the format of the policy.
+
+      Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected.
+
+      Policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset.
   """
 
   use GoogleApi.Gax.ModelBase

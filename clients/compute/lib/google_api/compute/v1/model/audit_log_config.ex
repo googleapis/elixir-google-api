@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.AuditLogConfig do
   ## Attributes
 
   *   `exemptedMembers` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the identities that do not cause logging for this type of permission. Follows the same format of [Binding.members][].
-  *   `ignoreChildExemptions` (*type:* `boolean()`, *default:* `nil`) - Specifies whether principals can be exempted for the same LogType in lower-level resource policies. If true, any lower-level exemptions will be ignored.
+  *   `ignoreChildExemptions` (*type:* `boolean()`, *default:* `nil`) - 
   *   `logType` (*type:* `String.t`, *default:* `nil`) - The log type that this config enables.
   """
 

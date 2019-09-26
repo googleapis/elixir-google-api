@@ -32,7 +32,17 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `affinityCookieTtlSec` (*type:* `integer()`, *default:* `nil`) - If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
   *   `backends` (*type:* `list(GoogleApi.Compute.V1.Model.Backend.t)`, *default:* `nil`) - The list of backends that serve this BackendService.
   *   `cdnPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t`, *default:* `nil`) - Cloud CDN configuration for this BackendService.
+  *   `circuitBreakers` (*type:* `GoogleApi.Compute.V1.Model.CircuitBreakers.t`, *default:* `nil`) - Settings controlling the volume of connections to a backend service.
+
+      This field is applicable to either:  
+      - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
+      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
   *   `connectionDraining` (*type:* `GoogleApi.Compute.V1.Model.ConnectionDraining.t`, *default:* `nil`) - 
+  *   `consistentHash` (*type:* `GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings.t`, *default:* `nil`) - Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
+
+      This field is applicable to either:  
+      - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
+      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `customRequestHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the HTTP/S load balancer should add to proxied requests.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
@@ -47,7 +57,21 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#backendService`) - [Output Only] Type of resource. Always compute#backendService for backend services.
   *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Indicates whether the backend service will be used with internal or external load balancing. A backend service created for one type of load balancing cannot be used with the other. Possible values are INTERNAL and EXTERNAL.
+  *   `localityLbPolicy` (*type:* `String.t`, *default:* `nil`) - The load balancing algorithm used within the scope of the locality. The possible values are:  
+      - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. 
+      - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. 
+      - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. 
+      - RANDOM: The load balancer selects a random healthy host. 
+      - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. 
+      - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, refer to https://ai.google/research/pubs/pub44824 
+
+      This field is applicable to either:  
+      - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
+      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `outlierDetection` (*type:* `GoogleApi.Compute.V1.Model.OutlierDetection.t`, *default:* `nil`) - Settings controlling eviction of unhealthy hosts from the load balancing pool. This field is applicable to either:  
+      - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
+      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
 
       This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
@@ -78,7 +102,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :affinityCookieTtlSec => integer(),
           :backends => list(GoogleApi.Compute.V1.Model.Backend.t()),
           :cdnPolicy => GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t(),
+          :circuitBreakers => GoogleApi.Compute.V1.Model.CircuitBreakers.t(),
           :connectionDraining => GoogleApi.Compute.V1.Model.ConnectionDraining.t(),
+          :consistentHash => GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings.t(),
           :creationTimestamp => String.t(),
           :customRequestHeaders => list(String.t()),
           :description => String.t(),
@@ -89,7 +115,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :id => String.t(),
           :kind => String.t(),
           :loadBalancingScheme => String.t(),
+          :localityLbPolicy => String.t(),
           :name => String.t(),
+          :outlierDetection => GoogleApi.Compute.V1.Model.OutlierDetection.t(),
           :port => integer(),
           :portName => String.t(),
           :protocol => String.t(),
@@ -103,7 +131,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:affinityCookieTtlSec)
   field(:backends, as: GoogleApi.Compute.V1.Model.Backend, type: :list)
   field(:cdnPolicy, as: GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy)
+  field(:circuitBreakers, as: GoogleApi.Compute.V1.Model.CircuitBreakers)
   field(:connectionDraining, as: GoogleApi.Compute.V1.Model.ConnectionDraining)
+  field(:consistentHash, as: GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings)
   field(:creationTimestamp)
   field(:customRequestHeaders, type: :list)
   field(:description)
@@ -114,7 +144,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:id)
   field(:kind)
   field(:loadBalancingScheme)
+  field(:localityLbPolicy)
   field(:name)
+  field(:outlierDetection, as: GoogleApi.Compute.V1.Model.OutlierDetection)
   field(:port)
   field(:portName)
   field(:protocol)
