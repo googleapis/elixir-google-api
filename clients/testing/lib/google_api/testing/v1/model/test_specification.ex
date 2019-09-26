@@ -26,6 +26,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
   *   `androidTestLoop` (*type:* `GoogleApi.Testing.V1.Model.AndroidTestLoop.t`, *default:* `nil`) - An Android Application with a Test Loop.
   *   `disablePerformanceMetrics` (*type:* `boolean()`, *default:* `nil`) - Disables performance metrics recording. May reduce test latency.
   *   `disableVideoRecording` (*type:* `boolean()`, *default:* `nil`) - Disables video recording. May reduce test latency.
+  *   `iosTestLoop` (*type:* `GoogleApi.Testing.V1.Model.IosTestLoop.t`, *default:* `nil`) - An iOS application with a test loop.
   *   `iosTestSetup` (*type:* `GoogleApi.Testing.V1.Model.IosTestSetup.t`, *default:* `nil`) - Test setup requirements for iOS.
   *   `iosXcTest` (*type:* `GoogleApi.Testing.V1.Model.IosXcTest.t`, *default:* `nil`) - An iOS XCTest, via an .xctestrun file.
   *   `testSetup` (*type:* `GoogleApi.Testing.V1.Model.TestSetup.t`, *default:* `nil`) - Test setup requirements for Android e.g. files to install, bootstrap
@@ -44,6 +45,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
           :androidTestLoop => GoogleApi.Testing.V1.Model.AndroidTestLoop.t(),
           :disablePerformanceMetrics => boolean(),
           :disableVideoRecording => boolean(),
+          :iosTestLoop => GoogleApi.Testing.V1.Model.IosTestLoop.t(),
           :iosTestSetup => GoogleApi.Testing.V1.Model.IosTestSetup.t(),
           :iosXcTest => GoogleApi.Testing.V1.Model.IosXcTest.t(),
           :testSetup => GoogleApi.Testing.V1.Model.TestSetup.t(),
@@ -55,6 +57,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
   field(:androidTestLoop, as: GoogleApi.Testing.V1.Model.AndroidTestLoop)
   field(:disablePerformanceMetrics)
   field(:disableVideoRecording)
+  field(:iosTestLoop, as: GoogleApi.Testing.V1.Model.IosTestLoop)
   field(:iosTestSetup, as: GoogleApi.Testing.V1.Model.IosTestSetup)
   field(:iosXcTest, as: GoogleApi.Testing.V1.Model.IosXcTest)
   field(:testSetup, as: GoogleApi.Testing.V1.Model.TestSetup)
