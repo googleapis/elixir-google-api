@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CallFunctionRequest do
 
   ## Attributes
 
-  *   `data` (*type:* `String.t`, *default:* `nil`) - Input to be passed to the function.
+  *   `data` (*type:* `String.t`, *default:* `nil`) - Required. Input to be passed to the function.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -110,7 +110,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the function to be called.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function to be called.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -195,7 +195,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `location`. The project and location in which the function should be created, specified
+  *   `projects_id` (*type:* `String.t`) - Part of `location`. Required. The project and location in which the function should be created, specified
       in the format `projects/*/locations/*`
   *   `locations_id` (*type:* `String.t`) - Part of `location`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -270,7 +270,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the function which should be deleted.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function which should be deleted.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -539,7 +539,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the function which details should be obtained.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function which details should be obtained.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -635,9 +635,13 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-          Acceptable values are 0, 1, and 3.
-          If the value is 0, or the field is omitted, policy format version 1 will be
-          returned.
+
+          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+          rejected.
+
+          Requests for policies with any conditional bindings must specify version 3.
+          Policies without any conditional bindings may specify any valid value or
+          leave the field unset.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
