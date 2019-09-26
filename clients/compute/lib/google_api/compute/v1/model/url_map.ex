@@ -26,12 +26,18 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
   ## Attributes
 
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
+  *   `defaultRouteAction` (*type:* `GoogleApi.Compute.V1.Model.HttpRouteAction.t`, *default:* `nil`) - defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
+      Only one of defaultRouteAction or defaultUrlRedirect must be set.
   *   `defaultService` (*type:* `String.t`, *default:* `nil`) - The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
       Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
+  *   `defaultUrlRedirect` (*type:* `GoogleApi.Compute.V1.Model.HttpRedirectAction.t`, *default:* `nil`) - When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
+      If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
 
       To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+  *   `headerAction` (*type:* `GoogleApi.Compute.V1.Model.HttpHeaderAction.t`, *default:* `nil`) - Specifies changes to request and response headers that need to take effect for the selected backendService.
+      The headerAction specified here take effect after headerAction specified under pathMatcher.
   *   `hostRules` (*type:* `list(GoogleApi.Compute.V1.Model.HostRule.t)`, *default:* `nil`) - The list of HostRules to use against the URL.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#urlMap`) - [Output Only] Type of the resource. Always compute#urlMaps for url maps.
@@ -46,9 +52,12 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
 
   @type t :: %__MODULE__{
           :creationTimestamp => String.t(),
+          :defaultRouteAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t(),
           :defaultService => String.t(),
+          :defaultUrlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t(),
           :description => String.t(),
           :fingerprint => String.t(),
+          :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t(),
           :hostRules => list(GoogleApi.Compute.V1.Model.HostRule.t()),
           :id => String.t(),
           :kind => String.t(),
@@ -60,9 +69,12 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
         }
 
   field(:creationTimestamp)
+  field(:defaultRouteAction, as: GoogleApi.Compute.V1.Model.HttpRouteAction)
   field(:defaultService)
+  field(:defaultUrlRedirect, as: GoogleApi.Compute.V1.Model.HttpRedirectAction)
   field(:description)
   field(:fingerprint)
+  field(:headerAction, as: GoogleApi.Compute.V1.Model.HttpHeaderAction)
   field(:hostRules, as: GoogleApi.Compute.V1.Model.HostRule, type: :list)
   field(:id)
   field(:kind)

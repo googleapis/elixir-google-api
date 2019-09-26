@@ -68,6 +68,10 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `ipVersion` (*type:* `String.t`, *default:* `nil`) - The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
   *   `kind` (*type:* `String.t`, *default:* `compute#forwardingRule`) - [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule resources.
   *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - This signifies what the ForwardingRule will be used for and can only take the following values: INTERNAL, INTERNAL_SELF_MANAGED, EXTERNAL. The value of INTERNAL means that this will be used for Internal Network Load Balancing (TCP, UDP). The value of INTERNAL_SELF_MANAGED means that this will be used for Internal Global HTTP(S) LB. The value of EXTERNAL means that this will be used for External Load Balancing (HTTP(S) LB, External TCP/UDP LB, SSL Proxy)
+  *   `metadataFilters` (*type:* `list(GoogleApi.Compute.V1.Model.MetadataFilter.t)`, *default:* `nil`) - Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. If a match takes place, the relevant routing configuration is made available to those proxies.
+      For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels in the provided metadata.
+      metadataFilters specified here can be overridden by those specified in the UrlMap that this ForwardingRule references.
+      metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `network` (*type:* `String.t`, *default:* `nil`) - This field is not used for external load balancing.
 
@@ -128,6 +132,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
           :ipVersion => String.t(),
           :kind => String.t(),
           :loadBalancingScheme => String.t(),
+          :metadataFilters => list(GoogleApi.Compute.V1.Model.MetadataFilter.t()),
           :name => String.t(),
           :network => String.t(),
           :networkTier => String.t(),
@@ -151,6 +156,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   field(:ipVersion)
   field(:kind)
   field(:loadBalancingScheme)
+  field(:metadataFilters, as: GoogleApi.Compute.V1.Model.MetadataFilter, type: :list)
   field(:name)
   field(:network)
   field(:networkTier)
