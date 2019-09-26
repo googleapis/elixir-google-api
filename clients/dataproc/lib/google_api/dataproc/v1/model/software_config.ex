@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.SoftwareConfig do
   ## Attributes
 
   *   `imageVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of software inside the cluster. It must be one of the supported Cloud Dataproc Versions, such as "1.2" (including a subminor version, such as "1.2.29"), or the "preview" version. If unspecified, it defaults to the latest Debian version.
-  *   `optionalComponents` (*type:* `list(String.t)`, *default:* `nil`) - The set of optional components to activate on the cluster.
+  *   `optionalComponents` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The set of components to activate on the cluster.
   *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. The properties to set on daemon config files.Property keys are specified in prefix:property format, for example core:hadoop.tmp.dir. The following are supported prefixes and their mappings:
       capacity-scheduler: capacity-scheduler.xml
       core: core-site.xml

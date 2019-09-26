@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowTemplatePlacement do
   ## Attributes
 
   *   `clusterSelector` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterSelector.t`, *default:* `nil`) - Optional. A selector that chooses target cluster for jobs based on metadata.The selector is evaluated at the time each job is submitted.
-  *   `managedCluster` (*type:* `GoogleApi.Dataproc.V1.Model.ManagedCluster.t`, *default:* `nil`) - Optional. A cluster that is managed by the workflow.
+  *   `managedCluster` (*type:* `GoogleApi.Dataproc.V1.Model.ManagedCluster.t`, *default:* `nil`) - A cluster that is managed by the workflow.
   """
 
   use GoogleApi.Gax.ModelBase
