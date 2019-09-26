@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.JobStatus do
 
   ## Attributes
 
-  *   `details` (*type:* `String.t`, *default:* `nil`) - Output only. Optional job state details, such as an error description if the state is <code>ERROR</code>.
+  *   `details` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. Job state details, such as an error description if the state is <code>ERROR</code>.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. A state message specifying the overall job state.
   *   `stateStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when this state was entered.
   *   `substate` (*type:* `String.t`, *default:* `nil`) - Output only. Additional state information, which includes status reported by the agent.

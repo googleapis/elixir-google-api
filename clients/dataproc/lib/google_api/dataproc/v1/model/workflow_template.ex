@@ -22,13 +22,13 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowTemplate do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time template was created.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The template id.The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - 
   *   `jobs` (*type:* `list(GoogleApi.Dataproc.V1.Model.OrderedJob.t)`, *default:* `nil`) - Required. The Directed Acyclic Graph of Jobs to submit.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created by the workflow instance.Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be associated with a template.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names.
       For projects.regions.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
       For projects.locations.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-  *   `parameters` (*type:* `list(GoogleApi.Dataproc.V1.Model.TemplateParameter.t)`, *default:* `nil`) - Optional. Template parameters whose values are substituted into the template. Values for parameters must be provided when the template is instantiated.
+  *   `parameters` (*type:* `list(GoogleApi.Dataproc.V1.Model.TemplateParameter.t)`, *default:* `nil`) - Optional. emplate parameters whose values are substituted into the template. Values for parameters must be provided when the template is instantiated.
   *   `placement` (*type:* `GoogleApi.Dataproc.V1.Model.WorkflowTemplatePlacement.t`, *default:* `nil`) - Required. WorkflowTemplate scheduling information.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time template was last updated.
   *   `version` (*type:* `integer()`, *default:* `nil`) - Optional. Used to perform a consistent read-modify-write.This field should be left blank for a CreateWorkflowTemplate request. It is required for an UpdateWorkflowTemplate request, and must match the current server version. A typical update template flow would fetch the current template with a GetWorkflowTemplate request, which will return the current template with the version field filled in with the current server version. The user updates other fields in the template, then returns it as part of the UpdateWorkflowTemplate request.
