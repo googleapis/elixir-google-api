@@ -43,7 +43,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Api.Voices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional (but recommended)
+      *   `:languageCode` (*type:* `String.t`) - Optional. Recommended.
           [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
           specified, the ListVoices call will only return voices that can be used to
           synthesize this language_code. E.g. when specifying "en-NZ", you will get
