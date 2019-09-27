@@ -63,6 +63,16 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
       are required in order to run the job.
   *   `workerPools` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.WorkerPool.t)`, *default:* `nil`) - The worker pools. At least one "harness" worker pool must be
       specified in order for the job to have workers.
+  *   `workerRegion` (*type:* `String.t`, *default:* `nil`) - The Compute Engine region
+      (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
+      which worker processing should occur, e.g. "us-west1". Mutually exclusive
+      with worker_zone. If neither worker_region nor worker_zone is specified,
+      default to the control plane's region.
+  *   `workerZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone
+      (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
+      which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
+      with worker_region. If neither worker_region nor worker_zone is specified,
+      a zone in the control plane's region is chosen based on available capacity.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -79,7 +89,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
           :tempStoragePrefix => String.t(),
           :userAgent => map(),
           :version => map(),
-          :workerPools => list(GoogleApi.Dataflow.V1b3.Model.WorkerPool.t())
+          :workerPools => list(GoogleApi.Dataflow.V1b3.Model.WorkerPool.t()),
+          :workerRegion => String.t(),
+          :workerZone => String.t()
         }
 
   field(:clusterManagerApiService)
@@ -94,6 +106,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   field(:userAgent, type: :map)
   field(:version, type: :map)
   field(:workerPools, as: GoogleApi.Dataflow.V1b3.Model.WorkerPool, type: :list)
+  field(:workerRegion)
+  field(:workerZone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.Environment do

@@ -45,9 +45,21 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
       Must be a valid Cloud Storage URL, beginning with `gs://`.
   *   `usePrivateIps` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies whether worker pools should be started with private IP addresses.
       False by default.
+  *   `workerRegion` (*type:* `String.t`, *default:* `nil`) - The Compute Engine region
+      (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
+      which worker processing should occur, e.g. "us-west1". Mutually exclusive
+      with worker_zone. If neither worker_region nor worker_zone is specified,
+      default to the control plane's region.
+  *   `workerZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone
+      (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
+      which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
+      with worker_region. If neither worker_region nor worker_zone is specified,
+      a zone in the control plane's region is chosen based on available capacity.
+      If both `worker_zone` and `zone` are set, `worker_zone` takes precedence.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine [availability
       zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
       for launching worker instances to run your pipeline.
+      In the future, worker_zone will take precedence.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -65,6 +77,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
           :subnetwork => String.t(),
           :tempLocation => String.t(),
           :usePrivateIps => boolean(),
+          :workerRegion => String.t(),
+          :workerZone => String.t(),
           :zone => String.t()
         }
 
@@ -80,6 +94,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   field(:subnetwork)
   field(:tempLocation)
   field(:usePrivateIps)
+  field(:workerRegion)
+  field(:workerZone)
   field(:zone)
 end
 
