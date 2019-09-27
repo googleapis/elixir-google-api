@@ -21,7 +21,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
 
   ## Attributes
 
-  *   `hasAugmentedPermissions` (*type:* `boolean()`, *default:* `nil`) - Whether any users are granted file access directly on this file. This field is only populated for shared drive files.
+  *   `hasAugmentedPermissions` (*type:* `boolean()`, *default:* `nil`) - Whether there are permissions directly on this file. This field is only populated for items in shared drives.
   *   `sharedWithMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the file was shared with the user, if applicable (RFC 3339 date-time).
   *   `trashedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the item was trashed (RFC 3339 date-time). Only populated for items in shared drives.
   *   `permissionIds` (*type:* `list(String.t)`, *default:* `nil`) - List of permission IDs for users with access to this file.
