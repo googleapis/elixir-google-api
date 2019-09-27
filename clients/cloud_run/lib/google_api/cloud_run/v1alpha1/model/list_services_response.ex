@@ -25,8 +25,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListServicesResponse do
   *   `items` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Service.t)`, *default:* `nil`) - List of Services.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "ServiceList".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t`, *default:* `nil`) - Metadata associated with this Service list.
-  *   `regionDetails` (*type:* `%{optional(String.t) => GoogleApi.CloudRun.V1alpha1.Model.RegionDetails.t}`, *default:* `nil`) - Details for the regions used during a global call including any failures.
-      This is not populated when targeting a specific region.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
@@ -37,9 +35,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListServicesResponse do
           :items => list(GoogleApi.CloudRun.V1alpha1.Model.Service.t()),
           :kind => String.t(),
           :metadata => GoogleApi.CloudRun.V1alpha1.Model.ListMeta.t(),
-          :regionDetails => %{
-            optional(String.t()) => GoogleApi.CloudRun.V1alpha1.Model.RegionDetails.t()
-          },
           :unreachable => list(String.t())
         }
 
@@ -47,7 +42,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ListServicesResponse do
   field(:items, as: GoogleApi.CloudRun.V1alpha1.Model.Service, type: :list)
   field(:kind)
   field(:metadata, as: GoogleApi.CloudRun.V1alpha1.Model.ListMeta)
-  field(:regionDetails, as: GoogleApi.CloudRun.V1alpha1.Model.RegionDetails, type: :map)
   field(:unreachable, type: :list)
 end
 
