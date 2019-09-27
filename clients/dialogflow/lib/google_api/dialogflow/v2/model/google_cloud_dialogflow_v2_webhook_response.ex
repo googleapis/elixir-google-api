@@ -54,6 +54,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2WebhookResponse d
           }
         }
       }</pre>
+  *   `sessionEntityTypes` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t)`, *default:* `nil`) - Optional. Additional session entity types to replace or extend developer
+      entity types with. The entity synonyms apply to all languages and persist
+      for the session of this query. Setting the session entity types inside
+      webhook overwrites the session entity types that have been set through
+      `DetectIntentRequest.query_params.session_entity_types`.
   *   `source` (*type:* `String.t`, *default:* `nil`) - Optional. This value is passed directly to `QueryResult.webhook_source`.
   """
 
@@ -68,6 +73,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2WebhookResponse d
           :outputContexts =>
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()),
           :payload => map(),
+          :sessionEntityTypes =>
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t()),
           :source => String.t()
         }
 
@@ -88,6 +95,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2WebhookResponse d
   )
 
   field(:payload, type: :map)
+
+  field(
+    :sessionEntityTypes,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType,
+    type: :list
+  )
+
   field(:source)
 end
 

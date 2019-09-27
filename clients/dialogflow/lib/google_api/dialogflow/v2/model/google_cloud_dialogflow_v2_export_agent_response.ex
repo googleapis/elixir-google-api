@@ -21,18 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ExportAgentRespon
 
   ## Attributes
 
-  *   `agentContent` (*type:* `String.t`, *default:* `nil`) - The exported agent.
-
-      Example for how to export an agent to a zip file via a command line:
-      <pre>curl \\
-        'https://dialogflow.googleapis.com/v2/projects/&lt;project_id&gt;/agent:export'\\
-        -X POST \\
-        -H 'Authorization: Bearer' \\
-        $(gcloud auth application-default print-access-token) \\
-        -H 'Accept: application/json'
-        --compressed \\
-        | grep agentContent | sed -e 's/.*"agentContent": "\\([^"]*\\)".*/\\1/' \\
-        | base64 --decode > &lt;agent zip file&gt;</pre>
+  *   `agentContent` (*type:* `String.t`, *default:* `nil`) - Zip compressed raw byte content for agent.
   *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The URI to a file containing the exported agent. This field is populated
       only if `agent_uri` is specified in `ExportAgentRequest`.
   """
