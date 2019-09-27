@@ -30,14 +30,19 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig do
       If set to zero, no upper time limit is applied.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Exclude files or rows older than this value.
   *   `timestampField` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Specification of the field containing the timestamp of scanned items.
-      Used for data sources like Datastore or BigQuery.
-      If not specified for BigQuery, table last modification timestamp
-      is checked against given time span.
-      The valid data types of the timestamp field are:
-      for BigQuery - timestamp, date, datetime;
-      for Datastore - timestamp.
-      Datastore entity will be scanned if the timestamp property does not exist
-      or its value is empty or invalid.
+      Used for data sources like Datastore and BigQuery.
+
+      For BigQuery:
+      Required to filter out rows based on the given start and
+      end times. If not specified and the table was modified between the given
+      start and end times, the entire table will be scanned.
+      The valid data types of the timestamp field are: `INTEGER`, `DATE`,
+      `TIMESTAMP`, or `DATETIME` BigQuery column.
+
+      For Datastore.
+      Valid data types of the timestamp field are: `TIMESTAMP`.
+      Datastore entity will be scanned if the timestamp property does not
+      exist or its value is empty or invalid.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -38,6 +38,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReidentifyContentRequest do
       reverse. This requires that only reversible transformations
       be provided here. The reversible transformations are:
 
+       - `CryptoDeterministicConfig`
        - `CryptoReplaceFfxFpeConfig`
   *   `reidentifyTemplateName` (*type:* `String.t`, *default:* `nil`) - Optional template to use. References an instance of `DeidentifyTemplate`.
       Any configuration directly specified in `reidentify_config` or
