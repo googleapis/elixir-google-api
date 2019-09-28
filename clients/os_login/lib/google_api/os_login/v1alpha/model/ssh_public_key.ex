@@ -26,6 +26,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
   *   `key` (*type:* `String.t`, *default:* `nil`) - Public key text in SSH format, defined by
       <a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank">RFC4253</a>
       section 6.6.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The canonical resource name.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,12 +34,14 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
   @type t :: %__MODULE__{
           :expirationTimeUsec => String.t(),
           :fingerprint => String.t(),
-          :key => String.t()
+          :key => String.t(),
+          :name => String.t()
         }
 
   field(:expirationTimeUsec)
   field(:fingerprint)
   field(:key)
+  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.OSLogin.V1alpha.Model.SshPublicKey do
