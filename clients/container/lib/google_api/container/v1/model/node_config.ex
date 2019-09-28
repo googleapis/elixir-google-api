@@ -110,6 +110,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       information about preemptible VM instances.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs. If
       no Service Account is specified, the "default" service account is used.
+  *   `shieldedInstanceConfig` (*type:* `GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Shielded Instance options.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - The list of instance tags applied to all nodes. Tags are used to identify
       valid sources or targets for network firewalls and are specified by
       the client during cluster or node pool creation. Each tag within the list
@@ -135,6 +136,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :oauthScopes => list(String.t()),
           :preemptible => boolean(),
           :serviceAccount => String.t(),
+          :shieldedInstanceConfig => GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t(),
           :tags => list(String.t()),
           :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t())
         }
@@ -151,6 +153,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:oauthScopes, type: :list)
   field(:preemptible)
   field(:serviceAccount)
+  field(:shieldedInstanceConfig, as: GoogleApi.Container.V1.Model.ShieldedInstanceConfig)
   field(:tags, type: :list)
   field(:taints, as: GoogleApi.Container.V1.Model.NodeTaint, type: :list)
 end
