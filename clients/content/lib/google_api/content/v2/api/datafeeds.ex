@@ -367,67 +367,6 @@ defmodule GoogleApi.Content.V2.Api.Datafeeds do
   end
 
   @doc """
-  Updates a datafeed configuration of your Merchant Center account. This method supports patch semantics.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the datafeed. This account cannot be a multi-client account.
-  *   `datafeed_id` (*type:* `String.t`) - The ID of the datafeed.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:dryRun` (*type:* `boolean()`) - Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
-      *   `:body` (*type:* `GoogleApi.Content.V2.Model.Datafeed.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.Content.V2.Model.Datafeed{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec content_datafeeds_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.Datafeed.t()} | {:error, Tesla.Env.t()}
-  def content_datafeeds_patch(
-        connection,
-        merchant_id,
-        datafeed_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :dryRun => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:patch)
-      |> Request.url("/{merchantId}/datafeeds/{datafeedId}", %{
-        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
-        "datafeedId" => URI.encode(datafeed_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Content.V2.Model.Datafeed{}])
-  end
-
-  @doc """
   Updates a datafeed configuration of your Merchant Center account.
 
   ## Parameters
