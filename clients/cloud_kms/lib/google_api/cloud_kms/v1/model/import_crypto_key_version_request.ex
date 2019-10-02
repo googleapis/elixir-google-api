@@ -43,6 +43,11 @@ defmodule GoogleApi.CloudKMS.V1.Model.ImportCryptoKeyVersionRequest do
         </li>
       </ol>
 
+      If importing symmetric key material, it is expected that the unwrapped
+      key contains plain bytes. If importing asymmetric key material, it is
+      expected that the unwrapped key is in PKCS#8-encoded DER format (the
+      PrivateKeyInfo structure from RFC 5208).
+
       This format is the same as the format produced by PKCS#11 mechanism
       CKM_RSA_AES_KEY_WRAP.
   """

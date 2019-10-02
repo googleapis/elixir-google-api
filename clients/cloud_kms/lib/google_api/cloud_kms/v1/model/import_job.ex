@@ -58,12 +58,10 @@ defmodule GoogleApi.CloudKMS.V1.Model.ImportJob do
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this ImportJob is scheduled for
       expiration and can no longer be used to import key material.
   *   `generateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this ImportJob's key material was generated.
-  *   `importMethod` (*type:* `String.t`, *default:* `nil`) - Required and immutable. The wrapping method to be used for incoming
-      key material.
+  *   `importMethod` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The wrapping method to be used for incoming key material.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this ImportJob in the format
       `projects/*/locations/*/keyRings/*/importJobs/*`.
-  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - Required and immutable. The protection level of the ImportJob. This
-      must match the
+  *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The protection level of the ImportJob. This must match the
       protection_level of the
       version_template on the CryptoKey you
       attempt to import into.

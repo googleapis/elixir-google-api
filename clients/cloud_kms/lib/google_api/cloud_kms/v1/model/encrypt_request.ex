@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.EncryptRequest do
 
   ## Attributes
 
-  *   `additionalAuthenticatedData` (*type:* `String.t`, *default:* `nil`) - Optional data that, if specified, must also be provided during decryption
+  *   `additionalAuthenticatedData` (*type:* `String.t`, *default:* `nil`) - Optional. Optional data that, if specified, must also be provided during decryption
       through DecryptRequest.additional_authenticated_data.
 
       The maximum size depends on the key version's
