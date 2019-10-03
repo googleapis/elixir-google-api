@@ -25,6 +25,7 @@ defmodule GoogleApi.OSLogin.V1.Model.PosixAccount do
   *   `gecos` (*type:* `String.t`, *default:* `nil`) - The GECOS (user information) entry for this account.
   *   `gid` (*type:* `String.t`, *default:* `nil`) - The default group ID.
   *   `homeDirectory` (*type:* `String.t`, *default:* `nil`) - The path to the home directory for this account.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The canonical resource name.
   *   `operatingSystemType` (*type:* `String.t`, *default:* `nil`) - The operating system type where this account applies.
   *   `primary` (*type:* `boolean()`, *default:* `nil`) - Only one POSIX account can be marked as primary.
   *   `shell` (*type:* `String.t`, *default:* `nil`) - The path to the logic shell for this account.
@@ -41,6 +42,7 @@ defmodule GoogleApi.OSLogin.V1.Model.PosixAccount do
           :gecos => String.t(),
           :gid => String.t(),
           :homeDirectory => String.t(),
+          :name => String.t(),
           :operatingSystemType => String.t(),
           :primary => boolean(),
           :shell => String.t(),
@@ -53,6 +55,7 @@ defmodule GoogleApi.OSLogin.V1.Model.PosixAccount do
   field(:gecos)
   field(:gid)
   field(:homeDirectory)
+  field(:name)
   field(:operatingSystemType)
   field(:primary)
   field(:shell)
