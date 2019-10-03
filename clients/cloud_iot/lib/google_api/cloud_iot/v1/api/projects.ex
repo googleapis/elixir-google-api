@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the registry. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the registry. For example,
       `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -115,7 +115,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project and cloud region where this device registry must be created.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and cloud region where this device registry must be created.
       For example, `projects/example-project/locations/us-central1`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -188,7 +188,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the device registry. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device registry. For example,
       `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -266,7 +266,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the device registry. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device registry. For example,
       `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -426,7 +426,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project and cloud region path. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and cloud region path. For example,
       `projects/example-project/locations/us-central1`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -526,7 +526,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Only updates the `device_registry` fields indicated by this mask.
+      *   `:updateMask` (*type:* `String.t`) - Required. Only updates the `device_registry` fields indicated by this mask.
           The field mask must not be empty, and it must not contain fields that
           are immutable or only set by the server.
           Mutable top-level fields: `event_notification_config`, `http_config`,
@@ -763,7 +763,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the registry. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the registry. For example,
       `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -847,7 +847,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the device registry where this device should be created.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the device registry where this device should be created.
       For example,
       `projects/example-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -928,7 +928,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the device. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
       `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
       `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1011,7 +1011,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the device. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
       `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
       `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1097,7 +1097,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The device registry path. Required. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The device registry path. Required. For example,
       `projects/my-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -1210,7 +1210,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the device. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
       `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
       `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1315,7 +1315,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Only updates the `device` fields indicated by this mask.
+      *   `:updateMask` (*type:* `String.t`) - Required. Only updates the `device` fields indicated by this mask.
           The field mask must not be empty, and it must not contain fields that
           are immutable or only set by the server.
           Mutable top-level fields: `credentials`, `blocked`, and `metadata`
@@ -1399,7 +1399,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the device. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
       `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
       `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1489,7 +1489,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the device. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
       `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
       `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1581,7 +1581,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the device. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the device. For example,
       `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
       `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1931,7 +1931,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIot.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The device registry path. Required. For example,
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The device registry path. Required. For example,
       `projects/my-project/locations/us-central1/registries/my-registry`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `registries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
