@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   @moduledoc """
-  A policy resources represents a group settings that govern the behavior of a managed device and the apps installed on it.
+  A policy resource represents a group of settings that govern the behavior of a managed device and the apps installed on it.
 
   ## Attributes
 
