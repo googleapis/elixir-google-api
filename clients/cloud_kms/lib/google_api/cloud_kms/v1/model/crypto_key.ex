@@ -53,7 +53,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
       All keys with purpose
       ENCRYPT_DECRYPT have a
       primary. For other keys, this field will be omitted.
-  *   `purpose` (*type:* `String.t`, *default:* `nil`) - The immutable purpose of this CryptoKey.
+  *   `purpose` (*type:* `String.t`, *default:* `nil`) - Immutable. The immutable purpose of this CryptoKey.
   *   `rotationPeriod` (*type:* `String.t`, *default:* `nil`) - next_rotation_time will be advanced by this period when the service
       automatically rotates a key. Must be at least 24 hours and at most
       876,000 hours.

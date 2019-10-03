@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.DecryptRequest do
 
   ## Attributes
 
-  *   `additionalAuthenticatedData` (*type:* `String.t`, *default:* `nil`) - Optional data that must match the data originally supplied in
+  *   `additionalAuthenticatedData` (*type:* `String.t`, *default:* `nil`) - Optional. Optional data that must match the data originally supplied in
       EncryptRequest.additional_authenticated_data.
   *   `ciphertext` (*type:* `String.t`, *default:* `nil`) - Required. The encrypted data originally returned in
       EncryptResponse.ciphertext.

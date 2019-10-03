@@ -240,7 +240,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the KeyRing to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the KeyRing to get.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -426,11 +426,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           results will be sorted in the default order.  For more information, see
           [Sorting and filtering list
           results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of KeyRings to include in the
+      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of KeyRings to include in the
           response.  Further KeyRings can subsequently be obtained by
           including the ListKeyRingsResponse.next_page_token in a subsequent
           request.  If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional pagination token, returned earlier via
+      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via
           ListKeyRingsResponse.next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -931,7 +931,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the CryptoKey to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the CryptoKey to get.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1129,11 +1129,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           results will be sorted in the default order. For more information, see
           [Sorting and filtering list
           results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of CryptoKeys to include in the
+      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of CryptoKeys to include in the
           response.  Further CryptoKeys can subsequently be obtained by
           including the ListCryptoKeysResponse.next_page_token in a subsequent
           request.  If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional pagination token, returned earlier via
+      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via
           ListCryptoKeysResponse.next_page_token.
       *   `:versionView` (*type:* `String.t`) - The fields of the primary version to include in the response.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1221,7 +1221,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required list of fields to be updated in this request.
+      *   `:updateMask` (*type:* `String.t`) - Required. List of fields to be updated in this request.
       *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKey.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1471,7 +1471,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the CryptoKey to update.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey to update.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1835,7 +1835,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the CryptoKeyVersion to destroy.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to destroy.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1922,7 +1922,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the CryptoKeyVersion to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the CryptoKeyVersion to get.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -2010,7 +2010,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the CryptoKeyVersion public key to
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the CryptoKeyVersion public key to
       get.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -2209,12 +2209,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           results will be sorted in the default order. For more information, see
           [Sorting and filtering list
           results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of CryptoKeyVersions to
+      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of CryptoKeyVersions to
           include in the response. Further CryptoKeyVersions can
           subsequently be obtained by including the
           ListCryptoKeyVersionsResponse.next_page_token in a subsequent request.
           If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional pagination token, returned earlier via
+      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via
           ListCryptoKeyVersionsResponse.next_page_token.
       *   `:view` (*type:* `String.t`) - The fields to include in the response.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2315,7 +2315,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required list of fields to be updated in this request.
+      *   `:updateMask` (*type:* `String.t`) - Required. List of fields to be updated in this request.
       *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2393,7 +2393,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the CryptoKeyVersion to restore.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to restore.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -2565,7 +2565,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the ImportJob to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the ImportJob to get.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `import_jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -2763,11 +2763,11 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           results will be sorted in the default order. For more information, see
           [Sorting and filtering list
           results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-      *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of ImportJobs to include in the
+      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of ImportJobs to include in the
           response. Further ImportJobs can subsequently be obtained by
           including the ListImportJobsResponse.next_page_token in a subsequent
           request. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional pagination token, returned earlier via
+      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via
           ListImportJobsResponse.next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
 
