@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   ## Attributes
 
   *   `maintenancePolicy` (*type:* `GoogleApi.Container.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Configure the maintenance policy for this cluster.
+  *   `databaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `servicesIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Kubernetes services in
       this cluster, in
       [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -44,6 +45,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
       - "1.X.Y-gke.N": picks an explicit Kubernetes version
       - "","-": picks the default Kubernetes version
+  *   `binaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - Configuration for Binary Authorization.
   *   `defaultMaxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The default constraint on the maximum number of pods that can be run
       simultaneously on a node in the node pool of this cluster. Only honored
       if cluster created with IP Alias support.
@@ -171,10 +173,12 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
 
   @type t :: %__MODULE__{
           :maintenancePolicy => GoogleApi.Container.V1.Model.MaintenancePolicy.t(),
+          :databaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t(),
           :servicesIpv4Cidr => String.t(),
           :selfLink => String.t(),
           :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()),
           :initialClusterVersion => String.t(),
+          :binaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t(),
           :defaultMaxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t(),
           :currentNodeCount => integer(),
           :expireTime => String.t(),
@@ -218,10 +222,12 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
         }
 
   field(:maintenancePolicy, as: GoogleApi.Container.V1.Model.MaintenancePolicy)
+  field(:databaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
   field(:servicesIpv4Cidr)
   field(:selfLink)
   field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)
   field(:initialClusterVersion)
+  field(:binaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
   field(:defaultMaxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
   field(:currentNodeCount)
   field(:expireTime)

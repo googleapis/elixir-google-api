@@ -24,6 +24,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   ## Attributes
 
   *   `desiredAddonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
+  *   `desiredBinaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - The desired configuration options for the Binary Authorization feature.
+  *   `desiredDatabaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool.
       NOTE: Set the "desired_node_pool" field as well.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
@@ -85,6 +87,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   @type t :: %__MODULE__{
           :desiredAddonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t(),
+          :desiredBinaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t(),
+          :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t(),
           :desiredImageType => String.t(),
           :desiredIntraNodeVisibilityConfig =>
             GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t(),
@@ -102,6 +106,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
         }
 
   field(:desiredAddonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
+  field(:desiredBinaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
+  field(:desiredDatabaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
   field(:desiredImageType)
 
   field(
