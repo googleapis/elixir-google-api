@@ -26,6 +26,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
   ## Attributes
 
+  *   `acceleratorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig.t`, *default:* `nil`) - Accelerator config for GPU serving.
   *   `autoScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AutoScaling.t`, *default:* `nil`) - Automatically scale the number of nodes used to serve the model in
       response to increases and decreases in traffic. Care should be
       taken to ramp up traffic according to the model's ability to scale
@@ -179,6 +180,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :acceleratorConfig =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig.t(),
           :autoScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AutoScaling.t(),
           :createTime => DateTime.t(),
           :deploymentUri => String.t(),
@@ -201,6 +204,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
           :serviceAccount => String.t(),
           :state => String.t()
         }
+
+  field(
+    :acceleratorConfig,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig
+  )
 
   field(:autoScaling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AutoScaling)
   field(:createTime, as: DateTime)
