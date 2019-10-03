@@ -22,8 +22,8 @@ defmodule GoogleApi.WebSecurityScanner.V1alpha.Model.FindingTypeStats do
 
   ## Attributes
 
-  *   `findingCount` (*type:* `integer()`, *default:* `nil`) - Output only. The count of findings belonging to this finding type.
-  *   `findingType` (*type:* `String.t`, *default:* `nil`) - Output only. The finding type associated with the stats.
+  *   `findingCount` (*type:* `integer()`, *default:* `nil`) - The count of findings belonging to this finding type.
+  *   `findingType` (*type:* `String.t`, *default:* `nil`) - The finding type associated with the stats.
   """
 
   use GoogleApi.Gax.ModelBase
