@@ -34,7 +34,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Policy do
       {
         "bindings": [
           {
-            "role": "role/resourcemanager.organizationAdmin",
+            "role": "roles/resourcemanager.organizationAdmin",
             "members": [
               "user:mike@example.com",
               "group:admins@example.com",
