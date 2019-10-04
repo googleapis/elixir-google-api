@@ -47,7 +47,11 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesRequest.t`) - 
+      *   `:filter` (*type:* `String.t`) - Optional filter to only return infoTypes supported by certain parts of the
+          API. Defaults to supported_by=INSPECT.
+      *   `:languageCode` (*type:* `String.t`) - Optional BCP-47 language code for localized infoType friendly
+          names. If omitted, or if localized strings are not available,
+          en-US strings will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -55,10 +59,10 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
   *   `{:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec dlp_locations_info_types(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec dlp_locations_info_types_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def dlp_locations_info_types(connection, location, optional_params \\ [], opts \\ []) do
+  def dlp_locations_info_types_list(connection, location, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -71,12 +75,13 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :body => :body
+      :filter => :query,
+      :languageCode => :query
     }
 
     request =
       Request.new()
-      |> Request.method(:post)
+      |> Request.method(:get)
       |> Request.url("/v2/locations/{location}/infoTypes", %{
         "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
