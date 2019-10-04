@@ -17,8 +17,8 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType do
   @moduledoc """
-  TriggerFilterSourceAndType filters events based on exact matches on the cloud
-  event's type and source attributes. Only exact matches will pass the filter.
+  TriggerFilterSourceAndType is DEPRECATED. Filters are now contained in the
+  map of attributes in TriggerFilter proto.
 
   ## Attributes
 

@@ -34,11 +34,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter do
       Only string values are supported.
 
       +optional
-  *   `sourceAndType` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType.t`, *default:* `nil`) - SourceAndType filters events based on exact matches on the
-      CloudEvents type and source attributes. This field has been replaced by the
-      Attributes field.
-
-      +optional
+  *   `sourceAndType` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType.t`, *default:* `nil`) - SourceAndType is DEPRECATED and replaced by the Attributes field.
   """
 
   use GoogleApi.Gax.ModelBase
