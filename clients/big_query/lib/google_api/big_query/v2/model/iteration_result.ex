@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
 
   ## Attributes
 
+  *   `arimaResult` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaResult.t`, *default:* `nil`) - 
   *   `clusterInfos` (*type:* `list(GoogleApi.BigQuery.V2.Model.ClusterInfo.t)`, *default:* `nil`) - Information about top clusters for clustering models.
   *   `durationMs` (*type:* `String.t`, *default:* `nil`) - Time taken to run the iteration in milliseconds.
   *   `evalLoss` (*type:* `float()`, *default:* `nil`) - Loss computed on the eval data at the end of iteration.
@@ -32,6 +33,7 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :arimaResult => GoogleApi.BigQuery.V2.Model.ArimaResult.t(),
           :clusterInfos => list(GoogleApi.BigQuery.V2.Model.ClusterInfo.t()),
           :durationMs => String.t(),
           :evalLoss => float(),
@@ -40,6 +42,7 @@ defmodule GoogleApi.BigQuery.V2.Model.IterationResult do
           :trainingLoss => float()
         }
 
+  field(:arimaResult, as: GoogleApi.BigQuery.V2.Model.ArimaResult)
   field(:clusterInfos, as: GoogleApi.BigQuery.V2.Model.ClusterInfo, type: :list)
   field(:durationMs)
   field(:evalLoss)
