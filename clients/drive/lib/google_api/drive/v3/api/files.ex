@@ -41,7 +41,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
-      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive.
+      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
@@ -101,7 +101,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
-      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive.
+      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
@@ -162,7 +162,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
-      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive.
+      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
@@ -226,7 +226,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
-      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive.
+      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
@@ -628,7 +628,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
-      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive.
+      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
@@ -694,7 +694,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
-      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive.
+      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
@@ -774,7 +774,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
-      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive.
+      *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
