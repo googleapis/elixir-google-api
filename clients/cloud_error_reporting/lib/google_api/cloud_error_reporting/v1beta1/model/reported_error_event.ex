@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ReportedErrorEvent do
 
   ## Attributes
 
-  *   `context` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorContext.t`, *default:* `nil`) - [Optional] A description of the context in which the error occurred.
-  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - [Optional] Time when the event occurred.
+  *   `context` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorContext.t`, *default:* `nil`) - Optional. A description of the context in which the error occurred.
+  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Time when the event occurred.
       If not provided, the time when the event was received by the
       Error Reporting system will be used.
-  *   `message` (*type:* `String.t`, *default:* `nil`) - [Required] The error message.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Required. The error message.
       If no `context.reportLocation` is provided, the message must contain a
       header (typically consisting of the exception type name and an error
       message) and an exception stack trace in one of the supported programming
@@ -49,7 +49,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ReportedErrorEvent do
       [`(string)$exception`](http://php.net/manual/en/exception.tostring.php).
       * **Go**: Must be the return value of
       [`runtime.Stack()`](https://golang.org/pkg/runtime/debug/#Stack).
-  *   `serviceContext` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext.t`, *default:* `nil`) - [Required] The service context in which this error has occurred.
+  *   `serviceContext` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Model.ServiceContext.t`, *default:* `nil`) - Required. The service context in which this error has occurred.
   """
 
   use GoogleApi.Gax.ModelBase
