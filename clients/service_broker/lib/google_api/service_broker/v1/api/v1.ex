@@ -99,6 +99,8 @@ defmodule GoogleApi.ServiceBroker.V1.Api.V1 do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
+  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceBroker.V1.Connection.t`) - Connection to server
