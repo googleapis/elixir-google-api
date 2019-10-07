@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
       as `projects/` plus the
       [Google Cloud Platform project
       ID](https://support.google.com/cloud/answer/6158840).
@@ -105,7 +105,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
       as `projects/` plus the
       [Google Cloud Platform project
       ID](https://support.google.com/cloud/answer/6158840).
@@ -122,14 +122,14 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:groupId` (*type:* `String.t`) - [Required] The group for which events shall be returned.
-      *   `:pageSize` (*type:* `integer()`) - [Optional] The maximum number of results to return per response.
-      *   `:pageToken` (*type:* `String.t`) - [Optional] A `next_page_token` provided by a previous response.
-      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:groupId` (*type:* `String.t`) - Required. The group for which events shall be returned.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per response.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A `next_page_token` provided by a previous response.
+      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - Optional. The exact value to match against
           [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
-      *   `:"serviceFilter.service"` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.service"` (*type:* `String.t`) - Optional. The exact value to match against
           [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
-      *   `:"serviceFilter.version"` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.version"` (*type:* `String.t`) - Optional. The exact value to match against
           [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
       *   `:"timeRange.period"` (*type:* `String.t`) - Restricts the query to the specified time range.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -204,7 +204,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
       as `projects/` plus the
       [Google Cloud Platform project
       ID](https://support.google.com/cloud/answer/6158840). Example:
@@ -280,7 +280,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. [Required] The resource name of the Google Cloud Platform project. Written
+  *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
       as <code>projects/</code> plus the
       <a href="https://support.google.com/cloud/answer/6158840">Google Cloud
       Platform project ID</a>.
@@ -298,26 +298,26 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:alignment` (*type:* `String.t`) - [Optional] The alignment of the timed counts to be returned.
+      *   `:alignment` (*type:* `String.t`) - Optional. The alignment of the timed counts to be returned.
           Default is `ALIGNMENT_EQUAL_AT_END`.
-      *   `:alignmentTime` (*type:* `DateTime.t`) - [Optional] Time where the timed counts shall be aligned if rounded
+      *   `:alignmentTime` (*type:* `DateTime.t`) - Optional. Time where the timed counts shall be aligned if rounded
           alignment is chosen. Default is 00:00 UTC.
-      *   `:groupId` (*type:* `list(String.t)`) - [Optional] List all <code>ErrorGroupStats</code> with these IDs.
-      *   `:order` (*type:* `String.t`) - [Optional] The sort order in which the results are returned.
+      *   `:groupId` (*type:* `list(String.t)`) - Optional. List all <code>ErrorGroupStats</code> with these IDs.
+      *   `:order` (*type:* `String.t`) - Optional. The sort order in which the results are returned.
           Default is `COUNT_DESC`.
-      *   `:pageSize` (*type:* `integer()`) - [Optional] The maximum number of results to return per response.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per response.
           Default is 20.
-      *   `:pageToken` (*type:* `String.t`) - [Optional] A `next_page_token` provided by a previous response. To view
+      *   `:pageToken` (*type:* `String.t`) - Optional. A `next_page_token` provided by a previous response. To view
           additional results, pass this token along with the identical query
           parameters as the first request.
-      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - Optional. The exact value to match against
           [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
-      *   `:"serviceFilter.service"` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.service"` (*type:* `String.t`) - Optional. The exact value to match against
           [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
-      *   `:"serviceFilter.version"` (*type:* `String.t`) - [Optional] The exact value to match against
+      *   `:"serviceFilter.version"` (*type:* `String.t`) - Optional. The exact value to match against
           [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
       *   `:"timeRange.period"` (*type:* `String.t`) - Restricts the query to the specified time range.
-      *   `:timedCountDuration` (*type:* `String.t`) - [Optional] The preferred duration for a single returned `TimedCount`.
+      *   `:timedCountDuration` (*type:* `String.t`) - Optional. The preferred duration for a single returned `TimedCount`.
           If not set, no timed counts are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -387,7 +387,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `groupName`. [Required] The group resource name. Written as
+  *   `projects_id` (*type:* `String.t`) - Part of `groupName`. Required. The group resource name. Written as
       <code>projects/<var>projectID</var>/groups/<var>group_name</var></code>.
       Call
       <a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list">
