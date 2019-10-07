@@ -42,10 +42,11 @@ defmodule GoogleApi.ServiceControl.V1.Model.QuotaOperation do
       of the service that generated the operation, and guarantees idempotency in
       case of retries.
 
-      UUID version 4 is recommended, though not required. In scenarios where an
-      operation is computed from existing information and an idempotent id is
-      desirable for deduplication purpose, UUID version 5 is recommended. See
-      RFC 4122 for details.
+      In order to ensure best performance and latency in the Quota backends,
+      operation_ids are optimally associated with time, so that related
+      operations can be accessed fast in storage. For this reason, the
+      recommended token for services that intend to operate at a high QPS is
+      Unix time in nanos + UUID
   *   `quotaMetrics` (*type:* `list(GoogleApi.ServiceControl.V1.Model.MetricValueSet.t)`, *default:* `nil`) - Represents information about this operation. Each MetricValueSet
       corresponds to a metric defined in the service configuration.
       The data type used in the MetricValueSet must agree with
