@@ -40,6 +40,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
       (Not applicable to Geo and Org charts.)
   *   `orgChart` (*type:* `GoogleApi.Sheets.V4.Model.OrgChartSpec.t`, *default:* `nil`) - An org chart specification.
   *   `pieChart` (*type:* `GoogleApi.Sheets.V4.Model.PieChartSpec.t`, *default:* `nil`) - A pie chart specification.
+  *   `scorecardChart` (*type:* `GoogleApi.Sheets.V4.Model.ScorecardChartSpec.t`, *default:* `nil`) - A scorecard chart specification.
   *   `subtitle` (*type:* `String.t`, *default:* `nil`) - The subtitle of the chart.
   *   `subtitleTextFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The subtitle text format.
       Strikethrough and underline are not supported.
@@ -68,6 +69,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
           :maximized => boolean(),
           :orgChart => GoogleApi.Sheets.V4.Model.OrgChartSpec.t(),
           :pieChart => GoogleApi.Sheets.V4.Model.PieChartSpec.t(),
+          :scorecardChart => GoogleApi.Sheets.V4.Model.ScorecardChartSpec.t(),
           :subtitle => String.t(),
           :subtitleTextFormat => GoogleApi.Sheets.V4.Model.TextFormat.t(),
           :subtitleTextPosition => GoogleApi.Sheets.V4.Model.TextPosition.t(),
@@ -89,6 +91,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   field(:maximized)
   field(:orgChart, as: GoogleApi.Sheets.V4.Model.OrgChartSpec)
   field(:pieChart, as: GoogleApi.Sheets.V4.Model.PieChartSpec)
+  field(:scorecardChart, as: GoogleApi.Sheets.V4.Model.ScorecardChartSpec)
   field(:subtitle)
   field(:subtitleTextFormat, as: GoogleApi.Sheets.V4.Model.TextFormat)
   field(:subtitleTextPosition, as: GoogleApi.Sheets.V4.Model.TextPosition)
