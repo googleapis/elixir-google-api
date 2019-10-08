@@ -19,7 +19,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.TrafficPercentStrategy do
   @moduledoc """
   Strategy that specifies how clients of Google Service Controller want to
   send traffic to use different config versions. This is generally
-  used by API proxy to split traffic based on your configured precentage for
+  used by API proxy to split traffic based on your configured percentage for
   each config version.
 
   One example of how to gradually rollout a new service configuration using

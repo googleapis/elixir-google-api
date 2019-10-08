@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.SubmitConfigSourceRequest do
 
   ## Attributes
 
-  *   `configSource` (*type:* `GoogleApi.ServiceManagement.V1.Model.ConfigSource.t`, *default:* `nil`) - The source configuration for the service.
+  *   `configSource` (*type:* `GoogleApi.ServiceManagement.V1.Model.ConfigSource.t`, *default:* `nil`) - Required. The source configuration for the service.
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, this will result in the generation of a
       `google.api.Service` configuration based on the `ConfigSource` provided,
       but the generated config and the sources will NOT be persisted.
