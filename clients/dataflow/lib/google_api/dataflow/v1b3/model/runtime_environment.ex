@@ -28,6 +28,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
       page.
   *   `bypassTempDirValidation` (*type:* `boolean()`, *default:* `nil`) - Whether to bypass the safety checks for the job's temporary directory.
       Use with caution.
+  *   `ipConfiguration` (*type:* `String.t`, *default:* `nil`) - Configuration for VM IPs.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. Name for the Cloud KMS key for the job.
       Key format is:
       projects/<project>/locations/<location>/keyRings/<keyring>/cryptoKeys/<key>
@@ -43,8 +44,6 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
       the form "regions/REGION/subnetworks/SUBNETWORK".
   *   `tempLocation` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage path to use for temporary files.
       Must be a valid Cloud Storage URL, beginning with `gs://`.
-  *   `usePrivateIps` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies whether worker pools should be started with private IP addresses.
-      False by default.
   *   `workerRegion` (*type:* `String.t`, *default:* `nil`) - The Compute Engine region
       (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
       which worker processing should occur, e.g. "us-west1". Mutually exclusive
@@ -68,6 +67,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
           :additionalExperiments => list(String.t()),
           :additionalUserLabels => map(),
           :bypassTempDirValidation => boolean(),
+          :ipConfiguration => String.t(),
           :kmsKeyName => String.t(),
           :machineType => String.t(),
           :maxWorkers => integer(),
@@ -76,7 +76,6 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
           :serviceAccountEmail => String.t(),
           :subnetwork => String.t(),
           :tempLocation => String.t(),
-          :usePrivateIps => boolean(),
           :workerRegion => String.t(),
           :workerZone => String.t(),
           :zone => String.t()
@@ -85,6 +84,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   field(:additionalExperiments, type: :list)
   field(:additionalUserLabels, type: :map)
   field(:bypassTempDirValidation)
+  field(:ipConfiguration)
   field(:kmsKeyName)
   field(:machineType)
   field(:maxWorkers)
@@ -93,7 +93,6 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   field(:serviceAccountEmail)
   field(:subnetwork)
   field(:tempLocation)
-  field(:usePrivateIps)
   field(:workerRegion)
   field(:workerZone)
   field(:zone)
