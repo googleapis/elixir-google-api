@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue do
   @moduledoc """
-  Nested value of the parameter.
+  Nested parameter value pairs associated with this parameter. Complex value type for a parameter are returned as a list of parameter values. For example, the address parameter may have a value as [{parameter: [{name: city, value: abc}]}]
 
   ## Attributes
 
-  *   `parameter` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.NestedParameter.t)`, *default:* `nil`) - Looping to get parameter values.
+  *   `parameter` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.NestedParameter.t)`, *default:* `nil`) - Parameter values
   """
 
   use GoogleApi.Gax.ModelBase
