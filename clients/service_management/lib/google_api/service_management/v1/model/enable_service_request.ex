@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.EnableServiceRequest do
 
   ## Attributes
 
-  *   `consumerId` (*type:* `String.t`, *default:* `nil`) - The identity of consumer resource which service enablement will be
+  *   `consumerId` (*type:* `String.t`, *default:* `nil`) - Required. The identity of consumer resource which service enablement will be
       applied to.
 
       The Google Service Management implementation accepts the following

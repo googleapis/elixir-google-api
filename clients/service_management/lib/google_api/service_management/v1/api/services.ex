@@ -95,7 +95,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -162,7 +162,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - Name of the service to disable. Specifying an unknown service name
+  *   `service_name` (*type:* `String.t`) - Required. Name of the service to disable. Specifying an unknown service name
       will cause the request to fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -232,7 +232,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - Name of the service to enable. Specifying an unknown service name will
+  *   `service_name` (*type:* `String.t`) - Required. Name of the service to enable. Specifying an unknown service name will
       cause the request to fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -375,7 +375,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the `ServiceManager` overview for naming
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the `ServiceManager` overview for naming
       requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -433,7 +433,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -447,7 +447,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:configId` (*type:* `String.t`) - The id of the service configuration resource.
+      *   `:configId` (*type:* `String.t`) - Required. The id of the service configuration resource.
 
           This field must be specified for the server to return all fields, including
           `SourceInfo`.
@@ -656,6 +656,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
+  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
@@ -812,7 +814,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service. See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service. See the [overview](/service-management/overview)
       for naming requirements. For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -882,7 +884,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -951,9 +953,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
-  *   `config_id` (*type:* `String.t`) - The id of the service configuration resource.
+  *   `config_id` (*type:* `String.t`) - Required. The id of the service configuration resource.
 
       This field must be specified for the server to return all fields, including
       `SourceInfo`.
@@ -1029,7 +1031,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1117,7 +1119,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1254,6 +1256,8 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @doc """
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
+
+  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
 
   ## Parameters
 
@@ -1419,7 +1423,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1497,9 +1501,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
-  *   `rollout_id` (*type:* `String.t`) - The id of the rollout resource.
+  *   `rollout_id` (*type:* `String.t`) - Required. The id of the rollout resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1569,7 +1573,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ServiceManagement.V1.Connection.t`) - Connection to server
-  *   `service_name` (*type:* `String.t`) - The name of the service.  See the [overview](/service-management/overview)
+  *   `service_name` (*type:* `String.t`) - Required. The name of the service.  See the [overview](/service-management/overview)
       for naming requirements.  For example: `example.googleapis.com`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1583,7 +1587,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Use `filter` to return subset of rollouts.
+      *   `:filter` (*type:* `String.t`) - Required. Use `filter` to return subset of rollouts.
           The following filters are supported:
             -- To limit the results to only those in
                [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
