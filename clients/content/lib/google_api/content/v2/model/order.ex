@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V2.Model.Order do
   @moduledoc """
-  Order. All methods require the order manager role.
+  Order. Production access (all methods) requires the order manager role. Sandbox access does not.
 
   ## Attributes
 
