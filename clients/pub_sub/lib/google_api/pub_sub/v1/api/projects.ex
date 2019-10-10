@@ -507,6 +507,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
+  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
@@ -1520,6 +1522,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
+  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
@@ -2200,6 +2204,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @doc """
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
+
+  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
 
   ## Parameters
 
