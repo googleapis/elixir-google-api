@@ -35,6 +35,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
       - Canceled 
       - Pending
   *   `purchaseTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970).
+  *   `purchaseToken` (*type:* `String.t`, *default:* `nil`) - The purchase token generated to identify this purchase.
   *   `purchaseType` (*type:* `integer()`, *default:* `nil`) - The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:  
       - Test (i.e. purchased from a license testing account) 
       - Promo (i.e. purchased using a promo code) 
@@ -51,6 +52,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
           :orderId => String.t(),
           :purchaseState => integer(),
           :purchaseTimeMillis => String.t(),
+          :purchaseToken => String.t(),
           :purchaseType => integer()
         }
 
@@ -61,6 +63,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   field(:orderId)
   field(:purchaseState)
   field(:purchaseTimeMillis)
+  field(:purchaseToken)
   field(:purchaseType)
 end
 
