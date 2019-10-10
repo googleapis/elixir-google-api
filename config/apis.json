@@ -616,11 +616,6 @@
   },
   {
     "version": "v1",
-    "name": "UrlShortener",
-    "url": "https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest"
-  },
-  {
-    "version": "v1",
     "name": "Vault",
     "url": "https://vault.googleapis.com/$discovery/rest?version=v1"
   },
