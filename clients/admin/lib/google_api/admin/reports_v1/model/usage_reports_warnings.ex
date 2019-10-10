@@ -21,11 +21,9 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings do
 
   ## Attributes
 
-  *   `code` (*type:* `String.t`, *default:* `nil`) - Machine readable code or warning type. The warning code value is 200.
-  *   `data` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarningsData.t)`, *default:* `nil`) - Key-value pairs to give detailed information on the warning.
-  *   `message` (*type:* `String.t`, *default:* `nil`) - The human readable messages for a warning are:  
-      - Data is not available warning - Sorry, data for date yyyy-mm-dd for application "application name" is not available.  
-      - Partial data is available warning - Data for date yyyy-mm-dd for application "application name" is not available right now, please try again after a few hours.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Machine readable code / warning type.
+  *   `data` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarningsData.t)`, *default:* `nil`) - Key-Value pairs to give detailed information on the warning.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Human readable message for the warning.
   """
 
   use GoogleApi.Gax.ModelBase

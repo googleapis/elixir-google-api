@@ -21,11 +21,11 @@ defmodule GoogleApi.Admin.Reports_v1.Model.UsageReportEntity do
 
   ## Attributes
 
-  *   `customerId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the customer's account.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Obfuscated customer id for the record.
   *   `entityId` (*type:* `String.t`, *default:* `nil`) - Object key. Only relevant if entity.type = "OBJECT" Note: external-facing name of report is "Entities" rather than "Objects".
-  *   `profileId` (*type:* `String.t`, *default:* `nil`) - The user's immutable G Suite profile identifier.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of item. The value is customer.
-  *   `userEmail` (*type:* `String.t`, *default:* `nil`) - The user's email address. Only relevant if entity.type = "USER"
+  *   `profileId` (*type:* `String.t`, *default:* `nil`) - Obfuscated user id for the record.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of item, can be customer, user, or entity (aka. object).
+  *   `userEmail` (*type:* `String.t`, *default:* `nil`) - user's email. Only relevant if entity.type = "USER"
   """
 
   use GoogleApi.Gax.ModelBase
