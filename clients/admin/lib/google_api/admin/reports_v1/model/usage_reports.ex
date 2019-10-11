@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.Admin.Reports_v1.Model.UsageReports do
   @moduledoc """
-
+  JSON template for a collection of usage reports.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `kind` (*type:* `String.t`, *default:* `admin#reports#usageReports`) - The type of API resource. For a usage report, the value is admin#reports#usageReports.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to specify next page. A report with multiple pages has a nextPageToken property in the response. For your follow-on requests getting all of the report's pages, enter the nextPageToken value in the pageToken query string.
+  *   `kind` (*type:* `String.t`, *default:* `admin#reports#usageReports`) - The kind of object.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token for retrieving the next page
   *   `usageReports` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.UsageReport.t)`, *default:* `nil`) - Various application parameter records.
-  *   `warnings` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings.t)`, *default:* `nil`) - Warnings, if any.
+  *   `warnings` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.UsageReportsWarnings.t)`, *default:* `nil`) - Warnings if any.
   """
 
   use GoogleApi.Gax.ModelBase
