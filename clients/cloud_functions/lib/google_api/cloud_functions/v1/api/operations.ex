@@ -111,10 +111,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Required. A filter for matching the requested operations.<br><br> The supported formats of <b>filter</b> are:<br> To query for specific function: <code>project:*,location:*,function:*</code><br> To query for all of the latest operations for a project: <code>project:*,latest:true</code>
+      *   `:filter` (*type:* `String.t`) - Required. A filter for matching the requested operations.<br><br> The supported formats of <b>filter</b> are:<br> To query for a specific function: <code>project:*,location:*,function:*</code><br> To query for all of the latest operations for a project: <code>project:*,latest:true</code>
       *   `:name` (*type:* `String.t`) - Must not be set.
-      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
-      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of records that should be returned.<br> Requested page size cannot exceed 100. If not set, the default page size is 100.<br><br> Pagination is only supported when querying for a specific function.
+      *   `:pageToken` (*type:* `String.t`) - Token identifying which result to start with, which is returned by a previous list call.<br><br> Pagination is only supported when querying for a specific function.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
