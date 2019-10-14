@@ -28,6 +28,7 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
       "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
       "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
       The sink's writer_identity, set when the sink is created, must have permission to write to the destination or else the log entries are not exported. For more information, see Exporting Logs with Sinks.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Do not use. This field is ignored.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Optional. An advanced logs filter. The only exported log entries are those that are in the resource owning the sink and that match the filter. For example:
       logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity>=ERROR
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The client-assigned sink identifier, unique within the project. Example: "my-syslog-errors-to-pubsub". Sink identifiers are limited to 100 characters and can include only the following characters: upper and lower-case alphanumeric characters, underscores, hyphens, and periods.
   *   `outputVersionFormat` (*type:* `String.t`, *default:* `nil`) - Deprecated. The log entry format to use for this sink's exported log entries. The v2 format is used by default and cannot be changed.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Do not use. This field is ignored.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the sink.This field may not be present for older sinks.
   *   `writerIdentity` (*type:* `String.t`, *default:* `nil`) - Output only. An IAM identity&mdash;a service account or group&mdash;under which Logging writes the exported log entries to the sink's destination. This field is set by sinks.create and sinks.update based on the value of unique_writer_identity in those methods.Until you grant this identity write-access to the destination, log entry exports from this sink will fail. For more information, see Granting Access for a Resource. Consult the destination service's documentation to determine the appropriate IAM roles to assign to the identity.
   """
@@ -47,10 +49,12 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
           :bigqueryOptions => GoogleApi.Logging.V2.Model.BigQueryOptions.t(),
           :createTime => DateTime.t(),
           :destination => String.t(),
+          :endTime => DateTime.t(),
           :filter => String.t(),
           :includeChildren => boolean(),
           :name => String.t(),
           :outputVersionFormat => String.t(),
+          :startTime => DateTime.t(),
           :updateTime => DateTime.t(),
           :writerIdentity => String.t()
         }
@@ -58,10 +62,12 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
   field(:bigqueryOptions, as: GoogleApi.Logging.V2.Model.BigQueryOptions)
   field(:createTime, as: DateTime)
   field(:destination)
+  field(:endTime, as: DateTime)
   field(:filter)
   field(:includeChildren)
   field(:name)
   field(:outputVersionFormat)
+  field(:startTime, as: DateTime)
   field(:updateTime, as: DateTime)
   field(:writerIdentity)
 end
