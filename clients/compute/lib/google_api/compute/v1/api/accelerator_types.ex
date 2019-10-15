@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of accelerator types.
+  Retrieves an aggregated list of accelerator types. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
   end
 
   @doc """
-  Returns the specified accelerator type.
+  Returns the specified accelerator type. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -172,7 +172,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
   end
 
   @doc """
-  Retrieves a list of accelerator types available to the specified project.
+  Retrieves a list of accelerator types available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified HttpsHealthCheck resource.
+  Deletes the specified HttpsHealthCheck resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
   end
 
   @doc """
-  Returns the specified HttpsHealthCheck resource. Gets a list of available HTTPS health checks by making a list() request.
+  Returns the specified HttpsHealthCheck resource. Gets a list of available HTTPS health checks by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -156,7 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
   end
 
   @doc """
-  Creates a HttpsHealthCheck resource in the specified project using the data included in the request.
+  Creates a HttpsHealthCheck resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
   end
 
   @doc """
-  Retrieves the list of HttpsHealthCheck resources available to the specified project.
+  Retrieves the list of HttpsHealthCheck resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -280,7 +280,7 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
   end
 
   @doc """
-  Updates a HttpsHealthCheck resource in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Updates a HttpsHealthCheck resource in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -350,7 +350,7 @@ defmodule GoogleApi.Compute.V1.Api.HttpsHealthChecks do
   end
 
   @doc """
-  Updates a HttpsHealthCheck resource in the specified project using the data included in the request.
+  Updates a HttpsHealthCheck resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified TargetTcpProxy resource.
+  Deletes the specified TargetTcpProxy resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
   end
 
   @doc """
-  Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by making a list() request.
+  Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -156,7 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
   end
 
   @doc """
-  Creates a TargetTcpProxy resource in the specified project using the data included in the request.
+  Creates a TargetTcpProxy resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
   end
 
   @doc """
-  Retrieves the list of TargetTcpProxy resources available to the specified project.
+  Retrieves the list of TargetTcpProxy resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -280,7 +280,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
   end
 
   @doc """
-  Changes the BackendService for TargetTcpProxy.
+  Changes the BackendService for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -350,7 +350,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetTcpProxies do
   end
 
   @doc """
-  Changes the ProxyHeaderType for TargetTcpProxy.
+  Changes the ProxyHeaderType for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves aggregated list of all of the instances in your project across all regions and zones.
+  Retrieves aggregated list of all of the instances in your project across all regions and zones. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -93,7 +93,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -162,7 +162,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown. For more information, see Resetting an instance.
+  Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown. For more information, see Resetting an instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -234,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets the service account on the instance. For more information, read Changing the service account and access scopes for an instance.
+  Sets the service account on the instance. For more information, read Changing the service account and access scopes for an instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -308,7 +308,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets network tags for the specified instance to the data included in the request.
+  Sets network tags for the specified instance to the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -382,7 +382,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Updates the Shielded Instance config for an instance. You can only use this method on a stopped instance. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Updates the Shielded Instance config for an instance. You can only use this method on a stopped instance. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -459,7 +459,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur VM usage charges while they are stopped. However, resources that the VM is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
+  Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur VM usage charges while they are stopped. However, resources that the VM is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -531,7 +531,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Adds an access config to an instance's network interface.
+  Adds an access config to an instance's network interface. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -609,7 +609,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Simulates a maintenance event on the instance.
+  Simulates a maintenance event on the instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -675,7 +675,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -743,7 +743,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Starts an instance that was stopped using the instances().stop method. For more information, see Restart an instance.
+  Starts an instance that was stopped using the instances().stop method. For more information, see Restart an instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -817,7 +817,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Changes the number and/or type of accelerator for a stopped instance to the values specified in the request.
+  Changes the number and/or type of accelerator for a stopped instance to the values specified in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -891,7 +891,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets labels on an instance. To learn more about labels, read the Labeling Resources documentation.
+  Sets labels on an instance. To learn more about labels, read the Labeling Resources documentation. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -965,7 +965,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Returns the specified Instance resource. Gets a list of available instances by making a list() request.
+  Returns the specified Instance resource. Gets a list of available instances by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1031,7 +1031,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets an instance's scheduling options.
+  Sets an instance's scheduling options. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1105,7 +1105,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Deletes the specified Instance resource. For more information, see Stopping or Deleting an Instance.
+  Deletes the specified Instance resource. For more information, see Stopping or Deleting an Instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1177,7 +1177,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Detaches a disk from an instance.
+  Detaches a disk from an instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1253,7 +1253,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Changes the minimum CPU platform that this instance should use. This method can only be called on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
+  Changes the minimum CPU platform that this instance should use. This method can only be called on a stopped instance. For more information, read Specifying a Minimum CPU Platform. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1327,7 +1327,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Updates the specified access config from an instance's network interface with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Updates the specified access config from an instance's network interface with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1405,7 +1405,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1471,7 +1471,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Returns the specified guest attributes entry.
+  Returns the specified guest attributes entry. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1541,7 +1541,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Deletes an access config from an instance's network interface.
+  Deletes an access config from an instance's network interface. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1621,7 +1621,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Updates the Display config for a VM instance. You can only use this method on a stopped VM instance. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Updates the Display config for a VM instance. You can only use this method on a stopped VM instance. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1695,7 +1695,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets metadata for the specified instance to the data included in the request.
+  Sets metadata for the specified instance to the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1769,7 +1769,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Returns the Shielded Instance Identity of an instance
+  Returns the Shielded Instance Identity of an instance (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1839,7 +1839,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Starts an instance that was stopped using the instances().stop method. For more information, see Restart an instance.
+  Starts an instance that was stopped using the instances().stop method. For more information, see Restart an instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1911,7 +1911,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets deletion protection on the instance.
+  Sets deletion protection on the instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -1985,7 +1985,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Retrieves the list of referrers to instances contained within the specified zone. For more information, read Viewing Referrers to VM Instances.
+  Retrieves the list of referrers to instances contained within the specified zone. For more information, read Viewing Referrers to VM Instances. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -2069,7 +2069,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Attaches an existing Disk resource to an instance. You must first create the disk before you can attach it. It is not possible to create and attach a disk at the same time. For more information, read Adding a persistent disk to your instance.
+  Attaches an existing Disk resource to an instance. You must first create the disk before you can attach it. It is not possible to create and attach a disk at the same time. For more information, read Adding a persistent disk to your instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -2145,7 +2145,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Changes the machine type for a stopped instance to the machine type specified in the request.
+  Changes the machine type for a stopped instance to the machine type specified in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -2219,7 +2219,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Creates an instance resource in the specified project using the data included in the request.
+  Creates an instance resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -2285,7 +2285,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets the Shielded Instance integrity policy for an instance. You can only use this method on a running instance. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Sets the Shielded Instance integrity policy for an instance. You can only use this method on a running instance. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -2362,7 +2362,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Updates an instance's network interface. This method follows PATCH semantics.
+  Updates an instance's network interface. This method follows PATCH semantics. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -2440,7 +2440,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets the auto-delete flag for a disk attached to an instance.
+  Sets the auto-delete flag for a disk attached to an instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -2520,7 +2520,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Returns the last 1 MB of serial port output from the specified instance.
+  Returns the last 1 MB of serial port output from the specified instance. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -2590,7 +2590,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Retrieves the list of instances contained within the specified zone.
+  Retrieves the list of instances contained within the specified zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

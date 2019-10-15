@@ -31,6 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.LogConfigCounterOptions do
 
   ## Attributes
 
+  *   `customFields` (*type:* `list(GoogleApi.Compute.V1.Model.LogConfigCounterOptionsCustomField.t)`, *default:* `nil`) - Custom fields.
   *   `field` (*type:* `String.t`, *default:* `nil`) - The field value to attribute.
   *   `metric` (*type:* `String.t`, *default:* `nil`) - The metric to update.
   """
@@ -38,9 +39,17 @@ defmodule GoogleApi.Compute.V1.Model.LogConfigCounterOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customFields =>
+            list(GoogleApi.Compute.V1.Model.LogConfigCounterOptionsCustomField.t()),
           :field => String.t(),
           :metric => String.t()
         }
+
+  field(
+    :customFields,
+    as: GoogleApi.Compute.V1.Model.LogConfigCounterOptionsCustomField,
+    type: :list
+  )
 
   field(:field)
   field(:metric)
