@@ -30,6 +30,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   *   `developerPayload` (*type:* `String.t`, *default:* `nil`) - A developer-specified string that contains supplemental information about an order.
   *   `kind` (*type:* `String.t`, *default:* `androidpublisher#productPurchase`) - This kind represents an inappPurchase object in the androidpublisher service.
   *   `orderId` (*type:* `String.t`, *default:* `nil`) - The order id associated with the purchase of the inapp product.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The inapp product SKU.
   *   `purchaseState` (*type:* `integer()`, *default:* `nil`) - The purchase state of the order. Possible values are:  
       - Purchased 
       - Canceled 
@@ -50,6 +51,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
           :developerPayload => String.t(),
           :kind => String.t(),
           :orderId => String.t(),
+          :productId => String.t(),
           :purchaseState => integer(),
           :purchaseTimeMillis => String.t(),
           :purchaseToken => String.t(),
@@ -61,6 +63,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   field(:developerPayload)
   field(:kind)
   field(:orderId)
+  field(:productId)
   field(:purchaseState)
   field(:purchaseTimeMillis)
   field(:purchaseToken)
