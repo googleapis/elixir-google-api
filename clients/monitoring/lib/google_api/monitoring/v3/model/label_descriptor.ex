@@ -22,7 +22,11 @@ defmodule GoogleApi.Monitoring.V3.Model.LabelDescriptor do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - A human-readable description for the label.
-  *   `key` (*type:* `String.t`, *default:* `nil`) - The label key.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The key for this label. The key must meet the following criteria:
+      Does not exceed 100 characters.
+      Matches the following regular expression: [a-zA-Z][a-zA-Z0-9_]*
+      The first character must be an upper- or lower-case letter.
+      The remaining characters must be letters, digits, or underscores.
   *   `valueType` (*type:* `String.t`, *default:* `nil`) - The type of data that can be assigned to the label.
   """
 
