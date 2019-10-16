@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.RegisterDebuggeeRequest do
 
   ## Attributes
 
-  *   `debuggee` (*type:* `GoogleApi.CloudDebugger.V2.Model.Debuggee.t`, *default:* `nil`) - Debuggee information to register.
+  *   `debuggee` (*type:* `GoogleApi.CloudDebugger.V2.Model.Debuggee.t`, *default:* `nil`) - Required. Debuggee information to register.
       The fields `project`, `uniquifier`, `description` and `agent_version`
       of the debuggee must be set.
   """

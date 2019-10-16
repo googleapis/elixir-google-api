@@ -43,11 +43,11 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
           Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
       *   `:includeInactive` (*type:* `boolean()`) - When set to `true`, the result includes all debuggees. Otherwise, the
           result includes only debuggees that are active.
-      *   `:project` (*type:* `String.t`) - Project number of a Google Cloud project whose debuggees to list.
+      *   `:project` (*type:* `String.t`) - Required. Project number of a Google Cloud project whose debuggees to list.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -96,8 +96,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
-  *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee whose breakpoint to delete.
-  *   `breakpoint_id` (*type:* `String.t`) - ID of the breakpoint to delete.
+  *   `debuggee_id` (*type:* `String.t`) - Required. ID of the debuggee whose breakpoint to delete.
+  *   `breakpoint_id` (*type:* `String.t`) - Required. ID of the breakpoint to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -110,7 +110,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
           Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -169,8 +169,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
-  *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee whose breakpoint to get.
-  *   `breakpoint_id` (*type:* `String.t`) - ID of the breakpoint to get.
+  *   `debuggee_id` (*type:* `String.t`) - Required. ID of the debuggee whose breakpoint to get.
+  *   `breakpoint_id` (*type:* `String.t`) - Required. ID of the breakpoint to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -183,7 +183,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
           Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -246,7 +246,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
-  *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee whose breakpoints to list.
+  *   `debuggee_id` (*type:* `String.t`) - Required. ID of the debuggee whose breakpoints to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -260,7 +260,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"action.value"` (*type:* `String.t`) - Only breakpoints with the specified action will pass the filter.
-      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
           Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
       *   `:includeAllUsers` (*type:* `boolean()`) - When set to `true`, the response includes the list of breakpoints set by
           any user. Otherwise, it includes only breakpoints set by the caller.
@@ -336,7 +336,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDebugger.V2.Connection.t`) - Connection to server
-  *   `debuggee_id` (*type:* `String.t`) - ID of the debuggee where the breakpoint is to be set.
+  *   `debuggee_id` (*type:* `String.t`) - Required. ID of the debuggee where the breakpoint is to be set.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -349,7 +349,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clientVersion` (*type:* `String.t`) - The client version making the call.
+      *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
           Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
       *   `:body` (*type:* `GoogleApi.CloudDebugger.V2.Model.Breakpoint.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
