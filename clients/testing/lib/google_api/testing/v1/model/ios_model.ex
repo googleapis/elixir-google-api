@@ -18,7 +18,7 @@
 defmodule GoogleApi.Testing.V1.Model.IosModel do
   @moduledoc """
   A description of an iOS device tests may be run on.
-  Next tag: 10
+  Next tag: 11
 
   ## Attributes
 
