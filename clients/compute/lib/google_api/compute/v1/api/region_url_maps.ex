@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified UrlMap resource.
+  Deletes the specified UrlMap resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
   end
 
   @doc """
-  Returns the specified UrlMap resource. Gets a list of available URL maps by making a list() request.
+  Returns the specified UrlMap resource. Gets a list of available URL maps by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -160,7 +160,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
   end
 
   @doc """
-  Creates a UrlMap resource in the specified project using the data included in the request.
+  Creates a UrlMap resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -226,7 +226,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
   end
 
   @doc """
-  Retrieves the list of UrlMap resources available to the specified project in the specified region.
+  Retrieves the list of UrlMap resources available to the specified project in the specified region. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -300,7 +300,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
   end
 
   @doc """
-  Patches the specified UrlMap resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+  Patches the specified UrlMap resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -370,7 +370,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
   end
 
   @doc """
-  Updates the specified UrlMap resource with the data included in the request.
+  Updates the specified UrlMap resource with the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -440,7 +440,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
   end
 
   @doc """
-  Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap.
+  Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

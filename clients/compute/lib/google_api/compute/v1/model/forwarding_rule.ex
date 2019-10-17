@@ -19,30 +19,11 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   @moduledoc """
   Represents a Forwarding Rule resource.
 
+  A forwarding rule and its corresponding IP address represent the frontend configuration of a Google Cloud Platform load balancer. Forwarding rules can also reference target instances and Cloud VPN Classic gateways (targetVpnGateway).
 
+  For more information, read Forwarding rule concepts and Using protocol forwarding.
 
-  A forwardingRules resource represents a regional forwarding rule.
-
-  Regional external forwarding rules can reference any of the following resources:
-   
-  - A target instance 
-  - A Cloud VPN Classic gateway (targetVpnGateway),  
-  - A target pool for a Network Load Balancer 
-  - A global target HTTP(S) proxy for an HTTP(S) load balancer using Standard Tier 
-  - A target SSL proxy for a SSL Proxy load balancer using Standard Tier 
-  - A target TCP proxy for a TCP Proxy load balancer using Standard Tier.  
-
-  Regional internal forwarding rules can reference the backend service of an internal TCP/UDP load balancer.
-
-  For regional internal forwarding rules, the following applies:  
-  - If the loadBalancingScheme for the load balancer is INTERNAL, then the forwarding rule references a regional internal backend service. 
-  - If the loadBalancingScheme for the load balancer is INTERNAL_MANAGED, then the forwarding rule must reference a regional target HTTP(S) proxy.  
-
-  For more information, read Using Forwarding rules.
-
-  A globalForwardingRules resource represents a global forwarding rule.
-
-  Global forwarding rules are only used by load balancers that use Premium Tier. (== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (== resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (== resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+  (== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (== resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (== resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
 
   ## Attributes
 
@@ -55,7 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
   *   `IPProtocol` (*type:* `String.t`, *default:* `nil`) - The IP protocol to which this rule applies. Valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
 
-      When the load balancing scheme is INTERNAL, only TCP and UDP are valid. When the load balancing scheme is INTERNAL_SELF_MANAGED, only TCPis valid.
+      For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
   *   `allPorts` (*type:* `boolean()`, *default:* `nil`) - This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. This field cannot be used with port or portRange fields.
 
       When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
@@ -67,7 +48,15 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `ipVersion` (*type:* `String.t`, *default:* `nil`) - The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
   *   `kind` (*type:* `String.t`, *default:* `compute#forwardingRule`) - [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule resources.
-  *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - This signifies what the ForwardingRule will be used for and can only take the following values: INTERNAL, INTERNAL_SELF_MANAGED, EXTERNAL. The value of INTERNAL means that this will be used for Internal Network Load Balancing (TCP, UDP). The value of INTERNAL_SELF_MANAGED means that this will be used for Internal Global HTTP(S) LB. The value of EXTERNAL means that this will be used for External Load Balancing (HTTP(S) LB, External TCP/UDP LB, SSL Proxy)
+  *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Specifies the forwarding rule type. EXTERNAL is used for: - Classic Cloud VPN gateways - Protocol forwarding to VMs from an external IP address - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP.
+
+      INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address - Internal TCP/UDP load balancers
+
+      INTERNAL_MANAGED is used for: - Internal HTTP(S) load balancers
+
+      INTERNAL_SELF_MANAGED is used for: - Traffic Director
+
+      For more information about forwarding rules, refer to Forwarding rule concepts.
   *   `metadataFilters` (*type:* `list(GoogleApi.Compute.V1.Model.MetadataFilter.t)`, *default:* `nil`) - Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. If a match takes place, the relevant routing configuration is made available to those proxies.
       For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels in the provided metadata.
       metadataFilters specified here can be overridden by those specified in the UrlMap that this ForwardingRule references.

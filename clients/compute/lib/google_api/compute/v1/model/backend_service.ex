@@ -19,13 +19,11 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   @moduledoc """
   Represents a Backend Service resource.
 
+  A backend service contains configuration values for Google Cloud Platform load balancing services.
 
+  For more information, read Backend Services.
 
-  Backend services must have an associated health check. Backend services also store information about session affinity. For more information, read Backend Services.
-
-  A backendServices resource represents a global backend service. Global backend services are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
-
-  A regionBackendServices resource represents a regional backend service. Regional backend services are used for internal TCP/UDP load balancing. For more information, read Internal TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+  (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
 
   ## Attributes
 
@@ -56,7 +54,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `iap` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceIAP.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#backendService`) - [Output Only] Type of resource. Always compute#backendService for backend services.
-  *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Indicates whether the backend service will be used with internal or external load balancing. A backend service created for one type of load balancing cannot be used with the other. Possible values are INTERNAL and EXTERNAL.
+  *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancing cannot be used with another. For more information, refer to Choosing a load balancer.
   *   `localityLbPolicy` (*type:* `String.t`, *default:* `nil`) - The load balancing algorithm used within the scope of the locality. The possible values are:  
       - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. 
       - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. 
@@ -82,7 +80,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Blaancing).
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol this BackendService uses to communicate with backends.
 
-      Possible values are HTTP, HTTPS, TCP, SSL, or UDP, depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic director for more information.
+      Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP, depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this backend service.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.

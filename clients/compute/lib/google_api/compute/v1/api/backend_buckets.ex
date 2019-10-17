@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Adds a key for validating requests with signed URLs for this backend bucket.
+  Adds a key for validating requests with signed URLs for this backend bucket. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -96,7 +96,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   end
 
   @doc """
-  Deletes the specified BackendBucket resource.
+  Deletes the specified BackendBucket resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -164,7 +164,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   end
 
   @doc """
-  Deletes a key for validating requests with signed URLs for this backend bucket.
+  Deletes a key for validating requests with signed URLs for this backend bucket. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -236,7 +236,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   end
 
   @doc """
-  Returns the specified BackendBucket resource. Gets a list of available backend buckets by making a list() request.
+  Returns the specified BackendBucket resource. Gets a list of available backend buckets by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -298,7 +298,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   end
 
   @doc """
-  Creates a BackendBucket resource in the specified project using the data included in the request.
+  Creates a BackendBucket resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -355,7 +355,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   end
 
   @doc """
-  Retrieves the list of BackendBucket resources available to the specified project.
+  Retrieves the list of BackendBucket resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -422,7 +422,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   end
 
   @doc """
-  Updates the specified BackendBucket resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Updates the specified BackendBucket resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -492,7 +492,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   end
 
   @doc """
-  Updates the specified BackendBucket resource with the data included in the request.
+  Updates the specified BackendBucket resource with the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

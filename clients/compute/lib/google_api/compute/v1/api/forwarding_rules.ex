@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of forwarding rules.
+  Retrieves an aggregated list of forwarding rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
   end
 
   @doc """
-  Deletes the specified ForwardingRule resource.
+  Deletes the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -178,7 +178,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
   end
 
   @doc """
-  Returns the specified ForwardingRule resource.
+  Returns the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -244,7 +244,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
   end
 
   @doc """
-  Creates a ForwardingRule resource in the specified project and region using the data included in the request.
+  Creates a ForwardingRule resource in the specified project and region using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -314,7 +314,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
   end
 
   @doc """
-  Retrieves a list of ForwardingRule resources available to the specified project and region.
+  Retrieves a list of ForwardingRule resources available to the specified project and region. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -394,7 +394,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
   end
 
   @doc """
-  Changes target URL for forwarding rule. The new target should be of the same type as the old target.
+  Changes target URL for forwarding rule. The new target should be of the same type as the old target. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.MachineTypes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of machine types.
+  Retrieves an aggregated list of machine types. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -104,7 +104,7 @@ defmodule GoogleApi.Compute.V1.Api.MachineTypes do
   end
 
   @doc """
-  Returns the specified machine type. Gets a list of available machine types by making a list() request.
+  Returns the specified machine type. Gets a list of available machine types by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -170,7 +170,7 @@ defmodule GoogleApi.Compute.V1.Api.MachineTypes do
   end
 
   @doc """
-  Retrieves a list of machine types available to the specified project.
+  Retrieves a list of machine types available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

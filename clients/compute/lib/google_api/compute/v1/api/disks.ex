@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Adds existing resource policies to a disk. You can only add one policy which will be applied to this disk for scheduling snapshot creation.
+  Adds existing resource policies to a disk. You can only add one policy which will be applied to this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -100,7 +100,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Retrieves an aggregated list of persistent disks.
+  Retrieves an aggregated list of persistent disks. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -167,7 +167,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Creates a snapshot of a specified persistent disk.
+  Creates a snapshot of a specified persistent disk. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -243,7 +243,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Deletes the specified persistent disk. Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots.
+  Deletes the specified persistent disk. Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -308,7 +308,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Returns a specified persistent disk. Gets a list of available persistent disks by making a list() request.
+  Returns a specified persistent disk. Gets a list of available persistent disks by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -367,7 +367,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -433,7 +433,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Creates a persistent disk in the specified project using the data in the request. You can create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property.
+  Creates a persistent disk in the specified project using the data in the request. You can create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -494,7 +494,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Retrieves a list of persistent disks contained within the specified zone.
+  Retrieves a list of persistent disks contained within the specified zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -563,7 +563,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Removes resource policies from a disk.
+  Removes resource policies from a disk. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -637,7 +637,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Resizes the specified persistent disk. You can only increase the size of the disk.
+  Resizes the specified persistent disk. You can only increase the size of the disk. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -704,7 +704,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -772,7 +772,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation.
+  Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -846,7 +846,7 @@ defmodule GoogleApi.Compute.V1.Api.Disks do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

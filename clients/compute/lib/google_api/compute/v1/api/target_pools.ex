@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Adds health check URLs to a target pool.
+  Adds health check URLs to a target pool. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -100,7 +100,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Adds an instance to a target pool.
+  Adds an instance to a target pool. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -174,7 +174,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Retrieves an aggregated list of target pools.
+  Retrieves an aggregated list of target pools. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -241,7 +241,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Deletes the specified target pool.
+  Deletes the specified target pool. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -313,7 +313,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Returns the specified target pool. Gets a list of available target pools by making a list() request.
+  Returns the specified target pool. Gets a list of available target pools by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -379,7 +379,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Gets the most recent health check results for each IP for the instance that is referenced by the given target pool.
+  Gets the most recent health check results for each IP for the instance that is referenced by the given target pool. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -448,7 +448,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Creates a target pool in the specified project and region using the data included in the request.
+  Creates a target pool in the specified project and region using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -512,7 +512,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Retrieves a list of target pools available to the specified project and region.
+  Retrieves a list of target pools available to the specified project and region. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -586,7 +586,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Removes health check URL from a target pool.
+  Removes health check URL from a target pool. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -660,7 +660,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Removes instance URL from a target pool.
+  Removes instance URL from a target pool. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -734,7 +734,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   end
 
   @doc """
-  Changes a backup target pool's configurations.
+  Changes a backup target pool's configurations. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

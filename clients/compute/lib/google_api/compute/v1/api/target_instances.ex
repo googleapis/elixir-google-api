@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of target instances.
+  Retrieves an aggregated list of target instances. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
   end
 
   @doc """
-  Deletes the specified TargetInstance resource.
+  Deletes the specified TargetInstance resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -178,7 +178,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
   end
 
   @doc """
-  Returns the specified TargetInstance resource. Gets a list of available target instances by making a list() request.
+  Returns the specified TargetInstance resource. Gets a list of available target instances by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -244,7 +244,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
   end
 
   @doc """
-  Creates a TargetInstance resource in the specified project and zone using the data included in the request.
+  Creates a TargetInstance resource in the specified project and zone using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -314,7 +314,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
   end
 
   @doc """
-  Retrieves a list of TargetInstance resources available to the specified project and zone.
+  Retrieves a list of TargetInstance resources available to the specified project and zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
