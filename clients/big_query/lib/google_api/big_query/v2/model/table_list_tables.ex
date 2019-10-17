@@ -28,6 +28,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
   *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque ID of the table
   *   `kind` (*type:* `String.t`, *default:* `bigquery#table`) - The resource type.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this table. You can use these to organize and group your tables.
+  *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - The range partitioning specification for this table, if configured.
   *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - A reference uniquely identifying the table.
   *   `timePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.TimePartitioning.t`, *default:* `nil`) - The time-based partitioning specification for this table, if configured.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of table. Possible values are: TABLE, VIEW.
@@ -44,6 +45,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
           :id => String.t(),
           :kind => String.t(),
           :labels => map(),
+          :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t(),
           :tableReference => GoogleApi.BigQuery.V2.Model.TableReference.t(),
           :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t(),
           :type => String.t(),
@@ -57,6 +59,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
   field(:id)
   field(:kind)
   field(:labels, type: :map)
+  field(:rangePartitioning, as: GoogleApi.BigQuery.V2.Model.RangePartitioning)
   field(:tableReference, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:timePartitioning, as: GoogleApi.BigQuery.V2.Model.TimePartitioning)
   field(:type)
