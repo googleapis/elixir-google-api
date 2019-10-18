@@ -37,6 +37,9 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
       corresponding to at least one of these public keys. Keys can be added to or
       removed from the environment using the CreatePublicKey and DeletePublicKey
       methods.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - Indicates the size of the backing VM running the environment.  If set to
+      something other than DEFAULT, it will be reverted to the default VM size
+      after vm_size_expire_time.
   *   `sshHost` (*type:* `String.t`, *default:* `nil`) - Output only. Host to which clients can connect to initiate SSH sessions
       with the environment.
   *   `sshPort` (*type:* `integer()`, *default:* `nil`) - Output only. Port to which clients can connect to initiate SSH sessions
@@ -44,6 +47,8 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
   *   `sshUsername` (*type:* `String.t`, *default:* `nil`) - Output only. Username that clients should use when initiating SSH sessions
       with the environment.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current execution state of this environment.
+  *   `vmSizeExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the Environment will expire back to the default
+      VM size.
   *   `webHost` (*type:* `String.t`, *default:* `nil`) - Output only. Host to which clients can connect to initiate HTTPS or WSS
       connections with the environment.
   """
@@ -55,10 +60,12 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
           :id => String.t(),
           :name => String.t(),
           :publicKeys => list(GoogleApi.CloudShell.V1.Model.PublicKey.t()),
+          :size => String.t(),
           :sshHost => String.t(),
           :sshPort => integer(),
           :sshUsername => String.t(),
           :state => String.t(),
+          :vmSizeExpireTime => DateTime.t(),
           :webHost => String.t()
         }
 
@@ -66,10 +73,12 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
   field(:id)
   field(:name)
   field(:publicKeys, as: GoogleApi.CloudShell.V1.Model.PublicKey, type: :list)
+  field(:size)
   field(:sshHost)
   field(:sshPort)
   field(:sshUsername)
   field(:state)
+  field(:vmSizeExpireTime, as: DateTime)
   field(:webHost)
 end
 
