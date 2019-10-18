@@ -26,7 +26,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow do
   *   `bids` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that Ad Exchange received from the buyer.
   *   `bidsInAuction` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that were permitted to compete in the auction.
   *   `billedImpressions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids for which the buyer was billed.
-  *   `impressionsWon` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that won an impression.
+  *   `impressionsWon` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that won the auction.
   *   `measurableImpressions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids for which the corresponding impression was measurable
       for viewability (as defined by Active View).
   *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
