@@ -22,7 +22,7 @@ defmodule GoogleApi.Vision.V1.Model.ProductSearchParams do
   ## Attributes
 
   *   `boundingPoly` (*type:* `GoogleApi.Vision.V1.Model.BoundingPoly.t`, *default:* `nil`) - The bounding polygon around the area of interest in the image.
-      Optional. If it is not specified, system discretion will be applied.
+      If it is not specified, system discretion will be applied.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - The filtering expression. This can be used to restrict search results based
       on Product labels. We currently support an AND of OR of key-value
       expressions, where each expression within an OR must have the same key. An
