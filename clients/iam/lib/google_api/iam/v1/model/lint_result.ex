@@ -46,7 +46,7 @@ defmodule GoogleApi.IAM.V1.Model.LintResult do
       expression.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The validation unit severity.
   *   `validationUnitName` (*type:* `String.t`, *default:* `nil`) - The validation unit name, for instance
-      “lintValidationUnits/ConditionComplexityCheck”.
+      "lintValidationUnits/ConditionComplexityCheck".
   """
 
   use GoogleApi.Gax.ModelBase
