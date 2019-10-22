@@ -21,7 +21,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_An
 
   ## Attributes
 
-  *   `features` (*type:* `list(String.t)`, *default:* `nil`) - Requested video annotation features.
+  *   `features` (*type:* `list(String.t)`, *default:* `nil`) - Required. Requested video annotation features.
   *   `inputContent` (*type:* `String.t`, *default:* `nil`) - The video data bytes.
       If unset, the input video(s) should be specified via `input_uri`.
       If set, `input_uri` should be unset.
@@ -35,10 +35,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_An
       multiple videos. Supported wildcards: '*' to match 0 or more characters;
       '?' to match 1 character. If unset, the input video should be embedded
       in the request as `input_content`. If set, `input_content` should be unset.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Optional cloud region where annotation should take place. Supported cloud
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud region where annotation should take place. Supported cloud
       regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
       is specified, a region will be determined based on video file location.
-  *   `outputUri` (*type:* `String.t`, *default:* `nil`) - Optional location where the output (in JSON format) should be stored.
+  *   `outputUri` (*type:* `String.t`, *default:* `nil`) - Optional. Location where the output (in JSON format) should be stored.
       Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
       URIs are supported, which must be specified in the following format:
       `gs://bucket-id/object-id` (other URI formats return

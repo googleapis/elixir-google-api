@@ -25,10 +25,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
       in `max_alternatives`).  These alternatives are ordered in terms of
       accuracy, with the top (first) alternative being the most probable, as
       ranked by the recognizer.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Output only. The
-      [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-      language in this result. This language code was detected to have the most
-      likelihood of being spoken in the audio.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
+      the language in this result. This language code was detected to have the
+      most likelihood of being spoken in the audio.
   """
 
   use GoogleApi.Gax.ModelBase
