@@ -25,6 +25,7 @@ defmodule GoogleApi.Testing.V1.Model.TestExecution do
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique id set by the service.
   *   `matrixId` (*type:* `String.t`, *default:* `nil`) - Output only. Id of the containing TestMatrix.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. The cloud project that owns the test execution.
+  *   `shard` (*type:* `GoogleApi.Testing.V1.Model.Shard.t`, *default:* `nil`) - Output only. Details about the shard.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the current progress of the test execution
       (e.g., FINISHED).
   *   `testDetails` (*type:* `GoogleApi.Testing.V1.Model.TestDetails.t`, *default:* `nil`) - Output only. Additional details about the running test.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Testing.V1.Model.TestExecution do
           :id => String.t(),
           :matrixId => String.t(),
           :projectId => String.t(),
+          :shard => GoogleApi.Testing.V1.Model.Shard.t(),
           :state => String.t(),
           :testDetails => GoogleApi.Testing.V1.Model.TestDetails.t(),
           :testSpecification => GoogleApi.Testing.V1.Model.TestSpecification.t(),
@@ -51,6 +53,7 @@ defmodule GoogleApi.Testing.V1.Model.TestExecution do
   field(:id)
   field(:matrixId)
   field(:projectId)
+  field(:shard, as: GoogleApi.Testing.V1.Model.Shard)
   field(:state)
   field(:testDetails, as: GoogleApi.Testing.V1.Model.TestDetails)
   field(:testSpecification, as: GoogleApi.Testing.V1.Model.TestSpecification)
