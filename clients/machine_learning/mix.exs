@@ -48,7 +48,7 @@ defmodule GoogleApi.MachineLearning.Mixfile do
 
   defp description() do
     """
-    Cloud Machine Learning Engine client library. An API to enable creating and using machine learning models.
+    AI Platform Training & Prediction API client library. An API to enable creating and using machine learning models.
     """
   end
 
