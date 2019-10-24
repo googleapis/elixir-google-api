@@ -208,6 +208,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
       <a href="/ml-engine/docs/versioning">how to manage runtime versions</a>.
   *   `scaleTier` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the machine types, the number of replicas for workers
       and parameter servers.
+  *   `useChiefInTfConfig` (*type:* `boolean()`, *default:* `nil`) - Optional. Use 'chief' instead of 'master' in TF_CONFIG when Custom
+      Container is used and evaluator is not specified.
+
+      Defaults to false.
   *   `workerConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for workers.
 
       You should only set `workerConfig.acceleratorConfig` if `workerType` is set
@@ -264,6 +268,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
           :region => String.t(),
           :runtimeVersion => String.t(),
           :scaleTier => String.t(),
+          :useChiefInTfConfig => boolean(),
           :workerConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t(),
           :workerCount => String.t(),
           :workerType => String.t()
@@ -293,6 +298,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   field(:region)
   field(:runtimeVersion)
   field(:scaleTier)
+  field(:useChiefInTfConfig)
   field(:workerConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig)
   field(:workerCount)
   field(:workerType)

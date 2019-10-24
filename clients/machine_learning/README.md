@@ -1,6 +1,6 @@
 # GoogleApi.MachineLearning
 
-Cloud Machine Learning Engine client library.
+AI Platform Training & Prediction API client library.
 
 An API to enable creating and using machine learning models.
 
