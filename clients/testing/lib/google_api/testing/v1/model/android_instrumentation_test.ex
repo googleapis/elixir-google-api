@@ -47,6 +47,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidInstrumentationTest do
       for more information about Android Test Orchestrator.
 
       If not set, the test will be run without the orchestrator.
+  *   `shardingOption` (*type:* `GoogleApi.Testing.V1.Model.ShardingOption.t`, *default:* `nil`) - The option to run tests in multiple shards in parallel.
   *   `testApk` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - Required. The APK containing the test code to be executed.
   *   `testPackageId` (*type:* `String.t`, *default:* `nil`) - The java package for the test to be executed.
       The default value is determined by examining the application's manifest.
@@ -68,6 +69,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidInstrumentationTest do
           :appBundle => GoogleApi.Testing.V1.Model.AppBundle.t(),
           :appPackageId => String.t(),
           :orchestratorOption => String.t(),
+          :shardingOption => GoogleApi.Testing.V1.Model.ShardingOption.t(),
           :testApk => GoogleApi.Testing.V1.Model.FileReference.t(),
           :testPackageId => String.t(),
           :testRunnerClass => String.t(),
@@ -78,6 +80,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidInstrumentationTest do
   field(:appBundle, as: GoogleApi.Testing.V1.Model.AppBundle)
   field(:appPackageId)
   field(:orchestratorOption)
+  field(:shardingOption, as: GoogleApi.Testing.V1.Model.ShardingOption)
   field(:testApk, as: GoogleApi.Testing.V1.Model.FileReference)
   field(:testPackageId)
   field(:testRunnerClass)
