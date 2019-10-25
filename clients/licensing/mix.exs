@@ -18,7 +18,7 @@
 defmodule GoogleApi.Licensing.Mixfile do
   use Mix.Project
 
-  @version "0.6.0"
+  @version "0.7.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Licensing.Mixfile do
 
   defp description() do
     """
-    Enterprise License Manager API client library. Views and manages licenses for your domain.
+    Licensing API client library. Licensing API to view and manage licenses for your domain
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Licensing.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/licensing",
-        "Homepage" => "https://developers.google.com/google-apps/licensing/"
+        "Homepage" => "https://developers.google.com/admin-sdk/licensing/"
       }
     ]
   end

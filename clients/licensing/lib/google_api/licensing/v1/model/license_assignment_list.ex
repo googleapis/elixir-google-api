@@ -24,7 +24,7 @@ defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentList do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `items` (*type:* `list(GoogleApi.Licensing.V1.Model.LicenseAssignment.t)`, *default:* `nil`) - The LicenseAssignments in this page of results.
   *   `kind` (*type:* `String.t`, *default:* `licensing#licenseAssignmentList`) - Identifies the resource as a collection of LicenseAssignments.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that you must submit in a subsequent request to retrieve additional license results matching your query parameters. The maxResults query string is related to the nextPageToken since maxResults determines how many entries are returned on each next page.
   """
 
   use GoogleApi.Gax.ModelBase

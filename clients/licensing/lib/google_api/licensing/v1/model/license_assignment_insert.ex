@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Licensing.V1.Model.LicenseAssignmentInsert do
   @moduledoc """
-  Template for LicenseAssignment Insert request
+  Representation of a license assignment.
 
   ## Attributes
 

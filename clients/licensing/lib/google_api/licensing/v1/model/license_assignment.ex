@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.Licensing.V1.Model.LicenseAssignment do
   @moduledoc """
-  Template for LiscenseAssignment Resource
+  Representation of a license assignment.
 
   ## Attributes
 
   *   `etags` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `licensing#licenseAssignment`) - Identifies the resource as a LicenseAssignment.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - Id of the product.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - A product's unique identifier. For more information about products in this version of the API, see Product and SKU IDs.
   *   `productName` (*type:* `String.t`, *default:* `nil`) - Display Name of the product.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Link to this page.
-  *   `skuId` (*type:* `String.t`, *default:* `nil`) - Id of the sku of the product.
+  *   `skuId` (*type:* `String.t`, *default:* `nil`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
   *   `skuName` (*type:* `String.t`, *default:* `nil`) - Display Name of the sku of the product.
-  *   `userId` (*type:* `String.t`, *default:* `nil`) - Email id of the user.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests. Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes. If the userId is suspended, the license status changes.
   """
 
   use GoogleApi.Gax.ModelBase
