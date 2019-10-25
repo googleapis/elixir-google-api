@@ -598,7 +598,7 @@ defmodule GoogleApi.Fitness.V1.Api.Users do
   end
 
   @doc """
-  Aggregates data of a certain type or stream into buckets divided by a given type of boundary. Multiple data sets of multiple types and from multiple sources can be aggreated into exactly one bucket type per request.
+  Aggregates data of a certain type or stream into buckets divided by a given type of boundary. Multiple data sets of multiple types and from multiple sources can be aggregated into exactly one bucket type per request.
 
   ## Parameters
 
