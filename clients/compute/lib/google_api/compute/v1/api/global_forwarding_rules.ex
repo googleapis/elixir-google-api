@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified GlobalForwardingRule resource.
+  Deletes the specified GlobalForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
   end
 
   @doc """
-  Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules by making a list() request.
+  Returns the specified GlobalForwardingRule resource. Gets a list of available forwarding rules by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -156,7 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
   end
 
   @doc """
-  Creates a GlobalForwardingRule resource in the specified project using the data included in the request.
+  Creates a GlobalForwardingRule resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -222,7 +222,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
   end
 
   @doc """
-  Retrieves a list of GlobalForwardingRule resources available to the specified project.
+  Retrieves a list of GlobalForwardingRule resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -289,7 +289,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalForwardingRules do
   end
 
   @doc """
-  Changes target URL for the GlobalForwardingRule resource. The new target should be of the same type as the old target.
+  Changes target URL for the GlobalForwardingRule resource. The new target should be of the same type as the old target. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
