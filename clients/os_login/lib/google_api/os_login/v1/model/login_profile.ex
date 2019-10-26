@@ -22,7 +22,7 @@ defmodule GoogleApi.OSLogin.V1.Model.LoginProfile do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A unique user ID.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. A unique user ID.
   *   `posixAccounts` (*type:* `list(GoogleApi.OSLogin.V1.Model.PosixAccount.t)`, *default:* `nil`) - The list of POSIX accounts associated with the user.
   *   `sshPublicKeys` (*type:* `%{optional(String.t) => GoogleApi.OSLogin.V1.Model.SshPublicKey.t}`, *default:* `nil`) - A map from SSH public key fingerprint to the associated key object.
   """
