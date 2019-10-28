@@ -25,6 +25,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   *   `desiredAddonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
   *   `desiredBinaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - The desired configuration options for the Binary Authorization feature.
+  *   `desiredClusterAutoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
   *   `desiredDatabaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool.
       NOTE: Set the "desired_node_pool" field as well.
@@ -40,7 +41,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
       Currently available options:
 
       * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-      service with Kubernetes-native resource model in Stackdriver
+      service with Kubernetes-native resource model
       * "logging.googleapis.com" - the Google Cloud Logging service
       * "none" - no logs will be exported from the cluster
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
@@ -58,7 +59,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
       Currently available options:
 
       * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-      service with Kubernetes-native resource model in Stackdriver
+      service with Kubernetes-native resource model
       * "monitoring.googleapis.com" - the Google Cloud Monitoring service
       * "none" - no metrics will be exported from the cluster
   *   `desiredNodePoolAutoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for the node pool specified in
@@ -81,6 +82,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
       - "1.X.Y-gke.N": picks an explicit Kubernetes version
       - "-": picks the Kubernetes master version
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
+  *   `desiredVerticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -88,6 +90,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   @type t :: %__MODULE__{
           :desiredAddonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t(),
           :desiredBinaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t(),
+          :desiredClusterAutoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t(),
           :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t(),
           :desiredImageType => String.t(),
           :desiredIntraNodeVisibilityConfig =>
@@ -102,11 +105,14 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredNodePoolId => String.t(),
           :desiredNodeVersion => String.t(),
           :desiredResourceUsageExportConfig =>
-            GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t()
+            GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t(),
+          :desiredVerticalPodAutoscaling =>
+            GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t()
         }
 
   field(:desiredAddonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
   field(:desiredBinaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
+  field(:desiredClusterAutoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
   field(:desiredDatabaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
   field(:desiredImageType)
 
@@ -133,6 +139,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
     :desiredResourceUsageExportConfig,
     as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig
   )
+
+  field(:desiredVerticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ClusterUpdate do

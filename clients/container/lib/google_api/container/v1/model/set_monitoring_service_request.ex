@@ -27,7 +27,7 @@ defmodule GoogleApi.Container.V1.Model.SetMonitoringServiceRequest do
       Currently available options:
 
       * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-      service with Kubernetes-native resource model in Stackdriver
+      service with Kubernetes-native resource model
       * "monitoring.googleapis.com" - the Google Cloud Monitoring service
       * "none" - no metrics will be exported from the cluster
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster) of the cluster to set monitoring.

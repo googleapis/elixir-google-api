@@ -21,6 +21,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
 
   ## Attributes
 
+  *   `verticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
   *   `maintenancePolicy` (*type:* `GoogleApi.Container.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Configure the maintenance policy for this cluster.
   *   `databaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `servicesIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Kubernetes services in
@@ -123,7 +124,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       Currently available options:
 
       * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-      service with Kubernetes-native resource model in Stackdriver
+      service with Kubernetes-native resource model
       * `logging.googleapis.com` - the Google Cloud Logging service.
       * `none` - no logs will be exported from the cluster.
       * if left as an empty string,`logging.googleapis.com` will be used.
@@ -146,6 +147,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       * `none` - no metrics will be exported from the cluster.
       * if left as an empty string, `monitoring.googleapis.com` will be used.
   *   `conditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current cluster state.
+  *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
   *   `currentNodeVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated, use
       [NodePools.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
       instead. The current version of the node software components. If they are
@@ -167,11 +169,13 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
       notation (e.g. `10.96.0.0/14`). Leave blank to have
       one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
+  *   `authenticatorGroupsConfig` (*type:* `GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t`, *default:* `nil`) - Configuration controlling RBAC group membership information.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :verticalPodAutoscaling => GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t(),
           :maintenancePolicy => GoogleApi.Container.V1.Model.MaintenancePolicy.t(),
           :databaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t(),
           :servicesIpv4Cidr => String.t(),
@@ -210,6 +214,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :zone => String.t(),
           :monitoringService => String.t(),
           :conditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()),
+          :autoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t(),
           :currentNodeVersion => String.t(),
           :createTime => String.t(),
           :statusMessage => String.t(),
@@ -218,9 +223,11 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :enableTpu => boolean(),
           :currentMasterVersion => String.t(),
           :instanceGroupUrls => list(String.t()),
-          :clusterIpv4Cidr => String.t()
+          :clusterIpv4Cidr => String.t(),
+          :authenticatorGroupsConfig => GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t()
         }
 
+  field(:verticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
   field(:maintenancePolicy, as: GoogleApi.Container.V1.Model.MaintenancePolicy)
   field(:databaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
   field(:servicesIpv4Cidr)
@@ -262,6 +269,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:zone)
   field(:monitoringService)
   field(:conditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
+  field(:autoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
   field(:currentNodeVersion)
   field(:createTime)
   field(:statusMessage)
@@ -271,6 +279,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:currentMasterVersion)
   field(:instanceGroupUrls, type: :list)
   field(:clusterIpv4Cidr)
+  field(:authenticatorGroupsConfig, as: GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.Cluster do
