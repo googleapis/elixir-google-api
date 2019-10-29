@@ -21,7 +21,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealTerms do
 
   ## Attributes
 
-  *   `brandingType` (*type:* `String.t`, *default:* `nil`) - Visibilty of the URL in bid requests.
+  *   `brandingType` (*type:* `String.t`, *default:* `nil`) - Visibility of the URL in bid requests.
   *   `crossListedExternalDealIdType` (*type:* `String.t`, *default:* `nil`) - Indicates that this ExternalDealId exists under at least two different AdxInventoryDeals. Currently, the only case that the same ExternalDealId will exist is programmatic cross sell case.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description for the proposed terms of the deal.
   *   `estimatedGrossSpend` (*type:* `GoogleApi.AdExchangeBuyer.V14.Model.Price.t`, *default:* `nil`) - Non-binding estimate of the estimated gross spend for this deal Can be set by buyer or seller.
