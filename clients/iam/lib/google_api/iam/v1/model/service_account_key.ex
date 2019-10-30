@@ -40,6 +40,7 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
 
   *   `keyAlgorithm` (*type:* `String.t`, *default:* `nil`) - Specifies the algorithm (and possibly key size) for the key.
   *   `keyOrigin` (*type:* `String.t`, *default:* `nil`) - The key origin.
+  *   `keyType` (*type:* `String.t`, *default:* `nil`) - The key type.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the service account key in the following format
       `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
   *   `privateKeyData` (*type:* `String.t`, *default:* `nil`) - The private key data. Only provided in `CreateServiceAccountKey`
@@ -68,6 +69,7 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
   @type t :: %__MODULE__{
           :keyAlgorithm => String.t(),
           :keyOrigin => String.t(),
+          :keyType => String.t(),
           :name => String.t(),
           :privateKeyData => String.t(),
           :privateKeyType => String.t(),
@@ -78,6 +80,7 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
 
   field(:keyAlgorithm)
   field(:keyOrigin)
+  field(:keyType)
   field(:name)
   field(:privateKeyData)
   field(:privateKeyType)
