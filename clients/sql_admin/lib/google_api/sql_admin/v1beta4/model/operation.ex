@@ -17,21 +17,38 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
   @moduledoc """
-  An Operation resource. For successful operations that return an Operation resource, only the fields relevant to the operation are populated in the resource.
+  An Operation resource.&nbsp;For successful operations that return an
+  Operation resource, only the fields relevant to the operation are populated
+  in the resource.
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation finished in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
-  *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors.t`, *default:* `nil`) - If errors occurred during processing of this operation, this field will be populated.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation finished in UTC timezone in <a
+      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
+      <code>2012-11-15T16:19:00.094Z</code>.
+  *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors.t`, *default:* `nil`) - If errors occurred during processing of this operation, this field will be
+      populated.
   *   `exportContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContext.t`, *default:* `nil`) - The context for export operation, if applicable.
   *   `importContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContext.t`, *default:* `nil`) - The context for import operation, if applicable.
-  *   `insertTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
-  *   `kind` (*type:* `String.t`, *default:* `sql#operation`) - This is always sql#operation.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - An identifier that uniquely identifies the operation. You can use this identifier to retrieve the Operations resource that has information about the operation.
-  *   `operationType` (*type:* `String.t`, *default:* `nil`) - The type of the operation. Valid values are CREATE, DELETE, UPDATE, RESTART, IMPORT, EXPORT, BACKUP_VOLUME, RESTORE_VOLUME, CREATE_USER, DELETE_USER, CREATE_DATABASE, DELETE_DATABASE .
+  *   `insertTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation was enqueued in UTC timezone in <a
+      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
+      <code>2012-11-15T16:19:00.094Z</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#operation</code>.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - An identifier that uniquely identifies the operation. You can use this
+      identifier to retrieve the Operations resource that has information about
+      the operation.
+  *   `operationType` (*type:* `String.t`, *default:* `nil`) - The type of the operation. Valid values are <code>CREATE</code>,
+      <code>DELETE</code>, <code>UPDATE</code>, <code>RESTART</code>,
+      <code>IMPORT</code>, <code>EXPORT</code>, <code>BACKUP_VOLUME</code>,
+      <code>RESTORE_VOLUME</code>, <code>CREATE_USER</code>,
+      <code>DELETE_USER</code>, <code>CREATE_DATABASE</code>,
+      <code>DELETE_DATABASE</code> .
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation actually started in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of an operation. Valid values are PENDING, RUNNING, DONE, UNKNOWN.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation actually started in UTC timezone in <a
+      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
+      <code>2012-11-15T16:19:00.094Z</code>.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of an operation. Valid values are <code>PENDING</code>,
+      <code>RUNNING</code>, <code>DONE</code>, <code>UNKNOWN</code>.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - Name of the database instance related to this operation.
   *   `targetLink` (*type:* `String.t`, *default:* `nil`) - 
   *   `targetProject` (*type:* `String.t`, *default:* `nil`) - The project ID of the target instance related to this operation.

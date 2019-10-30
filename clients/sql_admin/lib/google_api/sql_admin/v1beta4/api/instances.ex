@@ -26,7 +26,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Add a new trusted Certificate Authority (CA) version for the specified instance. Required to prepare for a certificate rotation. If a CA version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one CA version waiting to be rotated in.
+  Add a new trusted Certificate Authority (CA) version for the specified
+  instance. Required to prepare for a certificate rotation. If a CA version
+  was previously added but never used in a certificate rotation, this
+  operation replaces that version. There cannot be more than one CA version
+  waiting to be rotated in.
 
   ## Parameters
 
@@ -34,13 +38,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should add this server CA.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -63,19 +73,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/addServerCa", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/addServerCa", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -94,15 +109,22 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID of the source as well as the clone Cloud SQL instance.
-  *   `instance` (*type:* `String.t`) - The ID of the Cloud SQL instance to be cloned (source). This does not include the project ID.
+  *   `instance` (*type:* `String.t`) - The ID of the Cloud SQL instance to be cloned (source). This does not
+      include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should clone this instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -115,20 +137,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_clone(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/clone", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/clone", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -149,13 +176,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance to be deleted.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -167,19 +198,23 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_delete(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/projects/{project}/instances/{instance}", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -192,7 +227,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Demotes the stand-alone instance to be a Cloud SQL read replica for an external database server.
+  Demotes the stand-alone instance to be a Cloud SQL read replica for an
+  external database server.
 
   ## Parameters
 
@@ -200,13 +236,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL demotes this master database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -230,20 +272,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/demoteMaster", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/demoteMaster", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -256,7 +303,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL dump or CSV file.
+  Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL
+  dump or CSV file.
 
   ## Parameters
 
@@ -264,13 +312,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance to be exported.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL exports this database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -283,20 +337,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_export(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/export", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/export", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -317,13 +376,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - ID of the project that contains the read replica.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL sends this database instance during a
+          failover. Format:
+          projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -336,20 +402,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_failover(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/failover", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/failover", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -370,13 +441,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Database instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:resourceName` (*type:* `String.t`) - Name of the resource database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -388,19 +465,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t()} | {:error, Tesla.Env.t()}
   def sql_instances_get(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :resourceName => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/projects/{project}/instances/{instance}", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -413,7 +495,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Imports data into a Cloud SQL instance from a SQL dump or CSV file in Cloud Storage.
+  Imports data into a Cloud SQL instance from a SQL dump  or CSV file in
+  Cloud Storage.
 
   ## Parameters
 
@@ -421,13 +504,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL imports this database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -440,20 +529,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_import(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/import", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/import", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -471,15 +565,22 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Project ID of the project to which the newly created Cloud SQL instances should belong.
+  *   `project` (*type:* `String.t`) - Project ID of the project to which the newly created Cloud SQL instances
+      should belong.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL creates this database instance.
+          Format: projects/{project}/locations/{location}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -492,20 +593,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -517,23 +623,30 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Lists instances under a given project in the alphabetical order of the instance name.
+  Lists instances under a given project in the alphabetical order of the
+  instance name.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1beta4.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID of the project for which to list Cloud SQL instances.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request, such as by name or label.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request, such as by name or
+          label.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return per response.
-      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
+      *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
+          results to view.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -546,13 +659,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           | {:error, Tesla.Env.t()}
   def sql_instances_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :filter => :query,
       :maxResults => :query,
       :pageToken => :query
@@ -561,7 +678,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/projects/{project}/instances", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -575,7 +692,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Lists all of the trusted Certificate Authorities (CAs) for the specified instance. There can be up to three CAs listed: the CA that was used to sign the certificate that is currently in use, a CA that has been added but not yet used to sign a certificate, and a CA used to sign a certificate that has previously rotated out.
+  Lists all of the trusted Certificate Authorities (CAs) for the specified
+  instance. There can be up to three CAs listed: the CA that was used to sign
+  the certificate that is currently in use, a CA that has been added but not
+  yet used to sign a certificate, and a CA used to sign a certificate that
+  has previously rotated out.
 
   ## Parameters
 
@@ -583,13 +704,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of server CAs.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -614,19 +741,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/projects/{project}/instances/{instance}/listServerCas", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/listServerCas", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -641,7 +773,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Updates settings of a Cloud SQL instance. Caution: This is not a partial update, so you must include values for all the settings that you want to retain. For partial updates, use patch.. This method supports patch semantics.
+  Updates settings of a Cloud SQL instance.
+  This method supports patch semantics.
 
   ## Parameters
 
@@ -649,13 +782,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -668,20 +805,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_patch(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/projects/{project}/instances/{instance}", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -702,13 +843,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - ID of the project that contains the read replica.
   *   `instance` (*type:* `String.t`) - Cloud SQL read replica instance name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL promotes this replica database
+          instance. Format: projects/{project}/locations/{location}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -731,19 +878,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/promoteReplica", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/promoteReplica", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -756,7 +908,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Deletes all client certificates and generates a new server SSL certificate for the instance.
+  Deletes all client certificates and generates a new server SSL certificate
+  for the instance.
 
   ## Parameters
 
@@ -764,13 +917,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL resets this SSL config.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -793,19 +952,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/resetSslConfig", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/resetSslConfig", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -826,13 +990,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance to be restarted.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL restarts this database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -844,19 +1014,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_restart(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/restart", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/restart", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -877,13 +1052,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL restores this database instance from
+          backup. Format:
+          projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -907,20 +1089,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/restoreBackup", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/restoreBackup", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -933,7 +1120,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Rotates the server certificate to one signed by the Certificate Authority (CA) version previously added with the addServerCA method.
+  Rotates the server certificate to one signed by the Certificate Authority
+  (CA) version previously added with the addServerCA method.
 
   ## Parameters
 
@@ -941,13 +1129,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL rotates these server CAs.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -971,20 +1165,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/rotateServerCa", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/rotateServerCa", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -1005,13 +1204,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - ID of the project that contains the read replica.
   *   `instance` (*type:* `String.t`) - Cloud SQL read replica instance name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL starts this database instance
+          replication. Format:
+          projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1034,19 +1240,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/startReplica", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/startReplica", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -1067,13 +1278,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - ID of the project that contains the read replica.
   *   `instance` (*type:* `String.t`) - Cloud SQL read replica instance name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL stops this database instance
+          replication. Format:
+          projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1090,19 +1308,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_stop_replica(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/stopReplica", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/stopReplica", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -1123,13 +1346,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the Cloud SQL project.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL truncates this log.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateLogRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1147,20 +1376,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
         ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_truncate_log(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/truncateLog", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/truncateLog", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -1173,7 +1407,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Updates settings of a Cloud SQL instance. Caution: This is not a partial update, so you must include values for all the settings that you want to retain. For partial updates, use patch.
+  Updates settings of a Cloud SQL instance. <aside
+  class="caution"><strong>Caution:</strong> This is not a partial update, so
+  you must include values for all the settings that you want to retain. For
+  partial updates, use <a
+  href="/sql/docs/db_path/admin-api/rest/v1beta4/instances/patch">patch</a>.</aside>
 
   ## Parameters
 
@@ -1181,13 +1419,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1200,20 +1442,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_instances_update(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/projects/{project}/instances/{instance}", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })

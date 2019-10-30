@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus do
   @moduledoc """
-  Disk encryption status.
+  Disk encryption status for an instance.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `sql#diskEncryptionStatus`) - This is always sql#diskEncryptionStatus.
-  *   `kmsKeyVersionName` (*type:* `String.t`, *default:* `nil`) - KMS key version used to encrypt the Cloud SQL instance disk
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#diskEncryptionStatus</code>.
+  *   `kmsKeyVersionName` (*type:* `String.t`, *default:* `nil`) - KMS key version used to encrypt the Cloud SQL instance resource
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,9 +23,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Tier do
 
   *   `DiskQuota` (*type:* `String.t`, *default:* `nil`) - The maximum disk size of this tier in bytes.
   *   `RAM` (*type:* `String.t`, *default:* `nil`) - The maximum RAM usage of this tier in bytes.
-  *   `kind` (*type:* `String.t`, *default:* `sql#tier`) - This is always sql#tier.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#tier</code>.
   *   `region` (*type:* `list(String.t)`, *default:* `nil`) - The applicable regions for this tier.
-  *   `tier` (*type:* `String.t`, *default:* `nil`) - An identifier for the machine type, for example, db-n1-standard-1. For related information, see Pricing.
+  *   `tier` (*type:* `String.t`, *default:* `nil`) - An identifier for the machine type, for example, db-n1-standard-1. For
+      related information, see <a href="/sql/pricing">Pricing</a>.
   """
 
   use GoogleApi.Gax.ModelBase

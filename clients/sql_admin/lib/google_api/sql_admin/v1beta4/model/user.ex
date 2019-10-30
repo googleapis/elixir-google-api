@@ -21,13 +21,22 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.User do
 
   ## Attributes
 
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the API.
-  *   `host` (*type:* `String.t`, *default:* `nil`) - The host name from which the user can connect. For insert operations, host defaults to an empty string. For update operations, host is specified as part of the request URL. The host name cannot be updated after insertion.
-  *   `instance` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud SQL instance. This does not include the project ID. Can be omitted for update since it is already specified on the URL.
-  *   `kind` (*type:* `String.t`, *default:* `sql#user`) - This is always sql#user.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the user in the Cloud SQL instance. Can be omitted for update since it is already specified in the URL.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the
+      API.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - The host name from which the user can connect. For <code>insert</code>
+      operations, host defaults to an empty string. For <code>update</code>
+      operations, host is specified as part of the request URL. The host name
+      cannot be updated after insertion.
+  *   `instance` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud SQL instance. This does not include the project ID.
+      Can be omitted for <code>update</code> since it is already specified on the
+      URL.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#user</code>.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the user in the Cloud SQL instance. Can be omitted for
+      <code>update</code> since it is already specified in the URL.
   *   `password` (*type:* `String.t`, *default:* `nil`) - The password for the user.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL database. The Google apps domain is prefixed if applicable. Can be omitted for update since it is already specified on the URL.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL database. The Google
+      apps domain is prefixed if applicable. Can be omitted for
+      <code>update</code> since it is already specified on the URL.
   """
 
   use GoogleApi.Gax.ModelBase

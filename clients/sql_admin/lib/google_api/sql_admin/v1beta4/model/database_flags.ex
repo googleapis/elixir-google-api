@@ -21,8 +21,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the flag. These flags are passed at instance startup, so include both server options and system variables for MySQL. Flags should be specified with underscores, not hyphens. For more information, see Configuring Database Flags in the Cloud SQL documentation.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the flag. Booleans should be set to on for true and off for false. This field must be omitted if the flag doesn't take a value.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the flag. These flags are passed at instance startup, so
+      include both server options and system variables for MySQL. Flags should be
+      specified with underscores, not hyphens. For more information, see <a
+      href="/sql/docs/mysql/flags">Configuring Database Flags</a> in the Cloud
+      SQL documentation.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the flag. Booleans should be set to <code>on</code> for true
+      and <code>off</code> for false. This field must be omitted if the flag
+      doesn't take a value.
   """
 
   use GoogleApi.Gax.ModelBase

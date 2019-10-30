@@ -18,48 +18,80 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   @moduledoc """
   A Cloud SQL instance resource.
+  If you change this, also change SqlDatabaseInstance
 
   ## Attributes
 
-  *   `backendType` (*type:* `String.t`, *default:* `nil`) - FIRST_GEN: First Generation instance. MySQL only.
-      SECOND_GEN: Second Generation instance or PostgreSQL instance.
-      EXTERNAL: A database server that is not managed by Google.
-      This property is read-only; use the tier property in the settings object to determine the database type and Second or First Generation.
+  *   `backendType` (*type:* `String.t`, *default:* `nil`) - <code>FIRST_GEN</code>: First Generation instance. MySQL only. <br
+      /><code>SECOND_GEN</code>: Second Generation instance or PostgreSQL
+      instance. <br /><code>EXTERNAL</code>: A database server that is not
+      managed by Google. <br>This property is read-only; use the
+      <code>tier</code> property in the <code>settings</code> object to determine
+      the database type and Second or First Generation.
   *   `connectionName` (*type:* `String.t`, *default:* `nil`) - Connection name of the Cloud SQL instance used in connection strings.
-  *   `currentDiskSize` (*type:* `String.t`, *default:* `nil`) - The current disk usage of the instance in bytes. This property has been deprecated. Users should use the "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud Monitoring API instead. Please see this announcement for details.
-  *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version. The databaseVersion field can not be changed after instance creation. MySQL Second Generation instances: MYSQL_5_7 (default) or MYSQL_5_6. PostgreSQL instances: POSTGRES_9_6 (default) or POSTGRES_11 Beta. MySQL First Generation instances: MYSQL_5_6 (default) or MYSQL_5_5
-  *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Disk encryption configuration specific to an instance. Applies only to Second Generation instances.
-  *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Disk encryption status specific to an instance. Applies only to Second Generation instances.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the API. Use the settings.settingsVersion field instead.
-  *   `failoverReplica` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica.t`, *default:* `nil`) - The name and status of the failover replica. This property is applicable only to Second Generation instances.
-  *   `gceZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone that the instance is currently serving from. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary zone.
+  *   `currentDiskSize` (*type:* `String.t`, *default:* `nil`) - The current disk usage of the instance in bytes. This property has been
+      deprecated. Users should use the
+      "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud
+      Monitoring API instead. Please see <a
+      href="https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ">this
+      announcement</a> for details.
+  *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version. The <code>databaseVersion</code>
+      field can not be changed after instance creation.  MySQL Second Generation
+      instances: <code>MYSQL_5_7</code> (default) or <code>MYSQL_5_6</code>.
+      PostgreSQL instances: <code>POSTGRES_9_6</code> (default) or
+      <code>POSTGRES_11 Beta</code> MySQL First Generation
+      instances: <code>MYSQL_5_6</code> (default) or <code>MYSQL_5_5</code>
+  *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Disk encryption configuration specific to an instance.
+      Applies only to Second Generation instances.
+  *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Disk encryption status specific to an instance.
+      Applies only to Second Generation instances.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the
+      API. Use the <code>settings.settingsVersion</code> field instead.
+  *   `failoverReplica` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstanceFailoverReplica.t`, *default:* `nil`) - The name and status of the failover replica. This property is applicable
+      only to Second Generation instances.
+  *   `gceZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone that the instance is currently serving from. This
+      value could be different from the zone that was specified when the instance
+      was created if the instance has failed over to its secondary zone.
   *   `instanceType` (*type:* `String.t`, *default:* `nil`) - The instance type. This can be one of the following.
-      CLOUD_SQL_INSTANCE: A Cloud SQL instance that is not replicating from a master.
-      ON_PREMISES_INSTANCE: An instance running on the customer's premises.
-      READ_REPLICA_INSTANCE: A Cloud SQL instance configured as a read-replica.
+      <br><code>CLOUD_SQL_INSTANCE</code>: A Cloud SQL instance that is not
+      replicating from a master. <br><code>ON_PREMISES_INSTANCE</code>: An
+      instance running on the
+      customer's premises. <br><code>READ_REPLICA_INSTANCE</code>: A Cloud SQL
+      instance configured as a read-replica.
   *   `ipAddresses` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t)`, *default:* `nil`) - The assigned IP addresses for the instance.
-  *   `ipv6Address` (*type:* `String.t`, *default:* `nil`) - The IPv6 address assigned to the instance. This property is applicable only to First Generation instances.
-  *   `kind` (*type:* `String.t`, *default:* `sql#instance`) - This is always sql#instance.
+  *   `ipv6Address` (*type:* `String.t`, *default:* `nil`) - The IPv6 address assigned to the instance. This property is applicable only
+      to First Generation instances.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#instance</code>.
   *   `masterInstanceName` (*type:* `String.t`, *default:* `nil`) - The name of the instance which will act as master in the replication setup.
   *   `maxDiskSize` (*type:* `String.t`, *default:* `nil`) - The maximum disk size of the instance in bytes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud SQL instance. This does not include the project ID.
   *   `onPremisesConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t`, *default:* `nil`) - Configuration specific to on-premises instances.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL instance. The Google apps domain is prefixed if applicable.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - The geographical region. Can be us-central (FIRST_GEN instances only), us-central1 (SECOND_GEN instances only), asia-east1 or europe-west1. Defaults to us-central or us-central1 depending on the instance type (First Generation or Second Generation). The region can not be changed after instance creation.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL instance. The Google
+      apps domain is prefixed if applicable.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The geographical region. Can be <code>us-central</code>
+      (<code>FIRST_GEN</code> instances only), <code>us-central1</code>
+      (<code>SECOND_GEN</code> instances only), <code>asia-east1</code> or
+      <code>europe-west1</code>. Defaults to <code>us-central</code> or
+      <code>us-central1</code> depending on the instance type (First Generation
+      or Second Generation). The region can not be changed after instance
+      creation.
   *   `replicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t`, *default:* `nil`) - Configuration specific to failover replicas and read replicas.
   *   `replicaNames` (*type:* `list(String.t)`, *default:* `nil`) - The replicas of the instance.
   *   `rootPassword` (*type:* `String.t`, *default:* `nil`) - Initial root password. Use only on creation.
+  *   `scheduledMaintenance` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance.t`, *default:* `nil`) - The start time of any upcoming scheduled maintenance for this instance.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `serverCaCert` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t`, *default:* `nil`) - SSL configuration.
-  *   `serviceAccountEmailAddress` (*type:* `String.t`, *default:* `nil`) - The service account email address assigned to the instance. This property is applicable only to Second Generation instances.
+  *   `serviceAccountEmailAddress` (*type:* `String.t`, *default:* `nil`) - The service account email address assigned to the instance. This property
+      is applicable only to Second Generation instances.
   *   `settings` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.Settings.t`, *default:* `nil`) - The user settings.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The current serving state of the Cloud SQL instance. This can be one of the following.
-      RUNNABLE: The instance is running, or is ready to run when accessed.
-      SUSPENDED: The instance is not available, for example due to problems with billing.
-      PENDING_CREATE: The instance is being created.
-      MAINTENANCE: The instance is down for maintenance.
-      FAILED: The instance creation failed.
-      UNKNOWN_STATE: The state of the instance is unknown.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The current serving state of the Cloud SQL instance. This can be one of the
+      following. <br><code>RUNNABLE</code>: The instance is running, or is ready
+      to run when accessed. <br><code>SUSPENDED</code>: The instance is not
+      available, for example due to problems with billing.
+      <br><code>PENDING_CREATE</code>: The instance is being created.
+      <br><code>MAINTENANCE</code>: The instance is down for maintenance.
+      <br><code>FAILED</code>: The instance creation failed.
+      <br><code>UNKNOWN_STATE</code>: The state of the instance is unknown.
   *   `suspensionReason` (*type:* `list(String.t)`, *default:* `nil`) - If the instance state is SUSPENDED, the reason for the suspension.
   """
 
@@ -91,6 +123,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :replicaConfiguration => GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t(),
           :replicaNames => list(String.t()),
           :rootPassword => String.t(),
+          :scheduledMaintenance => GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance.t(),
           :selfLink => String.t(),
           :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t(),
           :serviceAccountEmailAddress => String.t(),
@@ -126,6 +159,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:replicaConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration)
   field(:replicaNames, type: :list)
   field(:rootPassword)
+  field(:scheduledMaintenance, as: GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance)
   field(:selfLink)
   field(:serverCaCert, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert)
   field(:serviceAccountEmailAddress)

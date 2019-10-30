@@ -18,7 +18,7 @@
 defmodule GoogleApi.SQLAdmin.Mixfile do
   use Mix.Project
 
-  @version "0.14.0"
+  @version "0.15.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.SQLAdmin.Mixfile do
 
   defp description() do
     """
-    Cloud SQL Admin API client library. Creates and manages Cloud SQL instances, which provide fully managed MySQL or PostgreSQL databases.
+    Cloud SQL Admin API client library. API for Cloud SQL database instance management
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.SQLAdmin.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/sql_admin",
-        "Homepage" => "https://cloud.google.com/sql/docs/reference/latest"
+        "Homepage" => "https://developers.google.com/cloud-sql/"
       }
     ]
   end

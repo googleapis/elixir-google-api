@@ -21,9 +21,16 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.IpConfiguration do
 
   ## Attributes
 
-  *   `authorizedNetworks` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.AclEntry.t)`, *default:* `nil`) - The list of external networks that are allowed to connect to the instance using the IP. In CIDR notation, also known as 'slash' notation (e.g. 192.168.100.0/24).
+  *   `authorizedNetworks` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.AclEntry.t)`, *default:* `nil`) - The list of external networks that are allowed to connect to the instance
+      using the IP. In <a
+      href="http://en.wikipedia.org/wiki/CIDR_notation#CIDR_notation">CIDR
+      notation</a>, also known as 'slash' notation (e.g.
+      <code>192.168.100.0/24</code>).
   *   `ipv4Enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the instance should be assigned an IP address or not.
-  *   `privateNetwork` (*type:* `String.t`, *default:* `nil`) - The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, /projects/myProject/global/networks/default. This setting can be updated, but it cannot be removed after it is set.
+  *   `privateNetwork` (*type:* `String.t`, *default:* `nil`) - The resource link for the VPC network from which the Cloud SQL instance is
+      accessible for private IP. For example,
+      <code>/projects/myProject/global/networks/default</code>. This setting can
+      be updated, but it cannot be removed after it is set.
   *   `requireSsl` (*type:* `boolean()`, *default:* `nil`) - Whether SSL connections over IP should be enforced or not.
   """
 

@@ -22,8 +22,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t)`, *default:* `nil`) - List of database instance resources.
-  *   `kind` (*type:* `String.t`, *default:* `sql#instancesList`) - This is always sql#instancesList.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#instancesList</code>.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide
+      this value in a subsequent request to return the next page of results.
   *   `warnings` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning.t)`, *default:* `nil`) - List of warnings that ocurred while handling the request.
   """
 

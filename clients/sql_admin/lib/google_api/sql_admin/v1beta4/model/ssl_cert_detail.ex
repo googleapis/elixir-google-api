@@ -22,7 +22,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCertDetail do
   ## Attributes
 
   *   `certInfo` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t`, *default:* `nil`) - The public information about the cert.
-  *   `certPrivateKey` (*type:* `String.t`, *default:* `nil`) - The private key for the client cert, in pem format. Keep private in order to protect your security.
+  *   `certPrivateKey` (*type:* `String.t`, *default:* `nil`) - The private key for the client cert, in pem format.  Keep private in order
+      to protect your security.
   """
 
   use GoogleApi.Gax.ModelBase
