@@ -26,11 +26,18 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
   ## Attributes
 
-  *   `acceleratorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig.t`, *default:* `nil`) - Accelerator config for GPU serving.
+  *   `acceleratorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig.t`, *default:* `nil`) - Optional. Accelerator config for using GPUs for online prediction (beta).
+      Only specify this field if you have specified a Compute Engine (N1) machine
+      type in the `machineType` field. Learn more about [using GPUs for online
+      prediction](/ml-engine/docs/machine-types-online-prediction#gpus).
   *   `autoScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AutoScaling.t`, *default:* `nil`) - Automatically scale the number of nodes used to serve the model in
       response to increases and decreases in traffic. Care should be
       taken to ramp up traffic according to the model's ability to scale
       or you will start seeing increases in latency and 429 response codes.
+
+      Note that you cannot use AutoScaling if your version uses
+      [GPUs](#Version.FIELDS.accelerator_config). Instead, you must use specify
+      `manual_scaling`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the version was created.
   *   `deploymentUri` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud Storage location of the trained model used to
       create the version. See the
@@ -62,6 +69,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
       Do **not** specify a framework if you're deploying a [custom
       prediction routine](/ml-engine/docs/tensorflow/custom-prediction-routines).
+
+      If you specify a [Compute Engine (N1) machine
+      type](/ml-engine/docs/machine-types-online-prediction) in the
+      `machineType` field, you must specify `TENSORFLOW`
+      for the framework.
   *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, this version will be used to handle prediction
       requests that do not specify a version.
 
@@ -74,19 +86,32 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
       <a href="/ml-engine/docs/tensorflow/resource-labels">using labels</a>.
   *   `lastUseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the version was last used for prediction.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of machine on which to serve the model. Currently only
-      applies to online prediction service.
-      <dl>
-        <dt>mls1-c1-m2</dt>
-        <dd>
-        The <b>default</b> machine type, with 1 core and 2 GB RAM. The deprecated
-        name for this machine type is "mls1-highmem-1".
-        </dd>
-        <dt>mls1-c4-m2</dt>
-        <dd>
-        In <b>Beta</b>. This machine type has 4 cores and 2 GB RAM. The
-        deprecated name for this machine type is "mls1-highcpu-4".
-        </dd>
-      </dl>
+      applies to online prediction service. If this field is not specified, it
+      defaults to `mls1-c1-m2`.
+
+      Online prediction supports the following machine types:
+
+      * `mls1-c1-m2`
+      * `mls1-c4-m2`
+      * `n1-standard-2`
+      * `n1-standard-4`
+      * `n1-standard-8`
+      * `n1-standard-16`
+      * `n1-standard-32`
+      * `n1-highmem-2`
+      * `n1-highmem-4`
+      * `n1-highmem-8`
+      * `n1-highmem-16`
+      * `n1-highmem-32`
+      * `n1-highcpu-2`
+      * `n1-highcpu-4`
+      * `n1-highcpu-8`
+      * `n1-highcpu-16`
+      * `n1-highcpu-32`
+
+      `mls1-c1-m2` is generally available. All other machine types are available
+      in beta. Learn more about the [differences between machine
+      types](/ml-engine/docs/machine-types-online-prediction).
   *   `manualScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ManualScaling.t`, *default:* `nil`) - Manually select the number of nodes to use for serving the
       model. You should generally use `auto_scaling` with an appropriate
       `min_nodes` instead, but this option is available if you want more
@@ -119,11 +144,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
       Specify this field if and only if you are deploying a [custom prediction
       routine (beta)](/ml-engine/docs/tensorflow/custom-prediction-routines).
       If you specify this field, you must set
-      [`runtimeVersion`](#Version.FIELDS.runtime_version) to 1.4 or greater.
+      [`runtimeVersion`](#Version.FIELDS.runtime_version) to 1.4 or greater and
+      you must set `machineType` to a [legacy (MLS1)
+      machine type](/ml-engine/docs/machine-types-online-prediction).
 
       The following code sample provides the Predictor interface:
 
-      ```py
+      <pre style="max-width: 626px;">
       class Predictor(object):
       \\"\\"\\"Interface for constructing custom predictors.\\"\\"\\"
 
@@ -159,7 +186,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
               An instance implementing this Predictor class.
           \\"\\"\\"
           raise NotImplementedError()
-      ```
+      </pre>
 
       Learn more about [the Predictor interface and custom prediction
       routines](/ml-engine/docs/tensorflow/custom-prediction-routines).
