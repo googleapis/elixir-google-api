@@ -74,11 +74,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
 
       It identifies the parent followup intent.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
-  *   `priority` (*type:* `integer()`, *default:* `nil`) - Optional. The priority of this intent. Higher numbers represent higher
-      priorities. If this is zero or unspecified, we use the default
-      priority 500000.
+  *   `priority` (*type:* `integer()`, *default:* `nil`) - The priority of this intent. Higher numbers represent higher
+      priorities.
 
-      Negative numbers mean that the intent is disabled.
+      - If the supplied value is unspecified or 0, the service
+        translates the value to 500,000, which corresponds to the
+        `Normal` priority in the console.
+      - If the supplied value is negative, the intent is ignored
+        in runtime detect intent requests.
   *   `resetContexts` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to delete all contexts in the current
       session when this intent is matched.
   *   `rootFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Read-only. The unique identifier of the root intent in the chain of
