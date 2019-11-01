@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
   ## Attributes
 
   *   `hostPort` (*type:* `String.t`, *default:* `nil`) - The host and port of the on-premises instance in host:port format
-  *   `kind` (*type:* `String.t`, *default:* `sql#onPremisesConfiguration`) - This is always sql#onPremisesConfiguration.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#onPremisesConfiguration</code>.
   """
 
   use GoogleApi.Gax.ModelBase

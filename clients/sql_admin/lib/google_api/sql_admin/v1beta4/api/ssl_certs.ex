@@ -26,7 +26,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Generates a short-lived X509 certificate containing the provided public key and signed by a private key specific to the target instance. Users may use the certificate to authenticate as themselves when connecting to the database.
+  Generates a short-lived X509 certificate containing the provided public key
+  and signed by a private key specific to the target instance. Users may use
+  the certificate to authenticate as themselves when connecting to the
+  database.
 
   ## Parameters
 
@@ -34,13 +37,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   *   `project` (*type:* `String.t`) - Project ID of the Cloud SQL project.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL creates this ephemeral certificate.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCertsCreateEphemeralRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -64,20 +73,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/createEphemeral", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/createEphemeral", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -90,7 +104,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   end
 
   @doc """
-  Deletes the SSL certificate. For First Generation instances, the certificate remains valid until the instance is restarted.
+  Deletes the SSL certificate. For First Generation instances, the
+  certificate remains valid until the instance is restarted.
 
   ## Parameters
 
@@ -99,13 +114,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `sha1_fingerprint` (*type:* `String.t`) - Sha1 FingerPrint.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -130,23 +149,30 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-        "sha1Fingerprint" => URI.encode(sha1_fingerprint, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/sql/v1beta4/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1),
+          "sha1Fingerprint" => URI.encode(sha1_fingerprint, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -156,7 +182,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   end
 
   @doc """
-  Retrieves a particular SSL certificate. Does not include the private key (required for usage). The private key must be saved from the response to initial creation.
+  Retrieves a particular SSL certificate.  Does not include the private key
+  (required for usage).  The private key must be saved from the response to
+  initial creation.
 
   ## Parameters
 
@@ -165,13 +193,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `sha1_fingerprint` (*type:* `String.t`) - Sha1 FingerPrint.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:resourceName` (*type:* `String.t`) - Name of the resource ssl certificate.
+          Format:
+          projects/{project}/locations/{location}/instances/{instance}/sslCerts/{sslCert}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -196,23 +231,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :resourceName => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-        "sha1Fingerprint" => URI.encode(sha1_fingerprint, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/sql/v1beta4/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1),
+          "sha1Fingerprint" => URI.encode(sha1_fingerprint, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -222,7 +265,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   end
 
   @doc """
-  Creates an SSL certificate and returns it along with the private key and server certificate authority. The new certificate will not be usable until the instance is restarted.
+  Creates an SSL certificate and returns it along with the private key and
+  server certificate authority.  The new certificate will not be usable until
+  the instance is restarted.
 
   ## Parameters
 
@@ -230,13 +275,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL creates this SSL certificate.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -250,20 +301,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
           | {:error, Tesla.Env.t()}
   def sql_ssl_certs_insert(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/sslCerts", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/sslCerts", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -286,13 +342,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of SSL certificates.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -305,19 +367,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
           | {:error, Tesla.Env.t()}
   def sql_ssl_certs_list(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/projects/{project}/instances/{instance}/sslCerts", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/sslCerts", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })

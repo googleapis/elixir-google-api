@@ -2,7 +2,7 @@
 
 Cloud SQL Admin API client library.
 
-Creates and manages Cloud SQL instances, which provide fully managed MySQL or PostgreSQL databases.
+API for Cloud SQL database instance management
 
 ## Installation
 
@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_sql_admin, "~> 0.14"}]
+  [{:google_api_sql_admin, "~> 0.15"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/sql/docs/reference/latest](https://cloud.google.com/sql/docs/reference/latest).
+Product documentation is available at [https://developers.google.com/cloud-sql/](https://developers.google.com/cloud-sql/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_sql_admin](https://hexdocs.pm/google_api_sql_admin).

@@ -17,13 +17,19 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference do
   @moduledoc """
-  Preferred location. This specifies where a Cloud SQL instance should preferably be located, either in a specific Compute Engine zone, or co-located with an App Engine application. Note that if the preferred location is not available, the instance will be located as close as possible within the region. Only one location may be specified.
+  Preferred location. This specifies where a Cloud SQL instance should
+  preferably be located, either in a specific Compute Engine zone, or
+  co-located with an App Engine application. Note that if the preferred
+  location is not available, the instance will be located as close as possible
+  within the region. Only one location may be specified.
 
   ## Attributes
 
-  *   `followGaeApplication` (*type:* `String.t`, *default:* `nil`) - The AppEngine application to follow, it must be in the same region as the Cloud SQL instance.
-  *   `kind` (*type:* `String.t`, *default:* `sql#locationPreference`) - This is always sql#locationPreference.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - The preferred Compute Engine zone (e.g. us-central1-a, us-central1-b, etc.).
+  *   `followGaeApplication` (*type:* `String.t`, *default:* `nil`) - The AppEngine application to follow, it must be in the same region as the
+      Cloud SQL instance.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#locationPreference</code>.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - The preferred Compute Engine zone (e.g. us-central1-a, us-central1-b,
+      etc.).
   """
 
   use GoogleApi.Gax.ModelBase

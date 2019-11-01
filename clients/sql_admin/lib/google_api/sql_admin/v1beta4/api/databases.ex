@@ -35,13 +35,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   *   `instance` (*type:* `String.t`) - Database instance ID. This does not include the project ID.
   *   `database` (*type:* `String.t`) - Name of the database to be deleted in the instance.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -66,23 +70,30 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/projects/{project}/instances/{instance}/databases/{database}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-        "database" => URI.encode(database, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/sql/v1beta4/projects/{project}/instances/{instance}/databases/{database}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1),
+          "database" => URI.encode(database, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -92,7 +103,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   end
 
   @doc """
-  Retrieves a resource containing information about a database inside a Cloud SQL instance.
+  Retrieves a resource containing information about a database inside a Cloud
+  SQL instance.
 
   ## Parameters
 
@@ -101,13 +113,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   *   `instance` (*type:* `String.t`) - Database instance ID. This does not include the project ID.
   *   `database` (*type:* `String.t`) - Name of the database in the instance.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:resourceName` (*type:* `String.t`) - Name of the resource database.
+          Format:
+          projects/{project}/locations/{location}/instances/{instance}/databases/{database}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -132,23 +151,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :resourceName => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/projects/{project}/instances/{instance}/databases/{database}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-        "database" => URI.encode(database, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/sql/v1beta4/projects/{project}/instances/{instance}/databases/{database}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1),
+          "database" => URI.encode(database, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -158,7 +185,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   end
 
   @doc """
-  Inserts a resource containing information about a database inside a Cloud SQL instance.
+  Inserts a resource containing information about a database inside a Cloud
+  SQL instance.
 
   ## Parameters
 
@@ -166,13 +194,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Database instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should add this database.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.Database.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -185,20 +219,25 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
   def sql_databases_insert(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/projects/{project}/instances/{instance}/databases", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/databases", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -219,13 +258,19 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   *   `project` (*type:* `String.t`) - Project ID of the project that contains the instance.
   *   `instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of databases.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -238,19 +283,24 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
           | {:error, Tesla.Env.t()}
   def sql_databases_list(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/projects/{project}/instances/{instance}/databases", %{
+      |> Request.url("/sql/v1beta4/projects/{project}/instances/{instance}/databases", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "instance" => URI.encode(instance, &URI.char_unreserved?/1)
       })
@@ -265,7 +315,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   end
 
   @doc """
-  Updates a resource containing information about a database inside a Cloud SQL instance. This method supports patch semantics.
+  Partially updates a resource containing information about a database inside
+  a Cloud SQL instance. This method supports patch semantics.
 
   ## Parameters
 
@@ -274,13 +325,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   *   `instance` (*type:* `String.t`) - Database instance ID. This does not include the project ID.
   *   `database` (*type:* `String.t`) - Name of the database to be updated in the instance.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.Database.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -306,24 +361,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/projects/{project}/instances/{instance}/databases/{database}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-        "database" => URI.encode(database, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/sql/v1beta4/projects/{project}/instances/{instance}/databases/{database}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1),
+          "database" => URI.encode(database, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -333,7 +395,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   end
 
   @doc """
-  Updates a resource containing information about a database inside a Cloud SQL instance.
+  Updates a resource containing information about a database inside a Cloud
+  SQL instance.
 
   ## Parameters
 
@@ -342,13 +405,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   *   `instance` (*type:* `String.t`) - Database instance ID. This does not include the project ID.
   *   `database` (*type:* `String.t`) - Name of the database to be updated in the instance.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.Database.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -374,24 +441,31 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/projects/{project}/instances/{instance}/databases/{database}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-        "database" => URI.encode(database, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/sql/v1beta4/projects/{project}/instances/{instance}/databases/{database}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "instance" => URI.encode(instance, &URI.char_unreserved?/1),
+          "database" => URI.encode(database, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

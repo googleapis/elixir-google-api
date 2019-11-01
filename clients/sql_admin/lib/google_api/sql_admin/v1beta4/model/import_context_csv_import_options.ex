@@ -21,7 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextCsvImportOptions do
 
   ## Attributes
 
-  *   `columns` (*type:* `list(String.t)`, *default:* `nil`) - The columns to which CSV data is imported. If not specified, all columns of the database table are loaded with CSV data.
+  *   `columns` (*type:* `list(String.t)`, *default:* `nil`) - The columns to which CSV data is imported. If not specified, all columns
+      of the database table are loaded with CSV data.
   *   `table` (*type:* `String.t`, *default:* `nil`) - The table to which CSV data is imported.
   """
 

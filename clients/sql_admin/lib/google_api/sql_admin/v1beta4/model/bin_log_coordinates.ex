@@ -23,7 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates do
 
   *   `binLogFileName` (*type:* `String.t`, *default:* `nil`) - Name of the binary log file for a Cloud SQL instance.
   *   `binLogPosition` (*type:* `String.t`, *default:* `nil`) - Position (offset) within the binary log file.
-  *   `kind` (*type:* `String.t`, *default:* `sql#binLogCoordinates`) - This is always sql#binLogCoordinates.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#binLogCoordinates</code>.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
 
   ## Attributes
 
-  *   `binLogCoordinates` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates.t`, *default:* `nil`) - Binary log coordinates, if specified, identify the position up to which the source instance should be cloned. If not specified, the source instance is cloned up to the most recent binary log coordinates.
+  *   `binLogCoordinates` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates.t`, *default:* `nil`) - Binary log coordinates, if specified, identify the position up to which the
+      source instance should be cloned. If not specified, the source instance is
+      cloned up to the most recent binary log coordinates.
   *   `destinationInstanceName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud SQL instance to be created as a clone.
-  *   `kind` (*type:* `String.t`, *default:* `sql#cloneContext`) - This is always sql#cloneContext.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#cloneContext</code>.
   *   `pitrTimestampMs` (*type:* `String.t`, *default:* `nil`) - Reserved for future use.
   """
 

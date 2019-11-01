@@ -22,20 +22,32 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this run, only applicable to on-demand backups.
-  *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Disk encryption configuration specific to a backup. Applies only to Second Generation instances.
-  *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Disk encryption status specific to a backup. Applies only to Second Generation instances.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation completed in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
-  *   `enqueuedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the run was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
-  *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t`, *default:* `nil`) - Information about why the backup operation failed. This is only present if the run has the FAILED status.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this backup run. Unique only for a specific Cloud SQL instance.
+  *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Encryption configuration specific to a backup.
+      Applies only to Second Generation instances.
+  *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Encryption status specific to a backup.
+      Applies only to Second Generation instances.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation completed in UTC timezone in <a
+      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
+      <code>2012-11-15T16:19:00.094Z</code>.
+  *   `enqueuedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the run was enqueued in UTC timezone in <a
+      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
+      <code>2012-11-15T16:19:00.094Z</code>.
+  *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t`, *default:* `nil`) - Information about why the backup operation failed. This is only present if
+      the run has the FAILED status.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this backup run. Unique only for a specific Cloud SQL
+      instance.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - Name of the database instance.
-  *   `kind` (*type:* `String.t`, *default:* `sql#backupRun`) - This is always sql#backupRun.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the backup.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#backupRun</code>.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the backups.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation actually started in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation actually started in UTC timezone in <a
+      href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
+      <code>2012-11-15T16:19:00.094Z</code>.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of this run.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this run; can be either "AUTOMATED" or "ON_DEMAND".
-  *   `windowStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the backup window during which this the backup was attempted in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
+  *   `windowStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the backup window during which this the backup was
+      attempted in <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>
+      format, for example <code>2012-11-15T16:19:00.094Z</code>.
   """
 
   use GoogleApi.Gax.ModelBase

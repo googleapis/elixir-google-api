@@ -21,9 +21,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextBakImportOptionsEncrypti
 
   ## Attributes
 
-  *   `certPath` (*type:* `String.t`, *default:* `nil`) - Path to the Certificate (.cer) in Cloud Storage, in the form gs://bucketName/fileName. The instance must have write permissions to the bucket and read access to the file.
+  *   `certPath` (*type:* `String.t`, *default:* `nil`) - Path to the Certificate (.cer) in Cloud Storage, in the form
+      <code>gs://bucketName/fileName</code>. The instance must have
+      write permissions to the bucket and read access to the file.
   *   `pvkPassword` (*type:* `String.t`, *default:* `nil`) - Password that encrypts the private key
-  *   `pvkPath` (*type:* `String.t`, *default:* `nil`) - Path to the Certificate Private Key (.pvk) in Cloud Storage, in the form gs://bucketName/fileName. The instance must have write permissions to the bucket and read access to the file.
+  *   `pvkPath` (*type:* `String.t`, *default:* `nil`) - Path to the Certificate Private Key (.pvk)  in Cloud Storage, in the
+      form <code>gs://bucketName/fileName</code>. The instance must have
+      write permissions to the bucket and read access to the file.
   """
 
   use GoogleApi.Gax.ModelBase

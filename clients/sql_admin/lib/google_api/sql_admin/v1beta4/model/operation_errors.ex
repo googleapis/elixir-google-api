@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors do
   ## Attributes
 
   *   `errors` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t)`, *default:* `nil`) - The list of errors encountered while processing this operation.
-  *   `kind` (*type:* `String.t`, *default:* `sql#operationErrors`) - This is always sql#operationErrors.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#operationErrors</code>.
   """
 
   use GoogleApi.Gax.ModelBase
