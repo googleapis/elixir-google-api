@@ -22,6 +22,7 @@ defmodule GoogleApi.Container.V1.Model.NodePoolAutoscaling do
 
   ## Attributes
 
+  *   `autoprovisioned` (*type:* `boolean()`, *default:* `nil`) - Can this node pool be deleted automatically.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Is autoscaling enabled for this node pool.
   *   `maxNodeCount` (*type:* `integer()`, *default:* `nil`) - Maximum number of nodes in the NodePool. Must be >= min_node_count. There
       has to enough quota to scale up the cluster.
@@ -32,11 +33,13 @@ defmodule GoogleApi.Container.V1.Model.NodePoolAutoscaling do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoprovisioned => boolean(),
           :enabled => boolean(),
           :maxNodeCount => integer(),
           :minNodeCount => integer()
         }
 
+  field(:autoprovisioned)
   field(:enabled)
   field(:maxNodeCount)
   field(:minNodeCount)
