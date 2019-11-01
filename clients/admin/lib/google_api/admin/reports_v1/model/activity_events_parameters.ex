@@ -22,11 +22,11 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEventsParameters do
   ## Attributes
 
   *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Boolean value of the parameter.
-  *   `intValue` (*type:* `String.t`, *default:* `nil`) - Integral value of the parameter.
-  *   `messageValue` (*type:* `GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue.t`, *default:* `nil`) - Nested value of the parameter.
-  *   `multiIntValue` (*type:* `list(String.t)`, *default:* `nil`) - Multi-int value of the parameter.
-  *   `multiMessageValue` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMultiMessageValue.t)`, *default:* `nil`) - Nested values of the parameter.
-  *   `multiValue` (*type:* `list(String.t)`, *default:* `nil`) - Multi-string value of the parameter.
+  *   `intValue` (*type:* `String.t`, *default:* `nil`) - Integer value of the parameter.
+  *   `messageValue` (*type:* `GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue.t`, *default:* `nil`) - Nested parameter value pairs associated with this parameter. Complex value type for a parameter are returned as a list of parameter values. For example, the address parameter may have a value as [{parameter: [{name: city, value: abc}]}]
+  *   `multiIntValue` (*type:* `list(String.t)`, *default:* `nil`) - Integer values of the parameter.
+  *   `multiMessageValue` (*type:* `list(GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMultiMessageValue.t)`, *default:* `nil`) - List of messageValue objects.
+  *   `multiValue` (*type:* `list(String.t)`, *default:* `nil`) - String values of the parameter.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the parameter.
   *   `value` (*type:* `String.t`, *default:* `nil`) - String value of the parameter.
   """
