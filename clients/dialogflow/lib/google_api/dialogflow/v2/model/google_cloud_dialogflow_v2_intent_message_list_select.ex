@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageList
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageListSelectItem.t)`, *default:* `nil`) - Required. List items.
+  *   `subtitle` (*type:* `String.t`, *default:* `nil`) - Optional. Subtitle of the list.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. The overall title of the list.
   """
 
@@ -32,6 +33,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageList
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageListSelectItem.t()
             ),
+          :subtitle => String.t(),
           :title => String.t()
         }
 
@@ -41,6 +43,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageList
     type: :list
   )
 
+  field(:subtitle)
   field(:title)
 end
 
