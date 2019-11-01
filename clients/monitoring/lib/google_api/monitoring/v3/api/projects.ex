@@ -2199,7 +2199,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
 
       *   `:"interval.endTime"` (*type:* `DateTime.t`) - Required. The end of the time interval.
       *   `:"interval.startTime"` (*type:* `DateTime.t`) - Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
-      *   `:orderBy` (*type:* `String.t`) - Unsupported: must be left blank. The points in each time series are returned in reverse time order.
+      *   `:orderBy` (*type:* `String.t`) - Unsupported: must be left blank. The points in each time series are currently returned in reverse time order (most recent to oldest).
       *   `:pageSize` (*type:* `integer()`) - A positive number that is the maximum number of results to return. If page_size is empty or more than 100,000 results, the effective page_size is 100,000 results. If view is set to FULL, this is the maximum number of Points returned. If view is set to HEADERS, this is the maximum number of TimeSeries returned.
       *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
       *   `:view` (*type:* `String.t`) - Specifies which information is returned about the time series.
