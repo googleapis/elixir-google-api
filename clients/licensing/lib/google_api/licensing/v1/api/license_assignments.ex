@@ -26,14 +26,16 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Revoke License.
+  Revoke a license.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
-  *   `product_id` (*type:* `String.t`) - Name for product
-  *   `sku_id` (*type:* `String.t`) - Name for sku
-  *   `user_id` (*type:* `String.t`) - email id or unique Id of the user
+  *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
+  *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
+  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests.
+      Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes.
+      If the userId is suspended, the license status changes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -92,14 +94,16 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   end
 
   @doc """
-  Get license assignment of a particular product and sku for a user
+  Get a specific user's license by product SKU.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
-  *   `product_id` (*type:* `String.t`) - Name for product
-  *   `sku_id` (*type:* `String.t`) - Name for sku
-  *   `user_id` (*type:* `String.t`) - email id or unique Id of the user
+  *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
+  *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
+  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests.
+      Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes.
+      If the userId is suspended, the license status changes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -158,13 +162,13 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   end
 
   @doc """
-  Assign License.
+  Assign a license.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
-  *   `product_id` (*type:* `String.t`) - Name for product
-  *   `sku_id` (*type:* `String.t`) - Name for sku
+  *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
+  *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -222,13 +226,14 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   end
 
   @doc """
-  List license assignments for given product of the customer.
+  List all users assigned licenses for a specific product SKU.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
-  *   `product_id` (*type:* `String.t`) - Name for product
-  *   `customer_id` (*type:* `String.t`) - CustomerId represents the customer for whom licenseassignments are queried
+  *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
+  *   `customer_id` (*type:* `String.t`) - Customer's customerId. A previous version of this API accepted the primary domain name as a value for this field.
+      If the customer is suspended, the server returns an error.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -237,8 +242,8 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.
-      *   `:pageToken` (*type:* `String.t`) - Token to fetch the next page.Optional. By default server will return first page
+      *   `:maxResults` (*type:* `integer()`) - The maxResults query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.
+      *   `:pageToken` (*type:* `String.t`) - Token to fetch the next page of data. The maxResults query string is related to the pageToken since maxResults determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -289,14 +294,15 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   end
 
   @doc """
-  List license assignments for given product and sku of the customer.
+  List all users assigned licenses for a specific product SKU.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
-  *   `product_id` (*type:* `String.t`) - Name for product
-  *   `sku_id` (*type:* `String.t`) - Name for sku
-  *   `customer_id` (*type:* `String.t`) - CustomerId represents the customer for whom licenseassignments are queried
+  *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
+  *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
+  *   `customer_id` (*type:* `String.t`) - Customer's customerId. A previous version of this API accepted the primary domain name as a value for this field.
+      If the customer is suspended, the server returns an error.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -305,8 +311,8 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.
-      *   `:pageToken` (*type:* `String.t`) - Token to fetch the next page.Optional. By default server will return first page
+      *   `:maxResults` (*type:* `integer()`) - The maxResults query string determines how many entries are returned on each page of a large response. This is an optional parameter. The value must be a positive number.
+      *   `:pageToken` (*type:* `String.t`) - Token to fetch the next page of data. The maxResults query string is related to the pageToken since maxResults determines how many entries are returned on each page. This is an optional query string. If not specified, the server returns the first page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -360,14 +366,16 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   end
 
   @doc """
-  Assign License. This method supports patch semantics.
+  Reassign a user's product SKU with a different SKU in the same product. This method supports patch semantics.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
-  *   `product_id` (*type:* `String.t`) - Name for product
-  *   `sku_id` (*type:* `String.t`) - Name for sku for which license would be revoked
-  *   `user_id` (*type:* `String.t`) - email id or unique Id of the user
+  *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
+  *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
+  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests.
+      Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes.
+      If the userId is suspended, the license status changes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -428,14 +436,16 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
   end
 
   @doc """
-  Assign License.
+  Reassign a user's product SKU with a different SKU in the same product.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Licensing.V1.Connection.t`) - Connection to server
-  *   `product_id` (*type:* `String.t`) - Name for product
-  *   `sku_id` (*type:* `String.t`) - Name for sku for which license would be revoked
-  *   `user_id` (*type:* `String.t`) - email id or unique Id of the user
+  *   `product_id` (*type:* `String.t`) - A product's unique identifier. For more information about products in this version of the API, see Products and SKUs.
+  *   `sku_id` (*type:* `String.t`) - A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs.
+  *   `user_id` (*type:* `String.t`) - The user's current primary email address. If the user's email address changes, use the new email address in your API requests.
+      Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes.
+      If the userId is suspended, the license status changes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
