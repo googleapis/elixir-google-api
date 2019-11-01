@@ -59,7 +59,7 @@ defmodule GoogleApi.Admin.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/admin",
-        "Homepage" => "/admin-sdk/reports/"
+        "Homepage" => "https://developers.google.com/admin-sdk/reports/"
       }
     ]
   end
