@@ -26,6 +26,7 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
 
   *   `dockerImage` (*type:* `String.t`, *default:* `nil`) - Required. Full path to the Docker image used to run this environment, e.g.
       "gcr.io/dev-con/cloud-devshell:latest".
+  *   `httpsPorts` (*type:* `list(integer())`, *default:* `nil`) - Output only. List of ports users can connect to on the environment.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The environment's identifier, which is always "default".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full name of this resource, in the format
       `users/{owner_email}/environments/{environment_id}`. `{owner_email}` is the
@@ -57,6 +58,7 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
 
   @type t :: %__MODULE__{
           :dockerImage => String.t(),
+          :httpsPorts => list(integer()),
           :id => String.t(),
           :name => String.t(),
           :publicKeys => list(GoogleApi.CloudShell.V1.Model.PublicKey.t()),
@@ -70,6 +72,7 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
         }
 
   field(:dockerImage)
+  field(:httpsPorts, type: :list)
   field(:id)
   field(:name)
   field(:publicKeys, as: GoogleApi.CloudShell.V1.Model.PublicKey, type: :list)
