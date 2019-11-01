@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.People.V1.Model.RelationshipInterest do
   @moduledoc """
-  A person's read-only relationship interest .
+  A person's relationship interest .
 
   ## Attributes
 
-  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - The value of the relationship interest translated and formatted in the
-      viewer's account locale or the locale specified in the Accept-Language
-      HTTP header.
+  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - Output only. The value of the relationship interest translated and formatted
+      in the viewer's account locale or the locale specified in the
+      Accept-Language HTTP header.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the relationship interest.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The kind of relationship the person is looking for. The value can be custom
       or one of these predefined values:

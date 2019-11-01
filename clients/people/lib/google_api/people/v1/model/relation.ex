@@ -21,8 +21,8 @@ defmodule GoogleApi.People.V1.Model.Relation do
 
   ## Attributes
 
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - The type of the relation translated and formatted in the viewer's account
-      locale or the locale specified in the Accept-Language HTTP header.
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the relation translated and formatted in the viewer's
+      account locale or the locale specified in the Accept-Language HTTP header.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the relation.
   *   `person` (*type:* `String.t`, *default:* `nil`) - The name of the other person this relation refers to.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The person's relation to the other person. The type can be custom or one of

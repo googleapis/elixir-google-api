@@ -21,7 +21,7 @@ defmodule GoogleApi.People.V1.Model.ContactGroupMembership do
 
   ## Attributes
 
-  *   `contactGroupId` (*type:* `String.t`, *default:* `nil`) - The read-only contact group ID for the contact group membership.
+  *   `contactGroupId` (*type:* `String.t`, *default:* `nil`) - Output only. The contact group ID for the contact group membership.
   *   `contactGroupResourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the contact group, assigned by the server. An ASCII
       string, in the form of `contactGroups/`<var>contact_group_id</var>.
       Only contact_group_resource_name can be used for modifying memberships.

@@ -28,7 +28,7 @@ defmodule GoogleApi.People.V1.Model.Organization do
   *   `domain` (*type:* `String.t`, *default:* `nil`) - The domain name associated with the organization; for example,
       `google.com`.
   *   `endDate` (*type:* `GoogleApi.People.V1.Model.Date.t`, *default:* `nil`) - The end date when the person left the organization.
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - The read-only type of the organization translated and formatted in the
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the organization translated and formatted in the
       viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `jobDescription` (*type:* `String.t`, *default:* `nil`) - The person's job description at the organization.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the organization office the person works at.

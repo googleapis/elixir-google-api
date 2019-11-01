@@ -21,10 +21,10 @@ defmodule GoogleApi.People.V1.Model.PhoneNumber do
 
   ## Attributes
 
-  *   `canonicalForm` (*type:* `String.t`, *default:* `nil`) - The read-only canonicalized [ITU-T
+  *   `canonicalForm` (*type:* `String.t`, *default:* `nil`) - Output only. The canonicalized [ITU-T
       E.164](https://law.resource.org/pub/us/cfr/ibr/004/itu-t.E.164.1.2008.pdf)
       form of the phone number.
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - The read-only type of the phone number translated and formatted in the
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the phone number translated and formatted in the
       viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the phone number.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the phone number. The type can be custom or one of these

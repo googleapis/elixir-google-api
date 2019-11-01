@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.CoverPhoto do
   @moduledoc """
-  A person's read-only cover photo. A large image shown on the person's
+  A person's cover photo. A large image shown on the person's
   profile page that represents who they are or what they care about.
 
   ## Attributes

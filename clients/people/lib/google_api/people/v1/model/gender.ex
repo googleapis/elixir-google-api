@@ -21,7 +21,7 @@ defmodule GoogleApi.People.V1.Model.Gender do
 
   ## Attributes
 
-  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - The read-only value of the gender translated and formatted in the viewer's
+  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - Output only. The value of the gender translated and formatted in the viewer's
       account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the gender.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The gender for the person. The gender can be custom or one of these

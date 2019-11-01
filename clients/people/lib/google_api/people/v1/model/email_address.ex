@@ -22,7 +22,7 @@ defmodule GoogleApi.People.V1.Model.EmailAddress do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the email.
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - The read-only type of the email address translated and formatted in the
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the email address translated and formatted in the
       viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the email address.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the email address. The type can be custom or one of these

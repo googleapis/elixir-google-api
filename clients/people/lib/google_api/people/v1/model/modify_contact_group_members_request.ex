@@ -23,10 +23,10 @@ defmodule GoogleApi.People.V1.Model.ModifyContactGroupMembersRequest do
 
   ## Attributes
 
-  *   `resourceNamesToAdd` (*type:* `list(String.t)`, *default:* `nil`) - The resource names of the contact people to add in the form of in the form
+  *   `resourceNamesToAdd` (*type:* `list(String.t)`, *default:* `nil`) - The resource names of the contact people to add in the form of
       `people/`<var>person_id</var>.
-  *   `resourceNamesToRemove` (*type:* `list(String.t)`, *default:* `nil`) - The resource names of the contact people to remove in the form of in the
-      form of `people/`<var>person_id</var>.
+  *   `resourceNamesToRemove` (*type:* `list(String.t)`, *default:* `nil`) - The resource names of the contact people to remove in the form of
+      `people/`<var>person_id</var>.
   """
 
   use GoogleApi.Gax.ModelBase

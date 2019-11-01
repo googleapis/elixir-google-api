@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.Tagline do
   @moduledoc """
-  A read-only brief one-line description of the person.
+  A brief one-line description of the person.
 
   ## Attributes
 

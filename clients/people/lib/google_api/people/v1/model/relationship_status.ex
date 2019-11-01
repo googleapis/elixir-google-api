@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.People.V1.Model.RelationshipStatus do
   @moduledoc """
-  A person's read-only relationship status.
+  A person's relationship status.
 
   ## Attributes
 
-  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - The read-only value of the relationship status translated and formatted in
+  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - Output only. The value of the relationship status translated and formatted in
       the viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the relationship status.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The relationship status. The value can be custom or one of these

@@ -23,7 +23,7 @@ defmodule GoogleApi.People.V1.Model.Membership do
   ## Attributes
 
   *   `contactGroupMembership` (*type:* `GoogleApi.People.V1.Model.ContactGroupMembership.t`, *default:* `nil`) - The contact group membership.
-  *   `domainMembership` (*type:* `GoogleApi.People.V1.Model.DomainMembership.t`, *default:* `nil`) - The read-only domain membership.
+  *   `domainMembership` (*type:* `GoogleApi.People.V1.Model.DomainMembership.t`, *default:* `nil`) - Output only. The domain membership.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the membership.
   """
 

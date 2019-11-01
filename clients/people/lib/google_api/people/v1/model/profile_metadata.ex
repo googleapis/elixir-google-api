@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.People.V1.Model.ProfileMetadata do
   @moduledoc """
-  The read-only metadata about a profile.
+  The metadata about a profile.
 
   ## Attributes
 
-  *   `objectType` (*type:* `String.t`, *default:* `nil`) - The profile object type.
-  *   `userTypes` (*type:* `list(String.t)`, *default:* `nil`) - The user types.
+  *   `objectType` (*type:* `String.t`, *default:* `nil`) - Output only. The profile object type.
+  *   `userTypes` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The user types.
   """
 
   use GoogleApi.Gax.ModelBase

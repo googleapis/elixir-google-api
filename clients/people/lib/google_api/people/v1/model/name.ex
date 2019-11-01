@@ -21,9 +21,9 @@ defmodule GoogleApi.People.V1.Model.Name do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The read-only display name formatted according to the locale specified by
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name formatted according to the locale specified by
       the viewer's account or the `Accept-Language` HTTP header.
-  *   `displayNameLastFirst` (*type:* `String.t`, *default:* `nil`) - The read-only display name with the last name first formatted according to
+  *   `displayNameLastFirst` (*type:* `String.t`, *default:* `nil`) - Output only. The display name with the last name first formatted according to
       the locale specified by the viewer's account or the
       `Accept-Language` HTTP header.
   *   `familyName` (*type:* `String.t`, *default:* `nil`) - The family name.

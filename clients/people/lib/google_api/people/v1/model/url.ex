@@ -21,7 +21,7 @@ defmodule GoogleApi.People.V1.Model.Url do
 
   ## Attributes
 
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - The read-only type of the URL translated and formatted in the viewer's
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the URL translated and formatted in the viewer's
       account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the URL.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the URL. The type can be custom or one of these predefined

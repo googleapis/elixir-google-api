@@ -21,7 +21,7 @@ defmodule GoogleApi.People.V1.Model.CreateContactGroupRequest do
 
   ## Attributes
 
-  *   `contactGroup` (*type:* `GoogleApi.People.V1.Model.ContactGroup.t`, *default:* `nil`) - The contact group to create.
+  *   `contactGroup` (*type:* `GoogleApi.People.V1.Model.ContactGroup.t`, *default:* `nil`) - Required. The contact group to create.
   """
 
   use GoogleApi.Gax.ModelBase

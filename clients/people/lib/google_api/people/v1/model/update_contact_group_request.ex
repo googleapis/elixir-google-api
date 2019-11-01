@@ -22,7 +22,7 @@ defmodule GoogleApi.People.V1.Model.UpdateContactGroupRequest do
 
   ## Attributes
 
-  *   `contactGroup` (*type:* `GoogleApi.People.V1.Model.ContactGroup.t`, *default:* `nil`) - The contact group to update.
+  *   `contactGroup` (*type:* `GoogleApi.People.V1.Model.ContactGroup.t`, *default:* `nil`) - Required. The contact group to update.
   """
 
   use GoogleApi.Gax.ModelBase
