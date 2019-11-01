@@ -22,7 +22,7 @@ defmodule GoogleApi.Drive.V3.Model.Comment do
   ## Attributes
 
   *   `anchor` (*type:* `String.t`, *default:* `nil`) - A region of the document represented as a JSON string. See anchor documentation for details on how to define and interpret anchor properties.
-  *   `author` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The user who created the comment.
+  *   `author` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The author of the comment. The author's email address and permission ID will not be populated.
   *   `content` (*type:* `String.t`, *default:* `nil`) - The plain text content of the comment. This field is used for setting the content, while htmlContent should be displayed.
   *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the comment was created (RFC 3339 date-time).
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Whether the comment has been deleted. A deleted comment has no content.

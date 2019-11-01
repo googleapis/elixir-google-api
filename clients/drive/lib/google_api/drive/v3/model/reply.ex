@@ -24,7 +24,7 @@ defmodule GoogleApi.Drive.V3.Model.Reply do
   *   `action` (*type:* `String.t`, *default:* `nil`) - The action the reply performed to the parent comment. Valid values are:  
       - resolve 
       - reopen
-  *   `author` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The user who created the reply.
+  *   `author` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The author of the reply. The author's email address and permission ID will not be populated.
   *   `content` (*type:* `String.t`, *default:* `nil`) - The plain text content of the reply. This field is used for setting the content, while htmlContent should be displayed. This is required on creates if no action is specified.
   *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the reply was created (RFC 3339 date-time).
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Whether the reply has been deleted. A deleted reply has no content.
