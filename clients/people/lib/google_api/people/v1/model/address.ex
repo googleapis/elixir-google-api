@@ -27,7 +27,7 @@ defmodule GoogleApi.People.V1.Model.Address do
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - The [ISO 3166-1 alpha-2](http://www.iso.org/iso/country_codes.htm) country
       code of the address.
   *   `extendedAddress` (*type:* `String.t`, *default:* `nil`) - The extended address of the address; for example, the apartment number.
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - The read-only type of the address translated and formatted in the viewer's
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the address translated and formatted in the viewer's
       account locale or the `Accept-Language` HTTP header locale.
   *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - The unstructured value of the address. If this is not set by the user it
       will be automatically constructed from structured values.

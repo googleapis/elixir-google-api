@@ -22,7 +22,7 @@ defmodule GoogleApi.People.V1.Model.Event do
   ## Attributes
 
   *   `date` (*type:* `GoogleApi.People.V1.Model.Date.t`, *default:* `nil`) - The date of the event.
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - The read-only type of the event translated and formatted in the
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the event translated and formatted in the
       viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the event.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the event. The type can be custom or one of these predefined

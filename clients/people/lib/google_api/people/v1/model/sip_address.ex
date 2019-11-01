@@ -22,7 +22,7 @@ defmodule GoogleApi.People.V1.Model.SipAddress do
 
   ## Attributes
 
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - The read-only type of the SIP address translated and formatted in the
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the SIP address translated and formatted in the
       viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the SIP address.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the SIP address. The type can be custom or or one of these

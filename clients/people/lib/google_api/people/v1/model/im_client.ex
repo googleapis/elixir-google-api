@@ -21,9 +21,9 @@ defmodule GoogleApi.People.V1.Model.ImClient do
 
   ## Attributes
 
-  *   `formattedProtocol` (*type:* `String.t`, *default:* `nil`) - The read-only protocol of the IM client formatted in the viewer's account
+  *   `formattedProtocol` (*type:* `String.t`, *default:* `nil`) - Output only. The protocol of the IM client formatted in the viewer's account
       locale or the `Accept-Language` HTTP header locale.
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - The read-only type of the IM client translated and formatted in the
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the IM client translated and formatted in the
       viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the IM client.
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol of the IM client. The protocol can be custom or one of these

@@ -23,17 +23,17 @@ defmodule GoogleApi.People.V1.Model.ContactGroup do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the
       resource. Used for web cache validation.
-  *   `formattedName` (*type:* `String.t`, *default:* `nil`) - The read-only name translated and formatted in the viewer's account locale
+  *   `formattedName` (*type:* `String.t`, *default:* `nil`) - Output only. The name translated and formatted in the viewer's account locale
       or the `Accept-Language` HTTP header locale for system groups names.
       Group names set by the owner are the same as name.
-  *   `groupType` (*type:* `String.t`, *default:* `nil`) - The read-only contact group type.
-  *   `memberCount` (*type:* `integer()`, *default:* `nil`) - The total number of contacts in the group irrespective of max members in
+  *   `groupType` (*type:* `String.t`, *default:* `nil`) - Output only. The contact group type.
+  *   `memberCount` (*type:* `integer()`, *default:* `nil`) - Output only. The total number of contacts in the group irrespective of max members in
       specified in the request.
-  *   `memberResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - The list of contact person resource names that are members of the contact
+  *   `memberResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of contact person resource names that are members of the contact
       group. The field is not populated for LIST requests and can only be updated
       through the
       [ModifyContactGroupMembers](/people/api/rest/v1/contactgroups/members/modify).
-  *   `metadata` (*type:* `GoogleApi.People.V1.Model.ContactGroupMetadata.t`, *default:* `nil`) - Metadata about the contact group.
+  *   `metadata` (*type:* `GoogleApi.People.V1.Model.ContactGroupMetadata.t`, *default:* `nil`) - Output only. Metadata about the contact group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The contact group name set by the group owner or a system provided name
       for system groups.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the contact group, assigned by the server. An ASCII

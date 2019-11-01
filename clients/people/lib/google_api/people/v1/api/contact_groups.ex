@@ -44,8 +44,9 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxMembers` (*type:* `integer()`) - Specifies the maximum number of members to return for each group.
-      *   `:resourceNames` (*type:* `list(String.t)`) - The resource names of the contact groups to get.
+      *   `:maxMembers` (*type:* `integer()`) - Optional. Specifies the maximum number of members to return for each group. Defaults
+          to 0 if not set, which will return zero members.
+      *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the contact groups to get.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -150,7 +151,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the contact group to delete.
+  *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact group to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -163,7 +164,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deleteContacts` (*type:* `boolean()`) - Set to true to also delete the contacts in the specified group.
+      *   `:deleteContacts` (*type:* `boolean()`) - Optional. Set to true to also delete the contacts in the specified group.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -215,7 +216,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the contact group to get.
+  *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact group to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -228,7 +229,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxMembers` (*type:* `integer()`) - Specifies the maximum number of members to return.
+      *   `:maxMembers` (*type:* `integer()`) - Optional. Specifies the maximum number of members to return. Defaults to 0 if not
+          set, which will return zero members.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -287,7 +289,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of resources to return.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of resources to return. Valid values are between 1 and
+          1000, inclusive. Defaults to 30 if not set or set to 0.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous call to
           [ListContactGroups](/people/api/rest/v1/contactgroups/list).
           Requests the next page of resources.
@@ -408,7 +411,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the contact group to modify.
+  *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact group to modify.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

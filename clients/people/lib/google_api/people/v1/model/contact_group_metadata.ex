@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.People.V1.Model.ContactGroupMetadata do
   @moduledoc """
-  The read-only metadata about a contact group.
+  The metadata about a contact group.
 
   ## Attributes
 
-  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - True if the contact group resource has been deleted. Populated only for
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the contact group resource has been deleted. Populated only for
       [`ListContactGroups`](/people/api/rest/v1/contactgroups/list) requests
       that include a sync token.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the group was last updated.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the group was last updated.
   """
 
   use GoogleApi.Gax.ModelBase

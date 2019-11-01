@@ -24,7 +24,7 @@ defmodule GoogleApi.People.V1.Model.FieldMetadata do
   *   `primary` (*type:* `boolean()`, *default:* `nil`) - True if the field is the primary field; false if the field is a secondary
       field.
   *   `source` (*type:* `GoogleApi.People.V1.Model.Source.t`, *default:* `nil`) - The source of the field.
-  *   `verified` (*type:* `boolean()`, *default:* `nil`) - True if the field is verified; false if the field is unverified. A
+  *   `verified` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the field is verified; false if the field is unverified. A
       verified field is typically a name, email address, phone number, or
       website that has been confirmed to be owned by the person.
   """

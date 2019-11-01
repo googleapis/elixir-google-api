@@ -43,7 +43,6 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The resource name of the owning person resource.
       *   `:body` (*type:* `GoogleApi.People.V1.Model.Person.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -67,7 +66,6 @@ defmodule GoogleApi.People.V1.Api.People do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -89,7 +87,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the contact to delete.
+  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -146,7 +144,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the contact whose photo will be deleted.
+  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact whose photo will be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -159,10 +157,9 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:personFields` (*type:* `String.t`) - **Optional.** Not specifying any fields will skip the post mutate read.
-          A field mask to restrict which fields on the person are
-          returned. Multiple fields can be specified by separating them with commas.
-          Valid values are:
+      *   `:personFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on the person are returned. Multiple
+          fields can be specified by separating them with commas. Defaults to empty
+          if not set, which will skip the post mutate get. Valid values are:
 
           * addresses
           * ageRanges
@@ -242,7 +239,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. The resource name of the person to provide information about.
+  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the person to provide information about.
 
       - To get information about the authenticated user, specify `people/me`.
       - To get information about a google account, specify
@@ -262,9 +259,8 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:personFields` (*type:* `String.t`) - **Required.** A field mask to restrict which fields on the person are
-          returned. Multiple fields can be specified by separating them with commas.
-          Valid values are:
+      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on the person are returned. Multiple
+          fields can be specified by separating them with commas. Valid values are:
 
           * addresses
           * ageRanges
@@ -295,9 +291,9 @@ defmodule GoogleApi.People.V1.Api.People do
           * taglines
           * urls
           * userDefined
-      *   `:"requestMask.includeField"` (*type:* `String.t`) - **Required.** Comma-separated list of person fields to be included in the
-          response. Each path should start with `person.`: for example,
-          `person.names` or `person.photos`.
+      *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
+          path should start with `person.`: for example, `person.names` or
+          `person.photos`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -360,9 +356,8 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:personFields` (*type:* `String.t`) - **Required.** A field mask to restrict which fields on each person are
-          returned. Multiple fields can be specified by separating them with commas.
-          Valid values are:
+      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
+          fields can be specified by separating them with commas. Valid values are:
 
           * addresses
           * ageRanges
@@ -393,10 +388,10 @@ defmodule GoogleApi.People.V1.Api.People do
           * taglines
           * urls
           * userDefined
-      *   `:"requestMask.includeField"` (*type:* `String.t`) - **Required.** Comma-separated list of person fields to be included in the
-          response. Each path should start with `person.`: for example,
-          `person.names` or `person.photos`.
-      *   `:resourceNames` (*type:* `list(String.t)`) - The resource names of the people to provide information about.
+      *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
+          path should start with `person.`: for example, `person.names` or
+          `person.photos`.
+      *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the people to provide information about.
 
           - To get information about the authenticated user, specify `people/me`.
           - To get information about a google account, specify
@@ -478,8 +473,8 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updatePersonFields` (*type:* `String.t`) - **Required.** A field mask to restrict which fields on the person are
-          updated. Multiple fields can be specified by separating them with commas.
+      *   `:updatePersonFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on the person are updated. Multiple
+          fields can be specified by separating them with commas.
           All updated fields will be replaced. Valid values are:
 
           * addresses
@@ -549,7 +544,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Person resource name
+  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. Person resource name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -612,7 +607,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. The resource name to return connections for. Only `people/me` is valid.
+  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name to return connections for. Only `people/me` is valid.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -625,12 +620,11 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The number of connections to include in the response. Valid values are
-          between 1 and 2000, inclusive. Defaults to 100.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of connections to include in the response. Valid values are
+          between 1 and 2000, inclusive. Defaults to 100 if not set or set to 0.
       *   `:pageToken` (*type:* `String.t`) - The token of the page to be returned.
-      *   `:personFields` (*type:* `String.t`) - **Required.** A field mask to restrict which fields on each person are
-          returned. Multiple fields can be specified by separating them with commas.
-          Valid values are:
+      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
+          fields can be specified by separating them with commas. Valid values are:
 
           * addresses
           * ageRanges
@@ -661,9 +655,9 @@ defmodule GoogleApi.People.V1.Api.People do
           * taglines
           * urls
           * userDefined
-      *   `:"requestMask.includeField"` (*type:* `String.t`) - **Required.** Comma-separated list of person fields to be included in the
-          response. Each path should start with `person.`: for example,
-          `person.names` or `person.photos`.
+      *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
+          path should start with `person.`: for example, `person.names` or
+          `person.photos`.
       *   `:requestSyncToken` (*type:* `boolean()`) - Whether the response should include a sync token, which can be used to get
           all changes since the last request. For subsequent sync requests use the
           `sync_token` param instead. Initial sync requests that specify

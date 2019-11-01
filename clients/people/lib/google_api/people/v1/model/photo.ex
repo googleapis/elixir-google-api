@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.Photo do
   @moduledoc """
-  A person's read-only photo. A picture shown next to the person's name to
+  A person's photo. A picture shown next to the person's name to
   help others recognize the person.
 
   ## Attributes

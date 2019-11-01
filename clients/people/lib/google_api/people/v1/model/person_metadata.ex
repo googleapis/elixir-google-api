@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.People.V1.Model.PersonMetadata do
   @moduledoc """
-  The read-only metadata about a person.
+  The metadata about a person.
 
   ## Attributes
 
-  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - True if the person resource has been deleted. Populated only for
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the person resource has been deleted. Populated only for
       [`connections.list`](/people/api/rest/v1/people.connections/list) requests
       that include a sync token.
-  *   `linkedPeopleResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Resource names of people linked to this resource.
-  *   `objectType` (*type:* `String.t`, *default:* `nil`) - **DEPRECATED** (Please use
+  *   `linkedPeopleResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Resource names of people linked to this resource.
+  *   `objectType` (*type:* `String.t`, *default:* `nil`) - Output only. **DEPRECATED** (Please use
       `person.metadata.sources.profileMetadata.objectType` instead)
 
       The type of the person object.
-  *   `previousResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Any former resource names this person has had. Populated only for
+  *   `previousResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Any former resource names this person has had. Populated only for
       [`connections.list`](/people/api/rest/v1/people.connections/list) requests
       that include a sync token.
 
