@@ -29,11 +29,11 @@ defmodule GoogleApi.CivicInfo.V2.Model.StreetSegment do
   *   `precinctName` (*type:* `String.t`, *default:* `nil`) - 
   *   `geographicDivisionOcdIds` (*type:* `list(String.t)`, *default:* `nil`) - 
   *   `vanPrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
-  *   `startLatE7` (*type:* `String.t`, *default:* `nil`) - 
+  *   `startLatE7` (*type:* `integer()`, *default:* `nil`) - 
   *   `published` (*type:* `boolean()`, *default:* `nil`) - 
   *   `contestIds` (*type:* `list(String.t)`, *default:* `nil`) - 
   *   `geocodedPoint` (*type:* `GoogleApi.CivicInfo.V2.Model.PointProto.t`, *default:* `nil`) - 
-  *   `startLngE7` (*type:* `String.t`, *default:* `nil`) - 
+  *   `startLngE7` (*type:* `integer()`, *default:* `nil`) - 
   *   `municipalDistrict` (*type:* `String.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - 
   *   `streetName` (*type:* `String.t`, *default:* `nil`) - 
@@ -79,11 +79,11 @@ defmodule GoogleApi.CivicInfo.V2.Model.StreetSegment do
           :precinctName => String.t(),
           :geographicDivisionOcdIds => list(String.t()),
           :vanPrecinctCode => String.t(),
-          :startLatE7 => String.t(),
+          :startLatE7 => integer(),
           :published => boolean(),
           :contestIds => list(String.t()),
           :geocodedPoint => GoogleApi.CivicInfo.V2.Model.PointProto.t(),
-          :startLngE7 => String.t(),
+          :startLngE7 => integer(),
           :municipalDistrict => String.t(),
           :id => String.t(),
           :streetName => String.t(),
