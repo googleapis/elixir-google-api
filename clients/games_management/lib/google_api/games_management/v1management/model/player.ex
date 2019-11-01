@@ -31,6 +31,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.Player do
   *   `name` (*type:* `GoogleApi.GamesManagement.V1management.Model.PlayerName.t`, *default:* `nil`) - An object representation of the individual components of the player's name. For some players, these fields may not be present.
   *   `originalPlayerId` (*type:* `String.t`, *default:* `nil`) - The player ID that was used for this player the first time they signed into the game in question. This is only populated for calls to player.get for the requesting player, only if the player ID has subsequently changed, and only to clients that support remapping player IDs.
   *   `playerId` (*type:* `String.t`, *default:* `nil`) - The ID of the player.
+  *   `playerStattus` (*type:* `String.t`, *default:* `nil`) - 
   *   `profileSettings` (*type:* `GoogleApi.GamesManagement.V1management.Model.ProfileSettings.t`, *default:* `nil`) - The player's profile settings. Controls whether or not the player's profile is visible to other players.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The player's title rewarded for their game activities.
   """
@@ -49,6 +50,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.Player do
           :name => GoogleApi.GamesManagement.V1management.Model.PlayerName.t(),
           :originalPlayerId => String.t(),
           :playerId => String.t(),
+          :playerStattus => String.t(),
           :profileSettings => GoogleApi.GamesManagement.V1management.Model.ProfileSettings.t(),
           :title => String.t()
         }
@@ -68,6 +70,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.Player do
   field(:name, as: GoogleApi.GamesManagement.V1management.Model.PlayerName)
   field(:originalPlayerId)
   field(:playerId)
+  field(:playerStattus)
   field(:profileSettings, as: GoogleApi.GamesManagement.V1management.Model.ProfileSettings)
   field(:title)
 end
