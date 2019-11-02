@@ -21,11 +21,11 @@ defmodule GoogleApi.Compute.V1.Model.CircuitBreakers do
 
   ## Attributes
 
-  *   `maxConnections` (*type:* `integer()`, *default:* `nil`) - The maximum number of connections to the backend cluster. If not specified, the default is 1024.
-  *   `maxPendingRequests` (*type:* `integer()`, *default:* `nil`) - The maximum number of pending requests allowed to the backend cluster. If not specified, the default is 1024.
-  *   `maxRequests` (*type:* `integer()`, *default:* `nil`) - The maximum number of parallel requests that allowed to the backend cluster. If not specified, the default is 1024.
-  *   `maxRequestsPerConnection` (*type:* `integer()`, *default:* `nil`) - Maximum requests for a single backend connection. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
-  *   `maxRetries` (*type:* `integer()`, *default:* `nil`) - The maximum number of parallel retries allowed to the backend cluster. If not specified, the default is 3.
+  *   `maxConnections` (*type:* `integer()`, *default:* `nil`) - The maximum number of connections to the backend service. If not specified, there is no limit.
+  *   `maxPendingRequests` (*type:* `integer()`, *default:* `nil`) - The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
+  *   `maxRequests` (*type:* `integer()`, *default:* `nil`) - The maximum number of parallel requests that allowed to the backend service. If not specified, there is no limit.
+  *   `maxRequestsPerConnection` (*type:* `integer()`, *default:* `nil`) - Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
+  *   `maxRetries` (*type:* `integer()`, *default:* `nil`) - The maximum number of parallel retries allowed to the backend cluster. If not specified, the default is 1.
   """
 
   use GoogleApi.Gax.ModelBase

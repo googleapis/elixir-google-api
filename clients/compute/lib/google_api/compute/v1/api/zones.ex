@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Zones do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns the specified Zone resource. Gets a list of available zones by making a list() request.
+  Returns the specified Zone resource. Gets a list of available zones by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -77,7 +77,7 @@ defmodule GoogleApi.Compute.V1.Api.Zones do
   end
 
   @doc """
-  Retrieves the list of Zone resources available to the specified project.
+  Retrieves the list of Zone resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

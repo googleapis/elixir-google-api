@@ -21,8 +21,9 @@ defmodule GoogleApi.Compute.V1.Model.HttpRetryPolicy do
 
   ## Attributes
 
-  *   `numRetries` (*type:* `integer()`, *default:* `nil`) - Specifies the allowed number retries. This number must be > 0.
+  *   `numRetries` (*type:* `integer()`, *default:* `nil`) - Specifies the allowed number retries. This number must be > 0. If not specified, defaults to 1.
   *   `perTryTimeout` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Specifies a non-zero timeout per retry attempt.
+      If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
   *   `retryConditions` (*type:* `list(String.t)`, *default:* `nil`) - Specfies one or more conditions when this retry rule applies. Valid values are:  
       - 5xx: Loadbalancer will attempt a retry if the backend service responds with any 5xx response code, or if the backend service does not respond at all, example: disconnects, reset, read timeout, connection failure, and refused streams. 
       - gateway-error: Similar to 5xx, but only applies to response codes 502, 503 or 504.

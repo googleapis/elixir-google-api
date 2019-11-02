@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified externalVpnGateway.
+  Deletes the specified externalVpnGateway. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
   end
 
   @doc """
-  Returns the specified externalVpnGateway. Get a list of available externalVpnGateways by making a list() request.
+  Returns the specified externalVpnGateway. Get a list of available externalVpnGateways by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -156,7 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
   end
 
   @doc """
-  Creates a ExternalVpnGateway in the specified project using the data included in the request.
+  Creates a ExternalVpnGateway in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
   end
 
   @doc """
-  Retrieves the list of ExternalVpnGateway available to the specified project.
+  Retrieves the list of ExternalVpnGateway available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -280,7 +280,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
   end
 
   @doc """
-  Sets the labels on an ExternalVpnGateway. To learn more about labels, read the Labeling Resources documentation.
+  Sets the labels on an ExternalVpnGateway. To learn more about labels, read the Labeling Resources documentation. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -344,7 +344,7 @@ defmodule GoogleApi.Compute.V1.Api.ExternalVpnGateways do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

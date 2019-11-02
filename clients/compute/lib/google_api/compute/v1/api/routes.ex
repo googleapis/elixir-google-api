@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified Route resource.
+  Deletes the specified Route resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -83,7 +83,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   end
 
   @doc """
-  Returns the specified Route resource. Gets a list of available routes by making a list() request.
+  Returns the specified Route resource. Gets a list of available routes by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -134,7 +134,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   end
 
   @doc """
-  Creates a Route resource in the specified project using the data included in the request.
+  Creates a Route resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -191,7 +191,7 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   end
 
   @doc """
-  Retrieves the list of Route resources available to the specified project.
+  Retrieves the list of Route resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

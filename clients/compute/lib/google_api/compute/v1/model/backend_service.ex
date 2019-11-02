@@ -19,20 +19,18 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   @moduledoc """
   Represents a Backend Service resource.
 
+  A backend service contains configuration values for Google Cloud Platform load balancing services.
 
+  For more information, read Backend Services.
 
-  Backend services must have an associated health check. Backend services also store information about session affinity. For more information, read Backend Services.
-
-  A backendServices resource represents a global backend service. Global backend services are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
-
-  A regionBackendServices resource represents a regional backend service. Regional backend services are used for internal TCP/UDP load balancing. For more information, read Internal TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+  (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
 
   ## Attributes
 
   *   `affinityCookieTtlSec` (*type:* `integer()`, *default:* `nil`) - If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
   *   `backends` (*type:* `list(GoogleApi.Compute.V1.Model.Backend.t)`, *default:* `nil`) - The list of backends that serve this BackendService.
   *   `cdnPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t`, *default:* `nil`) - Cloud CDN configuration for this BackendService.
-  *   `circuitBreakers` (*type:* `GoogleApi.Compute.V1.Model.CircuitBreakers.t`, *default:* `nil`) - Settings controlling the volume of connections to a backend service.
+  *   `circuitBreakers` (*type:* `GoogleApi.Compute.V1.Model.CircuitBreakers.t`, *default:* `nil`) - Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
 
       This field is applicable to either:  
       - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
@@ -56,7 +54,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `iap` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceIAP.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#backendService`) - [Output Only] Type of resource. Always compute#backendService for backend services.
-  *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Indicates whether the backend service will be used with internal or external load balancing. A backend service created for one type of load balancing cannot be used with the other. Possible values are INTERNAL and EXTERNAL.
+  *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancing cannot be used with another. For more information, refer to Choosing a load balancer.
   *   `localityLbPolicy` (*type:* `String.t`, *default:* `nil`) - The load balancing algorithm used within the scope of the locality. The possible values are:  
       - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. 
       - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. 
@@ -69,7 +67,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
       - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-  *   `outlierDetection` (*type:* `GoogleApi.Compute.V1.Model.OutlierDetection.t`, *default:* `nil`) - Settings controlling eviction of unhealthy hosts from the load balancing pool. This field is applicable to either:  
+  *   `outlierDetection` (*type:* `GoogleApi.Compute.V1.Model.OutlierDetection.t`, *default:* `nil`) - Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
+
+      This field is applicable to either:  
       - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
       - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
@@ -82,7 +82,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Blaancing).
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol this BackendService uses to communicate with backends.
 
-      Possible values are HTTP, HTTPS, TCP, SSL, or UDP, depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic director for more information.
+      Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP, depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this backend service.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.

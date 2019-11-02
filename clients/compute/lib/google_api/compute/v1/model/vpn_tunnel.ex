@@ -50,7 +50,13 @@ defmodule GoogleApi.Compute.V1.Model.VpnTunnel do
       - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). 
       - NEGOTIATION_FAILURE: Handshake failed. 
       - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. 
-      - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
+      - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. 
+      - NO_INCOMING_PACKETS: No incoming packets from peer. 
+      - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted. 
+      - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. 
+      - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. 
+      - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. 
+      - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
   *   `targetVpnGateway` (*type:* `String.t`, *default:* `nil`) - URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
   *   `vpnGateway` (*type:* `String.t`, *default:* `nil`) - URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
   *   `vpnGatewayInterface` (*type:* `integer()`, *default:* `nil`) - The interface ID of the VPN gateway with which this VPN tunnel is associated.
