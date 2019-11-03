@@ -77,13 +77,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
   *   `quotaProperties` (*type:* `GoogleApi.ServiceControl.V1.Model.QuotaProperties.t`, *default:* `nil`) - Represents the properties needed for quota check. Applicable only if this
       operation is for a quota check request. If this is not specified, no quota
       check will be performed.
-  *   `resourceContainer` (*type:* `String.t`, *default:* `nil`) - DO NOT USE. This field is deprecated, use "resources" field instead.
-      The resource name of the parent of a resource in the resource hierarchy.
-
-      This can be in one of the following formats:
-          - “projects/<project-id or project-number>”
-          - “folders/<folder-id>”
-          - “organizations/<organization-id>”
   *   `resources` (*type:* `list(GoogleApi.ServiceControl.V1.Model.ResourceInfo.t)`, *default:* `nil`) - The resources that are involved in the operation.
       The maximum supported number of entries in this field is 100.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. Start time of the operation.
@@ -104,7 +97,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
           :operationId => String.t(),
           :operationName => String.t(),
           :quotaProperties => GoogleApi.ServiceControl.V1.Model.QuotaProperties.t(),
-          :resourceContainer => String.t(),
           :resources => list(GoogleApi.ServiceControl.V1.Model.ResourceInfo.t()),
           :startTime => DateTime.t(),
           :userLabels => map()
@@ -119,7 +111,6 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
   field(:operationId)
   field(:operationName)
   field(:quotaProperties, as: GoogleApi.ServiceControl.V1.Model.QuotaProperties)
-  field(:resourceContainer)
   field(:resources, as: GoogleApi.ServiceControl.V1.Model.ResourceInfo, type: :list)
   field(:startTime, as: DateTime)
   field(:userLabels, type: :map)
