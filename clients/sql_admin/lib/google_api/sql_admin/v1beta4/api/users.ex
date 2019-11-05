@@ -47,6 +47,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:host` (*type:* `String.t`) - Host of the user in the instance.
       *   `:name` (*type:* `String.t`) - Name of the user in the instance.
+      *   `:resourceName` (*type:* `String.t`) - The name of the user to delete.
+          Format: projects/{project}/locations/{location}/instances/{instance}/users
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -70,7 +72,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       :uploadType => :query,
       :upload_protocol => :query,
       :host => :query,
-      :name => :query
+      :name => :query,
+      :resourceName => :query
     }
 
     request =
@@ -237,6 +240,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       *   `:host` (*type:* `String.t`) - Host of the user in the instance. For a MySQL instance, it's required; For
           a PostgreSQL instance, it's optional.
       *   `:name` (*type:* `String.t`) - Name of the user in the instance.
+      *   `:resourceName` (*type:* `String.t`) - The name of the user for Cloud SQL to update.
+          Format: projects/{project}/locations/{location}/instances/{instance}/users
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.User.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -262,6 +267,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Users do
       :upload_protocol => :query,
       :host => :query,
       :name => :query,
+      :resourceName => :query,
       :body => :body
     }
 
