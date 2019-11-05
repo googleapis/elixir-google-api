@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_TimestampedObject do
   @moduledoc """
-  For tracking related features, such as LOGO_RECOGNITION, FACE_DETECTION,
-  CELEBRITY_RECOGNITION, PERSON_DETECTION.
+  For tracking related features.
   An object at time_offset with attributes, and located with
   normalized_bounding_box.
 
