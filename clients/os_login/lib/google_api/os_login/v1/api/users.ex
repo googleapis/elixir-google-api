@@ -275,7 +275,7 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fingerprint of the public key to retrieve. Public keys are identified
+  *   `name` (*type:* `String.t`) - Required. The fingerprint of the public key to retrieve. Public keys are identified
       by their SHA-256 fingerprint. The fingerprint of the public key is in
       format `users/{user}/sshPublicKeys/{fingerprint}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
