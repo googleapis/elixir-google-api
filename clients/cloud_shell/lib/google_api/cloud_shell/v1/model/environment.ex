@@ -26,7 +26,8 @@ defmodule GoogleApi.CloudShell.V1.Model.Environment do
 
   *   `dockerImage` (*type:* `String.t`, *default:* `nil`) - Required. Full path to the Docker image used to run this environment, e.g.
       "gcr.io/dev-con/cloud-devshell:latest".
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The environment's identifier, which is always "default".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The environment's identifier, unique among the user's
+      environments.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full name of this resource, in the format
       `users/{owner_email}/environments/{environment_id}`. `{owner_email}` is the
       email address of the user to whom this environment belongs, and
