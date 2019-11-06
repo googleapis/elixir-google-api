@@ -23,16 +23,16 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
 
   *   `alternativeLocationId` (*type:* `String.t`, *default:* `nil`) - Optional. Only applicable to STANDARD_HA tier which protects the instance
       against zonal failures by provisioning it across two zones. If provided, it
-      must be a different zone from the one provided in [location_id].
+      must be a different zone from the one provided in location_id.
   *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Google Compute Engine
       [network](/compute/docs/networks-and-firewalls#networks) to which the
       instance is connected. If left unspecified, the `default` network
       will be used.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
   *   `currentLocationId` (*type:* `String.t`, *default:* `nil`) - Output only. The current zone where the Redis endpoint is placed. For Basic
-      Tier instances, this will always be the same as the [location_id]
+      Tier instances, this will always be the same as the location_id
       provided by the user at creation time. For Standard Tier instances,
-      this can be either [location_id] or [alternative_location_id] and can
+      this can be either location_id or alternative_location_id and can
       change after a failover event.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - An arbitrary and optional user-provided name for the instance.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. Hostname or IP address of the exposed Redis endpoint used by
@@ -41,8 +41,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - Optional. The zone where the instance will be provisioned. If not provided,
       the service will choose a zone for the instance. For STANDARD_HA tier,
       instances will be created across two zones for protection against zonal
-      failures. If [alternative_location_id] is also provided, it must be
-      different from [location_id].
+      failures. If alternative_location_id is also provided, it must be
+      different from location_id.
   *   `memorySizeGb` (*type:* `integer()`, *default:* `nil`) - Required. Redis memory size in GiB.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource in this scope including project and
       location using the form:
@@ -51,8 +51,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
       Note: Redis instances are managed and addressed at regional level so
       location_id here refers to a GCP region; however, users may choose which
       specific zone (or collection of zones for cross-zone instances) an instance
-      should be provisioned in. Refer to [location_id] and
-      [alternative_location_id] fields for more details.
+      should be provisioned in. Refer to location_id and
+      alternative_location_id fields for more details.
   *   `persistenceIamIdentity` (*type:* `String.t`, *default:* `nil`) - Output only. Cloud IAM identity used by import / export operations to
       transfer data to/from Cloud Storage. Format is
       "serviceAccount:<service_account_email>". The value may change over time
