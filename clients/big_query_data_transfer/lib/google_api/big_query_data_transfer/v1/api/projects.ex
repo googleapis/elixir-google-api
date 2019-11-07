@@ -659,6 +659,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
             urn:ietf:wg:oauth:2.0:oob means that authorization code should be
             returned in the title bar of the browser, with the page text prompting
             the user to copy the code and paste it in the application.
+      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set, transfer config will
+          be created with this service account credentials. It requires that
+          requesting user calling this API has permissions to act as this service
+          account.
       *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
           that is, immediately after approving access, users have to set the
           version_info claim in the token request. To obtain the version_info, users
@@ -700,6 +704,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :authorizationCode => :query,
+      :serviceAccountName => :query,
       :versionInfo => :query,
       :body => :body
     }
@@ -982,6 +987,11 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
             urn:ietf:wg:oauth:2.0:oob means that authorization code should be
             returned in the title bar of the browser, with the page text prompting
             the user to copy the code and paste it in the application.
+      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set and
+          "service_account_name" is set in update_mask, transfer config will be
+          updated to use this service account credentials. It requires that
+          requesting user calling this API has permissions to act as this service
+          account.
       *   `:updateMask` (*type:* `String.t`) - Required. Required list of fields to be updated in this request.
       *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
           that is, immediately after approving access, users have to set the
@@ -1024,6 +1034,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :authorizationCode => :query,
+      :serviceAccountName => :query,
       :updateMask => :query,
       :versionInfo => :query,
       :body => :body
@@ -1537,6 +1548,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
             urn:ietf:wg:oauth:2.0:oob means that authorization code should be
             returned in the title bar of the browser, with the page text prompting
             the user to copy the code and paste it in the application.
+      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set, transfer config will
+          be created with this service account credentials. It requires that
+          requesting user calling this API has permissions to act as this service
+          account.
       *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
           that is, immediately after approving access, users have to set the
           version_info claim in the token request. To obtain the version_info, users
@@ -1578,6 +1593,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :authorizationCode => :query,
+      :serviceAccountName => :query,
       :versionInfo => :query,
       :body => :body
     }
@@ -1860,6 +1876,11 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
             urn:ietf:wg:oauth:2.0:oob means that authorization code should be
             returned in the title bar of the browser, with the page text prompting
             the user to copy the code and paste it in the application.
+      *   `:serviceAccountName` (*type:* `String.t`) - Optional service account name. If this field is set and
+          "service_account_name" is set in update_mask, transfer config will be
+          updated to use this service account credentials. It requires that
+          requesting user calling this API has permissions to act as this service
+          account.
       *   `:updateMask` (*type:* `String.t`) - Required. Required list of fields to be updated in this request.
       *   `:versionInfo` (*type:* `String.t`) - Optional version info. If users want to find a very recent access token,
           that is, immediately after approving access, users have to set the
@@ -1902,6 +1923,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :authorizationCode => :query,
+      :serviceAccountName => :query,
       :updateMask => :query,
       :versionInfo => :query,
       :body => :body
