@@ -672,6 +672,7 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
   location (region) or all locations.
 
   The location should have the following format:
+
   * `projects/{project_id}/locations/{location_id}`
 
   If `location_id` is specified as `-` (wildcard), then all regions
@@ -701,10 +702,10 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
           If not specified, a default value of 1000 will be used by the service.
           Regardless of the page_size value, the response may include a partial list
           and a caller should only rely on response's
-          next_page_token
+          `next_page_token`
           to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request,
-          if any.
+      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous
+          ListInstances request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -775,8 +776,8 @@ defmodule GoogleApi.Redis.V1beta1.Api.Projects do
       Note: Redis instances are managed and addressed at regional level so
       location_id here refers to a GCP region; however, users may choose which
       specific zone (or collection of zones for cross-zone instances) an instance
-      should be provisioned in. Refer to [location_id] and
-      [alternative_location_id] fields for more details.
+      should be provisioned in. Refer to location_id and
+      alternative_location_id fields for more details.
   *   `locations_id` (*type:* `String.t`) - Part of `instance.name`. See documentation of `projectsId`.
   *   `instances_id` (*type:* `String.t`) - Part of `instance.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
