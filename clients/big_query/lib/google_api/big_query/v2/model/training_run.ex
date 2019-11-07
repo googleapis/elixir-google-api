@@ -21,6 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
 
   ## Attributes
 
+  *   `dataSplitResult` (*type:* `GoogleApi.BigQuery.V2.Model.DataSplitResult.t`, *default:* `nil`) - Data split result of the training run. Only set when the input data is
+      actually split.
   *   `evaluationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t`, *default:* `nil`) - The evaluation metrics over training/eval data that were computed at the
       end of training.
   *   `results` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Output of each iteration run, results.size() <= max_iterations.
@@ -32,12 +34,14 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataSplitResult => GoogleApi.BigQuery.V2.Model.DataSplitResult.t(),
           :evaluationMetrics => GoogleApi.BigQuery.V2.Model.EvaluationMetrics.t(),
           :results => list(GoogleApi.BigQuery.V2.Model.IterationResult.t()),
           :startTime => DateTime.t(),
           :trainingOptions => GoogleApi.BigQuery.V2.Model.TrainingOptions.t()
         }
 
+  field(:dataSplitResult, as: GoogleApi.BigQuery.V2.Model.DataSplitResult)
   field(:evaluationMetrics, as: GoogleApi.BigQuery.V2.Model.EvaluationMetrics)
   field(:results, as: GoogleApi.BigQuery.V2.Model.IterationResult, type: :list)
   field(:startTime, as: DateTime)
