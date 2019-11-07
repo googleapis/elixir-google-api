@@ -31,10 +31,10 @@ defmodule GoogleApi.Sheets.V4.Model.ScorecardChartSpec do
   *   `baselineValueData` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data for scorecard baseline value.
       This field is optional.
   *   `baselineValueFormat` (*type:* `GoogleApi.Sheets.V4.Model.BaselineValueFormat.t`, *default:* `nil`) - Formatting options for baseline value.
-      This field is needed only if baseline_value_data field is specified.
+      This field is needed only if baseline_value_data is specified.
   *   `customFormatOptions` (*type:* `GoogleApi.Sheets.V4.Model.ChartCustomNumberFormatOptions.t`, *default:* `nil`) - Custom formatting options for numeric key/baseline values in scorecard
-      chart. This field is used only when [number_format_source] field is set to
-      [ChartNumberFormatSource.CUSTOM]. This field is optional.
+      chart. This field is used only when number_format_source is set to
+      CUSTOM. This field is optional.
   *   `keyValueData` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data for scorecard key value.
   *   `keyValueFormat` (*type:* `GoogleApi.Sheets.V4.Model.KeyValueFormat.t`, *default:* `nil`) - Formatting options for key value.
   *   `numberFormatSource` (*type:* `String.t`, *default:* `nil`) - The number format source used in the scorecard chart.

@@ -28,6 +28,7 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   *   `addNamedRange` (*type:* `GoogleApi.Sheets.V4.Model.AddNamedRangeResponse.t`, *default:* `nil`) - A reply from adding a named range.
   *   `addProtectedRange` (*type:* `GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse.t`, *default:* `nil`) - A reply from adding a protected range.
   *   `addSheet` (*type:* `GoogleApi.Sheets.V4.Model.AddSheetResponse.t`, *default:* `nil`) - A reply from adding a sheet.
+  *   `addSlicer` (*type:* `GoogleApi.Sheets.V4.Model.AddSlicerResponse.t`, *default:* `nil`) - A reply from adding a slicer.
   *   `createDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse.t`, *default:* `nil`) - A reply from creating a developer metadata entry.
   *   `deleteConditionalFormatRule` (*type:* `GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse.t`, *default:* `nil`) - A reply from deleting a conditional format rule.
   *   `deleteDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse.t`, *default:* `nil`) - A reply from deleting a developer metadata entry.
@@ -52,6 +53,7 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
           :addNamedRange => GoogleApi.Sheets.V4.Model.AddNamedRangeResponse.t(),
           :addProtectedRange => GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse.t(),
           :addSheet => GoogleApi.Sheets.V4.Model.AddSheetResponse.t(),
+          :addSlicer => GoogleApi.Sheets.V4.Model.AddSlicerResponse.t(),
           :createDeveloperMetadata =>
             GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse.t(),
           :deleteConditionalFormatRule =>
@@ -79,6 +81,7 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   field(:addNamedRange, as: GoogleApi.Sheets.V4.Model.AddNamedRangeResponse)
   field(:addProtectedRange, as: GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse)
   field(:addSheet, as: GoogleApi.Sheets.V4.Model.AddSheetResponse)
+  field(:addSlicer, as: GoogleApi.Sheets.V4.Model.AddSlicerResponse)
   field(:createDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse)
 
   field(

@@ -21,18 +21,28 @@ defmodule GoogleApi.Sheets.V4.Model.SortSpec do
 
   ## Attributes
 
+  *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background fill color to sort by. Mutually exclusive with sorting by
+      text color. Requests to set this field will fail with a 400 error if
+      foreground color is also set.
   *   `dimensionIndex` (*type:* `integer()`, *default:* `nil`) - The dimension the sort should be applied to.
+  *   `foregroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The text color to sort by. Mutually exclusive with sorting by background
+      fill color. Requests to set this field will fail with a 400 error if
+      background color is also set.
   *   `sortOrder` (*type:* `String.t`, *default:* `nil`) - The order data should be sorted.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
           :dimensionIndex => integer(),
+          :foregroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
           :sortOrder => String.t()
         }
 
+  field(:backgroundColor, as: GoogleApi.Sheets.V4.Model.Color)
   field(:dimensionIndex)
+  field(:foregroundColor, as: GoogleApi.Sheets.V4.Model.Color)
   field(:sortOrder)
 end
 

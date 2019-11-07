@@ -70,6 +70,8 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `deleteDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t`, *default:* `nil`) - Deletes developer metadata
   *   `trimWhitespace` (*type:* `GoogleApi.Sheets.V4.Model.TrimWhitespaceRequest.t`, *default:* `nil`) - Trims cells of whitespace (such as spaces, tabs, or new lines).
   *   `deleteRange` (*type:* `GoogleApi.Sheets.V4.Model.DeleteRangeRequest.t`, *default:* `nil`) - Deletes a range of cells from a sheet, shifting the remaining cells.
+  *   `updateSlicerSpec` (*type:* `GoogleApi.Sheets.V4.Model.UpdateSlicerSpecRequest.t`, *default:* `nil`) - Updates a slicer's specifications.
+  *   `addSlicer` (*type:* `GoogleApi.Sheets.V4.Model.AddSlicerRequest.t`, *default:* `nil`) - Adds a slicer.
   *   `deleteBanding` (*type:* `GoogleApi.Sheets.V4.Model.DeleteBandingRequest.t`, *default:* `nil`) - Removes a banded range
   *   `updateEmbeddedObjectPosition` (*type:* `GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest.t`, *default:* `nil`) - Updates an embedded object's (e.g. chart, image) position.
   *   `duplicateFilterView` (*type:* `GoogleApi.Sheets.V4.Model.DuplicateFilterViewRequest.t`, *default:* `nil`) - Duplicates a filter view.
@@ -139,6 +141,8 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
             GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest.t(),
           :trimWhitespace => GoogleApi.Sheets.V4.Model.TrimWhitespaceRequest.t(),
           :deleteRange => GoogleApi.Sheets.V4.Model.DeleteRangeRequest.t(),
+          :updateSlicerSpec => GoogleApi.Sheets.V4.Model.UpdateSlicerSpecRequest.t(),
+          :addSlicer => GoogleApi.Sheets.V4.Model.AddSlicerRequest.t(),
           :deleteBanding => GoogleApi.Sheets.V4.Model.DeleteBandingRequest.t(),
           :updateEmbeddedObjectPosition =>
             GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectPositionRequest.t(),
@@ -217,6 +221,8 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   field(:deleteDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataRequest)
   field(:trimWhitespace, as: GoogleApi.Sheets.V4.Model.TrimWhitespaceRequest)
   field(:deleteRange, as: GoogleApi.Sheets.V4.Model.DeleteRangeRequest)
+  field(:updateSlicerSpec, as: GoogleApi.Sheets.V4.Model.UpdateSlicerSpecRequest)
+  field(:addSlicer, as: GoogleApi.Sheets.V4.Model.AddSlicerRequest)
   field(:deleteBanding, as: GoogleApi.Sheets.V4.Model.DeleteBandingRequest)
 
   field(

@@ -42,6 +42,7 @@ defmodule GoogleApi.Sheets.V4.Model.Sheet do
   *   `protectedRanges` (*type:* `list(GoogleApi.Sheets.V4.Model.ProtectedRange.t)`, *default:* `nil`) - The protected ranges in this sheet.
   *   `rowGroups` (*type:* `list(GoogleApi.Sheets.V4.Model.DimensionGroup.t)`, *default:* `nil`) - All row groups on this sheet, ordered by increasing range start index, then
       by group depth.
+  *   `slicers` (*type:* `list(GoogleApi.Sheets.V4.Model.Slicer.t)`, *default:* `nil`) - The slicers on this sheet.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -58,7 +59,8 @@ defmodule GoogleApi.Sheets.V4.Model.Sheet do
           :merges => list(GoogleApi.Sheets.V4.Model.GridRange.t()),
           :properties => GoogleApi.Sheets.V4.Model.SheetProperties.t(),
           :protectedRanges => list(GoogleApi.Sheets.V4.Model.ProtectedRange.t()),
-          :rowGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t())
+          :rowGroups => list(GoogleApi.Sheets.V4.Model.DimensionGroup.t()),
+          :slicers => list(GoogleApi.Sheets.V4.Model.Slicer.t())
         }
 
   field(:bandedRanges, as: GoogleApi.Sheets.V4.Model.BandedRange, type: :list)
@@ -73,6 +75,7 @@ defmodule GoogleApi.Sheets.V4.Model.Sheet do
   field(:properties, as: GoogleApi.Sheets.V4.Model.SheetProperties)
   field(:protectedRanges, as: GoogleApi.Sheets.V4.Model.ProtectedRange, type: :list)
   field(:rowGroups, as: GoogleApi.Sheets.V4.Model.DimensionGroup, type: :list)
+  field(:slicers, as: GoogleApi.Sheets.V4.Model.Slicer, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.Sheet do
