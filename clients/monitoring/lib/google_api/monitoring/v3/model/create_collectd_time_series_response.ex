@@ -21,16 +21,19 @@ defmodule GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesResponse do
 
   ## Attributes
 
-  *   `payloadErrors` (*type:* `list(GoogleApi.Monitoring.V3.Model.CollectdPayloadError.t)`, *default:* `nil`) - Records the error status for points that were not written due to an error.Failed requests for which nothing is written will return an error response instead.
+  *   `payloadErrors` (*type:* `list(GoogleApi.Monitoring.V3.Model.CollectdPayloadError.t)`, *default:* `nil`) - Records the error status for points that were not written due to an error in the request.Failed requests for which nothing is written will return an error response instead. Requests where data points were rejected by the backend will set summary instead.
+  *   `summary` (*type:* `GoogleApi.Monitoring.V3.Model.CreateTimeSeriesSummary.t`, *default:* `nil`) - Aggregate statistics from writing the payloads. This field is omitted if all points were successfully written, so that the response is empty. This is for backwards compatibility with clients that log errors on any non-empty response.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :payloadErrors => list(GoogleApi.Monitoring.V3.Model.CollectdPayloadError.t())
+          :payloadErrors => list(GoogleApi.Monitoring.V3.Model.CollectdPayloadError.t()),
+          :summary => GoogleApi.Monitoring.V3.Model.CreateTimeSeriesSummary.t()
         }
 
   field(:payloadErrors, as: GoogleApi.Monitoring.V3.Model.CollectdPayloadError, type: :list)
+  field(:summary, as: GoogleApi.Monitoring.V3.Model.CreateTimeSeriesSummary)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesResponse do
