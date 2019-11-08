@@ -22,9 +22,12 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeries do
   ## Attributes
 
   *   `bannerImageUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `eligibleForSubscription` (*type:* `boolean()`, *default:* `nil`) - 
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `isComplete` (*type:* `boolean()`, *default:* `nil`) - 
   *   `seriesId` (*type:* `String.t`, *default:* `nil`) - 
   *   `seriesType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subscriptionId` (*type:* `String.t`, *default:* `nil`) - 
   *   `title` (*type:* `String.t`, *default:* `nil`) - 
   """
 
@@ -32,16 +35,22 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeries do
 
   @type t :: %__MODULE__{
           :bannerImageUrl => String.t(),
+          :eligibleForSubscription => boolean(),
           :imageUrl => String.t(),
+          :isComplete => boolean(),
           :seriesId => String.t(),
           :seriesType => String.t(),
+          :subscriptionId => String.t(),
           :title => String.t()
         }
 
   field(:bannerImageUrl)
+  field(:eligibleForSubscription)
   field(:imageUrl)
+  field(:isComplete)
   field(:seriesId)
   field(:seriesType)
+  field(:subscriptionId)
   field(:title)
 end
 
