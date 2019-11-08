@@ -27,6 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
   *   `pubSub` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub.t`, *default:* `nil`) - Publish a notification to a pubsub topic.
   *   `publishFindingsToCloudDataCatalog` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog.t`, *default:* `nil`) - Publish findings to Cloud Datahub.
   *   `publishSummaryToCscc` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc.t`, *default:* `nil`) - Publish summary to Cloud Security Command Center (Alpha).
+  *   `publishToStackdriver` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToStackdriver.t`, *default:* `nil`) - Enable Stackdriver metric dlp.googleapis.com/finding_count
   *   `saveFindings` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings.t`, *default:* `nil`) - Save resulting findings in a provided location.
   """
 
@@ -40,6 +41,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog.t(),
           :publishSummaryToCscc =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc.t(),
+          :publishToStackdriver =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToStackdriver.t(),
           :saveFindings => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings.t()
         }
 
@@ -56,6 +59,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
   )
 
   field(:publishSummaryToCscc, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishSummaryToCscc)
+  field(:publishToStackdriver, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToStackdriver)
   field(:saveFindings, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings)
 end
 

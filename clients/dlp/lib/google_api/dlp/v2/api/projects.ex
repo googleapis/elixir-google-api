@@ -173,7 +173,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -238,7 +238,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -313,7 +313,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the organization and deidentify template to be deleted,
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be deleted,
       for example `organizations/433245324/deidentifyTemplates/432452342` or
       projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -383,7 +383,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the organization and deidentify template to be read, for
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and deidentify template to be read, for
       example `organizations/433245324/deidentifyTemplates/432452342` or
       projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -452,7 +452,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -546,7 +546,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of organization and deidentify template to be updated, for
+  *   `name` (*type:* `String.t`) - Required. Resource name of organization and deidentify template to be updated, for
       example `organizations/433245324/deidentifyTemplates/432452342` or
       projects/project-id/deidentifyTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -619,7 +619,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the DlpJob resource to be cancelled.
+  *   `name` (*type:* `String.t`) - Required. The name of the DlpJob resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -684,7 +684,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -747,7 +747,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the DlpJob resource to be deleted.
+  *   `name` (*type:* `String.t`) - Required. The name of the DlpJob resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -806,7 +806,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the DlpJob resource.
+  *   `name` (*type:* `String.t`) - Required. The name of the DlpJob resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -865,7 +865,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1045,7 +1045,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1114,7 +1114,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the organization and inspectTemplate to be deleted, for
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be deleted, for
       example `organizations/433245324/inspectTemplates/432452342` or
       projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1178,7 +1178,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the organization and inspectTemplate to be read, for
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and inspectTemplate to be read, for
       example `organizations/433245324/inspectTemplates/432452342` or
       projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1241,7 +1241,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1323,7 +1323,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of organization and inspectTemplate to be updated, for
+  *   `name` (*type:* `String.t`) - Required. Resource name of organization and inspectTemplate to be updated, for
       example `organizations/433245324/inspectTemplates/432452342` or
       projects/project-id/inspectTemplates/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1388,7 +1388,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the trigger to activate, for example
+  *   `name` (*type:* `String.t`) - Required. Resource name of the trigger to activate, for example
       `projects/dlp-test-project/jobTriggers/53234423`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1450,7 +1450,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1510,7 +1510,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the project and the triggeredJob, for example
+  *   `name` (*type:* `String.t`) - Required. Resource name of the project and the triggeredJob, for example
       `projects/dlp-test-project/jobTriggers/53234423`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1569,7 +1569,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the project and the triggeredJob, for example
+  *   `name` (*type:* `String.t`) - Required. Resource name of the project and the triggeredJob, for example
       `projects/dlp-test-project/jobTriggers/53234423`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1628,7 +1628,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example `projects/my-project-id`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example `projects/my-project-id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1736,7 +1736,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the project and the triggeredJob, for example
+  *   `name` (*type:* `String.t`) - Required. Resource name of the project and the triggeredJob, for example
       `projects/dlp-test-project/jobTriggers/53234423`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1968,7 +1968,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name.
   *   `location` (*type:* `String.t`) - The geographic location to process content reidentification.  Reserved for
       future extensions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2131,7 +2131,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2201,7 +2201,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the organization and storedInfoType to be deleted, for
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be deleted, for
       example `organizations/433245324/storedInfoTypes/432452342` or
       projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2266,7 +2266,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the organization and storedInfoType to be read, for
+  *   `name` (*type:* `String.t`) - Required. Resource name of the organization and storedInfoType to be read, for
       example `organizations/433245324/storedInfoTypes/432452342` or
       projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2330,7 +2330,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id or
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2415,7 +2415,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of organization and storedInfoType to be updated, for
+  *   `name` (*type:* `String.t`) - Required. Resource name of organization and storedInfoType to be updated, for
       example `organizations/433245324/storedInfoTypes/432452342` or
       projects/project-id/storedInfoTypes/432452342.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
