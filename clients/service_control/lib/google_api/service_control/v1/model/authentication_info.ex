@@ -27,6 +27,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
       of third party principal) making the request. For privacy reasons, the
       principal email address is redacted for all read-only operations that fail
       with a "permission denied" error.
+  *   `principalSubject` (*type:* `String.t`, *default:* `nil`) - String representation of identity of requesting party.
+      Populated for both first and third party identities.
   *   `serviceAccountDelegationInfo` (*type:* `list(GoogleApi.ServiceControl.V1.Model.ServiceAccountDelegationInfo.t)`, *default:* `nil`) - Identity delegation history of an authenticated service account that makes
       the request. It contains information on the real authorities that try to
       access GCP resources by delegating on a service account. When multiple
@@ -48,6 +50,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
   @type t :: %__MODULE__{
           :authoritySelector => String.t(),
           :principalEmail => String.t(),
+          :principalSubject => String.t(),
           :serviceAccountDelegationInfo =>
             list(GoogleApi.ServiceControl.V1.Model.ServiceAccountDelegationInfo.t()),
           :serviceAccountKeyName => String.t(),
@@ -56,6 +59,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
 
   field(:authoritySelector)
   field(:principalEmail)
+  field(:principalSubject)
 
   field(
     :serviceAccountDelegationInfo,
