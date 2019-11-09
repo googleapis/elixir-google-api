@@ -44,6 +44,10 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotation do
   *   `panAngle` (*type:* `number()`, *default:* `nil`) - Yaw angle, which indicates the leftward/rightward angle that the face is
       pointing relative to the vertical plane perpendicular to the image. Range
       [-180,180].
+  *   `recognitionResult` (*type:* `list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceRecognitionResult.t)`, *default:* `nil`) - Additional recognition information. Only computed if
+      image_context.face_recognition_params is provided, **and** a match is found
+      to a Celebrity in the input CelebritySet. This field is
+      sorted in order of decreasing confidence values.
   *   `rollAngle` (*type:* `number()`, *default:* `nil`) - Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
       of the face relative to the image vertical about the axis perpendicular to
       the face. Range [-180,180].
@@ -68,6 +72,8 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotation do
           :landmarks =>
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotationLandmark.t()),
           :panAngle => number(),
+          :recognitionResult =>
+            list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceRecognitionResult.t()),
           :rollAngle => number(),
           :sorrowLikelihood => String.t(),
           :surpriseLikelihood => String.t(),
@@ -91,6 +97,13 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotation do
   )
 
   field(:panAngle)
+
+  field(
+    :recognitionResult,
+    as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceRecognitionResult,
+    type: :list
+  )
+
   field(:rollAngle)
   field(:sorrowLikelihood)
   field(:surpriseLikelihood)
