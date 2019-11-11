@@ -21,6 +21,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   ## Attributes
 
+  *   `celebrityRecognitionAnnotations` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_CelebrityRecognitionAnnotation.t`, *default:* `nil`) - Celebrity recognition annotations.
   *   `error` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t`, *default:* `nil`) - If set, indicates an error. Note that for a single `AnnotateVideoRequest`
       some videos may succeed and some may fail.
   *   `explicitAnnotation` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation.t`, *default:* `nil`) - Explicit content annotation.
@@ -56,6 +57,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :celebrityRecognitionAnnotations =>
+            GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_CelebrityRecognitionAnnotation.t(),
           :error => GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t(),
           :explicitAnnotation =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation.t(),
@@ -103,6 +106,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_TextAnnotation.t()
             )
         }
+
+  field(
+    :celebrityRecognitionAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_CelebrityRecognitionAnnotation
+  )
 
   field(:error, as: GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status)
 
