@@ -31,8 +31,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project.
-  *   `id` (*type:* `String.t`) - ID of the build.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project.
+  *   `id` (*type:* `String.t`) - Required. ID of the build.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -107,7 +107,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -169,8 +169,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project.
-  *   `id` (*type:* `String.t`) - ID of the build.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project.
+  *   `id` (*type:* `String.t`) - Required. ID of the build.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -242,7 +242,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -331,8 +331,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project.
-  *   `id` (*type:* `String.t`) - Build ID of the original build.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project.
+  *   `id` (*type:* `String.t`) - Required. Build ID of the original build.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -405,7 +405,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project for which to configure automatic builds.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project for which to configure automatic builds.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -471,8 +471,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project that owns the trigger.
-  *   `trigger_id` (*type:* `String.t`) - ID of the `BuildTrigger` to delete.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project that owns the trigger.
+  *   `trigger_id` (*type:* `String.t`) - Required. ID of the `BuildTrigger` to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -543,8 +543,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project that owns the trigger.
-  *   `trigger_id` (*type:* `String.t`) - ID of the `BuildTrigger` to get.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project that owns the trigger.
+  *   `trigger_id` (*type:* `String.t`) - Required. Identifier (`id` or `name`) of the `BuildTrigger` to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -615,7 +615,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project for which to list BuildTriggers.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project for which to list BuildTriggers.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -681,8 +681,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project that owns the trigger.
-  *   `trigger_id` (*type:* `String.t`) - ID of the `BuildTrigger` to update.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project that owns the trigger.
+  *   `trigger_id` (*type:* `String.t`) - Required. ID of the `BuildTrigger` to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -753,8 +753,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - ID of the project.
-  *   `trigger_id` (*type:* `String.t`) - ID of the trigger.
+  *   `project_id` (*type:* `String.t`) - Required. ID of the project.
+  *   `trigger_id` (*type:* `String.t`) - Required. ID of the trigger.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

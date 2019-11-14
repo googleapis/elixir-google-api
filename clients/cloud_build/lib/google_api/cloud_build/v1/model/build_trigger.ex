@@ -30,6 +30,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
       template.
   *   `github` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig.t`, *default:* `nil`) - GitHubEventsConfig describes the configuration of a trigger that creates
       a build whenever a GitHub event is received.
+
+      Mutually exclusive with `trigger_template`.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the trigger.
   *   `ignoredFiles` (*type:* `list(String.t)`, *default:* `nil`) - ignored_files and included_files are file glob matches using
       http://godoc/pkg/path/filepath#Match extended with support for "**".
@@ -56,6 +58,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
       Branch and tag names in trigger templates are interpreted as regular
       expressions. Any branch or tag change that matches that regular expression
       will trigger a build.
+
+      Mutually exclusive with `github`.
   """
 
   use GoogleApi.Gax.ModelBase
