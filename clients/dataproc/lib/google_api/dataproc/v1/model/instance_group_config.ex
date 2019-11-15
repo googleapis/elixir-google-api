@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
 
   ## Attributes
 
-  *   `accelerators` (*type:* `list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Optional. The Compute Engine accelerator configuration for these instances.
+  *   `accelerators` (*type:* `list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Optional. The Compute Engine accelerator configuration for these instances.Beta Feature: This feature is still under development. It may be changed before final release.
   *   `diskConfig` (*type:* `GoogleApi.Dataproc.V1.Model.DiskConfig.t`, *default:* `nil`) - Optional. Disk option config settings.
   *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine image resource used for cluster instances. It can be specified or may be inferred from SoftwareConfig.image_version.
   *   `instanceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of instance names. Cloud Dataproc derives the names from cluster_name, num_instances, and the instance group.
@@ -31,7 +31,6 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
       projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
       n1-standard-2Auto Zone Exception: If you are using the Cloud Dataproc Auto Zone Placement feature, you must use the short name of the machine type resource, for example, n1-standard-2.
   *   `managedGroupConfig` (*type:* `GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t`, *default:* `nil`) - Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
-  *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the minimum cpu platform for the Instance Group. See Cloud Dataproc&rarr;Minimum CPU Platform.
   *   `numInstances` (*type:* `integer()`, *default:* `nil`) - Optional. The number of VM instances in the instance group. For master instance groups, must be set to 1.
   """
 
@@ -45,7 +44,6 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
           :isPreemptible => boolean(),
           :machineTypeUri => String.t(),
           :managedGroupConfig => GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t(),
-          :minCpuPlatform => String.t(),
           :numInstances => integer()
         }
 
@@ -56,7 +54,6 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   field(:isPreemptible)
   field(:machineTypeUri)
   field(:managedGroupConfig, as: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig)
-  field(:minCpuPlatform)
   field(:numInstances)
 end
 
