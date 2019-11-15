@@ -71,8 +71,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Service do
           - name: google.someapi.v1.SomeEnum
   *   `http` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Http.t`, *default:* `nil`) - HTTP configuration.
   *   `id` (*type:* `String.t`, *default:* `nil`) - A unique ID for a specific instance of this message, typically assigned
-      by the client for tracking purpose. If empty, the server may choose to
-      generate one instead. Must be no longer than 60 characters.
+      by the client for tracking purpose. Must be no longer than 63 characters
+      and only lower case letters, digits, '.', '_' and '-' are allowed. If
+      empty, the server may choose to generate one instead.
   *   `logging` (*type:* `GoogleApi.ServiceConsumerManagement.V1.Model.Logging.t`, *default:* `nil`) - Logging configuration.
   *   `logs` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.LogDescriptor.t)`, *default:* `nil`) - Defines the logs used by this service.
   *   `metrics` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.MetricDescriptor.t)`, *default:* `nil`) - Defines the metrics used by this service.
