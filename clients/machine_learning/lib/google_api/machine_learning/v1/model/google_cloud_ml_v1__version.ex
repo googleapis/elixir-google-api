@@ -60,6 +60,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
       conditions: An `etag` is returned in the response to `GetVersion`, and
       systems are expected to put that etag in the request to `UpdateVersion` to
       ensure that their change will be applied to the model as intended.
+  *   `explanationConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ExplanationConfig.t`, *default:* `nil`) - Optional. Configures explainability features on the model's version.
+      Some explanation features require additional metadata to be loaded
+      as part of the model payload.
   *   `framework` (*type:* `String.t`, *default:* `nil`) - Optional. The machine learning framework AI Platform uses to train
       this version of the model. Valid values are `TENSORFLOW`, `SCIKIT_LEARN`,
       `XGBOOST`. If you do not specify a framework, AI Platform
@@ -215,6 +218,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
           :description => String.t(),
           :errorMessage => String.t(),
           :etag => String.t(),
+          :explanationConfig =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ExplanationConfig.t(),
           :framework => String.t(),
           :isDefault => boolean(),
           :labels => map(),
@@ -243,6 +248,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   field(:description)
   field(:errorMessage)
   field(:etag)
+
+  field(
+    :explanationConfig,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ExplanationConfig
+  )
+
   field(:framework)
   field(:isDefault)
   field(:labels, type: :map)
