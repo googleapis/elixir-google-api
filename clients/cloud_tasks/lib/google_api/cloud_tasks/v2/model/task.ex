@@ -43,6 +43,8 @@ defmodule GoogleApi.CloudTasks.V2.Model.Task do
 
       The default and maximum values depend on the type of request:
 
+      * For HTTP tasks, the default is 10 minutes. The deadline
+        must be in the interval [15 seconds, 30 minutes].
 
       * For App Engine tasks, 0 indicates that the
         request has the default deadline. The default deadline depends on the
@@ -64,6 +66,9 @@ defmodule GoogleApi.CloudTasks.V2.Model.Task do
 
       Only dispatch_time will be set.
       The other Attempt information is not retained by Cloud Tasks.
+  *   `httpRequest` (*type:* `GoogleApi.CloudTasks.V2.Model.HttpRequest.t`, *default:* `nil`) - HTTP request that is sent to the worker.
+
+      An HTTP task is a task that has HttpRequest set.
   *   `lastAttempt` (*type:* `GoogleApi.CloudTasks.V2.Model.Attempt.t`, *default:* `nil`) - Output only. The status of the task's last attempt.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optionally caller-specified in CreateTask.
 
@@ -101,6 +106,7 @@ defmodule GoogleApi.CloudTasks.V2.Model.Task do
           :dispatchCount => integer(),
           :dispatchDeadline => String.t(),
           :firstAttempt => GoogleApi.CloudTasks.V2.Model.Attempt.t(),
+          :httpRequest => GoogleApi.CloudTasks.V2.Model.HttpRequest.t(),
           :lastAttempt => GoogleApi.CloudTasks.V2.Model.Attempt.t(),
           :name => String.t(),
           :responseCount => integer(),
@@ -113,6 +119,7 @@ defmodule GoogleApi.CloudTasks.V2.Model.Task do
   field(:dispatchCount)
   field(:dispatchDeadline)
   field(:firstAttempt, as: GoogleApi.CloudTasks.V2.Model.Attempt)
+  field(:httpRequest, as: GoogleApi.CloudTasks.V2.Model.HttpRequest)
   field(:lastAttempt, as: GoogleApi.CloudTasks.V2.Model.Attempt)
   field(:name)
   field(:responseCount)
