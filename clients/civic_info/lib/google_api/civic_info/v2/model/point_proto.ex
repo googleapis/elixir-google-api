@@ -24,7 +24,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.PointProto do
   *   `latE7` (*type:* `integer()`, *default:* `nil`) - 
   *   `lngE7` (*type:* `integer()`, *default:* `nil`) - 
   *   `metadata` (*type:* `GoogleApi.CivicInfo.V2.Model.FieldMetadataProto.t`, *default:* `nil`) - 
-  *   `temporaryData` (*type:* `GoogleApi.CivicInfo.V2.Model.MessageSet.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,14 +31,12 @@ defmodule GoogleApi.CivicInfo.V2.Model.PointProto do
   @type t :: %__MODULE__{
           :latE7 => integer(),
           :lngE7 => integer(),
-          :metadata => GoogleApi.CivicInfo.V2.Model.FieldMetadataProto.t(),
-          :temporaryData => GoogleApi.CivicInfo.V2.Model.MessageSet.t()
+          :metadata => GoogleApi.CivicInfo.V2.Model.FieldMetadataProto.t()
         }
 
   field(:latE7)
   field(:lngE7)
   field(:metadata, as: GoogleApi.CivicInfo.V2.Model.FieldMetadataProto)
-  field(:temporaryData, as: GoogleApi.CivicInfo.V2.Model.MessageSet)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.PointProto do
