@@ -111,8 +111,6 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:fieldMask` (*type:* `String.t`) - If set, only the Routine fields in the field mask are returned in the
-          response. If unset, all Routine fields are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -143,8 +141,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
-      :fieldMask => :query
+      :userIp => :query
     }
 
     request =

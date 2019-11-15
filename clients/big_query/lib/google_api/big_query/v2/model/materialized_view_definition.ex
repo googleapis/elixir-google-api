@@ -21,19 +21,25 @@ defmodule GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
 
   ## Attributes
 
+  *   `enableRefresh` (*type:* `boolean()`, *default:* `nil`) - [Optional] [TrustedTester] Enable automatic refresh of the materialized view when the base table is updated. The default value is "true".
   *   `lastRefreshTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] [TrustedTester] The time when this materialized view was last modified, in milliseconds since the epoch.
   *   `query` (*type:* `String.t`, *default:* `nil`) - [Required] A query whose result is persisted.
+  *   `refreshIntervalMs` (*type:* `String.t`, *default:* `nil`) - [Optional] [TrustedTester] The maximum frequency at which this materialized view will be refreshed. The default value is "1800000" (30 minutes).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :enableRefresh => boolean(),
           :lastRefreshTime => String.t(),
-          :query => String.t()
+          :query => String.t(),
+          :refreshIntervalMs => String.t()
         }
 
+  field(:enableRefresh)
   field(:lastRefreshTime)
   field(:query)
+  field(:refreshIntervalMs)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do

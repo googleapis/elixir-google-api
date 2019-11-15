@@ -41,7 +41,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   *   `numPhysicalBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] [TrustedTester] The physical size of this table in bytes, excluding any data in the streaming buffer. This includes compression and storage used for time travel.
   *   `numRows` (*type:* `String.t`, *default:* `nil`) - [Output-only] The number of rows of data in this table, excluding any data in the streaming buffer.
   *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - [TrustedTester] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified.
-  *   `requirePartitionFilter` (*type:* `boolean()`, *default:* `false`) - [Beta] [Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified.
+  *   `requirePartitionFilter` (*type:* `boolean()`, *default:* `false`) - [Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Optional] Describes the schema of this table.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output-only] A URL that can be used to access this resource again.
   *   `streamingBuffer` (*type:* `GoogleApi.BigQuery.V2.Model.Streamingbuffer.t`, *default:* `nil`) - [Output-only] Contains information regarding this table's streaming buffer, if one is present. This field will be absent if the table is not being streamed to or if there is no data in the streaming buffer.
