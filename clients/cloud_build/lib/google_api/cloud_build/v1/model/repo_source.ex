@@ -32,8 +32,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
       absolute path, this value is ignored for that step's execution.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - ID of the project that owns the Cloud Source Repository. If omitted, the
       project ID requesting the build is assumed.
-  *   `repoName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Source Repository. If omitted, the name "default" is
-      assumed.
+  *   `repoName` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Cloud Source Repository.
+  *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions to use in a triggered build.
+      Should only be used with RunBuildTrigger
   *   `tagName` (*type:* `String.t`, *default:* `nil`) - Regex matching tags to build.
 
       The syntax of the regular expressions accepted is the syntax accepted by
@@ -48,6 +49,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
           :dir => String.t(),
           :projectId => String.t(),
           :repoName => String.t(),
+          :substitutions => map(),
           :tagName => String.t()
         }
 
@@ -56,6 +58,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
   field(:dir)
   field(:projectId)
   field(:repoName)
+  field(:substitutions, type: :map)
   field(:tagName)
 end
 
