@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Policy do
   {
     "bindings": [
       {
-        "role": "roles/resourcemanager.organizationAdmin",
+        "role": "role/resourcemanager.organizationAdmin",
         "members": [
           "user:mike@example.com",
           "group:admins@example.com",
