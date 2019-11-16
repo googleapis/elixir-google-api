@@ -33,6 +33,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   *   `reference` (*type:* `GoogleApi.Dataproc.V1.Model.JobReference.t`, *default:* `nil`) - Optional. The fully qualified reference to the job, which can be used to obtain the equivalent REST path of the job resource. If this property is not specified when a job is created, the server generates a <code>job_id</code>.
   *   `scheduling` (*type:* `GoogleApi.Dataproc.V1.Model.JobScheduling.t`, *default:* `nil`) - Optional. Job scheduling configuration.
   *   `sparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkJob.t`, *default:* `nil`) - Job is a Spark job.
+  *   `sparkRJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkRJob.t`, *default:* `nil`) - Job is a SparkR job.
   *   `sparkSqlJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkSqlJob.t`, *default:* `nil`) - Job is a SparkSql job.
   *   `status` (*type:* `GoogleApi.Dataproc.V1.Model.JobStatus.t`, *default:* `nil`) - Output only. The job status. Additional application-specific status information may be contained in the <code>type_job</code> and <code>yarn_applications</code> fields.
   *   `statusHistory` (*type:* `list(GoogleApi.Dataproc.V1.Model.JobStatus.t)`, *default:* `nil`) - Output only. The previous job status.
@@ -54,6 +55,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
           :reference => GoogleApi.Dataproc.V1.Model.JobReference.t(),
           :scheduling => GoogleApi.Dataproc.V1.Model.JobScheduling.t(),
           :sparkJob => GoogleApi.Dataproc.V1.Model.SparkJob.t(),
+          :sparkRJob => GoogleApi.Dataproc.V1.Model.SparkRJob.t(),
           :sparkSqlJob => GoogleApi.Dataproc.V1.Model.SparkSqlJob.t(),
           :status => GoogleApi.Dataproc.V1.Model.JobStatus.t(),
           :statusHistory => list(GoogleApi.Dataproc.V1.Model.JobStatus.t()),
@@ -72,6 +74,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   field(:reference, as: GoogleApi.Dataproc.V1.Model.JobReference)
   field(:scheduling, as: GoogleApi.Dataproc.V1.Model.JobScheduling)
   field(:sparkJob, as: GoogleApi.Dataproc.V1.Model.SparkJob)
+  field(:sparkRJob, as: GoogleApi.Dataproc.V1.Model.SparkRJob)
   field(:sparkSqlJob, as: GoogleApi.Dataproc.V1.Model.SparkSqlJob)
   field(:status, as: GoogleApi.Dataproc.V1.Model.JobStatus)
   field(:statusHistory, as: GoogleApi.Dataproc.V1.Model.JobStatus, type: :list)

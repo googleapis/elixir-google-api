@@ -417,7 +417,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
 
   ## Parameters
 
@@ -1215,7 +1215,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
 
   ## Parameters
 
@@ -1849,7 +1849,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
 
   ## Parameters
 
@@ -2650,7 +2650,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
 
   ## Parameters
 
@@ -3273,7 +3273,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
 
   ## Parameters
 
@@ -3888,7 +3888,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
 
   ## Parameters
 
@@ -4605,7 +4605,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
 
   ## Parameters
 
