@@ -33,7 +33,7 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `location` (*type:* `String.t`) - The geographic location to list info types. Reserved for future
+  *   `location_id` (*type:* `String.t`) - The geographic location to list info types. Reserved for future
       extensions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -62,7 +62,7 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
   @spec dlp_locations_info_types_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesResponse.t()}
           | {:error, Tesla.Env.t()}
-  def dlp_locations_info_types_list(connection, location, optional_params \\ [], opts \\ []) do
+  def dlp_locations_info_types_list(connection, location_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -82,8 +82,8 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/locations/{location}/infoTypes", %{
-        "location" => URI.encode(location, &URI.char_unreserved?/1)
+      |> Request.url("/v2/locations/{locationId}/infoTypes", %{
+        "locationId" => URI.encode(location_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
