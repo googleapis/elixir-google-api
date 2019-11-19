@@ -28,7 +28,8 @@ defmodule GoogleApi.PubSub.V1.Model.PubsubMessage do
 
   ## Attributes
 
-  *   `attributes` (*type:* `map()`, *default:* `nil`) - Optional attributes for this message.
+  *   `attributes` (*type:* `map()`, *default:* `nil`) - Attributes for this message. If this field is empty, the message must
+      contain non-empty data.
   *   `data` (*type:* `String.t`, *default:* `nil`) - The message data field. If this field is empty, the message must contain
       at least one attribute.
   *   `messageId` (*type:* `String.t`, *default:* `nil`) - ID of this message, assigned by the server when the message is published.
