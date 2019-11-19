@@ -22,6 +22,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateStoredInfoTypeRequest d
   ## Attributes
 
   *   `config` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t`, *default:* `nil`) - Configuration of the storedInfoType to create.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to store the stored infoType. Reserved for
+      future extensions.
   *   `storedInfoTypeId` (*type:* `String.t`, *default:* `nil`) - The storedInfoType ID can contain uppercase and lowercase letters,
       numbers, and hyphens; that is, it must match the regular
       expression: `[a-zA-Z\\\\d-_]+`. The maximum length is 100
@@ -32,10 +34,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateStoredInfoTypeRequest d
 
   @type t :: %__MODULE__{
           :config => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig.t(),
+          :locationId => String.t(),
           :storedInfoTypeId => String.t()
         }
 
   field(:config, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig)
+  field(:locationId)
   field(:storedInfoTypeId)
 end
 

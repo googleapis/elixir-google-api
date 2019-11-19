@@ -24,10 +24,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig do
   ## Attributes
 
   *   `context` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Points to the field that contains the context, for example, an entity id.
-      If set, must also set method. If set, shift will be consistent for the
+      If set, must also set cryptoKey. If set, shift will be consistent for the
       given context.
   *   `cryptoKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t`, *default:* `nil`) - Causes the shift to be computed based on this key and the context. This
-      results in the same shift for the same context and crypto_key.
+      results in the same shift for the same context and crypto_key. If
+      set, must also set context. Can only be applied to table items.
   *   `lowerBoundDays` (*type:* `integer()`, *default:* `nil`) - For example, -5 means shift date to at most 5 days back in the past.
       [Required]
   *   `upperBoundDays` (*type:* `integer()`, *default:* `nil`) - Range of shift in days. Actual shift will be selected at random within this

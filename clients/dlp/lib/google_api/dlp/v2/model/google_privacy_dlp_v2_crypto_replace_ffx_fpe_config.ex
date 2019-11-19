@@ -59,10 +59,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig do
       that the FFX mode natively supports. This happens before/after
       encryption/decryption.
       Each character listed must appear only once.
-      Number of characters must be in the range [2, 62].
+      Number of characters must be in the range [2, 95].
       This must be encoded as ASCII.
       The order of characters does not matter.
-  *   `radix` (*type:* `integer()`, *default:* `nil`) - The native way to select the alphabet. Must be in the range [2, 62].
+  *   `radix` (*type:* `integer()`, *default:* `nil`) - The native way to select the alphabet. Must be in the range [2, 95].
   *   `surrogateInfoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - The custom infoType to annotate the surrogate with.
       This annotation will be applied to the surrogate by prefixing it with
       the name of the custom infoType followed by the number of

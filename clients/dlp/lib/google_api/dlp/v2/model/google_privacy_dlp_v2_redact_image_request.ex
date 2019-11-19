@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageRequest do
   *   `includeFindings` (*type:* `boolean()`, *default:* `nil`) - Whether the response should include findings along with the redacted
       image.
   *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - Configuration for the inspector.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location to process the request. Reserved for future
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to process the request. Reserved for future
       extensions.
   """
 
@@ -39,7 +39,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageRequest do
             list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageRedactionConfig.t()),
           :includeFindings => boolean(),
           :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t(),
-          :location => String.t()
+          :locationId => String.t()
         }
 
   field(:byteItem, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem)
@@ -52,7 +52,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageRequest do
 
   field(:includeFindings)
   field(:inspectConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig)
-  field(:location)
+  field(:locationId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageRequest do
