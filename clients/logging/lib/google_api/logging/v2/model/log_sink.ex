@@ -36,7 +36,7 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
       logName:("projects/test-project1/" OR "projects/test-project2/") AND
       resource.type=gce_instance
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The client-assigned sink identifier, unique within the project. Example: "my-syslog-errors-to-pubsub". Sink identifiers are limited to 100 characters and can include only the following characters: upper and lower-case alphanumeric characters, underscores, hyphens, and periods.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The client-assigned sink identifier, unique within the project. Example: "my-syslog-errors-to-pubsub". Sink identifiers are limited to 100 characters and can include only the following characters: upper and lower-case alphanumeric characters, underscores, hyphens, and periods. First character has to be alphanumeric.
   *   `outputVersionFormat` (*type:* `String.t`, *default:* `nil`) - Deprecated. The log entry format to use for this sink's exported log entries. The v2 format is used by default and cannot be changed.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Do not use. This field is ignored.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the sink.This field may not be present for older sinks.
