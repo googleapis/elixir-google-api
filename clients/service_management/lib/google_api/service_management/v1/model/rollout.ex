@@ -27,8 +27,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Rollout do
   *   `createdBy` (*type:* `String.t`, *default:* `nil`) - The user who created the Rollout. Readonly.
   *   `deleteServiceStrategy` (*type:* `GoogleApi.ServiceManagement.V1.Model.DeleteServiceStrategy.t`, *default:* `nil`) - The strategy associated with a rollout to delete a `ManagedService`.
       Readonly.
-  *   `rolloutId` (*type:* `String.t`, *default:* `nil`) - Optional. Unique identifier of this Rollout. Only lower case letters, digits
-       and '-' are allowed.
+  *   `rolloutId` (*type:* `String.t`, *default:* `nil`) - Optional. Unique identifier of this Rollout. Must be no longer than 63 characters
+      and only lower case letters, digits, '.', '_' and '-' are allowed.
 
       If not specified by client, the server will generate one. The generated id
       will have the form of <date><revision number>, where "date" is the create
