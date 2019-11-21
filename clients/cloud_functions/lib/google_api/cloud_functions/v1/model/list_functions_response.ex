@@ -26,17 +26,21 @@ defmodule GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse do
       the request; this value should be passed in a new
       google.cloud.functions.v1.ListFunctionsRequest
       to get more functions.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached. The response does not include any
+      functions from these locations.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :functions => list(GoogleApi.CloudFunctions.V1.Model.CloudFunction.t()),
-          :nextPageToken => String.t()
+          :nextPageToken => String.t(),
+          :unreachable => list(String.t())
         }
 
   field(:functions, as: GoogleApi.CloudFunctions.V1.Model.CloudFunction, type: :list)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse do
