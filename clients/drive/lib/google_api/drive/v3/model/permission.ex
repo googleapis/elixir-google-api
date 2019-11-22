@@ -23,14 +23,18 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
 
   *   `allowFileDiscovery` (*type:* `boolean()`, *default:* `nil`) - Whether the permission allows the file to be discovered through search. This is only applicable for permissions of type domain or anyone.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Whether the account associated with this permission has been deleted. This field only pertains to user and group permissions.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A displayable name for users, groups or domains.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The "pretty" name of the value of the permission. The following is a list of examples for each type of permission:  
+      - user - User's full name, as defined for their Google account, such as "Joe Smith." 
+      - group - Name of the Google Group, such as "The Company Administrators." 
+      - domain - String domain name, such as "thecompany.com." 
+      - anyone - No displayName is present.
   *   `domain` (*type:* `String.t`, *default:* `nil`) - The domain to which this permission refers.
   *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - The email address of the user or group to which this permission refers.
   *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions:  
       - They can only be set on user and group permissions 
       - The time must be in the future 
       - The time cannot be more than a year in the future
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as permissionId.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as permissionId. IDs should be treated as opaque values.
   *   `kind` (*type:* `String.t`, *default:* `drive#permission`) - Identifies what kind of resource this is. Value: the fixed string "drive#permission".
   *   `permissionDetails` (*type:* `list(GoogleApi.Drive.V3.Model.PermissionPermissionDetails.t)`, *default:* `nil`) - Details of whether the permissions on this shared drive item are inherited or directly on this item. This is an output-only field which is present only for shared drive items.
   *   `photoLink` (*type:* `String.t`, *default:* `nil`) - A link to the user's profile photo, if available.
@@ -46,7 +50,7 @@ defmodule GoogleApi.Drive.V3.Model.Permission do
       - user 
       - group 
       - domain 
-      - anyone
+      - anyone  When creating a permission, if type is user or group, you must provide an emailAddress for the user or group. When type is domain, you must provide a domain. There isn't extra information required for a anyone type.
   """
 
   use GoogleApi.Gax.ModelBase
