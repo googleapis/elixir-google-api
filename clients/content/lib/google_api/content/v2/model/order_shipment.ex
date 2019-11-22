@@ -41,7 +41,15 @@ defmodule GoogleApi.Content.V2.Model.OrderShipment do
       - "mpx" 
       - "uds" 
       - "efw" 
-      - "jd logistics"  
+      - "yunexpress" 
+      - "china post" 
+      - "china ems" 
+      - "singapore post" 
+      - "pos malaysia" 
+      - "postnl" 
+      - "ptt" 
+      - "eub" 
+      - "chukou1"  
 
       Acceptable values for FR are:  
       - "colissimo" 
@@ -53,7 +61,8 @@ defmodule GoogleApi.Content.V2.Model.OrderShipment do
       - "boxtal" 
       - "geodis" 
       - "tnt" 
-      - "la poste"
+      - "la poste" 
+      - "ups"
   *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been created, in ISO 8601 format.
   *   `deliveryDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been delivered, in ISO 8601 format. Present only if status is delivered
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the shipment.
