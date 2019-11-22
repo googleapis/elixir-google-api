@@ -70,7 +70,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   *   `attendees` (*type:* `list(GoogleApi.Calendar.V3.Model.EventAttendee.t)`, *default:* `nil`) - The attendees of the event. See the Events with attendees guide for more information on scheduling events with other calendar users.
   *   `guestsCanModify` (*type:* `boolean()`, *default:* `false`) - Whether attendees other than the organizer can modify the event. Optional. The default is False.
   *   `kind` (*type:* `String.t`, *default:* `calendar#event`) - Type of the resource ("calendar#event").
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the event. Optional.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the event. Can contain HTML. Optional.
   *   `attachments` (*type:* `list(GoogleApi.Calendar.V3.Model.EventAttachment.t)`, *default:* `nil`) - File attachments for the event. Currently only Google Drive attachments are supported.
       In order to modify attachments the supportsAttachments request parameter should be set to true.
       There can be at most 25 attachments per event,
