@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate do
   @moduledoc """
-  The DeidentifyTemplates contains instructions on how to deidentify content.
+  DeidentifyTemplates contains instructions on how to de-identify content.
   See https://cloud.google.com/dlp/docs/concepts-templates to learn more.
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation timestamp of a inspectTemplate, output only field.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation timestamp of an inspectTemplate, output only field.
   *   `deidentifyConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig.t`, *default:* `nil`) - ///////////// // The core content of the template  // ///////////////
   *   `description` (*type:* `String.t`, *default:* `nil`) - Short description (max 256 chars).
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name (max 256 chars).
@@ -31,7 +31,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate do
       The template will have one of the following formats:
       `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
       `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of a inspectTemplate, output only field.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of an inspectTemplate, output only field.
   """
 
   use GoogleApi.Gax.ModelBase
