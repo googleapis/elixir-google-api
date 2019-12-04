@@ -32,7 +32,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.Photo do
       is set to
       PhotoView.INCLUDE_DOWNLOAD_URL.
   *   `mapsPublishStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Status in Google Maps, whether this photo was published or
-      rejected.
+      rejected. Not currently populated.
   *   `photoId` (*type:* `GoogleApi.StreetViewPublish.V1.Model.PhotoId.t`, *default:* `nil`) - Required when updating a photo. Output only when creating a photo.
       Identifier for the photo, which is unique among all photos in
       Google.
