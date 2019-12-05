@@ -98,7 +98,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:timeZone` (*type:* `String.t`) - Time zone used in the response. Optional. The default is the time zone of the calendar.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -273,7 +273,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
       *   `:originalStart` (*type:* `String.t`) - The original start time of the instance in the result. Optional.
@@ -352,7 +352,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
       *   `:iCalUID` (*type:* `String.t`) - Specifies event ID in the iCalendar format to be included in the response. Optional.
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
@@ -521,7 +521,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
       *   `:conferenceDataVersion` (*type:* `integer()`) - Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:sendNotifications` (*type:* `boolean()`) - Deprecated. Please use sendUpdates instead.
@@ -650,7 +650,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
       *   `:conferenceDataVersion` (*type:* `integer()`) - Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:sendNotifications` (*type:* `boolean()`) - Deprecated. Please use sendUpdates instead.
@@ -716,7 +716,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
+      *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
       *   `:iCalUID` (*type:* `String.t`) - Specifies event ID in the iCalendar format to be included in the response. Optional.
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
