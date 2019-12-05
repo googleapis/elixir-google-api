@@ -38,7 +38,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Request do
       "spdy/3", "h2", "h2c", "webrtc", "tcp", "udp", "quic". See
       https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
       for details.
-  *   `query` (*type:* `String.t`, *default:* `nil`) - The HTTP URL query in the format of `name1=value`&name2=value2`, as it
+  *   `query` (*type:* `String.t`, *default:* `nil`) - The HTTP URL query in the format of `name1=value1&name2=value2`, as it
       appears in the first line of the HTTP request. No decoding is performed.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - A special parameter for request reason. It is used by security systems
       to associate auditing information with a request.
