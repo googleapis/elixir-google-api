@@ -78,7 +78,8 @@ defmodule GoogleApi.DFAReporting.V33.Model.Account do
       - "47" for BGN 
       - "48" for HRK 
       - "49" for MXN 
-      - "50" for NGN
+      - "50" for NGN 
+      - "51" for EGP
   *   `defaultCreativeSizeId` (*type:* `String.t`, *default:* `nil`) - Default placement dimensions for this account.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of this account.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this account. This is a read-only, auto-generated field.
