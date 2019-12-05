@@ -24,7 +24,7 @@ defmodule GoogleApi.Content.V2.Model.OrderCancellation do
   *   `actor` (*type:* `String.t`, *default:* `nil`) - The actor that created the cancellation.
   *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the cancellation has been created, in ISO 8601 format.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity that was canceled.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation. Orders that are cancelled with a noInventory reason will lead to the removal of the product from Shopping Actions until you make an update to that product. This will not affect your Shopping ads.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation. Orders that are canceled with a noInventory reason will lead to the removal of the product from Shopping Actions until you make an update to that product. This will not affect your Shopping ads.
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 
