@@ -17,7 +17,9 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig do
   @moduledoc """
-  Configuration for a StoredInfoType.
+  Configuration for stored infoT types. All fields and subfield are provided
+  by the user. For more information, see
+  https://cloud.google.com/dlp/docs/creating-custom-infotypes.
 
   ## Attributes
 
