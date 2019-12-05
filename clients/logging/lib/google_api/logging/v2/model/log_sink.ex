@@ -23,11 +23,13 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
 
   *   `bigqueryOptions` (*type:* `GoogleApi.Logging.V2.Model.BigQueryOptions.t`, *default:* `nil`) - Optional. Options that affect sinks exporting data to BigQuery.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the sink.This field may not be present for older sinks.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of this sink. The maximum length of the description is 8000 characters.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. The export destination:
       "storage.googleapis.com/[GCS_BUCKET]"
       "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]"
       "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
       The sink's writer_identity, set when the sink is created, must have permission to write to the destination or else the log entries are not exported. For more information, see Exporting Logs with Sinks.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to True, then this sink is disabled and it does not export any log entries.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Do not use. This field is ignored.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Optional. An advanced logs filter. The only exported log entries are those that are in the resource owning the sink and that match the filter. For example:
       logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity>=ERROR
@@ -48,7 +50,9 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
   @type t :: %__MODULE__{
           :bigqueryOptions => GoogleApi.Logging.V2.Model.BigQueryOptions.t(),
           :createTime => DateTime.t(),
+          :description => String.t(),
           :destination => String.t(),
+          :disabled => boolean(),
           :endTime => DateTime.t(),
           :filter => String.t(),
           :includeChildren => boolean(),
@@ -61,7 +65,9 @@ defmodule GoogleApi.Logging.V2.Model.LogSink do
 
   field(:bigqueryOptions, as: GoogleApi.Logging.V2.Model.BigQueryOptions)
   field(:createTime, as: DateTime)
+  field(:description)
   field(:destination)
+  field(:disabled)
   field(:endTime, as: DateTime)
   field(:filter)
   field(:includeChildren)
