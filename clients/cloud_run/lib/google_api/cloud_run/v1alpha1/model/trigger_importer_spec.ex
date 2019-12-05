@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec do
   @moduledoc """
-
+  Deprecated, importer specification will be available via GcpImporterDao.
 
   ## Attributes
 
