@@ -27,9 +27,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
       Not currently supported by Cloud Run.
   *   `filter` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t`, *default:* `nil`) - Filter is the filter to apply against all events from the Broker. Only
       events that pass this filter will be sent to the Subscriber.
-  *   `importers` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec.t)`, *default:* `nil`) - Specification of the importers that will provide events to the trigger.
-      Note, for Cloud Run, the importers will only be used if a filter is not
-      specified.
+  *   `importers` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec.t)`, *default:* `nil`) - Deprecated, importer specification will be replaced by information stored
+      in GcpImporterDao.
   *   `subscriber` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t`, *default:* `nil`) - Subscriber is the addressable that receives events from the Broker that
       pass the Filter. It is required.
 
