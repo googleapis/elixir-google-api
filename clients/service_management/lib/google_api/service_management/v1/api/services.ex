@@ -1437,14 +1437,6 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:baseRolloutId` (*type:* `String.t`) - Unimplemented. Do not use this feature until this comment is removed.
-
-          The rollout id that rollout to be created based on.
-
-          Rollout should be constructed based on current successful rollout, this
-          field indicates the current successful rollout id that new rollout based on
-          to construct, if current successful rollout changed when server receives
-          the request, request will be rejected for safety.
       *   `:body` (*type:* `GoogleApi.ServiceManagement.V1.Model.Rollout.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1477,7 +1469,6 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :baseRolloutId => :query,
       :body => :body
     }
 
