@@ -35,6 +35,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
   *   `isActive` (*type:* `boolean()`, *default:* `nil`) - Whether this config is active. Required for all requests.
   *   `kind` (*type:* `String.t`, *default:* `adexchangebuyer#pretargetingConfig`) - The kind of the resource, i.e. "adexchangebuyer#pretargetingConfig".
   *   `languages` (*type:* `list(String.t)`, *default:* `nil`) - Request containing any of these language codes will match.
+  *   `maximumQps` (*type:* `String.t`, *default:* `nil`) - The maximum QPS allocated to this pretargeting configuration, used for pretargeting-level QPS limits. By default, this is not set, which indicates that there is no QPS limit at the configuration level (a global or account-level limit may still be imposed).
   *   `minimumViewabilityDecile` (*type:* `integer()`, *default:* `nil`) - Requests where the predicted viewability is below the specified decile will not match. E.g. if the buyer sets this value to 5, requests from slots where the predicted viewability is below 50% will not match. If the predicted viewability is unknown this field will be ignored.
   *   `mobileCarriers` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these mobile carrier ids will match. Values are from mobile-carriers.csv in the downloadable files section.
   *   `mobileDevices` (*type:* `list(String.t)`, *default:* `nil`) - Requests containing any of these mobile device ids will match. Values are from mobile-devices.csv in the downloadable files section.
@@ -68,6 +69,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
           :isActive => boolean(),
           :kind => String.t(),
           :languages => list(String.t()),
+          :maximumQps => String.t(),
           :minimumViewabilityDecile => integer(),
           :mobileCarriers => list(String.t()),
           :mobileDevices => list(String.t()),
@@ -110,6 +112,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig do
   field(:isActive)
   field(:kind)
   field(:languages, type: :list)
+  field(:maximumQps)
   field(:minimumViewabilityDecile)
   field(:mobileCarriers, type: :list)
   field(:mobileDevices, type: :list)
