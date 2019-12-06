@@ -40,7 +40,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   *   `messages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage.t)`, *default:* `nil`) - Optional. The collection of rich messages corresponding to the
       `Response` field in the Dialogflow console.
   *   `mlDisabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether Machine Learning is disabled for the intent.
-      Note: If `ml_diabled` setting is set to true, then this intent is not
+      Note: If `ml_disabled` setting is set to true, then this intent is not
       taken into account during inference in `ML ONLY` match mode. Also,
       auto-markup in the UI is turned off.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of this intent.
