@@ -520,11 +520,6 @@
     "url": "https://servicemanagement.googleapis.com/$discovery/rest?version=v1"
   },
   {
-    "version": "v1",
-    "name": "ServiceUser",
-    "url": "https://serviceuser.googleapis.com/$discovery/rest?version=v1"
-  },
-  {
     "version": "v4",
     "name": "Sheets",
     "url": "https://sheets.googleapis.com/$discovery/rest?version=v4"
