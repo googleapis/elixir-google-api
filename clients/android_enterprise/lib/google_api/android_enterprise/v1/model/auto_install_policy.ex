@@ -24,7 +24,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AutoInstallPolicy do
   *   `autoInstallConstraint` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AutoInstallConstraint.t)`, *default:* `nil`) - The constraints for auto-installing the app. You can specify a maximum of one constraint.
   *   `autoInstallMode` (*type:* `String.t`, *default:* `nil`) - The auto-install mode. If unset defaults to "doNotAutoInstall".
   *   `autoInstallPriority` (*type:* `integer()`, *default:* `nil`) - The priority of the install, as an unsigned integer. A lower number means higher priority.
-  *   `minimumVersionCode` (*type:* `integer()`, *default:* `nil`) - The minimum version of the app. If a lower version of the app is installed, then the app will be auto-updated according to the auto-install constraints, instead of waiting for the regular auto-update.
+  *   `minimumVersionCode` (*type:* `integer()`, *default:* `nil`) - The minimum version of the app. If a lower version of the app is installed, then the app will be auto-updated according to the auto-install constraints, instead of waiting for the regular auto-update. You can set a minimum version code for at most 20 apps per device.
   """
 
   use GoogleApi.Gax.ModelBase
