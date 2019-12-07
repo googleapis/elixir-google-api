@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_translate, "~> 0.5"}]
+  [{:google_api_translate, "~> 0.6"}]
 end
 ```
 
