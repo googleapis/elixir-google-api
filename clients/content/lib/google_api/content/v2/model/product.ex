@@ -80,7 +80,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   *   `displayAdsTitle` (*type:* `String.t`, *default:* `nil`) - Title of an item for dynamic remarketing campaigns.
   *   `unitPricingMeasure` (*type:* `GoogleApi.Content.V2.Model.ProductUnitPricingMeasure.t`, *default:* `nil`) - The measure and dimension of an item.
   *   `gender` (*type:* `String.t`, *default:* `nil`) - Target gender of the item.
-  *   `customAttributes` (*type:* `list(GoogleApi.Content.V2.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { "name": "size type", "value": "regular" }). This is useful for submitting attributes not explicitly exposed by the API.
+  *   `customAttributes` (*type:* `list(GoogleApi.Content.V2.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { "name": "size type", "value": "regular" }). This is useful for submitting attributes not explicitly exposed by the API, such as additional attributes used for Shopping Actions.
   *   `taxes` (*type:* `list(GoogleApi.Content.V2.Model.ProductTax.t)`, *default:* `nil`) - Tax information.
   *   `adwordsRedirect` (*type:* `String.t`, *default:* `nil`) - Allows advertisers to override the item URL when the product is shown within the context of Product Ads.
   *   `shippingHeight` (*type:* `GoogleApi.Content.V2.Model.ProductShippingDimension.t`, *default:* `nil`) - Height of the item for shipping.
