@@ -25,7 +25,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
   *   `countryTargeting` (*type:* `GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The release name, used to identify this release in the Play Console UI. Not required to be unique. This is optional, if not set it will be generated from the version_name in the APKs.
   *   `releaseNotes` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t)`, *default:* `nil`) - The description of what is new in the app in this release.
-  *   `sampling` (*type:* `GoogleApi.AndroidPublisher.V3.Model.MendelSampling.t`, *default:* `nil`) - 
+  *   `sampling` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Sampling.t`, *default:* `nil`) - 
   *   `status` (*type:* `String.t`, *default:* `nil`) - The desired status of this release.
   *   `userFraction` (*type:* `float()`, *default:* `nil`) - Fraction of users who are eligible to receive the release. 0 < fraction < 1. To be set, release status must be "inProgress" or "halted".
   *   `versionCodes` (*type:* `list(String.t)`, *default:* `nil`) - A list of all version codes of APKs that will be exposed to the users of this track when this release is rolled out. Note that this list should contain all versions you wish to be active, including those you wish to retain from previous releases.
@@ -38,7 +38,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
           :countryTargeting => GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t(),
           :name => String.t(),
           :releaseNotes => list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t()),
-          :sampling => GoogleApi.AndroidPublisher.V3.Model.MendelSampling.t(),
+          :sampling => GoogleApi.AndroidPublisher.V3.Model.Sampling.t(),
           :status => String.t(),
           :userFraction => float(),
           :versionCodes => list(String.t())
@@ -48,7 +48,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
   field(:countryTargeting, as: GoogleApi.AndroidPublisher.V3.Model.CountryTargeting)
   field(:name)
   field(:releaseNotes, as: GoogleApi.AndroidPublisher.V3.Model.LocalizedText, type: :list)
-  field(:sampling, as: GoogleApi.AndroidPublisher.V3.Model.MendelSampling)
+  field(:sampling, as: GoogleApi.AndroidPublisher.V3.Model.Sampling)
   field(:status)
   field(:userFraction)
   field(:versionCodes, type: :list)
