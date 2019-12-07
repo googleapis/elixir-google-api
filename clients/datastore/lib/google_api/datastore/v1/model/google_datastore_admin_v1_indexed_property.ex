@@ -21,10 +21,8 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1IndexedProperty do
 
   ## Attributes
 
-  *   `direction` (*type:* `String.t`, *default:* `nil`) - The indexed property's direction.  Must not be DIRECTION_UNSPECIFIED.
-      Required.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The property name to index.
-      Required.
+  *   `direction` (*type:* `String.t`, *default:* `nil`) - Required. The indexed property's direction.  Must not be DIRECTION_UNSPECIFIED.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The property name to index.
   """
 
   use GoogleApi.Gax.ModelBase

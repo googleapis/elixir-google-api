@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.AllocateIdsRequest do
 
   ## Attributes
 
-  *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - A list of keys with incomplete key paths for which to allocate IDs.
+  *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - Required. A list of keys with incomplete key paths for which to allocate IDs.
       No key may be reserved/read-only.
   """
 

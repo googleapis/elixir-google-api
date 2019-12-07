@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_datastore, "~> 0.12"}]
+  [{:google_api_datastore, "~> 0.13"}]
 end
 ```
 
