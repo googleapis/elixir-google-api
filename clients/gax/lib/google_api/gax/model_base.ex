@@ -13,6 +13,8 @@
 # limitations under the License.
 
 defmodule GoogleApi.Gax.ModelBase do
+  require Poison.Decode
+
   @moduledoc """
   This module helps you quickly and concisely define API models.
 
@@ -97,17 +99,38 @@ defmodule GoogleApi.Gax.ModelBase do
   def decode(value, :map, module) when not is_nil(value) do
     value
     |> Enum.map(fn {k, v} ->
-      {k, Poison.Decode.decode(v, as: struct(module))}
+      {k, poison_transform(v, %{as: struct(module)})}
     end)
     |> Enum.into(%{})
   end
 
   def decode(value, :list, module) do
-    Poison.Decode.decode(value, as: [struct(module)])
+    poison_transform(value, %{as: [struct(module)]})
   end
 
   def decode(value, _, module) do
-    Poison.Decode.decode(value, as: struct(module))
+    poison_transform(value, %{as: struct(module)})
+  end
+
+  if function_exported?(Poison.Decode, :decode, 2) do
+    def poison_transform(value, options) do
+      Poison.Decode.decode(value, options)
+    end
+  else
+    # Short-circuit if the value has already been transformed.
+    # This works around a bug in poison 4 where Poison.decode does an extra
+    # transformation pass on sub-structs.
+    def poison_transform(%{__struct__: _} = value, %{as: _}) do
+      value
+    end
+
+    def poison_transform([%{__struct__: _} | _] = value, %{as: [_]}) do
+      value
+    end
+
+    def poison_transform(value, options) do
+      Poison.Decode.transform(value, options)
+    end
   end
 
   @doc """

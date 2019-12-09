@@ -45,7 +45,7 @@ defmodule GoogleApi.Gax.DataWrapper do
   @spec decode(GoogleApi.Gax.DataWrapper.t(), keyword()) :: any()
   def decode(data_wrapper, options) do
     struct = options[:struct]
-    Poison.Decode.decode(data_wrapper.data, as: struct)
+    GoogleApi.Gax.ModelBase.poison_transform(data_wrapper.data, %{as: struct})
   end
 end
 
