@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.Mixfile do
     [
       app: :google_api_compute,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       description: description(),

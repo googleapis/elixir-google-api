@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionCommitments do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of commitments.
+  Retrieves an aggregated list of commitments. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -103,7 +103,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionCommitments do
   end
 
   @doc """
-  Returns the specified commitment resource. Gets a list of available commitments by making a list() request.
+  Returns the specified commitment resource. Gets a list of available commitments by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -169,7 +169,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionCommitments do
   end
 
   @doc """
-  Creates a commitment in the specified project using the data included in the request.
+  Creates a commitment in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -239,7 +239,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionCommitments do
   end
 
   @doc """
-  Retrieves a list of commitments contained within the specified region.
+  Retrieves a list of commitments contained within the specified region. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

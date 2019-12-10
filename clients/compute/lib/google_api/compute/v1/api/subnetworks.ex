@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of subnetworks.
+  Retrieves an aggregated list of subnetworks. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -93,7 +93,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Deletes the specified subnetwork.
+  Deletes the specified subnetwork. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -165,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Expands the IP CIDR range of the subnetwork to a specified value.
+  Expands the IP CIDR range of the subnetwork to a specified value. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -239,7 +239,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Returns the specified subnetwork. Gets a list of available subnetworks list() request.
+  Returns the specified subnetwork. Gets a list of available subnetworks list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -305,7 +305,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -371,7 +371,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Creates a subnetwork in the specified project using the data included in the request.
+  Creates a subnetwork in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -435,7 +435,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Retrieves a list of subnetworks available to the specified project.
+  Retrieves a list of subnetworks available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -504,7 +504,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of the subnetworks in the project and the subnetworks that were shared by a Shared VPC host project.
+  Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of the subnetworks in the project and the subnetworks that were shared by a Shared VPC host project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -574,7 +574,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Patches the specified subnetwork with the data included in the request. Only certain fields can up updated with a patch request as indicated in the field descriptions. You must specify the current fingeprint of the subnetwork resource being patched.
+  Patches the specified subnetwork with the data included in the request. Only certain fields can up updated with a patch request as indicated in the field descriptions. You must specify the current fingeprint of the subnetwork resource being patched. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -590,6 +590,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:drainTimeoutSeconds` (*type:* `integer()`) - The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
       *   `:requestId` (*type:* `String.t`) - An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
 
           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
@@ -627,6 +628,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :drainTimeoutSeconds => :query,
       :requestId => :query,
       :body => :body
     }
@@ -648,7 +650,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -716,7 +718,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Set whether VMs in this subnet can access Google services without assigning external IP addresses through Private Google Access.
+  Set whether VMs in this subnet can access Google services without assigning external IP addresses through Private Google Access. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -793,7 +795,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

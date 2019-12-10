@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of reservations.
+  Retrieves an aggregated list of reservations. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Deletes the specified reservation.
+  Deletes the specified reservation. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -166,7 +166,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Retrieves information about the specified reservation.
+  Retrieves information about the specified reservation. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -232,7 +232,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -298,7 +298,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Creates a new reservation. For more information, read Reserving zonal resources.
+  Creates a new reservation. For more information, read Reserving zonal resources. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -362,7 +362,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  A list of all the reservations that have been configured for the specified project in specified zone.
+  A list of all the reservations that have been configured for the specified project in specified zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -436,7 +436,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Resizes the reservation (applicable to standalone reservations only). For more information, read Modifying reservations.
+  Resizes the reservation (applicable to standalone reservations only). For more information, read Modifying reservations. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -510,7 +510,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -578,7 +578,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

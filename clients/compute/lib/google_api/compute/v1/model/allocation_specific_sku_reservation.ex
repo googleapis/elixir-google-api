@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation do
   ## Attributes
 
   *   `count` (*type:* `String.t`, *default:* `nil`) - Specifies the number of resources that are allocated.
-  *   `inUseCount` (*type:* `String.t`, *default:* `nil`) - [OutputOnly] Indicates how many instances are in use.
+  *   `inUseCount` (*type:* `String.t`, *default:* `nil`) - [Output Only] Indicates how many instances are in use.
   *   `instanceProperties` (*type:* `GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInstanceProperties.t`, *default:* `nil`) - The instance properties for the reservation.
   """
 
