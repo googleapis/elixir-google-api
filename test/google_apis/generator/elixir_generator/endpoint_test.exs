@@ -254,11 +254,15 @@ defmodule GoogleApis.Generator.ElixirGenerator.EndpointTest do
       Poison.decode!(@media_upload, as: %RestMethod{})
       |> Endpoint.from_discovery_method(context)
 
-    assert 3 == length(endpoints)
-    [base, resumable, simple] = endpoints
+    assert 4 == length(endpoints)
+    [base, iodata, resumable, simple] = endpoints
     assert "storage_objects_insert" == base.name
     assert "/v1/storage/b/{bucket}/o" == base.path
     assert 1 == length(base.optional_parameters)
+
+    assert "storage_objects_insert_iodata" == iodata.name
+    assert "/upload/storage/v1/b/{bucket}/o" == iodata.path
+    assert 0 == length(iodata.optional_parameters)
 
     assert "storage_objects_insert_resumable" == resumable.name
     assert "/resumable/upload/storage/v1/b/{bucket}/o" == resumable.path
