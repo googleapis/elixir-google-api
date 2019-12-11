@@ -54,9 +54,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
         } = method,
         context
       ) do
-    simple_endpoint = simple_upload_endpoint(method, simple, context)
-    resumable_endpoint = resumable_upload_endpoint(method, resumable, context)
-    [basic_endpoint(method, context), resumable_endpoint, simple_endpoint]
+    [
+      basic_endpoint(method, context),
+      iodata_upload_endpoint(method, simple, context),
+      resumable_upload_endpoint(method, resumable, context),
+      simple_upload_endpoint(method, simple, context)
+    ]
   end
 
   def from_discovery_method(method, context) do
@@ -74,6 +77,62 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
       description: method.description,
       method: String.downcase(method.httpMethod),
       path: "/" <> ResourceContext.path(context, method.path),
+      required_parameters: required_parameters,
+      optional_parameters: optional_parameters,
+      path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
+      typespec: typespec(name, required_parameters, ret),
+      return: ret
+    }
+  end
+
+  defp iodata_upload_endpoint(method, simple_protocol, context) do
+    {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
+
+    # simple upload should not have body param
+    optional_parameters =
+      Enum.filter(optional_parameters, fn parameter -> parameter.location != "body" end)
+
+    name = method_name_to_endpoint_name(method.id <> "_iodata")
+    ret = return_type(method, context)
+    metadata_type = Type.from_schema(method.request, context)
+
+    required_parameters =
+      required_parameters ++
+        [
+          %Parameter{
+            name: "uploadType",
+            variable_name: "upload_type",
+            description: "Upload type. Must be \"multipart\".",
+            type: %Type{
+              name: "string",
+              typespec: "String.t"
+            },
+            location: "query"
+          },
+          %Parameter{
+            name: "metadata",
+            variable_name: "metadata",
+            description: "#{metadata_type.name} metadata",
+            type: metadata_type,
+            location: "body"
+          },
+          %Parameter{
+            name: "data",
+            variable_name: "data",
+            description: "Content to upload, as a string or iolist",
+            type: %Type{
+              name: "iodata",
+              typespec: "iodata"
+            },
+            location: "body"
+          }
+        ]
+
+    %__MODULE__{
+      name: name,
+      description: method.description,
+      method: String.downcase(method.httpMethod),
+      path: simple_protocol.path,
       required_parameters: required_parameters,
       optional_parameters: optional_parameters,
       path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
@@ -116,7 +175,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
           %Parameter{
             name: "data",
             variable_name: "data",
-            description: "Path to file",
+            description: "Path to file containing content to upload",
             type: %Type{
               name: "string",
               typespec: "String.t"
