@@ -54,25 +54,25 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
         } = method,
         context
       ) do
-    [
-      basic_endpoint(method, context),
-      iodata_upload_endpoint(method, simple, context),
-      resumable_upload_endpoint(method, resumable, context),
-      simple_upload_endpoint(method, simple, context)
-    ]
+    []
+    |> prepend_basic_endpoint(method, context)
+    |> prepend_iodata_upload_endpoint(method, simple, context)
+    |> prepend_resumable_upload_endpoint(method, resumable, context)
+    |> prepend_simple_upload_endpoint(method, simple, context)
+    |> Enum.reverse()
   end
 
   def from_discovery_method(method, context) do
-    [basic_endpoint(method, context)]
+    [] |> prepend_basic_endpoint(method, context)
   end
 
-  defp basic_endpoint(method, context) do
+  defp prepend_basic_endpoint(endpoints, method, context) do
     {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
 
     name = method_name_to_endpoint_name(method.id)
     ret = return_type(method, context)
 
-    %__MODULE__{
+    [%__MODULE__{
       name: name,
       description: method.description,
       method: String.downcase(method.httpMethod),
@@ -82,10 +82,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
       path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
       typespec: typespec(name, required_parameters, ret),
       return: ret
-    }
+    } | endpoints]
   end
 
-  defp iodata_upload_endpoint(method, simple_protocol, context) do
+  defp prepend_iodata_upload_endpoint(endpoints, _method, nil, _context), do: endpoints
+
+  defp prepend_iodata_upload_endpoint(endpoints, method, simple_protocol, context) do
     {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
 
     # simple upload should not have body param
@@ -128,7 +130,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
           }
         ]
 
-    %__MODULE__{
+    [%__MODULE__{
       name: name,
       description: method.description,
       method: String.downcase(method.httpMethod),
@@ -138,10 +140,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
       path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
       typespec: typespec(name, required_parameters, ret),
       return: ret
-    }
+    } | endpoints]
   end
 
-  defp simple_upload_endpoint(method, simple_protocol, context) do
+  defp prepend_simple_upload_endpoint(endpoints, _method, nil, _context), do: endpoints
+
+  defp prepend_simple_upload_endpoint(endpoints, method, simple_protocol, context) do
     {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
 
     # simple upload should not have body param
@@ -184,7 +188,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
           }
         ]
 
-    %__MODULE__{
+    [%__MODULE__{
       name: name,
       description: method.description,
       method: String.downcase(method.httpMethod),
@@ -194,10 +198,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
       path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
       typespec: typespec(name, required_parameters, ret),
       return: ret
-    }
+    } | endpoints]
   end
 
-  defp resumable_upload_endpoint(method, resumable_protocol, context) do
+  defp prepend_resumable_upload_endpoint(endpoints, _method, nil, _context), do: endpoints
+
+  defp prepend_resumable_upload_endpoint(endpoints, method, resumable_protocol, context) do
     {required_parameters, optional_parameters} = Parameter.from_discovery_method(method, context)
 
     name = method_name_to_endpoint_name(method.id <> "_resumable")
@@ -218,7 +224,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
           }
         ]
 
-    %__MODULE__{
+    [%__MODULE__{
       name: name,
       description: method.description,
       method: String.downcase(method.httpMethod),
@@ -228,7 +234,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
       path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
       typespec: typespec(name, required_parameters, ret),
       return: ret
-    }
+    } | endpoints]
   end
 
   defp typespec(name, params, ret) do
