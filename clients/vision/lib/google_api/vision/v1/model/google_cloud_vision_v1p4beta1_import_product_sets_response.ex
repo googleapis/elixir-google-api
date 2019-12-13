@@ -42,8 +42,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ImportProductSetsR
           :statuses => list(GoogleApi.Vision.V1.Model.Status.t())
         }
 
-  field(
-    :referenceImages,
+  field(:referenceImages,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ReferenceImage,
     type: :list
   )

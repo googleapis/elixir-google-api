@@ -43,14 +43,12 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResul
 
   field(:boundingPoly, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1BoundingPoly)
 
-  field(
-    :objectAnnotations,
+  field(:objectAnnotations,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotation,
     type: :list
   )
 
-  field(
-    :results,
+  field(:results,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p1beta1ProductSearchResultsResult,
     type: :list
   )

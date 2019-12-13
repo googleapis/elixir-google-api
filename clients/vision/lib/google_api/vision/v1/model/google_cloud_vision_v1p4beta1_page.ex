@@ -45,8 +45,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1Page do
   field(:confidence)
   field(:height)
 
-  field(
-    :property,
+  field(:property,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1TextAnnotationTextProperty
   )
 

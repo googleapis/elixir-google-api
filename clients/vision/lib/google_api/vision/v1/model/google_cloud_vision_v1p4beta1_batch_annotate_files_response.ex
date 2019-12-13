@@ -32,8 +32,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BatchAnnotateFiles
             list(GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateFileResponse.t())
         }
 
-  field(
-    :responses,
+  field(:responses,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateFileResponse,
     type: :list
   )
