@@ -21,115 +21,115 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Conversion do
 
   ## Attributes
 
-  *   `attributionModel` (*type:* `String.t`, *default:* `nil`) - Available to advertisers only after contacting DoubleClick Search customer support.
-  *   `segmentationType` (*type:* `String.t`, *default:* `nil`) - The segmentation type of this conversion (for example, FLOODLIGHT).
-  *   `productGroupId` (*type:* `String.t`, *default:* `nil`) - DS product group ID.
-  *   `productLanguage` (*type:* `String.t`, *default:* `nil`) - The language registered for the Merchant Center feed that contains the product. Use an ISO 639 code to specify a language.
-  *   `adGroupId` (*type:* `String.t`, *default:* `nil`) - DS ad group ID.
-  *   `clickId` (*type:* `String.t`, *default:* `nil`) - DS click ID for the conversion.
-  *   `dsConversionId` (*type:* `String.t`, *default:* `nil`) - ID that DoubleClick Search generates for each conversion.
-  *   `engineAccountId` (*type:* `String.t`, *default:* `nil`) - DS engine account ID.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the conversion, that is, either ACTION or TRANSACTION. An ACTION conversion is an action by the user that has no monetarily quantifiable value, while a TRANSACTION conversion is an action that does have a monetarily quantifiable value. Examples are email list signups (ACTION) versus ecommerce purchases (TRANSACTION).
-  *   `agencyId` (*type:* `String.t`, *default:* `nil`) - DS agency ID.
+  *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - DS advertiser ID.
+  *   `floodlightOrderId` (*type:* `String.t`, *default:* `nil`) - The Floodlight order ID provided by the advertiser for the conversion.
+  *   `segmentationId` (*type:* `String.t`, *default:* `nil`) - The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID).
+  *   `quantityMillis` (*type:* `String.t`, *default:* `nil`) - The quantity of this conversion, in millis.
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - The currency code for the conversion's revenue. Should be in ISO 4217 alphabetic (3-char) format.
+  *   `adId` (*type:* `String.t`, *default:* `nil`) - DS ad ID.
+  *   `deviceType` (*type:* `String.t`, *default:* `nil`) - The type of device on which the conversion occurred.
+  *   `inventoryAccountId` (*type:* `String.t`, *default:* `nil`) - ID that DS generates and uses to uniquely identify the inventory account that contains the product.
+  *   `conversionTimestamp` (*type:* `String.t`, *default:* `nil`) - The time at which the conversion took place, in epoch millis UTC.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The product ID (SKU).
+  *   `customDimension` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.CustomDimension.t)`, *default:* `nil`) - Custom dimensions for the conversion, which can be used to filter data in a report.
+  *   `conversionId` (*type:* `String.t`, *default:* `nil`) - For offline conversions, advertisers provide this ID. Advertisers can specify any ID that is meaningful to them. Each conversion in a request must specify a unique ID, and the combination of ID and timestamp must be unique amongst all conversions within the advertiser.
+      For online conversions, DS copies the dsConversionId or floodlightOrderId into this property depending on the advertiser's Floodlight instructions.
+  *   `countMillis` (*type:* `String.t`, *default:* `nil`) - Available to advertisers only after contacting DoubleClick Search customer support.
+  *   `campaignId` (*type:* `String.t`, *default:* `nil`) - DS campaign ID.
+  *   `criterionId` (*type:* `String.t`, *default:* `nil`) - DS criterion (keyword) ID.
+  *   `customMetric` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.CustomMetric.t)`, *default:* `nil`) - Custom metrics for the conversion.
+  *   `revenueMicros` (*type:* `String.t`, *default:* `nil`) - The revenue amount of this TRANSACTION conversion, in micros (value multiplied by 1000000, no decimal). For example, to specify a revenue value of "10" enter "10000000" (10 million) in your request.
+  *   `productCountry` (*type:* `String.t`, *default:* `nil`) - The country registered for the Merchant Center feed that contains the product. Use an ISO 3166 code to specify a country.
+  *   `conversionModifiedTimestamp` (*type:* `String.t`, *default:* `nil`) - The time at which the conversion was last modified, in epoch millis UTC.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the conversion, that is, either ACTIVE or REMOVED. Note: state DELETED is deprecated.
+  *   `segmentationName` (*type:* `String.t`, *default:* `nil`) - The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name).
+  *   `storeId` (*type:* `String.t`, *default:* `nil`) - The ID of the local store for which the product was advertised. Applicable only when the channel is "local".
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Sales channel for the product. Acceptable values are:  
       - "local": a physical store 
       - "online": an online store
-  *   `storeId` (*type:* `String.t`, *default:* `nil`) - The ID of the local store for which the product was advertised. Applicable only when the channel is "local".
-  *   `segmentationName` (*type:* `String.t`, *default:* `nil`) - The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name).
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the conversion, that is, either ACTIVE or REMOVED. Note: state DELETED is deprecated.
-  *   `conversionModifiedTimestamp` (*type:* `String.t`, *default:* `nil`) - The time at which the conversion was last modified, in epoch millis UTC.
-  *   `productCountry` (*type:* `String.t`, *default:* `nil`) - The country registered for the Merchant Center feed that contains the product. Use an ISO 3166 code to specify a country.
-  *   `revenueMicros` (*type:* `String.t`, *default:* `nil`) - The revenue amount of this TRANSACTION conversion, in micros (value multiplied by 1000000, no decimal). For example, to specify a revenue value of "10" enter "10000000" (10 million) in your request.
-  *   `customMetric` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.CustomMetric.t)`, *default:* `nil`) - Custom metrics for the conversion.
-  *   `criterionId` (*type:* `String.t`, *default:* `nil`) - DS criterion (keyword) ID.
-  *   `campaignId` (*type:* `String.t`, *default:* `nil`) - DS campaign ID.
-  *   `countMillis` (*type:* `String.t`, *default:* `nil`) - Available to advertisers only after contacting DoubleClick Search customer support.
-  *   `conversionId` (*type:* `String.t`, *default:* `nil`) - For offline conversions, advertisers provide this ID. Advertisers can specify any ID that is meaningful to them. Each conversion in a request must specify a unique ID, and the combination of ID and timestamp must be unique amongst all conversions within the advertiser.
-      For online conversions, DS copies the dsConversionId or floodlightOrderId into this property depending on the advertiser's Floodlight instructions.
-  *   `customDimension` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.CustomDimension.t)`, *default:* `nil`) - Custom dimensions for the conversion, which can be used to filter data in a report.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The product ID (SKU).
-  *   `conversionTimestamp` (*type:* `String.t`, *default:* `nil`) - The time at which the conversion took place, in epoch millis UTC.
-  *   `inventoryAccountId` (*type:* `String.t`, *default:* `nil`) - ID that DS generates and uses to uniquely identify the inventory account that contains the product.
-  *   `deviceType` (*type:* `String.t`, *default:* `nil`) - The type of device on which the conversion occurred.
-  *   `adId` (*type:* `String.t`, *default:* `nil`) - DS ad ID.
-  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - The currency code for the conversion's revenue. Should be in ISO 4217 alphabetic (3-char) format.
-  *   `quantityMillis` (*type:* `String.t`, *default:* `nil`) - The quantity of this conversion, in millis.
-  *   `segmentationId` (*type:* `String.t`, *default:* `nil`) - The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID).
-  *   `floodlightOrderId` (*type:* `String.t`, *default:* `nil`) - The Floodlight order ID provided by the advertiser for the conversion.
-  *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - DS advertiser ID.
+  *   `agencyId` (*type:* `String.t`, *default:* `nil`) - DS agency ID.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the conversion, that is, either ACTION or TRANSACTION. An ACTION conversion is an action by the user that has no monetarily quantifiable value, while a TRANSACTION conversion is an action that does have a monetarily quantifiable value. Examples are email list signups (ACTION) versus ecommerce purchases (TRANSACTION).
+  *   `engineAccountId` (*type:* `String.t`, *default:* `nil`) - DS engine account ID.
+  *   `dsConversionId` (*type:* `String.t`, *default:* `nil`) - ID that DoubleClick Search generates for each conversion.
+  *   `clickId` (*type:* `String.t`, *default:* `nil`) - DS click ID for the conversion.
+  *   `adGroupId` (*type:* `String.t`, *default:* `nil`) - DS ad group ID.
+  *   `productLanguage` (*type:* `String.t`, *default:* `nil`) - The language registered for the Merchant Center feed that contains the product. Use an ISO 639 code to specify a language.
+  *   `productGroupId` (*type:* `String.t`, *default:* `nil`) - DS product group ID.
+  *   `segmentationType` (*type:* `String.t`, *default:* `nil`) - The segmentation type of this conversion (for example, FLOODLIGHT).
+  *   `attributionModel` (*type:* `String.t`, *default:* `nil`) - Available to advertisers only after contacting DoubleClick Search customer support.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributionModel => String.t(),
-          :segmentationType => String.t(),
-          :productGroupId => String.t(),
-          :productLanguage => String.t(),
-          :adGroupId => String.t(),
-          :clickId => String.t(),
-          :dsConversionId => String.t(),
-          :engineAccountId => String.t(),
-          :type => String.t(),
-          :agencyId => String.t(),
-          :channel => String.t(),
-          :storeId => String.t(),
-          :segmentationName => String.t(),
-          :state => String.t(),
-          :conversionModifiedTimestamp => String.t(),
-          :productCountry => String.t(),
-          :revenueMicros => String.t(),
-          :customMetric => list(GoogleApi.DoubleClickSearch.V2.Model.CustomMetric.t()),
-          :criterionId => String.t(),
-          :campaignId => String.t(),
-          :countMillis => String.t(),
-          :conversionId => String.t(),
-          :customDimension => list(GoogleApi.DoubleClickSearch.V2.Model.CustomDimension.t()),
-          :productId => String.t(),
-          :conversionTimestamp => String.t(),
-          :inventoryAccountId => String.t(),
-          :deviceType => String.t(),
-          :adId => String.t(),
-          :currencyCode => String.t(),
-          :quantityMillis => String.t(),
-          :segmentationId => String.t(),
+          :advertiserId => String.t(),
           :floodlightOrderId => String.t(),
-          :advertiserId => String.t()
+          :segmentationId => String.t(),
+          :quantityMillis => String.t(),
+          :currencyCode => String.t(),
+          :adId => String.t(),
+          :deviceType => String.t(),
+          :inventoryAccountId => String.t(),
+          :conversionTimestamp => String.t(),
+          :productId => String.t(),
+          :customDimension => list(GoogleApi.DoubleClickSearch.V2.Model.CustomDimension.t()),
+          :conversionId => String.t(),
+          :countMillis => String.t(),
+          :campaignId => String.t(),
+          :criterionId => String.t(),
+          :customMetric => list(GoogleApi.DoubleClickSearch.V2.Model.CustomMetric.t()),
+          :revenueMicros => String.t(),
+          :productCountry => String.t(),
+          :conversionModifiedTimestamp => String.t(),
+          :state => String.t(),
+          :segmentationName => String.t(),
+          :storeId => String.t(),
+          :channel => String.t(),
+          :agencyId => String.t(),
+          :type => String.t(),
+          :engineAccountId => String.t(),
+          :dsConversionId => String.t(),
+          :clickId => String.t(),
+          :adGroupId => String.t(),
+          :productLanguage => String.t(),
+          :productGroupId => String.t(),
+          :segmentationType => String.t(),
+          :attributionModel => String.t()
         }
 
-  field(:attributionModel)
-  field(:segmentationType)
-  field(:productGroupId)
-  field(:productLanguage)
-  field(:adGroupId)
-  field(:clickId)
-  field(:dsConversionId)
-  field(:engineAccountId)
-  field(:type)
-  field(:agencyId)
-  field(:channel)
-  field(:storeId)
-  field(:segmentationName)
-  field(:state)
-  field(:conversionModifiedTimestamp)
-  field(:productCountry)
-  field(:revenueMicros)
-  field(:customMetric, as: GoogleApi.DoubleClickSearch.V2.Model.CustomMetric, type: :list)
-  field(:criterionId)
-  field(:campaignId)
-  field(:countMillis)
-  field(:conversionId)
-  field(:customDimension, as: GoogleApi.DoubleClickSearch.V2.Model.CustomDimension, type: :list)
-  field(:productId)
-  field(:conversionTimestamp)
-  field(:inventoryAccountId)
-  field(:deviceType)
-  field(:adId)
-  field(:currencyCode)
-  field(:quantityMillis)
-  field(:segmentationId)
-  field(:floodlightOrderId)
   field(:advertiserId)
+  field(:floodlightOrderId)
+  field(:segmentationId)
+  field(:quantityMillis)
+  field(:currencyCode)
+  field(:adId)
+  field(:deviceType)
+  field(:inventoryAccountId)
+  field(:conversionTimestamp)
+  field(:productId)
+  field(:customDimension, as: GoogleApi.DoubleClickSearch.V2.Model.CustomDimension, type: :list)
+  field(:conversionId)
+  field(:countMillis)
+  field(:campaignId)
+  field(:criterionId)
+  field(:customMetric, as: GoogleApi.DoubleClickSearch.V2.Model.CustomMetric, type: :list)
+  field(:revenueMicros)
+  field(:productCountry)
+  field(:conversionModifiedTimestamp)
+  field(:state)
+  field(:segmentationName)
+  field(:storeId)
+  field(:channel)
+  field(:agencyId)
+  field(:type)
+  field(:engineAccountId)
+  field(:dsConversionId)
+  field(:clickId)
+  field(:adGroupId)
+  field(:productLanguage)
+  field(:productGroupId)
+  field(:segmentationType)
+  field(:attributionModel)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickSearch.V2.Model.Conversion do
