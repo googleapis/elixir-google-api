@@ -850,6 +850,168 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   end
 
   @doc """
+  Gets an Environment.
+
+  May return any of the following canonical error codes:
+
+  - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the Environment does not exist
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ToolResults.V1beta3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Required. A Project id.
+  *   `history_id` (*type:* `String.t`) - Required. A History id.
+  *   `execution_id` (*type:* `String.t`) - Required. An Execution id.
+  *   `environment_id` (*type:* `String.t`) - Required. An Environment id.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ToolResults.V1beta3.Model.Environment{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec toolresults_projects_histories_executions_environments_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.Environment.t()} | {:error, Tesla.Env.t()}
+  def toolresults_projects_histories_executions_environments_get(
+        connection,
+        project_id,
+        history_id,
+        execution_id,
+        environment_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/{projectId}/histories/{historyId}/executions/{executionId}/environments/{environmentId}",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1),
+          "environmentId" => URI.encode(environment_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.Environment{}])
+  end
+
+  @doc """
+  Lists Environments for a given Execution.
+
+  The Environments are sorted by display name.
+
+  May return any of the following canonical error codes:
+
+  - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the containing Execution does not exist
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ToolResults.V1beta3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Required. A Project id.
+  *   `history_id` (*type:* `String.t`) - Required. A History id.
+  *   `execution_id` (*type:* `String.t`) - Required. An Execution id.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of Environments to fetch.
+
+          Default value: 25. The server will use this default if the field is not set or has a value of 0.
+      *   `:pageToken` (*type:* `String.t`) - A continuation token to resume the query at the next item.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ToolResults.V1beta3.Model.ListEnvironmentsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec toolresults_projects_histories_executions_environments_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.ListEnvironmentsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def toolresults_projects_histories_executions_environments_list(
+        connection,
+        project_id,
+        history_id,
+        execution_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/{projectId}/histories/{historyId}/executions/{executionId}/environments",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListEnvironmentsResponse{}]
+    )
+  end
+
+  @doc """
   Creates a Step.
 
   The returned Step will have the id set.

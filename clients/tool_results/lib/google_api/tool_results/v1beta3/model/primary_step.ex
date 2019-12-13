@@ -32,11 +32,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PrimaryStep do
           :rollUp => String.t()
         }
 
-  field(
-    :individualOutcome,
-    as: GoogleApi.ToolResults.V1beta3.Model.IndividualOutcome,
-    type: :list
-  )
+  field(:individualOutcome, as: GoogleApi.ToolResults.V1beta3.Model.IndividualOutcome, type: :list)
 
   field(:rollUp)
 end
