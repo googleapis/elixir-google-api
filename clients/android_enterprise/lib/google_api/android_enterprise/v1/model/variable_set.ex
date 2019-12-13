@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.VariableSet do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#variableSet`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#variableSet".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#variableSet`) - 
   *   `placeholder` (*type:* `String.t`, *default:* `nil`) - The placeholder string; defined by EMM.
   *   `userValue` (*type:* `String.t`, *default:* `nil`) - The value of the placeholder, specific to the user.
   """

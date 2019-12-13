@@ -34,7 +34,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
   *   `detailsUrl` (*type:* `String.t`, *default:* `nil`) - A link to the (consumer) Google Play details page for the product.
   *   `distributionChannel` (*type:* `String.t`, *default:* `nil`) - How and to whom the package is made available. The value publicGoogleHosted means that the package is available through the Play store and not restricted to a specific enterprise. The value privateGoogleHosted means that the package is a private app (restricted to an enterprise) but hosted by Google. The value privateSelfHosted means that the package is a private app (restricted to an enterprise) and is privately hosted.
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - A link to an image that can be used as an icon for the product. This image is suitable for use at up to 512px x 512px.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#product`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#product".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#product`) - 
   *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The approximate time (within 7 days) the app was last published, expressed in milliseconds since epoch.
   *   `minAndroidSdkVersion` (*type:* `integer()`, *default:* `nil`) - The minimum Android SDK necessary to run the app.
   *   `permissions` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ProductPermission.t)`, *default:* `nil`) - A list of permissions required by the app.

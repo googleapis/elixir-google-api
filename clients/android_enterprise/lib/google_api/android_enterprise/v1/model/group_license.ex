@@ -27,7 +27,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicense do
 
   *   `acquisitionKind` (*type:* `String.t`, *default:* `nil`) - How this group license was acquired. "bulkPurchase" means that this Grouplicenses resource was created because the enterprise purchased licenses for this product; otherwise, the value is "free" (for free products).
   *   `approval` (*type:* `String.t`, *default:* `nil`) - Whether the product to which this group license relates is currently approved by the enterprise. Products are approved when a group license is first created, but this approval may be revoked by an enterprise admin via Google Play. Unapproved products will not be visible to end users in collections, and new entitlements to them should not normally be created.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#groupLicense`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#groupLicense".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#groupLicense`) - 
   *   `numProvisioned` (*type:* `integer()`, *default:* `nil`) - The total number of provisioned licenses for this product. Returned by read operations, but ignored in write operations.
   *   `numPurchased` (*type:* `integer()`, *default:* `nil`) - The number of purchased licenses (possibly in multiple purchases). If this field is omitted, then there is no limit on the number of licenses that can be provisioned (for example, if the acquisition kind is "free").
   *   `permissions` (*type:* `String.t`, *default:* `nil`) - The permission approval status of the product. This field is only set if the product is approved. Possible states are: 

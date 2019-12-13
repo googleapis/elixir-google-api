@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#administratorWebTokenSpec`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#administratorWebTokenSpec".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#administratorWebTokenSpec`) - 
   *   `managedConfigurations` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations.t`, *default:* `nil`) - Options for displaying the Managed Configuration page.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The URI of the parent frame hosting the iframe. To prevent XSS, the iframe may not be hosted at other URIs. This URI must be https. Use whitespaces to separate multiple parent URIs.
   *   `permission` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use PlaySearch.approveApps.
@@ -50,8 +50,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
 
   field(:kind)
 
-  field(
-    :managedConfigurations,
+  field(:managedConfigurations,
     as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations
   )
 
@@ -59,13 +58,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
   field(:permission, type: :list)
   field(:playSearch, as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySearch)
 
-  field(
-    :privateApps,
+  field(:privateApps,
     as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps
   )
 
-  field(
-    :storeBuilder,
+  field(:storeBuilder,
     as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder
   )
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfigurationsSettings`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsSettings".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfigurationsSettings`) - 
   *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The last updated time of the managed configuration settings in milliseconds since 1970-01-01T00:00:00Z.
   *   `mcmId` (*type:* `String.t`, *default:* `nil`) - The ID of the managed configurations settings.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the managed configurations settings.
