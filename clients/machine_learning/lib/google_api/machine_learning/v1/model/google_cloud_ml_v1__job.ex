@@ -73,8 +73,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do
   field(:labels, type: :map)
   field(:predictionInput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__PredictionInput)
 
-  field(
-    :predictionOutput,
+  field(:predictionOutput,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__PredictionOutput
   )
 

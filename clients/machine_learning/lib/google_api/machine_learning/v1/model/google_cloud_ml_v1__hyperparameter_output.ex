@@ -56,22 +56,19 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutpu
           :trialId => String.t()
         }
 
-  field(
-    :allMetrics,
+  field(:allMetrics,
     as:
       GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric,
     type: :list
   )
 
-  field(
-    :builtInAlgorithmOutput,
+  field(:builtInAlgorithmOutput,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__BuiltInAlgorithmOutput
   )
 
   field(:endTime, as: DateTime)
 
-  field(
-    :finalMetric,
+  field(:finalMetric,
     as:
       GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric
   )

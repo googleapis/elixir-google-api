@@ -237,8 +237,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
           :state => String.t()
         }
 
-  field(
-    :acceleratorConfig,
+  field(:acceleratorConfig,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig
   )
 
@@ -249,8 +248,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   field(:errorMessage)
   field(:etag)
 
-  field(
-    :explanationConfig,
+  field(:explanationConfig,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ExplanationConfig
   )
 
@@ -265,8 +263,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   field(:predictionClass)
   field(:pythonVersion)
 
-  field(
-    :requestLoggingConfig,
+  field(:requestLoggingConfig,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__RequestLoggingConfig
   )
 
