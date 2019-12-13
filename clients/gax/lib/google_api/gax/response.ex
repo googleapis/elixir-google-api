@@ -63,6 +63,10 @@ defmodule GoogleApi.Gax.Response do
     Poison.decode(body, as: %DataWrapper{}, struct: struct)
   end
 
+  defp do_decode("[" <> _ = body, _data_wrapped, struct) do
+    Poison.decode(body, as: [struct])
+  end
+
   defp do_decode(body, _data_wrapped, struct) do
     Poison.decode(body, as: struct)
   end

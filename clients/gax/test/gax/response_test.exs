@@ -27,6 +27,15 @@ defmodule Gax.ResponseTest do
     assert {:ok, %{"foo" => "bar"}} = Response.decode({:ok, env})
   end
 
+  test "handles other 200 responses with array" do
+    env = %Tesla.Env{
+      status: 200,
+      body: "[{\"foo\": \"bar\"}]"
+    }
+
+    assert {:ok, [%{"foo" => "bar"}]} = Response.decode({:ok, env})
+  end
+
   test "handles other 200 responses without body" do
     env = %Tesla.Env{
       status: 200,
@@ -44,6 +53,16 @@ defmodule Gax.ResponseTest do
 
     assert {:ok, report} = Response.decode({:ok, env}, struct: %Pet{})
     assert %Pet{} = report
+  end
+
+  test "handles other 200 responses with struct array" do
+    env = %Tesla.Env{
+      status: 200,
+      body: "[{\"calloutStatusRate\": []}]"
+    }
+
+    assert {:ok, report} = Response.decode({:ok, env}, struct: %Pet{})
+    assert [%Pet{}] = report
   end
 
   test "handles other 200 responses with data wrapped struct" do
