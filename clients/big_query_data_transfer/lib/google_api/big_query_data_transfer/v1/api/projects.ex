@@ -37,7 +37,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The data source in the form:
-      `projects/{project_id}/dataSources/{data_source_id}`
+      `projects/{project_id}/dataSources/{data_source_id}` or
+      `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -111,7 +112,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/dataSources/{data_source_id}`
+      `projects/{project_id}/dataSources/{data_source_id}` or
+      `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -180,7 +182,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned.
-      Must be in the form: `projects/{project_id}`
+      Must be in the form: `projects/{project_id}` or
+      `projects/{project_id}/locations/{location_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -406,7 +409,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The data source in the form:
-      `projects/{project_id}/dataSources/{data_source_id}`
+      `projects/{project_id}/dataSources/{data_source_id}` or
+      `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -480,7 +484,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/dataSources/{data_source_id}`
+      `projects/{project_id}/dataSources/{data_source_id}` or
+      `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -549,7 +554,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources should be returned.
-      Must be in the form: `projects/{project_id}`
+      Must be in the form: `projects/{project_id}` or
+      `projects/{project_id}/locations/{location_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -628,9 +634,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The BigQuery project id where the transfer configuration should be created.
-      Must be in the format projects/{project_id}/locations/{location_id}
-      If specified location and location of the destination bigquery dataset
-      do not match - the request will fail.
+      Must be in the format projects/{project_id}/locations/{location_id} or
+      projects/{project_id}. If specified location and location of the
+      destination bigquery dataset do not match - the request will fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -733,7 +739,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}`
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -800,7 +807,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}`
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -871,7 +879,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources
-      should be returned: `projects/{project_id}`.
+      should be returned: `projects/{project_id}` or
+      `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1067,7 +1076,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. Transfer configuration name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}`.
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1143,7 +1153,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}`.
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1216,7 +1227,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1283,7 +1295,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1352,7 +1365,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. Name of transfer configuration for which transfer runs should be retrieved.
       Format of transfer configuration resource name is:
-      `projects/{project_id}/transferConfigs/{config_id}`.
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1435,7 +1449,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. Transfer run name in the form:
-      `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1517,9 +1532,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The BigQuery project id where the transfer configuration should be created.
-      Must be in the format projects/{project_id}/locations/{location_id}
-      If specified location and location of the destination bigquery dataset
-      do not match - the request will fail.
+      Must be in the format projects/{project_id}/locations/{location_id} or
+      projects/{project_id}. If specified location and location of the
+      destination bigquery dataset do not match - the request will fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1622,7 +1637,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}`
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1689,7 +1705,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}`
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1760,7 +1777,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The BigQuery project id for which data sources
-      should be returned: `projects/{project_id}`.
+      should be returned: `projects/{project_id}` or
+      `projects/{project_id}/locations/{location_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1956,7 +1974,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. Transfer configuration name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}`.
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2032,7 +2051,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Transfer configuration name in the form:
-      `projects/{project_id}/transferConfigs/{config_id}`.
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2105,7 +2125,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2172,7 +2193,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The field will contain name of the resource requested, for example:
-      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2241,7 +2263,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. Name of transfer configuration for which transfer runs should be retrieved.
       Format of transfer configuration resource name is:
-      `projects/{project_id}/transferConfigs/{config_id}`.
+      `projects/{project_id}/transferConfigs/{config_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2324,7 +2347,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. Transfer run name in the form:
-      `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
+      `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
+      `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
