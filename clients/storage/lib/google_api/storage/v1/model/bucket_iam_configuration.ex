@@ -36,8 +36,7 @@ defmodule GoogleApi.Storage.V1.Model.BucketIamConfiguration do
 
   field(:bucketPolicyOnly, as: GoogleApi.Storage.V1.Model.BucketIamConfigurationBucketPolicyOnly)
 
-  field(
-    :uniformBucketLevelAccess,
+  field(:uniformBucketLevelAccess,
     as: GoogleApi.Storage.V1.Model.BucketIamConfigurationUniformBucketLevelAccess
   )
 end
