@@ -38,8 +38,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DevicesLongRunningOperati
           :successCount => integer()
         }
 
-  field(
-    :perDeviceStatus,
+  field(:perDeviceStatus,
     as: GoogleApi.AndroidDeviceProvisioning.V1.Model.OperationPerDevice,
     type: :list
   )
