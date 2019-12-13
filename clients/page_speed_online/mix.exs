@@ -18,13 +18,13 @@
 defmodule GoogleApi.PageSpeedOnline.Mixfile do
   use Mix.Project
 
-  @version "0.4.0"
+  @version "0.5.0"
 
   def project() do
     [
       app: :google_api_page_speed_online,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       description: description(),
@@ -59,7 +59,7 @@ defmodule GoogleApi.PageSpeedOnline.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/page_speed_online",
-        "Homepage" => "https://developers.google.com/speed/docs/insights/v4/getting-started"
+        "Homepage" => "https://developers.google.com/speed/docs/insights/v5/get-started"
       }
     ]
   end
