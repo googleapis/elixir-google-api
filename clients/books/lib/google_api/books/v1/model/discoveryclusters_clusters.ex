@@ -41,8 +41,7 @@ defmodule GoogleApi.Books.V1.Model.DiscoveryclustersClusters do
           :volumes => list(GoogleApi.Books.V1.Model.Volume.t())
         }
 
-  field(
-    :banner_with_content_container,
+  field(:banner_with_content_container,
     as: GoogleApi.Books.V1.Model.DiscoveryclustersClustersBannerWithContentContainer
   )
 

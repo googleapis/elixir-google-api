@@ -46,14 +46,12 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSenses do
           :synonyms => list(GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesSynonyms.t())
         }
 
-  field(
-    :conjugations,
+  field(:conjugations,
     as: GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesConjugations,
     type: :list
   )
 
-  field(
-    :definitions,
+  field(:definitions,
     as: GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitions,
     type: :list
   )
