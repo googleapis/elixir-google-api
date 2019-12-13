@@ -33,8 +33,7 @@ defmodule GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettoke
           :verificationMethod => String.t()
         }
 
-  field(
-    :site,
+  field(:site,
     as: GoogleApi.SiteVerification.V1.Model.SiteVerificationWebResourceGettokenRequestSite
   )
 
