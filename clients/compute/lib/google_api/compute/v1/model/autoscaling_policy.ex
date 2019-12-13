@@ -47,14 +47,12 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
   field(:coolDownPeriodSec)
   field(:cpuUtilization, as: GoogleApi.Compute.V1.Model.AutoscalingPolicyCpuUtilization)
 
-  field(
-    :customMetricUtilizations,
+  field(:customMetricUtilizations,
     as: GoogleApi.Compute.V1.Model.AutoscalingPolicyCustomMetricUtilization,
     type: :list
   )
 
-  field(
-    :loadBalancingUtilization,
+  field(:loadBalancingUtilization,
     as: GoogleApi.Compute.V1.Model.AutoscalingPolicyLoadBalancingUtilization
   )
 

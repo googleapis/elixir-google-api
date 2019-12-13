@@ -37,8 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxyAggregatedListWarning do
 
   field(:code)
 
-  field(
-    :data,
+  field(:data,
     as: GoogleApi.Compute.V1.Model.TargetHttpsProxyAggregatedListWarningData,
     type: :list
   )

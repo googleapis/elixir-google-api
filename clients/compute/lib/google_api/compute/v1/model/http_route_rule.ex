@@ -21,9 +21,14 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteRule do
 
   ## Attributes
 
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The short description conveying the intent of this routeRule.
+      The description can have a maximum length of 1024 characters.
   *   `headerAction` (*type:* `GoogleApi.Compute.V1.Model.HttpHeaderAction.t`, *default:* `nil`) - Specifies changes to request and response headers that need to take effect for the selected backendService.
       The headerAction specified here are applied before the matching pathMatchers[].headerAction and after pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
   *   `matchRules` (*type:* `list(GoogleApi.Compute.V1.Model.HttpRouteRuleMatch.t)`, *default:* `nil`) - 
+  *   `priority` (*type:* `integer()`, *default:* `nil`) - For routeRules within a given pathMatcher, priority determines the order in which load balancer will interpret routeRules. RouteRules are evaluated in order of priority, from the lowest to highest number. The priority of a rule decreases as its number increases (1, 2, 3, N+1). The first rule that matches the request is applied.
+      You cannot configure two or more routeRules with the same priority. Priority for each rule must be set to a number between 0 and 2147483647 inclusive.
+      Priority numbers can have gaps, which enable you to add or remove rules in the future without affecting the rest of the rules. For example, 1, 2, 3, 4, 5, 9, 12, 16 is a valid series of priority numbers to which you could add rules numbered from 6 to 8, 10 to 11, and 13 to 15 in the future without any impact on existing rules.
   *   `routeAction` (*type:* `GoogleApi.Compute.V1.Model.HttpRouteAction.t`, *default:* `nil`) - In response to a matching matchRule, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If  routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
       Only one of routeAction or urlRedirect must be set.
   *   `service` (*type:* `String.t`, *default:* `nil`) - The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
@@ -35,15 +40,19 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :description => String.t(),
           :headerAction => GoogleApi.Compute.V1.Model.HttpHeaderAction.t(),
           :matchRules => list(GoogleApi.Compute.V1.Model.HttpRouteRuleMatch.t()),
+          :priority => integer(),
           :routeAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t(),
           :service => String.t(),
           :urlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t()
         }
 
+  field(:description)
   field(:headerAction, as: GoogleApi.Compute.V1.Model.HttpHeaderAction)
   field(:matchRules, as: GoogleApi.Compute.V1.Model.HttpRouteRuleMatch, type: :list)
+  field(:priority)
   field(:routeAction, as: GoogleApi.Compute.V1.Model.HttpRouteAction)
   field(:service)
   field(:urlRedirect, as: GoogleApi.Compute.V1.Model.HttpRedirectAction)

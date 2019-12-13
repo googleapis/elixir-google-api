@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetSslProxies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified TargetSslProxy resource.
+  Deletes the specified TargetSslProxy resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetSslProxies do
   end
 
   @doc """
-  Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by making a list() request.
+  Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -156,7 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetSslProxies do
   end
 
   @doc """
-  Creates a TargetSslProxy resource in the specified project using the data included in the request.
+  Creates a TargetSslProxy resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -213,7 +213,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetSslProxies do
   end
 
   @doc """
-  Retrieves the list of TargetSslProxy resources available to the specified project.
+  Retrieves the list of TargetSslProxy resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -280,7 +280,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetSslProxies do
   end
 
   @doc """
-  Changes the BackendService for TargetSslProxy.
+  Changes the BackendService for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -350,7 +350,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetSslProxies do
   end
 
   @doc """
-  Changes the ProxyHeaderType for TargetSslProxy.
+  Changes the ProxyHeaderType for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -420,7 +420,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetSslProxies do
   end
 
   @doc """
-  Changes SslCertificates for TargetSslProxy.
+  Changes SslCertificates for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -490,7 +490,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetSslProxies do
   end
 
   @doc """
-  Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for SSL features. This affects connections between clients and the SSL proxy load balancer. They do not affect the connection between the load balancer and the backends.
+  Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for SSL features. This affects connections between clients and the SSL proxy load balancer. They do not affect the connection between the load balancer and the backends. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

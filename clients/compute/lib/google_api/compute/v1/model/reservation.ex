@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
 
   ## Attributes
 
-  *   `commitment` (*type:* `String.t`, *default:* `nil`) - [OutputOnly] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+  *   `commitment` (*type:* `String.t`, *default:* `nil`) - [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.

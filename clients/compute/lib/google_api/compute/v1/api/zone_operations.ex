@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified zone-specific Operations resource.
+  Deletes the specified zone-specific Operations resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -92,7 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
   end
 
   @doc """
-  Retrieves the specified zone-specific Operations resource.
+  Retrieves the specified zone-specific Operations resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -158,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.ZoneOperations do
   end
 
   @doc """
-  Retrieves a list of Operation resources contained within the specified zone.
+  Retrieves a list of Operation resources contained within the specified zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

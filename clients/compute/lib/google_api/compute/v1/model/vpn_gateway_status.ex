@@ -30,11 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayStatus do
           :vpnConnections => list(GoogleApi.Compute.V1.Model.VpnGatewayStatusVpnConnection.t())
         }
 
-  field(
-    :vpnConnections,
-    as: GoogleApi.Compute.V1.Model.VpnGatewayStatusVpnConnection,
-    type: :list
-  )
+  field(:vpnConnections, as: GoogleApi.Compute.V1.Model.VpnGatewayStatusVpnConnection, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.VpnGatewayStatus do

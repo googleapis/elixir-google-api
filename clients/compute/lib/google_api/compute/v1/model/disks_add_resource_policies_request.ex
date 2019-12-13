@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.DisksAddResourcePoliciesRequest do
 
   ## Attributes
 
-  *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies to be added to this disk.
+  *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies to be added to this disk. Currently you can only specify one policy here.
   """
 
   use GoogleApi.Gax.ModelBase

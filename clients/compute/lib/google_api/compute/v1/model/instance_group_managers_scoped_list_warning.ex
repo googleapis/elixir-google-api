@@ -38,8 +38,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagersScopedListWarning do
 
   field(:code)
 
-  field(
-    :data,
+  field(:data,
     as: GoogleApi.Compute.V1.Model.InstanceGroupManagersScopedListWarningData,
     type: :list
   )

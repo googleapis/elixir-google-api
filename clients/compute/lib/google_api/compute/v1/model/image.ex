@@ -69,6 +69,7 @@ defmodule GoogleApi.Compute.V1.Model.Image do
   *   `sourceSnapshotId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
   *   `sourceType` (*type:* `String.t`, *default:* `RAW`) - The type of the image used to create this disk. The default and only value is RAW
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+  *   `storageLocations` (*type:* `list(String.t)`, *default:* `nil`) - Cloud Storage bucket storage location of the image (regional or multi-regional).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -101,7 +102,8 @@ defmodule GoogleApi.Compute.V1.Model.Image do
           :sourceSnapshotEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t(),
           :sourceSnapshotId => String.t(),
           :sourceType => String.t(),
-          :status => String.t()
+          :status => String.t(),
+          :storageLocations => list(String.t())
         }
 
   field(:archiveSizeBytes)
@@ -132,6 +134,7 @@ defmodule GoogleApi.Compute.V1.Model.Image do
   field(:sourceSnapshotId)
   field(:sourceType)
   field(:status)
+  field(:storageLocations, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Image do

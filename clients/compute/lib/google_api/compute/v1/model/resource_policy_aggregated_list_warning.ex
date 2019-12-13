@@ -37,11 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedListWarning do
 
   field(:code)
 
-  field(
-    :data,
-    as: GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedListWarningData,
-    type: :list
-  )
+  field(:data, as: GoogleApi.Compute.V1.Model.ResourcePolicyAggregatedListWarningData, type: :list)
 
   field(:message)
 end

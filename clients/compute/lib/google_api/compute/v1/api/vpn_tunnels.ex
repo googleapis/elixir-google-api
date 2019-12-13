@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of VPN tunnels.
+  Retrieves an aggregated list of VPN tunnels. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -93,7 +93,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   end
 
   @doc """
-  Deletes the specified VpnTunnel resource.
+  Deletes the specified VpnTunnel resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -165,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   end
 
   @doc """
-  Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a list() request.
+  Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -231,7 +231,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   end
 
   @doc """
-  Creates a VpnTunnel resource in the specified project and region using the data included in the request.
+  Creates a VpnTunnel resource in the specified project and region using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -295,7 +295,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnTunnels do
   end
 
   @doc """
-  Retrieves a list of VpnTunnel resources contained in the specified project and region.
+  Retrieves a list of VpnTunnel resources contained in the specified project and region. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

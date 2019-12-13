@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Adds a key for validating requests with signed URLs for this backend service.
+  Adds a key for validating requests with signed URLs for this backend service. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -96,7 +96,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Retrieves the list of all BackendService resources, regional and global, available to the specified project.
+  Retrieves the list of all BackendService resources, regional and global, available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -176,7 +176,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Deletes the specified BackendService resource.
+  Deletes the specified BackendService resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -244,7 +244,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Deletes a key for validating requests with signed URLs for this backend service.
+  Deletes a key for validating requests with signed URLs for this backend service. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -316,7 +316,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Returns the specified BackendService resource. Gets a list of available backend services.
+  Returns the specified BackendService resource. Gets a list of available backend services. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -378,7 +378,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Gets the most recent health check results for this BackendService.
+  Gets the most recent health check results for this BackendService. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -444,7 +444,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Creates a BackendService resource in the specified project using the data included in the request. There are several restrictions and guidelines to keep in mind when creating a backend service. Read  Restrictions and Guidelines for more information.
+  Creates a BackendService resource in the specified project using the data included in the request. There are several restrictions and guidelines to keep in mind when creating a backend service. Read  Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -501,7 +501,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Retrieves the list of BackendService resources available to the specified project.
+  Retrieves the list of BackendService resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -568,7 +568,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Patches the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Patches the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -638,7 +638,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Sets the security policy for the specified backend service.
+  Sets the security policy for the specified backend service. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -708,7 +708,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Updates the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information.
+  Updates the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

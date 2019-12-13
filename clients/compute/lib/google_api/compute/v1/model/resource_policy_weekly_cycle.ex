@@ -30,8 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyWeeklyCycle do
           :dayOfWeeks => list(GoogleApi.Compute.V1.Model.ResourcePolicyWeeklyCycleDayOfWeek.t())
         }
 
-  field(
-    :dayOfWeeks,
+  field(:dayOfWeeks,
     as: GoogleApi.Compute.V1.Model.ResourcePolicyWeeklyCycleDayOfWeek,
     type: :list
   )
