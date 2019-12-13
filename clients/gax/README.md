@@ -10,7 +10,7 @@ by adding `google_gax` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:google_gax, "~> 0.3.1"}
+    {:google_gax, "~> 0.3.0"}
   ]
 end
 ```
