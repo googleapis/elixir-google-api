@@ -34,12 +34,23 @@ defmodule GoogleApis.Discovery do
     end
   end
 
+  def discover_merge() do
+    ApiConfig.load_all()
+    |> remove_entries(discover(preferred: false))
+    |> add_entries(discover(preferred: true))
+    |> Enum.sort_by(fn config ->
+      {config.publish == false, String.downcase(config.name), config.version, config.url}
+    end)
+    |> format_entries()
+  end
+
   @doc """
   Download the list of preferred APIs from the Discovery service
   """
-  def discover() do
+  def discover(opts \\ []) do
     conn = Connection.new()
-    {:ok, %{items: items}} = Apis.discovery_apis_list(conn, preferred: true)
+    preferred = Keyword.get(opts, :preferred, true)
+    {:ok, %{items: items}} = Apis.discovery_apis_list(conn, preferred: preferred)
 
     Enum.map(items, fn item ->
       %ApiConfig{
@@ -47,6 +58,46 @@ defmodule GoogleApis.Discovery do
         version: item.version,
         url: item.discoveryRestUrl
       }
+    end)
+  end
+
+  defp remove_entries(current, discovered) do
+    Enum.map(current, fn %ApiConfig{url: url, publish: publish} = config ->
+      if publish == false || Enum.any?(discovered, fn c -> c.url == url end) do
+        config
+      else
+        %ApiConfig{config | publish: "FIXME: No longer in discovery. Consider removal."}
+      end
+    end)
+  end
+
+  defp add_entries(current, discovered) do
+    added = Enum.flat_map(discovered, fn config ->
+      url = config.url
+      if Enum.any?(current, fn c -> c.url == url end) do
+        []
+      else
+        [%ApiConfig{config | publish: "FIXME: Newly added. Adjust the name capitalization."}]
+      end
+    end)
+    current ++ added
+  end
+
+  defp format_entries(entries) do
+    Enum.map(entries, fn
+      %ApiConfig{name: name, version: version, url: url, publish: true} ->
+        %{
+          "version" => version,
+          "name" => name,
+          "url" => url
+        }
+      %ApiConfig{name: name, version: version, url: url, publish: publish} ->
+        %{
+          "version" => version,
+          "name" => name,
+          "url" => url,
+          "publish" => publish
+        }
     end)
   end
 
