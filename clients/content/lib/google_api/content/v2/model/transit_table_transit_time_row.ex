@@ -31,8 +31,7 @@ defmodule GoogleApi.Content.V2.Model.TransitTableTransitTimeRow do
             list(GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue.t())
         }
 
-  field(
-    :values,
+  field(:values,
     as: GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue,
     type: :list
   )

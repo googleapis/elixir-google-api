@@ -33,8 +33,7 @@ defmodule GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponse do
           :kind => String.t()
         }
 
-  field(
-    :entries,
+  field(:entries,
     as: GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponseEntry,
     type: :list
   )

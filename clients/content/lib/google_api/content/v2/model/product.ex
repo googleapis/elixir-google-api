@@ -21,249 +21,249 @@ defmodule GoogleApi.Content.V2.Model.Product do
 
   ## Attributes
 
-  *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the offer, i.e., how the offer was created.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code for the item.
-  *   `promotionIds` (*type:* `list(String.t)`, *default:* `nil`) - The unique ID of a promotion.
-  *   `energyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
-  *   `customLabel3` (*type:* `String.t`, *default:* `nil`) - Custom label 3 for custom grouping of items in a Shopping campaign.
-  *   `maxEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the item.
-  *   `availabilityDate` (*type:* `String.t`, *default:* `nil`) - The day a pre-ordered product becomes available for delivery, in ISO 8601 format.
-  *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability status of the item.
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
-  *   `sellOnGoogleQuantity` (*type:* `String.t`, *default:* `nil`) - The quantity of the product that is available for selling on Google. Supported only for online products.
-  *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Custom label 2 for custom grouping of items in a Shopping campaign.
-  *   `displayAdsSimilarIds` (*type:* `list(String.t)`, *default:* `nil`) - Advertiser-specified recommendations.
-  *   `shippingWeight` (*type:* `GoogleApi.Content.V2.Model.ProductShippingWeight.t`, *default:* `nil`) - Weight of the item for shipping.
-  *   `shippingLength` (*type:* `GoogleApi.Content.V2.Model.ProductShippingDimension.t`, *default:* `nil`) - Length of the item for shipping.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their productId parameter.
-      The REST ID for a product is of the form channel:contentLanguage:targetCountry:offerId.
-  *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of items in a Shopping campaign.
-  *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - Target age group of the item.
-  *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
-  *   `warnings` (*type:* `list(GoogleApi.Content.V2.Model.Error.t)`, *default:* `nil`) - Read-only warnings.
-  *   `minEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
-  *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Price of the item.
-  *   `channel` (*type:* `String.t`, *default:* `nil`) - The item's channel (online or local).
-  *   `minHandlingTime` (*type:* `String.t`, *default:* `nil`) - Minimal product handling time (in business days).
-  *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Custom label 4 for custom grouping of items in a Shopping campaign.
-  *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
-  *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see products data specification).
-  *   `expirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in productstatuses as googleExpirationDate and might be earlier if expirationDate is too far in the future.
-  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
-  *   `material` (*type:* `String.t`, *default:* `nil`) - The material of which the item is made.
-  *   `googleProductCategory` (*type:* `String.t`, *default:* `nil`) - Google's category of the item (see Google product taxonomy).
-  *   `isBundle` (*type:* `boolean()`, *default:* `nil`) - Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.
-  *   `mobileLink` (*type:* `String.t`, *default:* `nil`) - Link to a mobile-optimized version of the landing page.
-  *   `sizeType` (*type:* `String.t`, *default:* `nil`) - The cut of the item. Recommended for apparel items.
-  *   `additionalImageLinks` (*type:* `list(String.t)`, *default:* `nil`) - Additional URLs of images of the item.
-  *   `shipping` (*type:* `list(GoogleApi.Content.V2.Model.ProductShipping.t)`, *default:* `nil`) - Shipping rules.
-  *   `validatedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. The read-only list of intended destinations which passed validation.
-  *   `destinations` (*type:* `list(GoogleApi.Content.V2.Model.ProductDestination.t)`, *default:* `nil`) - Specifies the intended destinations for the product.
-  *   `costOfGoodsSold` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Cost of goods sold. Used for gross profit reporting.
-  *   `additionalProductTypes` (*type:* `list(String.t)`, *default:* `nil`) - Additional categories of the item (formatted as in products data specification).
-  *   `installment` (*type:* `GoogleApi.Content.V2.Model.Installment.t`, *default:* `nil`) - Number and amount of installments to pay for an item. Brazil only.
-  *   `onlineOnly` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Whether an item is available for purchase only online.
-  *   `multipack` (*type:* `String.t`, *default:* `nil`) - The number of identical products in a merchant-defined multipack.
-  *   `salePrice` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Advertised sale price of the item.
-  *   `sizeSystem` (*type:* `String.t`, *default:* `nil`) - System in which the size is specified. Recommended for apparel items.
-  *   `shippingLabel` (*type:* `String.t`, *default:* `nil`) - The shipping label of the product, used to group product in account-level shipping rules.
-  *   `displayAdsValue` (*type:* `float()`, *default:* `nil`) - Offer margin for dynamic remarketing campaigns.
-  *   `kind` (*type:* `String.t`, *default:* `content#product`) - Identifies what kind of resource this is. Value: the fixed string "content#product".
-  *   `loyaltyPoints` (*type:* `GoogleApi.Content.V2.Model.LoyaltyPoints.t`, *default:* `nil`) - Loyalty points that users receive after purchasing the item. Japan only.
-  *   `displayAdsLink` (*type:* `String.t`, *default:* `nil`) - URL directly to your item's landing page for dynamic remarketing campaigns.
-  *   `displayAdsId` (*type:* `String.t`, *default:* `nil`) - An identifier for an item for dynamic remarketing campaigns.
-  *   `customGroups` (*type:* `list(GoogleApi.Content.V2.Model.CustomGroup.t)`, *default:* `nil`) - A list of custom (merchant-provided) custom attribute groups.
-  *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the item.
-  *   `shippingWidth` (*type:* `GoogleApi.Content.V2.Model.ProductShippingDimension.t`, *default:* `nil`) - Width of the item for shipping.
-  *   `displayAdsTitle` (*type:* `String.t`, *default:* `nil`) - Title of an item for dynamic remarketing campaigns.
-  *   `unitPricingMeasure` (*type:* `GoogleApi.Content.V2.Model.ProductUnitPricingMeasure.t`, *default:* `nil`) - The measure and dimension of an item.
-  *   `gender` (*type:* `String.t`, *default:* `nil`) - Target gender of the item.
-  *   `customAttributes` (*type:* `list(GoogleApi.Content.V2.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { "name": "size type", "value": "regular" }). This is useful for submitting attributes not explicitly exposed by the API.
-  *   `taxes` (*type:* `list(GoogleApi.Content.V2.Model.ProductTax.t)`, *default:* `nil`) - Tax information.
-  *   `adwordsRedirect` (*type:* `String.t`, *default:* `nil`) - Allows advertisers to override the item URL when the product is shown within the context of Product Ads.
-  *   `shippingHeight` (*type:* `GoogleApi.Content.V2.Model.ProductShippingDimension.t`, *default:* `nil`) - Height of the item for shipping.
-  *   `mpn` (*type:* `String.t`, *default:* `nil`) - Manufacturer Part Number (MPN) of the item.
-  *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (e.g. polka dots).
-  *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign.
-  *   `adwordsGrouping` (*type:* `String.t`, *default:* `nil`) - Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise.
-  *   `aspects` (*type:* `list(GoogleApi.Content.V2.Model.ProductAspect.t)`, *default:* `nil`) - Deprecated. Do not use.
+  *   `sizes` (*type:* `list(String.t)`, *default:* `nil`) - Size of the item. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same itemGroupId value (see size definition).
+  *   `identifierExists` (*type:* `boolean()`, *default:* `nil`) - False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada.
+  *   `adult` (*type:* `boolean()`, *default:* `nil`) - Set to true if the item is targeted towards adults.
+  *   `unitPricingBaseMeasure` (*type:* `GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure.t`, *default:* `nil`) - The preference of the denominator of the unit price.
+  *   `productType` (*type:* `String.t`, *default:* `nil`) - Your category of the item (formatted as in products data specification).
+  *   `adwordsLabels` (*type:* `list(String.t)`, *default:* `nil`) - Similar to adwords_grouping, but only works on CPC.
+  *   `link` (*type:* `String.t`, *default:* `nil`) - URL directly linking to your item's page on your website.
+  *   `color` (*type:* `String.t`, *default:* `nil`) - Color of the item.
+  *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - Shared identifier for all variants of the same product.
+  *   `maxHandlingTime` (*type:* `String.t`, *default:* `nil`) - Maximal product handling time (in business days).
   *   `offerId` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details.
       Note: Content API methods that operate on products take the REST ID of the product, not this identifier.
-  *   `maxHandlingTime` (*type:* `String.t`, *default:* `nil`) - Maximal product handling time (in business days).
-  *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - Shared identifier for all variants of the same product.
-  *   `color` (*type:* `String.t`, *default:* `nil`) - Color of the item.
-  *   `link` (*type:* `String.t`, *default:* `nil`) - URL directly linking to your item's page on your website.
-  *   `adwordsLabels` (*type:* `list(String.t)`, *default:* `nil`) - Similar to adwords_grouping, but only works on CPC.
-  *   `productType` (*type:* `String.t`, *default:* `nil`) - Your category of the item (formatted as in products data specification).
-  *   `unitPricingBaseMeasure` (*type:* `GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure.t`, *default:* `nil`) - The preference of the denominator of the unit price.
-  *   `adult` (*type:* `boolean()`, *default:* `nil`) - Set to true if the item is targeted towards adults.
-  *   `identifierExists` (*type:* `boolean()`, *default:* `nil`) - False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada.
-  *   `sizes` (*type:* `list(String.t)`, *default:* `nil`) - Size of the item. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same itemGroupId value (see size definition).
+  *   `aspects` (*type:* `list(GoogleApi.Content.V2.Model.ProductAspect.t)`, *default:* `nil`) - Deprecated. Do not use.
+  *   `adwordsGrouping` (*type:* `String.t`, *default:* `nil`) - Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise.
+  *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign.
+  *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (e.g. polka dots).
+  *   `mpn` (*type:* `String.t`, *default:* `nil`) - Manufacturer Part Number (MPN) of the item.
+  *   `shippingHeight` (*type:* `GoogleApi.Content.V2.Model.ProductShippingDimension.t`, *default:* `nil`) - Height of the item for shipping.
+  *   `adwordsRedirect` (*type:* `String.t`, *default:* `nil`) - Allows advertisers to override the item URL when the product is shown within the context of Product Ads.
+  *   `taxes` (*type:* `list(GoogleApi.Content.V2.Model.ProductTax.t)`, *default:* `nil`) - Tax information.
+  *   `customAttributes` (*type:* `list(GoogleApi.Content.V2.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { "name": "size type", "value": "regular" }). This is useful for submitting attributes not explicitly exposed by the API, such as additional attributes used for Shopping Actions.
+  *   `gender` (*type:* `String.t`, *default:* `nil`) - Target gender of the item.
+  *   `unitPricingMeasure` (*type:* `GoogleApi.Content.V2.Model.ProductUnitPricingMeasure.t`, *default:* `nil`) - The measure and dimension of an item.
+  *   `displayAdsTitle` (*type:* `String.t`, *default:* `nil`) - Title of an item for dynamic remarketing campaigns.
+  *   `shippingWidth` (*type:* `GoogleApi.Content.V2.Model.ProductShippingDimension.t`, *default:* `nil`) - Width of the item for shipping.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the item.
+  *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item.
+  *   `customGroups` (*type:* `list(GoogleApi.Content.V2.Model.CustomGroup.t)`, *default:* `nil`) - A list of custom (merchant-provided) custom attribute groups.
+  *   `displayAdsId` (*type:* `String.t`, *default:* `nil`) - An identifier for an item for dynamic remarketing campaigns.
+  *   `displayAdsLink` (*type:* `String.t`, *default:* `nil`) - URL directly to your item's landing page for dynamic remarketing campaigns.
+  *   `loyaltyPoints` (*type:* `GoogleApi.Content.V2.Model.LoyaltyPoints.t`, *default:* `nil`) - Loyalty points that users receive after purchasing the item. Japan only.
+  *   `kind` (*type:* `String.t`, *default:* `content#product`) - Identifies what kind of resource this is. Value: the fixed string "content#product".
+  *   `displayAdsValue` (*type:* `float()`, *default:* `nil`) - Offer margin for dynamic remarketing campaigns.
+  *   `shippingLabel` (*type:* `String.t`, *default:* `nil`) - The shipping label of the product, used to group product in account-level shipping rules.
+  *   `sizeSystem` (*type:* `String.t`, *default:* `nil`) - System in which the size is specified. Recommended for apparel items.
+  *   `salePrice` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Advertised sale price of the item.
+  *   `multipack` (*type:* `String.t`, *default:* `nil`) - The number of identical products in a merchant-defined multipack.
+  *   `onlineOnly` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Whether an item is available for purchase only online.
+  *   `installment` (*type:* `GoogleApi.Content.V2.Model.Installment.t`, *default:* `nil`) - Number and amount of installments to pay for an item. Brazil only.
+  *   `additionalProductTypes` (*type:* `list(String.t)`, *default:* `nil`) - Additional categories of the item (formatted as in products data specification).
+  *   `costOfGoodsSold` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Cost of goods sold. Used for gross profit reporting.
+  *   `destinations` (*type:* `list(GoogleApi.Content.V2.Model.ProductDestination.t)`, *default:* `nil`) - Specifies the intended destinations for the product.
+  *   `validatedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. The read-only list of intended destinations which passed validation.
+  *   `shipping` (*type:* `list(GoogleApi.Content.V2.Model.ProductShipping.t)`, *default:* `nil`) - Shipping rules.
+  *   `additionalImageLinks` (*type:* `list(String.t)`, *default:* `nil`) - Additional URLs of images of the item.
+  *   `sizeType` (*type:* `String.t`, *default:* `nil`) - The cut of the item. Recommended for apparel items.
+  *   `mobileLink` (*type:* `String.t`, *default:* `nil`) - Link to a mobile-optimized version of the landing page.
+  *   `isBundle` (*type:* `boolean()`, *default:* `nil`) - Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.
+  *   `googleProductCategory` (*type:* `String.t`, *default:* `nil`) - Google's category of the item (see Google product taxonomy).
+  *   `material` (*type:* `String.t`, *default:* `nil`) - The material of which the item is made.
+  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
+  *   `expirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in productstatuses as googleExpirationDate and might be earlier if expirationDate is too far in the future.
+  *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see products data specification).
+  *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
+  *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Custom label 4 for custom grouping of items in a Shopping campaign.
+  *   `minHandlingTime` (*type:* `String.t`, *default:* `nil`) - Minimal product handling time (in business days).
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - The item's channel (online or local).
+  *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Price of the item.
+  *   `minEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
+  *   `warnings` (*type:* `list(GoogleApi.Content.V2.Model.Error.t)`, *default:* `nil`) - Read-only warnings.
+  *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
+  *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - Target age group of the item.
+  *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of items in a Shopping campaign.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their productId parameter.
+      The REST ID for a product is of the form channel:contentLanguage:targetCountry:offerId.
+  *   `shippingLength` (*type:* `GoogleApi.Content.V2.Model.ProductShippingDimension.t`, *default:* `nil`) - Length of the item for shipping.
+  *   `shippingWeight` (*type:* `GoogleApi.Content.V2.Model.ProductShippingWeight.t`, *default:* `nil`) - Weight of the item for shipping.
+  *   `displayAdsSimilarIds` (*type:* `list(String.t)`, *default:* `nil`) - Advertiser-specified recommendations.
+  *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Custom label 2 for custom grouping of items in a Shopping campaign.
+  *   `sellOnGoogleQuantity` (*type:* `String.t`, *default:* `nil`) - The quantity of the product that is available for selling on Google. Supported only for online products.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
+  *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability status of the item.
+  *   `availabilityDate` (*type:* `String.t`, *default:* `nil`) - The day a pre-ordered product becomes available for delivery, in ISO 8601 format.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the item.
+  *   `maxEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
+  *   `customLabel3` (*type:* `String.t`, *default:* `nil`) - Custom label 3 for custom grouping of items in a Shopping campaign.
+  *   `energyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
+  *   `promotionIds` (*type:* `list(String.t)`, *default:* `nil`) - The unique ID of a promotion.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code for the item.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the offer, i.e., how the offer was created.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :source => String.t(),
-          :targetCountry => String.t(),
-          :promotionIds => list(String.t()),
-          :energyEfficiencyClass => String.t(),
-          :customLabel3 => String.t(),
-          :maxEnergyEfficiencyClass => String.t(),
-          :title => String.t(),
-          :availabilityDate => String.t(),
-          :availability => String.t(),
-          :contentLanguage => String.t(),
-          :sellOnGoogleQuantity => String.t(),
-          :customLabel2 => String.t(),
-          :displayAdsSimilarIds => list(String.t()),
-          :shippingWeight => GoogleApi.Content.V2.Model.ProductShippingWeight.t(),
-          :shippingLength => GoogleApi.Content.V2.Model.ProductShippingDimension.t(),
-          :id => String.t(),
-          :customLabel0 => String.t(),
-          :ageGroup => String.t(),
-          :imageLink => String.t(),
-          :warnings => list(GoogleApi.Content.V2.Model.Error.t()),
-          :minEnergyEfficiencyClass => String.t(),
-          :price => GoogleApi.Content.V2.Model.Price.t(),
-          :channel => String.t(),
-          :minHandlingTime => String.t(),
-          :customLabel4 => String.t(),
-          :brand => String.t(),
-          :salePriceEffectiveDate => String.t(),
-          :expirationDate => String.t(),
-          :condition => String.t(),
-          :material => String.t(),
-          :googleProductCategory => String.t(),
-          :isBundle => boolean(),
-          :mobileLink => String.t(),
-          :sizeType => String.t(),
-          :additionalImageLinks => list(String.t()),
-          :shipping => list(GoogleApi.Content.V2.Model.ProductShipping.t()),
-          :validatedDestinations => list(String.t()),
-          :destinations => list(GoogleApi.Content.V2.Model.ProductDestination.t()),
-          :costOfGoodsSold => GoogleApi.Content.V2.Model.Price.t(),
-          :additionalProductTypes => list(String.t()),
-          :installment => GoogleApi.Content.V2.Model.Installment.t(),
-          :onlineOnly => boolean(),
-          :multipack => String.t(),
-          :salePrice => GoogleApi.Content.V2.Model.Price.t(),
-          :sizeSystem => String.t(),
-          :shippingLabel => String.t(),
-          :displayAdsValue => float(),
-          :kind => String.t(),
-          :loyaltyPoints => GoogleApi.Content.V2.Model.LoyaltyPoints.t(),
-          :displayAdsLink => String.t(),
-          :displayAdsId => String.t(),
-          :customGroups => list(GoogleApi.Content.V2.Model.CustomGroup.t()),
-          :gtin => String.t(),
-          :description => String.t(),
-          :shippingWidth => GoogleApi.Content.V2.Model.ProductShippingDimension.t(),
-          :displayAdsTitle => String.t(),
-          :unitPricingMeasure => GoogleApi.Content.V2.Model.ProductUnitPricingMeasure.t(),
-          :gender => String.t(),
-          :customAttributes => list(GoogleApi.Content.V2.Model.CustomAttribute.t()),
-          :taxes => list(GoogleApi.Content.V2.Model.ProductTax.t()),
-          :adwordsRedirect => String.t(),
-          :shippingHeight => GoogleApi.Content.V2.Model.ProductShippingDimension.t(),
-          :mpn => String.t(),
-          :pattern => String.t(),
-          :customLabel1 => String.t(),
-          :adwordsGrouping => String.t(),
-          :aspects => list(GoogleApi.Content.V2.Model.ProductAspect.t()),
-          :offerId => String.t(),
-          :maxHandlingTime => String.t(),
-          :itemGroupId => String.t(),
-          :color => String.t(),
-          :link => String.t(),
-          :adwordsLabels => list(String.t()),
-          :productType => String.t(),
-          :unitPricingBaseMeasure => GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure.t(),
-          :adult => boolean(),
+          :sizes => list(String.t()),
           :identifierExists => boolean(),
-          :sizes => list(String.t())
+          :adult => boolean(),
+          :unitPricingBaseMeasure => GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure.t(),
+          :productType => String.t(),
+          :adwordsLabels => list(String.t()),
+          :link => String.t(),
+          :color => String.t(),
+          :itemGroupId => String.t(),
+          :maxHandlingTime => String.t(),
+          :offerId => String.t(),
+          :aspects => list(GoogleApi.Content.V2.Model.ProductAspect.t()),
+          :adwordsGrouping => String.t(),
+          :customLabel1 => String.t(),
+          :pattern => String.t(),
+          :mpn => String.t(),
+          :shippingHeight => GoogleApi.Content.V2.Model.ProductShippingDimension.t(),
+          :adwordsRedirect => String.t(),
+          :taxes => list(GoogleApi.Content.V2.Model.ProductTax.t()),
+          :customAttributes => list(GoogleApi.Content.V2.Model.CustomAttribute.t()),
+          :gender => String.t(),
+          :unitPricingMeasure => GoogleApi.Content.V2.Model.ProductUnitPricingMeasure.t(),
+          :displayAdsTitle => String.t(),
+          :shippingWidth => GoogleApi.Content.V2.Model.ProductShippingDimension.t(),
+          :description => String.t(),
+          :gtin => String.t(),
+          :customGroups => list(GoogleApi.Content.V2.Model.CustomGroup.t()),
+          :displayAdsId => String.t(),
+          :displayAdsLink => String.t(),
+          :loyaltyPoints => GoogleApi.Content.V2.Model.LoyaltyPoints.t(),
+          :kind => String.t(),
+          :displayAdsValue => float(),
+          :shippingLabel => String.t(),
+          :sizeSystem => String.t(),
+          :salePrice => GoogleApi.Content.V2.Model.Price.t(),
+          :multipack => String.t(),
+          :onlineOnly => boolean(),
+          :installment => GoogleApi.Content.V2.Model.Installment.t(),
+          :additionalProductTypes => list(String.t()),
+          :costOfGoodsSold => GoogleApi.Content.V2.Model.Price.t(),
+          :destinations => list(GoogleApi.Content.V2.Model.ProductDestination.t()),
+          :validatedDestinations => list(String.t()),
+          :shipping => list(GoogleApi.Content.V2.Model.ProductShipping.t()),
+          :additionalImageLinks => list(String.t()),
+          :sizeType => String.t(),
+          :mobileLink => String.t(),
+          :isBundle => boolean(),
+          :googleProductCategory => String.t(),
+          :material => String.t(),
+          :condition => String.t(),
+          :expirationDate => String.t(),
+          :salePriceEffectiveDate => String.t(),
+          :brand => String.t(),
+          :customLabel4 => String.t(),
+          :minHandlingTime => String.t(),
+          :channel => String.t(),
+          :price => GoogleApi.Content.V2.Model.Price.t(),
+          :minEnergyEfficiencyClass => String.t(),
+          :warnings => list(GoogleApi.Content.V2.Model.Error.t()),
+          :imageLink => String.t(),
+          :ageGroup => String.t(),
+          :customLabel0 => String.t(),
+          :id => String.t(),
+          :shippingLength => GoogleApi.Content.V2.Model.ProductShippingDimension.t(),
+          :shippingWeight => GoogleApi.Content.V2.Model.ProductShippingWeight.t(),
+          :displayAdsSimilarIds => list(String.t()),
+          :customLabel2 => String.t(),
+          :sellOnGoogleQuantity => String.t(),
+          :contentLanguage => String.t(),
+          :availability => String.t(),
+          :availabilityDate => String.t(),
+          :title => String.t(),
+          :maxEnergyEfficiencyClass => String.t(),
+          :customLabel3 => String.t(),
+          :energyEfficiencyClass => String.t(),
+          :promotionIds => list(String.t()),
+          :targetCountry => String.t(),
+          :source => String.t()
         }
 
-  field(:source)
-  field(:targetCountry)
-  field(:promotionIds, type: :list)
-  field(:energyEfficiencyClass)
-  field(:customLabel3)
-  field(:maxEnergyEfficiencyClass)
-  field(:title)
-  field(:availabilityDate)
-  field(:availability)
-  field(:contentLanguage)
-  field(:sellOnGoogleQuantity)
-  field(:customLabel2)
-  field(:displayAdsSimilarIds, type: :list)
-  field(:shippingWeight, as: GoogleApi.Content.V2.Model.ProductShippingWeight)
-  field(:shippingLength, as: GoogleApi.Content.V2.Model.ProductShippingDimension)
-  field(:id)
-  field(:customLabel0)
-  field(:ageGroup)
-  field(:imageLink)
-  field(:warnings, as: GoogleApi.Content.V2.Model.Error, type: :list)
-  field(:minEnergyEfficiencyClass)
-  field(:price, as: GoogleApi.Content.V2.Model.Price)
-  field(:channel)
-  field(:minHandlingTime)
-  field(:customLabel4)
-  field(:brand)
-  field(:salePriceEffectiveDate)
-  field(:expirationDate)
-  field(:condition)
-  field(:material)
-  field(:googleProductCategory)
-  field(:isBundle)
-  field(:mobileLink)
-  field(:sizeType)
-  field(:additionalImageLinks, type: :list)
-  field(:shipping, as: GoogleApi.Content.V2.Model.ProductShipping, type: :list)
-  field(:validatedDestinations, type: :list)
-  field(:destinations, as: GoogleApi.Content.V2.Model.ProductDestination, type: :list)
-  field(:costOfGoodsSold, as: GoogleApi.Content.V2.Model.Price)
-  field(:additionalProductTypes, type: :list)
-  field(:installment, as: GoogleApi.Content.V2.Model.Installment)
-  field(:onlineOnly)
-  field(:multipack)
-  field(:salePrice, as: GoogleApi.Content.V2.Model.Price)
-  field(:sizeSystem)
-  field(:shippingLabel)
-  field(:displayAdsValue)
-  field(:kind)
-  field(:loyaltyPoints, as: GoogleApi.Content.V2.Model.LoyaltyPoints)
-  field(:displayAdsLink)
-  field(:displayAdsId)
-  field(:customGroups, as: GoogleApi.Content.V2.Model.CustomGroup, type: :list)
-  field(:gtin)
-  field(:description)
-  field(:shippingWidth, as: GoogleApi.Content.V2.Model.ProductShippingDimension)
-  field(:displayAdsTitle)
-  field(:unitPricingMeasure, as: GoogleApi.Content.V2.Model.ProductUnitPricingMeasure)
-  field(:gender)
-  field(:customAttributes, as: GoogleApi.Content.V2.Model.CustomAttribute, type: :list)
-  field(:taxes, as: GoogleApi.Content.V2.Model.ProductTax, type: :list)
-  field(:adwordsRedirect)
-  field(:shippingHeight, as: GoogleApi.Content.V2.Model.ProductShippingDimension)
-  field(:mpn)
-  field(:pattern)
-  field(:customLabel1)
-  field(:adwordsGrouping)
-  field(:aspects, as: GoogleApi.Content.V2.Model.ProductAspect, type: :list)
-  field(:offerId)
-  field(:maxHandlingTime)
-  field(:itemGroupId)
-  field(:color)
-  field(:link)
-  field(:adwordsLabels, type: :list)
-  field(:productType)
-  field(:unitPricingBaseMeasure, as: GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure)
-  field(:adult)
-  field(:identifierExists)
   field(:sizes, type: :list)
+  field(:identifierExists)
+  field(:adult)
+  field(:unitPricingBaseMeasure, as: GoogleApi.Content.V2.Model.ProductUnitPricingBaseMeasure)
+  field(:productType)
+  field(:adwordsLabels, type: :list)
+  field(:link)
+  field(:color)
+  field(:itemGroupId)
+  field(:maxHandlingTime)
+  field(:offerId)
+  field(:aspects, as: GoogleApi.Content.V2.Model.ProductAspect, type: :list)
+  field(:adwordsGrouping)
+  field(:customLabel1)
+  field(:pattern)
+  field(:mpn)
+  field(:shippingHeight, as: GoogleApi.Content.V2.Model.ProductShippingDimension)
+  field(:adwordsRedirect)
+  field(:taxes, as: GoogleApi.Content.V2.Model.ProductTax, type: :list)
+  field(:customAttributes, as: GoogleApi.Content.V2.Model.CustomAttribute, type: :list)
+  field(:gender)
+  field(:unitPricingMeasure, as: GoogleApi.Content.V2.Model.ProductUnitPricingMeasure)
+  field(:displayAdsTitle)
+  field(:shippingWidth, as: GoogleApi.Content.V2.Model.ProductShippingDimension)
+  field(:description)
+  field(:gtin)
+  field(:customGroups, as: GoogleApi.Content.V2.Model.CustomGroup, type: :list)
+  field(:displayAdsId)
+  field(:displayAdsLink)
+  field(:loyaltyPoints, as: GoogleApi.Content.V2.Model.LoyaltyPoints)
+  field(:kind)
+  field(:displayAdsValue)
+  field(:shippingLabel)
+  field(:sizeSystem)
+  field(:salePrice, as: GoogleApi.Content.V2.Model.Price)
+  field(:multipack)
+  field(:onlineOnly)
+  field(:installment, as: GoogleApi.Content.V2.Model.Installment)
+  field(:additionalProductTypes, type: :list)
+  field(:costOfGoodsSold, as: GoogleApi.Content.V2.Model.Price)
+  field(:destinations, as: GoogleApi.Content.V2.Model.ProductDestination, type: :list)
+  field(:validatedDestinations, type: :list)
+  field(:shipping, as: GoogleApi.Content.V2.Model.ProductShipping, type: :list)
+  field(:additionalImageLinks, type: :list)
+  field(:sizeType)
+  field(:mobileLink)
+  field(:isBundle)
+  field(:googleProductCategory)
+  field(:material)
+  field(:condition)
+  field(:expirationDate)
+  field(:salePriceEffectiveDate)
+  field(:brand)
+  field(:customLabel4)
+  field(:minHandlingTime)
+  field(:channel)
+  field(:price, as: GoogleApi.Content.V2.Model.Price)
+  field(:minEnergyEfficiencyClass)
+  field(:warnings, as: GoogleApi.Content.V2.Model.Error, type: :list)
+  field(:imageLink)
+  field(:ageGroup)
+  field(:customLabel0)
+  field(:id)
+  field(:shippingLength, as: GoogleApi.Content.V2.Model.ProductShippingDimension)
+  field(:shippingWeight, as: GoogleApi.Content.V2.Model.ProductShippingWeight)
+  field(:displayAdsSimilarIds, type: :list)
+  field(:customLabel2)
+  field(:sellOnGoogleQuantity)
+  field(:contentLanguage)
+  field(:availability)
+  field(:availabilityDate)
+  field(:title)
+  field(:maxEnergyEfficiencyClass)
+  field(:customLabel3)
+  field(:energyEfficiencyClass)
+  field(:promotionIds, type: :list)
+  field(:targetCountry)
+  field(:source)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Product do

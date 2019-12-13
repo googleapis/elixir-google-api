@@ -44,14 +44,12 @@ defmodule GoogleApi.Content.V2.Model.AccountStatus do
 
   field(:accountId)
 
-  field(
-    :accountLevelIssues,
+  field(:accountLevelIssues,
     as: GoogleApi.Content.V2.Model.AccountStatusAccountLevelIssue,
     type: :list
   )
 
-  field(
-    :dataQualityIssues,
+  field(:dataQualityIssues,
     as: GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue,
     type: :list
   )
