@@ -41,8 +41,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityEquivalenceClass do
   field(:numDistinctSensitiveValues)
   field(:quasiIdsValues, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value, type: :list)
 
-  field(
-    :topSensitiveValues,
+  field(:topSensitiveValues,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ValueFrequency,
     type: :list
   )

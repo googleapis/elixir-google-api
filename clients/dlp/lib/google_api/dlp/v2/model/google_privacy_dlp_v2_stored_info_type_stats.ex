@@ -31,8 +31,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeStats do
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryStats.t()
         }
 
-  field(
-    :largeCustomDictionary,
+  field(:largeCustomDictionary,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryStats
   )
 end
