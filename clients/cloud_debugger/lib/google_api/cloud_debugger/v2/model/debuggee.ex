@@ -74,8 +74,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Debuggee do
   field(:agentVersion)
   field(:description)
 
-  field(
-    :extSourceContexts,
+  field(:extSourceContexts,
     as: GoogleApi.CloudDebugger.V2.Model.ExtendedSourceContext,
     type: :list
   )
