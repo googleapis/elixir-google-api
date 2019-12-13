@@ -84,14 +84,12 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightConfiguration do
   field(:subaccountId)
   field(:tagSettings, as: GoogleApi.DFAReporting.V33.Model.TagSettings)
 
-  field(
-    :thirdPartyAuthenticationTokens,
+  field(:thirdPartyAuthenticationTokens,
     as: GoogleApi.DFAReporting.V33.Model.ThirdPartyAuthenticationToken,
     type: :list
   )
 
-  field(
-    :userDefinedVariableConfigurations,
+  field(:userDefinedVariableConfigurations,
     as: GoogleApi.DFAReporting.V33.Model.UserDefinedVariableConfiguration,
     type: :list
   )

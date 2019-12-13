@@ -93,8 +93,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Campaign do
   field(:accountId)
   field(:adBlockingConfiguration, as: GoogleApi.DFAReporting.V33.Model.AdBlockingConfiguration)
 
-  field(
-    :additionalCreativeOptimizationConfigurations,
+  field(:additionalCreativeOptimizationConfigurations,
     as: GoogleApi.DFAReporting.V33.Model.CreativeOptimizationConfiguration,
     type: :list
   )
@@ -104,16 +103,14 @@ defmodule GoogleApi.DFAReporting.V33.Model.Campaign do
   field(:advertiserIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
   field(:archived)
 
-  field(
-    :audienceSegmentGroups,
+  field(:audienceSegmentGroups,
     as: GoogleApi.DFAReporting.V33.Model.AudienceSegmentGroup,
     type: :list
   )
 
   field(:billingInvoiceCode)
 
-  field(
-    :clickThroughUrlSuffixProperties,
+  field(:clickThroughUrlSuffixProperties,
     as: GoogleApi.DFAReporting.V33.Model.ClickThroughUrlSuffixProperties
   )
 
@@ -121,13 +118,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.Campaign do
   field(:createInfo, as: GoogleApi.DFAReporting.V33.Model.LastModifiedInfo)
   field(:creativeGroupIds, type: :list)
 
-  field(
-    :creativeOptimizationConfiguration,
+  field(:creativeOptimizationConfiguration,
     as: GoogleApi.DFAReporting.V33.Model.CreativeOptimizationConfiguration
   )
 
-  field(
-    :defaultClickThroughEventTagProperties,
+  field(:defaultClickThroughEventTagProperties,
     as: GoogleApi.DFAReporting.V33.Model.DefaultClickThroughEventTagProperties
   )
 
