@@ -50,22 +50,19 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :title => String.t()
         }
 
-  field(
-    :buttons,
+  field(:buttons,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCardButton,
     type: :list
   )
 
-  field(
-    :columnProperties,
+  field(:columnProperties,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageColumnProperties,
     type: :list
   )
 
   field(:image, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageImage)
 
-  field(
-    :rows,
+  field(:rows,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTableCardRow,
     type: :list
   )

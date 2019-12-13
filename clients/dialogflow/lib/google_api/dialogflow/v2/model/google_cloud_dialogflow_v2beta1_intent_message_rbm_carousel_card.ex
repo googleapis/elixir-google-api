@@ -44,8 +44,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :cardWidth => String.t()
         }
 
-  field(
-    :cardContents,
+  field(:cardContents,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent,
     type: :list
   )

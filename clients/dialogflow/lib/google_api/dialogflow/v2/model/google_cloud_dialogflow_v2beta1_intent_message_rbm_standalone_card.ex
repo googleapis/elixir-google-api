@@ -44,8 +44,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :thumbnailImageAlignment => String.t()
         }
 
-  field(
-    :cardContent,
+  field(:cardContent,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent
   )
 

@@ -38,8 +38,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchCreateEntiti
           :languageCode => String.t()
         }
 
-  field(
-    :entities,
+  field(:entities,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeEntity,
     type: :list
   )

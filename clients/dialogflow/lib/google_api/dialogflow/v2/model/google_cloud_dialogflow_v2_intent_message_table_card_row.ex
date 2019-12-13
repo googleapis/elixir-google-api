@@ -35,8 +35,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageTabl
           :dividerAfter => boolean()
         }
 
-  field(
-    :cells,
+  field(:cells,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageTableCardCell,
     type: :list
   )

@@ -52,8 +52,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SessionEntit
           :name => String.t()
         }
 
-  field(
-    :entities,
+  field(:entities,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityTypeEntity,
     type: :list
   )

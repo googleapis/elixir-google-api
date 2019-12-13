@@ -44,22 +44,19 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :text => String.t()
         }
 
-  field(
-    :dial,
+  field(:dial,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedActionRbmSuggestedActionDial
   )
 
-  field(
-    :openUrl,
+  field(:openUrl,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedActionRbmSuggestedActionOpenUri
   )
 
   field(:postbackData)
 
-  field(
-    :shareLocation,
+  field(:shareLocation,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedActionRbmSuggestedActionShareLocation
   )

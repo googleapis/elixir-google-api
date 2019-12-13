@@ -35,8 +35,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :text => String.t()
         }
 
-  field(
-    :rbmSuggestion,
+  field(:rbmSuggestion,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestion,
     type: :list
   )

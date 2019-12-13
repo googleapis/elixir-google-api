@@ -35,8 +35,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageMedi
           :mediaType => String.t()
         }
 
-  field(
-    :mediaObjects,
+  field(:mediaObjects,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageMediaContentResponseMediaObject,
     type: :list
