@@ -96,8 +96,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
 
   field(:apiLevel)
 
-  field(
-    :applicationReports,
+  field(:applicationReports,
     as: GoogleApi.AndroidManagement.V1.Model.ApplicationReport,
     type: :list
   )
@@ -113,8 +112,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   field(:enrollmentTokenName)
   field(:hardwareInfo, as: GoogleApi.AndroidManagement.V1.Model.HardwareInfo)
 
-  field(
-    :hardwareStatusSamples,
+  field(:hardwareStatusSamples,
     as: GoogleApi.AndroidManagement.V1.Model.HardwareStatus,
     type: :list
   )
@@ -128,8 +126,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   field(:name)
   field(:networkInfo, as: GoogleApi.AndroidManagement.V1.Model.NetworkInfo)
 
-  field(
-    :nonComplianceDetails,
+  field(:nonComplianceDetails,
     as: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail,
     type: :list
   )
@@ -137,8 +134,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   field(:policyCompliant)
   field(:policyName)
 
-  field(
-    :powerManagementEvents,
+  field(:powerManagementEvents,
     as: GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent,
     type: :list
   )
