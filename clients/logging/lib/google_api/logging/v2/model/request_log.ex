@@ -21,112 +21,112 @@ defmodule GoogleApi.Logging.V2.Model.RequestLog do
 
   ## Attributes
 
-  *   `first` (*type:* `boolean()`, *default:* `nil`) - Whether this is the first RequestLog entry for this request. If an active request has several RequestLog entries written to Stackdriver Logging, then this field will be set for one of them.
-  *   `instanceIndex` (*type:* `integer()`, *default:* `nil`) - If the instance processing this request belongs to a manually scaled module, then this is the 0-based index of the instance. Otherwise, this value is -1.
-  *   `httpVersion` (*type:* `String.t`, *default:* `nil`) - HTTP version of request. Example: "HTTP/1.1".
-  *   `finished` (*type:* `boolean()`, *default:* `nil`) - Whether this request is finished or active.
-  *   `line` (*type:* `list(GoogleApi.Logging.V2.Model.LogLine.t)`, *default:* `nil`) - A list of log lines emitted by the application while serving this request.
-  *   `traceSampled` (*type:* `boolean()`, *default:* `nil`) - If true, the value in the 'trace_id' field was sampled for storage in a trace backend.
-  *   `taskQueueName` (*type:* `String.t`, *default:* `nil`) - Queue name of the request, in the case of an offline request.
-  *   `traceId` (*type:* `String.t`, *default:* `nil`) - Stackdriver Trace identifier for this request.
-  *   `wasLoadingRequest` (*type:* `boolean()`, *default:* `nil`) - Whether this was a loading request for the instance.
-  *   `megaCycles` (*type:* `String.t`, *default:* `nil`) - Number of CPU megacycles used to process request.
-  *   `ip` (*type:* `String.t`, *default:* `nil`) - Origin IP address.
-  *   `referrer` (*type:* `String.t`, *default:* `nil`) - Referrer URL of request.
-  *   `nickname` (*type:* `String.t`, *default:* `nil`) - The logged-in user who made the request.Most likely, this is the part of the user's email before the @ sign. The field value is the same for different requests from the same user, but different users can have similar names. This information is also available to the application via the App Engine Users API.This field will be populated starting with App Engine 1.9.21.
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - Contains the path and query portion of the URL that was requested. For example, if the URL was "http://example.com/app?name=val", the resource would be "/app?name=val". The fragment identifier, which is identified by the # character, is not included.
-  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - An identifier for the instance that handled the request.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the request finished.
-  *   `appId` (*type:* `String.t`, *default:* `nil`) - Application that handled this request.
-  *   `responseSize` (*type:* `String.t`, *default:* `nil`) - Size in bytes sent back to client by request.
-  *   `status` (*type:* `integer()`, *default:* `nil`) - HTTP response status code. Example: 200, 404.
-  *   `appEngineRelease` (*type:* `String.t`, *default:* `nil`) - App Engine release version.
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Internet host and port number of the resource being requested.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - Request method. Example: "GET", "HEAD", "PUT", "POST", "DELETE".
-  *   `moduleId` (*type:* `String.t`, *default:* `nil`) - Module of the application that handled this request.
-  *   `taskName` (*type:* `String.t`, *default:* `nil`) - Task name of the request, in the case of an offline request.
-  *   `urlMapEntry` (*type:* `String.t`, *default:* `nil`) - File or class that handled the request.
-  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Version of the application that handled this request.
-  *   `pendingTime` (*type:* `String.t`, *default:* `nil`) - Time this request spent in the pending request queue.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the request started.
-  *   `latency` (*type:* `String.t`, *default:* `nil`) - Latency of the request.
-  *   `cost` (*type:* `float()`, *default:* `nil`) - An indication of the relative cost of serving this request.
-  *   `userAgent` (*type:* `String.t`, *default:* `nil`) - User agent that made the request.
-  *   `requestId` (*type:* `String.t`, *default:* `nil`) - Globally unique identifier for a request, which is based on the request start time. Request IDs for requests which started later will compare greater as strings than those for requests which started earlier.
   *   `sourceReference` (*type:* `list(GoogleApi.Logging.V2.Model.SourceReference.t)`, *default:* `nil`) - Source code for the application that handled this request. There can be more than one source reference per deployed application if source code is distributed among multiple repositories.
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - Globally unique identifier for a request, which is based on the request start time. Request IDs for requests which started later will compare greater as strings than those for requests which started earlier.
+  *   `userAgent` (*type:* `String.t`, *default:* `nil`) - User agent that made the request.
+  *   `cost` (*type:* `float()`, *default:* `nil`) - An indication of the relative cost of serving this request.
+  *   `latency` (*type:* `String.t`, *default:* `nil`) - Latency of the request.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the request started.
+  *   `pendingTime` (*type:* `String.t`, *default:* `nil`) - Time this request spent in the pending request queue.
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Version of the application that handled this request.
+  *   `urlMapEntry` (*type:* `String.t`, *default:* `nil`) - File or class that handled the request.
+  *   `taskName` (*type:* `String.t`, *default:* `nil`) - Task name of the request, in the case of an offline request.
+  *   `moduleId` (*type:* `String.t`, *default:* `nil`) - Module of the application that handled this request.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - Request method. Example: "GET", "HEAD", "PUT", "POST", "DELETE".
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Internet host and port number of the resource being requested.
+  *   `appEngineRelease` (*type:* `String.t`, *default:* `nil`) - App Engine release version.
+  *   `status` (*type:* `integer()`, *default:* `nil`) - HTTP response status code. Example: 200, 404.
+  *   `responseSize` (*type:* `String.t`, *default:* `nil`) - Size in bytes sent back to client by request.
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - Application that handled this request.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the request finished.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - An identifier for the instance that handled the request.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - Contains the path and query portion of the URL that was requested. For example, if the URL was "http://example.com/app?name=val", the resource would be "/app?name=val". The fragment identifier, which is identified by the # character, is not included.
+  *   `nickname` (*type:* `String.t`, *default:* `nil`) - The logged-in user who made the request.Most likely, this is the part of the user's email before the @ sign. The field value is the same for different requests from the same user, but different users can have similar names. This information is also available to the application via the App Engine Users API.This field will be populated starting with App Engine 1.9.21.
+  *   `referrer` (*type:* `String.t`, *default:* `nil`) - Referrer URL of request.
+  *   `ip` (*type:* `String.t`, *default:* `nil`) - Origin IP address.
+  *   `megaCycles` (*type:* `String.t`, *default:* `nil`) - Number of CPU megacycles used to process request.
+  *   `wasLoadingRequest` (*type:* `boolean()`, *default:* `nil`) - Whether this was a loading request for the instance.
+  *   `traceId` (*type:* `String.t`, *default:* `nil`) - Stackdriver Trace identifier for this request.
+  *   `taskQueueName` (*type:* `String.t`, *default:* `nil`) - Queue name of the request, in the case of an offline request.
+  *   `traceSampled` (*type:* `boolean()`, *default:* `nil`) - If true, the value in the 'trace_id' field was sampled for storage in a trace backend.
+  *   `line` (*type:* `list(GoogleApi.Logging.V2.Model.LogLine.t)`, *default:* `nil`) - A list of log lines emitted by the application while serving this request.
+  *   `finished` (*type:* `boolean()`, *default:* `nil`) - Whether this request is finished or active.
+  *   `httpVersion` (*type:* `String.t`, *default:* `nil`) - HTTP version of request. Example: "HTTP/1.1".
+  *   `instanceIndex` (*type:* `integer()`, *default:* `nil`) - If the instance processing this request belongs to a manually scaled module, then this is the 0-based index of the instance. Otherwise, this value is -1.
+  *   `first` (*type:* `boolean()`, *default:* `nil`) - Whether this is the first RequestLog entry for this request. If an active request has several RequestLog entries written to Stackdriver Logging, then this field will be set for one of them.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :first => boolean(),
-          :instanceIndex => integer(),
-          :httpVersion => String.t(),
-          :finished => boolean(),
-          :line => list(GoogleApi.Logging.V2.Model.LogLine.t()),
-          :traceSampled => boolean(),
-          :taskQueueName => String.t(),
-          :traceId => String.t(),
-          :wasLoadingRequest => boolean(),
-          :megaCycles => String.t(),
-          :ip => String.t(),
-          :referrer => String.t(),
-          :nickname => String.t(),
-          :resource => String.t(),
-          :instanceId => String.t(),
-          :endTime => DateTime.t(),
-          :appId => String.t(),
-          :responseSize => String.t(),
-          :status => integer(),
-          :appEngineRelease => String.t(),
-          :host => String.t(),
-          :method => String.t(),
-          :moduleId => String.t(),
-          :taskName => String.t(),
-          :urlMapEntry => String.t(),
-          :versionId => String.t(),
-          :pendingTime => String.t(),
-          :startTime => DateTime.t(),
-          :latency => String.t(),
-          :cost => float(),
-          :userAgent => String.t(),
+          :sourceReference => list(GoogleApi.Logging.V2.Model.SourceReference.t()),
           :requestId => String.t(),
-          :sourceReference => list(GoogleApi.Logging.V2.Model.SourceReference.t())
+          :userAgent => String.t(),
+          :cost => float(),
+          :latency => String.t(),
+          :startTime => DateTime.t(),
+          :pendingTime => String.t(),
+          :versionId => String.t(),
+          :urlMapEntry => String.t(),
+          :taskName => String.t(),
+          :moduleId => String.t(),
+          :method => String.t(),
+          :host => String.t(),
+          :appEngineRelease => String.t(),
+          :status => integer(),
+          :responseSize => String.t(),
+          :appId => String.t(),
+          :endTime => DateTime.t(),
+          :instanceId => String.t(),
+          :resource => String.t(),
+          :nickname => String.t(),
+          :referrer => String.t(),
+          :ip => String.t(),
+          :megaCycles => String.t(),
+          :wasLoadingRequest => boolean(),
+          :traceId => String.t(),
+          :taskQueueName => String.t(),
+          :traceSampled => boolean(),
+          :line => list(GoogleApi.Logging.V2.Model.LogLine.t()),
+          :finished => boolean(),
+          :httpVersion => String.t(),
+          :instanceIndex => integer(),
+          :first => boolean()
         }
 
-  field(:first)
-  field(:instanceIndex)
-  field(:httpVersion)
-  field(:finished)
-  field(:line, as: GoogleApi.Logging.V2.Model.LogLine, type: :list)
-  field(:traceSampled)
-  field(:taskQueueName)
-  field(:traceId)
-  field(:wasLoadingRequest)
-  field(:megaCycles)
-  field(:ip)
-  field(:referrer)
-  field(:nickname)
-  field(:resource)
-  field(:instanceId)
-  field(:endTime, as: DateTime)
-  field(:appId)
-  field(:responseSize)
-  field(:status)
-  field(:appEngineRelease)
-  field(:host)
-  field(:method)
-  field(:moduleId)
-  field(:taskName)
-  field(:urlMapEntry)
-  field(:versionId)
-  field(:pendingTime)
-  field(:startTime, as: DateTime)
-  field(:latency)
-  field(:cost)
-  field(:userAgent)
-  field(:requestId)
   field(:sourceReference, as: GoogleApi.Logging.V2.Model.SourceReference, type: :list)
+  field(:requestId)
+  field(:userAgent)
+  field(:cost)
+  field(:latency)
+  field(:startTime, as: DateTime)
+  field(:pendingTime)
+  field(:versionId)
+  field(:urlMapEntry)
+  field(:taskName)
+  field(:moduleId)
+  field(:method)
+  field(:host)
+  field(:appEngineRelease)
+  field(:status)
+  field(:responseSize)
+  field(:appId)
+  field(:endTime, as: DateTime)
+  field(:instanceId)
+  field(:resource)
+  field(:nickname)
+  field(:referrer)
+  field(:ip)
+  field(:megaCycles)
+  field(:wasLoadingRequest)
+  field(:traceId)
+  field(:taskQueueName)
+  field(:traceSampled)
+  field(:line, as: GoogleApi.Logging.V2.Model.LogLine, type: :list)
+  field(:finished)
+  field(:httpVersion)
+  field(:instanceIndex)
+  field(:first)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Logging.V2.Model.RequestLog do
