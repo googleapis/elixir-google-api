@@ -39,8 +39,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByC
           :nextPageToken => String.t()
         }
 
-  field(
-    :filteredBidCreativeRows,
+  field(:filteredBidCreativeRows,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.FilteredBidCreativeRow,
     type: :list
   )
