@@ -37,8 +37,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse do
 
   field(:unifiedWorkerResponse, type: :map)
 
-  field(
-    :workItemServiceStates,
+  field(:workItemServiceStates,
     as: GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState,
     type: :list
   )
