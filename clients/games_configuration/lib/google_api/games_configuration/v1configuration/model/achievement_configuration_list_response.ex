@@ -35,8 +35,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigur
           :nextPageToken => String.t()
         }
 
-  field(
-    :items,
+  field(:items,
     as: GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfiguration,
     type: :list
   )
