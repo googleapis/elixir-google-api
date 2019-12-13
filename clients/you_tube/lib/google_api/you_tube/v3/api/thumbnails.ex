@@ -84,6 +84,79 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
   *   `video_id` (*type:* `String.t`) - The videoId parameter specifies a YouTube video ID for which the custom video thumbnail is being provided.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
+
+          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.YouTube.V3.Model.ThumbnailSetResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec youtube_thumbnails_set_iodata(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          iodata,
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.YouTube.V3.Model.ThumbnailSetResponse.t()} | {:error, Tesla.Env.t()}
+  def youtube_thumbnails_set_iodata(
+        connection,
+        video_id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :onBehalfOfContentOwner => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/upload/youtube/v3/thumbnails/set", %{})
+      |> Request.add_param(:query, :videoId, video_id)
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.ThumbnailSetResponse{}])
+  end
+
+  @doc """
+  Uploads a custom video thumbnail to YouTube and sets it for a video.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
+  *   `video_id` (*type:* `String.t`) - The videoId parameter specifies a YouTube video ID for which the custom video thumbnail is being provided.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -151,7 +224,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   *   `video_id` (*type:* `String.t`) - The videoId parameter specifies a YouTube video ID for which the custom video thumbnail is being provided.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
-  *   `data` (*type:* `String.t`) - Path to file
+  *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.

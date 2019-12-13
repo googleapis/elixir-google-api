@@ -35,8 +35,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamHealthStatus do
           :status => String.t()
         }
 
-  field(
-    :configurationIssues,
+  field(:configurationIssues,
     as: GoogleApi.YouTube.V3.Model.LiveStreamConfigurationIssue,
     type: :list
   )
