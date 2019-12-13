@@ -25,7 +25,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.AclEntry do
       href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
       <code>2012-11-15T16:19:00.094Z</code>.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#aclEntry</code>.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - An optional label to identify this entry.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. A label to identify this entry.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The whitelisted value for the access control list.
   """
 

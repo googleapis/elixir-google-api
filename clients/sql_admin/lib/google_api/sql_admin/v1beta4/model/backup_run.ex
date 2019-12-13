@@ -73,8 +73,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
 
   field(:description)
 
-  field(
-    :diskEncryptionConfiguration,
+  field(:diskEncryptionConfiguration,
     as: GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration
   )
 
