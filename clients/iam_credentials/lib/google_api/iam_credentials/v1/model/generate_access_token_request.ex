@@ -35,7 +35,7 @@ defmodule GoogleApi.IAMCredentials.V1.Model.GenerateAccessTokenRequest do
       Must be set to a value less than or equal to 3600 (1 hour). If a value is
       not specified, the token's lifetime will be set to a default value of one
       hour.
-  *   `scope` (*type:* `list(String.t)`, *default:* `nil`) - Code to identify the scopes to be included in the OAuth 2.0 access token.
+  *   `scope` (*type:* `list(String.t)`, *default:* `nil`) - Required. Code to identify the scopes to be included in the OAuth 2.0 access token.
       See https://developers.google.com/identity/protocols/googlescopes for more
       information.
       At least one value required.
