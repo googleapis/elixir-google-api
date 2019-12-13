@@ -43,8 +43,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy do
 
   field(:createDisposition)
 
-  field(
-    :destinationEncryptionConfiguration,
+  field(:destinationEncryptionConfiguration,
     as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration
   )
 
