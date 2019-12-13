@@ -33,8 +33,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.LogConfigCloudAuditOptions do
           :logName => String.t()
         }
 
-  field(
-    :authorizationLoggingOptions,
+  field(:authorizationLoggingOptions,
     as: GoogleApi.DeploymentManager.V2.Model.AuthorizationLoggingOptions
   )
 
