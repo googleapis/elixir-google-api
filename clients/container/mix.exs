@@ -24,7 +24,7 @@ defmodule GoogleApi.Container.Mixfile do
     [
       app: :google_api_container,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       description: description(),

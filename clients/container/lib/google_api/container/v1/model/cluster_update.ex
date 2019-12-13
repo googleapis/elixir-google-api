@@ -116,16 +116,14 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredDatabaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
   field(:desiredImageType)
 
-  field(
-    :desiredIntraNodeVisibilityConfig,
+  field(:desiredIntraNodeVisibilityConfig,
     as: GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig
   )
 
   field(:desiredLocations, type: :list)
   field(:desiredLoggingService)
 
-  field(
-    :desiredMasterAuthorizedNetworksConfig,
+  field(:desiredMasterAuthorizedNetworksConfig,
     as: GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig
   )
 
@@ -135,8 +133,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredNodePoolId)
   field(:desiredNodeVersion)
 
-  field(
-    :desiredResourceUsageExportConfig,
+  field(:desiredResourceUsageExportConfig,
     as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig
   )
 
