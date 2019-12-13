@@ -21,186 +21,186 @@ defmodule GoogleApi.Drive.V3.Model.File do
 
   ## Attributes
 
-  *   `hasAugmentedPermissions` (*type:* `boolean()`, *default:* `nil`) - Whether there are permissions directly on this file. This field is only populated for items in shared drives.
-  *   `sharedWithMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the file was shared with the user, if applicable (RFC 3339 date-time).
-  *   `trashedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the item was trashed (RFC 3339 date-time). Only populated for items in shared drives.
-  *   `permissionIds` (*type:* `list(String.t)`, *default:* `nil`) - List of permission IDs for users with access to this file.
-  *   `writersCanShare` (*type:* `boolean()`, *default:* `nil`) - Whether users with only writer permission can modify the file's permissions. Not populated for items in shared drives.
-  *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the file was created (RFC 3339 date-time).
-  *   `thumbnailVersion` (*type:* `String.t`, *default:* `nil`) - The thumbnail version for use in thumbnail cache invalidation.
-  *   `imageMediaMetadata` (*type:* `GoogleApi.Drive.V3.Model.FileImageMediaMetadata.t`, *default:* `nil`) - Additional metadata about image media, if available.
-  *   `videoMediaMetadata` (*type:* `GoogleApi.Drive.V3.Model.FileVideoMediaMetadata.t`, *default:* `nil`) - Additional metadata about video media. This may not be available immediately upon upload.
+  *   `modifiedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been modified by this user.
+  *   `fullFileExtension` (*type:* `String.t`, *default:* `nil`) - The full file extension extracted from the name field. May contain multiple concatenated extensions, such as "tar.gz". This is only available for files with binary content in Google Drive.
+      This is automatically updated when the name field changes, however it is not cleared if the new name does not contain a valid extension.
+  *   `folderColorRgb` (*type:* `String.t`, *default:* `nil`) - The color for a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.
+      If an unsupported color is specified, the closest color in the palette will be used instead.
+  *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by anyone (RFC 3339 date-time).
+      Note that setting modifiedTime will also update modifiedByMeTime for the user.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the file's content in bytes. This is only applicable to files with binary content in Google Drive.
+  *   `spaces` (*type:* `list(String.t)`, *default:* `nil`) - The list of spaces which contain the file. The currently supported values are 'drive', 'appDataFolder' and 'photos'.
+  *   `trashingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - If the file has been explicitly trashed, the user who trashed it. Only populated for items in shared drives.
+  *   `ownedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the user owns the file. Not populated for items in shared drives.
+  *   `starred` (*type:* `boolean()`, *default:* `nil`) - Whether the user has starred the file.
+  *   `viewersCanCopyContent` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use copyRequiresWriterPermission instead.
+  *   `capabilities` (*type:* `GoogleApi.Drive.V3.Model.FileCapabilities.t`, *default:* `nil`) - Capabilities the current user has on this file. Each capability corresponds to a fine-grained action that a user may take.
+  *   `permissions` (*type:* `list(GoogleApi.Drive.V3.Model.Permission.t)`, *default:* `nil`) - The full list of permissions for the file. This is only available if the requesting user can share the file. Not populated for items in shared drives.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A short description of the file.
+  *   `kind` (*type:* `String.t`, *default:* `drive#file`) - Identifies what kind of resource this is. Value: the fixed string "drive#file".
+  *   `iconLink` (*type:* `String.t`, *default:* `nil`) - A static, unauthenticated link to the file's icon.
+  *   `viewedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been viewed by this user.
+  *   `contentHints` (*type:* `GoogleApi.Drive.V3.Model.FileContentHints.t`, *default:* `nil`) - Additional information about the content of the file. These fields are never populated in responses.
+  *   `webContentLink` (*type:* `String.t`, *default:* `nil`) - A link for downloading the content of the file in a browser. This is only available for files with binary content in Google Drive.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the file. This is not necessarily unique within a folder. Note that for immutable items such as the top level folders of shared drives, My Drive root folder, and Application Data folder the name is constant.
+  *   `lastModifyingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The last user to modify the file.
+  *   `headRevisionId` (*type:* `String.t`, *default:* `nil`) - The ID of the file's head revision. This is currently only available for files with binary content in Google Drive.
+  *   `fileExtension` (*type:* `String.t`, *default:* `nil`) - The final component of fullFileExtension. This is only available for files with binary content in Google Drive.
+  *   `properties` (*type:* `map()`, *default:* `nil`) - A collection of arbitrary key-value pairs which are visible to all apps.
+      Entries with null values are cleared in update and copy requests.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - A monotonically increasing version number for the file. This reflects every change made to the file on the server, even those not visible to the user.
+  *   `hasThumbnail` (*type:* `boolean()`, *default:* `nil`) - Whether this file has a thumbnail. This does not indicate whether the requesting app has access to the thumbnail. To check access, look for the presence of the thumbnailLink field.
+  *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content.
+  *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename of the uploaded content if available, or else the original value of the name field. This is only available for files with binary content in Google Drive.
+  *   `explicitlyTrashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been explicitly trashed, as opposed to recursively trashed from a parent folder.
+  *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Google Docs to specific formats.
+  *   `modifiedByMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by the user (RFC 3339 date-time).
+  *   `quotaBytesUsed` (*type:* `String.t`, *default:* `nil`) - The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with keepForever enabled.
+  *   `owners` (*type:* `list(GoogleApi.Drive.V3.Model.User.t)`, *default:* `nil`) - The owners of the file. Currently, only certain legacy files may have more than one owner. Not populated for items in shared drives.
+  *   `driveId` (*type:* `String.t`, *default:* `nil`) - ID of the shared drive the file resides in. Only populated for items in shared drives.
+  *   `parents` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the parent folders which contain the file.
+      If not specified as part of a create request, the file will be placed directly in the user's My Drive folder. If not specified as part of a copy request, the file will inherit any discoverable parents of the source file. Update requests must use the addParents and removeParents parameters to modify the parents list.
+  *   `teamDriveId` (*type:* `String.t`, *default:* `nil`) - Deprecated - use driveId instead.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the file.
+  *   `shared` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been shared. Not populated for items in shared drives.
+  *   `trashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been trashed, either explicitly or from a trashed parent folder. Only the owner may trash a file, and other users cannot see files in the owner's trash.
+  *   `appProperties` (*type:* `map()`, *default:* `nil`) - A collection of arbitrary key-value pairs which are private to the requesting app.
+      Entries with null values are cleared in update and copy requests.
+  *   `isAppAuthorized` (*type:* `boolean()`, *default:* `nil`) - Whether the file was created or opened by the requesting app.
+  *   `webViewLink` (*type:* `String.t`, *default:* `nil`) - A link for opening the file in a relevant Google editor or viewer in a browser.
+  *   `copyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the options to copy, print, or download this file, should be disabled for readers and commenters.
+  *   `sharingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The user who shared the file with the requesting user, if applicable.
+  *   `md5Checksum` (*type:* `String.t`, *default:* `nil`) - The MD5 checksum for the content of the file. This is only applicable to files with binary content in Google Drive.
+  *   `viewedByMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was viewed by the user (RFC 3339 date-time).
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the file.
       Google Drive will attempt to automatically detect an appropriate value from uploaded content if no value is provided. The value cannot be changed unless a new revision is uploaded.
       If a file is created with a Google Doc MIME type, the uploaded content will be imported if possible. The supported import formats are published in the About resource.
-  *   `viewedByMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was viewed by the user (RFC 3339 date-time).
-  *   `md5Checksum` (*type:* `String.t`, *default:* `nil`) - The MD5 checksum for the content of the file. This is only applicable to files with binary content in Google Drive.
-  *   `sharingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The user who shared the file with the requesting user, if applicable.
-  *   `copyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the options to copy, print, or download this file, should be disabled for readers and commenters.
-  *   `webViewLink` (*type:* `String.t`, *default:* `nil`) - A link for opening the file in a relevant Google editor or viewer in a browser.
-  *   `isAppAuthorized` (*type:* `boolean()`, *default:* `nil`) - Whether the file was created or opened by the requesting app.
-  *   `appProperties` (*type:* `map()`, *default:* `nil`) - A collection of arbitrary key-value pairs which are private to the requesting app.
-      Entries with null values are cleared in update and copy requests.
-  *   `trashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been trashed, either explicitly or from a trashed parent folder. Only the owner may trash a file, and other users cannot see files in the owner's trash.
-  *   `shared` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been shared. Not populated for items in shared drives.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the file.
-  *   `teamDriveId` (*type:* `String.t`, *default:* `nil`) - Deprecated - use driveId instead.
-  *   `parents` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the parent folders which contain the file.
-      If not specified as part of a create request, the file will be placed directly in the user's My Drive folder. If not specified as part of a copy request, the file will inherit any discoverable parents of the source file. Update requests must use the addParents and removeParents parameters to modify the parents list.
-  *   `driveId` (*type:* `String.t`, *default:* `nil`) - ID of the shared drive the file resides in. Only populated for items in shared drives.
-  *   `owners` (*type:* `list(GoogleApi.Drive.V3.Model.User.t)`, *default:* `nil`) - The owners of the file. Currently, only certain legacy files may have more than one owner. Not populated for items in shared drives.
-  *   `quotaBytesUsed` (*type:* `String.t`, *default:* `nil`) - The number of storage quota bytes used by the file. This includes the head revision as well as previous revisions with keepForever enabled.
-  *   `modifiedByMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by the user (RFC 3339 date-time).
-  *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Google Docs to specific formats.
-  *   `explicitlyTrashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been explicitly trashed, as opposed to recursively trashed from a parent folder.
-  *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename of the uploaded content if available, or else the original value of the name field. This is only available for files with binary content in Google Drive.
-  *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content.
-  *   `hasThumbnail` (*type:* `boolean()`, *default:* `nil`) - Whether this file has a thumbnail. This does not indicate whether the requesting app has access to the thumbnail. To check access, look for the presence of the thumbnailLink field.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - A monotonically increasing version number for the file. This reflects every change made to the file on the server, even those not visible to the user.
-  *   `properties` (*type:* `map()`, *default:* `nil`) - A collection of arbitrary key-value pairs which are visible to all apps.
-      Entries with null values are cleared in update and copy requests.
-  *   `fileExtension` (*type:* `String.t`, *default:* `nil`) - The final component of fullFileExtension. This is only available for files with binary content in Google Drive.
-  *   `headRevisionId` (*type:* `String.t`, *default:* `nil`) - The ID of the file's head revision. This is currently only available for files with binary content in Google Drive.
-  *   `lastModifyingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The last user to modify the file.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the file. This is not necessarily unique within a folder. Note that for immutable items such as the top level folders of shared drives, My Drive root folder, and Application Data folder the name is constant.
-  *   `webContentLink` (*type:* `String.t`, *default:* `nil`) - A link for downloading the content of the file in a browser. This is only available for files with binary content in Google Drive.
-  *   `contentHints` (*type:* `GoogleApi.Drive.V3.Model.FileContentHints.t`, *default:* `nil`) - Additional information about the content of the file. These fields are never populated in responses.
-  *   `viewedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been viewed by this user.
-  *   `iconLink` (*type:* `String.t`, *default:* `nil`) - A static, unauthenticated link to the file's icon.
-  *   `kind` (*type:* `String.t`, *default:* `drive#file`) - Identifies what kind of resource this is. Value: the fixed string "drive#file".
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A short description of the file.
-  *   `permissions` (*type:* `list(GoogleApi.Drive.V3.Model.Permission.t)`, *default:* `nil`) - The full list of permissions for the file. This is only available if the requesting user can share the file. Not populated for items in shared drives.
-  *   `capabilities` (*type:* `GoogleApi.Drive.V3.Model.FileCapabilities.t`, *default:* `nil`) - Capabilities the current user has on this file. Each capability corresponds to a fine-grained action that a user may take.
-  *   `viewersCanCopyContent` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use copyRequiresWriterPermission instead.
-  *   `starred` (*type:* `boolean()`, *default:* `nil`) - Whether the user has starred the file.
-  *   `ownedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the user owns the file. Not populated for items in shared drives.
-  *   `trashingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - If the file has been explicitly trashed, the user who trashed it. Only populated for items in shared drives.
-  *   `spaces` (*type:* `list(String.t)`, *default:* `nil`) - The list of spaces which contain the file. The currently supported values are 'drive', 'appDataFolder' and 'photos'.
-  *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the file's content in bytes. This is only applicable to files with binary content in Google Drive.
-  *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by anyone (RFC 3339 date-time).
-      Note that setting modifiedTime will also update modifiedByMeTime for the user.
-  *   `folderColorRgb` (*type:* `String.t`, *default:* `nil`) - The color for a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.
-      If an unsupported color is specified, the closest color in the palette will be used instead.
-  *   `fullFileExtension` (*type:* `String.t`, *default:* `nil`) - The full file extension extracted from the name field. May contain multiple concatenated extensions, such as "tar.gz". This is only available for files with binary content in Google Drive.
-      This is automatically updated when the name field changes, however it is not cleared if the new name does not contain a valid extension.
-  *   `modifiedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been modified by this user.
+  *   `videoMediaMetadata` (*type:* `GoogleApi.Drive.V3.Model.FileVideoMediaMetadata.t`, *default:* `nil`) - Additional metadata about video media. This may not be available immediately upon upload.
+  *   `imageMediaMetadata` (*type:* `GoogleApi.Drive.V3.Model.FileImageMediaMetadata.t`, *default:* `nil`) - Additional metadata about image media, if available.
+  *   `thumbnailVersion` (*type:* `String.t`, *default:* `nil`) - The thumbnail version for use in thumbnail cache invalidation.
+  *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the file was created (RFC 3339 date-time).
+  *   `writersCanShare` (*type:* `boolean()`, *default:* `nil`) - Whether users with only writer permission can modify the file's permissions. Not populated for items in shared drives.
+  *   `permissionIds` (*type:* `list(String.t)`, *default:* `nil`) - List of permission IDs for users with access to this file.
+  *   `trashedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the item was trashed (RFC 3339 date-time). Only populated for items in shared drives.
+  *   `sharedWithMeTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the file was shared with the user, if applicable (RFC 3339 date-time).
+  *   `hasAugmentedPermissions` (*type:* `boolean()`, *default:* `nil`) - Whether there are permissions directly on this file. This field is only populated for items in shared drives.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hasAugmentedPermissions => boolean(),
-          :sharedWithMeTime => DateTime.t(),
-          :trashedTime => DateTime.t(),
-          :permissionIds => list(String.t()),
-          :writersCanShare => boolean(),
-          :createdTime => DateTime.t(),
-          :thumbnailVersion => String.t(),
-          :imageMediaMetadata => GoogleApi.Drive.V3.Model.FileImageMediaMetadata.t(),
-          :videoMediaMetadata => GoogleApi.Drive.V3.Model.FileVideoMediaMetadata.t(),
-          :mimeType => String.t(),
-          :viewedByMeTime => DateTime.t(),
-          :md5Checksum => String.t(),
-          :sharingUser => GoogleApi.Drive.V3.Model.User.t(),
-          :copyRequiresWriterPermission => boolean(),
-          :webViewLink => String.t(),
-          :isAppAuthorized => boolean(),
-          :appProperties => map(),
-          :trashed => boolean(),
-          :shared => boolean(),
-          :id => String.t(),
-          :teamDriveId => String.t(),
-          :parents => list(String.t()),
-          :driveId => String.t(),
-          :owners => list(GoogleApi.Drive.V3.Model.User.t()),
-          :quotaBytesUsed => String.t(),
-          :modifiedByMeTime => DateTime.t(),
-          :exportLinks => map(),
-          :explicitlyTrashed => boolean(),
-          :originalFilename => String.t(),
-          :thumbnailLink => String.t(),
-          :hasThumbnail => boolean(),
-          :version => String.t(),
-          :properties => map(),
-          :fileExtension => String.t(),
-          :headRevisionId => String.t(),
-          :lastModifyingUser => GoogleApi.Drive.V3.Model.User.t(),
-          :name => String.t(),
-          :webContentLink => String.t(),
-          :contentHints => GoogleApi.Drive.V3.Model.FileContentHints.t(),
-          :viewedByMe => boolean(),
-          :iconLink => String.t(),
-          :kind => String.t(),
-          :description => String.t(),
-          :permissions => list(GoogleApi.Drive.V3.Model.Permission.t()),
-          :capabilities => GoogleApi.Drive.V3.Model.FileCapabilities.t(),
-          :viewersCanCopyContent => boolean(),
-          :starred => boolean(),
-          :ownedByMe => boolean(),
-          :trashingUser => GoogleApi.Drive.V3.Model.User.t(),
-          :spaces => list(String.t()),
-          :size => String.t(),
-          :modifiedTime => DateTime.t(),
-          :folderColorRgb => String.t(),
+          :modifiedByMe => boolean(),
           :fullFileExtension => String.t(),
-          :modifiedByMe => boolean()
+          :folderColorRgb => String.t(),
+          :modifiedTime => DateTime.t(),
+          :size => String.t(),
+          :spaces => list(String.t()),
+          :trashingUser => GoogleApi.Drive.V3.Model.User.t(),
+          :ownedByMe => boolean(),
+          :starred => boolean(),
+          :viewersCanCopyContent => boolean(),
+          :capabilities => GoogleApi.Drive.V3.Model.FileCapabilities.t(),
+          :permissions => list(GoogleApi.Drive.V3.Model.Permission.t()),
+          :description => String.t(),
+          :kind => String.t(),
+          :iconLink => String.t(),
+          :viewedByMe => boolean(),
+          :contentHints => GoogleApi.Drive.V3.Model.FileContentHints.t(),
+          :webContentLink => String.t(),
+          :name => String.t(),
+          :lastModifyingUser => GoogleApi.Drive.V3.Model.User.t(),
+          :headRevisionId => String.t(),
+          :fileExtension => String.t(),
+          :properties => map(),
+          :version => String.t(),
+          :hasThumbnail => boolean(),
+          :thumbnailLink => String.t(),
+          :originalFilename => String.t(),
+          :explicitlyTrashed => boolean(),
+          :exportLinks => map(),
+          :modifiedByMeTime => DateTime.t(),
+          :quotaBytesUsed => String.t(),
+          :owners => list(GoogleApi.Drive.V3.Model.User.t()),
+          :driveId => String.t(),
+          :parents => list(String.t()),
+          :teamDriveId => String.t(),
+          :id => String.t(),
+          :shared => boolean(),
+          :trashed => boolean(),
+          :appProperties => map(),
+          :isAppAuthorized => boolean(),
+          :webViewLink => String.t(),
+          :copyRequiresWriterPermission => boolean(),
+          :sharingUser => GoogleApi.Drive.V3.Model.User.t(),
+          :md5Checksum => String.t(),
+          :viewedByMeTime => DateTime.t(),
+          :mimeType => String.t(),
+          :videoMediaMetadata => GoogleApi.Drive.V3.Model.FileVideoMediaMetadata.t(),
+          :imageMediaMetadata => GoogleApi.Drive.V3.Model.FileImageMediaMetadata.t(),
+          :thumbnailVersion => String.t(),
+          :createdTime => DateTime.t(),
+          :writersCanShare => boolean(),
+          :permissionIds => list(String.t()),
+          :trashedTime => DateTime.t(),
+          :sharedWithMeTime => DateTime.t(),
+          :hasAugmentedPermissions => boolean()
         }
 
-  field(:hasAugmentedPermissions)
-  field(:sharedWithMeTime, as: DateTime)
-  field(:trashedTime, as: DateTime)
-  field(:permissionIds, type: :list)
-  field(:writersCanShare)
-  field(:createdTime, as: DateTime)
-  field(:thumbnailVersion)
-  field(:imageMediaMetadata, as: GoogleApi.Drive.V3.Model.FileImageMediaMetadata)
-  field(:videoMediaMetadata, as: GoogleApi.Drive.V3.Model.FileVideoMediaMetadata)
-  field(:mimeType)
-  field(:viewedByMeTime, as: DateTime)
-  field(:md5Checksum)
-  field(:sharingUser, as: GoogleApi.Drive.V3.Model.User)
-  field(:copyRequiresWriterPermission)
-  field(:webViewLink)
-  field(:isAppAuthorized)
-  field(:appProperties, type: :map)
-  field(:trashed)
-  field(:shared)
-  field(:id)
-  field(:teamDriveId)
-  field(:parents, type: :list)
-  field(:driveId)
-  field(:owners, as: GoogleApi.Drive.V3.Model.User, type: :list)
-  field(:quotaBytesUsed)
-  field(:modifiedByMeTime, as: DateTime)
-  field(:exportLinks, type: :map)
-  field(:explicitlyTrashed)
-  field(:originalFilename)
-  field(:thumbnailLink)
-  field(:hasThumbnail)
-  field(:version)
-  field(:properties, type: :map)
-  field(:fileExtension)
-  field(:headRevisionId)
-  field(:lastModifyingUser, as: GoogleApi.Drive.V3.Model.User)
-  field(:name)
-  field(:webContentLink)
-  field(:contentHints, as: GoogleApi.Drive.V3.Model.FileContentHints)
-  field(:viewedByMe)
-  field(:iconLink)
-  field(:kind)
-  field(:description)
-  field(:permissions, as: GoogleApi.Drive.V3.Model.Permission, type: :list)
-  field(:capabilities, as: GoogleApi.Drive.V3.Model.FileCapabilities)
-  field(:viewersCanCopyContent)
-  field(:starred)
-  field(:ownedByMe)
-  field(:trashingUser, as: GoogleApi.Drive.V3.Model.User)
-  field(:spaces, type: :list)
-  field(:size)
-  field(:modifiedTime, as: DateTime)
-  field(:folderColorRgb)
-  field(:fullFileExtension)
   field(:modifiedByMe)
+  field(:fullFileExtension)
+  field(:folderColorRgb)
+  field(:modifiedTime, as: DateTime)
+  field(:size)
+  field(:spaces, type: :list)
+  field(:trashingUser, as: GoogleApi.Drive.V3.Model.User)
+  field(:ownedByMe)
+  field(:starred)
+  field(:viewersCanCopyContent)
+  field(:capabilities, as: GoogleApi.Drive.V3.Model.FileCapabilities)
+  field(:permissions, as: GoogleApi.Drive.V3.Model.Permission, type: :list)
+  field(:description)
+  field(:kind)
+  field(:iconLink)
+  field(:viewedByMe)
+  field(:contentHints, as: GoogleApi.Drive.V3.Model.FileContentHints)
+  field(:webContentLink)
+  field(:name)
+  field(:lastModifyingUser, as: GoogleApi.Drive.V3.Model.User)
+  field(:headRevisionId)
+  field(:fileExtension)
+  field(:properties, type: :map)
+  field(:version)
+  field(:hasThumbnail)
+  field(:thumbnailLink)
+  field(:originalFilename)
+  field(:explicitlyTrashed)
+  field(:exportLinks, type: :map)
+  field(:modifiedByMeTime, as: DateTime)
+  field(:quotaBytesUsed)
+  field(:owners, as: GoogleApi.Drive.V3.Model.User, type: :list)
+  field(:driveId)
+  field(:parents, type: :list)
+  field(:teamDriveId)
+  field(:id)
+  field(:shared)
+  field(:trashed)
+  field(:appProperties, type: :map)
+  field(:isAppAuthorized)
+  field(:webViewLink)
+  field(:copyRequiresWriterPermission)
+  field(:sharingUser, as: GoogleApi.Drive.V3.Model.User)
+  field(:md5Checksum)
+  field(:viewedByMeTime, as: DateTime)
+  field(:mimeType)
+  field(:videoMediaMetadata, as: GoogleApi.Drive.V3.Model.FileVideoMediaMetadata)
+  field(:imageMediaMetadata, as: GoogleApi.Drive.V3.Model.FileImageMediaMetadata)
+  field(:thumbnailVersion)
+  field(:createdTime, as: DateTime)
+  field(:writersCanShare)
+  field(:permissionIds, type: :list)
+  field(:trashedTime, as: DateTime)
+  field(:sharedWithMeTime, as: DateTime)
+  field(:hasAugmentedPermissions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.File do
