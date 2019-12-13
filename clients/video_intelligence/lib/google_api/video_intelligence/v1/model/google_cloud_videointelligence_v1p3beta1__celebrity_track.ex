@@ -37,15 +37,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Track.t()
         }
 
-  field(
-    :celebrities,
+  field(:celebrities,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_RecognizedCelebrity,
     type: :list
   )
 
-  field(
-    :faceTrack,
+  field(:faceTrack,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Track
   )
 end

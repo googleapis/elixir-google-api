@@ -34,8 +34,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Ob
           :timeOffset => String.t()
         }
 
-  field(
-    :normalizedBoundingBox,
+  field(:normalizedBoundingBox,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_NormalizedBoundingBox
   )
 

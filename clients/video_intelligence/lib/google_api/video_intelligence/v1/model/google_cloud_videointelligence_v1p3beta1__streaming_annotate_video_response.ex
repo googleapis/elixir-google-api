@@ -41,8 +41,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
           :error => GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t()
         }
 
-  field(
-    :annotationResults,
+  field(:annotationResults,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults
   )

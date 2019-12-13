@@ -35,8 +35,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
           :timeOffset => String.t()
         }
 
-  field(
-    :rotatedBoundingBox,
+  field(:rotatedBoundingBox,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingPoly
   )
