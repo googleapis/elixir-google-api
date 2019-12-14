@@ -31,8 +31,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1BatchCreateProduce
             list(GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride.t())
         }
 
-  field(
-    :overrides,
+  field(:overrides,
     as: GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride,
     type: :list
   )

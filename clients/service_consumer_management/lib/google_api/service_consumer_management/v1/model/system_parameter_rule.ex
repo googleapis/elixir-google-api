@@ -40,11 +40,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameterRule do
           :selector => String.t()
         }
 
-  field(
-    :parameters,
-    as: GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameter,
-    type: :list
-  )
+  field(:parameters, as: GoogleApi.ServiceConsumerManagement.V1.Model.SystemParameter, type: :list)
 
   field(:selector)
 end
