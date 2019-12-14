@@ -41,8 +41,7 @@ defmodule GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestResponse do
 
   field(:mobileFriendliness)
 
-  field(
-    :mobileFriendlyIssues,
+  field(:mobileFriendlyIssues,
     as: GoogleApi.SearchConsole.V1.Model.MobileFriendlyIssue,
     type: :list
   )
