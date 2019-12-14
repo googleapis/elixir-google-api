@@ -46,15 +46,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
           :saveFindings => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings.t()
         }
 
-  field(
-    :jobNotificationEmails,
-    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails
-  )
+  field(:jobNotificationEmails, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails)
 
   field(:pubSub, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub)
 
-  field(
-    :publishFindingsToCloudDataCatalog,
+  field(:publishFindingsToCloudDataCatalog,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog
   )
 
