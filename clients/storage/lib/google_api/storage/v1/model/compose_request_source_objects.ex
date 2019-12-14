@@ -38,8 +38,7 @@ defmodule GoogleApi.Storage.V1.Model.ComposeRequestSourceObjects do
   field(:generation)
   field(:name)
 
-  field(
-    :objectPreconditions,
+  field(:objectPreconditions,
     as: GoogleApi.Storage.V1.Model.ComposeRequestSourceObjectsObjectPreconditions
   )
 end
