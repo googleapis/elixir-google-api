@@ -206,6 +206,93 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
 
       Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Video.t`) - object metadata
+  *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:autoLevels` (*type:* `boolean()`) - The autoLevels parameter indicates whether YouTube should automatically enhance the video's lighting and color.
+      *   `:notifySubscribers` (*type:* `boolean()`) - The notifySubscribers parameter indicates whether YouTube should send a notification about the new video to users who subscribe to the video's channel. A parameter value of True indicates that subscribers will be notified of newly uploaded videos. However, a channel owner who is uploading many videos might prefer to set the value to False to avoid sending a notification about each new video to the channel's subscribers.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
+
+          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:onBehalfOfContentOwnerChannel` (*type:* `String.t`) - This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.
+
+          The onBehalfOfContentOwnerChannel parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies.
+
+          This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and perform actions on behalf of the channel specified in the parameter value, without having to provide authentication credentials for each separate channel.
+      *   `:stabilize` (*type:* `boolean()`) - The stabilize parameter indicates whether YouTube should adjust the video to remove shaky camera motions.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.YouTube.V3.Model.Video{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec youtube_videos_insert_iodata(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          GoogleApi.YouTube.V3.Model.Video.t(),
+          iodata,
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.YouTube.V3.Model.Video.t()} | {:error, Tesla.Env.t()}
+  def youtube_videos_insert_iodata(
+        connection,
+        part,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :autoLevels => :query,
+      :notifySubscribers => :query,
+      :onBehalfOfContentOwner => :query,
+      :onBehalfOfContentOwnerChannel => :query,
+      :stabilize => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/upload/youtube/v3/videos", %{})
+      |> Request.add_param(:query, :part, part)
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.YouTube.V3.Model.Video{}])
+  end
+
+  @doc """
+  Uploads a video to YouTube and optionally sets the video's metadata.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
+  *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+
+      Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -289,7 +376,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
       Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Video.t`) - object metadata
-  *   `data` (*type:* `String.t`) - Path to file
+  *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
