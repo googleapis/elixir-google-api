@@ -45,10 +45,7 @@ defmodule GoogleApi.DNS.V1.Model.Policy do
           :networks => list(GoogleApi.DNS.V1.Model.PolicyNetwork.t())
         }
 
-  field(
-    :alternativeNameServerConfig,
-    as: GoogleApi.DNS.V1.Model.PolicyAlternativeNameServerConfig
-  )
+  field(:alternativeNameServerConfig, as: GoogleApi.DNS.V1.Model.PolicyAlternativeNameServerConfig)
 
   field(:description)
   field(:enableInboundForwarding)

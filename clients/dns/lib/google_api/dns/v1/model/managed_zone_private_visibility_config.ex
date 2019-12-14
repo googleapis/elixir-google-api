@@ -34,8 +34,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig do
 
   field(:kind)
 
-  field(
-    :networks,
+  field(:networks,
     as: GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfigNetwork,
     type: :list
   )
