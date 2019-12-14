@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionSslCertificates do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified SslCertificate resource in the region.
+  Deletes the specified SslCertificate resource in the region. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -98,7 +98,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionSslCertificates do
   end
 
   @doc """
-  Returns the specified SslCertificate resource in the specified region. Get a list of available SSL certificates by making a list() request.
+  Returns the specified SslCertificate resource in the specified region. Get a list of available SSL certificates by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -164,7 +164,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionSslCertificates do
   end
 
   @doc """
-  Creates a SslCertificate resource in the specified project and region using the data included in the request
+  Creates a SslCertificate resource in the specified project and region using the data included in the request (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -234,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionSslCertificates do
   end
 
   @doc """
-  Retrieves the list of SslCertificate resources available to the specified project in the specified region.
+  Retrieves the list of SslCertificate resources available to the specified project in the specified region. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

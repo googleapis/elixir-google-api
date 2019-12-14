@@ -37,11 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceAggregatedListWarning do
 
   field(:code)
 
-  field(
-    :data,
-    as: GoogleApi.Compute.V1.Model.BackendServiceAggregatedListWarningData,
-    type: :list
-  )
+  field(:data, as: GoogleApi.Compute.V1.Model.BackendServiceAggregatedListWarningData, type: :list)
 
   field(:message)
 end

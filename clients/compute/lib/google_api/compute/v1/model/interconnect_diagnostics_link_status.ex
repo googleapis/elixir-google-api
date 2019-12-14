@@ -47,13 +47,11 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus do
   field(:googleDemarc)
   field(:lacpStatus, as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkLACPStatus)
 
-  field(
-    :receivingOpticalPower,
+  field(:receivingOpticalPower,
     as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower
   )
 
-  field(
-    :transmittingOpticalPower,
+  field(:transmittingOpticalPower,
     as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower
   )
 end

@@ -37,11 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRuleAggregatedListWarning do
 
   field(:code)
 
-  field(
-    :data,
-    as: GoogleApi.Compute.V1.Model.ForwardingRuleAggregatedListWarningData,
-    type: :list
-  )
+  field(:data, as: GoogleApi.Compute.V1.Model.ForwardingRuleAggregatedListWarningData, type: :list)
 
   field(:message)
 end

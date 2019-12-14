@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of interconnect attachments.
+  Retrieves an aggregated list of interconnect attachments. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Deletes the specified interconnect attachment.
+  Deletes the specified interconnect attachment. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -181,7 +181,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Returns the specified interconnect attachment.
+  Returns the specified interconnect attachment. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -251,7 +251,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Creates an InterconnectAttachment in the specified project using the data included in the request.
+  Creates an InterconnectAttachment in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -321,7 +321,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Retrieves the list of interconnect attachments contained within the specified region.
+  Retrieves the list of interconnect attachments contained within the specified region. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -403,7 +403,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Updates the specified interconnect attachment with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Updates the specified interconnect attachment with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

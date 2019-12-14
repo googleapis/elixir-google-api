@@ -37,11 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxiesScopedListWarning do
 
   field(:code)
 
-  field(
-    :data,
-    as: GoogleApi.Compute.V1.Model.TargetHttpsProxiesScopedListWarningData,
-    type: :list
-  )
+  field(:data, as: GoogleApi.Compute.V1.Model.TargetHttpsProxiesScopedListWarningData, type: :list)
 
   field(:message)
 end

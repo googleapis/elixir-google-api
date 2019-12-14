@@ -35,8 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.VmEndpointNatMappings do
 
   field(:instanceName)
 
-  field(
-    :interfaceNatMappings,
+  field(:interfaceNatMappings,
     as: GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappings,
     type: :list
   )

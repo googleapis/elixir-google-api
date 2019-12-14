@@ -41,8 +41,7 @@ defmodule GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationReservedInst
 
   field(:guestAccelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)
 
-  field(
-    :localSsds,
+  field(:localSsds,
     as:
       GoogleApi.Compute.V1.Model.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk,
     type: :list

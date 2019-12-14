@@ -28,7 +28,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   @doc """
   Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not necessarily delete all the data on that snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent snapshots, the data will be moved to the next corresponding snapshot.
 
-  For more information, see Deleting snapshots.
+  For more information, see Deleting snapshots. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -85,7 +85,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   end
 
   @doc """
-  Returns the specified Snapshot resource. Gets a list of available snapshots by making a list() request.
+  Returns the specified Snapshot resource. Gets a list of available snapshots by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -136,7 +136,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   end
 
   @doc """
-  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -198,7 +198,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   end
 
   @doc """
-  Retrieves the list of Snapshot resources contained within the specified project.
+  Retrieves the list of Snapshot resources contained within the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -265,7 +265,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -329,7 +329,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   end
 
   @doc """
-  Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
+  Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -393,7 +393,7 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Adds a peering to the specified network.
+  Adds a peering to the specified network. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -96,7 +96,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
-  Deletes the specified network.
+  Deletes the specified network. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -153,7 +153,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
-  Returns the specified network. Gets a list of available networks by making a list() request.
+  Returns the specified network. Gets a list of available networks by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -204,7 +204,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
-  Creates a network in the specified project using the data included in the request.
+  Creates a network in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -261,7 +261,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
-  Retrieves the list of networks available to the specified project.
+  Retrieves the list of networks available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -328,7 +328,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
-  Patches the specified network with the data included in the request. Only the following fields can be modified: routingConfig.routingMode.
+  Patches the specified network with the data included in the request. Only the following fields can be modified: routingConfig.routingMode. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -387,7 +387,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
-  Removes a peering from the specified network.
+  Removes a peering from the specified network. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -457,7 +457,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
-  Switches the network mode from auto subnet mode to custom subnet mode.
+  Switches the network mode from auto subnet mode to custom subnet mode. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -525,7 +525,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
-  Updates the specified network peering with the data included in the request Only the following fields can be modified: NetworkPeering.export_custom_routes, and NetworkPeering.import_custom_routes
+  Updates the specified network peering with the data included in the request Only the following fields can be modified: NetworkPeering.export_custom_routes, and NetworkPeering.import_custom_routes (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

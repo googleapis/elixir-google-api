@@ -55,8 +55,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicy do
   field(:region)
   field(:selfLink)
 
-  field(
-    :snapshotSchedulePolicy,
+  field(:snapshotSchedulePolicy,
     as: GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicy
   )
 

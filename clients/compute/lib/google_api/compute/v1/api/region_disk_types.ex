@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDiskTypes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns the specified regional disk type. Gets a list of available disk types by making a list() request.
+  Returns the specified regional disk type. Gets a list of available disk types by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -92,7 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDiskTypes do
   end
 
   @doc """
-  Retrieves a list of regional disk types available to the specified project.
+  Retrieves a list of regional disk types available to the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

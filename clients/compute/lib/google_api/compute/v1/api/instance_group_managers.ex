@@ -30,7 +30,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
 
   If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
 
-  You can specify a maximum of 1000 instances with this method per request.
+  You can specify a maximum of 1000 instances with this method per request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -107,7 +107,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Retrieves the list of managed instance groups and groups them by zone.
+  Retrieves the list of managed instance groups and groups them by zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -187,7 +187,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Deletes the specified managed instance group and all of the instances in that group. Note that the instance group must not belong to a backend service. Read  Deleting an instance group for more information.
+  Deletes the specified managed instance group and all of the instances in that group. Note that the instance group must not belong to a backend service. Read  Deleting an instance group for more information. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -263,7 +263,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
 
   If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
 
-  You can specify a maximum of 1000 instances with this method per request.
+  You can specify a maximum of 1000 instances with this method per request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -340,7 +340,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Returns all of the details about the specified managed instance group. Gets a list of available managed instance groups by making a list() request.
+  Returns all of the details about the specified managed instance group. Gets a list of available managed instance groups by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -408,7 +408,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   @doc """
   Creates a managed instance group using the information that you specify in the request. After the group is created, instances in the group are created using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with the listmanagedinstances method.
 
-  A managed instance group can have up to 1000 VM instances per group. Please contact Cloud Support if you need an increase in this limit.
+  A managed instance group can have up to 1000 VM instances per group. Please contact Cloud Support if you need an increase in this limit. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -478,7 +478,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Retrieves a list of managed instance groups that are contained within the specified project and zone.
+  Retrieves a list of managed instance groups that are contained within the specified project and zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -559,7 +559,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Lists all of the instances in the managed instance group. Each instance in the list has a currentAction, which indicates the action that the managed instance group is performing on the instance. For example, if the group is still creating an instance, the currentAction is CREATING. If a previous action failed, the list displays the errors for that failed action.
+  Lists all of the instances in the managed instance group. Each instance in the list has a currentAction, which indicates the action that the managed instance group is performing on the instance. For example, if the group is still creating an instance, the currentAction is CREATING. If a previous action failed, the list displays the errors for that failed action. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -651,7 +651,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Updates a managed instance group using the information that you specify in the request. This operation is marked as DONE when the group is patched even if the instances in the group are still in the process of being patched. You must separately verify the status of the individual instances with the listManagedInstances method. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Updates a managed instance group using the information that you specify in the request. This operation is marked as DONE when the group is patched even if the instances in the group are still in the process of being patched. You must separately verify the status of the individual instances with the listManagedInstances method. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -729,7 +729,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
 
   If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
 
-  You can specify a maximum of 1000 instances with this method per request.
+  You can specify a maximum of 1000 instances with this method per request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -814,7 +814,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
 
   This list is subject to change.
 
-  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted.
+  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration has elapsed before the VM instance is removed or deleted. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -893,7 +893,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Specifies the instance template to use when creating new instances in this group. The templates for existing instances in the group do not change unless you recreate them.
+  Specifies the instance template to use when creating new instances in this group. The templates for existing instances in the group do not change unless you recreate them. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -970,7 +970,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Modifies the target pools to which all instances in this managed instance group are assigned. The target pools automatically apply to all of the instances in the managed instance group. This operation is marked DONE when you make the request even if the instances have not yet been added to their target pools. The change might take some time to apply to all of the instances in the group depending on the size of the group.
+  Modifies the target pools to which all instances in this managed instance group are assigned. The target pools automatically apply to all of the instances in the managed instance group. This operation is marked DONE when you make the request even if the instances have not yet been added to their target pools. The change might take some time to apply to all of the instances in the group depending on the size of the group. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

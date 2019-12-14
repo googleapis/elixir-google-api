@@ -37,8 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.AcceleratorTypeAggregatedListWarning do
 
   field(:code)
 
-  field(
-    :data,
+  field(:data,
     as: GoogleApi.Compute.V1.Model.AcceleratorTypeAggregatedListWarningData,
     type: :list
   )

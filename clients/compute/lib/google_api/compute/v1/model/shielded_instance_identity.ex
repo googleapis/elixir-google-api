@@ -21,9 +21,9 @@ defmodule GoogleApi.Compute.V1.Model.ShieldedInstanceIdentity do
 
   ## Attributes
 
-  *   `encryptionKey` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry.t`, *default:* `nil`) - An Endorsement Key (EK) issued to the Shielded Instance's vTPM.
+  *   `encryptionKey` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry.t`, *default:* `nil`) - An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
   *   `kind` (*type:* `String.t`, *default:* `compute#shieldedInstanceIdentity`) - [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
-  *   `signingKey` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry.t`, *default:* `nil`) - An Attestation Key (AK) issued to the Shielded Instance's vTPM.
+  *   `signingKey` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceIdentityEntry.t`, *default:* `nil`) - An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
   """
 
   use GoogleApi.Gax.ModelBase

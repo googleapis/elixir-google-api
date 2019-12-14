@@ -40,8 +40,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupsListNetworkEndpointsWa
 
   field(:code)
 
-  field(
-    :data,
+  field(:data,
     as: GoogleApi.Compute.V1.Model.NetworkEndpointGroupsListNetworkEndpointsWarningData,
     type: :list
   )

@@ -37,15 +37,13 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicy do
             GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySnapshotProperties.t()
         }
 
-  field(
-    :retentionPolicy,
+  field(:retentionPolicy,
     as: GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
   )
 
   field(:schedule, as: GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySchedule)
 
-  field(
-    :snapshotProperties,
+  field(:snapshotProperties,
     as: GoogleApi.Compute.V1.Model.ResourcePolicySnapshotSchedulePolicySnapshotProperties
   )
 end

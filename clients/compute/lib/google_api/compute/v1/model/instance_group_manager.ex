@@ -81,8 +81,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :zone => String.t()
         }
 
-  field(
-    :autoHealingPolicies,
+  field(:autoHealingPolicies,
     as: GoogleApi.Compute.V1.Model.InstanceGroupManagerAutoHealingPolicy,
     type: :list
   )

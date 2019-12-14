@@ -37,11 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificateAggregatedListWarning do
 
   field(:code)
 
-  field(
-    :data,
-    as: GoogleApi.Compute.V1.Model.SslCertificateAggregatedListWarningData,
-    type: :list
-  )
+  field(:data, as: GoogleApi.Compute.V1.Model.SslCertificateAggregatedListWarningData, type: :list)
 
   field(:message)
 end
