@@ -1,11 +1,11 @@
 {
-  "updateTime": "2019-08-16T20:32:16.822500Z",
+  "updateTime": "2019-12-14T01:18:09.980625Z",
   "sources": [
     {
       "git": {
         "name": "elixir-google-api",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "768b04b2c0f2b0cb7699096bb4711b8be36ef9e2"
+        "sha": "ba9bf3ac88905ef3009bd043aac5b32679aa1052"
       }
     }
   ]

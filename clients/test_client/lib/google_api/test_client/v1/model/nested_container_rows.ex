@@ -33,8 +33,7 @@ defmodule GoogleApi.TestClient.V1.Model.NestedContainerRows do
           :primitiveValue => String.t()
         }
 
-  field(
-    :nestedArrayValue,
+  field(:nestedArrayValue,
     as: GoogleApi.TestClient.V1.Model.NestedContainerRowsNestedArrayValue,
     type: :list
   )

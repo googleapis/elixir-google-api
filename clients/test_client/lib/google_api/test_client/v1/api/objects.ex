@@ -193,6 +193,66 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.TestClient.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket where the object is stored
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.TestClient.V1.Model.Container.t`) - object metadata
+  *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.TestClient.V1.Model.Container{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec objects_insert_iodata(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          GoogleApi.TestClient.V1.Model.Container.t(),
+          iodata,
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.TestClient.V1.Model.Container.t()} | {:error, Tesla.Env.t()}
+  def objects_insert_iodata(
+        connection,
+        bucket,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :name => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/upload/v1/b/{bucket}/o", %{
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
+      })
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.TestClient.V1.Model.Container{}])
+  end
+
+  @doc """
+  Stores a new object and metadata
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.TestClient.V1.Connection.t`) - Connection to server
+  *   `bucket` (*type:* `String.t`) - Name of the bucket where the object is stored
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -238,7 +298,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
   *   `bucket` (*type:* `String.t`) - Name of the bucket where the object is stored
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.TestClient.V1.Model.Container.t`) - object metadata
-  *   `data` (*type:* `String.t`) - Path to file
+  *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided.
