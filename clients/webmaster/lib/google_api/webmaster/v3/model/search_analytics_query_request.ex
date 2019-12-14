@@ -51,8 +51,7 @@ defmodule GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryRequest do
 
   field(:aggregationType)
 
-  field(
-    :dimensionFilterGroups,
+  field(:dimensionFilterGroups,
     as: GoogleApi.Webmaster.V3.Model.ApiDimensionFilterGroup,
     type: :list
   )
