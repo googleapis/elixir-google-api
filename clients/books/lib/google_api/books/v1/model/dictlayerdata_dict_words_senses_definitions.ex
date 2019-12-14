@@ -35,8 +35,7 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitions do
 
   field(:definition)
 
-  field(
-    :examples,
+  field(:examples,
     as: GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExamples,
     type: :list
   )
