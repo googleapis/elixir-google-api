@@ -99,8 +99,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
   field(:autoResumeTimeMillis)
   field(:cancelReason)
 
-  field(
-    :cancelSurveyResult,
+  field(:cancelSurveyResult,
     as: GoogleApi.AndroidPublisher.V3.Model.SubscriptionCancelSurveyResult
   )
 
