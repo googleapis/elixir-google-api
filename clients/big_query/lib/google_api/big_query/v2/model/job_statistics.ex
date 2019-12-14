@@ -69,8 +69,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   field(:query, as: GoogleApi.BigQuery.V2.Model.JobStatistics2)
   field(:quotaDeferments, type: :list)
 
-  field(
-    :reservationUsage,
+  field(:reservationUsage,
     as: GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage,
     type: :list
   )

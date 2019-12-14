@@ -38,13 +38,11 @@ defmodule GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics do
           :positiveLabel => String.t()
         }
 
-  field(
-    :aggregateClassificationMetrics,
+  field(:aggregateClassificationMetrics,
     as: GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics
   )
 
-  field(
-    :binaryConfusionMatrixList,
+  field(:binaryConfusionMatrixList,
     as: GoogleApi.BigQuery.V2.Model.BinaryConfusionMatrix,
     type: :list
   )

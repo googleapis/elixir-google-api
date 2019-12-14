@@ -33,8 +33,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse do
           :kind => String.t()
         }
 
-  field(
-    :insertErrors,
+  field(:insertErrors,
     as: GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors,
     type: :list
   )

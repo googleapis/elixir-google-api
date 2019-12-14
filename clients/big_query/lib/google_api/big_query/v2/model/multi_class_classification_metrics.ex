@@ -33,8 +33,7 @@ defmodule GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics do
           :confusionMatrixList => list(GoogleApi.BigQuery.V2.Model.ConfusionMatrix.t())
         }
 
-  field(
-    :aggregateClassificationMetrics,
+  field(:aggregateClassificationMetrics,
     as: GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics
   )
 

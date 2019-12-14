@@ -25,7 +25,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Model do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A user-friendly description of this model.
   *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys). This shows the
       encryption configuration of the model data while stored in BigQuery
-      storage.
+      storage. This field can be used with PatchModel to update encryption key
+      for an already encrypted model.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of this resource.
   *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - Optional. The time when this model expires, in milliseconds since the epoch.
       If not present, the model will persist indefinitely. Expired models
