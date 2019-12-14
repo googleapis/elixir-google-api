@@ -45,8 +45,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Sp
   field(:confidence)
   field(:transcript)
 
-  field(
-    :words,
+  field(:words,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_WordInfo,
     type: :list
   )

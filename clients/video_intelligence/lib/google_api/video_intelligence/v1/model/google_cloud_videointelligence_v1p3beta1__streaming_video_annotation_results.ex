@@ -47,28 +47,24 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
             )
         }
 
-  field(
-    :explicitAnnotation,
+  field(:explicitAnnotation,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation
   )
 
-  field(
-    :labelAnnotations,
+  field(:labelAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation,
     type: :list
   )
 
-  field(
-    :objectAnnotations,
+  field(:objectAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation,
     type: :list
   )
 
-  field(
-    :shotAnnotations,
+  field(:shotAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment,
     type: :list
   )

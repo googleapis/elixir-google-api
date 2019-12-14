@@ -40,8 +40,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
           :languageCode => String.t()
         }
 
-  field(
-    :alternatives,
+  field(:alternatives,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_SpeechRecognitionAlternative,
     type: :list
