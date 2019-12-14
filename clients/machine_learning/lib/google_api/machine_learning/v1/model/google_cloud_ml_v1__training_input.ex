@@ -215,8 +215,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
 
   field(:args, type: :list)
 
-  field(
-    :hyperparameters,
+  field(:hyperparameters,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__HyperparameterSpec
   )
 
@@ -225,8 +224,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   field(:masterType)
   field(:packageUris, type: :list)
 
-  field(
-    :parameterServerConfig,
+  field(:parameterServerConfig,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig
   )
 

@@ -39,13 +39,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig d
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__SampledShapleyAttribution.t()
         }
 
-  field(
-    :integratedGradientsAttribution,
+  field(:integratedGradientsAttribution,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__IntegratedGradientsAttribution
   )
 
-  field(
-    :sampledShapleyAttribution,
+  field(:sampledShapleyAttribution,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__SampledShapleyAttribution
   )
 end

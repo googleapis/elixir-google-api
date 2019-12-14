@@ -85,8 +85,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig do
           :service => String.t()
         }
 
-  field(
-    :auditLogConfigs,
+  field(:auditLogConfigs,
     as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditLogConfig,
     type: :list
   )

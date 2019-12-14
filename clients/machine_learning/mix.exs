@@ -24,7 +24,7 @@ defmodule GoogleApi.MachineLearning.Mixfile do
     [
       app: :google_api_machine_learning,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       description: description(),

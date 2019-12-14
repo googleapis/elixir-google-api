@@ -52,8 +52,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig do
           :tpuTfVersion => String.t()
         }
 
-  field(
-    :acceleratorConfig,
+  field(:acceleratorConfig,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig
   )
 
