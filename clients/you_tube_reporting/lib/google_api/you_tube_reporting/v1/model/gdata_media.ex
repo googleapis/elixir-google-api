@@ -101,10 +101,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Model.GdataMedia do
   field(:cosmoBinaryReference)
   field(:crc32cHash)
 
-  field(
-    :diffChecksumsResponse,
-    as: GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse
-  )
+  field(:diffChecksumsResponse, as: GoogleApi.YouTubeReporting.V1.Model.GdataDiffChecksumsResponse)
 
   field(:diffDownloadResponse, as: GoogleApi.YouTubeReporting.V1.Model.GdataDiffDownloadResponse)
   field(:diffUploadRequest, as: GoogleApi.YouTubeReporting.V1.Model.GdataDiffUploadRequest)
