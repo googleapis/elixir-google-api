@@ -177,6 +177,71 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - object metadata
+  *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec mirror_timeline_insert_iodata(
+          Tesla.Env.client(),
+          String.t(),
+          GoogleApi.Mirror.V1.Model.TimelineItem.t(),
+          iodata,
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+  def mirror_timeline_insert_iodata(
+        connection,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/upload/mirror/v1/timeline", %{})
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Mirror.V1.Model.TimelineItem{}])
+  end
+
+  @doc """
+  Inserts a new item into the timeline.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -229,7 +294,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - object metadata
-  *   `data` (*type:* `String.t`) - Path to file
+  *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -455,6 +520,76 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
   *   `id` (*type:* `String.t`) - The ID of the timeline item.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - object metadata
+  *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.TimelineItem{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec mirror_timeline_update_iodata(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          GoogleApi.Mirror.V1.Model.TimelineItem.t(),
+          iodata,
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+  def mirror_timeline_update_iodata(
+        connection,
+        id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url("/upload/mirror/v1/timeline/{id}", %{
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Mirror.V1.Model.TimelineItem{}])
+  end
+
+  @doc """
+  Updates a timeline item in place.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `id` (*type:* `String.t`) - The ID of the timeline item.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -521,7 +656,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `id` (*type:* `String.t`) - The ID of the timeline item.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Mirror.V1.Model.TimelineItem.t`) - object metadata
-  *   `data` (*type:* `String.t`) - Path to file
+  *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -762,6 +897,76 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
 
   *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
   *   `item_id` (*type:* `String.t`) - The ID of the timeline item the attachment belongs to.
+  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
+  *   `metadata` (*type:* `String.t`) - string metadata
+  *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Mirror.V1.Model.Attachment{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec mirror_timeline_attachments_insert_iodata(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          iodata,
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()} | {:error, Tesla.Env.t()}
+  def mirror_timeline_attachments_insert_iodata(
+        connection,
+        item_id,
+        upload_type,
+        metadata,
+        data,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/upload/mirror/v1/timeline/{itemId}/attachments", %{
+        "itemId" => URI.encode(item_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_param(:query, :uploadType, upload_type)
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Mirror.V1.Model.Attachment{}])
+  end
+
+  @doc """
+  Adds a new attachment to a timeline item.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Mirror.V1.Connection.t`) - Connection to server
+  *   `item_id` (*type:* `String.t`) - The ID of the timeline item the attachment belongs to.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -826,7 +1031,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `item_id` (*type:* `String.t`) - The ID of the timeline item the attachment belongs to.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `String.t`) - string metadata
-  *   `data` (*type:* `String.t`) - Path to file
+  *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
