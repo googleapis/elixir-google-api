@@ -32,7 +32,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -91,7 +91,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -157,7 +157,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -223,7 +223,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
+  *   `project_id` (*type:* `String.t`) - Required. Project ID against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -289,7 +289,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID against which to make the request.
+  *   `project_id` (*type:* `String.t`) - Required. Project ID against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -351,7 +351,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -406,12 +406,12 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
 
   @doc """
   Prevents the supplied keys' IDs from being auto-allocated by Cloud
-  Datastore. Used for imports only; other workloads are not supported.
+  Datastore.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -470,7 +470,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -529,7 +529,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastore.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - The ID of the project against which to make the request.
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the project against which to make the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

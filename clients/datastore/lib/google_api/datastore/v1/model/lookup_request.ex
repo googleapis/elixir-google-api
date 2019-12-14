@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.LookupRequest do
 
   ## Attributes
 
-  *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - Keys of entities to look up.
+  *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - Required. Keys of entities to look up.
   *   `readOptions` (*type:* `GoogleApi.Datastore.V1.Model.ReadOptions.t`, *default:* `nil`) - The options for this lookup request.
   """
 
