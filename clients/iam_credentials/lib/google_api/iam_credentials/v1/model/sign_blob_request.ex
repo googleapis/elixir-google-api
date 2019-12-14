@@ -31,7 +31,7 @@ defmodule GoogleApi.IAMCredentials.V1.Model.SignBlobRequest do
       The delegates must have the following format:
       `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
       character is required; replacing it with a project ID is invalid.
-  *   `payload` (*type:* `String.t`, *default:* `nil`) - The bytes to sign.
+  *   `payload` (*type:* `String.t`, *default:* `nil`) - Required. The bytes to sign.
   """
 
   use GoogleApi.Gax.ModelBase

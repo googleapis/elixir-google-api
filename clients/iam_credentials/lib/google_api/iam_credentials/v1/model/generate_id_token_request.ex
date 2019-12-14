@@ -21,7 +21,7 @@ defmodule GoogleApi.IAMCredentials.V1.Model.GenerateIdTokenRequest do
 
   ## Attributes
 
-  *   `audience` (*type:* `String.t`, *default:* `nil`) - The audience for the token, such as the API or account that this token
+  *   `audience` (*type:* `String.t`, *default:* `nil`) - Required. The audience for the token, such as the API or account that this token
       grants access to.
   *   `delegates` (*type:* `list(String.t)`, *default:* `nil`) - The sequence of service accounts in a delegation chain. Each service
       account must be granted the `roles/iam.serviceAccountTokenCreator` role
