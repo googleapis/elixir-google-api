@@ -33,8 +33,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.AccountPermissionGroupsListResponse d
           :kind => String.t()
         }
 
-  field(
-    :accountPermissionGroups,
+  field(:accountPermissionGroups,
     as: GoogleApi.DFAReporting.V33.Model.AccountPermissionGroup,
     type: :list
   )

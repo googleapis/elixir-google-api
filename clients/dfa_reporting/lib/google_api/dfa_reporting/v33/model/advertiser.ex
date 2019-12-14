@@ -68,8 +68,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.Advertiser do
   field(:defaultEmail)
   field(:floodlightConfigurationId)
 
-  field(
-    :floodlightConfigurationIdDimensionValue,
+  field(:floodlightConfigurationIdDimensionValue,
     as: GoogleApi.DFAReporting.V33.Model.DimensionValue
   )
 

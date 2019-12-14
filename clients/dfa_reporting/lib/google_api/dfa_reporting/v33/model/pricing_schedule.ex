@@ -53,8 +53,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.PricingSchedule do
   field(:flighted)
   field(:floodlightActivityId)
 
-  field(
-    :pricingPeriods,
+  field(:pricingPeriods,
     as: GoogleApi.DFAReporting.V33.Model.PricingSchedulePricingPeriod,
     type: :list
   )

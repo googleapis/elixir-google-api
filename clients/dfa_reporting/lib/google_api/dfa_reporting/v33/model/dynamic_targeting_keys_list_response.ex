@@ -32,8 +32,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.DynamicTargetingKeysListResponse do
           :kind => String.t()
         }
 
-  field(
-    :dynamicTargetingKeys,
+  field(:dynamicTargetingKeys,
     as: GoogleApi.DFAReporting.V33.Model.DynamicTargetingKey,
     type: :list
   )

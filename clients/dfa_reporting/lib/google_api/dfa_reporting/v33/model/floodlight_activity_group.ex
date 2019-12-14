@@ -58,8 +58,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightActivityGroup do
   field(:advertiserIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
   field(:floodlightConfigurationId)
 
-  field(
-    :floodlightConfigurationIdDimensionValue,
+  field(:floodlightConfigurationIdDimensionValue,
     as: GoogleApi.DFAReporting.V33.Model.DimensionValue
   )
 

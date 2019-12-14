@@ -36,11 +36,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeRotation do
           :weightCalculationStrategy => String.t()
         }
 
-  field(
-    :creativeAssignments,
-    as: GoogleApi.DFAReporting.V33.Model.CreativeAssignment,
-    type: :list
-  )
+  field(:creativeAssignments, as: GoogleApi.DFAReporting.V33.Model.CreativeAssignment, type: :list)
 
   field(:creativeOptimizationConfigurationId)
   field(:type)

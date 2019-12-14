@@ -35,8 +35,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CampaignCreativeAssociationsListRespo
           :nextPageToken => String.t()
         }
 
-  field(
-    :campaignCreativeAssociations,
+  field(:campaignCreativeAssociations,
     as: GoogleApi.DFAReporting.V33.Model.CampaignCreativeAssociation,
     type: :list
   )

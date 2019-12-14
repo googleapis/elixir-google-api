@@ -21,7 +21,47 @@ defmodule GoogleApi.DFAReporting.V33.Model.Placement do
 
   ## Attributes
 
-  *   `directorySiteIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the directory site. This is a read-only, auto-generated field.
+  *   `contentCategoryId` (*type:* `String.t`, *default:* `nil`) - ID of the content category assigned to this placement.
+  *   `additionalSizes` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Size.t)`, *default:* `nil`) - Additional sizes associated with this placement. When inserting or updating a placement, only the size ID field is used.
+  *   `externalId` (*type:* `String.t`, *default:* `nil`) - External ID for this placement.
+  *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Advertiser ID of this placement. This field can be left blank.
+  *   `size` (*type:* `GoogleApi.DFAReporting.V33.Model.Size.t`, *default:* `nil`) - Size associated with this placement. When inserting or updating a placement, only the size ID field is used. This field is required on insertion.
+  *   `keyName` (*type:* `String.t`, *default:* `nil`) - Key name of this placement. This is a read-only, auto-generated field.
+  *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this placement. This field can be left blank.
+  *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the most recent modification of this placement. This is a read-only field.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this placement. This field can be left blank.
+  *   `advertiserIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.
+  *   `publisherUpdateInfo` (*type:* `GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the last publisher update. This is a read-only field.
+  *   `createInfo` (*type:* `GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the creation of this placement. This is a read-only field.
+  *   `adBlockingOptOut` (*type:* `boolean()`, *default:* `nil`) - Whether this placement opts out of ad blocking. When true, ad blocking is disabled for this placement. When false, the campaign and site settings take effect.
+  *   `kind` (*type:* `String.t`, *default:* `dfareporting#placement`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placement".
+  *   `lookbackConfiguration` (*type:* `GoogleApi.DFAReporting.V33.Model.LookbackConfiguration.t`, *default:* `nil`) - Lookback window settings for this placement.
+  *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Campaign ID of this placement. This field is a required field on insertion.
+  *   `placementGroupId` (*type:* `String.t`, *default:* `nil`) - ID of this placement's group, if applicable.
+  *   `vpaidAdapterChoice` (*type:* `String.t`, *default:* `nil`) - VPAID adapter setting for this placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to this placement.
+
+      Note: Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this placement.This is a required field and must be less than 256 characters long.
+  *   `campaignIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the campaign. This is a read-only, auto-generated field.
+  *   `videoSettings` (*type:* `GoogleApi.DFAReporting.V33.Model.VideoSettings.t`, *default:* `nil`) - A collection of settings which affect video creatives served through this placement. Applicable to placements with IN_STREAM_VIDEO compatibility.
+  *   `placementGroupIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the placement group. This is a read-only, auto-generated field.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Third-party placement status.
+  *   `primary` (*type:* `boolean()`, *default:* `nil`) - Whether this placement is the primary placement of a roadblock (placement group). You cannot change this field from true to false. Setting this field to true will automatically set the primary field on the original primary placement of the roadblock to false, and it will automatically set the roadblock's primaryPlacementId field to the ID of this placement.
+  *   `archived` (*type:* `boolean()`, *default:* `nil`) - Whether this placement is archived.
+  *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this placement. This is a read-only, auto-generated field.
+  *   `tagSetting` (*type:* `GoogleApi.DFAReporting.V33.Model.TagSetting.t`, *default:* `nil`) - Tag settings for this placement.
+  *   `siteIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the site. This is a read-only, auto-generated field.
+  *   `compatibility` (*type:* `String.t`, *default:* `nil`) - Placement compatibility. DISPLAY and DISPLAY_INTERSTITIAL refer to rendering on desktop, on mobile devices or in mobile apps for regular or interstitial ads respectively. APP and APP_INTERSTITIAL are no longer allowed for new placement insertions. Instead, use DISPLAY or DISPLAY_INTERSTITIAL. IN_STREAM_VIDEO refers to rendering in in-stream video ads developed with the VAST standard. This field is required on insertion.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this placement. This is a read-only, auto-generated field.
+  *   `paymentSource` (*type:* `String.t`, *default:* `nil`) - Payment source for this placement. This is a required field that is read-only after insertion.
+  *   `siteId` (*type:* `String.t`, *default:* `nil`) - Site ID associated with this placement. On insert, you must set either this field or the directorySiteId field to specify the site associated with this placement. This is a required field that is read-only after insertion.
+  *   `paymentApproved` (*type:* `boolean()`, *default:* `nil`) - Whether payment was approved for this placement. This is a read-only field relevant only to publisher-paid placements.
+  *   `sslRequired` (*type:* `boolean()`, *default:* `nil`) - Whether creatives assigned to this placement must be SSL-compliant.
+  *   `placementStrategyId` (*type:* `String.t`, *default:* `nil`) - ID of the placement strategy assigned to this placement.
+  *   `pricingSchedule` (*type:* `GoogleApi.DFAReporting.V33.Model.PricingSchedule.t`, *default:* `nil`) - Pricing schedule of this placement. This field is required on insertion, specifically subfields startDate, endDate and pricingType.
+  *   `videoActiveViewOptOut` (*type:* `boolean()`, *default:* `nil`) - Whether Verification and ActiveView are disabled for in-stream video creatives for this placement. The same setting videoActiveViewOptOut exists on the site level -- the opt out occurs if either of these settings are true. These settings are distinct from DirectorySites.settings.activeViewOptOut or Sites.siteSettings.activeViewOptOut which only apply to display ads. However, Accounts.activeViewOptOut opts out both video traffic, as well as display ads, from Verification and ActiveView.
+  *   `directorySiteId` (*type:* `String.t`, *default:* `nil`) - Directory site ID of this placement. On insert, you must set either this field or the siteId field to specify the site associated with this placement. This is a required field that is read-only after insertion.
+  *   `comment` (*type:* `String.t`, *default:* `nil`) - Comments for this placement.
   *   `tagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag formats to generate for this placement. This field is required on insertion.
       Acceptable values are:
       - "PLACEMENT_TAG_STANDARD"
@@ -39,136 +79,96 @@ defmodule GoogleApi.DFAReporting.V33.Model.Placement do
       - "PLACEMENT_TAG_TRACKING"
       - "PLACEMENT_TAG_TRACKING_IFRAME"
       - "PLACEMENT_TAG_TRACKING_JAVASCRIPT"
-  *   `comment` (*type:* `String.t`, *default:* `nil`) - Comments for this placement.
-  *   `directorySiteId` (*type:* `String.t`, *default:* `nil`) - Directory site ID of this placement. On insert, you must set either this field or the siteId field to specify the site associated with this placement. This is a required field that is read-only after insertion.
-  *   `videoActiveViewOptOut` (*type:* `boolean()`, *default:* `nil`) - Whether Verification and ActiveView are disabled for in-stream video creatives for this placement. The same setting videoActiveViewOptOut exists on the site level -- the opt out occurs if either of these settings are true. These settings are distinct from DirectorySites.settings.activeViewOptOut or Sites.siteSettings.activeViewOptOut which only apply to display ads. However, Accounts.activeViewOptOut opts out both video traffic, as well as display ads, from Verification and ActiveView.
-  *   `pricingSchedule` (*type:* `GoogleApi.DFAReporting.V33.Model.PricingSchedule.t`, *default:* `nil`) - Pricing schedule of this placement. This field is required on insertion, specifically subfields startDate, endDate and pricingType.
-  *   `placementStrategyId` (*type:* `String.t`, *default:* `nil`) - ID of the placement strategy assigned to this placement.
-  *   `sslRequired` (*type:* `boolean()`, *default:* `nil`) - Whether creatives assigned to this placement must be SSL-compliant.
-  *   `paymentApproved` (*type:* `boolean()`, *default:* `nil`) - Whether payment was approved for this placement. This is a read-only field relevant only to publisher-paid placements.
-  *   `siteId` (*type:* `String.t`, *default:* `nil`) - Site ID associated with this placement. On insert, you must set either this field or the directorySiteId field to specify the site associated with this placement. This is a required field that is read-only after insertion.
-  *   `paymentSource` (*type:* `String.t`, *default:* `nil`) - Payment source for this placement. This is a required field that is read-only after insertion.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this placement. This is a read-only, auto-generated field.
-  *   `compatibility` (*type:* `String.t`, *default:* `nil`) - Placement compatibility. DISPLAY and DISPLAY_INTERSTITIAL refer to rendering on desktop, on mobile devices or in mobile apps for regular or interstitial ads respectively. APP and APP_INTERSTITIAL are no longer allowed for new placement insertions. Instead, use DISPLAY or DISPLAY_INTERSTITIAL. IN_STREAM_VIDEO refers to rendering in in-stream video ads developed with the VAST standard. This field is required on insertion.
-  *   `siteIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the site. This is a read-only, auto-generated field.
-  *   `tagSetting` (*type:* `GoogleApi.DFAReporting.V33.Model.TagSetting.t`, *default:* `nil`) - Tag settings for this placement.
-  *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this placement. This is a read-only, auto-generated field.
-  *   `archived` (*type:* `boolean()`, *default:* `nil`) - Whether this placement is archived.
-  *   `primary` (*type:* `boolean()`, *default:* `nil`) - Whether this placement is the primary placement of a roadblock (placement group). You cannot change this field from true to false. Setting this field to true will automatically set the primary field on the original primary placement of the roadblock to false, and it will automatically set the roadblock's primaryPlacementId field to the ID of this placement.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Third-party placement status.
-  *   `placementGroupIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the placement group. This is a read-only, auto-generated field.
-  *   `videoSettings` (*type:* `GoogleApi.DFAReporting.V33.Model.VideoSettings.t`, *default:* `nil`) - A collection of settings which affect video creatives served through this placement. Applicable to placements with IN_STREAM_VIDEO compatibility.
-  *   `campaignIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the campaign. This is a read-only, auto-generated field.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this placement.This is a required field and must be less than 256 characters long.
-  *   `vpaidAdapterChoice` (*type:* `String.t`, *default:* `nil`) - VPAID adapter setting for this placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to this placement.
-
-      Note: Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
-  *   `placementGroupId` (*type:* `String.t`, *default:* `nil`) - ID of this placement's group, if applicable.
-  *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Campaign ID of this placement. This field is a required field on insertion.
-  *   `lookbackConfiguration` (*type:* `GoogleApi.DFAReporting.V33.Model.LookbackConfiguration.t`, *default:* `nil`) - Lookback window settings for this placement.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#placement`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#placement".
-  *   `adBlockingOptOut` (*type:* `boolean()`, *default:* `nil`) - Whether this placement opts out of ad blocking. When true, ad blocking is disabled for this placement. When false, the campaign and site settings take effect.
-  *   `createInfo` (*type:* `GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the creation of this placement. This is a read-only field.
-  *   `publisherUpdateInfo` (*type:* `GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the last publisher update. This is a read-only field.
-  *   `advertiserIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this placement. This field can be left blank.
-  *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the most recent modification of this placement. This is a read-only field.
-  *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this placement. This field can be left blank.
-  *   `keyName` (*type:* `String.t`, *default:* `nil`) - Key name of this placement. This is a read-only, auto-generated field.
-  *   `size` (*type:* `GoogleApi.DFAReporting.V33.Model.Size.t`, *default:* `nil`) - Size associated with this placement. When inserting or updating a placement, only the size ID field is used. This field is required on insertion.
-  *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Advertiser ID of this placement. This field can be left blank.
-  *   `externalId` (*type:* `String.t`, *default:* `nil`) - External ID for this placement.
-  *   `additionalSizes` (*type:* `list(GoogleApi.DFAReporting.V33.Model.Size.t)`, *default:* `nil`) - Additional sizes associated with this placement. When inserting or updating a placement, only the size ID field is used.
-  *   `contentCategoryId` (*type:* `String.t`, *default:* `nil`) - ID of the content category assigned to this placement.
+  *   `directorySiteIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the directory site. This is a read-only, auto-generated field.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :directorySiteIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :tagFormats => list(String.t()),
-          :comment => String.t(),
-          :directorySiteId => String.t(),
-          :videoActiveViewOptOut => boolean(),
-          :pricingSchedule => GoogleApi.DFAReporting.V33.Model.PricingSchedule.t(),
-          :placementStrategyId => String.t(),
-          :sslRequired => boolean(),
-          :paymentApproved => boolean(),
-          :siteId => String.t(),
-          :paymentSource => String.t(),
-          :id => String.t(),
-          :compatibility => String.t(),
-          :siteIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :tagSetting => GoogleApi.DFAReporting.V33.Model.TagSetting.t(),
-          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :archived => boolean(),
-          :primary => boolean(),
-          :status => String.t(),
-          :placementGroupIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :videoSettings => GoogleApi.DFAReporting.V33.Model.VideoSettings.t(),
-          :campaignIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :name => String.t(),
-          :vpaidAdapterChoice => String.t(),
-          :placementGroupId => String.t(),
-          :campaignId => String.t(),
-          :lookbackConfiguration => GoogleApi.DFAReporting.V33.Model.LookbackConfiguration.t(),
-          :kind => String.t(),
-          :adBlockingOptOut => boolean(),
-          :createInfo => GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t(),
-          :publisherUpdateInfo => GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t(),
-          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
-          :accountId => String.t(),
-          :lastModifiedInfo => GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t(),
-          :subaccountId => String.t(),
-          :keyName => String.t(),
-          :size => GoogleApi.DFAReporting.V33.Model.Size.t(),
-          :advertiserId => String.t(),
-          :externalId => String.t(),
+          :contentCategoryId => String.t(),
           :additionalSizes => list(GoogleApi.DFAReporting.V33.Model.Size.t()),
-          :contentCategoryId => String.t()
+          :externalId => String.t(),
+          :advertiserId => String.t(),
+          :size => GoogleApi.DFAReporting.V33.Model.Size.t(),
+          :keyName => String.t(),
+          :subaccountId => String.t(),
+          :lastModifiedInfo => GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t(),
+          :accountId => String.t(),
+          :advertiserIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
+          :publisherUpdateInfo => GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t(),
+          :createInfo => GoogleApi.DFAReporting.V33.Model.LastModifiedInfo.t(),
+          :adBlockingOptOut => boolean(),
+          :kind => String.t(),
+          :lookbackConfiguration => GoogleApi.DFAReporting.V33.Model.LookbackConfiguration.t(),
+          :campaignId => String.t(),
+          :placementGroupId => String.t(),
+          :vpaidAdapterChoice => String.t(),
+          :name => String.t(),
+          :campaignIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
+          :videoSettings => GoogleApi.DFAReporting.V33.Model.VideoSettings.t(),
+          :placementGroupIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
+          :status => String.t(),
+          :primary => boolean(),
+          :archived => boolean(),
+          :idDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
+          :tagSetting => GoogleApi.DFAReporting.V33.Model.TagSetting.t(),
+          :siteIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t(),
+          :compatibility => String.t(),
+          :id => String.t(),
+          :paymentSource => String.t(),
+          :siteId => String.t(),
+          :paymentApproved => boolean(),
+          :sslRequired => boolean(),
+          :placementStrategyId => String.t(),
+          :pricingSchedule => GoogleApi.DFAReporting.V33.Model.PricingSchedule.t(),
+          :videoActiveViewOptOut => boolean(),
+          :directorySiteId => String.t(),
+          :comment => String.t(),
+          :tagFormats => list(String.t()),
+          :directorySiteIdDimensionValue => GoogleApi.DFAReporting.V33.Model.DimensionValue.t()
         }
 
-  field(:directorySiteIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
-  field(:tagFormats, type: :list)
-  field(:comment)
-  field(:directorySiteId)
-  field(:videoActiveViewOptOut)
-  field(:pricingSchedule, as: GoogleApi.DFAReporting.V33.Model.PricingSchedule)
-  field(:placementStrategyId)
-  field(:sslRequired)
-  field(:paymentApproved)
-  field(:siteId)
-  field(:paymentSource)
-  field(:id)
-  field(:compatibility)
-  field(:siteIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
-  field(:tagSetting, as: GoogleApi.DFAReporting.V33.Model.TagSetting)
-  field(:idDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
-  field(:archived)
-  field(:primary)
-  field(:status)
-  field(:placementGroupIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
-  field(:videoSettings, as: GoogleApi.DFAReporting.V33.Model.VideoSettings)
-  field(:campaignIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
-  field(:name)
-  field(:vpaidAdapterChoice)
-  field(:placementGroupId)
-  field(:campaignId)
-  field(:lookbackConfiguration, as: GoogleApi.DFAReporting.V33.Model.LookbackConfiguration)
-  field(:kind)
-  field(:adBlockingOptOut)
-  field(:createInfo, as: GoogleApi.DFAReporting.V33.Model.LastModifiedInfo)
-  field(:publisherUpdateInfo, as: GoogleApi.DFAReporting.V33.Model.LastModifiedInfo)
-  field(:advertiserIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
-  field(:accountId)
-  field(:lastModifiedInfo, as: GoogleApi.DFAReporting.V33.Model.LastModifiedInfo)
-  field(:subaccountId)
-  field(:keyName)
-  field(:size, as: GoogleApi.DFAReporting.V33.Model.Size)
-  field(:advertiserId)
-  field(:externalId)
-  field(:additionalSizes, as: GoogleApi.DFAReporting.V33.Model.Size, type: :list)
   field(:contentCategoryId)
+  field(:additionalSizes, as: GoogleApi.DFAReporting.V33.Model.Size, type: :list)
+  field(:externalId)
+  field(:advertiserId)
+  field(:size, as: GoogleApi.DFAReporting.V33.Model.Size)
+  field(:keyName)
+  field(:subaccountId)
+  field(:lastModifiedInfo, as: GoogleApi.DFAReporting.V33.Model.LastModifiedInfo)
+  field(:accountId)
+  field(:advertiserIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
+  field(:publisherUpdateInfo, as: GoogleApi.DFAReporting.V33.Model.LastModifiedInfo)
+  field(:createInfo, as: GoogleApi.DFAReporting.V33.Model.LastModifiedInfo)
+  field(:adBlockingOptOut)
+  field(:kind)
+  field(:lookbackConfiguration, as: GoogleApi.DFAReporting.V33.Model.LookbackConfiguration)
+  field(:campaignId)
+  field(:placementGroupId)
+  field(:vpaidAdapterChoice)
+  field(:name)
+  field(:campaignIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
+  field(:videoSettings, as: GoogleApi.DFAReporting.V33.Model.VideoSettings)
+  field(:placementGroupIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
+  field(:status)
+  field(:primary)
+  field(:archived)
+  field(:idDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
+  field(:tagSetting, as: GoogleApi.DFAReporting.V33.Model.TagSetting)
+  field(:siteIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
+  field(:compatibility)
+  field(:id)
+  field(:paymentSource)
+  field(:siteId)
+  field(:paymentApproved)
+  field(:sslRequired)
+  field(:placementStrategyId)
+  field(:pricingSchedule, as: GoogleApi.DFAReporting.V33.Model.PricingSchedule)
+  field(:videoActiveViewOptOut)
+  field(:directorySiteId)
+  field(:comment)
+  field(:tagFormats, type: :list)
+  field(:directorySiteIdDimensionValue, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V33.Model.Placement do
