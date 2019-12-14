@@ -147,6 +147,8 @@ defmodule GoogleApi.Gax.ModelBase do
 
   defp parse_date(nil), do: nil
 
+  defp parse_date(%Date{} = date), do: date
+
   defp parse_date(ymd) do
     case Date.from_iso8601(ymd) do
       {:ok, date} -> date

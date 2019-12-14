@@ -806,11 +806,6 @@
   },
   {
     "version": "v2",
-    "url": "https://www.googleapis.com/discovery/v1/apis/surveys/v2/rest",
-    "name": "Surveys"
-  },
-  {
-    "version": "v2",
     "url": "https://www.googleapis.com/discovery/v1/apis/tagmanager/v2/rest",
     "name": "TagManager"
   },
