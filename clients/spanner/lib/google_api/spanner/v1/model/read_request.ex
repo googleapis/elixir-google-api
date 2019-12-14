@@ -22,7 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
 
   ## Attributes
 
-  *   `columns` (*type:* `list(String.t)`, *default:* `nil`) - The columns of table to be returned for each row matching
+  *   `columns` (*type:* `list(String.t)`, *default:* `nil`) - Required. The columns of table to be returned for each row matching
       this request.
   *   `index` (*type:* `String.t`, *default:* `nil`) - If non-empty, the name of an index on table. This index is
       used instead of the table primary key when interpreting key_set

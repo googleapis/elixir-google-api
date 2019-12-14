@@ -55,7 +55,7 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlRequest do
       underscore. If the named operation already exists,
       UpdateDatabaseDdl returns
       `ALREADY_EXISTS`.
-  *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - DDL statements to be applied to the database.
+  *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - Required. DDL statements to be applied to the database.
   """
 
   use GoogleApi.Gax.ModelBase

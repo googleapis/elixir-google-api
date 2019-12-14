@@ -42,7 +42,7 @@ defmodule GoogleApi.Spanner.V1.Model.PartitionQueryRequest do
 
       It is an error to execute a SQL statement with unbound parameters.
   *   `partitionOptions` (*type:* `GoogleApi.Spanner.V1.Model.PartitionOptions.t`, *default:* `nil`) - Additional options that affect how many partitions are created.
-  *   `sql` (*type:* `String.t`, *default:* `nil`) - The query request to generate partitions for. The request will fail if
+  *   `sql` (*type:* `String.t`, *default:* `nil`) - Required. The query request to generate partitions for. The request will fail if
       the query is not root partitionable. The query plan of a root
       partitionable query has a single distributed union operator. A distributed
       union operator conceptually divides one or more tables into multiple

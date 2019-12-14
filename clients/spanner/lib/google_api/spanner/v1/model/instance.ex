@@ -27,6 +27,14 @@ defmodule GoogleApi.Spanner.V1.Model.Instance do
       ListInstanceConfigs.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The descriptive name for this instance as it appears in UIs.
       Must be unique per project and between 4 and 30 characters in length.
+  *   `endpointUris` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The endpoint URIs based on the instance config.
+      For example, instances located in a specific cloud region (or multi region)
+      such as nam3, would have a nam3 specific endpoint URI.
+      This URI is to be used implictly by SDK clients, with fallback to default
+      URI. These endpoints are intended to optimize the network routing between
+      the client and the instance's serving resources.
+      If multiple endpoints are present, client may establish connections using
+      any of the given URIs.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Cloud Labels are a flexible and lightweight mechanism for organizing cloud
       resources into groups that reflect a customer's organizational needs and
       deployment strategies. Cloud Labels can be used to filter collections of
@@ -52,8 +60,9 @@ defmodule GoogleApi.Spanner.V1.Model.Instance do
       after the instance is created. Values are of the form
       `projects/<project>/instances/a-z*[a-z0-9]`. The final
       segment of the name must be between 2 and 64 characters in length.
-  *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - Required. The number of nodes allocated to this instance. This may be zero
-      in API responses for instances that are not yet in state `READY`.
+  *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes allocated to this instance. This
+      may be zero in API responses for instances that are not yet in state
+      `READY`.
 
       See [the
       documentation](https://cloud.google.com/spanner/docs/instances#node_count)
@@ -70,6 +79,7 @@ defmodule GoogleApi.Spanner.V1.Model.Instance do
   @type t :: %__MODULE__{
           :config => String.t(),
           :displayName => String.t(),
+          :endpointUris => list(String.t()),
           :labels => map(),
           :name => String.t(),
           :nodeCount => integer(),
@@ -78,6 +88,7 @@ defmodule GoogleApi.Spanner.V1.Model.Instance do
 
   field(:config)
   field(:displayName)
+  field(:endpointUris, type: :list)
   field(:labels, type: :map)
   field(:name)
   field(:nodeCount)
