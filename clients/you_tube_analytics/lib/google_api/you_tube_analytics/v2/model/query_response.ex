@@ -56,8 +56,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.QueryResponse do
           :rows => list(list(any()))
         }
 
-  field(
-    :columnHeaders,
+  field(:columnHeaders,
     as: GoogleApi.YouTubeAnalytics.V2.Model.ResultTableColumnHeader,
     type: :list
   )
