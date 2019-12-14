@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_billing, "~> 0.14"}]
+  [{:google_api_cloud_billing, "~> 0.15"}]
 end
 ```
 
