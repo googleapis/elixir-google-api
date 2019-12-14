@@ -90,16 +90,14 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotation do
   field(:joyLikelihood)
   field(:landmarkingConfidence)
 
-  field(
-    :landmarks,
+  field(:landmarks,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceAnnotationLandmark,
     type: :list
   )
 
   field(:panAngle)
 
-  field(
-    :recognitionResult,
+  field(:recognitionResult,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1FaceRecognitionResult,
     type: :list
   )
