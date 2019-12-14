@@ -45,8 +45,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateEntity
           :updateMask => String.t()
         }
 
-  field(
-    :entityTypeBatchInline,
+  field(:entityTypeBatchInline,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeBatch
   )
 

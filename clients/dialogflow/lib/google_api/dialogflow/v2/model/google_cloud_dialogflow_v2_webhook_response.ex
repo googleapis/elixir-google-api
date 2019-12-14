@@ -80,24 +80,21 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2WebhookResponse d
 
   field(:followupEventInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput)
 
-  field(
-    :fulfillmentMessages,
+  field(:fulfillmentMessages,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage,
     type: :list
   )
 
   field(:fulfillmentText)
 
-  field(
-    :outputContexts,
+  field(:outputContexts,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context,
     type: :list
   )
 
   field(:payload, type: :map)
 
-  field(
-    :sessionEntityTypes,
+  field(:sessionEntityTypes,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType,
     type: :list
   )

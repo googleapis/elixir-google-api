@@ -37,8 +37,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2MessageAnnotation
 
   field(:containEntities)
 
-  field(
-    :parts,
+  field(:parts,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnnotatedMessagePart,
     type: :list
   )

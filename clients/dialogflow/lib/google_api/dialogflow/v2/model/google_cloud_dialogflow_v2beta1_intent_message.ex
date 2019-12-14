@@ -93,91 +93,75 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageText.t()
         }
 
-  field(
-    :basicCard,
+  field(:basicCard,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCard
   )
 
-  field(
-    :browseCarouselCard,
+  field(:browseCarouselCard,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard
   )
 
   field(:card, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCard)
 
-  field(
-    :carouselSelect,
+  field(:carouselSelect,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect
   )
 
   field(:image, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageImage)
 
-  field(
-    :linkOutSuggestion,
+  field(:linkOutSuggestion,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion
   )
 
-  field(
-    :listSelect,
+  field(:listSelect,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageListSelect
   )
 
-  field(
-    :mediaContent,
+  field(:mediaContent,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageMediaContent
   )
 
   field(:payload, type: :map)
   field(:platform)
 
-  field(
-    :quickReplies,
+  field(:quickReplies,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageQuickReplies
   )
 
-  field(
-    :rbmCarouselRichCard,
+  field(:rbmCarouselRichCard,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard
   )
 
-  field(
-    :rbmStandaloneRichCard,
+  field(:rbmStandaloneRichCard,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard
   )
 
-  field(
-    :rbmText,
+  field(:rbmText,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmText
   )
 
-  field(
-    :simpleResponses,
+  field(:simpleResponses,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses
   )
 
-  field(
-    :suggestions,
+  field(:suggestions,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageSuggestions
   )
 
-  field(
-    :tableCard,
+  field(:tableCard,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTableCard
   )
 
-  field(
-    :telephonyPlayAudio,
+  field(:telephonyPlayAudio,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio
   )
 
-  field(
-    :telephonySynthesizeSpeech,
+  field(:telephonySynthesizeSpeech,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech
   )
 
-  field(
-    :telephonyTransferCall,
+  field(:telephonyTransferCall,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall
   )

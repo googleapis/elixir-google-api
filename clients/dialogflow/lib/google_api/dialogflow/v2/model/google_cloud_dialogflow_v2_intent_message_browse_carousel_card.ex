@@ -40,8 +40,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrow
 
   field(:imageDisplayOptions)
 
-  field(
-    :items,
+  field(:items,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItem,
     type: :list

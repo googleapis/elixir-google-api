@@ -33,8 +33,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
           :title => String.t()
         }
 
-  field(
-    :openUriAction,
+  field(:openUriAction,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBasicCardButtonOpenUriAction
   )

@@ -115,8 +115,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   field(:displayName)
   field(:events, type: :list)
 
-  field(
-    :followupIntentInfo,
+  field(:followupIntentInfo,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentFollowupIntentInfo,
     type: :list
   )
@@ -124,8 +123,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   field(:inputContextNames, type: :list)
   field(:isFallback)
 
-  field(
-    :messages,
+  field(:messages,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage,
     type: :list
   )
@@ -133,14 +131,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   field(:mlDisabled)
   field(:name)
 
-  field(
-    :outputContexts,
+  field(:outputContexts,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context,
     type: :list
   )
 
-  field(
-    :parameters,
+  field(:parameters,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentParameter,
     type: :list
   )
@@ -150,8 +146,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   field(:resetContexts)
   field(:rootFollowupIntentName)
 
-  field(
-    :trainingPhrases,
+  field(:trainingPhrases,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentTrainingPhrase,
     type: :list
   )

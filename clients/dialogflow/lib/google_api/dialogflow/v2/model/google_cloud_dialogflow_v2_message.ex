@@ -51,8 +51,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Message do
   field(:createTime, as: DateTime)
   field(:languageCode)
 
-  field(
-    :messageAnnotation,
+  field(:messageAnnotation,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2MessageAnnotation
   )
 

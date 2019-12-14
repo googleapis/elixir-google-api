@@ -42,8 +42,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig
   field(:audioEncoding)
   field(:sampleRateHertz)
 
-  field(
-    :synthesizeSpeechConfig,
+  field(:synthesizeSpeechConfig,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SynthesizeSpeechConfig
   )
 end
