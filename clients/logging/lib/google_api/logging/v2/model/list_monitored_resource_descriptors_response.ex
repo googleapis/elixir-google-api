@@ -34,8 +34,7 @@ defmodule GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse do
 
   field(:nextPageToken)
 
-  field(
-    :resourceDescriptors,
+  field(:resourceDescriptors,
     as: GoogleApi.Logging.V2.Model.MonitoredResourceDescriptor,
     type: :list
   )
