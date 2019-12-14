@@ -125,8 +125,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportRequest do
   field(:cohortGroup, as: GoogleApi.AnalyticsReporting.V4.Model.CohortGroup)
   field(:dateRanges, as: GoogleApi.AnalyticsReporting.V4.Model.DateRange, type: :list)
 
-  field(
-    :dimensionFilterClauses,
+  field(:dimensionFilterClauses,
     as: GoogleApi.AnalyticsReporting.V4.Model.DimensionFilterClause,
     type: :list
   )
@@ -137,8 +136,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.ReportRequest do
   field(:hideValueRanges)
   field(:includeEmptyRows)
 
-  field(
-    :metricFilterClauses,
+  field(:metricFilterClauses,
     as: GoogleApi.AnalyticsReporting.V4.Model.MetricFilterClause,
     type: :list
   )

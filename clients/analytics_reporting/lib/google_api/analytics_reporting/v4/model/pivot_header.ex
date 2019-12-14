@@ -32,8 +32,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Model.PivotHeader do
           :totalPivotGroupsCount => integer()
         }
 
-  field(
-    :pivotHeaderEntries,
+  field(:pivotHeaderEntries,
     as: GoogleApi.AnalyticsReporting.V4.Model.PivotHeaderEntry,
     type: :list
   )
