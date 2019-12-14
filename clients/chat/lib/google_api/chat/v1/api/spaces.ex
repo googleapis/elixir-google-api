@@ -481,9 +481,12 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The field paths to be updated.
+      *   `:updateMask` (*type:* `String.t`) - Required. The field paths to be updated, comma separated if there are
+          multiple.
 
-          Currently supported field paths: "text", "cards".
+          Currently supported field paths:
+          * text
+          * cards
       *   `:body` (*type:* `GoogleApi.Chat.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
