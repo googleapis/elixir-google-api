@@ -48,7 +48,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
       href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
       <code>2012-11-15T16:19:00.094Z</code>.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of an operation. Valid values are <code>PENDING</code>,
-      <code>RUNNING</code>, <code>DONE</code>, <code>UNKNOWN</code>.
+      <code>RUNNING</code>, <code>DONE</code>,
+      <code>SQL_OPERATION_STATUS_UNSPECIFIED</code>.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - Name of the database instance related to this operation.
   *   `targetLink` (*type:* `String.t`, *default:* `nil`) - 
   *   `targetProject` (*type:* `String.t`, *default:* `nil`) - The project ID of the target instance related to this operation.

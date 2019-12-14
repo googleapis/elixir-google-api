@@ -21,7 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance do
 
   ## Attributes
 
-  *   `canDefer` (*type:* `boolean()`, *default:* `nil`) - If the scheduled maintenance can be deferred.
+  *   `canDefer` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `canReschedule` (*type:* `boolean()`, *default:* `nil`) - If the scheduled maintenance can be rescheduled.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of any upcoming scheduled maintenance for this instance.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlScheduledMaintenance do
 
   @type t :: %__MODULE__{
           :canDefer => boolean(),
+          :canReschedule => boolean(),
           :startTime => DateTime.t()
         }
 
   field(:canDefer)
+  field(:canReschedule)
   field(:startTime, as: DateTime)
 end
 

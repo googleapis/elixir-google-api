@@ -18,7 +18,6 @@
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   @moduledoc """
   A Cloud SQL instance resource.
-  If you change this, also change SqlDatabaseInstance
 
   ## Attributes
 
@@ -137,8 +136,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:currentDiskSize)
   field(:databaseVersion)
 
-  field(
-    :diskEncryptionConfiguration,
+  field(:diskEncryptionConfiguration,
     as: GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration
   )
 
