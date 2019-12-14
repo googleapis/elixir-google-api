@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#appRestrictionsSchema`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#appRestrictionsSchema".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#appRestrictionsSchema`) - 
   *   `restrictions` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t)`, *default:* `nil`) - The set of restrictions that make up this schema.
   """
 
@@ -35,8 +35,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema do
 
   field(:kind)
 
-  field(
-    :restrictions,
+  field(:restrictions,
     as: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction,
     type: :list
   )

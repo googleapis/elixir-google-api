@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.DeviceState do
   ## Attributes
 
   *   `accountState` (*type:* `String.t`, *default:* `nil`) - The state of the Google account on the device. "enabled" indicates that the Google account on the device can be used to access Google services (including Google Play), while "disabled" means that it cannot. A new device is initially in the "disabled" state.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#deviceState`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#deviceState".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#deviceState`) - 
   """
 
   use GoogleApi.Gax.ModelBase

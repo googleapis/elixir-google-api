@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#configurationVariables`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#configurationVariables".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#configurationVariables`) - 
   *   `mcmId` (*type:* `String.t`, *default:* `nil`) - The ID of the managed configurations settings.
   *   `variableSet` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.VariableSet.t)`, *default:* `nil`) - The variable set that is attributed to the user.
   """

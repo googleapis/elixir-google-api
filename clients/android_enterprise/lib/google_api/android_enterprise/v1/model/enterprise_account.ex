@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount do
   ## Attributes
 
   *   `accountEmail` (*type:* `String.t`, *default:* `nil`) - The email address of the service account.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#enterpriseAccount`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#enterpriseAccount".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#enterpriseAccount`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.StorePage do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique ID of this page. Assigned by the server. Immutable once assigned.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#storePage`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storePage".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#storePage`) - 
   *   `link` (*type:* `list(String.t)`, *default:* `nil`) - Ordered list of pages a user should be able to reach from this page. The list can't include this page. It is recommended that the basic pages are created first, before adding the links between pages.
 
       The API doesn't verify that the pages exist or the pages are reachable.

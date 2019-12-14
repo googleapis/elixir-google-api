@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.NotificationSet do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#notificationSet`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#notificationSet".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#notificationSet`) - 
   *   `notification` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Notification.t)`, *default:* `nil`) - The notifications received, or empty if no notifications are present.
   *   `notificationSetId` (*type:* `String.t`, *default:* `nil`) - The notification set ID, required to mark the notification as received with the Enterprises.AcknowledgeNotification API. This will be omitted if no notifications are present.
   """

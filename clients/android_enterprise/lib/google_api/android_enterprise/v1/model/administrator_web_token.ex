@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#administratorWebToken`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#administratorWebToken".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#administratorWebToken`) - 
   *   `token` (*type:* `String.t`, *default:* `nil`) - An opaque token to be passed to the Play front-end to generate an iframe.
   """
 

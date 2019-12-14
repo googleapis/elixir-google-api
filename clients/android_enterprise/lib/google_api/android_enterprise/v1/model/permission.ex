@@ -24,7 +24,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Permission do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - A longer description of the Permissions resource, giving more details of what it affects.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#permission`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#permission".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#permission`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the permission.
   *   `permissionId` (*type:* `String.t`, *default:* `nil`) - An opaque string uniquely identifying the permission.
   """

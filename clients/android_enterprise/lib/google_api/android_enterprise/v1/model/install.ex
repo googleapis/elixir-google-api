@@ -32,7 +32,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Install do
   ## Attributes
 
   *   `installState` (*type:* `String.t`, *default:* `nil`) - Install state. The state "installPending" means that an install request has recently been made and download to the device is in progress. The state "installed" means that the app has been installed. This field is read-only.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#install`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#install".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#install`) - 
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product that the install is for. For example, "app:com.google.android.gm".
   *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The version of the installed product. Guaranteed to be set only if the install state is "installed".
   """
