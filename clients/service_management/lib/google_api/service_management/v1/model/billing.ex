@@ -54,8 +54,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Billing do
             list(GoogleApi.ServiceManagement.V1.Model.BillingDestination.t())
         }
 
-  field(
-    :consumerDestinations,
+  field(:consumerDestinations,
     as: GoogleApi.ServiceManagement.V1.Model.BillingDestination,
     type: :list
   )
