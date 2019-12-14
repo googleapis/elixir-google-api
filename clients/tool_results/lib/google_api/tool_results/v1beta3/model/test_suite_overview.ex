@@ -30,6 +30,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview do
   *   `failureCount` (*type:* `integer()`, *default:* `nil`) - Number of failed test cases, typically set by the service by parsing the xml_source. May also be set by the user.
 
       - In create/response: always set - In update request: never
+  *   `flakyCount` (*type:* `integer()`, *default:* `nil`) - Number of flaky test cases, set by the service by rolling up flaky test attempts.
+
+      Present only for rollup test suite overview at environment level. A step cannot have flaky test cases.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the test suite.
 
       - In create/response: always set - In update request: never
@@ -54,6 +57,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview do
           :elapsedTime => GoogleApi.ToolResults.V1beta3.Model.Duration.t(),
           :errorCount => integer(),
           :failureCount => integer(),
+          :flakyCount => integer(),
           :name => String.t(),
           :skippedCount => integer(),
           :totalCount => integer(),
@@ -63,6 +67,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview do
   field(:elapsedTime, as: GoogleApi.ToolResults.V1beta3.Model.Duration)
   field(:errorCount)
   field(:failureCount)
+  field(:flakyCount)
   field(:name)
   field(:skippedCount)
   field(:totalCount)
