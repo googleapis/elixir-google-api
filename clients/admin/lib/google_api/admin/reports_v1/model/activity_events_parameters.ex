@@ -51,8 +51,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.ActivityEventsParameters do
   field(:messageValue, as: GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMessageValue)
   field(:multiIntValue, type: :list)
 
-  field(
-    :multiMessageValue,
+  field(:multiMessageValue,
     as: GoogleApi.Admin.Reports_v1.Model.ActivityEventsParametersMultiMessageValue,
     type: :list
   )
