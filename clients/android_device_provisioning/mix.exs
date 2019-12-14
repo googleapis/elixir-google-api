@@ -18,13 +18,13 @@
 defmodule GoogleApi.AndroidDeviceProvisioning.Mixfile do
   use Mix.Project
 
-  @version "0.11.0"
+  @version "0.12.0"
 
   def project() do
     [
       app: :google_api_android_device_provisioning,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       description: description(),
