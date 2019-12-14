@@ -21,15 +21,15 @@ defmodule GoogleApi.Container.V1.Model.SetNetworkPolicyRequest do
 
   ## Attributes
 
-  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster.
+  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster id) of the cluster to set networking
       policy. Specified in the format 'projects/*/locations/*/clusters/*'.
-  *   `networkPolicy` (*type:* `GoogleApi.Container.V1.Model.NetworkPolicy.t`, *default:* `nil`) - Configuration options for the NetworkPolicy feature.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
+  *   `networkPolicy` (*type:* `GoogleApi.Container.V1.Model.NetworkPolicy.t`, *default:* `nil`) - Required. Configuration options for the NetworkPolicy feature.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.

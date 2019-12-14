@@ -21,15 +21,15 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
 
   ## Attributes
 
-  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade.
+  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
-  *   `imageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool.
+  *   `imageType` (*type:* `String.t`, *default:* `nil`) - Required. The desired image type for the node pool.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster, node pool) of the node pool to
       update. Specified in the format
       'projects/*/locations/*/clusters/*/nodePools/*'.
-  *   `nodePoolId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the node pool to upgrade.
+  *   `nodePoolId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the node pool to upgrade.
       This field has been deprecated and replaced by the name field.
-  *   `nodeVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the nodes to (typically an
+  *   `nodeVersion` (*type:* `String.t`, *default:* `nil`) - Required. The Kubernetes version to change the nodes to (typically an
       upgrade).
 
       Users may specify either explicit versions offered by Kubernetes Engine or
@@ -40,10 +40,10 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
       - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
       - "1.X.Y-gke.N": picks an explicit Kubernetes version
       - "-": picks the Kubernetes master version
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.

@@ -45,8 +45,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterAutoscaling do
 
   field(:autoprovisioningLocations, type: :list)
 
-  field(
-    :autoprovisioningNodePoolDefaults,
+  field(:autoprovisioningNodePoolDefaults,
     as: GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults
   )
 
