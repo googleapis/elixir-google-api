@@ -51,8 +51,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1ReferenceImage do
           :uri => String.t()
         }
 
-  field(
-    :boundingPolys,
+  field(:boundingPolys,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1BoundingPoly,
     type: :list
   )

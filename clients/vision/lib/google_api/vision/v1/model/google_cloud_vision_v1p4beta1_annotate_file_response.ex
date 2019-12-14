@@ -43,8 +43,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateFileRespon
   field(:error, as: GoogleApi.Vision.V1.Model.Status)
   field(:inputConfig, as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1InputConfig)
 
-  field(
-    :responses,
+  field(:responses,
     as: GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1AnnotateImageResponse,
     type: :list
   )
