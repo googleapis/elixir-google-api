@@ -30,6 +30,7 @@ defmodule GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig do
   *   `minSpeakerCount` (*type:* `integer()`, *default:* `nil`) - Minimum number of speakers in the conversation. This range gives you more
       flexibility by allowing the system to automatically determine the correct
       number of speakers. If not set, the default value is 2.
+  *   `speakerTag` (*type:* `integer()`, *default:* `nil`) - Output only. Unused.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,12 +38,14 @@ defmodule GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig do
   @type t :: %__MODULE__{
           :enableSpeakerDiarization => boolean(),
           :maxSpeakerCount => integer(),
-          :minSpeakerCount => integer()
+          :minSpeakerCount => integer(),
+          :speakerTag => integer()
         }
 
   field(:enableSpeakerDiarization)
   field(:maxSpeakerCount)
   field(:minSpeakerCount)
+  field(:speakerTag)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig do
