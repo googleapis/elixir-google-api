@@ -35,8 +35,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   field(:confidence)
 
-  field(
-    :segment,
+  field(:segment,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment
   )
 end

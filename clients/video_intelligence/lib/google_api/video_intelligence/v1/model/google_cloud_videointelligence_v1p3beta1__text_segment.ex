@@ -41,14 +41,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   field(:confidence)
 
-  field(
-    :frames,
+  field(:frames,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_TextFrame,
     type: :list
   )
 
-  field(
-    :segment,
+  field(:segment,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment
   )
 end

@@ -41,15 +41,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
           :timeOffset => String.t()
         }
 
-  field(
-    :attributes,
+  field(:attributes,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute,
     type: :list
   )
 
-  field(
-    :normalizedBoundingBox,
+  field(:normalizedBoundingBox,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox
   )

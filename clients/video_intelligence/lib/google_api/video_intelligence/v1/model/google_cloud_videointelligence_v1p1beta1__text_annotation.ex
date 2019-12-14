@@ -37,8 +37,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
           :text => String.t()
         }
 
-  field(
-    :segments,
+  field(:segments,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_TextSegment,
     type: :list
   )

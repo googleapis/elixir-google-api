@@ -85,8 +85,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Sp
   field(:languageCode)
   field(:maxAlternatives)
 
-  field(
-    :speechContexts,
+  field(:speechContexts,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_SpeechContext,
     type: :list
   )

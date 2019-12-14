@@ -47,22 +47,19 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_La
             )
         }
 
-  field(
-    :categoryEntities,
+  field(:categoryEntities,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Entity,
     type: :list
   )
 
   field(:entity, as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Entity)
 
-  field(
-    :frames,
+  field(:frames,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelFrame,
     type: :list
   )
 
-  field(
-    :segments,
+  field(:segments,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelSegment,
     type: :list
   )

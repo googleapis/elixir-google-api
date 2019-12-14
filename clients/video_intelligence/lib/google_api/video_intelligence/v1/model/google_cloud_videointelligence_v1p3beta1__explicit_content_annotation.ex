@@ -35,8 +35,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
             )
         }
 
-  field(
-    :frames,
+  field(:frames,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame,
     type: :list

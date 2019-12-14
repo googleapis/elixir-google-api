@@ -101,14 +101,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
 
   field(:error, as: GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status)
 
-  field(
-    :explicitAnnotation,
+  field(:explicitAnnotation,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_ExplicitContentAnnotation
   )
 
-  field(
-    :frameLabelAnnotations,
+  field(:frameLabelAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation,
     type: :list
@@ -116,61 +114,52 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
 
   field(:inputUri)
 
-  field(
-    :objectAnnotations,
+  field(:objectAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation,
     type: :list
   )
 
-  field(
-    :segment,
+  field(:segment,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoSegment
   )
 
-  field(
-    :segmentLabelAnnotations,
+  field(:segmentLabelAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation,
     type: :list
   )
 
-  field(
-    :segmentPresenceLabelAnnotations,
+  field(:segmentPresenceLabelAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation,
     type: :list
   )
 
-  field(
-    :shotAnnotations,
+  field(:shotAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoSegment,
     type: :list
   )
 
-  field(
-    :shotLabelAnnotations,
+  field(:shotLabelAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation,
     type: :list
   )
 
-  field(
-    :shotPresenceLabelAnnotations,
+  field(:shotPresenceLabelAnnotations,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation,
     type: :list
   )
 
-  field(
-    :speechTranscriptions,
+  field(:speechTranscriptions,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_SpeechTranscription,
     type: :list
   )
 
-  field(
-    :textAnnotations,
+  field(:textAnnotations,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_TextAnnotation,
     type: :list
   )

@@ -44,19 +44,16 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
             )
         }
 
-  field(
-    :entity,
+  field(:entity,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Entity
   )
 
-  field(
-    :segments,
+  field(:segments,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_VideoSegment,
     type: :list
   )
 
-  field(
-    :tracks,
+  field(:tracks,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Track,
     type: :list
   )

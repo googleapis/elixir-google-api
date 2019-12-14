@@ -49,8 +49,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
             )
         }
 
-  field(
-    :vertices,
+  field(:vertices,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_NormalizedVertex,
     type: :list
   )

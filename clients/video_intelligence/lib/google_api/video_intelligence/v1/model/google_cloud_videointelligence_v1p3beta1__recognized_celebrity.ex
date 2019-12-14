@@ -33,8 +33,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
           :confidence => number()
         }
 
-  field(
-    :celebrity,
+  field(:celebrity,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Celebrity
   )
 

@@ -49,8 +49,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Vi
   field(:inputUri)
   field(:progressPercent)
 
-  field(
-    :segment,
+  field(:segment,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_VideoSegment
   )
 
