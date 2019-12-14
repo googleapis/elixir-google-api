@@ -34,8 +34,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrections do
           :reason => String.t()
         }
 
-  field(
-    :contexts,
+  field(:contexts,
     as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeCorrectionsContexts,
     type: :list
   )

@@ -35,8 +35,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasons do
 
   field(:date)
 
-  field(
-    :reasons,
+  field(:reasons,
     as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeFilteringReasonsReasons,
     type: :list
   )

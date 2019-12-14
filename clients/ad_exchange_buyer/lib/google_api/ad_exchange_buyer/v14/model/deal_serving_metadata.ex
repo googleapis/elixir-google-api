@@ -35,8 +35,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadata do
 
   field(:alcoholAdsAllowed)
 
-  field(
-    :dealPauseStatus,
+  field(:dealPauseStatus,
     as: GoogleApi.AdExchangeBuyer.V14.Model.DealServingMetadataDealPauseStatus
   )
 end

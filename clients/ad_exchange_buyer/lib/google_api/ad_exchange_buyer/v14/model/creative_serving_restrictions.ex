@@ -38,14 +38,12 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictions do
           :reason => String.t()
         }
 
-  field(
-    :contexts,
+  field(:contexts,
     as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsContexts,
     type: :list
   )
 
-  field(
-    :disapprovalReasons,
+  field(:disapprovalReasons,
     as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictionsDisapprovalReasons,
     type: :list
   )

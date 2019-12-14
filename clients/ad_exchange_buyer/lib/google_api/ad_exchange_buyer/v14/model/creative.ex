@@ -96,8 +96,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   field(:accountId)
   field(:adChoicesDestinationUrl)
 
-  field(
-    :adTechnologyProviders,
+  field(:adTechnologyProviders,
     as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeAdTechnologyProviders
   )
 
@@ -123,8 +122,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Creative do
   field(:restrictedCategories, type: :list)
   field(:sensitiveCategories, type: :list)
 
-  field(
-    :servingRestrictions,
+  field(:servingRestrictions,
     as: GoogleApi.AdExchangeBuyer.V14.Model.CreativeServingRestrictions,
     type: :list
   )
