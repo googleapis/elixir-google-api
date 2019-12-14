@@ -60,8 +60,7 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudience do
 
   field(:accountId)
 
-  field(
-    :audienceDefinition,
+  field(:audienceDefinition,
     as: GoogleApi.Analytics.V3.Model.RemarketingAudienceAudienceDefinition
   )
 
@@ -75,8 +74,7 @@ defmodule GoogleApi.Analytics.V3.Model.RemarketingAudience do
   field(:linkedViews, type: :list)
   field(:name)
 
-  field(
-    :stateBasedAudienceDefinition,
+  field(:stateBasedAudienceDefinition,
     as: GoogleApi.Analytics.V3.Model.RemarketingAudienceStateBasedAudienceDefinition
   )
 
