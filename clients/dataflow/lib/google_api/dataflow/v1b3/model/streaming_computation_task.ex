@@ -36,8 +36,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingComputationTask do
           :taskType => String.t()
         }
 
-  field(
-    :computationRanges,
+  field(:computationRanges,
     as: GoogleApi.Dataflow.V1b3.Model.StreamingComputationRanges,
     type: :list
   )
