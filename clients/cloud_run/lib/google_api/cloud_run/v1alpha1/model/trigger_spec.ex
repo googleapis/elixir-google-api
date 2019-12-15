@@ -29,9 +29,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
       events that pass this filter will be sent to the Subscriber.
   *   `importers` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec.t)`, *default:* `nil`) - Deprecated, importer specification will be replaced by information stored
       in GcpImporterDao.
-  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is the addressable that will receive events.
-  *   `subscriber` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t`, *default:* `nil`) - Deprecated, sink will be represented by Destination.
-      Subscriber is the addressable that receives events from the Broker that
+  *   `subscriber` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t`, *default:* `nil`) - Subscriber is the addressable that receives events from the Broker that
       pass the Filter. It is required.
 
       E.g. https://us-central1-myproject.cloudfunctions.net/myfunction or
@@ -44,14 +42,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
           :broker => String.t(),
           :filter => GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t(),
           :importers => list(GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec.t()),
-          :sink => GoogleApi.CloudRun.V1alpha1.Model.Destination.t(),
           :subscriber => GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t()
         }
 
   field(:broker)
   field(:filter, as: GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter)
   field(:importers, as: GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec, type: :list)
-  field(:sink, as: GoogleApi.CloudRun.V1alpha1.Model.Destination)
   field(:subscriber, as: GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec)
 end
 
