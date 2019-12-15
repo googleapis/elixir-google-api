@@ -45,8 +45,7 @@ defmodule GoogleApi.Dataproc.V1.Model.AutoscalingPolicy do
   field(:id)
   field(:name)
 
-  field(
-    :secondaryWorkerConfig,
+  field(:secondaryWorkerConfig,
     as: GoogleApi.Dataproc.V1.Model.InstanceGroupAutoscalingPolicyConfig
   )
 

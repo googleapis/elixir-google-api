@@ -23,18 +23,18 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
 
   *   `driverControlFilesUri` (*type:* `String.t`, *default:* `nil`) - Output only. If present, the location of miscellaneous control files which may be used as part of job setup and handling. If not present, control files may be placed in the same location as driver_output_uri.
   *   `driverOutputResourceUri` (*type:* `String.t`, *default:* `nil`) - Output only. A URI pointing to the location of the stdout of the job's driver program.
-  *   `hadoopJob` (*type:* `GoogleApi.Dataproc.V1.Model.HadoopJob.t`, *default:* `nil`) - Job is a Hadoop job.
-  *   `hiveJob` (*type:* `GoogleApi.Dataproc.V1.Model.HiveJob.t`, *default:* `nil`) - Job is a Hive job.
+  *   `hadoopJob` (*type:* `GoogleApi.Dataproc.V1.Model.HadoopJob.t`, *default:* `nil`) - 
+  *   `hiveJob` (*type:* `GoogleApi.Dataproc.V1.Model.HiveJob.t`, *default:* `nil`) - 
   *   `jobUuid` (*type:* `String.t`, *default:* `nil`) - Output only. A UUID that uniquely identifies a job within the project over time. This is in contrast to a user-settable reference.job_id that may be reused over time.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job.
-  *   `pigJob` (*type:* `GoogleApi.Dataproc.V1.Model.PigJob.t`, *default:* `nil`) - Job is a Pig job.
+  *   `pigJob` (*type:* `GoogleApi.Dataproc.V1.Model.PigJob.t`, *default:* `nil`) - 
   *   `placement` (*type:* `GoogleApi.Dataproc.V1.Model.JobPlacement.t`, *default:* `nil`) - Required. Job information, including how, when, and where to run the job.
-  *   `pysparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.PySparkJob.t`, *default:* `nil`) - Job is a Pyspark job.
+  *   `pysparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.PySparkJob.t`, *default:* `nil`) - 
   *   `reference` (*type:* `GoogleApi.Dataproc.V1.Model.JobReference.t`, *default:* `nil`) - Optional. The fully qualified reference to the job, which can be used to obtain the equivalent REST path of the job resource. If this property is not specified when a job is created, the server generates a <code>job_id</code>.
   *   `scheduling` (*type:* `GoogleApi.Dataproc.V1.Model.JobScheduling.t`, *default:* `nil`) - Optional. Job scheduling configuration.
-  *   `sparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkJob.t`, *default:* `nil`) - Job is a Spark job.
-  *   `sparkRJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkRJob.t`, *default:* `nil`) - Job is a SparkR job.
-  *   `sparkSqlJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkSqlJob.t`, *default:* `nil`) - Job is a SparkSql job.
+  *   `sparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkJob.t`, *default:* `nil`) - 
+  *   `sparkRJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkRJob.t`, *default:* `nil`) - 
+  *   `sparkSqlJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkSqlJob.t`, *default:* `nil`) - 
   *   `status` (*type:* `GoogleApi.Dataproc.V1.Model.JobStatus.t`, *default:* `nil`) - Output only. The job status. Additional application-specific status information may be contained in the <code>type_job</code> and <code>yarn_applications</code> fields.
   *   `statusHistory` (*type:* `list(GoogleApi.Dataproc.V1.Model.JobStatus.t)`, *default:* `nil`) - Output only. The previous job status.
   *   `yarnApplications` (*type:* `list(GoogleApi.Dataproc.V1.Model.YarnApplication.t)`, *default:* `nil`) - Output only. The collection of YARN applications spun up by this job.Beta Feature: This report is available for testing purposes only. It may be changed before final release.

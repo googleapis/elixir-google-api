@@ -27,6 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
       https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default
       projects/[project_id]/regions/global/default
       default
+  *   `reservationAffinity` (*type:* `GoogleApi.Dataproc.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Optional. Reservation Affinity for consuming Zonal reservation.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The service account of the instances. Defaults to the default Compute Engine service account. Custom service accounts need permissions equivalent to the following IAM roles:
       roles/logging.logWriter
       roles/storage.objectAdmin(see https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts for more information). Example: [account_id]@[project_id].iam.gserviceaccount.com
@@ -55,6 +56,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
           :internalIpOnly => boolean(),
           :metadata => map(),
           :networkUri => String.t(),
+          :reservationAffinity => GoogleApi.Dataproc.V1.Model.ReservationAffinity.t(),
           :serviceAccount => String.t(),
           :serviceAccountScopes => list(String.t()),
           :subnetworkUri => String.t(),
@@ -65,6 +67,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
   field(:internalIpOnly)
   field(:metadata, type: :map)
   field(:networkUri)
+  field(:reservationAffinity, as: GoogleApi.Dataproc.V1.Model.ReservationAffinity)
   field(:serviceAccount)
   field(:serviceAccountScopes, type: :list)
   field(:subnetworkUri)
