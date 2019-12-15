@@ -131,8 +131,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
           :version => integer()
         }
 
-  field(
-    :auditConfigs,
+  field(:auditConfigs,
     as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditConfig,
     type: :list
   )

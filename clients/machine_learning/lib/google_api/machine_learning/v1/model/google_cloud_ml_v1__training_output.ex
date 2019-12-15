@@ -50,8 +50,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
             list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__HyperparameterOutput.t())
         }
 
-  field(
-    :builtInAlgorithmOutput,
+  field(:builtInAlgorithmOutput,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__BuiltInAlgorithmOutput
   )
 
@@ -61,8 +60,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
   field(:isBuiltInAlgorithmJob)
   field(:isHyperparameterTuningJob)
 
-  field(
-    :trials,
+  field(:trials,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__HyperparameterOutput,
     type: :list
   )

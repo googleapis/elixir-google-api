@@ -84,8 +84,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec 
   field(:maxParallelTrials)
   field(:maxTrials)
 
-  field(
-    :params,
+  field(:params,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ParameterSpec,
     type: :list
   )
