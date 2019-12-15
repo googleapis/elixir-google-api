@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_civic_info, "~> 0.9"}]
+  [{:google_api_civic_info, "~> 0.10"}]
 end
 ```
 

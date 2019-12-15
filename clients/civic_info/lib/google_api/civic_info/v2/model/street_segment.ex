@@ -21,148 +21,148 @@ defmodule GoogleApi.CivicInfo.V2.Model.StreetSegment do
 
   ## Attributes
 
-  *   `ncoaAddress` (*type:* `String.t`, *default:* `nil`) - 
-  *   `unitType` (*type:* `String.t`, *default:* `nil`) - 
-  *   `unitNumber` (*type:* `String.t`, *default:* `nil`) - 
-  *   `congressionalDistrict` (*type:* `String.t`, *default:* `nil`) - 
-  *   `stateHouseDistrict` (*type:* `String.t`, *default:* `nil`) - 
-  *   `precinctName` (*type:* `String.t`, *default:* `nil`) - 
-  *   `geographicDivisionOcdIds` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `vanPrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
-  *   `startLatE7` (*type:* `integer()`, *default:* `nil`) - 
-  *   `published` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `contestIds` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `geocodedPoint` (*type:* `GoogleApi.CivicInfo.V2.Model.PointProto.t`, *default:* `nil`) - 
-  *   `startLngE7` (*type:* `integer()`, *default:* `nil`) - 
-  *   `municipalDistrict` (*type:* `String.t`, *default:* `nil`) - 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - 
-  *   `streetName` (*type:* `String.t`, *default:* `nil`) - 
-  *   `subAdministrativeAreaName` (*type:* `String.t`, *default:* `nil`) - 
-  *   `surrogateId` (*type:* `String.t`, *default:* `nil`) - 
-  *   `pollinglocationByIds` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `countyCouncilDistrict` (*type:* `String.t`, *default:* `nil`) - 
-  *   `oddOrEvens` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - 
-  *   `originalId` (*type:* `String.t`, *default:* `nil`) - 
-  *   `state` (*type:* `String.t`, *default:* `nil`) - 
-  *   `countyFips` (*type:* `String.t`, *default:* `nil`) - 
-  *   `targetsmartUniquePrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
-  *   `precinctOcdId` (*type:* `String.t`, *default:* `nil`) - 
-  *   `earlyVoteSiteByIds` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `wildcard` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `city` (*type:* `String.t`, *default:* `nil`) - 
-  *   `beforeGeocodeId` (*type:* `String.t`, *default:* `nil`) - 
-  *   `cityCouncilDistrict` (*type:* `String.t`, *default:* `nil`) - 
-  *   `wardDistrict` (*type:* `String.t`, *default:* `nil`) - 
-  *   `provenances` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Provenance.t)`, *default:* `nil`) - 
-  *   `administrationRegionIds` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `schoolDistrict` (*type:* `String.t`, *default:* `nil`) - 
-  *   `zip` (*type:* `String.t`, *default:* `nil`) - 
-  *   `judicialDistrict` (*type:* `String.t`, *default:* `nil`) - 
-  *   `mailOnly` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `townshipDistrict` (*type:* `String.t`, *default:* `nil`) - 
-  *   `endHouseNumber` (*type:* `String.t`, *default:* `nil`) - 
-  *   `catalistUniquePrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
-  *   `startHouseNumber` (*type:* `String.t`, *default:* `nil`) - 
-  *   `stateSenateDistrict` (*type:* `String.t`, *default:* `nil`) - 
   *   `voterGeographicDivisionOcdIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `stateSenateDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `startHouseNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `catalistUniquePrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `endHouseNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `townshipDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `mailOnly` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `judicialDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `zip` (*type:* `String.t`, *default:* `nil`) - 
+  *   `schoolDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `administrationRegionIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `provenances` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Provenance.t)`, *default:* `nil`) - 
+  *   `wardDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `cityCouncilDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `beforeGeocodeId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `city` (*type:* `String.t`, *default:* `nil`) - 
+  *   `wildcard` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `earlyVoteSiteByIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `precinctOcdId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `targetsmartUniquePrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `countyFips` (*type:* `String.t`, *default:* `nil`) - 
+  *   `state` (*type:* `String.t`, *default:* `nil`) - 
+  *   `originalId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `oddOrEvens` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `countyCouncilDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `pollinglocationByIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `surrogateId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subAdministrativeAreaName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `streetName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `municipalDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `startLngE7` (*type:* `integer()`, *default:* `nil`) - 
+  *   `geocodedPoint` (*type:* `GoogleApi.CivicInfo.V2.Model.PointProto.t`, *default:* `nil`) - 
+  *   `contestIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `published` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `startLatE7` (*type:* `integer()`, *default:* `nil`) - 
+  *   `vanPrecinctCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `geographicDivisionOcdIds` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `precinctName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `stateHouseDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `congressionalDistrict` (*type:* `String.t`, *default:* `nil`) - 
+  *   `unitNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `unitType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ncoaAddress` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ncoaAddress => String.t(),
-          :unitType => String.t(),
-          :unitNumber => String.t(),
-          :congressionalDistrict => String.t(),
-          :stateHouseDistrict => String.t(),
-          :precinctName => String.t(),
-          :geographicDivisionOcdIds => list(String.t()),
-          :vanPrecinctCode => String.t(),
-          :startLatE7 => integer(),
-          :published => boolean(),
-          :contestIds => list(String.t()),
-          :geocodedPoint => GoogleApi.CivicInfo.V2.Model.PointProto.t(),
-          :startLngE7 => integer(),
-          :municipalDistrict => String.t(),
-          :id => String.t(),
-          :streetName => String.t(),
-          :subAdministrativeAreaName => String.t(),
-          :surrogateId => String.t(),
-          :pollinglocationByIds => list(String.t()),
-          :countyCouncilDistrict => String.t(),
-          :oddOrEvens => list(String.t()),
-          :datasetId => String.t(),
-          :originalId => String.t(),
-          :state => String.t(),
-          :countyFips => String.t(),
-          :targetsmartUniquePrecinctCode => String.t(),
-          :precinctOcdId => String.t(),
-          :earlyVoteSiteByIds => list(String.t()),
-          :wildcard => boolean(),
-          :city => String.t(),
-          :beforeGeocodeId => String.t(),
-          :cityCouncilDistrict => String.t(),
-          :wardDistrict => String.t(),
-          :provenances => list(GoogleApi.CivicInfo.V2.Model.Provenance.t()),
-          :administrationRegionIds => list(String.t()),
-          :schoolDistrict => String.t(),
-          :zip => String.t(),
-          :judicialDistrict => String.t(),
-          :mailOnly => boolean(),
-          :townshipDistrict => String.t(),
-          :endHouseNumber => String.t(),
-          :catalistUniquePrecinctCode => String.t(),
-          :startHouseNumber => String.t(),
+          :voterGeographicDivisionOcdIds => list(String.t()),
           :stateSenateDistrict => String.t(),
-          :voterGeographicDivisionOcdIds => list(String.t())
+          :startHouseNumber => String.t(),
+          :catalistUniquePrecinctCode => String.t(),
+          :endHouseNumber => String.t(),
+          :townshipDistrict => String.t(),
+          :mailOnly => boolean(),
+          :judicialDistrict => String.t(),
+          :zip => String.t(),
+          :schoolDistrict => String.t(),
+          :administrationRegionIds => list(String.t()),
+          :provenances => list(GoogleApi.CivicInfo.V2.Model.Provenance.t()),
+          :wardDistrict => String.t(),
+          :cityCouncilDistrict => String.t(),
+          :beforeGeocodeId => String.t(),
+          :city => String.t(),
+          :wildcard => boolean(),
+          :earlyVoteSiteByIds => list(String.t()),
+          :precinctOcdId => String.t(),
+          :targetsmartUniquePrecinctCode => String.t(),
+          :countyFips => String.t(),
+          :state => String.t(),
+          :originalId => String.t(),
+          :datasetId => String.t(),
+          :oddOrEvens => list(String.t()),
+          :countyCouncilDistrict => String.t(),
+          :pollinglocationByIds => list(String.t()),
+          :surrogateId => String.t(),
+          :subAdministrativeAreaName => String.t(),
+          :streetName => String.t(),
+          :id => String.t(),
+          :municipalDistrict => String.t(),
+          :startLngE7 => integer(),
+          :geocodedPoint => GoogleApi.CivicInfo.V2.Model.PointProto.t(),
+          :contestIds => list(String.t()),
+          :published => boolean(),
+          :startLatE7 => integer(),
+          :vanPrecinctCode => String.t(),
+          :geographicDivisionOcdIds => list(String.t()),
+          :precinctName => String.t(),
+          :stateHouseDistrict => String.t(),
+          :congressionalDistrict => String.t(),
+          :unitNumber => String.t(),
+          :unitType => String.t(),
+          :ncoaAddress => String.t()
         }
 
-  field(:ncoaAddress)
-  field(:unitType)
-  field(:unitNumber)
-  field(:congressionalDistrict)
-  field(:stateHouseDistrict)
-  field(:precinctName)
-  field(:geographicDivisionOcdIds, type: :list)
-  field(:vanPrecinctCode)
-  field(:startLatE7)
-  field(:published)
-  field(:contestIds, type: :list)
-  field(:geocodedPoint, as: GoogleApi.CivicInfo.V2.Model.PointProto)
-  field(:startLngE7)
-  field(:municipalDistrict)
-  field(:id)
-  field(:streetName)
-  field(:subAdministrativeAreaName)
-  field(:surrogateId)
-  field(:pollinglocationByIds, type: :list)
-  field(:countyCouncilDistrict)
-  field(:oddOrEvens, type: :list)
-  field(:datasetId)
-  field(:originalId)
-  field(:state)
-  field(:countyFips)
-  field(:targetsmartUniquePrecinctCode)
-  field(:precinctOcdId)
-  field(:earlyVoteSiteByIds, type: :list)
-  field(:wildcard)
-  field(:city)
-  field(:beforeGeocodeId)
-  field(:cityCouncilDistrict)
-  field(:wardDistrict)
-  field(:provenances, as: GoogleApi.CivicInfo.V2.Model.Provenance, type: :list)
-  field(:administrationRegionIds, type: :list)
-  field(:schoolDistrict)
-  field(:zip)
-  field(:judicialDistrict)
-  field(:mailOnly)
-  field(:townshipDistrict)
-  field(:endHouseNumber)
-  field(:catalistUniquePrecinctCode)
-  field(:startHouseNumber)
-  field(:stateSenateDistrict)
   field(:voterGeographicDivisionOcdIds, type: :list)
+  field(:stateSenateDistrict)
+  field(:startHouseNumber)
+  field(:catalistUniquePrecinctCode)
+  field(:endHouseNumber)
+  field(:townshipDistrict)
+  field(:mailOnly)
+  field(:judicialDistrict)
+  field(:zip)
+  field(:schoolDistrict)
+  field(:administrationRegionIds, type: :list)
+  field(:provenances, as: GoogleApi.CivicInfo.V2.Model.Provenance, type: :list)
+  field(:wardDistrict)
+  field(:cityCouncilDistrict)
+  field(:beforeGeocodeId)
+  field(:city)
+  field(:wildcard)
+  field(:earlyVoteSiteByIds, type: :list)
+  field(:precinctOcdId)
+  field(:targetsmartUniquePrecinctCode)
+  field(:countyFips)
+  field(:state)
+  field(:originalId)
+  field(:datasetId)
+  field(:oddOrEvens, type: :list)
+  field(:countyCouncilDistrict)
+  field(:pollinglocationByIds, type: :list)
+  field(:surrogateId)
+  field(:subAdministrativeAreaName)
+  field(:streetName)
+  field(:id)
+  field(:municipalDistrict)
+  field(:startLngE7)
+  field(:geocodedPoint, as: GoogleApi.CivicInfo.V2.Model.PointProto)
+  field(:contestIds, type: :list)
+  field(:published)
+  field(:startLatE7)
+  field(:vanPrecinctCode)
+  field(:geographicDivisionOcdIds, type: :list)
+  field(:precinctName)
+  field(:stateHouseDistrict)
+  field(:congressionalDistrict)
+  field(:unitNumber)
+  field(:unitType)
+  field(:ncoaAddress)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CivicInfo.V2.Model.StreetSegment do
