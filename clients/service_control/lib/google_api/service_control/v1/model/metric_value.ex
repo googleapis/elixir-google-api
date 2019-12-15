@@ -30,6 +30,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.MetricValue do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels describing the metric value.
       See comments on google.api.servicecontrol.v1.Operation.labels for
       the overriding relationship.
+      Note that this map must not contain monitored resource labels.
   *   `moneyValue` (*type:* `GoogleApi.ServiceControl.V1.Model.Money.t`, *default:* `nil`) - A money value.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start of the time period over which this metric value's measurement
       applies. The time period has different semantics for different metric
