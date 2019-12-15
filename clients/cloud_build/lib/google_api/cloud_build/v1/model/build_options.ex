@@ -55,9 +55,10 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
 
       Using a global volume in a build with only one step is not valid as
       it is indicative of a build request with an incorrect configuration.
-  *   `workerPool` (*type:* `String.t`, *default:* `nil`) - Option to specify a `WorkerPool` for the build. User specifies the pool
-      with the format "[WORKERPOOL_PROJECT_ID]/[WORKERPOOL_NAME]".
-      This is an experimental field.
+  *   `workerPool` (*type:* `String.t`, *default:* `nil`) - Option to specify a `WorkerPool` for the build.
+      Format: projects/{project}/workerPools/{workerPool}
+
+      This field is experimental.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -50,7 +50,12 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
       filter and included_files is not empty, then we make sure that at
       least one of those files matches a included_files glob. If not,
       then we do not trigger a build.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - User assigned name of the trigger. Must be unique within the project.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - User-assigned name of the trigger. Must be unique within the project.
+      Trigger names must meet the following requirements:
+
+      + They must contain only alphanumeric characters and dashes.
+      + They can be 1-64 characters long.
+      + They must begin and end with an alphanumeric character.
   *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions data for Build resource.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for annotation of a `BuildTrigger`
   *   `triggerTemplate` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - Template describing the types of source changes to trigger a build.
