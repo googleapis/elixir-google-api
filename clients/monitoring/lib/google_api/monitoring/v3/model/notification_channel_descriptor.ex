@@ -27,7 +27,6 @@ defmodule GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full REST resource name for this descriptor. The syntax is:
       projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
       In the above, [TYPE] is the value of the type field.
-  *   `supportedTiers` (*type:* `list(String.t)`, *default:* `nil`) - The tiers that support this notification channel; the project service tier must be one of the supported_tiers.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of notification channel, such as "email", "sms", etc. Notification channel types are globally unique.
   """
 
@@ -38,7 +37,6 @@ defmodule GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor do
           :displayName => String.t(),
           :labels => list(GoogleApi.Monitoring.V3.Model.LabelDescriptor.t()),
           :name => String.t(),
-          :supportedTiers => list(String.t()),
           :type => String.t()
         }
 
@@ -46,7 +44,6 @@ defmodule GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor do
   field(:displayName)
   field(:labels, as: GoogleApi.Monitoring.V3.Model.LabelDescriptor, type: :list)
   field(:name)
-  field(:supportedTiers, type: :list)
   field(:type)
 end
 

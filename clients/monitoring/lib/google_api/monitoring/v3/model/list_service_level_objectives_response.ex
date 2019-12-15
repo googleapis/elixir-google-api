@@ -34,8 +34,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ListServiceLevelObjectivesResponse do
 
   field(:nextPageToken)
 
-  field(
-    :serviceLevelObjectives,
+  field(:serviceLevelObjectives,
     as: GoogleApi.Monitoring.V3.Model.ServiceLevelObjective,
     type: :list
   )
