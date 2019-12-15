@@ -33,8 +33,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationOverview do
           :transformedBytes => String.t()
         }
 
-  field(
-    :transformationSummaries,
+  field(:transformationSummaries,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationSummary,
     type: :list
   )
