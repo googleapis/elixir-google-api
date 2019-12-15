@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Inserts a rule into a security policy.
+  Inserts a rule into a security policy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -90,7 +90,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   end
 
   @doc """
-  Deletes the specified policy.
+  Deletes the specified policy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -158,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   end
 
   @doc """
-  List all of the ordered rules present in a single specified policy.
+  List all of the ordered rules present in a single specified policy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -220,7 +220,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   end
 
   @doc """
-  Gets a rule at the specified priority.
+  Gets a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -284,7 +284,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   end
 
   @doc """
-  Creates a new policy in the specified project using the data included in the request.
+  Creates a new policy in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -341,7 +341,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   end
 
   @doc """
-  List all the policies that have been configured for the specified project.
+  List all the policies that have been configured for the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -408,7 +408,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   end
 
   @doc """
-  Patches the specified policy with the data included in the request.
+  Patches the specified policy with the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -478,7 +478,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   end
 
   @doc """
-  Patches a rule at the specified priority.
+  Patches a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -544,7 +544,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   end
 
   @doc """
-  Deletes a rule at the specified priority.
+  Deletes a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

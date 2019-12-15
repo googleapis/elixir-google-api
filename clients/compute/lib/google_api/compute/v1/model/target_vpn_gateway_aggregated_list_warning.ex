@@ -37,8 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetVpnGatewayAggregatedListWarning do
 
   field(:code)
 
-  field(
-    :data,
+  field(:data,
     as: GoogleApi.Compute.V1.Model.TargetVpnGatewayAggregatedListWarningData,
     type: :list
   )

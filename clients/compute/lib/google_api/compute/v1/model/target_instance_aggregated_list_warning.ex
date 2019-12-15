@@ -37,11 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetInstanceAggregatedListWarning do
 
   field(:code)
 
-  field(
-    :data,
-    as: GoogleApi.Compute.V1.Model.TargetInstanceAggregatedListWarningData,
-    type: :list
-  )
+  field(:data, as: GoogleApi.Compute.V1.Model.TargetInstanceAggregatedListWarningData, type: :list)
 
   field(:message)
 end

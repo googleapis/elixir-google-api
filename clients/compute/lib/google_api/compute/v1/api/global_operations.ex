@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of all operations.
+  Retrieves an aggregated list of all operations. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -103,7 +103,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   end
 
   @doc """
-  Deletes the specified Operations resource.
+  Deletes the specified Operations resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -165,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   end
 
   @doc """
-  Retrieves the specified Operations resource. Gets a list of operations by making a list() request.
+  Retrieves the specified Operations resource. Gets a list of operations by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -227,7 +227,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   end
 
   @doc """
-  Retrieves a list of Operation resources contained within the specified project.
+  Retrieves a list of Operation resources contained within the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

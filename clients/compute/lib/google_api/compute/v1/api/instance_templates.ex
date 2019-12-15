@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified instance template. Deleting an instance template is permanent and cannot be undone. It is not possible to delete templates that are already in use by a managed instance group.
+  Deletes the specified instance template. Deleting an instance template is permanent and cannot be undone. It is not possible to delete templates that are already in use by a managed instance group. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   end
 
   @doc """
-  Returns the specified instance template. Gets a list of available instance templates by making a list() request.
+  Returns the specified instance template. Gets a list of available instance templates by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -156,7 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   end
 
   @doc """
-  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -218,7 +218,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   end
 
   @doc """
-  Creates an instance template in the specified project using the data that is included in the request. If you are creating a new template to update an existing instance group, your new instance template must use the same network or, if applicable, the same subnetwork as the original template.
+  Creates an instance template in the specified project using the data that is included in the request. If you are creating a new template to update an existing instance group, your new instance template must use the same network or, if applicable, the same subnetwork as the original template. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -275,7 +275,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   end
 
   @doc """
-  Retrieves a list of instance templates that are contained within the specified project.
+  Retrieves a list of instance templates that are contained within the specified project. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -342,7 +342,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -406,7 +406,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

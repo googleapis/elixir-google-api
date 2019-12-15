@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of autoscalers.
+  Retrieves an aggregated list of autoscalers. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -93,7 +93,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
   end
 
   @doc """
-  Deletes the specified autoscaler.
+  Deletes the specified autoscaler. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -165,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
   end
 
   @doc """
-  Returns the specified autoscaler resource. Gets a list of available autoscalers by making a list() request.
+  Returns the specified autoscaler resource. Gets a list of available autoscalers by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -231,7 +231,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
   end
 
   @doc """
-  Creates an autoscaler in the specified project using the data included in the request.
+  Creates an autoscaler in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -295,7 +295,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
   end
 
   @doc """
-  Retrieves a list of autoscalers contained within the specified zone.
+  Retrieves a list of autoscalers contained within the specified zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -364,7 +364,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
   end
 
   @doc """
-  Updates an autoscaler in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Updates an autoscaler in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -430,7 +430,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
   end
 
   @doc """
-  Updates an autoscaler in the specified project using the data included in the request.
+  Updates an autoscaler in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

@@ -58,8 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpRouteRuleMatch do
   field(:metadataFilters, as: GoogleApi.Compute.V1.Model.MetadataFilter, type: :list)
   field(:prefixMatch)
 
-  field(
-    :queryParameterMatches,
+  field(:queryParameterMatches,
     as: GoogleApi.Compute.V1.Model.HttpQueryParameterMatch,
     type: :list
   )

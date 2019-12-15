@@ -21,7 +21,9 @@ defmodule GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappings d
 
   ## Attributes
 
+  *   `drainNatIpPortRanges` (*type:* `list(String.t)`, *default:* `nil`) - List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
   *   `natIpPortRanges` (*type:* `list(String.t)`, *default:* `nil`) - A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
+  *   `numTotalDrainNatPorts` (*type:* `integer()`, *default:* `nil`) - Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
   *   `numTotalNatPorts` (*type:* `integer()`, *default:* `nil`) - Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
   *   `sourceAliasIpRange` (*type:* `String.t`, *default:* `nil`) - Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
   *   `sourceVirtualIp` (*type:* `String.t`, *default:* `nil`) - Primary IP of the VM for this NIC.
@@ -30,13 +32,17 @@ defmodule GoogleApi.Compute.V1.Model.VmEndpointNatMappingsInterfaceNatMappings d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :drainNatIpPortRanges => list(String.t()),
           :natIpPortRanges => list(String.t()),
+          :numTotalDrainNatPorts => integer(),
           :numTotalNatPorts => integer(),
           :sourceAliasIpRange => String.t(),
           :sourceVirtualIp => String.t()
         }
 
+  field(:drainNatIpPortRanges, type: :list)
   field(:natIpPortRanges, type: :list)
+  field(:numTotalDrainNatPorts)
   field(:numTotalNatPorts)
   field(:sourceAliasIpRange)
   field(:sourceVirtualIp)

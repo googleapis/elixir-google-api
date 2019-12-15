@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns the specified instance group resource.
+  Returns the specified instance group resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -92,7 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   end
 
   @doc """
-  Retrieves the list of instance group resources contained within the specified region.
+  Retrieves the list of instance group resources contained within the specified region. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -173,7 +173,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   end
 
   @doc """
-  Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running.
+  Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -266,7 +266,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   end
 
   @doc """
-  Sets the named ports for the specified regional instance group.
+  Sets the named ports for the specified regional instance group. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

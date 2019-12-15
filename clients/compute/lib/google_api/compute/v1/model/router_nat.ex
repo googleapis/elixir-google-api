@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
 
   ## Attributes
 
+  *   `drainNatIps` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
   *   `icmpIdleTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for ICMP connections. Defaults to 30s if not set.
   *   `logConfig` (*type:* `GoogleApi.Compute.V1.Model.RouterNatLogConfig.t`, *default:* `nil`) - Configure logging on this NAT.
   *   `minPortsPerVm` (*type:* `integer()`, *default:* `nil`) - Minimum number of ports allocated to a VM from this NAT config. If not set, a default number of ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if the value of this field is 50, at least 64 ports are allocated to a VM.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :drainNatIps => list(String.t()),
           :icmpIdleTimeoutSec => integer(),
           :logConfig => GoogleApi.Compute.V1.Model.RouterNatLogConfig.t(),
           :minPortsPerVm => integer(),
@@ -55,6 +57,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
           :udpIdleTimeoutSec => integer()
         }
 
+  field(:drainNatIps, type: :list)
   field(:icmpIdleTimeoutSec)
   field(:logConfig, as: GoogleApi.Compute.V1.Model.RouterNatLogConfig)
   field(:minPortsPerVm)

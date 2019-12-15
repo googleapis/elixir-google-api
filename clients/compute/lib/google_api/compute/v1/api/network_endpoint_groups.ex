@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the list of network endpoint groups and sorts them by zone.
+  Retrieves the list of network endpoint groups and sorts them by zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   end
 
   @doc """
-  Attach a list of network endpoints to the specified network endpoint group.
+  Attach a list of network endpoints to the specified network endpoint group. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -183,7 +183,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   end
 
   @doc """
-  Deletes the specified network endpoint group. The network endpoints in the NEG and the VM instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot be deleted if there are backend services referencing it.
+  Deletes the specified network endpoint group. The network endpoints in the NEG and the VM instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot be deleted if there are backend services referencing it. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -255,7 +255,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   end
 
   @doc """
-  Detach a list of network endpoints from the specified network endpoint group.
+  Detach a list of network endpoints from the specified network endpoint group. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -332,7 +332,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   end
 
   @doc """
-  Returns the specified network endpoint group. Gets a list of available network endpoint groups by making a list() request.
+  Returns the specified network endpoint group. Gets a list of available network endpoint groups by making a list() request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -398,7 +398,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   end
 
   @doc """
-  Creates a network endpoint group in the specified project using the parameters that are included in the request.
+  Creates a network endpoint group in the specified project using the parameters that are included in the request. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -468,7 +468,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   end
 
   @doc """
-  Retrieves the list of network endpoint groups that are located in the specified project and zone.
+  Retrieves the list of network endpoint groups that are located in the specified project and zone. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -549,7 +549,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   end
 
   @doc """
-  Lists the network endpoints in the specified network endpoint group.
+  Lists the network endpoints in the specified network endpoint group. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 
@@ -642,7 +642,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
 
   ## Parameters
 

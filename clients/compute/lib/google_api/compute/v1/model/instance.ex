@@ -127,8 +127,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   field(:serviceAccounts, as: GoogleApi.Compute.V1.Model.ServiceAccount, type: :list)
   field(:shieldedInstanceConfig, as: GoogleApi.Compute.V1.Model.ShieldedInstanceConfig)
 
-  field(
-    :shieldedInstanceIntegrityPolicy,
+  field(:shieldedInstanceIntegrityPolicy,
     as: GoogleApi.Compute.V1.Model.ShieldedInstanceIntegrityPolicy
   )
 
