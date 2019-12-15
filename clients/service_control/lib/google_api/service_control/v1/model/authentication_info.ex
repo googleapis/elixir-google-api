@@ -61,8 +61,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
   field(:principalEmail)
   field(:principalSubject)
 
-  field(
-    :serviceAccountDelegationInfo,
+  field(:serviceAccountDelegationInfo,
     as: GoogleApi.ServiceControl.V1.Model.ServiceAccountDelegationInfo,
     type: :list
   )
