@@ -43,6 +43,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material is scheduled
       for destruction. Only present if state is
       DESTROY_SCHEDULED.
+  *   `externalProtectionLevelOptions` (*type:* `GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t`, *default:* `nil`) - [ExternalProtectionLevelOptions] stores a group of additional fields for
+      configuring a [CryptoKeyVersion] that are specific to the [EXTERNAL]
+      protection level.
   *   `generateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was
       generated.
   *   `importFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of an import failure. Only present if
@@ -68,6 +71,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
           :createTime => DateTime.t(),
           :destroyEventTime => DateTime.t(),
           :destroyTime => DateTime.t(),
+          :externalProtectionLevelOptions =>
+            GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t(),
           :generateTime => DateTime.t(),
           :importFailureReason => String.t(),
           :importJob => String.t(),
@@ -82,6 +87,11 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   field(:createTime, as: DateTime)
   field(:destroyEventTime, as: DateTime)
   field(:destroyTime, as: DateTime)
+
+  field(:externalProtectionLevelOptions,
+    as: GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions
+  )
+
   field(:generateTime, as: DateTime)
   field(:importFailureReason)
   field(:importJob)
