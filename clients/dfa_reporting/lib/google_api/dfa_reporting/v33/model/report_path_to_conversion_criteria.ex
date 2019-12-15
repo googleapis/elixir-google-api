@@ -51,8 +51,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportPathToConversionCriteria do
   field(:activityFilters, as: GoogleApi.DFAReporting.V33.Model.DimensionValue, type: :list)
   field(:conversionDimensions, as: GoogleApi.DFAReporting.V33.Model.SortedDimension, type: :list)
 
-  field(
-    :customFloodlightVariables,
+  field(:customFloodlightVariables,
     as: GoogleApi.DFAReporting.V33.Model.SortedDimension,
     type: :list
   )
@@ -62,14 +61,12 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportPathToConversionCriteria do
   field(:floodlightConfigId, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
   field(:metricNames, type: :list)
 
-  field(
-    :perInteractionDimensions,
+  field(:perInteractionDimensions,
     as: GoogleApi.DFAReporting.V33.Model.SortedDimension,
     type: :list
   )
 
-  field(
-    :reportProperties,
+  field(:reportProperties,
     as: GoogleApi.DFAReporting.V33.Model.ReportPathToConversionCriteriaReportProperties
   )
 end

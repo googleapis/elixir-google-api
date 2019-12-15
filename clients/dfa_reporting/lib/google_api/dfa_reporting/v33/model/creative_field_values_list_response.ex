@@ -34,11 +34,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeFieldValuesListResponse do
           :nextPageToken => String.t()
         }
 
-  field(
-    :creativeFieldValues,
-    as: GoogleApi.DFAReporting.V33.Model.CreativeFieldValue,
-    type: :list
-  )
+  field(:creativeFieldValues, as: GoogleApi.DFAReporting.V33.Model.CreativeFieldValue, type: :list)
 
   field(:kind)
   field(:nextPageToken)

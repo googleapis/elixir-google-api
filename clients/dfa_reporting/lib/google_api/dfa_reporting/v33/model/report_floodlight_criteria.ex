@@ -51,8 +51,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ReportFloodlightCriteria do
   field(:floodlightConfigId, as: GoogleApi.DFAReporting.V33.Model.DimensionValue)
   field(:metricNames, type: :list)
 
-  field(
-    :reportProperties,
+  field(:reportProperties,
     as: GoogleApi.DFAReporting.V33.Model.ReportFloodlightCriteriaReportProperties
   )
 end

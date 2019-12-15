@@ -35,8 +35,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.OperatingSystemVersionsListResponse d
 
   field(:kind)
 
-  field(
-    :operatingSystemVersions,
+  field(:operatingSystemVersions,
     as: GoogleApi.DFAReporting.V33.Model.OperatingSystemVersion,
     type: :list
   )

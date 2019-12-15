@@ -34,8 +34,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightActivitiesListResponse do
           :nextPageToken => String.t()
         }
 
-  field(
-    :floodlightActivities,
+  field(:floodlightActivities,
     as: GoogleApi.DFAReporting.V33.Model.FloodlightActivity,
     type: :list
   )

@@ -35,8 +35,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.UserRolePermissionGroupsListResponse 
 
   field(:kind)
 
-  field(
-    :userRolePermissionGroups,
+  field(:userRolePermissionGroups,
     as: GoogleApi.DFAReporting.V33.Model.UserRolePermissionGroup,
     type: :list
   )

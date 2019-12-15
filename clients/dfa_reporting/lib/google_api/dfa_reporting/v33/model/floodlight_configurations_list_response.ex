@@ -33,8 +33,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.FloodlightConfigurationsListResponse 
           :kind => String.t()
         }
 
-  field(
-    :floodlightConfigurations,
+  field(:floodlightConfigurations,
     as: GoogleApi.DFAReporting.V33.Model.FloodlightConfiguration,
     type: :list
   )

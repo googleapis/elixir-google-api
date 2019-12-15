@@ -38,8 +38,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.ListPopulationRule do
   field(:floodlightActivityId)
   field(:floodlightActivityName)
 
-  field(
-    :listPopulationClauses,
+  field(:listPopulationClauses,
     as: GoogleApi.DFAReporting.V33.Model.ListPopulationClause,
     type: :list
   )
