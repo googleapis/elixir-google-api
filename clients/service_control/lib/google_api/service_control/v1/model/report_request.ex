@@ -28,9 +28,9 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportRequest do
       be used only when multiple operations are natually available at the time
       of the report.
 
-      If multiple operations are in a single request, the total request size
-      should be no larger than 1MB. See ReportResponse.report_errors for
-      partial failure behavior.
+      There is no limit on the number of operations in the same ReportRequest,
+      however the ReportRequest size should be no larger than 1MB. See
+      ReportResponse.report_errors for partial failure behavior.
   *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - Specifies which version of service config should be used to process the
       request.
 
