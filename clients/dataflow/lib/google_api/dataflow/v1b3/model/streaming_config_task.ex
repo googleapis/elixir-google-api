@@ -51,8 +51,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
   field(:getDataStreamChunkSizeBytes)
   field(:maxWorkItemCommitBytes)
 
-  field(
-    :streamingComputationConfigs,
+  field(:streamingComputationConfigs,
     as: GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig,
     type: :list
   )
