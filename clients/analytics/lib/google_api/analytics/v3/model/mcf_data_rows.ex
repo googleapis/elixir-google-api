@@ -33,8 +33,7 @@ defmodule GoogleApi.Analytics.V3.Model.McfDataRows do
           :primitiveValue => String.t()
         }
 
-  field(
-    :conversionPathValue,
+  field(:conversionPathValue,
     as: GoogleApi.Analytics.V3.Model.McfDataRowsConversionPathValue,
     type: :list
   )
