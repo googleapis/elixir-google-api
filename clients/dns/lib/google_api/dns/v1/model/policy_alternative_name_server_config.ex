@@ -35,8 +35,7 @@ defmodule GoogleApi.DNS.V1.Model.PolicyAlternativeNameServerConfig do
 
   field(:kind)
 
-  field(
-    :targetNameServers,
+  field(:targetNameServers,
     as: GoogleApi.DNS.V1.Model.PolicyAlternativeNameServerConfigTargetNameServer,
     type: :list
   )
