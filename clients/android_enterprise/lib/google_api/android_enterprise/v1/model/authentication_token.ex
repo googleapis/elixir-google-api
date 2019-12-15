@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AuthenticationToken do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#authenticationToken`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#authenticationToken".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#authenticationToken`) - 
   *   `token` (*type:* `String.t`, *default:* `nil`) - The authentication token to be passed to the device policy client on the device where it can be used to provision the account for which this token was generated.
   """
 

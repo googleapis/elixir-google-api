@@ -25,7 +25,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Enterprise do
 
   *   `administrator` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Administrator.t)`, *default:* `nil`) - Admins of the enterprise. This is only supported for enterprises created via the EMM-initiated flow.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for the enterprise.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#enterprise`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#enterprise".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#enterprise`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the enterprise, for example, "Example, Inc".
   *   `primaryDomain` (*type:* `String.t`, *default:* `nil`) - The enterprise's primary domain, such as "example.com".
   """

@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Device do
   ## Attributes
 
   *   `androidId` (*type:* `String.t`, *default:* `nil`) - The Google Play Services Android ID for the device encoded as a lowercase hex string. For example, "123456789abcdef0".
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#device`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#device".
+  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#device`) - 
   *   `managementType` (*type:* `String.t`, *default:* `nil`) - Identifies the extent to which the device is controlled by a managed Google Play EMM in various deployment configurations.
 
       Possible values include: 

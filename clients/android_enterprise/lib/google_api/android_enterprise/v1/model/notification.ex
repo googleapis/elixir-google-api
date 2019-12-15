@@ -53,17 +53,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
           :timestampMillis => String.t()
         }
 
-  field(
-    :appRestrictionsSchemaChangeEvent,
+  field(:appRestrictionsSchemaChangeEvent,
     as: GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent
   )
 
   field(:appUpdateEvent, as: GoogleApi.AndroidEnterprise.V1.Model.AppUpdateEvent)
 
-  field(
-    :deviceReportUpdateEvent,
-    as: GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent
-  )
+  field(:deviceReportUpdateEvent, as: GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent)
 
   field(:enterpriseId)
   field(:installFailureEvent, as: GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent)
@@ -72,8 +68,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
   field(:notificationType)
   field(:productApprovalEvent, as: GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent)
 
-  field(
-    :productAvailabilityChangeEvent,
+  field(:productAvailabilityChangeEvent,
     as: GoogleApi.AndroidEnterprise.V1.Model.ProductAvailabilityChangeEvent
   )
 
