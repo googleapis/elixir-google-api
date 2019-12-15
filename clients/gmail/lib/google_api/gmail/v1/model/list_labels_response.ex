@@ -21,7 +21,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListLabelsResponse do
 
   ## Attributes
 
-  *   `labels` (*type:* `list(GoogleApi.Gmail.V1.Model.Label.t)`, *default:* `nil`) - List of labels.
+  *   `labels` (*type:* `list(GoogleApi.Gmail.V1.Model.Label.t)`, *default:* `nil`) - List of labels. Note that each label resource only contains an id, name, messageListVisibility, labelListVisibility, and type. The labels.get method can fetch additional label details.
   """
 
   use GoogleApi.Gax.ModelBase
