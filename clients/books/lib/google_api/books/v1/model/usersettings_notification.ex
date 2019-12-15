@@ -46,10 +46,7 @@ defmodule GoogleApi.Books.V1.Model.UsersettingsNotification do
   field(:moreFromSeries, as: GoogleApi.Books.V1.Model.UsersettingsNotificationMoreFromSeries)
   field(:priceDrop, as: GoogleApi.Books.V1.Model.UsersettingsNotificationPriceDrop)
 
-  field(
-    :rewardExpirations,
-    as: GoogleApi.Books.V1.Model.UsersettingsNotificationRewardExpirations
-  )
+  field(:rewardExpirations, as: GoogleApi.Books.V1.Model.UsersettingsNotificationRewardExpirations)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.UsersettingsNotification do

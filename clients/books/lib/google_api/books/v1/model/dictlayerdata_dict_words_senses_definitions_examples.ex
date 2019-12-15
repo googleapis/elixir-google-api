@@ -33,8 +33,7 @@ defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExampl
           :text => String.t()
         }
 
-  field(
-    :source,
+  field(:source,
     as: GoogleApi.Books.V1.Model.DictlayerdataDictWordsSensesDefinitionsExamplesSource
   )
 
