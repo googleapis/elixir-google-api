@@ -50,8 +50,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1FieldOperationMetad
   field(:endTime, as: DateTime)
   field(:field)
 
-  field(
-    :indexConfigDeltas,
+  field(:indexConfigDeltas,
     as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1IndexConfigDelta,
     type: :list
   )
