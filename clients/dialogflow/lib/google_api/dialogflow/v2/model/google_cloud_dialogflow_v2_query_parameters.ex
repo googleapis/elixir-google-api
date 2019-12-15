@@ -58,13 +58,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   field(:payload, type: :map)
   field(:resetContexts)
 
-  field(
-    :sentimentAnalysisRequestConfig,
+  field(:sentimentAnalysisRequestConfig,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig
   )
 
-  field(
-    :sessionEntityTypes,
+  field(:sessionEntityTypes,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType,
     type: :list
   )

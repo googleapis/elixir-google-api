@@ -46,8 +46,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   field(:footer)
   field(:image, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageImage)
 
-  field(
-    :openUriAction,
+  field(:openUriAction,
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction
   )

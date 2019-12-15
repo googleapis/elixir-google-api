@@ -32,8 +32,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1LabelConvers
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1AnnotatedConversationDataset.t()
         }
 
-  field(
-    :annotatedConversationDataset,
+  field(:annotatedConversationDataset,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1AnnotatedConversationDataset
   )
 end

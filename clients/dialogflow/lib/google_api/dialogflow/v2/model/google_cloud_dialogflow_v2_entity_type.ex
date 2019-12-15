@@ -51,8 +51,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType do
   field(:displayName)
   field(:enableFuzzyExtraction)
 
-  field(
-    :entities,
+  field(:entities,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeEntity,
     type: :list
   )

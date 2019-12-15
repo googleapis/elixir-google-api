@@ -70,60 +70,50 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage do
           :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageText.t()
         }
 
-  field(
-    :basicCard,
+  field(:basicCard,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBasicCard
   )
 
-  field(
-    :browseCarouselCard,
+  field(:browseCarouselCard,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard
   )
 
   field(:card, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCard)
 
-  field(
-    :carouselSelect,
+  field(:carouselSelect,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageCarouselSelect
   )
 
   field(:image, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageImage)
 
-  field(
-    :linkOutSuggestion,
+  field(:linkOutSuggestion,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion
   )
 
-  field(
-    :listSelect,
+  field(:listSelect,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageListSelect
   )
 
-  field(
-    :mediaContent,
+  field(:mediaContent,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageMediaContent
   )
 
   field(:payload, type: :map)
   field(:platform)
 
-  field(
-    :quickReplies,
+  field(:quickReplies,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageQuickReplies
   )
 
-  field(
-    :simpleResponses,
+  field(:simpleResponses,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSimpleResponses
   )
 
-  field(
-    :suggestions,
+  field(:suggestions,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSuggestions
   )
 
-  field(
-    :tableCard,
+  field(:tableCard,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageTableCard
   )
 

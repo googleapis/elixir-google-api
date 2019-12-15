@@ -48,14 +48,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1WebhookReque
           :session => String.t()
         }
 
-  field(
-    :alternativeQueryResults,
+  field(:alternativeQueryResults,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult,
     type: :list
   )
 
-  field(
-    :originalDetectIntentRequest,
+  field(:originalDetectIntentRequest,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1OriginalDetectIntentRequest
   )
 

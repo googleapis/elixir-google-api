@@ -48,8 +48,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRespo
 
   field(:outputAudio)
 
-  field(
-    :outputAudioConfig,
+  field(:outputAudioConfig,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig
   )
 
