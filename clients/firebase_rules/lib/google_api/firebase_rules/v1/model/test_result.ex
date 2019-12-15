@@ -37,6 +37,11 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestResult do
       When there is a `DENY` with an error, the `SourcePosition` is returned.
 
       E.g. `error_position { line: 19 column: 37 }`
+  *   `expressionReports` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.ExpressionReport.t)`, *default:* `nil`) - The mapping from expression in the ruleset AST to the values they were
+      evaluated to. Partially-nested to mirror AST structure. Note that this
+      field is actually tracking expressions and not permission statements in
+      contrast to the "visited_expressions" field above. Literal expressions
+      are omitted.
   *   `functionCalls` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.FunctionCall.t)`, *default:* `nil`) - The set of function calls made to service-defined methods.
 
       Function calls are included in the order in which they are encountered
@@ -60,6 +65,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestResult do
   @type t :: %__MODULE__{
           :debugMessages => list(String.t()),
           :errorPosition => GoogleApi.FirebaseRules.V1.Model.SourcePosition.t(),
+          :expressionReports => list(GoogleApi.FirebaseRules.V1.Model.ExpressionReport.t()),
           :functionCalls => list(GoogleApi.FirebaseRules.V1.Model.FunctionCall.t()),
           :state => String.t(),
           :visitedExpressions => list(GoogleApi.FirebaseRules.V1.Model.VisitedExpression.t())
@@ -67,6 +73,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestResult do
 
   field(:debugMessages, type: :list)
   field(:errorPosition, as: GoogleApi.FirebaseRules.V1.Model.SourcePosition)
+  field(:expressionReports, as: GoogleApi.FirebaseRules.V1.Model.ExpressionReport, type: :list)
   field(:functionCalls, as: GoogleApi.FirebaseRules.V1.Model.FunctionCall, type: :list)
   field(:state)
   field(:visitedExpressions, as: GoogleApi.FirebaseRules.V1.Model.VisitedExpression, type: :list)

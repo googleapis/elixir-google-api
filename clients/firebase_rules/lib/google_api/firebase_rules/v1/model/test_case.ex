@@ -30,6 +30,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestCase do
   ## Attributes
 
   *   `expectation` (*type:* `String.t`, *default:* `nil`) - Test expectation.
+  *   `expressionReportLevel` (*type:* `String.t`, *default:* `nil`) - Specifies what should be included in the response.
   *   `functionMocks` (*type:* `list(GoogleApi.FirebaseRules.V1.Model.FunctionMock.t)`, *default:* `nil`) - Optional function mocks for service-defined functions. If not set, any
       service defined function is expected to return an error, which may or may
       not influence the test outcome.
@@ -63,6 +64,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestCase do
 
   @type t :: %__MODULE__{
           :expectation => String.t(),
+          :expressionReportLevel => String.t(),
           :functionMocks => list(GoogleApi.FirebaseRules.V1.Model.FunctionMock.t()),
           :pathEncoding => String.t(),
           :request => any(),
@@ -70,6 +72,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.TestCase do
         }
 
   field(:expectation)
+  field(:expressionReportLevel)
   field(:functionMocks, as: GoogleApi.FirebaseRules.V1.Model.FunctionMock, type: :list)
   field(:pathEncoding)
   field(:request)
