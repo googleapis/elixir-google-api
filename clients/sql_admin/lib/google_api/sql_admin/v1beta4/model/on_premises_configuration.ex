@@ -21,6 +21,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
 
   ## Attributes
 
+  *   `caCertificate` (*type:* `String.t`, *default:* `nil`) - PEM representation of the trusted CA's x509 certificate.
+  *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - PEM representation of the slave's x509 certificate.
+  *   `clientKey` (*type:* `String.t`, *default:* `nil`) - PEM representation of the slave's private key. The corresponsing public key
+      is encoded in the client's certificate.
   *   `hostPort` (*type:* `String.t`, *default:* `nil`) - The host and port of the on-premises instance in host:port format
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#onPremisesConfiguration</code>.
   """
@@ -28,10 +32,16 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :caCertificate => String.t(),
+          :clientCertificate => String.t(),
+          :clientKey => String.t(),
           :hostPort => String.t(),
           :kind => String.t()
         }
 
+  field(:caCertificate)
+  field(:clientCertificate)
+  field(:clientKey)
   field(:hostPort)
   field(:kind)
 end
