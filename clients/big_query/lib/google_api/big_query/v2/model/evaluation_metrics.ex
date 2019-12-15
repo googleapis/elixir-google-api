@@ -44,8 +44,7 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
   field(:binaryClassificationMetrics, as: GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics)
   field(:clusteringMetrics, as: GoogleApi.BigQuery.V2.Model.ClusteringMetrics)
 
-  field(
-    :multiClassClassificationMetrics,
+  field(:multiClassClassificationMetrics,
     as: GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics
   )
 
