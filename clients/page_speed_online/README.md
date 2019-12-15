@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_page_speed_online, "~> 0.4"}]
+  [{:google_api_page_speed_online, "~> 0.5"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/speed/docs/insights/v4/getting-started](https://developers.google.com/speed/docs/insights/v4/getting-started).
+Product documentation is available at [https://developers.google.com/speed/docs/insights/v5/get-started](https://developers.google.com/speed/docs/insights/v5/get-started).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_page_speed_online](https://hexdocs.pm/google_api_page_speed_online).

@@ -60,8 +60,7 @@ defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4 do
 
   field(:captchaResult)
 
-  field(
-    :formattedResults,
+  field(:formattedResults,
     as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4FormattedResults
   )
 
@@ -69,13 +68,11 @@ defmodule GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4 do
   field(:invalidRules, type: :list)
   field(:kind)
 
-  field(
-    :loadingExperience,
+  field(:loadingExperience,
     as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4LoadingExperience
   )
 
-  field(
-    :pageStats,
+  field(:pageStats,
     as: GoogleApi.PageSpeedOnline.V4.Model.PagespeedApiPagespeedResponseV4PageStats
   )
 
