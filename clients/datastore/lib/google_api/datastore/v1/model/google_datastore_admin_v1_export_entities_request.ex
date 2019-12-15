@@ -24,7 +24,7 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ExportEntitiesReque
 
   *   `entityFilter` (*type:* `GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1EntityFilter.t`, *default:* `nil`) - Description of what data from the project is included in the export.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Client-assigned labels.
-  *   `outputUrlPrefix` (*type:* `String.t`, *default:* `nil`) - Location for the export metadata and data files.
+  *   `outputUrlPrefix` (*type:* `String.t`, *default:* `nil`) - Required. Location for the export metadata and data files.
 
       The full resource URL of the external storage location. Currently, only
       Google Cloud Storage is supported. So output_url_prefix should be of the
