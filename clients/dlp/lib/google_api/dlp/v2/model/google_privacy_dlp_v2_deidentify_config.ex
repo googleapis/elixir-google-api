@@ -26,6 +26,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
   *   `recordTransformations` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations.t`, *default:* `nil`) - Treat the dataset as structured. Transformations can be applied to
       specific locations within structured datasets, such as transforming
       a column within a table.
+  *   `transformationErrorHandling` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling.t`, *default:* `nil`) - Mode for handling transformation errors. If left unspecified, the default
+      mode is `TransformationErrorHandling.ThrowError`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,7 +36,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
           :infoTypeTransformations =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t(),
           :recordTransformations =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations.t(),
+          :transformationErrorHandling =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling.t()
         }
 
   field(:infoTypeTransformations,
@@ -42,6 +46,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
   )
 
   field(:recordTransformations, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations)
+
+  field(:transformationErrorHandling,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig do
