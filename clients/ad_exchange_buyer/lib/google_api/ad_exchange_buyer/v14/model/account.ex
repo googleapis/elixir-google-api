@@ -48,8 +48,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Model.Account do
 
   field(:applyPretargetingToNonGuaranteedDeals)
 
-  field(
-    :bidderLocation,
+  field(:bidderLocation,
     as: GoogleApi.AdExchangeBuyer.V14.Model.AccountBidderLocation,
     type: :list
   )

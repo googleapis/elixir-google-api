@@ -36,8 +36,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.OperatingSystemTargeting do
 
   field(:operatingSystemCriteria, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting)
 
-  field(
-    :operatingSystemVersionCriteria,
+  field(:operatingSystemVersionCriteria,
     as: GoogleApi.AdExchangeBuyer.V2beta1.Model.CriteriaTargeting
   )
 end
