@@ -21,18 +21,18 @@ defmodule GoogleApi.Container.V1.Model.SetNodePoolAutoscalingRequest do
 
   ## Attributes
 
-  *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Required. Autoscaling configuration for the node pool.
-  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaling configuration for the node pool.
+  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster, node pool) of the node pool to set
       autoscaler settings. Specified in the format
       'projects/*/locations/*/clusters/*/nodePools/*'.
-  *   `nodePoolId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the node pool to upgrade.
+  *   `nodePoolId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the node pool to upgrade.
       This field has been deprecated and replaced by the name field.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
