@@ -21,19 +21,19 @@ defmodule GoogleApi.Container.V1.Model.SetLoggingServiceRequest do
 
   ## Attributes
 
-  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
-  *   `loggingService` (*type:* `String.t`, *default:* `nil`) - Required. The logging service the cluster should use to write metrics.
+  *   `loggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write metrics.
       Currently available options:
 
       * "logging.googleapis.com" - the Google Cloud Logging service
       * "none" - no metrics will be exported from the cluster
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster) of the cluster to set logging.
       Specified in the format 'projects/*/locations/*/clusters/*'.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.

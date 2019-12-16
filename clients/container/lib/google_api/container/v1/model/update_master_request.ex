@@ -21,9 +21,9 @@ defmodule GoogleApi.Container.V1.Model.UpdateMasterRequest do
 
   ## Attributes
 
-  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
-  *   `masterVersion` (*type:* `String.t`, *default:* `nil`) - Required. The Kubernetes version to change the master to.
+  *   `masterVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the master to.
 
       Users may specify either explicit versions offered by Kubernetes Engine or
       version aliases, which have the following behavior:
@@ -35,10 +35,10 @@ defmodule GoogleApi.Container.V1.Model.UpdateMasterRequest do
       - "-": picks the default Kubernetes version
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster) of the cluster to update.
       Specified in the format 'projects/*/locations/*/clusters/*'.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.

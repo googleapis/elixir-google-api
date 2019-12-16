@@ -22,8 +22,6 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
 
   ## Attributes
 
-  *   `cloudRunConfig` (*type:* `GoogleApi.Container.V1.Model.CloudRunConfig.t`, *default:* `nil`) - Configuration for the Cloud Run addon, which allows the user to use a
-      managed Knative service.
   *   `horizontalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t`, *default:* `nil`) - Configuration for the horizontal pod autoscaling feature, which
       increases or decreases the number of replica pods a replication controller
       has based on the resource usage of the existing pods.
@@ -42,14 +40,12 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudRunConfig => GoogleApi.Container.V1.Model.CloudRunConfig.t(),
           :horizontalPodAutoscaling => GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t(),
           :httpLoadBalancing => GoogleApi.Container.V1.Model.HttpLoadBalancing.t(),
           :kubernetesDashboard => GoogleApi.Container.V1.Model.KubernetesDashboard.t(),
           :networkPolicyConfig => GoogleApi.Container.V1.Model.NetworkPolicyConfig.t()
         }
 
-  field(:cloudRunConfig, as: GoogleApi.Container.V1.Model.CloudRunConfig)
   field(:horizontalPodAutoscaling, as: GoogleApi.Container.V1.Model.HorizontalPodAutoscaling)
   field(:httpLoadBalancing, as: GoogleApi.Container.V1.Model.HttpLoadBalancing)
   field(:kubernetesDashboard, as: GoogleApi.Container.V1.Model.KubernetesDashboard)
