@@ -22,6 +22,7 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
 
   ## Attributes
 
+  *   `eligibility` (*type:* `GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility.t`, *default:* `nil`) - Optional: user-defined instance eligibility.
   *   `exclusions` (*type:* `list(GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion.t)`, *default:* `nil`) - List of SLO exclusion windows. When multiple entries in the list match
       (matching the exclusion time-window against current time point)
       the exclusion reason used in the first matching entry will be published.
@@ -33,8 +34,8 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
 
       This field can be used to mark the instance as temporary ineligible
       for the purpose of SLO calculation. For permanent instance SLO exclusion,
-      a dedicated tier name can be used that does not have targets specified
-      in the service SLO configuration.
+      use of custom instance eligibility is recommended. See 'eligibility' field
+      below.
   *   `nodes` (*type:* `list(GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata.t)`, *default:* `nil`) - Optional: list of nodes.
       Some producers need to use per-node metadata to calculate SLO.
       This field allows such producers to publish per-node SLO meta data,
@@ -49,6 +50,8 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :eligibility =>
+            GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility.t(),
           :exclusions =>
             list(
               GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion.t()
@@ -59,6 +62,10 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
             ),
           :tier => String.t()
         }
+
+  field(:eligibility,
+    as: GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility
+  )
 
   field(:exclusions,
     as: GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion,

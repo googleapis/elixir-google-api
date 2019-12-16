@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion do
   @moduledoc """
-  SloExclusion represents an excusion in SLI calculation applies to all SLOs.
+  SloExclusion represents an exclusion in SLI calculation applies to all SLOs.
 
   ## Attributes
 
-  *   `exclusionDuration` (*type:* `String.t`, *default:* `nil`) - Exclusion duration. No restrictions on the possible values.
+  *   `duration` (*type:* `String.t`, *default:* `nil`) - Exclusion duration. No restrictions on the possible values.
 
       When an ongoing operation is taking longer than initially expected,
       an existing entry in the exclusion list can be updated by extending the
@@ -29,7 +29,6 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
       as long as such extension is committed at least 10 minutes before the
       original exclusion expiration - otherwise it is possible that there will
       be "gaps" in the exclusion application in the exported timeseries.
-  *   `exclusionStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of the exclusion. No alignment (e.g. to a full minute) needed.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - Human-readable reason for the exclusion.
       This should be a static string (e.g. "Disruptive update in progress")
       and should not contain dynamically generated data (e.g. instance name).
@@ -37,21 +36,22 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
   *   `sliName` (*type:* `String.t`, *default:* `nil`) - Name of an SLI that this exclusion applies to. Can be left empty,
       signaling that the instance should be excluded from all SLIs defined
       in the service SLO configuration.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of the exclusion. No alignment (e.g. to a full minute) needed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :exclusionDuration => String.t(),
-          :exclusionStartTime => DateTime.t(),
+          :duration => String.t(),
           :reason => String.t(),
-          :sliName => String.t()
+          :sliName => String.t(),
+          :startTime => DateTime.t()
         }
 
-  field(:exclusionDuration)
-  field(:exclusionStartTime, as: DateTime)
+  field(:duration)
   field(:reason)
   field(:sliName)
+  field(:startTime, as: DateTime)
 end
 
 defimpl Poison.Decoder,
