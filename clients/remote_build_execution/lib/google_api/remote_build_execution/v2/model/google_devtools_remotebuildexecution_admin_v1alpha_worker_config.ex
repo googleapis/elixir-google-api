@@ -28,7 +28,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Required. Disk Type to use for the worker.
       See [Storage
       options](https://cloud.google.com/compute/docs/disks/#introduction).
-      Currently only `pd-standard` is supported.
+      Currently only `pd-standard` and `pd-ssd` are supported.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with the workers.
       Label keys and values can be no longer than 63 characters, can only contain
       lowercase letters, numeric characters, underscores and dashes.
