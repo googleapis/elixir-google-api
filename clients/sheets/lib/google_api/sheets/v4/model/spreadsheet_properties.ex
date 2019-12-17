@@ -37,6 +37,7 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
       * a combination of the ISO language code and country code, such as `en_US`
 
       Note: when updating this field, not all locales/languages are supported.
+  *   `spreadsheetTheme` (*type:* `GoogleApi.Sheets.V4.Model.SpreadsheetTheme.t`, *default:* `nil`) - Theme applied to the spreadsheet.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of the spreadsheet, in CLDR format such as
       `America/New_York`. If the time zone isn't recognized, this may
       be a custom time zone such as `GMT-07:00`.
@@ -51,6 +52,7 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
           :iterativeCalculationSettings =>
             GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t(),
           :locale => String.t(),
+          :spreadsheetTheme => GoogleApi.Sheets.V4.Model.SpreadsheetTheme.t(),
           :timeZone => String.t(),
           :title => String.t()
         }
@@ -59,6 +61,7 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
   field(:defaultFormat, as: GoogleApi.Sheets.V4.Model.CellFormat)
   field(:iterativeCalculationSettings, as: GoogleApi.Sheets.V4.Model.IterativeCalculationSettings)
   field(:locale)
+  field(:spreadsheetTheme, as: GoogleApi.Sheets.V4.Model.SpreadsheetTheme)
   field(:timeZone)
   field(:title)
 end
