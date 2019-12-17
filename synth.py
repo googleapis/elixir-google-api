@@ -26,6 +26,7 @@ import shutil
 import sys
 
 logging.basicConfig(level=logging.DEBUG)
+s.metadata.set_track_obsolete_files(False)  # TODO: enable again.
 
 repository_url = "https://github.com/googleapis/elixir-google-api.git"
 
