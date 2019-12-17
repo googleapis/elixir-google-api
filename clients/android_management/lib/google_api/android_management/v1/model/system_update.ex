@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SystemUpdate do
   ## Attributes
 
   *   `endMinutes` (*type:* `integer()`, *default:* `nil`) - If the type is WINDOWED, the end of the maintenance window, measured as the number of minutes after midnight in device's local time. This value must be between 0 and 1439, inclusive. If this value is less than start_minutes, then the maintenance window spans midnight. If the maintenance window specified is smaller than 30 minutes, the actual window is extended to 30 minutes beyond the start time.
+  *   `freezePeriods` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.FreezePeriod.t)`, *default:* `nil`) - An annually repeating time period in which over-the-air (OTA) system updates are postponed to freeze the OS version running on a device. To prevent freezing the device indefinitely, each freeze period must be separated by at least 60 days.
   *   `startMinutes` (*type:* `integer()`, *default:* `nil`) - If the type is WINDOWED, the start of the maintenance window, measured as the number of minutes after midnight in the device's local time. This value must be between 0 and 1439, inclusive.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of system update to configure.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.AndroidManagement.V1.Model.SystemUpdate do
 
   @type t :: %__MODULE__{
           :endMinutes => integer(),
+          :freezePeriods => list(GoogleApi.AndroidManagement.V1.Model.FreezePeriod.t()),
           :startMinutes => integer(),
           :type => String.t()
         }
 
   field(:endMinutes)
+  field(:freezePeriods, as: GoogleApi.AndroidManagement.V1.Model.FreezePeriod, type: :list)
   field(:startMinutes)
   field(:type)
 end
