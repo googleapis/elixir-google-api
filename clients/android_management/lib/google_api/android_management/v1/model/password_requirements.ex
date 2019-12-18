@@ -33,6 +33,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
   *   `passwordMinimumUpperCase` (*type:* `integer()`, *default:* `nil`) - Minimum number of upper case letters required in the password. Only enforced when password_quality is COMPLEX.
   *   `passwordQuality` (*type:* `String.t`, *default:* `nil`) - The required password quality.
   *   `passwordScope` (*type:* `String.t`, *default:* `nil`) - The scope that the password requirement applies to.
+  *   `requirePasswordUnlock` (*type:* `String.t`, *default:* `nil`) - The length of time after a device or work profile is unlocked using a strong form of authentication (password, PIN, pattern) that it can be unlocked using any other authentication method (e.g. fingerprint, trust agents, face). After the specified time period elapses, only strong forms of authentication can be used to unlock the device or work profile.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +50,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
           :passwordMinimumSymbols => integer(),
           :passwordMinimumUpperCase => integer(),
           :passwordQuality => String.t(),
-          :passwordScope => String.t()
+          :passwordScope => String.t(),
+          :requirePasswordUnlock => String.t()
         }
 
   field(:maximumFailedPasswordsForWipe)
@@ -64,6 +66,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
   field(:passwordMinimumUpperCase)
   field(:passwordQuality)
   field(:passwordScope)
+  field(:requirePasswordUnlock)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements do
