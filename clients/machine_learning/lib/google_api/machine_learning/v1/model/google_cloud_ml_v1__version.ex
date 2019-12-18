@@ -22,7 +22,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   Each version is a trained model deployed in the cloud, ready to handle
   prediction requests. A model can have multiple versions. You can get
   information about all of the versions of a given model by calling
-  [projects.models.versions.list](/ml-engine/reference/rest/v1/projects.models.versions/list).
+  projects.models.versions.list.
 
   ## Attributes
 
@@ -46,7 +46,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
       information.
 
       When passing Version to
-      [projects.models.versions.create](/ml-engine/reference/rest/v1/projects.models.versions/create)
+      projects.models.versions.create
       the model service uses the specified location as the source of the model.
       Once deployed, the model version is hosted by the prediction service, so
       this location is useful only as a historical record.
@@ -81,7 +81,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
       requests that do not specify a version.
 
       You can change the default version by calling
-      [projects.methods.versions.setDefault](/ml-engine/reference/rest/v1/projects.models.versions/setDefault).
+      projects.methods.versions.setDefault.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. One or more labels that you can add, to organize your model
       versions. Each label is a key-value pair, where both the key and the value
       are arbitrary strings that you supply.
@@ -196,8 +196,14 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   *   `pythonVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Python used in prediction. If not set, the default
       version is '2.7'. Python '3.5' is available when `runtime_version` is set
       to '1.4' and above. Python '2.7' works with all supported runtime versions.
-  *   `requestLoggingConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__RequestLoggingConfig.t`, *default:* `nil`) - Optional. Configures the request-response pair logging on predictions from
-      this Version.
+  *   `requestLoggingConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__RequestLoggingConfig.t`, *default:* `nil`) - Optional. *Only* specify this field in a
+      projects.models.versions.patch
+      request. Specifying it in a
+      projects.models.versions.create
+      request has no effect.
+
+      Configures the request-response pair logging on predictions from this
+      Version.
   *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The AI Platform runtime version to use for this deployment.
       If not set, AI Platform uses the default stable version, 1.0. For more
       information, see the

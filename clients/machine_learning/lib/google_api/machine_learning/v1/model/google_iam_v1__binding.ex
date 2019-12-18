@@ -46,7 +46,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding do
 
       * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique
          identifier) representing a user that has been recently deleted. For
-         example,`alice@example.com?uid=123456789012345678901`. If the user is
+         example, `alice@example.com?uid=123456789012345678901`. If the user is
          recovered, this value reverts to `user:{emailid}` and the recovered user
          retains the role in the binding.
 
