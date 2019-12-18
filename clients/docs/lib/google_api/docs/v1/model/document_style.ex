@@ -59,6 +59,10 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
 
       Updating the bottom page margin on the document style clears the bottom
       page margin on all section styles.
+  *   `marginFooter` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The amount of space between the bottom of the page and the contents of the
+      footer.
+  *   `marginHeader` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The amount of space between the top of the page and the contents of the
+      header.
   *   `marginLeft` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The left page margin.
 
       Updating the left page margin on the document style clears the left page
@@ -75,6 +79,18 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
       margin on all section styles.
   *   `pageNumberStart` (*type:* `integer()`, *default:* `nil`) - The page number from which to start counting the number of pages.
   *   `pageSize` (*type:* `GoogleApi.Docs.V1.Model.Size.t`, *default:* `nil`) - The size of a page in the document.
+  *   `useCustomHeaderFooterMargins` (*type:* `boolean()`, *default:* `nil`) - Indicates whether DocumentStyle
+      margin_header,
+      SectionStyle
+      margin_header and
+      DocumentStyle
+      margin_footer,
+      SectionStyle
+      margin_footer are
+      respected. When false, the default values in the Docs editor for header and
+      footer margin are used.
+
+      This property is read-only.
   *   `useEvenPageHeaderFooter` (*type:* `boolean()`, *default:* `nil`) - Indicates whether to use the even page header / footer IDs for the even
       pages.
 
@@ -96,11 +112,14 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
           :firstPageFooterId => String.t(),
           :firstPageHeaderId => String.t(),
           :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t(),
+          :marginFooter => GoogleApi.Docs.V1.Model.Dimension.t(),
+          :marginHeader => GoogleApi.Docs.V1.Model.Dimension.t(),
           :marginLeft => GoogleApi.Docs.V1.Model.Dimension.t(),
           :marginRight => GoogleApi.Docs.V1.Model.Dimension.t(),
           :marginTop => GoogleApi.Docs.V1.Model.Dimension.t(),
           :pageNumberStart => integer(),
           :pageSize => GoogleApi.Docs.V1.Model.Size.t(),
+          :useCustomHeaderFooterMargins => boolean(),
           :useEvenPageHeaderFooter => boolean(),
           :useFirstPageHeaderFooter => boolean()
         }
@@ -113,11 +132,14 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
   field(:firstPageFooterId)
   field(:firstPageHeaderId)
   field(:marginBottom, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:marginFooter, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:marginHeader, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:marginLeft, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:marginRight, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:marginTop, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:pageNumberStart)
   field(:pageSize, as: GoogleApi.Docs.V1.Model.Size)
+  field(:useCustomHeaderFooterMargins)
   field(:useEvenPageHeaderFooter)
   field(:useFirstPageHeaderFooter)
 end
