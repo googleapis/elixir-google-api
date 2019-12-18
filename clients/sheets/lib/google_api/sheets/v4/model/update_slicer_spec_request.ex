@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.UpdateSlicerSpecRequest do
   @moduledoc """
-  Updates a slicer’s specifications.
+  Updates a slicer's specifications.
   (This does not move or resize a slicer. To move or resize a slicer use
   UpdateEmbeddedObjectPositionRequest.
 
