@@ -28,7 +28,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @doc """
   Performs explanation on the data in the request.
   AI Platform implements a custom `explain` verb on top of an HTTP POST
-  method. <p>For details of the request and response format, see the **guide
+  method.
+
+  For details of the request and response format, see the **guide
   to the [explain request format](/ml-engine/docs/v1/explain-request)**.
 
   ## Parameters
@@ -158,7 +160,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @doc """
   Performs prediction on the data in the request.
   AI Platform implements a custom `predict` verb on top of an HTTP POST
-  method. <p>For details of the request and response format, see the **guide
+  method.
+
+  For details of the request and response format, see the **guide
   to the [predict request format](/ml-engine/docs/v1/predict-request)**.
 
   ## Parameters
@@ -983,7 +987,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   You must add at least one version before you can request predictions from
   the model. Add versions by calling
-  [projects.models.versions.create](/ml-engine/reference/rest/v1/projects.models.versions/create).
+  projects.models.versions.create.
 
   ## Parameters
 
@@ -1049,7 +1053,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   You can only delete a model if there are no versions in it. You can delete
   versions by calling
-  [projects.models.versions.delete](/ml-engine/reference/rest/v1/projects.models.versions/delete).
+  projects.models.versions.delete.
 
   ## Parameters
 
@@ -1618,7 +1622,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   model. When you add a version to a model that already has one or more
   versions, the default version does not automatically change. If you want a
   new version to be the default, you must call
-  [projects.models.versions.setDefault](/ml-engine/reference/rest/v1/projects.models.versions/setDefault).
+  projects.models.versions.setDefault.
 
   ## Parameters
 
@@ -1707,7 +1711,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the version. You can get the names of all the
       versions of a model by calling
-      [projects.models.versions.list](/ml-engine/reference/rest/v1/projects.models.versions/list).
+      projects.models.versions.list.
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1783,7 +1787,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   Gets information about a model version.
 
   Models can have multiple versions. You can call
-  [projects.models.versions.list](/ml-engine/reference/rest/v1/projects.models.versions/list)
+  projects.models.versions.list
   to get the same information that this method returns for all of the
   versions of a model.
 
@@ -1960,8 +1964,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @doc """
   Updates the specified Version resource.
 
-  Currently the only update-able fields are `description` and
-  `autoScaling.minNodes`.
+  Currently the only update-able fields are `description`,
+  `requestLoggingConfig`, `autoScaling.minNodes`, and `manualScaling.nodes`.
 
   ## Parameters
 
@@ -1995,8 +1999,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           ```
 
           Currently the only supported update mask fields are `description`,
-          `autoScaling.minNodes`, and `manualScaling.nodes`. However, you can only
-          update `manualScaling.nodes` if the version uses a [Compute Engine (N1)
+          `requestLoggingConfig`, `autoScaling.minNodes`, and `manualScaling.nodes`.
+          However, you can only update `manualScaling.nodes` if the version uses a
+          [Compute Engine (N1)
           machine type](/ml-engine/docs/machine-types-online-prediction).
       *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2073,7 +2078,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the version to make the default for the model. You
       can get the names of all the versions of a model by calling
-      [projects.models.versions.list](/ml-engine/reference/rest/v1/projects.models.versions/list).
+      projects.models.versions.list.
   *   `models_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

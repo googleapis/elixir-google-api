@@ -29,7 +29,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model do
       handle prediction requests that do not specify a version.
 
       You can change the default version by calling
-      [projects.methods.versions.setDefault](/ml-engine/reference/rest/v1/projects.models.versions/setDefault).
+      projects.models.versions.setDefault.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description specified for the model when it was created.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - `etag` is used for optimistic concurrency control as a way to help
       prevent simultaneous updates of a model from overwriting each other.
