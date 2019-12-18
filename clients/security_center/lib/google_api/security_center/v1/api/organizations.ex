@@ -341,9 +341,12 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
           * security_marks.marks: `=`, `:`
           * security_center_properties.resource_name: `=`, `:`
+          * security_center_properties.resource_display_name: `=`, `:`
           * security_center_properties.resource_type: `=`, `:`
           * security_center_properties.resource_parent: `=`, `:`
+          * security_center_properties.resource_parent_display_name: `=`, `:`
           * security_center_properties.resource_project: `=`, `:`
+          * security_center_properties.resource_project_display_name: `=`, `:`
           * security_center_properties.resource_owners: `=`, `:`
 
           For example, `resource_properties.size = 100` is a valid filter string.
@@ -362,8 +365,11 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           resource_properties
           security_marks.marks
           security_center_properties.resource_name
+          security_center_properties.resource_display_name
           security_center_properties.resource_parent
+          security_center_properties.resource_parent_display_name
           security_center_properties.resource_project
+          security_center_properties.resource_project_display_name
           security_center_properties.resource_type
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return in a single response. Default is
           10, minimum is 1, maximum is 1000.
