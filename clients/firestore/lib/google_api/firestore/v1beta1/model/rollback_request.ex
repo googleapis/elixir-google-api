@@ -21,7 +21,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.RollbackRequest do
 
   ## Attributes
 
-  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The transaction to roll back.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - Required. The transaction to roll back.
   """
 
   use GoogleApi.Gax.ModelBase

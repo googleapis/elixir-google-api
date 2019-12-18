@@ -191,7 +191,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - The database name. In the format:
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -264,7 +264,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - The database name. In the format:
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -337,7 +337,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - The database name. In the format:
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -406,10 +406,10 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource. For example:
+  *   `parent` (*type:* `String.t`) - Required. The parent resource. For example:
       `projects/{project_id}/databases/{database_id}/documents` or
       `projects/{project_id}/databases/{database_id}/documents/chatrooms/{chatroom_id}`
-  *   `collection_id` (*type:* `String.t`) - The collection ID, relative to `parent`, to list. For example: `chatrooms`.
+  *   `collection_id` (*type:* `String.t`) - Required. The collection ID, relative to `parent`, to list. For example: `chatrooms`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -487,7 +487,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the Document to delete. In the format:
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Document to delete. In the format:
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -560,7 +560,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the Document to get. In the format:
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Document to get. In the format:
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -635,13 +635,13 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name. In the format:
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format:
       `projects/{project_id}/databases/{database_id}/documents` or
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
       For example:
       `projects/my-project/databases/my-database/documents` or
       `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
-  *   `collection_id` (*type:* `String.t`) - The collection ID, relative to `parent`, to list. For example: `chatrooms`
+  *   `collection_id` (*type:* `String.t`) - Required. The collection ID, relative to `parent`, to list. For example: `chatrooms`
       or `messages`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -737,7 +737,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent document. In the format:
+  *   `parent` (*type:* `String.t`) - Required. The parent document. In the format:
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
       For example:
       `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
@@ -812,7 +812,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - The database name. In the format:
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -962,7 +962,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - The database name. In the format:
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1031,7 +1031,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name. In the format:
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format:
       `projects/{project_id}/databases/{database_id}/documents` or
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
       For example:
@@ -1105,7 +1105,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
-  *   `database` (*type:* `String.t`) - The database name. In the format:
+  *   `database` (*type:* `String.t`) - Required. The database name. In the format:
       `projects/{project_id}/databases/{database_id}`.
       This is only required in the first message.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
