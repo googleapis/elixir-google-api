@@ -27,7 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.CreateServiceAccountRequest do
       `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
   *   `serviceAccount` (*type:* `GoogleApi.IAM.V1.Model.ServiceAccount.t`, *default:* `nil`) - The ServiceAccount resource to
       create. Currently, only the following values are user assignable:
-      `display_name` .
+      `display_name` and `description`.
   """
 
   use GoogleApi.Gax.ModelBase

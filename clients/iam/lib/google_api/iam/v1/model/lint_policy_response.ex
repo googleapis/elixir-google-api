@@ -22,15 +22,7 @@ defmodule GoogleApi.IAM.V1.Model.LintPolicyResponse do
 
   ## Attributes
 
-  *   `lintResults` (*type:* `list(GoogleApi.IAM.V1.Model.LintResult.t)`, *default:* `nil`) - List of lint results sorted by a composite <severity, binding_ordinal> key,
-      descending order of severity and ascending order of binding_ordinal.
-      There is no certain order among the same keys.
-
-      For cross-binding results (only if the input object to lint is
-      instance of google.iam.v1.Policy), there will be a
-      google.iam.admin.v1.LintResult for each of the involved bindings,
-      and the associated debug_message may enumerate the other involved
-      binding ordinal number(s).
+  *   `lintResults` (*type:* `list(GoogleApi.IAM.V1.Model.LintResult.t)`, *default:* `nil`) - List of lint results sorted by `severity` in descending order.
   """
 
   use GoogleApi.Gax.ModelBase

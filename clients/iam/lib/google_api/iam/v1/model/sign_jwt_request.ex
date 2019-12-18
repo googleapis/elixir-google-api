@@ -21,7 +21,7 @@ defmodule GoogleApi.IAM.V1.Model.SignJwtRequest do
 
   ## Attributes
 
-  *   `payload` (*type:* `String.t`, *default:* `nil`) - The JWT payload to sign, a JSON JWT Claim set.
+  *   `payload` (*type:* `String.t`, *default:* `nil`) - Required. The JWT payload to sign, a JSON JWT Claim set.
   """
 
   use GoogleApi.Gax.ModelBase
