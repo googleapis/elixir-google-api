@@ -33,6 +33,7 @@ defmodule GoogleApi.Docs.V1.Model.Request do
   *   `deleteTableRow` (*type:* `GoogleApi.Docs.V1.Model.DeleteTableRowRequest.t`, *default:* `nil`) - Deletes a row from a table.
   *   `insertInlineImage` (*type:* `GoogleApi.Docs.V1.Model.InsertInlineImageRequest.t`, *default:* `nil`) - Inserts an inline image at the specified location.
   *   `insertPageBreak` (*type:* `GoogleApi.Docs.V1.Model.InsertPageBreakRequest.t`, *default:* `nil`) - Inserts a page break at the specified location.
+  *   `insertSectionBreak` (*type:* `GoogleApi.Docs.V1.Model.InsertSectionBreakRequest.t`, *default:* `nil`) - Inserts a section break at the specified location.
   *   `insertTable` (*type:* `GoogleApi.Docs.V1.Model.InsertTableRequest.t`, *default:* `nil`) - Inserts a table at the specified location.
   *   `insertTableColumn` (*type:* `GoogleApi.Docs.V1.Model.InsertTableColumnRequest.t`, *default:* `nil`) - Inserts an empty column into a table.
   *   `insertTableRow` (*type:* `GoogleApi.Docs.V1.Model.InsertTableRowRequest.t`, *default:* `nil`) - Inserts an empty row into a table.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Docs.V1.Model.Request do
   *   `unmergeTableCells` (*type:* `GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest.t`, *default:* `nil`) - Unmerges cells in a table.
   *   `updateDocumentStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateDocumentStyleRequest.t`, *default:* `nil`) - Updates the style of the document.
   *   `updateParagraphStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest.t`, *default:* `nil`) - Updates the paragraph style at the specified range.
+  *   `updateSectionStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateSectionStyleRequest.t`, *default:* `nil`) - Updates the section style of the specified range.
   *   `updateTableCellStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateTableCellStyleRequest.t`, *default:* `nil`) - Updates the style of table cells.
   *   `updateTableColumnProperties` (*type:* `GoogleApi.Docs.V1.Model.UpdateTableColumnPropertiesRequest.t`, *default:* `nil`) - Updates the properties of columns in a table.
   *   `updateTableRowStyle` (*type:* `GoogleApi.Docs.V1.Model.UpdateTableRowStyleRequest.t`, *default:* `nil`) - Updates the row style in a table.
@@ -65,6 +67,7 @@ defmodule GoogleApi.Docs.V1.Model.Request do
           :deleteTableRow => GoogleApi.Docs.V1.Model.DeleteTableRowRequest.t(),
           :insertInlineImage => GoogleApi.Docs.V1.Model.InsertInlineImageRequest.t(),
           :insertPageBreak => GoogleApi.Docs.V1.Model.InsertPageBreakRequest.t(),
+          :insertSectionBreak => GoogleApi.Docs.V1.Model.InsertSectionBreakRequest.t(),
           :insertTable => GoogleApi.Docs.V1.Model.InsertTableRequest.t(),
           :insertTableColumn => GoogleApi.Docs.V1.Model.InsertTableColumnRequest.t(),
           :insertTableRow => GoogleApi.Docs.V1.Model.InsertTableRowRequest.t(),
@@ -77,6 +80,7 @@ defmodule GoogleApi.Docs.V1.Model.Request do
           :unmergeTableCells => GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest.t(),
           :updateDocumentStyle => GoogleApi.Docs.V1.Model.UpdateDocumentStyleRequest.t(),
           :updateParagraphStyle => GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest.t(),
+          :updateSectionStyle => GoogleApi.Docs.V1.Model.UpdateSectionStyleRequest.t(),
           :updateTableCellStyle => GoogleApi.Docs.V1.Model.UpdateTableCellStyleRequest.t(),
           :updateTableColumnProperties =>
             GoogleApi.Docs.V1.Model.UpdateTableColumnPropertiesRequest.t(),
@@ -96,6 +100,7 @@ defmodule GoogleApi.Docs.V1.Model.Request do
   field(:deleteTableRow, as: GoogleApi.Docs.V1.Model.DeleteTableRowRequest)
   field(:insertInlineImage, as: GoogleApi.Docs.V1.Model.InsertInlineImageRequest)
   field(:insertPageBreak, as: GoogleApi.Docs.V1.Model.InsertPageBreakRequest)
+  field(:insertSectionBreak, as: GoogleApi.Docs.V1.Model.InsertSectionBreakRequest)
   field(:insertTable, as: GoogleApi.Docs.V1.Model.InsertTableRequest)
   field(:insertTableColumn, as: GoogleApi.Docs.V1.Model.InsertTableColumnRequest)
   field(:insertTableRow, as: GoogleApi.Docs.V1.Model.InsertTableRowRequest)
@@ -107,6 +112,7 @@ defmodule GoogleApi.Docs.V1.Model.Request do
   field(:unmergeTableCells, as: GoogleApi.Docs.V1.Model.UnmergeTableCellsRequest)
   field(:updateDocumentStyle, as: GoogleApi.Docs.V1.Model.UpdateDocumentStyleRequest)
   field(:updateParagraphStyle, as: GoogleApi.Docs.V1.Model.UpdateParagraphStyleRequest)
+  field(:updateSectionStyle, as: GoogleApi.Docs.V1.Model.UpdateSectionStyleRequest)
   field(:updateTableCellStyle, as: GoogleApi.Docs.V1.Model.UpdateTableCellStyleRequest)
 
   field(:updateTableColumnProperties,

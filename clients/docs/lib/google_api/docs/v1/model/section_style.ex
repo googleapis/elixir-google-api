@@ -30,6 +30,43 @@ defmodule GoogleApi.Docs.V1.Model.SectionStyle do
       This style can be set even when there is one column in the section.
   *   `contentDirection` (*type:* `String.t`, *default:* `nil`) - The content direction of this section. If unset, the value defaults to
       LEFT_TO_RIGHT.
+  *   `marginBottom` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The bottom page margin of the section. If unset, uses margin_bottom from DocumentStyle.
+
+      When updating this property, setting a concrete value is required.
+      Unsetting this property results in a 400 bad request error.
+  *   `marginFooter` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The footer margin of the section. If unset, uses margin_footer from DocumentStyle. If
+      updated, use_custom_header_footer_margins is set
+      to true on DocumentStyle. The value of use_custom_header_footer_margins on
+      DocumentStyle indicates if a footer margin is being respected for this
+      section
+
+      When updating this property, setting a concrete value is required.
+      Unsetting this property results in a 400 bad request error.
+  *   `marginHeader` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The header margin of the section. If unset, uses margin_header from DocumentStyle. If
+      updated, use_custom_header_footer_margins is set
+      to true on DocumentStyle. The value of use_custom_header_footer_margins on
+      DocumentStyle indicates if a header margin is being respected for this
+      section.
+
+      When updating this property, setting a concrete value is required.
+      Unsetting this property results in a 400 bad request error.
+  *   `marginLeft` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The left page margin of the section. If unset, uses margin_left from DocumentStyle.
+      Updating left margin causes columns in this section to resize. Since
+      the margin affects column width, it is applied before column properties.
+
+      When updating this property, setting a concrete value is required.
+      Unsetting this property results in a 400 bad request error.
+  *   `marginRight` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The right page margin of the section. If unset, uses margin_right from DocumentStyle.
+      Updating right margin causes columns in this section to resize. Since
+      the margin affects column width, it is applied before column properties.
+
+      When updating this property, setting a concrete value is required.
+      Unsetting this property results in a 400 bad request error.
+  *   `marginTop` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The top page margin of the section. If unset, uses margin_top from DocumentStyle.
+
+      When updating this property, setting a concrete value is required.
+      Unsetting this property results in a 400 bad request error.
+  *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of section.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,12 +74,26 @@ defmodule GoogleApi.Docs.V1.Model.SectionStyle do
   @type t :: %__MODULE__{
           :columnProperties => list(GoogleApi.Docs.V1.Model.SectionColumnProperties.t()),
           :columnSeparatorStyle => String.t(),
-          :contentDirection => String.t()
+          :contentDirection => String.t(),
+          :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t(),
+          :marginFooter => GoogleApi.Docs.V1.Model.Dimension.t(),
+          :marginHeader => GoogleApi.Docs.V1.Model.Dimension.t(),
+          :marginLeft => GoogleApi.Docs.V1.Model.Dimension.t(),
+          :marginRight => GoogleApi.Docs.V1.Model.Dimension.t(),
+          :marginTop => GoogleApi.Docs.V1.Model.Dimension.t(),
+          :sectionType => String.t()
         }
 
   field(:columnProperties, as: GoogleApi.Docs.V1.Model.SectionColumnProperties, type: :list)
   field(:columnSeparatorStyle)
   field(:contentDirection)
+  field(:marginBottom, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:marginFooter, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:marginHeader, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:marginLeft, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:marginRight, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:marginTop, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:sectionType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Docs.V1.Model.SectionStyle do
