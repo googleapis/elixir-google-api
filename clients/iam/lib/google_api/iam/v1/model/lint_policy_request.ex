@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.IAM.V1.Model.LintPolicyRequest do
   @moduledoc """
-  The request to lint a Cloud IAM policy object. LintPolicy is currently
-  functional only for `lint_object` of type `condition`.
+  The request to lint a Cloud IAM policy object.
 
   ## Attributes
 
-  *   `binding` (*type:* `GoogleApi.IAM.V1.Model.Binding.t`, *default:* `nil`) - Binding object to be linted. The functionality of linting a binding is
-      not yet implemented and if this field is set, it returns NOT_IMPLEMENTED
-      error.
   *   `condition` (*type:* `GoogleApi.IAM.V1.Model.Expr.t`, *default:* `nil`) - google.iam.v1.Binding.condition object to be linted.
-  *   `context` (*type:* `map()`, *default:* `nil`) - `context` contains additional *permission-controlled* data that any
-      lint unit may depend on, in form of `{key: value}` pairs. Currently, this
-      field is non-operational and it will not be used during the lint operation.
   *   `fullResourceName` (*type:* `String.t`, *default:* `nil`) - The full resource name of the policy this lint request is about.
 
       The name follows the Google Cloud Platform (GCP) resource format.
@@ -38,26 +31,17 @@ defmodule GoogleApi.IAM.V1.Model.LintPolicyRequest do
       The resource name is not used to read the policy instance from the Cloud
       IAM database. The candidate policy for lint has to be provided in the same
       request object.
-  *   `policy` (*type:* `GoogleApi.IAM.V1.Model.Policy.t`, *default:* `nil`) - Policy object to be linted. The functionality of linting a policy is not
-      yet implemented and if this field is set, it returns NOT_IMPLEMENTED
-      error.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :binding => GoogleApi.IAM.V1.Model.Binding.t(),
           :condition => GoogleApi.IAM.V1.Model.Expr.t(),
-          :context => map(),
-          :fullResourceName => String.t(),
-          :policy => GoogleApi.IAM.V1.Model.Policy.t()
+          :fullResourceName => String.t()
         }
 
-  field(:binding, as: GoogleApi.IAM.V1.Model.Binding)
   field(:condition, as: GoogleApi.IAM.V1.Model.Expr)
-  field(:context, type: :map)
   field(:fullResourceName)
-  field(:policy, as: GoogleApi.IAM.V1.Model.Policy)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.LintPolicyRequest do

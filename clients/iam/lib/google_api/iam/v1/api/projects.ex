@@ -630,7 +630,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
       `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
       Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
       the account. The `ACCOUNT` value can be the `email` address or the
@@ -882,7 +882,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
       `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
       Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
       the account. The `ACCOUNT` value can be the `email` address or the
@@ -1307,7 +1307,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
       `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
       Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
       the account. The `ACCOUNT` value can be the `email` address or the
@@ -1391,7 +1391,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
       `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
       Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
       the account. The `ACCOUNT` value can be the `email` address or the
@@ -1711,7 +1711,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
       `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
       Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
       the account. The `ACCOUNT` value can be the `email` address or the
@@ -1787,7 +1787,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account key in the following format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account key in the following format:
       `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
       Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
       the account. The `ACCOUNT` value can be the `email` address or the
@@ -1869,7 +1869,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account key in the following format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account key in the following format:
       `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
 
       Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
@@ -1954,7 +1954,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account in the following format:
       `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
 
       Using `-` as a wildcard for the `PROJECT_ID`, will infer the project from

@@ -21,7 +21,7 @@ defmodule GoogleApi.IAM.V1.Model.SignBlobRequest do
 
   ## Attributes
 
-  *   `bytesToSign` (*type:* `String.t`, *default:* `nil`) - The bytes to sign.
+  *   `bytesToSign` (*type:* `String.t`, *default:* `nil`) - Required. The bytes to sign.
   """
 
   use GoogleApi.Gax.ModelBase
