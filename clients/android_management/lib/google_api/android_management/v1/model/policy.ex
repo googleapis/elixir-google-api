@@ -55,6 +55,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `createWindowsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether creating windows besides app windows is disabled.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
   *   `accountTypesWithManagementDisabled` (*type:* `list(String.t)`, *default:* `nil`) - Account types that can't be managed by the user.
+  *   `kioskCustomization` (*type:* `GoogleApi.AndroidManagement.V1.Model.KioskCustomization.t`, *default:* `nil`) - Settings controlling the behavior of a device in kiosk mode. To enable kiosk mode, set kioskCustomLauncherEnabled to true or specify an app in the policy with installType KIOSK.
   *   `dataRoamingDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether roaming data services are disabled.
   *   `encryptionPolicy` (*type:* `String.t`, *default:* `nil`) - Whether encryption is enabled
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the policy. This is a read-only field. The version is incremented each time the policy is updated.
@@ -70,6 +71,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `setUserIconDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the user icon is disabled.
   *   `usbMassStorageEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether USB storage is enabled. Deprecated.
   *   `ensureVerifyAppsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether app verification is force-enabled.
+  *   `advancedSecurityOverrides` (*type:* `GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides.t`, *default:* `nil`) - Security policies set to the most secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values.
   *   `bluetoothDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth is disabled. Prefer this setting over bluetooth_config_disabled because bluetooth_config_disabled can be bypassed by the user.
   *   `policyEnforcementRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule.t)`, *default:* `nil`) - Rules that define the behavior when a particular policy can not be applied on device
   *   `vpnConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring VPN is disabled.
@@ -141,6 +143,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :createWindowsDisabled => boolean(),
           :name => String.t(),
           :accountTypesWithManagementDisabled => list(String.t()),
+          :kioskCustomization => GoogleApi.AndroidManagement.V1.Model.KioskCustomization.t(),
           :dataRoamingDisabled => boolean(),
           :encryptionPolicy => String.t(),
           :version => String.t(),
@@ -157,6 +160,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :setUserIconDisabled => boolean(),
           :usbMassStorageEnabled => boolean(),
           :ensureVerifyAppsEnabled => boolean(),
+          :advancedSecurityOverrides =>
+            GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides.t(),
           :bluetoothDisabled => boolean(),
           :policyEnforcementRules =>
             list(GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule.t()),
@@ -237,6 +242,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:createWindowsDisabled)
   field(:name)
   field(:accountTypesWithManagementDisabled, type: :list)
+  field(:kioskCustomization, as: GoogleApi.AndroidManagement.V1.Model.KioskCustomization)
   field(:dataRoamingDisabled)
   field(:encryptionPolicy)
   field(:version)
@@ -252,6 +258,11 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:setUserIconDisabled)
   field(:usbMassStorageEnabled)
   field(:ensureVerifyAppsEnabled)
+
+  field(:advancedSecurityOverrides,
+    as: GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides
+  )
+
   field(:bluetoothDisabled)
 
   field(:policyEnforcementRules,
