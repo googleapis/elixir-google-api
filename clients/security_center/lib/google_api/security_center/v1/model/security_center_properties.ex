@@ -22,14 +22,17 @@ defmodule GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties do
 
   ## Attributes
 
+  *   `resourceDisplayName` (*type:* `String.t`, *default:* `nil`) - The user defined display name for this resource.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The full resource name of the GCP resource this asset
       represents. This field is immutable after create time. See:
       https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `resourceOwners` (*type:* `list(String.t)`, *default:* `nil`) - Owners of the Google Cloud resource.
   *   `resourceParent` (*type:* `String.t`, *default:* `nil`) - The full resource name of the immediate parent of the resource. See:
       https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `resourceParentDisplayName` (*type:* `String.t`, *default:* `nil`) - The user defined display name for the parent of this resource.
   *   `resourceProject` (*type:* `String.t`, *default:* `nil`) - The full resource name of the project the resource belongs to. See:
       https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `resourceProjectDisplayName` (*type:* `String.t`, *default:* `nil`) - The user defined display name for the project of this resource.
   *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The type of the GCP resource. Examples include: APPLICATION,
       PROJECT, and ORGANIZATION. This is a case insensitive field defined by
       Cloud SCC and/or the producer of the resource and is immutable
@@ -39,17 +42,23 @@ defmodule GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :resourceDisplayName => String.t(),
           :resourceName => String.t(),
           :resourceOwners => list(String.t()),
           :resourceParent => String.t(),
+          :resourceParentDisplayName => String.t(),
           :resourceProject => String.t(),
+          :resourceProjectDisplayName => String.t(),
           :resourceType => String.t()
         }
 
+  field(:resourceDisplayName)
   field(:resourceName)
   field(:resourceOwners, type: :list)
   field(:resourceParent)
+  field(:resourceParentDisplayName)
   field(:resourceProject)
+  field(:resourceProjectDisplayName)
   field(:resourceType)
 end
 
