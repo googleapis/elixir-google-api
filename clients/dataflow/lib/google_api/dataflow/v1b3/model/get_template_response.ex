@@ -23,19 +23,25 @@ defmodule GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse do
 
   *   `metadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t`, *default:* `nil`) - The template metadata describing the template name, available
       parameters, etc.
+  *   `runtimeMetadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.RuntimeMetadata.t`, *default:* `nil`) - Describes the runtime metadata with SDKInfo and available parameters.
   *   `status` (*type:* `GoogleApi.Dataflow.V1b3.Model.Status.t`, *default:* `nil`) - The status of the get template request. Any problems with the
       request will be indicated in the error_details.
+  *   `templateType` (*type:* `String.t`, *default:* `nil`) - Template Type.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :metadata => GoogleApi.Dataflow.V1b3.Model.TemplateMetadata.t(),
-          :status => GoogleApi.Dataflow.V1b3.Model.Status.t()
+          :runtimeMetadata => GoogleApi.Dataflow.V1b3.Model.RuntimeMetadata.t(),
+          :status => GoogleApi.Dataflow.V1b3.Model.Status.t(),
+          :templateType => String.t()
         }
 
   field(:metadata, as: GoogleApi.Dataflow.V1b3.Model.TemplateMetadata)
+  field(:runtimeMetadata, as: GoogleApi.Dataflow.V1b3.Model.RuntimeMetadata)
   field(:status, as: GoogleApi.Dataflow.V1b3.Model.Status)
+  field(:templateType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse do
