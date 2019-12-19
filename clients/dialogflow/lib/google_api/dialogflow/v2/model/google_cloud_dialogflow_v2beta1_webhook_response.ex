@@ -19,6 +19,19 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1WebhookRespo
   @moduledoc """
   The response message for a webhook call.
 
+  This response is validated by the Dialogflow server. If validation fails,
+  an error will be returned in the QueryResult.diagnostic_info field.
+  Setting JSON fields to an empty value with the wrong type is a common error.
+  To avoid this error:
+
+  - Use `""` for empty strings
+  - Use `{}` or `null` for empty objects
+  - Use `[]` or `null` for empty arrays
+
+  For more information, see the
+  [Protocol Buffers Language
+  Guide](https://developers.google.com/protocol-buffers/docs/proto3#json).
+
   ## Attributes
 
   *   `endInteraction` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates that this intent ends an interaction. Some integrations

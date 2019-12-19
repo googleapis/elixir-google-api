@@ -35,6 +35,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Context do
 
       If `Environment ID` is not specified, we assume default 'draft'
       environment. If `User ID` is not specified, we assume default '-' user.
+
+      The following context names are reserved for internal use by Dialogflow.
+      You should not use these contexts or create contexts with these names:
+
+      * `__system_counters__`
+      * `*_id_dialog_context`
+      * `*_dialog_params_size`
   *   `parameters` (*type:* `map()`, *default:* `nil`) - Optional. The collection of parameters associated with this context.
       Refer to [this
       doc](https://cloud.google.com/dialogflow/docs/intents-actions-parameters)
