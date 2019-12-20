@@ -28,9 +28,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1QueryResult 
          the required parameter values have been collected.
       - `true` if all required parameter values have been collected, or if the
          matched intent doesn't contain any required parameters.
-  *   `diagnosticInfo` (*type:* `map()`, *default:* `nil`) - The free-form diagnostic info. For example, this field could contain
-      webhook call latency. The string keys of the Struct's fields map can change
-      without notice.
+  *   `diagnosticInfo` (*type:* `map()`, *default:* `nil`) - Free-form diagnostic information for the associated detect intent request.
+      The fields of this data can change without notice, so you should not write
+      code that depends on its structure.
+      The data may contain:
+
+      - webhook call latency
+      - webhook errors
   *   `fulfillmentMessages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessage.t)`, *default:* `nil`) - The collection of rich messages to present to the user.
   *   `fulfillmentText` (*type:* `String.t`, *default:* `nil`) - The text to be pronounced to the user or shown on the screen.
       Note: This is a legacy field, `fulfillment_messages` should be preferred.

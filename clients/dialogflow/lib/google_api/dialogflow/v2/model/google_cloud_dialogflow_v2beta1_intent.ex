@@ -69,8 +69,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
   *   `parameters` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentParameter.t)`, *default:* `nil`) - Optional. The collection of parameters associated with the intent.
   *   `parentFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Read-only after creation. The unique identifier of the parent intent in the
       chain of followup intents. You can set this field when creating an intent,
-      for example with CreateIntent or BatchUpdateIntents, in order to
-      make this intent a followup intent.
+      for example with CreateIntent or
+      BatchUpdateIntents, in order to make this
+      intent a followup intent.
 
       It identifies the parent followup intent.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
