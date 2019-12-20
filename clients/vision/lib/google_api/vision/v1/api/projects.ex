@@ -994,7 +994,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - Required. Resource name of the ProductSet to get.
 
       Format is:
-      `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
+      `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
