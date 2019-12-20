@@ -21,15 +21,18 @@ defmodule GoogleApi.DriveActivity.V2.Model.Assignment do
 
   ## Attributes
 
+  *   `assignedUser` (*type:* `GoogleApi.DriveActivity.V2.Model.User.t`, *default:* `nil`) - The user to whom the comment was assigned.
   *   `subtype` (*type:* `String.t`, *default:* `nil`) - The sub-type of this event.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :assignedUser => GoogleApi.DriveActivity.V2.Model.User.t(),
           :subtype => String.t()
         }
 
+  field(:assignedUser, as: GoogleApi.DriveActivity.V2.Model.User)
   field(:subtype)
 end
 
