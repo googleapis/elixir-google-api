@@ -39,6 +39,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
   *   `recordsWritten` (*type:* `String.t`, *default:* `nil`) - Number of records written by the stage.
   *   `shuffleOutputBytes` (*type:* `String.t`, *default:* `nil`) - Total number of bytes written to shuffle.
   *   `shuffleOutputBytesSpilled` (*type:* `String.t`, *default:* `nil`) - Total number of bytes written to shuffle and spilled to disk.
+  *   `slotMs` (*type:* `String.t`, *default:* `nil`) - Slot-milliseconds used by the stage.
   *   `startMs` (*type:* `String.t`, *default:* `nil`) - Stage start time represented as milliseconds since epoch.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Current status for the stage.
   *   `steps` (*type:* `list(GoogleApi.BigQuery.V2.Model.ExplainQueryStep.t)`, *default:* `nil`) - List of operations within the stage in dependency order (approximately chronological).
@@ -73,6 +74,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
           :recordsWritten => String.t(),
           :shuffleOutputBytes => String.t(),
           :shuffleOutputBytesSpilled => String.t(),
+          :slotMs => String.t(),
           :startMs => String.t(),
           :status => String.t(),
           :steps => list(GoogleApi.BigQuery.V2.Model.ExplainQueryStep.t()),
@@ -104,6 +106,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
   field(:recordsWritten)
   field(:shuffleOutputBytes)
   field(:shuffleOutputBytesSpilled)
+  field(:slotMs)
   field(:startMs)
   field(:status)
   field(:steps, as: GoogleApi.BigQuery.V2.Model.ExplainQueryStep, type: :list)
