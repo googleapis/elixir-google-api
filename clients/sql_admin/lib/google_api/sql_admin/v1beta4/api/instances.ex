@@ -626,8 +626,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Lists instances under a given project in the alphabetical order of the
-  instance name.
+  Lists instances under a given project.
 
   ## Parameters
 
