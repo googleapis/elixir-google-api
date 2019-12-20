@@ -141,6 +141,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:force` (*type:* `boolean()`) - Optional. If true, deletes all entries in the entry group.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -175,7 +176,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :force => :query
     }
 
     request =
@@ -2500,18 +2502,20 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The field mask specifies the parts of the template to be updated.
+      *   `:updateMask` (*type:* `String.t`) - Optional. The field mask specifies the parts of the template to be updated.
           Allowed fields:
 
             * `display_name`
             * `type.enum_type`
+            * `is_required`
 
           If `update_mask` is not set or empty, all of the allowed fields above will
           be updated.
 
           When updating an enum type, the provided values will be merged with the
           existing values. Therefore, enum values can only be added, existing enum
-          values cannot be deleted nor renamed.
+          values cannot be deleted nor renamed. Updating a template field from
+          optional to required is NOT allowed.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

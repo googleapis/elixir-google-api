@@ -22,6 +22,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name for this field. Defaults to an empty string.
+  *   `isRequired` (*type:* `boolean()`, *default:* `nil`) - Whether this is a required field. Defaults to false.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the tag template field in URL format. Example:
 
       * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
@@ -35,11 +36,13 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
 
   @type t :: %__MODULE__{
           :displayName => String.t(),
+          :isRequired => boolean(),
           :name => String.t(),
           :type => GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldType.t()
         }
 
   field(:displayName)
+  field(:isRequired)
   field(:name)
   field(:type, as: GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldType)
 end
