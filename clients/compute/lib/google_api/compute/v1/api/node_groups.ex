@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Adds specified number of nodes to the node group. (== suppress_warning http-rest-shadowed ==)
+  Adds specified number of nodes to the node group.
 
   ## Parameters
 
@@ -100,7 +100,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details about each group. (== suppress_warning http-rest-shadowed ==)
+  Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details about each group.
 
   ## Parameters
 
@@ -167,7 +167,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Deletes the specified NodeGroup resource. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified NodeGroup resource.
 
   ## Parameters
 
@@ -239,7 +239,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Deletes specified nodes from the node group. (== suppress_warning http-rest-shadowed ==)
+  Deletes specified nodes from the node group.
 
   ## Parameters
 
@@ -313,7 +313,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request. Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified NodeGroup. Get a list of available NodeGroups by making a list() request. Note: the "nodes" field should not be used. Use nodeGroups.listNodes instead.
 
   ## Parameters
 
@@ -379,7 +379,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Gets the access control policy for a resource. May be empty if no such policy or resource exists. (== suppress_warning http-rest-shadowed ==)
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
 
   ## Parameters
 
@@ -445,7 +445,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Creates a NodeGroup resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a NodeGroup resource in the specified project using the data included in the request.
 
   ## Parameters
 
@@ -519,7 +519,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Retrieves a list of node groups available to the specified project. Note: use nodeGroups.listNodes for more details about each group. (== suppress_warning http-rest-shadowed ==)
+  Retrieves a list of node groups available to the specified project. Note: use nodeGroups.listNodes for more details about each group.
 
   ## Parameters
 
@@ -588,7 +588,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Lists nodes in the node group. (== suppress_warning http-rest-shadowed ==)
+  Lists nodes in the node group.
 
   ## Parameters
 
@@ -672,7 +672,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy. (== suppress_warning http-rest-shadowed ==)
+  Sets the access control policy on the specified resource. Replaces any existing policy.
 
   ## Parameters
 
@@ -740,7 +740,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Updates the node template of the node group. (== suppress_warning http-rest-shadowed ==)
+  Updates the node template of the node group.
 
   ## Parameters
 
@@ -814,7 +814,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
+  Returns permissions that a caller has on the specified resource.
 
   ## Parameters
 

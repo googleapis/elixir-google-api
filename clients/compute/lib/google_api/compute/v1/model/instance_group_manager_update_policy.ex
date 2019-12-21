@@ -21,6 +21,9 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy do
 
   ## Attributes
 
+  *   `instanceRedistributionType` (*type:* `String.t`, *default:* `nil`) - The  instance redistribution policy for regional managed instance groups. Valid values are:  
+      - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. 
+      - NONE: For non-autoscaled groups, proactive redistribution is disabled.
   *   `maxSurge` (*type:* `GoogleApi.Compute.V1.Model.FixedOrPercent.t`, *default:* `nil`) - The maximum number of instances that can be created above the specified targetSize during the update process. By default, a fixed value of 1 is used. This value can be either a fixed number or a percentage if the instance group has 10 or more instances. If you set a percentage, the number of instances will be rounded up if necessary.
 
       At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
@@ -38,12 +41,14 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :instanceRedistributionType => String.t(),
           :maxSurge => GoogleApi.Compute.V1.Model.FixedOrPercent.t(),
           :maxUnavailable => GoogleApi.Compute.V1.Model.FixedOrPercent.t(),
           :minimalAction => String.t(),
           :type => String.t()
         }
 
+  field(:instanceRedistributionType)
   field(:maxSurge, as: GoogleApi.Compute.V1.Model.FixedOrPercent)
   field(:maxUnavailable, as: GoogleApi.Compute.V1.Model.FixedOrPercent)
   field(:minimalAction)

@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificate do
   @moduledoc """
   Represents an SSL Certificate resource.
 
-  This SSL certificate resource also contains a private key. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read  Creating and Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for v1.sslCertificates ==)
+  This SSL certificate resource also contains a private key. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read  Creating and Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for v1.sslCertificates ==) (== resource_for beta.regionSslCertificates ==) (== resource_for v1.regionSslCertificates ==) Next ID: 17
 
   ## Attributes
 

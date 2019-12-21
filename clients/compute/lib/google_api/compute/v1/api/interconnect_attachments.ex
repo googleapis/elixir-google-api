@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of interconnect attachments. (== suppress_warning http-rest-shadowed ==)
+  Retrieves an aggregated list of interconnect attachments.
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Deletes the specified interconnect attachment. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified interconnect attachment.
 
   ## Parameters
 
@@ -181,7 +181,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Returns the specified interconnect attachment. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified interconnect attachment.
 
   ## Parameters
 
@@ -251,7 +251,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Creates an InterconnectAttachment in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates an InterconnectAttachment in the specified project using the data included in the request.
 
   ## Parameters
 
@@ -271,6 +271,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
 
           The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+      *   `:validateOnly` (*type:* `boolean()`) - If true, the request will not be committed.
       *   `:body` (*type:* `GoogleApi.Compute.V1.Model.InterconnectAttachment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -302,6 +303,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
       :quotaUser => :query,
       :userIp => :query,
       :requestId => :query,
+      :validateOnly => :query,
       :body => :body
     }
 
@@ -321,7 +323,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Retrieves the list of interconnect attachments contained within the specified region. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of interconnect attachments contained within the specified region.
 
   ## Parameters
 
@@ -403,7 +405,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
   end
 
   @doc """
-  Updates the specified interconnect attachment with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+  Updates the specified interconnect attachment with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
 
   ## Parameters
 

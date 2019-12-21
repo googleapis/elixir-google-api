@@ -17,13 +17,19 @@
 
 defmodule GoogleApi.Compute.V1.Model.InstanceGroup do
   @moduledoc """
-  Represents an unmanaged Instance Group resource.
+  Represents an Instance Group resource.
 
-  Use unmanaged instance groups if you need to apply load balancing to groups of heterogeneous instances or if you need to manage the instances yourself. For more information, read  Instance groups.
+  Instance Groups can be used to configure a target for load balancing.
 
-  For zonal unmanaged Instance Group, use instanceGroups resource.
+  Instance groups can either be managed or unmanaged.
 
-  For regional unmanaged Instance Group, use regionInstanceGroups resource. (== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (== resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+  To create  managed instance groups, use the instanceGroupManager or regionInstanceGroupManager resource instead.
+
+  Use zonal unmanaged instance groups if you need to apply load balancing to groups of heterogeneous instances or if you need to manage the instances yourself. You cannot create regional unmanaged instance groups.
+
+  For more information, read Instance groups.
+
+  (== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (== resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
 
   ## Attributes
 

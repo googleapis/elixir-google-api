@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in use by any TargetHttpsProxy or TargetSslProxy resources. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in use by any TargetHttpsProxy or TargetSslProxy resources.
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   end
 
   @doc """
-  Lists all of the ordered rules present in a single specified policy. (== suppress_warning http-rest-shadowed ==)
+  Lists all of the ordered rules present in a single specified policy.
 
   ## Parameters
 
@@ -145,7 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   end
 
   @doc """
-  Returns the specified SSL policy resource. Gets a list of available SSL policies by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified SSL policy resource. Gets a list of available SSL policies by making a list() request.
 
   ## Parameters
 
@@ -202,7 +202,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   end
 
   @doc """
-  Lists all the SSL policies that have been configured for the specified project. (== suppress_warning http-rest-shadowed ==)
+  Lists all the SSL policies that have been configured for the specified project.
 
   ## Parameters
 
@@ -269,7 +269,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   end
 
   @doc """
-  Lists all features that can be specified in the SSL policy when using custom profile. (== suppress_warning http-rest-shadowed ==)
+  Lists all features that can be specified in the SSL policy when using custom profile.
 
   ## Parameters
 
@@ -349,7 +349,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   end
 
   @doc """
-  Patches the specified SSL policy with the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Patches the specified SSL policy with the data included in the request.
 
   ## Parameters
 

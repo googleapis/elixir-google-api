@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified TargetHttpProxy resource. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified TargetHttpProxy resource.
 
   ## Parameters
 
@@ -98,7 +98,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
   end
 
   @doc """
-  Returns the specified TargetHttpProxy resource in the specified region. Gets a list of available target HTTP proxies by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified TargetHttpProxy resource in the specified region. Gets a list of available target HTTP proxies by making a list() request.
 
   ## Parameters
 
@@ -164,7 +164,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
   end
 
   @doc """
-  Creates a TargetHttpProxy resource in the specified project and region using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a TargetHttpProxy resource in the specified project and region using the data included in the request.
 
   ## Parameters
 
@@ -234,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
   end
 
   @doc """
-  Retrieves the list of TargetHttpProxy resources available to the specified project in the specified region. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of TargetHttpProxy resources available to the specified project in the specified region.
 
   ## Parameters
 
@@ -314,7 +314,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
   end
 
   @doc """
-  Changes the URL map for TargetHttpProxy. (== suppress_warning http-rest-shadowed ==)
+  Changes the URL map for TargetHttpProxy.
 
   ## Parameters
 

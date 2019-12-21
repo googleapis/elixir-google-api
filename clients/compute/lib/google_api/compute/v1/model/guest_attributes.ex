@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.GuestAttributes do
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `compute#guestAttributes`) - [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
-  *   `queryPath` (*type:* `String.t`, *default:* `nil`) - The path to be queried. This can be the default namespace ('/') or a nested namespace ('//') or a specified key ('//')
+  *   `queryPath` (*type:* `String.t`, *default:* `nil`) - The path to be queried. This can be the default namespace ('/') or a nested namespace ('/\\/') or a specified key ('/\\/\\')
   *   `queryValue` (*type:* `GoogleApi.Compute.V1.Model.GuestAttributesValue.t`, *default:* `nil`) - [Output Only] The value of the requested queried path.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource.
   *   `variableKey` (*type:* `String.t`, *default:* `nil`) - The key to search for.

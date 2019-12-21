@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified regional BackendService resource. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified regional BackendService resource.
 
   ## Parameters
 
@@ -98,7 +98,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Returns the specified regional BackendService resource. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified regional BackendService resource.
 
   ## Parameters
 
@@ -164,7 +164,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Gets the most recent health check results for this regional BackendService. (== suppress_warning http-rest-shadowed ==)
+  Gets the most recent health check results for this regional BackendService.
 
   ## Parameters
 
@@ -234,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Creates a regional BackendService resource in the specified project using the data included in the request. There are several restrictions and guidelines to keep in mind when creating a regional backend service. Read  Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed ==)
+  Creates a regional BackendService resource in the specified project using the data included in the request. There are several restrictions and guidelines to keep in mind when creating a regional backend service. Read  Restrictions and Guidelines for more information.
 
   ## Parameters
 
@@ -304,7 +304,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Retrieves the list of regional BackendService resources available to the specified project in the given region. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of regional BackendService resources available to the specified project in the given region.
 
   ## Parameters
 
@@ -384,7 +384,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Updates the specified regional BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+  Updates the specified regional BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
 
   ## Parameters
 
@@ -458,7 +458,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Updates the specified regional BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed ==)
+  Updates the specified regional BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information.
 
   ## Parameters
 

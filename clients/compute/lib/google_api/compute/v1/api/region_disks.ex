@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Adds existing resource policies to a regional disk. You can only add one policy which will be applied to this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed ==)
+  Adds existing resource policies to a regional disk. You can only add one policy which will be applied to this disk for scheduling snapshot creation.
 
   ## Parameters
 
@@ -100,7 +100,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Creates a snapshot of this regional disk. (== suppress_warning http-rest-shadowed ==)
+  Creates a snapshot of this regional disk.
 
   ## Parameters
 
@@ -174,7 +174,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Deletes the specified regional persistent disk. Deleting a regional disk removes all the replicas of its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified regional persistent disk. Deleting a regional disk removes all the replicas of its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots.
 
   ## Parameters
 
@@ -246,7 +246,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Returns a specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+  Returns a specified regional persistent disk.
 
   ## Parameters
 
@@ -312,7 +312,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Creates a persistent regional disk in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a persistent regional disk in the specified project using the data included in the request.
 
   ## Parameters
 
@@ -378,7 +378,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Retrieves the list of persistent disks contained within the specified region. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of persistent disks contained within the specified region.
 
   ## Parameters
 
@@ -452,7 +452,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Removes resource policies from a regional disk. (== suppress_warning http-rest-shadowed ==)
+  Removes resource policies from a regional disk.
 
   ## Parameters
 
@@ -526,7 +526,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Resizes the specified regional persistent disk. (== suppress_warning http-rest-shadowed ==)
+  Resizes the specified regional persistent disk.
 
   ## Parameters
 
@@ -600,7 +600,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Sets the labels on the target regional disk. (== suppress_warning http-rest-shadowed ==)
+  Sets the labels on the target regional disk.
 
   ## Parameters
 
@@ -674,7 +674,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
+  Returns permissions that a caller has on the specified resource.
 
   ## Parameters
 

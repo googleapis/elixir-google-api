@@ -30,7 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpHeaderMatch do
       The default setting is false.
   *   `prefixMatch` (*type:* `String.t`, *default:* `nil`) - The value of the header must start with the contents of prefixMatch.
       Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
-  *   `presentMatch` (*type:* `boolean()`, *default:* `nil`) - A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value or not.
+  *   `presentMatch` (*type:* `boolean()`, *default:* `nil`) - A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value.
       Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
   *   `rangeMatch` (*type:* `GoogleApi.Compute.V1.Model.Int64RangeMatch.t`, *default:* `nil`) - The header value must be an integer and its value must be in the range specified in rangeMatch. If the header does not contain an integer, number or is empty, the match fails.
       For example for a range [-5, 0]  

@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of routers. (== suppress_warning http-rest-shadowed ==)
+  Retrieves an aggregated list of routers.
 
   ## Parameters
 
@@ -93,7 +93,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   end
 
   @doc """
-  Deletes the specified Router resource. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified Router resource.
 
   ## Parameters
 
@@ -165,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   end
 
   @doc """
-  Returns the specified Router resource. Gets a list of available routers by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified Router resource. Gets a list of available routers by making a list() request.
 
   ## Parameters
 
@@ -224,7 +224,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   end
 
   @doc """
-  Retrieves runtime Nat mapping information of VM endpoints. (== suppress_warning http-rest-shadowed ==)
+  Retrieves runtime Nat mapping information of VM endpoints.
 
   ## Parameters
 
@@ -310,7 +310,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   end
 
   @doc """
-  Retrieves runtime information of the specified router. (== suppress_warning http-rest-shadowed ==)
+  Retrieves runtime information of the specified router.
 
   ## Parameters
 
@@ -376,7 +376,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   end
 
   @doc """
-  Creates a Router resource in the specified project and region using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a Router resource in the specified project and region using the data included in the request.
 
   ## Parameters
 
@@ -435,7 +435,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   end
 
   @doc """
-  Retrieves a list of Router resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
+  Retrieves a list of Router resources available to the specified project.
 
   ## Parameters
 
@@ -504,7 +504,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   end
 
   @doc """
-  Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+  Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
 
   ## Parameters
 
@@ -578,7 +578,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   end
 
   @doc """
-  Preview fields auto-generated during router create and update operations. Calling this method does NOT create or update the router. (== suppress_warning http-rest-shadowed ==)
+  Preview fields auto-generated during router create and update operations. Calling this method does NOT create or update the router.
 
   ## Parameters
 
@@ -647,7 +647,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   end
 
   @doc """
-  Updates the specified Router resource with the data included in the request. This method conforms to PUT semantics, which requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload. (== suppress_warning http-rest-shadowed ==)
+  Updates the specified Router resource with the data included in the request. This method conforms to PUT semantics, which requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload.
 
   ## Parameters
 

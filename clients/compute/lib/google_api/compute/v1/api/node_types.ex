@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of node types. (== suppress_warning http-rest-shadowed ==)
+  Retrieves an aggregated list of node types.
 
   ## Parameters
 
@@ -93,7 +93,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
   end
 
   @doc """
-  Returns the specified node type. Gets a list of available node types by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified node type. Gets a list of available node types by making a list() request.
 
   ## Parameters
 
@@ -159,7 +159,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
   end
 
   @doc """
-  Retrieves a list of node types available to the specified project. (== suppress_warning http-rest-shadowed ==)
+  Retrieves a list of node types available to the specified project.
 
   ## Parameters
 

@@ -22,15 +22,18 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do
   ## Attributes
 
   *   `isStable` (*type:* `boolean()`, *default:* `nil`) - [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+  *   `versionTarget` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusVersionTarget.t`, *default:* `nil`) - [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :isStable => boolean()
+          :isStable => boolean(),
+          :versionTarget => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusVersionTarget.t()
         }
 
   field(:isStable)
+  field(:versionTarget, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusVersionTarget)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do

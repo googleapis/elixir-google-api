@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the list of all TargetHttpProxy resources, regional and global, available to the specified project. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of all TargetHttpProxy resources, regional and global, available to the specified project.
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   end
 
   @doc """
-  Deletes the specified TargetHttpProxy resource. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified TargetHttpProxy resource.
 
   ## Parameters
 
@@ -174,7 +174,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   end
 
   @doc """
-  Returns the specified TargetHttpProxy resource. Gets a list of available target HTTP proxies by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified TargetHttpProxy resource. Gets a list of available target HTTP proxies by making a list() request.
 
   ## Parameters
 
@@ -236,7 +236,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   end
 
   @doc """
-  Creates a TargetHttpProxy resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a TargetHttpProxy resource in the specified project using the data included in the request.
 
   ## Parameters
 
@@ -293,7 +293,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   end
 
   @doc """
-  Retrieves the list of TargetHttpProxy resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of TargetHttpProxy resources available to the specified project.
 
   ## Parameters
 
@@ -360,7 +360,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   end
 
   @doc """
-  Changes the URL map for TargetHttpProxy. (== suppress_warning http-rest-shadowed ==)
+  Changes the URL map for TargetHttpProxy.
 
   ## Parameters
 
