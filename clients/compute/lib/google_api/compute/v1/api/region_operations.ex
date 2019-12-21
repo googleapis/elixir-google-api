@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionOperations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified region-specific Operations resource. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified region-specific Operations resource.
 
   ## Parameters
 
@@ -92,7 +92,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionOperations do
   end
 
   @doc """
-  Retrieves the specified region-specific Operations resource. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the specified region-specific Operations resource.
 
   ## Parameters
 
@@ -158,7 +158,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionOperations do
   end
 
   @doc """
-  Retrieves a list of Operation resources contained within the specified region. (== suppress_warning http-rest-shadowed ==)
+  Retrieves a list of Operation resources contained within the specified region.
 
   ## Parameters
 
@@ -235,5 +235,71 @@ defmodule GoogleApi.Compute.V1.Api.RegionOperations do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.OperationList{}])
+  end
+
+  @doc """
+  Waits for the specified region-specific Operations resource until it is done or timeout, and retrieves the specified Operations resource. 1. Immediately returns when the operation is already done. 2. Waits for no more than the default deadline (2 minutes, subject to change) and then returns the current state of the operation, which may be DONE or still in progress. 3. Is best-effort: a. The server can wait less than the default deadline or zero seconds, in overload situations. b. There is no guarantee that the operation is actually done when returns. 4. User should be prepared to retry if the operation is not DONE.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
+  *   `project` (*type:* `String.t`) - Project ID for this request.
+  *   `region` (*type:* `String.t`) - Name of the region for this request.
+  *   `operation` (*type:* `String.t`) - Name of the Operations resource to return.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Compute.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec compute_region_operations_wait(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+  def compute_region_operations_wait(
+        connection,
+        project,
+        region,
+        operation,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{project}/regions/{region}/operations/{operation}/wait", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "operation" => URI.encode(operation, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Compute.V1.Model.Operation{}])
   end
 end

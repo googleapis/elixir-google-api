@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of VPN gateways. (== suppress_warning http-rest-shadowed ==)
+  Retrieves an aggregated list of VPN gateways.
 
   ## Parameters
 
@@ -93,7 +93,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
   end
 
   @doc """
-  Deletes the specified VPN gateway. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified VPN gateway.
 
   ## Parameters
 
@@ -165,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
   end
 
   @doc """
-  Returns the specified VPN gateway. Gets a list of available VPN gateways by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified VPN gateway. Gets a list of available VPN gateways by making a list() request.
 
   ## Parameters
 
@@ -231,7 +231,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
   end
 
   @doc """
-  Returns the status for the specified VPN gateway. (== suppress_warning http-rest-shadowed ==)
+  Returns the status for the specified VPN gateway.
 
   ## Parameters
 
@@ -301,7 +301,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
   end
 
   @doc """
-  Creates a VPN gateway in the specified project and region using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a VPN gateway in the specified project and region using the data included in the request.
 
   ## Parameters
 
@@ -365,7 +365,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
   end
 
   @doc """
-  Retrieves a list of VPN gateways available to the specified project and region. (== suppress_warning http-rest-shadowed ==)
+  Retrieves a list of VPN gateways available to the specified project and region.
 
   ## Parameters
 
@@ -439,7 +439,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
   end
 
   @doc """
-  Sets the labels on a VpnGateway. To learn more about labels, read the Labeling Resources documentation. (== suppress_warning http-rest-shadowed ==)
+  Sets the labels on a VpnGateway. To learn more about labels, read the Labeling Resources documentation.
 
   ## Parameters
 
@@ -513,7 +513,7 @@ defmodule GoogleApi.Compute.V1.Api.VpnGateways do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
+  Returns permissions that a caller has on the specified resource.
 
   ## Parameters
 

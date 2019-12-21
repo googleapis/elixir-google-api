@@ -65,7 +65,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
 
       This field is applicable to either:  
       - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. 
-      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+      - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.  
+
+      If sessionAffinity is not NONE, and this field is not set to >MAGLEV or RING_HASH, session affinity settings will not take effect.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `outlierDetection` (*type:* `GoogleApi.Compute.V1.Model.OutlierDetection.t`, *default:* `nil`) - Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
 
@@ -92,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
 
       When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
 
-      When the loadBalancingScheme is INTERNAL_SELF_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
+      When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
   *   `timeoutSec` (*type:* `integer()`, *default:* `nil`) - The backend service timeout has a different meaning depending on the type of load balancer. For more information read,  Backend service settings The default is 30 seconds.
   """
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of target VPN gateways. (== suppress_warning http-rest-shadowed ==)
+  Retrieves an aggregated list of target VPN gateways.
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
   end
 
   @doc """
-  Deletes the specified target VPN gateway. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified target VPN gateway.
 
   ## Parameters
 
@@ -178,7 +178,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
   end
 
   @doc """
-  Returns the specified target VPN gateway. Gets a list of available target VPN gateways by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified target VPN gateway. Gets a list of available target VPN gateways by making a list() request.
 
   ## Parameters
 
@@ -244,7 +244,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
   end
 
   @doc """
-  Creates a target VPN gateway in the specified project and region using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a target VPN gateway in the specified project and region using the data included in the request.
 
   ## Parameters
 
@@ -314,7 +314,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
   end
 
   @doc """
-  Retrieves a list of target VPN gateways available to the specified project and region. (== suppress_warning http-rest-shadowed ==)
+  Retrieves a list of target VPN gateways available to the specified project and region.
 
   ## Parameters
 

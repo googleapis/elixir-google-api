@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified interconnect. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified interconnect.
 
   ## Parameters
 
@@ -94,7 +94,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
   end
 
   @doc """
-  Returns the specified interconnect. Get a list of available interconnects by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified interconnect. Get a list of available interconnects by making a list() request.
 
   ## Parameters
 
@@ -156,7 +156,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
   end
 
   @doc """
-  Returns the interconnectDiagnostics for the specified interconnect. (== suppress_warning http-rest-shadowed ==)
+  Returns the interconnectDiagnostics for the specified interconnect.
 
   ## Parameters
 
@@ -222,7 +222,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
   end
 
   @doc """
-  Creates a Interconnect in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a Interconnect in the specified project using the data included in the request.
 
   ## Parameters
 
@@ -279,7 +279,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
   end
 
   @doc """
-  Retrieves the list of interconnect available to the specified project. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of interconnect available to the specified project.
 
   ## Parameters
 
@@ -346,7 +346,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
   end
 
   @doc """
-  Updates the specified interconnect with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed ==)
+  Updates the specified interconnect with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
 
   ## Parameters
 

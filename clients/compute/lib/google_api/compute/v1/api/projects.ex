@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Disable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+  Disable this project as a shared VPC host project.
 
   ## Parameters
 
@@ -81,7 +81,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Disable a service resource (also known as service project) associated with this host project. (== suppress_warning http-rest-shadowed ==)
+  Disable a service resource (also known as service project) associated with this host project.
 
   ## Parameters
 
@@ -147,7 +147,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Enable this project as a shared VPC host project. (== suppress_warning http-rest-shadowed ==)
+  Enable this project as a shared VPC host project.
 
   ## Parameters
 
@@ -202,7 +202,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Enable service resource (a.k.a service project) for a host project, so that subnets in the host project can be used by instances in the service project. (== suppress_warning http-rest-shadowed ==)
+  Enable service resource (a.k.a service project) for a host project, so that subnets in the host project can be used by instances in the service project.
 
   ## Parameters
 
@@ -259,7 +259,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Returns the specified Project resource. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified Project resource.
 
   ## Parameters
 
@@ -308,7 +308,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Gets the shared VPC host project that this project links to. May be empty if no link exists. (== suppress_warning http-rest-shadowed ==)
+  Gets the shared VPC host project that this project links to. May be empty if no link exists.
 
   ## Parameters
 
@@ -357,7 +357,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Gets service resources (a.k.a service project) associated with this host project. (== suppress_warning http-rest-shadowed ==)
+  Gets service resources (a.k.a service project) associated with this host project.
 
   ## Parameters
 
@@ -424,7 +424,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Lists all shared VPC host projects visible to the user in an organization. (== suppress_warning http-rest-shadowed ==)
+  Lists all shared VPC host projects visible to the user in an organization.
 
   ## Parameters
 
@@ -493,7 +493,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Moves a persistent disk from one zone to another. (== suppress_warning http-rest-shadowed ==)
+  Moves a persistent disk from one zone to another.
 
   ## Parameters
 
@@ -550,7 +550,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Moves an instance and its attached persistent disks from one zone to another. (== suppress_warning http-rest-shadowed ==)
+  Moves an instance and its attached persistent disks from one zone to another.
 
   ## Parameters
 
@@ -607,7 +607,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Sets metadata common to all instances within the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Sets metadata common to all instances within the specified project using the data included in the request.
 
   ## Parameters
 
@@ -673,7 +673,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Sets the default network tier of the project. The default network tier is used when an address/forwardingRule/instance is created without specifying the network tier field. (== suppress_warning http-rest-shadowed ==)
+  Sets the default network tier of the project. The default network tier is used when an address/forwardingRule/instance is created without specifying the network tier field.
 
   ## Parameters
 
@@ -739,7 +739,7 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   end
 
   @doc """
-  Enables the usage export feature and sets the usage export bucket where reports are stored. If you provide an empty request body using this method, the usage export feature will be disabled. (== suppress_warning http-rest-shadowed ==)
+  Enables the usage export feature and sets the usage export bucket where reports are stored. If you provide an empty request body using this method, the usage export feature will be disabled.
 
   ## Parameters
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves the list of all TargetHttpsProxy resources, regional and global, available to the specified project. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of all TargetHttpsProxy resources, regional and global, available to the specified project.
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   end
 
   @doc """
-  Deletes the specified TargetHttpsProxy resource. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified TargetHttpsProxy resource.
 
   ## Parameters
 
@@ -174,7 +174,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   end
 
   @doc """
-  Returns the specified TargetHttpsProxy resource. Gets a list of available target HTTPS proxies by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified TargetHttpsProxy resource. Gets a list of available target HTTPS proxies by making a list() request.
 
   ## Parameters
 
@@ -236,7 +236,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   end
 
   @doc """
-  Creates a TargetHttpsProxy resource in the specified project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a TargetHttpsProxy resource in the specified project using the data included in the request.
 
   ## Parameters
 
@@ -293,7 +293,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   end
 
   @doc """
-  Retrieves the list of TargetHttpsProxy resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of TargetHttpsProxy resources available to the specified project.
 
   ## Parameters
 
@@ -360,7 +360,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   end
 
   @doc """
-  Sets the QUIC override policy for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+  Sets the QUIC override policy for TargetHttpsProxy.
 
   ## Parameters
 
@@ -430,7 +430,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   end
 
   @doc """
-  Replaces SslCertificates for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+  Replaces SslCertificates for TargetHttpsProxy.
 
   ## Parameters
 
@@ -500,7 +500,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   end
 
   @doc """
-  Sets the SSL policy for TargetHttpsProxy. The SSL policy specifies the server-side support for SSL features. This affects connections between clients and the HTTPS proxy load balancer. They do not affect the connection between the load balancer and the backends. (== suppress_warning http-rest-shadowed ==)
+  Sets the SSL policy for TargetHttpsProxy. The SSL policy specifies the server-side support for SSL features. This affects connections between clients and the HTTPS proxy load balancer. They do not affect the connection between the load balancer and the backends.
 
   ## Parameters
 
@@ -570,7 +570,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   end
 
   @doc """
-  Changes the URL map for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+  Changes the URL map for TargetHttpsProxy.
 
   ## Parameters
 

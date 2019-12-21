@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified TargetHttpsProxy resource. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified TargetHttpsProxy resource.
 
   ## Parameters
 
@@ -98,7 +98,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
   end
 
   @doc """
-  Returns the specified TargetHttpsProxy resource in the specified region. Gets a list of available target HTTP proxies by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified TargetHttpsProxy resource in the specified region. Gets a list of available target HTTP proxies by making a list() request.
 
   ## Parameters
 
@@ -164,7 +164,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
   end
 
   @doc """
-  Creates a TargetHttpsProxy resource in the specified project and region using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates a TargetHttpsProxy resource in the specified project and region using the data included in the request.
 
   ## Parameters
 
@@ -234,7 +234,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
   end
 
   @doc """
-  Retrieves the list of TargetHttpsProxy resources available to the specified project in the specified region. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of TargetHttpsProxy resources available to the specified project in the specified region.
 
   ## Parameters
 
@@ -314,7 +314,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
   end
 
   @doc """
-  Replaces SslCertificates for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+  Replaces SslCertificates for TargetHttpsProxy.
 
   ## Parameters
 
@@ -391,7 +391,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpsProxies do
   end
 
   @doc """
-  Changes the URL map for TargetHttpsProxy. (== suppress_warning http-rest-shadowed ==)
+  Changes the URL map for TargetHttpsProxy.
 
   ## Parameters
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Return a specified license code. License codes are mirrored across all projects that have permissions to read the License Code. (== suppress_warning http-rest-shadowed ==)
+  Return a specified license code. License codes are mirrored across all projects that have permissions to read the License Code.
 
   ## Parameters
 
@@ -88,7 +88,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
+  Returns permissions that a caller has on the specified resource.
 
   ## Parameters
 

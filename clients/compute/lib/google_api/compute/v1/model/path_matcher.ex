@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.PathMatcher do
       Authorization requires one or more of the following Google IAM permissions on the specified resource default_service:  
       - compute.backendBuckets.use 
       - compute.backendServices.use
-  *   `defaultUrlRedirect` (*type:* `GoogleApi.Compute.V1.Model.HttpRedirectAction.t`, *default:* `nil`) - When when none of the specified pathRules or routeRules match, the request is redirected to a URL specified by defaultUrlRedirect.
+  *   `defaultUrlRedirect` (*type:* `GoogleApi.Compute.V1.Model.HttpRedirectAction.t`, *default:* `nil`) - When none of the specified pathRules or routeRules match, the request is redirected to a URL specified by defaultUrlRedirect.
       If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `headerAction` (*type:* `GoogleApi.Compute.V1.Model.HttpHeaderAction.t`, *default:* `nil`) - Specifies changes to request and response headers that need to take effect for the selected backendService.
@@ -40,7 +40,7 @@ defmodule GoogleApi.Compute.V1.Model.PathMatcher do
   *   `pathRules` (*type:* `list(GoogleApi.Compute.V1.Model.PathRule.t)`, *default:* `nil`) - The list of path rules. Use this list instead of routeRules when routing based on simple path matching is all that's required. The order by which path rules are specified does not matter. Matches are always done on the longest-path-first basis.
       For example: a pathRule with a path /a/b/c/* will match before /a/b/* irrespective of the order in which those paths appear in this list.
       Within a given pathMatcher, only one of pathRules or routeRules must be set.
-  *   `routeRules` (*type:* `list(GoogleApi.Compute.V1.Model.HttpRouteRule.t)`, *default:* `nil`) - The list of ordered HTTP route rules. Use this list instead of pathRules when advanced route matching and routing actions are desired. The order of specifying routeRules matters: the first rule that matches will cause its specified routing action to take effect.
+  *   `routeRules` (*type:* `list(GoogleApi.Compute.V1.Model.HttpRouteRule.t)`, *default:* `nil`) - The list of HTTP route rules. Use this list instead of pathRules when advanced route matching and routing actions are desired. routeRules are evaluated in order of priority, from the lowest to highest number.
       Within a given pathMatcher, only one of pathRules or routeRules must be set.
       routeRules are not supported in UrlMaps intended for External Load balancers.
   """

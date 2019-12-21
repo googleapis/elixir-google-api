@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.VpnGateway do
   @moduledoc """
-  Represents a VPN gateway resource.
+  Represents a VPN gateway resource. Next ID: 13
 
   ## Attributes
 

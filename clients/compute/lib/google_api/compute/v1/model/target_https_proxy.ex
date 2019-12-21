@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
   @moduledoc """
   Represents a Target HTTPS Proxy resource.
 
-  A target HTTPS proxy is a component of certain types of load balancers. Global forwarding rules reference a target HTTPS proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies. (== resource_for beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==)
+  A target HTTPS proxy is a component of GCP HTTPS load balancers. Forwarding rules reference a target HTTPS proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies and  Forwarding rule concepts. (== resource_for beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==) (== resource_for beta.regionTargetHttpsProxies ==) (== resource_for v1.regionTargetHttpsProxies ==)
 
   ## Attributes
 

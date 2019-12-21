@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
   @moduledoc """
-  The network endpoint.
+  The network endpoint. Next ID: 7
 
   ## Attributes
 

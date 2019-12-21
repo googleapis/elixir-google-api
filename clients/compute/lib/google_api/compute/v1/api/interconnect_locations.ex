@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns the details for the specified interconnect location. Gets a list of available interconnect locations by making a list() request. (== suppress_warning http-rest-shadowed ==)
+  Returns the details for the specified interconnect location. Gets a list of available interconnect locations by making a list() request.
 
   ## Parameters
 
@@ -88,7 +88,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
   end
 
   @doc """
-  Retrieves the list of interconnect locations available to the specified project. (== suppress_warning http-rest-shadowed ==)
+  Retrieves the list of interconnect locations available to the specified project.
 
   ## Parameters
 

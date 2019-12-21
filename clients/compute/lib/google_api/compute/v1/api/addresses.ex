@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves an aggregated list of addresses. (== suppress_warning http-rest-shadowed ==)
+  Retrieves an aggregated list of addresses.
 
   ## Parameters
 
@@ -93,7 +93,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
   end
 
   @doc """
-  Deletes the specified address resource. (== suppress_warning http-rest-shadowed ==)
+  Deletes the specified address resource.
 
   ## Parameters
 
@@ -165,7 +165,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
   end
 
   @doc """
-  Returns the specified address resource. (== suppress_warning http-rest-shadowed ==)
+  Returns the specified address resource.
 
   ## Parameters
 
@@ -231,7 +231,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
   end
 
   @doc """
-  Creates an address resource in the specified project by using the data included in the request. (== suppress_warning http-rest-shadowed ==)
+  Creates an address resource in the specified project by using the data included in the request.
 
   ## Parameters
 
@@ -290,7 +290,7 @@ defmodule GoogleApi.Compute.V1.Api.Addresses do
   end
 
   @doc """
-  Retrieves a list of addresses contained within the specified region. (== suppress_warning http-rest-shadowed ==)
+  Retrieves a list of addresses contained within the specified region.
 
   ## Parameters
 
