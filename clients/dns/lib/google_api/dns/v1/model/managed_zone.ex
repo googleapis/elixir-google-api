@@ -32,6 +32,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   *   `name` (*type:* `String.t`, *default:* `nil`) - User assigned name for this resource. Must be unique within the project. The name must be 1-63 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes.
   *   `nameServerSet` (*type:* `String.t`, *default:* `nil`) - Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users will leave this field unset.
   *   `nameServers` (*type:* `list(String.t)`, *default:* `nil`) - Delegate your managed_zone to these virtual name servers; defined by the server (output only)
+  *   `peeringConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig.t`, *default:* `nil`) - The presence of this field indicates that DNS Peering is enabled for this zone. The value of this field contains the network to peer with.
   *   `privateVisibilityConfig` (*type:* `GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig.t`, *default:* `nil`) - For privately visible zones, the set of Virtual Private Cloud resources that the zone is visible from.
   *   `visibility` (*type:* `String.t`, *default:* `nil`) - The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.
   """
@@ -50,6 +51,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
           :name => String.t(),
           :nameServerSet => String.t(),
           :nameServers => list(String.t()),
+          :peeringConfig => GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig.t(),
           :privateVisibilityConfig =>
             GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig.t(),
           :visibility => String.t()
@@ -66,6 +68,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZone do
   field(:name)
   field(:nameServerSet)
   field(:nameServers, type: :list)
+  field(:peeringConfig, as: GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig)
   field(:privateVisibilityConfig, as: GoogleApi.DNS.V1.Model.ManagedZonePrivateVisibilityConfig)
   field(:visibility)
 end
