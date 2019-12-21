@@ -26,7 +26,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Resets all player progress on the event with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player that use the event will also be reset.
+  Resets all player progress on the event with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
@@ -75,7 +75,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
   end
 
   @doc """
-  Resets all player progress on all events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player will also be reset.
+  Resets all player progress on all events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
 
   ## Parameters
 
@@ -121,7 +121,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
   end
 
   @doc """
-  Resets all draft events for all players. This method is only available to user accounts for your developer console. All quests that use any of these events will also be reset.
+  Resets all draft events for all players. This method is only available to user accounts for your developer console.
 
   ## Parameters
 
@@ -174,7 +174,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
   end
 
   @doc """
-  Resets the event with the given ID for all players. This method is only available to user accounts for your developer console. Only draft events can be reset. All quests that use the event will also be reset.
+  Resets the event with the given ID for all players. This method is only available to user accounts for your developer console. Only draft events can be reset.
 
   ## Parameters
 
@@ -232,7 +232,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
   end
 
   @doc """
-  Resets events with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft events may be reset. All quests that use any of the events will also be reset.
+  Resets events with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft events may be reset.
 
   ## Parameters
 
