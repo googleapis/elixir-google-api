@@ -347,9 +347,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fieldMask` (*type:* `String.t`) - If field_mask is present, specifies the subset of [][google.spanner.admin.instance.v1.Instance] fields that
+      *   `:fieldMask` (*type:* `String.t`) - If field_mask is present, specifies the subset of Instance fields that
           should be returned.
-          If absent, all [][google.spanner.admin.instance.v1.Instance] fields are returned.
+          If absent, all Instance fields are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
