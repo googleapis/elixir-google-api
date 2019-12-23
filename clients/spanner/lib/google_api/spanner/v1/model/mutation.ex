@@ -30,6 +30,10 @@ defmodule GoogleApi.Spanner.V1.Model.Mutation do
   *   `insertOrUpdate` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Like insert, except that if the row already exists, then
       its column values are overwritten with the ones provided. Any
       column values not explicitly written are preserved.
+
+      When using insert_or_update, just as when using insert, all `NOT
+      NULL` columns in the table must be given a value. This holds true
+      even when the row already exists and will therefore actually be updated.
   *   `replace` (*type:* `GoogleApi.Spanner.V1.Model.Write.t`, *default:* `nil`) - Like insert, except that if the row already exists, it is
       deleted, and the column values provided are inserted
       instead. Unlike insert_or_update, this means any values not
