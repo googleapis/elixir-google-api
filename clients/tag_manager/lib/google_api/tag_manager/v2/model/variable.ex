@@ -23,19 +23,40 @@ defmodule GoogleApi.TagManager.V2.Model.Variable do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
-  *   `disablingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - For mobile containers only: A list of trigger IDs for disabling conditional variables; the variable is enabled if one of the enabling trigger is true while all the disabling trigger are false. Treated as an unordered set.
-  *   `enablingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - For mobile containers only: A list of trigger IDs for enabling conditional variables; the variable is enabled if one of the enabling triggers is true while all the disabling triggers are false. Treated as an unordered set.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Variable as computed at storage time. This value is recomputed whenever the variable is modified.
+  *   `disablingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - For mobile containers only: A list of trigger IDs for disabling conditional
+      variables; the variable is enabled if one of the enabling trigger is true
+      while all the disabling trigger are false. Treated as an unordered set.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
+  *   `enablingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - For mobile containers only: A list of trigger IDs for enabling conditional
+      variables; the variable is enabled if one of the enabling triggers is true
+      while all the disabling triggers are false. Treated as an unordered set.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Variable as computed at storage time.
+      This value is recomputed whenever the variable is modified.
   *   `formatValue` (*type:* `GoogleApi.TagManager.V2.Model.VariableFormatValue.t`, *default:* `nil`) - Option to convert a variable value to other value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Variable display name.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
   *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this variable in the container.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
   *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The variable's parameters.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
   *   `parentFolderId` (*type:* `String.t`, *default:* `nil`) - Parent folder id.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Variable's API relative path.
   *   `scheduleEndMs` (*type:* `String.t`, *default:* `nil`) - The end timestamp in milliseconds to schedule a variable.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
   *   `scheduleStartMs` (*type:* `String.t`, *default:* `nil`) - The start timestamp in milliseconds to schedule a variable.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   *   `type` (*type:* `String.t`, *default:* `nil`) - GTM Variable Type.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
   *   `variableId` (*type:* `String.t`, *default:* `nil`) - The Variable ID uniquely identifies the GTM Variable.
   *   `workspaceId` (*type:* `String.t`, *default:* `nil`) - GTM Workspace ID.
   """

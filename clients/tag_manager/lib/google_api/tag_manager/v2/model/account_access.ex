@@ -22,6 +22,8 @@ defmodule GoogleApi.TagManager.V2.Model.AccountAccess do
   ## Attributes
 
   *   `permission` (*type:* `String.t`, *default:* `nil`) - Whether the user has no access, user access, or admin access to an account.
+      @mutable tagmanager.accounts.permissions.create
+      @mutable tagmanager.accounts.permissions.update
   """
 
   use GoogleApi.Gax.ModelBase

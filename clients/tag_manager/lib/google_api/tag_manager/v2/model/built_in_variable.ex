@@ -17,7 +17,10 @@
 
 defmodule GoogleApi.TagManager.V2.Model.BuiltInVariable do
   @moduledoc """
-  Built-in variables are a special category of variables that are pre-created and non-customizable. They provide common functionality like accessing propeties of the gtm data layer, monitoring clicks, or accessing elements of a page URL.
+  Built-in variables are a special category of variables that are pre-created
+  and non-customizable. They provide common functionality like accessing
+  propeties of the gtm data layer, monitoring clicks, or accessing elements
+  of a page URL.
 
   ## Attributes
 
@@ -26,6 +29,8 @@ defmodule GoogleApi.TagManager.V2.Model.BuiltInVariable do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the built-in variable to be used to refer to the built-in variable.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM BuiltInVariable's API relative path.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of built-in variable.
+      @required.tagmanager.accounts.containers.workspaces.built_in_variable.update
+      @mutable tagmanager.accounts.containers.workspaces.built_in_variable.update
   *   `workspaceId` (*type:* `String.t`, *default:* `nil`) - GTM Workspace ID.
   """
 
