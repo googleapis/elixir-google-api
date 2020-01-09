@@ -22,7 +22,6 @@ defmodule GoogleApi.YouTube.V3.Model.Member do
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube assigns to uniquely identify the member.
   *   `kind` (*type:* `String.t`, *default:* `youtube#member`) - Identifies what kind of resource this is. Value: the fixed string "youtube#member".
   *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.MemberSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the member.
   """
@@ -31,13 +30,11 @@ defmodule GoogleApi.YouTube.V3.Model.Member do
 
   @type t :: %__MODULE__{
           :etag => String.t(),
-          :id => String.t(),
           :kind => String.t(),
           :snippet => GoogleApi.YouTube.V3.Model.MemberSnippet.t()
         }
 
   field(:etag)
-  field(:id)
   field(:kind)
   field(:snippet, as: GoogleApi.YouTube.V3.Model.MemberSnippet)
 end
