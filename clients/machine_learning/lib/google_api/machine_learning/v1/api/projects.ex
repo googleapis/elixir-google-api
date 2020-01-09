@@ -30,9 +30,6 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   AI Platform implements a custom `explain` verb on top of an HTTP POST
   method.
 
-  For details of the request and response format, see the **guide
-  to the [explain request format](/ml-engine/docs/v1/explain-request)**.
-
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
@@ -158,12 +155,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Performs prediction on the data in the request.
-  AI Platform implements a custom `predict` verb on top of an HTTP POST
-  method.
+  Performs online prediction on the data in the request.
 
-  For details of the request and response format, see the **guide
-  to the [predict request format](/ml-engine/docs/v1/predict-request)**.
+  <div>{% dynamic include "/ai-platform/includes/___predict-request" %}</div>
 
   ## Parameters
 

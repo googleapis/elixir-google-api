@@ -24,7 +24,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttri
   ## Attributes
 
   *   `numPaths` (*type:* `integer()`, *default:* `nil`) - The number of feature permutations to consider when approximating the
-      shapley values.
+      Shapley values.
   """
 
   use GoogleApi.Gax.ModelBase

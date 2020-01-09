@@ -22,7 +22,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictRequest do
   ## Attributes
 
   *   `httpBody` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody.t`, *default:* `nil`) - 
-      Required. The prediction request body.
+      Required. The prediction request body. Refer to the [request body details
+      section](#request-body-details) for more information on how to structure
+      your request.
   """
 
   use GoogleApi.Gax.ModelBase
