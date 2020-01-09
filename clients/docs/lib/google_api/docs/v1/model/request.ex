@@ -22,6 +22,7 @@ defmodule GoogleApi.Docs.V1.Model.Request do
   ## Attributes
 
   *   `createFooter` (*type:* `GoogleApi.Docs.V1.Model.CreateFooterRequest.t`, *default:* `nil`) - Creates a footer.
+  *   `createFootnote` (*type:* `GoogleApi.Docs.V1.Model.CreateFootnoteRequest.t`, *default:* `nil`) - Creates a footnote.
   *   `createHeader` (*type:* `GoogleApi.Docs.V1.Model.CreateHeaderRequest.t`, *default:* `nil`) - Creates a header.
   *   `createNamedRange` (*type:* `GoogleApi.Docs.V1.Model.CreateNamedRangeRequest.t`, *default:* `nil`) - Creates a named range.
   *   `createParagraphBullets` (*type:* `GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest.t`, *default:* `nil`) - Creates bullets for paragraphs.
@@ -56,6 +57,7 @@ defmodule GoogleApi.Docs.V1.Model.Request do
 
   @type t :: %__MODULE__{
           :createFooter => GoogleApi.Docs.V1.Model.CreateFooterRequest.t(),
+          :createFootnote => GoogleApi.Docs.V1.Model.CreateFootnoteRequest.t(),
           :createHeader => GoogleApi.Docs.V1.Model.CreateHeaderRequest.t(),
           :createNamedRange => GoogleApi.Docs.V1.Model.CreateNamedRangeRequest.t(),
           :createParagraphBullets => GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest.t(),
@@ -89,6 +91,7 @@ defmodule GoogleApi.Docs.V1.Model.Request do
         }
 
   field(:createFooter, as: GoogleApi.Docs.V1.Model.CreateFooterRequest)
+  field(:createFootnote, as: GoogleApi.Docs.V1.Model.CreateFootnoteRequest)
   field(:createHeader, as: GoogleApi.Docs.V1.Model.CreateHeaderRequest)
   field(:createNamedRange, as: GoogleApi.Docs.V1.Model.CreateNamedRangeRequest)
   field(:createParagraphBullets, as: GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest)
