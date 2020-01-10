@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.SparkSqlJob do
   @moduledoc """
-  A Cloud Dataproc job for running Apache Spark SQL (http://spark.apache.org/sql/) queries.
+  A Dataproc job for running Apache Spark SQL (http://spark.apache.org/sql/) queries.
 
   ## Attributes
 
   *   `jarFileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
   *   `loggingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.LoggingConfig.t`, *default:* `nil`) - Optional. The runtime log config for job execution.
-  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Cloud Dataproc API may be overwritten.
+  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Dataproc API may be overwritten.
   *   `queryFileUri` (*type:* `String.t`, *default:* `nil`) - The HCFS URI of the script that contains SQL queries.
   *   `queryList` (*type:* `GoogleApi.Dataproc.V1.Model.QueryList.t`, *default:* `nil`) - A list of queries.
   *   `scriptVariables` (*type:* `map()`, *default:* `nil`) - Optional. Mapping of query variable names to values (equivalent to the Spark SQL command: SET name="value";).

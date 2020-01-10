@@ -28,9 +28,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
       projects/[project_id]/regions/global/default
       default
   *   `reservationAffinity` (*type:* `GoogleApi.Dataproc.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Optional. Reservation Affinity for consuming Zonal reservation.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The service account of the instances. Defaults to the default Compute Engine service account. Custom service accounts need permissions equivalent to the following IAM roles:
-      roles/logging.logWriter
-      roles/storage.objectAdmin(see https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts for more information). Example: [account_id]@[project_id].iam.gserviceaccount.com
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The Dataproc service account (also see VM Data Plane identity) used by Dataproc cluster VM instances to access Google Cloud Platform services.If not specified, the Compute Engine default service account is used.
   *   `serviceAccountScopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The URIs of service account scopes to be included in Compute Engine instances. The following base set of scopes is always included:
       https://www.googleapis.com/auth/cloud.useraccounts.readonly
       https://www.googleapis.com/auth/devstorage.read_write
@@ -44,7 +42,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GceClusterConfig do
       projects/[project_id]/regions/us-east1/subnetworks/sub0
       sub0
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - The Compute Engine tags to add to all instances (see Tagging instances).
-  *   `zoneUri` (*type:* `String.t`, *default:* `nil`) - Optional. The zone where the Compute Engine cluster will be located. On a create request, it is required in the "global" region. If omitted in a non-global Cloud Dataproc region, the service will pick a zone in the corresponding Compute Engine region. On a get request, zone will always be present.A full URL, partial URI, or short name are valid. Examples:
+  *   `zoneUri` (*type:* `String.t`, *default:* `nil`) - Optional. The zone where the Compute Engine cluster will be located. On a create request, it is required in the "global" region. If omitted in a non-global Dataproc region, the service will pick a zone in the corresponding Compute Engine region. On a get request, zone will always be present.A full URL, partial URI, or short name are valid. Examples:
       https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]
       projects/[project_id]/zones/[zone]
       us-central1-f

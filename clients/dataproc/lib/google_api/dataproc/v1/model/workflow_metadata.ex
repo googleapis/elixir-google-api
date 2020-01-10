@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
   @moduledoc """
-  A Cloud Dataproc workflow template resource.
+  A Dataproc workflow template resource.
 
   ## Attributes
 

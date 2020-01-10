@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterStatus do
 
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. Details of cluster's state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The cluster's state.
-  *   `stateStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this state was entered.
+  *   `stateStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this state was entered (see JSON representation of Timestamp (https://developers.google.com/protocol-buffers/docs/proto3#json)).
   *   `substate` (*type:* `String.t`, *default:* `nil`) - Output only. Additional state information that includes status reported by the agent.
   """
 
