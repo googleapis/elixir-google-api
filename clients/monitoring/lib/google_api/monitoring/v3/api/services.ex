@@ -99,7 +99,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the Service to delete. Of the form projects/{project_id}/service/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the Service to delete. Of the form projects/{project_id}/services/{service_id}.
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
