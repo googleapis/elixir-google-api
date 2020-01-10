@@ -29,8 +29,6 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionMetadata do
       vertical - see https://www.naics.com/search/.
   *   `interactionType` (*type:* `String.t`, *default:* `nil`) - The use case most closely describing the audio content to be recognized.
   *   `microphoneDistance` (*type:* `String.t`, *default:* `nil`) - The audio type that most closely describes the audio being recognized.
-  *   `obfuscatedId` (*type:* `String.t`, *default:* `nil`) - Obfuscated (privacy-protected) ID of the user, to identify number of
-      unique users using the service.
   *   `originalMediaType` (*type:* `String.t`, *default:* `nil`) - The original media the speech was recorded on.
   *   `originalMimeType` (*type:* `String.t`, *default:* `nil`) - Mime type of the original audio file.  For example `audio/m4a`,
       `audio/x-alaw-basic`, `audio/mp3`, `audio/3gpp`.
@@ -49,7 +47,6 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionMetadata do
           :industryNaicsCodeOfAudio => integer(),
           :interactionType => String.t(),
           :microphoneDistance => String.t(),
-          :obfuscatedId => String.t(),
           :originalMediaType => String.t(),
           :originalMimeType => String.t(),
           :recordingDeviceName => String.t(),
@@ -60,7 +57,6 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionMetadata do
   field(:industryNaicsCodeOfAudio)
   field(:interactionType)
   field(:microphoneDistance)
-  field(:obfuscatedId)
   field(:originalMediaType)
   field(:originalMimeType)
   field(:recordingDeviceName)
