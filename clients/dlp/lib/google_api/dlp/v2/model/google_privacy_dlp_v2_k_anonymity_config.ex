@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityConfig do
 
   ## Attributes
 
-  *   `entityId` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2EntityId.t`, *default:* `nil`) - Optional message indicating that multiple rows might be associated to a
+  *   `entityId` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2EntityId.t`, *default:* `nil`) - Message indicating that multiple rows might be associated to a
       single individual. If the same entity_id is associated to multiple
       quasi-identifier tuples over distinct rows, we consider the entire
       collection of tuples as the composite quasi-identifier. This collection

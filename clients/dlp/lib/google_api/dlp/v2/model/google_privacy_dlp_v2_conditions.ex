@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Conditions do
 
   ## Attributes
 
-  *   `conditions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Condition.t)`, *default:* `nil`) - 
+  *   `conditions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Condition.t)`, *default:* `nil`) - A collection of conditions.
   """
 
   use GoogleApi.Gax.ModelBase

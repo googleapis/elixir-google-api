@@ -26,14 +26,14 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value do
 
   ## Attributes
 
-  *   `booleanValue` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `dateValue` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeDate.t`, *default:* `nil`) - 
-  *   `dayOfWeekValue` (*type:* `String.t`, *default:* `nil`) - 
-  *   `floatValue` (*type:* `float()`, *default:* `nil`) - 
-  *   `integerValue` (*type:* `String.t`, *default:* `nil`) - 
-  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - 
-  *   `timeValue` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeTimeOfDay.t`, *default:* `nil`) - 
-  *   `timestampValue` (*type:* `DateTime.t`, *default:* `nil`) - 
+  *   `booleanValue` (*type:* `boolean()`, *default:* `nil`) - boolean
+  *   `dateValue` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeDate.t`, *default:* `nil`) - date
+  *   `dayOfWeekValue` (*type:* `String.t`, *default:* `nil`) - day of week
+  *   `floatValue` (*type:* `float()`, *default:* `nil`) - float
+  *   `integerValue` (*type:* `String.t`, *default:* `nil`) - integer
+  *   `stringValue` (*type:* `String.t`, *default:* `nil`) - string
+  *   `timeValue` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeTimeOfDay.t`, *default:* `nil`) - time of day
+  *   `timestampValue` (*type:* `DateTime.t`, *default:* `nil`) - timestamp
   """
 
   use GoogleApi.Gax.ModelBase

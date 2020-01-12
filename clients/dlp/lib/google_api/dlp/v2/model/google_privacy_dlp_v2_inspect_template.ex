@@ -24,16 +24,16 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation timestamp of an inspectTemplate, output only field.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of an inspectTemplate.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Short description (max 256 chars).
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name (max 256 chars).
   *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - The core content of the template. Configuration of the scanning process.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The template name. Output only.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The template name.
 
       The template will have one of the following formats:
       `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-      `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of an inspectTemplate, output only field.
+      `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of an inspectTemplate.
   """
 
   use GoogleApi.Gax.ModelBase

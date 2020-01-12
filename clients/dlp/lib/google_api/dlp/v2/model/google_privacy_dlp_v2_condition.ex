@@ -39,9 +39,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Condition do
 
   ## Attributes
 
-  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Field within the record this condition is evaluated against. [required]
-  *   `operator` (*type:* `String.t`, *default:* `nil`) - Operator used to compare the field or infoType to the value. [required]
-  *   `value` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Value to compare against. [Required, except for `EXISTS` tests.]
+  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Required. Field within the record this condition is evaluated against.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - Required. Operator used to compare the field or infoType to the value.
+  *   `value` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Value to compare against. [Mandatory, except for `EXISTS` tests.]
   """
 
   use GoogleApi.Gax.ModelBase

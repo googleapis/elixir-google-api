@@ -29,7 +29,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationSummary do
       this list will contain all of them; otherwise, only one is supplied.
   *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - Set if the transformation was limited to a specific InfoType.
   *   `recordSuppress` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t`, *default:* `nil`) - The specific suppression option these stats apply to.
-  *   `results` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SummaryResult.t)`, *default:* `nil`) - 
+  *   `results` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SummaryResult.t)`, *default:* `nil`) - Collection of all transformations that took place or had an error.
   *   `transformation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t`, *default:* `nil`) - The specific transformation these stats apply to.
   *   `transformedBytes` (*type:* `String.t`, *default:* `nil`) - Total size in bytes that were transformed in some way.
   """

@@ -25,7 +25,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation do
   *   `infoTypes` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t)`, *default:* `nil`) - InfoTypes to apply the transformation to. An empty list will cause
       this transformation to apply to all findings that correspond to
       infoTypes that were requested in `InspectConfig`.
-  *   `primitiveTransformation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t`, *default:* `nil`) - Primitive transformation to apply to the infoType. [required]
+  *   `primitiveTransformation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t`, *default:* `nil`) - Required. Primitive transformation to apply to the infoType.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -269,7 +269,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - The geographic location where deidentifications templates will be retrieved
           from. Use `-` for all locations. Reserved for future extensions.
-      *   `:orderBy` (*type:* `String.t`) - Optional comma separated list of fields to order by,
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
           insignificant.
@@ -282,9 +282,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
           - `update_time`: corresponds to time the template was last updated.
           - `name`: corresponds to template's name.
           - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Optional size of the page, can be limited by server. If zero server returns
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
           a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional page token to continue retrieval. Comes from previous call
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
           to `ListDeidentifyTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -653,7 +653,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - The geographic location where inspection templates will be retrieved from.
           Use `-` for all locations. Reserved for future extensions.
-      *   `:orderBy` (*type:* `String.t`) - Optional comma separated list of fields to order by,
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
           insignificant.
@@ -666,9 +666,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
           - `update_time`: corresponds to time the template was last updated.
           - `name`: corresponds to template's name.
           - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Optional size of the page, can be limited by server. If zero server returns
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
           a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional page token to continue retrieval. Comes from previous call
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
           to `ListInspectTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1049,7 +1049,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orderBy` (*type:* `String.t`) - Optional comma separated list of fields to order by,
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
           insignificant.
@@ -1062,9 +1062,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
           - `update_time`: corresponds to time the template was last updated.
           - `name`: corresponds to template's name.
           - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Optional size of the page, can be limited by server. If zero server returns
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
           a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional page token to continue retrieval. Comes from previous call
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
           to `ListDeidentifyTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1445,7 +1445,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orderBy` (*type:* `String.t`) - Optional comma separated list of fields to order by,
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
           insignificant.
@@ -1458,9 +1458,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
           - `update_time`: corresponds to time the template was last updated.
           - `name`: corresponds to template's name.
           - `display_name`: corresponds to template's display name.
-      *   `:pageSize` (*type:* `integer()`) - Optional size of the page, can be limited by server. If zero server returns
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
           a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional page token to continue retrieval. Comes from previous call
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
           to `ListInspectTemplates`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1842,7 +1842,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orderBy` (*type:* `String.t`) - Optional comma separated list of fields to order by,
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
           insignificant.
@@ -1856,9 +1856,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
           - `state`: corresponds to the state of the resource.
           - `name`: corresponds to resource name.
           - `display_name`: corresponds to info type's display name.
-      *   `:pageSize` (*type:* `integer()`) - Optional size of the page, can be limited by server. If zero server returns
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
           a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional page token to continue retrieval. Comes from previous call
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
           to `ListStoredInfoTypes`.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2232,7 +2232,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:locationId` (*type:* `String.t`) - The geographic location where stored infoTypes will be retrieved from.
           Use `-` for all locations. Reserved for future extensions.
-      *   `:orderBy` (*type:* `String.t`) - Optional comma separated list of fields to order by,
+      *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
           insignificant.
@@ -2246,9 +2246,9 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
           - `state`: corresponds to the state of the resource.
           - `name`: corresponds to resource name.
           - `display_name`: corresponds to info type's display name.
-      *   `:pageSize` (*type:* `integer()`) - Optional size of the page, can be limited by server. If zero server returns
+      *   `:pageSize` (*type:* `integer()`) - Size of the page, can be limited by server. If zero server returns
           a page of max size 100.
-      *   `:pageToken` (*type:* `String.t`) - Optional page token to continue retrieval. Comes from previous call
+      *   `:pageToken` (*type:* `String.t`) - Page token to continue retrieval. Comes from previous call
           to `ListStoredInfoTypes`.
   *   `opts` (*type:* `keyword()`) - Call options
 

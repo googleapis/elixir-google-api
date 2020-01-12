@@ -24,7 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformations do
 
   *   `fieldTransformations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation.t)`, *default:* `nil`) - Transform the record by applying various field transformations.
   *   `recordSuppressions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordSuppression.t)`, *default:* `nil`) - Configuration defining which records get suppressed entirely. Records that
-      match any suppression rule are omitted from the output [optional].
+      match any suppression rule are omitted from the output.
   """
 
   use GoogleApi.Gax.ModelBase

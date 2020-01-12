@@ -27,11 +27,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AuxiliaryTable do
 
   ## Attributes
 
-  *   `quasiIds` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiIdField.t)`, *default:* `nil`) - Quasi-identifier columns. [required]
-  *   `relativeFrequency` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - The relative frequency column must contain a floating-point number
+  *   `quasiIds` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiIdField.t)`, *default:* `nil`) - Required. Quasi-identifier columns.
+  *   `relativeFrequency` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Required. The relative frequency column must contain a floating-point number
       between 0 and 1 (inclusive). Null values are assumed to be zero.
-      [required]
-  *   `table` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - Auxiliary table location. [required]
+  *   `table` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - Required. Auxiliary table location.
   """
 
   use GoogleApi.Gax.ModelBase

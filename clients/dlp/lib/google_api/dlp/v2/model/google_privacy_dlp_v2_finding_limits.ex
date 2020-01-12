@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits do
   @moduledoc """
-
+  Configuration to control the number of findings returned.
 
   ## Attributes
 

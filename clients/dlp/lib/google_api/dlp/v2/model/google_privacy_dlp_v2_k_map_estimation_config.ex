@@ -23,17 +23,16 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationConfig do
   using publicly available data (like the US Census), or using a custom
   statistical model (indicated as one or several BigQuery tables), or by
   extrapolating from the distribution of values in the input dataset.
-  A column with a semantic tag attached.
 
   ## Attributes
 
   *   `auxiliaryTables` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AuxiliaryTable.t)`, *default:* `nil`) - Several auxiliary tables can be used in the analysis. Each custom_tag
       used to tag a quasi-identifiers column must appear in exactly one column
       of one auxiliary table.
-  *   `quasiIds` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TaggedField.t)`, *default:* `nil`) - Fields considered to be quasi-identifiers. No two columns can have the
-      same tag. [required]
+  *   `quasiIds` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TaggedField.t)`, *default:* `nil`) - Required. Fields considered to be quasi-identifiers. No two columns can have the
+      same tag.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-      Required if no column is tagged with a region-specific InfoType (like
+      Set if no column is tagged with a region-specific InfoType (like
       US_ZIP_5) or a region code.
   """
 

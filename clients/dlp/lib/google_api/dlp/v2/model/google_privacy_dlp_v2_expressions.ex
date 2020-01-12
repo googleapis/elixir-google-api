@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Expressions do
 
   ## Attributes
 
-  *   `conditions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Conditions.t`, *default:* `nil`) - 
+  *   `conditions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Conditions.t`, *default:* `nil`) - Conditions to apply to the expression.
   *   `logicalOperator` (*type:* `String.t`, *default:* `nil`) - The operator to apply to the result of conditions. Default and currently
       only supported value is `AND`.
   """

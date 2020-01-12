@@ -41,7 +41,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig do
       If you need precise control and predictability as to what detectors are
       run you should specify specific InfoTypes listed in the reference,
       otherwise a default list will be used, which may change over time.
-  *   `limits` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits.t`, *default:* `nil`) - 
+  *   `limits` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits.t`, *default:* `nil`) - Configuration to control the number of findings returned.
   *   `minLikelihood` (*type:* `String.t`, *default:* `nil`) - Only returns findings equal or above this threshold. The default is
       POSSIBLE.
       See https://cloud.google.com/dlp/docs/likelihood to learn more.

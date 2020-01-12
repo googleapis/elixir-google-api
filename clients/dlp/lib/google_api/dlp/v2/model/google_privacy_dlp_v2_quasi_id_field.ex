@@ -22,8 +22,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiIdField do
 
   ## Attributes
 
-  *   `customTag` (*type:* `String.t`, *default:* `nil`) - 
-  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - 
+  *   `customTag` (*type:* `String.t`, *default:* `nil`) - A auxiliary field.
+  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Identifies the column.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,7 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig do
 
   ## Attributes
 
-  *   `context` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Optional. A context may be used for higher security and maintaining
+  *   `context` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - A context may be used for higher security and maintaining
       referential integrity such that the same identifier in two different
       contexts will be given a distinct surrogate. The context is appended to
       plaintext value being encrypted. On decryption the provided context is
@@ -46,7 +46,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig do
       This annotation will be applied to the surrogate by prefixing it with
       the name of the custom info type followed by the number of
       characters comprising the surrogate. The following scheme defines the
-      format: <info type name>(<surrogate character count>):<surrogate>
+      format: {info type name}({surrogate character count}):{surrogate}
 
       For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
       the surrogate is 'abc', the full replacement value
@@ -57,7 +57,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig do
       surrogate when it occurs in free text.
 
       Note: For record transformations where the entire cell in a table is being
-      transformed, surrogates are optional to use. Surrogates are used to denote
+      transformed, surrogates are not mandatory. Surrogates are used to denote
       the location of the token and are necessary for re-identification in free
       form text.
 

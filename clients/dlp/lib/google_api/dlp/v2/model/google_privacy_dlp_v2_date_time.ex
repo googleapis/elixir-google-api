@@ -22,11 +22,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateTime do
 
   ## Attributes
 
-  *   `date` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeDate.t`, *default:* `nil`) - One or more of the following must be set. All fields are optional, but
-      when set must be valid date or time values.
-  *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - 
-  *   `time` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeTimeOfDay.t`, *default:* `nil`) - 
-  *   `timeZone` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimeZone.t`, *default:* `nil`) - 
+  *   `date` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeDate.t`, *default:* `nil`) - One or more of the following must be set.
+      Must be a valid date or time value.
+  *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - Day of week
+  *   `time` (*type:* `GoogleApi.DLP.V2.Model.GoogleTypeTimeOfDay.t`, *default:* `nil`) - Time of day
+  *   `timeZone` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimeZone.t`, *default:* `nil`) - Time zone
   """
 
   use GoogleApi.Gax.ModelBase
