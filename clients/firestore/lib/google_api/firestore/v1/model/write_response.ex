@@ -21,7 +21,8 @@ defmodule GoogleApi.Firestore.V1.Model.WriteResponse do
 
   ## Attributes
 
-  *   `commitTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the commit occurred.
+  *   `commitTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the commit occurred. Any read with an equal or greater
+      `read_time` is guaranteed to see the effects of the write.
   *   `streamId` (*type:* `String.t`, *default:* `nil`) - The ID of the stream.
       Only set on the first message, when a new stream was created.
   *   `streamToken` (*type:* `String.t`, *default:* `nil`) - A token that represents the position of this response in the stream.
