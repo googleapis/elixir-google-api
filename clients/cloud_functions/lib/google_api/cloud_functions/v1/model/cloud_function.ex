@@ -34,6 +34,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   *   `environmentVariables` (*type:* `map()`, *default:* `nil`) - Environment variables that shall be available during function execution.
   *   `eventTrigger` (*type:* `GoogleApi.CloudFunctions.V1.Model.EventTrigger.t`, *default:* `nil`) - A source that fires events in response to a condition in another service.
   *   `httpsTrigger` (*type:* `GoogleApi.CloudFunctions.V1.Model.HttpsTrigger.t`, *default:* `nil`) - An HTTPS endpoint type of source that can be triggered via URL.
+  *   `ingressSettings` (*type:* `String.t`, *default:* `nil`) - The ingress settings for the function, controlling what traffic can reach
+      it.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this Cloud Function.
   *   `maxInstances` (*type:* `integer()`, *default:* `nil`) - The limit on the maximum number of function instances that may coexist at a
       given time.
@@ -84,6 +86,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
 
       See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
       more information on connecting Cloud projects.
+  *   `vpcConnectorEgressSettings` (*type:* `String.t`, *default:* `nil`) - The egress settings for the connector, controlling what traffic is diverted
+      through it.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -95,6 +99,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
           :environmentVariables => map(),
           :eventTrigger => GoogleApi.CloudFunctions.V1.Model.EventTrigger.t(),
           :httpsTrigger => GoogleApi.CloudFunctions.V1.Model.HttpsTrigger.t(),
+          :ingressSettings => String.t(),
           :labels => map(),
           :maxInstances => integer(),
           :name => String.t(),
@@ -108,7 +113,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
           :timeout => String.t(),
           :updateTime => DateTime.t(),
           :versionId => String.t(),
-          :vpcConnector => String.t()
+          :vpcConnector => String.t(),
+          :vpcConnectorEgressSettings => String.t()
         }
 
   field(:availableMemoryMb)
@@ -117,6 +123,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   field(:environmentVariables, type: :map)
   field(:eventTrigger, as: GoogleApi.CloudFunctions.V1.Model.EventTrigger)
   field(:httpsTrigger, as: GoogleApi.CloudFunctions.V1.Model.HttpsTrigger)
+  field(:ingressSettings)
   field(:labels, type: :map)
   field(:maxInstances)
   field(:name)
@@ -131,6 +138,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   field(:updateTime, as: DateTime)
   field(:versionId)
   field(:vpcConnector)
+  field(:vpcConnectorEgressSettings)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V1.Model.CloudFunction do
