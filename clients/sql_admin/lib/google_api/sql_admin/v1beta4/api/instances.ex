@@ -644,11 +644,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request, such as by name or
-          label.
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters resources listed in the response.
+          The expression is in the form of field:value. For example,
+          'instanceType:CLOUD_SQL_INSTANCE'. Fields can be nested as needed as per
+          their JSON representation, such as 'settings.userLabels.auto_start:true'.
+
+          Multiple filter queries are space-separated. For example.
+          'state:RUNNABLE instanceType:CLOUD_SQL_INSTANCE'. By default, each
+          expression is an AND expression. However, you can include AND and OR
+          expressions explicitly.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return per response.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
           results to view.
+      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of database instances.
+          Format: projects/{project}/locations/{location}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -674,7 +683,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :upload_protocol => :query,
       :filter => :query,
       :maxResults => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :parent => :query
     }
 
     request =
@@ -1412,11 +1422,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Updates settings of a Cloud SQL instance. <aside
-  class="caution"><strong>Caution:</strong> This is not a partial update, so
-  you must include values for all the settings that you want to retain. For
-  partial updates, use <a
-  href="/sql/docs/db_path/admin-api/rest/v1beta4/instances/patch">patch</a>.</aside>
+  Updates settings of a Cloud SQL instance.
 
   ## Parameters
 
