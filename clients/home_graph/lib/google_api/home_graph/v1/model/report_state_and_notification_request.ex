@@ -49,7 +49,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.ReportStateAndNotificationRequest do
   *   `agentUserId` (*type:* `String.t`, *default:* `nil`) - Required. Third-party user ID.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Unique identifier per event (for example, a doorbell press).
   *   `followUpToken` (*type:* `String.t`, *default:* `nil`) - Token to maintain state in the follow up notification response.
-  *   `payload` (*type:* `GoogleApi.HomeGraph.V1.Model.StateAndNotificationPayload.t`, *default:* `nil`) - State of devices to update and notification metadata for devices. For
+  *   `payload` (*type:* `GoogleApi.HomeGraph.V1.Model.StateAndNotificationPayload.t`, *default:* `nil`) - Required. State of devices to update and notification metadata for devices. For
       example, if a user turns a light on manually, a state update should be
       sent so that the information is always the current status of the device.
       Notifications are independent from the state and its piece of the payload
