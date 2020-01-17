@@ -36,10 +36,11 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
   *   `assetTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of types of the assets to receive updates. You must specify either
       or both of asset_names and asset_types. Only asset updates matching
       specified asset_names and asset_types are exported to the feed.
-      For example:
-      "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
-      Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
-      for all supported asset types.
+      For example: `"compute.googleapis.com/Disk"`
+
+      See [this
+      topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+      for a list of all supported asset types.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Asset content type. If not specified, no content but the asset name and
       type will be returned.
   *   `feedOutputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.FeedOutputConfig.t`, *default:* `nil`) - Required. Feed output configuration defining where the asset updates are
