@@ -25,7 +25,10 @@ defmodule GoogleApi.MachineLearning.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
       # View and manage your data across Google Cloud Platform services
-      "https://www.googleapis.com/auth/cloud-platform"
+      "https://www.googleapis.com/auth/cloud-platform",
+
+      # View your data across Google Cloud Platform services
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
     ],
     otp_app: :google_api_machine_learning,
     base_url: "https://ml.googleapis.com/"
