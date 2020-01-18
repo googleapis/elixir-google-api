@@ -41,6 +41,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
       - Test (i.e. purchased from a license testing account) 
       - Promo (i.e. purchased using a promo code) 
       - Rewarded (i.e. from watching a video ad instead of paying)
+  *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity associated with the purchase of the inapp product.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -55,7 +56,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
           :purchaseState => integer(),
           :purchaseTimeMillis => String.t(),
           :purchaseToken => String.t(),
-          :purchaseType => integer()
+          :purchaseType => integer(),
+          :quantity => integer()
         }
 
   field(:acknowledgementState)
@@ -68,6 +70,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   field(:purchaseTimeMillis)
   field(:purchaseToken)
   field(:purchaseType)
+  field(:quantity)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
