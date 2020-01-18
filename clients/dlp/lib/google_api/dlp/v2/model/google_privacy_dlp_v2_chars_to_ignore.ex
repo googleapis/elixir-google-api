@@ -22,8 +22,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharsToIgnore do
 
   ## Attributes
 
-  *   `charactersToSkip` (*type:* `String.t`, *default:* `nil`) - 
-  *   `commonCharactersToIgnore` (*type:* `String.t`, *default:* `nil`) - 
+  *   `charactersToSkip` (*type:* `String.t`, *default:* `nil`) - Characters to not transform when masking.
+  *   `commonCharactersToIgnore` (*type:* `String.t`, *default:* `nil`) - Common characters to not transform when masking. Useful to avoid removing
+      punctuation.
   """
 
   use GoogleApi.Gax.ModelBase

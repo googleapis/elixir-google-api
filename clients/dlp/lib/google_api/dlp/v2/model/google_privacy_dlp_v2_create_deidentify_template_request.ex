@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateDeidentifyTemplateReque
 
   ## Attributes
 
-  *   `deidentifyTemplate` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t`, *default:* `nil`) - The DeidentifyTemplate to create.
+  *   `deidentifyTemplate` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t`, *default:* `nil`) - Required. The DeidentifyTemplate to create.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to store the deidentification template. Reserved
       for future extensions.
   *   `templateId` (*type:* `String.t`, *default:* `nil`) - The template id can contain uppercase and lowercase letters,

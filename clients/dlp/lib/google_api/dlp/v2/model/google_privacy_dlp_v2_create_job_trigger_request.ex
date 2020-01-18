@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateJobTriggerRequest do
 
   ## Attributes
 
-  *   `jobTrigger` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t`, *default:* `nil`) - The JobTrigger to create.
+  *   `jobTrigger` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t`, *default:* `nil`) - Required. The JobTrigger to create.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to store the job trigger. Reserved for
       future extensions.
   *   `triggerId` (*type:* `String.t`, *default:* `nil`) - The trigger id can contain uppercase and lowercase letters,

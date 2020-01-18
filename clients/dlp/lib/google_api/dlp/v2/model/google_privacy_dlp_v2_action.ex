@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
 
   ## Attributes
 
-  *   `jobNotificationEmails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t`, *default:* `nil`) - Enable email notification to project owners and editors on job's
+  *   `jobNotificationEmails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobNotificationEmails.t`, *default:* `nil`) - Enable email notification for project owners and editors on job's
       completion/failure.
   *   `pubSub` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToPubSub.t`, *default:* `nil`) - Publish a notification to a pubsub topic.
   *   `publishFindingsToCloudDataCatalog` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog.t`, *default:* `nil`) - Publish findings to Cloud Datahub.

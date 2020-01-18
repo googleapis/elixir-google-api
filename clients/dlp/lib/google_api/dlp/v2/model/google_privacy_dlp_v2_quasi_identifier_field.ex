@@ -22,8 +22,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiIdentifierField do
 
   ## Attributes
 
-  *   `customTag` (*type:* `String.t`, *default:* `nil`) - 
-  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - 
+  *   `customTag` (*type:* `String.t`, *default:* `nil`) - A column can be tagged with a custom tag. In this case, the user must
+      indicate an auxiliary table that contains statistical information on
+      the possible values of this column (below).
+  *   `field` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - Identifies the column.
   """
 
   use GoogleApi.Gax.ModelBase

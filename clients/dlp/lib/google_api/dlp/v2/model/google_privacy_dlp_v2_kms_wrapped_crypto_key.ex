@@ -25,8 +25,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KmsWrappedCryptoKey do
 
   ## Attributes
 
-  *   `cryptoKeyName` (*type:* `String.t`, *default:* `nil`) - The resource name of the KMS CryptoKey to use for unwrapping. [required]
-  *   `wrappedKey` (*type:* `String.t`, *default:* `nil`) - The wrapped data crypto key. [required]
+  *   `cryptoKeyName` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the KMS CryptoKey to use for unwrapping.
+  *   `wrappedKey` (*type:* `String.t`, *default:* `nil`) - Required. The wrapped data crypto key.
   """
 
   use GoogleApi.Gax.ModelBase

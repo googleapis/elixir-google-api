@@ -27,10 +27,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationConfig
   *   `auxiliaryTables` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StatisticalTable.t)`, *default:* `nil`) - Several auxiliary tables can be used in the analysis. Each custom_tag
       used to tag a quasi-identifiers field must appear in exactly one
       field of one auxiliary table.
-  *   `quasiIds` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiId.t)`, *default:* `nil`) - Fields considered to be quasi-identifiers. No two fields can have the
-      same tag. [required]
+  *   `quasiIds` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuasiId.t)`, *default:* `nil`) - Required. Fields considered to be quasi-identifiers. No two fields can have the
+      same tag.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - ISO 3166-1 alpha-2 region code to use in the statistical modeling.
-      Required if no column is tagged with a region-specific InfoType (like
+      Set if no column is tagged with a region-specific InfoType (like
       US_ZIP_5) or a region code.
   """
 

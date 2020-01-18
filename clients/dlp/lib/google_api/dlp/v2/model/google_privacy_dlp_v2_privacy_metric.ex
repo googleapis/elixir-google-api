@@ -21,12 +21,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric do
 
   ## Attributes
 
-  *   `categoricalStatsConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsConfig.t`, *default:* `nil`) - 
-  *   `deltaPresenceEstimationConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationConfig.t`, *default:* `nil`) - 
-  *   `kAnonymityConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityConfig.t`, *default:* `nil`) - 
-  *   `kMapEstimationConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationConfig.t`, *default:* `nil`) - 
-  *   `lDiversityConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityConfig.t`, *default:* `nil`) - 
-  *   `numericalStatsConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsConfig.t`, *default:* `nil`) - 
+  *   `categoricalStatsConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsConfig.t`, *default:* `nil`) - Categorical stats
+  *   `deltaPresenceEstimationConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationConfig.t`, *default:* `nil`) - delta-presence
+  *   `kAnonymityConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityConfig.t`, *default:* `nil`) - K-anonymity
+  *   `kMapEstimationConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationConfig.t`, *default:* `nil`) - k-map
+  *   `lDiversityConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityConfig.t`, *default:* `nil`) - l-diversity
+  *   `numericalStatsConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsConfig.t`, *default:* `nil`) - Numerical stats
   """
 
   use GoogleApi.Gax.ModelBase

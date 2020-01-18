@@ -23,8 +23,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Table do
 
   ## Attributes
 
-  *   `headers` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - 
-  *   `rows` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Row.t)`, *default:* `nil`) - 
+  *   `headers` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - Headers of the table.
+  *   `rows` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Row.t)`, *default:* `nil`) - Rows of the table.
   """
 
   use GoogleApi.Gax.ModelBase

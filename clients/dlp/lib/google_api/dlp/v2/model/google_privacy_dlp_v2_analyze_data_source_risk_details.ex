@@ -21,12 +21,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails 
 
   ## Attributes
 
-  *   `categoricalStatsResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsResult.t`, *default:* `nil`) - 
-  *   `deltaPresenceEstimationResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationResult.t`, *default:* `nil`) - 
-  *   `kAnonymityResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityResult.t`, *default:* `nil`) - 
-  *   `kMapEstimationResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationResult.t`, *default:* `nil`) - 
-  *   `lDiversityResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityResult.t`, *default:* `nil`) - 
-  *   `numericalStatsResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsResult.t`, *default:* `nil`) - 
+  *   `categoricalStatsResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsResult.t`, *default:* `nil`) - Categorical stats result
+  *   `deltaPresenceEstimationResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeltaPresenceEstimationResult.t`, *default:* `nil`) - Delta-presence result
+  *   `kAnonymityResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityResult.t`, *default:* `nil`) - K-anonymity result
+  *   `kMapEstimationResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KMapEstimationResult.t`, *default:* `nil`) - K-map result
+  *   `lDiversityResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityResult.t`, *default:* `nil`) - L-divesity result
+  *   `numericalStatsResult` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2NumericalStatsResult.t`, *default:* `nil`) - Numerical stats result
   *   `requestedPrivacyMetric` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrivacyMetric.t`, *default:* `nil`) - Privacy metric to compute.
   *   `requestedSourceTable` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - Input dataset to compute metrics over.
   """

@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig do
 
   ## Attributes
 
-  *   `partToExtract` (*type:* `String.t`, *default:* `nil`) - 
+  *   `partToExtract` (*type:* `String.t`, *default:* `nil`) - The part of the time to keep.
   """
 
   use GoogleApi.Gax.ModelBase

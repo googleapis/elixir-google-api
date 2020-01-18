@@ -28,8 +28,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationErrorHandling d
 
   ## Attributes
 
-  *   `leaveUntransformed` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LeaveUntransformed.t`, *default:* `nil`) - 
-  *   `throwError` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ThrowError.t`, *default:* `nil`) - 
+  *   `leaveUntransformed` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LeaveUntransformed.t`, *default:* `nil`) - Ignore errors
+  *   `throwError` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ThrowError.t`, *default:* `nil`) - Throw an error
   """
 
   use GoogleApi.Gax.ModelBase
