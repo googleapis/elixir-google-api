@@ -65,8 +65,9 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
        "configure-sh"
        "containerd-configure-sh"
        "enable-os-login"
-       "gci-update-strategy"
        "gci-ensure-gke-docker"
+       "gci-metrics-enabled"
+       "gci-update-strategy"
        "instance-template"
        "kube-env"
        "startup-script"
@@ -108,6 +109,10 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - Whether the nodes are created as preemptible VM instances. See:
       https://cloud.google.com/compute/docs/instances/preemptible for more
       information about preemptible VM instances.
+  *   `reservationAffinity` (*type:* `GoogleApi.Container.V1.Model.ReservationAffinity.t`, *default:* `nil`) - The optional reservation affinity. Setting this field will apply
+      the specified [Zonal Compute
+      Reservation](/compute/docs/instances/reserving-zonal-resources)
+      to this node pool.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs. If
       no Service Account is specified, the "default" service account is used.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Shielded Instance options.
@@ -135,6 +140,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :minCpuPlatform => String.t(),
           :oauthScopes => list(String.t()),
           :preemptible => boolean(),
+          :reservationAffinity => GoogleApi.Container.V1.Model.ReservationAffinity.t(),
           :serviceAccount => String.t(),
           :shieldedInstanceConfig => GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t(),
           :tags => list(String.t()),
@@ -152,6 +158,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:minCpuPlatform)
   field(:oauthScopes, type: :list)
   field(:preemptible)
+  field(:reservationAffinity, as: GoogleApi.Container.V1.Model.ReservationAffinity)
   field(:serviceAccount)
   field(:shieldedInstanceConfig, as: GoogleApi.Container.V1.Model.ShieldedInstanceConfig)
   field(:tags, type: :list)
