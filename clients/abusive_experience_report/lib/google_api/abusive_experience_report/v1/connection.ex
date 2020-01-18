@@ -23,10 +23,7 @@ defmodule GoogleApi.AbusiveExperienceReport.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [
-      # Test scope for access to the Zoo service
-      "https://www.googleapis.com/auth/xapi.zoo"
-    ],
+    scopes: [],
     otp_app: :google_api_abusive_experience_report,
     base_url: "https://abusiveexperiencereport.googleapis.com/"
 end
