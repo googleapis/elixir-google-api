@@ -924,6 +924,280 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
+  Gets the access control policy for a resource.
+  Returns an empty policy if the resource exists and does not have a policy
+  set.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `annotation_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
+
+          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+          rejected.
+
+          Requests for policies with any conditional bindings must specify version 3.
+          Policies without any conditional bindings may specify any valid value or
+          leave the field unset.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_annotation_stores_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def healthcare_projects_locations_datasets_annotation_stores_get_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        annotation_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Policy{}])
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any
+  existing policy.
+
+  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `annotation_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_annotation_stores_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+  def healthcare_projects_locations_datasets_annotation_stores_set_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        annotation_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource.
+  If the resource does not exist, this will return an empty set of
+  permissions, not a NOT_FOUND error.
+
+  Note: This operation is designed to be used for building permission-aware
+  UIs and command-line tools, not for authorization checking. This operation
+  may "fail open" without warning.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `annotation_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_annotation_stores_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def healthcare_projects_locations_datasets_annotation_stores_test_iam_permissions(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        annotation_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
   Creates a new DICOM store within the parent dataset.
 
   ## Parameters
@@ -4771,8 +5045,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   search criteria specified as query parameters, grouped by
   `Observation.code`, sorted from most recent to oldest.
 
-  Implements the FHIR extended operation
-  [Observation-lastn](http://hl7.org/implement/standards/fhir/STU3/observation-operations.html#lastn).
+  Implements the FHIR extended operation Observation-lastn
+  ([STU3](http://hl7.org/implement/standards/fhir/STU3/observation-operations.html#lastn)).
+
+  DSTU2 doesn't define the Observation-lastn method, but the server supports
+  it the same way it supports STU3.
 
   Search terms are provided as query parameters following the same pattern as
   the search method. The following search parameters must
@@ -5085,13 +5362,18 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the FHIR [capability
-  statement](http://hl7.org/implement/standards/fhir/STU3/capabilitystatement.html)
-  for the store, which contains a description of functionality supported by
-  the server.
+  Gets the FHIR capability statement
+  ([STU3](http://hl7.org/implement/standards/fhir/STU3/capabilitystatement.html)),
+  or the [conformance
+  statement](http://hl7.org/implement/standards/fhir/DSTU2/conformance.html)
+  in the DSTU2 case for the store, which contains a description of
+  functionality supported by the server.
 
-  Implements the FHIR standard [capabilities
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#capabilities).
+  Implements the FHIR standard capabilities interaction
+  ([STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#capabilities)),
+  or the [conformance
+  interaction](http://hl7.org/implement/standards/fhir/DSTU2/http.html#conformance)
+  in the DSTU2 case.
 
   On success, the response body will contain a JSON-encoded representation
   of a `CapabilityStatement` resource.
@@ -5177,8 +5459,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Deletes FHIR resources that match a search query.
 
-  Implements the FHIR standard [conditional delete
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.13.1).
+  Implements the FHIR standard conditional delete interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.12.1),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.13.1)).
   If multiple resources match, all of them will be deleted.
 
   Search terms are provided as query parameters following the same pattern as
@@ -5199,8 +5482,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type to delete, such as Patient or Observation. For a
-      complete list, see the [FHIR Resource
-      Index](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html).
+      complete list, see the FHIR Resource Index
+      ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html),
+      [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5280,8 +5564,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   parameters, updates part of that resource by applying the operations
   specified in a [JSON Patch](http://jsonpatch.com/) document.
 
-  Implements the FHIR standard [conditional patch
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#patch).
+  Implements the FHIR standard conditional patch interaction
+  ([STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#patch)).
+
+  DSTU2 doesn't define a conditional patch method, but the server supports it
+  in the same way it supports STU3.
 
   Search terms are provided as query parameters following the same pattern as
   the search method.
@@ -5307,8 +5594,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type to update, such as Patient or Observation. For a
-      complete list, see the [FHIR Resource
-      Index](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html).
+      complete list, see the FHIR Resource Index
+      ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html),
+      [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5389,8 +5677,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   If a resource is found based on the search criteria specified in the query
   parameters, updates the entire contents of that resource.
 
-  Implements the FHIR standard [conditional update
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#cond-update).
+  Implements the FHIR standard conditional update interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.10.2),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#cond-update)).
 
   Search terms are provided as query parameters following the same pattern as
   the search method.
@@ -5423,8 +5712,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type to update, such as Patient or Observation. For a
-      complete list, see the [FHIR Resource
-      Index](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html).
+      complete list, see the FHIR Resource Index
+      ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html),
+      [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html)).
       Must match the resource type in the provided content.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -5505,12 +5795,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Creates a FHIR resource.
 
-  Implements the FHIR standard [create
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#create),
+  Implements the FHIR standard create interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#create),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#create)),
   which creates a new resource with a server-assigned resource ID.
 
-  Also supports the FHIR standard [conditional create
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#ccreate),
+  Also supports the FHIR standard conditional create interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#ccreate),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#ccreate)),
   specified by supplying an `If-None-Exist` header containing a FHIR search
   query. If no resources match this search query, the server processes the
   create operation as normal.
@@ -5534,8 +5826,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type to create, such as Patient or Observation. For a
-      complete list, see the [FHIR Resource
-      Index](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html).
+      complete list, see the FHIR Resource Index
+      ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html),
+      [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html)).
       Must match the resource type in the provided content.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -5616,8 +5909,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Deletes a FHIR resource.
 
-  Implements the FHIR standard [delete
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#delete).
+  Implements the FHIR standard delete interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#delete),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#delete)).
 
   Note: Unless resource versioning is disabled by setting the
   disable_resource_versioning flag
@@ -5715,15 +6009,18 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Executes all the requests in the given Bundle.
 
-  Implements the FHIR standard [batch/transaction
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#transaction).
+  Implements the FHIR standard batch/transaction interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#transaction),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#transaction)).
 
   Supports all interactions within a bundle, except search. This method
   accepts Bundles of type `batch` and `transaction`, processing them
-  according to the [batch processing
-  rules](http://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.1)
-  and [transaction processing
-  rules](http://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.2).
+  according to the batch processing rules
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.16.1),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.1))
+  and transaction processing rules
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.16.2),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.2)).
 
   The request body must contain a JSON-encoded FHIR `Bundle` resource, and
   the request headers must contain `Content-Type: application/fhir+json`.
@@ -5821,8 +6118,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Lists all the versions of a resource (including the current version and
   deleted versions) from the FHIR store.
 
-  Implements the per-resource form of the FHIR standard [history
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#history).
+  Implements the per-resource form of the FHIR standard history interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#history),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#history)).
 
   On success, the response body will contain a JSON-encoded representation
   of a `Bundle` resource of type `history`, containing the version history
@@ -5949,8 +6247,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Updates part of an existing resource by applying the operations specified
   in a [JSON Patch](http://jsonpatch.com/) document.
 
-  Implements the FHIR standard [patch
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#patch).
+  Implements the FHIR standard patch interaction
+  ([STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#patch)).
+
+  DSTU2 doesn't define a patch method, but the server supports it in the same
+  way it supports STU3.
 
   The request body must contain a JSON Patch document, and the request
   headers must contain `Content-Type: application/json-patch+json`.
@@ -6053,11 +6354,13 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Gets the contents of a FHIR resource.
 
-  Implements the FHIR standard [read
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#read).
+  Implements the FHIR standard read interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#read),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#read)).
 
-  Also supports the FHIR standard [conditional read
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#cread)
+  Also supports the FHIR standard conditional read interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#cread),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#cread))
   specified by supplying an `If-Modified-Since` header with a date/time value
   or an `If-None-Match` header with an ETag value.
 
@@ -6158,10 +6461,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Searches for resources in the given FHIR store according to criteria
   specified as query parameters.
 
-  Implements the FHIR standard [search
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#search)
-  using the search semantics described in the [FHIR Search
-  specification](http://hl7.org/implement/standards/fhir/STU3/search.html).
+  Implements the FHIR standard search interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#search),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#search))
+  using the search semantics described in the FHIR Search specification
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/search.html),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/search.html)).
 
   Supports three methods of search defined by the specification:
 
@@ -6183,11 +6488,13 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   GCP error might be returned instead.
 
   The server's capability statement, retrieved through
-  capabilities, indicates the search parameters
-  that are supported on each FHIR resource. For the list of search
-  parameters for STU3, see the
-  [STU3 FHIR Search Parameter
-  Registry](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html).
+  capabilities, indicates what search parameters
+  are supported on each FHIR resource. A list of all search parameters
+  defined by the specification can be found in the FHIR Search Parameter
+  Registry
+  ([STU3](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html)).
+  FHIR search parameters for DSTU2 can be found on each resource's definition
+  page.
 
   Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`,
   `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`.
@@ -6291,8 +6598,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Updates the entire contents of a resource.
 
-  Implements the FHIR standard [update
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#update).
+  Implements the FHIR standard update interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#update),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#update)).
 
   If the specified resource does
   not exist and the FHIR store has
@@ -6403,8 +6711,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Gets the contents of a version (current or historical) of a FHIR resource
   by version ID.
 
-  Implements the FHIR standard [vread
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#vread).
+  Implements the FHIR standard vread interaction
+  ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#vread),
+  [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#vread).
 
   On success, the response body will contain a JSON-encoded representation
   of the resource.
@@ -7397,6 +7706,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:view` (*type:* `String.t`) - Specifies which parts of the Message resource to return in the response.
+          When unspecified, equivalent to FULL.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7463,9 +7773,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Ingests a new HL7v2 message from the hospital and sends a notification to
   the Cloud Pub/Sub topic. Return is an HL7v2 ACK message if the message was
-  successfully stored. Otherwise an error is returned.  If an identical
-  HL7v2 message is created twice only one resource is created on the server
-  and no error is reported.
+  successfully stored. Otherwise an error is returned.
 
   ## Parameters
 
