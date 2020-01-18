@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudAsset.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.CloudAsset.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/cloud_asset",
-        "Homepage" => "https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/quickstart-cloud-asset-inventory"
+        "Homepage" => "https://cloud.google.com/asset-inventory/docs/quickstart"
       }
     ]
   end

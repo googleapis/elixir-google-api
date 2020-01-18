@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
 
   *   `basic` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel.t`, *default:* `nil`) - A `BasicLevel` composed of `Conditions`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `AccessLevel` was created in UTC.
+  *   `custom` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1CustomLevel.t`, *default:* `nil`) - A `CustomLevel` written in the Common Expression Language.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `AccessLevel` and its use. Does not affect behavior.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource name for the Access Level. The `short_name` component
       must begin with a letter and only include alphanumeric and '_'. Format:
@@ -38,6 +39,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
           :basic =>
             GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel.t(),
           :createTime => DateTime.t(),
+          :custom =>
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1CustomLevel.t(),
           :description => String.t(),
           :name => String.t(),
           :title => String.t(),
@@ -46,6 +49,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
 
   field(:basic, as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel)
   field(:createTime, as: DateTime)
+
+  field(:custom, as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1CustomLevel)
+
   field(:description)
   field(:name)
   field(:title)
