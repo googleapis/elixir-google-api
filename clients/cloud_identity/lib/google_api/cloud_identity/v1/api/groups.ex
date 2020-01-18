@@ -200,7 +200,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  List groups within a customer or a domain.
+  Lists groups within a customer or a domain.
 
   ## Parameters
 
@@ -663,7 +663,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  List Memberships within a Group.
+  Lists Memberships within a Group.
 
   ## Parameters
 
