@@ -21,7 +21,9 @@ defmodule GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse do
 
   ## Attributes
 
-  *   `mergeConflict` (*type:* `list(GoogleApi.TagManager.V2.Model.MergeConflict.t)`, *default:* `nil`) - The merge conflict after sync. If this field is not empty, the sync is still treated as successful. But a version cannot be created until all conflicts are resolved.
+  *   `mergeConflict` (*type:* `list(GoogleApi.TagManager.V2.Model.MergeConflict.t)`, *default:* `nil`) - The merge conflict after sync.
+      If this field is not empty, the sync is still treated as successful.
+      But a version cannot be created until all conflicts are resolved.
   *   `syncStatus` (*type:* `GoogleApi.TagManager.V2.Model.SyncStatus.t`, *default:* `nil`) - Indicates whether synchronization caused a merge conflict or sync error.
   """
 

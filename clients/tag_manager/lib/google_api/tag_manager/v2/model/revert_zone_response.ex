@@ -21,7 +21,9 @@ defmodule GoogleApi.TagManager.V2.Model.RevertZoneResponse do
 
   ## Attributes
 
-  *   `zone` (*type:* `GoogleApi.TagManager.V2.Model.Zone.t`, *default:* `nil`) - Zone as it appears in the latest container version since the last workspace synchronization operation. If no zone is present, that means the zone was deleted in the latest container version.
+  *   `zone` (*type:* `GoogleApi.TagManager.V2.Model.Zone.t`, *default:* `nil`) - Zone as it appears in the latest container version since the last
+      workspace synchronization operation. If no zone is present, that means
+      the zone was deleted in the latest container version.
   """
 
   use GoogleApi.Gax.ModelBase

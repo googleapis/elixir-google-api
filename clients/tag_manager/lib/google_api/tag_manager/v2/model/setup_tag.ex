@@ -17,11 +17,14 @@
 
 defmodule GoogleApi.TagManager.V2.Model.SetupTag do
   @moduledoc """
-  Represents a reference to atag that fires before another tag in order to set up dependencies.
+  Represents a reference to atag that fires before another tag in order to
+  set up dependencies.
 
   ## Attributes
 
-  *   `stopOnSetupFailure` (*type:* `boolean()`, *default:* `nil`) - If true, fire the main tag if and only if the setup tag fires successfully. If false, fire the main tag regardless of setup tag firing status.
+  *   `stopOnSetupFailure` (*type:* `boolean()`, *default:* `nil`) - If true, fire the main tag if and only if the setup tag fires
+      successfully.
+      If false, fire the main tag regardless of setup tag firing status.
   *   `tagName` (*type:* `String.t`, *default:* `nil`) - The name of the setup tag.
   """
 
