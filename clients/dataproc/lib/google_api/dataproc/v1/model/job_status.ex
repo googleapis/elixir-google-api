@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.JobStatus do
   @moduledoc """
-  Cloud Dataproc job status.
+  Dataproc job status.
 
   ## Attributes
 

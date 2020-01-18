@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.NodeInitializationAction do
   ## Attributes
 
   *   `executableFile` (*type:* `String.t`, *default:* `nil`) - Required. Cloud Storage URI of executable file.
-  *   `executionTimeout` (*type:* `String.t`, *default:* `nil`) - Optional. Amount of time executable has to complete. Default is 10 minutes. Cluster creation fails with an explanatory error message (the name of the executable that caused the error and the exceeded timeout period) if the executable is not completed at end of the timeout period.
+  *   `executionTimeout` (*type:* `String.t`, *default:* `nil`) - Optional. Amount of time executable has to complete. Default is 10 minutes (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).Cluster creation fails with an explanatory error message (the name of the executable that caused the error and the exceeded timeout period) if the executable is not completed at end of the timeout period.
   """
 
   use GoogleApi.Gax.ModelBase

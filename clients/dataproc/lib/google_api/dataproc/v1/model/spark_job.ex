@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.SparkJob do
   @moduledoc """
-  A Cloud Dataproc job for running Apache Spark (http://spark.apache.org/) applications on YARN.
+  A Dataproc job for running Apache Spark (http://spark.apache.org/) applications on YARN.
 
   ## Attributes
 
@@ -28,7 +28,7 @@ defmodule GoogleApi.Dataproc.V1.Model.SparkJob do
   *   `loggingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.LoggingConfig.t`, *default:* `nil`) - Optional. The runtime log config for job execution.
   *   `mainClass` (*type:* `String.t`, *default:* `nil`) - The name of the driver's main class. The jar file that contains the class must be in the default CLASSPATH or specified in jar_file_uris.
   *   `mainJarFileUri` (*type:* `String.t`, *default:* `nil`) - The HCFS URI of the jar file that contains the main class.
-  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure Spark. Properties that conflict with values set by the Cloud Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
+  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure Spark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
   """
 
   use GoogleApi.Gax.ModelBase

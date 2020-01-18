@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.SparkRJob do
   @moduledoc """
-  A Cloud Dataproc job for running Apache SparkR (https://spark.apache.org/docs/latest/sparkr.html) applications on YARN.
+  A Dataproc job for running Apache SparkR (https://spark.apache.org/docs/latest/sparkr.html) applications on YARN.
 
   ## Attributes
 
@@ -26,7 +26,7 @@ defmodule GoogleApi.Dataproc.V1.Model.SparkRJob do
   *   `fileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of files to be copied to the working directory of R drivers and distributed tasks. Useful for naively parallel tasks.
   *   `loggingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.LoggingConfig.t`, *default:* `nil`) - Optional. The runtime log config for job execution.
   *   `mainRFileUri` (*type:* `String.t`, *default:* `nil`) - Required. The HCFS URI of the main R file to use as the driver. Must be a .R file.
-  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure SparkR. Properties that conflict with values set by the Cloud Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
+  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure SparkR. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
   """
 
   use GoogleApi.Gax.ModelBase
