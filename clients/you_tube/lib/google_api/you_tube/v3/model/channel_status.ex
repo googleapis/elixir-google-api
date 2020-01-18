@@ -23,7 +23,9 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatus do
 
   *   `isLinked` (*type:* `boolean()`, *default:* `nil`) - If true, then the user is linked to either a YouTube username or G+ account. Otherwise, the user doesn't have a public YouTube identity.
   *   `longUploadsStatus` (*type:* `String.t`, *default:* `nil`) - The long uploads status of this channel. See
+  *   `madeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   *   `privacyStatus` (*type:* `String.t`, *default:* `nil`) - Privacy status of the channel.
+  *   `selfDeclaredMadeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +33,16 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatus do
   @type t :: %__MODULE__{
           :isLinked => boolean(),
           :longUploadsStatus => String.t(),
-          :privacyStatus => String.t()
+          :madeForKids => boolean(),
+          :privacyStatus => String.t(),
+          :selfDeclaredMadeForKids => boolean()
         }
 
   field(:isLinked)
   field(:longUploadsStatus)
+  field(:madeForKids)
   field(:privacyStatus)
+  field(:selfDeclaredMadeForKids)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelStatus do

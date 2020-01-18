@@ -23,8 +23,10 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastStatus do
 
   *   `lifeCycleStatus` (*type:* `String.t`, *default:* `nil`) - The broadcast's status. The status can be updated using the API's liveBroadcasts.transition method.
   *   `liveBroadcastPriority` (*type:* `String.t`, *default:* `nil`) - Priority of the live broadcast event (internal state).
+  *   `madeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   *   `privacyStatus` (*type:* `String.t`, *default:* `nil`) - The broadcast's privacy status. Note that the broadcast represents exactly one YouTube video, so the privacy settings are identical to those supported for videos. In addition, you can set this field by modifying the broadcast resource or by setting the privacyStatus field of the corresponding video resource.
   *   `recordingStatus` (*type:* `String.t`, *default:* `nil`) - The broadcast's recording status.
+  *   `selfDeclaredMadeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,14 +34,18 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastStatus do
   @type t :: %__MODULE__{
           :lifeCycleStatus => String.t(),
           :liveBroadcastPriority => String.t(),
+          :madeForKids => boolean(),
           :privacyStatus => String.t(),
-          :recordingStatus => String.t()
+          :recordingStatus => String.t(),
+          :selfDeclaredMadeForKids => boolean()
         }
 
   field(:lifeCycleStatus)
   field(:liveBroadcastPriority)
+  field(:madeForKids)
   field(:privacyStatus)
   field(:recordingStatus)
+  field(:selfDeclaredMadeForKids)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.LiveBroadcastStatus do
