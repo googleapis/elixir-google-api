@@ -25,6 +25,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.Parameters do
   *   `groupBys` (*type:* `list(String.t)`, *default:* `nil`) - Data is grouped by the filters listed in this field.
   *   `includeInviteData` (*type:* `boolean()`, *default:* `nil`) - Deprecated. This field is no longer in use.
   *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - Metrics to include as columns in your report.
+  *   `options` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.Options.t`, *default:* `nil`) - Additional query options.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Report type.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.Parameters do
           :groupBys => list(String.t()),
           :includeInviteData => boolean(),
           :metrics => list(String.t()),
+          :options => GoogleApi.DoubleClickBidManager.V11.Model.Options.t(),
           :type => String.t()
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.Parameters do
   field(:groupBys, type: :list)
   field(:includeInviteData)
   field(:metrics, type: :list)
+  field(:options, as: GoogleApi.DoubleClickBidManager.V11.Model.Options)
   field(:type)
 end
 
