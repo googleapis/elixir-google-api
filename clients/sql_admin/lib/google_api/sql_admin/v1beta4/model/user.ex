@@ -37,6 +37,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.User do
   *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL database. The Google
       apps domain is prefixed if applicable. Can be omitted for
       <code>update</code> since it is already specified on the URL.
+  *   `sqlserverUserDetails` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlServerUserDetails.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,7 +49,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.User do
           :kind => String.t(),
           :name => String.t(),
           :password => String.t(),
-          :project => String.t()
+          :project => String.t(),
+          :sqlserverUserDetails => GoogleApi.SQLAdmin.V1beta4.Model.SqlServerUserDetails.t()
         }
 
   field(:etag)
@@ -58,6 +60,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.User do
   field(:name)
   field(:password)
   field(:project)
+  field(:sqlserverUserDetails, as: GoogleApi.SQLAdmin.V1beta4.Model.SqlServerUserDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.User do
