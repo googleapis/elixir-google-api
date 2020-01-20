@@ -24,8 +24,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations do
 
   ## Attributes
 
-  *   `transformations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation.t)`, *default:* `nil`) - Transformation for each infoType. Cannot specify more than one
-      for a given infoType. [required]
+  *   `transformations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformation.t)`, *default:* `nil`) - Required. Transformation for each infoType. Cannot specify more than one
+      for a given infoType.
   """
 
   use GoogleApi.Gax.ModelBase

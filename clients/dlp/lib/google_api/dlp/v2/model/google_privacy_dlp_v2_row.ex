@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Row do
   @moduledoc """
-
+  Values of the row.
 
   ## Attributes
 
-  *   `values` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t)`, *default:* `nil`) - 
+  *   `values` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t)`, *default:* `nil`) - Individual cells.
   """
 
   use GoogleApi.Gax.ModelBase

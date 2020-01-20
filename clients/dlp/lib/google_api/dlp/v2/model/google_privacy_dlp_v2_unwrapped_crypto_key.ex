@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UnwrappedCryptoKey do
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - A 128/192/256 bit key. [required]
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Required. A 128/192/256 bit key.
   """
 
   use GoogleApi.Gax.ModelBase

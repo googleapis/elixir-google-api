@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig do
   @moduledoc """
-
+  Controls what and how to inspect for findings.
 
   ## Attributes
 

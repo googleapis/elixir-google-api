@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateInspectTemplateRequest 
 
   ## Attributes
 
-  *   `inspectTemplate` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t`, *default:* `nil`) - The InspectTemplate to create.
+  *   `inspectTemplate` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t`, *default:* `nil`) - Required. The InspectTemplate to create.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to store the inspection template. Reserved for
       future extensions.
   *   `templateId` (*type:* `String.t`, *default:* `nil`) - The template id can contain uppercase and lowercase letters,

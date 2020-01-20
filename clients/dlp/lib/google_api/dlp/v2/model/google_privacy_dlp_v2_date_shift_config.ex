@@ -29,14 +29,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig do
   *   `cryptoKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t`, *default:* `nil`) - Causes the shift to be computed based on this key and the context. This
       results in the same shift for the same context and crypto_key. If
       set, must also set context. Can only be applied to table items.
-  *   `lowerBoundDays` (*type:* `integer()`, *default:* `nil`) - For example, -5 means shift date to at most 5 days back in the past.
-      [Required]
-  *   `upperBoundDays` (*type:* `integer()`, *default:* `nil`) - Range of shift in days. Actual shift will be selected at random within this
+  *   `lowerBoundDays` (*type:* `integer()`, *default:* `nil`) - Required. For example, -5 means shift date to at most 5 days back in the past.
+  *   `upperBoundDays` (*type:* `integer()`, *default:* `nil`) - Required. Range of shift in days. Actual shift will be selected at random within this
       range (inclusive ends). Negative means shift to earlier in time. Must not
       be more than 365250 days (1000 years) each direction.
 
       For example, 3 means shift date to at most 3 days into the future.
-      [Required]
   """
 
   use GoogleApi.Gax.ModelBase

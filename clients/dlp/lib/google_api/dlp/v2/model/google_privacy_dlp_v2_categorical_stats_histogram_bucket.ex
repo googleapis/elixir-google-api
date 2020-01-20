@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CategoricalStatsHistogramBucket do
   @moduledoc """
-
+  Histogram of value frequencies in the column.
 
   ## Attributes
 

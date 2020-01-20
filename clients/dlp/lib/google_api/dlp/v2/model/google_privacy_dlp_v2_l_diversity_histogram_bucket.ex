@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LDiversityHistogramBucket do
   @moduledoc """
-
+  Histogram of l-diversity equivalence class sensitive value frequencies.
 
   ## Attributes
 

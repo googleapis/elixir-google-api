@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimeZone do
   @moduledoc """
-
+  Time zone of the date time object.
 
   ## Attributes
 

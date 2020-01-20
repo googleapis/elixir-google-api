@@ -22,8 +22,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SummaryResult do
 
   ## Attributes
 
-  *   `code` (*type:* `String.t`, *default:* `nil`) - 
-  *   `count` (*type:* `String.t`, *default:* `nil`) - 
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Outcome of the transformation.
+  *   `count` (*type:* `String.t`, *default:* `nil`) - Number of transformations counted by this result.
   *   `details` (*type:* `String.t`, *default:* `nil`) - A place for warnings or errors to show up if a transformation didn't
       work as expected.
   """

@@ -33,7 +33,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig do
 
   ## Attributes
 
-  *   `commonAlphabet` (*type:* `String.t`, *default:* `nil`) - 
+  *   `commonAlphabet` (*type:* `String.t`, *default:* `nil`) - Common alphabets.
   *   `context` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t`, *default:* `nil`) - The 'tweak', a context may be used for higher security since the same
       identifier in two different contexts won't be given the same surrogate. If
       the context is not set, a default tweak will be used.
@@ -54,7 +54,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig do
 
       - a 64 bit integer is encoded followed by a single byte of value 1
       - a string is encoded in UTF-8 format followed by a single byte of value 2
-  *   `cryptoKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t`, *default:* `nil`) - The key used by the encryption algorithm. [required]
+  *   `cryptoKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey.t`, *default:* `nil`) - Required. The key used by the encryption algorithm.
   *   `customAlphabet` (*type:* `String.t`, *default:* `nil`) - This is supported by mapping these to the alphanumeric characters
       that the FFX mode natively supports. This happens before/after
       encryption/decryption.

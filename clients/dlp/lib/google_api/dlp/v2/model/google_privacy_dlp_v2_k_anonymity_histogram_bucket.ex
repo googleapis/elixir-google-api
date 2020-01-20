@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KAnonymityHistogramBucket do
   @moduledoc """
-
+  Histogram of k-anonymity equivalence classes.
 
   ## Attributes
 

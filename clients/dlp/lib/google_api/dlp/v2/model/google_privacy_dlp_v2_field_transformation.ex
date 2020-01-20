@@ -23,14 +23,14 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldTransformation do
 
   *   `condition` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordCondition.t`, *default:* `nil`) - Only apply the transformation if the condition evaluates to true for the
       given `RecordCondition`. The conditions are allowed to reference fields
-      that are not used in the actual transformation. [optional]
+      that are not used in the actual transformation.
 
       Example Use Cases:
 
       - Apply a different bucket transformation to an age column if the zip code
       column for the same record is within a specific range.
       - Redact a field if the date of birth field is greater than 85.
-  *   `fields` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - Input field(s) to apply the transformation to. [required]
+  *   `fields` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - Required. Input field(s) to apply the transformation to.
   *   `infoTypeTransformations` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeTransformations.t`, *default:* `nil`) - Treat the contents of the field as free text, and selectively
       transform content that matches an `InfoType`.
   *   `primitiveTransformation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation.t`, *default:* `nil`) - Apply the transformation to the entire field.

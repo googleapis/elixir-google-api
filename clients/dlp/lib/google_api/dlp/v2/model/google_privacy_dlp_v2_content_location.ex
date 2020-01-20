@@ -25,9 +25,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
       The top level name is the source file name or table name. Names of some
       common storage containers are formatted as follows:
 
-      * BigQuery tables:  `<project_id>:<dataset_id>.<table_id>`
-      * Cloud Storage files: `gs://<bucket>/<path>`
-      * Datastore namespace: <namespace>
+      * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+      * Cloud Storage files: `gs://{bucket}/{path}`
+      * Datastore namespace: {namespace}
 
       Nested names could be absent if the embedded object has no string
       identifier (for an example an image contained within a document).

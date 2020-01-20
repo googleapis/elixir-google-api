@@ -47,9 +47,9 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional filter to only return infoTypes supported by certain parts of the
+      *   `:filter` (*type:* `String.t`) - filter to only return infoTypes supported by certain parts of the
           API. Defaults to supported_by=INSPECT.
-      *   `:languageCode` (*type:* `String.t`) - Optional BCP-47 language code for localized infoType friendly
+      *   `:languageCode` (*type:* `String.t`) - BCP-47 language code for localized infoType friendly
           names. If omitted, or if localized strings are not available,
           en-US strings will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
