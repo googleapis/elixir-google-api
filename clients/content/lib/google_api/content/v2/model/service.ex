@@ -28,7 +28,9 @@ defmodule GoogleApi.Content.V2.Model.Service do
   *   `eligibility` (*type:* `String.t`, *default:* `nil`) - Eligibility for this service.
   *   `minimumOrderValue` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Minimum order value for this service. If set, indicates that customers will have to spend at least this amount. All prices within a service must have the same currency.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Free-form name of the service. Must be unique within target account. Required.
+  *   `pickupService` (*type:* `GoogleApi.Content.V2.Model.PickupCarrierService.t`, *default:* `nil`) - The carrier-service pair delivering items to collection points. The list of supported pickup services can be retrieved via the getSupportedPickupServices method. Required if and only if the service delivery type is pickup.
   *   `rateGroups` (*type:* `list(GoogleApi.Content.V2.Model.RateGroup.t)`, *default:* `nil`) - Shipping rate group definitions. Only the last one is allowed to have an empty applicableShippingLabels, which means "everything else". The other applicableShippingLabels must not overlap.
+  *   `shipmentType` (*type:* `String.t`, *default:* `nil`) - Type of locations this service ships orders to.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +43,9 @@ defmodule GoogleApi.Content.V2.Model.Service do
           :eligibility => String.t(),
           :minimumOrderValue => GoogleApi.Content.V2.Model.Price.t(),
           :name => String.t(),
-          :rateGroups => list(GoogleApi.Content.V2.Model.RateGroup.t())
+          :pickupService => GoogleApi.Content.V2.Model.PickupCarrierService.t(),
+          :rateGroups => list(GoogleApi.Content.V2.Model.RateGroup.t()),
+          :shipmentType => String.t()
         }
 
   field(:active)
@@ -51,7 +55,9 @@ defmodule GoogleApi.Content.V2.Model.Service do
   field(:eligibility)
   field(:minimumOrderValue, as: GoogleApi.Content.V2.Model.Price)
   field(:name)
+  field(:pickupService, as: GoogleApi.Content.V2.Model.PickupCarrierService)
   field(:rateGroups, as: GoogleApi.Content.V2.Model.RateGroup, type: :list)
+  field(:shipmentType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V2.Model.Service do

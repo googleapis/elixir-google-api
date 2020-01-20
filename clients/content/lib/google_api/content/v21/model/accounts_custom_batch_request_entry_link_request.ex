@@ -24,6 +24,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest
   *   `action` (*type:* `String.t`, *default:* `nil`) - Action to perform for this link. The "request" action is only available to select merchants.
   *   `linkType` (*type:* `String.t`, *default:* `nil`) - Type of the link between the two accounts.
   *   `linkedAccountId` (*type:* `String.t`, *default:* `nil`) - The ID of the linked account.
+  *   `services` (*type:* `list(String.t)`, *default:* `nil`) - List of provided services.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest
   @type t :: %__MODULE__{
           :action => String.t(),
           :linkType => String.t(),
-          :linkedAccountId => String.t()
+          :linkedAccountId => String.t(),
+          :services => list(String.t())
         }
 
   field(:action)
   field(:linkType)
   field(:linkedAccountId)
+  field(:services, type: :list)
 end
 
 defimpl Poison.Decoder,
