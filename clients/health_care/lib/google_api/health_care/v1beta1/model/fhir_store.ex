@@ -64,6 +64,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
       this destination. The Cloud Pub/Sub message attributes contain a map
       with a string describing the action that has triggered the notification.
       For example, "action":"CreateResource".
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The FHIR specification version that this FHIR store supports natively. This
+      field is immutable after store creation. Requests are rejected if they
+      contain FHIR resources of a different version.
+      An empty value is treated as STU3.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -74,7 +78,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
           :enableUpdateCreate => boolean(),
           :labels => map(),
           :name => String.t(),
-          :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t()
+          :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t(),
+          :version => String.t()
         }
 
   field(:disableReferentialIntegrity)
@@ -83,6 +88,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
   field(:labels, type: :map)
   field(:name)
   field(:notificationConfig, as: GoogleApi.HealthCare.V1beta1.Model.NotificationConfig)
+  field(:version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.FhirStore do
