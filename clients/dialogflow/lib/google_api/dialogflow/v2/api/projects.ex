@@ -1171,6 +1171,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   @doc """
   Deletes entities in the specified entity type.
 
+
   Operation <response: google.protobuf.Empty>
 
   ## Parameters
@@ -1247,6 +1248,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   Updates or creates multiple entities in the specified entity type. This
   method does not affect entities in the entity type that aren't explicitly
   specified in the request.
+
 
   Operation <response: google.protobuf.Empty>
 
@@ -2313,6 +2315,13 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
 
       The `Context ID` is always converted to lowercase, may only contain
       characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
+
+      The following context names are reserved for internal use by Dialogflow.
+      You should not use these contexts or create contexts with these names:
+
+      * `__system_counters__`
+      * `*_id_dialog_context`
+      * `*_dialog_params_size`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
