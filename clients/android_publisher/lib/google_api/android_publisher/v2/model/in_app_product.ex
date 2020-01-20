@@ -28,7 +28,6 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.InAppProduct do
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the parent app.
   *   `prices` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V2.Model.Price.t}`, *default:* `nil`) - Prices per buyer region. None of these prices should be zero. In-app products can never be free.
   *   `purchaseType` (*type:* `String.t`, *default:* `nil`) - Purchase type enum value. Unmodifiable after creation.
-  *   `season` (*type:* `GoogleApi.AndroidPublisher.V2.Model.Season.t`, *default:* `nil`) - Definition of a season for a seasonal subscription. Can be defined only for yearly subscriptions.
   *   `sku` (*type:* `String.t`, *default:* `nil`) - The stock-keeping-unit (SKU) of the product, unique within an app.
   *   `status` (*type:* `String.t`, *default:* `nil`) - 
   *   `subscriptionPeriod` (*type:* `String.t`, *default:* `nil`) - Subscription period, specified in ISO 8601 format. Acceptable values are "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year).
@@ -47,7 +46,6 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.InAppProduct do
           :packageName => String.t(),
           :prices => %{optional(String.t()) => GoogleApi.AndroidPublisher.V2.Model.Price.t()},
           :purchaseType => String.t(),
-          :season => GoogleApi.AndroidPublisher.V2.Model.Season.t(),
           :sku => String.t(),
           :status => String.t(),
           :subscriptionPeriod => String.t(),
@@ -61,7 +59,6 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.InAppProduct do
   field(:packageName)
   field(:prices, as: GoogleApi.AndroidPublisher.V2.Model.Price, type: :map)
   field(:purchaseType)
-  field(:season, as: GoogleApi.AndroidPublisher.V2.Model.Season)
   field(:sku)
   field(:status)
   field(:subscriptionPeriod)
