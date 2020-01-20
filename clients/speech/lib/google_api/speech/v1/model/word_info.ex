@@ -27,7 +27,7 @@ defmodule GoogleApi.Speech.V1.Model.WordInfo do
       in the top hypothesis.
       This is an experimental feature and the accuracy of the time offset can
       vary.
-  *   `speakerTag` (*type:* `integer()`, *default:* `nil`) - A distinct integer value is assigned for every speaker within
+  *   `speakerTag` (*type:* `integer()`, *default:* `nil`) - Output only. A distinct integer value is assigned for every speaker within
       the audio. This field specifies which one of those speakers was detected to
       have spoken this word. Value ranges from '1' to diarization_speaker_count.
       speaker_tag is set if enable_speaker_diarization = 'true' and only in the
