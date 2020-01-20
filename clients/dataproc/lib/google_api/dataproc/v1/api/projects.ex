@@ -2098,7 +2098,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2172,7 +2172,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `cluster_name` (*type:* `String.t`) - Required. The cluster name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2250,7 +2250,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `cluster_name` (*type:* `String.t`) - Required. The cluster name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2329,7 +2329,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `cluster_name` (*type:* `String.t`) - Required. The cluster name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2482,7 +2482,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2558,7 +2558,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `cluster_name` (*type:* `String.t`) - Required. The cluster name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2572,7 +2572,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gracefulDecommissionTimeout` (*type:* `String.t`) - Optional. Timeout for graceful YARN decomissioning. Graceful decommissioning allows removing nodes from the cluster without interrupting jobs in progress. Timeout specifies how long to wait for jobs in progress to finish before forcefully removing nodes (and potentially interrupting jobs). Default timeout is 0 (for forceful decommission), and the maximum allowed timeout is 1 day.Only supported on Dataproc image versions 1.2 and higher.
+      *   `:gracefulDecommissionTimeout` (*type:* `String.t`) - Optional. Timeout for graceful YARN decomissioning. Graceful decommissioning allows removing nodes from the cluster without interrupting jobs in progress. Timeout specifies how long to wait for jobs in progress to finish before forcefully removing nodes (and potentially interrupting jobs). Default timeout is 0 (for forceful decommission), and the maximum allowed timeout is 1 day. (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).Only supported on Dataproc image versions 1.2 and higher.
       *   `:requestId` (*type:* `String.t`) - Optional. A unique id used to identify the request. If the server receives two UpdateClusterRequest requests with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
       *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to Cluster, of the field to update. For example, to change the number of workers in a cluster to 5, the update_mask parameter would be specified as config.worker_config.num_instances, and the PATCH request body would specify the new value, as follows:
           {
@@ -2818,7 +2818,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `job_id` (*type:* `String.t`) - Required. The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2894,7 +2894,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `job_id` (*type:* `String.t`) - Required. The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2968,7 +2968,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `job_id` (*type:* `String.t`) - Required. The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3121,7 +3121,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3201,7 +3201,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `job_id` (*type:* `String.t`) - Required. The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3358,7 +3358,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

@@ -25,7 +25,7 @@ defmodule GoogleApi.Dataproc.V1.Model.AcceleratorConfig do
   *   `acceleratorTypeUri` (*type:* `String.t`, *default:* `nil`) - Full URL, partial URI, or short name of the accelerator type resource to expose to this instance. See Compute Engine AcceleratorTypes.Examples:
       https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80
       projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80
-      nvidia-tesla-k80Auto Zone Exception: If you are using the Cloud Dataproc Auto Zone Placement feature, you must use the short name of the accelerator type resource, for example, nvidia-tesla-k80.
+      nvidia-tesla-k80Auto Zone Exception: If you are using the Dataproc Auto Zone Placement feature, you must use the short name of the accelerator type resource, for example, nvidia-tesla-k80.
   """
 
   use GoogleApi.Gax.ModelBase

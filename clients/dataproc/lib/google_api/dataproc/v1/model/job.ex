@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.Job do
   @moduledoc """
-  A Cloud Dataproc job resource.
+  A Dataproc job resource.
 
   ## Attributes
 
