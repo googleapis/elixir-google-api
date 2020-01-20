@@ -23,17 +23,20 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Authentication do
 
   *   `customAccount` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.CustomAccount.t`, *default:* `nil`) - Authentication using a custom account.
   *   `googleAccount` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.GoogleAccount.t`, *default:* `nil`) - Authentication using a Google account.
+  *   `iapCredential` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.IapCredential.t`, *default:* `nil`) - Authentication using Identity-Aware-Proxy (IAP).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :customAccount => GoogleApi.WebSecurityScanner.V1.Model.CustomAccount.t(),
-          :googleAccount => GoogleApi.WebSecurityScanner.V1.Model.GoogleAccount.t()
+          :googleAccount => GoogleApi.WebSecurityScanner.V1.Model.GoogleAccount.t(),
+          :iapCredential => GoogleApi.WebSecurityScanner.V1.Model.IapCredential.t()
         }
 
   field(:customAccount, as: GoogleApi.WebSecurityScanner.V1.Model.CustomAccount)
   field(:googleAccount, as: GoogleApi.WebSecurityScanner.V1.Model.GoogleAccount)
+  field(:iapCredential, as: GoogleApi.WebSecurityScanner.V1.Model.IapCredential)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.WebSecurityScanner.V1.Model.Authentication do
