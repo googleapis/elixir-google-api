@@ -21,17 +21,58 @@ defmodule GoogleApi.TagManager.V2.Model.Parameter do
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - The named key that uniquely identifies a parameter. Required for top-level parameters, as well as map values. Ignored for list values.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The named key that uniquely identifies a parameter.  Required for top-level
+      parameters, as well as map values.  Ignored for list values.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
+      @mutable tagmanager.accounts.containers.workspaces.triggers.create
+      @mutable tagmanager.accounts.containers.workspaces.triggers.update
+      @mutable tagmanager.accounts.containers.workspaces.tags.create
+      @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `list` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - This list parameter's parameters (keys will be ignored).
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
+      @mutable tagmanager.accounts.containers.workspaces.triggers.create
+      @mutable tagmanager.accounts.containers.workspaces.triggers.update
+      @mutable tagmanager.accounts.containers.workspaces.tags.create
+      @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `map` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - This map parameter's parameters (must have keys; keys must be unique).
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The parameter type. Valid values are: 
-      - boolean: The value represents a boolean, represented as 'true' or 'false' 
-      - integer: The value represents a 64-bit signed integer value, in base 10 
-      - list: A list of parameters should be specified 
-      - map: A map of parameters should be specified 
-      - template: The value represents any text; this can include variable references (even variable references that might return non-string types) 
-      - trigger_reference: The value represents a trigger, represented as the trigger id
-  *   `value` (*type:* `String.t`, *default:* `nil`) - A parameter's value (may contain variable references such as "{{myVariable}}") as appropriate to the specified type.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
+      @mutable tagmanager.accounts.containers.workspaces.triggers.create
+      @mutable tagmanager.accounts.containers.workspaces.triggers.update
+      @mutable tagmanager.accounts.containers.workspaces.tags.create
+      @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The parameter type.  Valid values are:<ul>
+      <li><code>boolean</code>: The value represents a boolean, represented as
+          'true' or 'false'</li>
+      <li><code>integer</code>: The value represents a 64-bit signed integer
+          value, in base 10</li>
+      <li><code>list</code>: A list of parameters should be specified</li>
+      <li><code>map</code>: A map of parameters should be specified</li>
+      <li><code>template</code>: The value represents any text; this can include
+          variable references (even variable references that might return
+          non-string types)</li>
+      <li><code>trigger_reference</code>: The value represents a trigger,
+          represented as the trigger id</li>
+      <li><code>tag_reference</code>: The value represents a tag, represented as
+          the tag name</li>
+      </ul>
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
+      @mutable tagmanager.accounts.containers.workspaces.triggers.create
+      @mutable tagmanager.accounts.containers.workspaces.triggers.update
+      @mutable tagmanager.accounts.containers.workspaces.tags.create
+      @mutable tagmanager.accounts.containers.workspaces.tags.update
+  *   `value` (*type:* `String.t`, *default:* `nil`) - A parameter's value (may contain variable references such as
+      "{{myVariable}}")
+      as appropriate to the specified type.
+      @mutable tagmanager.accounts.containers.workspaces.variables.create
+      @mutable tagmanager.accounts.containers.workspaces.variables.update
+      @mutable tagmanager.accounts.containers.workspaces.triggers.create
+      @mutable tagmanager.accounts.containers.workspaces.triggers.update
+      @mutable tagmanager.accounts.containers.workspaces.tags.create
+      @mutable tagmanager.accounts.containers.workspaces.tags.update
   """
 
   use GoogleApi.Gax.ModelBase

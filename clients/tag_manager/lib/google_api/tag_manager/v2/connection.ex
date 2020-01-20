@@ -46,5 +46,5 @@ defmodule GoogleApi.TagManager.V2.Connection do
       "https://www.googleapis.com/auth/tagmanager.readonly"
     ],
     otp_app: :google_api_tag_manager,
-    base_url: "https://www.googleapis.com/tagmanager/v2/"
+    base_url: "https://www.googleapis.com/"
 end

@@ -17,11 +17,14 @@
 
 defmodule GoogleApi.TagManager.V2.Model.TeardownTag do
   @moduledoc """
-  Represents a tag that fires after another tag in order to tear down dependencies.
+  Represents a tag that fires after another tag in order to tear down
+  dependencies.
 
   ## Attributes
 
-  *   `stopTeardownOnFailure` (*type:* `boolean()`, *default:* `nil`) - If true, fire the teardown tag if and only if the main tag fires successfully. If false, fire the teardown tag regardless of main tag firing status.
+  *   `stopTeardownOnFailure` (*type:* `boolean()`, *default:* `nil`) - If true, fire the teardown tag if and only if the main tag fires
+      successfully.
+      If false, fire the teardown tag regardless of main tag firing status.
   *   `tagName` (*type:* `String.t`, *default:* `nil`) - The name of the teardown tag.
   """
 

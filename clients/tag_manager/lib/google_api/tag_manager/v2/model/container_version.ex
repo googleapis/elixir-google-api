@@ -23,15 +23,20 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
   *   `builtInVariable` (*type:* `list(GoogleApi.TagManager.V2.Model.BuiltInVariable.t)`, *default:* `nil`) - The built-in variables in the container that this version was taken from.
+  *   `client` (*type:* `list(GoogleApi.TagManager.V2.Model.Client.t)`, *default:* `nil`) - The clients in the container that this version was taken from.
   *   `container` (*type:* `GoogleApi.TagManager.V2.Model.Container.t`, *default:* `nil`) - The container that this version was taken from.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
   *   `containerVersionId` (*type:* `String.t`, *default:* `nil`) - The Container Version ID uniquely identifies the GTM Container Version.
   *   `customTemplate` (*type:* `list(GoogleApi.TagManager.V2.Model.CustomTemplate.t)`, *default:* `nil`) - The custom templates in the container that this version was taken from.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - A value of true indicates this container version has been deleted.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Container version description.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Container Version as computed at storage time. This value is recomputed whenever the container version is modified.
+      @mutable tagmanager.accounts.containers.versions.update
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Container Version as computed at
+      storage time. This value is recomputed whenever the container version is
+      modified.
   *   `folder` (*type:* `list(GoogleApi.TagManager.V2.Model.Folder.t)`, *default:* `nil`) - The folders in the container that this version was taken from.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Container version display name.
+      @mutable tagmanager.accounts.containers.versions.update
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM ContainerVersions's API relative path.
   *   `tag` (*type:* `list(GoogleApi.TagManager.V2.Model.Tag.t)`, *default:* `nil`) - The tags in the container that this version was taken from.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
@@ -45,6 +50,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   @type t :: %__MODULE__{
           :accountId => String.t(),
           :builtInVariable => list(GoogleApi.TagManager.V2.Model.BuiltInVariable.t()),
+          :client => list(GoogleApi.TagManager.V2.Model.Client.t()),
           :container => GoogleApi.TagManager.V2.Model.Container.t(),
           :containerId => String.t(),
           :containerVersionId => String.t(),
@@ -64,6 +70,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
 
   field(:accountId)
   field(:builtInVariable, as: GoogleApi.TagManager.V2.Model.BuiltInVariable, type: :list)
+  field(:client, as: GoogleApi.TagManager.V2.Model.Client, type: :list)
   field(:container, as: GoogleApi.TagManager.V2.Model.Container)
   field(:containerId)
   field(:containerVersionId)

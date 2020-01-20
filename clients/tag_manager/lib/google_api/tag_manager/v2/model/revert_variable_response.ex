@@ -21,7 +21,9 @@ defmodule GoogleApi.TagManager.V2.Model.RevertVariableResponse do
 
   ## Attributes
 
-  *   `variable` (*type:* `GoogleApi.TagManager.V2.Model.Variable.t`, *default:* `nil`) - Variable as it appears in the latest container version since the last workspace synchronization operation. If no variable is present, that means the variable was deleted in the latest container version.
+  *   `variable` (*type:* `GoogleApi.TagManager.V2.Model.Variable.t`, *default:* `nil`) - Variable as it appears in the latest container version since the last
+      workspace synchronization operation. If no variable is present, that means
+      the variable was deleted in the latest container version.
   """
 
   use GoogleApi.Gax.ModelBase

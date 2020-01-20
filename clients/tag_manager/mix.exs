@@ -18,7 +18,7 @@
 defmodule GoogleApi.TagManager.Mixfile do
   use Mix.Project
 
-  @version "0.8.0"
+  @version "0.9.0"
 
   def project() do
     [
@@ -48,7 +48,8 @@ defmodule GoogleApi.TagManager.Mixfile do
 
   defp description() do
     """
-    Tag Manager API client library. Accesses Tag Manager accounts and containers.
+    Tag Manager API client library. This API allows clients to access and modify container and tag
+     configuration.
     """
   end
 
@@ -59,7 +60,7 @@ defmodule GoogleApi.TagManager.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/tag_manager",
-        "Homepage" => "https://developers.google.com/tag-manager/api/v2/"
+        "Homepage" => "https://developers.google.com/tag-manager"
       }
     ]
   end

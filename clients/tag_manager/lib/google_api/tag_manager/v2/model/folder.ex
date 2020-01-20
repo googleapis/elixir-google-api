@@ -23,10 +23,15 @@ defmodule GoogleApi.TagManager.V2.Model.Folder do
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Folder as computed at storage time. This value is recomputed whenever the folder is modified.
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Folder as computed at storage time.
+      This value is recomputed whenever the folder is modified.
   *   `folderId` (*type:* `String.t`, *default:* `nil`) - The Folder ID uniquely identifies the GTM Folder.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Folder display name.
+      @mutable tagmanager.accounts.containers.workspaces.folders.create
+      @mutable tagmanager.accounts.containers.workspaces.folders.update
   *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this folder in the container.
+      @mutable tagmanager.accounts.containers.workspaces.folders.create
+      @mutable tagmanager.accounts.containers.workspaces.folders.update
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Folder's API relative path.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   *   `workspaceId` (*type:* `String.t`, *default:* `nil`) - GTM Workspace ID.

@@ -2,7 +2,8 @@
 
 Tag Manager API client library.
 
-Accesses Tag Manager accounts and containers.
+This API allows clients to access and modify container and tag
+     configuration.
 
 ## Installation
 
@@ -11,13 +12,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_tag_manager, "~> 0.8"}]
+  [{:google_api_tag_manager, "~> 0.9"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/tag-manager/api/v2/](https://developers.google.com/tag-manager/api/v2/).
+Product documentation is available at [https://developers.google.com/tag-manager](https://developers.google.com/tag-manager).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_tag_manager](https://hexdocs.pm/google_api_tag_manager).
