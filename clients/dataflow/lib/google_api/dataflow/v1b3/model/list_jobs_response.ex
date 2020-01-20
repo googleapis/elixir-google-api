@@ -17,8 +17,11 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.ListJobsResponse do
   @moduledoc """
-  Response to a request to list Cloud Dataflow jobs.  This may be a partial
-  response, depending on the page size in the ListJobsRequest.
+  Response to a request to list Cloud Dataflow jobs in a project. This might
+  be a partial response, depending on the page size in the ListJobsRequest.
+  However, if the project does not have any jobs, an instance of
+  ListJobsResponse is not returned and the requests's response
+  body is empty {}.
 
   ## Attributes
 
