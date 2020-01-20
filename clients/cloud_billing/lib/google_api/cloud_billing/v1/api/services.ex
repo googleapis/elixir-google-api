@@ -92,7 +92,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The name of the service.
+  *   `parent` (*type:* `String.t`) - Required. The name of the service.
       Example: "services/DA34-426B-A397"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

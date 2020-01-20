@@ -98,7 +98,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the billing account to retrieve. For example,
+  *   `name` (*type:* `String.t`) - Required. The resource name of the billing account to retrieve. For example,
       `billingAccounts/012345-567890-ABCDEF`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -313,7 +313,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the billing account resource to be updated.
+  *   `name` (*type:* `String.t`) - Required. The name of the billing account resource to be updated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -526,7 +526,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the billing account associated with the projects that
+  *   `name` (*type:* `String.t`) - Required. The resource name of the billing account associated with the projects that
       you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
