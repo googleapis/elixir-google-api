@@ -321,6 +321,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   @doc """
   Partially updates a resource containing information about a database inside
   a Cloud SQL instance. This method supports patch semantics.
+  <aside
+  class="caution"><strong>Caution:</strong> This is not a partial update, so
+  you must include values for all the settings that you want to retain. For
+  partial updates, use <a
+  href="/sql/docs/db_path/admin-api/rest/v1beta4/instances/update">update</a>.</aside>
 
   ## Parameters
 

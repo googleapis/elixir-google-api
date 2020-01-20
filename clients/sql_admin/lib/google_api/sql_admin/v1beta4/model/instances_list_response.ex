@@ -25,7 +25,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#instancesList</code>.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide
       this value in a subsequent request to return the next page of results.
-  *   `warnings` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning.t)`, *default:* `nil`) - List of warnings that ocurred while handling the request.
+  *   `warnings` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning.t)`, *default:* `nil`) - List of warnings that occurred while handling the request.
   """
 
   use GoogleApi.Gax.ModelBase
