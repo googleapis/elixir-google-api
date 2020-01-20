@@ -34,6 +34,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.QueryOperator do
   *   `isSuggestable` (*type:* `boolean()`, *default:* `nil`) - Can get suggestions for this field.
   *   `lessThanOperatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name that can be used to  isolate the property using
       the less-than operator.
+  *   `objectType` (*type:* `String.t`, *default:* `nil`) - Name of the object corresponding to the operator. This field is only filled
+      for schema-specific operators, and is unset for common operators.
   *   `operatorName` (*type:* `String.t`, *default:* `nil`) - The name of the operator.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the operator.
   """
@@ -50,6 +52,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.QueryOperator do
           :isSortable => boolean(),
           :isSuggestable => boolean(),
           :lessThanOperatorName => String.t(),
+          :objectType => String.t(),
           :operatorName => String.t(),
           :type => String.t()
         }
@@ -63,6 +66,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.QueryOperator do
   field(:isSortable)
   field(:isSuggestable)
   field(:lessThanOperatorName)
+  field(:objectType)
   field(:operatorName)
   field(:type)
 end
