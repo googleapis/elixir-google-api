@@ -123,6 +123,10 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
       not modify by itself.
       For update of a single entry in this map, the update field mask shall
       follow this sementics: go/advanced-field-masks
+  *   `slmInstanceTemplate` (*type:* `String.t`, *default:* `nil`) - Link to the SLM instance template. Only populated when updating SLM
+      instances via SSA's Actuation service adaptor.
+      Service producers with custom control plane (e.g. Cloud SQL) doesn't
+      need to populate this field. Instead they should use software_versions.
   *   `sloMetadata` (*type:* `GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata.t`, *default:* `nil`) - Output only. SLO metadata for instance classification in the
       Standardized dataplane SLO platform.
       See go/cloud-ssa-standard-slo for feature description.
@@ -156,6 +160,7 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
             optional(String.t()) =>
               GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1RolloutMetadata.t()
           },
+          :slmInstanceTemplate => String.t(),
           :sloMetadata =>
             GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata.t(),
           :softwareVersions => map(),
@@ -188,6 +193,8 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
     as: GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1RolloutMetadata,
     type: :map
   )
+
+  field(:slmInstanceTemplate)
 
   field(:sloMetadata,
     as: GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata
