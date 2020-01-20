@@ -22,6 +22,7 @@ defmodule GoogleApi.Docs.V1.Model.Response do
   ## Attributes
 
   *   `createFooter` (*type:* `GoogleApi.Docs.V1.Model.CreateFooterResponse.t`, *default:* `nil`) - The result of creating a footer.
+  *   `createFootnote` (*type:* `GoogleApi.Docs.V1.Model.CreateFootnoteResponse.t`, *default:* `nil`) - The result of creating a footnote.
   *   `createHeader` (*type:* `GoogleApi.Docs.V1.Model.CreateHeaderResponse.t`, *default:* `nil`) - The result of creating a header.
   *   `createNamedRange` (*type:* `GoogleApi.Docs.V1.Model.CreateNamedRangeResponse.t`, *default:* `nil`) - The result of creating a named range.
   *   `insertInlineImage` (*type:* `GoogleApi.Docs.V1.Model.InsertInlineImageResponse.t`, *default:* `nil`) - The result of inserting an inline image.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Docs.V1.Model.Response do
 
   @type t :: %__MODULE__{
           :createFooter => GoogleApi.Docs.V1.Model.CreateFooterResponse.t(),
+          :createFootnote => GoogleApi.Docs.V1.Model.CreateFootnoteResponse.t(),
           :createHeader => GoogleApi.Docs.V1.Model.CreateHeaderResponse.t(),
           :createNamedRange => GoogleApi.Docs.V1.Model.CreateNamedRangeResponse.t(),
           :insertInlineImage => GoogleApi.Docs.V1.Model.InsertInlineImageResponse.t(),
@@ -41,6 +43,7 @@ defmodule GoogleApi.Docs.V1.Model.Response do
         }
 
   field(:createFooter, as: GoogleApi.Docs.V1.Model.CreateFooterResponse)
+  field(:createFootnote, as: GoogleApi.Docs.V1.Model.CreateFootnoteResponse)
   field(:createHeader, as: GoogleApi.Docs.V1.Model.CreateHeaderResponse)
   field(:createNamedRange, as: GoogleApi.Docs.V1.Model.CreateNamedRangeResponse)
   field(:insertInlineImage, as: GoogleApi.Docs.V1.Model.InsertInlineImageResponse)

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Docs.V1.Model.CreateHeaderRequest do
   @moduledoc """
-  Creates a Header. The new header will be
-  applied to the DocumentStyle.
+  Creates a Header. The new header is applied to
+  the DocumentStyle.
 
-  If a header of the specified type already exists then a 400 bad request error
-  will be returned.
+  If a header of the specified type already exists, a 400 bad request error
+  is returned.
 
   ## Attributes
 
