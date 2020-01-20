@@ -292,6 +292,8 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.HttpRule do
   *   `additionalBindings` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t)`, *default:* `nil`) - Additional HTTP bindings for the selector. Nested bindings must
       not contain an `additional_bindings` field themselves (that is,
       the nesting may only be one level deep).
+  *   `allowHalfDuplex` (*type:* `boolean()`, *default:* `nil`) - When this flag is set to true, HTTP requests will be allowed to invoke a
+      half-duplex streaming method.
   *   `body` (*type:* `String.t`, *default:* `nil`) - The name of the request field whose value is mapped to the HTTP request
       body, or `*` for mapping all request fields not captured by the path
       pattern to the HTTP body, or omitted for not having any HTTP request body.
@@ -323,6 +325,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.HttpRule do
 
   @type t :: %__MODULE__{
           :additionalBindings => list(GoogleApi.ServiceNetworking.V1.Model.HttpRule.t()),
+          :allowHalfDuplex => boolean(),
           :body => String.t(),
           :custom => GoogleApi.ServiceNetworking.V1.Model.CustomHttpPattern.t(),
           :delete => String.t(),
@@ -335,6 +338,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.HttpRule do
         }
 
   field(:additionalBindings, as: GoogleApi.ServiceNetworking.V1.Model.HttpRule, type: :list)
+  field(:allowHalfDuplex)
   field(:body)
   field(:custom, as: GoogleApi.ServiceNetworking.V1.Model.CustomHttpPattern)
   field(:delete)
