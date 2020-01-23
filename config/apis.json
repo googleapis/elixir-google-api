@@ -716,11 +716,6 @@
   },
   {
     "version": "v1",
-    "url": "https://searchconsole.googleapis.com/$discovery/rest?version=v1",
-    "name": "SearchConsole"
-  },
-  {
-    "version": "v1",
     "url": "https://securitycenter.googleapis.com/$discovery/rest?version=v1",
     "name": "SecurityCenter"
   },
