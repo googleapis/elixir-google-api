@@ -58,8 +58,13 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
   *   `priceCurrencyCode` (*type:* `String.t`, *default:* `nil`) - ISO 4217 currency code for the subscription price. For example, if the price is specified in British pounds sterling, price_currency_code is "GBP".
   *   `profileId` (*type:* `String.t`, *default:* `nil`) - The Google profile id of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'.
   *   `profileName` (*type:* `String.t`, *default:* `nil`) - The profile name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'.
+  *   `promotionCode` (*type:* `String.t`, *default:* `nil`) - The promotion code applied on this purchase. This field is only set if a vanity code promotion is applied when the subscription was purchased.
+  *   `promotionType` (*type:* `integer()`, *default:* `nil`) - The type of promotion applied on this purchase. This field is only set if a promotion is applied when the subscription was purchased. Possible values are:  
+      - One time code 
+      - Vanity code
   *   `purchaseType` (*type:* `integer()`, *default:* `nil`) - The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:  
-      - Test (i.e. purchased from a license testing account)
+      - Test (i.e. purchased from a license testing account) 
+      - Promo (i.e. purchased using a promo code)
   *   `startTimeMillis` (*type:* `String.t`, *default:* `nil`) - Time at which the subscription was granted, in milliseconds since the Epoch.
   *   `userCancellationTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the subscription was canceled by the user, in milliseconds since the epoch. Only present if cancelReason is 0.
   """
@@ -89,6 +94,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
           :priceCurrencyCode => String.t(),
           :profileId => String.t(),
           :profileName => String.t(),
+          :promotionCode => String.t(),
+          :promotionType => integer(),
           :purchaseType => integer(),
           :startTimeMillis => String.t(),
           :userCancellationTimeMillis => String.t()
@@ -119,6 +126,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
   field(:priceCurrencyCode)
   field(:profileId)
   field(:profileName)
+  field(:promotionCode)
+  field(:promotionType)
   field(:purchaseType)
   field(:startTimeMillis)
   field(:userCancellationTimeMillis)
