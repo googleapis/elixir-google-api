@@ -31,7 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.CorsPolicy do
       An origin is allowed if it matches either allow_origins or allow_origin_regex.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
   *   `exposeHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the content for the Access-Control-Expose-Headers header.
-  *   `maxAge` (*type:* `integer()`, *default:* `nil`) - Specifies how long the results of a preflight request can be cached. This translates to the content for the Access-Control-Max-Age header.
+  *   `maxAge` (*type:* `integer()`, *default:* `nil`) - Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
   """
 
   use GoogleApi.Gax.ModelBase

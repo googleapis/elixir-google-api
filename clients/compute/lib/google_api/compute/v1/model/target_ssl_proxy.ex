@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetSslProxy do
   @moduledoc """
   Represents a Target SSL Proxy resource.
 
-  A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies. (== resource_for beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
+  A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies. (== resource_for {$api_version}.targetSslProxies ==)
 
   ## Attributes
 

@@ -35,6 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
       If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
 
       Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+  *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - The size of the disk in GB.
   *   `guestOsFeatures` (*type:* `list(GoogleApi.Compute.V1.Model.GuestOsFeature.t)`, *default:* `nil`) - A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
   *   `index` (*type:* `integer()`, *default:* `nil`) - [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
   *   `initializeParams` (*type:* `GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams.t`, *default:* `nil`) - [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
@@ -59,6 +60,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
           :boot => boolean(),
           :deviceName => String.t(),
           :diskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t(),
+          :diskSizeGb => String.t(),
           :guestOsFeatures => list(GoogleApi.Compute.V1.Model.GuestOsFeature.t()),
           :index => integer(),
           :initializeParams => GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams.t(),
@@ -74,6 +76,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
   field(:boot)
   field(:deviceName)
   field(:diskEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
+  field(:diskSizeGb)
   field(:guestOsFeatures, as: GoogleApi.Compute.V1.Model.GuestOsFeature, type: :list)
   field(:index)
   field(:initializeParams, as: GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams)

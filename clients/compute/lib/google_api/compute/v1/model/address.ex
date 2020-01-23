@@ -17,11 +17,21 @@
 
 defmodule GoogleApi.Compute.V1.Model.Address do
   @moduledoc """
-  Represents an IP Address resource.
+  Use global external addresses for GFE-based external HTTP(S) load balancers in Premium Tier.
 
-  An address resource represents a regional internal IP address. Regional internal IP addresses are RFC 1918 addresses that come from either a primary or secondary IP range of a subnet in a VPC network. Regional external IP addresses can be assigned to GCP VM instances, Cloud VPN gateways, regional external forwarding rules for network load balancers (in either Standard or Premium Tier), and regional external forwarding rules for HTTP(S), SSL Proxy, and TCP Proxy load balancers in Standard Tier. For more information, read IP addresses.
+  Use global internal addresses for reserved peering network range.
 
-  A globalAddresses resource represent a global external IP address. Global external IP addresses are IPv4 or IPv6 addresses. They can only be assigned to global forwarding rules for HTTP(S), SSL Proxy, or TCP Proxy load balancers in Premium Tier. For more information, read Global resources. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
+  Use regional external addresses for the following resources:
+
+  - External IP addresses for VM instances - Regional external forwarding rules - Cloud NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA)
+
+  Use regional internal IP addresses for subnet IP ranges (primary and secondary). This includes:
+
+  - Internal IP addresses for VM instances - Alias IP ranges of VM instances (/32 only) - Regional internal forwarding rules - Internal TCP/UDP load balancer addresses - Internal HTTP(S) load balancer addresses - Cloud DNS inbound forwarding IP addresses
+
+  For more information, read reserved IP address.
+
+  (== resource_for {$api_version}.addresses ==) (== resource_for {$api_version}.globalAddresses ==)
 
   ## Attributes
 

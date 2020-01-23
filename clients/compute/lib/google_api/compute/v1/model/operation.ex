@@ -19,6 +19,10 @@ defmodule GoogleApi.Compute.V1.Model.Operation do
   @moduledoc """
   Represents an Operation resource.
 
+  Google Compute Engine has three Operation resources:
+
+  * [Global](/compute/docs/reference/rest/latest/globalOperations) * [Regional](/compute/docs/reference/rest/latest/regionOperations) * [Zonal](/compute/docs/reference/rest/latest/zoneOperations)
+
   You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses.
 
   Operations can be global, regional or zonal.  
@@ -26,7 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.Operation do
   - For regional operations, use the regionOperations resource. 
   - For zonal operations, use the zonalOperations resource.  
 
-  For more information, read  Global, Regional, and Zonal Resources. (== resource_for v1.globalOperations ==) (== resource_for beta.globalOperations ==) (== resource_for v1.regionOperations ==) (== resource_for beta.regionOperations ==) (== resource_for v1.zoneOperations ==) (== resource_for beta.zoneOperations ==)
+  For more information, read  Global, Regional, and Zonal Resources. (== resource_for {$api_version}.globalOperations ==) (== resource_for {$api_version}.regionOperations ==) (== resource_for {$api_version}.zoneOperations ==)
 
   ## Attributes
 

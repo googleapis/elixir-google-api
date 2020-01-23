@@ -24,20 +24,12 @@ defmodule GoogleApi.Compute.V1.Model.TCPHealthCheck do
   *   `port` (*type:* `integer()`, *default:* `nil`) - The TCP port number for the health check request. The default value is 80. Valid values are 1 through 65535.
   *   `portName` (*type:* `String.t`, *default:* `nil`) - Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
   *   `portSpecification` (*type:* `String.t`, *default:* `nil`) - Specifies how port is selected for health checking, can be one of following values:
-      USE_FIXED_PORT: The port number in
-      port
-      is used for health checking.
-      USE_NAMED_PORT: The
-      portName
-      is used for health checking.
+      USE_FIXED_PORT: The port number in port is used for health checking.
+      USE_NAMED_PORT: The portName is used for health checking.
       USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
 
 
-      If not specified, TCP health check follows behavior specified in
-      port
-      and
-      portName
-      fields.
+      If not specified, TCP health check follows behavior specified in port and portName fields.
   *   `proxyHeader` (*type:* `String.t`, *default:* `nil`) - Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
   *   `request` (*type:* `String.t`, *default:* `nil`) - The application data to send once the TCP connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
   *   `response` (*type:* `String.t`, *default:* `nil`) - The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.

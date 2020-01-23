@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
   @moduledoc """
   Represents a VPC Network resource.
 
-  Networks connect resources to each other and to the internet. For more information, read Virtual Private Cloud (VPC) Network. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+  Networks connect resources to each other and to the internet. For more information, read Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
 
   ## Attributes
 

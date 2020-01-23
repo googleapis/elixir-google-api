@@ -25,20 +25,12 @@ defmodule GoogleApi.Compute.V1.Model.HTTP2HealthCheck do
   *   `port` (*type:* `integer()`, *default:* `nil`) - The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
   *   `portName` (*type:* `String.t`, *default:* `nil`) - Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
   *   `portSpecification` (*type:* `String.t`, *default:* `nil`) - Specifies how port is selected for health checking, can be one of following values:
-      USE_FIXED_PORT: The port number in
-      port
-      is used for health checking.
-      USE_NAMED_PORT: The
-      portName
-      is used for health checking.
+      USE_FIXED_PORT: The port number in port is used for health checking.
+      USE_NAMED_PORT: The portName is used for health checking.
       USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
 
 
-      If not specified, HTTP2 health check follows behavior specified in
-      port
-      and
-      portName
-      fields.
+      If not specified, HTTP2 health check follows behavior specified in port and portName fields.
   *   `proxyHeader` (*type:* `String.t`, *default:* `nil`) - Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
   *   `requestPath` (*type:* `String.t`, *default:* `nil`) - The request path of the HTTP/2 health check request. The default value is /.
   *   `response` (*type:* `String.t`, *default:* `nil`) - The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.

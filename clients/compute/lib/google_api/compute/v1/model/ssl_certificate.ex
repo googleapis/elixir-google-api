@@ -19,7 +19,15 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificate do
   @moduledoc """
   Represents an SSL Certificate resource.
 
-  This SSL certificate resource also contains a private key. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read  Creating and Using SSL Certificates. (== resource_for beta.sslCertificates ==) (== resource_for v1.sslCertificates ==) (== resource_for beta.regionSslCertificates ==) (== resource_for v1.regionSslCertificates ==) Next ID: 17
+  Google Compute Engine has two SSL Certificate resources:
+
+  * [Global](/compute/docs/reference/rest/latest/sslCertificates) * [Regional](/compute/docs/reference/rest/latest/regionSslCertificates)
+
+  - sslCertificates are used by: - external HTTPS load balancers - SSL proxy load balancers
+
+  - regionSslCertificates are used by: - internal HTTPS load balancers
+
+  This SSL certificate resource also contains a private key. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read  Creating and Using SSL Certificates. (== resource_for {$api_version}.sslCertificates ==) (== resource_for {$api_version}.regionSslCertificates ==) Next ID: 17
 
   ## Attributes
 

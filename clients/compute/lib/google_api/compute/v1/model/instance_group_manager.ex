@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
 
   For zonal Managed Instance Group, use the instanceGroupManagers resource.
 
-  For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (== resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for v1.regionInstanceGroupManagers ==)
+  For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (== resource_for {$api_version}.instanceGroupManagers ==) (== resource_for {$api_version}.regionInstanceGroupManagers ==)
 
   ## Attributes
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnostics do
   @moduledoc """
-  Diagnostics information about interconnect, contains detailed and current technical information about Google?s side of the connection.
+  Diagnostics information about interconnect, contains detailed and current technical information about Google's side of the connection.
 
   ## Attributes
 

@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.Image do
   @moduledoc """
   Represents an Image resource.
 
-  You can use images to create boot disks for your VM instances. For more information, read Images. (== resource_for beta.images ==) (== resource_for v1.images ==)
+  You can use images to create boot disks for your VM instances. For more information, read Images. (== resource_for {$api_version}.images ==)
 
   ## Attributes
 

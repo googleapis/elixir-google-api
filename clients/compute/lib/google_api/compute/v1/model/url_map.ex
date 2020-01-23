@@ -19,9 +19,17 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
   @moduledoc """
   Represents a URL Map resource.
 
-  A URL map resource is a component of certain types of load balancers. This resource defines mappings from host names and URL paths to either a backend service or a backend bucket.
+  Google Compute Engine has two URL Map resources:
 
-  To use this resource, the backend service must have a loadBalancingScheme of either EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED For more information, read URL Map Concepts.
+  * [Global](/compute/docs/reference/rest/latest/urlMaps) * [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+
+  A URL map resource is a component of certain types of GCP load balancers and Traffic Director.
+
+  * urlMaps are used by external HTTP(S) load balancers and Traffic Director. * regionUrlMaps are used by internal HTTP(S) load balancers.
+
+  This resource defines mappings from host names and URL paths to either a backend service or a backend bucket.
+
+  To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
 
   ## Attributes
 

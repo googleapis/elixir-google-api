@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeTemplate do
   @moduledoc """
   Represent a sole-tenant Node Template resource.
 
-  You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances. (== resource_for beta.nodeTemplates ==) (== resource_for v1.nodeTemplates ==)
+  You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances. (== resource_for {$api_version}.nodeTemplates ==) (== NextID: 18 ==)
 
   ## Attributes
 

@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineType do
   @moduledoc """
   Represents a Machine Type resource.
 
-  You can use specific machine types for your VM instances based on performance and pricing requirements. For more information, read Machine Types. (== resource_for v1.machineTypes ==) (== resource_for beta.machineTypes ==)
+  You can use specific machine types for your VM instances based on performance and pricing requirements. For more information, read Machine Types. (== resource_for {$api_version}.machineTypes ==)
 
   ## Attributes
 

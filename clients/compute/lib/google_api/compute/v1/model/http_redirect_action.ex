@@ -27,9 +27,11 @@ defmodule GoogleApi.Compute.V1.Model.HttpRedirectAction do
       This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted.
       The default is set to false.
   *   `pathRedirect` (*type:* `String.t`, *default:* `nil`) - The path that will be used in the redirect response instead of the one that was supplied in the request.
-      Only one of pathRedirect or prefixRedirect must be specified.
+      pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
       The value must be between 1 and 1024 characters.
   *   `prefixRedirect` (*type:* `String.t`, *default:* `nil`) - The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
+      prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
+      The value must be between 1 and 1024 characters.
   *   `redirectResponseCode` (*type:* `String.t`, *default:* `nil`) - The HTTP Status code to use for this RedirectAction.
       Supported values are:  
       - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. 
