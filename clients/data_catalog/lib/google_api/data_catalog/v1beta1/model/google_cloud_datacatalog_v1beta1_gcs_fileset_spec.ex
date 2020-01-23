@@ -22,7 +22,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1GcsFi
   ## Attributes
 
   *   `filePatterns` (*type:* `list(String.t)`, *default:* `nil`) - Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
-      Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+      Storage documentation](/storage/docs/gsutil/addlhelp/WildcardNames) for
       more information. Note that bucket wildcards are currently not supported.
 
       Examples of valid file_patterns:
