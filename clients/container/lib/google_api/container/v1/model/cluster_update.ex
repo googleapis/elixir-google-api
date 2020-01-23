@@ -82,6 +82,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
       - "1.X.Y-gke.N": picks an explicit Kubernetes version
       - "-": picks the Kubernetes master version
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
+  *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
   *   `desiredVerticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
   """
 
@@ -106,6 +107,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredNodeVersion => String.t(),
           :desiredResourceUsageExportConfig =>
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t(),
+          :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t(),
           :desiredVerticalPodAutoscaling =>
             GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t()
         }
@@ -137,6 +139,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
     as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig
   )
 
+  field(:desiredShieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
   field(:desiredVerticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
 end
 
