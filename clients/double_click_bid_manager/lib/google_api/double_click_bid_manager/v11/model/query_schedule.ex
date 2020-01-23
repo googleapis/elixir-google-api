@@ -25,6 +25,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.QuerySchedule do
   *   `frequency` (*type:* `String.t`, *default:* `nil`) - How often the query is run.
   *   `nextRunMinuteOfDay` (*type:* `integer()`, *default:* `nil`) - Time of day at which a new report will be generated, represented as minutes past midnight. Range is 0 to 1439. Only applies to scheduled reports.
   *   `nextRunTimezoneCode` (*type:* `String.t`, *default:* `nil`) - Canonical timezone code for report generation time. Defaults to America/New_York.
+  *   `startTimeMs` (*type:* `String.t`, *default:* `nil`) - When to start running the query. Not applicable to `ONE_TIME` frequency.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Model.QuerySchedule do
           :endTimeMs => String.t(),
           :frequency => String.t(),
           :nextRunMinuteOfDay => integer(),
-          :nextRunTimezoneCode => String.t()
+          :nextRunTimezoneCode => String.t(),
+          :startTimeMs => String.t()
         }
 
   field(:endTimeMs)
   field(:frequency)
   field(:nextRunMinuteOfDay)
   field(:nextRunTimezoneCode)
+  field(:startTimeMs)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V11.Model.QuerySchedule do
