@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchDeleteEntiti
 
   ## Attributes
 
-  *   `entityValues` (*type:* `list(String.t)`, *default:* `nil`) - Required. The canonical `values` of the entities to delete. Note that
+  *   `entityValues` (*type:* `list(String.t)`, *default:* `nil`) - Required. The reference `values` of the entities to delete. Note that
       these are not fully-qualified names, i.e. they don't start with
       `projects/<Project ID>`.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language of entity synonyms defined in `entities`. If not
