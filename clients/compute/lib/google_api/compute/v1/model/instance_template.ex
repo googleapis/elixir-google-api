@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceTemplate do
   @moduledoc """
   Represents an Instance Template resource.
 
-  You can use instance templates to create VM instances and managed instance groups. For more information, read Instance Templates. (== resource_for beta.instanceTemplates ==) (== resource_for v1.instanceTemplates ==)
+  You can use instance templates to create VM instances and managed instance groups. For more information, read Instance Templates. (== resource_for {$api_version}.instanceTemplates ==)
 
   ## Attributes
 

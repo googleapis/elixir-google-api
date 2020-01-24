@@ -29,7 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroup do
 
   For more information, read Instance groups.
 
-  (== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (== resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+  (== resource_for {$api_version}.instanceGroups ==) (== resource_for {$api_version}.regionInstanceGroups ==)
 
   ## Attributes
 

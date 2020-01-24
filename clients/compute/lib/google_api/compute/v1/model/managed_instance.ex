@@ -33,6 +33,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
       - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+  *   `instanceHealth` (*type:* `list(GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth.t)`, *default:* `nil`) - [Output Only] Health state of the instance per health-check.
   *   `instanceStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the instance. This field is empty when the instance does not exist.
   *   `lastAttempt` (*type:* `GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t`, *default:* `nil`) - [Output Only] Information about the last attempt to create or delete the instance.
   *   `version` (*type:* `GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t`, *default:* `nil`) - [Output Only] Intended version of this instance.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
           :currentAction => String.t(),
           :id => String.t(),
           :instance => String.t(),
+          :instanceHealth => list(GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth.t()),
           :instanceStatus => String.t(),
           :lastAttempt => GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt.t(),
           :version => GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t()
@@ -52,6 +54,9 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
   field(:currentAction)
   field(:id)
   field(:instance)
+
+  field(:instanceHealth, as: GoogleApi.Compute.V1.Model.ManagedInstanceInstanceHealth, type: :list)
+
   field(:instanceStatus)
   field(:lastAttempt, as: GoogleApi.Compute.V1.Model.ManagedInstanceLastAttempt)
   field(:version, as: GoogleApi.Compute.V1.Model.ManagedInstanceVersion)

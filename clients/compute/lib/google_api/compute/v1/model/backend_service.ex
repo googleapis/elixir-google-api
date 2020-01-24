@@ -21,9 +21,13 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
 
   A backend service contains configuration values for Google Cloud Platform load balancing services.
 
+  Backend services in Google Compute Engine can be either regionally or globally scoped.
+
+  * [Global](/compute/docs/reference/rest/latest/backendServices) * [Regional](/compute/docs/reference/rest/latest/regionBackendServices)
+
   For more information, read Backend Services.
 
-  (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+  (== resource_for {$api_version}.backendService ==)
 
   ## Attributes
 
@@ -48,7 +52,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
 
       To see the latest fingerprint, make a get() request to retrieve a BackendService.
-  *   `healthChecks` (*type:* `list(String.t)`, *default:* `nil`) - The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this BackendService. Currently at most one health check can be specified, and a health check is required for Compute Engine backend services. A health check must not be specified for App Engine backend and Cloud Function backend.
+  *   `healthChecks` (*type:* `list(String.t)`, *default:* `nil`) - The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this BackendService. Currently at most one health check can be specified. Health check is optional for Compute Engine backend services if there is no backend. A health check must not be specified when adding Internet Network Endpoint Group or Serverless Network Endpoint Group as backends. In all other cases, a health check is required for Compute Engine backend services.
 
       For internal load balancing, a URL to a HealthCheck resource must be specified instead.
   *   `iap` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceIAP.t`, *default:* `nil`) - 

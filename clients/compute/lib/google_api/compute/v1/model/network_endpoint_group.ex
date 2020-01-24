@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   @moduledoc """
   Represents a collection of network endpoints.
 
-  For more information read Setting up network endpoint groups in load balancing. (== resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==) Next ID: 21
+  For more information read Setting up network endpoint groups in load balancing. (== resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
 
   ## Attributes
 

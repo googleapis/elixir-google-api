@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetInstance do
   @moduledoc """
   Represents a Target Instance resource.
 
-  You can use a target instance to handle traffic for one or more forwarding rules, which is ideal for forwarding protocol traffic that is managed by a single source. For example, ESP, AH, TCP, or UDP. For more information, read Target instances. (== resource_for beta.targetInstances ==) (== resource_for v1.targetInstances ==)
+  You can use a target instance to handle traffic for one or more forwarding rules, which is ideal for forwarding protocol traffic that is managed by a single source. For example, ESP, AH, TCP, or UDP. For more information, read Target instances. (== resource_for {$api_version}.targetInstances ==)
 
   ## Attributes
 
