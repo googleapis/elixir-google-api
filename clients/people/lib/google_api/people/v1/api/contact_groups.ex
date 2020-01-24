@@ -291,10 +291,10 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of resources to return. Valid values are between 1 and
           1000, inclusive. Defaults to 30 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous call to
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous call to
           [ListContactGroups](/people/api/rest/v1/contactgroups/list).
           Requests the next page of resources.
-      *   `:syncToken` (*type:* `String.t`) - A sync token, returned by a previous call to `contactgroups.list`.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, returned by a previous call to `contactgroups.list`.
           Only resources changed since the sync token was created will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -343,7 +343,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `contact_groups_id` (*type:* `String.t`) - Part of `contactGroup.resourceName`. The resource name for the contact group, assigned by the server. An ASCII
-      string, in the form of `contactGroups/`<var>contact_group_id</var>.
+      string, in the form of `contactGroups/{contact_group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -403,7 +403,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
 
   @doc """
   Modify the members of a contact group owned by the authenticated user.
-  <br>
+
   The only system contact groups that can have members added are
   `contactGroups/myContacts` and `contactGroups/starred`. Other system
   contact groups are deprecated and can only have contacts removed.
