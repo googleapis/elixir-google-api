@@ -25,6 +25,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   *   `error` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t`, *default:* `nil`) - If set, indicates an error. Note that for a single `AnnotateVideoRequest`
       some videos may succeed and some may fail.
   *   `explicitAnnotation` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation.t`, *default:* `nil`) - Explicit content annotation.
+  *   `faceDetectionAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_FaceDetectionAnnotation.t)`, *default:* `nil`) - Face detection annotations.
   *   `frameLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation.t)`, *default:* `nil`) - Label annotations on frame level.
       There is exactly one element for each unique label.
   *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in
@@ -62,6 +63,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
           :error => GoogleApi.VideoIntelligence.V1.Model.GoogleRpc_Status.t(),
           :explicitAnnotation =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation.t(),
+          :faceDetectionAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_FaceDetectionAnnotation.t()
+            ),
           :frameLabelAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation.t()
@@ -117,6 +122,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   field(:explicitAnnotation,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation
+  )
+
+  field(:faceDetectionAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_FaceDetectionAnnotation,
+    type: :list
   )
 
   field(:frameLabelAnnotations,
