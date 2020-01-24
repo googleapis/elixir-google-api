@@ -24,7 +24,7 @@ defmodule GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataRequest do
 
   *   `dataFilters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataFilter.t)`, *default:* `nil`) - The data filters describing the criteria used to determine which
       DeveloperMetadata entries to return.  DeveloperMetadata matching any of the
-      specified filters will be included in the response.
+      specified filters are included in the response.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,9 +24,9 @@ defmodule GoogleApi.Sheets.V4.Model.DataFilterValueRange do
   *   `dataFilter` (*type:* `GoogleApi.Sheets.V4.Model.DataFilter.t`, *default:* `nil`) - The data filter describing the location of the values in the spreadsheet.
   *   `majorDimension` (*type:* `String.t`, *default:* `nil`) - The major dimension of the values.
   *   `values` (*type:* `list(list(any()))`, *default:* `nil`) - The data to be written.  If the provided values exceed any of the ranges
-      matched by the data filter then the request will fail.  If the provided
-      values are less than the matched ranges only the specified values will be
-      written, existing values in the matched ranges will remain unaffected.
+      matched by the data filter then the request fails.  If the provided values
+      are less than the matched ranges only the specified values are written,
+      existing values in the matched ranges remain unaffected.
   """
 
   use GoogleApi.Gax.ModelBase

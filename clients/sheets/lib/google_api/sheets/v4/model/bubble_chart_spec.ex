@@ -22,6 +22,8 @@ defmodule GoogleApi.Sheets.V4.Model.BubbleChartSpec do
   ## Attributes
 
   *   `bubbleBorderColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The bubble border color.
+  *   `bubbleBorderColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The bubble border color.
+      If bubble_border_color is also set, this field takes precedence.
   *   `bubbleLabels` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data containing the bubble labels.  These do not need to be unique.
   *   `bubbleMaxRadiusSize` (*type:* `integer()`, *default:* `nil`) - The max radius size of the bubbles, in pixels.
       If specified, the field must be a positive value.
@@ -50,6 +52,7 @@ defmodule GoogleApi.Sheets.V4.Model.BubbleChartSpec do
 
   @type t :: %__MODULE__{
           :bubbleBorderColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :bubbleBorderColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :bubbleLabels => GoogleApi.Sheets.V4.Model.ChartData.t(),
           :bubbleMaxRadiusSize => integer(),
           :bubbleMinRadiusSize => integer(),
@@ -63,6 +66,7 @@ defmodule GoogleApi.Sheets.V4.Model.BubbleChartSpec do
         }
 
   field(:bubbleBorderColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:bubbleBorderColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:bubbleLabels, as: GoogleApi.Sheets.V4.Model.ChartData)
   field(:bubbleMaxRadiusSize)
   field(:bubbleMinRadiusSize)

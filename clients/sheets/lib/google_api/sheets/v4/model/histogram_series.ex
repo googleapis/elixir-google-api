@@ -23,6 +23,9 @@ defmodule GoogleApi.Sheets.V4.Model.HistogramSeries do
 
   *   `barColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the column representing this series in each bucket.
       This field is optional.
+  *   `barColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the column representing this series in each bucket.
+      This field is optional.
+      If bar_color is also set, this field takes precedence.
   *   `data` (*type:* `GoogleApi.Sheets.V4.Model.ChartData.t`, *default:* `nil`) - The data for this histogram series.
   """
 
@@ -30,10 +33,12 @@ defmodule GoogleApi.Sheets.V4.Model.HistogramSeries do
 
   @type t :: %__MODULE__{
           :barColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :barColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :data => GoogleApi.Sheets.V4.Model.ChartData.t()
         }
 
   field(:barColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:barColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:data, as: GoogleApi.Sheets.V4.Model.ChartData)
 end
 

@@ -579,7 +579,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
   *   `range` (*type:* `String.t`) - The A1 notation of a range to search for a logical table of data.
-      Values will be appended after the last row of the table.
+      Values are appended after the last row of the table.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -835,9 +835,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       *   `:majorDimension` (*type:* `String.t`) - The major dimension that results should use.
 
           For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`,
-          then requesting `range=A1:B2,majorDimension=ROWS` will return
-          `[[1,2],[3,4]]`,
-          whereas requesting `range=A1:B2,majorDimension=COLUMNS` will return
+          then requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`,
+          whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns
           `[[1,3],[2,4]]`.
       *   `:ranges` (*type:* `list(String.t)`) - The A1 notation of the values to retrieve.
       *   `:valueRenderOption` (*type:* `String.t`) - How values should be represented in the output.
@@ -1213,10 +1212,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
       *   `:majorDimension` (*type:* `String.t`) - The major dimension that results should use.
 
-          For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`,
-          then requesting `range=A1:B2,majorDimension=ROWS` will return
-          `[[1,2],[3,4]]`,
-          whereas requesting `range=A1:B2,majorDimension=COLUMNS` will return
+          For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then
+          requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`,
+          whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns
           `[[1,3],[2,4]]`.
       *   `:valueRenderOption` (*type:* `String.t`) - How values should be represented in the output.
           The default render option is ValueRenderOption.FORMATTED_VALUE.
@@ -1298,9 +1296,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       *   `:includeValuesInResponse` (*type:* `boolean()`) - Determines if the update response should include the values
           of the cells that were updated. By default, responses
           do not include the updated values.
-          If the range to write was larger than than the range actually written,
-          the response will include all values in the requested range (excluding
-          trailing empty rows and columns).
+          If the range to write was larger than the range actually written, the
+          response includes all values in the requested range (excluding trailing
+          empty rows and columns).
       *   `:responseDateTimeRenderOption` (*type:* `String.t`) - Determines how dates, times, and durations in the response should be
           rendered. This is ignored if response_value_render_option is
           FORMATTED_VALUE.

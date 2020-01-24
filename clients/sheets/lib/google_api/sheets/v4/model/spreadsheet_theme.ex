@@ -22,8 +22,8 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetTheme do
   ## Attributes
 
   *   `primaryFontFamily` (*type:* `String.t`, *default:* `nil`) - / Name of the primary font family.
-  *   `themeColors` (*type:* `list(GoogleApi.Sheets.V4.Model.ThemeColorPair.t)`, *default:* `nil`) - The spreadsheet theme color pairs. For update users need to give all pairs
-      of theme colors.
+  *   `themeColors` (*type:* `list(GoogleApi.Sheets.V4.Model.ThemeColorPair.t)`, *default:* `nil`) - The spreadsheet theme color pairs. To update you must provide all theme
+      color pairs.
   """
 
   use GoogleApi.Gax.ModelBase
