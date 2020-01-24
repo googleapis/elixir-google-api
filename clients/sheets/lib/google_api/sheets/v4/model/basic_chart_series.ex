@@ -25,6 +25,9 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
 
   *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color for elements (i.e. bars, lines, points) associated with this
       series.  If empty, a default color is used.
+  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color for elements (i.e. bars, lines, points) associated with this
+      series.  If empty, a default color is used.
+      If color is also set, this field takes precedence.
   *   `lineStyle` (*type:* `GoogleApi.Sheets.V4.Model.LineStyle.t`, *default:* `nil`) - The line style of this series. Valid only if the
       chartType is AREA,
       LINE, or SCATTER.
@@ -51,6 +54,7 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
 
   @type t :: %__MODULE__{
           :color => GoogleApi.Sheets.V4.Model.Color.t(),
+          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :lineStyle => GoogleApi.Sheets.V4.Model.LineStyle.t(),
           :series => GoogleApi.Sheets.V4.Model.ChartData.t(),
           :targetAxis => String.t(),
@@ -58,6 +62,7 @@ defmodule GoogleApi.Sheets.V4.Model.BasicChartSeries do
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:colorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:lineStyle, as: GoogleApi.Sheets.V4.Model.LineStyle)
   field(:series, as: GoogleApi.Sheets.V4.Model.ChartData)
   field(:targetAxis)

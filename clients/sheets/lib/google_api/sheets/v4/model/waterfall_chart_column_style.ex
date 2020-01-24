@@ -22,6 +22,8 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle do
   ## Attributes
 
   *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the column.
+  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the column.
+      If color is also set, this field takes precedence.
   *   `label` (*type:* `String.t`, *default:* `nil`) - The label of the column's legend.
   """
 
@@ -29,10 +31,12 @@ defmodule GoogleApi.Sheets.V4.Model.WaterfallChartColumnStyle do
 
   @type t :: %__MODULE__{
           :color => GoogleApi.Sheets.V4.Model.Color.t(),
+          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :label => String.t()
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:colorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:label)
 end
 

@@ -26,10 +26,16 @@ defmodule GoogleApi.Sheets.V4.Model.BaselineValueFormat do
       This field is optional.
   *   `negativeColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - Color to be used, in case baseline value represents a negative change for
       key value. This field is optional.
+  *   `negativeColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - Color to be used, in case baseline value represents a negative change for
+      key value. This field is optional.
+      If negative_color is also set, this field takes precedence.
   *   `position` (*type:* `GoogleApi.Sheets.V4.Model.TextPosition.t`, *default:* `nil`) - Specifies the horizontal text positioning of baseline value.
       This field is optional. If not specified, default positioning is used.
   *   `positiveColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - Color to be used, in case baseline value represents a positive change for
       key value. This field is optional.
+  *   `positiveColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - Color to be used, in case baseline value represents a positive change for
+      key value. This field is optional.
+      If positive_color is also set, this field takes precedence.
   *   `textFormat` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - Text formatting options for baseline value.
   """
 
@@ -39,16 +45,20 @@ defmodule GoogleApi.Sheets.V4.Model.BaselineValueFormat do
           :comparisonType => String.t(),
           :description => String.t(),
           :negativeColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :negativeColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :position => GoogleApi.Sheets.V4.Model.TextPosition.t(),
           :positiveColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :positiveColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :textFormat => GoogleApi.Sheets.V4.Model.TextFormat.t()
         }
 
   field(:comparisonType)
   field(:description)
   field(:negativeColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:negativeColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:position, as: GoogleApi.Sheets.V4.Model.TextPosition)
   field(:positiveColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:positiveColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:textFormat, as: GoogleApi.Sheets.V4.Model.TextFormat)
 end
 

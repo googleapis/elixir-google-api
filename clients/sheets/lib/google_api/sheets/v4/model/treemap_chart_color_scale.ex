@@ -24,30 +24,54 @@ defmodule GoogleApi.Sheets.V4.Model.TreemapChartColorScale do
   *   `maxValueColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color for cells with a color value greater than or equal
       to maxValue. Defaults to #109618 if not
       specified.
+  *   `maxValueColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color for cells with a color value greater than or equal
+      to maxValue. Defaults to #109618 if not
+      specified.
+      If max_value_color is also set, this field takes precedence.
   *   `midValueColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color for cells with a color value at the midpoint between
       minValue and
       maxValue. Defaults to #efe6dc if not
       specified.
+  *   `midValueColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color for cells with a color value at the midpoint between
+      minValue and
+      maxValue. Defaults to #efe6dc if not
+      specified.
+      If mid_value_color is also set, this field takes precedence.
   *   `minValueColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color for cells with a color value less than or equal to
       minValue. Defaults to #dc3912 if not
       specified.
+  *   `minValueColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color for cells with a color value less than or equal to
+      minValue. Defaults to #dc3912 if not
+      specified.
+      If min_value_color is also set, this field takes precedence.
   *   `noDataColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color for cells that have no color data associated with
       them. Defaults to #000000 if not specified.
+  *   `noDataColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color for cells that have no color data associated with
+      them. Defaults to #000000 if not specified.
+      If no_data_color is also set, this field takes precedence.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :maxValueColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :maxValueColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :midValueColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :midValueColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :minValueColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :noDataColor => GoogleApi.Sheets.V4.Model.Color.t()
+          :minValueColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
+          :noDataColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :noDataColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t()
         }
 
   field(:maxValueColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:maxValueColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:midValueColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:midValueColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:minValueColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:minValueColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:noDataColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:noDataColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.TreemapChartColorScale do

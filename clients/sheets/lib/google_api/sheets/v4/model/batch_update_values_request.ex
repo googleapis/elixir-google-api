@@ -25,10 +25,10 @@ defmodule GoogleApi.Sheets.V4.Model.BatchUpdateValuesRequest do
   *   `includeValuesInResponse` (*type:* `boolean()`, *default:* `nil`) - Determines if the update response should include the values
       of the cells that were updated. By default, responses
       do not include the updated values. The `updatedData` field within
-      each of the BatchUpdateValuesResponse.responses will contain
-      the updated values. If the range to write was larger than than the range
-      actually written, the response will include all values in the requested
-      range (excluding trailing empty rows and columns).
+      each of the BatchUpdateValuesResponse.responses contains the updated
+      values. If the range to write was larger than the range actually written,
+      the response includes all values in the requested range (excluding trailing
+      empty rows and columns).
   *   `responseDateTimeRenderOption` (*type:* `String.t`, *default:* `nil`) - Determines how dates, times, and durations in the response should be
       rendered. This is ignored if response_value_render_option is
       FORMATTED_VALUE.

@@ -25,6 +25,9 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
       for accessibility.
   *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color of the entire chart.
       Not applicable to Org charts.
+  *   `backgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color of the entire chart.
+      Not applicable to Org charts.
+      If background_color is also set, this field takes precedence.
   *   `basicChart` (*type:* `GoogleApi.Sheets.V4.Model.BasicChartSpec.t`, *default:* `nil`) - A basic chart specification, can be one of many kinds of charts.
       See BasicChartType for the list of all
       charts this supports.
@@ -60,6 +63,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
   @type t :: %__MODULE__{
           :altText => String.t(),
           :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :backgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :basicChart => GoogleApi.Sheets.V4.Model.BasicChartSpec.t(),
           :bubbleChart => GoogleApi.Sheets.V4.Model.BubbleChartSpec.t(),
           :candlestickChart => GoogleApi.Sheets.V4.Model.CandlestickChartSpec.t(),
@@ -82,6 +86,7 @@ defmodule GoogleApi.Sheets.V4.Model.ChartSpec do
 
   field(:altText)
   field(:backgroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:backgroundColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:basicChart, as: GoogleApi.Sheets.V4.Model.BasicChartSpec)
   field(:bubbleChart, as: GoogleApi.Sheets.V4.Model.BubbleChartSpec)
   field(:candlestickChart, as: GoogleApi.Sheets.V4.Model.CandlestickChartSpec)

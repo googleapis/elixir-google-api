@@ -43,6 +43,8 @@ defmodule GoogleApi.Sheets.V4.Model.TreemapChartSpec do
       noDataColor as their background
       color.
   *   `headerColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color for header cells.
+  *   `headerColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color for header cells.
+      If header_color is also set, this field takes precedence.
   *   `hideTooltips` (*type:* `boolean()`, *default:* `nil`) - True to hide tooltips.
   *   `hintedLevels` (*type:* `integer()`, *default:* `nil`) - The number of additional data levels beyond the labeled levels to be shown
       on the treemap chart. These levels are not interactive and are shown
@@ -73,6 +75,7 @@ defmodule GoogleApi.Sheets.V4.Model.TreemapChartSpec do
           :colorData => GoogleApi.Sheets.V4.Model.ChartData.t(),
           :colorScale => GoogleApi.Sheets.V4.Model.TreemapChartColorScale.t(),
           :headerColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :headerColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :hideTooltips => boolean(),
           :hintedLevels => integer(),
           :labels => GoogleApi.Sheets.V4.Model.ChartData.t(),
@@ -87,6 +90,7 @@ defmodule GoogleApi.Sheets.V4.Model.TreemapChartSpec do
   field(:colorData, as: GoogleApi.Sheets.V4.Model.ChartData)
   field(:colorScale, as: GoogleApi.Sheets.V4.Model.TreemapChartColorScale)
   field(:headerColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:headerColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:hideTooltips)
   field(:hintedLevels)
   field(:labels, as: GoogleApi.Sheets.V4.Model.ChartData)
