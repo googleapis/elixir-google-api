@@ -34,6 +34,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       range. This field will only be set when cluster is in route-based network
       mode.
   *   `legacyAbac` (*type:* `GoogleApi.Container.V1.Model.LegacyAbac.t`, *default:* `nil`) - Configuration for the legacy ABAC authorization mode.
+  *   `shieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Shielded Nodes configuration.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Additional information about the current status of this
       cluster, if available.
   *   `createTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster was created, in
@@ -184,6 +185,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :enableTpu => boolean(),
           :nodeIpv4CidrSize => integer(),
           :legacyAbac => GoogleApi.Container.V1.Model.LegacyAbac.t(),
+          :shieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t(),
           :statusMessage => String.t(),
           :createTime => String.t(),
           :currentNodeVersion => String.t(),
@@ -236,6 +238,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:enableTpu)
   field(:nodeIpv4CidrSize)
   field(:legacyAbac, as: GoogleApi.Container.V1.Model.LegacyAbac)
+  field(:shieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
   field(:statusMessage)
   field(:createTime)
   field(:currentNodeVersion)

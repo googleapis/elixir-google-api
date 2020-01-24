@@ -113,6 +113,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       the specified [Zonal Compute
       Reservation](/compute/docs/instances/reserving-zonal-resources)
       to this node pool.
+  *   `sandboxConfig` (*type:* `GoogleApi.Container.V1.Model.SandboxConfig.t`, *default:* `nil`) - Sandbox configuration for this node.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs. If
       no Service Account is specified, the "default" service account is used.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Shielded Instance options.
@@ -141,6 +142,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :oauthScopes => list(String.t()),
           :preemptible => boolean(),
           :reservationAffinity => GoogleApi.Container.V1.Model.ReservationAffinity.t(),
+          :sandboxConfig => GoogleApi.Container.V1.Model.SandboxConfig.t(),
           :serviceAccount => String.t(),
           :shieldedInstanceConfig => GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t(),
           :tags => list(String.t()),
@@ -159,6 +161,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:oauthScopes, type: :list)
   field(:preemptible)
   field(:reservationAffinity, as: GoogleApi.Container.V1.Model.ReservationAffinity)
+  field(:sandboxConfig, as: GoogleApi.Container.V1.Model.SandboxConfig)
   field(:serviceAccount)
   field(:shieldedInstanceConfig, as: GoogleApi.Container.V1.Model.ShieldedInstanceConfig)
   field(:tags, type: :list)
