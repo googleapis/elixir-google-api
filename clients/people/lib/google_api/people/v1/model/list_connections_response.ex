@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.ListConnectionsResponse do
   @moduledoc """
-
+  The response to a request for the authenticated user's connections.
 
   ## Attributes
 

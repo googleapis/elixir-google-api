@@ -233,7 +233,7 @@ defmodule GoogleApi.People.V1.Api.People do
   @doc """
   Provides information about a person by specifying a resource name. Use
   `people/me` to indicate the authenticated user.
-  <br>
+
   The request throws a 400 error if 'personFields' is not specified.
 
   ## Parameters
@@ -243,7 +243,7 @@ defmodule GoogleApi.People.V1.Api.People do
 
       - To get information about the authenticated user, specify `people/me`.
       - To get information about a google account, specify
-       `people/`<var>account_id</var>.
+       `people/{account_id}`.
       - To get information about a contact, specify the resource name that
         identifies the contact as returned by
       [`people.connections.list`](/people/api/rest/v1/people.connections/list).
@@ -338,7 +338,7 @@ defmodule GoogleApi.People.V1.Api.People do
   Provides information about a list of specific people by specifying a list
   of requested resource names. Use `people/me` to indicate the authenticated
   user.
-  <br>
+
   The request throws a 400 error if 'personFields' is not specified.
 
   ## Parameters
@@ -395,7 +395,7 @@ defmodule GoogleApi.People.V1.Api.People do
 
           - To get information about the authenticated user, specify `people/me`.
           - To get information about a google account, specify
-            `people/`<var>account_id</var>.
+            `people/{account_id}`.
           - To get information about a contact, specify the resource name that
             identifies the contact as returned by
           [`people.connections.list`](/people/api/rest/v1/people.connections/list).
@@ -445,10 +445,10 @@ defmodule GoogleApi.People.V1.Api.People do
   will not be modified.
 
   The request throws a 400 error if `updatePersonFields` is not specified.
-  <br>
+
   The request throws a 400 error if `person.metadata.sources` is not
   specified for the contact to be updated.
-  <br>
+
   The request throws a 400 error with an error with reason
   `"failedPrecondition"` if `person.metadata.sources.etag` is different than
   the contact's etag, which indicates the contact has changed since its data
@@ -460,7 +460,7 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
   *   `people_id` (*type:* `String.t`) - Part of `person.resourceName`. The resource name for the person, assigned by the server. An ASCII string
       with a max length of 27 characters, in the form of
-      `people/`<var>person_id</var>.
+      `people/{person_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -601,7 +601,7 @@ defmodule GoogleApi.People.V1.Api.People do
   @doc """
   Provides a list of the authenticated user's contacts merged with any
   connected profiles.
-  <br>
+
   The request throws a 400 error if 'personFields' is not specified.
 
   ## Parameters
@@ -622,7 +622,7 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The number of connections to include in the response. Valid values are
           between 1 and 2000, inclusive. Defaults to 100 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - The token of the page to be returned.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The token of the page to be returned.
       *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
           fields can be specified by separating them with commas. Valid values are:
 
@@ -658,13 +658,13 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
           path should start with `person.`: for example, `person.names` or
           `person.photos`.
-      *   `:requestSyncToken` (*type:* `boolean()`) - Whether the response should include a sync token, which can be used to get
+      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include a sync token, which can be used to get
           all changes since the last request. For subsequent sync requests use the
           `sync_token` param instead. Initial sync requests that specify
           `request_sync_token` have an additional rate limit.
-      *   `:sortOrder` (*type:* `String.t`) - The order in which the connections should be sorted. Defaults to
+      *   `:sortOrder` (*type:* `String.t`) - Optional. The order in which the connections should be sorted. Defaults to
           `LAST_MODIFIED_ASCENDING`.
-      *   `:syncToken` (*type:* `String.t`) - A sync token returned by a previous call to `people.connections.list`.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token returned by a previous call to `people.connections.list`.
           Only resources changed since the sync token was created will be returned.
           Sync requests that specify `sync_token` have an additional rate limit.
   *   `opts` (*type:* `keyword()`) - Call options

@@ -37,7 +37,7 @@ defmodule GoogleApi.People.V1.Model.ContactGroup do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The contact group name set by the group owner or a system provided name
       for system groups.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the contact group, assigned by the server. An ASCII
-      string, in the form of `contactGroups/`<var>contact_group_id</var>.
+      string, in the form of `contactGroups/{contact_group_id}`.
   """
 
   use GoogleApi.Gax.ModelBase

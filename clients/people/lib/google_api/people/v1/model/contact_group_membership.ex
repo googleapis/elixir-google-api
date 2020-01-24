@@ -23,7 +23,7 @@ defmodule GoogleApi.People.V1.Model.ContactGroupMembership do
 
   *   `contactGroupId` (*type:* `String.t`, *default:* `nil`) - Output only. The contact group ID for the contact group membership.
   *   `contactGroupResourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the contact group, assigned by the server. An ASCII
-      string, in the form of `contactGroups/`<var>contact_group_id</var>.
+      string, in the form of `contactGroups/{contact_group_id}`.
       Only contact_group_resource_name can be used for modifying memberships.
       Any contact group membership can be removed, but only user group or
       "myContacts" or "starred" system groups memberships can be added. A
