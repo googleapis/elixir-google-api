@@ -93,12 +93,8 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
       This property is read-only.
   *   `useEvenPageHeaderFooter` (*type:* `boolean()`, *default:* `nil`) - Indicates whether to use the even page header / footer IDs for the even
       pages.
-
-      This property is read-only.
   *   `useFirstPageHeaderFooter` (*type:* `boolean()`, *default:* `nil`) - Indicates whether to use the first page header / footer IDs for the first
       page.
-
-      This property is read-only.
   """
 
   use GoogleApi.Gax.ModelBase
