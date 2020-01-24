@@ -33,6 +33,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
   *   `description` (*type:* `String.t`, *default:* `nil`) - The localized promotional description, if available.
   *   `detailsUrl` (*type:* `String.t`, *default:* `nil`) - A link to the (consumer) Google Play details page for the product.
   *   `distributionChannel` (*type:* `String.t`, *default:* `nil`) - How and to whom the package is made available. The value publicGoogleHosted means that the package is available through the Play store and not restricted to a specific enterprise. The value privateGoogleHosted means that the package is a private app (restricted to an enterprise) but hosted by Google. The value privateSelfHosted means that the package is a private app (restricted to an enterprise) and is privately hosted.
+  *   `features` (*type:* `list(String.t)`, *default:* `nil`) - Noteworthy features (if any) of this product.
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - A link to an image that can be used as an icon for the product. This image is suitable for use at up to 512px x 512px.
   *   `kind` (*type:* `String.t`, *default:* `androidenterprise#product`) - 
   *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The approximate time (within 7 days) the app was last published, expressed in milliseconds since epoch.
@@ -62,6 +63,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
           :description => String.t(),
           :detailsUrl => String.t(),
           :distributionChannel => String.t(),
+          :features => list(String.t()),
           :iconUrl => String.t(),
           :kind => String.t(),
           :lastUpdatedTimestampMillis => String.t(),
@@ -89,6 +91,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Product do
   field(:description)
   field(:detailsUrl)
   field(:distributionChannel)
+  field(:features, type: :list)
   field(:iconUrl)
   field(:kind)
   field(:lastUpdatedTimestampMillis)
