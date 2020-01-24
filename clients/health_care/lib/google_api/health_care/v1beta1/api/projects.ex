@@ -8001,6 +8001,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Update the message.
 
+  The contents of the message in Message.data and data extracted from
+  the contents such as Message.create_time cannot be altered. Only the
+  Message.labels field is allowed to be updated. The labels in the
+  request are merged with the existing set of labels. Existing labels with
+  the same keys are updated.
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -8026,9 +8032,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition,
           see
           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-          Only the `labels` field is allowed to be updated.
-          The labels in the request are merged with the existing set of labels.
-          Existing labels with the same keys are updated.
       *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
