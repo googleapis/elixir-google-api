@@ -34,7 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1EntityTypeEn
 
       For `KIND_MAP` entity types:
 
-      *   A canonical value to be used in place of synonyms.
+      *   A reference value to be used in place of synonyms.
 
       For `KIND_LIST` entity types:
 
