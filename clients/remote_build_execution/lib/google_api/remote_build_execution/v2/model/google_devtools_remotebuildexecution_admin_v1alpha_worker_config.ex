@@ -39,6 +39,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
       See https://cloud.google.com/compute/docs/machine-types for a list of
       supported machine types. Note that `f1-micro` and `g1-small` are not yet
       supported.
+  *   `maxConcurrentActions` (*type:* `String.t`, *default:* `nil`) - The maximum number of actions a worker can execute concurrently.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum CPU platform to use when creating the worker.
       See [CPU Platforms](https://cloud.google.com/compute/docs/cpu-platforms).
   *   `networkAccess` (*type:* `String.t`, *default:* `nil`) - Determines the type of network access granted to workers. Possible values:
@@ -62,6 +63,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
           :diskType => String.t(),
           :labels => map(),
           :machineType => String.t(),
+          :maxConcurrentActions => String.t(),
           :minCpuPlatform => String.t(),
           :networkAccess => String.t(),
           :reserved => boolean()
@@ -76,6 +78,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   field(:diskType)
   field(:labels, type: :map)
   field(:machineType)
+  field(:maxConcurrentActions)
   field(:minCpuPlatform)
   field(:networkAccess)
   field(:reserved)
