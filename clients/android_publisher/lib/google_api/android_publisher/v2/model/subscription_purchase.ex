@@ -52,7 +52,8 @@ defmodule GoogleApi.AndroidPublisher.V2.Model.SubscriptionPurchase do
   *   `profileId` (*type:* `String.t`, *default:* `nil`) - The Google profile id of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'.
   *   `profileName` (*type:* `String.t`, *default:* `nil`) - The profile name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'.
   *   `purchaseType` (*type:* `integer()`, *default:* `nil`) - The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:  
-      - Test (i.e. purchased from a license testing account)
+      - Test (i.e. purchased from a license testing account) 
+      - Promo (i.e. purchased using a promo code)
   *   `startTimeMillis` (*type:* `String.t`, *default:* `nil`) - Time at which the subscription was granted, in milliseconds since the Epoch.
   *   `userCancellationTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the subscription was canceled by the user, in milliseconds since the epoch. Only present if cancelReason is 0.
   """
