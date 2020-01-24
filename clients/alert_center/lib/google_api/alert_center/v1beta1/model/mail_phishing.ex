@@ -25,6 +25,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.MailPhishing do
   * Suspicious message reported
   * Phishing reclassification
   * Malware reclassification
+  * Gmail potential employee spoofing
 
   ## Attributes
 
@@ -32,6 +33,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.MailPhishing do
   *   `isInternal` (*type:* `boolean()`, *default:* `nil`) - If `true`, the email originated from within the organization.
   *   `maliciousEntity` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity.t`, *default:* `nil`) - The entity whose actions triggered a Gmail phishing alert.
   *   `messages` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo.t)`, *default:* `nil`) - The list of messages contained by this alert.
+  *   `systemActionType` (*type:* `String.t`, *default:* `nil`) - System actions on the messages.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,13 +42,15 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.MailPhishing do
           :domainId => GoogleApi.AlertCenter.V1beta1.Model.DomainId.t(),
           :isInternal => boolean(),
           :maliciousEntity => GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity.t(),
-          :messages => list(GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo.t())
+          :messages => list(GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo.t()),
+          :systemActionType => String.t()
         }
 
   field(:domainId, as: GoogleApi.AlertCenter.V1beta1.Model.DomainId)
   field(:isInternal)
   field(:maliciousEntity, as: GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity)
   field(:messages, as: GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo, type: :list)
+  field(:systemActionType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AlertCenter.V1beta1.Model.MailPhishing do
