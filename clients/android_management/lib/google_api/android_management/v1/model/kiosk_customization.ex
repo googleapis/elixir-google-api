@@ -21,6 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.KioskCustomization do
 
   ## Attributes
 
+  *   `deviceSettings` (*type:* `String.t`, *default:* `nil`) - Specifies whether the Settings app is allowed in kiosk mode.
   *   `powerButtonActions` (*type:* `String.t`, *default:* `nil`) - Sets the behavior of a device in kiosk mode when a user presses and holds (long-presses) the Power button.
   *   `statusBar` (*type:* `String.t`, *default:* `nil`) - Specifies whether system info and notifications are disabled in kiosk mode.
   *   `systemErrorWarnings` (*type:* `String.t`, *default:* `nil`) - Specifies whether system error dialogs for crashed or unresponsive apps are blocked in kiosk mode. When blocked, the system will force-stop the app as if the user chooses the "close app" option on the UI.
@@ -30,12 +31,14 @@ defmodule GoogleApi.AndroidManagement.V1.Model.KioskCustomization do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :deviceSettings => String.t(),
           :powerButtonActions => String.t(),
           :statusBar => String.t(),
           :systemErrorWarnings => String.t(),
           :systemNavigation => String.t()
         }
 
+  field(:deviceSettings)
   field(:powerButtonActions)
   field(:statusBar)
   field(:systemErrorWarnings)
