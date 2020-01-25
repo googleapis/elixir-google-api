@@ -42,6 +42,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.AuditLogConfig do
   *   `exemptedMembers` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the identities that do not cause logging for this type of
       permission.
       Follows the same format of Binding.members.
+  *   `ignoreChildExemptions` (*type:* `boolean()`, *default:* `nil`) - 
   *   `logType` (*type:* `String.t`, *default:* `nil`) - The log type that this config enables.
   """
 
@@ -49,10 +50,12 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.AuditLogConfig do
 
   @type t :: %__MODULE__{
           :exemptedMembers => list(String.t()),
+          :ignoreChildExemptions => boolean(),
           :logType => String.t()
         }
 
   field(:exemptedMembers, type: :list)
+  field(:ignoreChildExemptions)
   field(:logType)
 end
 
