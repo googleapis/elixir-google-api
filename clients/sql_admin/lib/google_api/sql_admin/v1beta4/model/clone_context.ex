@@ -27,6 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
   *   `destinationInstanceName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud SQL instance to be created as a clone.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#cloneContext</code>.
   *   `pitrTimestampMs` (*type:* `String.t`, *default:* `nil`) - Reserved for future use.
+  *   `pointInTime` (*type:* `DateTime.t`, *default:* `nil`) - Reserved for future use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,13 +36,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
           :binLogCoordinates => GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates.t(),
           :destinationInstanceName => String.t(),
           :kind => String.t(),
-          :pitrTimestampMs => String.t()
+          :pitrTimestampMs => String.t(),
+          :pointInTime => DateTime.t()
         }
 
   field(:binLogCoordinates, as: GoogleApi.SQLAdmin.V1beta4.Model.BinLogCoordinates)
   field(:destinationInstanceName)
   field(:kind)
   field(:pitrTimestampMs)
+  field(:pointInTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
