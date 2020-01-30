@@ -40,5 +40,5 @@ defmodule GoogleApi.Storage.V1.Connection do
       "https://www.googleapis.com/auth/devstorage.read_write"
     ],
     otp_app: :google_api_storage,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://storage.googleapis.com/"
 end
