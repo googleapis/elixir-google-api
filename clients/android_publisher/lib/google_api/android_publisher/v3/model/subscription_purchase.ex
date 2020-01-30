@@ -36,6 +36,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
   *   `developerPayload` (*type:* `String.t`, *default:* `nil`) - A developer-specified string that contains supplemental information about an order.
   *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - The email address of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'.
   *   `expiryTimeMillis` (*type:* `String.t`, *default:* `nil`) - Time at which the subscription will expire, in milliseconds since the Epoch.
+  *   `externalAccountId` (*type:* `String.t`, *default:* `nil`) - User account identifier in the third-party service. Only present if account linking happened as part of the subscription purchase flow.
   *   `familyName` (*type:* `String.t`, *default:* `nil`) - The family name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'.
   *   `givenName` (*type:* `String.t`, *default:* `nil`) - The given name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'.
   *   `introductoryPriceInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.IntroductoryPriceInfo.t`, *default:* `nil`) - Introductory price information of the subscription. This is only present when the subscription was purchased with an introductory price.
@@ -82,6 +83,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
           :developerPayload => String.t(),
           :emailAddress => String.t(),
           :expiryTimeMillis => String.t(),
+          :externalAccountId => String.t(),
           :familyName => String.t(),
           :givenName => String.t(),
           :introductoryPriceInfo => GoogleApi.AndroidPublisher.V3.Model.IntroductoryPriceInfo.t(),
@@ -114,6 +116,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase do
   field(:developerPayload)
   field(:emailAddress)
   field(:expiryTimeMillis)
+  field(:externalAccountId)
   field(:familyName)
   field(:givenName)
   field(:introductoryPriceInfo, as: GoogleApi.AndroidPublisher.V3.Model.IntroductoryPriceInfo)

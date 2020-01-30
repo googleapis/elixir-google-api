@@ -23,6 +23,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
 
   *   `controls` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Control.t)`, *default:* `nil`) - 
   *   `countryTargeting` (*type:* `GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t`, *default:* `nil`) - 
+  *   `inAppUpdatePriority` (*type:* `integer()`, *default:* `nil`) - In-app update priority of the release. All newly added APKs in the release will be considered at this priority. in_app_update_priority can take values between [0, 5]. 5 is the highest priority. Default priority is 0. See https://developer.android.com/guide/playcore/in-app-updates.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The release name, used to identify this release in the Play Console UI. Not required to be unique. This is optional, if not set it will be generated from the version_name in the APKs.
   *   `releaseNotes` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t)`, *default:* `nil`) - The description of what is new in the app in this release.
   *   `sampling` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Sampling.t`, *default:* `nil`) - 
@@ -36,6 +37,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
   @type t :: %__MODULE__{
           :controls => list(GoogleApi.AndroidPublisher.V3.Model.Control.t()),
           :countryTargeting => GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t(),
+          :inAppUpdatePriority => integer(),
           :name => String.t(),
           :releaseNotes => list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t()),
           :sampling => GoogleApi.AndroidPublisher.V3.Model.Sampling.t(),
@@ -46,6 +48,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
 
   field(:controls, as: GoogleApi.AndroidPublisher.V3.Model.Control, type: :list)
   field(:countryTargeting, as: GoogleApi.AndroidPublisher.V3.Model.CountryTargeting)
+  field(:inAppUpdatePriority)
   field(:name)
   field(:releaseNotes, as: GoogleApi.AndroidPublisher.V3.Model.LocalizedText, type: :list)
   field(:sampling, as: GoogleApi.AndroidPublisher.V3.Model.Sampling)
