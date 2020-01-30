@@ -41,6 +41,17 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
 
       If the subscriber never acknowledges the message, the Pub/Sub
       system will eventually redeliver the message.
+  *   `deadLetterPolicy` (*type:* `GoogleApi.PubSub.V1.Model.DeadLetterPolicy.t`, *default:* `nil`) - A policy that specifies the conditions for dead lettering messages in
+      this subscription. If dead_letter_policy is not set, dead lettering
+      is disabled.
+
+      The Cloud Pub/Sub service account associated with this subscriptions's
+      parent project (i.e.,
+      service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have
+      permission to Acknowledge() messages on this subscription.
+      <b>EXPERIMENTAL:</b> This feature is part of a closed alpha release. This
+      API might be changed in backward-incompatible ways and is not recommended
+      for production use. It is not subject to any SLA or deprecation policy.
   *   `expirationPolicy` (*type:* `GoogleApi.PubSub.V1.Model.ExpirationPolicy.t`, *default:* `nil`) - A policy that specifies the conditions for this subscription's expiration.
       A subscription is considered active as long as any connected subscriber is
       successfully consuming messages from the subscription or is issuing
@@ -81,6 +92,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
 
   @type t :: %__MODULE__{
           :ackDeadlineSeconds => integer(),
+          :deadLetterPolicy => GoogleApi.PubSub.V1.Model.DeadLetterPolicy.t(),
           :expirationPolicy => GoogleApi.PubSub.V1.Model.ExpirationPolicy.t(),
           :labels => map(),
           :messageRetentionDuration => String.t(),
@@ -91,6 +103,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
         }
 
   field(:ackDeadlineSeconds)
+  field(:deadLetterPolicy, as: GoogleApi.PubSub.V1.Model.DeadLetterPolicy)
   field(:expirationPolicy, as: GoogleApi.PubSub.V1.Model.ExpirationPolicy)
   field(:labels, type: :map)
   field(:messageRetentionDuration)
