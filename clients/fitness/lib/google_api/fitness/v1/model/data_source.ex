@@ -41,7 +41,7 @@ defmodule GoogleApi.Fitness.V1.Model.DataSource do
 
       When any of the optional fields that make up the data stream ID are absent, they will be omitted from the data stream ID. The minimum viable data stream ID would be: type:dataType.name:developer project number
 
-      Finally, the developer project number is obfuscated when read by any REST or Android client that did not create the data source. Only the data source creator will see the developer project number in clear and normal form.
+      Finally, the developer project number and device UID are obfuscated when read by any REST or Android client that did not create the data source. Only the data source creator will see the developer project number in clear and normal form. This means a client will see a different set of data_stream_ids than another client with different credentials.
   *   `dataStreamName` (*type:* `String.t`, *default:* `nil`) - The stream name uniquely identifies this particular data source among other data sources of the same type from the same underlying producer. Setting the stream name is optional, but should be done whenever an application exposes two streams for the same data type, or when a device has two equivalent sensors.
   *   `dataType` (*type:* `GoogleApi.Fitness.V1.Model.DataType.t`, *default:* `nil`) - The data type defines the schema for a stream of data being collected by, inserted into, or queried from the Fitness API.
   *   `device` (*type:* `GoogleApi.Fitness.V1.Model.Device.t`, *default:* `nil`) - Representation of an integrated device (such as a phone or a wearable) that can hold sensors.

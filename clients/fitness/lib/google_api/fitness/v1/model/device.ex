@@ -31,6 +31,8 @@ defmodule GoogleApi.Fitness.V1.Model.Device do
   *   `model` (*type:* `String.t`, *default:* `nil`) - End-user visible model name for the device.
   *   `type` (*type:* `String.t`, *default:* `nil`) - A constant representing the type of the device.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - The serial number or other unique ID for the hardware. This field is obfuscated when read by any REST or Android client that did not create the data source. Only the data source creator will see the uid field in clear and normal form.
+
+      The obfuscation preserves equality; that is, given two IDs, if id1 == id2, obfuscated(id1) == obfuscated(id2).
   *   `version` (*type:* `String.t`, *default:* `nil`) - Version string for the device hardware/software.
   """
 
