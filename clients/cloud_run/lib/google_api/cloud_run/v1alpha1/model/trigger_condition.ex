@@ -21,14 +21,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition do
 
   ## Attributes
 
-  *   `lastTransitionTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time the condition transitioned from one status to another.
-      +optional
-  *   `message` (*type:* `String.t`, *default:* `nil`) - Human readable message indicating details about the current status.
-      +optional
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - One-word CamelCase reason for the condition's current status.
-      +optional
-  *   `severity` (*type:* `String.t`, *default:* `nil`) - How to interpret failures of this condition, one of Error, Warning, Info
-      +optional
+  *   `lastTransitionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Last time the condition transitioned from one status to another.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Optional. Human readable message indicating details about the current status.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - Optional. One-word CamelCase reason for the condition's current status.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Optional. How to interpret failures of this condition, one of Error, Warning, Info
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the condition, one of True, False, Unknown.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of Trigger condition.
   """
