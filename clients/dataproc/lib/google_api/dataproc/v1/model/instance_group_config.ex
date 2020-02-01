@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   @moduledoc """
-  Optional. The config settings for Compute Engine resources in an instance group, such as a master or worker group.
+  The config settings for Compute Engine resources in an instance group, such as a master or worker group.
 
   ## Attributes
 
