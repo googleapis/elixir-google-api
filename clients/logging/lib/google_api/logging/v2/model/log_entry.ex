@@ -22,7 +22,7 @@ defmodule GoogleApi.Logging.V2.Model.LogEntry do
   ## Attributes
 
   *   `httpRequest` (*type:* `GoogleApi.Logging.V2.Model.HttpRequest.t`, *default:* `nil`) - Optional. Information about the HTTP request associated with this log entry, if applicable.
-  *   `insertId` (*type:* `String.t`, *default:* `nil`) - Optional. A unique identifier for the log entry. If you provide a value, then Logging considers other log entries in the same project, with the same timestamp, and with the same insert_id to be duplicates which can be removed. If omitted in new log entries, then Logging assigns its own unique identifier. The insert_id is also used to order log entries that have the same timestamp value.
+  *   `insertId` (*type:* `String.t`, *default:* `nil`) - Optional. A unique identifier for the log entry. If you provide a value, then Logging considers other log entries in the same project, with the same timestamp, and with the same insert_id to be duplicates which are removed in a single query result. However, there are no guarantees of de-duplication in the export of logs.If the insert_id is omitted when writing a log entry, the Logging API  assigns its own unique identifier in this field.In queries, the insert_id is also used to order log entries that have the same log_name and timestamp values.
   *   `jsonPayload` (*type:* `map()`, *default:* `nil`) - The log entry payload, represented as a structure that is expressed as a JSON object.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A set of user-defined (key, value) data that provides additional information about the log entry.
   *   `logName` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the log to which this log entry belongs:
