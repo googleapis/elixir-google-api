@@ -42,6 +42,8 @@ defmodule GoogleApi.Sheets.V4.Model.SheetProperties do
   *   `sheetType` (*type:* `String.t`, *default:* `nil`) - The type of sheet. Defaults to GRID.
       This field cannot be changed once set.
   *   `tabColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the tab in the UI.
+  *   `tabColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the tab in the UI.
+      If tab_color is also set, this field takes precedence.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The name of the sheet.
   """
 
@@ -55,6 +57,7 @@ defmodule GoogleApi.Sheets.V4.Model.SheetProperties do
           :sheetId => integer(),
           :sheetType => String.t(),
           :tabColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :tabColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :title => String.t()
         }
 
@@ -65,6 +68,7 @@ defmodule GoogleApi.Sheets.V4.Model.SheetProperties do
   field(:sheetId)
   field(:sheetType)
   field(:tabColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:tabColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:title)
 end
 

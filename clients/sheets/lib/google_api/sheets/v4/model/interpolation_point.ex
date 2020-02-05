@@ -24,6 +24,8 @@ defmodule GoogleApi.Sheets.V4.Model.InterpolationPoint do
   ## Attributes
 
   *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color this interpolation point should use.
+  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color this interpolation point should use.
+      If color is also set, this field takes precedence.
   *   `type` (*type:* `String.t`, *default:* `nil`) - How the value should be interpreted.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The value this interpolation point uses.  May be a formula.
       Unused if type is MIN or
@@ -34,11 +36,13 @@ defmodule GoogleApi.Sheets.V4.Model.InterpolationPoint do
 
   @type t :: %__MODULE__{
           :color => GoogleApi.Sheets.V4.Model.Color.t(),
+          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :type => String.t(),
           :value => String.t()
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:colorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:type)
   field(:value)
 end
