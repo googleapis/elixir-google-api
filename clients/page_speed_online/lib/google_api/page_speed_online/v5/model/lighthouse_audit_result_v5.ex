@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5 do
   @moduledoc """
-
+  An audit's result object in a Lighthouse result.
 
   ## Attributes
 
@@ -27,11 +27,13 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5 do
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - An error message from a thrown error inside the audit.
   *   `explanation` (*type:* `String.t`, *default:* `nil`) - An explanation of the errors in the audit.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The audit's id.
-  *   `numericValue` (*type:* `float()`, *default:* `nil`) - A numeric value that has a meaning specific to the audit, e.g. the number of nodes in the DOM or the timestamp of a specific load event. More information can be found in the audit details, if present.
-  *   `score` (*type:* `any()`, *default:* `nil`) - 
+  *   `numericValue` (*type:* `float()`, *default:* `nil`) - A numeric value that has a meaning specific to the audit, e.g. the number
+      of nodes in the DOM or the timestamp of a specific load event. More
+      information can be found in the audit details, if present.
+  *   `score` (*type:* `any()`, *default:* `nil`) - The score of the audit, can be null.
   *   `scoreDisplayMode` (*type:* `String.t`, *default:* `nil`) - The enumerated score display mode.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The human readable title.
-  *   `warnings` (*type:* `any()`, *default:* `nil`) - 
+  *   `warnings` (*type:* `any()`, *default:* `nil`) - Possible warnings that occurred in the audit, can be null.
   """
 
   use GoogleApi.Gax.ModelBase

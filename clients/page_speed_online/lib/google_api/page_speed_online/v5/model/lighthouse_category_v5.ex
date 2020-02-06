@@ -17,23 +17,23 @@
 
 defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5 do
   @moduledoc """
-
+  A Lighthouse category.
 
   ## Attributes
 
-  *   `auditRefs` (*type:* `list(GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5AuditRefs.t)`, *default:* `nil`) - An array of references to all the audit members of this category.
+  *   `auditRefs` (*type:* `list(GoogleApi.PageSpeedOnline.V5.Model.AuditRefs.t)`, *default:* `nil`) - An array of references to all the audit members of this category.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A more detailed description of the category and its importance.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The string identifier of the category.
   *   `manualDescription` (*type:* `String.t`, *default:* `nil`) - A description for the manual audits in the category.
-  *   `score` (*type:* `any()`, *default:* `nil`) - 
+  *   `score` (*type:* `any()`, *default:* `nil`) - The overall score of the category, the weighted average of all its audits.
+      (The category's score, can be null.)
   *   `title` (*type:* `String.t`, *default:* `nil`) - The human-friendly name of the category.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditRefs =>
-            list(GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5AuditRefs.t()),
+          :auditRefs => list(GoogleApi.PageSpeedOnline.V5.Model.AuditRefs.t()),
           :description => String.t(),
           :id => String.t(),
           :manualDescription => String.t(),
@@ -41,11 +41,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5 do
           :title => String.t()
         }
 
-  field(:auditRefs,
-    as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5AuditRefs,
-    type: :list
-  )
-
+  field(:auditRefs, as: GoogleApi.PageSpeedOnline.V5.Model.AuditRefs, type: :list)
   field(:description)
   field(:id)
   field(:manualDescription)
