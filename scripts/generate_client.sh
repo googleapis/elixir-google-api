@@ -29,9 +29,6 @@ function ensure_file_permissions {
 }
 trap ensure_file_permissions EXIT
 
-# install npm dependencies
-npm install
-
 # install dependencies
 mix deps.get
 
