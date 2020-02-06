@@ -26,6 +26,8 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   *   `fontFamily` (*type:* `String.t`, *default:* `nil`) - The font family.
   *   `fontSize` (*type:* `integer()`, *default:* `nil`) - The size of the font.
   *   `foregroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The foreground color of the text.
+  *   `foregroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The foreground color of the text.
+      If foreground_color is also set, this field takes precedence.
   *   `italic` (*type:* `boolean()`, *default:* `nil`) - True if the text is italicized.
   *   `strikethrough` (*type:* `boolean()`, *default:* `nil`) - True if the text has a strikethrough.
   *   `underline` (*type:* `boolean()`, *default:* `nil`) - True if the text is underlined.
@@ -38,6 +40,7 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
           :fontFamily => String.t(),
           :fontSize => integer(),
           :foregroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :foregroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :italic => boolean(),
           :strikethrough => boolean(),
           :underline => boolean()
@@ -47,6 +50,7 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormat do
   field(:fontFamily)
   field(:fontSize)
   field(:foregroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:foregroundColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:italic)
   field(:strikethrough)
   field(:underline)

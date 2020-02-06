@@ -22,6 +22,8 @@ defmodule GoogleApi.Sheets.V4.Model.Border do
   ## Attributes
 
   *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the border.
+  *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the border.
+      If color is also set, this field takes precedence.
   *   `style` (*type:* `String.t`, *default:* `nil`) - The style of the border.
   *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the border, in pixels.
       Deprecated; the width is determined by the "style" field.
@@ -31,11 +33,13 @@ defmodule GoogleApi.Sheets.V4.Model.Border do
 
   @type t :: %__MODULE__{
           :color => GoogleApi.Sheets.V4.Model.Color.t(),
+          :colorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :style => String.t(),
           :width => integer()
         }
 
   field(:color, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:colorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:style)
   field(:width)
 end
