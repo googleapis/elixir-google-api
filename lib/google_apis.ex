@@ -14,7 +14,7 @@
 
 defmodule GoogleApis do
   @moduledoc """
-  This module contains helper functions for downloading, fetching, converting
+  This module contains helper functions for downloading and fetching
   API specifications and generating clients from the specifications.
   """
 
@@ -31,19 +31,6 @@ defmodule GoogleApis do
     else
       error -> IO.inspect(error)
     end
-  end
-
-  def convert_spec(api_config = %ApiConfig{}) do
-    converter = Application.get_env(:google_apis, :spec_converter)
-    converter.convert(api_config)
-  end
-
-  def generate_config(api_config) do
-    file = ApiConfig.config_file(api_config)
-    swagger_config = GoogleApis.SwaggerConfig.from_api_config(api_config)
-
-    file |> Path.dirname() |> File.mkdir_p()
-    File.write(file, Poison.encode!(swagger_config, pretty: true))
   end
 
   def generate_client(api_config) do

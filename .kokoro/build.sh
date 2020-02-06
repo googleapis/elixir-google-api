@@ -17,7 +17,6 @@ set -eo pipefail
 
 pushd $(dirname "$0")/..
 
-npm install
 mkdir .cache
 export TEMPDIR=$(pwd)/.cache
 export TEMPLATE=gax
@@ -36,7 +35,7 @@ popd
 
 # create the test client
 if [ "${TEST_GENERATOR}" == "true" ]; then
-    mix do google_apis.convert TestClient, google_apis.build TestClient
+    mix google_apis.build TestClient
     pushd clients/test_client
     mix deps.get
     mix test
