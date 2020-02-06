@@ -25,17 +25,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
       specified, will default to 'default'.
 
       Not currently supported by Cloud Run.
-  *   `filter` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t`, *default:* `nil`) - Filter is the filter to apply against all events from the Broker. Only
+  *   `filter` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t`, *default:* `nil`) - Optional. Filter is the filter to apply against all events from the Broker. Only
       events that pass this filter will be sent to the Subscriber.
-  *   `importers` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec.t)`, *default:* `nil`) - Deprecated, importer specification will be replaced by information stored
-      in GcpImporterDao.
-  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is the addressable that will receive events.
-  *   `subscriber` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t`, *default:* `nil`) - Deprecated, sink will be represented by Destination.
-      Subscriber is the addressable that receives events from the Broker that
-      pass the Filter. It is required.
-
-      E.g. https://us-central1-myproject.cloudfunctions.net/myfunction or
-      /namespaces/my-project/services/my-service.
+      Note that filter is optional in knative and is only required in fully
+      managed due to different broker implementation.
+  *   `subscriber` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is the addressable that will receive events.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,16 +37,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
   @type t :: %__MODULE__{
           :broker => String.t(),
           :filter => GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t(),
-          :importers => list(GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec.t()),
-          :sink => GoogleApi.CloudRun.V1alpha1.Model.Destination.t(),
-          :subscriber => GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec.t()
+          :subscriber => GoogleApi.CloudRun.V1alpha1.Model.Destination.t()
         }
 
   field(:broker)
   field(:filter, as: GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter)
-  field(:importers, as: GoogleApi.CloudRun.V1alpha1.Model.TriggerImporterSpec, type: :list)
-  field(:sink, as: GoogleApi.CloudRun.V1alpha1.Model.Destination)
-  field(:subscriber, as: GoogleApi.CloudRun.V1alpha1.Model.SubscriberSpec)
+  field(:subscriber, as: GoogleApi.CloudRun.V1alpha1.Model.Destination)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
