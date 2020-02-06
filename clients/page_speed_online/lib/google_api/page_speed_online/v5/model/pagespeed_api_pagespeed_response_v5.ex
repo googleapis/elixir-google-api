@@ -17,18 +17,19 @@
 
 defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5 do
   @moduledoc """
-
+  The Pagespeed API response object.
 
   ## Attributes
 
   *   `analysisUTCTimestamp` (*type:* `String.t`, *default:* `nil`) - The UTC timestamp of this analysis.
   *   `captchaResult` (*type:* `String.t`, *default:* `nil`) - The captcha verify result
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Canonicalized and final URL for the document, after following page redirects (if any).
-  *   `kind` (*type:* `String.t`, *default:* `pagespeedonline#result`) - Kind of result.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Canonicalized and final URL for the document, after following page
+      redirects (if any).
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Kind of result.
   *   `lighthouseResult` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5.t`, *default:* `nil`) - Lighthouse response for the audit url as an object.
   *   `loadingExperience` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5.t`, *default:* `nil`) - Metrics of end users' page loading experience.
   *   `originLoadingExperience` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5.t`, *default:* `nil`) - Metrics of the aggregated page loading experience of the origin
-  *   `version` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5Version.t`, *default:* `nil`) - The version of PageSpeed used to generate these results.
+  *   `version` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.PagespeedVersion.t`, *default:* `nil`) - The version of PageSpeed used to generate these results.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,8 +44,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5 do
             GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5.t(),
           :originLoadingExperience =>
             GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5.t(),
-          :version =>
-            GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5Version.t()
+          :version => GoogleApi.PageSpeedOnline.V5.Model.PagespeedVersion.t()
         }
 
   field(:analysisUTCTimestamp)
@@ -59,7 +59,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5 do
     as: GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5
   )
 
-  field(:version, as: GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5Version)
+  field(:version, as: GoogleApi.PageSpeedOnline.V5.Model.PagespeedVersion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5 do
