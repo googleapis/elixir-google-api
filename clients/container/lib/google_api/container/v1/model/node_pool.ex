@@ -37,6 +37,8 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - [Output only] The resource URLs of the [managed instance
       groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
       associated with this node pool.
+  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](/compute/docs/zones#available)
+      in which the NodePool's nodes should be located.
   *   `management` (*type:* `GoogleApi.Container.V1.Model.NodeManagement.t`, *default:* `nil`) - NodeManagement configuration for this NodePool.
   *   `maxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The constraint on the maximum number of pods that can be run
       simultaneously on a node in the node pool.
@@ -46,6 +48,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output only] The status of the nodes in this pool instance.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Additional information about the current status of this
       node pool instance, if available.
+  *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the Kubernetes of this node.
   """
 
@@ -57,6 +60,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
           :config => GoogleApi.Container.V1.Model.NodeConfig.t(),
           :initialNodeCount => integer(),
           :instanceGroupUrls => list(String.t()),
+          :locations => list(String.t()),
           :management => GoogleApi.Container.V1.Model.NodeManagement.t(),
           :maxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t(),
           :name => String.t(),
@@ -64,6 +68,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
           :selfLink => String.t(),
           :status => String.t(),
           :statusMessage => String.t(),
+          :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t(),
           :version => String.t()
         }
 
@@ -72,6 +77,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   field(:config, as: GoogleApi.Container.V1.Model.NodeConfig)
   field(:initialNodeCount)
   field(:instanceGroupUrls, type: :list)
+  field(:locations, type: :list)
   field(:management, as: GoogleApi.Container.V1.Model.NodeManagement)
   field(:maxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
   field(:name)
@@ -79,6 +85,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   field(:selfLink)
   field(:status)
   field(:statusMessage)
+  field(:upgradeSettings, as: GoogleApi.Container.V1.Model.UpgradeSettings)
   field(:version)
 end
 
