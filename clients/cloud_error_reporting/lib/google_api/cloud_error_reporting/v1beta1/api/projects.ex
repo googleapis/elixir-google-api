@@ -473,7 +473,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `group.name`. The group resource name.
-      Example: <code>projects/my-project-123/groups/my-groupid</code>
+      Example: <code>projects/my-project-123/groups/CNSgkpnppqKCUw</code>
   *   `groups_id` (*type:* `String.t`) - Part of `group.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
