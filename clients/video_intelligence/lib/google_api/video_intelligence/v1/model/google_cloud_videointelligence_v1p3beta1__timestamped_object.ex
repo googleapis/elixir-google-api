@@ -24,6 +24,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   ## Attributes
 
   *   `attributes` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute.t)`, *default:* `nil`) - Optional. The attributes of the object in the bounding box.
+  *   `landmarks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_DetectedLandmark.t)`, *default:* `nil`) - Optional. The detected landmarks.
   *   `normalizedBoundingBox` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox.t`, *default:* `nil`) - Normalized Bounding box in a frame, where the object is located.
   *   `timeOffset` (*type:* `String.t`, *default:* `nil`) - Time-offset, relative to the beginning of the video,
       corresponding to the video frame for this object.
@@ -36,6 +37,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute.t()
             ),
+          :landmarks =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_DetectedLandmark.t()
+            ),
           :normalizedBoundingBox =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox.t(),
           :timeOffset => String.t()
@@ -44,6 +49,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   field(:attributes,
     as:
       GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute,
+    type: :list
+  )
+
+  field(:landmarks,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_DetectedLandmark,
     type: :list
   )
 
