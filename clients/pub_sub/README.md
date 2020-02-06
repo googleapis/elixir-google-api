@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_pub_sub, "~> 0.19"}]
+  [{:google_api_pub_sub, "~> 0.20"}]
 end
 ```
 
