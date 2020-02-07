@@ -28,7 +28,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGc
       The frame_number component exists only for multi-frame instances.
 
       Refer to the DICOM conformance statement for permissible MIME types:
-      https://cloud.google.com/healthcare/docs/dicom#wado-rs
+      https://cloud.google.com/healthcare/docs/dicom#retrieve_transaction
 
       The following extensions are used for output files:
         application/dicom -> .dcm
