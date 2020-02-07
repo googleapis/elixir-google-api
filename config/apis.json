@@ -490,11 +490,6 @@
     "name": "Games"
   },
   {
-    "version": "v1configuration",
-    "url": "https://www.googleapis.com/discovery/v1/apis/gamesConfiguration/v1configuration/rest",
-    "name": "GamesConfiguration"
-  },
-  {
     "version": "v1management",
     "url": "https://www.googleapis.com/discovery/v1/apis/gamesManagement/v1management/rest",
     "name": "GamesManagement"
