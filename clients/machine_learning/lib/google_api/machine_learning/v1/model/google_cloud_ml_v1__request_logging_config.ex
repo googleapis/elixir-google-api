@@ -35,7 +35,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RequestLoggingConfi
   *   `bigqueryTableName` (*type:* `String.t`, *default:* `nil`) - Required. Fully qualified BigQuery table name in the following format:
       "<var>project_id</var>.<var>dataset_name</var>.<var>table_name</var>"
 
-      The specifcied table must already exist, and the "Cloud ML Service Agent"
+      The specified table must already exist, and the "Cloud ML Service Agent"
       for your project must have permission to write to it. The table must have
       the following [schema](/bigquery/docs/schemas):
 
