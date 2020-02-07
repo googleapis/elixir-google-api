@@ -19,7 +19,7 @@ defmodule GoogleApi.Fitness.V1.Model.Value do
   @moduledoc """
   Holder object for the value of a single field in a data point.
 
-  A field value has a particular format and is only ever set to one of an integer or a floating point value. LINT.IfChange
+  A field value has a particular format and is only ever set to one of an integer or a floating point value.
 
   ## Attributes
 
