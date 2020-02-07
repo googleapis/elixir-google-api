@@ -25,9 +25,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Searc
   *   `orderBy` (*type:* `String.t`, *default:* `nil`) - Specifies the ordering of results, currently supported case-sensitive
       choices are:
 
-        * `relevance`, only supports desecending
-        * `last_access_timestamp [asc|desc]`, defaults to descending if not
-          specified
+        * `relevance`, only supports descending
         * `last_modified_timestamp [asc|desc]`, defaults to descending if not
           specified
 
