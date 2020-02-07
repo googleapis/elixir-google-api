@@ -23,6 +23,9 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
 
   *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - Output only. Data source id.
   *   `destinationDatasetId` (*type:* `String.t`, *default:* `nil`) - Output only. The BigQuery target dataset id.
+  *   `emailPreferences` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t`, *default:* `nil`) - Output only. Email notifications will be sent according to these
+      preferences to the email address of the user who owns the transfer config
+      this run was derived from.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when transfer run ended.
       Parameter ignored by server for input requests.
   *   `errorStatus` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.Status.t`, *default:* `nil`) - Status of the transfer run.
@@ -30,6 +33,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
       Transfer run names have the form
       `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
       The name is ignored when creating a transfer run.
+  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Output only. Pub/Sub topic where a notification will be sent after this
+      transfer run finishes
   *   `params` (*type:* `map()`, *default:* `nil`) - Output only. Data transfer specific parameters.
   *   `runTime` (*type:* `DateTime.t`, *default:* `nil`) - For batch transfer runs, specifies the date and time of the data should be
       ingested.
@@ -51,9 +56,11 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
   @type t :: %__MODULE__{
           :dataSourceId => String.t(),
           :destinationDatasetId => String.t(),
+          :emailPreferences => GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t(),
           :endTime => DateTime.t(),
           :errorStatus => GoogleApi.BigQueryDataTransfer.V1.Model.Status.t(),
           :name => String.t(),
+          :notificationPubsubTopic => String.t(),
           :params => map(),
           :runTime => DateTime.t(),
           :schedule => String.t(),
@@ -66,9 +73,11 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferRun do
 
   field(:dataSourceId)
   field(:destinationDatasetId)
+  field(:emailPreferences, as: GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences)
   field(:endTime, as: DateTime)
   field(:errorStatus, as: GoogleApi.BigQueryDataTransfer.V1.Model.Status)
   field(:name)
+  field(:notificationPubsubTopic)
   field(:params, type: :map)
   field(:runTime, as: DateTime)
   field(:schedule)
