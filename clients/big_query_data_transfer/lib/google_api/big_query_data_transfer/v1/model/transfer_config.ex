@@ -38,6 +38,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Is this config disabled. When set to true, no runs are scheduled
       for a given transfer.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User specified display name for the data transfer.
+  *   `emailPreferences` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t`, *default:* `nil`) - Email notifications will be sent according to these preferences
+      to the email address of the user who owns this transfer config.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the transfer config.
       Transfer config names have the form of
       `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
@@ -46,6 +48,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
       is not provided, usually a uuid, even though it is not guaranteed or
       required, will be generated for config_id.
   *   `nextRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Next time when data transfer will run.
+  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic where notifications will be sent after transfer runs
+      associated with this transfer config finish.
   *   `params` (*type:* `map()`, *default:* `nil`) - Data transfer specific parameters.
   *   `schedule` (*type:* `String.t`, *default:* `nil`) - Data transfer schedule.
       If the data source does not support a custom schedule, this should be
@@ -74,8 +78,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
           :destinationDatasetId => String.t(),
           :disabled => boolean(),
           :displayName => String.t(),
+          :emailPreferences => GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t(),
           :name => String.t(),
           :nextRunTime => DateTime.t(),
+          :notificationPubsubTopic => String.t(),
           :params => map(),
           :schedule => String.t(),
           :scheduleOptions => GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t(),
@@ -90,8 +96,10 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   field(:destinationDatasetId)
   field(:disabled)
   field(:displayName)
+  field(:emailPreferences, as: GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences)
   field(:name)
   field(:nextRunTime, as: DateTime)
+  field(:notificationPubsubTopic)
   field(:params, type: :map)
   field(:schedule)
   field(:scheduleOptions, as: GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions)
