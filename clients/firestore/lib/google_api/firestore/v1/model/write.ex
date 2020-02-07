@@ -27,9 +27,6 @@ defmodule GoogleApi.Firestore.V1.Model.Write do
   *   `delete` (*type:* `String.t`, *default:* `nil`) - A document name to delete. In the format:
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `transform` (*type:* `GoogleApi.Firestore.V1.Model.DocumentTransform.t`, *default:* `nil`) - Applies a transformation to a document.
-      At most one `transform` per document is allowed in a given request.
-      An `update` cannot follow a `transform` on the same document in a given
-      request.
   *   `update` (*type:* `GoogleApi.Firestore.V1.Model.Document.t`, *default:* `nil`) - A document to write.
   *   `updateMask` (*type:* `GoogleApi.Firestore.V1.Model.DocumentMask.t`, *default:* `nil`) - The fields to update in this write.
 
