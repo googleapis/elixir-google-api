@@ -31,7 +31,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Resource name of the parent workspace. Of the form projects/{project_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent workspace. Of the form projects/{project_id}.
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -99,7 +99,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the Service to delete. Of the form projects/{project_id}/services/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service to delete. Of the form projects/{project_id}/services/{service_id}.
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -173,7 +173,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the Service. Of the form projects/{project_id}/services/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service. Of the form projects/{project_id}/services/{service_id}.
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -247,7 +247,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Resource name of the parent Workspace. Of the form projects/{project_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed services, either a project or Stackdriver Account (workspace).One of the forms: "projects/{project_id}" "workspaces/{host_project_id}"
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -398,7 +398,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Resource name of the parent Service. Of the form projects/{project_id}/services/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent Service. Of the form projects/{project_id}/services/{service_id}.
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -477,7 +477,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the ServiceLevelObjective to delete. Of the form projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}.
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to delete. Of the form projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}.
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `service_level_objectives_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
@@ -559,7 +559,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the ServiceLevelObjective to get. Of the form projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}.
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to get. Of the form projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}.
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `service_level_objectives_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
@@ -644,7 +644,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Resource name of the parent Service. Of the form projects/{project_id}/services/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent Service. Of the form projects/{project_id}/services/{service_id}.
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
