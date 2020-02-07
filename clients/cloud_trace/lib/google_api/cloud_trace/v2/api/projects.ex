@@ -28,6 +28,8 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
   @doc """
   Sends new spans to new or existing traces. You cannot update
   existing spans.
+  In this case, writing traces is not consider an active developer
+  method since traces are machine generated.
 
   ## Parameters
 
@@ -97,6 +99,8 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
 
   @doc """
   Creates a new span.
+  In this case, writing traces is not consider an active developer
+  method since traces are machine generated.
 
   ## Parameters
 
