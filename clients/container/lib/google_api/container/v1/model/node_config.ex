@@ -114,8 +114,9 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       Reservation](/compute/docs/instances/reserving-zonal-resources)
       to this node pool.
   *   `sandboxConfig` (*type:* `GoogleApi.Container.V1.Model.SandboxConfig.t`, *default:* `nil`) - Sandbox configuration for this node.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs. If
-      no Service Account is specified, the "default" service account is used.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs.
+      Specify the email address of the Service Account; otherwise, if no Service
+      Account is specified, the "default" service account is used.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Shielded Instance options.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - The list of instance tags applied to all nodes. Tags are used to identify
       valid sources or targets for network firewalls and are specified by
