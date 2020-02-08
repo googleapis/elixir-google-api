@@ -24,7 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordKey do
   *   `bigQueryKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryKey.t`, *default:* `nil`) - 
   *   `datastoreKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreKey.t`, *default:* `nil`) - 
   *   `idValues` (*type:* `list(String.t)`, *default:* `nil`) - Values of identifying columns in the given row. Order of values matches
-      the order of field identifiers specified in the scanning request.
+      the order of `identifying_fields` specified in the scanning request.
   """
 
   use GoogleApi.Gax.ModelBase
