@@ -191,7 +191,13 @@ defmodule GoogleApi.AccessApproval.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - For the `FieldMask` definition, see
+      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the settings. Only the top level fields of
+          AccessApprovalSettings (notification_emails & enrolled_services) are
+          supported. For each field, if it is included, the currently stored value
+          will be entirely overwritten with the value of the field passed in this
+          request.
+
+          For the `FieldMask` definition, see
           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
           If this field is left unset, only the notification_emails field will be
           updated.
