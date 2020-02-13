@@ -126,6 +126,14 @@ defmodule GoogleApi.Docs.V1.Model.SectionStyle do
 
       When updating this property, setting a concrete value is required.
       Unsetting this property results in a 400 bad request error.
+  *   `pageNumberStart` (*type:* `integer()`, *default:* `nil`) - The page number from which to start counting the number of pages for this
+      section. If unset, page numbering continues from the previous section.
+      If the value is unset in the first
+      SectionBreak, refer to DocumentStyle's
+      page_number_start.
+
+      When updating this property, setting a concrete value is required.
+      Unsetting this property results in a 400 bad request error.
   *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of section.
   *   `useFirstPageHeaderFooter` (*type:* `boolean()`, *default:* `nil`) - Indicates whether to use the first page header / footer IDs for the first
       page of the section. If unset, it inherits from DocumentStyle's
@@ -155,6 +163,7 @@ defmodule GoogleApi.Docs.V1.Model.SectionStyle do
           :marginLeft => GoogleApi.Docs.V1.Model.Dimension.t(),
           :marginRight => GoogleApi.Docs.V1.Model.Dimension.t(),
           :marginTop => GoogleApi.Docs.V1.Model.Dimension.t(),
+          :pageNumberStart => integer(),
           :sectionType => String.t(),
           :useFirstPageHeaderFooter => boolean()
         }
@@ -174,6 +183,7 @@ defmodule GoogleApi.Docs.V1.Model.SectionStyle do
   field(:marginLeft, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:marginRight, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:marginTop, as: GoogleApi.Docs.V1.Model.Dimension)
+  field(:pageNumberStart)
   field(:sectionType)
   field(:useFirstPageHeaderFooter)
 end
