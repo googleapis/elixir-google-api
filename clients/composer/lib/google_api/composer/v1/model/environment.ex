@@ -33,6 +33,9 @@ defmodule GoogleApi.Composer.V1.Model.Environment do
       size.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the environment, in the form:
       "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+
+      EnvironmentId must start with a lowercase letter followed by up to 63
+      lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the environment.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this environment was last modified.
   *   `uuid` (*type:* `String.t`, *default:* `nil`) - Output only. The UUID (Universally Unique IDentifier) associated with this environment.
