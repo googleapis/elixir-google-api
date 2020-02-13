@@ -5104,26 +5104,24 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.HttpBody{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__observation -
-          lastn(
-            Tesla.Env.client(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            keyword(),
-            keyword()
-          ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
-  def healthcare_projects_locations_datasets_fhir_stores_fhir__observation -
-        lastn(
-          connection,
-          projects_id,
-          locations_id,
-          datasets_id,
-          fhir_stores_id,
-          optional_params \\ [],
-          opts \\ []
-        ) do
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__observation_lastn(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir__observation_lastn(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -5206,28 +5204,26 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.HttpBody{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__patient -
-          everything(
-            Tesla.Env.client(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            keyword(),
-            keyword()
-          ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
-  def healthcare_projects_locations_datasets_fhir_stores_fhir__patient -
-        everything(
-          connection,
-          projects_id,
-          locations_id,
-          datasets_id,
-          fhir_stores_id,
-          patient_id,
-          optional_params \\ [],
-          opts \\ []
-        ) do
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__patient_everything(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir__patient_everything(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        patient_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -5302,30 +5298,28 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__resource -
-          purge(
-            Tesla.Env.client(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            keyword(),
-            keyword()
-          ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def healthcare_projects_locations_datasets_fhir_stores_fhir__resource -
-        purge(
-          connection,
-          projects_id,
-          locations_id,
-          datasets_id,
-          fhir_stores_id,
-          fhir_id,
-          fhir_id1,
-          optional_params \\ [],
-          opts \\ []
-        ) do
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__resource_purge(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir__resource_purge(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        fhir_id,
+        fhir_id1,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
