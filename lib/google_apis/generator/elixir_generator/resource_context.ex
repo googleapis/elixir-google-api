@@ -32,7 +32,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
   """
   @spec struct_name(t, String.t()) :: String.t()
   def struct_name(context, name) do
-    "#{context.namespace}.Model.#{name}"
+    "#{context.namespace}.Model.#{Macro.camelize(name)}"
   end
 
   @doc """
@@ -46,7 +46,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
   """
   @spec typespec(t, String.t()) :: String.t()
   def typespec(context, name) do
-    "#{context.namespace}.Model.#{name}.t"
+    "#{context.namespace}.Model.#{Macro.camelize(name)}.t"
   end
 
   defp default_name(%{property: nil}), do: "Unknown"
