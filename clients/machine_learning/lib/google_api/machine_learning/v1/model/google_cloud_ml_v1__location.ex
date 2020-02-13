@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location do
 
   ## Attributes
 
-  *   `capabilities` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Capability.t)`, *default:* `nil`) - Capabilities available in the location.
+  *   `capabilities` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Capability.t)`, *default:* `nil`) - Capabilities available in the location.
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   """
 
@@ -29,12 +29,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location do
 
   @type t :: %__MODULE__{
           :capabilities =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Capability.t()),
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Capability.t()),
           :name => String.t()
         }
 
   field(:capabilities,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Capability,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Capability,
     type: :list
   )
 

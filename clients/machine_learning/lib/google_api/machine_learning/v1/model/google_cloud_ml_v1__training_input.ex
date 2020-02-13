@@ -28,12 +28,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   ## Attributes
 
   *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Command line arguments to pass to the program.
-  *   `hyperparameters` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__HyperparameterSpec.t`, *default:* `nil`) - Optional. The set of Hyperparameters to tune.
+  *   `hyperparameters` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec.t`, *default:* `nil`) - Optional. The set of Hyperparameters to tune.
   *   `jobDir` (*type:* `String.t`, *default:* `nil`) - Optional. A Google Cloud Storage path in which to store training outputs
       and other data needed for training. This path is passed to your TensorFlow
       program as the '--job-dir' command-line argument. The benefit of specifying
       this field is that Cloud ML validates the path for use in training.
-  *   `masterConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for your master worker.
+  *   `masterConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for your master worker.
 
       You should only set `masterConfig.acceleratorConfig` if `masterType` is set
       to a Compute Engine machine type. Learn about [restrictions on accelerator
@@ -99,7 +99,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   *   `packageUris` (*type:* `list(String.t)`, *default:* `nil`) - Required. The Google Cloud Storage location of the packages with
       the training program and any additional dependencies.
       The maximum number of package URIs is 100.
-  *   `parameterServerConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for parameter servers.
+  *   `parameterServerConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for parameter servers.
 
       You should only set `parameterServerConfig.acceleratorConfig` if
       `parameterServerConfigType` is set to a Compute Engine machine type. [Learn
@@ -164,12 +164,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
       <a href="/ml-engine/docs/versioning">how to manage runtime versions</a>.
   *   `scaleTier` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the machine types, the number of replicas for workers
       and parameter servers.
-  *   `scheduling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Scheduling.t`, *default:* `nil`) - Optional. Scheduling options for a training job.
+  *   `scheduling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling.t`, *default:* `nil`) - Optional. Scheduling options for a training job.
   *   `useChiefInTfConfig` (*type:* `boolean()`, *default:* `nil`) - Optional. Use 'chief' instead of 'master' in TF_CONFIG when Custom
       Container is used and evaluator is not specified.
 
       Defaults to false.
-  *   `workerConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for workers.
+  *   `workerConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for workers.
 
       You should only set `workerConfig.acceleratorConfig` if `workerType` is set
       to a Compute Engine machine type. [Learn about restrictions on accelerator
@@ -211,13 +211,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   @type t :: %__MODULE__{
           :args => list(String.t()),
           :hyperparameters =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__HyperparameterSpec.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec.t(),
           :jobDir => String.t(),
-          :masterConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t(),
+          :masterConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
           :masterType => String.t(),
           :packageUris => list(String.t()),
           :parameterServerConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
           :parameterServerCount => String.t(),
           :parameterServerType => String.t(),
           :pythonModule => String.t(),
@@ -225,9 +225,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
           :region => String.t(),
           :runtimeVersion => String.t(),
           :scaleTier => String.t(),
-          :scheduling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Scheduling.t(),
+          :scheduling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling.t(),
           :useChiefInTfConfig => boolean(),
-          :workerConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig.t(),
+          :workerConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
           :workerCount => String.t(),
           :workerType => String.t()
         }
@@ -235,16 +235,16 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   field(:args, type: :list)
 
   field(:hyperparameters,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__HyperparameterSpec
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec
   )
 
   field(:jobDir)
-  field(:masterConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig)
+  field(:masterConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig)
   field(:masterType)
   field(:packageUris, type: :list)
 
   field(:parameterServerConfig,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig
   )
 
   field(:parameterServerCount)
@@ -254,9 +254,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   field(:region)
   field(:runtimeVersion)
   field(:scaleTier)
-  field(:scheduling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Scheduling)
+  field(:scheduling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling)
   field(:useChiefInTfConfig)
-  field(:workerConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ReplicaConfig)
+  field(:workerConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig)
   field(:workerCount)
   field(:workerType)
 end

@@ -25,25 +25,25 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig d
 
   ## Attributes
 
-  *   `integratedGradientsAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__IntegratedGradientsAttribution.t`, *default:* `nil`) - 
-  *   `sampledShapleyAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__SampledShapleyAttribution.t`, *default:* `nil`) - 
+  *   `integratedGradientsAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution.t`, *default:* `nil`) - 
+  *   `sampledShapleyAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttribution.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :integratedGradientsAttribution =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__IntegratedGradientsAttribution.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution.t(),
           :sampledShapleyAttribution =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__SampledShapleyAttribution.t()
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttribution.t()
         }
 
   field(:integratedGradientsAttribution,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__IntegratedGradientsAttribution
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution
   )
 
   field(:sampledShapleyAttribution,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__SampledShapleyAttribution
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttribution
   )
 end
 

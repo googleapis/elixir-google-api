@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListJobsResponse do
 
   ## Attributes
 
-  *   `jobs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job.t)`, *default:* `nil`) - The list of jobs.
+  *   `jobs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t)`, *default:* `nil`) - The list of jobs.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a
       subsequent call.
   """
@@ -29,11 +29,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListJobsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :jobs => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job.t()),
+          :jobs => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t()),
           :nextPageToken => String.t()
         }
 
-  field(:jobs, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job, type: :list)
+  field(:jobs, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job, type: :list)
   field(:nextPageToken)
 end
 

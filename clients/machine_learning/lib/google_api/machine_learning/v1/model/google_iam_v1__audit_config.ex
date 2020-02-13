@@ -71,7 +71,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig do
 
   ## Attributes
 
-  *   `auditLogConfigs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditLogConfig.t)`, *default:* `nil`) - The configuration for logging of each type of permission.
+  *   `auditLogConfigs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditLogConfig.t)`, *default:* `nil`) - The configuration for logging of each type of permission.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Specifies a service that will be enabled for audit logging.
       For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
       `allServices` is a special value that covers all services.
@@ -81,12 +81,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig do
 
   @type t :: %__MODULE__{
           :auditLogConfigs =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditLogConfig.t()),
+            list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditLogConfig.t()),
           :service => String.t()
         }
 
   field(:auditLogConfigs,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditLogConfig,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditLogConfig,
     type: :list
   )
 

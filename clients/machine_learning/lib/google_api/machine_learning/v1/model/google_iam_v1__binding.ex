@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding do
 
   ## Attributes
 
-  *   `condition` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleType__Expr.t`, *default:* `nil`) - The condition that is associated with this binding.
+  *   `condition` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleType_Expr.t`, *default:* `nil`) - The condition that is associated with this binding.
       NOTE: An unsatisfied condition will not allow user access via current
       binding. Different bindings, including their conditions, are examined
       independently.
@@ -76,12 +76,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :condition => GoogleApi.MachineLearning.V1.Model.GoogleType__Expr.t(),
+          :condition => GoogleApi.MachineLearning.V1.Model.GoogleType_Expr.t(),
           :members => list(String.t()),
           :role => String.t()
         }
 
-  field(:condition, as: GoogleApi.MachineLearning.V1.Model.GoogleType__Expr)
+  field(:condition, as: GoogleApi.MachineLearning.V1.Model.GoogleType_Expr)
   field(:members, type: :list)
   field(:role)
 end

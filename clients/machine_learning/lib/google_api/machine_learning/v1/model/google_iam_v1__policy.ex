@@ -83,8 +83,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
 
   ## Attributes
 
-  *   `auditConfigs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditConfig.t)`, *default:* `nil`) - Specifies cloud audit logging configuration for this policy.
-  *   `bindings` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Binding.t)`, *default:* `nil`) - Associates a list of `members` to a `role`. Optionally, may specify a
+  *   `auditConfigs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig.t)`, *default:* `nil`) - Specifies cloud audit logging configuration for this policy.
+  *   `bindings` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding.t)`, *default:* `nil`) - Associates a list of `members` to a `role`. Optionally, may specify a
       `condition` that determines how and when the `bindings` are applied. Each
       of the `bindings` must contain at least one member.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - `etag` is used for optimistic concurrency control as a way to help
@@ -125,18 +125,15 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditConfigs => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditConfig.t()),
-          :bindings => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Binding.t()),
+          :auditConfigs => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig.t()),
+          :bindings => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding.t()),
           :etag => String.t(),
           :version => integer()
         }
 
-  field(:auditConfigs,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditConfig,
-    type: :list
-  )
+  field(:auditConfigs, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig, type: :list)
 
-  field(:bindings, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Binding, type: :list)
+  field(:bindings, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding, type: :list)
   field(:etag)
   field(:version)
 end
