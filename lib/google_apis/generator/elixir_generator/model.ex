@@ -19,12 +19,13 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
 
   @type t :: %__MODULE__{
           :name => String.t(),
+          :filename => String.t(),
           :description => String.t(),
           :properties => list(Property.t()),
           :schema => JsonSchema.t()
         }
 
-  defstruct [:name, :description, :properties, :schema]
+  defstruct [:name, :filename, :description, :properties, :schema]
 
   alias GoogleApi.Discovery.V1.Model.JsonSchema
   alias GoogleApis.Generator.ElixirGenerator.{Property, ResourceContext}

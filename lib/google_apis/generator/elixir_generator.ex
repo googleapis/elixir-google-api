@@ -39,11 +39,13 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   def generate_client(api_config) do
     Token.build(api_config)
     |> load_models
+    |> set_model_filenames
     |> update_model_properties
     |> create_directories
     |> write_model_files
     |> load_global_optional_params
     |> load_apis
+    |> set_api_filenames
     |> write_api_files
     |> write_connection
     |> write_mix_exs
@@ -63,6 +65,42 @@ defmodule GoogleApis.Generator.ElixirGenerator do
       :models_by_name,
       Enum.reduce(models, %{}, fn model, acc -> Map.put(acc, model.name, model) end)
     )
+  end
+
+  defp set_model_filenames(token) do
+    {models, _} =
+      token.models
+      |> Enum.map_reduce(MapSet.new(), fn(model, used) ->
+        {file, used} = find_unused_filename(Model.filename(model), used, 0)
+        {%Model{model | filename: file}, used}
+      end)
+    %Token{token | models: models}
+  end
+
+  defp set_api_filenames(token) do
+    {apis, _} =
+      token.apis
+      |> Enum.map_reduce(MapSet.new(), fn(api, used) ->
+        {file, used} = find_unused_filename(Api.filename(api), used, 0)
+        {%Api{api | filename: file}, used}
+      end)
+    %Token{token | apis: apis}
+  end
+
+  defp find_unused_filename(name, used, num) do
+    candidate = filename_candidate(name, num)
+    if MapSet.member?(used, candidate) do
+      find_unused_filename(name, used, num + 1)
+    else
+      {candidate, MapSet.put(used, candidate)}
+    end
+  end
+
+  def filename_candidate(name, 0), do: name
+
+  def filename_candidate(name, num) do
+    base = Path.basename(name, ".ex")
+    "#{base}_#{num}.ex"
   end
 
   defp update_model_properties(token) do
@@ -217,7 +255,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   defp write_model_files(%{models: models, namespace: namespace, base_dir: base_dir} = token) do
     models
     |> Enum.each(fn model ->
-      path = Path.join([base_dir, "model", Model.filename(model)])
+      path = Path.join([base_dir, "model", model.filename])
       IO.puts("Writing #{model.name} to #{path}.")
 
       File.write!(
@@ -249,7 +287,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   defp write_api_files(token) do
     token.apis
     |> Enum.each(fn api ->
-      path = Path.join([token.base_dir, "api", Api.filename(api)])
+      path = Path.join([token.base_dir, "api", api.filename])
       IO.puts("Writing #{api.name} to #{path}.")
 
       File.write!(
@@ -288,6 +326,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
           end)
       }
     end)
+    |> Enum.sort_by(&(&1.name))
   end
 
   defp collect_methods(%{resources: resources, methods: methods}) do
@@ -310,6 +349,8 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   """
   @spec all_models(RestDescription.t()) :: list(Model.t())
   def all_models(rest_description) do
-    Model.from_schemas(rest_description.schemas)
+    rest_description.schemas
+    |> Model.from_schemas()
+    |> Enum.sort_by(&(&1.name))
   end
 end

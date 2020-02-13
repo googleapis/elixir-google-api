@@ -19,11 +19,12 @@ defmodule GoogleApis.Generator.ElixirGenerator.Api do
 
   @type t :: %__MODULE__{
           :name => String.t(),
+          :filename => String.t(),
           :description => String.t(),
           :endpoints => list(Endpoint.t())
         }
 
-  defstruct [:name, :description, :endpoints]
+  defstruct [:name, :filename, :description, :endpoints]
 
   @doc """
   Returns the name of the file that should be generated.
