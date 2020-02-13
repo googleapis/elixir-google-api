@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling do
   @moduledoc """
-  All parameters related to queuing and scheduling of training jobs.
+  All parameters related to scheduling of training jobs.
 
   ## Attributes
 
-  *   `maxRunningTime` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum job running time, expressed in seconds. By default
-      there is no limit.
+  *   `maxRunningTime` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum job running time, expressed in seconds. The field can
+      contain up to nine fractional digits, terminated by `s`. By default there
+      is no limit to the running time.
 
       If the training job is still running after this duration, AI Platform
       Training cancels it.
@@ -33,7 +34,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling do
 
       If you submit your training job using the `gcloud` tool, you can [provide
       this field in a `config.yaml`
-      file](/ml-engine/docs/training-jobs#formatting_your_configuration_parameters).
+      file](/ai-platform/training/docs/training-jobs#formatting_your_configuration_parameters).
       For example:
 
       ```yaml
