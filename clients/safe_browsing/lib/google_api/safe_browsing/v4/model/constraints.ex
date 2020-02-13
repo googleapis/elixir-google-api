@@ -26,8 +26,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Model.Constraints do
   *   `language` (*type:* `String.t`, *default:* `nil`) - Requests the lists for a specific language. Expects ISO 639 alpha-2
       format.
   *   `maxDatabaseEntries` (*type:* `integer()`, *default:* `nil`) - Sets the maximum number of entries that the client is willing to have
-      in the local database. This should be a power of 2 between 2**10 and
-      2**20. If zero, no database size limit is set.
+      in the local database for the specified list. This should be a power of
+      2 between 2**10 and 2**20. If zero, no database size limit is set.
   *   `maxUpdateEntries` (*type:* `integer()`, *default:* `nil`) - The maximum size in number of entries. The update will not contain more
       entries than this value.  This should be a power of 2 between 2**10 and
       2**20.  If zero, no update size limit is set.
