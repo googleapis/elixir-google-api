@@ -2184,12 +2184,20 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `{:ok, %GoogleApi.Container.V1.Model.GetOpenIDConfigResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec container_projects_locations_clusters_well - known_get_openid -
-          configuration(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec container_projects_locations_clusters_well_known_get_openid_configuration(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Container.V1.Model.GetOpenIDConfigResponse.t()}
           | {:error, Tesla.Env.t()}
-  def container_projects_locations_clusters_well - known_get_openid -
-        configuration(connection, parent, optional_params \\ [], opts \\ []) do
+  def container_projects_locations_clusters_well_known_get_openid_configuration(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
