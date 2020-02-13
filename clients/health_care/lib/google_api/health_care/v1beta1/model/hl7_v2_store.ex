@@ -40,6 +40,17 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store do
       this is unset, no notifications are sent. Supplied by the client.
   *   `parserConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ParserConfig.t`, *default:* `nil`) - The configuration for the parser. It determines how the server parses the
       messages.
+  *   `rejectDuplicateMessage` (*type:* `boolean()`, *default:* `nil`) - Determines whether duplicate messages should be rejected. A duplicate
+      message is a message with the same raw bytes as a message that has already
+      been ingested/created in this HL7v2 store.
+      The default value is false, meaning that the store accepts the duplicate
+      messages and it also returns the same ACK message in the
+      IngestMessageResponse as has been returned previously. Note that only
+      one resource is created in the store.
+      When this field is set to true,
+      CreateMessage/IngestMessage
+      requests with a duplicate message will be rejected by the store, and
+      IngestMessageErrorDetail returns a NACK message upon rejection.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,13 +59,15 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store do
           :labels => map(),
           :name => String.t(),
           :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t(),
-          :parserConfig => GoogleApi.HealthCare.V1beta1.Model.ParserConfig.t()
+          :parserConfig => GoogleApi.HealthCare.V1beta1.Model.ParserConfig.t(),
+          :rejectDuplicateMessage => boolean()
         }
 
   field(:labels, type: :map)
   field(:name)
   field(:notificationConfig, as: GoogleApi.HealthCare.V1beta1.Model.NotificationConfig)
   field(:parserConfig, as: GoogleApi.HealthCare.V1beta1.Model.ParserConfig)
+  field(:rejectDuplicateMessage)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store do

@@ -7956,6 +7956,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:pageSize` (*type:* `integer()`) - Limit on the number of messages to return in a single response.
           If zero the default page size of 100 is used.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
+      *   `:view` (*type:* `String.t`) - Specifies the parts of the Message to return in the response.
+          When unspecified, equivalent to BASIC.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7998,7 +8000,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :view => :query
     }
 
     request =
