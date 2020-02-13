@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
   @moduledoc """
-  Findings container location data.
+  Precise location of the finding within a document, record, image, or metadata
+  container.
 
   ## Attributes
 
