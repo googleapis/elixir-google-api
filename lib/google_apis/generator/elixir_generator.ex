@@ -276,7 +276,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   def all_apis(%{resources: resources}, context) do
     resources
     |> Enum.map(fn {name, resource} ->
-      name = Macro.camelize(name)
+      name = name |> String.replace("-", "_") |> Macro.camelize()
       methods = collect_methods(resource)
 
       %Api{

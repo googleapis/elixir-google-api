@@ -257,7 +257,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
 
   defp method_name_to_endpoint_name(method_name) do
     method_name
-    |> String.replace(".", "_")
+    |> String.replace(~r{[\.-]}, "_")
     |> Macro.underscore()
   end
 end
