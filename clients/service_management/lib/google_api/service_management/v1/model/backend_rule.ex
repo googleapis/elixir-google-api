@@ -24,11 +24,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.BackendRule do
   *   `address` (*type:* `String.t`, *default:* `nil`) - The address of the API backend.
   *   `deadline` (*type:* `float()`, *default:* `nil`) - The number of seconds to wait for a response from a request. The default
       varies based on the request protocol and deployment environment.
-  *   `disableAuth` (*type:* `boolean()`, *default:* `nil`) - When disable_auth is false,  a JWT ID token will be generated with the
-      value from BackendRule.address as jwt_audience, overrode to the HTTP
-      "Authorization" request header and sent to the backend.
-
-      When disable_auth is true, a JWT ID token won't be generated and the
+  *   `disableAuth` (*type:* `boolean()`, *default:* `nil`) - When disable_auth is true, a JWT ID token won't be generated and the
       original "Authorization" HTTP header will be preserved. If the header is
       used to carry the original token and is expected by the backend, this
       field must be set to true to preserve the header.
