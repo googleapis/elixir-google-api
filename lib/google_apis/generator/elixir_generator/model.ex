@@ -82,6 +82,17 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
     [model | property_models]
   end
 
+  defp from_schema(name, schema = %JsonSchema{type: "object", id: name}, context) do
+    model = %__MODULE__{
+      name: ResourceContext.name(context, name),
+      description: schema.description,
+      properties: [],
+      schema: %JsonSchema{schema | properties: []}
+    }
+
+    [model]
+  end
+
   defp from_schema(name, %JsonSchema{type: "array", items: items}, context) do
     from_schema(name, items, context)
   end
