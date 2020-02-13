@@ -17,10 +17,18 @@
 
 defmodule GoogleApi.IAP.V1.Model.OAuthSettings do
   @moduledoc """
-  Configuration for OAuth login&consent flow behavior.
+  Configuration for OAuth login&consent flow behavior as well as for OAuth
+  Credentials.
 
   ## Attributes
 
+  *   `clientId` (*type:* `String.t`, *default:* `nil`) - OAuth 2.0 client ID used in the OAuth flow to generate an access token. If
+      this field is set, you can skip obtaining the OAuth credentials in this
+      step:
+      https://developers.google.com/identity/protocols/OAuth2?hl=en_US#1.-obtain-oauth-2.0-credentials-from-the-google-api-console.
+      However, this could allow for client sharing. The risks of client sharing
+      are outlined here:
+      https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
   *   `loginHint` (*type:* `String.t`, *default:* `nil`) - Domain hint to send as hd=? parameter in OAuth request flow. Enables
       redirect to primary IDP by skipping Google's login screen.
       https://developers.google.com/identity/protocols/OpenIDConnect#hd-param
@@ -31,9 +39,11 @@ defmodule GoogleApi.IAP.V1.Model.OAuthSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clientId => String.t(),
           :loginHint => String.t()
         }
 
+  field(:clientId)
   field(:loginHint)
 end
 
