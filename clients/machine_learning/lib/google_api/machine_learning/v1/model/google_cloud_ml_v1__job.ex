@@ -37,12 +37,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do
       arbitrary strings that you supply.
       For more information, see the documentation on
       <a href="/ml-engine/docs/tensorflow/resource-labels">using labels</a>.
-  *   `predictionInput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__PredictionInput.t`, *default:* `nil`) - Input parameters to create a prediction job.
-  *   `predictionOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__PredictionOutput.t`, *default:* `nil`) - The current prediction job result.
+  *   `predictionInput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput.t`, *default:* `nil`) - Input parameters to create a prediction job.
+  *   `predictionOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionOutput.t`, *default:* `nil`) - The current prediction job result.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the job processing was started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of a job.
-  *   `trainingInput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__TrainingInput.t`, *default:* `nil`) - Input parameters to create a training job.
-  *   `trainingOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__TrainingOutput.t`, *default:* `nil`) - The current training job result.
+  *   `trainingInput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput.t`, *default:* `nil`) - Input parameters to create a training job.
+  *   `trainingOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput.t`, *default:* `nil`) - The current training job result.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -55,14 +55,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do
           :jobId => String.t(),
           :labels => map(),
           :predictionInput =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__PredictionInput.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput.t(),
           :predictionOutput =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__PredictionOutput.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionOutput.t(),
           :startTime => DateTime.t(),
           :state => String.t(),
-          :trainingInput => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__TrainingInput.t(),
-          :trainingOutput =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__TrainingOutput.t()
+          :trainingInput => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput.t(),
+          :trainingOutput => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput.t()
         }
 
   field(:createTime, as: DateTime)
@@ -71,16 +70,14 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do
   field(:etag)
   field(:jobId)
   field(:labels, type: :map)
-  field(:predictionInput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__PredictionInput)
+  field(:predictionInput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionInput)
 
-  field(:predictionOutput,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__PredictionOutput
-  )
+  field(:predictionOutput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictionOutput)
 
   field(:startTime, as: DateTime)
   field(:state)
-  field(:trainingInput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__TrainingInput)
-  field(:trainingOutput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__TrainingOutput)
+  field(:trainingInput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput)
+  field(:trainingOutput, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job do

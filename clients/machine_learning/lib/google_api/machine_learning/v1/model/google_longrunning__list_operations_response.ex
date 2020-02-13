@@ -22,20 +22,20 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_ListOperationsRes
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The standard List next-page token.
-  *   `operations` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation.t)`, *default:* `nil`) - A list of operations that matches the specified filter in the request.
+  *   `operations` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t)`, *default:* `nil`) - A list of operations that matches the specified filter in the request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nextPageToken => String.t(),
-          :operations => list(GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation.t())
+          :operations => list(GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t())
         }
 
   field(:nextPageToken)
 
   field(:operations,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation,
     type: :list
   )
 end

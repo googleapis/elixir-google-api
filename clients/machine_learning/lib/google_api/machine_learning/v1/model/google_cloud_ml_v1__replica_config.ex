@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig do
 
   ## Attributes
 
-  *   `acceleratorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig.t`, *default:* `nil`) - Represents the type and number of accelerators used by the replica.
+  *   `acceleratorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t`, *default:* `nil`) - Represents the type and number of accelerators used by the replica.
       [Learn about restrictions on accelerator configurations for
       training.](/ml-engine/docs/tensorflow/using-gpus#compute-engine-machine-types-with-gpu)
   *   `imageUri` (*type:* `String.t`, *default:* `nil`) - The Docker image to run on the replica. This image must be in Container
@@ -47,13 +47,13 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig do
 
   @type t :: %__MODULE__{
           :acceleratorConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t(),
           :imageUri => String.t(),
           :tpuTfVersion => String.t()
         }
 
   field(:acceleratorConfig,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig
   )
 
   field(:imageUri)

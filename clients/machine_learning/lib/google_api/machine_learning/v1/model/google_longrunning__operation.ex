@@ -25,7 +25,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation do
   *   `done` (*type:* `boolean()`, *default:* `nil`) - If the value is `false`, it means the operation is still in progress.
       If `true`, the operation is completed, and either `error` or `response` is
       available.
-  *   `error` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleRpc__Status.t`, *default:* `nil`) - The error result of the operation in case of failure or cancellation.
+  *   `error` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleRpc_Status.t`, *default:* `nil`) - The error result of the operation in case of failure or cancellation.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Service-specific metadata associated with the operation.  It typically
       contains progress information and common metadata such as create time.
       Some services might not provide such metadata.  Any method that returns a
@@ -47,14 +47,14 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation do
 
   @type t :: %__MODULE__{
           :done => boolean(),
-          :error => GoogleApi.MachineLearning.V1.Model.GoogleRpc__Status.t(),
+          :error => GoogleApi.MachineLearning.V1.Model.GoogleRpc_Status.t(),
           :metadata => map(),
           :name => String.t(),
           :response => map()
         }
 
   field(:done)
-  field(:error, as: GoogleApi.MachineLearning.V1.Model.GoogleRpc__Status)
+  field(:error, as: GoogleApi.MachineLearning.V1.Model.GoogleRpc_Status)
   field(:metadata, type: :map)
   field(:name)
   field(:response, type: :map)

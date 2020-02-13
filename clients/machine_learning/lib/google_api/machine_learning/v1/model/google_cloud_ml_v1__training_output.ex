@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
 
   ## Attributes
 
-  *   `builtInAlgorithmOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__BuiltInAlgorithmOutput.t`, *default:* `nil`) - Details related to built-in algorithms jobs.
+  *   `builtInAlgorithmOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t`, *default:* `nil`) - Details related to built-in algorithms jobs.
       Only set for built-in algorithms jobs.
   *   `completedTrialCount` (*type:* `String.t`, *default:* `nil`) - The number of hyperparameter tuning trials that completed successfully.
       Only set for hyperparameter tuning jobs.
@@ -32,7 +32,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
       for more information. Only set for hyperparameter tuning jobs.
   *   `isBuiltInAlgorithmJob` (*type:* `boolean()`, *default:* `nil`) - Whether this job is a built-in Algorithm job.
   *   `isHyperparameterTuningJob` (*type:* `boolean()`, *default:* `nil`) - Whether this job is a hyperparameter tuning job.
-  *   `trials` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__HyperparameterOutput.t)`, *default:* `nil`) - Results for individual Hyperparameter trials.
+  *   `trials` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput.t)`, *default:* `nil`) - Results for individual Hyperparameter trials.
       Only set for hyperparameter tuning jobs.
   """
 
@@ -40,18 +40,18 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
 
   @type t :: %__MODULE__{
           :builtInAlgorithmOutput =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__BuiltInAlgorithmOutput.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t(),
           :completedTrialCount => String.t(),
           :consumedMLUnits => float(),
           :hyperparameterMetricTag => String.t(),
           :isBuiltInAlgorithmJob => boolean(),
           :isHyperparameterTuningJob => boolean(),
           :trials =>
-            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__HyperparameterOutput.t())
+            list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput.t())
         }
 
   field(:builtInAlgorithmOutput,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__BuiltInAlgorithmOutput
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput
   )
 
   field(:completedTrialCount)
@@ -61,7 +61,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingOutput do
   field(:isHyperparameterTuningJob)
 
   field(:trials,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__HyperparameterOutput,
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput,
     type: :list
   )
 end

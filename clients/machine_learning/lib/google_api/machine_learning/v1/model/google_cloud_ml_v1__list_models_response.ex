@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListModelsResponse 
 
   ## Attributes
 
-  *   `models` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model.t)`, *default:* `nil`) - The list of models.
+  *   `models` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t)`, *default:* `nil`) - The list of models.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a
       subsequent call.
   """
@@ -29,11 +29,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListModelsResponse 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :models => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model.t()),
+          :models => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t()),
           :nextPageToken => String.t()
         }
 
-  field(:models, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model, type: :list)
+  field(:models, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model, type: :list)
   field(:nextPageToken)
 end
 
