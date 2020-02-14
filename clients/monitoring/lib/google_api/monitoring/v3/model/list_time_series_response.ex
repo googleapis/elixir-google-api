@@ -22,7 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse do
   ## Attributes
 
   *   `executionErrors` (*type:* `list(GoogleApi.Monitoring.V3.Model.Status.t)`, *default:* `nil`) - Query execution errors that may have caused the time series data returned to be incomplete.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method.
   *   `timeSeries` (*type:* `list(GoogleApi.Monitoring.V3.Model.TimeSeries.t)`, *default:* `nil`) - One or more time series that match the filter included in the request.
   """
 
