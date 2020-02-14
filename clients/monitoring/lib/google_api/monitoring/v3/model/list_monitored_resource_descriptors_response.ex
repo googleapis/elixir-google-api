@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ListMonitoredResourceDescriptorsResponse
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method.
   *   `resourceDescriptors` (*type:* `list(GoogleApi.Monitoring.V3.Model.MonitoredResourceDescriptor.t)`, *default:* `nil`) - The monitored resource descriptors that are available to this project and that match filter, if present.
   """
 

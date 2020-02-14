@@ -26,7 +26,10 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   *   `clusterIstio` (*type:* `GoogleApi.Monitoring.V3.Model.ClusterIstio.t`, *default:* `nil`) - Type used for Istio services that live in a Kubernetes cluster.
   *   `custom` (*type:* `GoogleApi.Monitoring.V3.Model.Custom.t`, *default:* `nil`) - Custom service type.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name used for UI elements listing this Service.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for this Service. Of the form projects/{project_id}/services/{service_id}.
+  *   `meshIstio` (*type:* `GoogleApi.Monitoring.V3.Model.MeshIstio.t`, *default:* `nil`) - Type used for Istio services scoped to an Istio mesh.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for this Service. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID}
+
   *   `telemetry` (*type:* `GoogleApi.Monitoring.V3.Model.Telemetry.t`, *default:* `nil`) - Configuration for how to query telemetry on a Service.
   """
 
@@ -38,6 +41,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
           :clusterIstio => GoogleApi.Monitoring.V3.Model.ClusterIstio.t(),
           :custom => GoogleApi.Monitoring.V3.Model.Custom.t(),
           :displayName => String.t(),
+          :meshIstio => GoogleApi.Monitoring.V3.Model.MeshIstio.t(),
           :name => String.t(),
           :telemetry => GoogleApi.Monitoring.V3.Model.Telemetry.t()
         }
@@ -47,6 +51,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   field(:clusterIstio, as: GoogleApi.Monitoring.V3.Model.ClusterIstio)
   field(:custom, as: GoogleApi.Monitoring.V3.Model.Custom)
   field(:displayName)
+  field(:meshIstio, as: GoogleApi.Monitoring.V3.Model.MeshIstio)
   field(:name)
   field(:telemetry, as: GoogleApi.Monitoring.V3.Model.Telemetry)
 end

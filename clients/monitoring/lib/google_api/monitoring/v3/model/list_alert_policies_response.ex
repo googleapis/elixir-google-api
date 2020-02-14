@@ -22,7 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ListAlertPoliciesResponse do
   ## Attributes
 
   *   `alertPolicies` (*type:* `list(GoogleApi.Monitoring.V3.Model.AlertPolicy.t)`, *default:* `nil`) - The returned alert policies.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than were returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than were returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method.
   """
 
   use GoogleApi.Gax.ModelBase
