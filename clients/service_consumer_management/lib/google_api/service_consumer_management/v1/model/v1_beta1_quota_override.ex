@@ -21,7 +21,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1Beta1QuotaOverride do
 
   ## Attributes
 
-  *   `dimensions` (*type:* `map()`, *default:* `nil`) - If this map is nonempty, then this override applies only to specific values
+  *   `dimensions` (*type:* `map()`, *default:* `nil`) - 
+      If this map is nonempty, then this override applies only to specific values
       for dimensions defined in the limit unit.
 
       For example, an override on a limit with the unit 1/{project}/{region}
