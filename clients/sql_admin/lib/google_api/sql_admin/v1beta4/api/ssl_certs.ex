@@ -48,8 +48,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL creates this ephemeral certificate.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCertsCreateEphemeralRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -84,7 +82,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -125,9 +122,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of SSL certificate to delete.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/sslCerts/{sslCert}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -162,8 +156,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -208,9 +201,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - Name of the resource ssl certificate.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/sslCerts/{sslCert}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -245,8 +235,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -290,8 +279,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL creates this SSL certificate.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -316,7 +303,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -357,8 +343,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of SSL certificates.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -381,8 +365,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =

@@ -45,8 +45,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of the operation for Cloud SQL to get.
-          Format: projects/{project}/locations/{location}/operations/{operation}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -68,8 +66,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -111,10 +108,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
       *   `:maxResults` (*type:* `integer()`) - Maximum number of operations per response.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
           results to view.
-      *   `:parent` (*type:* `String.t`) - Indirect parent. The direct parent should combine with the instance name,
-          which owns this collection of operations.
-          Format:
-          projects/{project}/locations/{location}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -140,8 +133,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
       :upload_protocol => :query,
       :instance => :query,
       :maxResults => :query,
-      :pageToken => :query,
-      :parent => :query
+      :pageToken => :query
     }
 
     request =
