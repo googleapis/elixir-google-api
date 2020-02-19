@@ -97,7 +97,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `liens_id` (*type:* `String.t`) - Part of `name`. The name/identifier of the Lien to delete.
+  *   `liens_id` (*type:* `String.t`) - Part of `name`. Required. The name/identifier of the Lien to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -159,7 +159,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `liens_id` (*type:* `String.t`) - Part of `name`. The name/identifier of the Lien.
+  *   `liens_id` (*type:* `String.t`) - Part of `name`. Required. The name/identifier of the Lien.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -234,7 +234,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. This is a suggestion for the server.
       *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous List request, if any.
-      *   `:parent` (*type:* `String.t`) - The name of the resource to list all attached Liens.
+      *   `:parent` (*type:* `String.t`) - Required. The name of the resource to list all attached Liens.
           For example, `projects/1234`.
   *   `opts` (*type:* `keyword()`) - Call options
 
