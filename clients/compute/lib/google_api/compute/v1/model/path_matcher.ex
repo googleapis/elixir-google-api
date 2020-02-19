@@ -41,8 +41,7 @@ defmodule GoogleApi.Compute.V1.Model.PathMatcher do
       For example: a pathRule with a path /a/b/c/* will match before /a/b/* irrespective of the order in which those paths appear in this list.
       Within a given pathMatcher, only one of pathRules or routeRules must be set.
   *   `routeRules` (*type:* `list(GoogleApi.Compute.V1.Model.HttpRouteRule.t)`, *default:* `nil`) - The list of HTTP route rules. Use this list instead of pathRules when advanced route matching and routing actions are desired. routeRules are evaluated in order of priority, from the lowest to highest number.
-      Within a given pathMatcher, only one of pathRules or routeRules must be set.
-      routeRules are not supported in UrlMaps intended for External Load balancers.
+      Within a given pathMatcher, you can set only one of pathRules or routeRules.
   """
 
   use GoogleApi.Gax.ModelBase
