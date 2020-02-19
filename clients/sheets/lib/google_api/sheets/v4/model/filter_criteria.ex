@@ -27,19 +27,17 @@ defmodule GoogleApi.Sheets.V4.Model.FilterCriteria do
   *   `hiddenValues` (*type:* `list(String.t)`, *default:* `nil`) - Values that should be hidden.
   *   `visibleBackgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background fill color to filter by; only cells with this fill color are
       shown. Mutually exclusive with all other filter criteria. Requests to set
-      this field will fail with a 400 error if any other filter criteria field is
-      set.
+      this field fail with a 400 error if any other filter criteria field is set.
   *   `visibleBackgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background fill color to filter by; only cells with this fill color are
       shown. Mutually exclusive with all other filter criteria. Requests to set
-      this field will fail with a 400 error if any other filter criteria field is
-      set.
+      this field fail with a 400 error if any other filter criteria field is set.
       If visible_background_color is also set, this field takes precedence.
   *   `visibleForegroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The text color to filter by; only cells with this text color are shown.
       Mutually exclusive with all other filter criteria. Requests to set this
-      field will fail with a 400 error if any other filter criteria field is set.
+      field fail with a 400 error if any other filter criteria field is set.
   *   `visibleForegroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The text color to filter by; only cells with this text color are shown.
       Mutually exclusive with all other filter criteria. Requests to set this
-      field will fail with a 400 error if any other filter criteria field is set.
+      field fail with a 400 error if any other filter criteria field is set.
       If visible_foreground_color is also set, this field takes precedence.
   """
 
