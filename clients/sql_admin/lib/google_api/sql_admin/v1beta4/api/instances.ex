@@ -49,6 +49,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should add this server CA.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -81,7 +83,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
@@ -120,6 +123,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should clone this instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -143,6 +148,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
@@ -181,6 +187,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:resourceName` (*type:* `String.t`) - The name of database instance to delete.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -202,7 +210,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :resourceName => :query
     }
 
     request =
@@ -241,6 +250,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL demotes this master database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -275,6 +286,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
@@ -314,6 +326,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL exports this database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -337,6 +351,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
@@ -375,6 +390,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL sends this database instance during a
+          failover. Format:
+          projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -398,6 +416,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
@@ -436,6 +455,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:resourceName` (*type:* `String.t`) - Name of the resource database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -457,7 +478,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :resourceName => :query
     }
 
     request =
@@ -496,6 +518,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL imports this database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -519,6 +543,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
@@ -557,6 +582,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL creates this database instance.
+          Format: projects/{project}/locations/{location}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -580,6 +607,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
@@ -628,6 +656,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return per response.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
           results to view.
+      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of database instances.
+          Format: projects/{project}/locations/{location}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -653,7 +683,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :upload_protocol => :query,
       :filter => :query,
       :maxResults => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :parent => :query
     }
 
     request =
@@ -696,6 +727,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of server CAs.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -730,7 +763,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
@@ -771,6 +805,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:resourceName` (*type:* `String.t`) - The name of the database instance for Cloud SQL to update.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -794,6 +830,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :resourceName => :query,
       :body => :body
     }
 
@@ -832,6 +869,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL promotes this replica database
+          instance. Format: projects/{project}/locations/{location}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -864,7 +903,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
@@ -976,6 +1016,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL restarts this database instance.
+          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -997,7 +1039,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
@@ -1035,6 +1078,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL restores this database instance from
+          backup. Format:
+          projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1069,6 +1115,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
@@ -1108,6 +1155,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL rotates these server CAs.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1142,6 +1191,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
@@ -1180,6 +1230,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL starts this database instance
+          replication. Format:
+          projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1212,7 +1265,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
@@ -1250,6 +1304,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL stops this database instance
+          replication. Format:
+          projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1276,7 +1333,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :parent => :query
     }
 
     request =
@@ -1314,6 +1372,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL truncates this log.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateLogRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1342,6 +1402,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :parent => :query,
       :body => :body
     }
 
@@ -1380,6 +1441,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:resourceName` (*type:* `String.t`) - The name of the database instance for Cloud SQL to update.
+          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1403,6 +1466,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :resourceName => :query,
       :body => :body
     }
 
