@@ -23,8 +23,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
 
   *   `healthState` (*type:* `String.t`, *default:* `nil`) - Health state of the instance.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - URL of the instance resource.
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The IP address represented by this resource.
-  *   `port` (*type:* `integer()`, *default:* `nil`) - The port on the instance.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - A forwarding rule IP address assigned to this instance.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - The named port of the instance group, not necessarily the port that is health-checked.
   """
 
   use GoogleApi.Gax.ModelBase
