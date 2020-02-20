@@ -24,8 +24,8 @@ defmodule GoogleApi.Container.V1.Model.HorizontalPodAutoscaling do
   ## Attributes
 
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether the Horizontal Pod Autoscaling feature is enabled in the cluster.
-      When enabled, it ensures that a Heapster pod is running in the cluster,
-      which is also used by the Cloud Monitoring service.
+      When enabled, it ensures that metrics are collected into Stackdriver
+      Monitoring.
   """
 
   use GoogleApi.Gax.ModelBase
