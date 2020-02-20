@@ -27,7 +27,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AwsS3Data do
       AWS access key.
   *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Required. S3 Bucket name (see
       [Creating a
-      bucket](http://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
+      bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
   """
 
   use GoogleApi.Gax.ModelBase

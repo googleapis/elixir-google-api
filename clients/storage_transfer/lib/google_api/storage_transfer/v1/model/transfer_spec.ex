@@ -27,10 +27,11 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   *   `httpDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.HttpData.t`, *default:* `nil`) - An HTTP URL data source.
   *   `objectConditions` (*type:* `GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t`, *default:* `nil`) - Only objects that satisfy these object conditions are included in the set
       of data source and data sink objects.  Object conditions based on
-      objects' `lastModificationTime` do not exclude objects in a data sink.
-  *   `transferOptions` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferOptions.t`, *default:* `nil`) - If the option `deleteObjectsUniqueInSink` is `true`, object conditions
-      based on objects' `lastModificationTime` are ignored and do not exclude
-      objects in a data source or a data sink.
+      objects' "last modification time" do not exclude objects in a data sink.
+  *   `transferOptions` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferOptions.t`, *default:* `nil`) - If the option
+      delete_objects_unique_in_sink
+      is `true`, object conditions based on objects' "last modification time" are
+      ignored and do not exclude objects in a data source or a data sink.
   """
 
   use GoogleApi.Gax.ModelBase

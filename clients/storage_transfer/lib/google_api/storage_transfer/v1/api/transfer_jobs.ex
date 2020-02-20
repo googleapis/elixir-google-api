@@ -160,13 +160,16 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of:
-          {"project_id":"my_project_id",
+          {"project<span>_</span>id":"my_project_id",
            "job_names":["jobid1","jobid2",...],
            "job_statuses":["status1","status2",...]}.
           Since `job_names` and `job_statuses` support multiple values, their values
-          must be specified with array notation. `project_id` is required.
-          `job_names` and `job_statuses` are optional.  The valid values for
-          `job_statuses` are case-insensitive: `ENABLED`, `DISABLED`, and `DELETED`.
+          must be specified with array notation. `project`<span>`_`</span>`id` is
+          required.  `job_names` and `job_statuses` are optional.  The valid values
+          for `job_statuses` are case-insensitive:
+          ENABLED,
+          DISABLED, and
+          DELETED.
       *   `:pageSize` (*type:* `integer()`) - The list page size. The max allowed value is 256.
       *   `:pageToken` (*type:* `String.t`) - The list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -216,8 +219,11 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   transfer operations that are running already. Updating a job's schedule
   is not allowed.
 
-  Note: The job's `status` field can be modified using this RPC (for example,
-  to set a job's status to `DELETED`, `DISABLED`, or `ENABLED`).
+  **Note:** The job's status field can be modified
+  using this RPC (for example, to set a job's status to
+  DELETED,
+  DISABLED, or
+  ENABLED).
 
   ## Parameters
 
