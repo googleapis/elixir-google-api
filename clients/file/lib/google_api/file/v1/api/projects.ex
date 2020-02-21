@@ -437,7 +437,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Output only. The resource name of the instance, in the format
-      projects/{project}/locations/{location}/instances/{instance}.
+      projects/{project_id}/locations/{location_id}/instances/{instance_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
