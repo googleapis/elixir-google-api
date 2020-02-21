@@ -29,28 +29,29 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   *   `lastModificationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the transfer job was last modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A unique name (within the transfer project) assigned when the job is
       created.
-      If this field is left empty in a CreateTransferJobRequest,
-      Storage Transfer Service will assign a unique name. Otherwise, the supplied
-      name is used as the unique name for this job.
+      If this field is left empty in a CreateTransferJobRequest, Storage Transfer
+      Service will assign a unique name. Otherwise, the supplied name is used as
+      the unique name for this job.
 
-      This name must start with "transferJobs/" prefix and end with a letter or a
-      number, and should be no more than 128 characters.
-      Example of a valid format : "transferJobs/[A-Za-z0-9-._~]*[A-Za-z0-9]$"
+      This name must start with `"transferJobs/"` prefix and end with a letter or
+      a number, and should be no more than 128 characters.
+      Example of a valid format : `"transferJobs/[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
 
-      **NOTE:**
-      If the supplied name is already in use, the creation request results in an
-      `ALREADY_EXISTS` error and the transfer job will not be created.
-      Invalid job names will return an 'INVALID_ARGUMENT' error and the job will
+      **Note:** If the supplied name is already in use, the creation request
+      results in an ALREADY_EXISTS error and
+      the transfer job will not be created.  Invalid job names will return an
+      INVALID_ARGUMENT error and the job will
       not be created.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Cloud Platform Project that owns the job.
   *   `schedule` (*type:* `GoogleApi.StorageTransfer.V1.Model.Schedule.t`, *default:* `nil`) - Schedule specification.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the job. This value MUST be specified for
       `CreateTransferJobRequests`.
 
-      NOTE: The effect of the new job status takes place during a subsequent job
-      run. For example, if you change the job status from `ENABLED` to
-      `DISABLED`, and an operation spawned by the transfer is running, the status
-      change would not affect the current operation.
+      **Note:** The effect of the new job status takes place during a subsequent
+      job run. For example, if you change the job status from
+      ENABLED to DISABLED, and an operation
+      spawned by the transfer is running, the status change would not affect the
+      current operation.
   *   `transferSpec` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferSpec.t`, *default:* `nil`) - Transfer specification.
   """
 
