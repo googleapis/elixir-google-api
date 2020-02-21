@@ -72,7 +72,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.  
 
       If sessionAffinity is not NONE, and this field is not set to >MAGLEV or RING_HASH, session affinity settings will not take effect.
+  *   `logConfig` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceLogConfig.t`, *default:* `nil`) - This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which this backend service belongs. This field can only be spcified when the load balancing scheme is set to INTERNAL.
   *   `outlierDetection` (*type:* `GoogleApi.Compute.V1.Model.OutlierDetection.t`, *default:* `nil`) - Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
 
       This field is applicable to either:  
@@ -122,7 +124,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :kind => String.t(),
           :loadBalancingScheme => String.t(),
           :localityLbPolicy => String.t(),
+          :logConfig => GoogleApi.Compute.V1.Model.BackendServiceLogConfig.t(),
           :name => String.t(),
+          :network => String.t(),
           :outlierDetection => GoogleApi.Compute.V1.Model.OutlierDetection.t(),
           :port => integer(),
           :portName => String.t(),
@@ -151,7 +155,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:kind)
   field(:loadBalancingScheme)
   field(:localityLbPolicy)
+  field(:logConfig, as: GoogleApi.Compute.V1.Model.BackendServiceLogConfig)
   field(:name)
+  field(:network)
   field(:outlierDetection, as: GoogleApi.Compute.V1.Model.OutlierDetection)
   field(:port)
   field(:portName)
