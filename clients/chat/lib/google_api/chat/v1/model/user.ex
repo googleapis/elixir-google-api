@@ -22,6 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.User do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user's display name.
+  *   `domainId` (*type:* `String.t`, *default:* `nil`) - Obfuscated domain information.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name, in the format "users/*".
   *   `type` (*type:* `String.t`, *default:* `nil`) - User type.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Chat.V1.Model.User do
 
   @type t :: %__MODULE__{
           :displayName => String.t(),
+          :domainId => String.t(),
           :name => String.t(),
           :type => String.t()
         }
 
   field(:displayName)
+  field(:domainId)
   field(:name)
   field(:type)
 end
