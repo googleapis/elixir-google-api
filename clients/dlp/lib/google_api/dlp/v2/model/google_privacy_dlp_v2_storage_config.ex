@@ -21,9 +21,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageConfig do
 
   ## Attributes
 
-  *   `bigQueryOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions.t`, *default:* `nil`) - BigQuery options specification.
-  *   `cloudStorageOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t`, *default:* `nil`) - Google Cloud Storage options specification.
-  *   `datastoreOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions.t`, *default:* `nil`) - Google Cloud Datastore options specification.
+  *   `bigQueryOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions.t`, *default:* `nil`) - BigQuery options.
+  *   `cloudStorageOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t`, *default:* `nil`) - Google Cloud Storage options.
+  *   `datastoreOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions.t`, *default:* `nil`) - Google Cloud Datastore options.
   *   `timespanConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig.t`, *default:* `nil`) - 
   """
 
