@@ -53,6 +53,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerPool do
       Compute Engine API.
   *   `packages` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Package.t)`, *default:* `nil`) - Packages to be installed on workers.
   *   `poolArgs` (*type:* `map()`, *default:* `nil`) - Extra arguments for this worker pool.
+  *   `sdkHarnessContainerImages` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage.t)`, *default:* `nil`) - Set of SDK harness containers needed to execute this pipeline. This will
+      only be set in the Fn API path. For non-cross-language pipelines this
+      should have only one entry. Cross-language pipelines will have two or more
+      entries.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Subnetwork to which VMs will be assigned, if desired.  Expected to be of
       the form "regions/REGION/subnetworks/SUBNETWORK".
   *   `taskrunnerSettings` (*type:* `GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings.t`, *default:* `nil`) - Settings passed through to Google Compute Engine workers when
@@ -76,6 +80,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerPool do
       default.
   *   `workerHarnessContainerImage` (*type:* `String.t`, *default:* `nil`) - Required. Docker container image that executes the Cloud Dataflow worker
       harness, residing in Google Container Registry.
+
+      Deprecated for the Fn API path. Use sdk_harness_container_images instead.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Zone to run the worker pools in.  If empty or unspecified, the service
       will attempt to choose a reasonable default.
   """
@@ -99,6 +105,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerPool do
           :onHostMaintenance => String.t(),
           :packages => list(GoogleApi.Dataflow.V1b3.Model.Package.t()),
           :poolArgs => map(),
+          :sdkHarnessContainerImages =>
+            list(GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage.t()),
           :subnetwork => String.t(),
           :taskrunnerSettings => GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings.t(),
           :teardownPolicy => String.t(),
@@ -122,6 +130,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerPool do
   field(:onHostMaintenance)
   field(:packages, as: GoogleApi.Dataflow.V1b3.Model.Package, type: :list)
   field(:poolArgs, type: :map)
+
+  field(:sdkHarnessContainerImages,
+    as: GoogleApi.Dataflow.V1b3.Model.SdkHarnessContainerImage,
+    type: :list
+  )
+
   field(:subnetwork)
   field(:taskrunnerSettings, as: GoogleApi.Dataflow.V1b3.Model.TaskRunnerSettings)
   field(:teardownPolicy)
