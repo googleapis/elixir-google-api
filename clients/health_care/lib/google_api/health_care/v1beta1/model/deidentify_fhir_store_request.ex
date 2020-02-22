@@ -29,9 +29,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyFhirStoreRequest do
        * The destination dataset must exist.
        * The source dataset and destination dataset must both reside in the same
          project. De-identifying data across multiple projects is not supported.
-       * The destination FHIR store must not exist.
-       * The caller must have the necessary permissions to create the destination
-         FHIR store.
+       * The destination FHIR store must exist.
+       * The caller must have the healthcare.fhirResources.update permission to
+         write to the destination FHIR store.
   *   `resourceFilter` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FhirFilter.t`, *default:* `nil`) - A filter specifying the resources to include in the output. If not
       specified, all resources are included in the output.
   """
