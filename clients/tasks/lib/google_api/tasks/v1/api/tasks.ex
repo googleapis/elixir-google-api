@@ -177,7 +177,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   end
 
   @doc """
-  Creates a new task on the specified task list.
+  Creates a new task on the specified task list. Fails with HTTP code 403 or 429 after reaching the storage limit of 100,000 tasks per account.
 
   ## Parameters
 
