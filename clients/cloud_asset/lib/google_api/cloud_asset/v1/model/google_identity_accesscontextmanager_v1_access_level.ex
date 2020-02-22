@@ -17,8 +17,9 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessLevel do
   @moduledoc """
-  An `AccessLevel` is a label that can be applied to requests to GCP services,
-  along with a list of requirements necessary for the label to be applied.
+  An `AccessLevel` is a label that can be applied to requests to Google Cloud
+  services, along with a list of requirements necessary for the label to be
+  applied.
 
   ## Attributes
 
