@@ -32,6 +32,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   that you have indexed from a third party.
 
   **Note:** This API requires a standard end user account to execute.
+  A service account can't perform Query API requests directly; to use a
+  service account to perform queries, set up [G Suite domain-wide delegation
+  of
+  authority](https://developers.google.com/cloud-search/docs/guides/delegation/).
 
   ## Parameters
 
@@ -90,6 +94,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   Provides suggestions for autocompleting the query.
 
   **Note:** This API requires a standard end user account to execute.
+  A service account can't perform Query API requests directly; to use a
+  service account to perform queries, set up [G Suite domain-wide delegation
+  of
+  authority](https://developers.google.com/cloud-search/docs/guides/delegation/).
 
   ## Parameters
 
@@ -148,6 +156,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   Returns list of sources that user can use for Search and Suggest APIs.
 
   **Note:** This API requires a standard end user account to execute.
+  A service account can't perform Query API requests directly; to use a
+  service account to perform queries, set up [G Suite domain-wide delegation
+  of
+  authority](https://developers.google.com/cloud-search/docs/guides/delegation/).
 
   ## Parameters
 

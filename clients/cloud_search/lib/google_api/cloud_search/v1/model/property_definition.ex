@@ -57,8 +57,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.PropertyDefinition do
       property. Only supported for Text properties. IsReturnable must be true to
       set this option. In a given datasource maximum of 5 properties can be
       marked as is_wildcard_searchable.
-
-      Note: This is an alpha feature and is enabled for whitelisted users only.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the property. Item indexing requests sent to the Indexing API
       should set the property name
       equal to this value. For example, if name is *subject_line*, then indexing
