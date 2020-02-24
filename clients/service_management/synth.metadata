@@ -1,26 +1,26 @@
 {
-  "updateTime": "2020-02-12T13:31:05.949376Z",
+  "updateTime": "2020-02-24T13:33:53.801585Z",
   "sources": [
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "9c0c8a7407edd07fafee9ae605849df295450e83"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
-        "sha": "dd7cd93888cbeb1d4c56a1ca814491c7813160e8"
+        "sha": "bd457e9d3929071d7c91fcfc712528c5b8c70f32"
       }
     },
     {
       "git": {
         "name": "elixir-google-api",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "9c0c8a7407edd07fafee9ae605849df295450e83",
-        "log": "9c0c8a7407edd07fafee9ae605849df295450e83\nRegenerate ServiceManagement client (#3940)\n\n\n9472741113fa5c08e94933f60ff6cc77f925ba5f\nRegenerate SQLAdmin client (#3939)\n\n\nc2dd3874c3ff306b6cdfe06ec32211a134428e9b\nRegenerate Redis client (#3938)\n\n\nc2369234ae7d50a1d121b38982acfd025ea70386\nRegenerate Monitoring client (#3937)\n\n\n7d059cc0eb4148b0ce5e98eb5bae145ce97475c3\nRegenerate MachineLearning client (#3936)\n\n\n46bf6c8cf072eb7db7692ff2bafa6b59a8d0c72d\nRegenerate DataCatalog client (#3935)\n\n\n235b5c95c07a95fb291f0f94bf50a43be79e6936\nRegenerate CloudTrace client (#3934)\n\n\ncf03d77bacce3444bc382c9a83ce8bc7c1c5cbf4\nRegenerate BigQueryDataTransfer client (#3933)\n\n\nb4fa50ce0c7851af21dd82fab34cac6bc437b271\nRemove GamesConfiguration API (#3932)\n\n\n"
+        "sha": "bd457e9d3929071d7c91fcfc712528c5b8c70f32",
+        "log": "bd457e9d3929071d7c91fcfc712528c5b8c70f32\nRegenerate Logging client (#4025)\n\n\nc93321e2fa7050db5144dca1dbd8b3e6799d1839\nRegenerate Monitoring client (#4023)\n\n\nf94532996245d36129e3a4343aa80a4296f7adc9\nRegenerate HealthCare client (#4022)\n\n\n6e7ba2d602fd9b58ed3ebe0ed147b9d39033dfe4\nRegenerate Dataflow client (#4021)\n\n\n72bf9377e4c2f285c6b45669b248bbeeb8bc02d4\nRegenerate CloudAsset client (#4020)\n\n\n95a3f169596a24addd43175ba3bfa43d9b35ee88\nRegenerate AccessContextManager client (#4019)\n\n\n255f42fd73c2bbb82e5c96cb4e359d19501a3d1d\nRegenerate Chat client (#4018)\n\n\n93a3a12950619d029e0bb4b6b7886d0e59c32368\nRegenerate File client (#4011)\n\n\n7ebf5444e55d0c55e4e0abf4226d441ff016bead\nRegenerate StorageTransfer client (#4015)\n\n\n601bc7981ba6c6b3baea183afdd367b5bf0f6ad0\nRegenerate ServiceNetworking client (#4014)\n\n\n9810cad0eeb145a0792ec6f1cc2cdb8875dbd33b\nRegenerate SQLAdmin client (#4013)\n\n\nd6c5a23ca65bf4aa3d3f76af6d348d24e690c924\nRegenerate Fitness client (#4012)\n\n\nfaf596728f3d3680a08a523957f35ace559a405a\nRegenerate DLP client (#4010)\n\n\n87f9f60f8d11c1410d24084ef9e072a494f8fc32\nRegenerate Container client (#4009)\n\n\n73f167807e3369dde0e39563791e1fbb1c518b67\nRegenerate Compute client (#4008)\n\n\ndf56e001740da29572df680ea6af20ac692b91b3\nRegenerate CloudIdentity client (#4007)\n\n\n9cfb5117bba1bd0b71271fd19015e0275a4913e6\nRegenerate Sheets client (#4003)\n\n\nc2f358944b35322e2dcaf75bb747e50c500f5859\nRegenerate File client (#4002)\n\n\n1e7267c37343934425f3e0e99cc7d60f7e9f18bc\nRegenerate DataCatalog client (#4001)\n\n\n9f0ef39dae8d7014c216158a0e6acd9e77a90e5d\nRegenerate SQLAdmin client (#3999)\n\n\nadc23739cd34c77561093eaf2d41c0081b2372c7\nRegenerate AlertCenter client (#3998)\n\n\n27847144d5d43eb1fca7bd7a685af6321d41bff2\nRegenerate ServiceControl client (#3996)\n\n\n7d070ebfd559b90e73d518a66b98531c6aab5fab\nRegenerate ServiceUsage client (#3995)\n\n\n751e9b876fdee64da6fbdbe6caa5e4bdc3e102e7\nRegenerate ServiceNetworking client (#3994)\n\n\n8e970cd14acb7164c82f0c51e6dc14d4137ad51f\nRegenerate ServiceConsumerManagement client (#3993)\n\n\n5f7e303ee82f0958772d0ad65bc87aba1106259f\nRegenerate Gmail client (#3992)\n\n\n5045b19e64c9a82a55edaf736d17eb83705d9226\nRegenerate Dialogflow client (#3991)\n\n\n27bad970c06890fcb69bd1fc7816bd7917c7c806\nRegenerate Compute client (#3990)\n\n\n98dd8388b203ac8dbdc2fca3a1ac5035d1337496\nRegenerate CloudResourceManager client (#3989)\n\n\n8cbb7ada55231e56c85a4d7efb53058223f8f119\nRegenerate Monitoring client (#3985)\n\n\n03aa8af0e53d384a6e73cc261dcba5316683fb50\nRegenerate DoubleClickSearch client (#3984)\n\n\n672f3e977200872bcf6a66210bd8aa9484ffd553\nRegenerate CloudResourceManager client (#3983)\n\n\necb78b8a5aa816e9da51e829743b20d6e36f9b4f\nRegenerate CloudIdentity client (#3982)\n\n\n27a6edec6bf1b97f90fa92b93ef63640df285f7c\nRegenerate Container client (#3970)\n\n\n49ccb2743395c112ae1d993b1eb8354acfead43a\nRegenerate Compute client (#3969)\n\n\n9bb017b97288a6e5ef3a139ab0e560a474f99d3c\nRegenerate Composer client (#3968)\n\n\na31178bccf59bf8926ee8ce24acad2b2b1fc9309\nRegenerate CloudRun client (#3967)\n\n\n6944df235c840a04a04b661d9952c976d91b5cf4\nRegenerate CloudResourceManager client (#3966)\n\n\n4743b002429c8151cd8e8e9de56cc055688bf77c\nRegenerate BigQuery client (#3965)\n\n\ne8eb90aaa2914435e0996a3a11af16e93fbfeed6\nRegenerate HealthCare client (#3972)\n\n\nbd8682d6677c8fa13d146a270e992193fc76e110\nRegenerate IdentityToolkit client (#3973)\n\n\ne777557c705506fa3fbb70eb7579968900d7117c\nRegenerate MachineLearning client (#3974)\n\n\n7ee6ff7e1a9766f41df6080af3573c140a695751\nRegenerate SafeBrowsing client (#3975)\n\n\ncd0fb96f641d81bf5e4b5ff12b52d39e16e37537\nRegenerate StorageTransfer client (#3976)\n\n\nce7a78e8cd5b7a8b1374d5da6aa1f0c2e01b5046\nRegenerate YouTube client (#3977)\n\n\n7fd098030ca202d24564cc67a60b60067a6b574d\nfix: handle resource types without any properties (#3963)\n\n\n096562b54fc201e21b18c78ae0afdcfc158ed4ec\nfix: remove obsolete dfareporting client code that does not compile (#3964)\n\n\n4d86c85425520f1e6cf17312d0768e53fd0fa9c6\nfix: handle resource names with hyphens (#3962)\n\n\nb5aba0dbfaef4a9470b09eb928df9ac09f5a961c\nfix: dedup generated model and api filenames (#3956)\n\n\na30e8087bcfbd2faa281030bca5753610e3d32e6\nfix: shorten double-underscores in model class references (#3955)\n\n\n4818ce02fb79721c2083ac2f8d06fdd3568ae97c\nRegenerate Recommender client (#3961)\n\n\n7b5449588da81c73467daf69a61e3bf5571cd2bc\nRegenerate MachineLearning client (#3960)\n\n\n46a679c4a9195af114ecd49ddc74c35005a83892\nRegenerate IAP client (#3959)\n\n\n2bdadcf365532973ca0ced355800054da76266e5\nRegenerate HealthCare client (#3958)\n\n\nceedeec4291f753ffcaba3be41dcd795ab0ab21f\nRegenerate BigtableAdmin client (#3957)\n\n\ne4552aff89973d5a6b2a167868c9e0f283c00206\nRegenerate ServiceManagement client (#3954)\n\n\n69db80c2283ee2094817819b66e8ac7b2491206a\nRegenerate FirebaseRules client (#3953)\n\n\n09819702e830d4513409219ef0eb42f273ff69fb\nRegenerate Docs client (#3952)\n\n\n25c3cf4c20d3f44aeff22d7cdc56c586edf6372c\nRegenerate Spanner client (#3951)\n\n\n8315286160518ffa09eece54b2e4e4c05c001c4c\nRegenerate Dialogflow client (#3950)\n\n\nd8945ca7b884c83dacb381d8b5caeca462d17f2f\nRegenerate CloudRun client (#3949)\n\n\n18c1b497f939ea92a69494e15b31645d10d491d4\nRegenerate AccessApproval client (#3948)\n\n\n55dc911cee6ad2610ed601cacfa5bf0037dabd33\nRegenerate Redis client (#3945)\n\n\ned52baef9c335d1a095a61e9243e5dd784b13217\nRegenerate StorageTransfer client (#3942)\n\n\n73f4b912fff74e9fb5f97dc6620e4a470bd17655\nRegenerate DLP client (#3941)\n\n\n"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "rpc://devrel/cloud/libraries/tools/autosynth",
+        "sha": "706a38c26db42299845396cdae55db635c38794a"
       }
     }
   ]
