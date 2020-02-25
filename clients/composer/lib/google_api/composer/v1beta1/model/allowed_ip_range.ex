@@ -21,7 +21,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.AllowedIpRange do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided description.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided description. It must contain at most 300 characters.
   *   `value` (*type:* `String.t`, *default:* `nil`) - IP address or range, defined using CIDR notation, of requests that this
       rule applies to. You can use the wildcard character "*" to match all IPs
       equivalent to "0/0" and "::/0" together.
