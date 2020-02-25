@@ -17,6 +17,7 @@
 
 defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1NotificationMetadata do
   @moduledoc """
+  This message has been deprecated.
   NotificationMetadata is the notification state for an instance.
 
   ## Attributes
