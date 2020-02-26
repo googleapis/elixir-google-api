@@ -25,7 +25,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
   *   `countryTargeting` (*type:* `GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t`, *default:* `nil`) - 
   *   `inAppUpdatePriority` (*type:* `integer()`, *default:* `nil`) - In-app update priority of the release. All newly added APKs in the release will be considered at this priority. in_app_update_priority can take values between [0, 5]. 5 is the highest priority. Default priority is 0. See https://developer.android.com/guide/playcore/in-app-updates.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The release name, used to identify this release in the Play Console UI. Not required to be unique. This is optional, if not set it will be generated from the version_name in the APKs.
+  *   `pinnedVersions` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.TrackReleasePin.t)`, *default:* `nil`) - 
   *   `releaseNotes` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t)`, *default:* `nil`) - The description of what is new in the app in this release.
+  *   `rollbackEnabled` (*type:* `boolean()`, *default:* `nil`) - 
   *   `sampling` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Sampling.t`, *default:* `nil`) - 
   *   `status` (*type:* `String.t`, *default:* `nil`) - The desired status of this release.
   *   `userFraction` (*type:* `float()`, *default:* `nil`) - Fraction of users who are eligible to receive the release. 0 < fraction < 1. To be set, release status must be "inProgress" or "halted".
@@ -39,7 +41,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
           :countryTargeting => GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t(),
           :inAppUpdatePriority => integer(),
           :name => String.t(),
+          :pinnedVersions => list(GoogleApi.AndroidPublisher.V3.Model.TrackReleasePin.t()),
           :releaseNotes => list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t()),
+          :rollbackEnabled => boolean(),
           :sampling => GoogleApi.AndroidPublisher.V3.Model.Sampling.t(),
           :status => String.t(),
           :userFraction => float(),
@@ -50,7 +54,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
   field(:countryTargeting, as: GoogleApi.AndroidPublisher.V3.Model.CountryTargeting)
   field(:inAppUpdatePriority)
   field(:name)
+  field(:pinnedVersions, as: GoogleApi.AndroidPublisher.V3.Model.TrackReleasePin, type: :list)
   field(:releaseNotes, as: GoogleApi.AndroidPublisher.V3.Model.LocalizedText, type: :list)
+  field(:rollbackEnabled)
   field(:sampling, as: GoogleApi.AndroidPublisher.V3.Model.Sampling)
   field(:status)
   field(:userFraction)
