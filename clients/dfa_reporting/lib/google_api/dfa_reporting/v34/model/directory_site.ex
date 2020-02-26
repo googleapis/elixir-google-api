@@ -21,7 +21,6 @@ defmodule GoogleApi.DFAReporting.V34.Model.DirectorySite do
 
   ## Attributes
 
-  *   `active` (*type:* `boolean()`, *default:* `nil`) - Whether this directory site is active.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this directory site. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this directory site. This is a read-only, auto-generated field.
   *   `inpageTagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag types for regular placements.
@@ -46,7 +45,6 @@ defmodule GoogleApi.DFAReporting.V34.Model.DirectorySite do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :active => boolean(),
           :id => String.t(),
           :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
           :inpageTagFormats => list(String.t()),
@@ -57,7 +55,6 @@ defmodule GoogleApi.DFAReporting.V34.Model.DirectorySite do
           :url => String.t()
         }
 
-  field(:active)
   field(:id)
   field(:idDimensionValue, as: GoogleApi.DFAReporting.V34.Model.DimensionValue)
   field(:inpageTagFormats, type: :list)
