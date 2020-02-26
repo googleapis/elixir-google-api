@@ -35,7 +35,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
   *   `enableEmbed` (*type:* `boolean()`, *default:* `nil`) - This setting indicates whether the broadcast video can be played in an embedded player. If you choose to archive the video (using the enableArchive property), this setting will also apply to the archived video.
   *   `enableLowLatency` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this broadcast has low latency enabled.
   *   `latencyPreference` (*type:* `String.t`, *default:* `nil`) - If both this and enable_low_latency are set, they must match. LATENCY_NORMAL should match enable_low_latency=false LATENCY_LOW should match enable_low_latency=true LATENCY_ULTRA_LOW should have enable_low_latency omitted.
-  *   `mesh` (*type:* `String.t`, *default:* `nil`) - 
+  *   `mesh` (*type:* `String.t`, *default:* `nil`) - The mesh for projecting the video if projection is mesh. The mesh value must be a UTF-8 string containing the base-64 encoding of 3D mesh data that follows the  Spherical Video V2 RFC specification for an mshp box, excluding the box size and type but including the following four reserved zero bytes for the version and flags.
   *   `monitorStream` (*type:* `GoogleApi.YouTube.V3.Model.MonitorStreamInfo.t`, *default:* `nil`) - The monitorStream object contains information about the monitor stream, which the broadcaster can use to review the event content before the broadcast stream is shown publicly.
   *   `projection` (*type:* `String.t`, *default:* `nil`) - The projection format of this broadcast. This defaults to rectangular.
   *   `recordFromStart` (*type:* `boolean()`, *default:* `nil`) - Automatically start recording after the event goes live. The default value for this property is true.
