@@ -193,10 +193,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
       Learn more about [the Predictor interface and custom prediction
       routines](/ml-engine/docs/tensorflow/custom-prediction-routines).
-  *   `pythonVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Python used in prediction. If not set, the default
-      version is '2.7'. Starting [January 13,
-      2020](/ml-engine/docs/release-notes#december_10_2019), this field is
-      required.
+  *   `pythonVersion` (*type:* `String.t`, *default:* `nil`) - Required. The version of Python used in prediction.
 
       The following Python versions are available:
 
@@ -205,9 +202,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
       * Python '3.5' is available when `runtime_version` is set to a version
         from '1.4' to '1.14'.
       * Python '2.7' is available when `runtime_version` is set to '1.15' or
-        earlier. (Runtime versions released [after January 1,
-        2020](/ml-engine/docs/release-notes#december_10_2019) do not support
-        Python 2.7.)
+        earlier.
 
       Read more about the Python versions available for [each runtime
       version](/ml-engine/docs/runtime-version-list).
@@ -219,10 +214,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
       Configures the request-response pair logging on predictions from this
       Version.
-  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The AI Platform runtime version to use for this deployment.
-      If not set, AI Platform uses the default stable version, 1.0. Starting
-      [January 13, 2020](/ml-engine/docs/release-notes#december_10_2019), this
-      field is required.
+  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Required. The AI Platform runtime version to use for this deployment.
 
       For more information, see the
       [runtime version list](/ml-engine/docs/runtime-version-list) and

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   @moduledoc """
-  Represents input parameters for a training job. When using the
-  gcloud command to submit your training job, you can specify
-  the input parameters as command-line arguments and/or in a YAML configuration
-  file referenced from the --config command-line argument. For
-  details, see the guide to
-  <a href="/ml-engine/docs/tensorflow/training-jobs">submitting a training
-  job</a>.
+  Represents input parameters for a training job. When using the gcloud command
+  to submit your training job, you can specify the input parameters as
+  command-line arguments and/or in a YAML configuration file referenced from
+  the --config command-line argument. For details, see the guide to [submitting
+  a training job](/ai-platform/training/docs/training-jobs).
 
   ## Attributes
 
@@ -41,8 +39,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
       training.](/ml-engine/docs/tensorflow/using-gpus#compute-engine-machine-types-with-gpu)
 
       Set `masterConfig.imageUri` only if you build a custom image. Only one of
-      `masterConfig.imageUri` and `runtimeVersion` should be set. Learn more about
-      [configuring custom
+      `masterConfig.imageUri` and `runtimeVersion` should be set. Learn more
+      about [configuring custom
       containers](/ml-engine/docs/distributed-training-containers).
   *   `masterType` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the type of virtual machine to use for your training
       job's master worker. You must specify this field when `scaleTier` is set to
@@ -132,10 +130,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
       This value must be present when `scaleTier` is set to `CUSTOM` and
       `parameter_server_count` is greater than zero.
   *   `pythonModule` (*type:* `String.t`, *default:* `nil`) - Required. The Python module name to run after installing the packages.
-  *   `pythonVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Python used in training. If not set, the default
-      version is '2.7'. Starting [January 13,
-      2020](/ml-engine/docs/release-notes#december_10_2019), this field is
-      required.
+  *   `pythonVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Python used in training. You must either specify
+      this field or specify `masterConfig.imageUri`.
 
       The following Python versions are available:
 
@@ -144,24 +140,18 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
       * Python '3.5' is available when `runtime_version` is set to a version
         from '1.4' to '1.14'.
       * Python '2.7' is available when `runtime_version` is set to '1.15' or
-        earlier. (Runtime versions released [after January 1,
-        2020](/ml-engine/docs/release-notes#december_10_2019) do not support
-        Python 2.7.)
+        earlier.
 
       Read more about the Python versions available for [each runtime
       version](/ml-engine/docs/runtime-version-list).
-  *   `region` (*type:* `String.t`, *default:* `nil`) - Required. The Google Compute Engine region to run the training job in.
-      See the <a href="/ml-engine/docs/tensorflow/regions">available regions</a>
-      for AI Platform services.
-  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The AI Platform runtime version to use for training. If not
-      set, AI Platform uses the default stable version, 1.0. Starting [January
-      13, 2020](/ml-engine/docs/release-notes#december_10_2019), this field is
-      required.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Required. The region to run the training job in. See the [available
+      regions](/ai-platform/training/docs/regions) for AI Platform Training.
+  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The AI Platform runtime version to use for training. You must
+      either specify this field or specify `masterConfig.imageUri`.
 
-      For more information, see the
-      <a href="/ml-engine/docs/runtime-version-list">runtime version list</a>
-      and
-      <a href="/ml-engine/docs/versioning">how to manage runtime versions</a>.
+      For more information, see the [runtime version
+      list](/ai-platform/training/docs/runtime-version-list) and learn [how to
+      manage runtime versions](/ai-platform/training/docs/versioning).
   *   `scaleTier` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the machine types, the number of replicas for workers
       and parameter servers.
   *   `scheduling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling.t`, *default:* `nil`) - Optional. Scheduling options for a training job.
