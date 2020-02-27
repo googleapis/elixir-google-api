@@ -48,7 +48,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. User-provided name for this snapshot. If the name is not provided in the
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. User-provided name for this snapshot. If the name is not provided in the
       request, the server will assign a random name for this snapshot on the same
       project as the subscription. Note that for REST API requests, you must
       specify a name.  See the <a
@@ -134,7 +134,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `snapshot`. The name of the snapshot to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `snapshot`. Required. The name of the snapshot to delete.
       Format is `projects/{project}/snapshots/{snap}`.
   *   `snapshots_id` (*type:* `String.t`) - Part of `snapshot`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -209,7 +209,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `snapshot`. The name of the snapshot to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `snapshot`. Required. The name of the snapshot to get.
       Format is `projects/{project}/snapshots/{snap}`.
   *   `snapshots_id` (*type:* `String.t`) - Part of `snapshot`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -367,7 +367,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `project`. The name of the project in which to list snapshots.
+  *   `projects_id` (*type:* `String.t`) - Part of `project`. Required. The name of the project in which to list snapshots.
       Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -671,7 +671,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. The subscription whose message is being acknowledged.
+  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The subscription whose message is being acknowledged.
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -756,7 +756,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the subscription. It must have the format
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the subscription. It must have the format
       `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
       start with a letter, and contain only letters (`[A-Za-z]`), numbers
       (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
@@ -837,7 +837,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. The subscription to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The subscription to delete.
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -908,7 +908,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. The name of the subscription to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The name of the subscription to get.
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1061,7 +1061,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `project`. The name of the project in which to list subscriptions.
+  *   `projects_id` (*type:* `String.t`) - Part of `project`. Required. The name of the project in which to list subscriptions.
       Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1134,7 +1134,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. The name of the subscription.
+  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The name of the subscription.
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1215,7 +1215,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. The name of the subscription.
+  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The name of the subscription.
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1292,7 +1292,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription.name`. The name of the subscription. It must have the format
+  *   `projects_id` (*type:* `String.t`) - Part of `subscription.name`. Required. The name of the subscription. It must have the format
       `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
       start with a letter, and contain only letters (`[A-Za-z]`), numbers
       (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
@@ -1371,7 +1371,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. The subscription from which messages should be pulled.
+  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The subscription from which messages should be pulled.
       Format is `projects/{project}/subscriptions/{sub}`.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1451,7 +1451,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. The subscription to affect.
+  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The subscription to affect.
   *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1685,7 +1685,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the topic. It must have the format
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the topic. It must have the format
       `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
       and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
       underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -1766,7 +1766,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Name of the topic to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. Name of the topic to delete.
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1837,7 +1837,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. The name of the topic to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. The name of the topic to get.
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1990,7 +1990,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `project`. The name of the project in which to list topics.
+  *   `projects_id` (*type:* `String.t`) - Part of `project`. Required. The name of the project in which to list topics.
       Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2055,7 +2055,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic.name`. The name of the topic. It must have the format
+  *   `projects_id` (*type:* `String.t`) - Part of `topic.name`. Required. The name of the topic. It must have the format
       `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
       and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
       underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -2133,7 +2133,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. The messages in the request will be published on this topic.
+  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. The messages in the request will be published on this topic.
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2447,7 +2447,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. The name of the topic that subscriptions are attached to.
+  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. The name of the topic that subscriptions are attached to.
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

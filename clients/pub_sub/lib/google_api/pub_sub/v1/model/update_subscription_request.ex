@@ -21,8 +21,8 @@ defmodule GoogleApi.PubSub.V1.Model.UpdateSubscriptionRequest do
 
   ## Attributes
 
-  *   `subscription` (*type:* `GoogleApi.PubSub.V1.Model.Subscription.t`, *default:* `nil`) - The updated subscription object.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Indicates which fields in the provided subscription to update.
+  *   `subscription` (*type:* `GoogleApi.PubSub.V1.Model.Subscription.t`, *default:* `nil`) - Required. The updated subscription object.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. Indicates which fields in the provided subscription to update.
       Must be specified and non-empty.
   """
 

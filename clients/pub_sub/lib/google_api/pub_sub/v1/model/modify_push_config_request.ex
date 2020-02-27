@@ -21,7 +21,7 @@ defmodule GoogleApi.PubSub.V1.Model.ModifyPushConfigRequest do
 
   ## Attributes
 
-  *   `pushConfig` (*type:* `GoogleApi.PubSub.V1.Model.PushConfig.t`, *default:* `nil`) - The push configuration for future deliveries.
+  *   `pushConfig` (*type:* `GoogleApi.PubSub.V1.Model.PushConfig.t`, *default:* `nil`) - Required. The push configuration for future deliveries.
 
       An empty `pushConfig` indicates that the Pub/Sub system should
       stop pushing messages from the given subscription and allow

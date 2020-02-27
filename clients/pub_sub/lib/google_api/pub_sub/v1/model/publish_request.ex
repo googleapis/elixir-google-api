@@ -21,7 +21,7 @@ defmodule GoogleApi.PubSub.V1.Model.PublishRequest do
 
   ## Attributes
 
-  *   `messages` (*type:* `list(GoogleApi.PubSub.V1.Model.PubsubMessage.t)`, *default:* `nil`) - The messages to publish.
+  *   `messages` (*type:* `list(GoogleApi.PubSub.V1.Model.PubsubMessage.t)`, *default:* `nil`) - Required. The messages to publish.
   """
 
   use GoogleApi.Gax.ModelBase
