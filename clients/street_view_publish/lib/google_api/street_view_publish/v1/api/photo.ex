@@ -248,7 +248,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604,
   the photo must meet the following requirements:
 
-  * Photo Sphere XMP metadata must be included in the photo medadata. See
+  * Photo Sphere XMP metadata must be included in the photo metadata. See
   https://developers.google.com/streetview/spherical-metadata for the
   required fields.
   * The pixel size of the photo must meet the size requirements listed in
