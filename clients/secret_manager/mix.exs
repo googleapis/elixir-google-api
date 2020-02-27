@@ -18,7 +18,7 @@
 defmodule GoogleApi.SecretManager.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.SecretManager.Mixfile do
 
   defp description() do
     """
-    Secret Manager API client library. Stores and manages access to application secrets. Provides convenience while improving security.
+    Secret Manager API client library. Stores API keys, passwords, certificates, and other sensitive data. Provides convenience while improving security.
 
     """
   end
