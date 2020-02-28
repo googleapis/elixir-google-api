@@ -24,12 +24,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig
   ## Attributes
 
   *   `audioEncoding` (*type:* `String.t`, *default:* `nil`) - Required. Audio encoding of the synthesized audio content.
-  *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - Optional. The synthesis sample rate (in hertz) for this audio. If not
+  *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - The synthesis sample rate (in hertz) for this audio. If not
       provided, then the synthesizer will use the default sample rate based on
       the audio encoding. If this is different from the voice's natural sample
       rate, then the synthesizer will honor this request by converting to the
       desired sample rate (which might result in worse audio quality).
-  *   `synthesizeSpeechConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SynthesizeSpeechConfig.t`, *default:* `nil`) - Optional. Configuration of how speech should be synthesized.
+  *   `synthesizeSpeechConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SynthesizeSpeechConfig.t`, *default:* `nil`) - Configuration of how speech should be synthesized.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,12 +23,18 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentReque
 
   ## Attributes
 
-  *   `inputAudio` (*type:* `String.t`, *default:* `nil`) - Optional. The natural language speech audio to be processed. This field
+  *   `inputAudio` (*type:* `String.t`, *default:* `nil`) - The natural language speech audio to be processed. This field
       should be populated iff `query_input` is set to an input audio config.
       A single request can contain up to 1 minute of speech audio data.
-  *   `outputAudioConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t`, *default:* `nil`) - Optional. Instructs the speech synthesizer how to generate the output
+  *   `outputAudioConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t`, *default:* `nil`) - Instructs the speech synthesizer how to generate the output
       audio. If this field is not set and agent-level speech synthesizer is not
       configured, no output audio is generated.
+  *   `outputAudioConfigMask` (*type:* `String.t`, *default:* `nil`) - Mask for output_audio_config indicating which settings in this
+      request-level config should override speech synthesizer settings defined at
+      agent-level.
+
+      If unspecified or empty, output_audio_config replaces the agent-level
+      config in its entirety.
   *   `queryInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput.t`, *default:* `nil`) - Required. The input specification. It can be set to:
 
       1.  an audio config
@@ -37,7 +43,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentReque
       2.  a conversational query in the form of text, or
 
       3.  an event that specifies which intent to trigger.
-  *   `queryParams` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t`, *default:* `nil`) - Optional. The parameters of this query.
+  *   `queryParams` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t`, *default:* `nil`) - The parameters of this query.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,6 +52,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentReque
           :inputAudio => String.t(),
           :outputAudioConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t(),
+          :outputAudioConfigMask => String.t(),
           :queryInput => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput.t(),
           :queryParams => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t()
         }
@@ -56,6 +63,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentReque
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig
   )
 
+  field(:outputAudioConfigMask)
   field(:queryInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryInput)
   field(:queryParams, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters)
 end
