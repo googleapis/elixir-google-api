@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Apk do
   ## Attributes
 
   *   `binary` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ApkBinary.t`, *default:* `nil`) - Information about the binary payload of this APK.
+  *   `testBinary` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ApkBinary.t`, *default:* `nil`) - 
   *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The version code of the APK, as specified in the APK's manifest file.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Apk do
 
   @type t :: %__MODULE__{
           :binary => GoogleApi.AndroidPublisher.V3.Model.ApkBinary.t(),
+          :testBinary => GoogleApi.AndroidPublisher.V3.Model.ApkBinary.t(),
           :versionCode => integer()
         }
 
   field(:binary, as: GoogleApi.AndroidPublisher.V3.Model.ApkBinary)
+  field(:testBinary, as: GoogleApi.AndroidPublisher.V3.Model.ApkBinary)
   field(:versionCode)
 end
 
