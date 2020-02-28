@@ -37,7 +37,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.DataSource do
       specific item, as users need to have ACL permissions on the contained
       items. This ensures a high level access on the entire datasource, and
       that the individual items are not shared outside this visibility.
-      This should not be set if anonymous search is enabled for the data source.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the datasource resource.
       Format: datasources/{source_id}.
       <br />The name is ignored when creating a datasource.
