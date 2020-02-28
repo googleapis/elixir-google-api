@@ -17,6 +17,7 @@
 
 defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1RolloutMetadata do
   @moduledoc """
+  This message has been deprecated.
   RolloutMetadata for an actuation instance. It maps to a single RolloutType.
 
   ## Attributes
