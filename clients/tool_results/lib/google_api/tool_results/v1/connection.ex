@@ -25,5 +25,5 @@ defmodule GoogleApi.ToolResults.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [],
     otp_app: :google_api_tool_results,
-    base_url: "https://toolresults.googleapis.com/"
+    base_url: "https://www.googleapis.com/"
 end
