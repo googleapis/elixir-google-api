@@ -29,7 +29,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
   *   `publicStatsViewable` (*type:* `boolean()`, *default:* `nil`) - This value indicates if the extended video statistics on the watch page can be viewed by everyone. Note that the view count, likes, etc will still be visible if this is disabled.
   *   `publishAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the video is scheduled to publish. It can be set only if the privacy status of the video is private. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
   *   `rejectionReason` (*type:* `String.t`, *default:* `nil`) - This value explains why YouTube rejected an uploaded video. This property is only present if the uploadStatus property indicates that the upload was rejected.
-  *   `selfDeclaredMadeForKids` (*type:* `boolean()`, *default:* `nil`) - Allows clients to set the Crosswalk self_declared state for a Video. This maps to VAPI.Video.creator_flags.is_crosswalk_self_declared() and VAPI.Video.creator_flags.is_not_crosswalk_self_declared().
+  *   `selfDeclaredMadeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   *   `uploadStatus` (*type:* `String.t`, *default:* `nil`) - The status of the uploaded video.
   """
 
