@@ -66,7 +66,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
       of acknowledged messages, and thus configures how far back in time a `Seek`
       can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
       minutes.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the subscription. It must have the format
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the subscription. It must have the format
       `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
       start with a letter, and contain only letters (`[A-Za-z]`), numbers
       (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
@@ -82,7 +82,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
       <a
       href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time">
       Seek to a timestamp</a>.
-  *   `topic` (*type:* `String.t`, *default:* `nil`) - The name of the topic from which this subscription is receiving messages.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - Required. The name of the topic from which this subscription is receiving messages.
       Format is `projects/{project}/topics/{topic}`.
       The value of this field will be `_deleted-topic_` if the topic has been
       deleted.

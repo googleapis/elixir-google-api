@@ -30,7 +30,7 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
   *   `messageStoragePolicy` (*type:* `GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t`, *default:* `nil`) - Policy constraining the set of Google Cloud Platform regions where messages
       published to the topic may be stored. If not present, then no constraints
       are in effect.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the topic. It must have the format
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the topic. It must have the format
       `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
       and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
       underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
