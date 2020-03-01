@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V21.Model.RefundReason do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - 
-  *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the reason.
+  *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - Code of the refund reason.
   """
 
   use GoogleApi.Gax.ModelBase
