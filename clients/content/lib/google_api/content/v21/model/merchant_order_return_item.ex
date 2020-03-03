@@ -21,12 +21,12 @@ defmodule GoogleApi.Content.V21.Model.MerchantOrderReturnItem do
 
   ## Attributes
 
-  *   `customerReturnReason` (*type:* `GoogleApi.Content.V21.Model.CustomerReturnReason.t`, *default:* `nil`) - 
-  *   `itemId` (*type:* `String.t`, *default:* `nil`) - 
-  *   `merchantReturnReason` (*type:* `GoogleApi.Content.V21.Model.RefundReason.t`, *default:* `nil`) - 
-  *   `product` (*type:* `GoogleApi.Content.V21.Model.OrderLineItemProduct.t`, *default:* `nil`) - 
-  *   `returnShipmentIds` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `state` (*type:* `String.t`, *default:* `nil`) - 
+  *   `customerReturnReason` (*type:* `GoogleApi.Content.V21.Model.CustomerReturnReason.t`, *default:* `nil`) - The reason that the customer chooses to return an item.
+  *   `itemId` (*type:* `String.t`, *default:* `nil`) - Product level item ID. If the returned items are of the same product, they will have the same ID.
+  *   `merchantReturnReason` (*type:* `GoogleApi.Content.V21.Model.RefundReason.t`, *default:* `nil`) - The reason that merchant chooses to accept a return item.
+  *   `product` (*type:* `GoogleApi.Content.V21.Model.OrderLineItemProduct.t`, *default:* `nil`) - Product data from the time of the order placement.
+  *   `returnShipmentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the return shipments that this return item belongs to.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the item.
   """
 
   use GoogleApi.Gax.ModelBase

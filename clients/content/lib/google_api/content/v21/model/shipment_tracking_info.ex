@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V21.Model.ShipmentTrackingInfo do
 
   ## Attributes
 
-  *   `carrier` (*type:* `String.t`, *default:* `nil`) - 
-  *   `trackingNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `carrier` (*type:* `String.t`, *default:* `nil`) - The shipping carrier that handles the package.
+  *   `trackingNumber` (*type:* `String.t`, *default:* `nil`) - The tracking number for the package.
   """
 
   use GoogleApi.Gax.ModelBase
