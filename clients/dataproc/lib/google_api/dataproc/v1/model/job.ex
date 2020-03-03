@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
 
   ## Attributes
 
+  *   `done` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the job is completed. If the value is false, the job is still in progress. If true, the job is completed, and status.state field will indicate if it was successful, failed, or cancelled.
   *   `driverControlFilesUri` (*type:* `String.t`, *default:* `nil`) - Output only. If present, the location of miscellaneous control files which may be used as part of job setup and handling. If not present, control files may be placed in the same location as driver_output_uri.
   *   `driverOutputResourceUri` (*type:* `String.t`, *default:* `nil`) - Output only. A URI pointing to the location of the stdout of the job's driver program.
   *   `hadoopJob` (*type:* `GoogleApi.Dataproc.V1.Model.HadoopJob.t`, *default:* `nil`) - Optional. Job is a Hadoop job.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :done => boolean(),
           :driverControlFilesUri => String.t(),
           :driverOutputResourceUri => String.t(),
           :hadoopJob => GoogleApi.Dataproc.V1.Model.HadoopJob.t(),
@@ -64,6 +66,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
           :yarnApplications => list(GoogleApi.Dataproc.V1.Model.YarnApplication.t())
         }
 
+  field(:done)
   field(:driverControlFilesUri)
   field(:driverOutputResourceUri)
   field(:hadoopJob, as: GoogleApi.Dataproc.V1.Model.HadoopJob)
