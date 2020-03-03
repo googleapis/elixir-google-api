@@ -479,7 +479,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
       "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
       "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-      Note: The locations portion of the resource is required, but supplying the character - in place of LOCATION_ID will return all buckets.
+      Note: The locations portion of the resource must be specified, but supplying the character - in place of LOCATION_ID will return all buckets.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -777,7 +777,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The resource name of the project in which to create the metric:
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the project in which to create the metric:
       "projects/[PROJECT_ID]"
       The new metric must be provided in the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -838,7 +838,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `metricName`. The resource name of the metric to delete:
+  *   `projects_id` (*type:* `String.t`) - Part of `metricName`. Required. The resource name of the metric to delete:
       "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
 
   *   `metrics_id` (*type:* `String.t`) - Part of `metricName`. See documentation of `projectsId`.
@@ -910,7 +910,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `metricName`. The resource name of the desired metric:
+  *   `projects_id` (*type:* `String.t`) - Part of `metricName`. Required. The resource name of the desired metric:
       "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
 
   *   `metrics_id` (*type:* `String.t`) - Part of `metricName`. See documentation of `projectsId`.
@@ -1045,7 +1045,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `metricName`. The resource name of the metric to update:
+  *   `projects_id` (*type:* `String.t`) - Part of `metricName`. Required. The resource name of the metric to update:
       "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
       The updated metric must be provided in the request and it's name field must be the same as [METRIC_ID] If the metric does not exist in [PROJECT_ID], then a new metric is created.
   *   `metrics_id` (*type:* `String.t`) - Part of `metricName`. See documentation of `projectsId`.

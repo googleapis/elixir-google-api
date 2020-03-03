@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Logging.V2.Model.WriteLogEntriesResponse do
   @moduledoc """
-  Result returned from WriteLogEntries. empty
+  Result returned from WriteLogEntries.
 
   ## Attributes
 

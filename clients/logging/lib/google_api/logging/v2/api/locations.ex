@@ -119,7 +119,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
       "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
       "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
       "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-      Note: The locations portion of the resource is required, but supplying the character - in place of LOCATION_ID will return all buckets.
+      Note: The locations portion of the resource must be specified, but supplying the character - in place of LOCATION_ID will return all buckets.
   *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

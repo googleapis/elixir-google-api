@@ -474,7 +474,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
       "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
       "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
       "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-      Note: The locations portion of the resource is required, but supplying the character - in place of LOCATION_ID will return all buckets.
+      Note: The locations portion of the resource must be specified, but supplying the character - in place of LOCATION_ID will return all buckets.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `foldersId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
