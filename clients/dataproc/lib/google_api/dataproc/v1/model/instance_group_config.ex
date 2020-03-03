@@ -33,6 +33,7 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   *   `managedGroupConfig` (*type:* `GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t`, *default:* `nil`) - Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the minimum cpu platform for the Instance Group. See Dataproc&rarr;Minimum CPU Platform.
   *   `numInstances` (*type:* `integer()`, *default:* `nil`) - Optional. The number of VM instances in the instance group. For master instance groups, must be set to 1.
+  *   `preemptibility` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the preemptibility of the instance group.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,7 +47,8 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
           :machineTypeUri => String.t(),
           :managedGroupConfig => GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t(),
           :minCpuPlatform => String.t(),
-          :numInstances => integer()
+          :numInstances => integer(),
+          :preemptibility => String.t()
         }
 
   field(:accelerators, as: GoogleApi.Dataproc.V1.Model.AcceleratorConfig, type: :list)
@@ -58,6 +60,7 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   field(:managedGroupConfig, as: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig)
   field(:minCpuPlatform)
   field(:numInstances)
+  field(:preemptibility)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
