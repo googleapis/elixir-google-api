@@ -30,7 +30,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput do
       for a list of the currently supported language codes. Note that queries in
       the same session do not necessarily need to specify the same language.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the event.
-  *   `parameters` (*type:* `map()`, *default:* `nil`) - Optional. The collection of parameters associated with the event.
+  *   `parameters` (*type:* `map()`, *default:* `nil`) - The collection of parameters associated with the event.
   """
 
   use GoogleApi.Gax.ModelBase
