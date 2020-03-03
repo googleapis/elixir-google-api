@@ -39,6 +39,10 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
       Available network profiles can be queried by using the
       NETWORK_CONFIGURATION environment type when calling
       TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
+  *   `systrace` (*type:* `GoogleApi.Testing.V1.Model.SystraceSetup.t`, *default:* `nil`) - Systrace configuration for the run.
+      If set a systrace will be taken, starting on test start and lasting for the
+      configured duration. The systrace file thus obtained is put in the results
+      bucket together with the other artifacts from the run.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +53,8 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
           :directoriesToPull => list(String.t()),
           :environmentVariables => list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t()),
           :filesToPush => list(GoogleApi.Testing.V1.Model.DeviceFile.t()),
-          :networkProfile => String.t()
+          :networkProfile => String.t(),
+          :systrace => GoogleApi.Testing.V1.Model.SystraceSetup.t()
         }
 
   field(:account, as: GoogleApi.Testing.V1.Model.Account)
@@ -58,6 +63,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
   field(:environmentVariables, as: GoogleApi.Testing.V1.Model.EnvironmentVariable, type: :list)
   field(:filesToPush, as: GoogleApi.Testing.V1.Model.DeviceFile, type: :list)
   field(:networkProfile)
+  field(:systrace, as: GoogleApi.Testing.V1.Model.SystraceSetup)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Testing.V1.Model.TestSetup do
