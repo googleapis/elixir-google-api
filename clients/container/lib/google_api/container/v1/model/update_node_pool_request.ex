@@ -49,6 +49,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
+  *   `workloadMetadataConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t`, *default:* `nil`) - The desired workload metadata config for the node pool.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
@@ -66,6 +67,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
           :nodeVersion => String.t(),
           :projectId => String.t(),
           :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t(),
+          :workloadMetadataConfig => GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t(),
           :zone => String.t()
         }
 
@@ -77,6 +79,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   field(:nodeVersion)
   field(:projectId)
   field(:upgradeSettings, as: GoogleApi.Container.V1.Model.UpgradeSettings)
+  field(:workloadMetadataConfig, as: GoogleApi.Container.V1.Model.WorkloadMetadataConfig)
   field(:zone)
 end
 

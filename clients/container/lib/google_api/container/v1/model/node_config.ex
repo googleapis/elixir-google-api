@@ -126,6 +126,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
 
       For more information, including usage and the valid values, see:
       https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+  *   `workloadMetadataConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t`, *default:* `nil`) - The workload metadata configuration for this node.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -147,7 +148,8 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :serviceAccount => String.t(),
           :shieldedInstanceConfig => GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t(),
           :tags => list(String.t()),
-          :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t())
+          :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t()),
+          :workloadMetadataConfig => GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t()
         }
 
   field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)
@@ -167,6 +169,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:shieldedInstanceConfig, as: GoogleApi.Container.V1.Model.ShieldedInstanceConfig)
   field(:tags, type: :list)
   field(:taints, as: GoogleApi.Container.V1.Model.NodeTaint, type: :list)
+  field(:workloadMetadataConfig, as: GoogleApi.Container.V1.Model.WorkloadMetadataConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodeConfig do
