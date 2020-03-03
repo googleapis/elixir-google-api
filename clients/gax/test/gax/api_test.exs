@@ -25,6 +25,8 @@ defmodule Gax.ApiTest do
   }
   """
 
+  @pets_json_compressed :zlib.gzip(@pets_json)
+
   test "basic request" do
     elixir_version = System.version()
     gax_version = Application.spec(:google_gax, :vsn)
@@ -36,6 +38,31 @@ defmodule Gax.ApiTest do
               headers: [{"x-goog-api-client", ^api_client}]
             } ->
       %Tesla.Env{status: 200, body: @pets_json}
+    end)
+
+    conn = TestClient.Connection.new()
+    {:ok, pets} = TestClient.Api.Pets.pets_list_by_store(conn, "store-1")
+
+    assert %TestClient.Model.Pets{} = pets
+    assert 1 == Enum.count(pets.pets)
+
+    assert Enum.all?(pets.pets, fn pet ->
+             assert %TestClient.Model.Pet{} = pet
+           end)
+  end
+
+  test "request with compressed response" do
+    elixir_version = System.version()
+    gax_version = Application.spec(:google_gax, :vsn)
+    api_client = "gl-elixir/#{elixir_version} gax/#{gax_version} gdcl/1.2.3"
+
+    mock(fn %{
+              method: :get,
+              url: "https://example.com/v1/stores/store-1/pets",
+              headers: [{"x-goog-api-client", ^api_client}]
+            } ->
+      %Tesla.Env{status: 200, body: @pets_json_compressed,
+                 headers: [{"content-encoding", "gzip"}]}
     end)
 
     conn = TestClient.Connection.new()

@@ -33,6 +33,8 @@ defmodule GoogleApi.Gax.Connection do
         )
       )
 
+      plug(Tesla.Middleware.DecompressResponse, [])
+
       plug(Tesla.Middleware.EncodeJson, engine: Poison)
 
       @doc """
