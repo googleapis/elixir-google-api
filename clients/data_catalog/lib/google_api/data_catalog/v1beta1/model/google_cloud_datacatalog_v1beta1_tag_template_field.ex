@@ -29,6 +29,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
 
       Note that this TagTemplateField may not actually be stored in the location
       in this name.
+  *   `order` (*type:* `integer()`, *default:* `nil`) - The order of this field with respect to other fields in this tag
+      template.  A higher value indicates a more important field. The value can
+      be negative. Multiple fields can have the same order, and field orders
+      within a tag do not have to be sequential.
   *   `type` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldType.t`, *default:* `nil`) - Required. The type of value this tag field can contain.
   """
 
@@ -38,12 +42,14 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
           :displayName => String.t(),
           :isRequired => boolean(),
           :name => String.t(),
+          :order => integer(),
           :type => GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldType.t()
         }
 
   field(:displayName)
   field(:isRequired)
   field(:name)
+  field(:order)
   field(:type, as: GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldType)
 end
 
