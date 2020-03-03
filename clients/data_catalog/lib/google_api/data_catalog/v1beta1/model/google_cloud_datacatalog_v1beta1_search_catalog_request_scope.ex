@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SearchCatalogRequestScope do
   @moduledoc """
-
+  The criteria that select the subspace used for query matching.
 
   ## Attributes
 
@@ -25,16 +25,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Searc
       search results. Info on GCP public datasets is available at
       https://cloud.google.com/public-datasets/. By default, GCP public
       datasets are excluded.
-  *   `includeOrgIds` (*type:* `list(String.t)`, *default:* `nil`) - Data Catalog tries to automatically choose the right corpus of data to
-      search through. You can ensure an organization is included by adding it
-      to `include_org_ids`. You can ensure a project's org is included with
-      `include_project_ids`. You must specify at least one organization
-      using `include_org_ids` or `include_project_ids` in all search requests.
-
-      List of organization IDs to search within. To find your organization ID,
-      follow instructions in
+  *   `includeOrgIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of organization IDs to search within. To find your organization
+      ID, follow instructions in
       https://cloud.google.com/resource-manager/docs/creating-managing-organization.
-  *   `includeProjectIds` (*type:* `list(String.t)`, *default:* `nil`) - List of project IDs to search within. To learn more about the
+  *   `includeProjectIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of project IDs to search within. To learn more about the
       distinction between project names/IDs/numbers, go to
       https://cloud.google.com/docs/overview/#projects.
   """

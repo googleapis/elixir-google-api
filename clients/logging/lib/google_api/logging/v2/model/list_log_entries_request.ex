@@ -25,7 +25,7 @@ defmodule GoogleApi.Logging.V2.Model.ListLogEntriesRequest do
   *   `orderBy` (*type:* `String.t`, *default:* `nil`) - Optional. How the results should be sorted. Presently, the only permitted values are "timestamp asc" (default) and "timestamp desc". The first option returns entries in order of increasing values of LogEntry.timestamp (oldest first), and the second option returns entries in order of decreasing timestamps (newest first). Entries with equal timestamps are returned in order of their insert_id values.
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of next_page_token in the response indicates that more results might be available.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional. If present, then retrieve the next batch of results from the preceding call to this method. page_token must be the value of next_page_token from the previous response. The values of other method parameters should be identical to those in the previous call.
-  *   `projectIds` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use resource_names instead. One or more project identifiers or project numbers from which to retrieve log entries. Example: "my-project-1A".
+  *   `projectIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Deprecated. Use resource_names instead. One or more project identifiers or project numbers from which to retrieve log entries. Example: "my-project-1A".
   *   `resourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Required. Names of one or more parent resources from which to retrieve log entries:
       "projects/[PROJECT_ID]"
       "organizations/[ORGANIZATION_ID]"

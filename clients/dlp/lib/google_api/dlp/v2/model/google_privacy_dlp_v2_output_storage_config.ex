@@ -30,6 +30,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OutputStorageConfig do
       If unspecified, then all available columns will be used for a new table or
       an (existing) table with no schema, and no changes will be made to an
       existing table that has a schema.
+      Only for use with external storage.
   *   `table` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - Store findings in an existing table or a new table in an existing
       dataset. If table_id is not set a new one will be generated
       for you with the following format:

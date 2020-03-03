@@ -52,6 +52,8 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
       * `none` - no metrics will be exported from the cluster.
       * if left as an empty string, `monitoring.googleapis.com` will be used.
+  *   `workloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for the use of Kubernetes Service Accounts in GCP IAM
+      policies.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
@@ -192,6 +194,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :autoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t(),
           :conditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()),
           :monitoringService => String.t(),
+          :workloadIdentityConfig => GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t(),
           :zone => String.t(),
           :description => String.t(),
           :privateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t(),
@@ -245,6 +248,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:autoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
   field(:conditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
   field(:monitoringService)
+  field(:workloadIdentityConfig, as: GoogleApi.Container.V1.Model.WorkloadIdentityConfig)
   field(:zone)
   field(:description)
   field(:privateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)

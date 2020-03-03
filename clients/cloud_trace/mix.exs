@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudTrace.Mixfile do
   use Mix.Project
 
-  @version "0.16.0"
+  @version "0.17.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.CloudTrace.Mixfile do
 
   defp description() do
     """
-    Stackdriver Trace API client library.
+    Cloud Trace API client library.
     """
   end
 

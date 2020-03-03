@@ -25,7 +25,7 @@ defmodule <%= namespace %>.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [
     <%= for {name, description} <- scopes do %>
-      # <%= description.description %>
+      # <%= description["description"] %>
       "<%= name %>",
     <% end %>
     ],

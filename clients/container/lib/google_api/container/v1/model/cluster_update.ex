@@ -84,6 +84,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
   *   `desiredVerticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
+  *   `desiredWorkloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for Workload Identity.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -109,7 +110,9 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t(),
           :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t(),
           :desiredVerticalPodAutoscaling =>
-            GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t()
+            GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t(),
+          :desiredWorkloadIdentityConfig =>
+            GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t()
         }
 
   field(:desiredAddonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
@@ -141,6 +144,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   field(:desiredShieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
   field(:desiredVerticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
+  field(:desiredWorkloadIdentityConfig, as: GoogleApi.Container.V1.Model.WorkloadIdentityConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ClusterUpdate do

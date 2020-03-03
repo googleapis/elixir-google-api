@@ -18,7 +18,7 @@
 defmodule GoogleApi.AccessContextManager.V1.Model.ReplaceAccessLevelsRequest do
   @moduledoc """
   A request to replace all existing Access Levels in an Access Policy with
-  the Access Levels provided. This is done within one transaction.
+  the Access Levels provided. This is done atomically.
 
   ## Attributes
 

@@ -18,7 +18,7 @@
 defmodule GoogleApi.AccessContextManager.V1.Model.ReplaceServicePerimetersRequest do
   @moduledoc """
   A request to replace all existing Service Perimeters in an Access Policy
-  with the Service Perimeters provided. This is done within one transaction.
+  with the Service Perimeters provided. This is done atomically.
 
   ## Attributes
 

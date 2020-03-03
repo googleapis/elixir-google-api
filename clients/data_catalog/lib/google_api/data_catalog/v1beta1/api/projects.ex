@@ -381,6 +381,94 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
+  Lists entry groups.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the location that contains the entry groups, which can be
+      provided in URL format. Example:
+
+      * projects/{project_id}/locations/{location}
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. Default is 10. Max limit is 1000.
+          Throws an invalid argument for `page_size > 1000`.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Token that specifies which page is requested. If empty, the first page is
+          returned.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntryGroupsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datacatalog_projects_locations_entry_groups_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntryGroupsResponse.t()}
+          | {:error, Tesla.Env.t()}
+  def datacatalog_projects_locations_entry_groups_list(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntryGroupsResponse{}
+        ]
+    )
+  end
+
+  @doc """
   Updates an EntryGroup. The user should enable the Data Catalog API in the
   project identified by the `entry_group.name` parameter (see [Data Catalog
   Resource Project] (/data-catalog/docs/concepts/resource-project) for more

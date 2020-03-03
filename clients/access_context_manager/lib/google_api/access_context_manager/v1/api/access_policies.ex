@@ -765,11 +765,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   Replace all existing Access Levels in an Access
   Policy with
   the Access Levels provided. This
-  is done within one transaction. The longrunning operation from this RPC
-  will have a successful status once all replacements have propagated to
-  long-lasting storage. Replacements containing errors will result in an
-  error response for the first error encountered and the transaction will be
-  cancelled. Operation.response field will contain
+  is done atomically. The longrunning operation from this RPC will have a
+  successful status once all replacements have propagated to long-lasting
+  storage. Replacements containing errors will result in an error response
+  for the first error encountered.  Replacement will be cancelled on error,
+  existing Access Levels will not be
+  affected. Operation.response field will contain
   ReplaceAccessLevelsResponse. Removing Access Levels contained in existing
   Service Perimeters will result in
   error.
@@ -1311,11 +1312,12 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   Replace all existing Service Perimeters in an
   Access Policy
   with the Service Perimeters provided.
-  This is done within one transaction. The longrunning operation from this
+  This is done atomically. The longrunning operation from this
   RPC will have a successful status once all replacements have propagated to
   long-lasting storage. Replacements containing errors will result in an
-  error response for the first error encountered and the transaction will be
-  cancelled. Operation.response field will contain
+  error response for the first error encountered. Replacement will be
+  cancelled on error, existing Service Perimeters will not be
+  affected. Operation.response field will contain
   ReplaceServicePerimetersResponse.
 
   ## Parameters

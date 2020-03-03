@@ -59,7 +59,8 @@ defmodule GoogleApi.Content.V21.Model.OrderShipment do
       - "boxtal" (Boxtal) 
       - "geodis" (GEODIS) 
       - "tnt" (TNT) 
-      - "db schenker" (DB Schenker)
+      - "db schenker" (DB Schenker) 
+      - "aramex" (Aramex)
   *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been created, in ISO 8601 format.
   *   `deliveryDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been delivered, in ISO 8601 format. Present only if status is delivered
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the shipment.

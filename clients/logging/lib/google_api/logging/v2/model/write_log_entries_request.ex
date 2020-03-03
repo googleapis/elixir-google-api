@@ -32,7 +32,7 @@ defmodule GoogleApi.Logging.V2.Model.WriteLogEntriesRequest do
       [LOG_ID] must be URL-encoded. For example:
       "projects/my-project-id/logs/syslog"
       "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-      The permission <code>logging.logEntries.create</code> is needed on each project, organization, billing account, or folder that is receiving new log entries, whether the resource is specified in <code>logName</code> or in an individual log entry.
+      The permission logging.logEntries.create is needed on each project, organization, billing account, or folder that is receiving new log entries, whether the resource is specified in logName or in an individual log entry.
   *   `partialSuccess` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether valid entries should be written even if some other entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any entry is not written, then the response status is the error associated with one of the failed entries and the response includes error details keyed by the entries' zero-based index in the entries.write method.
   *   `resource` (*type:* `GoogleApi.Logging.V2.Model.MonitoredResource.t`, *default:* `nil`) - Optional. A default monitored resource object that is assigned to all log entries in entries that do not specify a value for resource. Example:
       { "type": "gce_instance",
