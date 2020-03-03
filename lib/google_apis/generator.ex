@@ -20,7 +20,7 @@ defmodule GoogleApis.Generator do
 
   def bump_version(api_config) do
     hex_version = current_hex_version(api_config)
-    bump_type = if ChangeAnalyzer.has_semantic_changes?(api_config), do: :minor, else: :patch
+    bump_type = if ChangeAnalyzer.has_significant_changes?(api_config), do: :minor, else: :patch
     Logger.info("Bumping #{bump_type}")
     new_version = bump_version_string(hex_version, bump_type)
     mix_version = current_mix_version(api_config)
