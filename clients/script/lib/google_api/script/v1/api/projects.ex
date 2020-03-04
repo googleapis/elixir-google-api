@@ -53,7 +53,9 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec script_projects_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.Project.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.Project.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -109,7 +111,9 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec script_projects_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.Project.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.Project.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_get(connection, script_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -169,7 +173,9 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec script_projects_get_content(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.Content.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.Content.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_get_content(connection, script_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -230,7 +236,9 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec script_projects_get_metrics(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.Metrics.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.Metrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_get_metrics(connection, script_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -294,7 +302,9 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec script_projects_update_content(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.Content.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.Content.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_update_content(connection, script_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -353,7 +363,9 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec script_projects_deployments_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.Deployment.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.Deployment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_deployments_create(connection, script_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -417,7 +429,10 @@ defmodule GoogleApi.Script.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Script.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Script.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_deployments_delete(
         connection,
         script_id,
@@ -487,7 +502,10 @@ defmodule GoogleApi.Script.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Script.V1.Model.Deployment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Script.V1.Model.Deployment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_deployments_get(
         connection,
         script_id,
@@ -554,7 +572,9 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec script_projects_deployments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.ListDeploymentsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.ListDeploymentsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_deployments_list(connection, script_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -620,7 +640,10 @@ defmodule GoogleApi.Script.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Script.V1.Model.Deployment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Script.V1.Model.Deployment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_deployments_update(
         connection,
         script_id,
@@ -687,7 +710,9 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec script_projects_versions_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.Version.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.Version.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_versions_create(connection, script_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -751,7 +776,10 @@ defmodule GoogleApi.Script.V1.Api.Projects do
           integer(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Script.V1.Model.Version.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Script.V1.Model.Version.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_versions_get(
         connection,
         script_id,
@@ -818,7 +846,9 @@ defmodule GoogleApi.Script.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec script_projects_versions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.ListVersionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.ListVersionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_projects_versions_list(connection, script_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

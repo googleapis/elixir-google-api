@@ -68,7 +68,9 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
   *   `{:error, info}` on failure
   """
   @spec script_scripts_run(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Script.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Script.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def script_scripts_run(connection, script_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
