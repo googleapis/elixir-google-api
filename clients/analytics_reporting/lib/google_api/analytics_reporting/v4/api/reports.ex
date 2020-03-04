@@ -53,6 +53,7 @@ defmodule GoogleApi.AnalyticsReporting.V4.Api.Reports do
   """
   @spec analyticsreporting_reports_batch_get(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsReporting.V4.Model.GetReportsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def analyticsreporting_reports_batch_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
