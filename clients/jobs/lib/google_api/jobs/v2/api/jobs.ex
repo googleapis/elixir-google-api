@@ -52,7 +52,9 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_batch_delete(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def jobs_jobs_batch_delete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -111,7 +113,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -177,7 +179,9 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def jobs_jobs_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -239,7 +243,9 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_delete_by_filter(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def jobs_jobs_delete_by_filter(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -296,7 +302,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -366,7 +372,9 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_histogram(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.GetHistogramResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.GetHistogramResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def jobs_jobs_histogram(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -447,7 +455,9 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def jobs_jobs_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -514,7 +524,7 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.Job.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def jobs_jobs_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -576,7 +586,9 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_search(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.SearchJobsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.SearchJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def jobs_jobs_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -641,7 +653,9 @@ defmodule GoogleApi.Jobs.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec jobs_jobs_search_for_alert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.SearchJobsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.SearchJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def jobs_jobs_search_for_alert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
