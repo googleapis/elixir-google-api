@@ -72,6 +72,7 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceControl.V1.Model.AllocateQuotaResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def servicecontrol_services_allocate_quota(
         connection,
@@ -158,7 +159,9 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec servicecontrol_services_check(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceControl.V1.Model.CheckResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceControl.V1.Model.CheckResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicecontrol_services_check(connection, service_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -236,7 +239,9 @@ defmodule GoogleApi.ServiceControl.V1.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec servicecontrol_services_report(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceControl.V1.Model.ReportResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceControl.V1.Model.ReportResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicecontrol_services_report(connection, service_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
