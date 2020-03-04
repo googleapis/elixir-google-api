@@ -56,7 +56,10 @@ defmodule GoogleApi.DFAReporting.V34.Api.InventoryItems do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V34.Model.InventoryItem.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V34.Model.InventoryItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_inventory_items_get(
         connection,
         profile_id,
@@ -134,6 +137,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.InventoryItems do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.InventoryItemsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_inventory_items_list(
         connection,

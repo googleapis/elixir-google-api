@@ -56,6 +56,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.TargetableRemarketingLists do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.TargetableRemarketingList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_targetable_remarketing_lists_get(
         connection,
@@ -131,6 +132,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.TargetableRemarketingLists do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.TargetableRemarketingListsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_targetable_remarketing_lists_list(
         connection,

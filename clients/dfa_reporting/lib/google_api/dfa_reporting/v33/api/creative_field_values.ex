@@ -56,7 +56,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def dfareporting_creative_field_values_delete(
         connection,
         profile_id,
@@ -126,7 +126,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creative_field_values_get(
         connection,
         profile_id,
@@ -195,7 +197,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creative_field_values_insert(
         connection,
         profile_id,
@@ -269,6 +273,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CreativeFieldValuesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_creative_field_values_list(
         connection,
@@ -346,7 +351,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creative_field_values_patch(
         connection,
         profile_id,
@@ -416,7 +423,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeFieldValues do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeFieldValue.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creative_field_values_update(
         connection,
         profile_id,

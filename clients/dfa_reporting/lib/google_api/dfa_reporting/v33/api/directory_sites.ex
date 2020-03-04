@@ -54,7 +54,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.DirectorySites do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.DirectorySite.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.DirectorySite.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_directory_sites_get(
         connection,
         profile_id,
@@ -111,7 +114,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.DirectorySites do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_directory_sites_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.DirectorySite.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.DirectorySite.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_directory_sites_insert(
         connection,
         profile_id,
@@ -178,6 +183,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.DirectorySites do
   """
   @spec dfareporting_directory_sites_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.DirectorySitesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_directory_sites_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

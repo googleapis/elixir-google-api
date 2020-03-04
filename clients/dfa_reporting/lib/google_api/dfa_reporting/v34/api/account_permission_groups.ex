@@ -56,6 +56,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.AccountPermissionGroups do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.AccountPermissionGroup.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_account_permission_groups_get(
         connection,
@@ -123,6 +124,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.AccountPermissionGroups do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.AccountPermissionGroupsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_account_permission_groups_list(
         connection,

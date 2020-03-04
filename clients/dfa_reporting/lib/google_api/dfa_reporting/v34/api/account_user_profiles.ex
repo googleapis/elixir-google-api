@@ -55,7 +55,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.AccountUserProfiles do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.AccountUserProfile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.AccountUserProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_account_user_profiles_get(
         connection,
         profile_id,
@@ -117,7 +119,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.AccountUserProfiles do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.AccountUserProfile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.AccountUserProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_account_user_profiles_insert(
         connection,
         profile_id,
@@ -187,6 +191,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.AccountUserProfiles do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.AccountUserProfilesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_account_user_profiles_list(
         connection,
@@ -260,7 +265,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.AccountUserProfiles do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.AccountUserProfile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.AccountUserProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_account_user_profiles_patch(
         connection,
         profile_id,
@@ -323,7 +330,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.AccountUserProfiles do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.AccountUserProfile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.AccountUserProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_account_user_profiles_update(
         connection,
         profile_id,

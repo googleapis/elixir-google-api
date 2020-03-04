@@ -56,6 +56,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.RemarketingListShares do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.RemarketingListShare.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_remarketing_list_shares_get(
         connection,
@@ -124,6 +125,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.RemarketingListShares do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.RemarketingListShare.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_remarketing_list_shares_patch(
         connection,
@@ -188,6 +190,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.RemarketingListShares do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.RemarketingListShare.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_remarketing_list_shares_update(
         connection,

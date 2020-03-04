@@ -54,7 +54,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.Creatives do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.Creative.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.Creative.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creatives_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -105,7 +108,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.Creatives do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_creatives_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.Creative.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.Creative.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creatives_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -172,6 +177,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Creatives do
   """
   @spec dfareporting_creatives_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CreativesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_creatives_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -246,7 +252,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.Creatives do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.Creative.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.Creative.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creatives_patch(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -298,7 +307,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.Creatives do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_creatives_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.Creative.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.Creative.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creatives_update(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
