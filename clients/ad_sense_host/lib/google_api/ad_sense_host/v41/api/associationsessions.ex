@@ -57,7 +57,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsensehost_associationsessions_start(
         connection,
         product_code,
@@ -119,7 +121,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsensehost_associationsessions_verify(connection, token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
