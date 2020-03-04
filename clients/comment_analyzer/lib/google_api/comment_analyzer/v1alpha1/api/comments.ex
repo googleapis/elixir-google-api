@@ -53,6 +53,7 @@ defmodule GoogleApi.CommentAnalyzer.V1alpha1.Api.Comments do
   """
   @spec commentanalyzer_comments_analyze(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CommentAnalyzer.V1alpha1.Model.AnalyzeCommentResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def commentanalyzer_comments_analyze(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -112,6 +113,7 @@ defmodule GoogleApi.CommentAnalyzer.V1alpha1.Api.Comments do
   """
   @spec commentanalyzer_comments_suggestscore(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CommentAnalyzer.V1alpha1.Model.SuggestCommentScoreResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def commentanalyzer_comments_suggestscore(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
