@@ -61,6 +61,7 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
   """
   @spec dlp_info_types_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dlp_info_types_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
