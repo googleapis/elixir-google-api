@@ -54,6 +54,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigquery_projects_get_service_account(
         connection,
@@ -109,7 +110,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec bigquery_projects_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.ProjectList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.ProjectList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigquery_projects_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

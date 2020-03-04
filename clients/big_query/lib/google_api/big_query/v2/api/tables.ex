@@ -56,7 +56,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def bigquery_tables_delete(
         connection,
         project_id,
@@ -123,7 +123,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Table.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQuery.V2.Model.Table.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigquery_tables_get(
         connection,
         project_id,
@@ -184,7 +187,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   *   `{:error, info}` on failure
   """
   @spec bigquery_tables_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Table.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Table.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigquery_tables_insert(
         connection,
         project_id,
@@ -244,7 +249,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   *   `{:error, info}` on failure
   """
   @spec bigquery_tables_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.TableList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.TableList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigquery_tables_list(connection, project_id, dataset_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -305,7 +312,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Table.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQuery.V2.Model.Table.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigquery_tables_patch(
         connection,
         project_id,
@@ -373,7 +383,10 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Table.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQuery.V2.Model.Table.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigquery_tables_update(
         connection,
         project_id,
