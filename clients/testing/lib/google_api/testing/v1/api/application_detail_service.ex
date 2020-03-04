@@ -55,7 +55,10 @@ defmodule GoogleApi.Testing.V1.Api.ApplicationDetailService do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Testing.V1.Model.GetApkDetailsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Testing.V1.Model.GetApkDetailsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def testing_application_detail_service_get_apk_details(
         connection,
         optional_params \\ [],
