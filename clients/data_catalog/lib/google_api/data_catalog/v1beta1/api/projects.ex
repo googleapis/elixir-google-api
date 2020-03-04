@@ -74,6 +74,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_create(
         connection,
@@ -156,7 +157,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_delete(
         connection,
         projects_id,
@@ -238,6 +242,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_get(
         connection,
@@ -337,7 +342,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_get_iam_policy(
         connection,
         projects_id,
@@ -423,6 +431,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntryGroupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_list(
         connection,
@@ -516,6 +525,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_patch(
         connection,
@@ -614,7 +624,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_set_iam_policy(
         connection,
         projects_id,
@@ -709,6 +722,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_test_iam_permissions(
         connection,
@@ -805,6 +819,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_create(
         connection,
@@ -895,7 +910,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_delete(
         connection,
         projects_id,
@@ -980,6 +998,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_get(
         connection,
@@ -1081,7 +1100,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_get_iam_policy(
         connection,
         projects_id,
@@ -1175,6 +1197,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_list(
         connection,
@@ -1294,6 +1317,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_patch(
         connection,
@@ -1396,6 +1420,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_test_iam_permissions(
         connection,
@@ -1495,6 +1520,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_tags_create(
         connection,
@@ -1583,7 +1609,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_tags_delete(
         connection,
         projects_id,
@@ -1679,6 +1708,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTagsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_tags_list(
         connection,
@@ -1780,6 +1810,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_entries_tags_patch(
         connection,
@@ -1880,6 +1911,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_tags_create(
         connection,
@@ -1964,7 +1996,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_tags_delete(
         connection,
         projects_id,
@@ -2056,6 +2091,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTagsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_tags_list(
         connection,
@@ -2153,6 +2189,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_entry_groups_tags_patch(
         connection,
@@ -2247,6 +2284,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplate.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_create(
         connection,
@@ -2332,7 +2370,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_delete(
         connection,
         projects_id,
@@ -2414,6 +2455,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplate.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_get(
         connection,
@@ -2512,7 +2554,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_get_iam_policy(
         connection,
         projects_id,
@@ -2610,6 +2655,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplate.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_patch(
         connection,
@@ -2708,7 +2754,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_set_iam_policy(
         connection,
         projects_id,
@@ -2803,6 +2852,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_test_iam_permissions(
         connection,
@@ -2902,6 +2952,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_fields_create(
         connection,
@@ -2997,7 +3048,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_fields_delete(
         connection,
         projects_id,
@@ -3102,6 +3156,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_fields_patch(
         connection,
@@ -3200,6 +3255,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_tag_templates_fields_rename(
         connection,
@@ -3287,6 +3343,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_create(
         connection,
@@ -3365,7 +3422,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_delete(
         connection,
         projects_id,
@@ -3449,6 +3509,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ExportTaxonomiesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_export(
         connection,
@@ -3534,6 +3595,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_get(
         connection,
@@ -3616,7 +3678,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_get_iam_policy(
         connection,
         projects_id,
@@ -3701,6 +3766,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ImportTaxonomiesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_import(
         connection,
@@ -3789,6 +3855,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTaxonomiesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_list(
         connection,
@@ -3877,6 +3944,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_patch(
         connection,
@@ -3961,7 +4029,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_set_iam_policy(
         connection,
         projects_id,
@@ -4044,6 +4115,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_test_iam_permissions(
         connection,
@@ -4127,6 +4199,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1PolicyTag.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_policy_tags_create(
         connection,
@@ -4211,7 +4284,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_policy_tags_delete(
         connection,
         projects_id,
@@ -4294,6 +4370,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1PolicyTag.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_policy_tags_get(
         connection,
@@ -4380,7 +4457,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_policy_tags_get_iam_policy(
         connection,
         projects_id,
@@ -4467,6 +4547,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListPolicyTagsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_policy_tags_list(
         connection,
@@ -4565,6 +4646,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1PolicyTag.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_policy_tags_patch(
         connection,
@@ -4653,7 +4735,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_policy_tags_set_iam_policy(
         connection,
         projects_id,
@@ -4740,6 +4825,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_projects_locations_taxonomies_policy_tags_test_iam_permissions(
         connection,

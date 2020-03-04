@@ -75,6 +75,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Entries do
   """
   @spec datacatalog_entries_lookup(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datacatalog_entries_lookup(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
