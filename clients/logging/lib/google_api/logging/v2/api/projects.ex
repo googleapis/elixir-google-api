@@ -58,7 +58,9 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec logging_projects_exclusions_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_exclusions_create(
         connection,
         projects_id,
@@ -132,7 +134,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_exclusions_delete(
         connection,
         projects_id,
@@ -207,7 +212,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_exclusions_get(
         connection,
         projects_id,
@@ -278,7 +286,9 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec logging_projects_exclusions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_exclusions_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -350,7 +360,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_exclusions_patch(
         connection,
         projects_id,
@@ -429,7 +442,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_locations_buckets_get(
         connection,
         projects_id,
@@ -508,7 +524,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.ListBucketsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.ListBucketsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_locations_buckets_list(
         connection,
         projects_id,
@@ -589,7 +608,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_locations_buckets_patch(
         connection,
         projects_id,
@@ -668,7 +690,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_logs_delete(
         connection,
         projects_id,
@@ -739,7 +764,9 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec logging_projects_logs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_logs_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -801,7 +828,9 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec logging_projects_metrics_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogMetric.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.LogMetric.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_metrics_create(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -867,7 +896,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_metrics_delete(
         connection,
         projects_id,
@@ -939,7 +971,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogMetric.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogMetric.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_metrics_get(
         connection,
         projects_id,
@@ -1007,7 +1042,9 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec logging_projects_metrics_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListLogMetricsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListLogMetricsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_metrics_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1075,7 +1112,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogMetric.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogMetric.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_metrics_update(
         connection,
         projects_id,
@@ -1147,7 +1187,9 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec logging_projects_sinks_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_sinks_create(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1217,7 +1259,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_sinks_delete(
         connection,
         projects_id,
@@ -1292,7 +1337,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_sinks_get(
         connection,
         projects_id,
@@ -1363,7 +1411,9 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec logging_projects_sinks_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListSinksResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListSinksResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_sinks_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1439,7 +1489,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_sinks_patch(
         connection,
         projects_id,
@@ -1523,7 +1576,10 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_projects_sinks_update(
         connection,
         projects_id,

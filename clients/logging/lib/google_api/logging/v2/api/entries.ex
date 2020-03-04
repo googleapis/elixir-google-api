@@ -52,7 +52,9 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
   *   `{:error, info}` on failure
   """
   @spec logging_entries_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListLogEntriesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListLogEntriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_entries_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -108,7 +110,9 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
   *   `{:error, info}` on failure
   """
   @spec logging_entries_write(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.WriteLogEntriesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.WriteLogEntriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_entries_write(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
