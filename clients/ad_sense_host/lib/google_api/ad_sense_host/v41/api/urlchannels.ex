@@ -54,7 +54,10 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSenseHost.V41.Model.UrlChannel.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSenseHost.V41.Model.UrlChannel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsensehost_urlchannels_delete(
         connection,
         ad_client_id,
@@ -111,7 +114,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
   *   `{:error, info}` on failure
   """
   @spec adsensehost_urlchannels_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSenseHost.V41.Model.UrlChannel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSenseHost.V41.Model.UrlChannel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsensehost_urlchannels_insert(connection, ad_client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -163,7 +168,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Urlchannels do
   *   `{:error, info}` on failure
   """
   @spec adsensehost_urlchannels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSenseHost.V41.Model.UrlChannels.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSenseHost.V41.Model.UrlChannels.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsensehost_urlchannels_list(connection, ad_client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
