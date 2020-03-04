@@ -48,7 +48,9 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
   *   `{:error, info}` on failure
   """
   @spec civicinfo_elections_election_query(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def civicinfo_elections_election_query(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,7 +102,9 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
   *   `{:error, info}` on failure
   """
   @spec civicinfo_elections_voter_info_query(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CivicInfo.V2.Model.VoterInfoResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CivicInfo.V2.Model.VoterInfoResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def civicinfo_elections_voter_info_query(connection, address, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
