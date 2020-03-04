@@ -54,7 +54,9 @@ defmodule GoogleApi.Speech.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec speech_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Speech.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Speech.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def speech_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -123,7 +125,9 @@ defmodule GoogleApi.Speech.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec speech_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Speech.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Speech.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def speech_operations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
