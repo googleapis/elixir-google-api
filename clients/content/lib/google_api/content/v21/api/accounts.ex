@@ -48,6 +48,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   """
   @spec content_accounts_authinfo(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.AccountsAuthInfoResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def content_accounts_authinfo(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -104,6 +105,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V21.Model.AccountsClaimWebsiteResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def content_accounts_claimwebsite(
         connection,
@@ -164,6 +166,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   """
   @spec content_accounts_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.AccountsCustomBatchResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def content_accounts_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -216,7 +219,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def content_accounts_delete(
         connection,
         merchant_id,
@@ -274,7 +277,9 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.Account.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def content_accounts_get(connection, merchant_id, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -325,7 +330,9 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.Account.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def content_accounts_insert(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -377,7 +384,9 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_link(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.AccountsLinkResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.AccountsLinkResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def content_accounts_link(
         connection,
         merchant_id,
@@ -436,7 +445,9 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.AccountsListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.AccountsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def content_accounts_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -497,6 +508,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V21.Model.AccountsListLinksResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def content_accounts_listlinks(
         connection,
@@ -557,7 +569,9 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.Account.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def content_accounts_update(
         connection,
         merchant_id,

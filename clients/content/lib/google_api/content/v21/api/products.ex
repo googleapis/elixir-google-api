@@ -49,6 +49,7 @@ defmodule GoogleApi.Content.V21.Api.Products do
   """
   @spec content_products_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ProductsCustomBatchResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def content_products_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -101,7 +102,7 @@ defmodule GoogleApi.Content.V21.Api.Products do
   *   `{:error, info}` on failure
   """
   @spec content_products_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def content_products_delete(
         connection,
         merchant_id,
@@ -159,7 +160,9 @@ defmodule GoogleApi.Content.V21.Api.Products do
   *   `{:error, info}` on failure
   """
   @spec content_products_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Product.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.Product.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def content_products_get(connection, merchant_id, product_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -211,7 +214,9 @@ defmodule GoogleApi.Content.V21.Api.Products do
   *   `{:error, info}` on failure
   """
   @spec content_products_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.Product.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.Product.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def content_products_insert(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -264,7 +269,9 @@ defmodule GoogleApi.Content.V21.Api.Products do
   *   `{:error, info}` on failure
   """
   @spec content_products_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.ProductsListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.ProductsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def content_products_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
