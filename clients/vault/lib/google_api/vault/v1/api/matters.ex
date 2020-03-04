@@ -53,7 +53,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_add_permissions(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.MatterPermission.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.MatterPermission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_add_permissions(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -112,7 +114,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_close(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.CloseMatterResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.CloseMatterResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_close(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -172,7 +176,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Matter.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -228,7 +234,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Matter.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_delete(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -286,7 +294,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Matter.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_get(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -349,7 +359,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.ListMattersResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.ListMattersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -409,7 +421,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_remove_permissions(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_remove_permissions(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -468,7 +482,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_reopen(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.ReopenMatterResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.ReopenMatterResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_reopen(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -527,7 +543,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_undelete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Matter.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_undelete(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -589,7 +607,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Matter.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Matter.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_update(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -648,7 +668,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_exports_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Export.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Export.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_exports_create(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -712,7 +734,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vault.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vault.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_exports_delete(
         connection,
         matter_id,
@@ -782,7 +807,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vault.V1.Model.Export.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vault.V1.Model.Export.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_exports_get(
         connection,
         matter_id,
@@ -848,7 +876,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_exports_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.ListExportsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.ListExportsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_exports_list(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -916,7 +946,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vault.V1.Model.AddHeldAccountsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vault.V1.Model.AddHeldAccountsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_add_held_accounts(
         connection,
         matter_id,
@@ -982,7 +1015,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_holds_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Hold.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Hold.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_create(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1046,7 +1081,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vault.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vault.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_delete(
         connection,
         matter_id,
@@ -1112,7 +1150,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_holds_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Hold.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Hold.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_get(connection, matter_id, hold_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1177,7 +1217,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_holds_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.ListHoldsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.ListHoldsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_list(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1247,7 +1289,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Vault.V1.Model.RemoveHeldAccountsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.RemoveHeldAccountsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_remove_held_accounts(
         connection,
         matter_id,
@@ -1321,7 +1365,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vault.V1.Model.Hold.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vault.V1.Model.Hold.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_update(
         connection,
         matter_id,
@@ -1395,7 +1442,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vault.V1.Model.HeldAccount.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vault.V1.Model.HeldAccount.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_accounts_create(
         connection,
         matter_id,
@@ -1469,7 +1519,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vault.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vault.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_accounts_delete(
         connection,
         matter_id,
@@ -1545,7 +1598,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Vault.V1.Model.ListHeldAccountsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.ListHeldAccountsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_holds_accounts_list(
         connection,
         matter_id,
@@ -1611,7 +1666,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_saved_queries_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.SavedQuery.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.SavedQuery.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_saved_queries_create(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1676,7 +1733,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vault.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vault.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_saved_queries_delete(
         connection,
         matter_id,
@@ -1747,7 +1807,10 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vault.V1.Model.SavedQuery.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vault.V1.Model.SavedQuery.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_saved_queries_get(
         connection,
         matter_id,
@@ -1816,7 +1879,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   *   `{:error, info}` on failure
   """
   @spec vault_matters_saved_queries_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.ListSavedQueriesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.ListSavedQueriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vault_matters_saved_queries_list(connection, matter_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
