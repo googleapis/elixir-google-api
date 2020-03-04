@@ -52,7 +52,9 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec datafusion_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DataFusion.V1beta1.Model.Location.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -115,6 +117,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
   """
   @spec datafusion_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DataFusion.V1beta1.Model.ListLocationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -185,7 +188,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_create(
         connection,
         parent,
@@ -254,7 +260,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_delete(
         connection,
         name,
@@ -321,7 +330,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Instance.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Instance.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_get(
         connection,
         name,
@@ -398,7 +410,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_get_iam_policy(
         connection,
         resource,
@@ -475,6 +490,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataFusion.V1beta1.Model.ListInstancesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_list(
         connection,
@@ -555,7 +571,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_patch(
         connection,
         name,
@@ -626,7 +645,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_restart(
         connection,
         name,
@@ -698,7 +720,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_set_iam_policy(
         connection,
         resource,
@@ -775,6 +800,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataFusion.V1beta1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_test_iam_permissions(
         connection,
@@ -849,7 +875,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_instances_upgrade(
         connection,
         name,
@@ -926,7 +955,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_operations_cancel(
         connection,
         name,
@@ -996,7 +1028,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_operations_delete(
         connection,
         name,
@@ -1064,7 +1099,10 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataFusion.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_operations_get(
         connection,
         name,
@@ -1144,6 +1182,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataFusion.V1beta1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datafusion_projects_locations_operations_list(
         connection,
