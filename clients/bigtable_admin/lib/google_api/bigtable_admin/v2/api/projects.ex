@@ -58,7 +58,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_create(
         connection,
         projects_id,
@@ -128,7 +131,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_delete(
         connection,
         projects_id,
@@ -199,7 +205,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Instance.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Instance.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_get(
         connection,
         projects_id,
@@ -272,7 +281,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_get_iam_policy(
         connection,
         projects_id,
@@ -345,6 +357,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.ListInstancesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_list(
         connection,
@@ -422,7 +435,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_partial_update_instance(
         connection,
         projects_id,
@@ -497,7 +513,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_set_iam_policy(
         connection,
         projects_id,
@@ -572,6 +591,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_test_iam_permissions(
         connection,
@@ -650,7 +670,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Instance.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Instance.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_update(
         connection,
         projects_id,
@@ -728,7 +751,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.AppProfile.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.AppProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_app_profiles_create(
         connection,
         projects_id,
@@ -805,7 +831,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_app_profiles_delete(
         connection,
         projects_id,
@@ -884,7 +913,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.AppProfile.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.AppProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_app_profiles_get(
         connection,
         projects_id,
@@ -975,6 +1007,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.ListAppProfilesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_app_profiles_list(
         connection,
@@ -1057,7 +1090,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_app_profiles_patch(
         connection,
         projects_id,
@@ -1141,7 +1177,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_clusters_create(
         connection,
         projects_id,
@@ -1216,7 +1255,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_clusters_delete(
         connection,
         projects_id,
@@ -1291,7 +1333,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Cluster.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Cluster.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_clusters_get(
         connection,
         projects_id,
@@ -1369,6 +1414,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.ListClustersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_clusters_list(
         connection,
@@ -1445,7 +1491,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_clusters_update(
         connection,
         projects_id,
@@ -1526,7 +1575,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_clusters_backups_get_iam_policy(
         connection,
         projects_id,
@@ -1611,7 +1663,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_clusters_backups_set_iam_policy(
         connection,
         projects_id,
@@ -1698,6 +1753,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.CheckConsistencyResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_check_consistency(
         connection,
@@ -1780,7 +1836,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Table.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Table.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_create(
         connection,
         projects_id,
@@ -1855,7 +1914,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_delete(
         connection,
         projects_id,
@@ -1934,7 +1996,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_drop_row_range(
         connection,
         projects_id,
@@ -2020,6 +2085,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.GenerateConsistencyTokenResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_generate_consistency_token(
         connection,
@@ -2104,7 +2170,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Table.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Table.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_get(
         connection,
         projects_id,
@@ -2183,7 +2252,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_get_iam_policy(
         connection,
         projects_id,
@@ -2273,7 +2345,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.BigtableAdmin.V2.Model.ListTablesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.ListTablesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_list(
         connection,
         projects_id,
@@ -2354,7 +2428,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Table.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Table.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_modify_column_families(
         connection,
         projects_id,
@@ -2435,7 +2512,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_set_iam_policy(
         connection,
         projects_id,
@@ -2517,6 +2597,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_instances_tables_test_iam_permissions(
         connection,
@@ -2595,7 +2676,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigtableAdmin.V2.Model.Location.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_locations_get(
         connection,
         projects_id,
@@ -2668,6 +2752,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.ListLocationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigtableadmin_projects_locations_list(
         connection,
