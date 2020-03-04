@@ -71,6 +71,7 @@ defmodule GoogleApi.CloudPrivateCatalog.V1beta1.Api.Folders do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalog.V1beta1.Model.GoogleCloudPrivatecatalogV1beta1SearchCatalogsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalog_folders_catalogs_search(
         connection,
@@ -162,6 +163,7 @@ defmodule GoogleApi.CloudPrivateCatalog.V1beta1.Api.Folders do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalog.V1beta1.Model.GoogleCloudPrivatecatalogV1beta1SearchProductsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalog_folders_products_search(
         connection,
@@ -253,6 +255,7 @@ defmodule GoogleApi.CloudPrivateCatalog.V1beta1.Api.Folders do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalog.V1beta1.Model.GoogleCloudPrivatecatalogV1beta1SearchVersionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalog_folders_versions_search(
         connection,
