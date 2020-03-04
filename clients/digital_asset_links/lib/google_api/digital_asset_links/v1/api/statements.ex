@@ -139,7 +139,9 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Api.Statements do
   *   `{:error, info}` on failure
   """
   @spec digitalassetlinks_statements_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DigitalAssetLinks.V1.Model.ListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DigitalAssetLinks.V1.Model.ListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def digitalassetlinks_statements_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
