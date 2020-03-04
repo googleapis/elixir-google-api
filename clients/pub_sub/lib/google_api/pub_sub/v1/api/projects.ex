@@ -81,7 +81,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_snapshots_create(
         connection,
         projects_id,
@@ -162,7 +165,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_snapshots_delete(
         connection,
         projects_id,
@@ -237,7 +243,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_snapshots_get(
         connection,
         projects_id,
@@ -318,7 +327,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_snapshots_get_iam_policy(
         connection,
         projects_id,
@@ -393,7 +405,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec pubsub_projects_snapshots_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.PubSub.V1.Model.ListSnapshotsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.PubSub.V1.Model.ListSnapshotsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_snapshots_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -464,7 +478,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_snapshots_patch(
         connection,
         projects_id,
@@ -540,7 +557,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_snapshots_set_iam_policy(
         connection,
         projects_id,
@@ -621,6 +641,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def pubsub_projects_snapshots_test_iam_permissions(
         connection,
@@ -700,7 +721,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_acknowledge(
         connection,
         projects_id,
@@ -789,7 +813,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_create(
         connection,
         projects_id,
@@ -865,7 +892,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_delete(
         connection,
         projects_id,
@@ -936,7 +966,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_get(
         connection,
         projects_id,
@@ -1017,7 +1050,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_get_iam_policy(
         connection,
         projects_id,
@@ -1087,7 +1123,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec pubsub_projects_subscriptions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_list(
         connection,
         projects_id,
@@ -1163,7 +1201,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_modify_ack_deadline(
         connection,
         projects_id,
@@ -1244,7 +1285,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_modify_push_config(
         connection,
         projects_id,
@@ -1325,7 +1369,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_patch(
         connection,
         projects_id,
@@ -1400,7 +1447,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.PullResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.PullResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_pull(
         connection,
         projects_id,
@@ -1479,7 +1529,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.SeekResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.SeekResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_seek(
         connection,
         projects_id,
@@ -1555,7 +1608,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_set_iam_policy(
         connection,
         projects_id,
@@ -1636,6 +1692,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def pubsub_projects_subscriptions_test_iam_permissions(
         connection,
@@ -1718,7 +1775,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Topic.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_create(
         connection,
         projects_id,
@@ -1794,7 +1854,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_delete(
         connection,
         projects_id,
@@ -1865,7 +1928,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Topic.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_get(
         connection,
         projects_id,
@@ -1946,7 +2012,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_get_iam_policy(
         connection,
         projects_id,
@@ -2016,7 +2085,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec pubsub_projects_topics_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.PubSub.V1.Model.ListTopicsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.PubSub.V1.Model.ListTopicsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2088,7 +2159,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Topic.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_patch(
         connection,
         projects_id,
@@ -2162,7 +2236,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.PublishResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.PublishResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_publish(
         connection,
         projects_id,
@@ -2238,7 +2315,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_set_iam_policy(
         connection,
         projects_id,
@@ -2319,6 +2399,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_test_iam_permissions(
         connection,
@@ -2402,6 +2483,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListTopicSnapshotsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_snapshots_list(
         connection,
@@ -2481,6 +2563,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListTopicSubscriptionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def pubsub_projects_topics_subscriptions_list(
         connection,
