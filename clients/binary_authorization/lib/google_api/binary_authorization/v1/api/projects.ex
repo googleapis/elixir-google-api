@@ -63,7 +63,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_get_policy(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -130,7 +133,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_update_policy(
         connection,
         name,
@@ -202,7 +208,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_attestors_create(
         connection,
         parent,
@@ -272,7 +281,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_attestors_delete(
         connection,
         name,
@@ -340,7 +352,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_attestors_get(
         connection,
         name,
@@ -417,7 +432,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_attestors_get_iam_policy(
         connection,
         resource,
@@ -493,6 +511,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.ListAttestorsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_attestors_list(
         connection,
@@ -568,7 +587,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_attestors_set_iam_policy(
         connection,
         resource,
@@ -645,6 +667,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_attestors_test_iam_permissions(
         connection,
@@ -717,7 +740,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_attestors_update(
         connection,
         name,
@@ -795,7 +821,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_policy_get_iam_policy(
         connection,
         resource,
@@ -867,7 +896,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_policy_set_iam_policy(
         connection,
         resource,
@@ -944,6 +976,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def binaryauthorization_projects_policy_test_iam_permissions(
         connection,
