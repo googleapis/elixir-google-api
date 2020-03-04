@@ -63,6 +63,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Api.Pagespeedapi do
   """
   @spec pagespeedonline_pagespeedapi_runpagespeed(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def pagespeedonline_pagespeedapi_runpagespeed(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
