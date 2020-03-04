@@ -53,7 +53,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.SignupUrls do
   *   `{:error, info}` on failure
   """
   @spec androidmanagement_signup_urls_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.SignupUrl.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidManagement.V1.Model.SignupUrl.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_signup_urls_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

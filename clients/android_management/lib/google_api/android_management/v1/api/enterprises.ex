@@ -55,7 +55,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Enterprise.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,7 +116,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Enterprise.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -173,7 +177,9 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   *   `{:error, info}` on failure
   """
   @spec androidmanagement_enterprises_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidManagement.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Enterprise.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -237,7 +243,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Application.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Application.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_applications_get(
         connection,
         name,
@@ -306,7 +315,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_delete(
         connection,
         name,
@@ -374,7 +386,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Device.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_get(
         connection,
         name,
@@ -441,7 +456,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_issue_command(
         connection,
         name,
@@ -512,6 +530,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.ListDevicesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_list(
         connection,
@@ -584,7 +603,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Device.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_patch(
         connection,
         name,
@@ -652,7 +674,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_operations_cancel(
         connection,
         name,
@@ -718,7 +743,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_operations_delete(
         connection,
         name,
@@ -784,7 +812,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_operations_get(
         connection,
         name,
@@ -855,6 +886,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_devices_operations_list(
         connection,
@@ -929,6 +961,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.EnrollmentToken.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_enrollment_tokens_create(
         connection,
@@ -996,7 +1029,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_enrollment_tokens_delete(
         connection,
         name,
@@ -1062,7 +1098,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_policies_delete(
         connection,
         name,
@@ -1128,7 +1167,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_policies_get(
         connection,
         name,
@@ -1198,6 +1240,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.ListPoliciesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_policies_list(
         connection,
@@ -1270,7 +1313,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_policies_patch(
         connection,
         name,
@@ -1339,7 +1385,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_create(
         connection,
         parent,
@@ -1406,7 +1455,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_delete(
         connection,
         name,
@@ -1472,7 +1524,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_get(
         connection,
         name,
@@ -1542,6 +1597,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidManagement.V1.Model.ListWebAppsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_list(
         connection,
@@ -1614,7 +1670,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.WebApp.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_apps_patch(
         connection,
         name,
@@ -1683,7 +1742,10 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidManagement.V1.Model.WebToken.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidManagement.V1.Model.WebToken.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidmanagement_enterprises_web_tokens_create(
         connection,
         parent,
