@@ -26,6 +26,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   ## Attributes
 
   *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Command line arguments to pass to the program.
+  *   `encryptionConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t`, *default:* `nil`) - Custom encryption key options for a training job. If this is set,
+      then all resources created by the training job will be encrypted with the
+      provided encryption key.
   *   `hyperparameters` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec.t`, *default:* `nil`) - Optional. The set of Hyperparameters to tune.
   *   `jobDir` (*type:* `String.t`, *default:* `nil`) - Optional. A Google Cloud Storage path in which to store training outputs
       and other data needed for training. This path is passed to your TensorFlow
@@ -200,6 +203,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
 
   @type t :: %__MODULE__{
           :args => list(String.t()),
+          :encryptionConfig =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t(),
           :hyperparameters =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec.t(),
           :jobDir => String.t(),
@@ -223,6 +228,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
         }
 
   field(:args, type: :list)
+
+  field(:encryptionConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig)
 
   field(:hyperparameters,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec
