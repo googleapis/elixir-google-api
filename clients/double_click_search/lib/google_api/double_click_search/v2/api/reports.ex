@@ -48,7 +48,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   *   `{:error, info}` on failure
   """
   @spec doubleclicksearch_reports_generate(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.Report.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.Report.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def doubleclicksearch_reports_generate(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -96,7 +98,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   *   `{:error, info}` on failure
   """
   @spec doubleclicksearch_reports_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.Report.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.Report.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def doubleclicksearch_reports_get(connection, report_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -151,7 +155,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
           integer(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def doubleclicksearch_reports_get_file(
         connection,
         report_id,
@@ -207,7 +211,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Reports do
   *   `{:error, info}` on failure
   """
   @spec doubleclicksearch_reports_request(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.Report.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.Report.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def doubleclicksearch_reports_request(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
