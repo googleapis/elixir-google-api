@@ -79,7 +79,9 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
   *   `{:error, info}` on failure
   """
   @spec reports_activities_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Admin.Reports_v1.Model.Activities.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Admin.Reports_v1.Model.Activities.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def reports_activities_list(
         connection,
         user_key,
@@ -176,7 +178,9 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
   *   `{:error, info}` on failure
   """
   @spec reports_activities_watch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Admin.Reports_v1.Model.Channel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Admin.Reports_v1.Model.Channel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def reports_activities_watch(
         connection,
         user_key,
