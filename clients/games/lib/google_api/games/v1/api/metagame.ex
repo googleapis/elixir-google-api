@@ -47,7 +47,9 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
   *   `{:error, info}` on failure
   """
   @spec games_metagame_get_metagame_config(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.MetagameConfig.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.MetagameConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def games_metagame_get_metagame_config(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -103,7 +105,10 @@ defmodule GoogleApi.Games.V1.Api.Metagame do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Games.V1.Model.CategoryListResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Games.V1.Model.CategoryListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def games_metagame_list_categories_by_player(
         connection,
         player_id,
