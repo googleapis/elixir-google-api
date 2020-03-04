@@ -68,6 +68,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Operations do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_operations_cancel(
         connection,
@@ -142,6 +143,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Operations do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_operations_delete(
         connection,
@@ -215,6 +217,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Operations do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_operations_get(
         connection,
@@ -297,6 +300,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Operations do
   @spec cloudprivatecatalogproducer_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleLongrunningListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_operations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
