@@ -83,6 +83,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2BatchReadBlobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def remotebuildexecution_blobs_batch_read(
         connection,
@@ -187,6 +188,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2BatchUpdateBlobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def remotebuildexecution_blobs_batch_update(
         connection,
@@ -273,6 +275,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FindMissingBlobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def remotebuildexecution_blobs_find_missing(
         connection,
@@ -385,6 +388,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2GetTreeResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def remotebuildexecution_blobs_get_tree(
         connection,
