@@ -70,7 +70,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   *   `{:error, info}` on failure
   """
   @spec proximitybeacon_beacons_activate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_activate(connection, beacon_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -146,7 +148,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   *   `{:error, info}` on failure
   """
   @spec proximitybeacon_beacons_deactivate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_deactivate(
         connection,
         beacon_name,
@@ -227,7 +231,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   *   `{:error, info}` on failure
   """
   @spec proximitybeacon_beacons_decommission(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_decommission(
         connection,
         beacon_name,
@@ -306,7 +312,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   *   `{:error, info}` on failure
   """
   @spec proximitybeacon_beacons_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_delete(connection, beacon_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -385,7 +393,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   *   `{:error, info}` on failure
   """
   @spec proximitybeacon_beacons_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_get(connection, beacon_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -524,6 +534,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   """
   @spec proximitybeacon_beacons_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -595,7 +606,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   *   `{:error, info}` on failure
   """
   @spec proximitybeacon_beacons_register(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_register(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -674,7 +687,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
   *   `{:error, info}` on failure
   """
   @spec proximitybeacon_beacons_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Beacon.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_update(connection, beacon_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -766,6 +781,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
           keyword()
         ) ::
           {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.DeleteAttachmentsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_attachments_batch_delete(
         connection,
@@ -865,6 +881,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
           keyword()
         ) ::
           {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.BeaconAttachment.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_attachments_create(
         connection,
@@ -952,7 +969,10 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_attachments_delete(
         connection,
         attachment_name,
@@ -1047,6 +1067,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
           keyword()
         ) ::
           {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.ListBeaconAttachmentsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_attachments_list(
         connection,
@@ -1135,6 +1156,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beacons do
           keyword()
         ) ::
           {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.ListDiagnosticsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def proximitybeacon_beacons_diagnostics_list(
         connection,
