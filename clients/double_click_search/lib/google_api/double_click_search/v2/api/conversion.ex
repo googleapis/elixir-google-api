@@ -69,7 +69,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def doubleclicksearch_conversion_get(
         connection,
         agency_id,
@@ -142,7 +144,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   *   `{:error, info}` on failure
   """
   @spec doubleclicksearch_conversion_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def doubleclicksearch_conversion_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -208,7 +212,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def doubleclicksearch_conversion_patch(
         connection,
         advertiser_id,
@@ -274,7 +280,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   *   `{:error, info}` on failure
   """
   @spec doubleclicksearch_conversion_update(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def doubleclicksearch_conversion_update(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -323,6 +331,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   """
   @spec doubleclicksearch_conversion_update_availability(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabilityResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def doubleclicksearch_conversion_update_availability(
         connection,
