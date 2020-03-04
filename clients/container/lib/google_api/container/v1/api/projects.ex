@@ -69,6 +69,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Container.V1.Model.ListUsableSubnetworksResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def container_projects_aggregated_usable_subnetworks_list(
         connection,
@@ -147,7 +148,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.ServerConfig.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.ServerConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_get_server_config(
         connection,
         name,
@@ -217,7 +221,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_complete_ip_rotation(
         connection,
         name,
@@ -298,7 +305,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_create(
         connection,
         parent,
@@ -383,7 +393,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_delete(
         connection,
         name,
@@ -462,7 +475,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Cluster.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Cluster.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_get(
         connection,
         name,
@@ -536,7 +552,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.GetJSONWebKeysResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Container.V1.Model.GetJSONWebKeysResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_get_jwks(
         connection,
         parent,
@@ -613,7 +631,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.ListClustersResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Container.V1.Model.ListClustersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_list(
         connection,
         parent,
@@ -683,7 +703,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_set_addons(
         connection,
         name,
@@ -752,7 +775,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_set_legacy_abac(
         connection,
         name,
@@ -824,7 +850,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_set_locations(
         connection,
         name,
@@ -893,7 +922,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_set_logging(
         connection,
         name,
@@ -963,7 +995,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_set_maintenance_policy(
         connection,
         name,
@@ -1034,7 +1069,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_set_master_auth(
         connection,
         name,
@@ -1103,7 +1141,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_set_monitoring(
         connection,
         name,
@@ -1172,7 +1213,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_set_network_policy(
         connection,
         name,
@@ -1241,7 +1285,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_set_resource_labels(
         connection,
         name,
@@ -1310,7 +1357,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_start_ip_rotation(
         connection,
         name,
@@ -1379,7 +1429,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_update(
         connection,
         name,
@@ -1448,7 +1501,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_update_master(
         connection,
         name,
@@ -1518,7 +1574,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_node_pools_create(
         connection,
         parent,
@@ -1598,7 +1657,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_node_pools_delete(
         connection,
         name,
@@ -1681,7 +1743,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.NodePool.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.NodePool.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_node_pools_get(
         connection,
         name,
@@ -1762,7 +1827,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.ListNodePoolsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Container.V1.Model.ListNodePoolsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_node_pools_list(
         connection,
         parent,
@@ -1835,7 +1902,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_node_pools_rollback(
         connection,
         name,
@@ -1905,7 +1975,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_node_pools_set_autoscaling(
         connection,
         name,
@@ -1975,7 +2048,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_node_pools_set_management(
         connection,
         name,
@@ -2045,7 +2121,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_node_pools_set_size(
         connection,
         name,
@@ -2115,7 +2194,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_node_pools_update(
         connection,
         name,
@@ -2191,6 +2273,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Container.V1.Model.GetOpenIDConfigResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def container_projects_locations_clusters_well_known_get_openid_configuration(
         connection,
@@ -2259,7 +2342,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_operations_cancel(
         connection,
         name,
@@ -2336,7 +2422,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_operations_get(
         connection,
         name,
@@ -2414,7 +2503,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Container.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_locations_operations_list(
         connection,
         parent,
@@ -2490,7 +2581,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.ServerConfig.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.ServerConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_get_serverconfig(
         connection,
         project_id,
@@ -2570,7 +2664,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_addons(
         connection,
         project_id,
@@ -2652,7 +2749,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_complete_ip_rotation(
         connection,
         project_id,
@@ -2746,7 +2846,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_create(
         connection,
         project_id,
@@ -2835,7 +2938,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_delete(
         connection,
         project_id,
@@ -2918,7 +3024,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Cluster.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Cluster.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_get(
         connection,
         project_id,
@@ -3000,7 +3109,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_legacy_abac(
         connection,
         project_id,
@@ -3083,7 +3195,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.ListClustersResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Container.V1.Model.ListClustersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_list(
         connection,
         project_id,
@@ -3166,7 +3280,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_locations(
         connection,
         project_id,
@@ -3248,7 +3365,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_logging(
         connection,
         project_id,
@@ -3330,7 +3450,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_master(
         connection,
         project_id,
@@ -3412,7 +3535,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_monitoring(
         connection,
         project_id,
@@ -3494,7 +3620,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_resource_labels(
         connection,
         project_id,
@@ -3576,7 +3705,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_set_maintenance_policy(
         connection,
         project_id,
@@ -3663,7 +3795,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_set_master_auth(
         connection,
         project_id,
@@ -3748,7 +3883,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_set_network_policy(
         connection,
         project_id,
@@ -3833,7 +3971,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_start_ip_rotation(
         connection,
         project_id,
@@ -3918,7 +4059,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_update(
         connection,
         project_id,
@@ -4003,7 +4147,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_node_pools_autoscaling(
         connection,
         project_id,
@@ -4090,7 +4237,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_node_pools_create(
         connection,
         project_id,
@@ -4177,7 +4327,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_node_pools_delete(
         connection,
         project_id,
@@ -4269,7 +4422,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.NodePool.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.NodePool.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_node_pools_get(
         connection,
         project_id,
@@ -4358,7 +4514,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.ListNodePoolsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Container.V1.Model.ListNodePoolsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_node_pools_list(
         connection,
         project_id,
@@ -4444,7 +4602,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_node_pools_rollback(
         connection,
         project_id,
@@ -4534,7 +4695,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_node_pools_set_management(
         connection,
         project_id,
@@ -4624,7 +4788,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_node_pools_set_size(
         connection,
         project_id,
@@ -4714,7 +4881,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_clusters_node_pools_update(
         connection,
         project_id,
@@ -4800,7 +4970,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_operations_cancel(
         connection,
         project_id,
@@ -4883,7 +5056,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Container.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Container.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_operations_get(
         connection,
         project_id,
@@ -4964,7 +5140,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Container.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Container.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def container_projects_zones_operations_list(
         connection,
         project_id,
