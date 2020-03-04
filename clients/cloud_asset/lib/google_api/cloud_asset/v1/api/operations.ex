@@ -64,7 +64,10 @@ defmodule GoogleApi.CloudAsset.V1.Api.Operations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudasset_operations_get(
         connection,
         v1_id,
