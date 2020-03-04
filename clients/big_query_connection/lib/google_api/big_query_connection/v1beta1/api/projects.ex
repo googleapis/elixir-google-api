@@ -61,6 +61,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Connection.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigqueryconnection_projects_locations_connections_create(
         connection,
@@ -130,7 +131,10 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigqueryconnection_projects_locations_connections_delete(
         connection,
         name,
@@ -199,6 +203,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Connection.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigqueryconnection_projects_locations_connections_get(
         connection,
@@ -270,7 +275,9 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigqueryconnection_projects_locations_connections_get_iam_policy(
         connection,
         resource,
@@ -342,6 +349,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.ListConnectionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigqueryconnection_projects_locations_connections_list(
         connection,
@@ -418,6 +426,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Connection.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigqueryconnection_projects_locations_connections_patch(
         connection,
@@ -492,7 +501,9 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigqueryconnection_projects_locations_connections_set_iam_policy(
         connection,
         resource,
@@ -569,6 +580,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def bigqueryconnection_projects_locations_connections_test_iam_permissions(
         connection,
@@ -640,7 +652,10 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def bigqueryconnection_projects_locations_connections_update_credential(
         connection,
         name,
