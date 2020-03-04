@@ -49,7 +49,7 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
   *   `{:error, info}` on failure
   """
   @spec drive_revisions_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def drive_revisions_delete(connection, file_id, revision_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -101,7 +101,9 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
   *   `{:error, info}` on failure
   """
   @spec drive_revisions_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Revision.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.Revision.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def drive_revisions_get(connection, file_id, revision_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -154,7 +156,9 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
   *   `{:error, info}` on failure
   """
   @spec drive_revisions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.RevisionList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.RevisionList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def drive_revisions_list(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -207,7 +211,9 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
   *   `{:error, info}` on failure
   """
   @spec drive_revisions_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Revision.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.Revision.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def drive_revisions_update(connection, file_id, revision_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
