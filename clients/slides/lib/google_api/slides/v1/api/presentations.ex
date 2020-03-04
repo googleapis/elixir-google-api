@@ -74,6 +74,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   """
   @spec slides_presentations_batch_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Slides.V1.Model.BatchUpdatePresentationResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def slides_presentations_batch_update(
         connection,
@@ -143,7 +144,9 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   *   `{:error, info}` on failure
   """
   @spec slides_presentations_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Slides.V1.Model.Presentation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Slides.V1.Model.Presentation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def slides_presentations_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -199,7 +202,9 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   *   `{:error, info}` on failure
   """
   @spec slides_presentations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Slides.V1.Model.Presentation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Slides.V1.Model.Presentation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def slides_presentations_get(connection, presentation_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -262,7 +267,10 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Slides.V1.Model.Page.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Slides.V1.Model.Page.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def slides_presentations_pages_get(
         connection,
         presentation_id,
@@ -343,7 +351,10 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Slides.V1.Model.Thumbnail.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Slides.V1.Model.Thumbnail.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def slides_presentations_pages_get_thumbnail(
         connection,
         presentation_id,
