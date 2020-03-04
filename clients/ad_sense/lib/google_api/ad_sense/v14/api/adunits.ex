@@ -49,7 +49,9 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
   *   `{:error, info}` on failure
   """
   @spec adsense_adunits_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.AdUnit.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.AdUnit.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsense_adunits_get(connection, ad_client_id, ad_unit_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -105,7 +107,10 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdCode.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.AdCode.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsense_adunits_get_ad_code(
         connection,
         ad_client_id,
@@ -164,7 +169,9 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
   *   `{:error, info}` on failure
   """
   @spec adsense_adunits_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsense_adunits_list(connection, ad_client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -224,7 +231,10 @@ defmodule GoogleApi.AdSense.V14.Api.Adunits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsense_adunits_customchannels_list(
         connection,
         ad_client_id,

@@ -47,7 +47,9 @@ defmodule GoogleApi.AdSense.V14.Api.Payments do
   *   `{:error, info}` on failure
   """
   @spec adsense_payments_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.Payments.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.Payments.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adsense_payments_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
