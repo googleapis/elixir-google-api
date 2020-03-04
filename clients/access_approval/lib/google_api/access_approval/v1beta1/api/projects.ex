@@ -61,7 +61,10 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AccessApproval.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AccessApproval.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accessapproval_projects_delete_access_approval_settings(
         connection,
         name,
@@ -129,6 +132,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.AccessApprovalSettings.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accessapproval_projects_get_access_approval_settings(
         connection,
@@ -210,6 +214,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.AccessApprovalSettings.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accessapproval_projects_update_access_approval_settings(
         connection,
@@ -286,6 +291,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ApprovalRequest.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accessapproval_projects_approval_requests_approve(
         connection,
@@ -367,6 +373,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ApprovalRequest.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accessapproval_projects_approval_requests_dismiss(
         connection,
@@ -438,6 +445,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ApprovalRequest.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accessapproval_projects_approval_requests_get(
         connection,
@@ -522,6 +530,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ListApprovalRequestsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accessapproval_projects_approval_requests_list(
         connection,
