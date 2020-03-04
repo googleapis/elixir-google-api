@@ -57,7 +57,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_clear_org_policy(
         connection,
         organizations_id,
@@ -128,6 +131,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.Organization.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_get(
         connection,
@@ -200,7 +204,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_get_effective_org_policy(
         connection,
         organizations_id,
@@ -274,7 +280,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudResourceManager.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudResourceManager.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_get_iam_policy(
         connection,
         organizations_id,
@@ -348,7 +357,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_get_org_policy(
         connection,
         organizations_id,
@@ -419,6 +430,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
         ) ::
           {:ok,
            GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstraintsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_list_available_org_policy_constraints(
         connection,
@@ -495,6 +507,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_list_org_policies(
         connection,
@@ -567,6 +580,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   """
   @spec cloudresourcemanager_organizations_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.SearchOrganizationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -636,7 +650,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudResourceManager.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudResourceManager.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_set_iam_policy(
         connection,
         organizations_id,
@@ -709,7 +726,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_set_org_policy(
         connection,
         organizations_id,
@@ -784,6 +803,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudresourcemanager_organizations_test_iam_permissions(
         connection,

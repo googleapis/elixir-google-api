@@ -80,7 +80,9 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -146,7 +148,9 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_delete(
         connection,
         folders_id,
@@ -213,7 +217,9 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_get(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -280,7 +286,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudResourceManager.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_get_iam_policy(
         connection,
         folders_id,
@@ -360,6 +369,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   """
   @spec cloudresourcemanager_folders_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V2.Model.ListFoldersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -439,7 +449,9 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_move(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_move(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -515,7 +527,9 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_patch(
         connection,
         folders_id,
@@ -585,6 +599,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   """
   @spec cloudresourcemanager_folders_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V2.Model.SearchFoldersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -653,7 +668,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudResourceManager.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_set_iam_policy(
         connection,
         folders_id,
@@ -728,6 +746,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V2.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_test_iam_permissions(
         connection,
@@ -808,7 +827,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_folders_undelete(
         connection,
         folders_id,
