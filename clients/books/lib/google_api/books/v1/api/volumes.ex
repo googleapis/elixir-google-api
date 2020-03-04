@@ -54,7 +54,9 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   *   `{:error, info}` on failure
   """
   @spec books_volumes_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Volume.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Volume.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_volumes_get(connection, volume_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -122,7 +124,9 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   *   `{:error, info}` on failure
   """
   @spec books_volumes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Volumes.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_volumes_list(connection, q, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -187,7 +191,9 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   *   `{:error, info}` on failure
   """
   @spec books_volumes_associated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Volumes.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_volumes_associated_list(connection, volume_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -246,7 +252,9 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   *   `{:error, info}` on failure
   """
   @spec books_volumes_mybooks_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Volumes.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_volumes_mybooks_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -302,7 +310,9 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   *   `{:error, info}` on failure
   """
   @spec books_volumes_recommended_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Volumes.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_volumes_recommended_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -362,6 +372,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
           keyword()
         ) ::
           {:ok, GoogleApi.Books.V1.Model.BooksVolumesRecommendedRateResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def books_volumes_recommended_rate(
         connection,
@@ -426,7 +437,9 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
   *   `{:error, info}` on failure
   """
   @spec books_volumes_useruploaded_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Volumes.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_volumes_useruploaded_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

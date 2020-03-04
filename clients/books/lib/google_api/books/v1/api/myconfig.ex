@@ -47,7 +47,9 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   *   `{:error, info}` on failure
   """
   @spec books_myconfig_get_user_settings(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Usersettings.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Usersettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_myconfig_get_user_settings(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -102,7 +104,10 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.DownloadAccesses.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.DownloadAccesses.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_myconfig_release_download_access(
         connection,
         volume_ids,
@@ -171,7 +176,10 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.RequestAccess.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.RequestAccess.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_myconfig_request_access(
         connection,
         source,
@@ -245,7 +253,10 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.Volumes.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_myconfig_sync_volume_licenses(
         connection,
         source,
@@ -307,7 +318,9 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   *   `{:error, info}` on failure
   """
   @spec books_myconfig_update_user_settings(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Usersettings.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Usersettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_myconfig_update_user_settings(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

@@ -48,7 +48,9 @@ defmodule GoogleApi.Books.V1.Api.Onboarding do
   *   `{:error, info}` on failure
   """
   @spec books_onboarding_list_categories(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Category.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Category.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_onboarding_list_categories(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,7 +102,9 @@ defmodule GoogleApi.Books.V1.Api.Onboarding do
   *   `{:error, info}` on failure
   """
   @spec books_onboarding_list_category_volumes(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Volume2.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Volume2.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_onboarding_list_category_volumes(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
