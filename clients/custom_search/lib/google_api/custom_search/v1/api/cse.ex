@@ -78,7 +78,9 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
   *   `{:error, info}` on failure
   """
   @spec search_cse_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CustomSearch.V1.Model.Search.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CustomSearch.V1.Model.Search.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def search_cse_list(connection, q, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -186,7 +188,9 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
   *   `{:error, info}` on failure
   """
   @spec search_cse_siterestrict_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CustomSearch.V1.Model.Search.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CustomSearch.V1.Model.Search.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def search_cse_siterestrict_list(connection, q, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
