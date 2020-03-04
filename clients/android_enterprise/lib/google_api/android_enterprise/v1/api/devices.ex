@@ -56,7 +56,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_devices_force_report_upload(
         connection,
         enterprise_id,
@@ -125,7 +125,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Device.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_devices_get(
         connection,
         enterprise_id,
@@ -191,7 +194,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.DeviceState.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.DeviceState.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_devices_get_state(
         connection,
         enterprise_id,
@@ -257,6 +263,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.DevicesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_devices_list(
         connection,
@@ -324,7 +331,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.DeviceState.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.DeviceState.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_devices_set_state(
         connection,
         enterprise_id,
@@ -395,7 +405,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Device.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_devices_update(
         connection,
         enterprise_id,

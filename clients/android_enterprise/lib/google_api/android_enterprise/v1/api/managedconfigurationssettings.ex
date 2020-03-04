@@ -57,6 +57,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationssettings do
         ) ::
           {:ok,
            GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_managedconfigurationssettings_list(
         connection,

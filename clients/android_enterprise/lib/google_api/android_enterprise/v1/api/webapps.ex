@@ -54,7 +54,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Webapps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_webapps_delete(
         connection,
         enterprise_id,
@@ -116,7 +116,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Webapps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.WebApp.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_webapps_get(
         connection,
         enterprise_id,
@@ -173,7 +176,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Webapps do
   *   `{:error, info}` on failure
   """
   @spec androidenterprise_webapps_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.WebApp.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_webapps_insert(
         connection,
         enterprise_id,
@@ -229,6 +234,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Webapps do
   """
   @spec androidenterprise_webapps_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.WebAppsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_webapps_list(connection, enterprise_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -287,7 +293,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Webapps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.WebApp.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.WebApp.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_webapps_update(
         connection,
         enterprise_id,

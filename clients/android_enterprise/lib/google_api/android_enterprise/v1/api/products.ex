@@ -57,7 +57,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_products_approve(
         connection,
         enterprise_id,
@@ -125,6 +125,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ProductsGenerateApprovalUrlResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_products_generate_approval_url(
         connection,
@@ -192,7 +193,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.Product.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Product.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_products_get(
         connection,
         enterprise_id,
@@ -258,6 +262,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_products_get_app_restrictions_schema(
         connection,
@@ -325,6 +330,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ProductPermissions.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_products_get_permissions(
         connection,
@@ -389,6 +395,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
   """
   @spec androidenterprise_products_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ProductsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_products_list(
         connection,
@@ -456,7 +463,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Products do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidenterprise_products_unapprove(
         connection,
         enterprise_id,

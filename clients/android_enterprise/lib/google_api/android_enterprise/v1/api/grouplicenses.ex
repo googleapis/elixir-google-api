@@ -55,7 +55,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_grouplicenses_get(
         connection,
         enterprise_id,
@@ -112,6 +114,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
   """
   @spec androidenterprise_grouplicenses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_grouplicenses_list(
         connection,
