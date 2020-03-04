@@ -53,7 +53,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec tagmanager_accounts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TagManager.V2.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.Account.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_get(connection, path, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -110,7 +112,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec tagmanager_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TagManager.V2.Model.ListAccountsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.ListAccountsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -170,7 +174,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec tagmanager_accounts_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TagManager.V2.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.Account.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_update(connection, path, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -235,7 +241,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Container.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Container.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -298,7 +307,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_delete(connection, path, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -356,7 +365,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec tagmanager_accounts_containers_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TagManager.V2.Model.Container.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.Container.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_get(connection, path, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -416,6 +427,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   """
   @spec tagmanager_accounts_containers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListContainersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -482,7 +494,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Container.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Container.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_update(connection, path, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -547,7 +562,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Environment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Environment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_environments_create(
         connection,
         parent,
@@ -616,7 +634,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_environments_delete(
         connection,
         path,
@@ -684,7 +702,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Environment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Environment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_environments_get(
         connection,
         path,
@@ -754,6 +775,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListEnvironmentsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_environments_list(
         connection,
@@ -826,7 +848,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Environment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Environment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_environments_reauthorize(
         connection,
         path,
@@ -898,7 +923,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Environment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Environment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_environments_update(
         connection,
         path,
@@ -969,6 +997,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ContainerVersionHeader.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_version_headers_latest(
         connection,
@@ -1040,6 +1069,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListContainerVersionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_version_headers_list(
         connection,
@@ -1112,7 +1142,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_versions_delete(
         connection,
         path,
@@ -1182,7 +1212,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_versions_get(
         connection,
         path,
@@ -1250,7 +1283,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_versions_live(
         connection,
         parent,
@@ -1322,6 +1358,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.PublishContainerVersionResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_versions_publish(
         connection,
@@ -1394,7 +1431,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_versions_set_latest(
         connection,
         path,
@@ -1462,7 +1502,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_versions_undelete(
         connection,
         path,
@@ -1533,7 +1576,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.ContainerVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_versions_update(
         connection,
         path,
@@ -1603,7 +1649,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Workspace.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Workspace.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_create(
         connection,
         parent,
@@ -1677,6 +1726,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.CreateContainerVersionResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_create_version(
         connection,
@@ -1748,7 +1798,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_delete(
         connection,
         path,
@@ -1816,7 +1866,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Workspace.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Workspace.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_get(
         connection,
         path,
@@ -1886,6 +1939,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.GetWorkspaceStatusResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_get_status(
         connection,
@@ -1958,6 +2012,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListWorkspacesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_list(
         connection,
@@ -2029,7 +2084,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.TagManager.V2.Model.QuickPreviewResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.QuickPreviewResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_quick_preview(
         connection,
         path,
@@ -2101,7 +2158,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_resolve_conflict(
         connection,
         path,
@@ -2174,7 +2231,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.SyncWorkspaceResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_sync(
         connection,
         path,
@@ -2245,7 +2304,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Workspace.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Workspace.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_update(
         connection,
         path,
@@ -2318,6 +2380,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.CreateBuiltInVariableResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_built_in_variables_create(
         connection,
@@ -2390,7 +2453,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_built_in_variables_delete(
         connection,
         path,
@@ -2462,6 +2525,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListEnabledBuiltInVariablesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_built_in_variables_list(
         connection,
@@ -2536,6 +2600,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.RevertBuiltInVariableResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_built_in_variables_revert(
         connection,
@@ -2608,7 +2673,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_folders_create(
         connection,
         parent,
@@ -2677,7 +2745,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_folders_delete(
         connection,
         path,
@@ -2746,7 +2814,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.FolderEntities.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.FolderEntities.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_folders_entities(
         connection,
         path,
@@ -2815,7 +2886,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_folders_get(
         connection,
         path,
@@ -2885,7 +2959,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.TagManager.V2.Model.ListFoldersResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.ListFoldersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_folders_list(
         connection,
         parent,
@@ -2958,7 +3034,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_folders_move_entities_to_folder(
         connection,
         path,
@@ -3033,7 +3109,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.TagManager.V2.Model.RevertFolderResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.RevertFolderResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_folders_revert(
         connection,
         path,
@@ -3105,7 +3183,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_folders_update(
         connection,
         path,
@@ -3176,7 +3257,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Tag.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Tag.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_tags_create(
         connection,
         parent,
@@ -3245,7 +3329,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_tags_delete(
         connection,
         path,
@@ -3313,7 +3397,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Tag.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Tag.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_tags_get(
         connection,
         path,
@@ -3382,7 +3469,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.ListTagsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.ListTagsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_tags_list(
         connection,
         parent,
@@ -3453,7 +3543,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.RevertTagResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.RevertTagResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_tags_revert(
         connection,
         path,
@@ -3525,7 +3618,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Tag.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Tag.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_tags_update(
         connection,
         path,
@@ -3596,7 +3692,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.CustomTemplate.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.CustomTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_templates_create(
         connection,
         parent,
@@ -3665,7 +3764,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_templates_delete(
         connection,
         path,
@@ -3733,7 +3832,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.CustomTemplate.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.CustomTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_templates_get(
         connection,
         path,
@@ -3803,7 +3905,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.TagManager.V2.Model.ListTemplatesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.ListTemplatesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_templates_list(
         connection,
         parent,
@@ -3876,6 +3980,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.RevertTemplateResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_templates_revert(
         connection,
@@ -3948,7 +4053,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.CustomTemplate.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.CustomTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_templates_update(
         connection,
         path,
@@ -4019,7 +4127,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Trigger.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Trigger.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_triggers_create(
         connection,
         parent,
@@ -4088,7 +4199,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_triggers_delete(
         connection,
         path,
@@ -4156,7 +4267,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Trigger.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Trigger.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_triggers_get(
         connection,
         path,
@@ -4226,7 +4340,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.TagManager.V2.Model.ListTriggersResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.ListTriggersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_triggers_list(
         connection,
         parent,
@@ -4298,7 +4414,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.TagManager.V2.Model.RevertTriggerResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.RevertTriggerResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_triggers_revert(
         connection,
         path,
@@ -4370,7 +4488,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Trigger.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Trigger.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_triggers_update(
         connection,
         path,
@@ -4441,7 +4562,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Variable.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Variable.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_variables_create(
         connection,
         parent,
@@ -4510,7 +4634,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_variables_delete(
         connection,
         path,
@@ -4578,7 +4702,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Variable.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Variable.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_variables_get(
         connection,
         path,
@@ -4648,7 +4775,9 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.TagManager.V2.Model.ListVariablesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TagManager.V2.Model.ListVariablesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_variables_list(
         connection,
         parent,
@@ -4721,6 +4850,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.RevertVariableResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_variables_revert(
         connection,
@@ -4793,7 +4923,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Variable.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Variable.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_variables_update(
         connection,
         path,
@@ -4864,7 +4997,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Zone.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Zone.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_zones_create(
         connection,
         parent,
@@ -4933,7 +5069,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_zones_delete(
         connection,
         path,
@@ -5001,7 +5137,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Zone.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Zone.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_zones_get(
         connection,
         path,
@@ -5070,7 +5209,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.ListZonesResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.ListZonesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_zones_list(
         connection,
         parent,
@@ -5141,7 +5283,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.RevertZoneResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.RevertZoneResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_zones_revert(
         connection,
         path,
@@ -5213,7 +5358,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.Zone.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.Zone.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_containers_workspaces_zones_update(
         connection,
         path,
@@ -5283,7 +5431,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.UserPermission.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.UserPermission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_user_permissions_create(
         connection,
         parent,
@@ -5352,7 +5503,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tagmanager_accounts_user_permissions_delete(
         connection,
         path,
@@ -5419,7 +5570,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.UserPermission.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.UserPermission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_user_permissions_get(
         connection,
         path,
@@ -5490,6 +5644,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.TagManager.V2.Model.ListUserPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def tagmanager_accounts_user_permissions_list(
         connection,
@@ -5561,7 +5716,10 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.TagManager.V2.Model.UserPermission.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.TagManager.V2.Model.UserPermission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tagmanager_accounts_user_permissions_update(
         connection,
         path,
