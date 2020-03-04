@@ -52,7 +52,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   *   `{:error, info}` on failure
   """
   @spec storagetransfer_transfer_jobs_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def storagetransfer_transfer_jobs_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -110,7 +112,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   *   `{:error, info}` on failure
   """
   @spec storagetransfer_transfer_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def storagetransfer_transfer_jobs_get(connection, job_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -181,6 +185,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   """
   @spec storagetransfer_transfer_jobs_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.ListTransferJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def storagetransfer_transfer_jobs_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -250,7 +255,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   *   `{:error, info}` on failure
   """
   @spec storagetransfer_transfer_jobs_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def storagetransfer_transfer_jobs_patch(connection, job_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
