@@ -61,7 +61,10 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTrace.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTrace.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudtrace_projects_traces_batch_write(
         connection,
         projects_id,
@@ -141,7 +144,10 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTrace.V2.Model.Span.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTrace.V2.Model.Span.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudtrace_projects_traces_spans_create_span(
         connection,
         projects_id,
