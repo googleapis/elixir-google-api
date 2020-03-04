@@ -54,7 +54,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_pretargeting_config_delete(
         connection,
         account_id,
@@ -118,6 +118,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_pretargeting_config_get(
         connection,
@@ -183,6 +184,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_pretargeting_config_insert(
         connection,
@@ -246,6 +248,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfigList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_pretargeting_config_list(
         connection,
@@ -311,6 +314,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_pretargeting_config_patch(
         connection,
@@ -379,6 +383,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PretargetingConfig do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PretargetingConfig.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_pretargeting_config_update(
         connection,

@@ -54,7 +54,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adexchangebuyer_budget_get(
         connection,
         account_id,
@@ -117,7 +120,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adexchangebuyer_budget_patch(
         connection,
         account_id,
@@ -181,7 +187,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Budget do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Budget.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adexchangebuyer_budget_update(
         connection,
         account_id,
