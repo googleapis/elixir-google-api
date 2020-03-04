@@ -57,6 +57,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Beaconinfo do
   """
   @spec proximitybeacon_beaconinfo_getforobserved(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.GetInfoForObservedBeaconsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def proximitybeacon_beaconinfo_getforobserved(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
