@@ -53,7 +53,9 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
   *   `{:error, info}` on failure
   """
   @spec youtubereporting_media_download(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTubeReporting.V1.Model.GdataMedia.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTubeReporting.V1.Model.GdataMedia.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtubereporting_media_download(
         connection,
         resource_name,
