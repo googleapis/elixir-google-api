@@ -54,6 +54,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   """
   @spec dataflow_projects_worker_messages(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_worker_messages(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -124,7 +125,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_jobs_aggregated(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_aggregated(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -198,7 +201,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_jobs_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_create(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -275,7 +280,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_get(
         connection,
         project_id,
@@ -358,7 +366,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.JobMetrics.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.JobMetrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_get_metrics(
         connection,
         project_id,
@@ -441,7 +452,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -519,7 +532,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_update(
         connection,
         project_id,
@@ -594,6 +610,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.GetDebugConfigResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_debug_get_config(
         connection,
@@ -668,6 +685,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_debug_send_capture(
         connection,
@@ -763,6 +781,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobMessagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_messages_list(
         connection,
@@ -841,7 +860,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_work_items_lease(
         connection,
         project_id,
@@ -915,6 +936,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_jobs_work_items_report_status(
         connection,
@@ -993,6 +1015,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_worker_messages(
         connection,
@@ -1071,6 +1094,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_flex_templates_launch(
         connection,
@@ -1155,7 +1179,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_create(
         connection,
         project_id,
@@ -1239,7 +1266,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_get(
         connection,
         project_id,
@@ -1324,7 +1354,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.JobMetrics.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.JobMetrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_get_metrics(
         connection,
         project_id,
@@ -1413,7 +1446,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_list(
         connection,
         project_id,
@@ -1498,7 +1534,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_update(
         connection,
         project_id,
@@ -1578,6 +1617,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.GetDebugConfigResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_debug_get_config(
         connection,
@@ -1661,6 +1701,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_debug_send_capture(
         connection,
@@ -1762,6 +1803,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobMessagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_messages_list(
         connection,
@@ -1845,7 +1887,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_work_items_lease(
         connection,
         project_id,
@@ -1928,6 +1972,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_jobs_work_items_report_status(
         connection,
@@ -2012,7 +2057,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.ValidateResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ValidateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_sql_validate(
         connection,
         project_id,
@@ -2086,7 +2134,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_templates_create(
         connection,
         project_id,
@@ -2164,7 +2215,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_templates_get(
         connection,
         project_id,
@@ -2250,6 +2303,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.LaunchTemplateResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_locations_templates_launch(
         connection,
@@ -2320,7 +2374,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_templates_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_templates_create(
         connection,
         project_id,
@@ -2390,7 +2446,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_templates_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dataflow_projects_templates_get(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2464,6 +2522,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   """
   @spec dataflow_projects_templates_launch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.LaunchTemplateResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dataflow_projects_templates_launch(
         connection,
