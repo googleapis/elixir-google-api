@@ -54,6 +54,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
   @spec cloudprivatecatalogproducer_catalogs_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -130,6 +131,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Catalog.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_delete(
         connection,
@@ -206,6 +208,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Catalog.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_get(
         connection,
@@ -289,6 +292,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleIamV1Policy.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_get_iam_policy(
         connection,
@@ -361,6 +365,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
   @spec cloudprivatecatalogproducer_catalogs_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1ListCatalogsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -438,6 +443,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Catalog.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_patch(
         connection,
@@ -516,6 +522,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleIamV1Policy.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_set_iam_policy(
         connection,
@@ -590,6 +597,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleIamV1TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_test_iam_permissions(
         connection,
@@ -667,6 +675,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Catalog.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_undelete(
         connection,
@@ -744,6 +753,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Association.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_associations_create(
         connection,
@@ -819,6 +829,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_associations_delete(
         connection,
@@ -890,6 +901,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Association.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_associations_get(
         connection,
@@ -969,6 +981,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1ListAssociationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_associations_list(
         connection,
@@ -1047,6 +1060,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_copy(
         connection,
@@ -1124,6 +1138,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Product.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_create(
         connection,
@@ -1199,6 +1214,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_delete(
         connection,
@@ -1270,6 +1286,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Product.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_get(
         connection,
@@ -1352,6 +1369,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1ListProductsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_list(
         connection,
@@ -1437,6 +1455,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Product.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_patch(
         connection,
@@ -1519,6 +1538,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_icons_upload(
         connection,
@@ -1592,6 +1612,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_versions_create(
         connection,
@@ -1667,6 +1688,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_versions_delete(
         connection,
@@ -1738,6 +1760,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Version.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_versions_get(
         connection,
@@ -1818,6 +1841,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1ListVersionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_versions_list(
         connection,
@@ -1902,6 +1926,7 @@ defmodule GoogleApi.CloudPrivateCatalogProducer.V1beta1.Api.Catalogs do
         ) ::
           {:ok,
            GoogleApi.CloudPrivateCatalogProducer.V1beta1.Model.GoogleCloudPrivatecatalogproducerV1beta1Version.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudprivatecatalogproducer_catalogs_products_versions_patch(
         connection,
