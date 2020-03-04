@@ -50,7 +50,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.ManagedZone.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.ManagedZone.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_managed_zones_create(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -103,7 +105,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def dns_managed_zones_delete(
         connection,
         project,
@@ -162,7 +164,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.ManagedZone.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.ManagedZone.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_managed_zones_get(connection, project, managed_zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -216,7 +220,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.ManagedZonesListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.ManagedZonesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_managed_zones_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -271,7 +277,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_managed_zones_patch(
         connection,
         project,
@@ -332,7 +340,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_managed_zones_update(
         connection,
         project,

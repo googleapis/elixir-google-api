@@ -49,7 +49,9 @@ defmodule GoogleApi.DNS.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dns_projects_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Project.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Project.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_projects_get(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
