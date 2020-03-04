@@ -54,7 +54,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_players_hide(
         connection,
         application_id,
@@ -116,7 +116,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_players_unhide(
         connection,
         application_id,

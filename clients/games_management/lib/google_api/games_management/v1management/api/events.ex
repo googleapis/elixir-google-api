@@ -48,7 +48,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec games_management_events_reset(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_events_reset(connection, event_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -96,7 +96,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
   *   `{:error, info}` on failure
   """
   @spec games_management_events_reset_all(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_events_reset_all(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -145,7 +145,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_events_reset_all_for_all_players(
         connection,
         optional_params \\ [],
@@ -200,7 +200,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_events_reset_for_all_players(
         connection,
         event_id,
@@ -257,7 +257,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Events do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_events_reset_multiple_for_all_players(
         connection,
         optional_params \\ [],
