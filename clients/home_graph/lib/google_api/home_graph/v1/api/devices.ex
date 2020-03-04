@@ -55,7 +55,9 @@ defmodule GoogleApi.HomeGraph.V1.Api.Devices do
   *   `{:error, info}` on failure
   """
   @spec homegraph_devices_query(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.HomeGraph.V1.Model.QueryResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.HomeGraph.V1.Model.QueryResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def homegraph_devices_query(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -126,6 +128,7 @@ defmodule GoogleApi.HomeGraph.V1.Api.Devices do
   """
   @spec homegraph_devices_report_state_and_notification(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.HomeGraph.V1.Model.ReportStateAndNotificationResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def homegraph_devices_report_state_and_notification(
         connection,
@@ -196,6 +199,7 @@ defmodule GoogleApi.HomeGraph.V1.Api.Devices do
   """
   @spec homegraph_devices_request_sync(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.HomeGraph.V1.Model.RequestSyncDevicesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def homegraph_devices_request_sync(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -257,7 +261,9 @@ defmodule GoogleApi.HomeGraph.V1.Api.Devices do
   *   `{:error, info}` on failure
   """
   @spec homegraph_devices_sync(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.HomeGraph.V1.Model.SyncResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.HomeGraph.V1.Model.SyncResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def homegraph_devices_sync(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
