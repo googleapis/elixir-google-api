@@ -73,7 +73,9 @@ defmodule GoogleApi.Jobs.V2.Api.V2 do
   *   `{:error, info}` on failure
   """
   @spec jobs_complete(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Jobs.V2.Model.CompleteQueryResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Jobs.V2.Model.CompleteQueryResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def jobs_complete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
