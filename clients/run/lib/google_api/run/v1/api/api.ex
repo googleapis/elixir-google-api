@@ -54,7 +54,9 @@ defmodule GoogleApi.Run.V1.Api.Api do
   *   `{:error, info}` on failure
   """
   @spec run_api_v1_namespaces_secrets_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Run.V1.Model.Secret.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Run.V1.Model.Secret.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def run_api_v1_namespaces_secrets_create(
         connection,
         namespaces_id,
@@ -124,7 +126,10 @@ defmodule GoogleApi.Run.V1.Api.Api do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Secret.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Secret.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def run_api_v1_namespaces_secrets_get(
         connection,
         namespaces_id,
@@ -203,7 +208,10 @@ defmodule GoogleApi.Run.V1.Api.Api do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Run.V1.Model.Secret.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Run.V1.Model.Secret.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def run_api_v1_namespaces_secrets_replace_secret(
         connection,
         namespaces_id,
