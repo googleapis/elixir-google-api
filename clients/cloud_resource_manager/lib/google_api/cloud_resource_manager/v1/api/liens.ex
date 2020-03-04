@@ -58,7 +58,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_liens_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V1.Model.Lien.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V1.Model.Lien.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_liens_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -118,7 +120,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_liens_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_liens_delete(connection, liens_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -180,7 +184,9 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_liens_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V1.Model.Lien.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V1.Model.Lien.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudresourcemanager_liens_get(connection, liens_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -245,6 +251,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   """
   @spec cloudresourcemanager_liens_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V1.Model.ListLiensResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudresourcemanager_liens_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
