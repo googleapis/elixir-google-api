@@ -68,6 +68,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.VideoIntelligence.V1.Model.GoogleProtobuf_Empty.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def videointelligence_projects_locations_operations_cancel(
         connection,
@@ -142,6 +143,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.VideoIntelligence.V1.Model.GoogleProtobuf_Empty.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def videointelligence_projects_locations_operations_delete(
         connection,
@@ -214,6 +216,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def videointelligence_projects_locations_operations_get(
         connection,
@@ -296,6 +299,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunning_ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def videointelligence_projects_locations_operations_list(
         connection,
