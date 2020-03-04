@@ -54,7 +54,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_commit(
         connection,
         package_name,
@@ -116,7 +119,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_delete(
         connection,
         package_name,
@@ -178,7 +181,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_get(
         connection,
         package_name,
@@ -235,7 +241,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   *   `{:error, info}` on failure
   """
   @spec androidpublisher_edits_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_insert(connection, package_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -291,7 +299,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppEdit.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_validate(
         connection,
         package_name,
@@ -356,6 +367,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ApksAddExternallyHostedResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_addexternallyhosted(
         connection,
@@ -426,6 +438,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ApksListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_list(
         connection,
@@ -488,7 +501,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Apk.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Apk.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_upload(
         connection,
         package_name,
@@ -556,7 +572,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Apk.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Apk.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_upload_iodata(
         connection,
         package_name,
@@ -629,7 +648,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_upload_resumable(
         connection,
         package_name,
@@ -702,7 +721,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Apk.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Apk.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_apks_upload_simple(
         connection,
         package_name,
@@ -775,6 +797,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.BundlesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_bundles_list(
         connection,
@@ -840,7 +863,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Bundle.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Bundle.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_bundles_upload(
         connection,
         package_name,
@@ -910,7 +936,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Bundle.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Bundle.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_bundles_upload_iodata(
         connection,
         package_name,
@@ -985,7 +1014,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_bundles_upload_resumable(
         connection,
         package_name,
@@ -1060,7 +1089,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Bundle.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Bundle.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_bundles_upload_simple(
         connection,
         package_name,
@@ -1138,6 +1170,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_deobfuscationfiles_upload(
         connection,
@@ -1221,6 +1254,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_deobfuscationfiles_upload_iodata(
         connection,
@@ -1304,7 +1338,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_deobfuscationfiles_upload_resumable(
         connection,
         package_name,
@@ -1387,6 +1421,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_deobfuscationfiles_upload_simple(
         connection,
@@ -1464,7 +1499,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_details_get(
         connection,
         package_name,
@@ -1527,7 +1565,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_details_patch(
         connection,
         package_name,
@@ -1591,7 +1632,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.AppDetails.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_details_update(
         connection,
         package_name,
@@ -1659,7 +1703,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_expansionfiles_get(
         connection,
         package_name,
@@ -1734,7 +1780,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_expansionfiles_patch(
         connection,
         package_name,
@@ -1810,7 +1858,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_expansionfiles_update(
         connection,
         package_name,
@@ -1886,6 +1936,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_expansionfiles_upload(
         connection,
@@ -1969,6 +2020,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_expansionfiles_upload_iodata(
         connection,
@@ -2052,7 +2104,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_expansionfiles_upload_resumable(
         connection,
         package_name,
@@ -2135,6 +2187,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_expansionfiles_upload_simple(
         connection,
@@ -2218,7 +2271,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_images_delete(
         connection,
         package_name,
@@ -2295,6 +2348,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ImagesDeleteAllResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_images_deleteall(
         connection,
@@ -2372,6 +2426,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ImagesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_images_list(
         connection,
@@ -2449,6 +2504,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_images_upload(
         connection,
@@ -2532,6 +2588,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_images_upload_iodata(
         connection,
@@ -2615,7 +2672,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_images_upload_resumable(
         connection,
         package_name,
@@ -2698,6 +2755,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_images_upload_simple(
         connection,
@@ -2777,7 +2835,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_delete(
         connection,
         package_name,
@@ -2844,7 +2902,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_deleteall(
         connection,
         package_name,
@@ -2908,7 +2966,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Listing.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Listing.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_get(
         connection,
         package_name,
@@ -2977,6 +3038,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ListingsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_list(
         connection,
@@ -3044,7 +3106,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Listing.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Listing.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_patch(
         connection,
         package_name,
@@ -3115,7 +3180,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Listing.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Listing.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_listings_update(
         connection,
         package_name,
@@ -3185,7 +3253,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Testers.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Testers.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_testers_get(
         connection,
         package_name,
@@ -3255,7 +3326,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Testers.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Testers.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_testers_patch(
         connection,
         package_name,
@@ -3326,7 +3400,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Testers.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Testers.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_testers_update(
         connection,
         package_name,
@@ -3396,7 +3473,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_tracks_get(
         connection,
         package_name,
@@ -3465,6 +3545,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.TracksListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_edits_tracks_list(
         connection,
@@ -3532,7 +3613,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_tracks_patch(
         connection,
         package_name,
@@ -3603,7 +3687,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.Track.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_edits_tracks_update(
         connection,
         package_name,

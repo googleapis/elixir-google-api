@@ -54,7 +54,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def androidpublisher_inappproducts_delete(
         connection,
         package_name,
@@ -116,7 +116,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_inappproducts_get(
         connection,
         package_name,
@@ -178,7 +181,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_inappproducts_insert(
         connection,
         package_name,
@@ -238,6 +244,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   """
   @spec androidpublisher_inappproducts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InappproductsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidpublisher_inappproducts_list(
         connection,
@@ -305,7 +312,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_inappproducts_patch(
         connection,
         package_name,
@@ -371,7 +381,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidpublisher_inappproducts_update(
         connection,
         package_name,
