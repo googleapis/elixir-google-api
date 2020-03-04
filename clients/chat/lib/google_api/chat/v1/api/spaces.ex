@@ -54,7 +54,9 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   *   `{:error, info}` on failure
   """
   @spec chat_spaces_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Space.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Chat.V1.Model.Space.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def chat_spaces_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,7 +116,9 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   *   `{:error, info}` on failure
   """
   @spec chat_spaces_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.ListSpacesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Chat.V1.Model.ListSpacesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def chat_spaces_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -174,7 +178,9 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   *   `{:error, info}` on failure
   """
   @spec chat_spaces_members_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Membership.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Chat.V1.Model.Membership.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def chat_spaces_members_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -238,7 +244,9 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   *   `{:error, info}` on failure
   """
   @spec chat_spaces_members_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.ListMembershipsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Chat.V1.Model.ListMembershipsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def chat_spaces_members_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -308,7 +316,9 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   *   `{:error, info}` on failure
   """
   @spec chat_spaces_messages_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Chat.V1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def chat_spaces_messages_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -370,7 +380,9 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   *   `{:error, info}` on failure
   """
   @spec chat_spaces_messages_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Chat.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def chat_spaces_messages_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -430,7 +442,9 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   *   `{:error, info}` on failure
   """
   @spec chat_spaces_messages_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Chat.V1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def chat_spaces_messages_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -496,7 +510,9 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   *   `{:error, info}` on failure
   """
   @spec chat_spaces_messages_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Chat.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Chat.V1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def chat_spaces_messages_update(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
