@@ -54,7 +54,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec datastore_projects_allocate_ids(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Datastore.V1.Model.AllocateIdsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Datastore.V1.Model.AllocateIdsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datastore_projects_allocate_ids(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,6 +116,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   """
   @spec datastore_projects_begin_transaction(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.BeginTransactionResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_begin_transaction(
         connection,
@@ -179,7 +182,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec datastore_projects_commit(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Datastore.V1.Model.CommitResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Datastore.V1.Model.CommitResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datastore_projects_commit(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -246,6 +251,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   """
   @spec datastore_projects_export(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_export(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -312,6 +318,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   """
   @spec datastore_projects_import(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_import(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -373,7 +380,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec datastore_projects_lookup(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Datastore.V1.Model.LookupResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Datastore.V1.Model.LookupResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datastore_projects_lookup(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -433,7 +442,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec datastore_projects_reserve_ids(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Datastore.V1.Model.ReserveIdsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Datastore.V1.Model.ReserveIdsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datastore_projects_reserve_ids(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -492,7 +503,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec datastore_projects_rollback(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Datastore.V1.Model.RollbackResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Datastore.V1.Model.RollbackResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datastore_projects_rollback(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -551,7 +564,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec datastore_projects_run_query(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Datastore.V1.Model.RunQueryResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Datastore.V1.Model.RunQueryResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datastore_projects_run_query(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -623,6 +638,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   """
   @spec datastore_projects_indexes_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_indexes_create(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -700,6 +716,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_indexes_delete(
         connection,
@@ -774,6 +791,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_indexes_get(
         connection,
@@ -847,6 +865,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   """
   @spec datastore_projects_indexes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1ListIndexesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_indexes_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -918,7 +937,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec datastore_projects_operations_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Datastore.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Datastore.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datastore_projects_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -978,7 +999,9 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec datastore_projects_operations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Datastore.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Datastore.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def datastore_projects_operations_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1038,6 +1061,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   """
   @spec datastore_projects_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -1110,6 +1134,7 @@ defmodule GoogleApi.Datastore.V1.Api.Projects do
   """
   @spec datastore_projects_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Datastore.V1.Model.GoogleLongrunningListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def datastore_projects_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
