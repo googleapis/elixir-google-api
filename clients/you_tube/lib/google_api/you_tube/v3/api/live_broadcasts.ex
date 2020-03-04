@@ -63,7 +63,10 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_live_broadcasts_bind(connection, id, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -136,7 +139,10 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_live_broadcasts_control(connection, id, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -198,7 +204,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   *   `{:error, info}` on failure
   """
   @spec youtube_live_broadcasts_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_live_broadcasts_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -259,7 +265,9 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   *   `{:error, info}` on failure
   """
   @spec youtube_live_broadcasts_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_live_broadcasts_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -325,6 +333,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   """
   @spec youtube_live_broadcasts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcastListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def youtube_live_broadcasts_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -397,7 +406,10 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_live_broadcasts_transition(
         connection,
         broadcast_status,
@@ -469,7 +481,9 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   *   `{:error, info}` on failure
   """
   @spec youtube_live_broadcasts_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.LiveBroadcast.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_live_broadcasts_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

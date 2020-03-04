@@ -52,7 +52,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:error, info}` on failure
   """
   @spec youtube_captions_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_captions_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -108,7 +108,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:error, info}` on failure
   """
   @spec youtube_captions_download(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_captions_download(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -169,7 +169,9 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:error, info}` on failure
   """
   @spec youtube_captions_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_captions_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -238,7 +240,10 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_captions_insert_iodata(
         connection,
         part,
@@ -314,7 +319,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_captions_insert_resumable(
         connection,
         part,
@@ -390,7 +395,10 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_captions_insert_simple(
         connection,
         part,
@@ -458,7 +466,9 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:error, info}` on failure
   """
   @spec youtube_captions_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.CaptionListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.CaptionListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_captions_list(connection, part, video_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -518,7 +528,9 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:error, info}` on failure
   """
   @spec youtube_captions_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_captions_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -587,7 +599,10 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_captions_update_iodata(
         connection,
         part,
@@ -663,7 +678,7 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_captions_update_resumable(
         connection,
         part,
@@ -739,7 +754,10 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_captions_update_simple(
         connection,
         part,

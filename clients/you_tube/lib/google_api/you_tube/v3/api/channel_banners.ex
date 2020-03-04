@@ -56,7 +56,9 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelBanners do
   *   `{:error, info}` on failure
   """
   @spec youtube_channel_banners_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.ChannelBannerResource.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.ChannelBannerResource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_channel_banners_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -122,7 +124,10 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelBanners do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.ChannelBannerResource.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.ChannelBannerResource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_channel_banners_insert_iodata(
         connection,
         upload_type,
@@ -194,7 +199,7 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelBanners do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_channel_banners_insert_resumable(
         connection,
         upload_type,
@@ -266,7 +271,10 @@ defmodule GoogleApi.YouTube.V3.Api.ChannelBanners do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.ChannelBannerResource.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.ChannelBannerResource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_channel_banners_insert_simple(
         connection,
         upload_type,

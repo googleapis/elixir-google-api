@@ -49,7 +49,9 @@ defmodule GoogleApi.YouTube.V3.Api.I18nRegions do
   *   `{:error, info}` on failure
   """
   @spec youtube_i18n_regions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.I18nRegionListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.I18nRegionListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_i18n_regions_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

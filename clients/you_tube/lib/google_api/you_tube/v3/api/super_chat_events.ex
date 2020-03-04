@@ -54,6 +54,7 @@ defmodule GoogleApi.YouTube.V3.Api.SuperChatEvents do
   """
   @spec youtube_super_chat_events_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.SuperChatEventListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def youtube_super_chat_events_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

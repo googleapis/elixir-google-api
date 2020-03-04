@@ -48,7 +48,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
   *   `{:error, info}` on failure
   """
   @spec youtube_live_chat_messages_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_live_chat_messages_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -97,7 +97,9 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
   *   `{:error, info}` on failure
   """
   @spec youtube_live_chat_messages_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.LiveChatMessage.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.LiveChatMessage.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_live_chat_messages_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -160,6 +162,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
           keyword()
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def youtube_live_chat_messages_list(
         connection,

@@ -51,7 +51,7 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   *   `{:error, info}` on failure
   """
   @spec youtube_playlist_items_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_playlist_items_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -104,7 +104,9 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   *   `{:error, info}` on failure
   """
   @spec youtube_playlist_items_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.PlaylistItem.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.PlaylistItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_playlist_items_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -164,7 +166,9 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   *   `{:error, info}` on failure
   """
   @spec youtube_playlist_items_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.PlaylistItemListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.PlaylistItemListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_playlist_items_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -224,7 +228,9 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   *   `{:error, info}` on failure
   """
   @spec youtube_playlist_items_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.PlaylistItem.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.PlaylistItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_playlist_items_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
