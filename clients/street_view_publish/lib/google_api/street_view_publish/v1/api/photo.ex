@@ -70,7 +70,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   *   `{:error, info}` on failure
   """
   @spec streetviewpublish_photo_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StreetViewPublish.V1.Model.Photo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StreetViewPublish.V1.Model.Photo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -132,7 +134,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   *   `{:error, info}` on failure
   """
   @spec streetviewpublish_photo_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StreetViewPublish.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StreetViewPublish.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_delete(connection, photo_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -206,7 +210,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   *   `{:error, info}` on failure
   """
   @spec streetviewpublish_photo_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StreetViewPublish.V1.Model.Photo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StreetViewPublish.V1.Model.Photo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_get(connection, photo_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -284,7 +290,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   *   `{:error, info}` on failure
   """
   @spec streetviewpublish_photo_start_upload(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StreetViewPublish.V1.Model.UploadRef.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StreetViewPublish.V1.Model.UploadRef.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_start_upload(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -383,7 +391,9 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photo do
   *   `{:error, info}` on failure
   """
   @spec streetviewpublish_photo_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StreetViewPublish.V1.Model.Photo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StreetViewPublish.V1.Model.Photo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def streetviewpublish_photo_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
