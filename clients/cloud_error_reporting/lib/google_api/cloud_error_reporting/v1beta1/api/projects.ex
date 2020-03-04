@@ -63,6 +63,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_delete_events(
         connection,
@@ -148,6 +149,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_events_list(
         connection,
@@ -239,6 +241,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_events_report(
         connection,
@@ -336,6 +339,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_group_stats_list(
         connection,
@@ -426,6 +430,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_groups_get(
         connection,
@@ -503,6 +508,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def clouderrorreporting_projects_groups_update(
         connection,
