@@ -63,7 +63,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   *   `{:error, info}` on failure
   """
   @spec classroom_user_profiles_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.UserProfile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.UserProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_user_profiles_get(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -154,7 +156,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardian_invitations_create(
         connection,
         student_id,
@@ -236,7 +241,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardian_invitations_get(
         connection,
         student_id,
@@ -344,6 +352,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           keyword()
         ) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListGuardianInvitationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardian_invitations_list(
         connection,
@@ -445,7 +454,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardian_invitations_patch(
         connection,
         student_id,
@@ -538,7 +550,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardians_delete(
         connection,
         student_id,
@@ -626,7 +641,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Guardian.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Guardian.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardians_get(
         connection,
         student_id,
@@ -735,7 +753,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Classroom.V1.Model.ListGuardiansResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.ListGuardiansResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_user_profiles_guardians_list(
         connection,
         student_id,

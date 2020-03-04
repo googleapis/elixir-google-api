@@ -65,7 +65,9 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   *   `{:error, info}` on failure
   """
   @spec classroom_invitations_accept(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_invitations_accept(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -133,7 +135,9 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   *   `{:error, info}` on failure
   """
   @spec classroom_invitations_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Invitation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Invitation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_invitations_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -195,7 +199,9 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   *   `{:error, info}` on failure
   """
   @spec classroom_invitations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_invitations_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -258,7 +264,9 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   *   `{:error, info}` on failure
   """
   @spec classroom_invitations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Invitation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Invitation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def classroom_invitations_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -341,6 +349,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
   """
   @spec classroom_invitations_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListInvitationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def classroom_invitations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
