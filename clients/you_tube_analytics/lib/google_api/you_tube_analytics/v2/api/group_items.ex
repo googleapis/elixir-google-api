@@ -64,7 +64,9 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.GroupItems do
   *   `{:error, info}` on failure
   """
   @spec youtube_analytics_group_items_delete(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTubeAnalytics.V2.Model.EmptyResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTubeAnalytics.V2.Model.EmptyResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_analytics_group_items_delete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -132,7 +134,9 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.GroupItems do
   *   `{:error, info}` on failure
   """
   @spec youtube_analytics_group_items_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTubeAnalytics.V2.Model.GroupItem.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTubeAnalytics.V2.Model.GroupItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_analytics_group_items_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -202,6 +206,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.GroupItems do
   """
   @spec youtube_analytics_group_items_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeAnalytics.V2.Model.ListGroupItemsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def youtube_analytics_group_items_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
