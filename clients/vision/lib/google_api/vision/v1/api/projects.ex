@@ -71,6 +71,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   """
   @spec vision_projects_files_annotate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Vision.V1.Model.BatchAnnotateFilesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def vision_projects_files_annotate(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -150,7 +151,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_files_async_batch_annotate(
         connection,
         parent,
@@ -226,6 +230,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   """
   @spec vision_projects_images_annotate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Vision.V1.Model.BatchAnnotateImagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def vision_projects_images_annotate(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -308,7 +313,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_images_async_batch_annotate(
         connection,
         parent,
@@ -395,6 +403,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Vision.V1.Model.BatchAnnotateFilesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def vision_projects_locations_files_annotate(
         connection,
@@ -479,7 +488,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_files_async_batch_annotate(
         connection,
         parent,
@@ -560,6 +572,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Vision.V1.Model.BatchAnnotateImagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def vision_projects_locations_images_annotate(
         connection,
@@ -647,7 +660,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_images_async_batch_annotate(
         connection,
         parent,
@@ -716,7 +732,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_operations_get(
         connection,
         name,
@@ -793,7 +812,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_product_sets_add_product(
         connection,
         name,
@@ -872,7 +894,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.ProductSet.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.ProductSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_product_sets_create(
         connection,
         parent,
@@ -946,7 +971,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_product_sets_delete(
         connection,
         name,
@@ -1019,7 +1047,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.ProductSet.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.ProductSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_product_sets_get(
         connection,
         name,
@@ -1098,7 +1129,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_product_sets_import(
         connection,
         parent,
@@ -1175,7 +1209,9 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Vision.V1.Model.ListProductSetsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vision.V1.Model.ListProductSetsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_product_sets_list(
         connection,
         parent,
@@ -1260,7 +1296,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.ProductSet.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.ProductSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_product_sets_patch(
         connection,
         name,
@@ -1332,7 +1371,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_product_sets_remove_product(
         connection,
         name,
@@ -1412,6 +1454,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Vision.V1.Model.ListProductsInProductSetResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def vision_projects_locations_product_sets_products_list(
         connection,
@@ -1497,7 +1540,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Product.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Product.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_create(
         connection,
         parent,
@@ -1572,7 +1618,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_delete(
         connection,
         name,
@@ -1645,7 +1694,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Product.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Product.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1715,7 +1767,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.ListProductsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.ListProductsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_list(
         connection,
         parent,
@@ -1808,7 +1863,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Product.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Product.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_patch(
         connection,
         name,
@@ -1902,7 +1960,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_purge(
         connection,
         parent,
@@ -1995,7 +2056,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.ReferenceImage.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.ReferenceImage.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_reference_images_create(
         connection,
         parent,
@@ -2073,7 +2137,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_reference_images_delete(
         connection,
         name,
@@ -2147,7 +2214,10 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Vision.V1.Model.ReferenceImage.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Vision.V1.Model.ReferenceImage.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_reference_images_get(
         connection,
         name,
@@ -2229,6 +2299,7 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Vision.V1.Model.ListReferenceImagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def vision_projects_locations_products_reference_images_list(
         connection,
@@ -2295,7 +2366,9 @@ defmodule GoogleApi.Vision.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec vision_projects_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vision.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vision.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def vision_projects_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
