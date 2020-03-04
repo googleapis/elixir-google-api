@@ -57,7 +57,9 @@ defmodule GoogleApi.FCM.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec fcm_projects_messages_send(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.FCM.V1.Model.Message.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.FCM.V1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def fcm_projects_messages_send(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
