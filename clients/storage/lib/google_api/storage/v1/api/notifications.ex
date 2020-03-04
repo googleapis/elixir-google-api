@@ -56,7 +56,7 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def storage_notifications_delete(
         connection,
         bucket,
@@ -122,7 +122,10 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Notification.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.Notification.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def storage_notifications_get(
         connection,
         bucket,
@@ -183,7 +186,9 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
   *   `{:error, info}` on failure
   """
   @spec storage_notifications_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Notification.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.Notification.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def storage_notifications_insert(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -237,7 +242,9 @@ defmodule GoogleApi.Storage.V1.Api.Notifications do
   *   `{:error, info}` on failure
   """
   @spec storage_notifications_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Notifications.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.Notifications.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def storage_notifications_list(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
