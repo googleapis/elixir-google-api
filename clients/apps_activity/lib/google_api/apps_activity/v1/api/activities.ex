@@ -56,6 +56,7 @@ defmodule GoogleApi.AppsActivity.V1.Api.Activities do
   """
   @spec appsactivity_activities_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AppsActivity.V1.Model.ListActivitiesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def appsactivity_activities_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
