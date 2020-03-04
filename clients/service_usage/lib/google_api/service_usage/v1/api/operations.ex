@@ -62,7 +62,9 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec serviceusage_operations_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceUsage.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceUsage.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def serviceusage_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -123,7 +125,9 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec serviceusage_operations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceUsage.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceUsage.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def serviceusage_operations_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -182,7 +186,9 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec serviceusage_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceUsage.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceUsage.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def serviceusage_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -252,6 +258,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Operations do
   """
   @spec serviceusage_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceUsage.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def serviceusage_operations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
