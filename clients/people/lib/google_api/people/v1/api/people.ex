@@ -52,7 +52,9 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_create_contact(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.Person.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_people_create_contact(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -108,7 +110,9 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_delete_contact(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_people_delete_contact(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -199,6 +203,7 @@ defmodule GoogleApi.People.V1.Api.People do
   """
   @spec people_people_delete_contact_photo(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.DeleteContactPhotoResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def people_people_delete_contact_photo(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -302,7 +307,9 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.Person.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_people_get(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -409,7 +416,9 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_get_batch_get(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.GetPeopleResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.GetPeopleResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_people_get_batch_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -506,7 +515,9 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_update_contact(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.Person.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_people_update_contact(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -567,6 +578,7 @@ defmodule GoogleApi.People.V1.Api.People do
   """
   @spec people_people_update_contact_photo(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.UpdateContactPhotoResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def people_people_update_contact_photo(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -675,7 +687,9 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_connections_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.ListConnectionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.ListConnectionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_people_connections_list(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
