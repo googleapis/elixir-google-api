@@ -68,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetHttpsProxyAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_target_https_proxies_aggregated_list(
         connection,
@@ -139,7 +140,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_https_proxies_delete(
         connection,
         project,
@@ -202,7 +206,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetHttpsProxy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetHttpsProxy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_https_proxies_get(
         connection,
         project,
@@ -264,7 +271,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   *   `{:error, info}` on failure
   """
   @spec compute_target_https_proxies_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_https_proxies_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -329,7 +338,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
   *   `{:error, info}` on failure
   """
   @spec compute_target_https_proxies_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.TargetHttpsProxyList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TargetHttpsProxyList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_https_proxies_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -394,7 +405,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_https_proxies_set_quic_override(
         connection,
         project,
@@ -464,7 +478,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_https_proxies_set_ssl_certificates(
         connection,
         project,
@@ -534,7 +551,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_https_proxies_set_ssl_policy(
         connection,
         project,
@@ -604,7 +624,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpsProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_https_proxies_set_url_map(
         connection,
         project,

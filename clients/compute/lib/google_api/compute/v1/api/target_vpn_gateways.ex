@@ -68,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetVpnGatewayAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_target_vpn_gateways_aggregated_list(
         connection,
@@ -141,7 +142,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_vpn_gateways_delete(
         connection,
         project,
@@ -208,7 +212,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetVpnGateway.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetVpnGateway.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_vpn_gateways_get(
         connection,
         project,
@@ -278,7 +285,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_vpn_gateways_insert(
         connection,
         project,
@@ -356,7 +366,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetVpnGateways do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetVpnGatewayList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetVpnGatewayList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_vpn_gateways_list(
         connection,
         project,

@@ -68,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxyAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_target_http_proxies_aggregated_list(
         connection,
@@ -139,7 +140,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_http_proxies_delete(
         connection,
         project,
@@ -202,7 +206,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_http_proxies_get(
         connection,
         project,
@@ -264,7 +271,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   *   `{:error, info}` on failure
   """
   @spec compute_target_http_proxies_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_http_proxies_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -329,7 +338,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
   *   `{:error, info}` on failure
   """
   @spec compute_target_http_proxies_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxyList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxyList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_http_proxies_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -394,7 +405,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetHttpProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_http_proxies_set_url_map(
         connection,
         project,

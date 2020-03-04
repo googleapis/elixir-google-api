@@ -68,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroupAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_network_endpoint_groups_aggregated_list(
         connection,
@@ -142,7 +143,10 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_network_endpoint_groups_attach_network_endpoints(
         connection,
         project,
@@ -218,7 +222,10 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_network_endpoint_groups_delete(
         connection,
         project,
@@ -291,7 +298,10 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_network_endpoint_groups_detach_network_endpoints(
         connection,
         project,
@@ -362,7 +372,10 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroup.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_network_endpoint_groups_get(
         connection,
         project,
@@ -432,7 +445,10 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_network_endpoint_groups_insert(
         connection,
         project,
@@ -511,7 +527,9 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroupList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroupList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_network_endpoint_groups_list(
         connection,
         project,
@@ -596,6 +614,7 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroupsListNetworkEndpoints.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_network_endpoint_groups_list_network_endpoints(
         connection,
@@ -674,7 +693,9 @@ defmodule GoogleApi.Compute.V1.Api.NetworkEndpointGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_network_endpoint_groups_test_iam_permissions(
         connection,
         project,

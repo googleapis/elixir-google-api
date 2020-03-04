@@ -56,7 +56,9 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   *   `{:error, info}` on failure
   """
   @spec compute_snapshots_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_snapshots_delete(connection, project, snapshot, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -108,7 +110,9 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   *   `{:error, info}` on failure
   """
   @spec compute_snapshots_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Snapshot.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_snapshots_get(connection, project, snapshot, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -164,7 +168,10 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_snapshots_get_iam_policy(
         connection,
         project,
@@ -234,7 +241,9 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
   *   `{:error, info}` on failure
   """
   @spec compute_snapshots_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.SnapshotList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.SnapshotList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_snapshots_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -294,7 +303,10 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_snapshots_set_iam_policy(
         connection,
         project,
@@ -358,7 +370,10 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_snapshots_set_labels(
         connection,
         project,
@@ -423,7 +438,9 @@ defmodule GoogleApi.Compute.V1.Api.Snapshots do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_snapshots_test_iam_permissions(
         connection,
         project,

@@ -57,7 +57,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_url_maps_delete(
         connection,
         project,
@@ -124,7 +127,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.UrlMap.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.UrlMap.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_url_maps_get(
         connection,
         project,
@@ -190,7 +196,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_url_maps_insert(
         connection,
         project,
@@ -268,7 +277,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.UrlMapList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.UrlMapList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_url_maps_list(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -332,7 +344,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_url_maps_patch(
         connection,
         project,
@@ -402,7 +417,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_url_maps_update(
         connection,
         project,
@@ -472,7 +490,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionUrlMaps do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.UrlMapsValidateResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.UrlMapsValidateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_url_maps_validate(
         connection,
         project,

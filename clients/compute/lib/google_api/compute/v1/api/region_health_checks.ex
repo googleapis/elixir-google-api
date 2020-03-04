@@ -61,7 +61,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_health_checks_delete(
         connection,
         project,
@@ -128,7 +131,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.HealthCheck.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.HealthCheck.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_health_checks_get(
         connection,
         project,
@@ -198,7 +204,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_health_checks_insert(
         connection,
         project,
@@ -276,7 +285,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.HealthCheckList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.HealthCheckList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_health_checks_list(
         connection,
         project,
@@ -350,7 +362,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_health_checks_patch(
         connection,
         project,
@@ -424,7 +439,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionHealthChecks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_health_checks_update(
         connection,
         project,

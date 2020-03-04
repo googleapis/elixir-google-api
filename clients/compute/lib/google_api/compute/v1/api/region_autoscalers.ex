@@ -61,7 +61,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_autoscalers_delete(
         connection,
         project,
@@ -128,7 +131,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Autoscaler.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Autoscaler.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_autoscalers_get(
         connection,
         project,
@@ -198,7 +204,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_autoscalers_insert(
         connection,
         project,
@@ -276,7 +285,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.RegionAutoscalerList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.RegionAutoscalerList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_autoscalers_list(
         connection,
         project,
@@ -349,7 +361,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_autoscalers_patch(
         connection,
         project,
@@ -421,7 +436,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionAutoscalers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_autoscalers_update(
         connection,
         project,

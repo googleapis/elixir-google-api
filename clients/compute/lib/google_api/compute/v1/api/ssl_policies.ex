@@ -59,7 +59,10 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_ssl_policies_delete(
         connection,
         project,
@@ -117,7 +120,9 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_ssl_policies_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.SslPolicy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.SslPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_ssl_policies_get(connection, project, ssl_policy, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -173,7 +178,9 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_ssl_policies_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_ssl_policies_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -238,7 +245,9 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_ssl_policies_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.SslPoliciesList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.SslPoliciesList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_ssl_policies_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -311,6 +320,7 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.SslPoliciesListAvailableFeaturesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_ssl_policies_list_available_features(
         connection,
@@ -383,7 +393,10 @@ defmodule GoogleApi.Compute.V1.Api.SslPolicies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_ssl_policies_patch(
         connection,
         project,

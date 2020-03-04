@@ -62,7 +62,9 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   *   `{:error, info}` on failure
   """
   @spec compute_url_maps_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.UrlMapsAggregatedList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.UrlMapsAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_url_maps_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -121,7 +123,9 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   *   `{:error, info}` on failure
   """
   @spec compute_url_maps_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_url_maps_delete(connection, project, url_map, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -173,7 +177,9 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   *   `{:error, info}` on failure
   """
   @spec compute_url_maps_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.UrlMap.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.UrlMap.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_url_maps_get(connection, project, url_map, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -229,7 +235,9 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   *   `{:error, info}` on failure
   """
   @spec compute_url_maps_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_url_maps_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -292,7 +300,10 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_url_maps_invalidate_cache(
         connection,
         project,
@@ -364,7 +375,9 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   *   `{:error, info}` on failure
   """
   @spec compute_url_maps_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.UrlMapList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.UrlMapList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_url_maps_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -424,7 +437,9 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   *   `{:error, info}` on failure
   """
   @spec compute_url_maps_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_url_maps_patch(connection, project, url_map, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -483,7 +498,9 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
   *   `{:error, info}` on failure
   """
   @spec compute_url_maps_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_url_maps_update(connection, project, url_map, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -543,7 +560,9 @@ defmodule GoogleApi.Compute.V1.Api.UrlMaps do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.UrlMapsValidateResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.UrlMapsValidateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_url_maps_validate(connection, project, url_map, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

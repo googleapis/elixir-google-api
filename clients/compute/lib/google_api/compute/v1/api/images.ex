@@ -54,7 +54,9 @@ defmodule GoogleApi.Compute.V1.Api.Images do
   *   `{:error, info}` on failure
   """
   @spec compute_images_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_delete(connection, project, image, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -114,7 +116,9 @@ defmodule GoogleApi.Compute.V1.Api.Images do
   *   `{:error, info}` on failure
   """
   @spec compute_images_deprecate(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_deprecate(connection, project, image, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -167,7 +171,9 @@ defmodule GoogleApi.Compute.V1.Api.Images do
   *   `{:error, info}` on failure
   """
   @spec compute_images_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Image.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Image.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_get(connection, project, image, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -223,7 +229,10 @@ defmodule GoogleApi.Compute.V1.Api.Images do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Image.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Image.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_get_from_family(
         connection,
         project,
@@ -285,7 +294,10 @@ defmodule GoogleApi.Compute.V1.Api.Images do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_get_iam_policy(
         connection,
         project,
@@ -348,7 +360,9 @@ defmodule GoogleApi.Compute.V1.Api.Images do
   *   `{:error, info}` on failure
   """
   @spec compute_images_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -414,7 +428,9 @@ defmodule GoogleApi.Compute.V1.Api.Images do
   *   `{:error, info}` on failure
   """
   @spec compute_images_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.ImageList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.ImageList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -474,7 +490,10 @@ defmodule GoogleApi.Compute.V1.Api.Images do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_set_iam_policy(
         connection,
         project,
@@ -538,7 +557,10 @@ defmodule GoogleApi.Compute.V1.Api.Images do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_set_labels(connection, project, resource, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -597,7 +619,9 @@ defmodule GoogleApi.Compute.V1.Api.Images do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_images_test_iam_permissions(
         connection,
         project,

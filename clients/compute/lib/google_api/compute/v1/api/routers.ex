@@ -62,7 +62,9 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   *   `{:error, info}` on failure
   """
   @spec compute_routers_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.RouterAggregatedList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.RouterAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routers_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -128,7 +130,10 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routers_delete(
         connection,
         project,
@@ -195,7 +200,10 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Router.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Router.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routers_get(connection, project, region, router, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -270,6 +278,7 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.VmEndpointNatMappingsList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_routers_get_nat_mapping_info(
         connection,
@@ -340,7 +349,10 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.RouterStatusResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.RouterStatusResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routers_get_router_status(
         connection,
         project,
@@ -405,7 +417,9 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   *   `{:error, info}` on failure
   """
   @spec compute_routers_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routers_insert(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -472,7 +486,9 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
   *   `{:error, info}` on failure
   """
   @spec compute_routers_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.RouterList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.RouterList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routers_list(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -540,7 +556,10 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routers_patch(
         connection,
         project,
@@ -610,7 +629,9 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.RoutersPreviewResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.RoutersPreviewResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routers_preview(
         connection,
         project,
@@ -683,7 +704,10 @@ defmodule GoogleApi.Compute.V1.Api.Routers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routers_update(
         connection,
         project,
