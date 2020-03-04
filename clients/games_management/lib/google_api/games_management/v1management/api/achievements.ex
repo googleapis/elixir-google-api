@@ -49,6 +49,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   """
   @spec games_management_achievements_reset(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def games_management_achievements_reset(
         connection,
@@ -105,6 +106,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
   """
   @spec games_management_achievements_reset_all(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def games_management_achievements_reset_all(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -157,7 +159,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_achievements_reset_all_for_all_players(
         connection,
         optional_params \\ [],
@@ -212,7 +214,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_achievements_reset_for_all_players(
         connection,
         achievement_id,
@@ -269,7 +271,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Achievements do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_achievements_reset_multiple_for_all_players(
         connection,
         optional_params \\ [],

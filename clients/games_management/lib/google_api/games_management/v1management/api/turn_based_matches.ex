@@ -47,7 +47,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.TurnBasedMatches do
   *   `{:error, info}` on failure
   """
   @spec games_management_turn_based_matches_reset(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_turn_based_matches_reset(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -96,7 +96,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.TurnBasedMatches do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_management_turn_based_matches_reset_for_all_players(
         connection,
         optional_params \\ [],
