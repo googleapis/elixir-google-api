@@ -48,7 +48,9 @@ defmodule GoogleApi.Analytics.V3.Api.Metadata do
   *   `{:error, info}` on failure
   """
   @spec analytics_metadata_columns_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Columns.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Columns.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def analytics_metadata_columns_list(connection, report_type, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
