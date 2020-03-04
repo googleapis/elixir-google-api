@@ -54,7 +54,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec toolresults_projects_get_settings(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ToolResults.V1beta3.Model.ProjectSettings.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.ProjectSettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_get_settings(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -120,7 +122,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ToolResults.V1beta3.Model.ProjectSettings.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.ProjectSettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_initialize_settings(
         connection,
         project_id,
@@ -190,7 +194,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.History.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.History.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_create(
         connection,
         project_id,
@@ -260,7 +267,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.History.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.History.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_get(
         connection,
         project_id,
@@ -336,6 +346,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   """
   @spec toolresults_projects_histories_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListHistoriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_list(
         connection,
@@ -415,7 +426,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.Execution.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.Execution.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_create(
         connection,
         project_id,
@@ -491,7 +505,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.Execution.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.Execution.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_get(
         connection,
         project_id,
@@ -575,6 +592,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListExecutionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_list(
         connection,
@@ -651,7 +669,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.Execution.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.Execution.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_patch(
         connection,
         project_id,
@@ -731,6 +752,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_clusters_get(
         connection,
@@ -812,6 +834,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListScreenshotClustersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_clusters_list(
         connection,
@@ -886,7 +909,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.Environment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.Environment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_environments_get(
         connection,
         project_id,
@@ -969,6 +995,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListEnvironmentsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_environments_list(
         connection,
@@ -1052,7 +1079,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_create(
         connection,
         project_id,
@@ -1134,7 +1164,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_get(
         connection,
         project_id,
@@ -1211,6 +1244,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_get_perf_metrics_summary(
         connection,
@@ -1306,6 +1340,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListStepsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_list(
         connection,
@@ -1392,7 +1427,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_patch(
         connection,
         project_id,
@@ -1480,7 +1518,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_publish_xunit_xml_files(
         connection,
         project_id,
@@ -1559,6 +1600,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_perf_metrics_summary_create(
         connection,
@@ -1640,6 +1682,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_perf_sample_series_create(
         connection,
@@ -1720,6 +1763,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_perf_sample_series_get(
         connection,
@@ -1802,6 +1846,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListPerfSampleSeriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_perf_sample_series_list(
         connection,
@@ -1885,6 +1930,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.BatchCreatePerfSamplesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_perf_sample_series_samples_batch_create(
         connection,
@@ -1971,6 +2017,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListPerfSamplesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_perf_sample_series_samples_list(
         connection,
@@ -2066,7 +2113,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ToolResults.V1beta3.Model.TestCase.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.TestCase.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_test_cases_get(
         connection,
         project_id,
@@ -2163,6 +2213,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListTestCasesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_test_cases_list(
         connection,
@@ -2260,6 +2311,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListStepThumbnailsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def toolresults_projects_histories_executions_steps_thumbnails_list(
         connection,
