@@ -59,7 +59,9 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def firebasehosting_projects_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
