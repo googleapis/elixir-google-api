@@ -48,7 +48,9 @@ defmodule GoogleApi.Analytics.V3.Api.Provisioning do
   *   `{:error, info}` on failure
   """
   @spec analytics_provisioning_create_account_ticket(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.AccountTicket.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.AccountTicket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def analytics_provisioning_create_account_ticket(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -96,7 +98,9 @@ defmodule GoogleApi.Analytics.V3.Api.Provisioning do
   *   `{:error, info}` on failure
   """
   @spec analytics_provisioning_create_account_tree(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.AccountTreeResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.AccountTreeResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def analytics_provisioning_create_account_tree(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
