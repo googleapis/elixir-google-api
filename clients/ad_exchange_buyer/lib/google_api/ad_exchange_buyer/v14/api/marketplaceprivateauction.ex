@@ -53,7 +53,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplaceprivateauction do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_marketplaceprivateauction_updateproposal(
         connection,
         private_auction_id,

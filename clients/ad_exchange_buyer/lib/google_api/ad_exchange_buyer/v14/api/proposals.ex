@@ -48,7 +48,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_proposals_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adexchangebuyer_proposals_get(connection, proposal_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -98,6 +100,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   """
   @spec adexchangebuyer_proposals_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreateOrdersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_proposals_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -157,7 +160,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adexchangebuyer_proposals_patch(
         connection,
         proposal_id,
@@ -217,6 +223,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
   """
   @spec adexchangebuyer_proposals_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.GetOrdersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_proposals_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -269,7 +276,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def adexchangebuyer_proposals_setupcomplete(
         connection,
         proposal_id,
@@ -332,7 +339,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Proposals do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Proposal.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def adexchangebuyer_proposals_update(
         connection,
         proposal_id,

@@ -60,6 +60,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PerformanceReport do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_performance_report_list(
         connection,

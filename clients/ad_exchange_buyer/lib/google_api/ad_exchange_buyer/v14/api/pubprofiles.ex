@@ -49,6 +49,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Pubprofiles do
   """
   @spec adexchangebuyer_pubprofiles_list(Tesla.Env.client(), integer(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.GetPublisherProfilesByAccountIdResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexchangebuyer_pubprofiles_list(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
