@@ -60,7 +60,9 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `{:error, info}` on failure
   """
   @spec logging_sinks_create(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_sinks_create(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -133,7 +135,10 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_sinks_delete(connection, v2_id, v2_id1, sinks_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -205,7 +210,10 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_sinks_get(connection, v2_id, v2_id1, sinks_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -272,7 +280,9 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `{:error, info}` on failure
   """
   @spec logging_sinks_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListSinksResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListSinksResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_sinks_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -351,7 +361,10 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_sinks_update(connection, v2_id, v2_id1, sinks_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

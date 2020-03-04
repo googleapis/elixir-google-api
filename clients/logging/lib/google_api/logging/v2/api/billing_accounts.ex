@@ -63,7 +63,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_buckets_get(
         connection,
         billing_accounts_id,
@@ -137,7 +140,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_create(
         connection,
         billing_accounts_id,
@@ -211,7 +217,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_delete(
         connection,
         billing_accounts_id,
@@ -286,7 +295,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_get(
         connection,
         billing_accounts_id,
@@ -362,7 +374,9 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_list(
         connection,
         billing_accounts_id,
@@ -439,7 +453,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_exclusions_patch(
         connection,
         billing_accounts_id,
@@ -518,7 +535,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.ListBucketsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.ListBucketsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_locations_buckets_list(
         connection,
         billing_accounts_id,
@@ -599,7 +619,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_locations_buckets_patch(
         connection,
         billing_accounts_id,
@@ -681,7 +704,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_logs_delete(
         connection,
         billing_accounts_id,
@@ -752,7 +778,9 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   *   `{:error, info}` on failure
   """
   @spec logging_billing_accounts_logs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_logs_list(
         connection,
         billing_accounts_id,
@@ -827,7 +855,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_create(
         connection,
         billing_accounts_id,
@@ -902,7 +933,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_delete(
         connection,
         billing_accounts_id,
@@ -977,7 +1011,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_get(
         connection,
         billing_accounts_id,
@@ -1048,7 +1085,9 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
   *   `{:error, info}` on failure
   """
   @spec logging_billing_accounts_sinks_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListSinksResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListSinksResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_list(
         connection,
         billing_accounts_id,
@@ -1129,7 +1168,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_patch(
         connection,
         billing_accounts_id,
@@ -1213,7 +1255,10 @@ defmodule GoogleApi.Logging.V2.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.LogSink.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def logging_billing_accounts_sinks_update(
         connection,
         billing_accounts_id,

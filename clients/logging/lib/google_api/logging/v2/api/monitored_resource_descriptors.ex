@@ -54,6 +54,7 @@ defmodule GoogleApi.Logging.V2.Api.MonitoredResourceDescriptors do
   """
   @spec logging_monitored_resource_descriptors_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListMonitoredResourceDescriptorsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def logging_monitored_resource_descriptors_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
