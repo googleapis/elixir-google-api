@@ -54,7 +54,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Tiers do
   *   `{:error, info}` on failure
   """
   @spec sql_tiers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.TiersListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.TiersListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def sql_tiers_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
