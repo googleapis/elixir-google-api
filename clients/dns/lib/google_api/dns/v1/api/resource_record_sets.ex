@@ -60,6 +60,7 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
           keyword()
         ) ::
           {:ok, GoogleApi.DNS.V1.Model.ResourceRecordSetsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dns_resource_record_sets_list(
         connection,

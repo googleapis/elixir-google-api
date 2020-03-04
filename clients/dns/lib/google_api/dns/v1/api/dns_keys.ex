@@ -58,7 +58,10 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DNS.V1.Model.DnsKey.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DNS.V1.Model.DnsKey.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_dns_keys_get(
         connection,
         project,
@@ -122,7 +125,9 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   *   `{:error, info}` on failure
   """
   @spec dns_dns_keys_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.DnsKeysListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.DnsKeysListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_dns_keys_list(connection, project, managed_zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

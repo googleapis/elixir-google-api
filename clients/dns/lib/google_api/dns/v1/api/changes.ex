@@ -51,7 +51,9 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   *   `{:error, info}` on failure
   """
   @spec dns_changes_create(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Change.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Change.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_changes_create(connection, project, managed_zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -112,7 +114,10 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DNS.V1.Model.Change.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DNS.V1.Model.Change.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_changes_get(
         connection,
         project,
@@ -176,7 +181,9 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   *   `{:error, info}` on failure
   """
   @spec dns_changes_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.ChangesListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.ChangesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dns_changes_list(connection, project, managed_zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
