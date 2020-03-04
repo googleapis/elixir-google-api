@@ -51,7 +51,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   *   `{:error, info}` on failure
   """
   @spec youtube_videos_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_videos_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -103,7 +103,9 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   *   `{:error, info}` on failure
   """
   @spec youtube_videos_get_rating(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.VideoGetRatingResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.VideoGetRatingResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_videos_get_rating(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -166,7 +168,9 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   *   `{:error, info}` on failure
   """
   @spec youtube_videos_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Video.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.Video.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_videos_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -243,7 +247,10 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Video.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Video.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_videos_insert_iodata(
         connection,
         part,
@@ -327,7 +334,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_videos_insert_resumable(
         connection,
         part,
@@ -411,7 +418,10 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Video.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Video.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_videos_insert_simple(
         connection,
         part,
@@ -497,7 +507,9 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   *   `{:error, info}` on failure
   """
   @spec youtube_videos_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.VideoListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.VideoListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_videos_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -558,7 +570,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   *   `{:error, info}` on failure
   """
   @spec youtube_videos_rate(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_videos_rate(connection, id, rating, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -610,7 +622,7 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   *   `{:error, info}` on failure
   """
   @spec youtube_videos_report_abuse(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_videos_report_abuse(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -667,7 +679,9 @@ defmodule GoogleApi.YouTube.V3.Api.Videos do
   *   `{:error, info}` on failure
   """
   @spec youtube_videos_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Video.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.Video.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_videos_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

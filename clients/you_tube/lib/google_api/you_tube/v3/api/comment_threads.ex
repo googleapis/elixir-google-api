@@ -49,7 +49,9 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   *   `{:error, info}` on failure
   """
   @spec youtube_comment_threads_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_comment_threads_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -119,6 +121,7 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   """
   @spec youtube_comment_threads_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.CommentThreadListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def youtube_comment_threads_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -178,7 +181,9 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   *   `{:error, info}` on failure
   """
   @spec youtube_comment_threads_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_comment_threads_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

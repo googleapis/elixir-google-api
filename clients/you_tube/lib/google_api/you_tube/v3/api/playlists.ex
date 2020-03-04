@@ -51,7 +51,7 @@ defmodule GoogleApi.YouTube.V3.Api.Playlists do
   *   `{:error, info}` on failure
   """
   @spec youtube_playlists_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def youtube_playlists_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -109,7 +109,9 @@ defmodule GoogleApi.YouTube.V3.Api.Playlists do
   *   `{:error, info}` on failure
   """
   @spec youtube_playlists_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Playlist.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.Playlist.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_playlists_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -176,7 +178,9 @@ defmodule GoogleApi.YouTube.V3.Api.Playlists do
   *   `{:error, info}` on failure
   """
   @spec youtube_playlists_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.PlaylistListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.PlaylistListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_playlists_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -238,7 +242,9 @@ defmodule GoogleApi.YouTube.V3.Api.Playlists do
   *   `{:error, info}` on failure
   """
   @spec youtube_playlists_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Playlist.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.Playlist.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def youtube_playlists_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
