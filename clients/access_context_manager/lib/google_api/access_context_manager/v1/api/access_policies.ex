@@ -56,7 +56,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   *   `{:error, info}` on failure
   """
   @spec accesscontextmanager_access_policies_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -122,7 +124,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_delete(
         connection,
         name,
@@ -192,6 +196,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.AccessPolicy.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_get(
         connection,
@@ -263,6 +268,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   """
   @spec accesscontextmanager_access_policies_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.ListAccessPoliciesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -335,7 +341,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_patch(
         connection,
         name,
@@ -412,7 +420,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_access_levels_create(
         connection,
         parent,
@@ -486,7 +496,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_access_levels_delete(
         connection,
         name,
@@ -564,7 +576,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.AccessLevel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.AccessLevel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_access_levels_get(
         connection,
         name,
@@ -644,6 +658,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.ListAccessLevelsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_access_levels_list(
         connection,
@@ -724,7 +739,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_access_levels_patch(
         connection,
         name,
@@ -808,7 +825,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_access_levels_replace_all(
         connection,
         parent,
@@ -892,7 +911,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_service_perimeters_commit(
         connection,
         parent,
@@ -968,7 +989,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_service_perimeters_create(
         connection,
         parent,
@@ -1042,7 +1065,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_service_perimeters_delete(
         connection,
         name,
@@ -1114,6 +1139,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_service_perimeters_get(
         connection,
@@ -1192,6 +1218,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.ListServicePerimetersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_service_perimeters_list(
         connection,
@@ -1271,7 +1298,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_service_perimeters_patch(
         connection,
         name,
@@ -1353,7 +1382,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def accesscontextmanager_access_policies_service_perimeters_replace_all(
         connection,
         parent,
