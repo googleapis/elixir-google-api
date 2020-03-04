@@ -48,7 +48,9 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec groups_settings_groups_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.GroupsSettings.V1.Model.Groups.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.GroupsSettings.V1.Model.Groups.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def groups_settings_groups_get(connection, group_unique_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -98,7 +100,9 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec groups_settings_groups_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.GroupsSettings.V1.Model.Groups.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.GroupsSettings.V1.Model.Groups.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def groups_settings_groups_patch(connection, group_unique_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -149,7 +153,9 @@ defmodule GoogleApi.GroupsSettings.V1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec groups_settings_groups_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.GroupsSettings.V1.Model.Groups.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.GroupsSettings.V1.Model.Groups.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def groups_settings_groups_update(
         connection,
         group_unique_id,
