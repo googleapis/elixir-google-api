@@ -53,6 +53,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.ViolatingSites do
   """
   @spec adexperiencereport_violating_sites_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExperienceReport.V1.Model.ViolatingSitesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexperiencereport_violating_sites_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
