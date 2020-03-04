@@ -61,7 +61,9 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbilling_projects_get_billing_info(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -155,7 +157,9 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbilling_projects_update_billing_info(
         connection,
         name,
