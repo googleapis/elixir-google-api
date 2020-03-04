@@ -55,7 +55,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec servicemanagement_services_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -117,7 +119,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec servicemanagement_services_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_delete(
         connection,
         service_name,
@@ -185,7 +189,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec servicemanagement_services_disable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_disable(
         connection,
         service_name,
@@ -255,7 +261,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec servicemanagement_services_enable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_enable(
         connection,
         service_name,
@@ -333,6 +341,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def servicemanagement_services_generate_config_report(
         connection,
@@ -397,7 +406,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec servicemanagement_services_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceManagement.V1.Model.ManagedService.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceManagement.V1.Model.ManagedService.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_get(connection, service_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -465,7 +476,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_get_config(
         connection,
         service_name,
@@ -537,7 +551,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_get_iam_policy(
         connection,
         resource,
@@ -618,6 +635,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   """
   @spec servicemanagement_services_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListServicesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def servicemanagement_services_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -688,7 +706,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_set_iam_policy(
         connection,
         resource,
@@ -765,6 +786,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def servicemanagement_services_test_iam_permissions(
         connection,
@@ -836,7 +858,9 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec servicemanagement_services_undelete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_undelete(
         connection,
         service_name,
@@ -911,7 +935,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_configs_create(
         connection,
         service_name,
@@ -986,7 +1013,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_configs_get(
         connection,
         service_name,
@@ -1062,6 +1092,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListServiceConfigsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def servicemanagement_services_configs_list(
         connection,
@@ -1146,7 +1177,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_configs_submit(
         connection,
         service_name,
@@ -1217,7 +1251,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_consumers_get_iam_policy(
         connection,
         resource,
@@ -1289,7 +1326,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_consumers_set_iam_policy(
         connection,
         resource,
@@ -1366,6 +1406,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def servicemanagement_services_consumers_test_iam_permissions(
         connection,
@@ -1450,7 +1491,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_rollouts_create(
         connection,
         service_name,
@@ -1520,7 +1564,10 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ServiceManagement.V1.Model.Rollout.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ServiceManagement.V1.Model.Rollout.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def servicemanagement_services_rollouts_get(
         connection,
         service_name,
@@ -1603,6 +1650,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListServiceRolloutsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def servicemanagement_services_rollouts_list(
         connection,
