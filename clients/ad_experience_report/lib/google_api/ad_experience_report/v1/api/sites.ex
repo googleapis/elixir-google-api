@@ -56,6 +56,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
   """
   @spec adexperiencereport_sites_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExperienceReport.V1.Model.SiteSummaryResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def adexperiencereport_sites_get(connection, sites_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
