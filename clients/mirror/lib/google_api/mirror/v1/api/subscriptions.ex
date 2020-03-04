@@ -48,7 +48,7 @@ defmodule GoogleApi.Mirror.V1.Api.Subscriptions do
   *   `{:error, info}` on failure
   """
   @spec mirror_subscriptions_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def mirror_subscriptions_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -97,7 +97,9 @@ defmodule GoogleApi.Mirror.V1.Api.Subscriptions do
   *   `{:error, info}` on failure
   """
   @spec mirror_subscriptions_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.Subscription.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_subscriptions_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -144,7 +146,9 @@ defmodule GoogleApi.Mirror.V1.Api.Subscriptions do
   *   `{:error, info}` on failure
   """
   @spec mirror_subscriptions_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.SubscriptionsListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.SubscriptionsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_subscriptions_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -192,7 +196,9 @@ defmodule GoogleApi.Mirror.V1.Api.Subscriptions do
   *   `{:error, info}` on failure
   """
   @spec mirror_subscriptions_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Subscription.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.Subscription.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_subscriptions_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

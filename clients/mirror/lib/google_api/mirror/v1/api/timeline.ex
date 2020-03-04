@@ -48,7 +48,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `{:error, info}` on failure
   """
   @spec mirror_timeline_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -97,7 +97,9 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `{:error, info}` on failure
   """
   @spec mirror_timeline_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -146,7 +148,9 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `{:error, info}` on failure
   """
   @spec mirror_timeline_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -202,7 +206,10 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_insert_iodata(
         connection,
         upload_type,
@@ -260,7 +267,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `{:error, info}` on failure
   """
   @spec mirror_timeline_insert_resumable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_insert_resumable(connection, upload_type, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -317,7 +324,10 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_insert_simple(
         connection,
         upload_type,
@@ -380,7 +390,9 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `{:error, info}` on failure
   """
   @spec mirror_timeline_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.TimelineListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.TimelineListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -435,7 +447,9 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `{:error, info}` on failure
   """
   @spec mirror_timeline_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_patch(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -486,7 +500,9 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `{:error, info}` on failure
   """
   @spec mirror_timeline_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -546,7 +562,10 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_update_iodata(
         connection,
         id,
@@ -613,7 +632,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_update_resumable(
         connection,
         id,
@@ -680,7 +699,10 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Mirror.V1.Model.TimelineItem.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_update_simple(
         connection,
         id,
@@ -746,7 +768,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_delete(
         connection,
         item_id,
@@ -808,7 +830,10 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_get(
         connection,
         item_id,
@@ -864,7 +889,9 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `{:error, info}` on failure
   """
   @spec mirror_timeline_attachments_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_insert(connection, item_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -923,7 +950,10 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_insert_iodata(
         connection,
         item_id,
@@ -989,7 +1019,7 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_insert_resumable(
         connection,
         item_id,
@@ -1055,7 +1085,10 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Mirror.V1.Model.Attachment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_insert_simple(
         connection,
         item_id,
@@ -1115,7 +1148,9 @@ defmodule GoogleApi.Mirror.V1.Api.Timeline do
   *   `{:error, info}` on failure
   """
   @spec mirror_timeline_attachments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.AttachmentsListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.AttachmentsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_timeline_attachments_list(connection, item_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

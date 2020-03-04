@@ -48,7 +48,9 @@ defmodule GoogleApi.Mirror.V1.Api.Locations do
   *   `{:error, info}` on failure
   """
   @spec mirror_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_locations_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -96,7 +98,9 @@ defmodule GoogleApi.Mirror.V1.Api.Locations do
   *   `{:error, info}` on failure
   """
   @spec mirror_locations_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.LocationsListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.LocationsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_locations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
