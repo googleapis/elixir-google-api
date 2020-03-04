@@ -57,6 +57,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
           keyword()
         ) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementIncrementResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def games_achievements_increment(
         connection,
@@ -119,6 +120,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   """
   @spec games_achievements_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.PlayerAchievementListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def games_achievements_list(connection, player_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -174,7 +176,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   *   `{:error, info}` on failure
   """
   @spec games_achievements_reveal(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.AchievementRevealResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.AchievementRevealResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def games_achievements_reveal(connection, achievement_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -231,6 +235,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
           keyword()
         ) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementSetStepsAtLeastResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def games_achievements_set_steps_at_least(
         connection,
@@ -290,7 +295,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   *   `{:error, info}` on failure
   """
   @spec games_achievements_unlock(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.AchievementUnlockResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.AchievementUnlockResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def games_achievements_unlock(connection, achievement_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -342,6 +349,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   """
   @spec games_achievements_update_multiple(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def games_achievements_update_multiple(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

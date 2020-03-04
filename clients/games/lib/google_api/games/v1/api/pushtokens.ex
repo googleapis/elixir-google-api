@@ -48,7 +48,7 @@ defmodule GoogleApi.Games.V1.Api.Pushtokens do
   *   `{:error, info}` on failure
   """
   @spec games_pushtokens_remove(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_pushtokens_remove(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -96,7 +96,7 @@ defmodule GoogleApi.Games.V1.Api.Pushtokens do
   *   `{:error, info}` on failure
   """
   @spec games_pushtokens_update(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def games_pushtokens_update(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
