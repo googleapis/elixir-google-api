@@ -59,7 +59,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudBuild.V1.Model.Build.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudBuild.V1.Model.Build.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_builds_cancel(
         connection,
         project_id,
@@ -129,7 +132,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudbuild_projects_builds_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_builds_create(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -196,7 +201,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudBuild.V1.Model.Build.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudBuild.V1.Model.Build.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_builds_get(
         connection,
         project_id,
@@ -266,7 +274,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudbuild_projects_builds_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudBuild.V1.Model.ListBuildsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBuild.V1.Model.ListBuildsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_builds_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -359,7 +369,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_builds_retry(
         connection,
         project_id,
@@ -427,7 +440,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudbuild_projects_triggers_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_triggers_create(
         connection,
         project_id,
@@ -498,7 +513,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudBuild.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudBuild.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_triggers_delete(
         connection,
         project_id,
@@ -570,7 +588,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_triggers_get(
         connection,
         project_id,
@@ -639,6 +660,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   """
   @spec cloudbuild_projects_triggers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.ListBuildTriggersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudbuild_projects_triggers_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -709,7 +731,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudBuild.V1.Model.BuildTrigger.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_triggers_patch(
         connection,
         project_id,
@@ -781,7 +806,10 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudbuild_projects_triggers_run(
         connection,
         project_id,
