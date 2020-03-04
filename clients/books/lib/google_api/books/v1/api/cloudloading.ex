@@ -51,7 +51,9 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
   *   `{:error, info}` on failure
   """
   @spec books_cloudloading_add_book(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.BooksCloudloadingResource.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.BooksCloudloadingResource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_cloudloading_add_book(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -102,7 +104,7 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
   *   `{:error, info}` on failure
   """
   @spec books_cloudloading_delete_book(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def books_cloudloading_delete_book(connection, volume_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -150,7 +152,9 @@ defmodule GoogleApi.Books.V1.Api.Cloudloading do
   *   `{:error, info}` on failure
   """
   @spec books_cloudloading_update_book(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.BooksCloudloadingResource.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.BooksCloudloadingResource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_cloudloading_update_book(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

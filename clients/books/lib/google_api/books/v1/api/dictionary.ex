@@ -52,7 +52,10 @@ defmodule GoogleApi.Books.V1.Api.Dictionary do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Books.V1.Model.Metadata.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Books.V1.Model.Metadata.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_dictionary_list_offline_metadata(
         connection,
         cpksver,

@@ -50,7 +50,9 @@ defmodule GoogleApi.Books.V1.Api.Notification do
   *   `{:error, info}` on failure
   """
   @spec books_notification_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Notification.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Notification.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_notification_get(connection, notification_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

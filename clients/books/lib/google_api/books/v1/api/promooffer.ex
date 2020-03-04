@@ -55,7 +55,7 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
   *   `{:error, info}` on failure
   """
   @spec books_promooffer_accept(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def books_promooffer_accept(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -116,7 +116,7 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
   *   `{:error, info}` on failure
   """
   @spec books_promooffer_dismiss(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def books_promooffer_dismiss(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -175,7 +175,9 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
   *   `{:error, info}` on failure
   """
   @spec books_promooffer_get(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Offers.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Offers.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def books_promooffer_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
