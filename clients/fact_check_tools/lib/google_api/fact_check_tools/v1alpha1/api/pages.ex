@@ -54,6 +54,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Api.Pages do
   @spec factchecktools_pages_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def factchecktools_pages_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -117,6 +118,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Api.Pages do
   """
   @spec factchecktools_pages_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.FactCheckTools.V1alpha1.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def factchecktools_pages_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -178,6 +180,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Api.Pages do
   @spec factchecktools_pages_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def factchecktools_pages_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -259,6 +262,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Api.Pages do
   @spec factchecktools_pages_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def factchecktools_pages_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -335,6 +339,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Api.Pages do
   @spec factchecktools_pages_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def factchecktools_pages_update(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

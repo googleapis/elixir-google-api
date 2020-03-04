@@ -70,6 +70,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Api.Claims do
   @spec factchecktools_claims_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def factchecktools_claims_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
