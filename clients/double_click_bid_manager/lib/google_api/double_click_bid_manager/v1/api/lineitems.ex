@@ -53,6 +53,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Lineitems do
           keyword()
         ) ::
           {:ok, GoogleApi.DoubleClickBidManager.V1.Model.DownloadLineItemsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def doubleclickbidmanager_lineitems_downloadlineitems(
         connection,
@@ -108,6 +109,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Lineitems do
   """
   @spec doubleclickbidmanager_lineitems_uploadlineitems(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickBidManager.V1.Model.UploadLineItemsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def doubleclickbidmanager_lineitems_uploadlineitems(
         connection,
