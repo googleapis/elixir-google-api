@@ -59,7 +59,9 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudtrace_projects_patch_traces(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudTrace.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudTrace.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudtrace_projects_patch_traces(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -125,7 +127,10 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTrace.V1.Model.Trace.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTrace.V1.Model.Trace.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudtrace_projects_traces_get(
         connection,
         project_id,
@@ -245,7 +250,9 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudtrace_projects_traces_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudTrace.V1.Model.ListTracesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudTrace.V1.Model.ListTracesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudtrace_projects_traces_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
