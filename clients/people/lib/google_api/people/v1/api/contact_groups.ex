@@ -56,6 +56,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   """
   @spec people_contact_groups_batch_get(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.BatchGetContactGroupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def people_contact_groups_batch_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -115,7 +116,9 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   *   `{:error, info}` on failure
   """
   @spec people_contact_groups_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.ContactGroup.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.ContactGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_contact_groups_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -173,7 +176,9 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   *   `{:error, info}` on failure
   """
   @spec people_contact_groups_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_contact_groups_delete(
         connection,
         contact_groups_id,
@@ -239,7 +244,9 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   *   `{:error, info}` on failure
   """
   @spec people_contact_groups_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.ContactGroup.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.ContactGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_contact_groups_get(connection, contact_groups_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -304,7 +311,9 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   *   `{:error, info}` on failure
   """
   @spec people_contact_groups_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.ListContactGroupsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.ListContactGroupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_contact_groups_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -365,7 +374,9 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   *   `{:error, info}` on failure
   """
   @spec people_contact_groups_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.ContactGroup.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.ContactGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def people_contact_groups_update(
         connection,
         contact_groups_id,
@@ -434,6 +445,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   """
   @spec people_contact_groups_members_modify(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.ModifyContactGroupMembersResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def people_contact_groups_members_modify(
         connection,
