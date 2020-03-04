@@ -56,7 +56,10 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudScheduler.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudScheduler.V1.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -122,6 +125,7 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudScheduler.V1.Model.ListLocationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -190,7 +194,10 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_jobs_create(
         connection,
         parent,
@@ -258,7 +265,10 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudScheduler.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudScheduler.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_jobs_delete(
         connection,
         name,
@@ -325,7 +335,10 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_jobs_get(
         connection,
         name,
@@ -406,7 +419,9 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudScheduler.V1.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudScheduler.V1.Model.ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_jobs_list(
         connection,
         parent,
@@ -500,7 +515,10 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_jobs_patch(
         connection,
         name,
@@ -576,7 +594,10 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_jobs_pause(
         connection,
         name,
@@ -650,7 +671,10 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_jobs_resume(
         connection,
         name,
@@ -722,7 +746,10 @@ defmodule GoogleApi.CloudScheduler.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudScheduler.V1.Model.Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def cloudscheduler_projects_locations_jobs_run(
         connection,
         name,
