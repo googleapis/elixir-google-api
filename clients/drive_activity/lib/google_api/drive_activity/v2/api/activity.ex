@@ -53,6 +53,7 @@ defmodule GoogleApi.DriveActivity.V2.Api.Activity do
   """
   @spec driveactivity_activity_query(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DriveActivity.V2.Model.QueryDriveActivityResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def driveactivity_activity_query(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
