@@ -54,7 +54,9 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   *   `{:error, info}` on failure
   """
   @spec compute_routes_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routes_delete(connection, project, route, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -106,7 +108,9 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   *   `{:error, info}` on failure
   """
   @spec compute_routes_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Route.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Route.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routes_get(connection, project, route, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -162,7 +166,9 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   *   `{:error, info}` on failure
   """
   @spec compute_routes_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routes_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -227,7 +233,9 @@ defmodule GoogleApi.Compute.V1.Api.Routes do
   *   `{:error, info}` on failure
   """
   @spec compute_routes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.RouteList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.RouteList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_routes_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

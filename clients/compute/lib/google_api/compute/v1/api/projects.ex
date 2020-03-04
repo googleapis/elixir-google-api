@@ -53,7 +53,9 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec compute_projects_disable_xpn_host(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_disable_xpn_host(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -113,7 +115,10 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_disable_xpn_resource(
         connection,
         project,
@@ -174,7 +179,9 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec compute_projects_enable_xpn_host(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_enable_xpn_host(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -230,7 +237,9 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec compute_projects_enable_xpn_resource(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_enable_xpn_resource(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -281,7 +290,9 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec compute_projects_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Project.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Project.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_get(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -330,7 +341,9 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec compute_projects_get_xpn_host(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Project.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Project.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_get_xpn_host(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -393,7 +406,9 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec compute_projects_get_xpn_resources(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.ProjectsGetXpnResources.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.ProjectsGetXpnResources.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_get_xpn_resources(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -461,7 +476,9 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec compute_projects_list_xpn_hosts(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.XpnHostList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.XpnHostList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_list_xpn_hosts(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -521,7 +538,9 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec compute_projects_move_disk(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_move_disk(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -578,7 +597,9 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec compute_projects_move_instance(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_move_instance(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -639,7 +660,10 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_set_common_instance_metadata(
         connection,
         project,
@@ -705,7 +729,10 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_set_default_network_tier(
         connection,
         project,
@@ -771,7 +798,10 @@ defmodule GoogleApi.Compute.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_projects_set_usage_export_bucket(
         connection,
         project,

@@ -62,7 +62,9 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
   *   `{:error, info}` on failure
   """
   @spec compute_disk_types_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.DiskTypeAggregatedList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.DiskTypeAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_disk_types_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -123,7 +125,10 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.DiskType.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.DiskType.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_disk_types_get(
         connection,
         project,
@@ -196,7 +201,9 @@ defmodule GoogleApi.Compute.V1.Api.DiskTypes do
   *   `{:error, info}` on failure
   """
   @spec compute_disk_types_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.DiskTypeList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.DiskTypeList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_disk_types_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

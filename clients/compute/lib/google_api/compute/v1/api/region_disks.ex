@@ -62,7 +62,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_add_resource_policies(
         connection,
         project,
@@ -136,7 +139,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_create_snapshot(
         connection,
         project,
@@ -209,7 +215,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_delete(
         connection,
         project,
@@ -276,7 +285,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Disk.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Disk.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_get(
         connection,
         project,
@@ -347,7 +359,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_insert(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -420,7 +435,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.DiskList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.DiskList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_list(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -488,7 +506,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_remove_resource_policies(
         connection,
         project,
@@ -562,7 +583,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_resize(
         connection,
         project,
@@ -636,7 +660,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_set_labels(
         connection,
         project,
@@ -706,7 +733,9 @@ defmodule GoogleApi.Compute.V1.Api.RegionDisks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disks_test_iam_permissions(
         connection,
         project,

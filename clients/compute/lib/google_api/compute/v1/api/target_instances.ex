@@ -68,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetInstanceAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_target_instances_aggregated_list(
         connection,
@@ -141,7 +142,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_instances_delete(
         connection,
         project,
@@ -208,7 +212,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetInstance.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetInstance.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_instances_get(
         connection,
         project,
@@ -278,7 +285,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_instances_insert(
         connection,
         project,
@@ -356,7 +366,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetInstanceList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetInstanceList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_instances_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

@@ -54,7 +54,9 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
   *   `{:error, info}` on failure
   """
   @spec compute_firewalls_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_firewalls_delete(connection, project, firewall, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -106,7 +108,9 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
   *   `{:error, info}` on failure
   """
   @spec compute_firewalls_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Firewall.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Firewall.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_firewalls_get(connection, project, firewall, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -162,7 +166,9 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
   *   `{:error, info}` on failure
   """
   @spec compute_firewalls_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_firewalls_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -227,7 +233,9 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
   *   `{:error, info}` on failure
   """
   @spec compute_firewalls_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.FirewallList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.FirewallList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_firewalls_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -287,7 +295,9 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
   *   `{:error, info}` on failure
   """
   @spec compute_firewalls_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_firewalls_patch(connection, project, firewall, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -346,7 +356,9 @@ defmodule GoogleApi.Compute.V1.Api.Firewalls do
   *   `{:error, info}` on failure
   """
   @spec compute_firewalls_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_firewalls_update(connection, project, firewall, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

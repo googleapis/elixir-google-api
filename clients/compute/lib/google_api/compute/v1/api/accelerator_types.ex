@@ -68,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.AcceleratorTypeAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_accelerator_types_aggregated_list(
         connection,
@@ -136,7 +137,10 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.AcceleratorType.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.AcceleratorType.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_accelerator_types_get(
         connection,
         project,
@@ -214,7 +218,10 @@ defmodule GoogleApi.Compute.V1.Api.AcceleratorTypes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.AcceleratorTypeList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.AcceleratorTypeList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_accelerator_types_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

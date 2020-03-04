@@ -66,7 +66,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_abandon_instances(
         connection,
         project,
@@ -138,7 +141,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_apply_updates_to_instances(
         connection,
         project,
@@ -214,7 +220,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_create_instances(
         connection,
         project,
@@ -290,7 +299,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_delete(
         connection,
         project,
@@ -370,7 +382,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_delete_instances(
         connection,
         project,
@@ -441,7 +456,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.InstanceGroupManager.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.InstanceGroupManager.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_get(
         connection,
         project,
@@ -516,7 +534,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_insert(
         connection,
         project,
@@ -596,6 +617,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.RegionInstanceGroupManagerList.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_list(
         connection,
@@ -682,6 +704,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           keyword()
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.RegionInstanceGroupManagersListInstancesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_list_managed_instances(
         connection,
@@ -764,7 +787,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_patch(
         connection,
         project,
@@ -845,7 +871,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_recreate_instances(
         connection,
         project,
@@ -927,7 +956,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           integer(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_resize(
         connection,
         project,
@@ -1005,7 +1037,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_set_instance_template(
         connection,
         project,
@@ -1082,7 +1117,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_instance_group_managers_set_target_pools(
         connection,
         project,

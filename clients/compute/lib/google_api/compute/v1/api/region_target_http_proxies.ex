@@ -61,7 +61,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_target_http_proxies_delete(
         connection,
         project,
@@ -128,7 +131,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_target_http_proxies_get(
         connection,
         project,
@@ -198,7 +204,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_target_http_proxies_insert(
         connection,
         project,
@@ -276,7 +285,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxyList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetHttpProxyList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_target_http_proxies_list(
         connection,
         project,
@@ -350,7 +362,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionTargetHttpProxies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_target_http_proxies_set_url_map(
         connection,
         project,

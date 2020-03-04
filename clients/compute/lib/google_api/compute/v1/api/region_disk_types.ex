@@ -56,7 +56,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDiskTypes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.DiskType.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.DiskType.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disk_types_get(
         connection,
         project,
@@ -134,7 +137,10 @@ defmodule GoogleApi.Compute.V1.Api.RegionDiskTypes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.RegionDiskTypeList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.RegionDiskTypeList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_region_disk_types_list(
         connection,
         project,

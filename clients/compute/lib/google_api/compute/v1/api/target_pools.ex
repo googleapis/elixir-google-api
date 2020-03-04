@@ -62,7 +62,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_add_health_check(
         connection,
         project,
@@ -136,7 +139,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_add_instance(
         connection,
         project,
@@ -210,7 +216,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
   *   `{:error, info}` on failure
   """
   @spec compute_target_pools_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.TargetPoolAggregatedList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TargetPoolAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -276,7 +284,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_delete(
         connection,
         project,
@@ -343,7 +354,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetPool.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetPool.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_get(
         connection,
         project,
@@ -411,7 +425,9 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.TargetPoolInstanceHealth.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TargetPoolInstanceHealth.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_get_health(
         connection,
         project,
@@ -482,7 +498,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_insert(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -554,7 +573,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.TargetPoolList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.TargetPoolList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_list(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -622,7 +644,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_remove_health_check(
         connection,
         project,
@@ -696,7 +721,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_remove_instance(
         connection,
         project,
@@ -771,7 +799,10 @@ defmodule GoogleApi.Compute.V1.Api.TargetPools do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_target_pools_set_backup(
         connection,
         project,

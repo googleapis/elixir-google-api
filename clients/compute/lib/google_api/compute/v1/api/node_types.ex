@@ -62,7 +62,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
   *   `{:error, info}` on failure
   """
   @spec compute_node_types_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.NodeTypeAggregatedList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.NodeTypeAggregatedList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_node_types_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -123,7 +125,10 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.NodeType.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.NodeType.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_node_types_get(
         connection,
         project,
@@ -196,7 +201,9 @@ defmodule GoogleApi.Compute.V1.Api.NodeTypes do
   *   `{:error, info}` on failure
   """
   @spec compute_node_types_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.NodeTypeList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.NodeTypeList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def compute_node_types_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
