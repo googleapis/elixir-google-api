@@ -54,6 +54,7 @@ defmodule GoogleApi.IAM.V1.Api.Permissions do
   """
   @spec iam_permissions_query_testable_permissions(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.QueryTestablePermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def iam_permissions_query_testable_permissions(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
