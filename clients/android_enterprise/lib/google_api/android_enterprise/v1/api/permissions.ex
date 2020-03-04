@@ -49,7 +49,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec androidenterprise_permissions_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Permission.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Permission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def androidenterprise_permissions_get(
         connection,
         permission_id,

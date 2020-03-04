@@ -56,6 +56,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenseusers do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.GroupLicenseUsersListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def androidenterprise_grouplicenseusers_list(
         connection,
