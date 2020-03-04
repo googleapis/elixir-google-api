@@ -54,6 +54,7 @@ defmodule GoogleApi.Monitoring.V3.Api.UptimeCheckIps do
   """
   @spec monitoring_uptime_check_ips_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListUptimeCheckIpsResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def monitoring_uptime_check_ips_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

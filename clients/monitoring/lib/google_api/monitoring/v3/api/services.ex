@@ -62,7 +62,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def monitoring_services_create(connection, v3_id, v3_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -132,7 +135,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def monitoring_services_delete(
         connection,
         v3_id,
@@ -208,7 +214,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def monitoring_services_get(
         connection,
         v3_id,
@@ -289,7 +298,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec monitoring_services_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ListServicesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.ListServicesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def monitoring_services_list(connection, v3_id, v3_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -362,7 +373,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def monitoring_services_patch(
         connection,
         v3_id,
@@ -443,7 +457,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def monitoring_services_service_level_objectives_create(
         connection,
         v3_id,
@@ -523,7 +539,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def monitoring_services_service_level_objectives_delete(
         connection,
         v3_id,
@@ -609,7 +628,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def monitoring_services_service_level_objectives_get(
         connection,
         v3_id,
@@ -698,6 +719,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListServiceLevelObjectivesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def monitoring_services_service_level_objectives_list(
         connection,
@@ -785,7 +807,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def monitoring_services_service_level_objectives_patch(
         connection,
         v3_id,
