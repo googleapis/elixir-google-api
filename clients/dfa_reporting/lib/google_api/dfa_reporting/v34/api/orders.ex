@@ -56,7 +56,10 @@ defmodule GoogleApi.DFAReporting.V34.Api.Orders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V34.Model.Order.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V34.Model.Order.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_orders_get(
         connection,
         profile_id,
@@ -125,7 +128,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.Orders do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_orders_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.OrdersListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.OrdersListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_orders_list(
         connection,
         profile_id,

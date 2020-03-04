@@ -49,6 +49,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Browsers do
   """
   @spec dfareporting_browsers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.BrowsersListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_browsers_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

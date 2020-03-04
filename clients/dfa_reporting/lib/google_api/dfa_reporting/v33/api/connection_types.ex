@@ -54,7 +54,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.ConnectionTypes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.ConnectionType.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.ConnectionType.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_connection_types_get(
         connection,
         profile_id,
@@ -111,6 +114,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.ConnectionTypes do
   """
   @spec dfareporting_connection_types_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.ConnectionTypesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_connection_types_list(
         connection,

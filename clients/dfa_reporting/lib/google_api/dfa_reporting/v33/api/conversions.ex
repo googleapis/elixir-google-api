@@ -50,6 +50,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Conversions do
   """
   @spec dfareporting_conversions_batchinsert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.ConversionsBatchInsertResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_conversions_batchinsert(
         connection,
@@ -109,6 +110,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Conversions do
   """
   @spec dfareporting_conversions_batchupdate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.ConversionsBatchUpdateResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_conversions_batchupdate(
         connection,

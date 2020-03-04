@@ -49,6 +49,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Languages do
   """
   @spec dfareporting_languages_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.LanguagesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_languages_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

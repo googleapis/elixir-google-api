@@ -56,7 +56,10 @@ defmodule GoogleApi.DFAReporting.V34.Api.OrderDocuments do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V34.Model.OrderDocument.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V34.Model.OrderDocument.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_order_documents_get(
         connection,
         profile_id,
@@ -134,6 +137,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.OrderDocuments do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.OrderDocumentsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_order_documents_list(
         connection,

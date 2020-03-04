@@ -54,7 +54,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeGroups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creative_groups_get(
         connection,
         profile_id,
@@ -111,7 +114,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeGroups do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_creative_groups_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creative_groups_insert(
         connection,
         profile_id,
@@ -175,6 +180,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeGroups do
   """
   @spec dfareporting_creative_groups_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CreativeGroupsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_creative_groups_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -241,7 +247,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeGroups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creative_groups_patch(
         connection,
         profile_id,
@@ -299,7 +308,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeGroups do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_creative_groups_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.CreativeGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_creative_groups_update(
         connection,
         profile_id,

@@ -54,7 +54,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.RemarketingLists do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.RemarketingList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.RemarketingList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_remarketing_lists_get(
         connection,
         profile_id,
@@ -115,7 +118,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.RemarketingLists do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.RemarketingList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.RemarketingList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_remarketing_lists_insert(
         connection,
         profile_id,
@@ -185,6 +191,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.RemarketingLists do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.RemarketingListsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_remarketing_lists_list(
         connection,
@@ -257,7 +264,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.RemarketingLists do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.RemarketingList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.RemarketingList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_remarketing_lists_patch(
         connection,
         profile_id,
@@ -319,7 +329,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.RemarketingLists do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.RemarketingList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.RemarketingList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_remarketing_lists_update(
         connection,
         profile_id,

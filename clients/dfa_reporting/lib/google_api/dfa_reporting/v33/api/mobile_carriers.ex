@@ -54,7 +54,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.MobileCarriers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.MobileCarrier.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.MobileCarrier.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_mobile_carriers_get(
         connection,
         profile_id,
@@ -111,6 +114,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.MobileCarriers do
   """
   @spec dfareporting_mobile_carriers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.MobileCarriersListResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_mobile_carriers_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

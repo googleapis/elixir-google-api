@@ -57,6 +57,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CreativeAssetMetadata.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_creative_assets_insert(
         connection,
@@ -133,6 +134,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CreativeAssetMetadata.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_creative_assets_insert_iodata(
         connection,
@@ -209,7 +211,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def dfareporting_creative_assets_insert_resumable(
         connection,
         profile_id,
@@ -285,6 +287,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.CreativeAssets do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.CreativeAssetMetadata.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def dfareporting_creative_assets_insert_simple(
         connection,

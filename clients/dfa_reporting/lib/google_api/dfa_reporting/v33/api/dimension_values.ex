@@ -51,7 +51,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.DimensionValues do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_dimension_values_query(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.DimensionValueList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.DimensionValueList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def dfareporting_dimension_values_query(
         connection,
         profile_id,
