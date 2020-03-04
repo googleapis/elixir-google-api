@@ -54,7 +54,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.V1beta1 do
   *   `{:error, info}` on failure
   """
   @spec alertcenter_get_settings(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.Settings.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AlertCenter.V1beta1.Model.Settings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def alertcenter_get_settings(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -113,7 +115,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.V1beta1 do
   *   `{:error, info}` on failure
   """
   @spec alertcenter_update_settings(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AlertCenter.V1beta1.Model.Settings.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AlertCenter.V1beta1.Model.Settings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def alertcenter_update_settings(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
