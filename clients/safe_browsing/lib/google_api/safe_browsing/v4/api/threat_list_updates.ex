@@ -54,6 +54,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatListUpdates do
   """
   @spec safebrowsing_threat_list_updates_fetch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def safebrowsing_threat_list_updates_fetch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
