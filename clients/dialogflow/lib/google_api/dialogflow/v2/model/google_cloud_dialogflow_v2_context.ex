@@ -26,10 +26,15 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context do
       immediately. Contexts expire automatically after 20 minutes if there
       are no matching queries.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the context. Format:
-      `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`.
+      `projects/<Project ID>/agent/sessions/<Session ID>/contexts/<Context ID>`,
+      or `projects/<Project ID>/agent/environments/<Environment ID>/users/<User
+      ID>/sessions/<Session ID>/contexts/<Context ID>`.
 
       The `Context ID` is always converted to lowercase, may only contain
-      characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
+      characters in a-zA-Z0-9_-% and may be at most 250 bytes long.
+
+      If `Environment ID` is not specified, we assume default 'draft'
+      environment. If `User ID` is not specified, we assume default '-' user.
 
       The following context names are reserved for internal use by Dialogflow.
       You should not use these contexts or create contexts with these names:
