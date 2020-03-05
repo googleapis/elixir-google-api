@@ -33,6 +33,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.NotificationConfig do
       to a project. cloud-healthcare@system.gserviceaccount.com must have
       publisher permissions on the given Cloud Pub/Sub topic. Not having adequate
       permissions causes the calls that send notifications to fail.
+
+      If a notification can't be published to Cloud Pub/Sub, errors are logged to
+      Stackdriver (see [Viewing
+      logs](/healthcare/docs/how-tos/stackdriver-logging)). If the number of
+      errors exceeds a certain rate, some aren't submitted.
   """
 
   use GoogleApi.Gax.ModelBase
