@@ -60,6 +60,23 @@ defmodule GoogleApi.ServiceManagement.V1.Model.AuthProvider do
        service account).
 
       Example: https://www.googleapis.com/oauth2/v1/certs
+  *   `jwtLocations` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.JwtLocation.t)`, *default:* `nil`) - Defines the locations to extract the JWT.
+
+      JWT locations can be either from HTTP headers or URL query parameters.
+      The rule is that the first match wins. The checking order is: checking
+      all headers first, then URL query parameters.
+
+      If not specified,  default to use following 3 locations:
+         1) Authorization: Bearer
+         2) x-goog-iap-jwt-assertion
+         3) access_token query parameter
+
+      Default locations can be specified as followings:
+         jwt_locations:
+         - header: Authorization
+           value_prefix: "Bearer "
+         - header: x-goog-iap-jwt-assertion
+         - query: access_token
   """
 
   use GoogleApi.Gax.ModelBase
@@ -69,7 +86,8 @@ defmodule GoogleApi.ServiceManagement.V1.Model.AuthProvider do
           :authorizationUrl => String.t(),
           :id => String.t(),
           :issuer => String.t(),
-          :jwksUri => String.t()
+          :jwksUri => String.t(),
+          :jwtLocations => list(GoogleApi.ServiceManagement.V1.Model.JwtLocation.t())
         }
 
   field(:audiences)
@@ -77,6 +95,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.AuthProvider do
   field(:id)
   field(:issuer)
   field(:jwksUri)
+  field(:jwtLocations, as: GoogleApi.ServiceManagement.V1.Model.JwtLocation, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.AuthProvider do
