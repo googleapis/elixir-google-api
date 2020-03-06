@@ -97,6 +97,9 @@ defmodule GoogleApi.CloudTasks.V2.Model.Queue do
         explicitly set on the task and were created by the App Engine SDK. See
         [App Engine
         documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+  *   `stackdriverLoggingConfig` (*type:* `GoogleApi.CloudTasks.V2.Model.StackdriverLoggingConfig.t`, *default:* `nil`) - Configuration options for writing logs to
+      [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+      field is unset, then no logs are written.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the queue.
 
       `state` can only be changed by called
@@ -114,6 +117,7 @@ defmodule GoogleApi.CloudTasks.V2.Model.Queue do
           :purgeTime => DateTime.t(),
           :rateLimits => GoogleApi.CloudTasks.V2.Model.RateLimits.t(),
           :retryConfig => GoogleApi.CloudTasks.V2.Model.RetryConfig.t(),
+          :stackdriverLoggingConfig => GoogleApi.CloudTasks.V2.Model.StackdriverLoggingConfig.t(),
           :state => String.t()
         }
 
@@ -122,6 +126,7 @@ defmodule GoogleApi.CloudTasks.V2.Model.Queue do
   field(:purgeTime, as: DateTime)
   field(:rateLimits, as: GoogleApi.CloudTasks.V2.Model.RateLimits)
   field(:retryConfig, as: GoogleApi.CloudTasks.V2.Model.RetryConfig)
+  field(:stackdriverLoggingConfig, as: GoogleApi.CloudTasks.V2.Model.StackdriverLoggingConfig)
   field(:state)
 end
 
