@@ -2720,6 +2720,76 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   end
 
   @doc """
+  Finish a running hybrid DlpJob. Triggers the finalization steps and running
+  of any enabled actions that have not yet run.
+  Early access feature is in a pre-release state and might change or have
+  limited support. For more information, see
+  https://cloud.google.com/products#product-launch-stages.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the DlpJob resource to be cancelled.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FinishDlpJobRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DLP.V2.Model.GoogleProtobufEmpty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dlp_projects_locations_dlp_jobs_finish(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_locations_dlp_jobs_finish(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+name}:finish", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DLP.V2.Model.GoogleProtobufEmpty{}])
+  end
+
+  @doc """
   Gets the latest state of a long-running DlpJob.
   See https://cloud.google.com/dlp/docs/inspecting-storage and
   https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -2778,6 +2848,85 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob{}])
+  end
+
+  @doc """
+  Inspect hybrid content and store findings to a job.
+  To review the findings inspect the job. Inspection will occur
+  asynchronously.
+  Early access feature is in a pre-release state and might change or have
+  limited support. For more information, see
+  https://cloud.google.com/products#product-launch-stages.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Resource name of the job to execute a hybrid inspect on, for example
+      `projects/dlp-test-project/dlpJob/53234423`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectDlpJobRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dlp_projects_locations_dlp_jobs_hybrid_inspect(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_locations_dlp_jobs_hybrid_inspect(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+name}:hybridInspect", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectResponse{}]
+    )
   end
 
   @doc """
@@ -3679,6 +3828,85 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger{}])
+  end
+
+  @doc """
+  Inspect hybrid content and store findings to a trigger. The inspection
+  will be processed asynchronously. To review the findings monitor the
+  jobs within the trigger.
+  Early access feature is in a pre-release state and might change or have
+  limited support. For more information, see
+  https://cloud.google.com/products#product-launch-stages.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Resource name of the trigger to execute a hybrid inspect on, for example
+      `projects/dlp-test-project/jobTriggers/53234423`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectJobTriggerRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dlp_projects_locations_job_triggers_hybrid_inspect(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def dlp_projects_locations_job_triggers_hybrid_inspect(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+name}:hybridInspect", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectResponse{}]
+    )
   end
 
   @doc """

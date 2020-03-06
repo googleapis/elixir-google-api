@@ -24,25 +24,32 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the StoredInfoType (max 256 characters).
+  *   `dictionary` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t`, *default:* `nil`) - Store dictionary-based CustomInfoType.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the StoredInfoType (max 256 characters).
   *   `largeCustomDictionary` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig.t`, *default:* `nil`) - StoredInfoType where findings are defined by a dictionary of phrases.
+  *   `regex` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t`, *default:* `nil`) - Store regular expression-based StoredInfoType.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :description => String.t(),
+          :dictionary => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary.t(),
           :displayName => String.t(),
           :largeCustomDictionary =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig.t()
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig.t(),
+          :regex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t()
         }
 
   field(:description)
+  field(:dictionary, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Dictionary)
   field(:displayName)
 
   field(:largeCustomDictionary,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2LargeCustomDictionaryConfig
   )
+
+  field(:regex, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoTypeConfig do

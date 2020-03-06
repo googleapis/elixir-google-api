@@ -21,15 +21,21 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Trigger do
 
   ## Attributes
 
+  *   `manual` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Manual.t`, *default:* `nil`) - For use with hybrid jobs. Jobs must be manually created and finished.
+      Early access feature is in a pre-release state and might change or have
+      limited support. For more information, see
+      https://cloud.google.com/products#product-launch-stages.
   *   `schedule` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Schedule.t`, *default:* `nil`) - Create a job on a repeating basis based on the elapse of time.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :manual => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Manual.t(),
           :schedule => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Schedule.t()
         }
 
+  field(:manual, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Manual)
   field(:schedule, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Schedule)
 end
 
