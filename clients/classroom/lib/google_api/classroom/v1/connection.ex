@@ -48,12 +48,6 @@ defmodule GoogleApi.Classroom.V1.Connection do
       # View course work and grades for students in the Google Classroom classes you teach or administer
       "https://www.googleapis.com/auth/classroom.coursework.students.readonly",
 
-      # See, edit, and create classwork materials in Google Classroom
-      "https://www.googleapis.com/auth/classroom.courseworkmaterials",
-
-      # See all classwork materials for your Google Classroom classes
-      "https://www.googleapis.com/auth/classroom.courseworkmaterials.readonly",
-
       # View your Google Classroom guardians
       "https://www.googleapis.com/auth/classroom.guardianlinks.me.readonly",
 
