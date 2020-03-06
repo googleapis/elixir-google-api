@@ -29,7 +29,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   *   `frameLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation.t)`, *default:* `nil`) - Label annotations on frame level.
       There is exactly one element for each unique label.
   *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in
-      [Google Cloud Storage](https://cloud.google.com/storage/).
+      [Cloud Storage](https://cloud.google.com/storage/).
   *   `logoRecognitionAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_LogoRecognitionAnnotation.t)`, *default:* `nil`) - Annotations for list of logos detected, tracked and recognized in video.
   *   `objectAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation.t)`, *default:* `nil`) - Annotations for list of objects detected and tracked in video.
   *   `personDetectionAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_PersonDetectionAnnotation.t)`, *default:* `nil`) - Person detection annotations.

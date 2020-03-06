@@ -24,7 +24,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   ## Attributes
 
   *   `annotationResults` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults.t`, *default:* `nil`) - Streaming annotation results.
-  *   `annotationResultsUri` (*type:* `String.t`, *default:* `nil`) - GCS URI that stores annotation results of one streaming session.
+  *   `annotationResultsUri` (*type:* `String.t`, *default:* `nil`) - Cloud Storage URI that stores annotation results of one streaming session.
       It is a directory that can hold multiple files in JSON format.
       Example uri format:
       gs://bucket_id/object_id/cloud_project_name-session_id

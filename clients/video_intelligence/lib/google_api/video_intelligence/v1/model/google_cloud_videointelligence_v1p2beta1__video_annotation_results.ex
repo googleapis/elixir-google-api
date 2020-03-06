@@ -27,7 +27,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   *   `frameLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t)`, *default:* `nil`) - Label annotations on frame level.
       There is exactly one element for each unique label.
   *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in
-      [Google Cloud Storage](https://cloud.google.com/storage/).
+      [Cloud Storage](https://cloud.google.com/storage/).
   *   `objectAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation.t)`, *default:* `nil`) - Annotations for list of objects detected and tracked in video.
   *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoSegment.t`, *default:* `nil`) - Video segment on which the annotation is run.
   *   `segmentLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on video level or user specified segment level.
