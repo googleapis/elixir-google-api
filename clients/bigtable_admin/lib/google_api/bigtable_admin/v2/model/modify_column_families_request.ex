@@ -22,7 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ModifyColumnFamiliesRequest do
 
   ## Attributes
 
-  *   `modifications` (*type:* `list(GoogleApi.BigtableAdmin.V2.Model.Modification.t)`, *default:* `nil`) - Modifications to be atomically applied to the specified table's families.
+  *   `modifications` (*type:* `list(GoogleApi.BigtableAdmin.V2.Model.Modification.t)`, *default:* `nil`) - Required. Modifications to be atomically applied to the specified table's families.
       Entries are applied in order, meaning that earlier modifications can be
       masked by later ones (in the case of repeated updates to the same family,
       for example).

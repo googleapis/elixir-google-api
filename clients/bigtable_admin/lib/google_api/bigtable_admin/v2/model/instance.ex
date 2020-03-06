@@ -24,10 +24,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Instance do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The descriptive name for this instance as it appears in UIs.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The descriptive name for this instance as it appears in UIs.
       Can be changed at any time, but should be kept globally unique
       to avoid confusion.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are a flexible and lightweight mechanism for organizing cloud
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Required. Labels are a flexible and lightweight mechanism for organizing cloud
       resources into groups that reflect a customer's organizational needs and
       deployment strategies. They can be used to filter resources and aggregate
       metrics.
@@ -38,12 +38,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Instance do
         the regular expression: `[\\p{Ll}\\p{Lo}\\p{N}_-]{0,63}`.
       * No more than 64 labels can be associated with a given resource.
       * Keys and values must both be under 128 bytes.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - (`OutputOnly`)
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. (`OutputOnly`)
       The unique name of the instance. Values are of the form
-      `projects/<project>/instances/a-z+[a-z0-9]`.
+      `projects/{project}/instances/a-z+[a-z0-9]`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - (`OutputOnly`)
       The current state of the instance.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the instance. Defaults to `PRODUCTION`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the instance. Defaults to `PRODUCTION`.
   """
 
   use GoogleApi.Gax.ModelBase
