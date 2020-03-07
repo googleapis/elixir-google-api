@@ -33,7 +33,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Settings do
       12 hours of inactivity.
   *   `authorizedGaeApplications` (*type:* `list(String.t)`, *default:* `nil`) - The App Engine app IDs that can access this instance. First Generation
       instances only.
-  *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Availability type (PostgreSQL instances only). Potential values:
+  *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Availability type (PostgreSQL and MySQL instances only). Potential values:
       <br><code>ZONAL</code>: The instance serves data from only one zone.
       Outages in that zone affect data accessibility. <br><code>REGIONAL</code>:
       The instance can serve data from more than one zone in a region (it is
