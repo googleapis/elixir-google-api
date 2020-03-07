@@ -35,7 +35,17 @@ defmodule GoogleApi.Content.V2.Model.Order do
   *   `paymentStatus` (*type:* `String.t`, *default:* `nil`) - The status of the payment.
   *   `pickupDetails` (*type:* `GoogleApi.Content.V2.Model.OrderPickupDetails.t`, *default:* `nil`) - Pickup details for shipments of type pickup.
   *   `placedDate` (*type:* `String.t`, *default:* `nil`) - The date when the order was placed, in ISO 8601 format.
-  *   `promotions` (*type:* `list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t)`, *default:* `nil`) - The details of the merchant provided promotions applied to the order. More details about the program are here.
+  *   `promotions` (*type:* `list(GoogleApi.Content.V2.Model.OrderLegacyPromotion.t)`, *default:* `nil`) - The details of the merchant provided promotions applied to the order.
+
+      To determine which promotions apply to which products, check the Promotions[].Benefits[].OfferIds field against the LineItems[].Product.OfferId field for each promotion. If a promotion is applied to more than 1 offerId, divide the discount value by the number of affected offers to determine how much discount to apply to each offerId.
+
+      Examples:  
+      - To calculate the line item level discount for a single specific item: For each promotion, subtract the Promotions[].Benefits[].Discount.value amount from the LineItems[].Price.value. 
+      - To calculate the line item level discount for multiple quantity of a specific item: For each promotion, divide the Promotions[].Benefits[].Discount.value by the quantity of products and substract it from LineItems[].Product.Price.value for each quantity item.  
+
+      Only 1 promotion can be applied to an offerId in a given order. To refund an item which had a promotion applied to it, make sure to refund the amount after first subtracting the promotion discount from the item price.
+
+      More details about the program are here.
   *   `refunds` (*type:* `list(GoogleApi.Content.V2.Model.OrderRefund.t)`, *default:* `nil`) - Refunds for the order.
   *   `shipments` (*type:* `list(GoogleApi.Content.V2.Model.OrderShipment.t)`, *default:* `nil`) - Shipments of the order.
   *   `shippingCost` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The total cost of shipping for all items.
