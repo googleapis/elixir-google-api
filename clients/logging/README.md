@@ -1,8 +1,8 @@
 # GoogleApi.Logging
 
-Stackdriver Logging API client library.
+Cloud Logging API client library.
 
-Writes log entries and manages your Stackdriver Logging configuration. The table entries below are presented in alphabetical order, not in order of common use. For explanations of the concepts found in the table entries, read the <a href=https://cloud.google.com/logging/docs>Stackdriver Logging documentation</a>.
+Writes log entries and manages your Cloud Logging configuration. The table entries below are presented in alphabetical order, not in order of common use. For explanations of the concepts found in the table entries, read the <a href=https://cloud.google.com/logging/docs>Cloud Logging documentation</a>.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_logging, "~> 0.26"}]
+  [{:google_api_logging, "~> 0.27"}]
 end
 ```
 
