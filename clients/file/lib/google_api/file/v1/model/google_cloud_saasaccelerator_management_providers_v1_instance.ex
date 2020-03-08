@@ -17,66 +17,7 @@
 
 defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1Instance do
   @moduledoc """
-  Instance represents the interface for SLM services to actuate the state
-  of control plane resources.
 
-  Example Instance in JSON, where
-    consumer-project=snapchat,
-    producer-project=cloud-sql:
-
-  ```json
-  Instance:
-  {
-    "name":
-    "projects/snapchat/locations/us-east1/instances/prod-instance",
-    "create_time": {
-      "seconds": 1526406431,
-    },
-    "labels": {
-      "env": "prod",
-      "foo": "bar"
-    },
-    "state": READY,
-    "software_versions": {
-      "software_update": "cloud-sql-09-28-2018",
-    },
-    "maintenance_policy_names": {
-      "UpdatePolicy":
-      "projects/snapchat/locations/us-east1/maintenancePolicies/prod-update-policy",
-    }
-    "tenant_project_id": "cloud-sql-test-tenant",
-    "producer_metadata": {
-      "cloud-sql-tier": "basic",
-      "cloud-sql-instance-size": "1G",
-    },
-    "provisioned_resources": [
-      {
-        "resource-type": "compute-instance",
-        "resource-url":
-        "https://www.googleapis.com/compute/v1/projects/cloud-sql/zones/us-east1-b/instances/vm-1",
-      }
-    ],
-    "maintenance_schedules": {
-      "csa_rollout": {
-         "start_time": {
-            "seconds": 1526406431,
-         },
-         "end_time": {
-            "seconds": 1535406431,
-         },
-      },
-      "ncsa_rollout": {
-         "start_time": {
-            "seconds": 1526406431,
-         },
-         "end_time": {
-            "seconds": 1535406431,
-         },
-      }
-    },
-    "consumer_defined_name": "my-sql-instance1",
-  }
-  ```
 
   ## Attributes
 
@@ -103,12 +44,6 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
       See go/get-instance-metadata.
   *   `provisionedResources` (*type:* `list(GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource.t)`, *default:* `nil`) - Output only. The list of data plane resources provisioned for this
       instance, e.g. compute VMs. See go/get-instance-metadata.
-  *   `rolloutMetadata` (*type:* `%{optional(String.t) => GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1RolloutMetadata.t}`, *default:* `nil`) - The map between RolloutType and the corresponding RolloutMetadata.
-      This is only mutated by rollout service. For actuation implementation,
-      this information is pass-through for Rollout management. Producer shall
-      not modify by itself.
-      For update of a single entry in this map, the update field mask shall
-      follow this sementics: go/advanced-field-masks
   *   `slmInstanceTemplate` (*type:* `String.t`, *default:* `nil`) - Link to the SLM instance template. Only populated when updating SLM
       instances via SSA's Actuation service adaptor.
       Service producers with custom control plane (e.g. Cloud SQL) doesn't
@@ -142,10 +77,6 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
             list(
               GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource.t()
             ),
-          :rolloutMetadata => %{
-            optional(String.t()) =>
-              GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1RolloutMetadata.t()
-          },
           :slmInstanceTemplate => String.t(),
           :sloMetadata =>
             GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata.t(),
@@ -173,11 +104,6 @@ defmodule GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV
     as:
       GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource,
     type: :list
-  )
-
-  field(:rolloutMetadata,
-    as: GoogleApi.File.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1RolloutMetadata,
-    type: :map
   )
 
   field(:slmInstanceTemplate)
