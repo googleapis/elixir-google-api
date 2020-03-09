@@ -13,6 +13,11 @@
 # limitations under the License.
 
 defmodule GoogleApis.Discovery do
+  defmodule Client do
+    use Tesla
+    plug(Tesla.Middleware.DecompressResponse, [])
+  end
+
   alias GoogleApis.ApiConfig
   alias GoogleApi.Discovery.V1.Connection
   alias GoogleApi.Discovery.V1.Api.Apis
@@ -116,7 +121,7 @@ defmodule GoogleApis.Discovery do
   defp fetch_direct(url) do
     Logger.info("FETCHING: #{url}")
 
-    with {:ok, %Tesla.Env{status: 200, body: body}} <- Tesla.get(url) do
+    with {:ok, %Tesla.Env{status: 200, body: body}} <- Client.get(url) do
       Logger.info("FOUND: #{url}")
       {:ok, body}
     else
