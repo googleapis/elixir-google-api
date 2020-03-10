@@ -26,7 +26,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_An
       If unset, the input video(s) should be specified via `input_uri`.
       If set, `input_uri` should be unset.
   *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Input video location. Currently, only
-      [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
+      [Cloud Storage](https://cloud.google.com/storage/) URIs are
       supported, which must be specified in the following format:
       `gs://bucket-id/object-id` (other URI formats return
       google.rpc.Code.INVALID_ARGUMENT). For more information, see
@@ -39,7 +39,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_An
       regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
       is specified, a region will be determined based on video file location.
   *   `outputUri` (*type:* `String.t`, *default:* `nil`) - Optional. Location where the output (in JSON format) should be stored.
-      Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
+      Currently, only [Cloud Storage](https://cloud.google.com/storage/)
       URIs are supported, which must be specified in the following format:
       `gs://bucket-id/object-id` (other URI formats return
       google.rpc.Code.INVALID_ARGUMENT). For more information, see
