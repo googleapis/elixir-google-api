@@ -22,7 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CheckConsistencyRequest do
 
   ## Attributes
 
-  *   `consistencyToken` (*type:* `String.t`, *default:* `nil`) - The token created using GenerateConsistencyToken for the Table.
+  *   `consistencyToken` (*type:* `String.t`, *default:* `nil`) - Required. The token created using GenerateConsistencyToken for the Table.
   """
 
   use GoogleApi.Gax.ModelBase

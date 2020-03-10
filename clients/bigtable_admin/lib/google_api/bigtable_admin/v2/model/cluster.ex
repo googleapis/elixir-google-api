@@ -30,11 +30,11 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
       The location where this cluster's nodes and storage reside. For best
       performance, clients should be located as close as possible to this
       cluster. Currently only zones are supported, so values should be of the
-      form `projects/<project>/locations/<zone>`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - (`OutputOnly`)
+      form `projects/{project}/locations/{zone}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. (`OutputOnly`)
       The unique name of the cluster. Values are of the form
-      `projects/<project>/instances/<instance>/clusters/a-z*`.
-  *   `serveNodes` (*type:* `integer()`, *default:* `nil`) - The number of nodes allocated to this cluster. More nodes enable higher
+      `projects/{project}/instances/{instance}/clusters/a-z*`.
+  *   `serveNodes` (*type:* `integer()`, *default:* `nil`) - Required. The number of nodes allocated to this cluster. More nodes enable higher
       throughput and more consistent performance.
   *   `state` (*type:* `String.t`, *default:* `nil`) - (`OutputOnly`)
       The current state of the cluster.
