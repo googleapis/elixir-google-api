@@ -130,10 +130,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:projectId` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+      *   `:projectId` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the name field.
-      *   `:zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+      *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
           [zone](/compute/docs/zones#available) to return operations for.
           This field has been deprecated and replaced by the name field.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -372,12 +372,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clusterId` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to delete.
+      *   `:clusterId` (*type:* `String.t`) - Deprecated. The name of the cluster to delete.
           This field has been deprecated and replaced by the name field.
-      *   `:projectId` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+      *   `:projectId` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the name field.
-      *   `:zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+      *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
           [zone](/compute/docs/zones#available) in which the cluster
           resides.
           This field has been deprecated and replaced by the name field.
@@ -454,12 +454,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clusterId` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to retrieve.
+      *   `:clusterId` (*type:* `String.t`) - Deprecated. The name of the cluster to retrieve.
           This field has been deprecated and replaced by the name field.
-      *   `:projectId` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+      *   `:projectId` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the name field.
-      *   `:zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+      *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
           [zone](/compute/docs/zones#available) in which the cluster
           resides.
           This field has been deprecated and replaced by the name field.
@@ -611,10 +611,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:projectId` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+      *   `:projectId` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the parent field.
-      *   `:zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+      *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
           [zone](/compute/docs/zones#available) in which the cluster
           resides, or "-" for all zones.
           This field has been deprecated and replaced by the parent field.
@@ -1634,14 +1634,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clusterId` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+      *   `:clusterId` (*type:* `String.t`) - Deprecated. The name of the cluster.
           This field has been deprecated and replaced by the name field.
-      *   `:nodePoolId` (*type:* `String.t`) - Required. Deprecated. The name of the node pool to delete.
+      *   `:nodePoolId` (*type:* `String.t`) - Deprecated. The name of the node pool to delete.
           This field has been deprecated and replaced by the name field.
-      *   `:projectId` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+      *   `:projectId` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
           number](https://developers.google.com/console/help/new/#projectnumber).
           This field has been deprecated and replaced by the name field.
-      *   `:zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+      *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
           [zone](/compute/docs/zones#available) in which the cluster
           resides.
           This field has been deprecated and replaced by the name field.
@@ -1720,14 +1720,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clusterId` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+      *   `:clusterId` (*type:* `String.t`) - Deprecated. The name of the cluster.
           This field has been deprecated and replaced by the name field.
-      *   `:nodePoolId` (*type:* `String.t`) - Required. Deprecated. The name of the node pool.
+      *   `:nodePoolId` (*type:* `String.t`) - Deprecated. The name of the node pool.
           This field has been deprecated and replaced by the name field.
-      *   `:projectId` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+      *   `:projectId` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
           number](https://developers.google.com/console/help/new/#projectnumber).
           This field has been deprecated and replaced by the name field.
-      *   `:zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+      *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
           [zone](/compute/docs/zones#available) in which the cluster
           resides.
           This field has been deprecated and replaced by the name field.
@@ -1805,12 +1805,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:clusterId` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+      *   `:clusterId` (*type:* `String.t`) - Deprecated. The name of the cluster.
           This field has been deprecated and replaced by the parent field.
-      *   `:projectId` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+      *   `:projectId` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
           number](https://developers.google.com/console/help/new/#projectnumber).
           This field has been deprecated and replaced by the parent field.
-      *   `:zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+      *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
           [zone](/compute/docs/zones#available) in which the cluster
           resides.
           This field has been deprecated and replaced by the parent field.
@@ -2401,12 +2401,12 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:operationId` (*type:* `String.t`) - Required. Deprecated. The server-assigned `name` of the operation.
+      *   `:operationId` (*type:* `String.t`) - Deprecated. The server-assigned `name` of the operation.
           This field has been deprecated and replaced by the name field.
-      *   `:projectId` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+      *   `:projectId` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the name field.
-      *   `:zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+      *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
           [zone](/compute/docs/zones#available) in which the cluster
           resides.
           This field has been deprecated and replaced by the name field.
@@ -2484,10 +2484,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:projectId` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+      *   `:projectId` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the parent field.
-      *   `:zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+      *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
           [zone](/compute/docs/zones#available) to return operations for, or `-` for
           all zones. This field has been deprecated and replaced by the parent field.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2548,10 +2548,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) to return operations for.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2628,14 +2628,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2713,14 +2713,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2813,10 +2813,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the parent field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the parent field.
@@ -2901,14 +2901,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to delete.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to delete.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2987,14 +2987,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to retrieve.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to retrieve.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3073,14 +3073,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to update.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to update.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3159,10 +3159,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the parent field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides, or "-" for all zones.
       This field has been deprecated and replaced by the parent field.
@@ -3244,14 +3244,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3329,14 +3329,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3414,14 +3414,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3499,14 +3499,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3584,14 +3584,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3759,14 +3759,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3847,14 +3847,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3935,14 +3935,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4023,14 +4023,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4108,16 +4108,16 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
-  *   `node_pool_id` (*type:* `String.t`) - Required. Deprecated. The name of the node pool to upgrade.
+  *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4201,14 +4201,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the parent field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the parent field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4286,16 +4286,16 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
-  *   `node_pool_id` (*type:* `String.t`) - Required. Deprecated. The name of the node pool to delete.
+  *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to delete.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4381,16 +4381,16 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
-  *   `node_pool_id` (*type:* `String.t`) - Required. Deprecated. The name of the node pool.
+  *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4476,14 +4476,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the parent field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the parent field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4563,16 +4563,16 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to rollback.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to rollback.
       This field has been deprecated and replaced by the name field.
-  *   `node_pool_id` (*type:* `String.t`) - Required. Deprecated. The name of the node pool to rollback.
+  *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to rollback.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4656,16 +4656,16 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to update.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to update.
       This field has been deprecated and replaced by the name field.
-  *   `node_pool_id` (*type:* `String.t`) - Required. Deprecated. The name of the node pool to update.
+  *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to update.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4749,16 +4749,16 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to update.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to update.
       This field has been deprecated and replaced by the name field.
-  *   `node_pool_id` (*type:* `String.t`) - Required. Deprecated. The name of the node pool to update.
+  *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to update.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4842,16 +4842,16 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `cluster_id` (*type:* `String.t`) - Required. Deprecated. The name of the cluster to upgrade.
+  *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
-  *   `node_pool_id` (*type:* `String.t`) - Required. Deprecated. The name of the node pool to upgrade.
+  *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4935,13 +4935,13 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the operation resides.
       This field has been deprecated and replaced by the name field.
-  *   `operation_id` (*type:* `String.t`) - Required. Deprecated. The server-assigned `name` of the operation.
+  *   `operation_id` (*type:* `String.t`) - Deprecated. The server-assigned `name` of the operation.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -5019,14 +5019,14 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) in which the cluster
       resides.
       This field has been deprecated and replaced by the name field.
-  *   `operation_id` (*type:* `String.t`) - Required. Deprecated. The server-assigned `name` of the operation.
+  *   `operation_id` (*type:* `String.t`) - Deprecated. The server-assigned `name` of the operation.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -5105,10 +5105,10 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Container.V1.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Required. Deprecated. The Google Developers Console [project ID or project
+  *   `project_id` (*type:* `String.t`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the parent field.
-  *   `zone` (*type:* `String.t`) - Required. Deprecated. The name of the Google Compute Engine
+  *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
       [zone](/compute/docs/zones#available) to return operations for, or `-` for
       all zones. This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
