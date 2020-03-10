@@ -68,6 +68,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
       https://support.google.com/manufacturers/answer/6124116#flavor.
   *   `productName` (*type:* `String.t`, *default:* `nil`) - The canonical name of the product. For more information, see
       https://support.google.com/manufacturers/answer/6124116#productname.
+  *   `richContent` (*type:* `list(String.t)`, *default:* `nil`) - Rich product content. For more information, see
+      https://support.google.com/manufacturers/answer/9389865
   *   `videoLink` (*type:* `list(String.t)`, *default:* `nil`) - The videos of the product. For more information, see
       https://support.google.com/manufacturers/answer/6124116#video.
   *   `scent` (*type:* `String.t`, *default:* `nil`) - The scent of the product. For more information, see
@@ -119,6 +121,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
           :brand => String.t(),
           :flavor => String.t(),
           :productName => String.t(),
+          :richContent => list(String.t()),
           :videoLink => list(String.t()),
           :scent => String.t(),
           :suggestedRetailPrice => GoogleApi.Manufacturers.V1.Model.Price.t(),
@@ -156,6 +159,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   field(:brand)
   field(:flavor)
   field(:productName)
+  field(:richContent, type: :list)
   field(:videoLink, type: :list)
   field(:scent)
   field(:suggestedRetailPrice, as: GoogleApi.Manufacturers.V1.Model.Price)
