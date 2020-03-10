@@ -1,6 +1,6 @@
 # GoogleApi.CloudErrorReporting
 
-Stackdriver Error Reporting API client library.
+Error Reporting API client library.
 
 Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors.
 
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_error_reporting, "~> 0.13"}]
+  [{:google_api_cloud_error_reporting, "~> 0.14"}]
 end
 ```
 
