@@ -18,7 +18,7 @@
 defmodule GoogleApi.Logging.Mixfile do
   use Mix.Project
 
-  @version "0.26.0"
+  @version "0.27.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Logging.Mixfile do
 
   defp description() do
     """
-    Stackdriver Logging API client library.
+    Cloud Logging API client library.
     """
   end
 
