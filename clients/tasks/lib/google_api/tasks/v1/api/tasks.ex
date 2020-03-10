@@ -48,7 +48,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasks_clear(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tasks_tasks_clear(connection, tasklist, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -98,7 +98,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasks_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def tasks_tasks_delete(connection, tasklist, task, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -149,7 +149,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasks_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.Task.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.Task.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tasks_tasks_get(connection, tasklist, task, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -177,7 +179,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   end
 
   @doc """
-  Creates a new task on the specified task list.
+  Creates a new task on the specified task list. Fails with HTTP code 403 or 429 after reaching the storage limit of 100,000 tasks per account.
 
   ## Parameters
 
@@ -202,7 +204,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasks_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.Task.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.Task.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tasks_tasks_insert(connection, tasklist, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -264,7 +268,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasks_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.Tasks.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.Tasks.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tasks_tasks_list(connection, tasklist, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -326,7 +332,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasks_move(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.Task.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.Task.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tasks_tasks_move(connection, tasklist, task, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -380,7 +388,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasks_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.Task.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.Task.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tasks_tasks_patch(connection, tasklist, task, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -433,7 +443,9 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasks_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.Task.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.Task.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def tasks_tasks_update(connection, tasklist, task, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
