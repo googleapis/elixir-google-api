@@ -22,7 +22,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.BatchUndeleteAlertsResponse do
   ## Attributes
 
   *   `failedAlertStatus` (*type:* `%{optional(String.t) => GoogleApi.AlertCenter.V1beta1.Model.Status.t}`, *default:* `nil`) - The status details for each failed alert_id.
-  *   `successAlertIds` (*type:* `list(String.t)`, *default:* `nil`) - The successful list of alert ids.
+  *   `successAlertIds` (*type:* `list(String.t)`, *default:* `nil`) - The successful list of alert IDs.
   """
 
   use GoogleApi.Gax.ModelBase

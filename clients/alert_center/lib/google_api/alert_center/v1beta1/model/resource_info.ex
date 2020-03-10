@@ -22,7 +22,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo do
   ## Attributes
 
   *   `documentId` (*type:* `String.t`, *default:* `nil`) - Drive file ID.
-  *   `resourceTitle` (*type:* `String.t`, *default:* `nil`) - Title of the resource, e.g. email subject, or document title.
+  *   `resourceTitle` (*type:* `String.t`, *default:* `nil`) - Title of the resource, for example email subject, or document title.
   """
 
   use GoogleApi.Gax.ModelBase
