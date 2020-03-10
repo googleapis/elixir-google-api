@@ -245,7 +245,7 @@ defmodule GoogleApi.Content.V21.Api.Products do
   end
 
   @doc """
-  Lists the products in your Merchant Center account.
+  Lists the products in your Merchant Center account. The response might contain fewer items than specified by maxResults. Rely on nextPageToken to determine if there are more items to be requested.
 
   ## Parameters
 

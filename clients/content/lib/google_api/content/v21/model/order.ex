@@ -36,6 +36,16 @@ defmodule GoogleApi.Content.V21.Model.Order do
   *   `pickupDetails` (*type:* `GoogleApi.Content.V21.Model.OrderPickupDetails.t`, *default:* `nil`) - Pickup details for shipments of type pickup.
   *   `placedDate` (*type:* `String.t`, *default:* `nil`) - The date when the order was placed, in ISO 8601 format.
   *   `promotions` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotion.t)`, *default:* `nil`) - Promotions associated with the order.
+
+      To determine which promotions apply to which products, check the Promotions[].appliedItems[].lineItemId field against the LineItems[].id field for each promotion. If a promotion is applied to more than 1 offerId, divide the discount value by the number of affected offers to determine how much discount to apply to each offerId.
+
+      Examples:  
+      - To calculate price paid by the customer for a single line item including the discount: For each promotion, subtract the LineItems[].adjustments[].priceAdjustment.value amount from the LineItems[].Price.value. 
+      - To calculate price paid by the customer for a single line item including the discount in case of multiple quantity: For each promotion, divide the LineItems[].adjustments[].priceAdjustment.value by the quantity of products then subtract the resulting value from the LineItems[].Product.Price.value for each quantity item.  
+
+      Only 1 promotion can be applied to an offerId in a given order. To refund an item which had a promotion applied to it, make sure to refund the amount after first subtracting the promotion discount from the item price.
+
+      More details about the program are here.
   *   `refunds` (*type:* `list(GoogleApi.Content.V21.Model.OrderRefund.t)`, *default:* `nil`) - Refunds for the order.
   *   `shipments` (*type:* `list(GoogleApi.Content.V21.Model.OrderShipment.t)`, *default:* `nil`) - Shipments of the order.
   *   `shippingCost` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The total cost of shipping for all items.
