@@ -49,7 +49,7 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
   *   `{:error, info}` on failure
   """
   @spec blogger_pages_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def blogger_pages_delete(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -101,7 +101,9 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
   *   `{:error, info}` on failure
   """
   @spec blogger_pages_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Page.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_pages_get(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -154,7 +156,9 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
   *   `{:error, info}` on failure
   """
   @spec blogger_pages_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Page.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_pages_insert(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -210,7 +214,9 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
   *   `{:error, info}` on failure
   """
   @spec blogger_pages_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.PageList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.PageList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_pages_list(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -268,7 +274,9 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
   *   `{:error, info}` on failure
   """
   @spec blogger_pages_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Page.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_pages_patch(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -322,7 +330,9 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
   *   `{:error, info}` on failure
   """
   @spec blogger_pages_publish(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Page.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_pages_publish(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -373,7 +383,9 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
   *   `{:error, info}` on failure
   """
   @spec blogger_pages_revert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Page.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_pages_revert(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -427,7 +439,9 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
   *   `{:error, info}` on failure
   """
   @spec blogger_pages_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Page.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Page.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_pages_update(connection, blog_id, page_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
