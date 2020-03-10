@@ -48,7 +48,9 @@ defmodule GoogleApi.Blogger.V3.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec blogger_users_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.User.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.User.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_users_get(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

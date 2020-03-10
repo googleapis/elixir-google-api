@@ -57,7 +57,10 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Blogger.V3.Model.PostUserInfo.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Blogger.V3.Model.PostUserInfo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_post_user_infos_get(
         connection,
         user_id,
@@ -131,7 +134,10 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Blogger.V3.Model.PostUserInfosList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Blogger.V3.Model.PostUserInfosList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def blogger_post_user_infos_list(
         connection,
         user_id,
