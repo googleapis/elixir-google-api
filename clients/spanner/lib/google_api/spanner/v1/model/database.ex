@@ -21,22 +21,29 @@ defmodule GoogleApi.Spanner.V1.Model.Database do
 
   ## Attributes
 
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If exists, the time at which the database creation started.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the database. Values are of the form
       `projects/<project>/instances/<instance>/databases/<database>`,
       where `<database>` is as specified in the `CREATE DATABASE`
       statement. This name can be passed to other API methods to
       identify the database.
+  *   `restoreInfo` (*type:* `GoogleApi.Spanner.V1.Model.RestoreInfo.t`, *default:* `nil`) - Output only. Applicable only for restored databases. Contains information
+      about the restore source.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current database state.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t(),
           :name => String.t(),
+          :restoreInfo => GoogleApi.Spanner.V1.Model.RestoreInfo.t(),
           :state => String.t()
         }
 
+  field(:createTime, as: DateTime)
   field(:name)
+  field(:restoreInfo, as: GoogleApi.Spanner.V1.Model.RestoreInfo)
   field(:state)
 end
 

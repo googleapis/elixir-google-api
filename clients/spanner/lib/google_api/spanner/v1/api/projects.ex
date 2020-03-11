@@ -816,12 +816,373 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a database resource.
-  Returns an empty policy if a database exists but does
-  not have a policy set.
+  Lists the backup long-running operations in
+  the given instance. A backup operation has a name of the form
+  `projects/<project>/instances/<instance>/backups/<backup>/operations/<operation>`.
+  The long-running operation
+  metadata field type
+  `metadata.type_url` describes the type of the metadata. Operations returned
+  include those that have completed/failed/canceled within the last 7 days,
+  and pending operations. Operations returned are ordered by
+  `operation.metadata.value.progress.start_time` in descending order starting
+  from the most recently started operation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The instance of the backup operations. Values are of
+      the form `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters what operations are returned in the
+          response.
+
+          The filter expression must specify the field name of an operation, a
+          comparison operator, and the value that you want to use for filtering.
+          The value must be a string, a number, or a boolean. The comparison operator
+          must be
+          <, >, <=, >=, !=, =, or :. Colon ‘:’ represents a HAS operator which is
+          roughly synonymous with equality. Filter rules are case insensitive.
+
+          The long-running operation fields eligible for filtering are:
+            * `name` --> The name of the long-running operation
+            * `done` --> False if the operation is in progress, else true.
+            * `metadata.type_url` (using filter string `metadata.@type`) and fields
+               in `metadata.value` (using filter string `metadata.<field_name>`,
+               where <field_name> is a field in metadata.value) are eligible for
+               filtering.
+            * `error` --> Error associated with the long-running operation.
+            * `response.type_url` (using filter string `response.@type`) and fields
+               in `response.value` (using filter string `response.<field_name>`,
+               where <field_name> is a field in response.value) are eligible for
+               filtering.
+
+          To filter on multiple expressions, provide each separate expression within
+          parentheses. By default, each expression is an AND expression. However,
+          you can include AND, OR, and NOT expressions explicitly.
+
+          Some examples of using filters are:
+
+            * `done:true` --> The operation is complete.
+            * `metadata.database:prod`
+                   --> The database the backup was taken from has a name containing
+                       the string "prod".
+            * `(metadata.@type:type.googleapis.com/google.spanner.admin.database.v1.CreateBackupMetadata)
+               AND (metadata.name:howl)
+               AND (metadata.progress.start_time < \\"2018-03-28T14:50:00Z\\")
+               AND (error:*)`
+                   --> Return CreateBackup operations where the created backup name
+                       contains the string "howl", the progress.start_time of the
+                       backup operation is before 2018-03-28T14:50:00Z, and the
+                       operation returned an error.
+      *   `:pageSize` (*type:* `integer()`) - Number of operations to be returned in the response. If 0 or
+          less, defaults to the server's maximum allowed page size.
+      *   `:pageToken` (*type:* `String.t`) - If non-empty, `page_token` should contain a
+          next_page_token
+          from a previous ListBackupOperationsResponse to the
+          same `parent` and with the same `filter`.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.ListBackupOperationsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backup_operations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ListBackupOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def spanner_projects_instances_backup_operations_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/backupOperations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Spanner.V1.Model.ListBackupOperationsResponse{}]
+    )
+  end
+
+  @doc """
+  Starts creating a new Cloud Spanner Backup.
+  The returned backup long-running operation
+  will have a name of the format
+  `projects/<project>/instances/<instance>/backups/<backup>/operations/<operation_id>`
+  and can be used to track creation of the backup. The
+  metadata field type is
+  CreateBackupMetadata. The
+  response field type is
+  Backup, if successful. Cancelling the returned operation will stop the
+  creation and delete the backup.
+  There can be only one pending backup creation per database. Backup creation
+  of different databases can run concurrently.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the instance in which the backup will be
+      created. This must be the same instance that contains the database the
+      backup will be created from. The backup will be stored in the
+      location(s) specified in the instance configuration of this
+      instance. Values are of the form
+      `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:backupId` (*type:* `String.t`) - Required. The id of the backup to be created. The `backup_id` appended to
+          `parent` forms the full backup name of the form
+          `projects/<project>/instances/<instance>/backups/<backup_id>`.
+      *   `:body` (*type:* `GoogleApi.Spanner.V1.Model.Backup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def spanner_projects_instances_backups_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :backupId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/backups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Deletes a pending or completed Backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Name of the backup to delete.
+      Values are of the form
+      `projects/<project>/instances/<instance>/backups/<backup>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def spanner_projects_instances_backups_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Gets metadata on a pending or completed Backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Name of the backup.
+      Values are of the form
+      `projects/<project>/instances/<instance>/backups/<backup>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Backup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Backup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def spanner_projects_instances_backups_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Backup{}])
+  end
+
+  @doc """
+  Gets the access control policy for a database or backup resource.
+  Returns an empty policy if a database or backup exists but does not have a
+  policy set.
 
   Authorization requires `spanner.databases.getIamPolicy` permission on
   resource.
+  For backups, authorization requires `spanner.backups.getIamPolicy`
+  permission on resource.
 
   ## Parameters
 
@@ -892,10 +1253,214 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a database resource.
+  Lists completed and pending backups.
+  Backups returned are ordered by `create_time` in descending order,
+  starting from the most recent `create_time`.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The instance to list backups from.  Values are of the
+      form `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters backups listed in the response.
+          The expression must specify the field name, a comparison operator,
+          and the value that you want to use for filtering. The value must be a
+          string, a number, or a boolean. The comparison operator must be
+          <, >, <=, >=, !=, =, or :. Colon ‘:’ represents a HAS operator which is
+          roughly synonymous with equality. Filter rules are case insensitive.
+
+          The fields eligible for filtering are:
+            * `name`
+            * `database`
+            * `state`
+            * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+            * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+            * `size_bytes`
+
+          To filter on multiple expressions, provide each separate expression within
+          parentheses. By default, each expression is an AND expression. However,
+          you can include AND, OR, and NOT expressions explicitly.
+
+          Some examples of using filters are:
+
+            * `name:Howl` --> The backup's name contains the string "howl".
+            * `database:prod`
+                   --> The database's name contains the string "prod".
+            * `state:CREATING` --> The backup is pending creation.
+            * `state:READY` --> The backup is fully created and ready for use.
+            * `(name:howl) AND (create_time < \\"2018-03-28T14:50:00Z\\")`
+                   --> The backup name contains the string "howl" and `create_time`
+                       of the backup is before 2018-03-28T14:50:00Z.
+            * `expire_time < \\"2018-03-28T14:50:00Z\\"`
+                   --> The backup `expire_time` is before 2018-03-28T14:50:00Z.
+            * `size_bytes > 10000000000` --> The backup's size is greater than 10GB
+      *   `:pageSize` (*type:* `integer()`) - Number of backups to be returned in the response. If 0 or
+          less, defaults to the server's maximum allowed page size.
+      *   `:pageToken` (*type:* `String.t`) - If non-empty, `page_token` should contain a
+          next_page_token from a
+          previous ListBackupsResponse to the same `parent` and with the same
+          `filter`.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.ListBackupsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ListBackupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def spanner_projects_instances_backups_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/backups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.ListBackupsResponse{}])
+  end
+
+  @doc """
+  Updates a pending or completed Backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Output only for the CreateBackup][DatabaseAdmin.CreateBackup] operation.
+      Required for the UpdateBackup operation.
+
+      A globally unique identifier for the backup which cannot be
+      changed. Values are of the form
+      `projects/<project>/instances/<instance>/backups/a-z*[a-z0-9]`
+      The final segment of the name must be between 2 and 60 characters
+      in length.
+
+      The backup is stored in the location(s) specified in the instance
+      configuration of the instance containing the backup, identified
+      by the prefix of the backup name of the form
+      `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. A mask specifying which fields (e.g. `expire_time`) in the
+          Backup resource should be updated. This mask is relative to the Backup
+          resource, not to the request message. The field mask must always be
+          specified; this prevents any future fields from being erased accidentally
+          by clients that do not know about them.
+      *   `:body` (*type:* `GoogleApi.Spanner.V1.Model.Backup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Backup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Backup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def spanner_projects_instances_backups_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Backup{}])
+  end
+
+  @doc """
+  Sets the access control policy on a database or backup resource.
   Replaces any existing policy.
 
   Authorization requires `spanner.databases.setIamPolicy`
+  permission on resource.
+  For backups, authorization requires `spanner.backups.setIamPolicy`
   permission on resource.
 
   ## Parameters
@@ -967,12 +1532,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified database resource.
+  Returns permissions that the caller has on the specified database or backup
+  resource.
 
   Attempting this RPC on a non-existent Cloud Spanner database will
   result in a NOT_FOUND error if the user has
   `spanner.databases.list` permission on the containing Cloud
   Spanner instance. Otherwise returns an empty set of permissions.
+  Calling this method on a backup that does not exist will
+  result in a NOT_FOUND error if the user has
+  `spanner.backups.list` permission on the containing instance.
 
   ## Parameters
 
@@ -1348,6 +1917,134 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
+  Lists database longrunning-operations.
+  A database operation has a name of the form
+  `projects/<project>/instances/<instance>/databases/<database>/operations/<operation>`.
+  The long-running operation
+  metadata field type
+  `metadata.type_url` describes the type of the metadata. Operations returned
+  include those that have completed/failed/canceled within the last 7 days,
+  and pending operations.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The instance of the database operations.
+      Values are of the form `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters what operations are returned in the
+          response.
+
+          The filter expression must specify the field name, a comparison operator,
+          and the value that you want to use for filtering. The value must be a
+          string, a number, or a boolean. The comparison operator must be
+          <, >, <=, >=, !=, =, or :. Colon ‘:’ represents a HAS operator which is
+          roughly synonymous with equality. Filter rules are case insensitive.
+
+          The long-running operation fields eligible for filtering are:
+            * `name` --> The name of the long-running operation
+            * `done` --> False if the operation is in progress, else true.
+            * `metadata.type_url` (using filter string `metadata.@type`) and fields
+               in `metadata.value` (using filter string `metadata.<field_name>`,
+               where <field_name> is a field in metadata.value) are eligible for
+               filtering.
+            * `error` --> Error associated with the long-running operation.
+            * `response.type_url` (using filter string `response.@type`) and fields
+               in `response.value` (using filter string `response.<field_name>`,
+               where <field_name> is a field in response.value) are eligible for
+               filtering.
+
+          To filter on multiple expressions, provide each separate expression within
+          parentheses. By default, each expression is an AND expression. However,
+          you can include AND, OR, and NOT expressions explicitly.
+
+          Some examples of using filters are:
+
+            * `done:true` --> The operation is complete.
+            * `(metadata.@type:type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabaseMetadata)
+               AND (metadata.source_type:BACKUP)
+               AND (metadata.backup_info.backup:backup_howl)
+               AND (metadata.name:restored_howl)
+               AND (metadata.progress.start_time < \\"2018-03-28T14:50:00Z\\")
+               AND (error:*)`
+                   --> Return RestoreDatabase operations from backups whose name
+                       contains "backup_howl", where the created database name
+                       contains the string "restored_howl", the start_time of the
+                       restore operation is before 2018-03-28T14:50:00Z,
+                       and the operation returned an error.
+      *   `:pageSize` (*type:* `integer()`) - Number of operations to be returned in the response. If 0 or
+          less, defaults to the server's maximum allowed page size.
+      *   `:pageToken` (*type:* `String.t`) - If non-empty, `page_token` should contain a
+          next_page_token
+          from a previous ListDatabaseOperationsResponse to the
+          same `parent` and with the same `filter`.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.ListDatabaseOperationsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_database_operations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ListDatabaseOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def spanner_projects_instances_database_operations_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/databaseOperations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Spanner.V1.Model.ListDatabaseOperationsResponse{}]
+    )
+  end
+
+  @doc """
   Creates a new Cloud Spanner database and starts to prepare it for serving.
   The returned long-running operation will
   have a name of the format `<database_name>/operations/<operation_id>` and
@@ -1428,6 +2125,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
 
   @doc """
   Drops (aka deletes) a Cloud Spanner database.
+  Completed backups for the database will be retained according to their
+  `expire_time`.
 
   ## Parameters
 
@@ -1637,12 +2336,14 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a database resource.
-  Returns an empty policy if a database exists but does
-  not have a policy set.
+  Gets the access control policy for a database or backup resource.
+  Returns an empty policy if a database or backup exists but does not have a
+  policy set.
 
   Authorization requires `spanner.databases.getIamPolicy` permission on
   resource.
+  For backups, authorization requires `spanner.backups.getIamPolicy`
+  permission on resource.
 
   ## Parameters
 
@@ -1790,10 +2491,103 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a database resource.
+  Create a new database by restoring from a completed backup. The new
+  database must be in the same project and in an instance with the same
+  instance configuration as the instance containing
+  the backup. The returned database long-running
+  operation has a name of the format
+  `projects/<project>/instances/<instance>/databases/<database>/operations/<operation_id>`,
+  and can be used to track the progress of the operation, and to cancel it.
+  The metadata field type is
+  RestoreDatabaseMetadata.
+  The response type
+  is Database, if
+  successful. Cancelling the returned operation will stop the restore and
+  delete the database.
+  There can be only one database being restored into an instance at a time.
+  Once the restore operation completes, a new restore operation can be
+  initiated, without waiting for the optimize operation associated with the
+  first restore to complete.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the instance in which to create the
+      restored database. This instance must be in the same project and
+      have the same instance configuration as the instance containing
+      the source backup. Values are of the form
+      `projects/<project>/instances/<instance>.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Spanner.V1.Model.RestoreDatabaseRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_databases_restore(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def spanner_projects_instances_databases_restore(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/databases:restore", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Sets the access control policy on a database or backup resource.
   Replaces any existing policy.
 
   Authorization requires `spanner.databases.setIamPolicy`
+  permission on resource.
+  For backups, authorization requires `spanner.backups.setIamPolicy`
   permission on resource.
 
   ## Parameters
@@ -1865,12 +2659,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified database resource.
+  Returns permissions that the caller has on the specified database or backup
+  resource.
 
   Attempting this RPC on a non-existent Cloud Spanner database will
   result in a NOT_FOUND error if the user has
   `spanner.databases.list` permission on the containing Cloud
   Spanner instance. Otherwise returns an empty set of permissions.
+  Calling this method on a backup that does not exist will
+  result in a NOT_FOUND error if the user has
+  `spanner.backups.list` permission on the containing instance.
 
   ## Parameters
 
