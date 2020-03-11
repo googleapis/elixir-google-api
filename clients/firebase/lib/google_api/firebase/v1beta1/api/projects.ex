@@ -759,7 +759,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project for which to list Apps, in the format:
+  *   `parent` (*type:* `String.t`) - The parent Project in which to create an App, in the format:
       <br><code>projects/<var>projectId</var></code>
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1547,7 +1547,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project for which to list Apps, in the format:
+  *   `parent` (*type:* `String.t`) - The parent Project in which to create an App, in the format:
       <br><code>projects/<var>projectId</var></code>
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1884,7 +1884,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project for which to list Apps, in the format:
+  *   `parent` (*type:* `String.t`) - The parent Project in which to create an App, in the format:
       <br><code>projects/<var>projectId</var></code>
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
