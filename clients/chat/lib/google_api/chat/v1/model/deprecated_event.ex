@@ -30,13 +30,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
       authorization or configuration flow outside of Hangouts Chat. See the
       [Authorizing access to 3p services guide](/hangouts/chat/how-tos/auth-3p)
       for more information.
-  *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of dialog event we have received.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the event was dispatched.
-  *   `formInputs` (*type:* `list(GoogleApi.Chat.V1.Model.FormInput.t)`, *default:* `nil`) - The list of form inputs we will supply to the bot. These are just the
-      inputs from the dialog that are populated by the user. This will only be
-      populated for CARD_CLICKED events.
-  *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - Whether or not this event is related to dialogs request, submit or cancel.
-      This will be set to true when we want a request/submit/cancel event.
   *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The message that triggered the event, if applicable.
   *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The room or DM in which the event occurred.
   *   `threadKey` (*type:* `String.t`, *default:* `nil`) - The bot-defined key for the thread related to the event. See the
@@ -55,10 +49,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   @type t :: %__MODULE__{
           :action => GoogleApi.Chat.V1.Model.FormAction.t(),
           :configCompleteRedirectUrl => String.t(),
-          :dialogEventType => String.t(),
           :eventTime => DateTime.t(),
-          :formInputs => list(GoogleApi.Chat.V1.Model.FormInput.t()),
-          :isDialogEvent => boolean(),
           :message => GoogleApi.Chat.V1.Model.Message.t(),
           :space => GoogleApi.Chat.V1.Model.Space.t(),
           :threadKey => String.t(),
@@ -69,10 +60,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
 
   field(:action, as: GoogleApi.Chat.V1.Model.FormAction)
   field(:configCompleteRedirectUrl)
-  field(:dialogEventType)
   field(:eventTime, as: DateTime)
-  field(:formInputs, as: GoogleApi.Chat.V1.Model.FormInput, type: :list)
-  field(:isDialogEvent)
   field(:message, as: GoogleApi.Chat.V1.Model.Message)
   field(:space, as: GoogleApi.Chat.V1.Model.Space)
   field(:threadKey)
