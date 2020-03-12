@@ -18,8 +18,7 @@
 defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest do
   @moduledoc """
   A content digest. A digest for a given blob consists of the size of the blob
-  and its hash. The hash algorithm to use is defined by the server, but servers
-  SHOULD use SHA-256.
+  and its hash. The hash algorithm to use is defined by the server.
 
   The size is considered to be an integral part of the digest and cannot be
   separated. That is, even if the `hash` field is correctly specified but

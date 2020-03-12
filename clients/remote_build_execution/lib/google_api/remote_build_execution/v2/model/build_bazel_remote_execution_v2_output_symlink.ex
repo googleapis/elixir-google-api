@@ -25,6 +25,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Out
 
   ## Attributes
 
+  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The supported node properties of the OutputSymlink, if requested by the
+      Action.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The full path of the symlink relative to the working directory, including the
       filename. The path separator is a forward slash `/`. Since this is a
       relative path, it MUST NOT begin with a leading forward slash.
@@ -39,9 +41,18 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Out
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :nodeProperties =>
+            list(
+              GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t()
+            ),
           :path => String.t(),
           :target => String.t()
         }
+
+  field(:nodeProperties,
+    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty,
+    type: :list
+  )
 
   field(:path)
   field(:target)
