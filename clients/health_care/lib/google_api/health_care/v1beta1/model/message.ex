@@ -37,7 +37,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
       following PCRE regular expression: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63}
 
       No more than 64 labels can be associated with a given store.
-  *   `messageType` (*type:* `String.t`, *default:* `nil`) - The message type and trigger event for this message. MSH-9.
+  *   `messageType` (*type:* `String.t`, *default:* `nil`) - The message type for this message. MSH-9.1.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Message, of the form
       `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`.
       Assigned by the server.
