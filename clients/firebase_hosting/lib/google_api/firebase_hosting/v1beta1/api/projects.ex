@@ -90,4 +90,318 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseHosting.V1beta1.Model.Operation{}])
   end
+
+  @doc """
+  Creates a new release which makes the content of the specified version
+  actively display on the appropriate URL(s).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The site that the release belongs to, in the format:
+      <code>sites/<var>site-name</var></code>
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:versionName` (*type:* `String.t`) - The unique identifier for a version, in the format:
+          <code>/sites/<var>site-name</var>/versions/<var>versionID</var></code>
+          The <var>site-name</var> in this version identifier must match the
+          <var>site-name</var> in the `parent` parameter.
+          <br>
+          <br>This query parameter must be empty if the `type` field in the
+          request body is `SITE_DISABLE`.
+      *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Release.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.FirebaseHosting.V1beta1.Model.Release{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec firebasehosting_projects_sites_channels_releases_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Release.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def firebasehosting_projects_sites_channels_releases_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :versionName => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta1/{+parent}/releases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseHosting.V1beta1.Model.Release{}])
+  end
+
+  @doc """
+  Lists the releases that have been created on the specified site.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The parent for which to list files, in the format:
+      <code>sites/<var>site-name</var></code>
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The page size to return. Defaults to 100.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token from a previous request, if provided.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec firebasehosting_projects_sites_channels_releases_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def firebasehosting_projects_sites_channels_releases_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1beta1/{+parent}/releases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse{}]
+    )
+  end
+
+  @doc """
+  Creates a new release which makes the content of the specified version
+  actively display on the appropriate URL(s).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The site that the release belongs to, in the format:
+      <code>sites/<var>site-name</var></code>
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:versionName` (*type:* `String.t`) - The unique identifier for a version, in the format:
+          <code>/sites/<var>site-name</var>/versions/<var>versionID</var></code>
+          The <var>site-name</var> in this version identifier must match the
+          <var>site-name</var> in the `parent` parameter.
+          <br>
+          <br>This query parameter must be empty if the `type` field in the
+          request body is `SITE_DISABLE`.
+      *   `:body` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Model.Release.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.FirebaseHosting.V1beta1.Model.Release{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec firebasehosting_projects_sites_releases_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Release.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def firebasehosting_projects_sites_releases_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :versionName => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta1/{+parent}/releases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.FirebaseHosting.V1beta1.Model.Release{}])
+  end
+
+  @doc """
+  Lists the releases that have been created on the specified site.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The parent for which to list files, in the format:
+      <code>sites/<var>site-name</var></code>
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The page size to return. Defaults to 100.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token from a previous request, if provided.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec firebasehosting_projects_sites_releases_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def firebasehosting_projects_sites_releases_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1beta1/{+parent}/releases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse{}]
+    )
+  end
 end
