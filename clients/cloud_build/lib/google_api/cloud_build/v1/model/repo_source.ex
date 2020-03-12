@@ -30,6 +30,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
 
       This must be a relative path. If a step's `dir` is specified and is an
       absolute path, this value is ignored for that step's execution.
+  *   `invertRegex` (*type:* `boolean()`, *default:* `nil`) - Only trigger a build if the revision regex does NOT match the revision
+      regex.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - ID of the project that owns the Cloud Source Repository. If omitted, the
       project ID requesting the build is assumed.
   *   `repoName` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Cloud Source Repository.
@@ -47,6 +49,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
           :branchName => String.t(),
           :commitSha => String.t(),
           :dir => String.t(),
+          :invertRegex => boolean(),
           :projectId => String.t(),
           :repoName => String.t(),
           :substitutions => map(),
@@ -56,6 +59,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.RepoSource do
   field(:branchName)
   field(:commitSha)
   field(:dir)
+  field(:invertRegex)
   field(:projectId)
   field(:repoName)
   field(:substitutions, type: :map)
