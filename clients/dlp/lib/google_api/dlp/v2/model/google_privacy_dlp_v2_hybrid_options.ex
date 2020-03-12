@@ -19,9 +19,6 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridOptions do
   @moduledoc """
   Configuration to control jobs where the content being inspected is outside
   of Google Cloud Platform.
-  Early access feature is in a pre-release state and might change or have
-  limited support. For more information, see
-  https://cloud.google.com/products#product-launch-stages.
 
   ## Attributes
 
