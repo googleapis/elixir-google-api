@@ -15,7 +15,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_data_fusion, "~> 0.4"}]
+  [{:google_api_data_fusion, "~> 0.5"}]
 end
 ```
 
