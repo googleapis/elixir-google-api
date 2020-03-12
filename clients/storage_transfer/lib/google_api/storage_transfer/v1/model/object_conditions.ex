@@ -65,6 +65,21 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
           with the value of a path explicitly included by `include_prefixes`.
 
       The max size of `include_prefixes` is 1000.
+  *   `lastModifiedBefore` (*type:* `DateTime.t`, *default:* `nil`) - If specified, only objects with a "last modification time" before this
+      timestamp and objects that don't have a "last modification time" will be
+      transferred.
+  *   `lastModifiedSince` (*type:* `DateTime.t`, *default:* `nil`) - If specified, only objects with a "last modification time" on or after
+      this timestamp and objects that don't have a "last modification time" are
+      transferred.
+
+      The `last_modified_since` and `last_modified_before` fields can be used
+      together for chunked data processing. For example, consider a script that
+      processes each day's worth of data at a time. For that you'd set each
+      of the fields as follows:
+
+      *  `last_modified_since` to the start of the day
+
+      *  `last_modified_before` to the end of the day
   *   `maxTimeElapsedSinceLastModification` (*type:* `String.t`, *default:* `nil`) - If specified, only objects with a "last modification time" on or after
       `NOW` - `max_time_elapsed_since_last_modification` and objects that don't
       have a "last modification time" are transferred.
@@ -86,12 +101,16 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
   @type t :: %__MODULE__{
           :excludePrefixes => list(String.t()),
           :includePrefixes => list(String.t()),
+          :lastModifiedBefore => DateTime.t(),
+          :lastModifiedSince => DateTime.t(),
           :maxTimeElapsedSinceLastModification => String.t(),
           :minTimeElapsedSinceLastModification => String.t()
         }
 
   field(:excludePrefixes, type: :list)
   field(:includePrefixes, type: :list)
+  field(:lastModifiedBefore, as: DateTime)
+  field(:lastModifiedSince, as: DateTime)
   field(:maxTimeElapsedSinceLastModification)
   field(:minTimeElapsedSinceLastModification)
 end

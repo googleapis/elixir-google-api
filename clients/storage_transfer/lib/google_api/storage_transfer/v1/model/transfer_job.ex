@@ -28,20 +28,19 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
       bytes when Unicode-encoded.
   *   `lastModificationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the transfer job was last modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A unique name (within the transfer project) assigned when the job is
-      created.
-      If this field is left empty in a CreateTransferJobRequest, Storage Transfer
-      Service will assign a unique name. Otherwise, the supplied name is used as
-      the unique name for this job.
+      created.  If this field is empty in a CreateTransferJobRequest, Storage
+      Transfer Service will assign a unique name. Otherwise, the specified name
+      is used as the unique name for this job.
+
+      If the specified name is in use by a job, the creation request fails with
+      an ALREADY_EXISTS error.
 
       This name must start with `"transferJobs/"` prefix and end with a letter or
       a number, and should be no more than 128 characters.
-      Example of a valid format : `"transferJobs/[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+      Example: `"transferJobs/[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
 
-      **Note:** If the supplied name is already in use, the creation request
-      results in an ALREADY_EXISTS error and
-      the transfer job will not be created.  Invalid job names will return an
-      INVALID_ARGUMENT error and the job will
-      not be created.
+      Invalid job names will fail with an
+      INVALID_ARGUMENT error.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Cloud Platform Project that owns the job.
   *   `schedule` (*type:* `GoogleApi.StorageTransfer.V1.Model.Schedule.t`, *default:* `nil`) - Schedule specification.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the job. This value MUST be specified for
