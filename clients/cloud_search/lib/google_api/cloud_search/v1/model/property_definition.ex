@@ -38,7 +38,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.PropertyDefinition do
   *   `isRepeatable` (*type:* `boolean()`, *default:* `nil`) - Indicates that multiple values are allowed for the property. For example, a
       document only has one description but can have multiple comments. Cannot be
       true for properties whose type is a boolean.
-      If set to false, properties that contain more than one value will cause the
+      If set to false, properties that contain more than one value cause the
       indexing request for that item to be rejected.
   *   `isReturnable` (*type:* `boolean()`, *default:* `nil`) - Indicates that the property identifies data that should be returned in
       search results via the Query API. If set to *true*, indicates that Query

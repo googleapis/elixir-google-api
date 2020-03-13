@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DateOperatorOptions do
   *   `greaterThanOperatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name required in the query in order to isolate the
       date property using the greater-than operator. For example, if
       greaterThanOperatorName is *closedafter* and the property's name is
-      *closeDate*, then queries like *closedafter:&lt;value&gt;* will
+      *closeDate*, then queries like *closedafter:&lt;value&gt;*
       show results only where the value of the property named *closeDate* is
       later than *&lt;value&gt;*.
       The operator name can only contain lowercase letters (a-z).
@@ -34,7 +34,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.DateOperatorOptions do
   *   `lessThanOperatorName` (*type:* `String.t`, *default:* `nil`) - Indicates the operator name required in the query in order to isolate the
       date property using the less-than operator. For example, if
       lessThanOperatorName is *closedbefore* and the property's name is
-      *closeDate*, then queries like *closedbefore:&lt;value&gt;* will
+      *closeDate*, then queries like *closedbefore:&lt;value&gt;*
       show results only where the value of the property named *closeDate* is
       earlier than *&lt;value&gt;*.
       The operator name can only contain lowercase letters (a-z).
@@ -43,9 +43,9 @@ defmodule GoogleApi.CloudSearch.V1.Model.DateOperatorOptions do
       date property. For example, suppose an issue tracking schema object
       has a property named *closeDate* that specifies an operator with an
       operatorName of *closedon*. For searches on that data, queries like
-      *closedon:&lt;value&gt;* will show results only where the value of the
+      *closedon:&lt;value&gt;* show results only where the value of the
       *closeDate* property matches *&lt;value&gt;*. By contrast, a
-      search that uses the same *&lt;value&gt;* without an operator will return
+      search that uses the same *&lt;value&gt;* without an operator returns
       all items where *&lt;value&gt;* matches the value of any String
       properties or text within the content field for the indexed datasource.
       The operator name can only contain lowercase letters (a-z).
