@@ -180,7 +180,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   WARNING: There are some fields exposed on the Google Cloud Console that
   aren’t available on this API. When reading from the API, you will not
   see these fields in the return value, though they may have been set
-  in the cloud console.
+  in the Cloud Console.
 
   ## Parameters
 
@@ -258,7 +258,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   WARNING: There are some fields exposed on the Google Cloud Console that
   aren’t available on this API. When reading from the API, you will not
   see these fields in the return value, though they may have been set
-  in the cloud console.
+  in the Cloud Console.
 
   ## Parameters
 

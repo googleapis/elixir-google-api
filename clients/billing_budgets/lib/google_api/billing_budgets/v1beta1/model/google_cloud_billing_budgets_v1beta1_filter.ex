@@ -22,7 +22,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   ## Attributes
 
   *   `creditTypesTreatment` (*type:* `String.t`, *default:* `nil`) - Optional. If not set, default behavior is `INCLUDE_ALL_CREDITS`.
-  *   `projects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of projects of the form `projects/{project_id}`,
+  *   `projects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of projects of the form `projects/{project}`,
       specifying that usage from only this set of projects should be
       included in the budget. If omitted, the report will include all usage for
       the billing account, regardless of which project the usage occurred on.
