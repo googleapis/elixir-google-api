@@ -24,6 +24,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
   *   `digestFunction` (*type:* `String.t`, *default:* `nil`) - Remote execution may only support a single digest function.
   *   `execEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether remote execution is enabled for the particular server/instance.
   *   `executionPriorityCapabilities` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities.t`, *default:* `nil`) - Supported execution priority range.
+  *   `supportedNodeProperties` (*type:* `list(String.t)`, *default:* `nil`) - Supported node properties.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,7 +33,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
           :digestFunction => String.t(),
           :execEnabled => boolean(),
           :executionPriorityCapabilities =>
-            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities.t()
+            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities.t(),
+          :supportedNodeProperties => list(String.t())
         }
 
   field(:digestFunction)
@@ -41,6 +43,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Exe
   field(:executionPriorityCapabilities,
     as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2PriorityCapabilities
   )
+
+  field(:supportedNodeProperties, type: :list)
 end
 
 defimpl Poison.Decoder,

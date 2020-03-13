@@ -40,6 +40,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dir
   * The files, directories and symlinks in the directory must each be sorted
     in lexicographical order by path. The path strings must be sorted by code
     point, equivalently, by UTF-8 bytes.
+  * The NodeProperties of files,
+    directories, and symlinks must be sorted in lexicographical order by
+    property name.
 
   A `Directory` that obeys the restrictions is said to be in canonical form.
 
@@ -56,7 +59,13 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dir
         digest: {
           hash: "4a73bc9d03...",
           size: 65534
-        }
+        },
+        node_properties: [
+          {
+            "name": "MTime",
+            "value": "2017-01-15T01:30:15.01Z"
+          }
+        ]
       }
     ],
     directories: [
@@ -89,6 +98,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dir
 
   *   `directories` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2DirectoryNode.t)`, *default:* `nil`) - The subdirectories in the directory.
   *   `files` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FileNode.t)`, *default:* `nil`) - The files in the directory.
+  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The node properties of the Directory.
   *   `symlinks` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2SymlinkNode.t)`, *default:* `nil`) - The symlinks in the directory.
   """
 
@@ -101,6 +111,10 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dir
             ),
           :files =>
             list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FileNode.t()),
+          :nodeProperties =>
+            list(
+              GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t()
+            ),
           :symlinks =>
             list(
               GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2SymlinkNode.t()
@@ -114,6 +128,11 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Dir
 
   field(:files,
     as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FileNode,
+    type: :list
+  )
+
+  field(:nodeProperties,
+    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty,
     type: :list
   )
 

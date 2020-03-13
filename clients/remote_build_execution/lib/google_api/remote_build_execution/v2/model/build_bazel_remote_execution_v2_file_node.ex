@@ -24,6 +24,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Fil
   *   `digest` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t`, *default:* `nil`) - The digest of the file's content.
   *   `isExecutable` (*type:* `boolean()`, *default:* `nil`) - True if file is executable, false otherwise.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the file.
+  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The node properties of the FileNode.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +33,21 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Fil
           :digest =>
             GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
           :isExecutable => boolean(),
-          :name => String.t()
+          :name => String.t(),
+          :nodeProperties =>
+            list(
+              GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t()
+            )
         }
 
   field(:digest, as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest)
   field(:isExecutable)
   field(:name)
+
+  field(:nodeProperties,
+    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder,

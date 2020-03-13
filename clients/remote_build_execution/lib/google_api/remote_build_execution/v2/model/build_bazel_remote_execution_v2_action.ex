@@ -53,6 +53,14 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Act
       directory, as well as every subdirectory and content blob referred to, MUST
       be in the
       ContentAddressableStorage.
+  *   `outputNodeProperties` (*type:* `list(String.t)`, *default:* `nil`) - List of required supported NodeProperty
+      keys. In order to ensure that equivalent `Action`s always hash to the same
+      value, the supported node properties MUST be lexicographically sorted by name.
+      Sorting of strings is done by code point, equivalently, by the UTF-8 bytes.
+
+      The interpretation of these properties is server-dependent. If a property is
+      not recognized by the server, the server will return an `INVALID_ARGUMENT`
+      error.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - A timeout after which the execution should be killed. If the timeout is
       absent, then the client is specifying that the execution should continue
       as long as the server will let it. The server SHOULD impose a timeout if
@@ -79,6 +87,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Act
           :doNotCache => boolean(),
           :inputRootDigest =>
             GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest.t(),
+          :outputNodeProperties => list(String.t()),
           :timeout => String.t()
         }
 
@@ -92,6 +101,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Act
     as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Digest
   )
 
+  field(:outputNodeProperties, type: :list)
   field(:timeout)
 end
 
