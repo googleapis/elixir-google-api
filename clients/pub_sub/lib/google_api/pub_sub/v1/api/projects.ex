@@ -2449,7 +2449,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. The name of the topic that snapshots are attached to.
+  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. The name of the topic that snapshots are attached to.
       Format is `projects/{project}/topics/{topic}`.
   *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
