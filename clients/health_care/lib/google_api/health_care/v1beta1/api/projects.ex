@@ -8139,7 +8139,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
           Fields/functions available for filtering are:
 
-          *  `message_type`, from the MSH-9 segment. For example,
+          *  `message_type`, from the MSH-9.1 field. For example,
           `NOT message_type = "ADT"`.
           *  `send_date` or `sendDate`, the YYYY-MM-DD date the message was sent in
           the dataset's time_zone, from the MSH-7 segment. For example,
