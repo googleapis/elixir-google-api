@@ -19,9 +19,6 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Manual do
   @moduledoc """
   Job trigger option for hybrid jobs. Jobs must be manually created
   and finished.
-  Early access feature is in a pre-release state and might change or have
-  limited support. For more information, see
-  https://cloud.google.com/products#product-launch-stages.
 
   ## Attributes
 

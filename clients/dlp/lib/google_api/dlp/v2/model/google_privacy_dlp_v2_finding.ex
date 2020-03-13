@@ -26,7 +26,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
       Provided if `excluded_types` is false.
   *   `jobCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time the job started that produced this finding.
   *   `jobName` (*type:* `String.t`, *default:* `nil`) - The job that stored the finding.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this `InspectFinding`.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this `Finding`.
 
       Label keys must be between 1 and 63 characters long and must conform
       to the following regular expression: \\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?.
@@ -40,8 +40,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
       Example: <code>"pipeline" : "etl"</code>
   *   `likelihood` (*type:* `String.t`, *default:* `nil`) - Confidence of how likely it is that the `info_type` is correct.
   *   `location` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location.t`, *default:* `nil`) - Where the content was found.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name in format projects/{id}/locations/{id}/inspectFindings/{id}
-      Populated only when viewing persisted findings.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name in format
+      projects/{project}/locations/{location}/findings/{finding} Populated only
+      when viewing persisted findings.
   *   `quote` (*type:* `String.t`, *default:* `nil`) - The content that was found. Even if the content is not textual, it
       may be converted to a textual representation here.
       Provided if `include_quote` is true and the finding is

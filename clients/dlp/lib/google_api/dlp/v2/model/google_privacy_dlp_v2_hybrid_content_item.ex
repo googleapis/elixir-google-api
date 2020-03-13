@@ -19,9 +19,6 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridContentItem do
   @moduledoc """
   An individual hybrid item to inspect. Will be stored temporarily during
   processing.
-  Early access feature is in a pre-release state and might change or have
-  limited support. For more information, see
-  https://cloud.google.com/products#product-launch-stages.
 
   ## Attributes
 

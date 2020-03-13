@@ -17,34 +17,31 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics do
   @moduledoc """
-  Statistics related to processing hybrid inspect requests
-  Early access feature is in a pre-release state and might change or have
-  limited support. For more information, see
-  https://cloud.google.com/products#product-launch-stages.
+  Statistics related to processing hybrid inspect requests.
 
   ## Attributes
 
-  *   `hybridRequestsAborted` (*type:* `String.t`, *default:* `nil`) - The number of hybrid inspection requests aborted because the job ran
+  *   `abortedCount` (*type:* `String.t`, *default:* `nil`) - The number of hybrid inspection requests aborted because the job ran
       out of quota or was ended before they could be processed.
-  *   `hybridRequestsPending` (*type:* `String.t`, *default:* `nil`) - The number of hybrid requests currently being processed. Only populated
+  *   `pendingCount` (*type:* `String.t`, *default:* `nil`) - The number of hybrid requests currently being processed. Only populated
       when called via method `getDlpJob`.
       A burst of traffic may cause hybrid inspect requests to be enqueued.
       Processing will take place as quickly as possible, but resource limitations
       may impact how long a request is enqueued for.
-  *   `hybridRequestsProcessed` (*type:* `String.t`, *default:* `nil`) - The number of hybrid inspection requests processed within this job.
+  *   `processedCount` (*type:* `String.t`, *default:* `nil`) - The number of hybrid inspection requests processed within this job.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :hybridRequestsAborted => String.t(),
-          :hybridRequestsPending => String.t(),
-          :hybridRequestsProcessed => String.t()
+          :abortedCount => String.t(),
+          :pendingCount => String.t(),
+          :processedCount => String.t()
         }
 
-  field(:hybridRequestsAborted)
-  field(:hybridRequestsPending)
-  field(:hybridRequestsProcessed)
+  field(:abortedCount)
+  field(:pendingCount)
+  field(:processedCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics do
