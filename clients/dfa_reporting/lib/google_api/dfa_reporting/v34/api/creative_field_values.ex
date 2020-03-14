@@ -319,14 +319,14 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFieldValues do
   end
 
   @doc """
-  Updates an existing creative field value. This method supports patch semantics.
+  Updates an existing creative field. This method supports patch semantics.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V34.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
   *   `creative_field_id` (*type:* `String.t`) - Creative field ID for this creative field value.
-  *   `id` (*type:* `String.t`) - Creative Field Value ID
+  *   `id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
