@@ -26,6 +26,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.Player do
   *   `bannerUrlPortrait` (*type:* `String.t`, *default:* `nil`) - The url to the portrait mode player banner image.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the player.
   *   `experienceInfo` (*type:* `GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource.t`, *default:* `nil`) - An object to represent Play Game experience information for the player.
+  *   `friendStatus` (*type:* `String.t`, *default:* `nil`) - The friend status of the given player, relative to the requester. This is unset if the player is not sharing their friends list with the game.
   *   `kind` (*type:* `String.t`, *default:* `gamesManagement#player`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#player.
   *   `lastPlayedWith` (*type:* `GoogleApi.GamesManagement.V1management.Model.GamesPlayedResource.t`, *default:* `nil`) - Details about the last time this player played a multiplayer game with the currently authenticated player. Populated for PLAYED_WITH player collection members.
   *   `name` (*type:* `GoogleApi.GamesManagement.V1management.Model.PlayerName.t`, *default:* `nil`) - An object representation of the individual components of the player's name. For some players, these fields may not be present.
@@ -45,6 +46,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.Player do
           :displayName => String.t(),
           :experienceInfo =>
             GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource.t(),
+          :friendStatus => String.t(),
           :kind => String.t(),
           :lastPlayedWith => GoogleApi.GamesManagement.V1management.Model.GamesPlayedResource.t(),
           :name => GoogleApi.GamesManagement.V1management.Model.PlayerName.t(),
@@ -64,6 +66,7 @@ defmodule GoogleApi.GamesManagement.V1management.Model.Player do
     as: GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource
   )
 
+  field(:friendStatus)
   field(:kind)
   field(:lastPlayedWith, as: GoogleApi.GamesManagement.V1management.Model.GamesPlayedResource)
   field(:name, as: GoogleApi.GamesManagement.V1management.Model.PlayerName)
