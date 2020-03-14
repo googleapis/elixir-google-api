@@ -242,6 +242,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
       *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous List request, if any.
       *   `:parent` (*type:* `String.t`) - Required. The name of the resource to list all attached Liens.
           For example, `projects/1234`.
+
+          (google.api.field_policy).resource_type annotation is not set since the
+          parent depends on the meta api implementation. This field could be a
+          project or other sub project resources.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
