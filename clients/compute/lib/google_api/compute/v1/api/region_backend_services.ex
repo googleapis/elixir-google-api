@@ -241,7 +241,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Creates a regional BackendService resource in the specified project using the data included in the request. There are several restrictions and guidelines to keep in mind when creating a regional backend service. Read  Restrictions and Guidelines for more information.
+  Creates a regional BackendService resource in the specified project using the data included in the request. There are several restrictions and guidelines to keep in mind when creating a regional backend service. Read  Understanding backend services for more information.
 
   ## Parameters
 
@@ -397,7 +397,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Updates the specified regional BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+  Updates the specified regional BackendService resource with the data included in the request. There are several Understanding backend services to keep in mind when updating a backend service. Read  Understanding backend services for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
 
   ## Parameters
 
@@ -474,7 +474,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Updates the specified regional BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information.
+  Updates the specified regional BackendService resource with the data included in the request. There are several Understanding backend services to keep in mind when updating a backend service. Read  Understanding backend services for more information.
 
   ## Parameters
 

@@ -27,8 +27,6 @@ defmodule GoogleApi.Compute.V1.Model.LogConfigCounterOptions do
 
   Examples: counter { metric: "/debug_access_count" field: "iam_principal" } ==> increment counter /iam/policy/debug_access_count {iam_principal=[value of IAMContext.principal]}
 
-  TODO(b/141846426): Consider supporting "authority" and "iam_principal" fields in the same counter.
-
   ## Attributes
 
   *   `customFields` (*type:* `list(GoogleApi.Compute.V1.Model.LogConfigCounterOptionsCustomField.t)`, *default:* `nil`) - Custom fields.

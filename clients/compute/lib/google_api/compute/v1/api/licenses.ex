@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified license.
+  Deletes the specified license.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -85,7 +85,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Returns the specified License resource.
+  Returns the specified License resource.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -138,7 +138,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -203,7 +203,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Create a License resource in the specified project.
+  Create a License resource in the specified project.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -262,7 +262,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Retrieves the list of licenses available in the specified project. This method does not get any licenses that belong to other projects, including licenses attached to publicly-available images, like Debian 9. If you want to get a list of publicly-available licenses, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.
+  Retrieves the list of licenses available in the specified project. This method does not get any licenses that belong to other projects, including licenses attached to publicly-available images, like Debian 9. If you want to get a list of publicly-available licenses, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -331,7 +331,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -398,7 +398,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 

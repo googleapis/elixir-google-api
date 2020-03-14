@@ -31,6 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum cpu/platform to be used by this instance. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
   *   `networkInterfaces` (*type:* `list(GoogleApi.Compute.V1.Model.NetworkInterface.t)`, *default:* `nil`) - An array of network access configurations for this interface.
   *   `reservationAffinity` (*type:* `GoogleApi.Compute.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Specifies the reservations that this instance can consume from.
+  *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies (names, not ULRs) applied to instances created from this template.
   *   `scheduling` (*type:* `GoogleApi.Compute.V1.Model.Scheduling.t`, *default:* `nil`) - Specifies the scheduling options for the instances that are created from this template.
   *   `serviceAccounts` (*type:* `list(GoogleApi.Compute.V1.Model.ServiceAccount.t)`, *default:* `nil`) - A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from this template. Use metadata queries to obtain the access tokens for these instances.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - 
@@ -50,6 +51,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
           :minCpuPlatform => String.t(),
           :networkInterfaces => list(GoogleApi.Compute.V1.Model.NetworkInterface.t()),
           :reservationAffinity => GoogleApi.Compute.V1.Model.ReservationAffinity.t(),
+          :resourcePolicies => list(String.t()),
           :scheduling => GoogleApi.Compute.V1.Model.Scheduling.t(),
           :serviceAccounts => list(GoogleApi.Compute.V1.Model.ServiceAccount.t()),
           :shieldedInstanceConfig => GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t(),
@@ -66,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
   field(:minCpuPlatform)
   field(:networkInterfaces, as: GoogleApi.Compute.V1.Model.NetworkInterface, type: :list)
   field(:reservationAffinity, as: GoogleApi.Compute.V1.Model.ReservationAffinity)
+  field(:resourcePolicies, type: :list)
   field(:scheduling, as: GoogleApi.Compute.V1.Model.Scheduling)
   field(:serviceAccounts, as: GoogleApi.Compute.V1.Model.ServiceAccount, type: :list)
   field(:shieldedInstanceConfig, as: GoogleApi.Compute.V1.Model.ShieldedInstanceConfig)

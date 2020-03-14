@@ -35,6 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy do
 
       At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
   *   `minimalAction` (*type:* `String.t`, *default:* `nil`) - Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+  *   `replacementMethod` (*type:* `String.t`, *default:* `nil`) - What action should be used to replace instances. See minimal_action.REPLACE
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
   """
 
@@ -45,6 +46,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy do
           :maxSurge => GoogleApi.Compute.V1.Model.FixedOrPercent.t(),
           :maxUnavailable => GoogleApi.Compute.V1.Model.FixedOrPercent.t(),
           :minimalAction => String.t(),
+          :replacementMethod => String.t(),
           :type => String.t()
         }
 
@@ -52,6 +54,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy do
   field(:maxSurge, as: GoogleApi.Compute.V1.Model.FixedOrPercent)
   field(:maxUnavailable, as: GoogleApi.Compute.V1.Model.FixedOrPercent)
   field(:minimalAction)
+  field(:replacementMethod)
   field(:type)
 end
 

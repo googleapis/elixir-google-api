@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Return a specified license code. License codes are mirrored across all projects that have permissions to read the License Code.
+  Return a specified license code. License codes are mirrored across all projects that have permissions to read the License Code.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -91,7 +91,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 

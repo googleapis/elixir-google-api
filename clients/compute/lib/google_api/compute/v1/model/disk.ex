@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
 
   Google Compute Engine has two Disk resources:
 
-  * [Global](/compute/docs/reference/rest/latest/disks) * [Regional](/compute/docs/reference/rest/latest/regionDisks)
+  * [Global](/compute/docs/reference/rest/{$api_version}/disks) * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
 
   Persistent disks are required for running your VM instances. Create both boot and non-boot (data) persistent disks. For more information, read Persistent Disks. For more storage options, read Storage options.
 

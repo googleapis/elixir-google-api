@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
 
   Forwarding rule resources in GCP can be either regional or global in scope:
 
-  * [Global](/compute/docs/reference/rest/latest/globalForwardingRules) * [Regional](/compute/docs/reference/rest/latest/forwardingRules)
+  * [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) * [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
 
   A forwarding rule and its corresponding IP address represent the frontend configuration of a Google Cloud Platform load balancer. Forwarding rules can also reference target instances and Cloud VPN Classic gateways (targetVpnGateway).
 
@@ -69,7 +69,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       - Internal TCP/UDP load balancers   
       - INTERNAL_MANAGED is used for:  
       - Internal HTTP(S) load balancers   
-      - >INTERNAL_SELF_MANAGED is used for:  
+      - INTERNAL_SELF_MANAGED is used for:  
       - Traffic Director    
 
       For more information about forwarding rules, refer to Forwarding rule concepts.
@@ -81,7 +81,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `network` (*type:* `String.t`, *default:* `nil`) - This field is not used for external load balancing.
 
       For INTERNAL and INTERNAL_SELF_MANAGED load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
-  *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM , STANDARD.
+  *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.
 
       For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
 
