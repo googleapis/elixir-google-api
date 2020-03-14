@@ -26,6 +26,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `AccessPolicy` was created in UTC.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. An opaque identifier for the current version of the
+      `AccessPolicy`. This will always be a strongly validated etag, meaning that
+      two Access Polices will be identical if and only if their etags are
+      identical. Clients should not expect this to be in any specific format.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the `AccessPolicy`. Format:
       `accessPolicies/{policy_id}`
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The parent of this `AccessPolicy` in the Cloud Resource
@@ -39,6 +43,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t(),
+          :etag => String.t(),
           :name => String.t(),
           :parent => String.t(),
           :title => String.t(),
@@ -46,6 +51,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
         }
 
   field(:createTime, as: DateTime)
+  field(:etag)
   field(:name)
   field(:parent)
   field(:title)
