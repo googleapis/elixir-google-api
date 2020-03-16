@@ -30,7 +30,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_An
       supported, which must be specified in the following format:
       `gs://bucket-id/object-id` (other URI formats return
       google.rpc.Code.INVALID_ARGUMENT). For more information, see
-      [Request URIs](/storage/docs/reference-uris).
+      [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
       A video URI may include wildcards in `object-id`, and thus identify
       multiple videos. Supported wildcards: '*' to match 0 or more characters;
       '?' to match 1 character. If unset, the input video should be embedded
@@ -43,7 +43,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_An
       URIs are supported, which must be specified in the following format:
       `gs://bucket-id/object-id` (other URI formats return
       google.rpc.Code.INVALID_ARGUMENT). For more information, see
-      [Request URIs](/storage/docs/reference-uris).
+      [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
   *   `videoContext` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_VideoContext.t`, *default:* `nil`) - Additional video context and/or feature-specific parameters.
   """
 
