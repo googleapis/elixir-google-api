@@ -40,10 +40,14 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredLoggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs.
       Currently available options:
 
-      * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-      service with Kubernetes-native resource model
-      * "logging.googleapis.com" - the Google Cloud Logging service
-      * "none" - no logs will be exported from the cluster
+      * `logging.googleapis.com/kubernetes` - The Cloud Logging
+      service with a Kubernetes-native resource model
+      * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+        available as of GKE 1.15).
+      * `none` - no logs will be exported from the cluster.
+
+      If left as an empty string,`logging.googleapis.com/kubernetes` will be
+      used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
   *   `desiredMasterVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the master to.
 
@@ -58,10 +62,14 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredMonitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics.
       Currently available options:
 
-      * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-      service with Kubernetes-native resource model
-      * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-      * "none" - no metrics will be exported from the cluster
+      * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+      service with a Kubernetes-native resource model
+      * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+        longer available as of GKE 1.15).
+      * `none` - No metrics will be exported from the cluster.
+
+      If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+      used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
   *   `desiredNodePoolAutoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for the node pool specified in
       desired_node_pool_id. If there is only one pool in the
       cluster and desired_node_pool_id is not provided then

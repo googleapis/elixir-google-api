@@ -49,9 +49,14 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `monitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics.
       Currently available options:
 
-      * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-      * `none` - no metrics will be exported from the cluster.
-      * if left as an empty string, `monitoring.googleapis.com` will be used.
+      * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+      service with a Kubernetes-native resource model
+      * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+        longer available as of GKE 1.15).
+      * `none` - No metrics will be exported from the cluster.
+
+      If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+      used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
   *   `workloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for the use of Kubernetes Service Accounts in GCP IAM
       policies.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine
@@ -69,11 +74,14 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `loggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs.
       Currently available options:
 
-      * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-      service with Kubernetes-native resource model
-      * `logging.googleapis.com` - the Google Cloud Logging service.
+      * `logging.googleapis.com/kubernetes` - The Cloud Logging
+      service with a Kubernetes-native resource model
+      * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+        available as of GKE 1.15).
       * `none` - no logs will be exported from the cluster.
-      * if left as an empty string,`logging.googleapis.com` will be used.
+
+      If left as an empty string,`logging.googleapis.com/kubernetes` will be
+      used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
   *   `resourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - Configuration for exporting resource usages. Resource usage export is
       disabled when this config is unspecified.
   *   `endpoint` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address of this cluster's master endpoint.
