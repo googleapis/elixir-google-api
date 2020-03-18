@@ -18,7 +18,6 @@
 defmodule GoogleApi.CloudIdentity.V1.Model.EndpointApp do
   @moduledoc """
   An EndpointApp represents an app that is installed on a device
-  Next ID to use: 7
 
   ## Attributes
 
