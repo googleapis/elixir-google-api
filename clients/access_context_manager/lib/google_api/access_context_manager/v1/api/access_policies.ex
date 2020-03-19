@@ -711,7 +711,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level. The `short_name` component
       must begin with a letter and only include alphanumeric and '_'. Format:
-      `accessPolicies/{policy_id}/accessLevels/{short_name}`
+      `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
+      of the `short_name` component is 50 characters.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -950,7 +951,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Create an Service Perimeter. The
+  Create a Service Perimeter. The
   longrunning operation from this RPC will have a successful status once the
   Service Perimeter has
   propagated to long-lasting storage. Service Perimeters containing
@@ -1028,7 +1029,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Delete an Service Perimeter by resource
+  Delete a Service Perimeter by resource
   name. The longrunning operation from this RPC will have a successful status
   once the Service Perimeter has been
   removed from long-lasting storage.
@@ -1103,7 +1104,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Get an Service Perimeter by resource
+  Get a Service Perimeter by resource
   name.
 
   ## Parameters
@@ -1259,7 +1260,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Update an Service Perimeter. The
+  Update a Service Perimeter. The
   longrunning operation from this RPC will have a successful status once the
   changes to the Service Perimeter have
   propagated to long-lasting storage. Service Perimeter containing
