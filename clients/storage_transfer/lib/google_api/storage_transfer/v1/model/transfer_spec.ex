@@ -22,6 +22,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   ## Attributes
 
   *   `awsS3DataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.AwsS3Data.t`, *default:* `nil`) - An AWS S3 data source.
+  *   `azureBlobStorageDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData.t`, *default:* `nil`) - An Azure Blob Storage data source.
   *   `gcsDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Cloud Storage data sink.
   *   `gcsDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Cloud Storage data source.
   *   `httpDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.HttpData.t`, *default:* `nil`) - An HTTP URL data source.
@@ -38,6 +39,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
 
   @type t :: %__MODULE__{
           :awsS3DataSource => GoogleApi.StorageTransfer.V1.Model.AwsS3Data.t(),
+          :azureBlobStorageDataSource =>
+            GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData.t(),
           :gcsDataSink => GoogleApi.StorageTransfer.V1.Model.GcsData.t(),
           :gcsDataSource => GoogleApi.StorageTransfer.V1.Model.GcsData.t(),
           :httpDataSource => GoogleApi.StorageTransfer.V1.Model.HttpData.t(),
@@ -46,6 +49,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
         }
 
   field(:awsS3DataSource, as: GoogleApi.StorageTransfer.V1.Model.AwsS3Data)
+  field(:azureBlobStorageDataSource, as: GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData)
   field(:gcsDataSink, as: GoogleApi.StorageTransfer.V1.Model.GcsData)
   field(:gcsDataSource, as: GoogleApi.StorageTransfer.V1.Model.GcsData)
   field(:httpDataSource, as: GoogleApi.StorageTransfer.V1.Model.HttpData)

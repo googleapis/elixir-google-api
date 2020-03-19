@@ -41,6 +41,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
 
       Invalid job names will fail with an
       INVALID_ARGUMENT error.
+  *   `notificationConfig` (*type:* `GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Cloud Platform Project that owns the job.
   *   `schedule` (*type:* `GoogleApi.StorageTransfer.V1.Model.Schedule.t`, *default:* `nil`) - Schedule specification.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the job. This value MUST be specified for
@@ -62,6 +63,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
           :description => String.t(),
           :lastModificationTime => DateTime.t(),
           :name => String.t(),
+          :notificationConfig => GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t(),
           :projectId => String.t(),
           :schedule => GoogleApi.StorageTransfer.V1.Model.Schedule.t(),
           :status => String.t(),
@@ -73,6 +75,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   field(:description)
   field(:lastModificationTime, as: DateTime)
   field(:name)
+  field(:notificationConfig, as: GoogleApi.StorageTransfer.V1.Model.NotificationConfig)
   field(:projectId)
   field(:schedule, as: GoogleApi.StorageTransfer.V1.Model.Schedule)
   field(:status)
