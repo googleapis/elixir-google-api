@@ -24,7 +24,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildbotCo
 
   *   `dockerPrep` (*type:* `String.t`, *default:* `nil`) - The time spent preparing the command to be run in a Docker container
       (includes pulling the Docker image, if necessary).
-  *   `dockerPrepStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when docker prepartion begins.
+  *   `dockerPrepStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when docker preparation begins.
   *   `download` (*type:* `String.t`, *default:* `nil`) - The time spent downloading the input files and constructing the working
       directory.
   *   `downloadStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when downloading the input files begins.
