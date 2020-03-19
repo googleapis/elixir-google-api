@@ -33,9 +33,6 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Insig
   *   `insightSubtype` (*type:* `String.t`, *default:* `nil`) - Insight subtype. Insight content schema will be stable for a given subtype.
   *   `lastRefreshTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the latest data used to generate the insight.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the insight.
-
-      * A project insight is represented as
-        projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/insights/[insight_id]
   *   `observationPeriod` (*type:* `String.t`, *default:* `nil`) - Observation period that led to the insight. The source data used to
       generate the insight ends at last_refresh_time and begins at
       (last_refresh_time - observation_period).
