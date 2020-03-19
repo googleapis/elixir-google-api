@@ -34,7 +34,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.BatchGetDocumentsRequest do
       The new transaction ID will be returned as the first response in the
       stream.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time.
-      This may not be older than 60 seconds.
+      This may not be older than 270 seconds.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - Reads documents in a transaction.
   """
 
