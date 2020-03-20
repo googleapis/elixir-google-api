@@ -23,6 +23,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Condition do
 
   *   `conditionAbsent` (*type:* `GoogleApi.Monitoring.V3.Model.MetricAbsence.t`, *default:* `nil`) - A condition that checks that a time series continues to receive new data points.
   *   `conditionThreshold` (*type:* `GoogleApi.Monitoring.V3.Model.MetricThreshold.t`, *default:* `nil`) - A condition that compares a time series against a threshold.
+  *   `conditionTimeSeriesQueryLanguage` (*type:* `GoogleApi.Monitoring.V3.Model.TimeSeriesQueryLanguageCondition.t`, *default:* `nil`) - A condition that uses the time series query language format to define alerts. If set, no other conditions can be present.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A short name or phrase used to identify the condition in dashboards, notifications, and incidents. To avoid confusion, don't use the same display name for multiple conditions in the same policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required if the condition exists. The unique resource name for this condition. Its format is:
       projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
@@ -34,12 +35,19 @@ defmodule GoogleApi.Monitoring.V3.Model.Condition do
   @type t :: %__MODULE__{
           :conditionAbsent => GoogleApi.Monitoring.V3.Model.MetricAbsence.t(),
           :conditionThreshold => GoogleApi.Monitoring.V3.Model.MetricThreshold.t(),
+          :conditionTimeSeriesQueryLanguage =>
+            GoogleApi.Monitoring.V3.Model.TimeSeriesQueryLanguageCondition.t(),
           :displayName => String.t(),
           :name => String.t()
         }
 
   field(:conditionAbsent, as: GoogleApi.Monitoring.V3.Model.MetricAbsence)
   field(:conditionThreshold, as: GoogleApi.Monitoring.V3.Model.MetricThreshold)
+
+  field(:conditionTimeSeriesQueryLanguage,
+    as: GoogleApi.Monitoring.V3.Model.TimeSeriesQueryLanguageCondition
+  )
+
   field(:displayName)
   field(:name)
 end

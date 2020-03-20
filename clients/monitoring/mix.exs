@@ -18,7 +18,7 @@
 defmodule GoogleApi.Monitoring.Mixfile do
   use Mix.Project
 
-  @version "0.32.0"
+  @version "0.33.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Monitoring.Mixfile do
 
   defp description() do
     """
-    Stackdriver Monitoring API client library.
+    Cloud Monitoring API client library.
     """
   end
 
