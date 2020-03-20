@@ -17,6 +17,9 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.Breakpoint do
   @moduledoc """
+  ------------------------------------------------------------------------------
+  ## Breakpoint (the resource)
+
   Represents the breakpoint specification, status and results.
 
   ## Attributes
