@@ -71,7 +71,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{projectId}/settings", %{
+      |> Request.url("/projects/{projectId}/settings", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -144,7 +144,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{projectId}:initializeSettings", %{
+      |> Request.url("/projects/{projectId}:initializeSettings", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -219,7 +219,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{projectId}/histories", %{
+      |> Request.url("/projects/{projectId}/histories", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -291,7 +291,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{projectId}/histories/{historyId}", %{
+      |> Request.url("/projects/{projectId}/histories/{historyId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "historyId" => URI.encode(history_id, &URI.char_unreserved?/1)
       })
@@ -370,7 +370,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{projectId}/histories", %{
+      |> Request.url("/projects/{projectId}/histories", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -452,7 +452,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{projectId}/histories/{historyId}/executions", %{
+      |> Request.url("/projects/{projectId}/histories/{historyId}/executions", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "historyId" => URI.encode(history_id, &URI.char_unreserved?/1)
       })
@@ -530,7 +530,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}", %{
+      |> Request.url("/projects/{projectId}/histories/{historyId}/executions/{executionId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
         "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
@@ -616,7 +616,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{projectId}/histories/{historyId}/executions", %{
+      |> Request.url("/projects/{projectId}/histories/{historyId}/executions", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "historyId" => URI.encode(history_id, &URI.char_unreserved?/1)
       })
@@ -696,7 +696,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}", %{
+      |> Request.url("/projects/{projectId}/histories/{historyId}/executions/{executionId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
         "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
@@ -777,7 +777,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/clusters/{clusterId}",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/clusters/{clusterId}",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -857,11 +857,14 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}/clusters", %{
-        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
-        "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/clusters",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -936,7 +939,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/environments/{environmentId}",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/environments/{environmentId}",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1021,7 +1024,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/environments",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/environments",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1035,6 +1038,80 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.ToolResults.V1beta3.Model.ListEnvironmentsResponse{}]
+    )
+  end
+
+  @doc """
+  Lists accessibility clusters for a given Step
+
+  May return any of the following canonical error codes:
+
+  - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - FAILED_PRECONDITION - if an argument in the request happens to be invalid; e.g. if the locale format is incorrect - NOT_FOUND - if the containing Step does not exist
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.ToolResults.V1beta3.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - A full resource name of the step. For example, projects/my-project/histories/bh.1234567890abcdef/executions/ 1234567890123456789/steps/bs.1234567890abcdef
+
+      Required.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:locale` (*type:* `String.t`) - The accepted format is the canonical Unicode format with hyphen as a delimiter. Language must be lowercase, Language Script - Capitalized, Region - UPPERCASE. See http://www.unicode.org/reports/tr35/#Unicode_locale_identifier for details.
+
+          Required.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.ToolResults.V1beta3.Model.ListStepAccessibilityClustersResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec toolresults_projects_histories_executions_steps_accessibility_clusters(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.ToolResults.V1beta3.Model.ListStepAccessibilityClustersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def toolresults_projects_histories_executions_steps_accessibility_clusters(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :locale => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/{+name}:accessibilityClusters", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.ToolResults.V1beta3.Model.ListStepAccessibilityClustersResponse{}]
     )
   end
 
@@ -1106,11 +1183,14 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}/steps", %{
-        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
-        "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1191,7 +1271,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1269,7 +1349,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfMetricsSummary",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfMetricsSummary",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1365,11 +1445,14 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{projectId}/histories/{historyId}/executions/{executionId}/steps", %{
-        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
-        "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
+          "executionId" => URI.encode(execution_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1456,7 +1539,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:patch)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1546,7 +1629,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}:publishXunitXmlFiles",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}:publishXunitXmlFiles",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1626,7 +1709,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfMetricsSummary",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfMetricsSummary",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1708,7 +1791,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1789,7 +1872,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1872,7 +1955,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -1957,7 +2040,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}/samples:batchCreate",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}/samples:batchCreate",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -2045,7 +2128,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}/samples",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/perfSampleSeries/{sampleSeriesId}/samples",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -2141,7 +2224,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/testCases/{testCaseId}",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/testCases/{testCaseId}",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -2240,7 +2323,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/testCases",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/testCases",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
@@ -2338,7 +2421,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/thumbnails",
+        "/projects/{projectId}/histories/{historyId}/executions/{executionId}/steps/{stepId}/thumbnails",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "historyId" => URI.encode(history_id, &URI.char_unreserved?/1),
