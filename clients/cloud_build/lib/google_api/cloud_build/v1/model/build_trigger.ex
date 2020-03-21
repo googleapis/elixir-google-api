@@ -56,7 +56,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
       + They must contain only alphanumeric characters and dashes.
       + They can be 1-64 characters long.
       + They must begin and end with an alphanumeric character.
-  *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions data for Build resource.
+  *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions for Build resource. The keys must match the following
+      regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+      keys in bindings.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for annotation of a `BuildTrigger`
   *   `triggerTemplate` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - Template describing the types of source changes to trigger a build.
 
