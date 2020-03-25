@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#appRestrictionsSchema`) - 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Deprecated.
   *   `restrictions` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaRestriction.t)`, *default:* `nil`) - The set of restrictions that make up this schema.
   """
 
