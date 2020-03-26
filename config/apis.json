@@ -45,6 +45,11 @@
     "name": "Admin"
   },
   {
+    "version": "directory_v1",
+    "url": "https://www.googleapis.com/discovery/v1/apis/admin/directory_v1/rest",
+    "name": "Directory"
+  },  
+  {
     "version": "v1",
     "url": "https://admob.googleapis.com/$discovery/rest?version=v1",
     "name": "AdMob"
