@@ -340,6 +340,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:readMask` (*type:* `String.t`) - Optional. Read mask is used for a more granular control over what the API returns. By
+          it includes all fields in Queue except for stats.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -373,7 +375,8 @@ defmodule GoogleApi.CloudTasks.V2beta2.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :readMask => :query
     }
 
     request =
