@@ -21,15 +21,15 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationExtract do
 
   ## Attributes
 
-  *   `compression` (*type:* `String.t`, *default:* `nil`) - [Optional] The compression type to use for exported files. Possible values include GZIP, DEFLATE, SNAPPY, and NONE. The default value is NONE. DEFLATE and SNAPPY are only supported for Avro.
-  *   `destinationFormat` (*type:* `String.t`, *default:* `nil`) - [Optional] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON and AVRO. The default value is CSV. Tables with nested or repeated fields cannot be exported as CSV.
+  *   `compression` (*type:* `String.t`, *default:* `nil`) - [Optional] The compression type to use for exported files. Possible values include GZIP, DEFLATE, SNAPPY, and NONE. The default value is NONE. DEFLATE and SNAPPY are only supported for Avro. Not applicable when extracting models.
+  *   `destinationFormat` (*type:* `String.t`, *default:* `nil`) - [Optional] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON or AVRO for tables and ML_TF_SAVED_MODEL or ML_XGBOOST_BOOSTER for models. The default value for tables is CSV. Tables with nested or repeated fields cannot be exported as CSV. The default value for models is ML_TF_SAVED_MODEL.
   *   `destinationUri` (*type:* `String.t`, *default:* `nil`) - [Pick one] DEPRECATED: Use destinationUris instead, passing only one URI as necessary. The fully-qualified Google Cloud Storage URI where the extracted table should be written.
   *   `destinationUris` (*type:* `list(String.t)`, *default:* `nil`) - [Pick one] A list of fully-qualified Google Cloud Storage URIs where the extracted table should be written.
-  *   `fieldDelimiter` (*type:* `String.t`, *default:* `nil`) - [Optional] Delimiter to use between fields in the exported data. Default is ','
-  *   `printHeader` (*type:* `boolean()`, *default:* `true`) - [Optional] Whether to print out a header row in the results. Default is true.
+  *   `fieldDelimiter` (*type:* `String.t`, *default:* `nil`) - [Optional] Delimiter to use between fields in the exported data. Default is ','. Not applicable when extracting models.
+  *   `printHeader` (*type:* `boolean()`, *default:* `true`) - [Optional] Whether to print out a header row in the results. Default is true. Not applicable when extracting models.
   *   `sourceModel` (*type:* `GoogleApi.BigQuery.V2.Model.ModelReference.t`, *default:* `nil`) - A reference to the model being exported.
   *   `sourceTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - A reference to the table being exported.
-  *   `useAvroLogicalTypes` (*type:* `boolean()`, *default:* `nil`) - [Optional] If destinationFormat is set to "AVRO", this flag indicates whether to enable extracting applicable column types (such as TIMESTAMP) to their corresponding AVRO logical types (timestamp-micros), instead of only using their raw types (avro-long).
+  *   `useAvroLogicalTypes` (*type:* `boolean()`, *default:* `nil`) - [Optional] If destinationFormat is set to "AVRO", this flag indicates whether to enable extracting applicable column types (such as TIMESTAMP) to their corresponding AVRO logical types (timestamp-micros), instead of only using their raw types (avro-long). Not applicable when extracting models.
   """
 
   use GoogleApi.Gax.ModelBase
