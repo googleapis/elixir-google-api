@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.DFAReporting.V34.Model.UserProfile do
   @moduledoc """
-  Represents a UserProfile resource.
+  A UserProfile resource lets you list all DFA user profiles that are associated with a Google user account. The profile_id needs to be specified in other API requests. 
 
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account ID to which this profile belongs.
   *   `accountName` (*type:* `String.t`, *default:* `nil`) - The account name this profile belongs to.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - The eTag of this response for caching purposes.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#userProfile`) - The kind of resource this is, in this case dfareporting#userProfile.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
+  *   `kind` (*type:* `String.t`, *default:* `dfareporting#userProfile`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#userProfile".
   *   `profileId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the user profile.
   *   `subAccountId` (*type:* `String.t`, *default:* `nil`) - The sub account ID this profile belongs to if applicable.
   *   `subAccountName` (*type:* `String.t`, *default:* `nil`) - The sub account name this profile belongs to if applicable.

@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.CreativeAssetMetadata do
   ## Attributes
 
   *   `assetIdentifier` (*type:* `GoogleApi.DFAReporting.V33.Model.CreativeAssetId.t`, *default:* `nil`) - ID of the creative asset. This is a required field.
-  *   `clickTags` (*type:* `list(GoogleApi.DFAReporting.V33.Model.ClickTag.t)`, *default:* `nil`) - List of detected click tags for assets. This is a read-only auto-generated field.
+  *   `clickTags` (*type:* `list(GoogleApi.DFAReporting.V33.Model.ClickTag.t)`, *default:* `nil`) - List of detected click tags for assets. This is a read-only, auto-generated field. This field is empty for a rich media asset.
   *   `detectedFeatures` (*type:* `list(String.t)`, *default:* `nil`) - List of feature dependencies for the creative asset that are detected by Campaign Manager. Feature dependencies are features that a browser must be able to support in order to render your HTML5 creative correctly. This is a read-only, auto-generated field.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Numeric ID of the asset. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V33.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the numeric ID of the asset. This is a read-only, auto-generated field.
