@@ -28,6 +28,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
       There is exactly one element for each unique label.
   *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in
       [Cloud Storage](https://cloud.google.com/storage/).
+  *   `logoRecognitionAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LogoRecognitionAnnotation.t)`, *default:* `nil`) - Annotations for list of logos detected, tracked and recognized in video.
   *   `objectAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation.t)`, *default:* `nil`) - Annotations for list of objects detected and tracked in video.
   *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_VideoSegment.t`, *default:* `nil`) - Video segment on which the annotation is run.
   *   `segmentLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on video level or user specified segment level.
@@ -63,6 +64,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelAnnotation.t()
             ),
           :inputUri => String.t(),
+          :logoRecognitionAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LogoRecognitionAnnotation.t()
+            ),
           :objectAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation.t()
@@ -112,6 +117,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
   )
 
   field(:inputUri)
+
+  field(:logoRecognitionAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LogoRecognitionAnnotation,
+    type: :list
+  )
 
   field(:objectAnnotations,
     as:
