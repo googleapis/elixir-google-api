@@ -39,6 +39,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:asynchronous` (*type:* `boolean()`) - If true, tries to run the query asynchronously. Only applicable when the frequency is ONE_TIME.
       *   `:body` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.Query.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -60,6 +61,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :asynchronous => :query,
       :body => :body
     }
 
@@ -263,6 +265,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:asynchronous` (*type:* `boolean()`) - If true, tries to run the query asynchronously.
       *   `:body` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.RunQueryRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -291,6 +294,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :asynchronous => :query,
       :body => :body
     }
 
