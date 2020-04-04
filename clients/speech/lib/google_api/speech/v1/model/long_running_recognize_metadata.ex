@@ -27,6 +27,8 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeMetadata do
   *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - Approximate percentage of audio processed thus far. Guaranteed to be 100
       when the audio is fully processed and the results are available.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the request was received.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the audio file being transcribed. Empty if the audio was sent
+      as byte content. 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,12 +36,14 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeMetadata do
   @type t :: %__MODULE__{
           :lastUpdateTime => DateTime.t(),
           :progressPercent => integer(),
-          :startTime => DateTime.t()
+          :startTime => DateTime.t(),
+          :uri => String.t()
         }
 
   field(:lastUpdateTime, as: DateTime)
   field(:progressPercent)
   field(:startTime, as: DateTime)
+  field(:uri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.LongRunningRecognizeMetadata do
