@@ -31,6 +31,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentRequest do
   *   `item` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t`, *default:* `nil`) - The item to inspect.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to process content inspection. Reserved for future
       extensions.
+      When inspecting images location is restricted to 'global', 'us', 'asia',
+      and 'europe'.
   """
 
   use GoogleApi.Gax.ModelBase
