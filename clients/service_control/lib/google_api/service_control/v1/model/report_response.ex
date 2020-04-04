@@ -45,7 +45,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.ReportResponse do
       If there is no quota release request, report_quota_info will be empty.
 
   *   `serviceConfigId` (*type:* `String.t`, *default:* `nil`) - The actual config id used to process the request.
-  *   `serviceRolloutId` (*type:* `String.t`, *default:* `nil`) - Unimplemented. The current service rollout id used to process the request.
+  *   `serviceRolloutId` (*type:* `String.t`, *default:* `nil`) - The current service rollout id used to process the request.
   """
 
   use GoogleApi.Gax.ModelBase
