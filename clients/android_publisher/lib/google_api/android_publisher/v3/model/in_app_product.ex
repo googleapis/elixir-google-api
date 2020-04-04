@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
 
   *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The default language of the localized data, as defined by BCP 47. e.g. "en-US", "en-GB".
   *   `defaultPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Default price cannot be zero. In-app products can never be free. Default price is always in the developer's Checkout merchant currency.
-  *   `gracePeriod` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. It will allow developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values = "P3D" (three days) and "P7D" (seven days)
+  *   `gracePeriod` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. It will allow developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values = "P3D" (three days), "P7D" (seven days), "P14D" (fourteen days), and "P30D" (thirty days)
   *   `listings` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t}`, *default:* `nil`) - List of localized title and description data.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the parent app.
   *   `prices` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.Price.t}`, *default:* `nil`) - Prices per buyer region. None of these prices should be zero. In-app products can never be free.
