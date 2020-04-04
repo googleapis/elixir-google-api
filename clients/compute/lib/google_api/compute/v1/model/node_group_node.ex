@@ -25,6 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the node.
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - The type of this node.
   *   `serverBinding` (*type:* `GoogleApi.Compute.V1.Model.ServerBinding.t`, *default:* `nil`) - Binding properties for the physical server.
+  *   `serverId` (*type:* `String.t`, *default:* `nil`) - Server ID associated with this node.
   *   `status` (*type:* `String.t`, *default:* `nil`) - 
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
           :name => String.t(),
           :nodeType => String.t(),
           :serverBinding => GoogleApi.Compute.V1.Model.ServerBinding.t(),
+          :serverId => String.t(),
           :status => String.t()
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   field(:name)
   field(:nodeType)
   field(:serverBinding, as: GoogleApi.Compute.V1.Model.ServerBinding)
+  field(:serverId)
   field(:status)
 end
 

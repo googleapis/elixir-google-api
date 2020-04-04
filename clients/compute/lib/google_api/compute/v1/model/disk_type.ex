@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.DiskType do
 
   Google Compute Engine has two Disk Type resources:
 
-  * [Global](/compute/docs/reference/rest/latest/diskTypes) * [Regional](/compute/docs/reference/rest/latest/regionDiskTypes)
+  * [Regional](/compute/docs/reference/rest/{$api_version}/regionDiskTypes) * [Zonal](/compute/docs/reference/rest/{$api_version}/diskTypes)
 
   You can choose from a variety of disk types based on your needs. For more information, read Storage options.
 

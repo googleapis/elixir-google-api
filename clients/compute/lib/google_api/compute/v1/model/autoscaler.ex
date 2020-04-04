@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.Autoscaler do
 
   Google Compute Engine has two Autoscaler resources:
 
-  * [Global](/compute/docs/reference/rest/latest/autoscalers) * [Regional](/compute/docs/reference/rest/latest/regionAutoscalers)
+  * [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
 
   Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.
 

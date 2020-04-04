@@ -23,8 +23,8 @@ defmodule GoogleApi.Compute.V1.Model.OperationList do
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `items` (*type:* `list(GoogleApi.Compute.V1.Model.Operation.t)`, *default:* `nil`) - [Output Only] A list of Operation resources.
-  *   `kind` (*type:* `String.t`, *default:* `compute#operationList`) - [Output Only] Type of resource. Always compute#operations for Operations resource.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+  *   `kind` (*type:* `String.t`, *default:* `compute#operationList`) - [Output Only] Type of resource. Always `compute#operations` for Operations resource.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than `maxResults`, use the `nextPageToken` as a value for the query parameter `pageToken` in the next list request. Subsequent list requests will have their own `nextPageToken` to continue paging through the results.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource.
   *   `warning` (*type:* `GoogleApi.Compute.V1.Model.OperationListWarning.t`, *default:* `nil`) - [Output Only] Informational warning message.
   """

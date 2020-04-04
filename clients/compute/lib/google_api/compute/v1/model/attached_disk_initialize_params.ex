@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description. Provide this property when creating the disk.
-  *   `diskName` (*type:* `String.t`, *default:* `nil`) - Specifies the disk name. If not specified, the default is to use the name of the instance. If the disk with the instance name exists already in the given zone/region, a new name will be automatically generated.
+  *   `diskName` (*type:* `String.t`, *default:* `nil`) - Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
   *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
       https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
@@ -35,6 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
       - projects/project/zones/zone/diskTypes/diskType 
       - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
+  *   `onUpdateAction` (*type:* `String.t`, *default:* `nil`) - Specifies which action to take on instance update with this disk. Default is to use the existing disk.
   *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies applied to this disk for automatic snapshot creations. Specified using the full or partial URL. For instance template, specify only the resource policy name.
   *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
 
@@ -76,6 +77,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
           :diskSizeGb => String.t(),
           :diskType => String.t(),
           :labels => map(),
+          :onUpdateAction => String.t(),
           :resourcePolicies => list(String.t()),
           :sourceImage => String.t(),
           :sourceImageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t(),
@@ -88,6 +90,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams do
   field(:diskSizeGb)
   field(:diskType)
   field(:labels, type: :map)
+  field(:onUpdateAction)
   field(:resourcePolicies, type: :list)
   field(:sourceImage)
   field(:sourceImageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)

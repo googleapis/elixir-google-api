@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
 
   Google Compute Engine has two Target HTTPS Proxy resources:
 
-  * [Global](/compute/docs/reference/rest/latest/targetHttpsProxies) * [Regional](/compute/docs/reference/rest/latest/regionTargetHttpsProxies)
+  * [Global](/compute/docs/reference/rest/{$api_version}/targetHttpsProxies) * [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpsProxies)
 
   A target HTTPS proxy is a component of GCP HTTPS load balancers.
 

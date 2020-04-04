@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyDailyCycle do
 
   ## Attributes
 
-  *   `daysInCycle` (*type:* `integer()`, *default:* `nil`) - Defines a schedule that runs every nth day of the month.
+  *   `daysInCycle` (*type:* `integer()`, *default:* `nil`) - Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
   *   `duration` (*type:* `String.t`, *default:* `nil`) - [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
   """
