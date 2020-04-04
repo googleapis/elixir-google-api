@@ -28,6 +28,7 @@ defmodule GoogleApi.Sheets.V4.Model.Sheet do
       then by group depth.
   *   `conditionalFormats` (*type:* `list(GoogleApi.Sheets.V4.Model.ConditionalFormatRule.t)`, *default:* `nil`) - The conditional format rules in this sheet.
   *   `data` (*type:* `list(GoogleApi.Sheets.V4.Model.GridData.t)`, *default:* `nil`) - Data in the grid, if this is a grid sheet.
+
       The number of GridData objects returned is dependent on the number of
       ranges requested on this sheet. For example, if this is representing
       `Sheet1`, and the spreadsheet was requested with ranges
