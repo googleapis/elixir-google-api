@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1SecurityCenterProperties do
   @moduledoc """
-  Cloud SCC managed properties. These properties are managed by Cloud SCC and
-  cannot be modified by the user.
+  Security Command Center managed properties. These properties are managed by
+  Security Command Center and cannot be modified by the user.
 
   ## Attributes
 
   *   `resourceDisplayName` (*type:* `String.t`, *default:* `nil`) - The user defined display name for this resource.
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The full resource name of the GCP resource this asset
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The full resource name of the Google Cloud resource this asset
       represents. This field is immutable after create time. See:
       https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `resourceOwners` (*type:* `list(String.t)`, *default:* `nil`) - Owners of the Google Cloud resource.
@@ -33,10 +33,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1Se
   *   `resourceProject` (*type:* `String.t`, *default:* `nil`) - The full resource name of the project the resource belongs to. See:
       https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `resourceProjectDisplayName` (*type:* `String.t`, *default:* `nil`) - The user defined display name for the project of this resource.
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The type of the GCP resource. Examples include: APPLICATION,
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The type of the Google Cloud resource. Examples include: APPLICATION,
       PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-      Cloud SCC and/or the producer of the resource and is immutable
-      after create time.
+      Security Command Center and/or the producer of the resource and is
+      immutable after create time.
   """
 
   use GoogleApi.Gax.ModelBase

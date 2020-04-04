@@ -353,6 +353,12 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           * security_center_properties.resource_owners: `=`, `:`
 
           For example, `resource_properties.size = 100` is a valid filter string.
+
+          Use a partial match on the empty string to filter based on a property
+          existing: "resource_properties.my_property : \\"\\""
+
+          Use a negated partial match on the empty string to filter based on a
+          property not existing: "-resource_properties.my_property : \\"\\""
       *   `:orderBy` (*type:* `String.t`) - Expression that defines what fields and order to use for sorting. The
           string value should follow SQL syntax: comma separated list of fields. For
           example: "name,resource_properties.a_property". The default sorting order
@@ -2125,6 +2131,12 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           source_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
 
           For example, `source_properties.size = 100` is a valid filter string.
+
+          Use a partial match on the empty string to filter based on a property
+          existing: "source_properties.my_property : \\"\\""
+
+          Use a negated partial match on the empty string to filter based on a
+          property not existing: "-source_properties.my_property : \\"\\""
       *   `:orderBy` (*type:* `String.t`) - Expression that defines what fields and order to use for sorting. The
           string value should follow SQL syntax: comma separated list of fields. For
           example: "name,resource_properties.a_property". The default sorting order

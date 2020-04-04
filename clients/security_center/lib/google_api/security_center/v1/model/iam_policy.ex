@@ -17,9 +17,10 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.IamPolicy do
   @moduledoc """
-  IAM Policy information associated with the GCP resource described by the
-  Cloud SCC asset. This information is managed and defined by the GCP
-  resource and cannot be modified by the user.
+  Cloud IAM Policy information associated with the Google Cloud resource
+  described by the Security Command Center asset. This information is managed
+  and defined by the Google Cloud resource and cannot be modified by the
+  user.
 
   ## Attributes
 

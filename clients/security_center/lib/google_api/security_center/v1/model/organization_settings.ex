@@ -17,8 +17,8 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.OrganizationSettings do
   @moduledoc """
-  User specified settings that are attached to the Cloud Security Command
-  Center (Cloud SCC) organization.
+  User specified settings that are attached to the Security Command
+  Center organization.
 
   ## Attributes
 

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   @moduledoc """
-  Cloud Security Command Center (Cloud SCC) finding.
+  Security Command Center finding.
 
   A finding is a record of assessment data like security, risk, health, or
-  privacy, that is ingested into Cloud SCC for presentation, notification,
-  analysis, policy testing, and enforcement. For example, a
+  privacy, that is ingested into Security Command Center for presentation,
+  notification, analysis, policy testing, and enforcement. For example, a
   cross-site scripting (XSS) vulnerability in an App Engine application is a
   finding.
 
@@ -30,13 +30,13 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `category` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source.
       This field is immutable after creation time.
       Example: "XSS_FLASH_INJECTION"
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Cloud SCC.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the event took place. For example, if the finding
       represents an open firewall it would capture the time the detector believes
       the firewall became open. The accuracy is determined by the detector.
-  *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Cloud SCC
-      where additional information about the finding can be found. This field is
-      guaranteed to be either empty or a well formed URL.
+  *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security
+      Command Center where additional information about the finding can be found.
+      This field is guaranteed to be either empty or a well formed URL.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of this finding. See:
       https://cloud.google.com/apis/design/resource_names#relative_resource_name
       Example:
@@ -46,12 +46,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
       This field is immutable after creation time.
       For example:
       "organizations/{organization_id}/sources/{source_id}"
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - For findings on Google Cloud Platform (GCP) resources, the full resource
-      name of the GCP resource this finding is for. See:
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - For findings on Google Cloud resources, the full resource
+      name of the Google Cloud resource this finding is for. See:
       https://cloud.google.com/apis/design/resource_names#full_resource_name
-      When the finding is for a non-GCP resource, the resourceName can be a
-      customer or partner defined string.
-      This field is immutable after creation time.
+      When the finding is for a non-Google Cloud resource, the resourceName can
+      be a customer or partner defined string. This field is immutable after
+      creation time.
   *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t`, *default:* `nil`) - Output only. User specified security marks. These marks are entirely
       managed by the user and come from the SecurityMarks resource that belongs
       to the finding.

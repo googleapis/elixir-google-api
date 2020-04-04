@@ -1,8 +1,8 @@
 # GoogleApi.SecurityCenter
 
-Cloud Security Command Center API client library.
+Security Command Center API client library.
 
-Cloud Security Command Center API provides access to temporal views of assets and findings within an organization.
+Security Command Center API provides access to temporal views of assets and findings within an organization.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_security_center, "~> 0.8"}]
+  [{:google_api_security_center, "~> 0.9"}]
 end
 ```
 

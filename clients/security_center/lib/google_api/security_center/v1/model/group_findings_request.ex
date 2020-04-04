@@ -96,6 +96,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupFindingsRequest do
       * source_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
 
       For example, `source_properties.size = 100` is a valid filter string.
+
+      Use a partial match on the empty string to filter based on a property
+      existing: "source_properties.my_property : \\"\\""
+
+      Use a negated partial match on the empty string to filter based on a
+      property not existing: "-source_properties.my_property : \\"\\""
   *   `groupBy` (*type:* `String.t`, *default:* `nil`) - Required. Expression that defines what assets fields to use for grouping (including
       `state_change`). The string value should follow SQL syntax: comma separated
       list of fields. For example: "parent,resource_name".
