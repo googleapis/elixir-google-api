@@ -26,6 +26,7 @@ defmodule GoogleApi.Games.V1.Model.Player do
   *   `bannerUrlPortrait` (*type:* `String.t`, *default:* `nil`) - The url to the portrait mode player banner image.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the player.
   *   `experienceInfo` (*type:* `GoogleApi.Games.V1.Model.PlayerExperienceInfo.t`, *default:* `nil`) - An object to represent Play Game experience information for the player.
+  *   `friendStatus` (*type:* `String.t`, *default:* `nil`) - The friend status of the given player, relative to the requester. This is unset if the player is not sharing their friends list with the game.
   *   `kind` (*type:* `String.t`, *default:* `games#player`) - Uniquely identifies the type of this resource. Value is always the fixed string games#player.
   *   `lastPlayedWith` (*type:* `GoogleApi.Games.V1.Model.Played.t`, *default:* `nil`) - Details about the last time this player played a multiplayer game with the currently authenticated player. Populated for PLAYED_WITH player collection members.
   *   `name` (*type:* `GoogleApi.Games.V1.Model.PlayerName.t`, *default:* `nil`) - An object representation of the individual components of the player's name. For some players, these fields may not be present.
@@ -44,6 +45,7 @@ defmodule GoogleApi.Games.V1.Model.Player do
           :bannerUrlPortrait => String.t(),
           :displayName => String.t(),
           :experienceInfo => GoogleApi.Games.V1.Model.PlayerExperienceInfo.t(),
+          :friendStatus => String.t(),
           :kind => String.t(),
           :lastPlayedWith => GoogleApi.Games.V1.Model.Played.t(),
           :name => GoogleApi.Games.V1.Model.PlayerName.t(),
@@ -59,6 +61,7 @@ defmodule GoogleApi.Games.V1.Model.Player do
   field(:bannerUrlPortrait)
   field(:displayName)
   field(:experienceInfo, as: GoogleApi.Games.V1.Model.PlayerExperienceInfo)
+  field(:friendStatus)
   field(:kind)
   field(:lastPlayedWith, as: GoogleApi.Games.V1.Model.Played)
   field(:name, as: GoogleApi.Games.V1.Model.PlayerName)
