@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments do
   @moduledoc """
-  Identifies metdata updates to one device.
+  Identifies metadata updates to one device.
 
   ## Attributes
 
