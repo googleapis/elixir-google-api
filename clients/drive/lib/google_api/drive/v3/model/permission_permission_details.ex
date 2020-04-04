@@ -22,7 +22,7 @@ defmodule GoogleApi.Drive.V3.Model.PermissionPermissionDetails do
   ## Attributes
 
   *   `inherited` (*type:* `boolean()`, *default:* `nil`) - Whether this permission is inherited. This field is always populated. This is an output-only field.
-  *   `inheritedFrom` (*type:* `String.t`, *default:* `nil`) - The ID of the item from which this permission is inherited. This is an output-only field and is only populated for members of the shared drive.
+  *   `inheritedFrom` (*type:* `String.t`, *default:* `nil`) - The ID of the item from which this permission is inherited. This is an output-only field.
   *   `permissionType` (*type:* `String.t`, *default:* `nil`) - The permission type for this user. While new values may be added in future, the following are currently possible:  
       - file 
       - member
