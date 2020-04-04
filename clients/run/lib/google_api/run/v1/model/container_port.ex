@@ -17,19 +17,11 @@
 
 defmodule GoogleApi.Run.V1.Model.ContainerPort do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
   ContainerPort represents a network port in a single container.
 
   ## Attributes
 
   *   `containerPort` (*type:* `integer()`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: supported
-
-      Cloud Run for Anthos: supported
 
       Port number the container listens on.
       This must be a valid port number, 0 < x < 65536.
@@ -47,7 +39,7 @@ defmodule GoogleApi.Run.V1.Model.ContainerPort do
 
       Cloud Run for Anthos: supported
 
-      Protocol for port. Must be TCP.
+      Protocol for port. Must be "TCP".
       Defaults to "TCP".
   """
 
