@@ -68,8 +68,6 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
       https://support.google.com/manufacturers/answer/6124116#flavor.
   *   `productName` (*type:* `String.t`, *default:* `nil`) - The canonical name of the product. For more information, see
       https://support.google.com/manufacturers/answer/6124116#productname.
-  *   `richContent` (*type:* `list(String.t)`, *default:* `nil`) - Rich product content. For more information, see
-      https://support.google.com/manufacturers/answer/9389865
   *   `videoLink` (*type:* `list(String.t)`, *default:* `nil`) - The videos of the product. For more information, see
       https://support.google.com/manufacturers/answer/6124116#video.
   *   `scent` (*type:* `String.t`, *default:* `nil`) - The scent of the product. For more information, see
@@ -84,6 +82,8 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
       https://support.google.com/manufacturers/answer/6124116#capacity.
   *   `featureDescription` (*type:* `list(GoogleApi.Manufacturers.V1.Model.FeatureDescription.t)`, *default:* `nil`) - The rich format description of the product. For more information, see
       https://support.google.com/manufacturers/answer/6124116#featuredesc.
+  *   `richProductContent` (*type:* `list(String.t)`, *default:* `nil`) - Rich product content. For more information, see
+      https://support.google.com/manufacturers/answer/9389865
   *   `format` (*type:* `String.t`, *default:* `nil`) - The format of the product. For more information, see
       https://support.google.com/manufacturers/answer/6124116#format.
   *   `count` (*type:* `GoogleApi.Manufacturers.V1.Model.Count.t`, *default:* `nil`) - The count of the product. For more information, see
@@ -121,7 +121,6 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
           :brand => String.t(),
           :flavor => String.t(),
           :productName => String.t(),
-          :richContent => list(String.t()),
           :videoLink => list(String.t()),
           :scent => String.t(),
           :suggestedRetailPrice => GoogleApi.Manufacturers.V1.Model.Price.t(),
@@ -129,6 +128,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
           :ageGroup => String.t(),
           :capacity => GoogleApi.Manufacturers.V1.Model.Capacity.t(),
           :featureDescription => list(GoogleApi.Manufacturers.V1.Model.FeatureDescription.t()),
+          :richProductContent => list(String.t()),
           :format => String.t(),
           :count => GoogleApi.Manufacturers.V1.Model.Count.t(),
           :disclosureDate => String.t(),
@@ -159,7 +159,6 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   field(:brand)
   field(:flavor)
   field(:productName)
-  field(:richContent, type: :list)
   field(:videoLink, type: :list)
   field(:scent)
   field(:suggestedRetailPrice, as: GoogleApi.Manufacturers.V1.Model.Price)
@@ -167,6 +166,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   field(:ageGroup)
   field(:capacity, as: GoogleApi.Manufacturers.V1.Model.Capacity)
   field(:featureDescription, as: GoogleApi.Manufacturers.V1.Model.FeatureDescription, type: :list)
+  field(:richProductContent, type: :list)
   field(:format)
   field(:count, as: GoogleApi.Manufacturers.V1.Model.Count)
   field(:disclosureDate)
