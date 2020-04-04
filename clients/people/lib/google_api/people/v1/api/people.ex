@@ -634,7 +634,11 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The number of connections to include in the response. Valid values are
           between 1 and 2000, inclusive. Defaults to 100 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The token of the page to be returned.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListConnections` call.
+          Provide this to retrieve the subsequent page.
+
+          When paginating, all other parameters provided to `ListConnections`
+          must match the call that provided the page token.
       *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
           fields can be specified by separating them with commas. Valid values are:
 
@@ -670,15 +674,18 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
           path should start with `person.`: for example, `person.names` or
           `person.photos`.
-      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include a sync token, which can be used to get
-          all changes since the last request. For subsequent sync requests use the
-          `sync_token` param instead. Initial sync requests that specify
+      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include `next_sync_token`, which can be used to
+          get all changes since the last request. For subsequent sync requests use
+          the `sync_token` param instead. Initial sync requests that specify
           `request_sync_token` have an additional rate limit.
       *   `:sortOrder` (*type:* `String.t`) - Optional. The order in which the connections should be sorted. Defaults to
           `LAST_MODIFIED_ASCENDING`.
-      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token returned by a previous call to `people.connections.list`.
-          Only resources changed since the sync token was created will be returned.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListConnections` call.
+          Provide this to retrieve only the resources changed since the last request.
           Sync requests that specify `sync_token` have an additional rate limit.
+
+          When syncing, all other parameters provided to `ListConnections`
+          must match the call that provided the sync token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
