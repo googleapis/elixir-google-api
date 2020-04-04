@@ -36,7 +36,7 @@ defmodule GoogleApi.Spanner.V1.Model.Backup do
       from the time the CreateBackup request is processed. Once the `expire_time`
       has passed, the backup is eligible to be automatically deleted by Cloud
       Spanner to free the resources used by the backup.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only for the CreateBackup][DatabaseAdmin.CreateBackup] operation.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only for the CreateBackup operation.
       Required for the UpdateBackup operation.
 
       A globally unique identifier for the backup which cannot be
