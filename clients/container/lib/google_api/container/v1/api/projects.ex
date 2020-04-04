@@ -817,7 +817,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   @doc """
   Sets the locations for a specific cluster.
   Deprecated. Use
-  [projects.locations.clusters.update](/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.update)
+  [projects.locations.clusters.update](/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
   instead.
 
   ## Parameters
@@ -3238,7 +3238,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   @doc """
   Sets the locations for a specific cluster.
   Deprecated. Use
-  [projects.locations.clusters.update](/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.update)
+  [projects.locations.clusters.update](/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
   instead.
 
   ## Parameters
