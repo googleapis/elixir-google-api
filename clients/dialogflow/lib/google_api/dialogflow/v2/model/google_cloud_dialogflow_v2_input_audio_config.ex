@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
   ## Attributes
 
   *   `audioEncoding` (*type:* `String.t`, *default:* `nil`) - Required. Audio encoding of the audio content to process.
-  *   `enableWordInfo` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true`, Dialogflow returns SpeechWordInfo in
+  *   `enableWordInfo` (*type:* `boolean()`, *default:* `nil`) - If `true`, Dialogflow returns SpeechWordInfo in
       StreamingRecognitionResult with information about the recognized speech
       words, e.g. start and end time offsets. If false or unspecified, Speech
       doesn't return any word-level information.
@@ -31,7 +31,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
       Support](https://cloud.google.com/dialogflow/docs/reference/language)
       for a list of the currently supported language codes. Note that queries in
       the same session do not necessarily need to specify the same language.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Optional. Which Speech model to select for the given request. Select the
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Which Speech model to select for the given request. Select the
       model best suited to your domain to get best results. If a model is not
       explicitly specified, then we auto-select a model based on the parameters
       in the InputAudioConfig.
@@ -42,8 +42,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
       [Cloud Speech API
       documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
       for more details.
-  *   `modelVariant` (*type:* `String.t`, *default:* `nil`) - Optional. Which variant of the Speech model to use.
-  *   `phraseHints` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of strings containing words and phrases that the speech
+  *   `modelVariant` (*type:* `String.t`, *default:* `nil`) - Which variant of the Speech model to use.
+  *   `phraseHints` (*type:* `list(String.t)`, *default:* `nil`) - A list of strings containing words and phrases that the speech
       recognizer should recognize with higher likelihood.
 
       See [the Cloud Speech
@@ -58,7 +58,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
       [Cloud Speech API
       documentation](https://cloud.google.com/speech-to-text/docs/basics) for
       more details.
-  *   `singleUtterance` (*type:* `boolean()`, *default:* `nil`) - Optional. If `false` (default), recognition does not cease until the
+  *   `singleUtterance` (*type:* `boolean()`, *default:* `nil`) - If `false` (default), recognition does not cease until the
       client closes the stream.
       If `true`, the recognizer will detect a single spoken utterance in input
       audio. Recognition ceases when it detects the audio's voice has
@@ -68,7 +68,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
       Note: This setting is relevant only for streaming methods.
       Note: When specified, InputAudioConfig.single_utterance takes precedence
       over StreamingDetectIntentRequest.single_utterance.
-  *   `speechContexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext.t)`, *default:* `nil`) - Optional. Context information to assist speech recognition.
+  *   `speechContexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext.t)`, *default:* `nil`) - Context information to assist speech recognition.
 
       See [the Cloud Speech
       documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)

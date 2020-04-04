@@ -17,7 +17,6 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRequest do
   @moduledoc """
-  ============================================================================
   Requests and responses for custom methods.
   The request to detect user's intent.
 
