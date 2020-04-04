@@ -48,9 +48,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of the backupRun to delete.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/backupRuns/{backupRun}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -81,8 +78,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -122,9 +118,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - Name of the resource backupRun.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/backupRuns/{backupRun}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -155,8 +148,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -196,8 +188,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should create this backupRun.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -223,7 +213,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -266,8 +255,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       *   `:maxResults` (*type:* `integer()`) - Maximum number of backup runs per response.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
           results to view.
-      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of backupRuns.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -293,8 +280,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       :uploadType => :query,
       :upload_protocol => :query,
       :maxResults => :query,
-      :pageToken => :query,
-      :parent => :query
+      :pageToken => :query
     }
 
     request =
