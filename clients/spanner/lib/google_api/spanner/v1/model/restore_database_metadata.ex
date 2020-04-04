@@ -32,14 +32,14 @@ defmodule GoogleApi.Spanner.V1.Model.RestoreDatabaseMetadata do
       other methods to check whether the cancellation succeeded or whether the
       operation completed despite cancellation. On successful cancellation,
       the operation is not deleted; instead, it becomes an operation with
-      an Operation.error value with a google.rpc.Status.code of 1,
-      corresponding to `Code.CANCELLED`.
+      an Operation.error value with a
+      google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the database being created and restored to.
   *   `optimizeDatabaseOperationName` (*type:* `String.t`, *default:* `nil`) - If exists, the name of the long-running operation that will be used to
       track the post-restore optimization process to optimize the performance of
       the restored database, and remove the dependency on the restore source.
       The name is of the form
-      `projects/<project>/instances/<instance>/databases/<database>/operations/<operation>
+      `projects/<project>/instances/<instance>/databases/<database>/operations/<operation>`
       where the <database> is the name of database being created and restored to.
       The metadata type of the  long-running operation is
       OptimizeRestoredDatabaseMetadata. This long-running operation will be
