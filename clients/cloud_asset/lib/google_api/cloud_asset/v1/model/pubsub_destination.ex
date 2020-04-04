@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.PubsubDestination do
   @moduledoc """
-  A Cloud Pubsub destination.
+  A Pub/Sub destination.
 
   ## Attributes
 
-  *   `topic` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Pub/Sub topic to publish to.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - The name of the Pub/Sub topic to publish to.
       For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
   """
 
