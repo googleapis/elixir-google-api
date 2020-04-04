@@ -22,6 +22,10 @@ defmodule GoogleApi.Content.V21.Model.OrdersUpdateLineItemShippingDetailsRespons
   ## Attributes
 
   *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
+
+      Acceptable values are:  
+      - "duplicate" 
+      - "executed"
   *   `kind` (*type:* `String.t`, *default:* `content#ordersUpdateLineItemShippingDetailsResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersUpdateLineItemShippingDetailsResponse".
   """
 

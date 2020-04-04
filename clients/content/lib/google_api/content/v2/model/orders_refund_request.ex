@@ -26,6 +26,24 @@ defmodule GoogleApi.Content.V2.Model.OrdersRefundRequest do
   *   `amountTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Tax amount that corresponds to refund amount in amountPretax. Optional, but if filled, amountPretax must be set. Calculated automatically if not provided.
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - The ID of the operation. Unique across all operations for a given order.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the refund.
+
+      Acceptable values are:  
+      - "adjustment" 
+      - "courtesyAdjustment" 
+      - "customerCanceled" 
+      - "customerDiscretionaryReturn" 
+      - "deliveredLateByCarrier" 
+      - "feeAdjustment" 
+      - "lateShipmentCredit" 
+      - "noInventory" 
+      - "other" 
+      - "priceError" 
+      - "productArrivedDamaged" 
+      - "productNotAsDescribed" 
+      - "shippingCostAdjustment" 
+      - "taxAdjustment" 
+      - "undeliverableShippingAddress" 
+      - "wrongProductShipped"
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 

@@ -29,7 +29,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `color` (*type:* `String.t`, *default:* `nil`) - Color of the item.
   *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - Shared identifier for all variants of the same product.
   *   `maxHandlingTime` (*type:* `String.t`, *default:* `nil`) - Maximal product handling time (in business days).
-  *   `offerId` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details.
+  *   `offerId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details.
       Note: Content API methods that operate on products take the REST ID of the product, not this identifier.
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign.
   *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (e.g. polka dots).
@@ -75,7 +75,11 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
   *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Custom label 4 for custom grouping of items in a Shopping campaign.
   *   `minHandlingTime` (*type:* `String.t`, *default:* `nil`) - Minimal product handling time (in business days).
-  *   `channel` (*type:* `String.t`, *default:* `nil`) - The item's channel (online or local).
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - Required. The item's channel (online or local).
+
+      Acceptable values are:  
+      - "local" 
+      - "online"
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Price of the item.
   *   `minEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
@@ -88,7 +92,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `displayAdsSimilarIds` (*type:* `list(String.t)`, *default:* `nil`) - Advertiser-specified recommendations.
   *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Custom label 2 for custom grouping of items in a Shopping campaign.
   *   `sellOnGoogleQuantity` (*type:* `String.t`, *default:* `nil`) - The quantity of the product that is available for selling on Google. Supported only for online products.
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability status of the item.
   *   `availabilityDate` (*type:* `String.t`, *default:* `nil`) - The day a pre-ordered product becomes available for delivery, in ISO 8601 format.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the item.
@@ -96,8 +100,13 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `customLabel3` (*type:* `String.t`, *default:* `nil`) - Custom label 3 for custom grouping of items in a Shopping campaign.
   *   `energyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `promotionIds` (*type:* `list(String.t)`, *default:* `nil`) - The unique ID of a promotion.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code for the item.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code for the item.
   *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the offer, i.e., how the offer was created.
+
+      Acceptable values are:  
+      - "api" 
+      - "crawl" 
+      - "feed"
   """
 
   use GoogleApi.Gax.ModelBase

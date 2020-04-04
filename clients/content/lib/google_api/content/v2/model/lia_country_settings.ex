@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V2.Model.LiaCountrySettings do
   ## Attributes
 
   *   `about` (*type:* `GoogleApi.Content.V2.Model.LiaAboutPageSettings.t`, *default:* `nil`) - The settings for the About page.
-  *   `country` (*type:* `String.t`, *default:* `nil`) - CLDR country code (e.g. "US").
+  *   `country` (*type:* `String.t`, *default:* `nil`) - Required. CLDR country code (e.g. "US").
   *   `hostedLocalStorefrontActive` (*type:* `boolean()`, *default:* `nil`) - The status of the "Merchant hosted local storefront" feature.
   *   `inventory` (*type:* `GoogleApi.Content.V2.Model.LiaInventorySettings.t`, *default:* `nil`) - LIA inventory verification settings.
   *   `onDisplayToOrder` (*type:* `GoogleApi.Content.V2.Model.LiaOnDisplayToOrderSettings.t`, *default:* `nil`) - LIA "On Display To Order" settings.

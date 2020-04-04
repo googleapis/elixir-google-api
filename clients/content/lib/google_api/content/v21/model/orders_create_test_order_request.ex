@@ -27,6 +27,13 @@ defmodule GoogleApi.Content.V21.Model.OrdersCreateTestOrderRequest do
       - "US" 
       - "FR"  Defaults to US.
   *   `templateName` (*type:* `String.t`, *default:* `nil`) - The test order template to use. Specify as an alternative to testOrder as a shortcut for retrieving a template and then creating an order using that template.
+
+      Acceptable values are:  
+      - "template1" 
+      - "template1a" 
+      - "template1b" 
+      - "template2" 
+      - "template3"
   *   `testOrder` (*type:* `GoogleApi.Content.V21.Model.TestOrder.t`, *default:* `nil`) - The test order to create.
   """
 

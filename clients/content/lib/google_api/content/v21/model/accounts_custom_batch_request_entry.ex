@@ -28,6 +28,14 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
   *   `linkRequest` (*type:* `GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest.t`, *default:* `nil`) - Details about the link request.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "claimWebsite" 
+      - "delete" 
+      - "get" 
+      - "insert" 
+      - "link" 
+      - "update"
   *   `overwrite` (*type:* `boolean()`, *default:* `nil`) - Only applicable if the method is claimwebsite. Indicates whether or not to take the claim from another account in case there is a conflict.
   """
 

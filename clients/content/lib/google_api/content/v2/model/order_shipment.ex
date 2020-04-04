@@ -66,6 +66,12 @@ defmodule GoogleApi.Content.V2.Model.OrderShipment do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the shipment.
   *   `lineItems` (*type:* `list(GoogleApi.Content.V2.Model.OrderShipmentLineItemShipment.t)`, *default:* `nil`) - The line items that are shipped.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the shipment.
+
+      Acceptable values are:  
+      - "delivered" 
+      - "readyForPickup" 
+      - "shipped" 
+      - "undeliverable"
   *   `trackingId` (*type:* `String.t`, *default:* `nil`) - The tracking ID for the shipment.
   """
 

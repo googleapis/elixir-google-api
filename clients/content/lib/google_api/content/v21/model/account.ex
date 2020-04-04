@@ -25,9 +25,9 @@ defmodule GoogleApi.Content.V21.Model.Account do
   *   `adultContent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the merchant sells adult content.
   *   `businessInformation` (*type:* `GoogleApi.Content.V21.Model.AccountBusinessInformation.t`, *default:* `nil`) - The business information of the account.
   *   `googleMyBusinessLink` (*type:* `GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink.t`, *default:* `nil`) - The GMB account which is linked or in the process of being linked with the Merchant Center account.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Merchant Center account ID.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required for update. Merchant Center account ID.
   *   `kind` (*type:* `String.t`, *default:* `content#account`) - Identifies what kind of resource this is. Value: the fixed string "content#account".
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Display name for the account.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Display name for the account.
   *   `sellerId` (*type:* `String.t`, *default:* `nil`) - Client-specific, locally-unique, internal ID for the child account.
   *   `users` (*type:* `list(GoogleApi.Content.V21.Model.AccountUser.t)`, *default:* `nil`) - Users with access to the account. Every account (except for subaccounts) must have at least one admin user.
   *   `websiteUrl` (*type:* `String.t`, *default:* `nil`) - The merchant's website.

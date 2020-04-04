@@ -28,7 +28,14 @@ defmodule GoogleApi.Content.V2.Model.OrderLegacyPromotion do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of the promotion.
   *   `longTitle` (*type:* `String.t`, *default:* `nil`) - The full title of the promotion.
   *   `productApplicability` (*type:* `String.t`, *default:* `nil`) - Whether the promotion is applicable to all products or only specific products.
+
+      Acceptable values are:  
+      - "allProducts" 
+      - "specificProducts"
   *   `redemptionChannel` (*type:* `String.t`, *default:* `nil`) - Indicates that the promotion is valid online.
+
+      Acceptable values are:  
+      - "online"
   """
 
   use GoogleApi.Gax.ModelBase

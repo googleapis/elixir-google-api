@@ -21,15 +21,15 @@ defmodule GoogleApi.Content.V21.Model.PosSaleRequest do
 
   ## Attributes
 
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number.
-  *   `itemId` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the item.
-  *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The price of the item.
-  *   `quantity` (*type:* `String.t`, *default:* `nil`) - The relative change of the available quantity. Negative for items returned.
+  *   `itemId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the item.
+  *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Required. The price of the item.
+  *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The relative change of the available quantity. Negative for items returned.
   *   `saleId` (*type:* `String.t`, *default:* `nil`) - A unique ID to group items from the same sale event.
-  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - The identifier of the merchant's store. Either a storeCode inserted via the API or the code of the store in Google My Business.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code for the item.
-  *   `timestamp` (*type:* `String.t`, *default:* `nil`) - The inventory timestamp, in ISO 8601 format.
+  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the merchant's store. Either a storeCode inserted via the API or the code of the store in Google My Business.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code for the item.
+  *   `timestamp` (*type:* `String.t`, *default:* `nil`) - Required. The inventory timestamp, in ISO 8601 format.
   """
 
   use GoogleApi.Gax.ModelBase

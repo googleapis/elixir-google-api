@@ -30,6 +30,15 @@ defmodule GoogleApi.Content.V21.Model.DatafeedFetchSchedule do
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Time zone used for schedule. UTC by default. E.g., "America/Los_Angeles".
   *   `username` (*type:* `String.t`, *default:* `nil`) - An optional user name for fetch_url.
   *   `weekday` (*type:* `String.t`, *default:* `nil`) - The day of the week the feed file should be fetched.
+
+      Acceptable values are:  
+      - "monday" 
+      - "tuesday" 
+      - "wednesday" 
+      - "thursday" 
+      - "friday" 
+      - "saturday" 
+      - "sunday"
   """
 
   use GoogleApi.Gax.ModelBase

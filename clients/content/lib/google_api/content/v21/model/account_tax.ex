@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.AccountTax do
 
   ## Attributes
 
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account to which these account tax settings belong.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the account to which these account tax settings belong.
   *   `kind` (*type:* `String.t`, *default:* `content#accountTax`) - Identifies what kind of resource this is. Value: the fixed string "content#accountTax".
   *   `rules` (*type:* `list(GoogleApi.Content.V21.Model.AccountTaxTaxRule.t)`, *default:* `nil`) - Tax rules. Updating the tax rules will enable US taxes (not reversible). Defining no rules is equivalent to not charging tax at all.
   """

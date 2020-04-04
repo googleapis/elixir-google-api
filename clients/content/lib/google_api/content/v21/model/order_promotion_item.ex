@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.OrderPromotionItem do
   ## Attributes
 
   *   `lineItemId` (*type:* `String.t`, *default:* `nil`) - The line item ID of a product. Do not provide for orders.createtestorder.
-  *   `offerId` (*type:* `String.t`, *default:* `nil`) - Offer ID of a product. Only for orders.createtestorder.
+  *   `offerId` (*type:* `String.t`, *default:* `nil`) - Required. Offer ID of a product. Only for orders.createtestorder.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - orders.createtestorder.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity of the associated product. Do not provide for orders.createtestorder.
   """

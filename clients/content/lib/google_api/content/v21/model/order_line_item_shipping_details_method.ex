@@ -22,9 +22,9 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod do
   ## Attributes
 
   *   `carrier` (*type:* `String.t`, *default:* `nil`) - The carrier for the shipping. Optional. See shipments[].carrier for a list of acceptable values.
-  *   `maxDaysInTransit` (*type:* `integer()`, *default:* `nil`) - Maximum transit time.
-  *   `methodName` (*type:* `String.t`, *default:* `nil`) - The name of the shipping method.
-  *   `minDaysInTransit` (*type:* `integer()`, *default:* `nil`) - Minimum transit time.
+  *   `maxDaysInTransit` (*type:* `integer()`, *default:* `nil`) - Required. Maximum transit time.
+  *   `methodName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the shipping method.
+  *   `minDaysInTransit` (*type:* `integer()`, *default:* `nil`) - Required. Minimum transit time.
   """
 
   use GoogleApi.Gax.ModelBase

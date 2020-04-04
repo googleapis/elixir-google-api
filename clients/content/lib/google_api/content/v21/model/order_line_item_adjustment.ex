@@ -24,6 +24,9 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemAdjustment do
   *   `priceAdjustment` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Adjustment for total price of the line item.
   *   `taxAdjustment` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Adjustment for total tax of the line item.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this adjustment.
+
+      Acceptable values are:  
+      - "promotion"
   """
 
   use GoogleApi.Gax.ModelBase

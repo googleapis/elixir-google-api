@@ -23,7 +23,10 @@ defmodule GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchRequestEntry d
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - Method of the batch request entry.
+
+      Acceptable values are:  
+      - "insert"
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product for which to update price and availability.
   *   `regionalInventory` (*type:* `GoogleApi.Content.V21.Model.RegionalInventory.t`, *default:* `nil`) - Price and availability of the product.
   """
