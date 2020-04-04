@@ -23,16 +23,25 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport do
 
   ## Attributes
 
+  *   `containers` (*type:* `%{optional(String.t) => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t}`, *default:* `nil`) - Per container information.
+      Key: container name.
   *   `cpuTime` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.CPUTime.t)`, *default:* `nil`) - CPU utilization samples.
+  *   `memoryInfo` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.MemInfo.t)`, *default:* `nil`) - Memory utilization samples.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpuTime => list(GoogleApi.Dataflow.V1b3.Model.CPUTime.t())
+          :containers => %{
+            optional(String.t()) => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t()
+          },
+          :cpuTime => list(GoogleApi.Dataflow.V1b3.Model.CPUTime.t()),
+          :memoryInfo => list(GoogleApi.Dataflow.V1b3.Model.MemInfo.t())
         }
 
+  field(:containers, as: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport, type: :map)
   field(:cpuTime, as: GoogleApi.Dataflow.V1b3.Model.CPUTime, type: :list)
+  field(:memoryInfo, as: GoogleApi.Dataflow.V1b3.Model.MemInfo, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport do
