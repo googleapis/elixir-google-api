@@ -26,7 +26,7 @@ defmodule GoogleApi.Firestore.V1.Model.RunQueryRequest do
       The new transaction ID will be returned as the first response in the
       stream.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time.
-      This may not be older than 60 seconds.
+      This may not be older than 270 seconds.
   *   `structuredQuery` (*type:* `GoogleApi.Firestore.V1.Model.StructuredQuery.t`, *default:* `nil`) - A structured query.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - Reads documents in a transaction.
   """
