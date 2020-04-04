@@ -24,6 +24,8 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
   *   `corsSettings` (*type:* `GoogleApi.IAP.V1.Model.CorsSettings.t`, *default:* `nil`) - Configuration to allow cross-origin requests via IAP.
   *   `gcipSettings` (*type:* `GoogleApi.IAP.V1.Model.GcipSettings.t`, *default:* `nil`) - GCIP claims and endpoint configurations for 3p identity providers.
   *   `oauthSettings` (*type:* `GoogleApi.IAP.V1.Model.OAuthSettings.t`, *default:* `nil`) - Settings to configure IAP's OAuth behavior.
+  *   `policyDelegationSettings` (*type:* `GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t`, *default:* `nil`) - Settings to configure Policy delegation for apps hosted in tenant projects.
+      INTERNAL_ONLY.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +33,14 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
   @type t :: %__MODULE__{
           :corsSettings => GoogleApi.IAP.V1.Model.CorsSettings.t(),
           :gcipSettings => GoogleApi.IAP.V1.Model.GcipSettings.t(),
-          :oauthSettings => GoogleApi.IAP.V1.Model.OAuthSettings.t()
+          :oauthSettings => GoogleApi.IAP.V1.Model.OAuthSettings.t(),
+          :policyDelegationSettings => GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t()
         }
 
   field(:corsSettings, as: GoogleApi.IAP.V1.Model.CorsSettings)
   field(:gcipSettings, as: GoogleApi.IAP.V1.Model.GcipSettings)
   field(:oauthSettings, as: GoogleApi.IAP.V1.Model.OAuthSettings)
+  field(:policyDelegationSettings, as: GoogleApi.IAP.V1.Model.PolicyDelegationSettings)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAP.V1.Model.AccessSettings do
