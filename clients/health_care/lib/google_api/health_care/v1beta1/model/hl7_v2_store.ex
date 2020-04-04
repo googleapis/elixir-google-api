@@ -38,6 +38,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store do
   *   `notificationConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t`, *default:* `nil`) - The notification destination all messages (both Ingest & Create) are
       published on. Only the message name is sent as part of the notification. If
       this is unset, no notifications are sent. Supplied by the client.
+  *   `notificationConfigs` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Hl7V2NotificationConfig.t)`, *default:* `nil`) - A list of notification configs. Each configuration uses a filter to
+      determine whether to publish a message (both Ingest & Create) on
+      the corresponding notification destination. Only the message name is sent
+      as part of the notification. Supplied by the client.
   *   `parserConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ParserConfig.t`, *default:* `nil`) - The configuration for the parser. It determines how the server parses the
       messages.
   *   `rejectDuplicateMessage` (*type:* `boolean()`, *default:* `nil`) - Determines whether duplicate messages should be rejected. A duplicate
@@ -59,6 +63,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store do
           :labels => map(),
           :name => String.t(),
           :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t(),
+          :notificationConfigs =>
+            list(GoogleApi.HealthCare.V1beta1.Model.Hl7V2NotificationConfig.t()),
           :parserConfig => GoogleApi.HealthCare.V1beta1.Model.ParserConfig.t(),
           :rejectDuplicateMessage => boolean()
         }
@@ -66,6 +72,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store do
   field(:labels, type: :map)
   field(:name)
   field(:notificationConfig, as: GoogleApi.HealthCare.V1beta1.Model.NotificationConfig)
+
+  field(:notificationConfigs,
+    as: GoogleApi.HealthCare.V1beta1.Model.Hl7V2NotificationConfig,
+    type: :list
+  )
+
   field(:parserConfig, as: GoogleApi.HealthCare.V1beta1.Model.ParserConfig)
   field(:rejectDuplicateMessage)
 end

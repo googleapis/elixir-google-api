@@ -64,6 +64,19 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
       this destination. The Cloud Pub/Sub message attributes contain a map
       with a string describing the action that has triggered the notification.
       For example, "action":"CreateResource".
+  *   `streamConfigs` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.StreamConfig.t)`, *default:* `nil`) - A list of streaming configs that configure the destinations of streaming
+      export for every resource mutation in this FHIR store. Each store is
+      allowed to have up to 10 streaming configs.
+      After a new config is added, the next resource mutation is streamed to
+      the new location in addition to the existing ones.
+      When a location is removed from the list, the server stops
+      streaming to that location. Before adding a new config, you must add the
+      required
+      [`bigquery.dataEditor`](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataEditor)
+      role to your project's **Cloud Healthcare Service Agent**
+      [service account](https://cloud.google.com/iam/docs/service-accounts).
+      Some lag (typically on the order of dozens of seconds) is expected before
+      the results show up in the streaming destination.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The FHIR specification version that this FHIR store supports natively. This
       field is immutable after store creation. Requests are rejected if they
       contain FHIR resources of a different version.
@@ -79,6 +92,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
           :labels => map(),
           :name => String.t(),
           :notificationConfig => GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t(),
+          :streamConfigs => list(GoogleApi.HealthCare.V1beta1.Model.StreamConfig.t()),
           :version => String.t()
         }
 
@@ -88,6 +102,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
   field(:labels, type: :map)
   field(:name)
   field(:notificationConfig, as: GoogleApi.HealthCare.V1beta1.Model.NotificationConfig)
+  field(:streamConfigs, as: GoogleApi.HealthCare.V1beta1.Model.StreamConfig, type: :list)
   field(:version)
 end
 
