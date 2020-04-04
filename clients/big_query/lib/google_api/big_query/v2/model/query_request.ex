@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
 
   ## Attributes
 
+  *   `connectionProperties` (*type:* `list(any())`, *default:* `nil`) - Connection properties.
   *   `defaultDataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Optional] Specifies the default datasetId and projectId to assume for any unqualified table names in the query. If not set, all table names in the query string must be qualified in the format 'datasetId.tableId'.
   *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - [Optional] If set to true, BigQuery doesn't run the job. Instead, if the query is valid, BigQuery returns statistics about the job such as how many bytes would be processed. If the query is invalid, an error returns. The default value is false.
   *   `kind` (*type:* `String.t`, *default:* `bigquery#queryRequest`) - The resource type of the request.
@@ -38,6 +39,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :connectionProperties => list(any()),
           :defaultDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t(),
           :dryRun => boolean(),
           :kind => String.t(),
@@ -52,6 +54,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
           :useQueryCache => boolean()
         }
 
+  field(:connectionProperties, type: :list)
   field(:defaultDataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
   field(:dryRun)
   field(:kind)
