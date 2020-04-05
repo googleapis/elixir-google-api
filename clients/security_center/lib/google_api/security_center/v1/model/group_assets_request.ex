@@ -104,6 +104,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupAssetsRequest do
       * security_center_properties.resource_owners: `=`, `:`
 
       For example, `resource_properties.size = 100` is a valid filter string.
+
+      Use a partial match on the empty string to filter based on a property
+      existing: "resource_properties.my_property : \\"\\""
+
+      Use a negated partial match on the empty string to filter based on a
+      property not existing: "-resource_properties.my_property : \\"\\""
   *   `groupBy` (*type:* `String.t`, *default:* `nil`) - Required. Expression that defines what assets fields to use for grouping. The string
       value should follow SQL syntax: comma separated list of fields. For
       example:

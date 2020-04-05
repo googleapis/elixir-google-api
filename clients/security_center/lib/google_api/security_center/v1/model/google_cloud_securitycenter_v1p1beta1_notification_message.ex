@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1NotificationMessage do
   @moduledoc """
-  Cloud SCC's Notification
+  Security Command Center's Notification
 
   ## Attributes
 

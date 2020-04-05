@@ -17,9 +17,9 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1p1beta1SecurityMarks do
   @moduledoc """
-  User specified security marks that are attached to the parent Cloud Security
-  Command Center (Cloud SCC) resource. Security marks are scoped within a Cloud
-  SCC organization -- they can be modified and viewed by all users who have
+  User specified security marks that are attached to the parent Security
+  Command Center resource. Security marks are scoped within a Security Command
+  Center organization -- they can be modified and viewed by all users who have
   proper permissions on the organization.
 
   ## Attributes
