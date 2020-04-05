@@ -262,9 +262,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed services, either a project or Stackdriver Account (workspace). The formats are:
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed services, either a project or a Monitoring Workspace. The formats are:
       projects/[PROJECT_ID_OR_NUMBER]
-      workspaces/[HOST_PROJECT_ID]
+      workspaces/[HOST_PROJECT_ID_OR_NUMBER]
 
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -341,7 +341,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `v3_id` (*type:* `String.t`) - Part of `service.name`. Resource name for this Service. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID}
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
 
   *   `v3_id1` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
@@ -682,8 +682,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent Service. The format is:
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed SLOs, either a project or a Monitoring Workspace. The formats are:
       projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+      workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
 
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.

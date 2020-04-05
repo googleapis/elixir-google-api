@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.Service do
   @moduledoc """
-  A Service is a discrete, autonomous, and network-accessible unit, designed to solve an individual concern (Wikipedia (https://en.wikipedia.org/wiki/Service-orientation)). In Stackdriver Monitoring, a Service acts as the root resource under which operational aspects of the service are accessible.
+  A Service is a discrete, autonomous, and network-accessible unit, designed to solve an individual concern (Wikipedia (https://en.wikipedia.org/wiki/Service-orientation)). In Cloud Monitoring, a Service acts as the root resource under which operational aspects of the service are accessible.
 
   ## Attributes
 
@@ -28,7 +28,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name used for UI elements listing this Service.
   *   `meshIstio` (*type:* `GoogleApi.Monitoring.V3.Model.MeshIstio.t`, *default:* `nil`) - Type used for Istio services scoped to an Istio mesh.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for this Service. The format is:
-      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID}
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
 
   *   `telemetry` (*type:* `GoogleApi.Monitoring.V3.Model.Telemetry.t`, *default:* `nil`) - Configuration for how to query telemetry on a Service.
   """

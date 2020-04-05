@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.AlertPolicy do
   @moduledoc """
-  A description of the conditions under which some aspect of your system is considered to be "unhealthy" and the ways to notify people or services about this state. For an overview of alert policies, see Introduction to Alerting.
+  A description of the conditions under which some aspect of your system is considered to be "unhealthy" and the ways to notify people or services about this state. For an overview of alert policies, see Introduction to Alerting (https://cloud.google.com/monitoring/alerts/).
 
   ## Attributes
 
