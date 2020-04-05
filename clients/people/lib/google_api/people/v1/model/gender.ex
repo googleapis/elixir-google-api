@@ -21,26 +21,34 @@ defmodule GoogleApi.People.V1.Model.Gender do
 
   ## Attributes
 
-  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - Output only. The value of the gender translated and formatted in the viewer's
-      account locale or the `Accept-Language` HTTP header locale.
+  *   `addressMeAs` (*type:* `String.t`, *default:* `nil`) - The type of pronouns that should be used to address the person. The value
+      can be custom or one of these predefined values:
+
+      * `male`
+      * `female`
+      * `other`
+  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - Output only. The value of the gender translated and formatted in the viewer's account
+      locale or the `Accept-Language` HTTP header locale. Unspecified or custom
+      value are not localized.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the gender.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The gender for the person. The gender can be custom or one of these
       predefined values:
 
       * `male`
       * `female`
-      * `other`
-      * `unknown`
+      * `unspecified`
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :addressMeAs => String.t(),
           :formattedValue => String.t(),
           :metadata => GoogleApi.People.V1.Model.FieldMetadata.t(),
           :value => String.t()
         }
 
+  field(:addressMeAs)
   field(:formattedValue)
   field(:metadata, as: GoogleApi.People.V1.Model.FieldMetadata)
   field(:value)
