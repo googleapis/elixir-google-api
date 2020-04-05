@@ -21,13 +21,11 @@ defmodule GoogleApi.OAuth2.V2.Model.Tokeninfo do
 
   ## Attributes
 
-  *   `access_type` (*type:* `String.t`, *default:* `nil`) - The access type granted with this token. It can be offline or online.
   *   `audience` (*type:* `String.t`, *default:* `nil`) - Who is the intended audience for this token. In general the same as issued_to.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the user. Present only if the email scope is present in the request.
   *   `expires_in` (*type:* `integer()`, *default:* `nil`) - The expiry time of the token, as number of seconds left until expiry.
   *   `issued_to` (*type:* `String.t`, *default:* `nil`) - To whom was the token issued to. In general the same as audience.
   *   `scope` (*type:* `String.t`, *default:* `nil`) - The space separated list of scopes granted to this token.
-  *   `token_handle` (*type:* `String.t`, *default:* `nil`) - The token handle associated with this token.
   *   `user_id` (*type:* `String.t`, *default:* `nil`) - The obfuscated user id.
   *   `verified_email` (*type:* `boolean()`, *default:* `nil`) - Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request.
   """
@@ -35,24 +33,20 @@ defmodule GoogleApi.OAuth2.V2.Model.Tokeninfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :access_type => String.t(),
           :audience => String.t(),
           :email => String.t(),
           :expires_in => integer(),
           :issued_to => String.t(),
           :scope => String.t(),
-          :token_handle => String.t(),
           :user_id => String.t(),
           :verified_email => boolean()
         }
 
-  field(:access_type)
   field(:audience)
   field(:email)
   field(:expires_in)
   field(:issued_to)
   field(:scope)
-  field(:token_handle)
   field(:user_id)
   field(:verified_email)
 end
