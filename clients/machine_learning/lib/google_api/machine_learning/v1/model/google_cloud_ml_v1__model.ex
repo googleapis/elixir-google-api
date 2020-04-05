@@ -64,7 +64,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model do
 
       Default is false.
   *   `regions` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of regions where the model is going to be deployed.
-      Currently only one region per model is supported.
+      Only one region per model is supported.
       Defaults to 'us-central1' if nothing is set.
       See the <a href="/ml-engine/docs/tensorflow/regions">available regions</a>
       for AI Platform services.
