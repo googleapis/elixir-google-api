@@ -29,7 +29,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   *   `workerConfig` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig.t`, *default:* `nil`) - Specifies the properties, such as machine type and disk size, used for
       creating workers in a worker pool.
   *   `workerCount` (*type:* `String.t`, *default:* `nil`) - The desired number of workers in the worker pool. Must be a value between
-      0 and 1000.
+      0 and 15000.
   """
 
   use GoogleApi.Gax.ModelBase
