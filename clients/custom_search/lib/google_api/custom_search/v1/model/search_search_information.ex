@@ -17,14 +17,15 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.SearchSearchInformation do
   @moduledoc """
-
+  Metadata about a search operation.
 
   ## Attributes
 
-  *   `formattedSearchTime` (*type:* `String.t`, *default:* `nil`) - 
-  *   `formattedTotalResults` (*type:* `String.t`, *default:* `nil`) - 
-  *   `searchTime` (*type:* `float()`, *default:* `nil`) - 
-  *   `totalResults` (*type:* `String.t`, *default:* `nil`) - 
+  *   `formattedSearchTime` (*type:* `String.t`, *default:* `nil`) - The time taken for the server to return search results, formatted
+      according to locale style.
+  *   `formattedTotalResults` (*type:* `String.t`, *default:* `nil`) - The total number of search results, formatted according to locale style.
+  *   `searchTime` (*type:* `float()`, *default:* `nil`) - The time taken for the server to return search results.
+  *   `totalResults` (*type:* `String.t`, *default:* `nil`) - The total number of search results returned by the query.
   """
 
   use GoogleApi.Gax.ModelBase

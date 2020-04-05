@@ -17,13 +17,15 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.ResultLabels do
   @moduledoc """
-
+  Refinement label associated with a custom search result.
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - 
-  *   `label_with_op` (*type:* `String.t`, *default:* `nil`) - 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of a refinement label. This is the name you should
+      display in your user interface.
+  *   `label_with_op` (*type:* `String.t`, *default:* `nil`) - Refinement label and the associated refinement operation.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of a refinement label, which you can use to refine searches.
+      Don't display this in your user interface; instead, use displayName.
   """
 
   use GoogleApi.Gax.ModelBase
