@@ -28,9 +28,8 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
       [network](/compute/docs/networks-and-firewalls#networks) to which the
       instance is connected. If left unspecified, the `default` network
       will be used.
-  *   `connectMode` (*type:* `String.t`, *default:* `nil`) - Optional. The connect mode of Redis instance.
-      If not provided, default one will be used.
-      Current default: DIRECT_PEERING.
+  *   `connectMode` (*type:* `String.t`, *default:* `nil`) - Optional. The network connect mode of the Redis instance.
+      If not provided, the connect mode defaults to DIRECT_PEERING.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
   *   `currentLocationId` (*type:* `String.t`, *default:* `nil`) - Output only. The current zone where the Redis endpoint is placed. For Basic
       Tier instances, this will always be the same as the location_id
