@@ -23,10 +23,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig do
 
   *   `acceleratorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t`, *default:* `nil`) - Represents the type and number of accelerators used by the replica.
       [Learn about restrictions on accelerator configurations for
-      training.](/ml-engine/docs/tensorflow/using-gpus#compute-engine-machine-types-with-gpu)
+      training.](/ai-platform/training/docs/using-gpus#compute-engine-machine-types-with-gpu)
   *   `imageUri` (*type:* `String.t`, *default:* `nil`) - The Docker image to run on the replica. This image must be in Container
       Registry. Learn more about [configuring custom
-      containers](/ml-engine/docs/distributed-training-containers).
+      containers](/ai-platform/training/docs/distributed-training-containers).
   *   `tpuTfVersion` (*type:* `String.t`, *default:* `nil`) - The AI Platform runtime version that includes a TensorFlow version matching
       the one used in the custom container. This field is required if the replica
       is a TPU worker that uses a custom container. Otherwise, do not specify

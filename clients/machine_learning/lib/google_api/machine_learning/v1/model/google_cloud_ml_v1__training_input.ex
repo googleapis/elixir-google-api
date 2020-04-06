@@ -25,10 +25,47 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
 
   ## Attributes
 
-  *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Command line arguments to pass to the program.
+  *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Arguments passed to the training.
+      - If it is a python package training:
+        It will be passed as command line argument to the program.
+      - If it is a custom container training,
+        It will be passed as an argument to the custom container
+        image.
   *   `encryptionConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t`, *default:* `nil`) - Custom encryption key options for a training job. If this is set,
       then all resources created by the training job will be encrypted with the
       provided encryption key.
+  *   `evaluatorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for evaluators.
+
+      You should only set `evaluatorConfig.acceleratorConfig` if
+      `evaluatorType` is set to a Compute Engine machine type. [Learn
+      about restrictions on accelerator configurations for
+      training.](/ai-platform/training/docs/using-gpus#compute-engine-machine-types-with-gpu)
+
+      Set `evaluatorConfig.imageUri` only if you build a custom image for
+      your evaluator. If `evaluatorConfig.imageUri` has not been
+      set, AI Platform uses the value of `masterConfig.imageUri` .
+      Learn more about [configuring custom
+      containers](/ai-platform/training/docs/distributed-training-containers).
+  *   `evaluatorCount` (*type:* `String.t`, *default:* `nil`) - Optional. The number of evaluator replicas to use for the training job.
+      Each replica in the cluster will be of the type specified in
+      `evaluator_type`.
+
+      This value can only be used when `scale_tier` is set to `CUSTOM`. If you
+      set this value, you must also set `evaluator_type`.
+
+      The default value is zero.
+  *   `evaluatorType` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the type of virtual machine to use for your training
+      job's evaluator nodes.
+
+      The supported values are the same as those described in the entry for
+      `masterType`.
+
+      This value must be consistent with the category of machine type that
+      `masterType` uses. In other words, both must be Compute Engine machine
+      types or both must be legacy machine types.
+
+      This value must be present when `scaleTier` is set to `CUSTOM` and
+      `evaluatorCount` is greater than zero.
   *   `hyperparameters` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec.t`, *default:* `nil`) - Optional. The set of Hyperparameters to tune.
   *   `jobDir` (*type:* `String.t`, *default:* `nil`) - Optional. A Google Cloud Storage path in which to store training outputs
       and other data needed for training. This path is passed to your TensorFlow
@@ -39,12 +76,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
       You should only set `masterConfig.acceleratorConfig` if `masterType` is set
       to a Compute Engine machine type. Learn about [restrictions on accelerator
       configurations for
-      training.](/ml-engine/docs/tensorflow/using-gpus#compute-engine-machine-types-with-gpu)
+      training.](/ai-platform/training/docs/using-gpus#compute-engine-machine-types-with-gpu)
 
       Set `masterConfig.imageUri` only if you build a custom image. Only one of
       `masterConfig.imageUri` and `runtimeVersion` should be set. Learn more
       about [configuring custom
-      containers](/ml-engine/docs/distributed-training-containers).
+      containers](/ai-platform/training/docs/distributed-training-containers).
   *   `masterType` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the type of virtual machine to use for your training
       job's master worker. You must specify this field when `scaleTier` is set to
       `CUSTOM`.
@@ -103,20 +140,20 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   *   `parameterServerConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for parameter servers.
 
       You should only set `parameterServerConfig.acceleratorConfig` if
-      `parameterServerConfigType` is set to a Compute Engine machine type. [Learn
+      `parameterServerType` is set to a Compute Engine machine type. [Learn
       about restrictions on accelerator configurations for
-      training.](/ml-engine/docs/tensorflow/using-gpus#compute-engine-machine-types-with-gpu)
+      training.](/ai-platform/training/docs/using-gpus#compute-engine-machine-types-with-gpu)
 
       Set `parameterServerConfig.imageUri` only if you build a custom image for
       your parameter server. If `parameterServerConfig.imageUri` has not been
-      set, AI Platform uses the value of `masterConfig.imageUri`.
+      set, AI Platform uses the value of `masterConfig.imageUri` .
       Learn more about [configuring custom
-      containers](/ml-engine/docs/distributed-training-containers).
+      containers](/ai-platform/training/docs/distributed-training-containers).
   *   `parameterServerCount` (*type:* `String.t`, *default:* `nil`) - Optional. The number of parameter server replicas to use for the training
       job. Each replica in the cluster will be of the type specified in
       `parameter_server_type`.
 
-      This value can only be used when `scale_tier` is set to `CUSTOM`.If you
+      This value can only be used when `scale_tier` is set to `CUSTOM`. If you
       set this value, you must also set `parameter_server_type`.
 
       The default value is zero.
@@ -158,22 +195,25 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   *   `scaleTier` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the machine types, the number of replicas for workers
       and parameter servers.
   *   `scheduling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling.t`, *default:* `nil`) - Optional. Scheduling options for a training job.
-  *   `useChiefInTfConfig` (*type:* `boolean()`, *default:* `nil`) - Optional. Use 'chief' instead of 'master' in TF_CONFIG when Custom
-      Container is used and evaluator is not specified.
+  *   `useChiefInTfConfig` (*type:* `boolean()`, *default:* `nil`) - Optional. Use `chief` instead of `master` in the `TF_CONFIG` environment
+      variable when training with a custom container. Defaults to `false`. [Learn
+      more about this
+      field.](/ai-platform/training/docs/distributed-training-details#chief-versus-master)
 
-      Defaults to false.
+      This field has no effect for training jobs that don't use a custom
+      container.
   *   `workerConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for workers.
 
       You should only set `workerConfig.acceleratorConfig` if `workerType` is set
       to a Compute Engine machine type. [Learn about restrictions on accelerator
       configurations for
-      training.](/ml-engine/docs/tensorflow/using-gpus#compute-engine-machine-types-with-gpu)
+      training.](/ai-platform/training/docs/using-gpus#compute-engine-machine-types-with-gpu)
 
       Set `workerConfig.imageUri` only if you build a custom image for your
       worker. If `workerConfig.imageUri` has not been set, AI Platform uses
-      the value of `masterConfig.imageUri`. Learn more about
-      [configuring custom
-      containers](/ml-engine/docs/distributed-training-containers).
+      the value of `masterConfig.imageUri` .
+      Learn more about [configuring custom
+      containers](/ai-platform/training/docs/distributed-training-containers).
   *   `workerCount` (*type:* `String.t`, *default:* `nil`) - Optional. The number of worker replicas to use for the training job. Each
       replica in the cluster will be of the type specified in `worker_type`.
 
@@ -205,6 +245,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
           :args => list(String.t()),
           :encryptionConfig =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t(),
+          :evaluatorConfig =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
+          :evaluatorCount => String.t(),
+          :evaluatorType => String.t(),
           :hyperparameters =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec.t(),
           :jobDir => String.t(),
@@ -230,6 +274,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   field(:args, type: :list)
 
   field(:encryptionConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig)
+
+  field(:evaluatorConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig)
+  field(:evaluatorCount)
+  field(:evaluatorType)
 
   field(:hyperparameters,
     as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec
