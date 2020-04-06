@@ -20,21 +20,21 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   Rich Business Messaging (RBM) Media displayed in Cards
   The following media-types are currently supported:
 
-  ## Image Types
+  Image Types
 
-   image/jpeg
-   image/jpg'
-   image/gif
-   image/png
+  * image/jpeg
+  * image/jpg'
+  * image/gif
+  * image/png
 
-  ## Video Types
+  Video Types
 
-   video/h263
-   video/m4v
-   video/mp4
-   video/mpeg
-   video/mpeg4
-   video/webm
+  * video/h263
+  * video/m4v
+  * video/mp4
+  * video/mpeg
+  * video/mpeg4
+  * video/webm
 
   ## Attributes
 

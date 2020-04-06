@@ -958,12 +958,11 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language of entity synonyms defined in `entity_type`. If not
-          specified, the agent's default language is used.
-          [Many
-          languages](https://cloud.google.com/dialogflow/docs/reference/language)
-          are supported. Note: languages must be enabled in the agent before they can
-          be used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
+          If not specified, the agent's default language is used.
+          For more information, see
+          [Multilingual intent and entity
+          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1109,12 +1108,11 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language to retrieve entity synonyms for. If not specified,
-          the agent's default language is used.
-          [Many
-          languages](https://cloud.google.com/dialogflow/docs/reference/language)
-          are supported. Note: languages must be enabled in the agent before they can
-          be used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
+          If not specified, the agent's default language is used.
+          For more information, see
+          [Multilingual intent and entity
+          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1188,12 +1186,11 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language to list entity synonyms for. If not specified,
-          the agent's default language is used.
-          [Many
-          languages](https://cloud.google.com/dialogflow/docs/reference/language)
-          are supported. Note: languages must be enabled in the agent before they can
-          be used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
+          If not specified, the agent's default language is used.
+          For more information, see
+          [Multilingual intent and entity
+          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
           default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
@@ -1275,12 +1272,11 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language of entity synonyms defined in `entity_type`. If not
-          specified, the agent's default language is used.
-          [Many
-          languages](https://cloud.google.com/dialogflow/docs/reference/language)
-          are supported. Note: languages must be enabled in the agent before they can
-          be used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
+          If not specified, the agent's default language is used.
+          For more information, see
+          [Multilingual intent and entity
+          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityType.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2728,12 +2724,11 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language of training phrases, parameters and rich messages
-          defined in `intent`. If not specified, the agent's default language is
-          used. [Many
-          languages](https://cloud.google.com/dialogflow/docs/reference/language)
-          are supported. Note: languages must be enabled in the agent before they can
-          be used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
+          If not specified, the agent's default language is used.
+          For more information, see
+          [Multilingual intent and entity
+          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2882,12 +2877,11 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language to retrieve training phrases, parameters and rich
-          messages for. If not specified, the agent's default language is used.
-          [Many
-          languages](https://cloud.google.com/dialogflow/docs/reference/language)
-          are supported. Note: languages must be enabled in the agent before they can
-          be used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
+          If not specified, the agent's default language is used.
+          For more information, see
+          [Multilingual intent and entity
+          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2958,12 +2952,11 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language to list training phrases, parameters and rich
-          messages for. If not specified, the agent's default language is used.
-          [Many
-          languages](https://cloud.google.com/dialogflow/docs/reference/language)
-          are supported. Note: languages must be enabled in the agent before they can
-          be used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
+          If not specified, the agent's default language is used.
+          For more information, see
+          [Multilingual intent and entity
+          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return in a single page. By
           default 100 and at most 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request.
@@ -3047,12 +3040,11 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:intentView` (*type:* `String.t`) - Optional. The resource view to apply to the returned intent.
-      *   `:languageCode` (*type:* `String.t`) - Optional. The language of training phrases, parameters and rich messages
-          defined in `intent`. If not specified, the agent's default language is
-          used. [Many
-          languages](https://cloud.google.com/dialogflow/docs/reference/language)
-          are supported. Note: languages must be enabled in the agent before they can
-          be used.
+      *   `:languageCode` (*type:* `String.t`) - Optional. The language used to access language-specific data.
+          If not specified, the agent's default language is used.
+          For more information, see
+          [Multilingual intent and entity
+          data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
       *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields get updated.
       *   `:body` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
