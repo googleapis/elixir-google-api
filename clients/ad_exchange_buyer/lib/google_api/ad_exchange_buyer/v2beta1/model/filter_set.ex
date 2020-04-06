@@ -40,9 +40,11 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet do
       i.e., one whose name matches the `bidders/*/accounts/*/filterSets/*`
       pattern.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - The environment on which to filter; optional.
-  *   `formats` (*type:* `list(String.t)`, *default:* `nil`) - The list of formats on which to filter; may be empty. The filters
-      represented by multiple formats are ORed together (i.e., if non-empty,
-      results must match any one of the formats).
+  *   `format` (*type:* `String.t`, *default:* `nil`) - Creative format bidded on or allowed to bid on, can be empty.
+  *   `formats` (*type:* `list(String.t)`, *default:* `nil`) - Creative formats bidded on or allowed to bid on, can be empty. Although
+      this field is a list, it can only be populated with a single item. A
+      HTTP 400 bad request error will be returned in the response if you specify
+      multiple items.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the filter set. Filter set names must be unique
       globally and match one of the patterns:
 
@@ -82,6 +84,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet do
           :creativeId => String.t(),
           :dealId => String.t(),
           :environment => String.t(),
+          :format => String.t(),
           :formats => list(String.t()),
           :name => String.t(),
           :platforms => list(String.t()),
@@ -97,6 +100,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet do
   field(:creativeId)
   field(:dealId)
   field(:environment)
+  field(:format)
   field(:formats, type: :list)
   field(:name)
   field(:platforms, type: :list)
