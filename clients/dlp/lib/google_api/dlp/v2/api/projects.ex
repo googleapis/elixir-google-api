@@ -1942,6 +1942,8 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
   *   `location_id` (*type:* `String.t`) - The geographic location to process content inspection. Reserved for future
       extensions.
+      When inspecting images location is restricted to 'global', 'us', 'asia',
+      and 'europe'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3072,6 +3074,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
   *   `location_id` (*type:* `String.t`) - The geographic location to process the request. Reserved for future
       extensions.
+      Location is restricted to 'global', 'us', 'asia', and 'europe'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
