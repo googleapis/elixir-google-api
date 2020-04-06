@@ -25,7 +25,7 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   *   `diskConfig` (*type:* `GoogleApi.Dataproc.V1.Model.DiskConfig.t`, *default:* `nil`) - Optional. Disk option config settings.
   *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine image resource used for cluster instances. It can be specified or may be inferred from SoftwareConfig.image_version.
   *   `instanceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of instance names. Dataproc derives the names from cluster_name, num_instances, and the instance group.
-  *   `isPreemptible` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies that this instance group contains preemptible instances.
+  *   `isPreemptible` (*type:* `boolean()`, *default:* `nil`) - Output only. Specifies that this instance group contains preemptible instances.
   *   `machineTypeUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples:
       https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
       projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
@@ -33,7 +33,7 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   *   `managedGroupConfig` (*type:* `GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t`, *default:* `nil`) - Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the minimum cpu platform for the Instance Group. See Dataproc&rarr;Minimum CPU Platform.
   *   `numInstances` (*type:* `integer()`, *default:* `nil`) - Optional. The number of VM instances in the instance group. For master instance groups, must be set to 1.
-  *   `preemptibility` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the preemptibility of the instance group.
+  *   `preemptibility` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the preemptibility of the instance group.The default value for master and worker groups is NON_PREEMPTIBLE. This default cannot be changed.The default value for secondary instances is PREEMPTIBLE.
   """
 
   use GoogleApi.Gax.ModelBase
