@@ -24,7 +24,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ParserConfig do
 
   *   `allowNullHeader` (*type:* `boolean()`, *default:* `nil`) - Determines whether messages with no header are allowed.
   *   `segmentTerminator` (*type:* `String.t`, *default:* `nil`) - Byte(s) to use as the segment terminator. If this is unset, '\\r' is
-      used as segment terminator.
+      used as segment terminator, matching the HL7 version 2
+      specification.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,24 +23,32 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.OperationMetadata do
   ## Attributes
 
   *   `apiMethodName` (*type:* `String.t`, *default:* `nil`) - The name of the API method that initiated the operation.
+  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Specifies if cancellation was requested for the operation.
   *   `counter` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ProgressCounter.t`, *default:* `nil`) - 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation was created by the API.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which execution was completed.
+  *   `logsUrl` (*type:* `String.t`, *default:* `nil`) - A link to audit and error logs in the log viewer. Error logs are generated
+      only by some operations, listed at
+      https://cloud.google.com/healthcare/docs/how-tos/stackdriver-logging.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :apiMethodName => String.t(),
+          :cancelRequested => boolean(),
           :counter => GoogleApi.HealthCare.V1beta1.Model.ProgressCounter.t(),
           :createTime => DateTime.t(),
-          :endTime => DateTime.t()
+          :endTime => DateTime.t(),
+          :logsUrl => String.t()
         }
 
   field(:apiMethodName)
+  field(:cancelRequested)
   field(:counter, as: GoogleApi.HealthCare.V1beta1.Model.ProgressCounter)
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)
+  field(:logsUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.OperationMetadata do
