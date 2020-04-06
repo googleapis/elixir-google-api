@@ -1160,7 +1160,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field
           path syntax reference.
       *   `:readTime` (*type:* `DateTime.t`) - Reads the version of the document at the given time.
-          This may not be older than 60 seconds.
+          This may not be older than 270 seconds.
       *   `:transaction` (*type:* `String.t`) - Reads the document in a transaction.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1247,7 +1247,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:pageSize` (*type:* `integer()`) - The maximum number of documents to return.
       *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous List request, if any.
       *   `:readTime` (*type:* `DateTime.t`) - Reads documents as they were at the given time.
-          This may not be older than 60 seconds.
+          This may not be older than 270 seconds.
       *   `:showMissing` (*type:* `boolean()`) - If the list should show missing documents. A missing document is a
           document that does not exist but has sub-documents. These documents will
           be returned with a key but will not have fields, Document.create_time,
