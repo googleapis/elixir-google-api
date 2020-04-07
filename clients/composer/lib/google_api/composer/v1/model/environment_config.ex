@@ -32,6 +32,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   *   `nodeConfig` (*type:* `GoogleApi.Composer.V1.Model.NodeConfig.t`, *default:* `nil`) - The configuration used for the Kubernetes Engine cluster.
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the Kubernetes Engine cluster that will be
       used to run this environment.
+  *   `privateEnvironmentConfig` (*type:* `GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig.t`, *default:* `nil`) - The configuration used for the Private IP Cloud Composer environment.
   *   `softwareConfig` (*type:* `GoogleApi.Composer.V1.Model.SoftwareConfig.t`, *default:* `nil`) - The configuration settings for software inside the environment.
   """
 
@@ -43,6 +44,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
           :gkeCluster => String.t(),
           :nodeConfig => GoogleApi.Composer.V1.Model.NodeConfig.t(),
           :nodeCount => integer(),
+          :privateEnvironmentConfig => GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig.t(),
           :softwareConfig => GoogleApi.Composer.V1.Model.SoftwareConfig.t()
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.Composer.V1.Model.EnvironmentConfig do
   field(:gkeCluster)
   field(:nodeConfig, as: GoogleApi.Composer.V1.Model.NodeConfig)
   field(:nodeCount)
+  field(:privateEnvironmentConfig, as: GoogleApi.Composer.V1.Model.PrivateEnvironmentConfig)
   field(:softwareConfig, as: GoogleApi.Composer.V1.Model.SoftwareConfig)
 end
 
