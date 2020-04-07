@@ -26,6 +26,8 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
   *   `binaryClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics.t`, *default:* `nil`) - Populated for binary classification/classifier models.
   *   `clusteringMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t`, *default:* `nil`) - Populated for clustering models.
   *   `multiClassClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t`, *default:* `nil`) - Populated for multi-class classification/classifier models.
+  *   `rankingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RankingMetrics.t`, *default:* `nil`) - [Alpha] Populated for implicit feedback type matrix factorization
+      models.
   *   `regressionMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RegressionMetrics.t`, *default:* `nil`) - Populated for regression models and explicit feedback type matrix
       factorization models.
   """
@@ -38,6 +40,7 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
           :clusteringMetrics => GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t(),
           :multiClassClassificationMetrics =>
             GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t(),
+          :rankingMetrics => GoogleApi.BigQuery.V2.Model.RankingMetrics.t(),
           :regressionMetrics => GoogleApi.BigQuery.V2.Model.RegressionMetrics.t()
         }
 
@@ -48,6 +51,7 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
     as: GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics
   )
 
+  field(:rankingMetrics, as: GoogleApi.BigQuery.V2.Model.RankingMetrics)
   field(:regressionMetrics, as: GoogleApi.BigQuery.V2.Model.RegressionMetrics)
 end
 
