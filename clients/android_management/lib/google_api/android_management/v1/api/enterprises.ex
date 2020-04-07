@@ -302,7 +302,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:wipeDataFlags` (*type:* `list(String.t)`) - Optional flags that control the device wiping behavior.
-      *   `:wipeReasonMessage` (*type:* `String.t`) - Optional short message displayed to the user before wiping the work profile on personal devices. This has no effect on company owned devices. The maximum message length is 200 characters.
+      *   `:wipeReasonMessage` (*type:* `String.t`) - Optional. A short message displayed to the user before wiping the work profile on personal devices. This has no effect on company owned devices. The maximum message length is 200 characters.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
