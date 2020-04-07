@@ -25,6 +25,10 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment
   *   `deliveryDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been delivered, in ISO 8601 format. Optional and can be provided only if status is delivered.
   *   `shipmentId` (*type:* `String.t`, *default:* `nil`) - The ID of the shipment.
   *   `status` (*type:* `String.t`, *default:* `nil`) - New status for the shipment. Not updated if missing.
+
+      Acceptable values are:  
+      - "delivered" 
+      - "undeliverable"
   *   `trackingId` (*type:* `String.t`, *default:* `nil`) - The tracking ID for the shipment. Not updated if missing.
   """
 

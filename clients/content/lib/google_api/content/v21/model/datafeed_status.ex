@@ -30,6 +30,12 @@ defmodule GoogleApi.Content.V21.Model.DatafeedStatus do
   *   `language` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language for which the status is reported.
   *   `lastUploadDate` (*type:* `String.t`, *default:* `nil`) - The last date at which the feed was uploaded.
   *   `processingStatus` (*type:* `String.t`, *default:* `nil`) - The processing status of the feed.
+
+      Acceptable values are:  
+      - ""failure": The feed could not be processed or all items had errors." 
+      - "in progress": The feed is being processed. 
+      - "none": The feed has not yet been processed. For example, a feed that has never been uploaded will have this processing status. 
+      - "success": The feed was processed successfully, though some items might have had errors.
   *   `warnings` (*type:* `list(GoogleApi.Content.V21.Model.DatafeedStatusError.t)`, *default:* `nil`) - The list of errors occurring in the feed.
   """
 

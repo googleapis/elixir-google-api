@@ -21,18 +21,25 @@ defmodule GoogleApi.Content.V21.Model.TestOrderLineItemProduct do
 
   ## Attributes
 
-  *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
-  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
+  *   `brand` (*type:* `String.t`, *default:* `nil`) - Required. Brand of the item.
+  *   `condition` (*type:* `String.t`, *default:* `nil`) - Required. Condition or state of the item.
+
+      Acceptable values are:  
+      - "new"
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
+
+      Acceptable values are:  
+      - "en" 
+      - "fr"
   *   `fees` (*type:* `list(GoogleApi.Content.V21.Model.OrderLineItemProductFee.t)`, *default:* `nil`) - Fees for the item. Optional.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item. Optional.
-  *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
+  *   `imageLink` (*type:* `String.t`, *default:* `nil`) - Required. URL of an image of the item.
   *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - Shared identifier for all variants of the same product. Optional.
   *   `mpn` (*type:* `String.t`, *default:* `nil`) - Manufacturer Part Number (MPN) of the item. Optional.
-  *   `offerId` (*type:* `String.t`, *default:* `nil`) - An identifier of the item.
-  *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The price for the product. Tax is automatically calculated for orders where marketplace facilitator tax laws are applicable. Otherwise, tax settings from Merchant Center are applied.
-  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - The CLDR territory code of the target country of the product.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the product.
+  *   `offerId` (*type:* `String.t`, *default:* `nil`) - Required. An identifier of the item.
+  *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Required. The price for the product. Tax is automatically calculated for orders where marketplace facilitator tax laws are applicable. Otherwise, tax settings from Merchant Center are applied.
+  *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code of the target country of the product.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Required. The title of the product.
   *   `variantAttributes` (*type:* `list(GoogleApi.Content.V21.Model.OrderLineItemProductVariantAttribute.t)`, *default:* `nil`) - Variant attributes for the item. Optional.
   """
 

@@ -24,7 +24,12 @@ defmodule GoogleApi.Content.V21.Model.ProductsCustomBatchRequestEntry do
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `feedId` (*type:* `String.t`, *default:* `nil`) - The Content API feed id.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "delete" 
+      - "get" 
+      - "insert"
   *   `product` (*type:* `GoogleApi.Content.V21.Model.Product.t`, *default:* `nil`) - The product to insert. Only required if the method is insert.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to get or delete. Only defined if the method is get or delete.
   """

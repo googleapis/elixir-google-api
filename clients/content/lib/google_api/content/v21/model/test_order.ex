@@ -23,15 +23,47 @@ defmodule GoogleApi.Content.V21.Model.TestOrder do
 
   *   `enableOrderinvoices` (*type:* `boolean()`, *default:* `nil`) - Whether the orderinvoices service should support this order.
   *   `kind` (*type:* `String.t`, *default:* `content#testOrder`) - Identifies what kind of resource this is. Value: the fixed string "content#testOrder".
-  *   `lineItems` (*type:* `list(GoogleApi.Content.V21.Model.TestOrderLineItem.t)`, *default:* `nil`) - Line items that are ordered. At least one line item must be provided.
+  *   `lineItems` (*type:* `list(GoogleApi.Content.V21.Model.TestOrderLineItem.t)`, *default:* `nil`) - Required. Line items that are ordered. At least one line item must be provided.
   *   `notificationMode` (*type:* `String.t`, *default:* `nil`) - Determines if test order must be pulled by merchant or pushed to merchant via push integration.
-  *   `predefinedBillingAddress` (*type:* `String.t`, *default:* `nil`) - The billing address.
-  *   `predefinedDeliveryAddress` (*type:* `String.t`, *default:* `nil`) - Identifier of one of the predefined delivery addresses for the delivery.
-  *   `predefinedEmail` (*type:* `String.t`, *default:* `nil`) - Email address of the customer.
+
+      Acceptable values are:  
+      - "checkoutIntegration" 
+      - "merchantPull"
+  *   `predefinedBillingAddress` (*type:* `String.t`, *default:* `nil`) - Required. The billing address.
+
+      Acceptable values are:  
+      - "dwight" 
+      - "jim" 
+      - "pam"
+  *   `predefinedDeliveryAddress` (*type:* `String.t`, *default:* `nil`) - Required. Identifier of one of the predefined delivery addresses for the delivery.
+
+      Acceptable values are:  
+      - "dwight" 
+      - "jim" 
+      - "pam"
+  *   `predefinedEmail` (*type:* `String.t`, *default:* `nil`) - Required. Email address of the customer.
+
+      Acceptable values are:  
+      - "pog.dwight.schrute@gmail.com" 
+      - "pog.jim.halpert@gmail.com" 
+      - "penpog.pam.beesly@gmail.comding"
   *   `predefinedPickupDetails` (*type:* `String.t`, *default:* `nil`) - Identifier of one of the predefined pickup details. Required for orders containing line items with shipping type pickup.
+
+      Acceptable values are:  
+      - "dwight" 
+      - "jim" 
+      - "pam"
   *   `promotions` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotion.t)`, *default:* `nil`) - Promotions associated with the order.
-  *   `shippingCost` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The price of shipping for all items. Shipping tax is automatically calculated for orders where marketplace facilitator tax laws are applicable. Otherwise, tax settings from Merchant Center are applied. Note that shipping is not taxed in certain states.
-  *   `shippingOption` (*type:* `String.t`, *default:* `nil`) - The requested shipping option.
+  *   `shippingCost` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Required. The price of shipping for all items. Shipping tax is automatically calculated for orders where marketplace facilitator tax laws are applicable. Otherwise, tax settings from Merchant Center are applied. Note that shipping is not taxed in certain states.
+  *   `shippingOption` (*type:* `String.t`, *default:* `nil`) - Required. The requested shipping option.
+
+      Acceptable values are:  
+      - "economy" 
+      - "expedited" 
+      - "oneDay" 
+      - "sameDay" 
+      - "standard" 
+      - "twoDay"
   """
 
   use GoogleApi.Gax.ModelBase

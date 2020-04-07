@@ -26,6 +26,13 @@ defmodule GoogleApi.Content.V2.Model.OrdersRejectReturnLineItemRequest do
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity to return and refund.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
+
+      Acceptable values are:  
+      - "damagedOrUsed" 
+      - "missingComponent" 
+      - "notEligible" 
+      - "other" 
+      - "outOfReturnWindow"
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 

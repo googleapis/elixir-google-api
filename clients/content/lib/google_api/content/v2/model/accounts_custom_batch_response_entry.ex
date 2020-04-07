@@ -26,6 +26,11 @@ defmodule GoogleApi.Content.V2.Model.AccountsCustomBatchResponseEntry do
   *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
   *   `kind` (*type:* `String.t`, *default:* `content#accountsCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#accountsCustomBatchResponseEntry".
   *   `linkStatus` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field is never set.
+
+      Acceptable values are:  
+      - "active" 
+      - "inactive" 
+      - "pending"
   """
 
   use GoogleApi.Gax.ModelBase
