@@ -23,8 +23,10 @@ defmodule GoogleApi.Compute.V1.Model.SubnetworkLogConfig do
 
   *   `aggregationInterval` (*type:* `String.t`, *default:* `nil`) - Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
   *   `enable` (*type:* `boolean()`, *default:* `nil`) - Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
+  *   `filterExpr` (*type:* `String.t`, *default:* `nil`) - Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
   *   `flowSampling` (*type:* `number()`, *default:* `nil`) - Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
   *   `metadata` (*type:* `String.t`, *default:* `nil`) - Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is INCLUDE_ALL_METADATA.
+  *   `metadataFields` (*type:* `list(String.t)`, *default:* `nil`) - Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,14 +34,18 @@ defmodule GoogleApi.Compute.V1.Model.SubnetworkLogConfig do
   @type t :: %__MODULE__{
           :aggregationInterval => String.t(),
           :enable => boolean(),
+          :filterExpr => String.t(),
           :flowSampling => number(),
-          :metadata => String.t()
+          :metadata => String.t(),
+          :metadataFields => list(String.t())
         }
 
   field(:aggregationInterval)
   field(:enable)
+  field(:filterExpr)
   field(:flowSampling)
   field(:metadata)
+  field(:metadataFields, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.SubnetworkLogConfig do

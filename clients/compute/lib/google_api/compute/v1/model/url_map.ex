@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.UrlMap do
 
   Google Compute Engine has two URL Map resources:
 
-  * [Global](/compute/docs/reference/rest/latest/urlMaps) * [Regional](/compute/docs/reference/rest/latest/regionUrlMaps)
+  * [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) * [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
 
   A URL map resource is a component of certain types of GCP load balancers and Traffic Director.
 

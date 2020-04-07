@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   @moduledoc """
   Represents a collection of network endpoints.
 
-  For more information read Setting up network endpoint groups in load balancing. (== resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
+  For more information read Network endpoint groups overview. (== resource_for {$api_version}.networkEndpointGroups ==) Next ID: 21
 
   ## Attributes
 
@@ -30,7 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   *   `kind` (*type:* `String.t`, *default:* `compute#networkEndpointGroup`) - [Output Only] Type of the resource. Always compute#networkEndpointGroup for network endpoint group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
-  *   `networkEndpointType` (*type:* `String.t`, *default:* `nil`) - Type of network endpoints in this network endpoint group. Currently the only supported value is GCE_VM_IP_PORT.
+  *   `networkEndpointType` (*type:* `String.t`, *default:* `nil`) - Type of network endpoints in this network endpoint group.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `size` (*type:* `integer()`, *default:* `nil`) - [Output only] Number of network endpoints in the network endpoint group.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Optional URL of the subnetwork to which all network endpoints in the NEG belong.

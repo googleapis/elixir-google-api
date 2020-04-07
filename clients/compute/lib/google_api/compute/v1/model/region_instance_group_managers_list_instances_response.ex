@@ -22,15 +22,18 @@ defmodule GoogleApi.Compute.V1.Model.RegionInstanceGroupManagersListInstancesRes
   ## Attributes
 
   *   `managedInstances` (*type:* `list(GoogleApi.Compute.V1.Model.ManagedInstance.t)`, *default:* `nil`) - A list of managed instances.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :managedInstances => list(GoogleApi.Compute.V1.Model.ManagedInstance.t())
+          :managedInstances => list(GoogleApi.Compute.V1.Model.ManagedInstance.t()),
+          :nextPageToken => String.t()
         }
 
   field(:managedInstances, as: GoogleApi.Compute.V1.Model.ManagedInstance, type: :list)
+  field(:nextPageToken)
 end
 
 defimpl Poison.Decoder,

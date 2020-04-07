@@ -17,7 +17,9 @@
 
 defmodule GoogleApi.Compute.V1.Model.License do
   @moduledoc """
-  A license resource.
+  Represents a License resource.
+
+  A License represents billing and aggregate usage data for public and marketplace images.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images. (== resource_for {$api_version}.licenses ==)
 
   ## Attributes
 

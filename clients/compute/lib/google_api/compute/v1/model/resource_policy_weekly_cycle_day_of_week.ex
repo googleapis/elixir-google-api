@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyWeeklyCycleDayOfWeek do
 
   ## Attributes
 
-  *   `day` (*type:* `String.t`, *default:* `nil`) - Allows to define schedule that runs specified day of the week.
+  *   `day` (*type:* `String.t`, *default:* `nil`) - Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
   *   `duration` (*type:* `String.t`, *default:* `nil`) - [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
   """

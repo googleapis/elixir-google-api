@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions do
 
   ## Attributes
 
-  *   `logMode` (*type:* `String.t`, *default:* `nil`) - Whether Gin logging should happen in a fail-closed manner at the caller. This is relevant only in the LocalIAM implementation, for now.
+  *   `logMode` (*type:* `String.t`, *default:* `nil`) - Whether Gin logging should happen in a fail-closed manner at the caller. This is currently supported in the LocalIAM implementation, Stubby C++, and Stubby Java. For Apps Framework, see go/af-audit-logging#failclosed. TODO(b/77591626): Add support for Stubby Go. TODO(b/129671387): Add support for Scaffolding.
   """
 
   use GoogleApi.Gax.ModelBase

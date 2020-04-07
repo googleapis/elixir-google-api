@@ -41,10 +41,11 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
   *   `initializeParams` (*type:* `GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams.t`, *default:* `nil`) - [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
 
       This property is mutually exclusive with the source property; you can only define one or the other, but not both.
-  *   `interface` (*type:* `String.t`, *default:* `nil`) - Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance. TODO(b/131765817): Update documentation when NVME is supported.
+  *   `interface` (*type:* `String.t`, *default:* `nil`) - Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
   *   `kind` (*type:* `String.t`, *default:* `compute#attachedDisk`) - [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
   *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] Any valid publicly visible licenses.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+  *   `shieldedInstanceInitialState` (*type:* `GoogleApi.Compute.V1.Model.InitialStateConfig.t`, *default:* `nil`) - [Output Only] shielded vm initial state stored on disk
   *   `source` (*type:* `String.t`, *default:* `nil`) - Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
 
       If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
@@ -68,6 +69,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
           :kind => String.t(),
           :licenses => list(String.t()),
           :mode => String.t(),
+          :shieldedInstanceInitialState => GoogleApi.Compute.V1.Model.InitialStateConfig.t(),
           :source => String.t(),
           :type => String.t()
         }
@@ -84,6 +86,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
   field(:kind)
   field(:licenses, type: :list)
   field(:mode)
+  field(:shieldedInstanceInitialState, as: GoogleApi.Compute.V1.Model.InitialStateConfig)
   field(:source)
   field(:type)
 end
