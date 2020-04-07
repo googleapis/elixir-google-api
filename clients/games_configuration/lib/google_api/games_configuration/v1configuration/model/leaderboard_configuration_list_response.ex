@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationListResponse do
   @moduledoc """
-  This is a JSON template for a ListConfigurations response.
+  A ListConfigurations response.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t)`, *default:* `nil`) - The leaderboard configurations.
-  *   `kind` (*type:* `String.t`, *default:* `gamesConfiguration#leaderboardConfigurationListResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#leaderboardConfigurationListResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string
+      <code>gamesConfiguration#leaderboardConfigurationListResponse</code>.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token for the next page of results.
   """
 

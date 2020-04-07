@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail do
   @moduledoc """
-  This is a JSON template for an achievement configuration detail.
+  An achievement configuration detail.
 
   ## Attributes
 
   *   `description` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t`, *default:* `nil`) - Localized strings for the achievement description.
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - The icon url of this achievement. Writes to this field are ignored.
-  *   `kind` (*type:* `String.t`, *default:* `gamesConfiguration#achievementConfigurationDetail`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesConfiguration#achievementConfigurationDetail.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string <code>gamesConfiguration#achievementConfigurationDetail</code>.
   *   `name` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t`, *default:* `nil`) - Localized strings for the achievement name.
   *   `pointValue` (*type:* `integer()`, *default:* `nil`) - Point value for the achievement.
   *   `sortRank` (*type:* `integer()`, *default:* `nil`) - The sort rank of this achievement. Writes to this field are ignored.
