@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.TemporalAsset do
   @moduledoc """
-  Temporal asset. In addition to the asset, the temporal asset includes the
-  status of the asset and valid from and to time of it.
+  An asset in Google Cloud and its temporal metadata, including the time window
+  when it was observed and its status during that window.
 
   ## Attributes
 
-  *   `asset` (*type:* `GoogleApi.CloudAsset.V1.Model.Asset.t`, *default:* `nil`) - Asset.
-  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - If the asset is deleted or not.
+  *   `asset` (*type:* `GoogleApi.CloudAsset.V1.Model.Asset.t`, *default:* `nil`) - An asset in Google Cloud.
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Whether the asset has been deleted or not.
   *   `window` (*type:* `GoogleApi.CloudAsset.V1.Model.TimeWindow.t`, *default:* `nil`) - The time window when the asset data and state was observed.
   """
 

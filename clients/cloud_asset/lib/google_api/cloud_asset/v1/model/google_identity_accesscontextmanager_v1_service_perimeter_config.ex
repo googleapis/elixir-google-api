@@ -36,7 +36,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
       restrictions. For example, if `storage.googleapis.com` is specified, access
       to the storage buckets inside the perimeter must meet the perimeter's
       access restrictions.
-  *   `vpcAccessibleServices` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1VpcAccessibleServices.t`, *default:* `nil`) - Configuration for within Perimeter allowed APIs.
+  *   `vpcAccessibleServices` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1VpcAccessibleServices.t`, *default:* `nil`) - Configuration for APIs allowed within Perimeter.
   """
 
   use GoogleApi.Gax.ModelBase

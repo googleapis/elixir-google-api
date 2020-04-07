@@ -64,8 +64,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
           The request becomes a no-op if the asset name list is empty, and the max
           size of the asset name list is 100 in one request.
       *   `:contentType` (*type:* `String.t`) - Optional. The content type.
-      *   `:"readTimeWindow.endTime"` (*type:* `DateTime.t`) - End time of the time window (inclusive).
-          Current timestamp if not specified.
+      *   `:"readTimeWindow.endTime"` (*type:* `DateTime.t`) - End time of the time window (inclusive). If not specified, the current
+          timestamp is used instead.
       *   `:"readTimeWindow.startTime"` (*type:* `DateTime.t`) - Start time of the time window (exclusive).
   *   `opts` (*type:* `keyword()`) - Call options
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.FeedOutputConfig do
 
   ## Attributes
 
-  *   `pubsubDestination` (*type:* `GoogleApi.CloudAsset.V1.Model.PubsubDestination.t`, *default:* `nil`) - Destination on Cloud Pubsub.
+  *   `pubsubDestination` (*type:* `GoogleApi.CloudAsset.V1.Model.PubsubDestination.t`, *default:* `nil`) - Destination on Pub/Sub.
   """
 
   use GoogleApi.Gax.ModelBase
