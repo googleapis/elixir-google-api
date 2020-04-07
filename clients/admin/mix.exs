@@ -18,7 +18,7 @@
 defmodule GoogleApi.Admin.Mixfile do
   use Mix.Project
 
-  @version "0.10.0"
+  @version "0.11.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Admin.Mixfile do
 
   defp description() do
     """
-    Admin Reports API client library. Fetches reports for the administrators of G Suite customers about the usage, collaboration, security, and risk for their users.
+    Admin Data Transfer API client library. Transfers user data from one user to another.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Admin.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/admin",
-        "Homepage" => "https://developers.google.com/admin-sdk/reports/"
+        "Homepage" => "https://developers.google.com/admin-sdk/data-transfer/"
       }
     ]
   end
