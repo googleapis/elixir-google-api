@@ -1,8 +1,8 @@
 # GoogleApi.Admin
 
-Admin Reports API client library.
+Admin Data Transfer API client library.
 
-Fetches reports for the administrators of G Suite customers about the usage, collaboration, security, and risk for their users.
+Transfers user data from one user to another.
 
 ## Installation
 
@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_admin, "~> 0.10"}]
+  [{:google_api_admin, "~> 0.11"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/admin-sdk/reports/](https://developers.google.com/admin-sdk/reports/).
+Product documentation is available at [https://developers.google.com/admin-sdk/data-transfer/](https://developers.google.com/admin-sdk/data-transfer/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_admin](https://hexdocs.pm/google_api_admin).
