@@ -1,6 +1,6 @@
 # GoogleApi.CustomSearch
 
-Custom Search API client library.
+CustomSearch API client library.
 
 Searches over a website or collection of websites
 
@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/custom-search/v1/introduction](https://developers.google.com/custom-search/v1/introduction).
+Product documentation is available at [https://developers.google.com/custom-search/v1/using_rest](https://developers.google.com/custom-search/v1/using_rest).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_custom_search](https://hexdocs.pm/google_api_custom_search).

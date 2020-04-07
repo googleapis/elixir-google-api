@@ -17,40 +17,38 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.Search do
   @moduledoc """
-  Response to a custom search request.
+
 
   ## Attributes
 
-  *   `context` (*type:* `map()`, *default:* `nil`) - Metadata and refinements associated with the given search engine.
-  *   `items` (*type:* `list(GoogleApi.CustomSearch.V1.Model.Result.t)`, *default:* `nil`) - The current set of custom search results.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the type of current object. For this API, it is
-      customsearch#search.
-  *   `promotions` (*type:* `list(GoogleApi.CustomSearch.V1.Model.Promotion.t)`, *default:* `nil`) - The set of promotions. Present only if the custom search engine's
-      configuration files define any promotions for the given query.
-  *   `queries` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchQueries.t`, *default:* `nil`) - Query metadata for the previous, current, and next pages of results.
-  *   `searchInformation` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchSearchInformation.t`, *default:* `nil`) - Metadata about a search operation.
-  *   `spelling` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchSpelling.t`, *default:* `nil`) - Spell correction information for a query.
-  *   `url` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchUrl.t`, *default:* `nil`) - OpenSearch template and URL.
+  *   `context` (*type:* `GoogleApi.CustomSearch.V1.Model.Context.t`, *default:* `nil`) - 
+  *   `items` (*type:* `list(GoogleApi.CustomSearch.V1.Model.Result.t)`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `customsearch#search`) - 
+  *   `promotions` (*type:* `list(GoogleApi.CustomSearch.V1.Model.Promotion.t)`, *default:* `nil`) - 
+  *   `queries` (*type:* `map()`, *default:* `nil`) - 
+  *   `searchInformation` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchSearchInformation.t`, *default:* `nil`) - 
+  *   `spelling` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchSpelling.t`, *default:* `nil`) - 
+  *   `url` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchUrl.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :context => map(),
+          :context => GoogleApi.CustomSearch.V1.Model.Context.t(),
           :items => list(GoogleApi.CustomSearch.V1.Model.Result.t()),
           :kind => String.t(),
           :promotions => list(GoogleApi.CustomSearch.V1.Model.Promotion.t()),
-          :queries => GoogleApi.CustomSearch.V1.Model.SearchQueries.t(),
+          :queries => map(),
           :searchInformation => GoogleApi.CustomSearch.V1.Model.SearchSearchInformation.t(),
           :spelling => GoogleApi.CustomSearch.V1.Model.SearchSpelling.t(),
           :url => GoogleApi.CustomSearch.V1.Model.SearchUrl.t()
         }
 
-  field(:context, type: :map)
+  field(:context, as: GoogleApi.CustomSearch.V1.Model.Context)
   field(:items, as: GoogleApi.CustomSearch.V1.Model.Result, type: :list)
   field(:kind)
   field(:promotions, as: GoogleApi.CustomSearch.V1.Model.Promotion, type: :list)
-  field(:queries, as: GoogleApi.CustomSearch.V1.Model.SearchQueries)
+  field(:queries, type: :map)
   field(:searchInformation, as: GoogleApi.CustomSearch.V1.Model.SearchSearchInformation)
   field(:spelling, as: GoogleApi.CustomSearch.V1.Model.SearchSpelling)
   field(:url, as: GoogleApi.CustomSearch.V1.Model.SearchUrl)

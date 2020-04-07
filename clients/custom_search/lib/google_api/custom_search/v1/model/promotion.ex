@@ -17,17 +17,16 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.Promotion do
   @moduledoc """
-  Promotion result.
+
 
   ## Attributes
 
-  *   `bodyLines` (*type:* `list(GoogleApi.CustomSearch.V1.Model.PromotionBodyLines.t)`, *default:* `nil`) - An array of block objects for this promotion. See Google WebSearch Protocol
-      reference for more information.
-  *   `displayLink` (*type:* `String.t`, *default:* `nil`) - An abridged version of this search's result URL, e.g. www.example.com.
-  *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - The title of the promotion, in HTML.
-  *   `image` (*type:* `GoogleApi.CustomSearch.V1.Model.PromotionImage.t`, *default:* `nil`) - Image belonging to a promotion.
-  *   `link` (*type:* `String.t`, *default:* `nil`) - The URL of the promotion.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the promotion.
+  *   `bodyLines` (*type:* `list(GoogleApi.CustomSearch.V1.Model.PromotionBodyLines.t)`, *default:* `nil`) - 
+  *   `displayLink` (*type:* `String.t`, *default:* `nil`) - 
+  *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - 
+  *   `image` (*type:* `GoogleApi.CustomSearch.V1.Model.PromotionImage.t`, *default:* `nil`) - 
+  *   `link` (*type:* `String.t`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
