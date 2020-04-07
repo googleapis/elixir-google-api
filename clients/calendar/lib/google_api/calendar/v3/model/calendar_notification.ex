@@ -21,10 +21,8 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarNotification do
 
   ## Attributes
 
-  *   `method` (*type:* `String.t`, *default:* `nil`) - The method used to deliver the notification. Possible values are:  
-      - "email" - Notifications are sent via email. 
-      - "sms" - Deprecated. Once this feature is shutdown, the API will no longer return notifications using this method. Any newly added SMS notifications will be ignored. See  Google Calendar SMS notifications to be removed for more information.
-      Notifications are sent via SMS. This value is read-only and is ignored on inserts and updates. SMS notifications are only available for G Suite customers.  
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method used to deliver the notification. The possible value is:  
+      - "email" - Notifications are sent via email.  
       Required when adding a notification.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of notification. Possible values are:  
       - "eventCreation" - Notification sent when a new event is put on the calendar. 
