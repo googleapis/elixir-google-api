@@ -21,6 +21,13 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
 
   ## Attributes
 
+  *   `defaultSearchHandlingStrict` (*type:* `boolean()`, *default:* `nil`) - If true, overrides the default search behavior for this FHIR store to
+      `handling=strict` which returns an error for unrecognized search
+      parameters. If false, uses the FHIR specification default
+      `handling=lenient` which ignores unrecognized search parameters.
+      The handling can always be changed from the default on an individual API
+      call by setting the HTTP header `Prefer: handling=strict` or
+      `Prefer: handling=lenient`.
   *   `disableReferentialIntegrity` (*type:* `boolean()`, *default:* `nil`) - Whether to disable referential integrity in this FHIR store. This field is
       immutable after FHIR store creation.
       The default value is false, meaning that the API enforces referential
@@ -86,6 +93,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :defaultSearchHandlingStrict => boolean(),
           :disableReferentialIntegrity => boolean(),
           :disableResourceVersioning => boolean(),
           :enableUpdateCreate => boolean(),
@@ -96,6 +104,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirStore do
           :version => String.t()
         }
 
+  field(:defaultSearchHandlingStrict)
   field(:disableReferentialIntegrity)
   field(:disableResourceVersioning)
   field(:enableUpdateCreate)
