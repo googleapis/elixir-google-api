@@ -1451,6 +1451,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           {:ok, GoogleApi.PubSub.V1.Model.PullResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
+          | {:error, :econnrefused}
   def pubsub_projects_subscriptions_pull(
         connection,
         projects_id,
