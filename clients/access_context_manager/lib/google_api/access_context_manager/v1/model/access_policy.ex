@@ -25,7 +25,6 @@ defmodule GoogleApi.AccessContextManager.V1.Model.AccessPolicy do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `AccessPolicy` was created in UTC.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. An opaque identifier for the current version of the
       `AccessPolicy`. This will always be a strongly validated etag, meaning that
       two Access Polices will be identical if and only if their etags are
@@ -36,26 +35,21 @@ defmodule GoogleApi.AccessContextManager.V1.Model.AccessPolicy do
       Hierarchy. Currently immutable once created. Format:
       `organizations/{organization_id}`
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. Human readable title. Does not affect behavior.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `AccessPolicy` was updated in UTC.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
           :etag => String.t(),
           :name => String.t(),
           :parent => String.t(),
-          :title => String.t(),
-          :updateTime => DateTime.t()
+          :title => String.t()
         }
 
-  field(:createTime, as: DateTime)
   field(:etag)
   field(:name)
   field(:parent)
   field(:title)
-  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessContextManager.V1.Model.AccessPolicy do
