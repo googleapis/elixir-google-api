@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationDetail do
   @moduledoc """
-  This is a JSON template for a leaderboard configuration detail.
+  A leaderboard configuration detail.
 
   ## Attributes
 
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - The icon url of this leaderboard. Writes to this field are ignored.
-  *   `kind` (*type:* `String.t`, *default:* `gamesConfiguration#leaderboardConfigurationDetail`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesConfiguration#leaderboardConfigurationDetail.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string <code>gamesConfiguration#leaderboardConfigurationDetail</code>.
   *   `name` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle.t`, *default:* `nil`) - Localized strings for the leaderboard name.
   *   `scoreFormat` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.GamesNumberFormatConfiguration.t`, *default:* `nil`) - The score formatting for the leaderboard.
   *   `sortRank` (*type:* `integer()`, *default:* `nil`) - The sort rank of this leaderboard. Writes to this field are ignored.

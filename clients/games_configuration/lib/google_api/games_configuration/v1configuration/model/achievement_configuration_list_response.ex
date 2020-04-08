@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationListResponse do
   @moduledoc """
-  This is a JSON template for a ListConfigurations response.
+  A ListConfigurations response.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfiguration.t)`, *default:* `nil`) - The achievement configurations.
-  *   `kind` (*type:* `String.t`, *default:* `gamesConfiguration#achievementConfigurationListResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementConfigurationListResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string
+      <code>gamesConfiguration#achievementConfigurationListResponse</code>.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token for the next page of results.
   """
 

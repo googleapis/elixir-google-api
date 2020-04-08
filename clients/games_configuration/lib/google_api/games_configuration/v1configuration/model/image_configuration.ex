@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.GamesConfiguration.V1configuration.Model.ImageConfiguration do
   @moduledoc """
-  This is a JSON template for an image configuration resource.
+  An image configuration resource.
 
   ## Attributes
 
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The image type for the image.
-  *   `kind` (*type:* `String.t`, *default:* `gamesConfiguration#imageConfiguration`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesConfiguration#imageConfiguration.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string <code>gamesConfiguration#imageConfiguration</code>.
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The resource ID of resource which the image belongs to.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The url for this image.
   """
