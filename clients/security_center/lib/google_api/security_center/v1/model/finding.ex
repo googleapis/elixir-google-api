@@ -25,6 +25,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   cross-site scripting (XSS) vulnerability in an App Engine application is a
   finding.
 
+  When adding a new field hidden behind a visibility label, ensure it is also
+  hidden from Notifications:
+  http://google3/java/com/google/cloud/security/riskdashboard/notification/actions/streaming/FindingTranslator.java?l=26
+
   ## Attributes
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source.
