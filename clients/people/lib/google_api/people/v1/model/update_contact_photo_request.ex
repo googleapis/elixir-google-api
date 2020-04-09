@@ -30,7 +30,6 @@ defmodule GoogleApi.People.V1.Model.UpdateContactPhotoRequest do
       * ageRanges
       * biographies
       * birthdays
-      * braggingRights
       * coverPhotos
       * emailAddresses
       * events
@@ -47,12 +46,9 @@ defmodule GoogleApi.People.V1.Model.UpdateContactPhotoRequest do
       * phoneNumbers
       * photos
       * relations
-      * relationshipInterests
-      * relationshipStatuses
       * residences
       * sipAddresses
       * skills
-      * taglines
       * urls
       * userDefined
   *   `photoBytes` (*type:* `String.t`, *default:* `nil`) - Required. Raw photo bytes
