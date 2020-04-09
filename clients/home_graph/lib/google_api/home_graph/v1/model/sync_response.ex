@@ -18,9 +18,10 @@
 defmodule GoogleApi.HomeGraph.V1.Model.SyncResponse do
   @moduledoc """
   Response type for the
-  [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync) call. This should
-  follow the same format as the Actions on Google `action.devices.SYNC`
-  [response](/actions/smarthome/create-app#actiondevicessync).
+  [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync) call.
+  This should follow the same format as the Google smart home
+  `action.devices.SYNC`
+  [response](https://developers.google.com/assistant/smarthome/reference/intent/sync).
   # Example
 
   ```json

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId do
   @moduledoc """
-  Identifies a device in the third party or first party system.
+  Alternate third-party device ID.
 
   ## Attributes
 
-  *   `agentId` (*type:* `String.t`, *default:* `nil`) - The agent's ID. Generally it is the agent's AoG project id.
-  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Device ID defined by the agent. The device_id must be unique.
+  *   `agentId` (*type:* `String.t`, *default:* `nil`) - Project ID for your smart home Action.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Unique third-party device ID.
   """
 
   use GoogleApi.Gax.ModelBase
