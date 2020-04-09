@@ -26,22 +26,26 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Marks a comment as not spam.
+  Marks a comment as not spam by blog id, post id and comment id.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
-  *   `post_id` (*type:* `String.t`) - The ID of the Post.
-  *   `comment_id` (*type:* `String.t`) - The ID of the comment to mark as not spam.
+  *   `blog_id` (*type:* `String.t`) - 
+  *   `post_id` (*type:* `String.t`) - 
+  *   `comment_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -69,19 +73,23 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}/approve", %{
+      |> Request.url("/v3/blogs/{blogId}/posts/{postId}/comments/{commentId}/approve", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
         "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
@@ -95,22 +103,26 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
   end
 
   @doc """
-  Delete a comment by ID.
+  Deletes a comment by blog id, post id and comment id.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
-  *   `post_id` (*type:* `String.t`) - The ID of the Post.
-  *   `comment_id` (*type:* `String.t`) - The ID of the comment to delete.
+  *   `blog_id` (*type:* `String.t`) - 
+  *   `post_id` (*type:* `String.t`) - 
+  *   `comment_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -135,19 +147,23 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
+      |> Request.url("/v3/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
         "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
@@ -161,23 +177,27 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
   end
 
   @doc """
-  Gets one comment by ID.
+  Gets a comment by id.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `blog_id` (*type:* `String.t`) - ID of the blog to containing the comment.
-  *   `post_id` (*type:* `String.t`) - ID of the post to fetch posts from.
-  *   `comment_id` (*type:* `String.t`) - The ID of the comment to get.
+  *   `blog_id` (*type:* `String.t`) - 
+  *   `post_id` (*type:* `String.t`) - 
+  *   `comment_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:view` (*type:* `String.t`) - Access level for the requested comment (default: READER). Note that some comments will require elevated permissions, for example comments where the parent posts which is in a draft state, or comments that are pending moderation.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:view` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -205,20 +225,24 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :view => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
+      |> Request.url("/v3/blogs/{blogId}/posts/{postId}/comments/{commentId}", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
         "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
@@ -232,28 +256,32 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
   end
 
   @doc """
-  Retrieves the comments for a post, possibly filtered.
+  Lists comments.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `blog_id` (*type:* `String.t`) - ID of the blog to fetch comments from.
-  *   `post_id` (*type:* `String.t`) - ID of the post to fetch posts from.
+  *   `blog_id` (*type:* `String.t`) - 
+  *   `post_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:endDate` (*type:* `DateTime.t`) - Latest date of comment to fetch, a date-time with RFC 3339 formatting.
-      *   `:fetchBodies` (*type:* `boolean()`) - Whether the body content of the comments is included.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of comments to include in the result.
-      *   `:pageToken` (*type:* `String.t`) - Continuation token if request is paged.
-      *   `:startDate` (*type:* `DateTime.t`) - Earliest date of comment to fetch, a date-time with RFC 3339 formatting.
-      *   `:status` (*type:* `list(String.t)`) - 
-      *   `:view` (*type:* `String.t`) - Access level with which to view the returned result. Note that some fields require elevated access.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:endDate` (*type:* `String.t`) - 
+      *   `:fetchBodies` (*type:* `boolean()`) - 
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:pageToken` (*type:* `String.t`) - 
+      *   `:startDate` (*type:* `String.t`) - 
+      *   `:status` (*type:* `String.t`) - 
+      *   `:view` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -267,13 +295,17 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
           | {:error, Tesla.Env.t()}
   def blogger_comments_list(connection, blog_id, post_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :endDate => :query,
       :fetchBodies => :query,
       :maxResults => :query,
@@ -286,7 +318,7 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/blogs/{blogId}/posts/{postId}/comments", %{
+      |> Request.url("/v3/blogs/{blogId}/posts/{postId}/comments", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1)
       })
@@ -299,25 +331,29 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
   end
 
   @doc """
-  Retrieves the comments for a blog, across all posts, possibly filtered.
+  Lists comments by blog.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `blog_id` (*type:* `String.t`) - ID of the blog to fetch comments from.
+  *   `blog_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:endDate` (*type:* `DateTime.t`) - Latest date of comment to fetch, a date-time with RFC 3339 formatting.
-      *   `:fetchBodies` (*type:* `boolean()`) - Whether the body content of the comments is included.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of comments to include in the result.
-      *   `:pageToken` (*type:* `String.t`) - Continuation token if request is paged.
-      *   `:startDate` (*type:* `DateTime.t`) - Earliest date of comment to fetch, a date-time with RFC 3339 formatting.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:endDate` (*type:* `String.t`) - 
+      *   `:fetchBodies` (*type:* `boolean()`) - 
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:pageToken` (*type:* `String.t`) - 
+      *   `:startDate` (*type:* `String.t`) - 
       *   `:status` (*type:* `list(String.t)`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -332,13 +368,17 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
           | {:error, Tesla.Env.t()}
   def blogger_comments_list_by_blog(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :endDate => :query,
       :fetchBodies => :query,
       :maxResults => :query,
@@ -350,7 +390,7 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/blogs/{blogId}/comments", %{
+      |> Request.url("/v3/blogs/{blogId}/comments", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -362,22 +402,26 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
   end
 
   @doc """
-  Marks a comment as spam.
+  Marks a comment as spam by blog id, post id and comment id.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
-  *   `post_id` (*type:* `String.t`) - The ID of the Post.
-  *   `comment_id` (*type:* `String.t`) - The ID of the comment to mark as spam.
+  *   `blog_id` (*type:* `String.t`) - 
+  *   `post_id` (*type:* `String.t`) - 
+  *   `comment_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -405,19 +449,23 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}/spam", %{
+      |> Request.url("/v3/blogs/{blogId}/posts/{postId}/comments/{commentId}/spam", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
         "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)
@@ -431,22 +479,26 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
   end
 
   @doc """
-  Removes the content of a comment.
+  Removes the content of a comment by blog id, post id and comment id.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `blog_id` (*type:* `String.t`) - The ID of the Blog.
-  *   `post_id` (*type:* `String.t`) - The ID of the Post.
-  *   `comment_id` (*type:* `String.t`) - The ID of the comment to delete content from.
+  *   `blog_id` (*type:* `String.t`) - 
+  *   `post_id` (*type:* `String.t`) - 
+  *   `comment_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -474,19 +526,23 @@ defmodule GoogleApi.Blogger.V3.Api.Comments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/blogs/{blogId}/posts/{postId}/comments/{commentId}/removecontent", %{
+      |> Request.url("/v3/blogs/{blogId}/posts/{postId}/comments/{commentId}/removecontent", %{
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1),
         "commentId" => URI.encode(comment_id, &URI.char_unreserved?/1)

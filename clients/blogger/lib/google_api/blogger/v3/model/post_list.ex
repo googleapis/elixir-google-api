@@ -23,8 +23,9 @@ defmodule GoogleApi.Blogger.V3.Model.PostList do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the response.
   *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.Post.t)`, *default:* `nil`) - The list of Posts for this Blog.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#postList`) - The kind of this entity. Always blogger#postList
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entity. Always blogger#postList.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the next page, if one exists.
+  *   `prevPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the previous page, if one exists.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Blogger.V3.Model.PostList do
           :etag => String.t(),
           :items => list(GoogleApi.Blogger.V3.Model.Post.t()),
           :kind => String.t(),
-          :nextPageToken => String.t()
+          :nextPageToken => String.t(),
+          :prevPageToken => String.t()
         }
 
   field(:etag)
   field(:items, as: GoogleApi.Blogger.V3.Model.Post, type: :list)
   field(:kind)
   field(:nextPageToken)
+  field(:prevPageToken)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.PostList do

@@ -26,23 +26,27 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets one post and user info pair, by post ID and user ID. The post user info contains per-user information about the post, such as access rights, specific to the user.
+  Gets one post and user info pair, by post_id and user_id.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - ID of the user for the per-user information to be fetched. Either the word 'self' or the user's profile identifier.
-  *   `blog_id` (*type:* `String.t`) - The ID of the blog.
-  *   `post_id` (*type:* `String.t`) - The ID of the post to get.
+  *   `user_id` (*type:* `String.t`) - 
+  *   `blog_id` (*type:* `String.t`) - 
+  *   `post_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxComments` (*type:* `integer()`) - Maximum number of comments to pull back on a post.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:maxComments` (*type:* `integer()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -70,20 +74,24 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :maxComments => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/users/{userId}/blogs/{blogId}/posts/{postId}", %{
+      |> Request.url("/v3/users/{userId}/blogs/{blogId}/posts/{postId}", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1),
         "postId" => URI.encode(post_id, &URI.char_unreserved?/1)
@@ -97,30 +105,34 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
   end
 
   @doc """
-  Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.
+  Lists post and user info pairs.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Blogger.V3.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - ID of the user for the per-user information to be fetched. Either the word 'self' or the user's profile identifier.
-  *   `blog_id` (*type:* `String.t`) - ID of the blog to fetch posts from.
+  *   `user_id` (*type:* `String.t`) - 
+  *   `blog_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:endDate` (*type:* `DateTime.t`) - Latest post date to fetch, a date-time with RFC 3339 formatting.
-      *   `:fetchBodies` (*type:* `boolean()`) - Whether the body content of posts is included. Default is false.
-      *   `:labels` (*type:* `String.t`) - Comma-separated list of labels to search for.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of posts to fetch.
-      *   `:orderBy` (*type:* `String.t`) - Sort order applied to search results. Default is published.
-      *   `:pageToken` (*type:* `String.t`) - Continuation token if the request is paged.
-      *   `:startDate` (*type:* `DateTime.t`) - Earliest post date to fetch, a date-time with RFC 3339 formatting.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:endDate` (*type:* `String.t`) - 
+      *   `:fetchBodies` (*type:* `boolean()`) - 
+      *   `:labels` (*type:* `String.t`) - 
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:orderBy` (*type:* `String.t`) - 
+      *   `:pageToken` (*type:* `String.t`) - 
+      *   `:startDate` (*type:* `String.t`) - 
       *   `:status` (*type:* `list(String.t)`) - 
-      *   `:view` (*type:* `String.t`) - Access level with which to view the returned result. Note that some fields require elevated access.
+      *   `:view` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -146,13 +158,17 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :endDate => :query,
       :fetchBodies => :query,
       :labels => :query,
@@ -167,7 +183,7 @@ defmodule GoogleApi.Blogger.V3.Api.PostUserInfos do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/users/{userId}/blogs/{blogId}/posts", %{
+      |> Request.url("/v3/users/{userId}/blogs/{blogId}/posts", %{
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
         "blogId" => URI.encode(blog_id, &URI.char_unreserved?/1)
       })

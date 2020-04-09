@@ -23,10 +23,10 @@ defmodule GoogleApi.Blogger.V3.Model.User do
 
   *   `about` (*type:* `String.t`, *default:* `nil`) - Profile summary information.
   *   `blogs` (*type:* `GoogleApi.Blogger.V3.Model.UserBlogs.t`, *default:* `nil`) - The container of blogs for this user.
-  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of when this profile was created, in seconds since epoch.
+  *   `created` (*type:* `String.t`, *default:* `nil`) - The timestamp of when this profile was created, in seconds since epoch.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this User.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#user`) - The kind of this entity. Always blogger#user
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entity. Always blogger#user.
   *   `locale` (*type:* `GoogleApi.Blogger.V3.Model.UserLocale.t`, *default:* `nil`) - This user's locale
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The user's profile page.
@@ -37,7 +37,7 @@ defmodule GoogleApi.Blogger.V3.Model.User do
   @type t :: %__MODULE__{
           :about => String.t(),
           :blogs => GoogleApi.Blogger.V3.Model.UserBlogs.t(),
-          :created => DateTime.t(),
+          :created => String.t(),
           :displayName => String.t(),
           :id => String.t(),
           :kind => String.t(),
@@ -48,7 +48,7 @@ defmodule GoogleApi.Blogger.V3.Model.User do
 
   field(:about)
   field(:blogs, as: GoogleApi.Blogger.V3.Model.UserBlogs)
-  field(:created, as: DateTime)
+  field(:created)
   field(:displayName)
   field(:id)
   field(:kind)
