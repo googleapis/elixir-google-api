@@ -36,7 +36,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
   *   `plan` (*type:* `String.t`, *default:* `nil`) - Capacity commitment commitment plan.
   *   `renewalPlan` (*type:* `String.t`, *default:* `nil`) - The plan this capacity commitment is converted to after commitment_end_time
       passes. Once the plan is changed, committed period is extended according to
-      commitment plan. Only applicable for MONTHLY and ANNUAL commitments.
+      commitment plan. Only applicable for ANNUAL commitments.
   *   `slotCount` (*type:* `String.t`, *default:* `nil`) - Number of slots in this commitment.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the commitment.
   """
