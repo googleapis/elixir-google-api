@@ -3023,7 +3023,7 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The unique identifier of this intent.
+  *   `name` (*type:* `String.t`) - Optional. The unique identifier of this intent.
       Required for Intents.UpdateIntent and Intents.BatchUpdateIntents
       methods.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.

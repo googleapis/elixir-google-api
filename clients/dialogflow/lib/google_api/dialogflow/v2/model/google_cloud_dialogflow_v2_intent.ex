@@ -44,7 +44,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
       Note: If `ml_disabled` setting is set to true, then this intent is not
       taken into account during inference in `ML ONLY` match mode. Also,
       auto-markup in the UI is turned off.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of this intent.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of this intent.
       Required for Intents.UpdateIntent and Intents.BatchUpdateIntents
       methods.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.

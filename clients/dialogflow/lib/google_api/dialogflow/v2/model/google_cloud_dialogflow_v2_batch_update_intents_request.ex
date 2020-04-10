@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateIntentsRequest do
   @moduledoc """
-  The request message for Intents.BatchUpdateIntents.
+
 
   ## Attributes
 
