@@ -26,6 +26,16 @@ defmodule GoogleApi.Run.V1.Model.Probe do
 
   ## Attributes
 
+  *   `exec` (*type:* `GoogleApi.Run.V1.Model.ExecAction.t`, *default:* `nil`) - (Optional)
+
+      Cloud Run fully managed: not supported
+
+      Cloud Run for Anthos: supported
+
+      One and only one of the following should be specified.
+      Exec specifies the action to take.
+
+      A field inlined from the Handler message.
   *   `failureThreshold` (*type:* `integer()`, *default:* `nil`) - (Optional)
 
       Cloud Run fully managed: not supported
@@ -34,11 +44,15 @@ defmodule GoogleApi.Run.V1.Model.Probe do
 
       Minimum consecutive failures for the probe to be considered failed after
       having succeeded. Defaults to 3. Minimum value is 1.
-  *   `handler` (*type:* `GoogleApi.Run.V1.Model.Handler.t`, *default:* `nil`) - Cloud Run fully managed: not supported
+  *   `httpGet` (*type:* `GoogleApi.Run.V1.Model.HTTPGetAction.t`, *default:* `nil`) - (Optional)
+
+      Cloud Run fully managed: not supported
 
       Cloud Run for Anthos: supported
 
-      The action taken to determine the health of a container
+      HTTPGet specifies the http request to perform.
+
+      A field inlined from the Handler message.
   *   `initialDelaySeconds` (*type:* `integer()`, *default:* `nil`) - (Optional)
 
       Cloud Run fully managed: not supported
@@ -65,6 +79,16 @@ defmodule GoogleApi.Run.V1.Model.Probe do
       Minimum consecutive successes for the probe to be considered successful
       after having failed. Defaults to 1. Must be 1 for liveness. Minimum value
       is 1.
+  *   `tcpSocket` (*type:* `GoogleApi.Run.V1.Model.TCPSocketAction.t`, *default:* `nil`) - (Optional)
+
+      Cloud Run fully managed: not supported
+
+      Cloud Run for Anthos: supported
+
+      TCPSocket specifies an action involving a TCP port.
+      TCP hooks not yet supported
+
+      A field inlined from the Handler message.
   *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - (Optional)
 
       Cloud Run fully managed: not supported
@@ -80,19 +104,23 @@ defmodule GoogleApi.Run.V1.Model.Probe do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :exec => GoogleApi.Run.V1.Model.ExecAction.t(),
           :failureThreshold => integer(),
-          :handler => GoogleApi.Run.V1.Model.Handler.t(),
+          :httpGet => GoogleApi.Run.V1.Model.HTTPGetAction.t(),
           :initialDelaySeconds => integer(),
           :periodSeconds => integer(),
           :successThreshold => integer(),
+          :tcpSocket => GoogleApi.Run.V1.Model.TCPSocketAction.t(),
           :timeoutSeconds => integer()
         }
 
+  field(:exec, as: GoogleApi.Run.V1.Model.ExecAction)
   field(:failureThreshold)
-  field(:handler, as: GoogleApi.Run.V1.Model.Handler)
+  field(:httpGet, as: GoogleApi.Run.V1.Model.HTTPGetAction)
   field(:initialDelaySeconds)
   field(:periodSeconds)
   field(:successThreshold)
+  field(:tcpSocket, as: GoogleApi.Run.V1.Model.TCPSocketAction)
   field(:timeoutSeconds)
 end
 
