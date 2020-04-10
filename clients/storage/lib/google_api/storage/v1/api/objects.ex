@@ -116,6 +116,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:destinationKmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
       *   `:destinationPredefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to the destination object.
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the destination object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
       *   `:ifGenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the destination object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -166,6 +167,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :destinationKmsKeyName => :query,
       :destinationPredefinedAcl => :query,
       :ifGenerationMatch => :query,
       :ifGenerationNotMatch => :query,
