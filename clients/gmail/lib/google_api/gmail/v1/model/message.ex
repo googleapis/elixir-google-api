@@ -23,16 +23,33 @@ defmodule GoogleApi.Gmail.V1.Model.Message do
 
   *   `historyId` (*type:* `String.t`, *default:* `nil`) - The ID of the last history record that modified this message.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The immutable ID of the message.
-  *   `internalDate` (*type:* `String.t`, *default:* `nil`) - The internal message creation timestamp (epoch ms), which determines ordering in the inbox. For normal SMTP-received email, this represents the time the message was originally accepted by Google, which is more reliable than the Date header. However, for API-migrated mail, it can be configured by client to be based on the Date header.
+  *   `internalDate` (*type:* `String.t`, *default:* `nil`) - The internal message creation timestamp (epoch ms), which determines
+      ordering in the inbox.  For normal SMTP-received email, this represents the
+      time the message was originally accepted by Google, which is more reliable
+      than the <code>Date</code> header. However, for API-migrated mail, it can
+      be configured by client to be based on the <code>Date</code> header.
   *   `labelIds` (*type:* `list(String.t)`, *default:* `nil`) - List of IDs of labels applied to this message.
+      @mutable gmail.users.messages.insert gmail.users.messages.modify
   *   `payload` (*type:* `GoogleApi.Gmail.V1.Model.MessagePart.t`, *default:* `nil`) - The parsed email structure in the message parts.
-  *   `raw` (*type:* `String.t`, *default:* `nil`) - The entire email message in an RFC 2822 formatted and base64url encoded string. Returned in messages.get and drafts.get responses when the format=RAW parameter is supplied.
+  *   `raw` (*type:* `String.t`, *default:* `nil`) - The entire email message in an RFC 2822 formatted and base64url
+      encoded string. Returned in <code>messages.get</code> and
+      <code>drafts.get</code> responses when the <code>format=RAW</code>
+      parameter is supplied.
+      @mutable gmail.users.messages.insert gmail.users.messages.send
+      @mutable gmail.users.drafts.create gmail.users.drafts.update
   *   `sizeEstimate` (*type:* `integer()`, *default:* `nil`) - Estimated size in bytes of the message.
   *   `snippet` (*type:* `String.t`, *default:* `nil`) - A short part of the message text.
-  *   `threadId` (*type:* `String.t`, *default:* `nil`) - The ID of the thread the message belongs to. To add a message or draft to a thread, the following criteria must be met: 
-      - The requested threadId must be specified on the Message or Draft.Message you supply with your request. 
-      - The References and In-Reply-To headers must be set in compliance with the RFC 2822 standard. 
-      - The Subject headers must match.
+  *   `threadId` (*type:* `String.t`, *default:* `nil`) - The ID of the thread the message belongs to. To add a message or draft to
+      a thread, the following criteria must be met:
+      <ol><li>The requested <code>threadId</code> must be specified on the
+      <code>Message</code> or <code>Draft.Message</code> you supply with your
+      request.</li>
+      <li>The <code>References</code> and <code>In-Reply-To</code> headers must
+      be set in compliance with the
+      <a href="https://tools.ietf.org/html/rfc2822">RFC 2822</a> standard.</li>
+      <li>The <code>Subject</code> headers must match.
+      @mutable gmail.users.messages.insert gmail.users.messages.send
+      @mutable gmail.users.drafts.create gmail.users.drafts.update
   """
 
   use GoogleApi.Gax.ModelBase

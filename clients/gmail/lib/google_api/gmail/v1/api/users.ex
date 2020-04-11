@@ -31,15 +31,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -53,13 +58,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_get_profile(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -82,15 +91,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -102,13 +116,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def gmail_users_stop(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -131,15 +149,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.WatchRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -154,13 +177,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_watch(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -179,20 +206,25 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a new draft with the DRAFT label.
+  Creates a new draft with the <code>DRAFT</code> label.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -207,13 +239,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_drafts_create(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -232,23 +268,28 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a new draft with the DRAFT label.
+  Creates a new draft with the <code>DRAFT</code> label.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -278,13 +319,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -305,87 +350,28 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a new draft with the DRAFT label.
+  Creates a new draft with the <code>DRAFT</code> label.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec gmail_users_drafts_create_resumable(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
-  def gmail_users_drafts_create_resumable(
-        connection,
-        user_id,
-        upload_type,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/resumable/upload/gmail/v1/users/{userId}/drafts", %{
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
-  end
-
-  @doc """
-  Creates a new draft with the DRAFT label.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -415,13 +401,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -442,21 +432,27 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Immediately and permanently deletes the specified draft. Does not simply trash it.
+  Immediately and permanently deletes the specified draft.
+  Does not simply trash it.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -473,13 +469,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def gmail_users_drafts_delete(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -503,16 +503,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:format` (*type:* `String.t`) - The format to return the draft in.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -527,13 +532,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_drafts_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :format => :query
     }
 
@@ -558,19 +567,28 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:includeSpamTrash` (*type:* `boolean()`) - Include drafts from SPAM and TRASH in the results.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:includeSpamTrash` (*type:* `boolean()`) - Include drafts from <code>SPAM</code> and <code>TRASH</code>
+          in the results.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of drafts to return.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
-      *   `:q` (*type:* `String.t`) - Only return draft messages matching the specified query. Supports the same query format as the Gmail search box. For example, "from:someuser@example.com rfc822msgid: is:unread".
+      *   `:q` (*type:* `String.t`) - Only return draft messages matching the specified query. Supports the same
+          query format as the Gmail search box. For example,
+          <code>"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
+          is:unread"</code>.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -584,13 +602,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_drafts_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :includeSpamTrash => :query,
       :maxResults => :query,
       :pageToken => :query,
@@ -612,20 +634,26 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified, existing draft to the recipients in the To, Cc, and Bcc headers.
+  Sends the specified, existing draft to the recipients in the
+  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -640,13 +668,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_drafts_send(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -665,23 +697,29 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified, existing draft to the recipients in the To, Cc, and Bcc headers.
+  Sends the specified, existing draft to the recipients in the
+  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -711,13 +749,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -738,87 +780,29 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified, existing draft to the recipients in the To, Cc, and Bcc headers.
+  Sends the specified, existing draft to the recipients in the
+  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec gmail_users_drafts_send_resumable(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
-  def gmail_users_drafts_send_resumable(
-        connection,
-        user_id,
-        upload_type,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/resumable/upload/gmail/v1/users/{userId}/drafts/send", %{
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
-  end
-
-  @doc """
-  Sends the specified, existing draft to the recipients in the To, Cc, and Bcc headers.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -848,13 +832,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -880,16 +868,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -910,13 +903,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_drafts_update(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -941,19 +938,24 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to update.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -985,13 +987,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -1018,87 +1024,24 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `id` (*type:* `String.t`) - The ID of the draft to update.
-  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec gmail_users_drafts_update_resumable(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
-  def gmail_users_drafts_update_resumable(
-        connection,
-        user_id,
-        id,
-        upload_type,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:put)
-      |> Request.url("/resumable/upload/gmail/v1/users/{userId}/drafts/{id}", %{
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
-  end
-
-  @doc """
-  Replaces a draft's content.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to update.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1130,13 +1073,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -1158,25 +1105,43 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Lists the history of all changes to the given mailbox. History results are returned in chronological order (increasing historyId).
+  Lists the history of all changes to the given mailbox. History results are
+  returned in chronological order (increasing <code>historyId</code>).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:historyTypes` (*type:* `list(String.t)`) - History types to be returned by the function
       *   `:labelId` (*type:* `String.t`) - Only return messages with a label matching the ID.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of history records to return.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
-      *   `:startHistoryId` (*type:* `String.t`) - Required. Returns history records after the specified startHistoryId. The supplied startHistoryId should be obtained from the historyId of a message, thread, or previous list response. History IDs increase chronologically but are not contiguous with random gaps in between valid IDs. Supplying an invalid or out of date startHistoryId typically returns an HTTP 404 error code. A historyId is typically valid for at least a week, but in some rare circumstances may be valid for only a few hours. If you receive an HTTP 404 error response, your application should perform a full sync. If you receive no nextPageToken in the response, there are no updates to retrieve and you can store the returned historyId for a future request.
+      *   `:startHistoryId` (*type:* `String.t`) - Required. Returns history records after the specified
+          <code>startHistoryId</code>. The supplied <code>startHistoryId</code>
+          should be obtained from the <code>historyId</code> of a message, thread, or
+          previous <code>list</code> response. History IDs increase
+          chronologically but are not contiguous with random gaps in between valid
+          IDs. Supplying an invalid or out of date <code>startHistoryId</code>
+          typically returns an <code>HTTP 404</code> error code. A
+          <code>historyId</code> is typically valid for at least a week, but in some
+          rare circumstances may be valid for only a few hours. If you receive an
+          <code>HTTP 404</code> error response, your  application should perform a
+          full sync. If you receive no <code>nextPageToken</code> in the response,
+          there are no updates to retrieve and you can store the returned
+          <code>historyId</code> for a future request.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1190,13 +1155,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_history_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :historyTypes => :query,
       :labelId => :query,
       :maxResults => :query,
@@ -1224,15 +1193,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Label.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1247,13 +1221,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_labels_create(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -1272,21 +1250,27 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Immediately and permanently deletes the specified label and removes it from any messages and threads that it is applied to.
+  Immediately and permanently deletes the specified label and removes it from
+  any messages and threads that it is applied to.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the label to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1303,13 +1287,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def gmail_users_labels_delete(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -1333,16 +1321,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the label to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1356,13 +1349,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_labels_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -1386,15 +1383,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1408,13 +1410,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_labels_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -1432,21 +1438,26 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Updates the specified label. This method supports patch semantics.
+  Patch the specified label.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the label to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Label.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1461,13 +1472,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_labels_patch(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -1492,16 +1507,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the label to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Label.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1522,13 +1542,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_labels_update(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -1548,20 +1572,26 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Deletes many messages by message ID. Provides no guarantees that messages were not already deleted or even existed at all.
+  Deletes many messages by message ID.  Provides no guarantees that messages
+  were not already deleted or even existed at all.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.BatchDeleteMessagesRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1574,13 +1604,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def gmail_users_messages_batch_delete(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -1604,15 +1638,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.BatchModifyMessagesRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1625,13 +1664,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def gmail_users_messages_batch_modify(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -1650,21 +1693,27 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Immediately and permanently deletes the specified message. This operation cannot be undone. Prefer messages.trash instead.
+  Immediately and permanently deletes the specified message. This operation
+  cannot be undone.  Prefer <code>messages.trash</code> instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1681,13 +1730,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def gmail_users_messages_delete(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -1711,16 +1764,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:format` (*type:* `String.t`) - The format to return the message in.
       *   `:metadataHeaders` (*type:* `list(String.t)`) - When given and format is METADATA, only include headers specified.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1736,13 +1794,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_messages_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :format => :query,
       :metadataHeaders => :query
     }
@@ -1763,24 +1825,36 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
+  Imports a message into only this user's mailbox, with standard
+  email delivery scanning and classification similar to receiving via SMTP.
+  Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and
+          only visible in
+          <a href="http://support.google.com/vault/">Google Vault</a> to
+          a Vault administrator. Only used for G Suite accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
-      *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox.
-      *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user.
+      *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark
+          this email as SPAM in the mailbox.
+      *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted
+          meetings to the Google Calendar for this user.
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1795,13 +1869,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_messages_import(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :deleted => :query,
       :internalDateSource => :query,
       :neverMarkSpam => :query,
@@ -1824,27 +1902,39 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
+  Imports a message into only this user's mailbox, with standard
+  email delivery scanning and classification similar to receiving via SMTP.
+  Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and
+          only visible in
+          <a href="http://support.google.com/vault/">Google Vault</a> to
+          a Vault administrator. Only used for G Suite accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
-      *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox.
-      *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user.
+      *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark
+          this email as SPAM in the mailbox.
+      *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted
+          meetings to the Google Calendar for this user.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1874,13 +1964,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :deleted => :query,
       :internalDateSource => :query,
       :neverMarkSpam => :query,
@@ -1905,99 +1999,39 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
+  Imports a message into only this user's mailbox, with standard
+  email delivery scanning and classification similar to receiving via SMTP.
+  Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
-      *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
-      *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox.
-      *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user.
-      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec gmail_users_messages_import_resumable(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
-  def gmail_users_messages_import_resumable(
-        connection,
-        user_id,
-        upload_type,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :deleted => :query,
-      :internalDateSource => :query,
-      :neverMarkSpam => :query,
-      :processForCalendar => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/resumable/upload/gmail/v1/users/{userId}/messages/import", %{
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
-  end
-
-  @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and
+          only visible in
+          <a href="http://support.google.com/vault/">Google Vault</a> to
+          a Vault administrator. Only used for G Suite accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
-      *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox.
-      *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user.
+      *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark
+          this email as SPAM in the mailbox.
+      *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted
+          meetings to the Google Calendar for this user.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2027,13 +2061,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :deleted => :query,
       :internalDateSource => :query,
       :neverMarkSpam => :query,
@@ -2058,21 +2096,31 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Directly inserts a message into only this user's mailbox similar to IMAP APPEND, bypassing most scanning and classification. Does not send a message.
+  Directly inserts a message into only this user's mailbox similar to
+  <code>IMAP APPEND</code>, bypassing most scanning and classification.
+  Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and
+          only visible in
+          <a href="http://support.google.com/vault/">Google Vault</a> to
+          a Vault administrator. Only used for G Suite accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2088,13 +2136,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_messages_insert(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :deleted => :query,
       :internalDateSource => :query,
       :body => :body
@@ -2115,24 +2167,34 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Directly inserts a message into only this user's mailbox similar to IMAP APPEND, bypassing most scanning and classification. Does not send a message.
+  Directly inserts a message into only this user's mailbox similar to
+  <code>IMAP APPEND</code>, bypassing most scanning and classification.
+  Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and
+          only visible in
+          <a href="http://support.google.com/vault/">Google Vault</a> to
+          a Vault administrator. Only used for G Suite accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2163,13 +2225,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :deleted => :query,
       :internalDateSource => :query
     }
@@ -2192,92 +2258,34 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Directly inserts a message into only this user's mailbox similar to IMAP APPEND, bypassing most scanning and classification. Does not send a message.
+  Directly inserts a message into only this user's mailbox similar to
+  <code>IMAP APPEND</code>, bypassing most scanning and classification.
+  Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
-      *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
-      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec gmail_users_messages_insert_resumable(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
-  def gmail_users_messages_insert_resumable(
-        connection,
-        user_id,
-        upload_type,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :deleted => :query,
-      :internalDateSource => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/resumable/upload/gmail/v1/users/{userId}/messages", %{
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
-  end
-
-  @doc """
-  Directly inserts a message into only this user's mailbox similar to IMAP APPEND, bypassing most scanning and classification. Does not send a message.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and
+          only visible in
+          <a href="http://support.google.com/vault/">Google Vault</a> to
+          a Vault administrator. Only used for G Suite accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2308,13 +2316,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :deleted => :query,
       :internalDateSource => :query
     }
@@ -2342,20 +2354,30 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:includeSpamTrash` (*type:* `boolean()`) - Include messages from SPAM and TRASH in the results.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:includeSpamTrash` (*type:* `boolean()`) - Include messages from <code>SPAM</code> and <code>TRASH</code>
+          in the results.
       *   `:labelIds` (*type:* `list(String.t)`) - Only return messages with labels that match all of the specified label IDs.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of messages to return.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
-      *   `:q` (*type:* `String.t`) - Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, "from:someuser@example.com rfc822msgid:<somemsgid@example.com> is:unread". Parameter cannot be used when accessing the api using the gmail.metadata scope.
+      *   `:q` (*type:* `String.t`) - Only return messages matching the specified query. Supports the same
+          query format as the Gmail search box. For example,
+          <code>"from:someuser@example.com rfc822msgid:&lt;somemsgid@example.com&gt;
+          is:unread"</code>. Parameter cannot be used when accessing the api
+          using the gmail.metadata scope.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2369,13 +2391,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_messages_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :includeSpamTrash => :query,
       :labelIds => :query,
       :maxResults => :query,
@@ -2403,16 +2429,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to modify.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.ModifyMessageRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2433,13 +2464,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_messages_modify(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -2459,20 +2494,26 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified message to the recipients in the To, Cc, and Bcc headers.
+  Sends the specified message to the recipients in the
+  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2487,13 +2528,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_messages_send(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -2512,23 +2557,29 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified message to the recipients in the To, Cc, and Bcc headers.
+  Sends the specified message to the recipients in the
+  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2558,13 +2609,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -2585,87 +2640,29 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified message to the recipients in the To, Cc, and Bcc headers.
+  Sends the specified message to the recipients in the
+  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec gmail_users_messages_send_resumable(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
-  def gmail_users_messages_send_resumable(
-        connection,
-        user_id,
-        upload_type,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/resumable/upload/gmail/v1/users/{userId}/messages/send", %{
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
-  end
-
-  @doc """
-  Sends the specified message to the recipients in the To, Cc, and Bcc headers.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2695,13 +2692,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -2727,16 +2728,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to Trash.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2756,13 +2762,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_messages_trash(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -2786,16 +2796,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to remove from Trash.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2815,13 +2830,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_messages_untrash(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -2845,17 +2864,22 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `message_id` (*type:* `String.t`) - The ID of the message containing the attachment.
   *   `id` (*type:* `String.t`) - The ID of the attachment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2883,13 +2907,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -2914,15 +2942,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2946,13 +2979,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -2975,15 +3012,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2997,13 +3039,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_get_imap(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3026,15 +3072,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3048,13 +3099,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_get_language(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3077,15 +3132,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3099,13 +3159,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_get_pop(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3128,15 +3192,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3150,13 +3219,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_get_vacation(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3174,22 +3247,29 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Updates the auto-forwarding setting for the specified account. A verified forwarding address must be specified when auto-forwarding is enabled.
+  Updates the auto-forwarding setting for the specified account.  A verified
+  forwarding address must be specified when auto-forwarding is enabled.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.AutoForwarding.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3214,13 +3294,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -3244,15 +3328,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.ImapSettings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3267,13 +3356,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_update_imap(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -3294,20 +3387,29 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @doc """
   Updates language settings.
 
-  If successful, the return object contains the displayLanguage that was saved for the user, which may differ from the value passed into the request. This is because the requested displayLanguage may not be directly supported by Gmail but have a close variant that is, and so the variant may be chosen and saved instead.
+  If successful, the return object contains the <code>displayLanguage</code>
+  that was saved for the user, which may differ from the value passed into
+  the request. This is because the requested <code>displayLanguage</code> may
+  not be directly supported by Gmail but have a close variant that is, and so
+  the variant may be chosen and saved instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.LanguageSettings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3322,13 +3424,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_update_language(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -3352,15 +3458,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.PopSettings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3375,13 +3486,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_update_pop(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -3405,15 +3520,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.VacationSettings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3428,13 +3548,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_update_vacation(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -3453,28 +3577,42 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Adds a delegate with its verification status set directly to accepted, without sending any verification email. The delegate user must be a member of the same G Suite organization as the delegator user.
+  Adds a delegate with its verification status set directly to
+  <code>accepted</code>, without sending any verification email.  The
+  delegate user must be a member of the same G Suite organization as the
+  delegator user.
 
-  Gmail imposes limitations on the number of delegates and delegators each user in a G Suite organization can have. These limits depend on your organization, but in general each user can have up to 25 delegates and up to 10 delegators.
+  Gmail imposes limitations on the number of delegates and delegators each
+  user in a G Suite organization can have. These limits depend on your
+  organization, but in general each user can have up to 25 delegates and
+  up to 10 delegators.
 
-  Note that a delegate user must be referred to by their primary email address, and not an email alias.
+  Note that a delegate user must be referred to by their primary email
+  address, and not an email alias.
 
-  Also note that when a new delegate is created, there may be up to a one minute delay before the new delegate is available for use.
+  Also note that when a new delegate is created, there may be up to a one
+  minute delay before the new delegate is available for use.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Delegate.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3499,13 +3637,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -3524,25 +3666,33 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Removes the specified delegate (which can be of any verification status), and revokes any verification that may have been required for using it.
+  Removes the specified delegate (which can be of any verification status),
+  and revokes any verification that may have been required for using it.
 
-  Note that a delegate user must be referred to by their primary email address, and not an email alias.
+  Note that a delegate user must be referred to by their primary email
+  address, and not an email alias.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `delegate_email` (*type:* `String.t`) - The email address of the user to be removed as a delegate.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3565,13 +3715,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3592,23 +3746,31 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @doc """
   Gets the specified delegate.
 
-  Note that a delegate user must be referred to by their primary email address, and not an email alias.
+  Note that a delegate user must be referred to by their primary email
+  address, and not an email alias.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
-  *   `delegate_email` (*type:* `String.t`) - The email address of the user whose delegate relationship is to be retrieved.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
+  *   `delegate_email` (*type:* `String.t`) - The email address of the user whose delegate relationship is to be
+      retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3634,13 +3796,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3661,20 +3827,26 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @doc """
   Lists the delegates for the specified account.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3688,13 +3860,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_delegates_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3717,15 +3893,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Filter.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3740,13 +3921,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_filters_create(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -3770,16 +3955,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me"
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the filter to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3802,13 +3992,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3832,16 +4026,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me"
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the filter to be fetched.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3861,13 +4060,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_filters_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3891,15 +4094,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3913,13 +4121,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_filters_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -3937,22 +4149,31 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a forwarding address. If ownership verification is required, a message will be sent to the recipient and the resource's verification status will be set to pending; otherwise, the resource will be created with verification status set to accepted.
+  Creates a forwarding address.  If ownership verification is required, a
+  message will be sent to the recipient and the resource's verification
+  status will be set to <code>pending</code>; otherwise, the resource will be
+  created with verification status set to <code>accepted</code>.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.ForwardingAddress.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3977,13 +4198,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -4002,23 +4227,30 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Deletes the specified forwarding address and revokes any verification that may have been required.
+  Deletes the specified forwarding address and revokes any verification that
+  may have been required.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `forwarding_email` (*type:* `String.t`) - The forwarding address to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4041,13 +4273,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4071,16 +4307,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `forwarding_email` (*type:* `String.t`) - The forwarding address to be retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4106,13 +4347,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4136,15 +4381,20 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4168,13 +4418,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4194,22 +4448,35 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a custom "from" send-as alias. If an SMTP MSA is specified, Gmail will attempt to connect to the SMTP service to validate the configuration before creating the alias. If ownership verification is required for the alias, a message will be sent to the email address and the resource's verification status will be set to pending; otherwise, the resource will be created with verification status set to accepted. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias.
+  Creates a custom "from" send-as alias.  If an SMTP MSA is specified, Gmail
+  will attempt to connect to the SMTP service to validate the configuration
+  before creating the alias.  If ownership verification is required for the
+  alias, a message will be sent to the email address and the resource's
+  verification status will be set to <code>pending</code>; otherwise, the
+  resource will be created with verification status set to
+  <code>accepted</code>.  If a signature is provided, Gmail will sanitize the
+  HTML before saving it with the alias.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.SendAs.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4224,13 +4491,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_send_as_create(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -4249,23 +4520,30 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Deletes the specified send-as alias. Revokes any verification that may have been required for using it.
+  Deletes the specified send-as alias.  Revokes any verification that may
+  have been required for using it.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The send-as alias to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4288,13 +4566,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4313,21 +4595,27 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Gets the specified send-as alias. Fails with an HTTP 404 error if the specified address is not a member of the collection.
+  Gets the specified send-as alias.  Fails with an HTTP 404 error if the
+  specified address is not a member of the collection.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The send-as alias to be retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4353,13 +4641,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4378,20 +4670,27 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Lists the send-as aliases for the specified account. The result includes the primary send-as address associated with the account as well as any custom "from" aliases.
+  Lists the send-as aliases for the specified account.  The result includes
+  the primary send-as address associated with the account as well as any
+  custom "from" aliases.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4405,13 +4704,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_settings_send_as_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4429,23 +4732,26 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Updates a send-as alias. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias.
-
-  Addresses other than the primary address for the account can only be updated by service account clients that have been delegated domain-wide authority. This method supports patch semantics.
+  Patch the specified send-as alias.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The send-as alias to be updated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.SendAs.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4472,13 +4778,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -4498,23 +4808,31 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Updates a send-as alias. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias.
+  Updates a send-as alias.  If a signature is provided, Gmail will sanitize
+  the HTML before saving it with the alias.
 
-  Addresses other than the primary address for the account can only be updated by service account clients that have been delegated domain-wide authority.
+  Addresses other than the primary address for the account can only be
+  updated by service account clients that have been delegated domain-wide
+  authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The send-as alias to be updated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.SendAs.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4541,13 +4859,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -4567,23 +4889,30 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends a verification email to the specified send-as alias address. The verification status must be pending.
+  Sends a verification email to the specified send-as alias address.
+  The verification status must be <code>pending</code>.
 
-  This method is only available to service account clients that have been delegated domain-wide authority.
+  This method is only available to service account clients that have been
+  delegated domain-wide authority.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - User's email address. The special value "me" can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - User's email address.  The special value "me"
+      can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The send-as alias to be verified.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4606,13 +4935,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4636,17 +4969,23 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using this alias.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
+  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
+      this alias.
   *   `id` (*type:* `String.t`) - The immutable ID for the SmimeInfo.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4671,13 +5010,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4702,17 +5045,23 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using this alias.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
+  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
+      this alias.
   *   `id` (*type:* `String.t`) - The immutable ID for the SmimeInfo.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4740,13 +5089,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4766,21 +5119,28 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Insert (upload) the given S/MIME config for the specified send-as alias. Note that pkcs12 format is required for the key.
+  Insert (upload) the given S/MIME config for the specified send-as alias.
+  Note that pkcs12 format is required for the key.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using this alias.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
+  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
+      this alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.SmimeInfo.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4807,13 +5167,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -4838,16 +5202,22 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using this alias.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
+  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
+      this alias.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4873,13 +5243,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4903,17 +5277,23 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
-  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using this alias.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
+  *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
+      this alias.
   *   `id` (*type:* `String.t`) - The immutable ID for the SmimeInfo.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4938,13 +5318,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -4967,21 +5351,27 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Immediately and permanently deletes the specified thread. This operation cannot be undone. Prefer threads.trash instead.
+  Immediately and permanently deletes the specified thread. This operation
+  cannot be undone. Prefer <code>threads.trash</code> instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - ID of the Thread to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4998,13 +5388,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def gmail_users_threads_delete(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -5028,16 +5422,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the thread to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:format` (*type:* `String.t`) - The format to return the messages in.
       *   `:metadataHeaders` (*type:* `list(String.t)`) - When given and format is METADATA, only include headers specified.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -5053,13 +5452,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_threads_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :format => :query,
       :metadataHeaders => :query
     }
@@ -5085,20 +5488,30 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:includeSpamTrash` (*type:* `boolean()`) - Include threads from SPAM and TRASH in the results.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:includeSpamTrash` (*type:* `boolean()`) - Include threads from <code>SPAM</code> and <code>TRASH</code>
+          in the results.
       *   `:labelIds` (*type:* `list(String.t)`) - Only return threads with labels that match all of the specified label IDs.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of threads to return.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
-      *   `:q` (*type:* `String.t`) - Only return threads matching the specified query. Supports the same query format as the Gmail search box. For example, "from:someuser@example.com rfc822msgid: is:unread". Parameter cannot be used when accessing the api using the gmail.metadata scope.
+      *   `:q` (*type:* `String.t`) - Only return threads matching the specified query. Supports the same
+          query format as the Gmail search box. For example,
+          <code>"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
+          is:unread"</code>. Parameter cannot be used when accessing the api
+          using the gmail.metadata scope.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5112,13 +5525,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_threads_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :includeSpamTrash => :query,
       :labelIds => :query,
       :maxResults => :query,
@@ -5141,21 +5558,27 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Modifies the labels applied to the thread. This applies to all messages in the thread.
+  Modifies the labels applied to the thread. This applies to all messages
+  in the thread.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the thread to modify.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.ModifyThreadRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -5176,13 +5599,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_threads_modify(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -5207,16 +5634,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the thread to Trash.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5236,13 +5668,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_threads_trash(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -5266,16 +5702,21 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value me can be used to indicate the authenticated user.
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+      can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the thread to remove from Trash.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5295,13 +5736,17 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           | {:error, Tesla.Env.t()}
   def gmail_users_threads_untrash(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =

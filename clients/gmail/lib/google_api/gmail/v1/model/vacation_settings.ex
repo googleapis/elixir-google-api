@@ -17,18 +17,34 @@
 
 defmodule GoogleApi.Gmail.V1.Model.VacationSettings do
   @moduledoc """
-  Vacation auto-reply settings for an account. These settings correspond to the "Vacation responder" feature in the web interface.
+  Vacation auto-reply settings for an account.  These settings correspond to
+  the <a href="https://support.google.com/mail/answer/25922">"Vacation
+  responder"</a> feature in the web interface.
 
   ## Attributes
 
   *   `enableAutoReply` (*type:* `boolean()`, *default:* `nil`) - Flag that controls whether Gmail automatically replies to messages.
-  *   `endTime` (*type:* `String.t`, *default:* `nil`) - An optional end time for sending auto-replies (epoch ms). When this is specified, Gmail will automatically reply only to messages that it receives before the end time. If both startTime and endTime are specified, startTime must precede endTime.
-  *   `responseBodyHtml` (*type:* `String.t`, *default:* `nil`) - Response body in HTML format. Gmail will sanitize the HTML before storing it.
+  *   `endTime` (*type:* `String.t`, *default:* `nil`) - An optional end time for sending auto-replies (epoch ms).
+      When this is specified, Gmail will automatically reply only to messages
+      that it receives before the end time.  If both <code>startTime</code> and
+      <code>endTime</code> are specified, <code>startTime</code> must precede
+      <code>endTime</code>.
+  *   `responseBodyHtml` (*type:* `String.t`, *default:* `nil`) - Response body in HTML format.  Gmail will sanitize the HTML before
+      storing it.
   *   `responseBodyPlainText` (*type:* `String.t`, *default:* `nil`) - Response body in plain text format.
-  *   `responseSubject` (*type:* `String.t`, *default:* `nil`) - Optional text to prepend to the subject line in vacation responses. In order to enable auto-replies, either the response subject or the response body must be nonempty.
-  *   `restrictToContacts` (*type:* `boolean()`, *default:* `nil`) - Flag that determines whether responses are sent to recipients who are not in the user's list of contacts.
-  *   `restrictToDomain` (*type:* `boolean()`, *default:* `nil`) - Flag that determines whether responses are sent to recipients who are outside of the user's domain. This feature is only available for G Suite users.
-  *   `startTime` (*type:* `String.t`, *default:* `nil`) - An optional start time for sending auto-replies (epoch ms). When this is specified, Gmail will automatically reply only to messages that it receives after the start time. If both startTime and endTime are specified, startTime must precede endTime.
+  *   `responseSubject` (*type:* `String.t`, *default:* `nil`) - Optional text to prepend to the subject line in vacation responses.  In
+      order to enable auto-replies, either the response subject or the response
+      body must be nonempty.
+  *   `restrictToContacts` (*type:* `boolean()`, *default:* `nil`) - Flag that determines whether responses are sent to recipients who are not
+      in the user's list of contacts.
+  *   `restrictToDomain` (*type:* `boolean()`, *default:* `nil`) - Flag that determines whether responses are sent to recipients who are
+      outside of the user's domain. This feature is only available for G Suite
+      users.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - An optional start time for sending auto-replies (epoch ms).
+      When this is specified, Gmail will automatically reply only to messages
+      that it receives after the start time.  If both <code>startTime</code> and
+      <code>endTime</code> are specified, <code>startTime</code> must precede
+      <code>endTime</code>.
   """
 
   use GoogleApi.Gax.ModelBase
