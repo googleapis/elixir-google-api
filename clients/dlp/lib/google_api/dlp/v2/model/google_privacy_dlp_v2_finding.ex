@@ -29,15 +29,16 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this `Finding`.
 
       Label keys must be between 1 and 63 characters long and must conform
-      to the following regular expression: \\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?.
+      to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
 
       Label values must be between 0 and 63 characters long and must conform
-      to the regular expression (\\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?)?.
+      to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
 
       No more than 10 labels can be associated with a given finding.
 
-      Example: <code>"environment" : "production"</code>
-      Example: <code>"pipeline" : "etl"</code>
+      Examples:
+      * `"environment" : "production"`
+      * `"pipeline" : "etl"`
   *   `likelihood` (*type:* `String.t`, *default:* `nil`) - Confidence of how likely it is that the `info_type` is correct.
   *   `location` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location.t`, *default:* `nil`) - Where the content was found.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name in format
