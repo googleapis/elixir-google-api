@@ -324,20 +324,20 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:invitedEmailAddress` (*type:* `String.t`) - If specified, only results with the specified `invited_email_address`
-          will be returned.
+          are returned.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
           server may assign a maximum.
 
           The server may return fewer than the specified number of results.
       *   `:pageToken` (*type:* `String.t`) - nextPageToken
           value returned from a previous
-          list call,
-          indicating that the subsequent page of results should be returned.
+          list
+          call, indicating that the subsequent page of results should be returned.
 
-          The list request
-          must be otherwise identical to the one that resulted in this token.
-      *   `:states` (*type:* `list(String.t)`) - If specified, only results with the specified `state` values will be
-          returned. Otherwise, results with a `state` of `PENDING` will be returned.
+          The list
+          request must be otherwise identical to the one that resulted in this token.
+      *   `:states` (*type:* `list(String.t)`) - If specified, only results with the specified `state` values are
+          returned. Otherwise, results with a `state` of `PENDING` are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -432,7 +432,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the course to update.
-          This field is required to do an update. The update will fail if invalid
+          This field is required to do an update. The update fails if invalid
           fields are specified. The following fields are valid:
 
           * `state`

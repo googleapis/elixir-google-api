@@ -22,9 +22,9 @@ defmodule GoogleApi.Classroom.V1.Model.ModifyIndividualStudentsOptions do
 
   ## Attributes
 
-  *   `addStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - Ids of students to be added as having access to this
+  *   `addStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of students to be added as having access to this
       coursework/announcement.
-  *   `removeStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - Ids of students to be removed from having access to this
+  *   `removeStudentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of students to be removed from having access to this
       coursework/announcement.
   """
 
