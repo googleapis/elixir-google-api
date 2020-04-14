@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListDomainsResponse do
   @moduledoc """
-
+  The response to listing Domains.
 
   ## Attributes
 
