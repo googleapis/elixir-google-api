@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ListVersionFilesResponse do
   @moduledoc """
-
+  The response when listing a Version's Files..
 
   ## Attributes
 

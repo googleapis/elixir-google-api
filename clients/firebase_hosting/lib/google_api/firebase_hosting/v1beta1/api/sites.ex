@@ -160,7 +160,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The site that the release belongs to, in the format:
+  *   `parent` (*type:* `String.t`) - Required. The site that the release belongs to, in the format:
       <code>sites/<var>site-name</var></code>
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -626,7 +626,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseHosting.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The site that the release belongs to, in the format:
+  *   `parent` (*type:* `String.t`) - Required. The site that the release belongs to, in the format:
       <code>sites/<var>site-name</var></code>
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
