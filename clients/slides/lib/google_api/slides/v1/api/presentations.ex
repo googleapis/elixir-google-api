@@ -333,7 +333,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"thumbnailProperties.mimeType"` (*type:* `String.t`) - The optional mime type of the thumbnail image.
 
-          If you don't specify the mime type, the default mime type will be PNG.
+          If you don't specify the mime type, the mime type defaults to PNG.
       *   `:"thumbnailProperties.thumbnailSize"` (*type:* `String.t`) - The optional thumbnail image size.
 
           If you don't specify the size, the server chooses a default size of the

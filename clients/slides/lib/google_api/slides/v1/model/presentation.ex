@@ -33,7 +33,7 @@ defmodule GoogleApi.Slides.V1.Model.Presentation do
         properties of all placeholder shapes on pages that use that master.
       - The master page properties define the common page properties inherited by
         its layouts.
-      - Any other shapes on the master slide will appear on all slides using that
+      - Any other shapes on the master slide appear on all slides using that
         master, regardless of their layout.
   *   `notesMaster` (*type:* `GoogleApi.Slides.V1.Model.Page.t`, *default:* `nil`) - The notes master in the presentation. It serves three purposes:
 
@@ -43,7 +43,7 @@ defmodule GoogleApi.Slides.V1.Model.Presentation do
         `BODY` placeholder shape contains the speaker notes.
       - The notes master page properties define the common page properties
         inherited by all notes pages.
-      - Any other shapes on the notes master will appear on all notes pages.
+      - Any other shapes on the notes master appears on all notes pages.
 
       The notes master is read-only.
   *   `pageSize` (*type:* `GoogleApi.Slides.V1.Model.Size.t`, *default:* `nil`) - The size of pages in the presentation.
