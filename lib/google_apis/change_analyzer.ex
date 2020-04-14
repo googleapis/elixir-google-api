@@ -95,7 +95,7 @@ defmodule GoogleApis.ChangeAnalyzer do
   defp elixir_content_has_significant_changes?(old_content, new_content, file) do
     with {:old, {:ok, old_ast}} <- {:old, Code.string_to_quoted(old_content)},
          {:new, {:ok, new_ast}} <- {:new, Code.string_to_quoted(new_content)} do
-      elixir_ast_has_significant_changes?(old_ast, new_ast)
+      elixir_ast_has_significant_changes?(old_ast, new_ast, Path.basename(file))
     else
       {:old, _} ->
         Logger.error("Change analyzer: parse of pre-change #{file} failed!")
@@ -106,31 +106,35 @@ defmodule GoogleApis.ChangeAnalyzer do
     end
   end
 
-  defp elixir_ast_has_significant_changes?(old_ast, new_ast) do
-    strip_trivial_ast(old_ast) != strip_trivial_ast(new_ast)
+  defp elixir_ast_has_significant_changes?(old_ast, new_ast, basename) do
+    strip_trivial_ast(old_ast, basename) != strip_trivial_ast(new_ast, basename)
   end
 
-  defp strip_trivial_ast({:@, _, [{:doc, _, [str]}]}) when is_binary(str) do
+  defp strip_trivial_ast({:@, _, [{:doc, _, [str]}]}, _) when is_binary(str) do
     {:@, [], [{:doc, [], ["."]}]}
   end
 
-  defp strip_trivial_ast({:@, _, [{:moduledoc, _, [str]}]}) when is_binary(str) do
+  defp strip_trivial_ast({:@, _, [{:moduledoc, _, [str]}]}, _) when is_binary(str) do
     {:@, [], [{:moduledoc, [], ["."]}]}
   end
 
-  defp strip_trivial_ast({name, _, args}) do
-    {strip_trivial_ast(name), [], strip_trivial_ast(args)}
+  defp strip_trivial_ast({:@, _, [{:version, _, [str]}]}, "mix.exs") when is_binary(str) do
+    {:@, [], [{:version, [], ["."]}]}
   end
 
-  defp strip_trivial_ast(list) when is_list(list) do
-    Enum.map(list, &strip_trivial_ast/1)
+  defp strip_trivial_ast({name, _, args}, basename) do
+    {strip_trivial_ast(name, basename), [], strip_trivial_ast(args, basename)}
   end
 
-  defp strip_trivial_ast({key, value}) do
-    {strip_trivial_ast(key), strip_trivial_ast(value)}
+  defp strip_trivial_ast(list, basename) when is_list(list) do
+    Enum.map(list, &(strip_trivial_ast(&1, basename)))
   end
 
-  defp strip_trivial_ast(term) do
+  defp strip_trivial_ast({key, value}, basename) do
+    {strip_trivial_ast(key, basename), strip_trivial_ast(value, basename)}
+  end
+
+  defp strip_trivial_ast(term, _) do
     term
   end
 end
