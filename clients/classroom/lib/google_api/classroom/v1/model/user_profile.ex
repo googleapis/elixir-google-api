@@ -38,7 +38,7 @@ defmodule GoogleApi.Classroom.V1.Model.UserProfile do
       Read-only.
   *   `verifiedTeacher` (*type:* `boolean()`, *default:* `nil`) - Represents whether a G Suite for Education user's domain administrator has
       explicitly verified them as being a teacher. If the user is not a member of
-      a G Suite for Education domain, than this field will always be false.
+      a G Suite for Education domain, than this field is always false.
 
       Read-only
   """
