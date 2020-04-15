@@ -158,7 +158,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The instance's project and location, in the format
+  *   `parent` (*type:* `String.t`) - The instance's project and location, in the format
       projects/{project_id}/locations/{location}. In Cloud Filestore,
       locations map to GCP zones, for example **us-west1-b**.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -173,7 +173,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:instanceId` (*type:* `String.t`) - Required. The name of the instance to create.
+      *   `:instanceId` (*type:* `String.t`) - The name of the instance to create.
           The name must be unique for the specified project and location.
       *   `:body` (*type:* `GoogleApi.File.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -234,7 +234,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The instance resource name, in the format
+  *   `name` (*type:* `String.t`) - The instance resource name, in the format
       projects/{project_id}/locations/{location}/instances/{instance_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -304,7 +304,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The instance resource name, in the format
+  *   `name` (*type:* `String.t`) - The instance resource name, in the format
       projects/{project_id}/locations/{location}/instances/{instance_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -370,7 +370,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project and location for which to retrieve instance information,
+  *   `parent` (*type:* `String.t`) - The project and location for which to retrieve instance information,
       in the format projects/{project_id}/locations/{location}. In Cloud
       Filestore, locations map to GCP zones, for example **us-west1-b**. To
       retrieve instance information for all locations, use "-" for the {location}
