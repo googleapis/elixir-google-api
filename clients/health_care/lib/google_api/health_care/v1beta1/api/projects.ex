@@ -8327,7 +8327,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           If zero the default page size of 100 is used.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
       *   `:view` (*type:* `String.t`) - Specifies the parts of the Message to return in the response.
-          When unspecified, equivalent to BASIC.
+          When unspecified, equivalent to BASIC. Setting this to anything other than
+          BASIC with a `page_size` larger than the default can generate a large
+          response, which impacts the performance of this method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
