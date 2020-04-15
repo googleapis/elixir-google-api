@@ -21,8 +21,10 @@ defmodule GoogleApi.CustomSearch.V1.Model.Promotion do
 
   ## Attributes
 
-  *   `bodyLines` (*type:* `list(GoogleApi.CustomSearch.V1.Model.PromotionBodyLines.t)`, *default:* `nil`) - An array of block objects for this promotion. See Google WebSearch Protocol
-      reference for more information.
+  *   `bodyLines` (*type:* `list(GoogleApi.CustomSearch.V1.Model.PromotionBodyLines.t)`, *default:* `nil`) - An array of block objects for this promotion. See [Google WebSearch
+      Protocol
+      reference](https://developers.google.com/custom-search/docs/xml_results)
+      for more information.
   *   `displayLink` (*type:* `String.t`, *default:* `nil`) - An abridged version of this search's result URL, e.g. www.example.com.
   *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - The title of the promotion, in HTML.
   *   `image` (*type:* `GoogleApi.CustomSearch.V1.Model.PromotionImage.t`, *default:* `nil`) - Image belonging to a promotion.

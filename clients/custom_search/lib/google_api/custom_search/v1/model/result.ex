@@ -30,12 +30,15 @@ defmodule GoogleApi.CustomSearch.V1.Model.Result do
   *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - The title of the search result, in HTML.
   *   `image` (*type:* `GoogleApi.CustomSearch.V1.Model.ResultImage.t`, *default:* `nil`) - Image belonging to a custom search result.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the type of current object. For this API, it is
-      customsearch#result.
-  *   `labels` (*type:* `list(GoogleApi.CustomSearch.V1.Model.ResultLabels.t)`, *default:* `nil`) - Encapsulates all information about refinement labels.
+      `customsearch#result.`
+  *   `labels` (*type:* `list(GoogleApi.CustomSearch.V1.Model.ResultLabels.t)`, *default:* `nil`) - Encapsulates all information about [refinement
+      labels](https://developers.google.com/custom-search/docs/xml_results).
   *   `link` (*type:* `String.t`, *default:* `nil`) - The full URL to which the search result is pointing, e.g.
       http://www.example.com/foo/bar.
   *   `mime` (*type:* `String.t`, *default:* `nil`) - The MIME type of the search result.
-  *   `pagemap` (*type:* `map()`, *default:* `nil`) - Contains PageMap information for this search result.
+  *   `pagemap` (*type:* `map()`, *default:* `nil`) - Contains
+      [PageMap](https://developers.google.com/custom-search/docs/structured_data#pagemaps)
+      information for this search result.
   *   `snippet` (*type:* `String.t`, *default:* `nil`) - The snippet of the search result, in plain text.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the search result, in plain text.
   """
