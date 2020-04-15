@@ -22,7 +22,8 @@ defmodule GoogleApi.Gmail.V1.Model.BatchModifyMessagesRequest do
   ## Attributes
 
   *   `addLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of label IDs to add to messages.
-  *   `ids` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the messages to modify. There is a limit of 1000 ids per request.
+  *   `ids` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the messages to modify. There is a limit of 1000 ids per
+      request.
   *   `removeLabelIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of label IDs to remove from messages.
   """
 
