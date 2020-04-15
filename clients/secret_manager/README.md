@@ -2,7 +2,7 @@
 
 Secret Manager API client library.
 
-Stores API keys, passwords, certificates, and other sensitive data. Provides convenience while improving security.
+Stores sensitive data such as API keys, passwords, and certificates. Provides convenience while improving security.
 
 
 ## Installation
@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_secret_manager, "~> 0.4"}]
+  [{:google_api_secret_manager, "~> 0.5"}]
 end
 ```
 
