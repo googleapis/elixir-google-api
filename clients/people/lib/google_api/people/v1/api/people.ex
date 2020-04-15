@@ -169,7 +169,6 @@ defmodule GoogleApi.People.V1.Api.People do
           * ageRanges
           * biographies
           * birthdays
-          * braggingRights
           * coverPhotos
           * emailAddresses
           * events
@@ -186,12 +185,9 @@ defmodule GoogleApi.People.V1.Api.People do
           * phoneNumbers
           * photos
           * relations
-          * relationshipInterests
-          * relationshipStatuses
           * residences
           * sipAddresses
           * skills
-          * taglines
           * urls
           * userDefined
   *   `opts` (*type:* `keyword()`) - Call options
@@ -271,7 +267,6 @@ defmodule GoogleApi.People.V1.Api.People do
           * ageRanges
           * biographies
           * birthdays
-          * braggingRights
           * coverPhotos
           * emailAddresses
           * events
@@ -288,12 +283,9 @@ defmodule GoogleApi.People.V1.Api.People do
           * phoneNumbers
           * photos
           * relations
-          * relationshipInterests
-          * relationshipStatuses
           * residences
           * sipAddresses
           * skills
-          * taglines
           * urls
           * userDefined
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
@@ -370,7 +362,6 @@ defmodule GoogleApi.People.V1.Api.People do
           * ageRanges
           * biographies
           * birthdays
-          * braggingRights
           * coverPhotos
           * emailAddresses
           * events
@@ -387,12 +378,9 @@ defmodule GoogleApi.People.V1.Api.People do
           * phoneNumbers
           * photos
           * relations
-          * relationshipInterests
-          * relationshipStatuses
           * residences
           * sipAddresses
           * skills
-          * taglines
           * urls
           * userDefined
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
@@ -646,7 +634,6 @@ defmodule GoogleApi.People.V1.Api.People do
           * ageRanges
           * biographies
           * birthdays
-          * braggingRights
           * coverPhotos
           * emailAddresses
           * events
@@ -663,12 +650,9 @@ defmodule GoogleApi.People.V1.Api.People do
           * phoneNumbers
           * photos
           * relations
-          * relationshipInterests
-          * relationshipStatuses
           * residences
           * sipAddresses
           * skills
-          * taglines
           * urls
           * userDefined
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each

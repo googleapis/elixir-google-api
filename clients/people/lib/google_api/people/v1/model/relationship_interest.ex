@@ -17,6 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.RelationshipInterest do
   @moduledoc """
+  **DEPRECATED**: No data will be returned
   A person's relationship interest .
 
   ## Attributes

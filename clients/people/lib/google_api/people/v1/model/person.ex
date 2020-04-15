@@ -33,7 +33,8 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `ageRanges` (*type:* `list(GoogleApi.People.V1.Model.AgeRangeType.t)`, *default:* `nil`) - Output only. The person's age ranges.
   *   `biographies` (*type:* `list(GoogleApi.People.V1.Model.Biography.t)`, *default:* `nil`) - The person's biographies.
   *   `birthdays` (*type:* `list(GoogleApi.People.V1.Model.Birthday.t)`, *default:* `nil`) - The person's birthdays.
-  *   `braggingRights` (*type:* `list(GoogleApi.People.V1.Model.BraggingRights.t)`, *default:* `nil`) - The person's bragging rights.
+  *   `braggingRights` (*type:* `list(GoogleApi.People.V1.Model.BraggingRights.t)`, *default:* `nil`) - **DEPRECATED**: No data will be returned
+      The person's bragging rights.
   *   `coverPhotos` (*type:* `list(GoogleApi.People.V1.Model.CoverPhoto.t)`, *default:* `nil`) - Output only. The person's cover photos.
   *   `emailAddresses` (*type:* `list(GoogleApi.People.V1.Model.EmailAddress.t)`, *default:* `nil`) - The person's email addresses.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the
@@ -52,15 +53,18 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `phoneNumbers` (*type:* `list(GoogleApi.People.V1.Model.PhoneNumber.t)`, *default:* `nil`) - The person's phone numbers.
   *   `photos` (*type:* `list(GoogleApi.People.V1.Model.Photo.t)`, *default:* `nil`) - Output only. The person's photos.
   *   `relations` (*type:* `list(GoogleApi.People.V1.Model.Relation.t)`, *default:* `nil`) - The person's relations.
-  *   `relationshipInterests` (*type:* `list(GoogleApi.People.V1.Model.RelationshipInterest.t)`, *default:* `nil`) - Output only. The person's relationship interests.
-  *   `relationshipStatuses` (*type:* `list(GoogleApi.People.V1.Model.RelationshipStatus.t)`, *default:* `nil`) - Output only. The person's relationship statuses.
+  *   `relationshipInterests` (*type:* `list(GoogleApi.People.V1.Model.RelationshipInterest.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned
+      The person's relationship interests.
+  *   `relationshipStatuses` (*type:* `list(GoogleApi.People.V1.Model.RelationshipStatus.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned
+      The person's relationship statuses.
   *   `residences` (*type:* `list(GoogleApi.People.V1.Model.Residence.t)`, *default:* `nil`) - The person's residences.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the person, assigned by the server. An ASCII string
       with a max length of 27 characters, in the form of
       `people/{person_id}`.
   *   `sipAddresses` (*type:* `list(GoogleApi.People.V1.Model.SipAddress.t)`, *default:* `nil`) - The person's SIP addresses.
   *   `skills` (*type:* `list(GoogleApi.People.V1.Model.Skill.t)`, *default:* `nil`) - The person's skills.
-  *   `taglines` (*type:* `list(GoogleApi.People.V1.Model.Tagline.t)`, *default:* `nil`) - Output only. The person's taglines.
+  *   `taglines` (*type:* `list(GoogleApi.People.V1.Model.Tagline.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned
+      The person's taglines.
   *   `urls` (*type:* `list(GoogleApi.People.V1.Model.Url.t)`, *default:* `nil`) - The person's associated URLs.
   *   `userDefined` (*type:* `list(GoogleApi.People.V1.Model.UserDefined.t)`, *default:* `nil`) - The person's user defined data.
   """
