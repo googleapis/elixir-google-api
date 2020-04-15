@@ -27,21 +27,22 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridOptions do
   *   `labels` (*type:* `map()`, *default:* `nil`) - To organize findings, these labels will be added to each finding.
 
       Label keys must be between 1 and 63 characters long and must conform
-      to the following regular expression: \\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?.
+      to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
 
       Label values must be between 0 and 63 characters long and must conform
-      to the regular expression (\\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?)?.
+      to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
 
       No more than 10 labels can be associated with a given finding.
 
-      Example: <code>"environment" : "production"</code>
-      Example: <code>"pipeline" : "etl"</code>
+      Examples:
+      * `"environment" : "production"`
+      * `"pipeline" : "etl"`
   *   `requiredFindingLabelKeys` (*type:* `list(String.t)`, *default:* `nil`) - These are labels that each inspection request must include within their
       'finding_labels' map. Request may contain others, but any missing one of
       these will be rejected.
 
       Label keys must be between 1 and 63 characters long and must conform
-      to the following regular expression: \\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?.
+      to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
 
       No more than 10 keys can be required.
   *   `tableOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableOptions.t`, *default:* `nil`) - If the container is a table, additional information to make findings
