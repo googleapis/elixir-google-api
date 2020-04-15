@@ -341,7 +341,7 @@ defmodule GoogleApi.Memcache.V1beta2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Memcache.V1beta2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Memcached instance resource name in the format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Memcached instance resource name in the format:
           `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
       where `location_id` refers to a GCP region
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
