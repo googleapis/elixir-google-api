@@ -21,6 +21,7 @@ defmodule GoogleApi.Games.V1.Model.ProfileSettings do
 
   ## Attributes
 
+  *   `friendsListVisibility` (*type:* `String.t`, *default:* `nil`) - Whether the player's friends list is visible to the game.
   *   `kind` (*type:* `String.t`, *default:* `games#profileSettings`) - Uniquely identifies the type of this resource. Value is always the fixed string games#profileSettings.
   *   `profileVisible` (*type:* `boolean()`, *default:* `nil`) - 
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Games.V1.Model.ProfileSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :friendsListVisibility => String.t(),
           :kind => String.t(),
           :profileVisible => boolean()
         }
 
+  field(:friendsListVisibility)
   field(:kind)
   field(:profileVisible)
 end
