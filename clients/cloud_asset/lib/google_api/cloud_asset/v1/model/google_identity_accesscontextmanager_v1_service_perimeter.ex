@@ -30,7 +30,6 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `ServicePerimeter` was created in UTC.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `ServicePerimeter` and its use. Does not affect
       behavior.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource name for the ServicePerimeter.  The `short_name`
@@ -50,7 +49,6 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
       restricted services and access levels that determine perimeter
       content and boundaries.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Human readable title. Must be unique within the Policy.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `ServicePerimeter` was updated in UTC.
   *   `useExplicitDryRunSpec` (*type:* `boolean()`, *default:* `nil`) - Use explicit dry run spec flag. Ordinarily, a dry-run spec implicitly
       exists  for all Service Perimeters, and that spec is identical to the
       status for those Service Perimeters. When this flag is set, it inhibits the
@@ -66,7 +64,6 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
           :description => String.t(),
           :name => String.t(),
           :perimeterType => String.t(),
@@ -75,11 +72,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
           :status =>
             GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig.t(),
           :title => String.t(),
-          :updateTime => DateTime.t(),
           :useExplicitDryRunSpec => boolean()
         }
 
-  field(:createTime, as: DateTime)
   field(:description)
   field(:name)
   field(:perimeterType)
@@ -93,7 +88,6 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
   )
 
   field(:title)
-  field(:updateTime, as: DateTime)
   field(:useExplicitDryRunSpec)
 end
 
