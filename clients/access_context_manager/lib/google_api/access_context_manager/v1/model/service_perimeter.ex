@@ -30,7 +30,6 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ServicePerimeter do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `ServicePerimeter` was created in UTC.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `ServicePerimeter` and its use. Does not affect
       behavior.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource name for the ServicePerimeter.  The `short_name`
@@ -50,7 +49,6 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ServicePerimeter do
       restricted services and access levels that determine perimeter
       content and boundaries.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Human readable title. Must be unique within the Policy.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `ServicePerimeter` was updated in UTC.
   *   `useExplicitDryRunSpec` (*type:* `boolean()`, *default:* `nil`) - Use explicit dry run spec flag. Ordinarily, a dry-run spec implicitly
       exists  for all Service Perimeters, and that spec is identical to the
       status for those Service Perimeters. When this flag is set, it inhibits the
@@ -66,25 +64,21 @@ defmodule GoogleApi.AccessContextManager.V1.Model.ServicePerimeter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
           :description => String.t(),
           :name => String.t(),
           :perimeterType => String.t(),
           :spec => GoogleApi.AccessContextManager.V1.Model.ServicePerimeterConfig.t(),
           :status => GoogleApi.AccessContextManager.V1.Model.ServicePerimeterConfig.t(),
           :title => String.t(),
-          :updateTime => DateTime.t(),
           :useExplicitDryRunSpec => boolean()
         }
 
-  field(:createTime, as: DateTime)
   field(:description)
   field(:name)
   field(:perimeterType)
   field(:spec, as: GoogleApi.AccessContextManager.V1.Model.ServicePerimeterConfig)
   field(:status, as: GoogleApi.AccessContextManager.V1.Model.ServicePerimeterConfig)
   field(:title)
-  field(:updateTime, as: DateTime)
   field(:useExplicitDryRunSpec)
 end
 
