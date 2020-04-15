@@ -25,6 +25,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
   *   `boundStreamLastUpdateTimeMs` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the live stream referenced by boundStreamId was last updated.
   *   `closedCaptionsType` (*type:* `String.t`, *default:* `nil`) - 
   *   `enableAutoStart` (*type:* `boolean()`, *default:* `nil`) - This setting indicates whether auto start is enabled for this broadcast.
+  *   `enableAutoStop` (*type:* `boolean()`, *default:* `nil`) - 
   *   `enableClosedCaptions` (*type:* `boolean()`, *default:* `nil`) - This setting indicates whether HTTP POST closed captioning is enabled for this broadcast. The ingestion URL of the closed captions is returned through the liveStreams API. This is mutually exclusive with using the closed_captions_type property, and is equivalent to setting closed_captions_type to CLOSED_CAPTIONS_HTTP_POST.
   *   `enableContentEncryption` (*type:* `boolean()`, *default:* `nil`) - This setting indicates whether YouTube should enable content encryption for the broadcast.
   *   `enableDvr` (*type:* `boolean()`, *default:* `nil`) - This setting determines whether viewers can access DVR controls while watching the video. DVR controls enable the viewer to control the video playback experience by pausing, rewinding, or fast forwarding content. The default value for this property is true.
@@ -54,6 +55,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
           :boundStreamLastUpdateTimeMs => DateTime.t(),
           :closedCaptionsType => String.t(),
           :enableAutoStart => boolean(),
+          :enableAutoStop => boolean(),
           :enableClosedCaptions => boolean(),
           :enableContentEncryption => boolean(),
           :enableDvr => boolean(),
@@ -72,6 +74,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastContentDetails do
   field(:boundStreamLastUpdateTimeMs, as: DateTime)
   field(:closedCaptionsType)
   field(:enableAutoStart)
+  field(:enableAutoStop)
   field(:enableClosedCaptions)
   field(:enableContentEncryption)
   field(:enableDvr)
