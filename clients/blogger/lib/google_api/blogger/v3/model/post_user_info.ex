@@ -21,7 +21,7 @@ defmodule GoogleApi.Blogger.V3.Model.PostUserInfo do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `blogger#postUserInfo`) - The kind of this entity. Always blogger#postUserInfo
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entity. Always blogger#postUserInfo.
   *   `post` (*type:* `GoogleApi.Blogger.V3.Model.Post.t`, *default:* `nil`) - The Post resource.
   *   `post_user_info` (*type:* `GoogleApi.Blogger.V3.Model.PostPerUserInfo.t`, *default:* `nil`) - Information about a User for the Post.
   """

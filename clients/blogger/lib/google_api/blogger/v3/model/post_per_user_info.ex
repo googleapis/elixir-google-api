@@ -23,7 +23,7 @@ defmodule GoogleApi.Blogger.V3.Model.PostPerUserInfo do
 
   *   `blogId` (*type:* `String.t`, *default:* `nil`) - ID of the Blog that the post resource belongs to.
   *   `hasEditAccess` (*type:* `boolean()`, *default:* `nil`) - True if the user has Author level access to the post.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#postPerUserInfo`) - The kind of this entity. Always blogger#postPerUserInfo
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entity. Always blogger#postPerUserInfo.
   *   `postId` (*type:* `String.t`, *default:* `nil`) - ID of the Post resource.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - ID of the User.
   """

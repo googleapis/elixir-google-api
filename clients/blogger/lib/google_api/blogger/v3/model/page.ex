@@ -26,12 +26,13 @@ defmodule GoogleApi.Blogger.V3.Model.Page do
   *   `content` (*type:* `String.t`, *default:* `nil`) - The body content of this Page, in HTML.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this resource.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#page`) - The kind of this entity. Always blogger#page
-  *   `published` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this Page was published.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entity. Always blogger#page.
+  *   `published` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this Page was published.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the page for admin resources (either LIVE or DRAFT).
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this entity. This is the name displayed in the Admin user interface.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this Page was last updated.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of this entity. This is the name displayed in the Admin user
+      interface.
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this Page was last updated.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL that this Page is displayed at.
   """
 
@@ -44,11 +45,11 @@ defmodule GoogleApi.Blogger.V3.Model.Page do
           :etag => String.t(),
           :id => String.t(),
           :kind => String.t(),
-          :published => DateTime.t(),
+          :published => String.t(),
           :selfLink => String.t(),
           :status => String.t(),
           :title => String.t(),
-          :updated => DateTime.t(),
+          :updated => String.t(),
           :url => String.t()
         }
 
@@ -58,11 +59,11 @@ defmodule GoogleApi.Blogger.V3.Model.Page do
   field(:etag)
   field(:id)
   field(:kind)
-  field(:published, as: DateTime)
+  field(:published)
   field(:selfLink)
   field(:status)
   field(:title)
-  field(:updated, as: DateTime)
+  field(:updated)
   field(:url)
 end
 

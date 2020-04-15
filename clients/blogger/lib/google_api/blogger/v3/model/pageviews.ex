@@ -21,9 +21,9 @@ defmodule GoogleApi.Blogger.V3.Model.Pageviews do
 
   ## Attributes
 
-  *   `blogId` (*type:* `String.t`, *default:* `nil`) - Blog Id
+  *   `blogId` (*type:* `String.t`, *default:* `nil`) - Blog Id.
   *   `counts` (*type:* `list(GoogleApi.Blogger.V3.Model.PageviewsCounts.t)`, *default:* `nil`) - The container of posts in this blog.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#page_views`) - The kind of this entry. Always blogger#page_views
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entry. Always blogger#page_views.
   """
 
   use GoogleApi.Gax.ModelBase
