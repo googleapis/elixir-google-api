@@ -19,11 +19,11 @@ defmodule GoogleApi.HomeGraph.V1.Model.ReportStateAndNotificationRequest do
   @moduledoc """
   Request type for the
   [`ReportStateAndNotification`](#google.home.graph.v1.HomeGraphApiService.ReportStateAndNotification)
-  call. It may include States, Notifications, or both. This request uses
-  globally unique flattened state names instead of namespaces based on traits
-  to align with the existing QUERY and EXECUTE APIs implemented by 90+ Smart
-  Home partners. States and notifications are defined per `device_id` (for example, "123"
-  and "456" in the following example). # Example
+  call. It may include states, notifications, or both. States and notifications
+  are defined per `device_id` (for example, "123" and "456" in the following
+  example).
+  # Example
+
   ```json
   {
     "requestId": "ff36a3cc-ec34-11e6-b1a0-64510650abcf",
@@ -49,16 +49,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.ReportStateAndNotificationRequest do
   *   `agentUserId` (*type:* `String.t`, *default:* `nil`) - Required. Third-party user ID.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Unique identifier per event (for example, a doorbell press).
   *   `followUpToken` (*type:* `String.t`, *default:* `nil`) - Token to maintain state in the follow up notification response.
-  *   `payload` (*type:* `GoogleApi.HomeGraph.V1.Model.StateAndNotificationPayload.t`, *default:* `nil`) - Required. State of devices to update and notification metadata for devices. For
-      example, if a user turns a light on manually, a state update should be
-      sent so that the information is always the current status of the device.
-      Notifications are independent from the state and its piece of the payload
-      should contain everything necessary to notify the user. Although it may be
-      related to a state change, it does not need to be. For example, if a
-      device can turn on/off and change temperature, the states reported would
-      include both "on" and "70 degrees" but the 3p may choose not to send any
-      notification for that, or to only say that the "the room is heating up",
-      keeping state and notification independent.
+  *   `payload` (*type:* `GoogleApi.HomeGraph.V1.Model.StateAndNotificationPayload.t`, *default:* `nil`) - Required. State of devices to update and notification metadata for devices.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Request ID used for debugging.
   """
 

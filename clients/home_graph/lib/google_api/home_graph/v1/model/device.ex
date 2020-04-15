@@ -17,40 +17,40 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.Device do
   @moduledoc """
-  Third-party partner's device definition.
+  Third-party device definition.
 
   ## Attributes
 
   *   `attributes` (*type:* `map()`, *default:* `nil`) - Attributes for the traits supported by the device.
-  *   `customData` (*type:* `map()`, *default:* `nil`) - Custom JSON data provided by the manufacturer and attached to QUERY and
-      EXECUTE requests in AoG.
+  *   `customData` (*type:* `map()`, *default:* `nil`) - Custom device attributes stored in Home Graph and provided to your
+      smart home Action in each
+      [QUERY](https://developers.google.com/assistant/smarthome/reference/intent/query)
+      and
+      [EXECUTE](https://developers.google.com/assistant/smarthome/reference/intent/execute)
+      intent.
   *   `deviceInfo` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceInfo.t`, *default:* `nil`) - Device manufacturer, model, hardware version, and software version.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Third-party partner's device ID.
-  *   `name` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceNames.t`, *default:* `nil`) - Name of the device given by the third party. This includes names given to
-      the device via third party device manufacturer's app, model names for the
-      device, etc.
-  *   `notificationSupportedByAgent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the device is capable of sending notifications. This
-      field will be set by the agent (partner) on an incoming SYNC. If a device
-      is not capable of generating notifications, the partner should set this
-      flag to false. If a partner is not capable of calling
-      ReportStateAndNotification to send notifications to Google, the partner
-      should set this flag to false. If there is a user setting in the partner
-      app to enable notifications and it is turned off, the partner should set
-      this flag to false.
-  *   `otherDeviceIds` (*type:* `list(GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId.t)`, *default:* `nil`) - IDs of other devices associated with this device. This is used to
-      represent a device group (e.g. bonded zone) or "facets" synced
-      through different flows (e.g. Google Nest Hub Max with a Nest Camera).
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Third-party device ID.
+  *   `name` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceNames.t`, *default:* `nil`) - Names given to this device by your smart home Action.
+  *   `notificationSupportedByAgent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether your smart home Action will report notifications
+      to Google for this device via ReportStateAndNotification.
 
-      This may also be used to pass in alternate IDs used to identify a cloud
-      synced device for local execution (i.e. local verification). If used for
-      local verification, this field is synced from the cloud.
-  *   `roomHint` (*type:* `String.t`, *default:* `nil`) - If the third-party partner's cloud configuration includes placing devices
-      in rooms, the name of the room can be provided here.
-  *   `structureHint` (*type:* `String.t`, *default:* `nil`) - As in roomHint, for structures that users set up in the partner's system.
+      If your smart home Action enables users to control device notifications,
+      you should update this field and call RequestSyncDevices.
+  *   `otherDeviceIds` (*type:* `list(GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId.t)`, *default:* `nil`) - Alternate IDs associated with this device.
+      This is used to identify cloud synced devices enabled for [local
+      fulfillment](https://developers.google.com/assistant/smarthome/concepts/local).
+  *   `roomHint` (*type:* `String.t`, *default:* `nil`) - Suggested name for the room where this device is installed.
+      Google attempts to use this value during user setup.
+  *   `structureHint` (*type:* `String.t`, *default:* `nil`) - Suggested name for the structure where this device is installed.
+      Google attempts to use this value during user setup.
   *   `traits` (*type:* `list(String.t)`, *default:* `nil`) - Traits supported by the device.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Hardware type of the device (e.g. light, outlet, etc).
-  *   `willReportState` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the state of this device is being reported to Google
-      through ReportStateAndNotification call.
+      See [device
+      traits](https://developers.google.com/assistant/smarthome/traits).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Hardware type of the device.
+      See [device
+      types](https://developers.google.com/assistant/smarthome/guides).
+  *   `willReportState` (*type:* `boolean()`, *default:* `nil`) - Indicates whether your smart home Action will report state of this device
+      to Google via ReportStateAndNotification.
   """
 
   use GoogleApi.Gax.ModelBase

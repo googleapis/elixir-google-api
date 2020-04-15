@@ -18,16 +18,12 @@
 defmodule GoogleApi.HomeGraph.V1.Model.QueryRequest do
   @moduledoc """
   Request type for the
-  [`Query`](#google.home.graph.v1.HomeGraphApiService.Query) call. This should
-  be the same format as the Actions on Google `action.devices.QUERY`
-  [request](/actions/smarthome/create-app#actiondevicesquery) with the
-  exception of the extra `agent_user_id` and no `intent` and `customData`
-  fields.
+  [`Query`](#google.home.graph.v1.HomeGraphApiService.Query) call.
 
   ## Attributes
 
   *   `agentUserId` (*type:* `String.t`, *default:* `nil`) - Required. Third-party user ID.
-  *   `inputs` (*type:* `list(GoogleApi.HomeGraph.V1.Model.QueryRequestInput.t)`, *default:* `nil`) - Required. Inputs containing third-party partner's device IDs for which to
+  *   `inputs` (*type:* `list(GoogleApi.HomeGraph.V1.Model.QueryRequestInput.t)`, *default:* `nil`) - Required. Inputs containing third-party device IDs for which to
       get the device states.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Request ID used for debugging.
   """
