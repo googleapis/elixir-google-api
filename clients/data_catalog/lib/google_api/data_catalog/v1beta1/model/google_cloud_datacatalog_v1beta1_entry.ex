@@ -19,7 +19,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry
   @moduledoc """
   Entry Metadata. 
   A Data Catalog Entry resource represents another resource in Google
-  Cloud Platform (such as a BigQuery dataset or a Cloud Pub/Sub topic), or
+  Cloud Platform (such as a BigQuery dataset or a Pub/Sub topic), or
   outside of Google Cloud Platform. Clients can use the `linked_resource` field
   in the Entry resource to refer to the original resource ID of the source
   system.
@@ -43,7 +43,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry
   *   `gcsFilesetSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1GcsFilesetSpec.t`, *default:* `nil`) - Specification that applies to a Cloud Storage fileset. This is only valid
       on entries of type FILESET.
   *   `integratedSystem` (*type:* `String.t`, *default:* `nil`) - Output only. This field indicates the entry's source system that Data Catalog
-      integrates with, such as BigQuery or Cloud Pub/Sub.
+      integrates with, such as BigQuery or Pub/Sub.
   *   `linkedResource` (*type:* `String.t`, *default:* `nil`) - The resource this metadata entry refers to.
 
       For Google Cloud Platform resources, `linked_resource` is the [full name of
