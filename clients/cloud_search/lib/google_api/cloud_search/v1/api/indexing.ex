@@ -952,6 +952,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Name of the Item to start a resumable upload.
       Format: datasources/{source_id}/items/{item_id}.
+      The maximum length is 1536 bytes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
