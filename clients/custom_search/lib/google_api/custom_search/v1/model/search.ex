@@ -21,12 +21,21 @@ defmodule GoogleApi.CustomSearch.V1.Model.Search do
 
   ## Attributes
 
-  *   `context` (*type:* `map()`, *default:* `nil`) - Metadata and refinements associated with the given search engine.
+  *   `context` (*type:* `map()`, *default:* `nil`) - Metadata and refinements associated with the given search engine,
+      including:
+
+      * The name of the search engine that was used for the query.
+
+      *   A set of [facet
+      objects](https://developers.google.com/custom-search/docs/refinements#create)
+      (refinements) you can use for refining a search.
   *   `items` (*type:* `list(GoogleApi.CustomSearch.V1.Model.Result.t)`, *default:* `nil`) - The current set of custom search results.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the type of current object. For this API, it is
       customsearch#search.
-  *   `promotions` (*type:* `list(GoogleApi.CustomSearch.V1.Model.Promotion.t)`, *default:* `nil`) - The set of promotions. Present only if the custom search engine's
-      configuration files define any promotions for the given query.
+  *   `promotions` (*type:* `list(GoogleApi.CustomSearch.V1.Model.Promotion.t)`, *default:* `nil`) - The set of
+      [promotions](https://developers.google.com/custom-search/docs/promotions).
+      Present only if the custom search engine's configuration files define any
+      promotions for the given query.
   *   `queries` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchQueries.t`, *default:* `nil`) - Query metadata for the previous, current, and next pages of results.
   *   `searchInformation` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchSearchInformation.t`, *default:* `nil`) - Metadata about a search operation.
   *   `spelling` (*type:* `GoogleApi.CustomSearch.V1.Model.SearchSpelling.t`, *default:* `nil`) - Spell correction information for a query.
