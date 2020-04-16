@@ -45,7 +45,7 @@ defmodule GoogleApi.PubSub.V1.Model.PushConfig do
   *   `oidcToken` (*type:* `GoogleApi.PubSub.V1.Model.OidcToken.t`, *default:* `nil`) - If specified, Pub/Sub will generate and attach an OIDC JWT token as an
       `Authorization` header in the HTTP request for every pushed message.
   *   `pushEndpoint` (*type:* `String.t`, *default:* `nil`) - A URL locating the endpoint to which messages should be pushed.
-      For example, a Webhook endpoint might use "https://example.com/push".
+      For example, a Webhook endpoint might use `https://example.com/push`.
   """
 
   use GoogleApi.Gax.ModelBase

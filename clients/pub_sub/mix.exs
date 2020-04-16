@@ -18,7 +18,7 @@
 defmodule GoogleApi.PubSub.Mixfile do
   use Mix.Project
 
-  @version "0.22.2"
+  @version "0.22.3"
 
   def project() do
     [
