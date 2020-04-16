@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Blogger.V3.Model.PageAuthorImage do
   @moduledoc """
-  The page author's avatar.
+  The creator's avatar.
 
   ## Attributes
 
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The page author's avatar URL.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The creator's avatar URL.
   """
 
   use GoogleApi.Gax.ModelBase

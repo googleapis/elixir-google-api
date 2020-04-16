@@ -21,18 +21,18 @@ defmodule GoogleApi.Blogger.V3.Model.Blog do
 
   ## Attributes
 
-  *   `customMetaData` (*type:* `String.t`, *default:* `nil`) - The JSON custom meta-data for the Blog
+  *   `customMetaData` (*type:* `String.t`, *default:* `nil`) - The JSON custom meta-data for the Blog.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this blog. This is displayed underneath the title.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this resource.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#blog`) - The kind of this entry. Always blogger#blog
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entry. Always blogger#blog.
   *   `locale` (*type:* `GoogleApi.Blogger.V3.Model.BlogLocale.t`, *default:* `nil`) - The locale this Blog is set to.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this blog. This is displayed as the title.
   *   `pages` (*type:* `GoogleApi.Blogger.V3.Model.BlogPages.t`, *default:* `nil`) - The container of pages in this blog.
   *   `posts` (*type:* `GoogleApi.Blogger.V3.Model.BlogPosts.t`, *default:* `nil`) - The container of posts in this blog.
-  *   `published` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this blog was published.
+  *   `published` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this blog was published.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the blog.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this blog was last updated.
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this blog was last updated.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL where this blog is published.
   """
 
@@ -47,10 +47,10 @@ defmodule GoogleApi.Blogger.V3.Model.Blog do
           :name => String.t(),
           :pages => GoogleApi.Blogger.V3.Model.BlogPages.t(),
           :posts => GoogleApi.Blogger.V3.Model.BlogPosts.t(),
-          :published => DateTime.t(),
+          :published => String.t(),
           :selfLink => String.t(),
           :status => String.t(),
-          :updated => DateTime.t(),
+          :updated => String.t(),
           :url => String.t()
         }
 
@@ -62,10 +62,10 @@ defmodule GoogleApi.Blogger.V3.Model.Blog do
   field(:name)
   field(:pages, as: GoogleApi.Blogger.V3.Model.BlogPages)
   field(:posts, as: GoogleApi.Blogger.V3.Model.BlogPosts)
-  field(:published, as: DateTime)
+  field(:published)
   field(:selfLink)
   field(:status)
-  field(:updated, as: DateTime)
+  field(:updated)
   field(:url)
 end
 

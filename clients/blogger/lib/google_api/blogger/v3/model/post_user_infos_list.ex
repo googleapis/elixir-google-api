@@ -22,7 +22,7 @@ defmodule GoogleApi.Blogger.V3.Model.PostUserInfosList do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.PostUserInfo.t)`, *default:* `nil`) - The list of Posts with User information for the post, for this Blog.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#postUserInfosList`) - The kind of this entity. Always blogger#postList
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entity. Always blogger#postList.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the next page, if one exists.
   """
 

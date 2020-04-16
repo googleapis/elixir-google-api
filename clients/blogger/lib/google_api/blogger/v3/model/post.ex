@@ -28,17 +28,17 @@ defmodule GoogleApi.Blogger.V3.Model.Post do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of this Post.
   *   `images` (*type:* `list(GoogleApi.Blogger.V3.Model.PostImages.t)`, *default:* `nil`) - Display image for the Post.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#post`) - The kind of this entity. Always blogger#post
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entity. Always blogger#post.
   *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - The list of labels this Post was tagged with.
   *   `location` (*type:* `GoogleApi.Blogger.V3.Model.PostLocation.t`, *default:* `nil`) - The location for geotagged posts.
-  *   `published` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this Post was published.
+  *   `published` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this Post was published.
   *   `readerComments` (*type:* `String.t`, *default:* `nil`) - Comment control and display setting for readers of this post.
   *   `replies` (*type:* `GoogleApi.Blogger.V3.Model.PostReplies.t`, *default:* `nil`) - The container of comments on this Post.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the post. Only set for admin-level requests
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the post. Only set for admin-level requests.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the Post.
   *   `titleLink` (*type:* `String.t`, *default:* `nil`) - The title link URL, similar to atom's related link.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this Post was last updated.
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this Post was last updated.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL where this Post is displayed.
   """
 
@@ -55,14 +55,14 @@ defmodule GoogleApi.Blogger.V3.Model.Post do
           :kind => String.t(),
           :labels => list(String.t()),
           :location => GoogleApi.Blogger.V3.Model.PostLocation.t(),
-          :published => DateTime.t(),
+          :published => String.t(),
           :readerComments => String.t(),
           :replies => GoogleApi.Blogger.V3.Model.PostReplies.t(),
           :selfLink => String.t(),
           :status => String.t(),
           :title => String.t(),
           :titleLink => String.t(),
-          :updated => DateTime.t(),
+          :updated => String.t(),
           :url => String.t()
         }
 
@@ -76,14 +76,14 @@ defmodule GoogleApi.Blogger.V3.Model.Post do
   field(:kind)
   field(:labels, type: :list)
   field(:location, as: GoogleApi.Blogger.V3.Model.PostLocation)
-  field(:published, as: DateTime)
+  field(:published)
   field(:readerComments)
   field(:replies, as: GoogleApi.Blogger.V3.Model.PostReplies)
   field(:selfLink)
   field(:status)
   field(:title)
   field(:titleLink)
-  field(:updated, as: DateTime)
+  field(:updated)
   field(:url)
 end
 

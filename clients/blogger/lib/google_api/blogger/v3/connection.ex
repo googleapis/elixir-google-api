@@ -31,5 +31,5 @@ defmodule GoogleApi.Blogger.V3.Connection do
       "https://www.googleapis.com/auth/blogger.readonly"
     ],
     otp_app: :google_api_blogger,
-    base_url: "https://www.googleapis.com/blogger/v3/"
+    base_url: "https://blogger.googleapis.com/"
 end

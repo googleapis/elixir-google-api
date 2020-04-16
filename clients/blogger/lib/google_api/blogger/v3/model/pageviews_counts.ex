@@ -21,8 +21,8 @@ defmodule GoogleApi.Blogger.V3.Model.PageviewsCounts do
 
   ## Attributes
 
-  *   `count` (*type:* `String.t`, *default:* `nil`) - Count of page views for the given time range
-  *   `timeRange` (*type:* `String.t`, *default:* `nil`) - Time range the given count applies to
+  *   `count` (*type:* `String.t`, *default:* `nil`) - Count of page views for the given time range.
+  *   `timeRange` (*type:* `String.t`, *default:* `nil`) - Time range the given count applies to.
   """
 
   use GoogleApi.Gax.ModelBase
