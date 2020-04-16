@@ -22,9 +22,15 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Probe do
 
   ## Attributes
 
+  *   `exec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t`, *default:* `nil`) - One and only one of the following should be specified.
+      Exec specifies the action to take.
+
+      A field inlined from the Handler message.
   *   `failureThreshold` (*type:* `integer()`, *default:* `nil`) - Minimum consecutive failures for the probe to be considered failed after
       having succeeded. Defaults to 3. Minimum value is 1. +optional
-  *   `handler` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Handler.t`, *default:* `nil`) - The action taken to determine the health of a container
+  *   `httpGet` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction.t`, *default:* `nil`) - HTTPGet specifies the http request to perform.
+
+      A field inlined from the Handler message.
   *   `initialDelaySeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after the container has started before liveness probes
       are initiated. More info:
       https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
@@ -35,6 +41,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Probe do
   *   `successThreshold` (*type:* `integer()`, *default:* `nil`) - Minimum consecutive successes for the probe to be considered successful
       after having failed. Defaults to 1. Must be 1 for liveness. Minimum value
       is 1. +optional
+  *   `tcpSocket` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction.t`, *default:* `nil`) - TCPSocket specifies an action involving a TCP port.
+      TCP hooks not yet supported
+
+      A field inlined from the Handler message.
   *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after which the probe times out.
       Defaults to 1 second. Minimum value is 1.
       More info:
@@ -45,19 +55,23 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Probe do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :exec => GoogleApi.CloudRun.V1alpha1.Model.ExecAction.t(),
           :failureThreshold => integer(),
-          :handler => GoogleApi.CloudRun.V1alpha1.Model.Handler.t(),
+          :httpGet => GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction.t(),
           :initialDelaySeconds => integer(),
           :periodSeconds => integer(),
           :successThreshold => integer(),
+          :tcpSocket => GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction.t(),
           :timeoutSeconds => integer()
         }
 
+  field(:exec, as: GoogleApi.CloudRun.V1alpha1.Model.ExecAction)
   field(:failureThreshold)
-  field(:handler, as: GoogleApi.CloudRun.V1alpha1.Model.Handler)
+  field(:httpGet, as: GoogleApi.CloudRun.V1alpha1.Model.HTTPGetAction)
   field(:initialDelaySeconds)
   field(:periodSeconds)
   field(:successThreshold)
+  field(:tcpSocket, as: GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction)
   field(:timeoutSeconds)
 end
 
