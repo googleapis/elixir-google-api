@@ -298,9 +298,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
@@ -580,9 +579,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
@@ -679,9 +677,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   A caller is not required to have Google IAM permission to make this
   request.
@@ -1054,9 +1051,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
@@ -1375,9 +1371,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   A caller is not required to have Google IAM permission to make this
   request.
@@ -2510,9 +2505,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
@@ -2710,9 +2704,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
@@ -2809,9 +2802,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   A caller is not required to have Google IAM permission to make this
   request.
