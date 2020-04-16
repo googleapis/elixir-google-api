@@ -18,10 +18,7 @@
 defmodule GoogleApi.HomeGraph.V1.Model.SyncRequest do
   @moduledoc """
   Request type for the [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync)
-  call. This should follow the same format as the Actions on Google
-  `action.devices.SYNC`
-  [request](/actions/smarthome/create-app#actiondevicessync) with the exception
-  of the extra `agent_user_id` and no `intent` field.
+  call.
 
   ## Attributes
 

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.DeviceNames do
   @moduledoc """
-  Different names for the device.
+  Identifiers used to describe the device.
 
   ## Attributes
 
-  *   `defaultNames` (*type:* `list(String.t)`, *default:* `nil`) - List of names provided by the partner rather than the user, often
-      manufacturer names, SKUs, etc.
+  *   `defaultNames` (*type:* `list(String.t)`, *default:* `nil`) - List of names provided by the manufacturer rather than the user, such as
+      serial numbers, SKUs, etc.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Primary name of the device, generally provided by the user.
   *   `nicknames` (*type:* `list(String.t)`, *default:* `nil`) - Additional names provided by the user for the device.
   """

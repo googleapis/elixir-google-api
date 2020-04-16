@@ -21,7 +21,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.QueryRequestPayload do
 
   ## Attributes
 
-  *   `devices` (*type:* `list(GoogleApi.HomeGraph.V1.Model.AgentDeviceId.t)`, *default:* `nil`) - Third-party partner's device IDs for which to get the device states.
+  *   `devices` (*type:* `list(GoogleApi.HomeGraph.V1.Model.AgentDeviceId.t)`, *default:* `nil`) - Third-party device IDs for which to get the device states.
   """
 
   use GoogleApi.Gax.ModelBase

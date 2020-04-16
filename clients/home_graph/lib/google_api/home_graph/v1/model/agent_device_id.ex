@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.AgentDeviceId do
   @moduledoc """
-  Third-party partner's device ID for one device.
+  Third-party device ID for one device.
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Third-party partner's device ID.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Third-party device ID.
   """
 
   use GoogleApi.Gax.ModelBase

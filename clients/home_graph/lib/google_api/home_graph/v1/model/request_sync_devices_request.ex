@@ -23,11 +23,10 @@ defmodule GoogleApi.HomeGraph.V1.Model.RequestSyncDevicesRequest do
 
   ## Attributes
 
-  *   `agentUserId` (*type:* `String.t`, *default:* `nil`) - Required. Third-party user ID issued by agent's third-party identity
-      provider.
+  *   `agentUserId` (*type:* `String.t`, *default:* `nil`) - Required. Third-party user ID.
   *   `async` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, the request will be added to a queue and a response will
-      be returned immediately. The queue allows for de-duplication of
-      simultaneous requests.
+      be returned immediately. This enables concurrent requests for the given
+      `agent_user_id`, but the caller will not receive any error responses.
   """
 
   use GoogleApi.Gax.ModelBase

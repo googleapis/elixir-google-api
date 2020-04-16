@@ -21,8 +21,12 @@ defmodule GoogleApi.HomeGraph.V1.Model.ReportStateAndNotificationDevice do
 
   ## Attributes
 
-  *   `notifications` (*type:* `map()`, *default:* `nil`) - Notifications metadata for devices.
-  *   `states` (*type:* `map()`, *default:* `nil`) - States of devices to update.
+  *   `notifications` (*type:* `map()`, *default:* `nil`) - Notifications metadata for devices. See the **Device NOTIFICATIONS**
+      section of the individual trait [reference
+      guides](https://developers.google.com/assistant/smarthome/traits).
+  *   `states` (*type:* `map()`, *default:* `nil`) - States of devices to update. See the **Device STATES** section
+      of the individual trait [reference
+      guides](https://developers.google.com/assistant/smarthome/traits).
   """
 
   use GoogleApi.Gax.ModelBase
