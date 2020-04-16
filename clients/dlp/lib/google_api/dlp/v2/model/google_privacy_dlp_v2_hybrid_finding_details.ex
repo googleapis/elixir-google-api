@@ -32,15 +32,16 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridFindingDetails do
       inspection.
 
       Label keys must be between 1 and 63 characters long and must conform
-      to the following regular expression: \\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?.
+      to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
 
       Label values must be between 0 and 63 characters long and must conform
-      to the regular expression (\\[a-z\\](\\[-a-z0-9\\]*\\[a-z0-9\\])?)?.
+      to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
 
       No more than 10 labels can be associated with a given finding.
 
-      Example: <code>"environment" : "production"</code>
-      Example: <code>"pipeline" : "etl"</code>
+      Examples:
+      * `"environment" : "production"`
+      * `"pipeline" : "etl"`
   *   `rowOffset` (*type:* `String.t`, *default:* `nil`) - Offset of the row for tables. Populate if the row(s) being scanned are
       part of a bigger dataset and you want to keep track of their absolute
       position.
