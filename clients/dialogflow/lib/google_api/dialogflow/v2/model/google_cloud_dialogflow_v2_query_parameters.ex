@@ -24,8 +24,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   *   `contexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - The collection of contexts to be activated before this query is
       executed.
   *   `geoLocation` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleTypeLatLng.t`, *default:* `nil`) - The geo location of this conversational query.
-  *   `payload` (*type:* `map()`, *default:* `nil`) - This field can be used to pass custom data into the webhook
-      associated with the agent. Arbitrary JSON objects are supported.
+  *   `payload` (*type:* `map()`, *default:* `nil`) - This field can be used to pass custom data to your webhook.
+      Arbitrary JSON objects are supported.
+      If supplied, the value is used to populate the
+      `WebhookRequest.original_detect_intent_request.payload`
+      field sent to your webhook.
   *   `resetContexts` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to delete all contexts in the current session
       before the new ones are activated.
   *   `sentimentAnalysisRequestConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t`, *default:* `nil`) - Configures the type of sentiment analysis to perform. If not

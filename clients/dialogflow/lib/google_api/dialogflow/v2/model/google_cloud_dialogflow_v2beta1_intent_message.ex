@@ -29,9 +29,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   *   `linkOutSuggestion` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion.t`, *default:* `nil`) - Displays a link out suggestion chip for Actions on Google.
   *   `listSelect` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageListSelect.t`, *default:* `nil`) - Displays a list card for Actions on Google.
   *   `mediaContent` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageMediaContent.t`, *default:* `nil`) - The media content card for Actions on Google.
-  *   `payload` (*type:* `map()`, *default:* `nil`) - Returns a response containing a custom, platform-specific payload.
-      See the Intent.Message.Platform type for a description of the
-      structure that may be required for your platform.
+  *   `payload` (*type:* `map()`, *default:* `nil`) - A custom platform-specific response.
   *   `platform` (*type:* `String.t`, *default:* `nil`) - Optional. The platform that this message is intended for.
   *   `quickReplies` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageQuickReplies.t`, *default:* `nil`) - Displays quick replies.
   *   `rbmCarouselRichCard` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard.t`, *default:* `nil`) - Rich Business Messaging (RBM) carousel rich card response.
