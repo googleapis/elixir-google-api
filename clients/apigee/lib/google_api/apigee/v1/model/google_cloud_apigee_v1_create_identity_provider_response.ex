@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CreateIdentityProviderRes
 
   ## Attributes
 
-  *   `data` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CreateIdentityProviderResponseIdentityProviders.t`, *default:* `nil`) - List of identity providers.
+  *   `data` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IdentityProvider.t`, *default:* `nil`) - Identity provider created by the request
   *   `errorCode` (*type:* `String.t`, *default:* `nil`) - ID that can be used to find errors in the log files.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Description of the operation.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - ID that can be used to find request details in the log files.
@@ -31,19 +31,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CreateIdentityProviderRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data =>
-            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CreateIdentityProviderResponseIdentityProviders.t(),
+          :data => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IdentityProvider.t(),
           :errorCode => String.t(),
           :message => String.t(),
           :requestId => String.t(),
           :status => String.t()
         }
 
-  field(:data,
-    as:
-      GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CreateIdentityProviderResponseIdentityProviders
-  )
-
+  field(:data, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IdentityProvider)
   field(:errorCode)
   field(:message)
   field(:requestId)

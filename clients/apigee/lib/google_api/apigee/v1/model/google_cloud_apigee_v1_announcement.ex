@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Announcement do
 
   ## Attributes
 
-  *   `data` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AnnoucementData.t`, *default:* `nil`) - Details of the announcement.
+  *   `data` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AnnouncementData.t`, *default:* `nil`) - Details of the announcement.
   *   `errorCode` (*type:* `String.t`, *default:* `nil`) - ID that can be used to find errors in the log files.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Description of the operation.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - ID that can be used to find request details in the log files.
@@ -31,14 +31,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Announcement do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AnnoucementData.t(),
+          :data => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AnnouncementData.t(),
           :errorCode => String.t(),
           :message => String.t(),
           :requestId => String.t(),
           :status => String.t()
         }
 
-  field(:data, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AnnoucementData)
+  field(:data, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AnnouncementData)
   field(:errorCode)
   field(:message)
   field(:requestId)
