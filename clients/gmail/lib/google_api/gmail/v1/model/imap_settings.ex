@@ -21,10 +21,15 @@ defmodule GoogleApi.Gmail.V1.Model.ImapSettings do
 
   ## Attributes
 
-  *   `autoExpunge` (*type:* `boolean()`, *default:* `nil`) - If this value is true, Gmail will immediately expunge a message when it is marked as deleted in IMAP. Otherwise, Gmail will wait for an update from the client before expunging messages marked as deleted.
+  *   `autoExpunge` (*type:* `boolean()`, *default:* `nil`) - If this value is true, Gmail will immediately expunge a message when it is
+      marked as deleted in IMAP.  Otherwise, Gmail will wait for an update from
+      the client before expunging messages marked as deleted.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether IMAP is enabled for the account.
-  *   `expungeBehavior` (*type:* `String.t`, *default:* `nil`) - The action that will be executed on a message when it is marked as deleted and expunged from the last visible IMAP folder.
-  *   `maxFolderSize` (*type:* `integer()`, *default:* `nil`) - An optional limit on the number of messages that an IMAP folder may contain. Legal values are 0, 1000, 2000, 5000 or 10000. A value of zero is interpreted to mean that there is no limit.
+  *   `expungeBehavior` (*type:* `String.t`, *default:* `nil`) - The action that will be executed on a message when it is marked as deleted
+      and expunged from the last visible IMAP folder.
+  *   `maxFolderSize` (*type:* `integer()`, *default:* `nil`) - An optional limit on the number of messages that an IMAP folder may
+      contain.  Legal values are 0, 1000, 2000, 5000 or 10000.  A value of zero
+      is interpreted to mean that there is no limit.
   """
 
   use GoogleApi.Gax.ModelBase

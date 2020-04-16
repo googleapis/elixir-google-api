@@ -17,14 +17,18 @@
 
 defmodule GoogleApi.Gmail.V1.Model.History do
   @moduledoc """
-  A record of a change to the user's mailbox. Each history change may affect multiple messages in multiple ways.
+  A record of a change to the user's mailbox. Each history change may affect
+  multiple messages in multiple ways.
 
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - The mailbox sequence ID.
   *   `labelsAdded` (*type:* `list(GoogleApi.Gmail.V1.Model.HistoryLabelAdded.t)`, *default:* `nil`) - Labels added to messages in this history record.
   *   `labelsRemoved` (*type:* `list(GoogleApi.Gmail.V1.Model.HistoryLabelRemoved.t)`, *default:* `nil`) - Labels removed from messages in this history record.
-  *   `messages` (*type:* `list(GoogleApi.Gmail.V1.Model.Message.t)`, *default:* `nil`) - List of messages changed in this history record. The fields for specific change types, such as messagesAdded may duplicate messages in this field. We recommend using the specific change-type fields instead of this.
+  *   `messages` (*type:* `list(GoogleApi.Gmail.V1.Model.Message.t)`, *default:* `nil`) - List of messages changed in this history record.  The fields for specific
+      change types, such as <code>messagesAdded</code> may duplicate messages in
+      this field.  We recommend using the specific change-type fields instead
+      of this.
   *   `messagesAdded` (*type:* `list(GoogleApi.Gmail.V1.Model.HistoryMessageAdded.t)`, *default:* `nil`) - Messages added to the mailbox in this history record.
   *   `messagesDeleted` (*type:* `list(GoogleApi.Gmail.V1.Model.HistoryMessageDeleted.t)`, *default:* `nil`) - Messages deleted (not Trashed) from the mailbox in this history record.
   """
