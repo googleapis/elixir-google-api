@@ -21,7 +21,7 @@ defmodule GoogleApi.Classroom.V1.Model.StateHistory do
 
   ## Attributes
 
-  *   `actorUserId` (*type:* `String.t`, *default:* `nil`) - The teacher or student who made the change
+  *   `actorUserId` (*type:* `String.t`, *default:* `nil`) - The teacher or student who made the change.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The workflow pipeline stage.
   *   `stateTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - When the submission entered this state.
   """

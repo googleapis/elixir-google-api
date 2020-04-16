@@ -42,7 +42,7 @@ defmodule GoogleApi.Classroom.V1.Model.Announcement do
   *   `individualStudentsOptions` (*type:* `GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t`, *default:* `nil`) - Identifiers of students with access to the announcement.
       This field is set only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
       If the `assigneeMode` is `INDIVIDUAL_STUDENTS`, then only students
-      specified in this field will be able to see the announcement.
+      specified in this field can see the announcement.
   *   `materials` (*type:* `list(GoogleApi.Classroom.V1.Model.Material.t)`, *default:* `nil`) - Additional materials.
 
       Announcements must have no more than 20 material items.

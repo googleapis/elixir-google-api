@@ -25,8 +25,8 @@ defmodule GoogleApi.Classroom.V1.Model.Material do
 
   *   `driveFile` (*type:* `GoogleApi.Classroom.V1.Model.SharedDriveFile.t`, *default:* `nil`) - Google Drive file material.
   *   `form` (*type:* `GoogleApi.Classroom.V1.Model.Form.t`, *default:* `nil`) - Google Forms material.
-  *   `link` (*type:* `GoogleApi.Classroom.V1.Model.Link.t`, *default:* `nil`) - Link material. On creation, will be upgraded to a more appropriate type
-      if possible, and this will be reflected in the response.
+  *   `link` (*type:* `GoogleApi.Classroom.V1.Model.Link.t`, *default:* `nil`) - Link material. On creation, this is upgraded to a more appropriate type
+      if possible, and this is reflected in the response.
   *   `youtubeVideo` (*type:* `GoogleApi.Classroom.V1.Model.YouTubeVideo.t`, *default:* `nil`) - YouTube video material.
   """
 

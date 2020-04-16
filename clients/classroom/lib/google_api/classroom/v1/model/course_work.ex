@@ -34,7 +34,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
   *   `associatedWithDeveloper` (*type:* `boolean()`, *default:* `nil`) - Whether this course work item is associated with the Developer Console
       project making the request.
 
-      See google.classroom.Work.CreateCourseWork for more
+      See CreateCourseWork for more
       details.
 
       Read-only.
@@ -61,7 +61,7 @@ defmodule GoogleApi.Classroom.V1.Model.CourseWork do
   *   `individualStudentsOptions` (*type:* `GoogleApi.Classroom.V1.Model.IndividualStudentsOptions.t`, *default:* `nil`) - Identifiers of students with access to the coursework.
       This field is set only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
       If the `assigneeMode` is `INDIVIDUAL_STUDENTS`, then only students
-      specified in this field will be assigned the coursework.
+      specified in this field are assigned the coursework.
   *   `materials` (*type:* `list(GoogleApi.Classroom.V1.Model.Material.t)`, *default:* `nil`) - Additional materials.
 
       CourseWork must have no more than 20 material items.
