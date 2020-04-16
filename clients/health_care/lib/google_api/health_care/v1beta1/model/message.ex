@@ -44,6 +44,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
   *   `parsedData` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ParsedData.t`, *default:* `nil`) - Output only. The parsed version of the raw message data.
   *   `patientIds` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.PatientId.t)`, *default:* `nil`) - All patient IDs listed in the PID-2, PID-3, and PID-4 segments of this
       message.
+  *   `schematizedData` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SchematizedData.t`, *default:* `nil`) - The parsed version of the raw message data schematized according to this
+      store's schemas and type definitions.
   *   `sendFacility` (*type:* `String.t`, *default:* `nil`) - The hospital that this message came from. MSH-4.
   *   `sendTime` (*type:* `DateTime.t`, *default:* `nil`) - The datetime the sending application sent this message. MSH-7.
   """
@@ -58,6 +60,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
           :name => String.t(),
           :parsedData => GoogleApi.HealthCare.V1beta1.Model.ParsedData.t(),
           :patientIds => list(GoogleApi.HealthCare.V1beta1.Model.PatientId.t()),
+          :schematizedData => GoogleApi.HealthCare.V1beta1.Model.SchematizedData.t(),
           :sendFacility => String.t(),
           :sendTime => DateTime.t()
         }
@@ -69,6 +72,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
   field(:name)
   field(:parsedData, as: GoogleApi.HealthCare.V1beta1.Model.ParsedData)
   field(:patientIds, as: GoogleApi.HealthCare.V1beta1.Model.PatientId, type: :list)
+  field(:schematizedData, as: GoogleApi.HealthCare.V1beta1.Model.SchematizedData)
   field(:sendFacility)
   field(:sendTime, as: DateTime)
 end
