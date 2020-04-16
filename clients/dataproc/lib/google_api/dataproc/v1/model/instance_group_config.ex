@@ -23,7 +23,12 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
 
   *   `accelerators` (*type:* `list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Optional. The Compute Engine accelerator configuration for these instances.
   *   `diskConfig` (*type:* `GoogleApi.Dataproc.V1.Model.DiskConfig.t`, *default:* `nil`) - Optional. Disk option config settings.
-  *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine image resource used for cluster instances. It can be specified or may be inferred from SoftwareConfig.image_version.
+  *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine image resource used for cluster instances.The URI can represent an image or image family.Image examples:
+      https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/[image-id]
+      projects/[project_id]/global/images/[image-id]
+      image-idImage family examples. Dataproc will use the most recent image from the family:
+      https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/family/[custom-image-family-name]
+      projects/[project_id]/global/images/family/[custom-image-family-name]If the URI is unspecified, it will be inferred from SoftwareConfig.image_version or the system default.
   *   `instanceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of instance names. Dataproc derives the names from cluster_name, num_instances, and the instance group.
   *   `isPreemptible` (*type:* `boolean()`, *default:* `nil`) - Output only. Specifies that this instance group contains preemptible instances.
   *   `machineTypeUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples:
