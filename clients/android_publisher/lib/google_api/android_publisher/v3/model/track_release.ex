@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
 
   *   `controls` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Control.t)`, *default:* `nil`) - 
   *   `countryTargeting` (*type:* `GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t`, *default:* `nil`) - 
-  *   `inAppUpdatePriority` (*type:* `integer()`, *default:* `nil`) - In-app update priority of the release. All newly added APKs in the release will be considered at this priority. in_app_update_priority can take values between [0, 5]. 5 is the highest priority. Default priority is 0. See https://developer.android.com/guide/playcore/in-app-updates.
+  *   `inAppUpdatePriority` (*type:* `integer()`, *default:* `nil`) - In-app update priority of the release. All newly added APKs in the release will be considered at this priority. in_app_update_priority can take values between [0, 5]. 5 is the highest priority. Default priority is 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The release name, used to identify this release in the Play Console UI. Not required to be unique. This is optional, if not set it will be generated from the version_name in the APKs.
   *   `pinnedVersions` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.TrackReleasePin.t)`, *default:* `nil`) - 
   *   `releaseNotes` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t)`, *default:* `nil`) - The description of what is new in the app in this release.
