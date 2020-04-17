@@ -27,9 +27,9 @@ defmodule GoogleApi.Content.V21.Model.ShippingsettingsCustomBatchRequestEntry do
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
 
       Acceptable values are:  
-      - "get" 
-      - "update"
-  *   `shippingSettings` (*type:* `GoogleApi.Content.V21.Model.ShippingSettings.t`, *default:* `nil`) - The account shipping settings to update. Only defined if the method is update.
+      - "`get`" 
+      - "`update`"
+  *   `shippingSettings` (*type:* `GoogleApi.Content.V21.Model.ShippingSettings.t`, *default:* `nil`) - The account shipping settings to update. Only defined if the method is `update`.
   """
 
   use GoogleApi.Gax.ModelBase

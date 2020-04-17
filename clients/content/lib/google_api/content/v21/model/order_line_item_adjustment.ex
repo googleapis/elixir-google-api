@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemAdjustment do
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this adjustment.
 
       Acceptable values are:  
-      - "promotion"
+      - "`promotion`"
   """
 
   use GoogleApi.Gax.ModelBase

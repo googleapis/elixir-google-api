@@ -26,11 +26,11 @@ defmodule GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchRequestEntry do
   *   `method` (*type:* `String.t`, *default:* `nil`) - Method of the batch request entry.
 
       Acceptable values are:  
-      - "delete" 
-      - "get" 
-      - "insert"
-  *   `returnPolicy` (*type:* `GoogleApi.Content.V21.Model.ReturnPolicy.t`, *default:* `nil`) - The return policy to submit. Set this only if the method is insert.
-  *   `returnPolicyId` (*type:* `String.t`, *default:* `nil`) - The return policy ID. Set this only if the method is delete or get.
+      - "`delete`" 
+      - "`get`" 
+      - "`insert`"
+  *   `returnPolicy` (*type:* `GoogleApi.Content.V21.Model.ReturnPolicy.t`, *default:* `nil`) - The return policy to submit. Set this only if the method is `insert`.
+  *   `returnPolicyId` (*type:* `String.t`, *default:* `nil`) - The return policy ID. Set this only if the method is `delete` or `get`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V2.Model.UnitInvoiceAdditionalCharge do
   *   `type` (*type:* `String.t`, *default:* `nil`) - [required] Type of the additional charge.
 
       Acceptable values are:  
-      - "shipping"
+      - "`shipping`"
   """
 
   use GoogleApi.Gax.ModelBase

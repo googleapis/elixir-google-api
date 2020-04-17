@@ -29,7 +29,7 @@ defmodule GoogleApi.Content.V2.Model.DatafeedstatusesCustomBatchRequestEntry do
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
 
       Acceptable values are:  
-      - "get"
+      - "`get`"
   """
 
   use GoogleApi.Gax.ModelBase

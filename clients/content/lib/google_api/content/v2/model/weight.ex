@@ -24,8 +24,8 @@ defmodule GoogleApi.Content.V2.Model.Weight do
   *   `unit` (*type:* `String.t`, *default:* `nil`) - Required. The weight unit.
 
       Acceptable values are:  
-      - "kg" 
-      - "lb"
+      - "`kg`" 
+      - "`lb`"
   *   `value` (*type:* `String.t`, *default:* `nil`) - Required. The weight represented as a number.
   """
 

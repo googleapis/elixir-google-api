@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V2.Model.OrderReportDisbursement do
   @moduledoc """
-  Order disbursement. All methods require the payment analyst role.
+  Order disbursement. All methods require the payment analyst role. (== resource_for v2.orderreports ==) (== resource_for v2.1.orderreports ==)
 
   ## Attributes
 

@@ -24,11 +24,11 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemShippingDetails do
   *   `deliverByDate` (*type:* `String.t`, *default:* `nil`) - Required. The delivery by date, in ISO 8601 format.
   *   `method` (*type:* `GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod.t`, *default:* `nil`) - Required. Details of the shipping method.
   *   `shipByDate` (*type:* `String.t`, *default:* `nil`) - Required. The ship by date, in ISO 8601 format.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of shipment. Indicates whether deliveryDetails or pickupDetails is applicable for this shipment.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of shipment. Indicates whether `deliveryDetails` or `pickupDetails` is applicable for this shipment.
 
       Acceptable values are:  
-      - "delivery" 
-      - "pickup"
+      - "`delivery`" 
+      - "`pickup`"
   """
 
   use GoogleApi.Gax.ModelBase

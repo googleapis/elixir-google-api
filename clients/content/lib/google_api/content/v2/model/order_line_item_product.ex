@@ -25,14 +25,14 @@ defmodule GoogleApi.Content.V2.Model.OrderLineItemProduct do
   *   `channel` (*type:* `String.t`, *default:* `nil`) - The item's channel (online or local).
 
       Acceptable values are:  
-      - "local" 
-      - "online"
+      - "`local`" 
+      - "`online`"
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
 
       Acceptable values are:  
-      - "new" 
-      - "refurbished" 
-      - "used"
+      - "`new`" 
+      - "`refurbished`" 
+      - "`used`"
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
   *   `fees` (*type:* `list(GoogleApi.Content.V2.Model.OrderLineItemProductFee.t)`, *default:* `nil`) - Associated fees at order creation time.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item.

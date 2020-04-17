@@ -28,11 +28,11 @@ defmodule GoogleApi.Content.V21.Model.DatafeedsCustomBatchRequestEntry do
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
 
       Acceptable values are:  
-      - "delete" 
-      - "fetchNow" 
-      - "get" 
-      - "insert" 
-      - "update"
+      - "`delete`" 
+      - "`fetchNow`" 
+      - "`get`" 
+      - "`insert`" 
+      - "`update`"
   """
 
   use GoogleApi.Gax.ModelBase

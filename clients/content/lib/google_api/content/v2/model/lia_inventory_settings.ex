@@ -26,15 +26,15 @@ defmodule GoogleApi.Content.V2.Model.LiaInventorySettings do
   *   `inventoryVerificationContactStatus` (*type:* `String.t`, *default:* `nil`) - The status of the verification contact.
 
       Acceptable values are:  
-      - "active" 
-      - "inactive" 
-      - "pending"
+      - "`active`" 
+      - "`inactive`" 
+      - "`pending`"
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the inventory verification process.
 
       Acceptable values are:  
-      - "active" 
-      - "inactive" 
-      - "pending"
+      - "`active`" 
+      - "`inactive`" 
+      - "`pending`"
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V21.Model.PickupServicesPickupService do
 
   ## Attributes
 
-  *   `carrierName` (*type:* `String.t`, *default:* `nil`) - The name of the carrier (e.g., "UPS"). Always present.
+  *   `carrierName` (*type:* `String.t`, *default:* `nil`) - The name of the carrier (e.g., `"UPS"`). Always present.
   *   `country` (*type:* `String.t`, *default:* `nil`) - The CLDR country code of the carrier (e.g., "US"). Always present.
-  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the pickup service (e.g., "Access point"). Always present.
+  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the pickup service (e.g., `"Access point"`). Always present.
   """
 
   use GoogleApi.Gax.ModelBase

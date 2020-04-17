@@ -24,11 +24,11 @@ defmodule GoogleApi.Content.V2.Model.PosSale do
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number.
   *   `itemId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the item.
-  *   `kind` (*type:* `String.t`, *default:* `content#posSale`) - Identifies what kind of resource this is. Value: the fixed string "content#posSale".
+  *   `kind` (*type:* `String.t`, *default:* `content#posSale`) - Identifies what kind of resource this is. Value: the fixed string "`content#posSale`"
   *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Required. The price of the item.
   *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The relative change of the available quantity. Negative for items returned.
   *   `saleId` (*type:* `String.t`, *default:* `nil`) - A unique ID to group items from the same sale event.
-  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the merchant's store. Either a storeCode inserted via the API or the code of the store in Google My Business.
+  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business.
   *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code for the item.
   *   `timestamp` (*type:* `String.t`, *default:* `nil`) - Required. The inventory timestamp, in ISO 8601 format.
   """

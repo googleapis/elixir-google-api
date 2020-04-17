@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.LocalinventoryCustomBatchResponseEntry do
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry this entry responds to.
   *   `errors` (*type:* `GoogleApi.Content.V21.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
-  *   `kind` (*type:* `String.t`, *default:* `content#localinventoryCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#localinventoryCustomBatchResponseEntry".
+  *   `kind` (*type:* `String.t`, *default:* `content#localinventoryCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "`content#localinventoryCustomBatchResponseEntry`"
   """
 
   use GoogleApi.Gax.ModelBase

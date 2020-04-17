@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V2.Model.InventoryCustomBatchRequestEntry do
   *   `inventory` (*type:* `GoogleApi.Content.V2.Model.Inventory.t`, *default:* `nil`) - Price and availability of the product.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product for which to update price and availability.
-  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - The code of the store for which to update price and availability. Use online to update price and availability of an online product.
+  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - The code of the store for which to update price and availability. Use `online` to update price and availability of an online product.
   """
 
   use GoogleApi.Gax.ModelBase

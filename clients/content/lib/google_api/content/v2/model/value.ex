@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Content.V2.Model.Value do
   @moduledoc """
-  The single value of a rate group or the value of a rate group table's cell. Exactly one of noShipping, flatRate, pricePercentage, carrierRateName, subtableName must be set.
+  The single value of a rate group or the value of a rate group table's cell. Exactly one of `noShipping`, `flatRate`, `pricePercentage`, `carrierRateName`, `subtableName` must be set.
 
   ## Attributes
 
   *   `carrierRateName` (*type:* `String.t`, *default:* `nil`) - The name of a carrier rate referring to a carrier rate defined in the same rate group. Can only be set if all other fields are not set.
   *   `flatRate` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - A flat rate. Can only be set if all other fields are not set.
   *   `noShipping` (*type:* `boolean()`, *default:* `nil`) - If true, then the product can't ship. Must be true when set, can only be set if all other fields are not set.
-  *   `pricePercentage` (*type:* `String.t`, *default:* `nil`) - A percentage of the price represented as a number in decimal notation (e.g., "5.4"). Can only be set if all other fields are not set.
+  *   `pricePercentage` (*type:* `String.t`, *default:* `nil`) - A percentage of the price represented as a number in decimal notation (e.g., `"5.4"`). Can only be set if all other fields are not set.
   *   `subtableName` (*type:* `String.t`, *default:* `nil`) - The name of a subtable. Can only be set in table cells (i.e., not for single values), and only if all other fields are not set.
   """
 

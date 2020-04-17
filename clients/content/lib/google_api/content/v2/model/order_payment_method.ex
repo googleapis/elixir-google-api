@@ -29,13 +29,13 @@ defmodule GoogleApi.Content.V2.Model.OrderPaymentMethod do
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of instrument.
 
       Acceptable values are:  
-      - "AMEX" 
-      - "DISCOVER" 
-      - "JCB" 
-      - "MASTERCARD" 
-      - "UNIONPAY" 
-      - "VISA" 
-      - ""
+      - "`AMEX`" 
+      - "`DISCOVER`" 
+      - "`JCB`" 
+      - "`MASTERCARD`" 
+      - "`UNIONPAY`" 
+      - "`VISA`" 
+      - "``"
   """
 
   use GoogleApi.Gax.ModelBase

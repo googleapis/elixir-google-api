@@ -27,7 +27,7 @@ defmodule GoogleApi.Content.V21.Model.LocalinventoryCustomBatchRequestEntry do
   *   `method` (*type:* `String.t`, *default:* `nil`) - Method of the batch request entry.
 
       Acceptable values are:  
-      - "insert"
+      - "`insert`"
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product for which to update local inventory.
   """
 

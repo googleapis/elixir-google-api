@@ -31,9 +31,9 @@ defmodule GoogleApi.Content.V2.Model.AccountStatusDataQualityIssue do
   *   `location` (*type:* `String.t`, *default:* `nil`) - 
   *   `numItems` (*type:* `integer()`, *default:* `nil`) - 
   *   `severity` (*type:* `String.t`, *default:* `nil`) - Acceptable values are:  
-      - "critical" 
-      - "error" 
-      - "suggestion"
+      - "`critical`" 
+      - "`error`" 
+      - "`suggestion`"
   *   `submittedValue` (*type:* `String.t`, *default:* `nil`) - 
   """
 

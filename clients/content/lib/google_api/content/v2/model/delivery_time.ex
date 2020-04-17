@@ -24,12 +24,12 @@ defmodule GoogleApi.Content.V2.Model.DeliveryTime do
   *   `cutoffTime` (*type:* `GoogleApi.Content.V2.Model.CutoffTime.t`, *default:* `nil`) - Business days cutoff time definition. If not configured the cutoff time will be defaulted to 8AM PST.
   *   `handlingBusinessDayConfig` (*type:* `GoogleApi.Content.V2.Model.BusinessDayConfig.t`, *default:* `nil`) - The business days during which orders can be handled. If not provided, Monday to Friday business days will be assumed.
   *   `holidayCutoffs` (*type:* `list(GoogleApi.Content.V2.Model.HolidayCutoff.t)`, *default:* `nil`) - Holiday cutoff definitions. If configured, they specify order cutoff times for holiday-specific shipping.
-  *   `maxHandlingTimeInDays` (*type:* `integer()`, *default:* `nil`) - Maximum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Must be greater than or equal to minHandlingTimeInDays.
-  *   `maxTransitTimeInDays` (*type:* `integer()`, *default:* `nil`) - Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to minTransitTimeInDays.
+  *   `maxHandlingTimeInDays` (*type:* `integer()`, *default:* `nil`) - Maximum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Must be greater than or equal to `minHandlingTimeInDays`.
+  *   `maxTransitTimeInDays` (*type:* `integer()`, *default:* `nil`) - Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to `minTransitTimeInDays`.
   *   `minHandlingTimeInDays` (*type:* `integer()`, *default:* `nil`) - Minimum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped.
-  *   `minTransitTimeInDays` (*type:* `integer()`, *default:* `nil`) - Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Either {min,max}TransitTimeInDays or transitTimeTable must be set, but not both.
+  *   `minTransitTimeInDays` (*type:* `integer()`, *default:* `nil`) - Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Either `{min,max}TransitTimeInDays` or `transitTimeTable` must be set, but not both.
   *   `transitBusinessDayConfig` (*type:* `GoogleApi.Content.V2.Model.BusinessDayConfig.t`, *default:* `nil`) - The business days during which orders can be in-transit. If not provided, Monday to Friday business days will be assumed.
-  *   `transitTimeTable` (*type:* `GoogleApi.Content.V2.Model.TransitTable.t`, *default:* `nil`) - Transit time table, number of business days spent in transit based on row and column dimensions. Either {min,max}TransitTimeInDays or transitTimeTable can be set, but not both.
+  *   `transitTimeTable` (*type:* `GoogleApi.Content.V2.Model.TransitTable.t`, *default:* `nil`) - Transit time table, number of business days spent in transit based on row and column dimensions. Either `{min,max}TransitTimeInDays` or `transitTimeTable` can be set, but not both.
   """
 
   use GoogleApi.Gax.ModelBase

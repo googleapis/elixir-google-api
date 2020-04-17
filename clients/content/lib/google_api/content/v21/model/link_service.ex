@@ -24,15 +24,15 @@ defmodule GoogleApi.Content.V21.Model.LinkService do
   *   `service` (*type:* `String.t`, *default:* `nil`) - Service provided to or by the linked account.
 
       Acceptable values are:  
-      - "shoppingActionsOrderManagement" 
-      - "shoppingActionsProductManagement" 
-      - "shoppingAdsProductManagement"
+      - "`shoppingActionsOrderManagement`" 
+      - "`shoppingActionsProductManagement`" 
+      - "`shoppingAdsProductManagement`"
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the link
 
       Acceptable values are:  
-      - "active" 
-      - "inactive" 
-      - "pending"
+      - "`active`" 
+      - "`inactive`" 
+      - "`pending`"
   """
 
   use GoogleApi.Gax.ModelBase

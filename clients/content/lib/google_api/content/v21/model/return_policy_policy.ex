@@ -26,10 +26,10 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicyPolicy do
   *   `type` (*type:* `String.t`, *default:* `nil`) - Policy type. Use "lastReturnDate" for seasonal overrides only. Note that for most items a minimum of 30 days is required for returns. Exceptions may be made for electronics or non-returnable items such as food, perishables, and living things. A policy of less than 30 days can only be applied to those items.
 
       Acceptable values are:  
-      - "lastReturnDate" 
-      - "lifetimeReturns" 
-      - "noReturns" 
-      - "numberOfDaysAfterDelivery"
+      - "`lastReturnDate`" 
+      - "`lifetimeReturns`" 
+      - "`noReturns`" 
+      - "`numberOfDaysAfterDelivery`"
   """
 
   use GoogleApi.Gax.ModelBase

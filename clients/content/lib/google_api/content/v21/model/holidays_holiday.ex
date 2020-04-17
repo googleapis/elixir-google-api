@@ -29,14 +29,14 @@ defmodule GoogleApi.Content.V21.Model.HolidaysHoliday do
   *   `type` (*type:* `String.t`, *default:* `nil`) - The holiday type. Always present.
 
       Acceptable values are:  
-      - "Christmas" 
-      - "Easter" 
-      - "Father's Day" 
-      - "Halloween" 
-      - "Independence Day (USA)" 
-      - "Mother's Day" 
-      - "Thanksgiving" 
-      - "Valentine's Day"
+      - "`Christmas`" 
+      - "`Easter`" 
+      - "`Father's Day`" 
+      - "`Halloween`" 
+      - "`Independence Day (USA)`" 
+      - "`Mother's Day`" 
+      - "`Thanksgiving`" 
+      - "`Valentine's Day`"
   """
 
   use GoogleApi.Gax.ModelBase

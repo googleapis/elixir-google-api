@@ -22,19 +22,19 @@ defmodule GoogleApi.Content.V2.Model.Datafeed do
   ## Attributes
 
   *   `attributeLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language in which the attributes are defined in the data feed.
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - [DEPRECATED] Please use targets[].language instead. The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for targetCountry.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - [DEPRECATED] Please use targets[].language instead. The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for `targetCountry`.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Required. The type of data feed. For product inventory feeds, only feeds for local stores, not online stores, are supported.
 
       Acceptable values are:  
-      - "local products" 
-      - "product inventory" 
-      - "products"
+      - "`local products`" 
+      - "`product inventory`" 
+      - "`products`"
   *   `fetchSchedule` (*type:* `GoogleApi.Content.V2.Model.DatafeedFetchSchedule.t`, *default:* `nil`) - Fetch schedule for the feed file.
   *   `fileName` (*type:* `String.t`, *default:* `nil`) - Required. The filename of the feed. All feeds must have a unique file name.
   *   `format` (*type:* `GoogleApi.Content.V2.Model.DatafeedFormat.t`, *default:* `nil`) - Format of the feed file.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required for update. The ID of the data feed.
   *   `intendedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - [DEPRECATED] Please use targets[].includedDestinations instead. The list of intended destinations (corresponds to checked check boxes in Merchant Center).
-  *   `kind` (*type:* `String.t`, *default:* `content#datafeed`) - Identifies what kind of resource this is. Value: the fixed string "content#datafeed".
+  *   `kind` (*type:* `String.t`, *default:* `content#datafeed`) - Identifies what kind of resource this is. Value: the fixed string "`content#datafeed`"
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required for insert. A descriptive name of the data feed.
   *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - [DEPRECATED] Please use targets[].country instead. The country where the items in the feed will be included in the search index, represented as a CLDR territory code.
   *   `targets` (*type:* `list(GoogleApi.Content.V2.Model.DatafeedTarget.t)`, *default:* `nil`) - The targets this feed should apply to (country, language, destinations).

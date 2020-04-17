@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V21.Model.ProductstatusesCustomBatchRequestEntry do
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
 
       Acceptable values are:  
-      - "get"
+      - "`get`"
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product whose status to get.
   """
 

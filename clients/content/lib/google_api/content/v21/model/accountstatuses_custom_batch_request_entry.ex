@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V21.Model.AccountstatusesCustomBatchRequestEntry do
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
 
       Acceptable values are:  
-      - "get"
+      - "`get`"
   """
 
   use GoogleApi.Gax.ModelBase

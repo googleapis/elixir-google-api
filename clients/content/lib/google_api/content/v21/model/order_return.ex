@@ -24,30 +24,30 @@ defmodule GoogleApi.Content.V21.Model.OrderReturn do
   *   `actor` (*type:* `String.t`, *default:* `nil`) - The actor that created the refund.
 
       Acceptable values are:  
-      - "customer" 
-      - "googleBot" 
-      - "googleCustomerService" 
-      - "googlePayments" 
-      - "googleSabre" 
-      - "merchant"
+      - "`customer`" 
+      - "`googleBot`" 
+      - "`googleCustomerService`" 
+      - "`googlePayments`" 
+      - "`googleSabre`" 
+      - "`merchant`"
   *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item has been created, in ISO 8601 format.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - Quantity that is returned.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
 
       Acceptable values are:  
-      - "customerDiscretionaryReturn" 
-      - "customerInitiatedMerchantCancel" 
-      - "deliveredTooLate" 
-      - "expiredItem" 
-      - "invalidCoupon" 
-      - "malformedShippingAddress" 
-      - "other" 
-      - "productArrivedDamaged" 
-      - "productNotAsDescribed" 
-      - "qualityNotAsExpected" 
-      - "undeliverableShippingAddress" 
-      - "unsupportedPoBoxAddress" 
-      - "wrongProductShipped"
+      - "`customerDiscretionaryReturn`" 
+      - "`customerInitiatedMerchantCancel`" 
+      - "`deliveredTooLate`" 
+      - "`expiredItem`" 
+      - "`invalidCoupon`" 
+      - "`malformedShippingAddress`" 
+      - "`other`" 
+      - "`productArrivedDamaged`" 
+      - "`productNotAsDescribed`" 
+      - "`qualityNotAsExpected`" 
+      - "`undeliverableShippingAddress`" 
+      - "`unsupportedPoBoxAddress`" 
+      - "`wrongProductShipped`"
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 

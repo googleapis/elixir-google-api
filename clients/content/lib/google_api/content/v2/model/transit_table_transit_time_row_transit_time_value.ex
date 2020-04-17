@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V2.Model.TransitTableTransitTimeRowTransitTimeValue 
 
   ## Attributes
 
-  *   `maxTransitTimeInDays` (*type:* `integer()`, *default:* `nil`) - Must be greater than or equal to minTransitTimeInDays.
+  *   `maxTransitTimeInDays` (*type:* `integer()`, *default:* `nil`) - Must be greater than or equal to `minTransitTimeInDays`.
   *   `minTransitTimeInDays` (*type:* `integer()`, *default:* `nil`) - Transit time range (min-max) in business days. 0 means same day delivery, 1 means next day delivery.
   """
 

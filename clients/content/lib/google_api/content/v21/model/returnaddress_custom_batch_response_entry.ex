@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.ReturnaddressCustomBatchResponseEntry do
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry to which this entry responds.
   *   `errors` (*type:* `GoogleApi.Content.V21.Model.Errors.t`, *default:* `nil`) - A list of errors defined if, and only if, the request failed.
-  *   `kind` (*type:* `String.t`, *default:* `content#returnaddressCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#returnaddressCustomBatchResponseEntry".
+  *   `kind` (*type:* `String.t`, *default:* `content#returnaddressCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "`content#returnaddressCustomBatchResponseEntry`"
   *   `returnAddress` (*type:* `GoogleApi.Content.V21.Model.ReturnAddress.t`, *default:* `nil`) - The retrieved return address.
   """
 

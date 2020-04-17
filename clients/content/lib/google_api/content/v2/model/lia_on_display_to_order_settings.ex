@@ -25,9 +25,9 @@ defmodule GoogleApi.Content.V2.Model.LiaOnDisplayToOrderSettings do
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the ?On display to order? feature.
 
       Acceptable values are:  
-      - "active" 
-      - "inactive" 
-      - "pending"
+      - "`active`" 
+      - "`inactive`" 
+      - "`pending`"
   """
 
   use GoogleApi.Gax.ModelBase
