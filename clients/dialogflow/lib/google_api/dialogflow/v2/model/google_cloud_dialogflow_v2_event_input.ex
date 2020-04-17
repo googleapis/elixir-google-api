@@ -31,6 +31,20 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput do
       the same session do not necessarily need to specify the same language.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the event.
   *   `parameters` (*type:* `map()`, *default:* `nil`) - The collection of parameters associated with the event.
+
+      Depending on your protocol or client library language, this is a
+      map, associative array, symbol table, dictionary, or JSON object
+      composed of a collection of (MapKey, MapValue) pairs:
+
+      -   MapKey type: string
+      -   MapKey value: parameter name
+      -   MapValue type:
+          -   If parameter's entity type is a composite entity: map
+          -   Else: string or number, depending on parameter value type
+      -   MapValue value:
+          -   If parameter's entity type is a composite entity:
+              map from composite entity property names to property values
+          -   Else: parameter value
   """
 
   use GoogleApi.Gax.ModelBase
