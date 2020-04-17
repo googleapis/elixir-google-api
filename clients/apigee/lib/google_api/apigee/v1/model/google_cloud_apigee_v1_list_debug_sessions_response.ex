@@ -21,17 +21,17 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListDebugSessionsResponse
 
   ## Attributes
 
-  *   `sessions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Sesssion.t)`, *default:* `nil`) - Session info that includes debug session ID and the first transaction
+  *   `sessions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session.t)`, *default:* `nil`) - Session info that includes debug session ID and the first transaction
       creation timestamp.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sessions => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Sesssion.t())
+          :sessions => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session.t())
         }
 
-  field(:sessions, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Sesssion, type: :list)
+  field(:sessions, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session, type: :list)
 end
 
 defimpl Poison.Decoder,
