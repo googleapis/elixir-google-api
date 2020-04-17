@@ -1136,12 +1136,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads the deobfuscation file of the specified APK. If a deobfuscation file already exists, it will be replaced.
+  Uploads the deobfuscation file of the specified APK. If a deobfuscation or symbolication file already exists, it will be replaced. See https://developer.android.com/studio/build/shrink-code to learn more about deobfuscation files.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscation files are being uploaded; for example, "com.spiffygame".
   *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
   *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose deobfuscation file is being uploaded.
   *   `deobfuscation_file_type` (*type:* `String.t`) - 
@@ -1214,12 +1214,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads the deobfuscation file of the specified APK. If a deobfuscation file already exists, it will be replaced.
+  Uploads the deobfuscation file of the specified APK. If a deobfuscation or symbolication file already exists, it will be replaced. See https://developer.android.com/studio/build/shrink-code to learn more about deobfuscation files.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscation files are being uploaded; for example, "com.spiffygame".
   *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
   *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose deobfuscation file is being uploaded.
   *   `deobfuscation_file_type` (*type:* `String.t`) - 
@@ -1304,12 +1304,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads the deobfuscation file of the specified APK. If a deobfuscation file already exists, it will be replaced.
+  Uploads the deobfuscation file of the specified APK. If a deobfuscation or symbolication file already exists, it will be replaced. See https://developer.android.com/studio/build/shrink-code to learn more about deobfuscation files.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscation files are being uploaded; for example, "com.spiffygame".
   *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
   *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose deobfuscation file is being uploaded.
   *   `deobfuscation_file_type` (*type:* `String.t`) - 
@@ -1381,12 +1381,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
   end
 
   @doc """
-  Uploads the deobfuscation file of the specified APK. If a deobfuscation file already exists, it will be replaced.
+  Uploads the deobfuscation file of the specified APK. If a deobfuscation or symbolication file already exists, it will be replaced. See https://developer.android.com/studio/build/shrink-code to learn more about deobfuscation files.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscatiuon files are being uploaded; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Unique identifier of the Android app for which the deobfuscation files are being uploaded; for example, "com.spiffygame".
   *   `edit_id` (*type:* `String.t`) - Unique identifier for this edit.
   *   `apk_version_code` (*type:* `integer()`) - The version code of the APK whose deobfuscation file is being uploaded.
   *   `deobfuscation_file_type` (*type:* `String.t`) - 
