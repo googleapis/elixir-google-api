@@ -22,7 +22,7 @@ defmodule GoogleApi.File.V1.Model.Instance do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was created.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the instance (2048 characters or less).
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the instance (2048 characters or less).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Server-specified ETag for the instance resource to prevent simultaneous
       updates from overwriting each other.
   *   `fileShares` (*type:* `list(GoogleApi.File.V1.Model.FileShareConfig.t)`, *default:* `nil`) - File system shares on the instance.
