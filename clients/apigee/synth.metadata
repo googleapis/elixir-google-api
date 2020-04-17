@@ -4,15 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "12402cb7d8cabfae36711583f38caf0f1d227340"
+        "sha": "5cce11140faa136bc550a7327fed4acb19f9fa67"
       }
     },
     {
       "git": {
         "name": "elixir-google-api",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "12402cb7d8cabfae36711583f38caf0f1d227340",
-        "log": "12402cb7d8cabfae36711583f38caf0f1d227340\nRegenerate File client (#4478)\n\n\nc0c5d43164e80edcd14e2ad4d4df17ee3970a50d\nRegenerate FirebaseHosting client (#4479)\n\n\n8e54057851220f5dc7e9acfea274fc618a5ca5e8\nRegenerate Slides client (#4480)\n\n\n4ce2195c626212440ba4d7b4f8714d3c2054b159\nfix: Previous version bumps should not trigger minor changes\n\n\n72f64426e800fe4b13b411cfe590abc20e8e3ae7\nRegenerate Storage client (#4468)\n\n\n2e4b97441eba4ef63d5a41157f0537d6d62c8af8\nRegenerate Vision client (#4469)\n\n\n43a899d7b45fdaa2712bf08c0e57e2f9ddd638d6\nRegenerate DisplayVideo client (#4434)\n\n\n4b8820a5fccb51d84580af6b372402bd3a3f6af8\nRegenerate GameServices client (#4435)\n\n\na8a30cf7740f0a99e97ca7b63e5c24fa76652f20\nRegenerate GamesConfiguration client (#4436)\n\n\n65dfe4053bf50269c7b68d281eacf9116ce8cc3b\nRegenerate ManagedIdentities client (#4437)\n\n\n8f4f59df6e9a2798418bf5f875bc48451fbf8af4\nRegenerate Memcache client (#4438)\n\n\nc0d3725c8d012711f50d2354cbb548eefd0cb38b\nRegenerate NetworkManagement client (#4439)\n\n\n0dad3dfee343f49c911abdb64bf07d2988d699b6\nRegenerate OSConfig client (#4440)\n\n\nd09ed78f13db811371665bcc6f851a3239dfbb81\nRegenerate Redis client (#4441)\n\n\na71fb89fc2e6fcd3d17d67e1265b33686e6db2c1\nRegenerate Composer client (#4432)\n\n\ned5460f4f4d27b189ac8884c9eab629079650a02\nRegenerate Apigee client (#4431)\n\n\n27b5cfdff3c59a8813ca6442714d06f544ed2657\nRegenerate AndroidManagement client (#4430)\n\n\n60acdd4c27ffae7397b754202a4bba83ccbc6bdc\nRegenerate AlertCenter client (#4429)\n\n\n9149a41d1c915ac029252b3e45fd2d8b87eb8ac5\nRegenerate Admin client (#4428)\n\n\n"
+        "sha": "5cce11140faa136bc550a7327fed4acb19f9fa67"
       }
     }
   ]
