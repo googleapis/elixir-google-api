@@ -32,10 +32,12 @@ defmodule GoogleApi.HomeGraph.V1.Model.Device do
   *   `id` (*type:* `String.t`, *default:* `nil`) - Third-party device ID.
   *   `name` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceNames.t`, *default:* `nil`) - Names given to this device by your smart home Action.
   *   `notificationSupportedByAgent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether your smart home Action will report notifications
-      to Google for this device via ReportStateAndNotification.
+      to Google for this device via
+      ReportStateAndNotification.
 
       If your smart home Action enables users to control device notifications,
-      you should update this field and call RequestSyncDevices.
+      you should update this field and call
+      RequestSyncDevices.
   *   `otherDeviceIds` (*type:* `list(GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId.t)`, *default:* `nil`) - Alternate IDs associated with this device.
       This is used to identify cloud synced devices enabled for [local
       fulfillment](https://developers.google.com/assistant/smarthome/concepts/local).
@@ -50,7 +52,8 @@ defmodule GoogleApi.HomeGraph.V1.Model.Device do
       See [device
       types](https://developers.google.com/assistant/smarthome/guides).
   *   `willReportState` (*type:* `boolean()`, *default:* `nil`) - Indicates whether your smart home Action will report state of this device
-      to Google via ReportStateAndNotification.
+      to Google via
+      ReportStateAndNotification.
   """
 
   use GoogleApi.Gax.ModelBase
