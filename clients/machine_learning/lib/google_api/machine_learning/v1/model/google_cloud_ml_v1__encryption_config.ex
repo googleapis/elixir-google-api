@@ -22,9 +22,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig do
 
   ## Attributes
 
-  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The Cloud KMS resource identifier of the customer managed encryption key
-      used to protect a resource, such as a training job. Has the form:
-      `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The Cloud KMS resource identifier of the customer-managed encryption key
+      used to protect a resource, such as a training job. It has the following
+      format:
+      `projects/{PROJECT_ID}/locations/{REGION}/keyRings/{KEY_RING_NAME}/cryptoKeys/{KEY_NAME}`
   """
 
   use GoogleApi.Gax.ModelBase

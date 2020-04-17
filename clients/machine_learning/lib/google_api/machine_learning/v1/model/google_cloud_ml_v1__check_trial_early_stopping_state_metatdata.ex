@@ -23,9 +23,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CheckTrialEarlyStop
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time operation was submitted.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation was submitted.
   *   `study` (*type:* `String.t`, *default:* `nil`) - The name of the study that the trial belongs to.
-  *   `trial` (*type:* `String.t`, *default:* `nil`) - The Trial name.
+  *   `trial` (*type:* `String.t`, *default:* `nil`) - The trial name.
   """
 
   use GoogleApi.Gax.ModelBase

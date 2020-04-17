@@ -23,7 +23,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig do
 
   *   `algorithm` (*type:* `String.t`, *default:* `nil`) - The search algorithm specified for the study.
   *   `automatedStoppingConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingConfig.t`, *default:* `nil`) - Configuration for automated stopping of unpromising Trials.
-  *   `metrics` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_MetricSpec.t)`, *default:* `nil`) - 
+  *   `metrics` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_MetricSpec.t)`, *default:* `nil`) - Metric specs for the study.
   *   `parameters` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StudyConfig_ParameterSpec.t)`, *default:* `nil`) - Required. The set of parameters to tune.
   """
 

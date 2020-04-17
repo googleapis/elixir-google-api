@@ -1472,8 +1472,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Adds a measurement of the objective metrics to a Trial. This measurement
-  is assumed to have been taken before the Trial is complete.
+  Adds a measurement of the objective metrics to a trial. This measurement
+  is assumed to have been taken before the trial is complete.
 
   ## Parameters
 
@@ -1561,7 +1561,10 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Checks whether a trial should stop or not.
+  Checks  whether a trial should stop or not. Returns a
+  long-running operation. When the operation is successful,
+  it will contain a
+  CheckTrialEarlyStoppingStateResponse.
 
   ## Parameters
 
@@ -1649,12 +1652,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Marks a Trial as complete.
+  Marks a trial as complete.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The trial name.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The trial name.metat
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `studies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `trials_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1737,7 +1740,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Adds a user provided trial to a Study.
+  Adds a user provided trial to a study.
 
   ## Parameters
 
@@ -1821,7 +1824,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a Trial.
+  Deletes a trial.
 
   ## Parameters
 
@@ -1907,7 +1910,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Gets a Trial.
+  Gets a trial.
 
   ## Parameters
 
@@ -1993,7 +1996,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Lists the trials associated with a Study.
+  Lists the trials associated with a study.
 
   ## Parameters
 
@@ -2163,8 +2166,11 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   end
 
   @doc """
-  Returns a long-running operation associated with the generation of trial
-  suggestions.
+  Adds one or more trials to a study, with parameter values
+  suggested by AI Platform Optimizer. Returns a long-running
+  operation associated with the generation of trial suggestions.
+  When this long-running operation succeeds, it will contain
+  a SuggestTrialsResponse.
 
   ## Parameters
 

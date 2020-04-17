@@ -25,10 +25,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingCo
 
   ## Attributes
 
-  *   `useElapsedTime` (*type:* `boolean()`, *default:* `nil`) - True if median automated stopping rule applies on
-      measurement.use_elapsed_time. it means that elapsed_time field of
-      latest measurement of current trial is used to compute median objective
-      value for each completed trials.
+  *   `useElapsedTime` (*type:* `boolean()`, *default:* `nil`) - If true, the median automated stopping rule applies to
+      measurement.use_elapsed_time, which means the elapsed_time field of
+      the current trial's
+      latest measurement is used to compute the median objective
+      value for each completed trial.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListStudiesResponse
 
   ## Attributes
 
-  *   `studies` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t)`, *default:* `nil`) - The Studies associated with the project.
+  *   `studies` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t)`, *default:* `nil`) - The studies associated with the project.
   """
 
   use GoogleApi.Gax.ModelBase

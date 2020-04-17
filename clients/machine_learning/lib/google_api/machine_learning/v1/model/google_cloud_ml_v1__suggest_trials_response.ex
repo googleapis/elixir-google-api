@@ -22,10 +22,10 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SuggestTrialsRespon
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time operation processing completed.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time operation was started.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which operation processing completed.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation was started.
   *   `studyState` (*type:* `String.t`, *default:* `nil`) - The state of the study.
-  *   `trials` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t)`, *default:* `nil`) - A list of Trials.
+  *   `trials` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t)`, *default:* `nil`) - A list of trials.
   """
 
   use GoogleApi.Gax.ModelBase

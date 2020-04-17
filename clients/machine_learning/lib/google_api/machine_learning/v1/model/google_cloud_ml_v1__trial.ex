@@ -17,23 +17,23 @@
 
 defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial do
   @moduledoc """
-  A message representing a Trial.
+  A message representing a trial.
 
   ## Attributes
 
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - Output only. The identifier of the client that originally requested this trial.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the Trial's status changed to COMPLETED.
-  *   `finalMeasurement` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t`, *default:* `nil`) - The final Measurement containing the objective value.
-  *   `infeasibleReason` (*type:* `String.t`, *default:* `nil`) - Output only. A human readable string describing why the Trial is
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the trial's status changed to COMPLETED.
+  *   `finalMeasurement` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t`, *default:* `nil`) - The final measurement containing the objective value.
+  *   `infeasibleReason` (*type:* `String.t`, *default:* `nil`) - Output only. A human readable string describing why the trial is
       infeasible. This should only be set if trial_infeasible is true.
   *   `measurements` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Measurement.t)`, *default:* `nil`) - A list of measurements that are strictly lexicographically
       ordered by their induced tuples (steps, elapsed_time).
       These are used for early stopping computations.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the trial assigned by the service.
-  *   `parameters` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial_Parameter.t)`, *default:* `nil`) - The parameters of the Trial.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the Trial was started.
+  *   `parameters` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial_Parameter.t)`, *default:* `nil`) - The parameters of the trial.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the trial was started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The detailed state of a trial.
-  *   `trialInfeasible` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the parameters in this trial should not be attempted again.
+  *   `trialInfeasible` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, the parameters in this trial are not attempted again.
   """
 
   use GoogleApi.Gax.ModelBase

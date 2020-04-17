@@ -23,9 +23,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CheckTrialEarlyStop
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time operation processing completed.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which operation processing completed.
   *   `shouldStop` (*type:* `boolean()`, *default:* `nil`) - True if the Trial should stop.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time operation was started.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation was started.
   """
 
   use GoogleApi.Gax.ModelBase
