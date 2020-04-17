@@ -28,8 +28,8 @@ defmodule GoogleApi.SecretManager.V1.Model.SetIamPolicyRequest do
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
       the fields in the mask will be modified. If no mask is provided, the
       following default mask is used:
-      paths: "bindings, etag"
-      This field is only used by Cloud IAM.
+
+      `paths: "bindings, etag"`
   """
 
   use GoogleApi.Gax.ModelBase
