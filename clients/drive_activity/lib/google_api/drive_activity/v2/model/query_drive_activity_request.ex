@@ -24,7 +24,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.QueryDriveActivityRequest do
   *   `ancestorName` (*type:* `String.t`, *default:* `nil`) - Return activities for this Drive folder and all children and descendants.
       The format is "items/ITEM_ID".
   *   `consolidationStrategy` (*type:* `GoogleApi.DriveActivity.V2.Model.ConsolidationStrategy.t`, *default:* `nil`) - Details on how to consolidate related actions that make up the activity. If
-      not set, then related actions will not be consolidated.
+      not set, then related actions are not consolidated.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - The filtering for items returned from this query request. The format of the
       filter string is a sequence of expressions, joined by an optional "AND",
       where each expression is of the form "field operator value".
@@ -46,8 +46,8 @@ defmodule GoogleApi.DriveActivity.V2.Model.QueryDriveActivityRequest do
             - <tt>-detail.action_detail_case:MOVE</tt>
   *   `itemName` (*type:* `String.t`, *default:* `nil`) - Return activities for this Drive item. The format is
       "items/ITEM_ID".
-  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The requested number of activity to return. If not set, a default value
-      will be used.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The requested number of activities to return. If not set, a default value
+      is used.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - The next_page_token value returned from a previous QueryDriveActivity
       request, if any.
   """
