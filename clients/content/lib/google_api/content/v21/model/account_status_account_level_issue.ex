@@ -29,9 +29,9 @@ defmodule GoogleApi.Content.V21.Model.AccountStatusAccountLevelIssue do
   *   `severity` (*type:* `String.t`, *default:* `nil`) - Severity of the issue.
 
       Acceptable values are:  
-      - "critical" 
-      - "error" 
-      - "suggestion"
+      - "`critical`" 
+      - "`error`" 
+      - "`suggestion`"
   *   `title` (*type:* `String.t`, *default:* `nil`) - Short description of the issue.
   """
 

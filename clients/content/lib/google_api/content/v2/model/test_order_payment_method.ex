@@ -27,16 +27,16 @@ defmodule GoogleApi.Content.V2.Model.TestOrderPaymentMethod do
   *   `predefinedBillingAddress` (*type:* `String.t`, *default:* `nil`) - The billing address.
 
       Acceptable values are:  
-      - "dwight" 
-      - "jim" 
-      - "pam"
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of instrument. Note that real orders might have different values than the four values accepted by createTestOrder.
+      - "`dwight`" 
+      - "`jim`" 
+      - "`pam`"
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of instrument. Note that real orders might have different values than the four values accepted by `createTestOrder`.
 
       Acceptable values are:  
-      - "AMEX" 
-      - "DISCOVER" 
-      - "MASTERCARD" 
-      - "VISA"
+      - "`AMEX`" 
+      - "`DISCOVER`" 
+      - "`MASTERCARD`" 
+      - "`VISA`"
   """
 
   use GoogleApi.Gax.ModelBase

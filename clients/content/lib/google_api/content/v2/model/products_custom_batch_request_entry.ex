@@ -26,11 +26,11 @@ defmodule GoogleApi.Content.V2.Model.ProductsCustomBatchRequestEntry do
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
 
       Acceptable values are:  
-      - "delete" 
-      - "get" 
-      - "insert"
-  *   `product` (*type:* `GoogleApi.Content.V2.Model.Product.t`, *default:* `nil`) - The product to insert. Only required if the method is insert.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to get or delete. Only defined if the method is get or delete.
+      - "`delete`" 
+      - "`get`" 
+      - "`insert`"
+  *   `product` (*type:* `GoogleApi.Content.V2.Model.Product.t`, *default:* `nil`) - The product to insert. Only required if the method is `insert`.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product to get or delete. Only defined if the method is `get` or `delete`.
   """
 
   use GoogleApi.Gax.ModelBase

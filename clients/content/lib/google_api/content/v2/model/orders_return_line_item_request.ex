@@ -28,19 +28,19 @@ defmodule GoogleApi.Content.V2.Model.OrdersReturnLineItemRequest do
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
 
       Acceptable values are:  
-      - "customerDiscretionaryReturn" 
-      - "customerInitiatedMerchantCancel" 
-      - "deliveredTooLate" 
-      - "expiredItem" 
-      - "invalidCoupon" 
-      - "malformedShippingAddress" 
-      - "other" 
-      - "productArrivedDamaged" 
-      - "productNotAsDescribed" 
-      - "qualityNotAsExpected" 
-      - "undeliverableShippingAddress" 
-      - "unsupportedPoBoxAddress" 
-      - "wrongProductShipped"
+      - "`customerDiscretionaryReturn`" 
+      - "`customerInitiatedMerchantCancel`" 
+      - "`deliveredTooLate`" 
+      - "`expiredItem`" 
+      - "`invalidCoupon`" 
+      - "`malformedShippingAddress`" 
+      - "`other`" 
+      - "`productArrivedDamaged`" 
+      - "`productNotAsDescribed`" 
+      - "`qualityNotAsExpected`" 
+      - "`undeliverableShippingAddress`" 
+      - "`unsupportedPoBoxAddress`" 
+      - "`wrongProductShipped`"
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 

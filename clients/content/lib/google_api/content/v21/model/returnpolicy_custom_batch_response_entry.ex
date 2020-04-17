@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchResponseEntry do
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - The ID of the request entry to which this entry responds.
   *   `errors` (*type:* `GoogleApi.Content.V21.Model.Errors.t`, *default:* `nil`) - A list of errors defined if, and only if, the request failed.
-  *   `kind` (*type:* `String.t`, *default:* `content#returnpolicyCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#returnpolicyCustomBatchResponseEntry".
+  *   `kind` (*type:* `String.t`, *default:* `content#returnpolicyCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "`content#returnpolicyCustomBatchResponseEntry`"
   *   `returnPolicy` (*type:* `GoogleApi.Content.V21.Model.ReturnPolicy.t`, *default:* `nil`) - The retrieved return policy.
   """
 

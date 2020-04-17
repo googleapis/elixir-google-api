@@ -24,9 +24,9 @@ defmodule GoogleApi.Content.V21.Model.OrdersCancelTestOrderByCustomerRequest do
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the cancellation.
 
       Acceptable values are:  
-      - "changedMind" 
-      - "orderedWrongItem" 
-      - "other"
+      - "`changedMind`" 
+      - "`orderedWrongItem`" 
+      - "`other`"
   """
 
   use GoogleApi.Gax.ModelBase

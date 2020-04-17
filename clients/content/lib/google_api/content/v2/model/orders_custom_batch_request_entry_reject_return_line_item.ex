@@ -27,11 +27,11 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryRejectReturnLi
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
 
       Acceptable values are:  
-      - "damagedOrUsed" 
-      - "missingComponent" 
-      - "notEligible" 
-      - "other" 
-      - "outOfReturnWindow"
+      - "`damagedOrUsed`" 
+      - "`missingComponent`" 
+      - "`notEligible`" 
+      - "`other`" 
+      - "`outOfReturnWindow`"
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   """
 

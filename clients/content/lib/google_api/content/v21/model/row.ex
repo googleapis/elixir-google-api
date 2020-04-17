@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.Row do
 
   ## Attributes
 
-  *   `cells` (*type:* `list(GoogleApi.Content.V21.Model.Value.t)`, *default:* `nil`) - The list of cells that constitute the row. Must have the same length as columnHeaders for two-dimensional tables, a length of 1 for one-dimensional tables. Required.
+  *   `cells` (*type:* `list(GoogleApi.Content.V21.Model.Value.t)`, *default:* `nil`) - The list of cells that constitute the row. Must have the same length as `columnHeaders` for two-dimensional tables, a length of 1 for one-dimensional tables. Required.
   """
 
   use GoogleApi.Gax.ModelBase

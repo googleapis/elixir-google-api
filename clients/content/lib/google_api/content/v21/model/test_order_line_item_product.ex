@@ -25,12 +25,12 @@ defmodule GoogleApi.Content.V21.Model.TestOrderLineItemProduct do
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Required. Condition or state of the item.
 
       Acceptable values are:  
-      - "new"
+      - "`new`"
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
 
       Acceptable values are:  
-      - "en" 
-      - "fr"
+      - "`en`" 
+      - "`fr`"
   *   `fees` (*type:* `list(GoogleApi.Content.V21.Model.OrderLineItemProductFee.t)`, *default:* `nil`) - Fees for the item. Optional.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item. Optional.
   *   `imageLink` (*type:* `String.t`, *default:* `nil`) - Required. URL of an image of the item.

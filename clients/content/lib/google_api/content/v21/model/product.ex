@@ -17,11 +17,15 @@
 
 defmodule GoogleApi.Content.V21.Model.Product do
   @moduledoc """
+  Required product attributes are primarily defined by the products data specification. See the  Products Data Specification Help Center article for information.
+
+  Some attributes are country-specific, so make sure you select the appropriate country in the drop-down selector at the top of the page.  
+
   Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
 
   ## Attributes
 
-  *   `sizes` (*type:* `list(String.t)`, *default:* `nil`) - Size of the item. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same itemGroupId value (see size definition).
+  *   `sizes` (*type:* `list(String.t)`, *default:* `nil`) - Size of the item. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same `itemGroupId` value (see size definition).
   *   `identifierExists` (*type:* `boolean()`, *default:* `nil`) - False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada.
   *   `adult` (*type:* `boolean()`, *default:* `nil`) - Set to true if the item is targeted towards adults.
   *   `unitPricingBaseMeasure` (*type:* `GoogleApi.Content.V21.Model.ProductUnitPricingBaseMeasure.t`, *default:* `nil`) - The preference of the denominator of the unit price.
@@ -34,10 +38,10 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign.
   *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (e.g. polka dots).
   *   `mpn` (*type:* `String.t`, *default:* `nil`) - Manufacturer Part Number (MPN) of the item.
-  *   `includedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in excludedDestinations.
+  *   `includedDestinations` (*type:* `list(String.t)`, *default:* `nil`) - The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in `excludedDestinations`.
   *   `shippingHeight` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Height of the item for shipping.
   *   `taxes` (*type:* `list(GoogleApi.Content.V21.Model.ProductTax.t)`, *default:* `nil`) - Tax information.
-  *   `customAttributes` (*type:* `list(GoogleApi.Content.V21.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., { "name": "size type", "value": "regular" }). This is useful for submitting attributes not explicitly exposed by the API, such as additional attributes used for Shopping Actions.
+  *   `customAttributes` (*type:* `list(GoogleApi.Content.V21.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., `{ "name": "size type", "value": "regular" }`). This is useful for submitting attributes not explicitly exposed by the API, such as additional attributes used for Shopping Actions.
   *   `gender` (*type:* `String.t`, *default:* `nil`) - Target gender of the item.
   *   `unitPricingMeasure` (*type:* `GoogleApi.Content.V21.Model.ProductUnitPricingMeasure.t`, *default:* `nil`) - The measure and dimension of an item.
   *   `adsLabels` (*type:* `list(String.t)`, *default:* `nil`) - Similar to ads_grouping, but only works on CPC.
@@ -48,7 +52,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `displayAdsId` (*type:* `String.t`, *default:* `nil`) - An identifier for an item for dynamic remarketing campaigns.
   *   `displayAdsLink` (*type:* `String.t`, *default:* `nil`) - URL directly to your item's landing page for dynamic remarketing campaigns.
   *   `loyaltyPoints` (*type:* `GoogleApi.Content.V21.Model.LoyaltyPoints.t`, *default:* `nil`) - Loyalty points that users receive after purchasing the item. Japan only.
-  *   `kind` (*type:* `String.t`, *default:* `content#product`) - Identifies what kind of resource this is. Value: the fixed string "content#product".
+  *   `kind` (*type:* `String.t`, *default:* `content#product`) - Identifies what kind of resource this is. Value: the fixed string "`content#product`"
   *   `displayAdsValue` (*type:* `float()`, *default:* `nil`) - Offer margin for dynamic remarketing campaigns.
   *   `shippingLabel` (*type:* `String.t`, *default:* `nil`) - The shipping label of the product, used to group product in account-level shipping rules.
   *   `sizeSystem` (*type:* `String.t`, *default:* `nil`) - System in which the size is specified. Recommended for apparel items.
@@ -70,7 +74,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `googleProductCategory` (*type:* `String.t`, *default:* `nil`) - Google's category of the item (see Google product taxonomy).
   *   `material` (*type:* `String.t`, *default:* `nil`) - The material of which the item is made.
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
-  *   `expirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in productstatuses as googleExpirationDate and might be earlier if expirationDate is too far in the future.
+  *   `expirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in `productstatuses` as `googleExpirationDate` and might be earlier if `expirationDate` is too far in the future.
   *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see products data specification).
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
   *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Custom label 4 for custom grouping of items in a Shopping campaign.
@@ -78,14 +82,14 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Required. The item's channel (online or local).
 
       Acceptable values are:  
-      - "local" 
-      - "online"
+      - "`local`" 
+      - "`online`"
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Price of the item.
   *   `minEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
   *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - Target age group of the item.
   *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of items in a Shopping campaign.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their productId parameter.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their `productId` parameter.
       The REST ID for a product is of the form channel:contentLanguage:targetCountry:offerId.
   *   `shippingLength` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Length of the item for shipping.
   *   `shippingWeight` (*type:* `GoogleApi.Content.V21.Model.ProductShippingWeight.t`, *default:* `nil`) - Weight of the item for shipping.
@@ -104,9 +108,9 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `source` (*type:* `String.t`, *default:* `nil`) - The source of the offer, i.e., how the offer was created.
 
       Acceptable values are:  
-      - "api" 
-      - "crawl" 
-      - "feed"
+      - "`api`" 
+      - "`crawl`" 
+      - "`feed`"
   """
 
   use GoogleApi.Gax.ModelBase

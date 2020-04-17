@@ -25,8 +25,8 @@ defmodule GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink do
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the link between this Merchant Center account and the GMB account.
 
       Acceptable values are:  
-      - "active" 
-      - "pending"
+      - "`active`" 
+      - "`pending`"
   """
 
   use GoogleApi.Gax.ModelBase

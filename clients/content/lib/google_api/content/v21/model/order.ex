@@ -17,37 +17,37 @@
 
 defmodule GoogleApi.Content.V21.Model.Order do
   @moduledoc """
-  Order. Production access (all methods) requires the order manager role. Sandbox access does not.
+  Order. Production access (all methods) requires the order manager role. Sandbox access does not. (== resource_for v2.orders ==) (== resource_for v2.1.orders ==)
 
   ## Attributes
 
   *   `acknowledged` (*type:* `boolean()`, *default:* `nil`) - Whether the order was acknowledged.
   *   `billingAddress` (*type:* `GoogleApi.Content.V21.Model.OrderAddress.t`, *default:* `nil`) - The billing address.
   *   `customer` (*type:* `GoogleApi.Content.V21.Model.OrderCustomer.t`, *default:* `nil`) - The details of the customer who placed the order.
-  *   `deliveryDetails` (*type:* `GoogleApi.Content.V21.Model.OrderDeliveryDetails.t`, *default:* `nil`) - Delivery details for shipments of type delivery.
+  *   `deliveryDetails` (*type:* `GoogleApi.Content.V21.Model.OrderDeliveryDetails.t`, *default:* `nil`) - Delivery details for shipments of type `delivery`.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the order. Globally unique.
-  *   `kind` (*type:* `String.t`, *default:* `content#order`) - Identifies what kind of resource this is. Value: the fixed string "content#order".
+  *   `kind` (*type:* `String.t`, *default:* `content#order`) - Identifies what kind of resource this is. Value: the fixed string "`content#order`"
   *   `lineItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderLineItem.t)`, *default:* `nil`) - Line items that are ordered.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - 
   *   `merchantOrderId` (*type:* `String.t`, *default:* `nil`) - Merchant-provided ID of the order.
   *   `netPriceAmount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The net amount for the order (price part). For example, if an order was originally for $100 and a refund was issued for $20, the net amount will be $80.
-  *   `netTaxAmount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The net amount for the order (tax part). Note that in certain cases due to taxable base adjustment netTaxAmount might not match to a sum of tax field across all lineItems and refunds.
+  *   `netTaxAmount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The net amount for the order (tax part). Note that in certain cases due to taxable base adjustment `netTaxAmount` might not match to a sum of tax field across all lineItems and refunds.
   *   `paymentStatus` (*type:* `String.t`, *default:* `nil`) - The status of the payment.
 
       Acceptable values are:  
-      - "paymentCaptured" 
-      - "paymentRejected" 
-      - "paymentSecured" 
-      - "pendingAuthorization"
-  *   `pickupDetails` (*type:* `GoogleApi.Content.V21.Model.OrderPickupDetails.t`, *default:* `nil`) - Pickup details for shipments of type pickup.
+      - "`paymentCaptured`" 
+      - "`paymentRejected`" 
+      - "`paymentSecured`" 
+      - "`pendingAuthorization`"
+  *   `pickupDetails` (*type:* `GoogleApi.Content.V21.Model.OrderPickupDetails.t`, *default:* `nil`) - Pickup details for shipments of type `pickup`.
   *   `placedDate` (*type:* `String.t`, *default:* `nil`) - The date when the order was placed, in ISO 8601 format.
   *   `promotions` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotion.t)`, *default:* `nil`) - Promotions associated with the order.
 
-      To determine which promotions apply to which products, check the Promotions[].appliedItems[].lineItemId field against the LineItems[].id field for each promotion. If a promotion is applied to more than 1 offerId, divide the discount value by the number of affected offers to determine how much discount to apply to each offerId.
+      To determine which promotions apply to which products, check the `Promotions[].appliedItems[].lineItemId` field against the `LineItems[].id` field for each promotion. If a promotion is applied to more than 1 offerId, divide the discount value by the number of affected offers to determine how much discount to apply to each offerId.
 
       Examples:  
-      - To calculate price paid by the customer for a single line item including the discount: For each promotion, subtract the LineItems[].adjustments[].priceAdjustment.value amount from the LineItems[].Price.value. 
-      - To calculate price paid by the customer for a single line item including the discount in case of multiple quantity: For each promotion, divide the LineItems[].adjustments[].priceAdjustment.value by the quantity of products then subtract the resulting value from the LineItems[].Product.Price.value for each quantity item.  
+      - To calculate price paid by the customer for a single line item including the discount: For each promotion, subtract the `LineItems[].adjustments[].priceAdjustment.value` amount from the `LineItems[].Price.value`. 
+      - To calculate price paid by the customer for a single line item including the discount in case of multiple quantity: For each promotion, divide the `LineItems[].adjustments[].priceAdjustment.value` by the quantity of products then subtract the resulting value from the `LineItems[].Product.Price.value` for each quantity item.  
 
       Only 1 promotion can be applied to an offerId in a given order. To refund an item which had a promotion applied to it, make sure to refund the amount after first subtracting the promotion discount from the item price.
 
@@ -59,20 +59,20 @@ defmodule GoogleApi.Content.V21.Model.Order do
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the order.
 
       Acceptable values are:  
-      - "canceled" 
-      - "delivered" 
-      - "inProgress" 
-      - "partiallyDelivered" 
-      - "partiallyReturned" 
-      - "partiallyShipped" 
-      - "pendingShipment" 
-      - "returned" 
-      - "shipped"
+      - "`canceled`" 
+      - "`delivered`" 
+      - "`inProgress`" 
+      - "`partiallyDelivered`" 
+      - "`partiallyReturned`" 
+      - "`partiallyShipped`" 
+      - "`pendingShipment`" 
+      - "`returned`" 
+      - "`shipped`"
   *   `taxCollector` (*type:* `String.t`, *default:* `nil`) - The party responsible for collecting and remitting taxes.
 
       Acceptable values are:  
-      - "marketplaceFacilitator" 
-      - "merchant"
+      - "`marketplaceFacilitator`" 
+      - "`merchant`"
   """
 
   use GoogleApi.Gax.ModelBase

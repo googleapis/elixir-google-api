@@ -29,19 +29,19 @@ defmodule GoogleApi.Content.V21.Model.OrdersReturnRefundLineItemRequest do
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason for the return.
 
       Acceptable values are:  
-      - "customerDiscretionaryReturn" 
-      - "customerInitiatedMerchantCancel" 
-      - "deliveredTooLate" 
-      - "expiredItem" 
-      - "invalidCoupon" 
-      - "malformedShippingAddress" 
-      - "other" 
-      - "productArrivedDamaged" 
-      - "productNotAsDescribed" 
-      - "qualityNotAsExpected" 
-      - "undeliverableShippingAddress" 
-      - "unsupportedPoBoxAddress" 
-      - "wrongProductShipped"
+      - "`customerDiscretionaryReturn`" 
+      - "`customerInitiatedMerchantCancel`" 
+      - "`deliveredTooLate`" 
+      - "`expiredItem`" 
+      - "`invalidCoupon`" 
+      - "`malformedShippingAddress`" 
+      - "`other`" 
+      - "`productArrivedDamaged`" 
+      - "`productNotAsDescribed`" 
+      - "`qualityNotAsExpected`" 
+      - "`undeliverableShippingAddress`" 
+      - "`unsupportedPoBoxAddress`" 
+      - "`wrongProductShipped`"
   *   `reasonText` (*type:* `String.t`, *default:* `nil`) - The explanation of the reason.
   *   `taxAmount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The amount of tax to be refunded. Optional, but if filled, then priceAmount must be set. Calculated automatically if not provided.
   """

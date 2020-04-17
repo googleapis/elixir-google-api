@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.Content.V2.Model.Inventory do
   @moduledoc """
-
+  (== resource_for v2.inventory ==)
 
   ## Attributes
 
   *   `availability` (*type:* `String.t`, *default:* `nil`) - The availability of the product.
 
       Acceptable values are:  
-      - "in stock" 
-      - "out of stock" 
-      - "preorder"
+      - "`in stock`" 
+      - "`out of stock`" 
+      - "`preorder`"
   *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products.
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products.
   *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products.
@@ -34,12 +34,12 @@ defmodule GoogleApi.Content.V2.Model.Inventory do
   *   `customLabel4` (*type:* `String.t`, *default:* `nil`) - Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products.
   *   `installment` (*type:* `GoogleApi.Content.V2.Model.Installment.t`, *default:* `nil`) - Number and amount of installments to pay for an item. Brazil only.
   *   `instoreProductLocation` (*type:* `String.t`, *default:* `nil`) - The instore product location. Supported only for local products.
-  *   `kind` (*type:* `String.t`, *default:* `content#inventory`) - Identifies what kind of resource this is. Value: the fixed string "content#inventory".
+  *   `kind` (*type:* `String.t`, *default:* `content#inventory`) - Identifies what kind of resource this is. Value: the fixed string "`content#inventory`"
   *   `loyaltyPoints` (*type:* `GoogleApi.Content.V2.Model.LoyaltyPoints.t`, *default:* `nil`) - Loyalty points that users receive after purchasing the item. Japan only.
-  *   `pickup` (*type:* `GoogleApi.Content.V2.Model.InventoryPickup.t`, *default:* `nil`) - Store pickup information. Only supported for local inventory. Not setting pickup means "don't update" while setting it to the empty value ({} in JSON) means "delete". Otherwise, pickupMethod and pickupSla must be set together, unless pickupMethod is "not supported".
+  *   `pickup` (*type:* `GoogleApi.Content.V2.Model.InventoryPickup.t`, *default:* `nil`) - Store pickup information. Only supported for local inventory. Not setting `pickup` means "don't update" while setting it to the empty value (`{}` in JSON) means "delete". Otherwise, `pickupMethod` and `pickupSla` must be set together, unless `pickupMethod` is "not supported".
   *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The price of the product.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity of the product. Must be equal to or greater than zero. Supported only for local products.
-  *   `salePrice` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The sale price of the product. Mandatory if sale_price_effective_date is defined.
+  *   `salePrice` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The sale price of the product. Mandatory if `sale_price_effective_date` is defined.
   *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided.
   *   `sellOnGoogleQuantity` (*type:* `integer()`, *default:* `nil`) - The quantity of the product that is available for selling on Google. Supported only for online products.
   """

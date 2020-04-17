@@ -24,8 +24,8 @@ defmodule GoogleApi.Content.V2.Model.TestOrderCustomerMarketingRightsInfo do
   *   `explicitMarketingPreference` (*type:* `String.t`, *default:* `nil`) - Last know user use selection regards marketing preferences. In certain cases selection might not be known, so this field would be empty.
 
       Acceptable values are:  
-      - "denied" 
-      - "granted"
+      - "`denied`" 
+      - "`granted`"
   *   `lastUpdatedTimestamp` (*type:* `String.t`, *default:* `nil`) - Timestamp when last time marketing preference was updated. Could be empty, if user wasn't offered a selection yet.
   """
 

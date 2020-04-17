@@ -23,12 +23,12 @@ defmodule GoogleApi.Content.V21.Model.LocalInventory do
 
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability of the product.
   *   `instoreProductLocation` (*type:* `String.t`, *default:* `nil`) - In-store product location.
-  *   `kind` (*type:* `String.t`, *default:* `content#localInventory`) - Identifies what kind of resource this is. Value: the fixed string "content#localInventory".
-  *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - Supported pickup method for this offer. Unless the value is "not supported", this field must be submitted together with pickupSla.
-  *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - Expected date that an order will be ready for pickup relative to the order date. Must be submitted together with pickupMethod.
+  *   `kind` (*type:* `String.t`, *default:* `content#localInventory`) - Identifies what kind of resource this is. Value: the fixed string "`content#localInventory`"
+  *   `pickupMethod` (*type:* `String.t`, *default:* `nil`) - Supported pickup method for this offer. Unless the value is "not supported", this field must be submitted together with `pickupSla`.
+  *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - Expected date that an order will be ready for pickup relative to the order date. Must be submitted together with `pickupMethod`.
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Price of the product.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - Quantity of the product. Must be nonnegative.
-  *   `salePrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Sale price of the product. Mandatory if sale_price_effective_date is defined.
+  *   `salePrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Sale price of the product. Mandatory if `sale_price_effective_date` is defined.
   *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates may be specified as 'null' if undecided.
   *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. Store code of this local inventory resource.
   """

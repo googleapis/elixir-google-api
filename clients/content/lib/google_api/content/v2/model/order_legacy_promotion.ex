@@ -30,12 +30,12 @@ defmodule GoogleApi.Content.V2.Model.OrderLegacyPromotion do
   *   `productApplicability` (*type:* `String.t`, *default:* `nil`) - Whether the promotion is applicable to all products or only specific products.
 
       Acceptable values are:  
-      - "allProducts" 
-      - "specificProducts"
+      - "`allProducts`" 
+      - "`specificProducts`"
   *   `redemptionChannel` (*type:* `String.t`, *default:* `nil`) - Indicates that the promotion is valid online.
 
       Acceptable values are:  
-      - "online"
+      - "`online`"
   """
 
   use GoogleApi.Gax.ModelBase

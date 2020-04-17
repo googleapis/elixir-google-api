@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V21.Model.OrderinvoicesCreateChargeInvoiceRequest do
   *   `invoiceSummary` (*type:* `GoogleApi.Content.V21.Model.InvoiceSummary.t`, *default:* `nil`) - [required] Invoice summary.
   *   `lineItemInvoices` (*type:* `list(GoogleApi.Content.V21.Model.ShipmentInvoiceLineItemInvoice.t)`, *default:* `nil`) - [required] Invoice details per line item.
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - [required] The ID of the operation, unique across all operations for a given order.
-  *   `shipmentGroupId` (*type:* `String.t`, *default:* `nil`) - [required] ID of the shipment group. It is assigned by the merchant in the shipLineItems method and is used to group multiple line items that have the same kind of shipping charges.
+  *   `shipmentGroupId` (*type:* `String.t`, *default:* `nil`) - [required] ID of the shipment group. It is assigned by the merchant in the `shipLineItems` method and is used to group multiple line items that have the same kind of shipping charges.
   """
 
   use GoogleApi.Gax.ModelBase

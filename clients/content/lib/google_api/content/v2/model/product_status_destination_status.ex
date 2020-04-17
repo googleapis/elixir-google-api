@@ -25,16 +25,16 @@ defmodule GoogleApi.Content.V2.Model.ProductStatusDestinationStatus do
   *   `approvalStatus` (*type:* `String.t`, *default:* `nil`) - The destination's approval status.
 
       Acceptable values are:  
-      - "approved" 
-      - "disapproved"
+      - "`approved`" 
+      - "`disapproved`"
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination
   *   `intention` (*type:* `String.t`, *default:* `nil`) - Provided for backward compatibility only. Always set to "required".
 
       Acceptable values are:  
-      - "default" 
-      - "excluded" 
-      - "optional" 
-      - "required"
+      - "`default`" 
+      - "`excluded`" 
+      - "`optional`" 
+      - "`required`"
   """
 
   use GoogleApi.Gax.ModelBase

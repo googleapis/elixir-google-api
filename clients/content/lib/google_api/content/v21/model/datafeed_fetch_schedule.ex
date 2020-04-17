@@ -32,13 +32,13 @@ defmodule GoogleApi.Content.V21.Model.DatafeedFetchSchedule do
   *   `weekday` (*type:* `String.t`, *default:* `nil`) - The day of the week the feed file should be fetched.
 
       Acceptable values are:  
-      - "monday" 
-      - "tuesday" 
-      - "wednesday" 
-      - "thursday" 
-      - "friday" 
-      - "saturday" 
-      - "sunday"
+      - "`monday`" 
+      - "`tuesday`" 
+      - "`wednesday`" 
+      - "`thursday`" 
+      - "`friday`" 
+      - "`saturday`" 
+      - "`sunday`"
   """
 
   use GoogleApi.Gax.ModelBase

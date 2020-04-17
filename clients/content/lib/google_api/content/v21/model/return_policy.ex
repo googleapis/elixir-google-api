@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicy do
   ## Attributes
 
   *   `country` (*type:* `String.t`, *default:* `nil`) - Required. The country of sale where the return policy is applicable.
-  *   `kind` (*type:* `String.t`, *default:* `content#returnPolicy`) - Identifies what kind of resource this is. Value: the fixed string "content#returnPolicy".
+  *   `kind` (*type:* `String.t`, *default:* `content#returnPolicy`) - Identifies what kind of resource this is. Value: the fixed string "`content#returnPolicy`"
   *   `label` (*type:* `String.t`, *default:* `nil`) - Required. The user-defined label of the return policy. For the default policy, use the label "default".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the policy as shown in Merchant Center.
   *   `nonFreeReturnReasons` (*type:* `list(String.t)`, *default:* `nil`) - Return reasons that will incur return fees.

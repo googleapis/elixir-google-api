@@ -28,7 +28,7 @@ defmodule GoogleApi.Content.V2.Model.PosSaleResponse do
   *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Required. The price of the item.
   *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The relative change of the available quantity. Negative for items returned.
   *   `saleId` (*type:* `String.t`, *default:* `nil`) - A unique ID to group items from the same sale event.
-  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the merchant's store. Either a storeCode inserted via the API or the code of the store in Google My Business.
+  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business.
   *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code for the item.
   *   `timestamp` (*type:* `String.t`, *default:* `nil`) - Required. The inventory timestamp, in ISO 8601 format.
   """

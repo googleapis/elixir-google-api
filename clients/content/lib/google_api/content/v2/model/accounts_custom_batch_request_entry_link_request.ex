@@ -21,17 +21,17 @@ defmodule GoogleApi.Content.V2.Model.AccountsCustomBatchRequestEntryLinkRequest 
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - Action to perform for this link. The "request" action is only available to select merchants.
+  *   `action` (*type:* `String.t`, *default:* `nil`) - Action to perform for this link. The `"request"` action is only available to select merchants.
 
       Acceptable values are:  
-      - "approve" 
-      - "remove" 
-      - "request"
+      - "`approve`" 
+      - "`remove`" 
+      - "`request`"
   *   `linkType` (*type:* `String.t`, *default:* `nil`) - Type of the link between the two accounts.
 
       Acceptable values are:  
-      - "channelPartner" 
-      - "eCommercePlatform"
+      - "`channelPartner`" 
+      - "`eCommercePlatform`"
   *   `linkedAccountId` (*type:* `String.t`, *default:* `nil`) - The ID of the linked account.
   """
 

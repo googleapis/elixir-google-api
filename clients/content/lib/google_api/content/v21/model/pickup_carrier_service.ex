@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V21.Model.PickupCarrierService do
 
   ## Attributes
 
-  *   `carrierName` (*type:* `String.t`, *default:* `nil`) - The name of the pickup carrier (e.g., "UPS"). Required.
-  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the pickup service (e.g., "Access point"). Required.
+  *   `carrierName` (*type:* `String.t`, *default:* `nil`) - The name of the pickup carrier (e.g., `"UPS"`). Required.
+  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the pickup service (e.g., `"Access point"`). Required.
   """
 
   use GoogleApi.Gax.ModelBase

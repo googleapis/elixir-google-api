@@ -29,11 +29,11 @@ defmodule GoogleApi.Content.V2.Model.MerchantOrderReturnItem do
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the item.
 
       Acceptable values are:  
-      - "canceled" 
-      - "new" 
-      - "received" 
-      - "refunded" 
-      - "rejected"
+      - "`canceled`" 
+      - "`new`" 
+      - "`received`" 
+      - "`refunded`" 
+      - "`rejected`"
   """
 
   use GoogleApi.Gax.ModelBase

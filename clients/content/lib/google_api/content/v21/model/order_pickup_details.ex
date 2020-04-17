@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.OrderPickupDetails do
 
   ## Attributes
 
-  *   `address` (*type:* `GoogleApi.Content.V21.Model.OrderAddress.t`, *default:* `nil`) - Address of the pickup location where the shipment should be sent. Note that recipientName in the address is the name of the business at the pickup location.
+  *   `address` (*type:* `GoogleApi.Content.V21.Model.OrderAddress.t`, *default:* `nil`) - Address of the pickup location where the shipment should be sent. Note that `recipientName` in the address is the name of the business at the pickup location.
   *   `collectors` (*type:* `list(GoogleApi.Content.V21.Model.OrderPickupDetailsCollector.t)`, *default:* `nil`) - Collectors authorized to pick up shipment from the pickup location.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - ID of the pickup location.
   """

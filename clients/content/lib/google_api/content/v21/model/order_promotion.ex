@@ -22,41 +22,41 @@ defmodule GoogleApi.Content.V21.Model.OrderPromotion do
   ## Attributes
 
   *   `applicableItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotionItem.t)`, *default:* `nil`) - Items which this promotion may be applied to. If empty, there are no restrictions on applicable items and quantity.
-  *   `appliedItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotionItem.t)`, *default:* `nil`) - Items which this promotion have been applied to. Do not provide for orders.createtestorder.
+  *   `appliedItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotionItem.t)`, *default:* `nil`) - Items which this promotion have been applied to. Do not provide for `orders.createtestorder`.
   *   `endTime` (*type:* `String.t`, *default:* `nil`) - Promotion end time in ISO 8601 format. Date, time, and offset required, e.g., "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z".
-  *   `funder` (*type:* `String.t`, *default:* `nil`) - Required. The party funding the promotion. Only merchant is supported for orders.createtestorder.
+  *   `funder` (*type:* `String.t`, *default:* `nil`) - Required. The party funding the promotion. Only `merchant` is supported for `orders.createtestorder`.
 
       Acceptable values are:  
-      - "google" 
-      - "merchant"
+      - "`google`" 
+      - "`merchant`"
   *   `merchantPromotionId` (*type:* `String.t`, *default:* `nil`) - Required. This field is used to identify promotions within merchants' own systems.
   *   `priceValue` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Estimated discount applied to price. Amount is pre-tax or post-tax depending on location of order.
-  *   `shortTitle` (*type:* `String.t`, *default:* `nil`) - A short title of the promotion to be shown on the checkout page. Do not provide for orders.createtestorder.
+  *   `shortTitle` (*type:* `String.t`, *default:* `nil`) - A short title of the promotion to be shown on the checkout page. Do not provide for `orders.createtestorder`.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - Promotion start time in ISO 8601 format. Date, time, and offset required, e.g., "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z".
-  *   `subtype` (*type:* `String.t`, *default:* `nil`) - Required. The category of the promotion. Only moneyOff is supported for orders.createtestorder.
+  *   `subtype` (*type:* `String.t`, *default:* `nil`) - Required. The category of the promotion. Only `moneyOff` is supported for `orders.createtestorder`.
 
       Acceptable values are:  
-      - "buyMGetMoneyOff" 
-      - "buyMGetNMoneyOff" 
-      - "buyMGetNPercentOff" 
-      - "buyMGetPercentOff" 
-      - "freeGift" 
-      - "freeGiftWithItemId" 
-      - "freeGiftWithValue" 
-      - "freeShippingOvernight" 
-      - "freeShippingStandard" 
-      - "freeShippingTwoDay" 
-      - "moneyOff" 
-      - "percentOff" 
-      - "rewardPoints" 
-      - "salePrice"
-  *   `taxValue` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Estimated discount applied to tax (if allowed by law). Do not provide for orders.createtestorder.
+      - "`buyMGetMoneyOff`" 
+      - "`buyMGetNMoneyOff`" 
+      - "`buyMGetNPercentOff`" 
+      - "`buyMGetPercentOff`" 
+      - "`freeGift`" 
+      - "`freeGiftWithItemId`" 
+      - "`freeGiftWithValue`" 
+      - "`freeShippingOvernight`" 
+      - "`freeShippingStandard`" 
+      - "`freeShippingTwoDay`" 
+      - "`moneyOff`" 
+      - "`percentOff`" 
+      - "`rewardPoints`" 
+      - "`salePrice`"
+  *   `taxValue` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Estimated discount applied to tax (if allowed by law). Do not provide for `orders.createtestorder`.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. The title of the promotion.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The scope of the promotion. Only product is supported for orders.createtestorder.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The scope of the promotion. Only `product` is supported for `orders.createtestorder`.
 
       Acceptable values are:  
-      - "product" 
-      - "shipping"
+      - "`product`" 
+      - "`shipping`"
   """
 
   use GoogleApi.Gax.ModelBase

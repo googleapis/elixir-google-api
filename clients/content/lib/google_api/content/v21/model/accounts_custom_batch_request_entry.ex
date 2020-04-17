@@ -21,22 +21,22 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
 
   ## Attributes
 
-  *   `account` (*type:* `GoogleApi.Content.V21.Model.Account.t`, *default:* `nil`) - The account to create or update. Only defined if the method is insert or update.
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the targeted account. Only defined if the method is not insert.
+  *   `account` (*type:* `GoogleApi.Content.V21.Model.Account.t`, *default:* `nil`) - The account to create or update. Only defined if the method is `insert` or `update`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the targeted account. Only defined if the method is not `insert`.
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
-  *   `force` (*type:* `boolean()`, *default:* `nil`) - Whether the account should be deleted if the account has offers. Only applicable if the method is delete.
-  *   `linkRequest` (*type:* `GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest.t`, *default:* `nil`) - Details about the link request.
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - Whether the account should be deleted if the account has offers. Only applicable if the method is `delete`.
+  *   `linkRequest` (*type:* `GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest.t`, *default:* `nil`) - Details about the `link` request.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
 
       Acceptable values are:  
-      - "claimWebsite" 
-      - "delete" 
-      - "get" 
-      - "insert" 
-      - "link" 
-      - "update"
-  *   `overwrite` (*type:* `boolean()`, *default:* `nil`) - Only applicable if the method is claimwebsite. Indicates whether or not to take the claim from another account in case there is a conflict.
+      - "`claimWebsite`" 
+      - "`delete`" 
+      - "`get`" 
+      - "`insert`" 
+      - "`link`" 
+      - "`update`"
+  *   `overwrite` (*type:* `boolean()`, *default:* `nil`) - Only applicable if the method is `claimwebsite`. Indicates whether or not to take the claim from another account in case there is a conflict.
   """
 
   use GoogleApi.Gax.ModelBase

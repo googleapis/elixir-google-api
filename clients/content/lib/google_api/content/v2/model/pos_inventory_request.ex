@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V2.Model.PosInventoryRequest do
   *   `itemId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the item.
   *   `price` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Required. The current price of the item.
   *   `quantity` (*type:* `String.t`, *default:* `nil`) - Required. The available quantity of the item.
-  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the merchant's store. Either a storeCode inserted via the API or the code of the store in Google My Business.
+  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business.
   *   `targetCountry` (*type:* `String.t`, *default:* `nil`) - Required. The CLDR territory code for the item.
   *   `timestamp` (*type:* `String.t`, *default:* `nil`) - Required. The inventory timestamp, in ISO 8601 format.
   """

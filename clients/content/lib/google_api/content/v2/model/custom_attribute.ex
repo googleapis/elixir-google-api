@@ -25,15 +25,15 @@ defmodule GoogleApi.Content.V2.Model.CustomAttribute do
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the attribute.
 
       Acceptable values are:  
-      - "boolean" 
-      - "datetimerange" 
-      - "float" 
-      - "group" 
-      - "int" 
-      - "price" 
-      - "text" 
-      - "time" 
-      - "url"
+      - "`boolean`" 
+      - "`datetimerange`" 
+      - "`float`" 
+      - "`group`" 
+      - "`int`" 
+      - "`price`" 
+      - "`text`" 
+      - "`time`" 
+      - "`url`"
   *   `unit` (*type:* `String.t`, *default:* `nil`) - Free-form unit of the attribute. Unit can only be used for values of type int, float, or price.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the attribute.
   """
