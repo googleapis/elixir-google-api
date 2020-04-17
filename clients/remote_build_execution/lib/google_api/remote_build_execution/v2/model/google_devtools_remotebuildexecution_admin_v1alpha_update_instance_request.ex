@@ -21,19 +21,34 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   ## Attributes
 
-  *   `loggingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether to enable Stackdriver logging for this instance.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the instance to update.
+  *   `instance` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance.t`, *default:* `nil`) - Specifies the instance to update.
+  *   `loggingEnabled` (*type:* `boolean()`, *default:* `nil`) - Deprecated, use instance.logging_enabled instead.
+      Whether to enable Stackdriver logging for this instance.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Deprecated, use instance.Name instead.
+      Name of the instance to update.
       Format: `projects/[PROJECT_ID]/instances/[INSTANCE_ID]`.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - The fields to update.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - The update mask applies to instance. For the `FieldMask` definition, see
+      https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      If an empty update_mask is provided, only the non-default valued field in
+      the worker pool field will be updated. Note that in order to update a field
+      to the default value (zero, false, empty string) an explicit update_mask
+      must be provided.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :instance =>
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance.t(),
           :loggingEnabled => boolean(),
           :name => String.t(),
           :updateMask => String.t()
         }
+
+  field(:instance,
+    as:
+      GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance
+  )
 
   field(:loggingEnabled)
   field(:name)
