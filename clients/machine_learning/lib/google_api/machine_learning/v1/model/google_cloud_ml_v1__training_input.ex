@@ -25,15 +25,19 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
 
   ## Attributes
 
-  *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Arguments passed to the training.
-      - If it is a python package training:
-        It will be passed as command line argument to the program.
-      - If it is a custom container training,
-        It will be passed as an argument to the custom container
-        image.
-  *   `encryptionConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t`, *default:* `nil`) - Custom encryption key options for a training job. If this is set,
-      then all resources created by the training job will be encrypted with the
-      provided encryption key.
+  *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Command-line arguments passed to the training application when it
+      starts. If your job uses a custom container, then the arguments are passed
+      to the container's <a class="external" target="_blank"
+      href="https://docs.docker.com/engine/reference/builder/#entrypoint">
+      `ENTRYPOINT`</a> command.
+  *   `encryptionConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_EncryptionConfig.t`, *default:* `nil`) - Optional. Options for using customer-managed encryption keys (CMEK) to
+      protect resources created by a training job, instead of using Google's
+      default encryption. If this is set, then all resources created by the
+      training job will be encrypted with the customer-managed encryption key
+      that you specify.
+
+      [Learn how and when to use CMEK with AI Platform
+      Training](/ai-platform/training/docs/cmek).
   *   `evaluatorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t`, *default:* `nil`) - Optional. The configuration for evaluators.
 
       You should only set `evaluatorConfig.acceleratorConfig` if
@@ -43,8 +47,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
 
       Set `evaluatorConfig.imageUri` only if you build a custom image for
       your evaluator. If `evaluatorConfig.imageUri` has not been
-      set, AI Platform uses the value of `masterConfig.imageUri` .
-      Learn more about [configuring custom
+      set, AI Platform uses the value of `masterConfig.imageUri`. Learn more about [configuring custom
       containers](/ai-platform/training/docs/distributed-training-containers).
   *   `evaluatorCount` (*type:* `String.t`, *default:* `nil`) - Optional. The number of evaluator replicas to use for the training job.
       Each replica in the cluster will be of the type specified in
@@ -146,8 +149,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
 
       Set `parameterServerConfig.imageUri` only if you build a custom image for
       your parameter server. If `parameterServerConfig.imageUri` has not been
-      set, AI Platform uses the value of `masterConfig.imageUri` .
-      Learn more about [configuring custom
+      set, AI Platform uses the value of `masterConfig.imageUri`. Learn more about [configuring custom
       containers](/ai-platform/training/docs/distributed-training-containers).
   *   `parameterServerCount` (*type:* `String.t`, *default:* `nil`) - Optional. The number of parameter server replicas to use for the training
       job. Each replica in the cluster will be of the type specified in
@@ -211,8 +213,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
 
       Set `workerConfig.imageUri` only if you build a custom image for your
       worker. If `workerConfig.imageUri` has not been set, AI Platform uses
-      the value of `masterConfig.imageUri` .
-      Learn more about [configuring custom
+      the value of `masterConfig.imageUri`. Learn more about [configuring custom
       containers](/ai-platform/training/docs/distributed-training-containers).
   *   `workerCount` (*type:* `String.t`, *default:* `nil`) - Optional. The number of worker replicas to use for the training job. Each
       replica in the cluster will be of the type specified in `worker_type`.

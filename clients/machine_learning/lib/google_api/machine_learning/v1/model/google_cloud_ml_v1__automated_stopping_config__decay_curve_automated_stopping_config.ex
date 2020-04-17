@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutomatedStoppingCo
 
   ## Attributes
 
-  *   `useElapsedTime` (*type:* `boolean()`, *default:* `nil`) - True if measurement.elapsed_time is used as the x-axis of each
+  *   `useElapsedTime` (*type:* `boolean()`, *default:* `nil`) - If true, measurement.elapsed_time is used as the x-axis of each
       Trials Decay Curve. Otherwise, Measurement.steps will be used as the
       x-axis.
   """
