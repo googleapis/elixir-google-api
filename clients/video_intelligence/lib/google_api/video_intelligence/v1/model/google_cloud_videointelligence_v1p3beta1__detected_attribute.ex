@@ -22,7 +22,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Detected attribute confidence. Range [0, 1].
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the attribute, i.e. glasses, dark_glasses, mouth_open etc.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the attribute, for example, glasses, dark_glasses, mouth_open.
       A full list of supported type names will be provided in the document.
   *   `value` (*type:* `String.t`, *default:* `nil`) - Text value of the detection result. For example, the value for "HairColor"
       can be "black", "blonde", etc.

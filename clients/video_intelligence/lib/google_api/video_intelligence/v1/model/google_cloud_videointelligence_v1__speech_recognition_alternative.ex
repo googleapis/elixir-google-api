@@ -29,8 +29,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Sp
       The default of 0.0 is a sentinel value indicating `confidence` was not set.
   *   `transcript` (*type:* `String.t`, *default:* `nil`) - Transcript text representing the words that the user spoke.
   *   `words` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_WordInfo.t)`, *default:* `nil`) - Output only. A list of word-specific information for each recognized word.
-      Note: When `enable_speaker_diarization` is true, you will see all the words
-      from the beginning of the audio.
+      Note: When `enable_speaker_diarization` is set to true, you will see all
+      the words from the beginning of the audio.
   """
 
   use GoogleApi.Gax.ModelBase
