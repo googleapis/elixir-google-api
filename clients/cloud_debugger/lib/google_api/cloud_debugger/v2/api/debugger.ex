@@ -355,6 +355,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:canaryOption` (*type:* `String.t`) - The canary option set by the user upon setting breakpoint.
       *   `:clientVersion` (*type:* `String.t`) - Required. The client version making the call.
           Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
       *   `:body` (*type:* `GoogleApi.CloudDebugger.V2.Model.Breakpoint.t`) - 
@@ -392,6 +393,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :canaryOption => :query,
       :clientVersion => :query,
       :body => :body
     }
