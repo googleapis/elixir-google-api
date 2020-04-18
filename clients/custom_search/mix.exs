@@ -18,7 +18,7 @@
 defmodule GoogleApi.CustomSearch.Mixfile do
   use Mix.Project
 
-  @version "0.9.1"
+  @version "0.10.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.CustomSearch.Mixfile do
 
   defp description() do
     """
-    Custom Search API client library. Searches over a website or collection of websites
+    CustomSearch API client library. Searches over a website or collection of websites
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.CustomSearch.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/custom_search",
-        "Homepage" => "https://developers.google.com/custom-search/v1/introduction"
+        "Homepage" => "https://developers.google.com/custom-search/v1/using_rest"
       }
     ]
   end
