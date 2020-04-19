@@ -125,6 +125,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:agentId` (*type:* `String.t`) - Identifies the agent.
+          This is the ID returned in the RegisterDebuggee response.
       *   `:successOnTimeout` (*type:* `boolean()`) - If set to `true` (recommended), returns `google.rpc.Code.OK` status and
           sets the `wait_expired` response field to `true` when the server-selected
           timeout has expired.
@@ -169,6 +171,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :agentId => :query,
       :successOnTimeout => :query,
       :waitToken => :query
     }
