@@ -31,7 +31,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
 
   Users should enable the Data Catalog API in the project identified by
   the `parent` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -121,7 +122,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   Deletes an EntryGroup. Only entry groups that do not contain entries can be
   deleted. Users should enable the Data Catalog API in the project
   identified by the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -479,8 +481,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @doc """
   Updates an EntryGroup. The user should enable the Data Catalog API in the
   project identified by the `entry_group.name` parameter (see [Data Catalog
-  Resource Project] (/data-catalog/docs/concepts/resource-project) for more
-  information).
+  Resource Project]
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -771,7 +774,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
 
   Users should enable the Data Catalog API in the project identified by
   the `parent` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   A maximum of 100,000 entries may be created per entry group.
 
@@ -869,7 +873,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   method can be deleted.
   Users should enable the Data Catalog API in the project identified by
   the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -1249,7 +1254,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   Updates an existing entry.
   Users should enable the Data Catalog API in the project identified by
   the `entry.name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -1466,10 +1472,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @doc """
   Creates a tag on an Entry.
   Note: The project identified by the `parent` parameter for the
-  [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+  [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
   and the
   [tag
-  template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+  template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
   used to create the tag must be from the same organization.
 
   ## Parameters
@@ -1859,10 +1865,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @doc """
   Creates a tag on an Entry.
   Note: The project identified by the `parent` parameter for the
-  [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+  [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
   and the
   [tag
-  template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+  template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
   used to create the tag must be from the same organization.
 
   ## Parameters
@@ -2236,15 +2242,15 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @doc """
   Creates a tag template. The user should enable the Data Catalog API in
   the project identified by the `parent` parameter (see [Data Catalog
-  Resource Project](/data-catalog/docs/concepts/resource-project) for more
-  information).
+  Resource
+  Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+  for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location
-      [region](/compute/docs/regions-zones/#available).
-      NOTE: Currently, only the `us-central1 region` is supported.
+      [region](https://cloud.google.com/data-catalog/docs/concepts/regions.
 
       Example:
 
@@ -2326,7 +2332,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   Deletes a tag template and all tags using the template.
   Users should enable the Data Catalog API in the project identified by
   the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -2600,7 +2607,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   and should be updated using their own create/update/delete methods.
   Users should enable the Data Catalog API in the project identified by
   the `tag_template.name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -2894,15 +2902,14 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   Creates a field in a tag template. The user should enable the Data Catalog
   API in the project identified by the `parent` parameter (see
   [Data Catalog Resource
-  Project](/data-catalog/docs/concepts/resource-project) for more
-  information).
+  Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+  for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location
-      [region](/compute/docs/regions-zones/#available).
-      NOTE: Currently, only the `us-central1 region` is supported.
+      [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
 
       Example:
 
@@ -2999,7 +3006,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   Deletes a field in a tag template and all uses of that field.
   Users should enable the Data Catalog API in the project identified by
   the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -3092,7 +3100,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   Updates a field in a tag template. This method cannot be used to update the
   field type. Users should enable the Data Catalog API in the project
   identified by the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -3204,8 +3213,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @doc """
   Renames a field in a tag template. The user should enable the Data Catalog
   API in the project identified by the `name` parameter (see [Data Catalog
-  Resource Project](/data-catalog/docs/concepts/resource-project) for more
-  information).
+  Resource
+  Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+  for more information).
 
   ## Parameters
 

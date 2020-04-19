@@ -48,7 +48,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Searc
 
       Note: Query tokens need to have a minimum of 3 characters for substring
       matching to work correctly. See [Data Catalog Search
-      Syntax](/data-catalog/docs/how-to/search-reference) for more information.
+      Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+      for more information.
   *   `scope` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SearchCatalogRequestScope.t`, *default:* `nil`) - Required. The scope of this search request. A `scope` that has empty
       `include_org_ids`, `include_project_ids` AND false
       `include_gcp_public_datasets` is considered invalid. Data Catalog will

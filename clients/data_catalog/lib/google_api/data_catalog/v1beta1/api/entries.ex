@@ -58,7 +58,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Entries do
 
           Examples:
 
-            * `cloud_pubsub.project_id.topic_id`
+            * `pubsub.project_id.topic_id`
             * ``pubsub.project_id.`topic.id.with.dots` ``
             * `bigquery.table.project_id.dataset_id.table_id`
             * `bigquery.dataset.project_id.dataset_id`
