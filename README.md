@@ -25,8 +25,8 @@ defmodule YourApplication.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:google_api_storage, "~> 0.0.1"},
-      {:goth, "~> 0.6.0"}
+      {:google_api_storage, "~> 0.19.0"},
+      {:goth, "~> 1.2.0"}
     ]
   end
 end
