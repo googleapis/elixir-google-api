@@ -25,10 +25,9 @@ defmodule GoogleApi.CloudTrace.V2.Model.Attributes do
       long. The value can be a string up to 256 bytes, a signed 64-bit integer,
       or the Boolean values `true` and `false`. For example:
 
-          "/instance_id": "my-instance"
-          "/http/user_agent": ""
-          "/http/request_bytes": 300
-          "abc.com/myattribute": true
+          "/instance_id": { "string_value": { "value": "my-instance" } }
+          "/http/request_bytes": { "int_value": 300 }
+          "abc.com/myattribute": { "bool_value": false }
   *   `droppedAttributesCount` (*type:* `integer()`, *default:* `nil`) - The number of attributes that were discarded. Attributes can be discarded
       because their keys are too long or because there are too many attributes.
       If this value is 0 then all attributes are valid.
