@@ -23,6 +23,8 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRuleCondition do
 
   *   `age` (*type:* `integer()`, *default:* `nil`) - Age of an object (in days). This condition is satisfied when an object reaches the specified age.
   *   `createdBefore` (*type:* `Date.t`, *default:* `nil`) - A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when an object is created before midnight of the specified date in UTC.
+  *   `customTimeBefore` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp in RFC 3339 format. This condition is satisfied when the custom time on an object is before this timestamp.
+  *   `daysSinceCustomTime` (*type:* `integer()`, *default:* `nil`) - Number of days elapsed since the user-specified timestamp set on an object. The condition is satisfied if the days elapsed is at least this number. If no custom timestamp is specified on an object, the condition does not apply.
   *   `isLive` (*type:* `boolean()`, *default:* `nil`) - Relevant only for versioned objects. If the value is true, this condition matches live objects; if the value is false, it matches archived objects.
   *   `matchesPattern` (*type:* `String.t`, *default:* `nil`) - A regular expression that satisfies the RE2 syntax. This condition is satisfied when the name of the object matches the RE2 pattern. Note: This feature is currently in the "Early Access" launch stage and is only available to a whitelisted set of users; that means that this feature may be changed in backward-incompatible ways and that it is not guaranteed to be released.
   *   `matchesStorageClass` (*type:* `list(String.t)`, *default:* `nil`) - Objects having any of the storage classes specified by this condition will be matched. Values include MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE, STANDARD, and DURABLE_REDUCED_AVAILABILITY.
@@ -34,6 +36,8 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRuleCondition do
   @type t :: %__MODULE__{
           :age => integer(),
           :createdBefore => Date.t(),
+          :customTimeBefore => DateTime.t(),
+          :daysSinceCustomTime => integer(),
           :isLive => boolean(),
           :matchesPattern => String.t(),
           :matchesStorageClass => list(String.t()),
@@ -42,6 +46,8 @@ defmodule GoogleApi.Storage.V1.Model.BucketLifecycleRuleCondition do
 
   field(:age)
   field(:createdBefore, as: Date)
+  field(:customTimeBefore, as: DateTime)
+  field(:daysSinceCustomTime)
   field(:isLive)
   field(:matchesPattern)
   field(:matchesStorageClass, type: :list)
