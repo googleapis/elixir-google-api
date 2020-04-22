@@ -21,7 +21,7 @@ defmodule GoogleApi.Calendar.V3.Model.CreateConferenceRequest do
 
   ## Attributes
 
-  *   `conferenceSolutionKey` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t`, *default:* `nil`) - The conference solution, such as Hangouts or Hangouts Meet.
+  *   `conferenceSolutionKey` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceSolutionKey.t`, *default:* `nil`) - The conference solution, such as Hangouts or Google Meet.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - The client-generated unique ID for this request.
       Clients should regenerate this ID for every new request. If an ID provided is the same as for the previous request, the request is ignored.
   *   `status` (*type:* `GoogleApi.Calendar.V3.Model.ConferenceRequestStatus.t`, *default:* `nil`) - The status of the conference create request.
