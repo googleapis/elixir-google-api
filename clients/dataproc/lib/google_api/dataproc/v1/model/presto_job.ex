@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.PrestoJob do
   @moduledoc """
-  A Dataproc job for running Presto (https://prestosql.io/) queries. IMPORTANT: The Dataproc Presto Optional Component must be enabled when the cluster is created to submit a Presto job to the cluster.
+  A Dataproc job for running Presto (https://prestosql.io/) queries. IMPORTANT: The Dataproc Presto Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/presto) must be enabled when the cluster is created to submit a Presto job to the cluster.
 
   ## Attributes
 
