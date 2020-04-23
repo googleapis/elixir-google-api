@@ -22,10 +22,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   ## Attributes
 
   *   `analyticsRegion` (*type:* `String.t`, *default:* `nil`) - Required. Primary GCP region for analytics data storage. For valid values, see
-      [Create an organization](/hybrid/precog-provision).
-  *   `attributes` (*type:* `list(String.t)`, *default:* `nil`) - Not used by Apigee hybrid.
+      [Create an
+      organization](https://docs.apigee.com/hybrid/latest/precog-provision).
+  *   `attributes` (*type:* `list(String.t)`, *default:* `nil`) - Not used by Apigee.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization was created in milliseconds since epoch.
-  *   `customerName` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee hybrid.
+  *   `customerName` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the Apigee organization.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - 
   *   `environments` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of environments in the Apigee organization.
@@ -39,7 +40,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
       (free, limited, and for evaluation purposes only) or paid (full
       subscription has been purchased). See
       [Apigee pricing](https://cloud.google.com/apigee/pricing/).
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee hybrid.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee.
   """
 
   use GoogleApi.Gax.ModelBase

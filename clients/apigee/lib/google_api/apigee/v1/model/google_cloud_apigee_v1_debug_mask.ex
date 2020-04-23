@@ -21,21 +21,21 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask do
 
   ## Attributes
 
-  *   `faultJSONPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of JSON paths that specify JSON elements to be filtered from JSON
+  *   `faultJSONPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of JSON paths that specify the JSON elements to be filtered from JSON
       payloads in error flows.
-  *   `faultXPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of XPaths that specify XML elements to be filtered from XML payloads
-      in error flows.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The DebugMask resource name.
-  *   `namespaces` (*type:* `map()`, *default:* `nil`) - Map of namespaces to uris.
-  *   `requestJSONPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of JSON paths that specify JSON elements to be filtered from JSON
+  *   `faultXPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of XPaths that specify the XML elements to be filtered from XML
+      payloads in error flows.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the debug mask.
+  *   `namespaces` (*type:* `map()`, *default:* `nil`) - Map of namespaces to URIs.
+  *   `requestJSONPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of JSON paths that specify the JSON elements to be filtered from JSON
       request message payloads.
-  *   `requestXPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of XPaths that specify XML elements to be filtered from XML request
-      message payloads.
-  *   `responseJSONPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of JSON paths that specify JSON elements to be filtered from JSON
+  *   `requestXPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of XPaths that specify the XML elements to be filtered from XML
+      request message payloads.
+  *   `responseJSONPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of JSON paths that specify the JSON elements to be filtered from JSON
       response message payloads.
-  *   `responseXPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of XPaths that specify XML elements to be filtered from XML response
-      message payloads.
-  *   `variables` (*type:* `list(String.t)`, *default:* `nil`) - List of variables that should be masked from debug output.
+  *   `responseXPaths` (*type:* `list(String.t)`, *default:* `nil`) - List of XPaths that specify the XML elements to be filtered from XML
+      response message payloads.
+  *   `variables` (*type:* `list(String.t)`, *default:* `nil`) - List of variables that should be masked from the debug output.
   """
 
   use GoogleApi.Gax.ModelBase

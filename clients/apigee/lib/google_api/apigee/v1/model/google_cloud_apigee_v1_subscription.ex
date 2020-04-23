@@ -21,8 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Subscription do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Full name of the Pub/Sub subcription in the following format:
-       `subscription "projects/foo/subscription/bar"`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Full name of the Pub/Sub subcription. Use the following structure in your
+      request:
+        `subscription "projects/foo/subscription/bar"`
   """
 
   use GoogleApi.Gax.ModelBase
