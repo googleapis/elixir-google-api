@@ -30,6 +30,9 @@ defmodule GoogleApi.People.V1.Connection do
       # See and download your contacts
       "https://www.googleapis.com/auth/contacts.readonly",
 
+      # See and download your organization's GSuite directory
+      "https://www.googleapis.com/auth/directory.readonly",
+
       # View your street addresses
       "https://www.googleapis.com/auth/user.addresses.read",
 
