@@ -21,7 +21,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   ## Attributes
 
-  *   `tracks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Track.t)`, *default:* `nil`) - The trackes that a person is detected.
+  *   `tracks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Track.t)`, *default:* `nil`) - The detected tracks of a person.
   """
 
   use GoogleApi.Gax.ModelBase

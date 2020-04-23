@@ -22,9 +22,9 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   ## Attributes
 
   *   `categoryEntities` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_Entity.t)`, *default:* `nil`) - Common categories for the detected entity.
-      E.g. when the label is `Terrier` the category is likely `dog`. And in some
-      cases there might be more than one categories e.g. `Terrier` could also be
-      a `pet`.
+      For example, when the label is `Terrier`, the category is likely `dog`. And
+      in some cases there might be more than one categories e.g., `Terrier` could
+      also be a `pet`.
   *   `entity` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_Entity.t`, *default:* `nil`) - Detected entity.
   *   `frames` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelFrame.t)`, *default:* `nil`) - All video frames where a label was detected.
   *   `segments` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_LabelSegment.t)`, *default:* `nil`) - All video segments where a label was detected.

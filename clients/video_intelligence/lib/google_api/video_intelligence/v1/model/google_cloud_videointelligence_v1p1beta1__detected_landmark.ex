@@ -23,7 +23,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - The confidence score of the detected landmark. Range [0, 1].
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this landmark, i.e. left_hand, right_shoulder.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this landmark, for example, left_hand, right_shoulder.
   *   `point` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_NormalizedVertex.t`, *default:* `nil`) - The 2D point of the detected landmark using the normalized image
       coordindate system. The normalized coordinates have the range from 0 to 1.
   """
