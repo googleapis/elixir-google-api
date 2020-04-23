@@ -34,9 +34,9 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   *   `machineTypeUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples:
       https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
       projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
-      n1-standard-2Auto Zone Exception: If you are using the Dataproc Auto Zone Placement feature, you must use the short name of the machine type resource, for example, n1-standard-2.
+      n1-standard-2Auto Zone Exception: If you are using the Dataproc Auto Zone Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the machine type resource, for example, n1-standard-2.
   *   `managedGroupConfig` (*type:* `GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t`, *default:* `nil`) - Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
-  *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the minimum cpu platform for the Instance Group. See Dataproc&rarr;Minimum CPU Platform.
+  *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the minimum cpu platform for the Instance Group. See Dataproc -&gt; Minimum CPU Platform (https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu).
   *   `numInstances` (*type:* `integer()`, *default:* `nil`) - Optional. The number of VM instances in the instance group. For master instance groups, must be set to 1.
   *   `preemptibility` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the preemptibility of the instance group.The default value for master and worker groups is NON_PREEMPTIBLE. This default cannot be changed.The default value for secondary instances is PREEMPTIBLE.
   """

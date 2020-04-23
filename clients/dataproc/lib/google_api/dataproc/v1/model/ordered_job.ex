@@ -21,17 +21,17 @@ defmodule GoogleApi.Dataproc.V1.Model.OrderedJob do
 
   ## Attributes
 
-  *   `hadoopJob` (*type:* `GoogleApi.Dataproc.V1.Model.HadoopJob.t`, *default:* `nil`) - 
-  *   `hiveJob` (*type:* `GoogleApi.Dataproc.V1.Model.HiveJob.t`, *default:* `nil`) - 
+  *   `hadoopJob` (*type:* `GoogleApi.Dataproc.V1.Model.HadoopJob.t`, *default:* `nil`) - Optional. Job is a Hadoop job.
+  *   `hiveJob` (*type:* `GoogleApi.Dataproc.V1.Model.HiveJob.t`, *default:* `nil`) - Optional. Job is a Hive job.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with this job.Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: \\p{Ll}\\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following regular expression: \\p{Ll}\\p{Lo}\\p{N}_-{0,63}No more than 32 labels can be associated with a given job.
-  *   `pigJob` (*type:* `GoogleApi.Dataproc.V1.Model.PigJob.t`, *default:* `nil`) - 
+  *   `pigJob` (*type:* `GoogleApi.Dataproc.V1.Model.PigJob.t`, *default:* `nil`) - Optional. Job is a Pig job.
   *   `prerequisiteStepIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The optional list of prerequisite job step_ids. If not specified, the job will start at the beginning of workflow.
-  *   `prestoJob` (*type:* `GoogleApi.Dataproc.V1.Model.PrestoJob.t`, *default:* `nil`) - Presto job
-  *   `pysparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.PySparkJob.t`, *default:* `nil`) - 
+  *   `prestoJob` (*type:* `GoogleApi.Dataproc.V1.Model.PrestoJob.t`, *default:* `nil`) - Optional. Job is a Presto job.
+  *   `pysparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.PySparkJob.t`, *default:* `nil`) - Optional. Job is a PySpark job.
   *   `scheduling` (*type:* `GoogleApi.Dataproc.V1.Model.JobScheduling.t`, *default:* `nil`) - Optional. Job scheduling configuration.
-  *   `sparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkJob.t`, *default:* `nil`) - 
-  *   `sparkRJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkRJob.t`, *default:* `nil`) - Spark R job
-  *   `sparkSqlJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkSqlJob.t`, *default:* `nil`) - 
+  *   `sparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkJob.t`, *default:* `nil`) - Optional. Job is a Spark job.
+  *   `sparkRJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkRJob.t`, *default:* `nil`) - Optional. Job is a SparkR job.
+  *   `sparkSqlJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkSqlJob.t`, *default:* `nil`) - Optional. Job is a SparkSql job.
   *   `stepId` (*type:* `String.t`, *default:* `nil`) - Required. The step id. The id must be unique among all jobs within the template.The step id is used as prefix for job id, as job goog-dataproc-workflow-step-id label, and in prerequisiteStepIds field from other steps.The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters.
   """
 
