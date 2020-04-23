@@ -23,7 +23,12 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaModelInfo do
 
   *   `arimaCoefficients` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaCoefficients.t`, *default:* `nil`) - Arima coefficients.
   *   `arimaFittingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t`, *default:* `nil`) - Arima fitting metrics.
+  *   `hasDrift` (*type:* `boolean()`, *default:* `nil`) - Whether Arima model fitted with drift or not. It is always false
+      when d is not 1.
   *   `nonSeasonalOrder` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaOrder.t`, *default:* `nil`) - Non-seasonal order.
+  *   `seasonalPeriods` (*type:* `list(String.t)`, *default:* `nil`) - Seasonal periods. Repeated because multiple periods are supported
+      for one time series.
+  *   `timeSeriesId` (*type:* `String.t`, *default:* `nil`) - The id to indicate different time series.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +36,18 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaModelInfo do
   @type t :: %__MODULE__{
           :arimaCoefficients => GoogleApi.BigQuery.V2.Model.ArimaCoefficients.t(),
           :arimaFittingMetrics => GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics.t(),
-          :nonSeasonalOrder => GoogleApi.BigQuery.V2.Model.ArimaOrder.t()
+          :hasDrift => boolean(),
+          :nonSeasonalOrder => GoogleApi.BigQuery.V2.Model.ArimaOrder.t(),
+          :seasonalPeriods => list(String.t()),
+          :timeSeriesId => String.t()
         }
 
   field(:arimaCoefficients, as: GoogleApi.BigQuery.V2.Model.ArimaCoefficients)
   field(:arimaFittingMetrics, as: GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics)
+  field(:hasDrift)
   field(:nonSeasonalOrder, as: GoogleApi.BigQuery.V2.Model.ArimaOrder)
+  field(:seasonalPeriods, type: :list)
+  field(:timeSeriesId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ArimaModelInfo do
