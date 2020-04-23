@@ -30,6 +30,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Content-Language of the object data.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Content-Type of the object data. If an object is stored without a Content-Type, it is served as application/octet-stream.
   *   `crc32c` (*type:* `String.t`, *default:* `nil`) - CRC32c checksum, as described in RFC 4960, Appendix B; encoded using base64 in big-endian byte order. For more information about using the CRC32c checksum, see Hashes and ETags: Best Practices.
+  *   `customTime` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp in RFC 3339 format specified by the user for an object.
   *   `customerEncryption` (*type:* `GoogleApi.Storage.V1.Model.ObjectCustomerEncryption.t`, *default:* `nil`) - Metadata of customer-supplied encryption key, if the object is encrypted by such a key.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - HTTP 1.1 Entity tag for the object.
   *   `eventBasedHold` (*type:* `boolean()`, *default:* `nil`) - Whether an object is under event-based hold. Event-based hold is a way to retain objects until an event occurs, which is signified by the hold's release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is the loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false.
@@ -66,6 +67,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
           :contentLanguage => String.t(),
           :contentType => String.t(),
           :crc32c => String.t(),
+          :customTime => DateTime.t(),
           :customerEncryption => GoogleApi.Storage.V1.Model.ObjectCustomerEncryption.t(),
           :etag => String.t(),
           :eventBasedHold => boolean(),
@@ -99,6 +101,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   field(:contentLanguage)
   field(:contentType)
   field(:crc32c)
+  field(:customTime, as: DateTime)
   field(:customerEncryption, as: GoogleApi.Storage.V1.Model.ObjectCustomerEncryption)
   field(:etag)
   field(:eventBasedHold)
