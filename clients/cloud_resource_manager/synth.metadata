@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "5cce11140faa136bc550a7327fed4acb19f9fa67"
+        "sha": "088c62a64d2c2c9a136baea4152de0d6b207d82e"
       }
     },
     {
       "git": {
         "name": "elixir-google-api",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "5cce11140faa136bc550a7327fed4acb19f9fa67"
+        "sha": "088c62a64d2c2c9a136baea4152de0d6b207d82e"
       }
     }
   ]
