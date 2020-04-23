@@ -21,6 +21,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   ## Attributes
 
+  *   `autoscale` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale.t`, *default:* `nil`) - The autoscale policy to apply on a pool.
   *   `name` (*type:* `String.t`, *default:* `nil`) - WorkerPool resource name formatted as:
       `projects/[PROJECT_ID]/instances/[INSTANCE_ID]/workerpools/[POOL_ID]`.
       name should not be populated when creating a worker pool since it is
@@ -35,12 +36,19 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoscale =>
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale.t(),
           :name => String.t(),
           :state => String.t(),
           :workerConfig =>
             GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig.t(),
           :workerCount => String.t()
         }
+
+  field(:autoscale,
+    as:
+      GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale
+  )
 
   field(:name)
   field(:state)
