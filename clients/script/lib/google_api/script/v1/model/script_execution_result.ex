@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.Script.V1.Model.ScriptExecutionResult do
   @moduledoc """
-  The result of an execution
-  Based on ScriptExecutionResult at:
-  google3/apps/maestro/api/frontend_execution_common.proto?q=message%5c%20ScriptExecutionResult
+  The result of an execution.
 
   ## Attributes
 
   *   `returnValue` (*type:* `GoogleApi.Script.V1.Model.Value.t`, *default:* `nil`) - The returned value of the execution.
-      TODO (johnlattin): Add HtmlResponse
-      TODO (johnlattin): Add ExceptionResponse
-      TODO (johlnattin): Add TextResponse
   """
 
   use GoogleApi.Gax.ModelBase

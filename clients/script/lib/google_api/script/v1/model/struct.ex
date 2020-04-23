@@ -19,8 +19,6 @@ defmodule GoogleApi.Script.V1.Model.Struct do
   @moduledoc """
   `Struct` represents a structured data value, consisting of fields which map
   to dynamically typed values.
-  Based on Struct at:
-  google3/apps/maestro/api/struct.proto?q=message%5c%20Struct
 
   ## Attributes
 

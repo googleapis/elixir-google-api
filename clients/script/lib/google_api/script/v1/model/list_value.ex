@@ -18,8 +18,6 @@
 defmodule GoogleApi.Script.V1.Model.ListValue do
   @moduledoc """
   `ListValue` is a wrapper around a repeated field of values.
-  Based on LustValue at:
-  google3/apps/maestro/api/struct.proto?q=message%5c%20ListValue
 
   ## Attributes
 
