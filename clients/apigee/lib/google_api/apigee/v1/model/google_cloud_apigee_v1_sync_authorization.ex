@@ -46,7 +46,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SyncAuthorization do
       one.
 
       The service accounts must have **Apigee Synchronizer Manager** role.
-      See also [Add service accounts](/hybrid/precog-serviceaccounts).
+      See also [Create service
+      accounts](https://docs.apigee.com/hybrid/latest/sa-about#create-the-service-accounts).
   """
 
   use GoogleApi.Gax.ModelBase
