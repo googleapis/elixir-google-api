@@ -20,8 +20,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag d
   Tags are used to attach custom metadata to Data Catalog resources. Tags
   conform to the specifications within their tag template.
 
-  See [Data Catalog IAM](/data-catalog/docs/concepts/iam) for information on
-  the permissions needed to create or view tags.
+  See [Data Catalog
+  IAM](https://cloud.google.com/data-catalog/docs/concepts/iam) for information
+  on the permissions needed to create or view tags.
 
   ## Attributes
 
