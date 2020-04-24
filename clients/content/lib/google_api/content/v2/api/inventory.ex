@@ -86,7 +86,7 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the account that contains the product. This account cannot be a multi-client account.
-  *   `store_code` (*type:* `String.t`) - The code of the store for which to update price and availability. Use online to update price and availability of an online product.
+  *   `store_code` (*type:* `String.t`) - The code of the store for which to update price and availability. Use `online` to update price and availability of an online product.
   *   `product_id` (*type:* `String.t`) - The REST ID of the product for which to update price and availability.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.

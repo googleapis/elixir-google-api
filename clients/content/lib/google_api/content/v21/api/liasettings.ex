@@ -83,7 +83,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to get or update LIA settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -142,7 +142,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to retrieve accessible Google My Business accounts.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -314,7 +314,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which GMB access is requested.
   *   `gmb_email` (*type:* `String.t`) - The email of the Google My Business account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -385,7 +385,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
   *   `country` (*type:* `String.t`) - The country for which inventory validation is requested.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -460,7 +460,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
   *   `contact_email` (*type:* `String.t`) - The email of the inventory verification contact.
   *   `contact_name` (*type:* `String.t`) - The name of the inventory verification contact.
@@ -548,7 +548,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to retrieve accessible Google My Business accounts.
   *   `country` (*type:* `String.t`) - The country for which the POS data provider is selected.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -623,7 +623,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to get or update LIA settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.

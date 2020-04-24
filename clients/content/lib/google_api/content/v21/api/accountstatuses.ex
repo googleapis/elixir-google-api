@@ -83,7 +83,7 @@ defmodule GoogleApi.Content.V21.Api.Accountstatuses do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.

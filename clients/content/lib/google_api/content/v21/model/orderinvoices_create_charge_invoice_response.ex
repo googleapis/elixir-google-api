@@ -24,8 +24,8 @@ defmodule GoogleApi.Content.V21.Model.OrderinvoicesCreateChargeInvoiceResponse d
   *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
 
       Acceptable values are:  
-      - "duplicate" 
-      - "executed"
+      - "`duplicate`" 
+      - "`executed`"
   *   `kind` (*type:* `String.t`, *default:* `content#orderinvoicesCreateChargeInvoiceResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#orderinvoicesCreateChargeInvoiceResponse".
   """
 

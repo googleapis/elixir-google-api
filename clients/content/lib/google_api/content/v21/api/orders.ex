@@ -93,7 +93,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
   end
 
   @doc """
-  Sandbox only. Moves a test order from state "inProgress" to state "pendingShipment".
+  Sandbox only. Moves a test order from state "`inProgress`" to state "`pendingShipment`".
 
   ## Parameters
 
@@ -612,7 +612,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:country` (*type:* `String.t`) - The country of the template to retrieve. Defaults to US.
+      *   `:country` (*type:* `String.t`) - The country of the template to retrieve. Defaults to `US`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -751,7 +751,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:acknowledged` (*type:* `boolean()`) - Obtains orders that match the acknowledgement status. When set to true, obtains orders that have been acknowledged. When false, obtains orders that have not been acknowledged.
-          We recommend using this filter set to false, in conjunction with the acknowledge call, such that only un-acknowledged orders are returned.
+          We recommend using this filter set to `false`, in conjunction with the `acknowledge` call, such that only un-acknowledged orders are returned.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of orders to return in the response, used for paging. The default value is 25 orders per page, and the maximum allowed value is 250 orders per page.
       *   `:orderBy` (*type:* `String.t`) - Order results by placement date in descending or ascending order.
 
@@ -761,7 +761,7 @@ defmodule GoogleApi.Content.V21.Api.Orders do
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
       *   `:placedDateEnd` (*type:* `String.t`) - Obtains orders placed before this date (exclusively), in ISO 8601 format.
       *   `:placedDateStart` (*type:* `String.t`) - Obtains orders placed after this date (inclusively), in ISO 8601 format.
-      *   `:statuses` (*type:* `list(String.t)`) - Obtains orders that match any of the specified statuses. Please note that active is a shortcut for pendingShipment and partiallyShipped, and completed is a shortcut for shipped, partiallyDelivered, delivered, partiallyReturned, returned, and canceled.
+      *   `:statuses` (*type:* `list(String.t)`) - Obtains orders that match any of the specified statuses. Please note that `active` is a shortcut for `pendingShipment` and `partiallyShipped`, and `completed` is a shortcut for `shipped`, `partiallyDelivered`, `delivered`, `partiallyReturned`, `returned`, and `canceled`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
