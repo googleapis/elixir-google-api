@@ -22,7 +22,7 @@ defmodule GoogleApi.IAMCredentials.V1.Model.SignBlobResponse do
   ## Attributes
 
   *   `keyId` (*type:* `String.t`, *default:* `nil`) - The ID of the key used to sign the blob.
-  *   `signedBlob` (*type:* `String.t`, *default:* `nil`) - The signed blob.
+  *   `signedBlob` (*type:* `String.t`, *default:* `nil`) - The signature for the blob. Does not include the original blob.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,9 @@ defmodule GoogleApi.IAMCredentials.V1.Model.SignJwtResponse do
   ## Attributes
 
   *   `keyId` (*type:* `String.t`, *default:* `nil`) - The ID of the key used to sign the JWT.
-  *   `signedJwt` (*type:* `String.t`, *default:* `nil`) - The signed JWT.
+  *   `signedJwt` (*type:* `String.t`, *default:* `nil`) - The signed JWT. Contains the automatically generated header; the
+      client-supplied payload; and the signature, which is generated using the
+      key referenced by the `kid` field in the header.
   """
 
   use GoogleApi.Gax.ModelBase
