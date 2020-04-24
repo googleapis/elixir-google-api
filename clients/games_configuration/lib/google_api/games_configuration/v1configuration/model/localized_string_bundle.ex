@@ -22,7 +22,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBund
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
-      string <code>gamesConfiguration#localizedStringBundle</code>.
+      string `gamesConfiguration#localizedStringBundle`.
   *   `translations` (*type:* `list(GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedString.t)`, *default:* `nil`) - The locale strings.
   """
 

@@ -258,7 +258,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:maxResults` (*type:* `integer()`) - The maximum number of resource configurations to return in the response,
           used for paging. For any response, the actual number of resources returned
-          may be less than the specified <code>maxResults</code>.
+          may be less than the specified `maxResults`.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
   *   `opts` (*type:* `keyword()`) - Call options
 
