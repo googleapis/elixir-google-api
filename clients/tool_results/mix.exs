@@ -18,7 +18,7 @@
 defmodule GoogleApi.ToolResults.Mixfile do
   use Mix.Project
 
-  @version "0.21.0"
+  @version "0.22.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.ToolResults.Mixfile do
 
   defp description() do
     """
-    Cloud Tool Results API client library. Reads and publishes results from Firebase Test Lab.
+    Cloud Tool Results API client library. API to publish and access results from developer tools.
     """
   end
 

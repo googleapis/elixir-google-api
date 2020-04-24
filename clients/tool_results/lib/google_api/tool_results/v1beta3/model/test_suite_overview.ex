@@ -17,38 +17,54 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.TestSuiteOverview do
   @moduledoc """
-  A summary of a test suite result either parsed from XML or uploaded directly by a user.
+  A summary of a test suite result either parsed from XML or uploaded
+  directly by a user.
 
-  Note: the API related comments are for StepService only. This message is also being used in ExecutionService in a read only mode for the corresponding step.
+  Note: the API related comments are for StepService only. This message is
+  also being used in ExecutionService in a read only mode for the corresponding
+  step.
 
   ## Attributes
 
   *   `elapsedTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - Elapsed time of test suite.
-  *   `errorCount` (*type:* `integer()`, *default:* `nil`) - Number of test cases in error, typically set by the service by parsing the xml_source.
+  *   `errorCount` (*type:* `integer()`, *default:* `nil`) - Number of test cases in error, typically set by the service by parsing the
+      xml_source.
 
-      - In create/response: always set - In update request: never
-  *   `failureCount` (*type:* `integer()`, *default:* `nil`) - Number of failed test cases, typically set by the service by parsing the xml_source. May also be set by the user.
+      - In create/response: always set
+      - In update request: never
+  *   `failureCount` (*type:* `integer()`, *default:* `nil`) - Number of failed test cases, typically set by the service by parsing the
+      xml_source. May also be set by the user.
 
-      - In create/response: always set - In update request: never
-  *   `flakyCount` (*type:* `integer()`, *default:* `nil`) - Number of flaky test cases, set by the service by rolling up flaky test attempts.
+      - In create/response: always set
+      - In update request: never
+  *   `flakyCount` (*type:* `integer()`, *default:* `nil`) - Number of flaky test cases, set by the service by rolling up flaky test
+      attempts.
 
-      Present only for rollup test suite overview at environment level. A step cannot have flaky test cases.
+      Present only for rollup test suite overview at environment level. A step
+      cannot have flaky test cases.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the test suite.
 
-      - In create/response: always set - In update request: never
-  *   `skippedCount` (*type:* `integer()`, *default:* `nil`) - Number of test cases not run, typically set by the service by parsing the xml_source.
+      - In create/response: always set
+      - In update request: never
+  *   `skippedCount` (*type:* `integer()`, *default:* `nil`) - Number of test cases not run, typically set by the service by parsing the
+      xml_source.
 
-      - In create/response: always set - In update request: never
-  *   `totalCount` (*type:* `integer()`, *default:* `nil`) - Number of test cases, typically set by the service by parsing the xml_source.
+      - In create/response: always set
+      - In update request: never
+  *   `totalCount` (*type:* `integer()`, *default:* `nil`) - Number of test cases, typically set by the service by parsing the
+      xml_source.
 
-      - In create/response: always set - In update request: never
-  *   `xmlSource` (*type:* `GoogleApi.ToolResults.V1beta3.Model.FileReference.t`, *default:* `nil`) - If this test suite was parsed from XML, this is the URI where the original XML file is stored.
+      - In create/response: always set
+      - In update request: never
+  *   `xmlSource` (*type:* `GoogleApi.ToolResults.V1beta3.Model.FileReference.t`, *default:* `nil`) - If this test suite was parsed from XML, this is the URI where the original
+      XML file is stored.
 
       Note: Multiple test suites can share the same xml_source
 
       Returns INVALID_ARGUMENT if the uri format is not supported.
 
-      - In create/response: optional - In update request: never
+      - In create/response: optional
+      - In update request: never
   """
 
   use GoogleApi.Gax.ModelBase

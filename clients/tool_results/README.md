@@ -2,7 +2,7 @@
 
 Cloud Tool Results API client library.
 
-Reads and publishes results from Firebase Test Lab.
+API to publish and access results from developer tools.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_tool_results, "~> 0.21"}]
+  [{:google_api_tool_results, "~> 0.22"}]
 end
 ```
 

@@ -26,7 +26,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Thumbnail do
       Always set.
   *   `data` (*type:* `String.t`, *default:* `nil`) - The thumbnail file itself.
 
-      That is, the bytes here are precisely the bytes that make up the thumbnail file; they can be served as an image as-is (with the appropriate content type.)
+      That is, the bytes here are precisely the bytes that make up the thumbnail
+      file; they can be served as an image as-is (with the appropriate content
+      type.)
 
       Always set.
   *   `heightPx` (*type:* `integer()`, *default:* `nil`) - The height of the thumbnail, in pixels.

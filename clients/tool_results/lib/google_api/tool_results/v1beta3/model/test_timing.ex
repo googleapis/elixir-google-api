@@ -23,7 +23,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestTiming do
 
   *   `testProcessDuration` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - How long it took to run the test process.
 
-      - In response: present if previously set. - In create/update request: optional
+      - In response: present if previously set.
+      - In create/update request: optional
   """
 
   use GoogleApi.Gax.ModelBase

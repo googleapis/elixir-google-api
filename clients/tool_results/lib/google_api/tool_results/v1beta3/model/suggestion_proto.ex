@@ -21,16 +21,35 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.SuggestionProto do
 
   ## Attributes
 
-  *   `helpUrl` (*type:* `String.t`, *default:* `nil`) - Reference to a help center article concerning this type of suggestion. Always set.
-  *   `longMessage` (*type:* `GoogleApi.ToolResults.V1beta3.Model.SafeHtmlProto.t`, *default:* `nil`) - Message, in the user's language, explaining the suggestion, which may contain markup. Always set.
-  *   `priority` (*type:* `String.t`, *default:* `nil`) - Relative importance of a suggestion. Always set.
-  *   `pseudoResourceId` (*type:* `String.t`, *default:* `nil`) - A somewhat human readable identifier of the source view, if it does not have a resource_name. This is a path within the accessibility hierarchy, an element with resource name; similar to an XPath.
-  *   `region` (*type:* `GoogleApi.ToolResults.V1beta3.Model.RegionProto.t`, *default:* `nil`) - Region within the screenshot that is relevant to this suggestion. Optional.
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Reference to a view element, identified by its resource name, if it has one.
-  *   `screenId` (*type:* `String.t`, *default:* `nil`) - ID of the screen for the suggestion. It is used for getting the corresponding screenshot path. For example, screen_id "1" corresponds to "1.png" file in GCS. Always set.
-  *   `secondaryPriority` (*type:* `float()`, *default:* `nil`) - Relative importance of a suggestion as compared with other suggestions that have the same priority and category. This is a meaningless value that can be used to order suggestions that are in the same category and have the same priority. The larger values have higher priority (i.e., are more important). Optional.
-  *   `shortMessage` (*type:* `GoogleApi.ToolResults.V1beta3.Model.SafeHtmlProto.t`, *default:* `nil`) - Concise message, in the user's language, representing the suggestion, which may contain markup. Always set.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - General title for the suggestion, in the user's language, without markup. Always set.
+  *   `helpUrl` (*type:* `String.t`, *default:* `nil`) - Reference to a help center article concerning this type of suggestion.
+      Always set.
+  *   `longMessage` (*type:* `GoogleApi.ToolResults.V1beta3.Model.SafeHtmlProto.t`, *default:* `nil`) - Message, in the user's language, explaining the suggestion, which may
+      contain markup.
+      Always set.
+  *   `priority` (*type:* `String.t`, *default:* `nil`) - Relative importance of a suggestion.
+      Always set.
+  *   `pseudoResourceId` (*type:* `String.t`, *default:* `nil`) - A somewhat human readable identifier of the source view, if it does not
+      have a resource_name. This is a path within the accessibility hierarchy,
+      an element with resource name; similar to an XPath.
+  *   `region` (*type:* `GoogleApi.ToolResults.V1beta3.Model.RegionProto.t`, *default:* `nil`) - Region within the screenshot that is relevant to this suggestion.
+      Optional.
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Reference to a view element, identified by its resource name, if it has
+      one.
+  *   `screenId` (*type:* `String.t`, *default:* `nil`) - ID of the screen for the suggestion.
+      It is used for getting the corresponding screenshot path. For example,
+      screen_id "1" corresponds to "1.png" file in GCS.
+      Always set.
+  *   `secondaryPriority` (*type:* `float()`, *default:* `nil`) - Relative importance of a suggestion as compared with other suggestions
+      that have the same priority and category.
+      This is a meaningless value that can be used to order suggestions that are
+      in the same category and have the same priority.
+      The larger values have higher priority (i.e., are more important).
+      Optional.
+  *   `shortMessage` (*type:* `GoogleApi.ToolResults.V1beta3.Model.SafeHtmlProto.t`, *default:* `nil`) - Concise message, in the user's language, representing the suggestion,
+      which may contain markup.
+      Always set.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - General title for the suggestion, in the user's language, without markup.
+      Always set.
   """
 
   use GoogleApi.Gax.ModelBase
