@@ -395,6 +395,10 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   @doc """
   Gets the most recent health check results for this BackendService.
 
+  Example request body:
+
+  { "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
