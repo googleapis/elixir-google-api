@@ -17,11 +17,14 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.IndividualOutcome do
   @moduledoc """
-  Step Id and outcome of each individual step that was run as a group with other steps with the same configuration.
+  Step Id and outcome of each individual step that was run as a group with
+  other steps with the same configuration.
 
   ## Attributes
 
-  *   `multistepNumber` (*type:* `integer()`, *default:* `nil`) - Unique int given to each step. Ranges from 0(inclusive) to total number of steps(exclusive). The primary step is 0.
+  *   `multistepNumber` (*type:* `integer()`, *default:* `nil`) - Unique int given to each step.
+      Ranges from 0(inclusive) to total number of steps(exclusive).
+      The primary step is 0.
   *   `outcomeSummary` (*type:* `String.t`, *default:* `nil`) - 
   *   `runDuration` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - How long it took for this step to run.
   *   `stepId` (*type:* `String.t`, *default:* `nil`) - 

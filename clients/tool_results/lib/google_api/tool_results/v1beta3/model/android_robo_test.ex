@@ -17,15 +17,22 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest do
   @moduledoc """
-  A test of an android application that explores the application on a virtual or physical Android device, finding culprits and crashes as it goes.
+  A test of an android application that explores the application on a virtual
+  or physical Android device, finding culprits and crashes as it goes.
 
   ## Attributes
 
-  *   `appInitialActivity` (*type:* `String.t`, *default:* `nil`) - The initial activity that should be used to start the app. Optional
-  *   `bootstrapPackageId` (*type:* `String.t`, *default:* `nil`) - The java package for the bootstrap. Optional
-  *   `bootstrapRunnerClass` (*type:* `String.t`, *default:* `nil`) - The runner class for the bootstrap. Optional
-  *   `maxDepth` (*type:* `integer()`, *default:* `nil`) - The max depth of the traversal stack Robo can explore. Optional
-  *   `maxSteps` (*type:* `integer()`, *default:* `nil`) - The max number of steps/actions Robo can execute. Default is no limit (0). Optional
+  *   `appInitialActivity` (*type:* `String.t`, *default:* `nil`) - The initial activity that should be used to start the app.
+      Optional
+  *   `bootstrapPackageId` (*type:* `String.t`, *default:* `nil`) - The java package for the bootstrap.
+      Optional
+  *   `bootstrapRunnerClass` (*type:* `String.t`, *default:* `nil`) - The runner class for the bootstrap.
+      Optional
+  *   `maxDepth` (*type:* `integer()`, *default:* `nil`) - The max depth of the traversal stack Robo can explore.
+      Optional
+  *   `maxSteps` (*type:* `integer()`, *default:* `nil`) - The max number of steps/actions Robo can execute.
+      Default is no limit (0).
+      Optional
   """
 
   use GoogleApi.Gax.ModelBase

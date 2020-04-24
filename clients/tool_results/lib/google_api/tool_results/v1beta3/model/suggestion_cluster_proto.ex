@@ -19,12 +19,17 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.SuggestionClusterProto do
   @moduledoc """
   A set of similar suggestions that we suspect are closely related.
 
-  This proto and most of the nested protos are branched from foxandcrown.prelaunchreport.service.SuggestionClusterProto, replacing PLR's dependencies with FTL's.
+  This proto and most of the nested protos are branched from
+  foxandcrown.prelaunchreport.service.SuggestionClusterProto, replacing PLR's
+  dependencies with FTL's.
 
   ## Attributes
 
-  *   `category` (*type:* `String.t`, *default:* `nil`) - Category in which these types of suggestions should appear. Always set.
-  *   `suggestions` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.SuggestionProto.t)`, *default:* `nil`) - A sequence of suggestions. All of the suggestions within a cluster must have the same SuggestionPriority and belong to the same SuggestionCategory. Suggestions with the same screenshot URL should be adjacent.
+  *   `category` (*type:* `String.t`, *default:* `nil`) - Category in which these types of suggestions should appear.
+      Always set.
+  *   `suggestions` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.SuggestionProto.t)`, *default:* `nil`) - A sequence of suggestions. All of the suggestions within a cluster must
+      have the same SuggestionPriority and belong to the same SuggestionCategory.
+      Suggestions with the same screenshot URL should be adjacent.
   """
 
   use GoogleApi.Gax.ModelBase

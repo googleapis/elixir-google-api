@@ -23,10 +23,15 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries do
 
   *   `basicPerfSampleSeries` (*type:* `GoogleApi.ToolResults.V1beta3.Model.BasicPerfSampleSeries.t`, *default:* `nil`) - Basic series represented by a line chart
   *   `executionId` (*type:* `String.t`, *default:* `nil`) - A tool results execution ID.
+      @OutputOnly
   *   `historyId` (*type:* `String.t`, *default:* `nil`) - A tool results history ID.
+      @OutputOnly
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The cloud project
+      @OutputOnly
   *   `sampleSeriesId` (*type:* `String.t`, *default:* `nil`) - A sample series id
+      @OutputOnly
   *   `stepId` (*type:* `String.t`, *default:* `nil`) - A tool results step ID.
+      @OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

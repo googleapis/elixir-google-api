@@ -25,19 +25,16 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestCase do
 
       Required.
   *   `endTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - The end time of the test case.
-
-      Optional.
   *   `skippedMessage` (*type:* `String.t`, *default:* `nil`) - Why the test case was skipped.
 
       Present only for skipped test case
   *   `stackTraces` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.StackTrace.t)`, *default:* `nil`) - The stack trace details if the test case failed or encountered an error.
 
-      The maximum size of the stack traces is 100KiB, beyond which the stack track will be truncated.
+      The maximum size of the stack traces is 100KiB, beyond which the stack
+      track will be truncated.
 
       Zero if the test case passed.
   *   `startTime` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Timestamp.t`, *default:* `nil`) - The start time of the test case.
-
-      Optional.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the test case.
 
       Required.
@@ -46,6 +43,8 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.TestCase do
 
       Required.
   *   `toolOutputs` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t)`, *default:* `nil`) - References to opaque files of any format output by the tool execution.
+
+      @OutputOnly
   """
 
   use GoogleApi.Gax.ModelBase

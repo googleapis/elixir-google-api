@@ -22,10 +22,12 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.FailureDetail do
   ## Attributes
 
   *   `crashed` (*type:* `boolean()`, *default:* `nil`) - If the failure was severe because the system (app) under test crashed.
-  *   `notInstalled` (*type:* `boolean()`, *default:* `nil`) - If an app is not installed and thus no test can be run with the app. This might be caused by trying to run a test on an unsupported platform.
+  *   `notInstalled` (*type:* `boolean()`, *default:* `nil`) - If an app is not installed and thus no test can be run with the app.
+      This might be caused by trying to run a test on an unsupported platform.
   *   `otherNativeCrash` (*type:* `boolean()`, *default:* `nil`) - If a native process (including any other than the app) crashed.
   *   `timedOut` (*type:* `boolean()`, *default:* `nil`) - If the test overran some time limit, and that is why it failed.
-  *   `unableToCrawl` (*type:* `boolean()`, *default:* `nil`) - If the robo was unable to crawl the app; perhaps because the app did not start.
+  *   `unableToCrawl` (*type:* `boolean()`, *default:* `nil`) - If the robo was unable to crawl the app; perhaps because the app did not
+      start.
   """
 
   use GoogleApi.Gax.ModelBase

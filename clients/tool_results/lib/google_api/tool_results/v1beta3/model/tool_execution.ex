@@ -17,28 +17,43 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.ToolExecution do
   @moduledoc """
-  An execution of an arbitrary tool. It could be a test runner or a tool copying artifacts or deploying code.
+  An execution of an arbitrary tool. It could be a test runner or a tool
+  copying artifacts or deploying code.
 
   ## Attributes
 
-  *   `commandLineArguments` (*type:* `list(String.t)`, *default:* `nil`) - The full tokenized command line including the program name (equivalent to argv in a C program).
+  *   `commandLineArguments` (*type:* `list(String.t)`, *default:* `nil`) - The full tokenized command line including the program name (equivalent to
+      argv in a C program).
 
-      - In response: present if set by create request - In create request: optional - In update request: never set
-  *   `exitCode` (*type:* `GoogleApi.ToolResults.V1beta3.Model.ToolExitCode.t`, *default:* `nil`) - Tool execution exit code. This field will be set once the tool has exited.
+      - In response: present if set by create request
+      - In create request: optional
+      - In update request: never set
+  *   `exitCode` (*type:* `GoogleApi.ToolResults.V1beta3.Model.ToolExitCode.t`, *default:* `nil`) - Tool execution exit code. This field will be set once the tool has
+      exited.
 
-      - In response: present if set by create/update request - In create request: optional - In update request: optional, a FAILED_PRECONDITION error will be returned if an exit_code is already set.
+      - In response: present if set by create/update request
+      - In create request: optional
+      - In update request: optional, a FAILED_PRECONDITION error will be
+        returned if an exit_code is already set.
   *   `toolLogs` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.FileReference.t)`, *default:* `nil`) - References to any plain text logs output the tool execution.
 
-      This field can be set before the tool has exited in order to be able to have access to a live view of the logs while the tool is running.
+      This field can be set before the tool has exited in order to be able to
+      have access to a live view of the logs while the tool is running.
 
       The maximum allowed number of tool logs per step is 1000.
 
-      - In response: present if set by create/update request - In create request: optional - In update request: optional, any value provided will be appended to the existing list
+      - In response: present if set by create/update request
+      - In create request: optional
+      - In update request: optional, any value provided will be appended to the
+        existing list
   *   `toolOutputs` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.ToolOutputReference.t)`, *default:* `nil`) - References to opaque files of any format output by the tool execution.
 
       The maximum allowed number of tool outputs per step is 1000.
 
-      - In response: present if set by create/update request - In create request: optional - In update request: optional, any value provided will be appended to the existing list
+      - In response: present if set by create/update request
+      - In create request: optional
+      - In update request: optional, any value provided will be appended to the
+        existing list
   """
 
   use GoogleApi.Gax.ModelBase
