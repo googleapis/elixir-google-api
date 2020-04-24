@@ -24,8 +24,8 @@ defmodule GoogleApi.Content.V21.Model.OrdersRejectReturnLineItemResponse do
   *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
 
       Acceptable values are:  
-      - "duplicate" 
-      - "executed"
+      - "`duplicate`" 
+      - "`executed`"
   *   `kind` (*type:* `String.t`, *default:* `content#ordersRejectReturnLineItemResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersRejectReturnLineItemResponse".
   """
 

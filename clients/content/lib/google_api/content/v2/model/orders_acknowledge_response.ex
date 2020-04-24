@@ -24,8 +24,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersAcknowledgeResponse do
   *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution.
 
       Acceptable values are:  
-      - "duplicate" 
-      - "executed"
+      - "`duplicate`" 
+      - "`executed`"
   *   `kind` (*type:* `String.t`, *default:* `content#ordersAcknowledgeResponse`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersAcknowledgeResponse".
   """
 

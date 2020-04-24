@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Content.V21.Model.SettlementTransaction do
   @moduledoc """
-  Settlement transactions give a detailed breakdown of the  settlement report.
+  Settlement transactions give a detailed breakdown of the  settlement report. (== resource_for v2.1.settlementtransactions ==)
 
   ## Attributes
 
