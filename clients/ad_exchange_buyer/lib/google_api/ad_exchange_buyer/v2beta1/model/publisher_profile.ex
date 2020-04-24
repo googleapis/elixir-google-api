@@ -20,7 +20,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
   Note: this resource requires whitelisting for access. Please contact your
   account manager for access to Marketplace resources.
 
-  Represents a publisher profile in Marketplace.
+  Represents a publisher profile
+  (https://support.google.com/admanager/answer/6035806?hl=en) in Marketplace.
 
   All fields are read only. All string fields are free-form text entered by the
   publisher unless noted otherwise.
@@ -39,6 +40,13 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
       not contain a string like "photos.google.co.uk/123", but will instead
       contain "google.co.uk".
   *   `googlePlusUrl` (*type:* `String.t`, *default:* `nil`) - URL to publisher's Google+ page.
+  *   `isParent` (*type:* `boolean()`, *default:* `nil`) - Indicates if this profile is the parent profile of the seller. A parent
+      profile represents all the inventory from the seller, as opposed to child
+      profile that is created to brand a portion of inventory. One seller should
+      have only one parent publisher profile, and can have multiple child
+      profiles. Publisher profiles for the same seller will have same value of
+      field google.ads.adexchange.buyer.v2beta1.PublisherProfile.seller.
+      See https://support.google.com/admanager/answer/6035806?hl=en for details.
   *   `logoUrl` (*type:* `String.t`, *default:* `nil`) - A Google public URL to the logo for this publisher profile. The logo is
       stored as a PNG, JPG, or GIF image.
   *   `mediaKitUrl` (*type:* `String.t`, *default:* `nil`) - URL to additional marketing and sales materials.
@@ -63,6 +71,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
           :displayName => String.t(),
           :domains => list(String.t()),
           :googlePlusUrl => String.t(),
+          :isParent => boolean(),
           :logoUrl => String.t(),
           :mediaKitUrl => String.t(),
           :overview => String.t(),
@@ -80,6 +89,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile do
   field(:displayName)
   field(:domains, type: :list)
   field(:googlePlusUrl)
+  field(:isParent)
   field(:logoUrl)
   field(:mediaKitUrl)
   field(:overview)
