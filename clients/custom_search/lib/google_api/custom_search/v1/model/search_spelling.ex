@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.SearchSpelling do
   @moduledoc """
-  Spell correction information for a query.
+
 
   ## Attributes
 
-  *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - The corrected query.
-  *   `htmlCorrectedQuery` (*type:* `String.t`, *default:* `nil`) - The corrected query, formatted in HTML.
+  *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - 
+  *   `htmlCorrectedQuery` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
