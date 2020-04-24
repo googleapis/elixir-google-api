@@ -38,12 +38,17 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificate do
   *   `certificate` (*type:* `String.t`, *default:* `nil`) - A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `expireTime` (*type:* `String.t`, *default:* `nil`) - [Output Only] Expire time of the certificate. RFC3339
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#sslCertificate`) - [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
+  *   `managed` (*type:* `GoogleApi.Compute.V1.Model.SslCertificateManagedSslCertificate.t`, *default:* `nil`) - Configuration and status of a managed SSL certificate.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `privateKey` (*type:* `String.t`, *default:* `nil`) - A write-only private key in PEM format. Only insert requests will include this field.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined URL for the resource.
+  *   `selfManaged` (*type:* `GoogleApi.Compute.V1.Model.SslCertificateSelfManagedSslCertificate.t`, *default:* `nil`) - Configuration and status of a self-managed SSL certificate.
+  *   `subjectAlternativeNames` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] Domains associated with the certificate via Subject Alternative Name.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -52,23 +57,33 @@ defmodule GoogleApi.Compute.V1.Model.SslCertificate do
           :certificate => String.t(),
           :creationTimestamp => String.t(),
           :description => String.t(),
+          :expireTime => String.t(),
           :id => String.t(),
           :kind => String.t(),
+          :managed => GoogleApi.Compute.V1.Model.SslCertificateManagedSslCertificate.t(),
           :name => String.t(),
           :privateKey => String.t(),
           :region => String.t(),
-          :selfLink => String.t()
+          :selfLink => String.t(),
+          :selfManaged => GoogleApi.Compute.V1.Model.SslCertificateSelfManagedSslCertificate.t(),
+          :subjectAlternativeNames => list(String.t()),
+          :type => String.t()
         }
 
   field(:certificate)
   field(:creationTimestamp)
   field(:description)
+  field(:expireTime)
   field(:id)
   field(:kind)
+  field(:managed, as: GoogleApi.Compute.V1.Model.SslCertificateManagedSslCertificate)
   field(:name)
   field(:privateKey)
   field(:region)
   field(:selfLink)
+  field(:selfManaged, as: GoogleApi.Compute.V1.Model.SslCertificateSelfManagedSslCertificate)
+  field(:subjectAlternativeNames, type: :list)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.SslCertificate do

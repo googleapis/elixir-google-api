@@ -24,7 +24,9 @@ defmodule GoogleApi.Compute.V1.Model.NetworkPeering do
   *   `autoCreateRoutes` (*type:* `boolean()`, *default:* `nil`) - This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
   *   `exchangeSubnetRoutes` (*type:* `boolean()`, *default:* `nil`) - Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
   *   `exportCustomRoutes` (*type:* `boolean()`, *default:* `nil`) - Whether to export the custom routes to peer network.
+  *   `exportSubnetRoutesWithPublicIp` (*type:* `boolean()`, *default:* `nil`) - Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
   *   `importCustomRoutes` (*type:* `boolean()`, *default:* `nil`) - Whether to import the custom routes from peer network.
+  *   `importSubnetRoutesWithPublicIp` (*type:* `boolean()`, *default:* `nil`) - Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
   *   `state` (*type:* `String.t`, *default:* `nil`) - [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
@@ -37,7 +39,9 @@ defmodule GoogleApi.Compute.V1.Model.NetworkPeering do
           :autoCreateRoutes => boolean(),
           :exchangeSubnetRoutes => boolean(),
           :exportCustomRoutes => boolean(),
+          :exportSubnetRoutesWithPublicIp => boolean(),
           :importCustomRoutes => boolean(),
+          :importSubnetRoutesWithPublicIp => boolean(),
           :name => String.t(),
           :network => String.t(),
           :state => String.t(),
@@ -47,7 +51,9 @@ defmodule GoogleApi.Compute.V1.Model.NetworkPeering do
   field(:autoCreateRoutes)
   field(:exchangeSubnetRoutes)
   field(:exportCustomRoutes)
+  field(:exportSubnetRoutesWithPublicIp)
   field(:importCustomRoutes)
+  field(:importSubnetRoutesWithPublicIp)
   field(:name)
   field(:network)
   field(:state)

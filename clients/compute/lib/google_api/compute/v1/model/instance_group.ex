@@ -44,11 +44,11 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroup do
       This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] 
 
       Named ports apply to all instances in this instance group.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which all instances in the instance group belong.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the instance group is located (for regional resources).
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL for this instance group. The server generates this URL.
   *   `size` (*type:* `integer()`, *default:* `nil`) - [Output Only] The total number of instances in the instance group.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the subnetwork to which all instances in the instance group belong.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the zone where the instance group is located (for zonal resources).
   """
 

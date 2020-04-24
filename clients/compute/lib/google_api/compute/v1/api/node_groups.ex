@@ -699,7 +699,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   end
 
   @doc """
-  Patch the node group.
+  Updates the specified node group.
 
   ## Parameters
 
