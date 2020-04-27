@@ -1,6 +1,6 @@
 # GoogleApi.CustomSearch
 
-CustomSearch API client library.
+Custom Search API client library.
 
 Searches over a website or collection of websites
 
@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_custom_search, "~> 0.10"}]
+  [{:google_api_custom_search, "~> 0.11"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/custom-search/v1/using_rest](https://developers.google.com/custom-search/v1/using_rest).
+Product documentation is available at [https://developers.google.com/custom-search/v1/introduction](https://developers.google.com/custom-search/v1/introduction).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_custom_search](https://hexdocs.pm/google_api_custom_search).

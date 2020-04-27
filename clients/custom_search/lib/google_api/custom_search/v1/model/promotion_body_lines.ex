@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.PromotionBodyLines do
   @moduledoc """
-
+  Block object belonging to a promotion.
 
   ## Attributes
 
-  *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - 
-  *   `link` (*type:* `String.t`, *default:* `nil`) - 
-  *   `title` (*type:* `String.t`, *default:* `nil`) - 
-  *   `url` (*type:* `String.t`, *default:* `nil`) - 
+  *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - The block object's text in HTML, if it has text.
+  *   `link` (*type:* `String.t`, *default:* `nil`) - The anchor text of the block object's link, if it has a link.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The block object's text, if it has text.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the block object's link, if it has one.
   """
 
   use GoogleApi.Gax.ModelBase
