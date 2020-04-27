@@ -42,7 +42,7 @@ defmodule GoogleApi.DriveActivity.V2.Model.QueryDriveActivityRequest do
           parentheses.
           Examples:
             - <tt>detail.action_detail_case: RENAME</tt>
-            - <tt>detail.action_detail_case:(CREATE UPLOAD)</tt>
+            - <tt>detail.action_detail_case:(CREATE EDIT)</tt>
             - <tt>-detail.action_detail_case:MOVE</tt>
   *   `itemName` (*type:* `String.t`, *default:* `nil`) - Return activities for this Drive item. The format is
       "items/ITEM_ID".
