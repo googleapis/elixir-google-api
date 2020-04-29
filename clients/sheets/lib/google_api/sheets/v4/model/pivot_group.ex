@@ -61,8 +61,8 @@ defmodule GoogleApi.Sheets.V4.Model.PivotGroup do
   *   `sourceColumnOffset` (*type:* `integer()`, *default:* `nil`) - The column offset of the source range that this grouping is based on.
 
       For example, if the source was `C10:E15`, a `sourceColumnOffset` of `0`
-      means this group refers to column `C`, whereas the offset `1` would refer
-      to column `D`.
+      means this group refers to column `C`, whereas the offset `1` would
+      refer to column `D`.
   *   `valueBucket` (*type:* `GoogleApi.Sheets.V4.Model.PivotGroupSortValueBucket.t`, *default:* `nil`) - The bucket of the opposite pivot group to sort by.
       If not specified, sorting is alphabetical by this group's values.
   *   `valueMetadata` (*type:* `list(GoogleApi.Sheets.V4.Model.PivotGroupValueMetadata.t)`, *default:* `nil`) - Metadata about values in the grouping.
