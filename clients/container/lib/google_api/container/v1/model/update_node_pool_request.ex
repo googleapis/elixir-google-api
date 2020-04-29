@@ -25,10 +25,10 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
       This field has been deprecated and replaced by the name field.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - Required. The desired image type for the node pool.
   *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine
-      [zones](/compute/docs/zones#available) in which the node pool's nodes
-      should be located. Changing the locations for a node pool will result
-      in nodes being either created or removed from the node pool, depending
-      on whether locations are being added or removed.
+      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+      node pool's nodes should be located. Changing the locations for a node pool
+      will result in nodes being either created or removed from the node pool,
+      depending on whether locations are being added or removed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster, node pool) of the node pool to
       update. Specified in the format
       'projects/*/locations/*/clusters/*/nodePools/*'.
@@ -51,9 +51,9 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
   *   `workloadMetadataConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t`, *default:* `nil`) - The desired workload metadata config for the node pool.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   """
 
   use GoogleApi.Gax.ModelBase

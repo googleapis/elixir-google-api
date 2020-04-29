@@ -31,10 +31,10 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
       NOTE: Set the "desired_node_pool" field as well.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
   *   `desiredLocations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine
-      [zones](/compute/docs/zones#available) in which the cluster's nodes
-      should be located. Changing the locations a cluster is in will result
-      in nodes being either created or removed from the cluster, depending on
-      whether locations are being added or removed.
+      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster's nodes should be located. Changing the locations a cluster is in
+      will result in nodes being either created or removed from the cluster,
+      depending on whether locations are being added or removed.
 
       This list must always include the cluster's primary zone.
   *   `desiredLoggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs.

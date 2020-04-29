@@ -24,12 +24,13 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   *   `enableIntraNodeVisibility` (*type:* `boolean()`, *default:* `nil`) - Whether Intra-node visibility is enabled for this cluster.
       This makes same node pod to pod traffic visible for VPC network.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine
-      network(/compute/docs/networks-and-firewalls#networks) to which
-      the cluster is connected.
-      Example: projects/my-project/global/networks/my-network
+      network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+      to which the cluster is connected. Example:
+      projects/my-project/global/networks/my-network
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine
-      [subnetwork](/compute/docs/vpc) to which the cluster is connected.
-      Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+      [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+      cluster is connected. Example:
+      projects/my-project/regions/us-central1/subnetworks/my-subnet
   """
 
   use GoogleApi.Gax.ModelBase

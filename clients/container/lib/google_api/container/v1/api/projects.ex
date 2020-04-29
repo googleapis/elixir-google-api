@@ -134,8 +134,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the name field.
       *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-          [zone](/compute/docs/zones#available) to return operations for.
-          This field has been deprecated and replaced by the name field.
+          [zone](https://cloud.google.com/compute/docs/zones#available) to return
+          operations for. This field has been deprecated and replaced by the name
+          field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -265,7 +266,8 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   Compute Engine instances.
 
   By default, the cluster is created in the project's
-  [default network](/compute/docs/networks-and-firewalls#networks).
+  [default
+  network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
 
   One firewall is added for the cluster. After cluster creation,
   the Kubelet creates routes for each node to allow the containers
@@ -378,9 +380,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the name field.
       *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-          [zone](/compute/docs/zones#available) in which the cluster
-          resides.
-          This field has been deprecated and replaced by the name field.
+          [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+          cluster resides. This field has been deprecated and replaced by the name
+          field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -460,9 +462,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the name field.
       *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-          [zone](/compute/docs/zones#available) in which the cluster
-          resides.
-          This field has been deprecated and replaced by the name field.
+          [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+          cluster resides. This field has been deprecated and replaced by the name
+          field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -615,9 +617,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the parent field.
       *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-          [zone](/compute/docs/zones#available) in which the cluster
-          resides, or "-" for all zones.
-          This field has been deprecated and replaced by the parent field.
+          [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+          cluster resides, or "-" for all zones. This field has been deprecated and
+          replaced by the parent field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -817,7 +819,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   @doc """
   Sets the locations for a specific cluster.
   Deprecated. Use
-  [projects.locations.clusters.update](/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+  [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
   instead.
 
   ## Parameters
@@ -1642,9 +1644,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           number](https://developers.google.com/console/help/new/#projectnumber).
           This field has been deprecated and replaced by the name field.
       *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-          [zone](/compute/docs/zones#available) in which the cluster
-          resides.
-          This field has been deprecated and replaced by the name field.
+          [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+          cluster resides. This field has been deprecated and replaced by the name
+          field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1728,9 +1730,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           number](https://developers.google.com/console/help/new/#projectnumber).
           This field has been deprecated and replaced by the name field.
       *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-          [zone](/compute/docs/zones#available) in which the cluster
-          resides.
-          This field has been deprecated and replaced by the name field.
+          [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+          cluster resides. This field has been deprecated and replaced by the name
+          field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1811,9 +1813,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           number](https://developers.google.com/console/help/new/#projectnumber).
           This field has been deprecated and replaced by the parent field.
       *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-          [zone](/compute/docs/zones#available) in which the cluster
-          resides.
-          This field has been deprecated and replaced by the parent field.
+          [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+          cluster resides. This field has been deprecated and replaced by the parent
+          field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2407,9 +2409,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the name field.
       *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-          [zone](/compute/docs/zones#available) in which the cluster
-          resides.
-          This field has been deprecated and replaced by the name field.
+          [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+          cluster resides. This field has been deprecated and replaced by the name
+          field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2488,8 +2490,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
           number](https://support.google.com/cloud/answer/6158840).
           This field has been deprecated and replaced by the parent field.
       *   `:zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-          [zone](/compute/docs/zones#available) to return operations for, or `-` for
-          all zones. This field has been deprecated and replaced by the parent field.
+          [zone](https://cloud.google.com/compute/docs/zones#available) to return
+          operations for, or `-` for all zones. This field has been deprecated and
+          replaced by the parent field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2552,8 +2555,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) to return operations for.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) to return
+      operations for. This field has been deprecated and replaced by the name
+      field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2632,9 +2636,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2717,9 +2721,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2800,7 +2804,8 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   Compute Engine instances.
 
   By default, the cluster is created in the project's
-  [default network](/compute/docs/networks-and-firewalls#networks).
+  [default
+  network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
 
   One firewall is added for the cluster. After cluster creation,
   the Kubelet creates routes for each node to allow the containers
@@ -2817,9 +2822,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the parent field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the parent field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the parent
+      field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2905,9 +2910,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to delete.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2991,9 +2996,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to retrieve.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3077,9 +3082,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to update.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3163,9 +3168,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the parent field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides, or "-" for all zones.
-      This field has been deprecated and replaced by the parent field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides, or "-" for all zones. This field has been deprecated and
+      replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3238,7 +3243,7 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   @doc """
   Sets the locations for a specific cluster.
   Deprecated. Use
-  [projects.locations.clusters.update](/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+  [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
   instead.
 
   ## Parameters
@@ -3248,9 +3253,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3333,9 +3338,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3418,9 +3423,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3503,9 +3508,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3588,9 +3593,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3675,8 +3680,8 @@ defmodule GoogleApi.Container.V1.Api.Projects do
   *   `project_id` (*type:* `String.t`) - Required. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
   *   `zone` (*type:* `String.t`) - Required. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides.
   *   `cluster_id` (*type:* `String.t`) - Required. The name of the cluster to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3763,9 +3768,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3851,9 +3856,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3939,9 +3944,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4027,9 +4032,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4112,9 +4117,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to upgrade.
@@ -4205,9 +4210,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the parent field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the parent field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the parent
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4290,9 +4295,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to delete.
@@ -4385,9 +4390,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the name field.
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool.
@@ -4480,9 +4485,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the parent field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the parent field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the parent
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster.
       This field has been deprecated and replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4567,9 +4572,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to rollback.
       This field has been deprecated and replaced by the name field.
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to rollback.
@@ -4660,9 +4665,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to update.
       This field has been deprecated and replaced by the name field.
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to update.
@@ -4753,9 +4758,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to update.
       This field has been deprecated and replaced by the name field.
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to update.
@@ -4846,9 +4851,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `cluster_id` (*type:* `String.t`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `node_pool_id` (*type:* `String.t`) - Deprecated. The name of the node pool to upgrade.
@@ -4939,8 +4944,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the operation resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      operation resides. This field has been deprecated and replaced by the name
+      field.
   *   `operation_id` (*type:* `String.t`) - Deprecated. The server-assigned `name` of the operation.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -5023,9 +5029,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   *   `operation_id` (*type:* `String.t`) - Deprecated. The server-assigned `name` of the operation.
       This field has been deprecated and replaced by the name field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -5109,8 +5115,9 @@ defmodule GoogleApi.Container.V1.Api.Projects do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the parent field.
   *   `zone` (*type:* `String.t`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) to return operations for, or `-` for
-      all zones. This field has been deprecated and replaced by the parent field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) to return
+      operations for, or `-` for all zones. This field has been deprecated and
+      replaced by the parent field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

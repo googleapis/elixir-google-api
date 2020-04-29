@@ -31,9 +31,9 @@ defmodule GoogleApi.Container.V1.Model.CreateNodePoolRequest do
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the parent field.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the parent field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the parent
+      field.
   """
 
   use GoogleApi.Gax.ModelBase

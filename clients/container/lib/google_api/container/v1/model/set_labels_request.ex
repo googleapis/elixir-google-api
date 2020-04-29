@@ -38,9 +38,9 @@ defmodule GoogleApi.Container.V1.Model.SetLabelsRequest do
       This field has been deprecated and replaced by the name field.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - Required. The labels to set for that cluster.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   """
 
   use GoogleApi.Gax.ModelBase

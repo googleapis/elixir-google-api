@@ -30,8 +30,8 @@ defmodule GoogleApi.Container.V1.Model.SetMaintenancePolicyRequest do
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides.
   """
 
   use GoogleApi.Gax.ModelBase

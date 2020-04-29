@@ -31,9 +31,9 @@ defmodule GoogleApi.Container.V1.Model.SetMasterAuthRequest do
       This field has been deprecated and replaced by the name field.
   *   `update` (*type:* `GoogleApi.Container.V1.Model.MasterAuth.t`, *default:* `nil`) - Required. A description of the update.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   """
 
   use GoogleApi.Gax.ModelBase
