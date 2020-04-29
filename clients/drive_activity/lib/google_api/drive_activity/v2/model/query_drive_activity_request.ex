@@ -46,10 +46,14 @@ defmodule GoogleApi.DriveActivity.V2.Model.QueryDriveActivityRequest do
             - <tt>-detail.action_detail_case:MOVE</tt>
   *   `itemName` (*type:* `String.t`, *default:* `nil`) - Return activities for this Drive item. The format is
       "items/ITEM_ID".
-  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The requested number of activities to return. If not set, a default value
-      is used.
-  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - The next_page_token value returned from a previous QueryDriveActivity
-      request, if any.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The miminum number of activities desired in the response; the server will
+      attempt to return at least this quanitity. The server may also return fewer
+      activities if it has a partial response ready before the request times out.
+      If not set, a default value is used.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - The token identifying which page of results to return. Set this to the
+      next_page_token value returned from a previous query to obtain the
+      following page of results. If not set, the first page of results will be
+      returned.
   """
 
   use GoogleApi.Gax.ModelBase
