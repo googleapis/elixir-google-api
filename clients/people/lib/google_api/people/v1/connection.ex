@@ -42,6 +42,9 @@ defmodule GoogleApi.People.V1.Connection do
       # View your email addresses
       "https://www.googleapis.com/auth/user.emails.read",
 
+      # See your gender
+      "https://www.googleapis.com/auth/user.gender.read",
+
       # See your education, work history and org info
       "https://www.googleapis.com/auth/user.organization.read",
 
