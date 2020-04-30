@@ -197,7 +197,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
 
           The suggest API does not use this parameter. Instead, suggest autocompletes
           only based on characters in the query.
-      *   `:"requestOptions.searchApplicationId"` (*type:* `String.t`) - Id of the application created using SearchApplicationsService.
+      *   `:"requestOptions.searchApplicationId"` (*type:* `String.t`) - The ID generated when you create a search application using the
+          [admin console](https://support.google.com/a/answer/9043922).
       *   `:"requestOptions.timeZone"` (*type:* `String.t`) - Current user's time zone id, such as "America/Los_Angeles" or
           "Australia/Sydney". These IDs are defined by
           [Unicode Common Locale Data Repository (CLDR)](http://cldr.unicode.org/)
