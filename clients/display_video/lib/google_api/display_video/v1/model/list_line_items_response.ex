@@ -22,6 +22,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListLineItemsResponse do
   ## Attributes
 
   *   `lineItems` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.LineItem.t)`, *default:* `nil`) - The list of line items.
+
+      This list will be absent if empty.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
       Pass this value in the
       page_token

@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.OperatingSystemTargetingOptionDetails 
   operating_system_details field
   of a TargetingOption when
   targeting_type is
-  `TAREGTING_TYPE_OPERATING_SYSTEM`.
+  `TARGETING_TYPE_OPERATING_SYSTEM`.
 
   ## Attributes
 

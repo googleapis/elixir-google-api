@@ -22,6 +22,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListChannelsResponse do
   ## Attributes
 
   *   `channels` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Channel.t)`, *default:* `nil`) - The list of channels.
+
+      This list will be absent if empty.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
       Pass this value in the page_token field
       in the subsequent call to `ListChannels` method to retrieve the next page
