@@ -90,7 +90,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - Target age group of the item.
   *   `customLabel0` (*type:* `String.t`, *default:* `nil`) - Custom label 0 for custom grouping of items in a Shopping campaign.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their `productId` parameter.
-      The REST ID for a product is of the form channel:contentLanguage:targetCountry:offerId.
+      The REST ID for a product is of the form channel:contentLanguage:targetCountry: offerId.
   *   `shippingLength` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Length of the item for shipping.
   *   `shippingWeight` (*type:* `GoogleApi.Content.V21.Model.ProductShippingWeight.t`, *default:* `nil`) - Weight of the item for shipping.
   *   `displayAdsSimilarIds` (*type:* `list(String.t)`, *default:* `nil`) - Advertiser-specified recommendations.
