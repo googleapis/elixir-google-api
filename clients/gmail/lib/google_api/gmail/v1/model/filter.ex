@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.Gmail.V1.Model.Filter do
   @moduledoc """
-  Resource definition for Gmail filters. Filters apply to specific messages
-  instead of an entire email thread.
+  Resource definition for Gmail filters. Filters apply to specific messages instead of an entire email thread.
 
   ## Attributes
 
