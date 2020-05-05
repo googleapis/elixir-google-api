@@ -23,6 +23,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   *   `celebrityTracks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack.t)`, *default:* `nil`) - The tracks detected from the input video, including recognized celebrities
       and other detected faces in the video.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,13 +32,16 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
           :celebrityTracks =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack.t()
-            )
+            ),
+          :version => String.t()
         }
 
   field(:celebrityTracks,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack,
     type: :list
   )
+
+  field(:version)
 end
 
 defimpl Poison.Decoder,

@@ -35,6 +35,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
       Instead, we provide a unique identifiable integer track_id so that
       the customers can correlate the results of the ongoing
       ObjectTrackAnnotation of the same track_id over time.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +50,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
             ),
           :segment =>
             GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2beta1_VideoSegment.t(),
-          :trackId => String.t()
+          :trackId => String.t(),
+          :version => String.t()
         }
 
   field(:confidence)
@@ -69,6 +71,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p2b
   )
 
   field(:trackId)
+  field(:version)
 end
 
 defimpl Poison.Decoder,
