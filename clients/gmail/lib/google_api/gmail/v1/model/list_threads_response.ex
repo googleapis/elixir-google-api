@@ -23,10 +23,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListThreadsResponse do
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token to retrieve the next page of results in the list.
   *   `resultSizeEstimate` (*type:* `integer()`, *default:* `nil`) - Estimated total number of results.
-  *   `threads` (*type:* `list(GoogleApi.Gmail.V1.Model.Thread.t)`, *default:* `nil`) - List of threads. Note that each thread resource does not contain a list of
-      <code>messages</code>. The list of <code>messages</code> for a given thread
-      can be fetched using the
-      <a href="/gmail/api/v1/reference/users/threads/get">threads.get</a> method.
+  *   `threads` (*type:* `list(GoogleApi.Gmail.V1.Model.Thread.t)`, *default:* `nil`) - List of threads. Note that each thread resource does not contain a list of messages. The list of messages for a given thread can be fetched using the threads.get method.
   """
 
   use GoogleApi.Gax.ModelBase

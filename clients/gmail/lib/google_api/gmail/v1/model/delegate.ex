@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.Gmail.V1.Model.Delegate do
   @moduledoc """
-  Settings for a delegate. Delegates can read, send, and delete messages, as
-  well as view and add contacts, for the delegator's account. See
-  <a href="https://support.google.com/mail/answer/138350">"Set up
-  mail delegation"</a> for more information about delegates.
+  Settings for a delegate. Delegates can read, send, and delete messages, as well as view and add contacts, for the delegator's account. See "Set up mail delegation" for more information about delegates.
 
   ## Attributes
 
   *   `delegateEmail` (*type:* `String.t`, *default:* `nil`) - The email address of the delegate.
-  *   `verificationStatus` (*type:* `String.t`, *default:* `nil`) - Indicates whether this address has been verified and can act as a delegate
-      for the account.  Read-only.
+  *   `verificationStatus` (*type:* `String.t`, *default:* `nil`) - Indicates whether this address has been verified and can act as a delegate for the account. Read-only.
   """
 
   use GoogleApi.Gax.ModelBase
