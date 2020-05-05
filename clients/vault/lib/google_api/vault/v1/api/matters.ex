@@ -579,7 +579,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   @doc """
   Updates the specified matter.
   This updates only the name and description of the matter, identified by
-  matter id. Changes to any other fields are ignored.
+  matter ID. Changes to any other fields are ignored.
   Returns the default view of the matter.
 
   ## Parameters
@@ -1643,7 +1643,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
-  *   `matter_id` (*type:* `String.t`) - The matter id of the parent matter for which the saved query is to be
+  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved query is to be
       created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1705,9 +1705,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
-  *   `matter_id` (*type:* `String.t`) - The matter id of the parent matter for which the saved query is to be
+  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved query is to be
       deleted.
-  *   `saved_query_id` (*type:* `String.t`) - Id of the saved query to be deleted.
+  *   `saved_query_id` (*type:* `String.t`) - ID of the saved query to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1779,9 +1779,9 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
-  *   `matter_id` (*type:* `String.t`) - The matter id of the parent matter for which the saved query is to be
+  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved query is to be
       retrieved.
-  *   `saved_query_id` (*type:* `String.t`) - Id of the saved query to be retrieved.
+  *   `saved_query_id` (*type:* `String.t`) - ID of the saved query to be retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1854,7 +1854,7 @@ defmodule GoogleApi.Vault.V1.Api.Matters do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Vault.V1.Connection.t`) - Connection to server
-  *   `matter_id` (*type:* `String.t`) - The matter id of the parent matter for which the saved queries are to be
+  *   `matter_id` (*type:* `String.t`) - The matter ID of the parent matter for which the saved queries are to be
       retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
