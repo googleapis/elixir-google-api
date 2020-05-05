@@ -21,7 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.AddHeldAccountsRequest do
 
   ## Attributes
 
-  *   `accountIds` (*type:* `list(String.t)`, *default:* `nil`) - Account ids to identify which accounts to add. Only account_ids or only
+  *   `accountIds` (*type:* `list(String.t)`, *default:* `nil`) - Account IDs to identify which accounts to add. Only account_ids or only
       emails should be specified, but not both.
   *   `emails` (*type:* `list(String.t)`, *default:* `nil`) - Emails to identify which accounts to add. Only emails or only account_ids
       should be specified, but not both.
