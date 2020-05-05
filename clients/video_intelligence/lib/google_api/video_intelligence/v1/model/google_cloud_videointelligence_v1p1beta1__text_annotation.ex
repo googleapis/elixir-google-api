@@ -25,6 +25,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
 
   *   `segments` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_TextSegment.t)`, *default:* `nil`) - All video segments where OCR detected text appears.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The detected text.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,7 +35,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_TextSegment.t()
             ),
-          :text => String.t()
+          :text => String.t(),
+          :version => String.t()
         }
 
   field(:segments,
@@ -43,6 +45,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
   )
 
   field(:text)
+  field(:version)
 end
 
 defimpl Poison.Decoder,

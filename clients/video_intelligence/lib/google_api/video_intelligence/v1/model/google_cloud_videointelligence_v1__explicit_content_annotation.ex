@@ -24,6 +24,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Ex
   ## Attributes
 
   *   `frames` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ExplicitContentFrame.t)`, *default:* `nil`) - All video frames where explicit content was detected.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,13 +33,16 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Ex
           :frames =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ExplicitContentFrame.t()
-            )
+            ),
+          :version => String.t()
         }
 
   field(:frames,
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_ExplicitContentFrame,
     type: :list
   )
+
+  field(:version)
 end
 
 defimpl Poison.Decoder,

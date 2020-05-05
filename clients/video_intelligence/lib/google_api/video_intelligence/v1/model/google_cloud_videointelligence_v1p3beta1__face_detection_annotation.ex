@@ -23,6 +23,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
 
   *   `thumbnail` (*type:* `String.t`, *default:* `nil`) - The thumbnail of a person's face.
   *   `tracks` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Track.t)`, *default:* `nil`) - The face tracks with attributes.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,7 +33,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
           :tracks =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Track.t()
-            )
+            ),
+          :version => String.t()
         }
 
   field(:thumbnail)
@@ -41,6 +43,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3b
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p3beta1_Track,
     type: :list
   )
+
+  field(:version)
 end
 
 defimpl Poison.Decoder,

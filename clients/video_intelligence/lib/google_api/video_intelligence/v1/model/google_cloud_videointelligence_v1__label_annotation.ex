@@ -28,6 +28,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_La
   *   `entity` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_Entity.t`, *default:* `nil`) - Detected entity.
   *   `frames` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelFrame.t)`, *default:* `nil`) - All video frames where a label was detected.
   *   `segments` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelSegment.t)`, *default:* `nil`) - All video segments where a label was detected.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,7 +45,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_La
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelSegment.t()
-            )
+            ),
+          :version => String.t()
         }
 
   field(:categoryEntities,
@@ -63,6 +65,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_La
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1_LabelSegment,
     type: :list
   )
+
+  field(:version)
 end
 
 defimpl Poison.Decoder,
