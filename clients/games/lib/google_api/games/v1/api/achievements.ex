@@ -286,7 +286,6 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:builtinGameId` (*type:* `String.t`) - Override used only by built-in games in Play Games application.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -306,8 +305,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
-      :builtinGameId => :query
+      :userIp => :query
     }
 
     request =
@@ -338,7 +336,6 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:builtinGameId` (*type:* `String.t`) - Override used only by built-in games in Play Games application.
       *   `:body` (*type:* `GoogleApi.Games.V1.Model.AchievementUpdateMultipleRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -360,7 +357,6 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :builtinGameId => :query,
       :body => :body
     }
 

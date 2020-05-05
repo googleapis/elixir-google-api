@@ -21,7 +21,7 @@ defmodule GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#achievementUpdateMultipleResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementUpdateListResponse.
+  *   `kind` (*type:* `String.t`, *default:* `games#achievementUpdateMultipleResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementUpdateMultipleResponse.
   *   `updatedAchievements` (*type:* `list(GoogleApi.Games.V1.Model.AchievementUpdateResponse.t)`, *default:* `nil`) - The updated state of the achievements.
   """
 
