@@ -32,7 +32,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchApplication do
       The maximum length is 300 characters.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Search Application.
       <br />Format: searchapplications/{application_id}.
-  *   `operationIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the Long Running Operations (LROs) currently running for this
+  *   `operationIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. IDs of the Long Running Operations (LROs) currently running for this
       schema. Output only field.
   *   `scoringConfig` (*type:* `GoogleApi.CloudSearch.V1.Model.ScoringConfig.t`, *default:* `nil`) - Configuration for ranking results.
   *   `sourceConfig` (*type:* `list(GoogleApi.CloudSearch.V1.Model.SourceConfig.t)`, *default:* `nil`) - Configuration for a sources specified in data_source_restrictions.
