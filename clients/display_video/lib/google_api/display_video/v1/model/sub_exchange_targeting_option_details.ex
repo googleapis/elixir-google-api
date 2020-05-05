@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SubExchangeTargetingOptionDetails do
   sub_exchange_details field
   of a TargetingOption when
   targeting_type is
-  `TAREGTING_TYPE_SUB_EXCHANGE`.
+  `TARGETING_TYPE_SUB_EXCHANGE`.
 
   ## Attributes
 

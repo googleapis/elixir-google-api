@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ExchangeTargetingOptionDetails do
   exchange_details field
   of a TargetingOption when
   targeting_type is
-  `TAREGTING_TYPE_EXCHANGE`.
+  `TARGETING_TYPE_EXCHANGE`.
 
   ## Attributes
 

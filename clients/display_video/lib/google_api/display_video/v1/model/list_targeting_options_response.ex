@@ -28,6 +28,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListTargetingOptionsResponse do
       field in the subsequent call to `ListTargetingOptions` method to retrieve
       the next page of results.
   *   `targetingOptions` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.TargetingOption.t)`, *default:* `nil`) - The list of targeting options.
+
+      This list will be absent if empty.
   """
 
   use GoogleApi.Gax.ModelBase

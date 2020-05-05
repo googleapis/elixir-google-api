@@ -26,9 +26,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelTargetingOptionDeta
 
   ## Attributes
 
-  *   `contentRatingTier` (*type:* `String.t`, *default:* `nil`) - Output only. An enum for the content label brand safety tiers. Values from
-      content-labels.txt. Must be kept in sync with
-      //contentads/bidder/proto/video_ratings.proto
+  *   `contentRatingTier` (*type:* `String.t`, *default:* `nil`) - Output only. An enum for the content label brand safety tiers.
   """
 
   use GoogleApi.Gax.ModelBase

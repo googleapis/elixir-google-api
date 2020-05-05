@@ -18,7 +18,8 @@
 defmodule GoogleApi.DisplayVideo.V1.Model.ViewabilityAssignedTargetingOptionDetails do
   @moduledoc """
   Assigned viewability targeting option details. This will be populated in the
-  details field of an AssignedTargetingOption when
+  viewability_details field of
+  an AssignedTargetingOption when
   targeting_type is
   `TARGETING_TYPE_VIEWABILITY`.
 

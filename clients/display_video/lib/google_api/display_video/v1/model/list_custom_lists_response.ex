@@ -22,6 +22,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListCustomListsResponse do
   ## Attributes
 
   *   `customLists` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CustomList.t)`, *default:* `nil`) - The list of custom lists.
+
+      This list will be absent if empty.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
       Pass this value in the
       page_token

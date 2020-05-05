@@ -22,6 +22,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListInsertionOrdersResponse do
   ## Attributes
 
   *   `insertionOrders` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.InsertionOrder.t)`, *default:* `nil`) - The list of insertion orders.
+
+      This list will be absent if empty.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
       Pass this value in the page_token
       field in the subsequent call to `ListInsertionOrders` method to retrieve
