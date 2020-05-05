@@ -35,10 +35,11 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
       is sufficient for this number of instances. You must also have available
       firewall and routes quota.
   *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - [Output only] The resource URLs of the [managed instance
-      groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
+      groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
       associated with this node pool.
-  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](/compute/docs/zones#available)
-      in which the NodePool's nodes should be located.
+  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine
+      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+      NodePool's nodes should be located.
   *   `management` (*type:* `GoogleApi.Container.V1.Model.NodeManagement.t`, *default:* `nil`) - NodeManagement configuration for this NodePool.
   *   `maxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The constraint on the maximum number of pods that can be run
       simultaneously on a node in the node pool.

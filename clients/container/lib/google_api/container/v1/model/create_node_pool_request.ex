@@ -26,14 +26,14 @@ defmodule GoogleApi.Container.V1.Model.CreateNodePoolRequest do
   *   `nodePool` (*type:* `GoogleApi.Container.V1.Model.NodePool.t`, *default:* `nil`) - Required. The node pool to create.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The parent (project, location, cluster id) where the node pool will be
       created. Specified in the format
-      'projects/*/locations/*/clusters/*'.
+      `projects/*/locations/*/clusters/*`.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the parent field.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the parent field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the parent
+      field.
   """
 
   use GoogleApi.Gax.ModelBase

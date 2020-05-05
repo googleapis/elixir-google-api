@@ -32,15 +32,15 @@ defmodule GoogleApi.Container.V1.Model.SetLabelsRequest do
       updating or changing labels. Make a <code>get()</code> request to the
       resource to get the latest fingerprint.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster id) of the cluster to set labels.
-      Specified in the format 'projects/*/locations/*/clusters/*'.
+      Specified in the format `projects/*/locations/*/clusters/*`.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
       number](https://developers.google.com/console/help/new/#projectnumber).
       This field has been deprecated and replaced by the name field.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - Required. The labels to set for that cluster.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   """
 
   use GoogleApi.Gax.ModelBase

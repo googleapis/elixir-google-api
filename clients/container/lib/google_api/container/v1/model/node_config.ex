@@ -48,7 +48,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       https://cloud.google.com/compute/docs/disks/local-ssd
       for more information.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The name of a Google Compute Engine [machine
-      type](/compute/docs/machine-types) (e.g.
+      type](https://cloud.google.com/compute/docs/machine-types) (e.g.
       `n1-standard-1`).
 
       If unspecified, the default machine type is
@@ -102,7 +102,8 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       persistent storage on your nodes.
       * `https://www.googleapis.com/auth/devstorage.read_only` is required for
       communicating with **gcr.io**
-      (the [Google Container Registry](/container-registry/)).
+      (the [Google Container
+      Registry](https://cloud.google.com/container-registry/)).
 
       If unspecified, no scopes are added, unless Cloud Logging or Cloud
       Monitoring are enabled, in which case their required scopes will be added.
@@ -111,7 +112,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       information about preemptible VM instances.
   *   `reservationAffinity` (*type:* `GoogleApi.Container.V1.Model.ReservationAffinity.t`, *default:* `nil`) - The optional reservation affinity. Setting this field will apply
       the specified [Zonal Compute
-      Reservation](/compute/docs/instances/reserving-zonal-resources)
+      Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
       to this node pool.
   *   `sandboxConfig` (*type:* `GoogleApi.Container.V1.Model.SandboxConfig.t`, *default:* `nil`) - Sandbox configuration for this node.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs.

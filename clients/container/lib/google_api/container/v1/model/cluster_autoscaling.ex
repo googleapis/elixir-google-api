@@ -24,8 +24,9 @@ defmodule GoogleApi.Container.V1.Model.ClusterAutoscaling do
 
   ## Attributes
 
-  *   `autoprovisioningLocations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](/compute/docs/zones#available)
-      in which the NodePool's nodes can be created by NAP.
+  *   `autoprovisioningLocations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine
+      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+      NodePool's nodes can be created by NAP.
   *   `autoprovisioningNodePoolDefaults` (*type:* `GoogleApi.Container.V1.Model.AutoprovisioningNodePoolDefaults.t`, *default:* `nil`) - AutoprovisioningNodePoolDefaults contains defaults for a node pool
       created by NAP.
   *   `enableNodeAutoprovisioning` (*type:* `boolean()`, *default:* `nil`) - Enables automatic node pool creation and deletion.

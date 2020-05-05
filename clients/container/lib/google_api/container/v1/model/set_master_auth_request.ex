@@ -25,15 +25,15 @@ defmodule GoogleApi.Container.V1.Model.SetMasterAuthRequest do
   *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade.
       This field has been deprecated and replaced by the name field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster) of the cluster to set auth.
-      Specified in the format 'projects/*/locations/*/clusters/*'.
+      Specified in the format `projects/*/locations/*/clusters/*`.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `update` (*type:* `GoogleApi.Container.V1.Model.MasterAuth.t`, *default:* `nil`) - Required. A description of the update.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   """
 
   use GoogleApi.Gax.ModelBase

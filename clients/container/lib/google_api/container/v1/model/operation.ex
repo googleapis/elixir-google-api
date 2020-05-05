@@ -27,9 +27,10 @@ defmodule GoogleApi.Container.V1.Model.Operation do
   *   `endTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the operation completed, in
       [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `location` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine
-      [zone](/compute/docs/regions-zones/regions-zones#available) or
-      [region](/compute/docs/regions-zones/regions-zones#available) in which
-      the cluster resides.
+      [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+      or
+      [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+      in which the cluster resides.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned ID for the operation.
   *   `nodepoolConditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current node pool state.
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - The operation type.
@@ -41,9 +42,8 @@ defmodule GoogleApi.Container.V1.Model.Operation do
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. If an error has occurred, a textual description of the error.
   *   `targetLink` (*type:* `String.t`, *default:* `nil`) - Server-defined URL for the target of the operation.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the operation
-      is taking place.
-      This field is deprecated, use location instead.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      operation is taking place. This field is deprecated, use location instead.
   """
 
   use GoogleApi.Gax.ModelBase
