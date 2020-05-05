@@ -22,6 +22,8 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.SiteConfig do
 
   ## Attributes
 
+  *   `cloudLoggingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not web requests made by site visitors are logged via Cloud
+      Logging.
   *   `maxVersions` (*type:* `String.t`, *default:* `nil`) - The number of FINALIZED versions that will be held for a site before
       automatic deletion. When a new version is deployed, content for versions
       in storage in excess of this number will be deleted, and will no longer be
@@ -32,9 +34,11 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.SiteConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudLoggingEnabled => boolean(),
           :maxVersions => String.t()
         }
 
+  field(:cloudLoggingEnabled)
   field(:maxVersions)
 end
 
