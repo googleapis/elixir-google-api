@@ -34,7 +34,7 @@ defmodule GoogleApi.Calendar.V3.Model.CalendarListEntry do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the calendar. Optional. Read-only.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `foregroundColor` (*type:* `String.t`, *default:* `nil`) - The foreground color of the calendar in the hexadecimal format "#ffffff". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional.
-  *   `hidden` (*type:* `boolean()`, *default:* `false`) - Whether the calendar has been hidden from the list. Optional. The default is False.
+  *   `hidden` (*type:* `boolean()`, *default:* `false`) - Whether the calendar has been hidden from the list. Optional. The attribute is only returned when the calendar is hidden, in which case the value is true.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Identifier of the calendar.
   *   `kind` (*type:* `String.t`, *default:* `calendar#calendarListEntry`) - Type of the resource ("calendar#calendarListEntry").
   *   `location` (*type:* `String.t`, *default:* `nil`) - Geographic location of the calendar as free-form text. Optional. Read-only.
