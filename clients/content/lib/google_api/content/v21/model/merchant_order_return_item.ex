@@ -23,9 +23,14 @@ defmodule GoogleApi.Content.V21.Model.MerchantOrderReturnItem do
 
   *   `customerReturnReason` (*type:* `GoogleApi.Content.V21.Model.CustomerReturnReason.t`, *default:* `nil`) - The reason that the customer chooses to return an item.
   *   `itemId` (*type:* `String.t`, *default:* `nil`) - Product level item ID. If the returned items are of the same product, they will have the same ID.
+  *   `merchantRejectionReason` (*type:* `GoogleApi.Content.V21.Model.MerchantRejectionReason.t`, *default:* `nil`) - The reason that the merchant chose to reject an item return.
   *   `merchantReturnReason` (*type:* `GoogleApi.Content.V21.Model.RefundReason.t`, *default:* `nil`) - The reason that merchant chooses to accept a return item.
   *   `product` (*type:* `GoogleApi.Content.V21.Model.OrderLineItemProduct.t`, *default:* `nil`) - Product data from the time of the order placement.
+  *   `refundableAmount` (*type:* `GoogleApi.Content.V21.Model.MonetaryAmount.t`, *default:* `nil`) - Maximum amount that can be refunded for this return item.
+  *   `returnItemId` (*type:* `String.t`, *default:* `nil`) - Unit level ID for the return item. Different units of the same product will have different IDs.
   *   `returnShipmentIds` (*type:* `list(String.t)`, *default:* `nil`) - IDs of the return shipments that this return item belongs to.
+  *   `shipmentGroupId` (*type:* `String.t`, *default:* `nil`) - ID of the original shipment group. Provided for shipments with invoice support.
+  *   `shipmentUnitId` (*type:* `String.t`, *default:* `nil`) - ID of the shipment unit assigned by the merchant. Provided for shipments with invoice support.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the item.
 
       Acceptable values are:  
@@ -41,17 +46,27 @@ defmodule GoogleApi.Content.V21.Model.MerchantOrderReturnItem do
   @type t :: %__MODULE__{
           :customerReturnReason => GoogleApi.Content.V21.Model.CustomerReturnReason.t(),
           :itemId => String.t(),
+          :merchantRejectionReason => GoogleApi.Content.V21.Model.MerchantRejectionReason.t(),
           :merchantReturnReason => GoogleApi.Content.V21.Model.RefundReason.t(),
           :product => GoogleApi.Content.V21.Model.OrderLineItemProduct.t(),
+          :refundableAmount => GoogleApi.Content.V21.Model.MonetaryAmount.t(),
+          :returnItemId => String.t(),
           :returnShipmentIds => list(String.t()),
+          :shipmentGroupId => String.t(),
+          :shipmentUnitId => String.t(),
           :state => String.t()
         }
 
   field(:customerReturnReason, as: GoogleApi.Content.V21.Model.CustomerReturnReason)
   field(:itemId)
+  field(:merchantRejectionReason, as: GoogleApi.Content.V21.Model.MerchantRejectionReason)
   field(:merchantReturnReason, as: GoogleApi.Content.V21.Model.RefundReason)
   field(:product, as: GoogleApi.Content.V21.Model.OrderLineItemProduct)
+  field(:refundableAmount, as: GoogleApi.Content.V21.Model.MonetaryAmount)
+  field(:returnItemId)
   field(:returnShipmentIds, type: :list)
+  field(:shipmentGroupId)
+  field(:shipmentUnitId)
   field(:state)
 end
 

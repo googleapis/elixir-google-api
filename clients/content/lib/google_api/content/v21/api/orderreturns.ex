@@ -26,6 +26,75 @@ defmodule GoogleApi.Content.V21.Api.Orderreturns do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Acks an order return in your Merchant Center account.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
+  *   `return_id` (*type:* `String.t`) - The ID of the return.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Content.V21.Model.OrderreturnsAcknowledgeRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Content.V21.Model.OrderreturnsAcknowledgeResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec content_orderreturns_acknowledge(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Content.V21.Model.OrderreturnsAcknowledgeResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def content_orderreturns_acknowledge(
+        connection,
+        merchant_id,
+        return_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{merchantId}/orderreturns/{returnId}/acknowledge", %{
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "returnId" => URI.encode(return_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V21.Model.OrderreturnsAcknowledgeResponse{}]
+    )
+  end
+
+  @doc """
   Retrieves an order return from your Merchant Center account.
 
   ## Parameters
@@ -99,11 +168,20 @@ defmodule GoogleApi.Content.V21.Api.Orderreturns do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:acknowledged` (*type:* `boolean()`) - Obtains order returns that match the acknowledgement status. When set to true, obtains order returns that have been acknowledged. When false, obtains order returns that have not been acknowledged. When not provided, obtains order returns regardless of their acknowledgement status.
+          We recommend using this filter set to `false`, in conjunction with the `acknowledge` call, such that only un-acknowledged order returns are returned.
       *   `:createdEndDate` (*type:* `String.t`) - Obtains order returns created before this date (inclusively), in ISO 8601 format.
       *   `:createdStartDate` (*type:* `String.t`) - Obtains order returns created after this date (inclusively), in ISO 8601 format.
+      *   `:googleOrderIds` (*type:* `list(String.t)`) - Obtains order returns with the specified order ids. If this parameter is provided, createdStartDate, createdEndDate, shipmentType, shipmentStatus, shipmentState and acknowledged parameters must be not set.
+          Note: if googleOrderId and shipmentTrackingNumber parameters are provided, the obtained results will include all order returns that either match the specified order id or the specified tracking number.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of order returns to return in the response, used for paging. The default value is 25 returns per page, and the maximum allowed value is 250 returns per page.
       *   `:orderBy` (*type:* `String.t`) - Return the results in the specified order.
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
+      *   `:shipmentStates` (*type:* `list(String.t)`) - Obtains order returns that match any shipment state provided in this parameter. When this parameter is not provided, order returns are obtained regardless of their shipment states.
+      *   `:shipmentStatus` (*type:* `list(String.t)`) - Obtains order returns that match any shipment status provided in this parameter. When this parameter is not provided, order returns are obtained regardless of their shipment statuses.
+      *   `:shipmentTrackingNumbers` (*type:* `list(String.t)`) - Obtains order returns with the specified tracking numbers. If this parameter is provided, createdStartDate, createdEndDate, shipmentType, shipmentStatus, shipmentState and acknowledged parameters must be not set.
+          Note: if googleOrderId and shipmentTrackingNumber parameters are provided, the obtained results will include all order returns that either match the specified order id or the specified tracking number.
+      *   `:shipmentTypes` (*type:* `list(String.t)`) - Obtains order returns that match any shipment type provided in this parameter. When this parameter is not provided, order returns are obtained regardless of their shipment types.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -124,11 +202,17 @@ defmodule GoogleApi.Content.V21.Api.Orderreturns do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :acknowledged => :query,
       :createdEndDate => :query,
       :createdStartDate => :query,
+      :googleOrderIds => :query,
       :maxResults => :query,
       :orderBy => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :shipmentStates => :query,
+      :shipmentStatus => :query,
+      :shipmentTrackingNumbers => :query,
+      :shipmentTypes => :query
     }
 
     request =
@@ -143,5 +227,74 @@ defmodule GoogleApi.Content.V21.Api.Orderreturns do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Content.V21.Model.OrderreturnsListResponse{}])
+  end
+
+  @doc """
+  Processes return in your Merchant Center account.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
+  *   `merchant_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
+  *   `return_id` (*type:* `String.t`) - The ID of the return.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Content.V21.Model.OrderreturnsProcessRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Content.V21.Model.OrderreturnsProcessResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec content_orderreturns_process(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Content.V21.Model.OrderreturnsProcessResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
+  def content_orderreturns_process(
+        connection,
+        merchant_id,
+        return_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/{merchantId}/orderreturns/{returnId}/process", %{
+        "merchantId" => URI.encode(merchant_id, &URI.char_unreserved?/1),
+        "returnId" => URI.encode(return_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Content.V21.Model.OrderreturnsProcessResponse{}]
+    )
   end
 end
