@@ -66,7 +66,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     with {:ok, old_metadata} <- File.read(path),
          [_, old_revision] <- Regex.run(~r/@discovery_revision "(\d{8})"/, old_metadata) do
       new_revision = token.rest_description.revision
-      result = Regex.match?(~r/^\d{8}$/, new_revision) && old_revision < new_revision
+      result = Regex.match?(~r/^\d{8}$/, new_revision) && old_revision <= new_revision
       IO.puts("Revision check: old=#{old_revision}, new=#{new_revision}, generating=#{result}")
       result
     else
