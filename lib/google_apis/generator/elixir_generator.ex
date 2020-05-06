@@ -37,23 +37,43 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   """
   @spec generate_client(ApiConfig.t()) :: {:ok, any()} | {:error, String.t()}
   def generate_client(api_config) do
-    Token.build(api_config)
-    |> load_models
-    |> set_model_filenames
-    |> update_model_properties
-    |> create_directories
-    |> write_model_files
-    |> load_global_optional_params
-    |> load_apis
-    |> set_api_filenames
-    |> write_api_files
-    |> write_connection
-    |> write_mix_exs
-    |> write_readme
-    |> write_license
-    |> write_gitignore
-    |> write_config_exs
-    |> write_test_helper_exs
+    token = Token.build(api_config)
+    if updated_discovery_revision?(token) do
+      token
+      |> load_models
+      |> set_model_filenames
+      |> update_model_properties
+      |> create_directories
+      |> write_model_files
+      |> load_global_optional_params
+      |> load_apis
+      |> set_api_filenames
+      |> write_api_files
+      |> write_connection
+      |> write_metadata
+      |> write_mix_exs
+      |> write_readme
+      |> write_license
+      |> write_gitignore
+      |> write_config_exs
+      |> write_test_helper_exs
+    end
+    {:ok, token}
+  end
+
+  defp updated_discovery_revision?(token) do
+    path = Path.join(token.base_dir, "metadata.ex")
+    with {:ok, old_metadata} <- File.read(path),
+         [_, old_revision] <- Regex.run(~r/@discovery_revision "(\d{8})"/, old_metadata) do
+      new_revision = token.rest_description.revision
+      result = Regex.match?(~r/^\d{8}$/, new_revision) && old_revision < new_revision
+      IO.puts("Revision check: old=#{old_revision}, new=#{new_revision}, generating=#{result}")
+      result
+    else
+      _ ->
+        IO.puts("Couldn't determine old discovery revision. Generating by default.")
+        true
+    end
   end
 
   defp load_models(token) do
@@ -134,6 +154,18 @@ defmodule GoogleApis.Generator.ElixirGenerator do
     File.write!(
       path,
       Renderer.connection(token.namespace, scopes, otp_app, token.base_url)
+    )
+
+    token
+  end
+
+  defp write_metadata(token) do
+    path = Path.join(token.base_dir, "metadata.ex")
+    IO.puts("Writing metadata.ex.")
+
+    File.write!(
+      path,
+      Renderer.metadata(token.namespace, token.rest_description.revision)
     )
 
     token
