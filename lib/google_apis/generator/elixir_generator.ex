@@ -35,7 +35,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   @doc """
   Run the generator for the specified api configuration
   """
-  @spec generate_client(ApiConfig.t()) :: {:ok, any()} | {:error, String.t()}
+  @spec generate_client(ApiConfig.t()) :: any()
   def generate_client(api_config) do
     token = Token.build(api_config)
     if updated_discovery_revision?(token) do
@@ -58,7 +58,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
       |> write_config_exs
       |> write_test_helper_exs
     end
-    {:ok, token}
+    :ok
   end
 
   defp updated_discovery_revision?(token) do
