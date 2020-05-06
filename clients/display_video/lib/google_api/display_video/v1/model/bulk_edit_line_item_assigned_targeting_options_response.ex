@@ -22,6 +22,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditLineItemAssignedTargetingOptio
   ## Attributes
 
   *   `createdAssignedTargetingOptions` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t)`, *default:* `nil`) - The list of assigned targeting options that have been successfully created.
+
+      This list will be absent if empty.
   """
 
   use GoogleApi.Gax.ModelBase

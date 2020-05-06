@@ -23,6 +23,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListLineItemAssignedTargetingOptionsRe
   ## Attributes
 
   *   `assignedTargetingOptions` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t)`, *default:* `nil`) - The list of assigned targeting options.
+
+      This list will be absent if empty.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token identifying the next page of results. This value should be
       specified as the
       pageToken in a
