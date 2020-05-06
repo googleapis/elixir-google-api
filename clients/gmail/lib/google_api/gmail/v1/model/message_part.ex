@@ -21,21 +21,12 @@ defmodule GoogleApi.Gmail.V1.Model.MessagePart do
 
   ## Attributes
 
-  *   `body` (*type:* `GoogleApi.Gmail.V1.Model.MessagePartBody.t`, *default:* `nil`) - The message part body for this part, which may be empty for
-      container MIME message parts.
-  *   `filename` (*type:* `String.t`, *default:* `nil`) - The filename of the attachment. Only present if this message part
-      represents an attachment.
-  *   `headers` (*type:* `list(GoogleApi.Gmail.V1.Model.MessagePartHeader.t)`, *default:* `nil`) - List of headers on this message part. For the top-level message part,
-      representing the entire message payload, it will contain the standard
-      RFC 2822 email headers such as <code>To</code>, <code>From</code>, and
-      <code>Subject</code>.
+  *   `body` (*type:* `GoogleApi.Gmail.V1.Model.MessagePartBody.t`, *default:* `nil`) - The message part body for this part, which may be empty for container MIME message parts.
+  *   `filename` (*type:* `String.t`, *default:* `nil`) - The filename of the attachment. Only present if this message part represents an attachment.
+  *   `headers` (*type:* `list(GoogleApi.Gmail.V1.Model.MessagePartHeader.t)`, *default:* `nil`) - List of headers on this message part. For the top-level message part, representing the entire message payload, it will contain the standard RFC 2822 email headers such as To, From, and Subject.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the message part.
   *   `partId` (*type:* `String.t`, *default:* `nil`) - The immutable ID of the message part.
-  *   `parts` (*type:* `list(GoogleApi.Gmail.V1.Model.MessagePart.t)`, *default:* `nil`) - The child MIME message parts of this part. This only applies to container
-      MIME message parts, for example <code>multipart/*</code>. For non-
-      container MIME message part types, such as <code>text/plain</code>, this
-      field is empty. For more information, see
-      <a href="http://www.ietf.org/rfc/rfc1521.txt">RFC 1521</a>.
+  *   `parts` (*type:* `list(GoogleApi.Gmail.V1.Model.MessagePart.t)`, *default:* `nil`) - The child MIME message parts of this part. This only applies to container MIME message parts, for example multipart/*. For non- container MIME message part types, such as text/plain, this field is empty. For more information, see RFC 1521.
   """
 
   use GoogleApi.Gax.ModelBase

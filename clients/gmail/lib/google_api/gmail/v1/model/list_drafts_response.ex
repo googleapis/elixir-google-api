@@ -21,11 +21,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListDraftsResponse do
 
   ## Attributes
 
-  *   `drafts` (*type:* `list(GoogleApi.Gmail.V1.Model.Draft.t)`, *default:* `nil`) - List of drafts. Note that the <code>Message</code> property in each
-      <code>Draft</code> resource only contains an <code>id</code> and a
-      <code>threadId</code>. The
-      <a href="/gmail/api/v1/reference/users/messages/get">messages.get</a>
-      method can fetch additional message details.
+  *   `drafts` (*type:* `list(GoogleApi.Gmail.V1.Model.Draft.t)`, *default:* `nil`) - List of drafts. Note that the Message property in each Draft resource only contains an id and a threadId. The messages.get method can fetch additional message details.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results in the list.
   *   `resultSizeEstimate` (*type:* `integer()`, *default:* `nil`) - Estimated total number of results.
   """
