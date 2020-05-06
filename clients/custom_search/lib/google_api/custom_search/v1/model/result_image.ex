@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.ResultImage do
   @moduledoc """
-  Image belonging to a custom search result.
+
 
   ## Attributes
 
-  *   `byteSize` (*type:* `integer()`, *default:* `nil`) - The size of the image, in pixels.
-  *   `contextLink` (*type:* `String.t`, *default:* `nil`) - A URL pointing to the webpage hosting the image.
-  *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the image, in pixels.
-  *   `thumbnailHeight` (*type:* `integer()`, *default:* `nil`) - The height of the thumbnail image, in pixels.
-  *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - A URL to the thumbnail image.
-  *   `thumbnailWidth` (*type:* `integer()`, *default:* `nil`) - The width of the thumbnail image, in pixels.
-  *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the image, in pixels.
+  *   `byteSize` (*type:* `integer()`, *default:* `nil`) - 
+  *   `contextLink` (*type:* `String.t`, *default:* `nil`) - 
+  *   `height` (*type:* `integer()`, *default:* `nil`) - 
+  *   `thumbnailHeight` (*type:* `integer()`, *default:* `nil`) - 
+  *   `thumbnailLink` (*type:* `String.t`, *default:* `nil`) - 
+  *   `thumbnailWidth` (*type:* `integer()`, *default:* `nil`) - 
+  *   `width` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
