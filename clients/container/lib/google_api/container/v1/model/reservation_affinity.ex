@@ -17,8 +17,8 @@
 
 defmodule GoogleApi.Container.V1.Model.ReservationAffinity do
   @moduledoc """
-  [ReservationAffinity](/compute/docs/instances/reserving-zonal-resources) is
-  the configuration of desired reservation which instances could take
+  [ReservationAffinity](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+  is the configuration of desired reservation which instances could take
   capacity from.
 
   ## Attributes

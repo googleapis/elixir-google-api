@@ -26,7 +26,7 @@ defmodule GoogleApi.Container.V1.Model.SetNodePoolSizeRequest do
       This field has been deprecated and replaced by the name field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster, node pool id) of the node pool to set
       size.
-      Specified in the format 'projects/*/locations/*/clusters/*/nodePools/*'.
+      Specified in the format `projects/*/locations/*/clusters/*/nodePools/*`.
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - Required. The desired node count for the pool.
   *   `nodePoolId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the node pool to update.
       This field has been deprecated and replaced by the name field.
@@ -34,9 +34,9 @@ defmodule GoogleApi.Container.V1.Model.SetNodePoolSizeRequest do
       number](https://support.google.com/cloud/answer/6158840).
       This field has been deprecated and replaced by the name field.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field has been deprecated and replaced by the name field.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field has been deprecated and replaced by the name
+      field.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -26,12 +26,12 @@ defmodule GoogleApi.Container.V1.Model.SetMaintenancePolicyRequest do
       clears the existing maintenance policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (project, location, cluster id) of the cluster to set maintenance
       policy.
-      Specified in the format 'projects/*/locations/*/clusters/*'.
+      Specified in the format `projects/*/locations/*/clusters/*`.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The Google Developers Console [project ID or project
       number](https://support.google.com/cloud/answer/6158840).
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides.
   """
 
   use GoogleApi.Gax.ModelBase
