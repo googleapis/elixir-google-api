@@ -122,6 +122,10 @@ defmodule GoogleApis.ChangeAnalyzer do
     {:@, [], [{:version, [], ["."]}]}
   end
 
+  defp strip_trivial_ast({:@, _, [{:discovery_revision, _, [str]}]}, "metadata.ex") when is_binary(str) do
+    {:@, [], [{:discovery_revision, [], ["."]}]}
+  end
+
   defp strip_trivial_ast({name, _, args}, basename) do
     {strip_trivial_ast(name, basename), [], strip_trivial_ast(args, basename)}
   end
