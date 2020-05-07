@@ -49,7 +49,7 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   @spec reseller_resellernotify_getwatchdetails(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.ResellernotifyGetwatchdetailsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def reseller_resellernotify_getwatchdetails(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,7 +100,7 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   @spec reseller_resellernotify_register(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.ResellernotifyResource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def reseller_resellernotify_register(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -150,7 +150,7 @@ defmodule GoogleApi.Reseller.V1.Api.Resellernotify do
   @spec reseller_resellernotify_unregister(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Reseller.V1.Model.ResellernotifyResource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def reseller_resellernotify_unregister(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
