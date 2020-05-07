@@ -57,7 +57,7 @@ defmodule GoogleApi.Apigee.V1.Api.Hybrid do
   @spec apigee_hybrid_issuers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListHybridIssuersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def apigee_hybrid_issuers_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
