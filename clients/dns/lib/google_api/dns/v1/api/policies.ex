@@ -50,9 +50,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   *   `{:error, info}` on failure
   """
   @spec dns_policies_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_policies_create(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -105,7 +103,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   *   `{:error, info}` on failure
   """
   @spec dns_policies_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_policies_delete(connection, project, policy, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -158,9 +156,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   *   `{:error, info}` on failure
   """
   @spec dns_policies_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_policies_get(connection, project, policy, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -215,7 +211,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   @spec dns_policies_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DNS.V1.Model.PoliciesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dns_policies_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -271,7 +267,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   @spec dns_policies_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DNS.V1.Model.PoliciesPatchResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dns_policies_patch(connection, project, policy, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -328,7 +324,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   @spec dns_policies_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DNS.V1.Model.PoliciesUpdateResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dns_policies_update(connection, project, policy, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
