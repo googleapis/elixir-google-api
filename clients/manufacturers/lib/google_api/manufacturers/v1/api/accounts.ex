@@ -72,7 +72,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.Manufacturers.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def manufacturers_accounts_products_delete(
         connection,
         parent,
@@ -164,7 +164,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.Manufacturers.V1.Model.Product.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def manufacturers_accounts_products_get(
         connection,
         parent,
@@ -238,7 +238,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
   @spec manufacturers_accounts_products_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Manufacturers.V1.Model.ListProductsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def manufacturers_accounts_products_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -333,7 +333,7 @@ defmodule GoogleApi.Manufacturers.V1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.Manufacturers.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def manufacturers_accounts_products_update(
         connection,
         parent,
