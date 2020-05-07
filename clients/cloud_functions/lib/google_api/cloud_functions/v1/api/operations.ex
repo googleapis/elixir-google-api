@@ -56,7 +56,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
   @spec cloudfunctions_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_operations_get(connection, operations_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -127,7 +127,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
   @spec cloudfunctions_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_operations_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
