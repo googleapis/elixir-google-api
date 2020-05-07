@@ -61,7 +61,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListAuthorizedDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_authorizeddomains_list(
         connection,
         namespaces_id,
@@ -139,7 +139,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudauditlogssources_create(
         connection,
         namespaces_id,
@@ -223,7 +223,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudauditlogssources_delete(
         connection,
         namespaces_id,
@@ -304,7 +304,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudauditlogssources_get(
         connection,
         namespaces_id,
@@ -394,7 +394,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudAuditLogsSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudauditlogssources_list(
         connection,
         namespaces_id,
@@ -477,7 +477,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudpubsubsources_create(
         connection,
         namespaces_id,
@@ -559,7 +559,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudpubsubsources_delete(
         connection,
         namespaces_id,
@@ -639,7 +639,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudpubsubsources_get(
         connection,
         namespaces_id,
@@ -726,7 +726,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudPubSubSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudpubsubsources_list(
         connection,
         namespaces_id,
@@ -809,7 +809,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudschedulersources_create(
         connection,
         namespaces_id,
@@ -893,7 +893,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudschedulersources_delete(
         connection,
         namespaces_id,
@@ -974,7 +974,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudschedulersources_get(
         connection,
         namespaces_id,
@@ -1064,7 +1064,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudSchedulerSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudschedulersources_list(
         connection,
         namespaces_id,
@@ -1156,7 +1156,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudschedulersources_replace_cloud_scheduler_source(
         connection,
         namespaces_id,
@@ -1236,7 +1236,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudstoragesources_create(
         connection,
         namespaces_id,
@@ -1318,7 +1318,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudstoragesources_delete(
         connection,
         namespaces_id,
@@ -1398,7 +1398,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudstoragesources_get(
         connection,
         namespaces_id,
@@ -1485,7 +1485,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudStorageSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudstoragesources_list(
         connection,
         namespaces_id,
@@ -1577,7 +1577,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_cloudstoragesources_replace_cloud_storage_source(
         connection,
         namespaces_id,
@@ -1655,7 +1655,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Configuration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_configurations_get(
         connection,
         namespaces_id,
@@ -1737,7 +1737,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   @spec run_namespaces_configurations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListConfigurationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_configurations_list(
         connection,
         namespaces_id,
@@ -1815,7 +1815,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   @spec run_namespaces_domainmappings_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_domainmappings_create(
         connection,
         namespaces_id,
@@ -1902,7 +1902,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_domainmappings_delete(
         connection,
         namespaces_id,
@@ -1983,7 +1983,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_domainmappings_get(
         connection,
         namespaces_id,
@@ -2065,7 +2065,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   @spec run_namespaces_domainmappings_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListDomainMappingsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_domainmappings_list(
         connection,
         namespaces_id,
@@ -2160,7 +2160,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_revisions_delete(
         connection,
         namespaces_id,
@@ -2241,7 +2241,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Revision.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_revisions_get(
         connection,
         namespaces_id,
@@ -2322,7 +2322,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   @spec run_namespaces_revisions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListRevisionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_revisions_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2398,7 +2398,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Route.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_routes_get(
         connection,
         namespaces_id,
@@ -2479,7 +2479,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   @spec run_namespaces_routes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListRoutesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_routes_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2546,7 +2546,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   @spec run_namespaces_services_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_services_create(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2627,7 +2627,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_services_delete(
         connection,
         namespaces_id,
@@ -2708,7 +2708,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_services_get(
         connection,
         namespaces_id,
@@ -2789,7 +2789,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   @spec run_namespaces_services_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_services_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2873,7 +2873,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_services_replace_service(
         connection,
         namespaces_id,
@@ -2945,7 +2945,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   @spec run_namespaces_triggers_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_triggers_create(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -3019,7 +3019,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_triggers_delete(
         connection,
         namespaces_id,
@@ -3099,7 +3099,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_triggers_get(
         connection,
         namespaces_id,
@@ -3181,7 +3181,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Namespaces do
   @spec run_namespaces_triggers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListTriggersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_namespaces_triggers_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
