@@ -54,7 +54,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.V1 do
   @spec domainsrdap_get_domains(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DomainsRDAP.V1.Model.RdapResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def domainsrdap_get_domains(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -111,7 +111,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.V1 do
   @spec domainsrdap_get_entities(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DomainsRDAP.V1.Model.RdapResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def domainsrdap_get_entities(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -167,7 +167,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.V1 do
   @spec domainsrdap_get_help(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DomainsRDAP.V1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def domainsrdap_get_help(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -224,7 +224,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.V1 do
   @spec domainsrdap_get_ip(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DomainsRDAP.V1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def domainsrdap_get_ip(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -281,7 +281,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.V1 do
   @spec domainsrdap_get_nameservers(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DomainsRDAP.V1.Model.RdapResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def domainsrdap_get_nameservers(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
