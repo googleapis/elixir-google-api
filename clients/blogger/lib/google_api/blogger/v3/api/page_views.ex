@@ -53,9 +53,7 @@ defmodule GoogleApi.Blogger.V3.Api.PageViews do
   *   `{:error, info}` on failure
   """
   @spec blogger_page_views_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Pageviews.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Pageviews.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_page_views_get(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -53,7 +53,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
   *   `{:error, info}` on failure
   """
   @spec blogger_posts_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_delete(connection, blog_id, post_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -116,9 +116,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
   *   `{:error, info}` on failure
   """
   @spec blogger_posts_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Post.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Post.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_get(connection, blog_id, post_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -188,10 +186,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Post.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Blogger.V3.Model.Post.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_get_by_path(connection, blog_id, path, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -255,9 +250,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
   *   `{:error, info}` on failure
   """
   @spec blogger_posts_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Post.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Post.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_insert(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -328,9 +321,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
   *   `{:error, info}` on failure
   """
   @spec blogger_posts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.PostList.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.PostList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_list(connection, blog_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -404,9 +395,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
   *   `{:error, info}` on failure
   """
   @spec blogger_posts_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Post.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Post.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_patch(connection, blog_id, post_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -472,9 +461,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
   *   `{:error, info}` on failure
   """
   @spec blogger_posts_publish(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Post.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Post.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_publish(connection, blog_id, post_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -534,9 +521,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
   *   `{:error, info}` on failure
   """
   @spec blogger_posts_revert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Post.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Post.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_revert(connection, blog_id, post_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -597,9 +582,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
   *   `{:error, info}` on failure
   """
   @spec blogger_posts_search(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.PostList.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.PostList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_search(connection, blog_id, q, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -666,9 +649,7 @@ defmodule GoogleApi.Blogger.V3.Api.Posts do
   *   `{:error, info}` on failure
   """
   @spec blogger_posts_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Blogger.V3.Model.Post.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Blogger.V3.Model.Post.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def blogger_posts_update(connection, blog_id, post_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
