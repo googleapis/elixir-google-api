@@ -62,7 +62,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   @spec serviceusage_services_batch_enable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceUsage.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def serviceusage_services_batch_enable(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -133,7 +133,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   @spec serviceusage_services_batch_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceUsage.V1.Model.BatchGetServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def serviceusage_services_batch_get(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -208,7 +208,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   @spec serviceusage_services_disable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceUsage.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def serviceusage_services_disable(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -279,7 +279,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   @spec serviceusage_services_enable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceUsage.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def serviceusage_services_enable(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -343,7 +343,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   @spec serviceusage_services_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV1Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def serviceusage_services_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -420,7 +420,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
   @spec serviceusage_services_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceUsage.V1.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def serviceusage_services_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
