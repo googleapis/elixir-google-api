@@ -56,7 +56,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_configuration_leaderboard_configurations_delete(
         connection,
         leaderboard_id,
@@ -125,7 +125,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
         ) ::
           {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_leaderboard_configurations_get(
         connection,
         leaderboard_id,
@@ -198,7 +198,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
         ) ::
           {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_leaderboard_configurations_insert(
         connection,
         application_id,
@@ -276,7 +276,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
           {:ok,
            GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_leaderboard_configurations_list(
         connection,
         application_id,
@@ -354,7 +354,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.LeaderboardConfigurat
         ) ::
           {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_leaderboard_configurations_update(
         connection,
         leaderboard_id,

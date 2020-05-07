@@ -61,7 +61,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
         ) ::
           {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.ImageConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_image_configurations_upload(
         connection,
         resource_id,
@@ -142,7 +142,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
         ) ::
           {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.ImageConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_image_configurations_upload_iodata(
         connection,
         resource_id,
@@ -229,7 +229,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.ImageConfigurations d
         ) ::
           {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.ImageConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_image_configurations_upload_simple(
         connection,
         resource_id,
