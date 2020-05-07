@@ -48,7 +48,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatBans do
   *   `{:error, info}` on failure
   """
   @spec youtube_live_chat_bans_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_live_chat_bans_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -99,7 +99,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatBans do
   @spec youtube_live_chat_bans_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.LiveChatBan.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_live_chat_bans_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

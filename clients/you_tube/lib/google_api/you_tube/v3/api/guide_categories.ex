@@ -53,7 +53,7 @@ defmodule GoogleApi.YouTube.V3.Api.GuideCategories do
   @spec youtube_guide_categories_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.GuideCategoryListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_guide_categories_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
