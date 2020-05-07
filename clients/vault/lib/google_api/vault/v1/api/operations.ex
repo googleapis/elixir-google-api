@@ -55,9 +55,7 @@ defmodule GoogleApi.Vault.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec vault_operations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Vault.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Vault.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def vault_operations_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
