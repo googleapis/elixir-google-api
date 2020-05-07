@@ -82,9 +82,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_snapshots_create(
         connection,
         projects_id,
@@ -165,10 +163,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_snapshots_delete(
         connection,
         projects_id,
@@ -244,9 +239,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_snapshots_get(
         connection,
         projects_id,
@@ -314,6 +307,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -327,10 +324,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_snapshots_get_iam_policy(
         connection,
         projects_id,
@@ -407,7 +401,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_snapshots_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListSnapshotsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_snapshots_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -479,9 +473,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_snapshots_patch(
         connection,
         projects_id,
@@ -523,7 +515,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -557,10 +549,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_snapshots_set_iam_policy(
         connection,
         projects_id,
@@ -601,7 +590,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -642,7 +631,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_snapshots_test_iam_permissions(
         connection,
         projects_id,
@@ -721,10 +710,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_subscriptions_acknowledge(
         connection,
         projects_id,
@@ -816,7 +802,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_subscriptions_create(
         connection,
         projects_id,
@@ -892,10 +878,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_subscriptions_delete(
         connection,
         projects_id,
@@ -969,7 +952,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_subscriptions_get(
         connection,
         projects_id,
@@ -1037,6 +1020,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1050,10 +1037,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_subscriptions_get_iam_policy(
         connection,
         projects_id,
@@ -1125,7 +1109,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_subscriptions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListSubscriptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_subscriptions_list(
         connection,
         projects_id,
@@ -1201,10 +1185,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_subscriptions_modify_ack_deadline(
         connection,
         projects_id,
@@ -1285,10 +1266,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_subscriptions_modify_push_config(
         connection,
         projects_id,
@@ -1372,7 +1350,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_subscriptions_patch(
         connection,
         projects_id,
@@ -1450,7 +1428,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.PullResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_subscriptions_pull(
         connection,
         projects_id,
@@ -1532,7 +1510,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.SeekResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_subscriptions_seek(
         connection,
         projects_id,
@@ -1574,7 +1552,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -1608,10 +1586,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_subscriptions_set_iam_policy(
         connection,
         projects_id,
@@ -1652,7 +1627,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -1693,7 +1668,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_subscriptions_test_iam_permissions(
         connection,
         projects_id,
@@ -1775,10 +1750,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Topic.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Topic.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_topics_create(
         connection,
         projects_id,
@@ -1854,10 +1826,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_topics_delete(
         connection,
         projects_id,
@@ -1928,10 +1897,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Topic.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Topic.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_topics_get(
         connection,
         projects_id,
@@ -1999,6 +1965,10 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2012,10 +1982,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_topics_get_iam_policy(
         connection,
         projects_id,
@@ -2087,7 +2054,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_topics_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListTopicsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_topics_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2159,10 +2126,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Topic.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Topic.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_topics_patch(
         connection,
         projects_id,
@@ -2239,7 +2203,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.PublishResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_topics_publish(
         connection,
         projects_id,
@@ -2281,7 +2245,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -2315,10 +2279,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.PubSub.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.PubSub.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def pubsub_projects_topics_set_iam_policy(
         connection,
         projects_id,
@@ -2359,7 +2320,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -2400,7 +2361,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_topics_test_iam_permissions(
         connection,
         projects_id,
@@ -2484,7 +2445,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListTopicSnapshotsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_topics_snapshots_list(
         connection,
         projects_id,
@@ -2564,7 +2525,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.PubSub.V1.Model.ListTopicSubscriptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pubsub_projects_topics_subscriptions_list(
         connection,
         projects_id,
