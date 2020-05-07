@@ -54,7 +54,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def webmasters_sitemaps_delete(
         connection,
         site_url,
@@ -113,7 +113,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   @spec webmasters_sitemaps_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Webmaster.V3.Model.WmxSitemap.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def webmasters_sitemaps_get(connection, site_url, feedpath, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -166,7 +166,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
   @spec webmasters_sitemaps_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Webmaster.V3.Model.SitemapsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def webmasters_sitemaps_list(connection, site_url, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -222,7 +222,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Sitemaps do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def webmasters_sitemaps_submit(
         connection,
         site_url,
