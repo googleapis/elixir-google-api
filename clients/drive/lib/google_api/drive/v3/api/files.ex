@@ -55,9 +55,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_copy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_copy(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -120,9 +118,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -192,10 +188,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           iodata,
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_create_iodata(
         connection,
         upload_type,
@@ -267,7 +260,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_create_resumable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_create_resumable(connection, upload_type, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -338,10 +331,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_create_simple(
         connection,
         upload_type,
@@ -407,7 +397,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_delete(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -457,7 +447,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_empty_trash(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_empty_trash(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -505,7 +495,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_export(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_export(connection, file_id, mime_type, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -558,7 +548,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   @spec drive_files_generate_ids(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Drive.V3.Model.GeneratedIds.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def drive_files_generate_ids(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -610,9 +600,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_get(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -676,9 +664,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.FileList.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.FileList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -747,9 +733,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_update(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -825,10 +809,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           iodata,
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_update_iodata(
         connection,
         file_id,
@@ -911,7 +892,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_update_resumable(
         connection,
         file_id,
@@ -994,10 +975,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_update_simple(
         connection,
         file_id,
@@ -1069,9 +1047,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Channel.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_watch(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
