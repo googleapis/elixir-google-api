@@ -56,7 +56,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
   @spec youtubereporting_jobs_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeReporting.V1.Model.Job.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtubereporting_jobs_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -117,7 +117,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
   @spec youtubereporting_jobs_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeReporting.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtubereporting_jobs_delete(connection, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -179,7 +179,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
   @spec youtubereporting_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeReporting.V1.Model.Job.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtubereporting_jobs_get(connection, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -249,7 +249,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
   @spec youtubereporting_jobs_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeReporting.V1.Model.ListJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtubereporting_jobs_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -319,7 +319,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
         ) ::
           {:ok, GoogleApi.YouTubeReporting.V1.Model.Report.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtubereporting_jobs_reports_get(
         connection,
         job_id,
@@ -400,7 +400,7 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Jobs do
   @spec youtubereporting_jobs_reports_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeReporting.V1.Model.ListReportsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtubereporting_jobs_reports_list(connection, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
