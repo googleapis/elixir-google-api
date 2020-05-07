@@ -49,7 +49,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   *   `{:error, info}` on failure
   """
   @spec directory_schemas_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_schemas_delete(
         connection,
         customer_id,
@@ -108,7 +108,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   @spec directory_schemas_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Schema.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_schemas_get(
         connection,
         customer_id,
@@ -167,7 +167,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   @spec directory_schemas_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Schema.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_schemas_insert(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -219,7 +219,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   @spec directory_schemas_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Schemas.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_schemas_list(connection, customer_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -272,7 +272,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   @spec directory_schemas_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Schema.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_schemas_patch(
         connection,
         customer_id,
@@ -333,7 +333,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
   @spec directory_schemas_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Schema.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_schemas_update(
         connection,
         customer_id,

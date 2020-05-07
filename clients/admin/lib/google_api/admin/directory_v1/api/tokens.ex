@@ -49,7 +49,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Tokens do
   *   `{:error, info}` on failure
   """
   @spec directory_tokens_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_tokens_delete(connection, user_key, client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -102,7 +102,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Tokens do
   @spec directory_tokens_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Token.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_tokens_get(connection, user_key, client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -154,7 +154,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Tokens do
   @spec directory_tokens_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Tokens.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_tokens_list(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

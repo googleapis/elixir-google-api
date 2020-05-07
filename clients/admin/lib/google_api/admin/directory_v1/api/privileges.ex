@@ -50,7 +50,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Privileges do
   @spec directory_privileges_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Privileges.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_privileges_list(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

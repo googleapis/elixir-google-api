@@ -49,7 +49,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
   *   `{:error, info}` on failure
   """
   @spec directory_members_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_members_delete(
         connection,
         group_key,
@@ -108,7 +108,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
   @spec directory_members_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Member.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_members_get(connection, group_key, member_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -167,7 +167,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.MembersHasMember.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_members_has_member(
         connection,
         group_key,
@@ -226,7 +226,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
   @spec directory_members_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Member.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_members_insert(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -282,7 +282,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
   @spec directory_members_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Members.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_members_list(connection, group_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -339,7 +339,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
   @spec directory_members_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Member.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_members_patch(
         connection,
         group_key,
@@ -400,7 +400,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
   @spec directory_members_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Member.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_members_update(
         connection,
         group_key,

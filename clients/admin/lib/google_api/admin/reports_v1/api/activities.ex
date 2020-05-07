@@ -81,7 +81,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
   @spec reports_activities_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Reports_v1.Model.Activities.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def reports_activities_list(
         connection,
         user_key,
@@ -180,7 +180,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.Activities do
   @spec reports_activities_watch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Reports_v1.Model.Channel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def reports_activities_watch(
         connection,
         user_key,

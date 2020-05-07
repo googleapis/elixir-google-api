@@ -54,7 +54,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.DomainAliases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_domain_aliases_delete(
         connection,
         customer,
@@ -119,7 +119,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.DomainAliases do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.DomainAlias.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_domain_aliases_get(
         connection,
         customer,
@@ -178,7 +178,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.DomainAliases do
   @spec directory_domain_aliases_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.DomainAlias.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_domain_aliases_insert(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -231,7 +231,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.DomainAliases do
   @spec directory_domain_aliases_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.DomainAliases.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_domain_aliases_list(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

@@ -58,7 +58,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.CustomerUsageReports do
   @spec reports_customer_usage_reports_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def reports_customer_usage_reports_get(connection, date, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

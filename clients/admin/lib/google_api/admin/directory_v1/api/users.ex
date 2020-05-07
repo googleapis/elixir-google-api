@@ -48,7 +48,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec directory_users_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_users_delete(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -102,7 +102,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.User.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_get(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -156,7 +156,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_insert(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.User.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -217,7 +217,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Users.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -277,7 +277,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec directory_users_make_admin(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_users_make_admin(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -330,7 +330,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.User.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_patch(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -381,7 +381,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec directory_users_undelete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_users_undelete(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -434,7 +434,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.User.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_update(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -498,7 +498,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_watch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Channel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_watch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -564,7 +564,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_users_aliases_delete(
         connection,
         user_key,
@@ -623,7 +623,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_aliases_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Alias.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_aliases_insert(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -676,7 +676,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_aliases_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Aliases.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_aliases_list(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -730,7 +730,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_aliases_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Channel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_aliases_watch(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -781,7 +781,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec directory_users_photos_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_users_photos_delete(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -832,7 +832,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_photos_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.UserPhoto.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_photos_get(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -884,7 +884,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_photos_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.UserPhoto.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_photos_patch(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -937,7 +937,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   @spec directory_users_photos_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.UserPhoto.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_users_photos_update(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
