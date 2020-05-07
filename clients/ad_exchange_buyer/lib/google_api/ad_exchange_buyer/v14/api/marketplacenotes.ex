@@ -56,7 +56,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacenotes do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.AddOrderNotesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_marketplacenotes_insert(
         connection,
         proposal_id,
@@ -121,7 +121,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacenotes do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.GetOrderNotesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_marketplacenotes_list(
         connection,
         proposal_id,

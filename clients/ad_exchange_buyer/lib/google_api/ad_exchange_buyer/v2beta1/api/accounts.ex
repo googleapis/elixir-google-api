@@ -61,7 +61,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Client.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_create(
         connection,
         account_id,
@@ -133,7 +133,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Client.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_get(
         connection,
         account_id,
@@ -215,7 +215,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_list(
         connection,
         account_id,
@@ -293,7 +293,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Client.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_update(
         connection,
         account_id,
@@ -370,7 +370,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_invitations_create(
         connection,
         account_id,
@@ -449,7 +449,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUserInvitation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_invitations_get(
         connection,
         account_id,
@@ -543,7 +543,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUserInvitationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_invitations_list(
         connection,
         account_id,
@@ -624,7 +624,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_users_get(
         connection,
         account_id,
@@ -713,7 +713,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListClientUsersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_users_list(
         connection,
         account_id,
@@ -795,7 +795,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ClientUser.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_clients_users_update(
         connection,
         account_id,
@@ -875,7 +875,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_creatives_create(
         connection,
         account_id,
@@ -948,7 +948,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_creatives_get(
         connection,
         account_id,
@@ -1044,7 +1044,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_creatives_list(
         connection,
         account_id,
@@ -1123,7 +1123,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_creatives_stop_watching(
         connection,
         account_id,
@@ -1204,7 +1204,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Creative.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_creatives_update(
         connection,
         account_id,
@@ -1284,7 +1284,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_creatives_watch(
         connection,
         account_id,
@@ -1359,7 +1359,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_creatives_deal_associations_add(
         connection,
         account_id,
@@ -1457,7 +1457,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListDealAssociationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_creatives_deal_associations_list(
         connection,
         account_id,
@@ -1536,7 +1536,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_creatives_deal_associations_remove(
         connection,
         account_id,
@@ -1622,7 +1622,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_finalized_proposals_list(
         connection,
         account_id,
@@ -1699,7 +1699,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Product.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_products_get(
         connection,
         account_id,
@@ -1780,7 +1780,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProductsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_products_list(
         connection,
         account_id,
@@ -1860,7 +1860,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_accept(
         connection,
         account_id,
@@ -1938,7 +1938,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Note.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_add_note(
         connection,
         account_id,
@@ -2015,7 +2015,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_cancel_negotiation(
         connection,
         account_id,
@@ -2095,7 +2095,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_complete_setup(
         connection,
         account_id,
@@ -2169,7 +2169,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_create(
         connection,
         account_id,
@@ -2242,7 +2242,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_get(
         connection,
         account_id,
@@ -2327,7 +2327,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListProposalsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_list(
         connection,
         account_id,
@@ -2412,7 +2412,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_pause(
         connection,
         account_id,
@@ -2497,7 +2497,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_resume(
         connection,
         account_id,
@@ -2584,7 +2584,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Proposal.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_proposals_update(
         connection,
         account_id,
@@ -2658,7 +2658,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.PublisherProfile.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_publisher_profiles_get(
         connection,
         account_id,
@@ -2733,7 +2733,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListPublisherProfilesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_accounts_publisher_profiles_list(
         connection,
         account_id,
