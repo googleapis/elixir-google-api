@@ -35,7 +35,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
       If the collection of input contexts is not empty, all of the contexts must
       be present in the active user session for an event to trigger this intent.
       Event names are limited to 150 characters.
-  *   `followupIntentInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo.t)`, *default:* `nil`) - Read-only. Information about all followup intents that have this intent as
+  *   `followupIntentInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo.t)`, *default:* `nil`) - Output only. Information about all followup intents that have this intent as
       a direct or indirect parent. We populate this field only in the output.
   *   `inputContextNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of context names required for this intent to be
       triggered.
@@ -58,7 +58,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
         ml_enabled = false / ml_disabled = true.
       - After April 15th, 2018 the default is:
         ml_enabled = true / ml_disabled = false.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of this intent.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of this intent.
       Required for Intents.UpdateIntent and Intents.BatchUpdateIntents
       methods.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
@@ -68,7 +68,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
       when the intent is matched.
       Format: `projects/<Project ID>/agent/sessions/-/contexts/<Context ID>`.
   *   `parameters` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentParameter.t)`, *default:* `nil`) - Optional. The collection of parameters associated with the intent.
-  *   `parentFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Read-only after creation. The unique identifier of the parent intent in the
+  *   `parentFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of the parent intent in the
       chain of followup intents. You can set this field when creating an intent,
       for example with CreateIntent or
       BatchUpdateIntents, in order to make this
@@ -76,7 +76,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
 
       It identifies the parent followup intent.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
-  *   `priority` (*type:* `integer()`, *default:* `nil`) - The priority of this intent. Higher numbers represent higher
+  *   `priority` (*type:* `integer()`, *default:* `nil`) - Optional. The priority of this intent. Higher numbers represent higher
       priorities.
 
       - If the supplied value is unspecified or 0, the service
@@ -86,9 +86,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Intent do
         in runtime detect intent requests.
   *   `resetContexts` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to delete all contexts in the current
       session when this intent is matched.
-  *   `rootFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Read-only. The unique identifier of the root intent in the chain of
+  *   `rootFollowupIntentName` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the root intent in the chain of
       followup intents. It identifies the correct followup intents chain for
-      this intent. We populate this field only in the output.
+      this intent.
 
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.
   *   `trainingPhrases` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentTrainingPhrase.t)`, *default:* `nil`) - Optional. The collection of examples that the agent is
