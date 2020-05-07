@@ -57,7 +57,7 @@ defmodule GoogleApi.VideoIntelligence.V1.Api.Videos do
   @spec videointelligence_videos_annotate(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.VideoIntelligence.V1.Model.GoogleLongrunning_Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def videointelligence_videos_annotate(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
