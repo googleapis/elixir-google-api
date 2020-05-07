@@ -57,7 +57,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adsensehost_customchannels_delete(
         connection,
         ad_client_id,
@@ -122,7 +122,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adsensehost_customchannels_get(
         connection,
         ad_client_id,
@@ -181,7 +181,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   @spec adsensehost_customchannels_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adsensehost_customchannels_insert(
         connection,
         ad_client_id,
@@ -240,7 +240,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   @spec adsensehost_customchannels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannels.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adsensehost_customchannels_list(connection, ad_client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -301,7 +301,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
         ) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adsensehost_customchannels_patch(
         connection,
         ad_client_id,
@@ -361,7 +361,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Customchannels do
   @spec adsensehost_customchannels_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSenseHost.V41.Model.CustomChannel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adsensehost_customchannels_update(
         connection,
         ad_client_id,
