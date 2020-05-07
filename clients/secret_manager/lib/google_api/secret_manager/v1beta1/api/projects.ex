@@ -61,7 +61,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_locations_get(
         connection,
         projects_id,
@@ -135,7 +135,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_locations_list(
         connection,
         projects_id,
@@ -214,7 +214,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.SecretVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_add_version(
         connection,
         projects_id,
@@ -293,7 +293,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.Secret.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_create(
         connection,
         projects_id,
@@ -367,7 +367,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_delete(
         connection,
         projects_id,
@@ -440,7 +440,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.Secret.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_get(
         connection,
         projects_id,
@@ -523,7 +523,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_get_iam_policy(
         connection,
         projects_id,
@@ -596,7 +596,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
   @spec secretmanager_projects_secrets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.ListSecretsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_list(
         connection,
         projects_id,
@@ -673,7 +673,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.Secret.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_patch(
         connection,
         projects_id,
@@ -754,7 +754,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_set_iam_policy(
         connection,
         projects_id,
@@ -836,7 +836,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_test_iam_permissions(
         connection,
         projects_id,
@@ -918,7 +918,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.AccessSecretVersionResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_versions_access(
         connection,
         projects_id,
@@ -1006,7 +1006,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.SecretVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_versions_destroy(
         connection,
         projects_id,
@@ -1092,7 +1092,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.SecretVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_versions_disable(
         connection,
         projects_id,
@@ -1178,7 +1178,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.SecretVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_versions_enable(
         connection,
         projects_id,
@@ -1265,7 +1265,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.SecretVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_versions_get(
         connection,
         projects_id,
@@ -1351,7 +1351,7 @@ defmodule GoogleApi.SecretManager.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.SecretManager.V1beta1.Model.ListSecretVersionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def secretmanager_projects_secrets_versions_list(
         connection,
         projects_id,
