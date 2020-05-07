@@ -62,7 +62,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Channel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_partners_channels_get(
         connection,
         partner_id,
@@ -164,7 +164,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
   @spec displayvideo_partners_channels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListChannelsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_partners_channels_list(
         connection,
         partner_id,

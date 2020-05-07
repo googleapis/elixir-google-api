@@ -55,7 +55,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FloodlightGroups do
   @spec displayvideo_floodlight_groups_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.FloodlightGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_floodlight_groups_get(
         connection,
         floodlight_group_id,
@@ -124,7 +124,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FloodlightGroups do
   @spec displayvideo_floodlight_groups_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.FloodlightGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_floodlight_groups_patch(
         connection,
         floodlight_group_id,

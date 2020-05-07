@@ -63,7 +63,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FirstAndThirdPartyAudiences do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_first_and_third_party_audiences_get(
         connection,
         first_and_third_party_audience_id,
@@ -176,7 +176,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FirstAndThirdPartyAudiences do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListFirstAndThirdPartyAudiencesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_first_and_third_party_audiences_list(
         connection,
         optional_params \\ [],

@@ -25,6 +25,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudgetSegment do
       date_range.
       The amount is in micros. Must be greater than 0. For example, 500000000
       represents 500 standard units of the currency.
+  *   `campaignBudgetId` (*type:* `String.t`, *default:* `nil`) - The ID of the campaign budget linked to this insertion order budget
+      segment.
   *   `dateRange` (*type:* `GoogleApi.DisplayVideo.V1.Model.DateRange.t`, *default:* `nil`) - Required. The start and end date settings of the budget segment. They are resolved
       relative to the parent advertiser's time zone.
 
@@ -44,11 +46,13 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudgetSegment do
 
   @type t :: %__MODULE__{
           :budgetAmountMicros => String.t(),
+          :campaignBudgetId => String.t(),
           :dateRange => GoogleApi.DisplayVideo.V1.Model.DateRange.t(),
           :description => String.t()
         }
 
   field(:budgetAmountMicros)
+  field(:campaignBudgetId)
   field(:dateRange, as: GoogleApi.DisplayVideo.V1.Model.DateRange)
   field(:description)
 end

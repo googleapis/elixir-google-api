@@ -66,7 +66,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_inventory_source_groups_get(
         connection,
         inventory_source_group_id,
@@ -169,7 +169,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   @spec displayvideo_inventory_source_groups_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListInventorySourceGroupsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_inventory_source_groups_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
