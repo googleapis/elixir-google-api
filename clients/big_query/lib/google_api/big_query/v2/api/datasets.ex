@@ -50,7 +50,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   *   `{:error, info}` on failure
   """
   @spec bigquery_datasets_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_datasets_delete(
         connection,
         project_id,
@@ -108,9 +108,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   *   `{:error, info}` on failure
   """
   @spec bigquery_datasets_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_datasets_get(connection, project_id, dataset_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -161,9 +159,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   *   `{:error, info}` on failure
   """
   @spec bigquery_datasets_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_datasets_insert(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -219,7 +215,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   @spec bigquery_datasets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.DatasetList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigquery_datasets_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -274,9 +270,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   *   `{:error, info}` on failure
   """
   @spec bigquery_datasets_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_datasets_patch(
         connection,
         project_id,
@@ -335,9 +329,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
   *   `{:error, info}` on failure
   """
   @spec bigquery_datasets_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Dataset.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_datasets_update(
         connection,
         project_id,
