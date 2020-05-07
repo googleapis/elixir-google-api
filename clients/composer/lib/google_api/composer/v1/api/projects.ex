@@ -63,7 +63,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Composer.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def composer_projects_locations_environments_create(
         connection,
         projects_id,
@@ -140,7 +140,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Composer.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def composer_projects_locations_environments_delete(
         connection,
         projects_id,
@@ -221,7 +221,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Composer.V1.Model.Environment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def composer_projects_locations_environments_get(
         connection,
         projects_id,
@@ -302,7 +302,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Composer.V1.Model.ListEnvironmentsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def composer_projects_locations_environments_list(
         connection,
         projects_id,
@@ -514,7 +514,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Composer.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def composer_projects_locations_environments_patch(
         connection,
         projects_id,
@@ -597,7 +597,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Composer.V1.Model.ListImageVersionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def composer_projects_locations_image_versions_list(
         connection,
         projects_id,
@@ -674,10 +674,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Composer.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Composer.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def composer_projects_locations_operations_delete(
         connection,
         projects_id,
@@ -759,7 +756,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Composer.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def composer_projects_locations_operations_get(
         connection,
         projects_id,
@@ -849,7 +846,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Composer.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def composer_projects_locations_operations_list(
         connection,
         projects_id,
