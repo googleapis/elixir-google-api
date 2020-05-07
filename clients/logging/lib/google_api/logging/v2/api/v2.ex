@@ -66,7 +66,7 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.CmekSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def logging_get_cmek_settings(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -140,7 +140,7 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.CmekSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def logging_update_cmek_settings(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

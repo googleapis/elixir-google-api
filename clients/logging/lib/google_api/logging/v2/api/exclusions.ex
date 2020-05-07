@@ -67,7 +67,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def logging_exclusions_create(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -139,10 +139,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def logging_exclusions_delete(
         connection,
         v2_id,
@@ -224,7 +221,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def logging_exclusions_get(
         connection,
         v2_id,
@@ -300,7 +297,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   @spec logging_exclusions_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def logging_exclusions_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -378,7 +375,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
         ) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def logging_exclusions_patch(
         connection,
         v2_id,
