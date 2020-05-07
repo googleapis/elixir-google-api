@@ -54,7 +54,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_users_delete(
         connection,
         enterprise_id,
@@ -123,7 +123,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.AuthenticationToken.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_users_generate_authentication_token(
         connection,
         enterprise_id,
@@ -192,7 +192,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.UserToken.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_users_generate_token(
         connection,
         enterprise_id,
@@ -257,7 +257,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.User.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_users_get(
         connection,
         enterprise_id,
@@ -322,7 +322,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ProductSet.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_users_get_available_product_set(
         connection,
         enterprise_id,
@@ -384,7 +384,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   @spec androidenterprise_users_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.User.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_users_insert(connection, enterprise_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -443,7 +443,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.UsersListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_users_list(
         connection,
         enterprise_id,
@@ -509,7 +509,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_users_revoke_device_access(
         connection,
         enterprise_id,
@@ -571,7 +571,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_users_revoke_token(
         connection,
         enterprise_id,
@@ -637,7 +637,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ProductSet.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_users_set_available_product_set(
         connection,
         enterprise_id,
@@ -706,7 +706,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.User.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_users_update(
         connection,
         enterprise_id,

@@ -54,7 +54,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_storelayoutpages_delete(
         connection,
         enterprise_id,
@@ -119,7 +119,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StorePage.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_storelayoutpages_get(
         connection,
         enterprise_id,
@@ -183,7 +183,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StorePage.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_storelayoutpages_insert(
         connection,
         enterprise_id,
@@ -245,7 +245,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPagesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_storelayoutpages_list(
         connection,
         enterprise_id,
@@ -311,7 +311,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Storelayoutpages do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StorePage.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_storelayoutpages_update(
         connection,
         enterprise_id,
