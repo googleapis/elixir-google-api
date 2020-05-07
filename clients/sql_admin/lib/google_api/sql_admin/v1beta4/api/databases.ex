@@ -63,7 +63,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_delete(
         connection,
         project,
@@ -144,7 +144,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Database.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_get(
         connection,
         project,
@@ -218,7 +218,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   @spec sql_databases_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_insert(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -280,7 +280,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   @spec sql_databases_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.DatabasesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_list(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -353,7 +353,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_patch(
         connection,
         project,
@@ -436,7 +436,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_update(
         connection,
         project,
