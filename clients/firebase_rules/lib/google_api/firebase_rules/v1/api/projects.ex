@@ -82,7 +82,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   @spec firebaserules_projects_test(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.TestRulesetResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_test(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -171,7 +171,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Release.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_releases_create(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -238,7 +238,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_releases_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -299,7 +299,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   @spec firebaserules_projects_releases_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Release.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_releases_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -367,7 +367,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.GetReleaseExecutableResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_releases_get_executable(
         connection,
         name,
@@ -468,7 +468,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   @spec firebaserules_projects_releases_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.ListReleasesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_releases_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -542,7 +542,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Release.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_releases_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -615,7 +615,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Ruleset.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_rulesets_create(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -684,7 +684,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_rulesets_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -745,7 +745,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   @spec firebaserules_projects_rulesets_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.Ruleset.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_rulesets_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -822,7 +822,7 @@ defmodule GoogleApi.FirebaseRules.V1.Api.Projects do
   @spec firebaserules_projects_rulesets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseRules.V1.Model.ListRulesetsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebaserules_projects_rulesets_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
