@@ -51,7 +51,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Divisions do
   @spec civicinfo_divisions_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def civicinfo_divisions_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
