@@ -110,7 +110,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Api.Reports do
   @spec youtube_analytics_reports_query(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeAnalytics.V2.Model.QueryResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_analytics_reports_query(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
