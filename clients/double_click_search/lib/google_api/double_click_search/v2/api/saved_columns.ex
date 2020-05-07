@@ -57,7 +57,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.SavedColumns do
         ) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.SavedColumnList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclicksearch_saved_columns_list(
         connection,
         agency_id,
