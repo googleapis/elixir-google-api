@@ -50,7 +50,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
   @spec doubleclickbidmanager_queries_createquery(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickBidManager.V1.Model.Query.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclickbidmanager_queries_createquery(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -102,7 +102,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def doubleclickbidmanager_queries_deletequery(
         connection,
         query_id,
@@ -163,7 +163,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
         ) ::
           {:ok, GoogleApi.DoubleClickBidManager.V1.Model.Query.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclickbidmanager_queries_getquery(
         connection,
         query_id,
@@ -218,7 +218,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
   @spec doubleclickbidmanager_queries_listqueries(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickBidManager.V1.Model.ListQueriesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclickbidmanager_queries_listqueries(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -272,7 +272,7 @@ defmodule GoogleApi.DoubleClickBidManager.V1.Api.Queries do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def doubleclickbidmanager_queries_runquery(
         connection,
         query_id,

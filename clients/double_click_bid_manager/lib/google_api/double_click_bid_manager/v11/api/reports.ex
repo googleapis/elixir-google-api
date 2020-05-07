@@ -57,7 +57,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Reports do
         ) ::
           {:ok, GoogleApi.DoubleClickBidManager.V11.Model.ListReportsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclickbidmanager_reports_listreports(
         connection,
         query_id,
