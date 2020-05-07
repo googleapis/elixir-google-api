@@ -22,6 +22,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   ## Attributes
 
   *   `autoscale` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale.t`, *default:* `nil`) - The autoscale policy to apply on a pool.
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - Channel specifies the release channel of the pool.
   *   `name` (*type:* `String.t`, *default:* `nil`) - WorkerPool resource name formatted as:
       `projects/[PROJECT_ID]/instances/[INSTANCE_ID]/workerpools/[POOL_ID]`.
       name should not be populated when creating a worker pool since it is
@@ -38,6 +39,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   @type t :: %__MODULE__{
           :autoscale =>
             GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale.t(),
+          :channel => String.t(),
           :name => String.t(),
           :state => String.t(),
           :workerConfig =>
@@ -50,6 +52,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
       GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale
   )
 
+  field(:channel)
   field(:name)
   field(:state)
 
