@@ -71,7 +71,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Environments do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.Environment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_environments_get(
         connection,
         project_id,
@@ -166,7 +166,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Environments do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListEnvironmentsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_environments_list(
         connection,
         project_id,

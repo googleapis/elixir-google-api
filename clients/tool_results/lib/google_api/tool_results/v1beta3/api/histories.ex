@@ -69,7 +69,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Histories do
   @spec toolresults_histories_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.History.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_histories_create(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -147,7 +147,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Histories do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.History.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_histories_get(
         connection,
         project_id,
@@ -237,7 +237,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Histories do
   @spec toolresults_histories_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListHistoriesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_histories_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

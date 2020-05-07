@@ -89,7 +89,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Thumbnails do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListStepThumbnailsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_thumbnails_list(
         connection,
         project_id,

@@ -70,7 +70,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.PerfSampleSeries do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_perf_sample_series_create(
         connection,
         project_id,
@@ -160,7 +160,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.PerfSampleSeries do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.PerfSampleSeries.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_perf_sample_series_get(
         connection,
         project_id,
@@ -254,7 +254,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.PerfSampleSeries do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListPerfSampleSeriesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_perf_sample_series_list(
         connection,
         project_id,

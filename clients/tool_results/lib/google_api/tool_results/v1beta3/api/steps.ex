@@ -78,7 +78,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Steps do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListStepAccessibilityClustersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_steps_accessibility_clusters(
         connection,
         name,
@@ -169,7 +169,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Steps do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_steps_create(
         connection,
         project_id,
@@ -267,7 +267,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Steps do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_steps_get(
         connection,
         project_id,
@@ -354,7 +354,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Steps do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_steps_get_perf_metrics_summary(
         connection,
         project_id,
@@ -466,7 +466,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Steps do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListStepsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_steps_list(
         connection,
         project_id,
@@ -572,7 +572,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Steps do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_steps_patch(
         connection,
         project_id,
@@ -676,7 +676,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Steps do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.Step.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_steps_publish_xunit_xml_files(
         connection,
         project_id,

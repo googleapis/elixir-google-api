@@ -85,7 +85,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.TestCases do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.TestCase.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_test_cases_get(
         connection,
         project_id,
@@ -196,7 +196,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.TestCases do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListTestCasesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_test_cases_list(
         connection,
         project_id,

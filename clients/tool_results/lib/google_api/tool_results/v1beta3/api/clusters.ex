@@ -73,7 +73,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Clusters do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ScreenshotCluster.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_clusters_get(
         connection,
         project_id,
@@ -169,7 +169,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Clusters do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListScreenshotClustersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_clusters_list(
         connection,
         project_id,
