@@ -55,9 +55,7 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
   *   `{:error, info}` on failure
   """
   @spec poly_assets_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Poly.V1.Model.Asset.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Poly.V1.Model.Asset.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def poly_assets_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -140,7 +138,7 @@ defmodule GoogleApi.Poly.V1.Api.Assets do
   @spec poly_assets_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Poly.V1.Model.ListAssetsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def poly_assets_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
