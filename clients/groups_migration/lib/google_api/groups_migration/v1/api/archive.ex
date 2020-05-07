@@ -50,7 +50,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
   @spec groupsmigration_archive_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.GroupsMigration.V1.Model.Groups.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def groupsmigration_archive_insert(connection, group_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -112,7 +112,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
         ) ::
           {:ok, GoogleApi.GroupsMigration.V1.Model.Groups.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def groupsmigration_archive_insert_iodata(
         connection,
         group_id,
@@ -178,7 +178,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def groupsmigration_archive_insert_resumable(
         connection,
         group_id,
@@ -247,7 +247,7 @@ defmodule GoogleApi.GroupsMigration.V1.Api.Archive do
         ) ::
           {:ok, GoogleApi.GroupsMigration.V1.Model.Groups.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def groupsmigration_archive_insert_simple(
         connection,
         group_id,
