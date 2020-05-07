@@ -58,7 +58,7 @@ defmodule GoogleApi.SearchConsole.V1.Api.UrlTestingTools do
         ) ::
           {:ok, GoogleApi.SearchConsole.V1.Model.RunMobileFriendlyTestResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def searchconsole_url_testing_tools_mobile_friendly_test_run(
         connection,
         optional_params \\ [],
