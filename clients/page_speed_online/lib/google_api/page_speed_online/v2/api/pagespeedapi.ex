@@ -60,7 +60,7 @@ defmodule GoogleApi.PageSpeedOnline.V2.Api.Pagespeedapi do
         ) ::
           {:ok, GoogleApi.PageSpeedOnline.V2.Model.Result.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def pagespeedonline_pagespeedapi_runpagespeed(
         connection,
         url,
