@@ -65,7 +65,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Company.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_customers_create(
         connection,
         parent,
@@ -140,7 +140,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ListCustomersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_customers_list(
         connection,
         partner_id,
@@ -215,7 +215,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ClaimDeviceResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_devices_claim(
         connection,
         partner_id,
@@ -290,7 +290,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_devices_claim_async(
         connection,
         partner_id,
@@ -364,7 +364,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
           {:ok,
            GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdentifierResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_devices_find_by_identifier(
         connection,
         partner_id,
@@ -444,7 +444,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByOwnerResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_devices_find_by_owner(
         connection,
         partner_id,
@@ -517,7 +517,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_devices_get(
         connection,
         name,
@@ -589,7 +589,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_devices_metadata(
         connection,
         metadata_owner_id,
@@ -665,7 +665,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_devices_unclaim(
         connection,
         partner_id,
@@ -738,7 +738,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_devices_unclaim_async(
         connection,
         partner_id,
@@ -814,7 +814,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_devices_update_metadata_async(
         connection,
         partner_id,
@@ -888,7 +888,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_vendors_list(
         connection,
         parent,
@@ -964,7 +964,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Partners do
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.ListVendorCustomersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_partners_vendors_customers_list(
         connection,
         parent,
