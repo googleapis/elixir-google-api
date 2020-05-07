@@ -69,7 +69,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Testing.V1.Model.CancelTestMatrixResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def testing_projects_test_matrices_cancel(
         connection,
         project_id,
@@ -155,7 +155,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Testing.V1.Model.TestMatrix.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def testing_projects_test_matrices_create(
         connection,
         project_id,
@@ -234,7 +234,7 @@ defmodule GoogleApi.Testing.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Testing.V1.Model.TestMatrix.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def testing_projects_test_matrices_get(
         connection,
         project_id,
