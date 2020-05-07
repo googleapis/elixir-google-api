@@ -33,7 +33,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project in which to create the alerting policy. The format is:
       projects/[PROJECT_ID_OR_NUMBER]
-      Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[ALERT_POLICY_ID], identifying the policy in the container.
+      Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. |name| must be a host project of a workspace, otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[ALERT_POLICY_ID], identifying the policy in the container.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -62,7 +62,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_alert_policies_create(
         connection,
         projects_id,
@@ -134,9 +134,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_alert_policies_delete(
         connection,
         projects_id,
@@ -211,7 +209,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_alert_policies_get(
         connection,
         projects_id,
@@ -249,7 +247,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Lists the existing alerting policies for the project.
+  Lists the existing alerting policies for the workspace.
 
   ## Parameters
 
@@ -288,7 +286,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListAlertPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_alert_policies_list(
         connection,
         projects_id,
@@ -371,7 +369,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_alert_policies_patch(
         connection,
         projects_id,
@@ -447,7 +445,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_collectd_time_series_create(
         connection,
         projects_id,
@@ -516,9 +514,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec monitoring_projects_groups_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_groups_create(
         connection,
         projects_id,
@@ -592,9 +588,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_groups_delete(
         connection,
         projects_id,
@@ -668,9 +662,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_groups_get(
         connection,
         projects_id,
@@ -749,7 +741,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_groups_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListGroupsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_groups_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -822,9 +814,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_groups_update(
         connection,
         projects_id,
@@ -908,7 +898,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListGroupMembersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_groups_members_list(
         connection,
         projects_id,
@@ -989,7 +979,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.MetricDescriptor.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_metric_descriptors_create(
         connection,
         projects_id,
@@ -1061,9 +1051,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_metric_descriptors_delete(
         connection,
         projects_id,
@@ -1138,7 +1126,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.MetricDescriptor.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_metric_descriptors_get(
         connection,
         projects_id,
@@ -1216,7 +1204,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListMetricDescriptorsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_metric_descriptors_list(
         connection,
         projects_id,
@@ -1294,7 +1282,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.MonitoredResourceDescriptor.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_monitored_resource_descriptors_get(
         connection,
         projects_id,
@@ -1378,7 +1366,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListMonitoredResourceDescriptorsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_monitored_resource_descriptors_list(
         connection,
         projects_id,
@@ -1456,7 +1444,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channel_descriptors_get(
         connection,
         projects_id,
@@ -1537,7 +1525,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListNotificationChannelDescriptorsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channel_descriptors_list(
         connection,
         projects_id,
@@ -1614,7 +1602,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_create(
         connection,
         projects_id,
@@ -1687,9 +1675,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_notification_channels_delete(
         connection,
         projects_id,
@@ -1765,7 +1751,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_get(
         connection,
         projects_id,
@@ -1839,7 +1825,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.GetNotificationChannelVerificationCodeResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_get_verification_code(
         connection,
         projects_id,
@@ -1924,7 +1910,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListNotificationChannelsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_list(
         connection,
         projects_id,
@@ -2005,7 +1991,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_patch(
         connection,
         projects_id,
@@ -2079,9 +2065,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_notification_channels_send_verification_code(
         connection,
         projects_id,
@@ -2160,7 +2144,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_verify(
         connection,
         projects_id,
@@ -2237,9 +2221,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_time_series_create(
         connection,
         projects_id,
@@ -2320,7 +2302,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_time_series_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_time_series_list(
         connection,
         projects_id,
@@ -2403,7 +2385,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.QueryTimeSeriesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_time_series_query(
         connection,
         projects_id,
@@ -2476,7 +2458,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_uptime_check_configs_create(
         connection,
         projects_id,
@@ -2548,9 +2530,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_uptime_check_configs_delete(
         connection,
         projects_id,
@@ -2625,7 +2605,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_uptime_check_configs_get(
         connection,
         projects_id,
@@ -2700,7 +2680,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListUptimeCheckConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_uptime_check_configs_list(
         connection,
         projects_id,
@@ -2779,7 +2759,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_uptime_check_configs_patch(
         connection,
         projects_id,
