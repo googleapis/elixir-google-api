@@ -59,7 +59,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
         ) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_transfer_operations_cancel(
         connection,
         name,
@@ -130,7 +130,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
         ) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_transfer_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -201,7 +201,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
         ) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_transfer_operations_list(
         connection,
         name,
@@ -276,7 +276,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
         ) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_transfer_operations_pause(
         connection,
         name,
@@ -347,7 +347,7 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferOperations do
         ) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_transfer_operations_resume(
         connection,
         name,
