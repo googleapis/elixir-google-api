@@ -57,7 +57,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def deploymentmanager_operations_get(
         connection,
         project,
@@ -129,7 +129,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Operations do
   @spec deploymentmanager_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.OperationsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def deploymentmanager_operations_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
