@@ -57,7 +57,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidpublisher_purchases_products_acknowledge(
         connection,
         package_name,
@@ -130,7 +130,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.ProductPurchase.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidpublisher_purchases_products_get(
         connection,
         package_name,
@@ -200,7 +200,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidpublisher_purchases_subscriptions_acknowledge(
         connection,
         package_name,
@@ -270,7 +270,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidpublisher_purchases_subscriptions_cancel(
         connection,
         package_name,
@@ -343,7 +343,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchasesDeferResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidpublisher_purchases_subscriptions_defer(
         connection,
         package_name,
@@ -418,7 +418,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchase.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidpublisher_purchases_subscriptions_get(
         connection,
         package_name,
@@ -489,7 +489,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidpublisher_purchases_subscriptions_refund(
         connection,
         package_name,
@@ -558,7 +558,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidpublisher_purchases_subscriptions_revoke(
         connection,
         package_name,
@@ -634,7 +634,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         ) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.VoidedPurchasesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidpublisher_purchases_voidedpurchases_list(
         connection,
         package_name,
