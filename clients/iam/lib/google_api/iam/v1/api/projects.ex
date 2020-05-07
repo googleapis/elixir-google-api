@@ -72,7 +72,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec iam_projects_roles_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_roles_create(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -162,8 +162,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_roles_delete(
         connection,
         projects_id,
@@ -255,7 +254,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec iam_projects_roles_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_roles_get(connection, projects_id, roles_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -348,7 +347,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   @spec iam_projects_roles_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.ListRolesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_roles_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -431,7 +430,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec iam_projects_roles_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_roles_patch(
         connection,
         projects_id,
@@ -523,8 +522,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_roles_undelete(
         connection,
         projects_id,
@@ -594,7 +592,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   @spec iam_projects_service_accounts_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.ServiceAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_create(
         connection,
         projects_id,
@@ -667,8 +665,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_service_accounts_delete(
         connection,
         projects_id,
@@ -760,8 +757,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_service_accounts_disable(
         connection,
         projects_id,
@@ -846,8 +842,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_service_accounts_enable(
         connection,
         projects_id,
@@ -925,7 +920,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.ServiceAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_get(
         connection,
         projects_id,
@@ -1018,10 +1013,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.IAM.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_service_accounts_get_iam_policy(
         connection,
         projects_id,
@@ -1098,7 +1090,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   @spec iam_projects_service_accounts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.ListServiceAccountsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_list(
         connection,
         projects_id,
@@ -1188,7 +1180,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.ServiceAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_patch(
         connection,
         projects_id,
@@ -1276,10 +1268,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.IAM.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_service_accounts_set_iam_policy(
         connection,
         projects_id,
@@ -1365,7 +1354,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.SignBlobResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_sign_blob(
         connection,
         projects_id,
@@ -1452,7 +1441,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.SignJwtResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_sign_jwt(
         connection,
         projects_id,
@@ -1529,7 +1518,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_test_iam_permissions(
         connection,
         projects_id,
@@ -1612,7 +1601,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.UndeleteServiceAccountResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_undelete(
         connection,
         projects_id,
@@ -1701,7 +1690,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.ServiceAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_update(
         connection,
         projects_id,
@@ -1781,7 +1770,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.ServiceAccountKey.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_keys_create(
         connection,
         projects_id,
@@ -1858,8 +1847,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.IAM.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_projects_service_accounts_keys_delete(
         connection,
         projects_id,
@@ -1947,7 +1935,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.ServiceAccountKey.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_keys_get(
         connection,
         projects_id,
@@ -2034,7 +2022,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.ListServiceAccountKeysResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_keys_list(
         connection,
         projects_id,
@@ -2116,7 +2104,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAM.V1.Model.ServiceAccountKey.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_projects_service_accounts_keys_upload(
         connection,
         projects_id,
