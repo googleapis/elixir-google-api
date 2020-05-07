@@ -59,7 +59,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -126,7 +126,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_list(
         connection,
         name,
@@ -209,7 +209,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Namespace.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_create(
         connection,
         parent,
@@ -281,7 +281,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_delete(
         connection,
         name,
@@ -350,7 +350,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Namespace.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_get(
         connection,
         name,
@@ -421,7 +421,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_get_iam_policy(
         connection,
         resource,
@@ -526,7 +526,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.ListNamespacesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_list(
         connection,
         parent,
@@ -604,7 +604,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Namespace.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_patch(
         connection,
         name,
@@ -677,7 +677,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_set_iam_policy(
         connection,
         resource,
@@ -749,7 +749,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_test_iam_permissions(
         connection,
         resource,
@@ -829,7 +829,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_create(
         connection,
         parent,
@@ -901,7 +901,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_delete(
         connection,
         name,
@@ -970,7 +970,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_get(
         connection,
         name,
@@ -1041,7 +1041,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_get_iam_policy(
         connection,
         resource,
@@ -1139,7 +1139,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_list(
         connection,
         parent,
@@ -1217,7 +1217,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_patch(
         connection,
         name,
@@ -1291,7 +1291,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.ResolveServiceResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_resolve(
         connection,
         name,
@@ -1365,7 +1365,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_set_iam_policy(
         connection,
         resource,
@@ -1437,7 +1437,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_test_iam_permissions(
         connection,
         resource,
@@ -1517,7 +1517,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_endpoints_create(
         connection,
         parent,
@@ -1588,7 +1588,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_endpoints_delete(
         connection,
         name,
@@ -1657,7 +1657,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_endpoints_get(
         connection,
         name,
@@ -1756,7 +1756,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.ListEndpointsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_endpoints_list(
         connection,
         parent,
@@ -1834,7 +1834,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicedirectory_projects_locations_namespaces_services_endpoints_patch(
         connection,
         name,
