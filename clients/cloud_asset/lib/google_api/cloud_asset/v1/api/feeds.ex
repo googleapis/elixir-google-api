@@ -59,9 +59,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
   *   `{:error, info}` on failure
   """
   @spec cloudasset_feeds_create(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudAsset.V1.Model.Feed.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudAsset.V1.Model.Feed.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudasset_feeds_create(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -132,9 +130,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudAsset.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudAsset.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudasset_feeds_delete(
         connection,
         v1_id,
@@ -212,9 +208,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudAsset.V1.Model.Feed.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudAsset.V1.Model.Feed.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudasset_feeds_get(connection, v1_id, v1_id1, feeds_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -278,7 +272,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
   @spec cloudasset_feeds_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.ListFeedsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudasset_feeds_list(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -352,9 +346,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Feeds do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudAsset.V1.Model.Feed.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudAsset.V1.Model.Feed.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudasset_feeds_patch(
         connection,
         v1_id,
