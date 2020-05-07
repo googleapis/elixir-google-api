@@ -51,7 +51,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreturns do
   @spec content_orderreturns_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.MerchantOrderReturn.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_orderreturns_get(
         connection,
         merchant_id,
@@ -114,7 +114,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreturns do
   @spec content_orderreturns_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrderreturnsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_orderreturns_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

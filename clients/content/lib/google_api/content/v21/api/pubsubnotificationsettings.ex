@@ -55,7 +55,7 @@ defmodule GoogleApi.Content.V21.Api.Pubsubnotificationsettings do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.PubsubNotificationSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_pubsubnotificationsettings_get(
         connection,
         merchant_id,
@@ -119,7 +119,7 @@ defmodule GoogleApi.Content.V21.Api.Pubsubnotificationsettings do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.PubsubNotificationSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_pubsubnotificationsettings_update(
         connection,
         merchant_id,

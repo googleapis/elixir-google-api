@@ -50,7 +50,7 @@ defmodule GoogleApi.Content.V21.Api.Localinventory do
   @spec content_localinventory_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.LocalinventoryCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_localinventory_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -110,7 +110,7 @@ defmodule GoogleApi.Content.V21.Api.Localinventory do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LocalInventory.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_localinventory_insert(
         connection,
         merchant_id,

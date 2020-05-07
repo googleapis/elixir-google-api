@@ -50,7 +50,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeedstatuses do
   @spec content_datafeedstatuses_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.DatafeedstatusesCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_datafeedstatuses_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -111,7 +111,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeedstatuses do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.DatafeedStatus.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_datafeedstatuses_get(
         connection,
         merchant_id,
@@ -173,7 +173,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeedstatuses do
   @spec content_datafeedstatuses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.DatafeedstatusesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_datafeedstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
