@@ -66,7 +66,7 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
   @spec youtube_channels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.ChannelListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_channels_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -130,9 +130,7 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
   *   `{:error, info}` on failure
   """
   @spec youtube_channels_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Channel.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.YouTube.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_channels_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

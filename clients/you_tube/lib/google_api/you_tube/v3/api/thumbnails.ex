@@ -53,7 +53,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
   @spec youtube_thumbnails_set(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.ThumbnailSetResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_thumbnails_set(connection, video_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -118,7 +118,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.ThumbnailSetResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_thumbnails_set_iodata(
         connection,
         video_id,
@@ -187,7 +187,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_thumbnails_set_resumable(
         connection,
         video_id,
@@ -259,7 +259,7 @@ defmodule GoogleApi.YouTube.V3.Api.Thumbnails do
         ) ::
           {:ok, GoogleApi.YouTube.V3.Model.ThumbnailSetResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_thumbnails_set_simple(
         connection,
         video_id,

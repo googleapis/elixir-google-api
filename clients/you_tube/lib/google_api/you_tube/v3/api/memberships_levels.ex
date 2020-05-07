@@ -50,7 +50,7 @@ defmodule GoogleApi.YouTube.V3.Api.MembershipsLevels do
   @spec youtube_memberships_levels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.MembershipsLevelListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_memberships_levels_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
