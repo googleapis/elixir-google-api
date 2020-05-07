@@ -56,7 +56,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_default_object_access_controls_delete(
         connection,
         bucket,
@@ -125,7 +125,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_default_object_access_controls_get(
         connection,
         bucket,
@@ -193,7 +193,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_default_object_access_controls_insert(
         connection,
         bucket,
@@ -261,7 +261,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControls.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_default_object_access_controls_list(
         connection,
         bucket,
@@ -331,7 +331,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_default_object_access_controls_patch(
         connection,
         bucket,
@@ -402,7 +402,7 @@ defmodule GoogleApi.Storage.V1.Api.DefaultObjectAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.ObjectAccessControl.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_default_object_access_controls_update(
         connection,
         bucket,

@@ -56,7 +56,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_bucket_access_controls_delete(
         connection,
         bucket,
@@ -125,7 +125,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.BucketAccessControl.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_bucket_access_controls_get(
         connection,
         bucket,
@@ -193,7 +193,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.BucketAccessControl.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_bucket_access_controls_insert(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -249,7 +249,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
   @spec storage_bucket_access_controls_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.BucketAccessControls.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_bucket_access_controls_list(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -312,7 +312,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.BucketAccessControl.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_bucket_access_controls_patch(
         connection,
         bucket,
@@ -383,7 +383,7 @@ defmodule GoogleApi.Storage.V1.Api.BucketAccessControls do
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.BucketAccessControl.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def storage_bucket_access_controls_update(
         connection,
         bucket,
