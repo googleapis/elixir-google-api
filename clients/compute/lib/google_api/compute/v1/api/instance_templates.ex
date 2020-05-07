@@ -60,9 +60,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_instance_templates_delete(
         connection,
         project,
@@ -128,7 +126,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_instance_templates_get(
         connection,
         project,
@@ -190,10 +188,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_instance_templates_get_iam_policy(
         connection,
         project,
@@ -255,9 +250,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   *   `{:error, info}` on failure
   """
   @spec compute_instance_templates_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_instance_templates_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -324,7 +317,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
   @spec compute_instance_templates_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceTemplateList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_instance_templates_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -384,10 +377,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_instance_templates_set_iam_policy(
         connection,
         project,
@@ -454,7 +444,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceTemplates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_instance_templates_test_iam_permissions(
         connection,
         project,

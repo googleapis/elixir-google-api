@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.SslCertificateAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_ssl_certificates_aggregated_list(
         connection,
         project,
@@ -143,9 +143,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_ssl_certificates_delete(
         connection,
         project,
@@ -211,7 +209,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.SslCertificate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_ssl_certificates_get(
         connection,
         project,
@@ -273,9 +271,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
   *   `{:error, info}` on failure
   """
   @spec compute_ssl_certificates_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_ssl_certificates_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -342,7 +338,7 @@ defmodule GoogleApi.Compute.V1.Api.SslCertificates do
   @spec compute_ssl_certificates_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.SslCertificateList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_ssl_certificates_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

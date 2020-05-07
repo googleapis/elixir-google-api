@@ -61,9 +61,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_backend_buckets_add_signed_url_key(
         connection,
         project,
@@ -133,9 +131,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_backend_buckets_delete(
         connection,
         project,
@@ -206,9 +202,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_backend_buckets_delete_signed_url_key(
         connection,
         project,
@@ -276,7 +270,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendBucket.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_backend_buckets_get(
         connection,
         project,
@@ -338,9 +332,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   *   `{:error, info}` on failure
   """
   @spec compute_backend_buckets_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_backend_buckets_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -407,7 +399,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
   @spec compute_backend_buckets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.BackendBucketList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_backend_buckets_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -473,9 +465,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_backend_buckets_patch(
         connection,
         project,
@@ -546,9 +536,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendBuckets do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_backend_buckets_update(
         connection,
         project,

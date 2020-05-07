@@ -62,9 +62,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionSslCertificates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_region_ssl_certificates_delete(
         connection,
         project,
@@ -134,7 +132,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionSslCertificates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.SslCertificate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_region_ssl_certificates_get(
         connection,
         project,
@@ -205,9 +203,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionSslCertificates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_region_ssl_certificates_insert(
         connection,
         project,
@@ -288,7 +284,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionSslCertificates do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.SslCertificateList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_region_ssl_certificates_list(
         connection,
         project,

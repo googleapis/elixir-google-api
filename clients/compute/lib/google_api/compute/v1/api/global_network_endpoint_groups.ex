@@ -61,9 +61,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_global_network_endpoint_groups_attach_network_endpoints(
         connection,
         project,
@@ -136,9 +134,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_global_network_endpoint_groups_delete(
         connection,
         project,
@@ -208,9 +204,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_global_network_endpoint_groups_detach_network_endpoints(
         connection,
         project,
@@ -280,7 +274,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_global_network_endpoint_groups_get(
         connection,
         project,
@@ -347,9 +341,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_global_network_endpoint_groups_insert(
         connection,
         project,
@@ -426,7 +418,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroupList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_global_network_endpoint_groups_list(
         connection,
         project,
@@ -507,7 +499,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalNetworkEndpointGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NetworkEndpointGroupsListNetworkEndpoints.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_global_network_endpoint_groups_list_network_endpoints(
         connection,
         project,

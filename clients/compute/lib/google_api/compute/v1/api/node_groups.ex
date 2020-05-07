@@ -63,9 +63,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_node_groups_add_nodes(
         connection,
         project,
@@ -142,7 +140,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   @spec compute_node_groups_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.NodeGroupAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_node_groups_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -210,9 +208,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_node_groups_delete(
         connection,
         project,
@@ -286,9 +282,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_node_groups_delete_nodes(
         connection,
         project,
@@ -357,9 +351,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.NodeGroup.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.NodeGroup.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_node_groups_get(
         connection,
         project,
@@ -425,10 +417,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_node_groups_get_iam_policy(
         connection,
         project,
@@ -501,9 +490,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_node_groups_insert(
         connection,
         project,
@@ -580,7 +567,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
   @spec compute_node_groups_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.NodeGroupList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_node_groups_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -659,7 +646,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.NodeGroupsListNodes.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_node_groups_list_nodes(
         connection,
         project,
@@ -736,9 +723,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_node_groups_patch(
         connection,
         project,
@@ -807,10 +792,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_node_groups_set_iam_policy(
         connection,
         project,
@@ -884,9 +866,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_node_groups_set_node_template(
         connection,
         project,
@@ -958,7 +938,7 @@ defmodule GoogleApi.Compute.V1.Api.NodeGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_node_groups_test_iam_permissions(
         connection,
         project,

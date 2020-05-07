@@ -57,7 +57,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectLocation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_interconnect_locations_get(
         connection,
         project,
@@ -129,7 +129,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectLocations do
   @spec compute_interconnect_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectLocationList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_interconnect_locations_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

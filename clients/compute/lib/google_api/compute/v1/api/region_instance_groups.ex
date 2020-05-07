@@ -59,7 +59,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_region_instance_groups_get(
         connection,
         project,
@@ -140,7 +140,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.RegionInstanceGroupList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_region_instance_groups_list(
         connection,
         project,
@@ -226,7 +226,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.RegionInstanceGroupsListInstances.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_region_instance_groups_list_instances(
         connection,
         project,
@@ -309,9 +309,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_region_instance_groups_set_named_ports(
         connection,
         project,

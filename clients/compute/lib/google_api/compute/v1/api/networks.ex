@@ -61,9 +61,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_networks_add_peering(
         connection,
         project,
@@ -127,9 +125,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   *   `{:error, info}` on failure
   """
   @spec compute_networks_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_networks_delete(connection, project, network, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -181,9 +177,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   *   `{:error, info}` on failure
   """
   @spec compute_networks_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Network.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Network.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_networks_get(connection, project, network, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -239,9 +233,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   *   `{:error, info}` on failure
   """
   @spec compute_networks_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_networks_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -308,7 +300,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   @spec compute_networks_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.NetworkList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_networks_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -387,7 +379,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.ExchangedPeeringRoutesList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_networks_list_peering_routes(
         connection,
         project,
@@ -457,9 +449,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   *   `{:error, info}` on failure
   """
   @spec compute_networks_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_networks_patch(connection, project, network, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -524,9 +514,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_networks_remove_peering(
         connection,
         project,
@@ -596,9 +584,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_networks_switch_to_custom_mode(
         connection,
         project,
@@ -668,9 +654,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_networks_update_peering(
         connection,
         project,
