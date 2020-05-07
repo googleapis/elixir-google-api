@@ -76,7 +76,7 @@ defmodule GoogleApi.Poly.V1.Api.Users do
   @spec poly_users_assets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Poly.V1.Model.ListUserAssetsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def poly_users_assets_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -155,7 +155,7 @@ defmodule GoogleApi.Poly.V1.Api.Users do
   @spec poly_users_likedassets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Poly.V1.Model.ListLikedAssetsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def poly_users_likedassets_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
