@@ -64,7 +64,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_deidentify_templates_create(
         connection,
         parent,
@@ -140,7 +140,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_deidentify_templates_delete(
         connection,
         name,
@@ -213,7 +213,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_deidentify_templates_get(
         connection,
         name,
@@ -306,7 +306,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_deidentify_templates_list(
         connection,
         parent,
@@ -387,7 +387,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_deidentify_templates_patch(
         connection,
         name,
@@ -463,7 +463,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_inspect_templates_create(
         connection,
         parent,
@@ -538,7 +538,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_inspect_templates_delete(
         connection,
         name,
@@ -610,7 +610,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_inspect_templates_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -697,7 +697,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_inspect_templates_list(
         connection,
         parent,
@@ -776,7 +776,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_inspect_templates_patch(
         connection,
         name,
@@ -856,7 +856,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_deidentify_templates_create(
         connection,
         parent,
@@ -934,7 +934,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_deidentify_templates_delete(
         connection,
         name,
@@ -1007,7 +1007,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_deidentify_templates_get(
         connection,
         name,
@@ -1101,7 +1101,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_deidentify_templates_list(
         connection,
         parent,
@@ -1183,7 +1183,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_deidentify_templates_patch(
         connection,
         name,
@@ -1262,7 +1262,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_inspect_templates_create(
         connection,
         parent,
@@ -1339,7 +1339,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_inspect_templates_delete(
         connection,
         name,
@@ -1411,7 +1411,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_inspect_templates_get(
         connection,
         name,
@@ -1504,7 +1504,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_inspect_templates_list(
         connection,
         parent,
@@ -1584,7 +1584,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_inspect_templates_patch(
         connection,
         name,
@@ -1663,7 +1663,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_stored_info_types_create(
         connection,
         parent,
@@ -1741,7 +1741,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_stored_info_types_delete(
         connection,
         name,
@@ -1814,7 +1814,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_stored_info_types_get(
         connection,
         name,
@@ -1909,7 +1909,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_stored_info_types_list(
         connection,
         parent,
@@ -1991,7 +1991,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_locations_stored_info_types_patch(
         connection,
         name,
@@ -2067,7 +2067,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_stored_info_types_create(
         connection,
         parent,
@@ -2143,7 +2143,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GoogleProtobufEmpty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_stored_info_types_delete(
         connection,
         name,
@@ -2216,7 +2216,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_stored_info_types_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2305,7 +2305,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_stored_info_types_list(
         connection,
         parent,
@@ -2386,7 +2386,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
         ) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_organizations_stored_info_types_patch(
         connection,
         name,
