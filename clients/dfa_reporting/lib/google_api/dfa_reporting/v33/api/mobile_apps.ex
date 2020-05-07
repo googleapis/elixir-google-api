@@ -57,7 +57,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.MobileApps do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.MobileApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_mobile_apps_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -114,7 +114,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.MobileApps do
   @spec dfareporting_mobile_apps_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.MobileAppsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_mobile_apps_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

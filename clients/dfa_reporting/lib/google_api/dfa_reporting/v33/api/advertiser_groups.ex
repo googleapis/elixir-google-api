@@ -54,7 +54,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_advertiser_groups_delete(
         connection,
         profile_id,
@@ -119,7 +119,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_advertiser_groups_get(
         connection,
         profile_id,
@@ -183,7 +183,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_advertiser_groups_insert(
         connection,
         profile_id,
@@ -246,7 +246,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
   @spec dfareporting_advertiser_groups_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroupsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_advertiser_groups_list(
         connection,
         profile_id,
@@ -318,7 +318,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_advertiser_groups_patch(
         connection,
         profile_id,
@@ -383,7 +383,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AdvertiserGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AdvertiserGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_advertiser_groups_update(
         connection,
         profile_id,

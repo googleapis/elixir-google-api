@@ -57,7 +57,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.OperatingSystems do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.OperatingSystem.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_operating_systems_get(
         connection,
         profile_id,
@@ -115,7 +115,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.OperatingSystems do
   @spec dfareporting_operating_systems_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.OperatingSystemsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_operating_systems_list(
         connection,
         profile_id,

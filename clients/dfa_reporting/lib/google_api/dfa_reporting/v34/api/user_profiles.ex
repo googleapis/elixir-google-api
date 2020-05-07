@@ -50,7 +50,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserProfiles do
   @spec dfareporting_user_profiles_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.UserProfile.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_user_profiles_get(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,7 +100,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserProfiles do
   @spec dfareporting_user_profiles_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.UserProfileList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_user_profiles_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

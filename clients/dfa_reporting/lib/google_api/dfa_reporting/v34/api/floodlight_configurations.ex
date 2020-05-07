@@ -57,7 +57,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightConfigurations do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_configurations_get(
         connection,
         profile_id,
@@ -126,7 +126,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightConfigurations do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightConfigurationsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_configurations_list(
         connection,
         profile_id,
@@ -193,7 +193,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightConfigurations do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_configurations_patch(
         connection,
         profile_id,
@@ -260,7 +260,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightConfigurations do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_configurations_update(
         connection,
         profile_id,

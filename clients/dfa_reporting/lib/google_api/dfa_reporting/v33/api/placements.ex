@@ -55,7 +55,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Placements do
   @spec dfareporting_placements_generatetags(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementsGenerateTagsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placements_generatetags(
         connection,
         profile_id,
@@ -123,7 +123,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Placements do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Placement.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placements_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -176,7 +176,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Placements do
   @spec dfareporting_placements_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Placement.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placements_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -250,7 +250,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Placements do
   @spec dfareporting_placements_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placements_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -333,7 +333,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Placements do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Placement.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placements_patch(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -387,7 +387,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Placements do
   @spec dfareporting_placements_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Placement.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placements_update(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

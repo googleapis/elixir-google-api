@@ -54,7 +54,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.ContentCategories do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_content_categories_delete(
         connection,
         profile_id,
@@ -119,7 +119,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.ContentCategories do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.ContentCategory.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_content_categories_get(
         connection,
         profile_id,
@@ -183,7 +183,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.ContentCategories do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.ContentCategory.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_content_categories_insert(
         connection,
         profile_id,
@@ -246,7 +246,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.ContentCategories do
   @spec dfareporting_content_categories_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.ContentCategoriesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_content_categories_list(
         connection,
         profile_id,
@@ -318,7 +318,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.ContentCategories do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.ContentCategory.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_content_categories_patch(
         connection,
         profile_id,
@@ -383,7 +383,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.ContentCategories do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.ContentCategory.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_content_categories_update(
         connection,
         profile_id,

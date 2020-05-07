@@ -54,7 +54,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFields do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_creative_fields_delete(
         connection,
         profile_id,
@@ -119,7 +119,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFields do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeField.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_creative_fields_get(
         connection,
         profile_id,
@@ -178,7 +178,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFields do
   @spec dfareporting_creative_fields_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeField.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_creative_fields_insert(
         connection,
         profile_id,
@@ -242,7 +242,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFields do
   @spec dfareporting_creative_fields_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeFieldsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_creative_fields_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -310,7 +310,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFields do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeField.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_creative_fields_patch(
         connection,
         profile_id,
@@ -370,7 +370,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.CreativeFields do
   @spec dfareporting_creative_fields_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CreativeField.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_creative_fields_update(
         connection,
         profile_id,

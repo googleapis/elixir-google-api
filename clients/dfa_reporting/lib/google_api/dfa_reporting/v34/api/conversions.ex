@@ -51,7 +51,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Conversions do
   @spec dfareporting_conversions_batchinsert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.ConversionsBatchInsertResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_conversions_batchinsert(
         connection,
         profile_id,
@@ -111,7 +111,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Conversions do
   @spec dfareporting_conversions_batchupdate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.ConversionsBatchUpdateResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_conversions_batchupdate(
         connection,
         profile_id,

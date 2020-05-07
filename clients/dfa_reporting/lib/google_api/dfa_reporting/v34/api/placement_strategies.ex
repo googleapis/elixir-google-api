@@ -54,7 +54,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.PlacementStrategies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_placement_strategies_delete(
         connection,
         profile_id,
@@ -119,7 +119,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.PlacementStrategy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_strategies_get(
         connection,
         profile_id,
@@ -183,7 +183,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.PlacementStrategy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_strategies_insert(
         connection,
         profile_id,
@@ -251,7 +251,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.PlacementStrategiesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_strategies_list(
         connection,
         profile_id,
@@ -323,7 +323,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.PlacementStrategy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_strategies_patch(
         connection,
         profile_id,
@@ -388,7 +388,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.PlacementStrategies do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.PlacementStrategy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_strategies_update(
         connection,
         profile_id,
