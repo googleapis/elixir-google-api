@@ -48,7 +48,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   *   `{:error, info}` on failure
   """
   @spec games_turn_based_matches_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_turn_based_matches_cancel(connection, match_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,7 +100,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -152,7 +152,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_decline(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_decline(connection, match_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -202,7 +202,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   *   `{:error, info}` on failure
   """
   @spec games_turn_based_matches_dismiss(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_turn_based_matches_dismiss(connection, match_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -255,7 +255,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_finish(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_finish(connection, match_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -310,7 +310,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_get(connection, match_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -364,7 +364,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_join(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_join(connection, match_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -417,7 +417,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_leave(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_leave(connection, match_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -478,7 +478,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
         ) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_leave_turn(
         connection,
         match_id,
@@ -542,7 +542,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatchList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -598,7 +598,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_rematch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatchRematch.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_rematch(connection, match_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -655,7 +655,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_sync(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatchSync.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_sync(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -711,7 +711,7 @@ defmodule GoogleApi.Games.V1.Api.TurnBasedMatches do
   @spec games_turn_based_matches_take_turn(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.TurnBasedMatch.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_turn_based_matches_take_turn(connection, match_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

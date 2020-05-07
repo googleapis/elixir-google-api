@@ -49,9 +49,7 @@ defmodule GoogleApi.Games.V1.Api.Players do
   *   `{:error, info}` on failure
   """
   @spec games_players_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Player.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.Player.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_players_get(connection, player_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -106,7 +104,7 @@ defmodule GoogleApi.Games.V1.Api.Players do
   @spec games_players_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.PlayerListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_players_list(connection, collection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

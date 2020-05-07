@@ -49,9 +49,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec games_rooms_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Room.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_rooms_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -101,9 +99,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec games_rooms_decline(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Room.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_rooms_decline(connection, room_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -153,7 +149,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec games_rooms_dismiss(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_rooms_dismiss(connection, room_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -203,9 +199,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec games_rooms_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Room.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_rooms_get(connection, room_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -257,9 +251,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec games_rooms_join(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Room.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_rooms_join(connection, room_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -312,9 +304,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec games_rooms_leave(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Room.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.Room.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_rooms_leave(connection, room_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -367,9 +357,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec games_rooms_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.RoomList.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.RoomList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_rooms_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -421,9 +409,7 @@ defmodule GoogleApi.Games.V1.Api.Rooms do
   *   `{:error, info}` on failure
   """
   @spec games_rooms_report_status(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.RoomStatus.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.RoomStatus.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_rooms_report_status(connection, room_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
