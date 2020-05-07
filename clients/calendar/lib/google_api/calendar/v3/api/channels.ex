@@ -48,7 +48,7 @@ defmodule GoogleApi.Calendar.V3.Api.Channels do
   *   `{:error, info}` on failure
   """
   @spec calendar_channels_stop(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def calendar_channels_stop(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
