@@ -53,7 +53,7 @@ defmodule GoogleApi.AbusiveExperienceReport.V1.Api.ViolatingSites do
   @spec abusiveexperiencereport_violating_sites_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AbusiveExperienceReport.V1.Model.ViolatingSitesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def abusiveexperiencereport_violating_sites_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
