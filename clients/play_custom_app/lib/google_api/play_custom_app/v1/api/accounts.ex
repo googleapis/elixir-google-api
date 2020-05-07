@@ -56,7 +56,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.PlayCustomApp.V1.Model.CustomApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def playcustomapp_accounts_custom_apps_create(
         connection,
         account,
@@ -124,7 +124,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.PlayCustomApp.V1.Model.CustomApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def playcustomapp_accounts_custom_apps_create_iodata(
         connection,
         account,
@@ -191,7 +191,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def playcustomapp_accounts_custom_apps_create_resumable(
         connection,
         account,
@@ -261,7 +261,7 @@ defmodule GoogleApi.PlayCustomApp.V1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.PlayCustomApp.V1.Model.CustomApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def playcustomapp_accounts_custom_apps_create_simple(
         connection,
         account,
