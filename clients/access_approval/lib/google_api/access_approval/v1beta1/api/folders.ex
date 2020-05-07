@@ -64,7 +64,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Folders do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_folders_delete_access_approval_settings(
         connection,
         name,
@@ -133,7 +133,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Folders do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.AccessApprovalSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_folders_get_access_approval_settings(
         connection,
         name,
@@ -215,7 +215,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Folders do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.AccessApprovalSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_folders_update_access_approval_settings(
         connection,
         name,
@@ -292,7 +292,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Folders do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ApprovalRequest.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_folders_approval_requests_approve(
         connection,
         name,
@@ -374,7 +374,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Folders do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ApprovalRequest.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_folders_approval_requests_dismiss(
         connection,
         name,
@@ -446,7 +446,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Folders do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ApprovalRequest.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_folders_approval_requests_get(
         connection,
         name,
@@ -531,7 +531,7 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Folders do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ListApprovalRequestsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_folders_approval_requests_list(
         connection,
         parent,
