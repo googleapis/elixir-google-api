@@ -53,9 +53,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
   *   `{:error, info}` on failure
   """
   @spec run_api_v1_namespaces_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Run.V1.Model.Namespace.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Run.V1.Model.Namespace.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def run_api_v1_namespaces_get(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -116,9 +114,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
   *   `{:error, info}` on failure
   """
   @spec run_api_v1_namespaces_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Run.V1.Model.Namespace.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Run.V1.Model.Namespace.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def run_api_v1_namespaces_patch(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -179,9 +175,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
   *   `{:error, info}` on failure
   """
   @spec run_api_v1_namespaces_secrets_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Run.V1.Model.Secret.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Run.V1.Model.Secret.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def run_api_v1_namespaces_secrets_create(
         connection,
         namespaces_id,
@@ -251,10 +245,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Run.V1.Model.Secret.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Run.V1.Model.Secret.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def run_api_v1_namespaces_secrets_get(
         connection,
         namespaces_id,
@@ -333,10 +324,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Run.V1.Model.Secret.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Run.V1.Model.Secret.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def run_api_v1_namespaces_secrets_replace_secret(
         connection,
         namespaces_id,
