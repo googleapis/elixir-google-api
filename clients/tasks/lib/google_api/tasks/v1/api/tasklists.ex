@@ -48,7 +48,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasklists_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def tasks_tasklists_delete(connection, tasklist, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -97,9 +97,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasklists_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def tasks_tasklists_get(connection, tasklist, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -148,9 +146,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasklists_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def tasks_tasklists_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -199,9 +195,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasklists_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.TaskLists.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.TaskLists.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def tasks_tasklists_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -251,9 +245,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasklists_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def tasks_tasklists_patch(connection, tasklist, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -304,9 +296,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   *   `{:error, info}` on failure
   """
   @spec tasks_tasklists_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Tasks.V1.Model.TaskList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def tasks_tasklists_update(connection, tasklist, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
