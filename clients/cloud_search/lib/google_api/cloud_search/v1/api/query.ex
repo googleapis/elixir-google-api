@@ -63,7 +63,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   @spec cloudsearch_query_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.SearchResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_query_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -127,7 +127,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   @spec cloudsearch_query_suggest(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.SuggestResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_query_suggest(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -197,7 +197,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
 
           The suggest API does not use this parameter. Instead, suggest autocompletes
           only based on characters in the query.
-      *   `:"requestOptions.searchApplicationId"` (*type:* `String.t`) - Id of the application created using SearchApplicationsService.
+      *   `:"requestOptions.searchApplicationId"` (*type:* `String.t`) - The ID generated when you create a search application using the
+          [admin console](https://support.google.com/a/answer/9043922).
       *   `:"requestOptions.timeZone"` (*type:* `String.t`) - Current user's time zone id, such as "America/Los_Angeles" or
           "Australia/Sydney". These IDs are defined by
           [Unicode Common Locale Data Repository (CLDR)](http://cldr.unicode.org/)
@@ -215,7 +216,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   @spec cloudsearch_query_sources_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.ListQuerySourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_query_sources_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

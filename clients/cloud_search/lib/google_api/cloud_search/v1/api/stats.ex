@@ -63,7 +63,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   @spec cloudsearch_stats_get_index(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.GetCustomerIndexStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_stats_get_index(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -135,7 +135,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   @spec cloudsearch_stats_get_query(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.GetCustomerQueryStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_stats_get_query(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -208,7 +208,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   @spec cloudsearch_stats_get_session(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.GetCustomerSessionStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_stats_get_session(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -280,7 +280,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
   @spec cloudsearch_stats_get_user(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.GetCustomerUserStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_stats_get_user(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -359,7 +359,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.GetDataSourceIndexStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_stats_index_datasources_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -440,7 +440,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.GetSearchApplicationQueryStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_stats_query_searchapplications_get(
         connection,
         name,
@@ -527,7 +527,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.GetSearchApplicationSessionStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_stats_session_searchapplications_get(
         connection,
         name,
@@ -613,7 +613,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Stats do
         ) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.GetSearchApplicationUserStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_stats_user_searchapplications_get(
         connection,
         name,
