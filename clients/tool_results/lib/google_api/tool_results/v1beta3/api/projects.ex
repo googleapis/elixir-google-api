@@ -60,7 +60,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
   @spec toolresults_projects_get_settings(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ProjectSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_projects_get_settings(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -152,7 +152,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Projects do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ProjectSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_projects_initialize_settings(
         connection,
         project_id,

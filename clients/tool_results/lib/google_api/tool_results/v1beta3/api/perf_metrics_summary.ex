@@ -70,7 +70,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.PerfMetricsSummary do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.PerfMetricsSummary.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_perf_metrics_summary_create(
         connection,
         project_id,

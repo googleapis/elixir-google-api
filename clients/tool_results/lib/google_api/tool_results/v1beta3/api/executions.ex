@@ -78,7 +78,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Executions do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.Execution.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_executions_create(
         connection,
         project_id,
@@ -170,7 +170,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Executions do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.Execution.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_executions_get(
         connection,
         project_id,
@@ -271,7 +271,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Executions do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListExecutionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_executions_list(
         connection,
         project_id,
@@ -366,7 +366,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Executions do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.Execution.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_executions_patch(
         connection,
         project_id,

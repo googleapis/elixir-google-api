@@ -77,7 +77,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Samples do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.BatchCreatePerfSamplesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_samples_batch_create(
         connection,
         project_id,
@@ -181,7 +181,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Api.Samples do
         ) ::
           {:ok, GoogleApi.ToolResults.V1beta3.Model.ListPerfSamplesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def toolresults_samples_list(
         connection,
         project_id,
