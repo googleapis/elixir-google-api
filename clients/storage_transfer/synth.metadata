@@ -1,12 +1,17 @@
 {
-  "updateTime": "2020-04-04T23:21:46.608135Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/elixir-google-api.git",
+        "sha": "7f6c73c334f1b41084c62f6f62b0e841fe5b6c8d"
+      }
+    },
     {
       "git": {
         "name": "elixir-google-api",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "b6119a0ce5314248338adb3bc4ee26014c020549",
-        "log": "b6119a0ce5314248338adb3bc4ee26014c020549\nRegenerate Translate client (#4293)\n\n\n272f6633f37ecfa707f1ddb1f39db3adad22ab4a\nRegenerate AdSenseHost client (#4295)\n\n\n92307aa6aafaf3d847080f0dc4a4b392064c237b\nRegenerate StorageTransfer client (#4292)\n\n\n3da49a72f9da07536bf0e30b8490af7c99b26c0a\nRegenerate RemoteBuildExecution client (#4291)\n\n\nc26ef3f3b5525de860d293b2aee6c64ef13b07e9\nRegenerate Recommender client (#4290)\n\n\n5f777762b4b4038c571fb23fa1a7f12a96dba663\nRegenerate PubSub client (#4289)\n\n\n1770b583e70fe273c091c605d17e1478a84531f4\nRegenerate HealthCare client (#4288)\n\n\n6066dfd5cb562e8f2a4eab26c2aaec32cf41830f\nRegenerate FirebaseHosting client (#4287)\n\n\n07d53054f0591f60a0d7d7181e306327dd5a4be6\nRegenerate DataFusion client (#4286)\n\n\nedf87fdb80218cd1eab3f7d42eade79e32098dbf\nRegenerate DLP client (#4285)\n\n\ndad4d7770709d7147b75d2313cc9ca44f9b020e8\nRegenerate CloudSearch client (#4284)\n\n\n2211582e6008d218e5612568dfb058b40a9eea97\nRegenerate CloudBuild client (#4283)\n\n\n9358fc39343d914135d8836f9ee3e98f504debd6\nRegenerate BillingBudgets client (#4282)\n\n\n"
+        "sha": "7f6c73c334f1b41084c62f6f62b0e841fe5b6c8d"
       }
     }
   ]
