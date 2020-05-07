@@ -60,7 +60,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.InstanceConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instance_configs_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -131,7 +131,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListInstanceConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instance_configs_list(
         connection,
         parent,
@@ -232,9 +232,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec spanner_projects_instances_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -303,9 +301,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec spanner_projects_instances_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -366,9 +362,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec spanner_projects_instances_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Instance.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Instance.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -435,10 +429,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_get_iam_policy(
         connection,
         resource,
@@ -528,7 +519,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   @spec spanner_projects_instances_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListInstancesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -631,9 +622,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec spanner_projects_instances_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -700,10 +689,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_set_iam_policy(
         connection,
         resource,
@@ -779,7 +765,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_test_iam_permissions(
         connection,
         resource,
@@ -903,7 +889,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListBackupOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_backup_operations_list(
         connection,
         parent,
@@ -995,9 +981,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_create(
         connection,
         parent,
@@ -1067,10 +1051,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_delete(
         connection,
         name,
@@ -1138,10 +1119,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Backup.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Backup.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1210,10 +1188,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_get_iam_policy(
         connection,
         resource,
@@ -1326,7 +1301,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListBackupsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_backups_list(
         connection,
         parent,
@@ -1413,10 +1388,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Backup.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Backup.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_patch(
         connection,
         name,
@@ -1491,10 +1463,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_set_iam_policy(
         connection,
         resource,
@@ -1574,7 +1543,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_backups_test_iam_permissions(
         connection,
         resource,
@@ -1650,10 +1619,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_operations_cancel(
         connection,
         name,
@@ -1722,10 +1688,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_operations_delete(
         connection,
         name,
@@ -1794,9 +1757,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_operations_get(
         connection,
         name,
@@ -1877,7 +1838,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_backups_operations_list(
         connection,
         name,
@@ -2003,7 +1964,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListDatabaseOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_database_operations_list(
         connection,
         parent,
@@ -2084,9 +2045,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_create(
         connection,
         parent,
@@ -2155,10 +2114,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_drop_database(
         connection,
         database,
@@ -2226,9 +2182,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Database.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Database.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_get(
         connection,
         name,
@@ -2299,7 +2253,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.GetDatabaseDdlResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_get_ddl(
         connection,
         database,
@@ -2373,10 +2327,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_get_iam_policy(
         connection,
         resource,
@@ -2452,7 +2403,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListDatabasesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_list(
         connection,
         parent,
@@ -2542,9 +2493,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_restore(
         connection,
         parent,
@@ -2618,10 +2567,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_set_iam_policy(
         connection,
         resource,
@@ -2701,7 +2647,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_test_iam_permissions(
         connection,
         resource,
@@ -2776,9 +2722,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_update_ddl(
         connection,
         database,
@@ -2854,10 +2798,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_operations_cancel(
         connection,
         name,
@@ -2926,10 +2867,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_operations_delete(
         connection,
         name,
@@ -2998,9 +2936,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_operations_get(
         connection,
         name,
@@ -3081,7 +3017,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_operations_list(
         connection,
         name,
@@ -3157,7 +3093,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.BatchCreateSessionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_batch_create(
         connection,
         database,
@@ -3233,7 +3169,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.Transaction.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_begin_transaction(
         connection,
         session,
@@ -3311,7 +3247,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.CommitResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_commit(
         connection,
         session,
@@ -3398,9 +3334,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Session.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Session.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_create(
         connection,
         database,
@@ -3469,10 +3403,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_delete(
         connection,
         name,
@@ -3552,7 +3483,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ExecuteBatchDmlResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_execute_batch_dml(
         connection,
         session,
@@ -3631,9 +3562,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.ResultSet.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.ResultSet.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_execute_sql(
         connection,
         session,
@@ -3708,7 +3637,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.PartialResultSet.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_execute_streaming_sql(
         connection,
         session,
@@ -3778,9 +3707,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Session.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Session.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_get(
         connection,
         name,
@@ -3864,7 +3791,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListSessionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_list(
         connection,
         database,
@@ -3947,7 +3874,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.PartitionResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_partition_query(
         connection,
         session,
@@ -4030,7 +3957,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.PartitionResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_partition_read(
         connection,
         session,
@@ -4111,9 +4038,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.ResultSet.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.ResultSet.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_read(
         connection,
         session,
@@ -4188,10 +4113,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_rollback(
         connection,
         session,
@@ -4266,7 +4188,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.PartialResultSet.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_streaming_read(
         connection,
         session,
@@ -4342,10 +4264,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_operations_cancel(
         connection,
         name,
@@ -4414,10 +4333,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_operations_delete(
         connection,
         name,
@@ -4486,9 +4402,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_operations_get(
         connection,
         name,
@@ -4569,7 +4483,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_operations_list(
         connection,
         name,
