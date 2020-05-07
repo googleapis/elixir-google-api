@@ -63,9 +63,7 @@ defmodule GoogleApi.HomeGraph.V1.Api.AgentUsers do
   *   `{:error, info}` on failure
   """
   @spec homegraph_agent_users_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.HomeGraph.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.HomeGraph.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def homegraph_agent_users_delete(connection, agent_users_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
