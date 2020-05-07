@@ -55,7 +55,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
   @spec admob_accounts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdMob.V1.Model.PublisherAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def admob_accounts_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -118,7 +118,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
   @spec admob_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdMob.V1.Model.ListPublisherAccountsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def admob_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -187,7 +187,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdMob.V1.Model.GenerateMediationReportResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def admob_accounts_mediation_report_generate(
         connection,
         parent,
@@ -262,7 +262,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
         ) ::
           {:ok, GoogleApi.AdMob.V1.Model.GenerateNetworkReportResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def admob_accounts_network_report_generate(
         connection,
         parent,
