@@ -66,7 +66,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_get_policy(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -136,7 +136,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_update_policy(
         connection,
         name,
@@ -211,7 +211,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_attestors_create(
         connection,
         parent,
@@ -284,7 +284,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_attestors_delete(
         connection,
         name,
@@ -355,7 +355,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_attestors_get(
         connection,
         name,
@@ -420,6 +420,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -435,7 +439,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_attestors_get_iam_policy(
         connection,
         resource,
@@ -512,7 +516,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.ListAttestorsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_attestors_list(
         connection,
         parent,
@@ -555,7 +559,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -590,7 +594,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_attestors_set_iam_policy(
         connection,
         resource,
@@ -629,7 +633,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -668,7 +672,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_attestors_test_iam_permissions(
         connection,
         resource,
@@ -743,7 +747,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.Attestor.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_attestors_update(
         connection,
         name,
@@ -809,6 +813,10 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -824,7 +832,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_policy_get_iam_policy(
         connection,
         resource,
@@ -864,7 +872,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -899,7 +907,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.IamPolicy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_policy_set_iam_policy(
         connection,
         resource,
@@ -938,7 +946,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -977,7 +985,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BinaryAuthorization.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def binaryauthorization_projects_policy_test_iam_permissions(
         connection,
         resource,
