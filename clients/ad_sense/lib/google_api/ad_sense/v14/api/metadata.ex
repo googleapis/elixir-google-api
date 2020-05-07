@@ -47,9 +47,7 @@ defmodule GoogleApi.AdSense.V14.Api.Metadata do
   *   `{:error, info}` on failure
   """
   @spec adsense_metadata_dimensions_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.Metadata.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.Metadata.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_metadata_dimensions_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -95,9 +93,7 @@ defmodule GoogleApi.AdSense.V14.Api.Metadata do
   *   `{:error, info}` on failure
   """
   @spec adsense_metadata_metrics_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.Metadata.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.Metadata.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_metadata_metrics_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
