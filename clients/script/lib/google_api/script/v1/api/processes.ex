@@ -76,7 +76,7 @@ defmodule GoogleApi.Script.V1.Api.Processes do
   @spec script_processes_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.ListUserProcessesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def script_processes_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -163,7 +163,7 @@ defmodule GoogleApi.Script.V1.Api.Processes do
   @spec script_processes_list_script_processes(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Script.V1.Model.ListScriptProcessesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def script_processes_list_script_processes(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
