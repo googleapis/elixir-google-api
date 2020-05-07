@@ -21,8 +21,9 @@ defmodule GoogleApi.Books.V1.Model.Volumeseriesinfo do
 
   ## Attributes
 
-  *   `bookDisplayNumber` (*type:* `String.t`, *default:* `nil`) - The display number string. This should be used only for display purposes and the actual sequence should be inferred from the below orderNumber.
-  *   `kind` (*type:* `String.t`, *default:* `books#volume_series_info`) - Resource type.
+  *   `bookDisplayNumber` (*type:* `String.t`, *default:* `nil`) - The display number string. This should be used only for display purposes
+      and the actual sequence should be inferred from the below orderNumber.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   *   `shortSeriesBookTitle` (*type:* `String.t`, *default:* `nil`) - Short book title in the context of the series.
   *   `volumeSeries` (*type:* `list(GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeries.t)`, *default:* `nil`) - 
   """

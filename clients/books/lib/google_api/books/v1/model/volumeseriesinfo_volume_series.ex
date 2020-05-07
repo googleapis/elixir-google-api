@@ -23,7 +23,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeries do
 
   *   `issue` (*type:* `list(GoogleApi.Books.V1.Model.VolumeseriesinfoVolumeSeriesIssue.t)`, *default:* `nil`) - List of issues. Applicable only for Collection Edition and Omnibus.
   *   `orderNumber` (*type:* `integer()`, *default:* `nil`) - The book order number in the series.
-  *   `seriesBookType` (*type:* `String.t`, *default:* `nil`) - The book type in the context of series. Examples - Single Issue, Collection Edition, etc.
+  *   `seriesBookType` (*type:* `String.t`, *default:* `nil`) - The book type in the context of series. Examples - Single Issue,
+      Collection Edition, etc.
   *   `seriesId` (*type:* `String.t`, *default:* `nil`) - The series id.
   """
 

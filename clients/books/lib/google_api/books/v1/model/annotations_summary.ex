@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.AnnotationsSummary do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `books#annotationsSummary`) - 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - 
   *   `layers` (*type:* `list(GoogleApi.Books.V1.Model.AnnotationsSummaryLayers.t)`, *default:* `nil`) - 
   """
 

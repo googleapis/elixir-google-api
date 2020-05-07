@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.Books.V1.Model.ReviewSource do
   @moduledoc """
-  Information regarding the source of this review, when the review is not from a Google Books user.
+  Information regarding the source of this review, when the review is not
+  from a Google Books user.
 
   ## Attributes
 

@@ -24,9 +24,10 @@ defmodule GoogleApi.Books.V1.Model.ReadingPosition do
   *   `epubCfiPosition` (*type:* `String.t`, *default:* `nil`) - Position in an EPUB as a CFI.
   *   `gbImagePosition` (*type:* `String.t`, *default:* `nil`) - Position in a volume for image-based content.
   *   `gbTextPosition` (*type:* `String.t`, *default:* `nil`) - Position in a volume for text-based content.
-  *   `kind` (*type:* `String.t`, *default:* `books#readingPosition`) - Resource type for a reading position.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type for a reading position.
   *   `pdfPosition` (*type:* `String.t`, *default:* `nil`) - Position in a PDF file.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when this reading position was last updated (formatted UTC timestamp with millisecond resolution).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp when this reading position was last updated (formatted UTC
+      timestamp with millisecond resolution).
   *   `volumeId` (*type:* `String.t`, *default:* `nil`) - Volume id associated with this reading position.
   """
 
@@ -38,7 +39,7 @@ defmodule GoogleApi.Books.V1.Model.ReadingPosition do
           :gbTextPosition => String.t(),
           :kind => String.t(),
           :pdfPosition => String.t(),
-          :updated => DateTime.t(),
+          :updated => String.t(),
           :volumeId => String.t()
         }
 
@@ -47,7 +48,7 @@ defmodule GoogleApi.Books.V1.Model.ReadingPosition do
   field(:gbTextPosition)
   field(:kind)
   field(:pdfPosition)
-  field(:updated, as: DateTime)
+  field(:updated)
   field(:volumeId)
 end
 

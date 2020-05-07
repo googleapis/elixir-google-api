@@ -22,7 +22,7 @@ defmodule GoogleApi.Books.V1.Model.Volume2 do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Books.V1.Model.Volume.t)`, *default:* `nil`) - A list of volumes.
-  *   `kind` (*type:* `String.t`, *default:* `onboarding#volume`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
   """
 

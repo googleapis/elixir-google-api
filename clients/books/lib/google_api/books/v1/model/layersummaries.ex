@@ -22,7 +22,7 @@ defmodule GoogleApi.Books.V1.Model.Layersummaries do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Books.V1.Model.Layersummary.t)`, *default:* `nil`) - A list of layer summary items.
-  *   `kind` (*type:* `String.t`, *default:* `books#layersummaries`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of layer summaries found.
   """
 

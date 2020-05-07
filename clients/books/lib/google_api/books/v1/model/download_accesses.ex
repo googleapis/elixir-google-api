@@ -22,7 +22,7 @@ defmodule GoogleApi.Books.V1.Model.DownloadAccesses do
   ## Attributes
 
   *   `downloadAccessList` (*type:* `list(GoogleApi.Books.V1.Model.DownloadAccessRestriction.t)`, *default:* `nil`) - A list of download access responses.
-  *   `kind` (*type:* `String.t`, *default:* `books#downloadAccesses`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -26,19 +26,23 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-
+  Accepts the promo offer.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:androidId` (*type:* `String.t`) - device android_id
       *   `:device` (*type:* `String.t`) - device device
       *   `:manufacturer` (*type:* `String.t`) - device manufacturer
@@ -51,20 +55,24 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
 
   ## Returns
 
-  *   `{:ok, %{}}` on success
+  *   `{:ok, %GoogleApi.Books.V1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
   @spec books_promooffer_accept(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def books_promooffer_accept(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :androidId => :query,
       :device => :query,
       :manufacturer => :query,
@@ -78,29 +86,33 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/promooffer/accept", %{})
+      |> Request.url("/books/v1/promooffer/accept", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Empty{}])
   end
 
   @doc """
-
+  Marks the promo offer as dismissed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:androidId` (*type:* `String.t`) - device android_id
       *   `:device` (*type:* `String.t`) - device device
       *   `:manufacturer` (*type:* `String.t`) - device manufacturer
@@ -112,20 +124,24 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
 
   ## Returns
 
-  *   `{:ok, %{}}` on success
+  *   `{:ok, %GoogleApi.Books.V1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
   @spec books_promooffer_dismiss(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def books_promooffer_dismiss(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :androidId => :query,
       :device => :query,
       :manufacturer => :query,
@@ -138,13 +154,13 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/promooffer/dismiss", %{})
+      |> Request.url("/books/v1/promooffer/dismiss", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.Empty{}])
   end
 
   @doc """
@@ -154,13 +170,17 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:androidId` (*type:* `String.t`) - device android_id
       *   `:device` (*type:* `String.t`) - device device
       *   `:manufacturer` (*type:* `String.t`) - device manufacturer
@@ -175,18 +195,20 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
   *   `{:error, info}` on failure
   """
   @spec books_promooffer_get(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Books.V1.Model.Offers.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Books.V1.Model.Offers.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def books_promooffer_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :androidId => :query,
       :device => :query,
       :manufacturer => :query,
@@ -198,7 +220,7 @@ defmodule GoogleApi.Books.V1.Api.Promooffer do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/promooffer/get", %{})
+      |> Request.url("/books/v1/promooffer/get", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

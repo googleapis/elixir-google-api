@@ -22,7 +22,7 @@ defmodule GoogleApi.Books.V1.Model.Category do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Books.V1.Model.CategoryItems.t)`, *default:* `nil`) - A list of onboarding categories.
-  *   `kind` (*type:* `String.t`, *default:* `onboarding#category`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

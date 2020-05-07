@@ -23,7 +23,7 @@ defmodule GoogleApi.Books.V1.Model.Geolayerdata do
 
   *   `common` (*type:* `GoogleApi.Books.V1.Model.GeolayerdataCommon.t`, *default:* `nil`) - 
   *   `geo` (*type:* `GoogleApi.Books.V1.Model.GeolayerdataGeo.t`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `books#geolayerdata`) - 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
