@@ -65,7 +65,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAMCredentials.V1.Model.GenerateAccessTokenResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iamcredentials_projects_service_accounts_generate_access_token(
         connection,
         projects_id,
@@ -148,7 +148,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAMCredentials.V1.Model.GenerateIdTokenResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iamcredentials_projects_service_accounts_generate_id_token(
         connection,
         projects_id,
@@ -231,7 +231,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAMCredentials.V1.Model.SignBlobResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iamcredentials_projects_service_accounts_sign_blob(
         connection,
         projects_id,
@@ -309,7 +309,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAMCredentials.V1.Model.SignJwtResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iamcredentials_projects_service_accounts_sign_jwt(
         connection,
         projects_id,
