@@ -60,7 +60,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.BiReservation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_get_bi_reservation(
         connection,
         name,
@@ -152,7 +152,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.SearchAssignmentsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_search_assignments(
         connection,
         parent,
@@ -235,7 +235,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.BiReservation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_update_bi_reservation(
         connection,
         name,
@@ -310,7 +310,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_capacity_commitments_create(
         connection,
         parent,
@@ -386,7 +386,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_capacity_commitments_delete(
         connection,
         name,
@@ -456,7 +456,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_capacity_commitments_get(
         connection,
         name,
@@ -530,7 +530,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.ListCapacityCommitmentsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_capacity_commitments_list(
         connection,
         parent,
@@ -608,7 +608,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_capacity_commitments_merge(
         connection,
         parent,
@@ -688,7 +688,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_capacity_commitments_patch(
         connection,
         name,
@@ -767,7 +767,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.SplitCapacityCommitmentResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_capacity_commitments_split(
         connection,
         name,
@@ -843,7 +843,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.Reservation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_reservations_create(
         connection,
         parent,
@@ -917,7 +917,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_reservations_delete(
         connection,
         name,
@@ -987,7 +987,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.Reservation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_reservations_get(
         connection,
         name,
@@ -1059,7 +1059,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.ListReservationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_reservations_list(
         connection,
         parent,
@@ -1135,7 +1135,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.Reservation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_reservations_patch(
         connection,
         name,
@@ -1224,7 +1224,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.Assignment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_reservations_assignments_create(
         connection,
         parent,
@@ -1304,7 +1304,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_reservations_assignments_delete(
         connection,
         name,
@@ -1389,7 +1389,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.ListAssignmentsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_reservations_assignments_list(
         connection,
         parent,
@@ -1470,7 +1470,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.Assignment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_projects_locations_reservations_assignments_move(
         connection,
         name,
