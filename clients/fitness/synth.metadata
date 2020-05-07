@@ -1,12 +1,17 @@
 {
-  "updateTime": "2020-03-04T13:29:49.236321Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/elixir-google-api.git",
+        "sha": "7f6c73c334f1b41084c62f6f62b0e841fe5b6c8d"
+      }
+    },
     {
       "git": {
         "name": "elixir-google-api",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "9d98460f17f32d0f14bf3b7e14ef4985adee28a8",
-        "log": "9d98460f17f32d0f14bf3b7e14ef4985adee28a8\nfix: api response typespecs reflect the option to skip decoding\n\n\ne6e77fda7f402160371003150a794df8ef7c7a19\nchore: update discovery client used by generator\n\n\nd280a4d75a05bd657e28fd42e0bbe49adc4a0252\nfix: handle responses with compressed content-encoding\n\n\n6cfde8cabf7a2c07c7b26644e9d6bc36f987b762\nRegenerate Testing client (#4076)\n\n\n4adacf254fe29c724f21fbd8c4403106b84d9cbc\nRegenerate StreetViewPublish client (#4075)\n\n\n63a866f99d5e336d7dc36fd78cefd5630527d03d\nRegenerate Sheets client (#4074)\n\n\nd6db7d3c3a6537ebce87f67ba0d1283ec72177b3\nRegenerate OAuth2 client (#4073)\n\n\ne124b9eafc5b9b7c9202b4d0a0def09ef051a123\nRegenerate Dataproc client (#4072)\n\n\n76e5efa1b6aeb0117b513875ef04a8284b520dff\nRegenerate DataCatalog client (#4071)\n\n\n32a468654358064a692fd3c0fcf84f0e49d04990\nRegenerate DLP client (#4070)\n\n\n762a2ba54f0771f482c1be831c9017c018e17d40\nRegenerate Container client (#4069)\n\n\nd116683399a33387083861b33dec35cb5601f8a2\nRegenerate CommentAnalyzer client (#4068)\n\n\ncf6ea2a61569cc74915289d92ed7a457cbb47280\nRegenerate CloudTrace client (#4067)\n\n\n2defd18a5d163c55d389e68d13e391f9f8bfd228\nRegenerate Books client (#4066)\n\n\n472fd97ce5acd424d0a1cbcddd38ee6cd101f681\nRegenerate Content client (#4062)\n\n\n501993c22ff6041fd054a2d17764379dd23d2acb\nRegenerate Spanner client (#4060)\n\n\nc4c80f0f0fc0fd9cee8301f84a385cb0cdee5c59\nRegenerate Logging client (#4059)\n\n\n8daaec6eba80c950096859453cc62653d910f3d7\nRegenerate DLP client (#4058)\n\n\ndf347f3bd8bb88296ee81c61a55722e01db1e54e\nRegenerate AccessContextManager client (#4057)\n\n\n4668d9c1053cb70083132ec695c5f52a8650e4e5\nRegenerate ServiceUsage client (#4056)\n\n\n5388c87d8e06cacb257ed1ae55a33b193d6242b2\nRegenerate ServiceNetworking client (#4055)\n\n\n81ef68b6406c4061fe78a7c165d58b970130ff58\nRegenerate ServiceConsumerManagement client (#4054)\n\n\n2d9a7f6f24559b7af02fd9c52b9a46168b743935\nRegenerate Dialogflow client (#4053)\n\n\ncaede004c9651f8808da0cea0cdd464f2396f94f\nRegenerate WebSecurityScanner client (#4051)\n\n\n0ee7ae7789729f94d28bfc2122435b4ab0e8e031\nRegenerate SecretManager client (#4049)\n\n\n0dea7d0eb358b1c55a5d9ade0738a4900b93cc95\nRegenerate PubSub client (#4048)\n\n\n29e385abc7cd6f1ed16f2220e02249809da23787\nRegenerate MachineLearning client (#4046)\n\n\n85962807c5b80eec7e57e4be09eca5cc07991ae2\nRegenerate YouTube client (#4042)\n\n\nb4d1216f8466976091dd57e7b07f46e66f40cd5b\nRegenerate Fitness client (#4041)\n\n\n11cfef892234317812ef3431700f4d1ca21d2491\nRegenerate DoubleClickBidManager client (#4040)\n\n\n4c62f65d7f424ad99c6fc6b86d0658c67e39591c\nRegenerate DFAReporting client (#4039)\n\n\n9d72735672b0c910bc6d6cb2a8031d795cb4af82\nRegenerate AndroidPublisher client (#4037)\n\n\n8a593ae1e838a22226707ba2bc3cfddc10420924\nRegenerate Run client (#4035)\n\n\nc2e36c880d687807e1bf30da7cb3fca009f54e04\nRegenerate ToolResults client (#4036)\n\n\n38a401bbcff98925c0a20c956ebdf12f1ef2700b\nRegenerate File client (#4034)\n\n\nb3c08a3072ce7dee37a8b9201df718ee57e13206\nRegenerate Docs client (#4033)\n\n\n9c032cb538cce11f4ee35f103dea31a664e90a49\nRegenerate DataCatalog client (#4032)\n\n\ne1ff11328d0a3c8446fcc23e1213385331917aad\nRegenerate Composer client (#4031)\n\n\nb17a56b95ac2bbdad54e59b88ba9afa17d9594e0\nRegenerate CloudRun client (#4030)\n\n\nc4ee5bc85ae2e3328195569ce993b199b089fbb7\nRegenerate ServiceManagement client (#4028)\n\n\n48e5f7cfc48218d2806e852f55dc8fc1f5f55dbf\nRegenerate Dataproc client (#4027)\n\n\n46e174bc01f3b12377db0bd192e26011a609c46e\nRegenerate CloudSearch client (#4026)\n\n\n"
+        "sha": "7f6c73c334f1b41084c62f6f62b0e841fe5b6c8d"
       }
     }
   ]
