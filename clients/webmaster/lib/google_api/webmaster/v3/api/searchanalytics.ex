@@ -53,7 +53,7 @@ defmodule GoogleApi.Webmaster.V3.Api.Searchanalytics do
   @spec webmasters_searchanalytics_query(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Webmaster.V3.Model.SearchAnalyticsQueryResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def webmasters_searchanalytics_query(connection, site_url, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
