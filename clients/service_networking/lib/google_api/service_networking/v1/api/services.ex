@@ -74,7 +74,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicenetworking_services_add_subnetwork(
         connection,
         parent,
@@ -147,7 +147,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicenetworking_services_disable_vpc_service_controls(
         connection,
         parent,
@@ -220,7 +220,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicenetworking_services_enable_vpc_service_controls(
         connection,
         parent,
@@ -297,7 +297,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicenetworking_services_search_range(
         connection,
         parent,
@@ -368,7 +368,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   @spec servicenetworking_services_validate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.ValidateConsumerConfigResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicenetworking_services_validate(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -444,7 +444,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicenetworking_services_connections_create(
         connection,
         parent,
@@ -526,7 +526,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.ListConnectionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicenetworking_services_connections_list(
         connection,
         parent,
@@ -608,7 +608,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicenetworking_services_connections_patch(
         connection,
         name,
@@ -681,7 +681,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Api.Services do
   @spec servicenetworking_services_roles_add(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceNetworking.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicenetworking_services_roles_add(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
