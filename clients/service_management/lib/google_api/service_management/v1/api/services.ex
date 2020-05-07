@@ -64,7 +64,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -128,7 +128,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_delete(
         connection,
         service_name,
@@ -198,7 +198,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_disable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_disable(
         connection,
         service_name,
@@ -270,7 +270,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_enable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_enable(
         connection,
         service_name,
@@ -349,7 +349,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.GenerateConfigReportResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_generate_config_report(
         connection,
         optional_params \\ [],
@@ -415,7 +415,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ManagedService.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_get(connection, service_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -486,7 +486,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_get_config(
         connection,
         service_name,
@@ -561,7 +561,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_get_iam_policy(
         connection,
         resource,
@@ -643,7 +643,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -681,7 +681,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -716,7 +716,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_set_iam_policy(
         connection,
         resource,
@@ -755,7 +755,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -794,7 +794,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_test_iam_permissions(
         connection,
         resource,
@@ -867,7 +867,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @spec servicemanagement_services_undelete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_undelete(
         connection,
         service_name,
@@ -945,7 +945,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_configs_create(
         connection,
         service_name,
@@ -1023,7 +1023,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_configs_get(
         connection,
         service_name,
@@ -1100,7 +1100,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListServiceConfigsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_configs_list(
         connection,
         service_name,
@@ -1187,7 +1187,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_configs_submit(
         connection,
         service_name,
@@ -1261,7 +1261,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_consumers_get_iam_policy(
         connection,
         resource,
@@ -1301,7 +1301,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -1336,7 +1336,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_consumers_set_iam_policy(
         connection,
         resource,
@@ -1375,7 +1375,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -1414,7 +1414,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_consumers_test_iam_permissions(
         connection,
         resource,
@@ -1501,7 +1501,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_rollouts_create(
         connection,
         service_name,
@@ -1574,7 +1574,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.Rollout.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_rollouts_get(
         connection,
         service_name,
@@ -1658,7 +1658,7 @@ defmodule GoogleApi.ServiceManagement.V1.Api.Services do
         ) ::
           {:ok, GoogleApi.ServiceManagement.V1.Model.ListServiceRolloutsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def servicemanagement_services_rollouts_list(
         connection,
         service_name,
