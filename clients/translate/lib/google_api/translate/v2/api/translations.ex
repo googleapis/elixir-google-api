@@ -74,7 +74,7 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
         ) ::
           {:ok, GoogleApi.Translate.V2.Model.TranslationsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def language_translations_list(connection, q, target, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -144,7 +144,7 @@ defmodule GoogleApi.Translate.V2.Api.Translations do
   @spec language_translations_translate(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Translate.V2.Model.TranslationsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def language_translations_translate(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

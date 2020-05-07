@@ -56,7 +56,7 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
   @spec language_detections_detect(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Translate.V2.Model.DetectionsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def language_detections_detect(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -121,7 +121,7 @@ defmodule GoogleApi.Translate.V2.Api.Detections do
   @spec language_detections_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.Translate.V2.Model.DetectionsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def language_detections_list(connection, q, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
