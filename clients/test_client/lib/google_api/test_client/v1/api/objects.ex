@@ -44,7 +44,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec objects_batch_write(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def objects_batch_write(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -83,7 +83,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec objects_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def objects_delete(connection, bucket, object, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query
@@ -125,7 +125,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
   @spec objects_get(Tesla.Env.client(), String.t(), integer(), keyword(), keyword()) ::
           {:ok, GoogleApi.TestClient.V1.Model.Container.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def objects_get(connection, bucket, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -168,7 +168,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
   @spec objects_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.TestClient.V1.Model.Container.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def objects_insert(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -221,7 +221,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
         ) ::
           {:ok, GoogleApi.TestClient.V1.Model.Container.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def objects_insert_iodata(
         connection,
         bucket,
@@ -273,7 +273,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec objects_insert_resumable(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def objects_insert_resumable(connection, bucket, upload_type, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -327,7 +327,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
         ) ::
           {:ok, GoogleApi.TestClient.V1.Model.Container.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def objects_insert_simple(
         connection,
         bucket,
@@ -378,7 +378,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
   @spec objects_wrapped(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.TestClient.V1.Model.Container.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def objects_wrapped(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query
