@@ -57,7 +57,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedFullHashes do
   @spec safebrowsing_encoded_full_hashes_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def safebrowsing_encoded_full_hashes_get(
         connection,
         encoded_request,

@@ -53,7 +53,7 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatLists do
   @spec safebrowsing_threat_lists_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SafeBrowsing.V4.Model.ListThreatListsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def safebrowsing_threat_lists_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
