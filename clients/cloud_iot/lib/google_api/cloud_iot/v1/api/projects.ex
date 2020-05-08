@@ -65,7 +65,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.BindDeviceToGatewayResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_bind_device_to_gateway(
         connection,
         projects_id,
@@ -148,7 +148,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.DeviceRegistry.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_create(
         connection,
         projects_id,
@@ -222,10 +222,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.CloudIot.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.CloudIot.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudiot_projects_locations_registries_delete(
         connection,
         projects_id,
@@ -306,7 +303,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.DeviceRegistry.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_get(
         connection,
         projects_id,
@@ -388,9 +385,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudIot.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIot.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudiot_projects_locations_registries_get_iam_policy(
         connection,
         projects_id,
@@ -477,7 +472,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.ListDeviceRegistriesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_list(
         connection,
         projects_id,
@@ -563,7 +558,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.DeviceRegistry.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_patch(
         connection,
         projects_id,
@@ -646,9 +641,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudIot.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIot.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudiot_projects_locations_registries_set_iam_policy(
         connection,
         projects_id,
@@ -733,7 +726,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_test_iam_permissions(
         connection,
         projects_id,
@@ -818,7 +811,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.UnbindDeviceFromGatewayResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_unbind_device_from_gateway(
         connection,
         projects_id,
@@ -902,9 +895,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudIot.V1.Model.Device.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIot.V1.Model.Device.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudiot_projects_locations_registries_devices_create(
         connection,
         projects_id,
@@ -986,10 +977,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.CloudIot.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.CloudIot.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudiot_projects_locations_registries_devices_delete(
         connection,
         projects_id,
@@ -1075,9 +1063,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudIot.V1.Model.Device.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIot.V1.Model.Device.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudiot_projects_locations_registries_devices_get(
         connection,
         projects_id,
@@ -1186,7 +1172,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.ListDevicesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_devices_list(
         connection,
         projects_id,
@@ -1281,7 +1267,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.DeviceConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_devices_modify_cloud_to_device_config(
         connection,
         projects_id,
@@ -1373,9 +1359,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudIot.V1.Model.Device.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIot.V1.Model.Device.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudiot_projects_locations_registries_devices_patch(
         connection,
         projects_id,
@@ -1476,7 +1460,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.SendCommandToDeviceResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_devices_send_command_to_device(
         connection,
         projects_id,
@@ -1569,7 +1553,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.ListDeviceConfigVersionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_devices_config_versions_list(
         connection,
         projects_id,
@@ -1662,7 +1646,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.ListDeviceStatesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_devices_states_list(
         connection,
         projects_id,
@@ -1749,9 +1733,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudIot.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIot.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudiot_projects_locations_registries_groups_get_iam_policy(
         connection,
         projects_id,
@@ -1837,9 +1819,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudIot.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIot.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudiot_projects_locations_registries_groups_set_iam_policy(
         connection,
         projects_id,
@@ -1928,7 +1908,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_groups_test_iam_permissions(
         connection,
         projects_id,
@@ -2041,7 +2021,7 @@ defmodule GoogleApi.CloudIot.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudIot.V1.Model.ListDevicesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudiot_projects_locations_registries_groups_devices_list(
         connection,
         projects_id,
