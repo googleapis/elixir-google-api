@@ -71,7 +71,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1.Api.Claims do
           {:ok,
            GoogleApi.FactCheckTools.V1alpha1.Model.GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def factchecktools_claims_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
