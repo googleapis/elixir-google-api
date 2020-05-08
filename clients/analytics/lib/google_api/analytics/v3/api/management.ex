@@ -51,7 +51,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   @spec analytics_management_account_summaries_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.AccountSummaries.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_account_summaries_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -106,7 +106,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_account_user_links_delete(
         connection,
         account_id,
@@ -170,7 +170,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_account_user_links_insert(
         connection,
         account_id,
@@ -234,7 +234,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityUserLinks.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_account_user_links_list(
         connection,
         account_id,
@@ -300,7 +300,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_account_user_links_update(
         connection,
         account_id,
@@ -360,7 +360,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   @spec analytics_management_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.Accounts.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -411,7 +411,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   @spec analytics_management_client_id_hash_client_id(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.HashClientIdResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_client_id_hash_client_id(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -470,7 +470,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomDataSources.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_data_sources_list(
         connection,
         account_id,
@@ -542,7 +542,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomDimension.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_dimensions_get(
         connection,
         account_id,
@@ -613,7 +613,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomDimension.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_dimensions_insert(
         connection,
         account_id,
@@ -684,7 +684,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomDimensions.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_dimensions_list(
         connection,
         account_id,
@@ -758,7 +758,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomDimension.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_dimensions_patch(
         connection,
         account_id,
@@ -834,7 +834,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomDimension.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_dimensions_update(
         connection,
         account_id,
@@ -908,7 +908,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomMetric.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_metrics_get(
         connection,
         account_id,
@@ -979,7 +979,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomMetric.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_metrics_insert(
         connection,
         account_id,
@@ -1050,7 +1050,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomMetrics.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_metrics_list(
         connection,
         account_id,
@@ -1124,7 +1124,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomMetric.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_metrics_patch(
         connection,
         account_id,
@@ -1200,7 +1200,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.CustomMetric.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_custom_metrics_update(
         connection,
         account_id,
@@ -1273,7 +1273,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_experiments_delete(
         connection,
         account_id,
@@ -1349,7 +1349,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Experiment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_experiments_get(
         connection,
         account_id,
@@ -1424,7 +1424,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Experiment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_experiments_insert(
         connection,
         account_id,
@@ -1499,7 +1499,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Experiments.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_experiments_list(
         connection,
         account_id,
@@ -1576,7 +1576,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Experiment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_experiments_patch(
         connection,
         account_id,
@@ -1654,7 +1654,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Experiment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_experiments_update(
         connection,
         account_id,
@@ -1725,9 +1725,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_filters_delete(
         connection,
         account_id,
@@ -1790,9 +1788,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_filters_get(
         connection,
         account_id,
@@ -1849,9 +1845,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   *   `{:error, info}` on failure
   """
   @spec analytics_management_filters_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_filters_insert(
         connection,
         account_id,
@@ -1908,9 +1902,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   *   `{:error, info}` on failure
   """
   @spec analytics_management_filters_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filters.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Filters.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_filters_list(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1969,9 +1961,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_filters_patch(
         connection,
         account_id,
@@ -2036,9 +2026,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Filter.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_filters_update(
         connection,
         account_id,
@@ -2105,10 +2093,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Goal.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Goal.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_goals_get(
         connection,
         account_id,
@@ -2180,10 +2165,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Goal.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Goal.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_goals_insert(
         connection,
         account_id,
@@ -2256,9 +2238,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Goals.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Goals.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_goals_list(
         connection,
         account_id,
@@ -2332,10 +2312,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Goal.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Goal.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_goals_patch(
         connection,
         account_id,
@@ -2410,10 +2387,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Goal.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Analytics.V3.Model.Goal.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_goals_update(
         connection,
         account_id,
@@ -2487,7 +2461,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_profile_filter_links_delete(
         connection,
         account_id,
@@ -2563,7 +2537,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_profile_filter_links_get(
         connection,
         account_id,
@@ -2638,7 +2612,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_profile_filter_links_insert(
         connection,
         account_id,
@@ -2713,7 +2687,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLinks.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_profile_filter_links_list(
         connection,
         account_id,
@@ -2790,7 +2764,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_profile_filter_links_patch(
         connection,
         account_id,
@@ -2868,7 +2842,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.ProfileFilterLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_profile_filter_links_update(
         connection,
         account_id,
@@ -2942,7 +2916,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_profile_user_links_delete(
         connection,
         account_id,
@@ -3017,7 +2991,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_profile_user_links_insert(
         connection,
         account_id,
@@ -3092,7 +3066,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityUserLinks.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_profile_user_links_list(
         connection,
         account_id,
@@ -3169,7 +3143,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_profile_user_links_update(
         connection,
         account_id,
@@ -3241,7 +3215,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_profiles_delete(
         connection,
         account_id,
@@ -3311,9 +3285,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Profile.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Profile.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_profiles_get(
         connection,
         account_id,
@@ -3382,9 +3354,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Profile.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Profile.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_profiles_insert(
         connection,
         account_id,
@@ -3455,7 +3425,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Profiles.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_profiles_list(
         connection,
         account_id,
@@ -3526,9 +3496,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Profile.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Profile.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_profiles_patch(
         connection,
         account_id,
@@ -3600,9 +3568,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Profile.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Profile.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_profiles_update(
         connection,
         account_id,
@@ -3672,7 +3638,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_remarketing_audience_delete(
         connection,
         account_id,
@@ -3744,7 +3710,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudience.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_remarketing_audience_get(
         connection,
         account_id,
@@ -3815,7 +3781,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudience.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_remarketing_audience_insert(
         connection,
         account_id,
@@ -3887,7 +3853,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudiences.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_remarketing_audience_list(
         connection,
         account_id,
@@ -3961,7 +3927,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudience.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_remarketing_audience_patch(
         connection,
         account_id,
@@ -4035,7 +4001,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.RemarketingAudience.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_remarketing_audience_update(
         connection,
         account_id,
@@ -4100,7 +4066,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
   @spec analytics_management_segments_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Analytics.V3.Model.Segments.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_segments_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -4159,7 +4125,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_unsampled_reports_delete(
         connection,
         account_id,
@@ -4235,7 +4201,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.UnsampledReport.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_unsampled_reports_get(
         connection,
         account_id,
@@ -4310,7 +4276,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.UnsampledReport.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_unsampled_reports_insert(
         connection,
         account_id,
@@ -4385,7 +4351,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.UnsampledReports.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_unsampled_reports_list(
         connection,
         account_id,
@@ -4457,7 +4423,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_uploads_delete_upload_data(
         connection,
         account_id,
@@ -4530,9 +4496,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Upload.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Upload.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_uploads_get(
         connection,
         account_id,
@@ -4606,9 +4570,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Uploads.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Uploads.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_uploads_list(
         connection,
         account_id,
@@ -4680,9 +4642,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Upload.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Upload.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_uploads_upload_data(
         connection,
         account_id,
@@ -4758,9 +4718,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Upload.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Upload.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_uploads_upload_data_iodata(
         connection,
         account_id,
@@ -4837,7 +4795,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_uploads_upload_data_resumable(
         connection,
         account_id,
@@ -4915,9 +4873,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Analytics.V3.Model.Upload.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Analytics.V3.Model.Upload.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_uploads_upload_data_simple(
         connection,
         account_id,
@@ -4992,7 +4948,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_web_property_ad_words_links_delete(
         connection,
         account_id,
@@ -5065,7 +5021,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_web_property_ad_words_links_get(
         connection,
         account_id,
@@ -5137,7 +5093,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_web_property_ad_words_links_insert(
         connection,
         account_id,
@@ -5208,7 +5164,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLinks.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_web_property_ad_words_links_list(
         connection,
         account_id,
@@ -5281,7 +5237,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_web_property_ad_words_links_patch(
         connection,
         account_id,
@@ -5356,7 +5312,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityAdWordsLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_web_property_ad_words_links_update(
         connection,
         account_id,
@@ -5428,7 +5384,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Webproperty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_webproperties_get(
         connection,
         account_id,
@@ -5495,7 +5451,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Webproperty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_webproperties_insert(
         connection,
         account_id,
@@ -5559,7 +5515,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Webproperties.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_webproperties_list(
         connection,
         account_id,
@@ -5625,7 +5581,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Webproperty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_webproperties_patch(
         connection,
         account_id,
@@ -5695,7 +5651,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.Webproperty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_webproperties_update(
         connection,
         account_id,
@@ -5763,7 +5719,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_management_webproperty_user_links_delete(
         connection,
         account_id,
@@ -5834,7 +5790,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_webproperty_user_links_insert(
         connection,
         account_id,
@@ -5905,7 +5861,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityUserLinks.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_webproperty_user_links_list(
         connection,
         account_id,
@@ -5978,7 +5934,7 @@ defmodule GoogleApi.Analytics.V3.Api.Management do
         ) ::
           {:ok, GoogleApi.Analytics.V3.Model.EntityUserLink.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_management_webproperty_user_links_update(
         connection,
         account_id,
