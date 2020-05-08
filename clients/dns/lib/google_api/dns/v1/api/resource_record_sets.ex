@@ -61,7 +61,7 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
         ) ::
           {:ok, GoogleApi.DNS.V1.Model.ResourceRecordSetsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dns_resource_record_sets_list(
         connection,
         project,
