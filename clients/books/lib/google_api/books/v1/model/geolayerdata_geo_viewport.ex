@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.Books.V1.Model.GeolayerdataGeoViewport do
   @moduledoc """
-  The viewport for showing this location. This is a latitude, longitude rectangle.
+  The viewport for showing this location. This is a latitude, longitude
+  rectangle.
 
   ## Attributes
 

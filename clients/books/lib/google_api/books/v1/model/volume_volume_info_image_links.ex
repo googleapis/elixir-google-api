@@ -17,16 +17,20 @@
 
 defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfoImageLinks do
   @moduledoc """
-  A list of image links for all the sizes that are available. (In LITE projection.)
+  A list of image links for all the sizes that are available. (In LITE
+  projection.)
 
   ## Attributes
 
-  *   `extraLarge` (*type:* `String.t`, *default:* `nil`) - Image link for extra large size (width of ~1280 pixels). (In LITE projection)
+  *   `extraLarge` (*type:* `String.t`, *default:* `nil`) - Image link for extra large size (width of ~1280 pixels). (In LITE
+      projection)
   *   `large` (*type:* `String.t`, *default:* `nil`) - Image link for large size (width of ~800 pixels). (In LITE projection)
   *   `medium` (*type:* `String.t`, *default:* `nil`) - Image link for medium size (width of ~575 pixels). (In LITE projection)
   *   `small` (*type:* `String.t`, *default:* `nil`) - Image link for small size (width of ~300 pixels). (In LITE projection)
-  *   `smallThumbnail` (*type:* `String.t`, *default:* `nil`) - Image link for small thumbnail size (width of ~80 pixels). (In LITE projection)
-  *   `thumbnail` (*type:* `String.t`, *default:* `nil`) - Image link for thumbnail size (width of ~128 pixels). (In LITE projection)
+  *   `smallThumbnail` (*type:* `String.t`, *default:* `nil`) - Image link for small thumbnail size (width of ~80 pixels). (In LITE
+      projection)
+  *   `thumbnail` (*type:* `String.t`, *default:* `nil`) - Image link for thumbnail size (width of ~128 pixels). (In LITE
+      projection)
   """
 
   use GoogleApi.Gax.ModelBase

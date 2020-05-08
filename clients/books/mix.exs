@@ -18,7 +18,7 @@
 defmodule GoogleApi.Books.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.13.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Books.Mixfile do
 
   defp description() do
     """
-    Books API client library. Searches for books and manages your Google Books library.
+    Books API client library. The Google Books API allows clients to access the Google Books repository.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Books.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/books",
-        "Homepage" => "https://developers.google.com/books/docs/v1/getting_started"
+        "Homepage" => "https://code.google.com/apis/books/docs/v1/getting_started.html"
       }
     ]
   end

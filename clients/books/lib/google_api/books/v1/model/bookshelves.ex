@@ -22,7 +22,7 @@ defmodule GoogleApi.Books.V1.Model.Bookshelves do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Books.V1.Model.Bookshelf.t)`, *default:* `nil`) - A list of bookshelves.
-  *   `kind` (*type:* `String.t`, *default:* `books#bookshelves`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

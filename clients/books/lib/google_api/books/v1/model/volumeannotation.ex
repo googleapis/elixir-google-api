@@ -28,12 +28,13 @@ defmodule GoogleApi.Books.V1.Model.Volumeannotation do
   *   `data` (*type:* `String.t`, *default:* `nil`) - Data for this annotation.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Indicates that this annotation is deleted.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique id of this volume annotation.
-  *   `kind` (*type:* `String.t`, *default:* `books#volumeannotation`) - Resource Type
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource Type
   *   `layerId` (*type:* `String.t`, *default:* `nil`) - The Layer this annotation is for.
   *   `pageIds` (*type:* `list(String.t)`, *default:* `nil`) - Pages the annotation spans.
   *   `selectedText` (*type:* `String.t`, *default:* `nil`) - Excerpt from the volume.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the last time this anntoation was updated. (RFC 3339 UTC date-time format).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp for the last time this anntoation was updated. (RFC 3339 UTC
+      date-time format).
   *   `volumeId` (*type:* `String.t`, *default:* `nil`) - The Volume this annotation is for.
   """
 
@@ -52,7 +53,7 @@ defmodule GoogleApi.Books.V1.Model.Volumeannotation do
           :pageIds => list(String.t()),
           :selectedText => String.t(),
           :selfLink => String.t(),
-          :updated => DateTime.t(),
+          :updated => String.t(),
           :volumeId => String.t()
         }
 
@@ -68,7 +69,7 @@ defmodule GoogleApi.Books.V1.Model.Volumeannotation do
   field(:pageIds, type: :list)
   field(:selectedText)
   field(:selfLink)
-  field(:updated, as: DateTime)
+  field(:updated)
   field(:volumeId)
 end
 

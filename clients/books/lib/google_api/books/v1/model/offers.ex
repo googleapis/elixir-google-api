@@ -22,7 +22,7 @@ defmodule GoogleApi.Books.V1.Model.Offers do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Books.V1.Model.OffersItems.t)`, *default:* `nil`) - A list of offers.
-  *   `kind` (*type:* `String.t`, *default:* `promooffer#offers`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.FamilyInfo do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `books#familyInfo`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   *   `membership` (*type:* `GoogleApi.Books.V1.Model.FamilyInfoMembership.t`, *default:* `nil`) - Family membership info of the user that made the request.
   """
 

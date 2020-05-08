@@ -22,14 +22,15 @@ defmodule GoogleApi.Books.V1.Model.ConcurrentAccessRestriction do
   ## Attributes
 
   *   `deviceAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether access is granted for this (user, device, volume).
-  *   `kind` (*type:* `String.t`, *default:* `books#concurrentAccessRestriction`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   *   `maxConcurrentDevices` (*type:* `integer()`, *default:* `nil`) - The maximum number of concurrent access licenses for this volume.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Error/warning message.
   *   `nonce` (*type:* `String.t`, *default:* `nil`) - Client nonce for verification. Download access and client-validation only.
   *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - Error/warning reason code.
   *   `restricted` (*type:* `boolean()`, *default:* `nil`) - Whether this volume has any concurrent access restrictions.
   *   `signature` (*type:* `String.t`, *default:* `nil`) - Response signature.
-  *   `source` (*type:* `String.t`, *default:* `nil`) - Client app identifier for verification. Download access and client-validation only.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Client app identifier for verification. Download access and
+      client-validation only.
   *   `timeWindowSeconds` (*type:* `integer()`, *default:* `nil`) - Time in seconds for license auto-expiration.
   *   `volumeId` (*type:* `String.t`, *default:* `nil`) - Identifies the volume for which this entry applies.
   """

@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.Books.V1.Model.DictlayerdataDictWordsSource do
   @moduledoc """
-  The words with different meanings but not related words, e.g. "go" (game) and "go" (verb).
+  The words with different meanings but not related words, e.g. "go"
+  (game) and "go" (verb).
 
   ## Attributes
 

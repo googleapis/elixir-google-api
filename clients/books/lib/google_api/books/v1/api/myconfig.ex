@@ -32,13 +32,18 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:country` (*type:* `String.t`) - Unused. Added only to workaround TEX mandatory request template requirement
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -49,22 +54,27 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   @spec books_myconfig_get_user_settings(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Usersettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def books_myconfig_get_user_settings(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :country => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/myconfig/getUserSettings", %{})
+      |> Request.url("/books/v1/myconfig/getUserSettings", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -79,18 +89,22 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
-  *   `volume_ids` (*type:* `list(String.t)`) - The volume(s) to release restrictions for.
-  *   `cpksver` (*type:* `String.t`) - The device/version ID from which to release the restriction.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:cpksver` (*type:* `String.t`) - The device/version ID from which to release the restriction.
       *   `:locale` (*type:* `String.t`) - ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:volumeIds` (*type:* `list(String.t)`) - The volume(s) to release restrictions for.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -98,41 +112,33 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   *   `{:ok, %GoogleApi.Books.V1.Model.DownloadAccesses{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_myconfig_release_download_access(
-          Tesla.Env.client(),
-          list(String.t()),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec books_myconfig_release_download_access(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.DownloadAccesses.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
-  def books_myconfig_release_download_access(
-        connection,
-        volume_ids,
-        cpksver,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+          | {:error, any()}
+  def books_myconfig_release_download_access(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :cpksver => :query,
       :locale => :query,
-      :source => :query
+      :source => :query,
+      :volumeIds => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/myconfig/releaseDownloadAccess", %{})
-      |> Request.add_param(:query, :volumeIds, volume_ids)
-      |> Request.add_param(:query, :cpksver, cpksver)
+      |> Request.url("/books/v1/myconfig/releaseDownloadAccess", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -147,97 +153,95 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
-  *   `source` (*type:* `String.t`) - String to identify the originator of this request.
-  *   `volume_id` (*type:* `String.t`) - The volume to request concurrent/download restrictions for.
-  *   `nonce` (*type:* `String.t`) - The client nonce value.
-  *   `cpksver` (*type:* `String.t`) - The device/version ID from which to request the restrictions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:licenseTypes` (*type:* `String.t`) - The type of access license to request. If not specified, the default is BOTH.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:cpksver` (*type:* `String.t`) - The device/version ID from which to request the restrictions.
+      *   `:licenseTypes` (*type:* `String.t`) - The type of access license to request. If not specified, the default is
+          BOTH.
       *   `:locale` (*type:* `String.t`) - ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
+      *   `:nonce` (*type:* `String.t`) - The client nonce value.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
+      *   `:volumeId` (*type:* `String.t`) - The volume to request concurrent/download restrictions for.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.Books.V1.Model.RequestAccess{}}` on success
+  *   `{:ok, %GoogleApi.Books.V1.Model.RequestAccessData{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_myconfig_request_access(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.Books.V1.Model.RequestAccess.t()}
+  @spec books_myconfig_request_access(Tesla.Env.client(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Books.V1.Model.RequestAccessData.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
-  def books_myconfig_request_access(
-        connection,
-        source,
-        volume_id,
-        nonce,
-        cpksver,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+          | {:error, any()}
+  def books_myconfig_request_access(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :cpksver => :query,
       :licenseTypes => :query,
-      :locale => :query
+      :locale => :query,
+      :nonce => :query,
+      :source => :query,
+      :volumeId => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/myconfig/requestAccess", %{})
-      |> Request.add_param(:query, :source, source)
-      |> Request.add_param(:query, :volumeId, volume_id)
-      |> Request.add_param(:query, :nonce, nonce)
-      |> Request.add_param(:query, :cpksver, cpksver)
+      |> Request.url("/books/v1/myconfig/requestAccess", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.RequestAccess{}])
+    |> Response.decode(opts ++ [struct: %GoogleApi.Books.V1.Model.RequestAccessData{}])
   end
 
   @doc """
-  Request downloaded content access for specified volumes on the My eBooks shelf.
+  Request downloaded content access for specified volumes on the My eBooks
+  shelf.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
-  *   `source` (*type:* `String.t`) - String to identify the originator of this request.
-  *   `nonce` (*type:* `String.t`) - The client nonce value.
-  *   `cpksver` (*type:* `String.t`) - The device/version ID from which to release the restriction.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:cpksver` (*type:* `String.t`) - The device/version ID from which to release the restriction.
       *   `:features` (*type:* `list(String.t)`) - List of features supported by the client, i.e., 'RENTALS'
       *   `:includeNonComicsSeries` (*type:* `boolean()`) - Set to true to include non-comics series. Defaults to false.
       *   `:locale` (*type:* `String.t`) - ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
+      *   `:nonce` (*type:* `String.t`) - The client nonce value.
       *   `:showPreorders` (*type:* `boolean()`) - Set to true to show pre-ordered books. Defaults to false.
+      *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
       *   `:volumeIds` (*type:* `list(String.t)`) - The volume(s) to request download restrictions for.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -246,47 +250,35 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   *   `{:ok, %GoogleApi.Books.V1.Model.Volumes{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec books_myconfig_sync_volume_licenses(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.Books.V1.Model.Volumes.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
-  def books_myconfig_sync_volume_licenses(
-        connection,
-        source,
-        nonce,
-        cpksver,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  @spec books_myconfig_sync_volume_licenses(Tesla.Env.client(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Books.V1.Model.Volumes.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def books_myconfig_sync_volume_licenses(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :cpksver => :query,
       :features => :query,
       :includeNonComicsSeries => :query,
       :locale => :query,
+      :nonce => :query,
       :showPreorders => :query,
+      :source => :query,
       :volumeIds => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/myconfig/syncVolumeLicenses", %{})
-      |> Request.add_param(:query, :source, source)
-      |> Request.add_param(:query, :nonce, nonce)
-      |> Request.add_param(:query, :cpksver, cpksver)
+      |> Request.url("/books/v1/myconfig/syncVolumeLicenses", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -296,19 +288,25 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   end
 
   @doc """
-  Sets the settings for the user. If a sub-object is specified, it will overwrite the existing sub-object stored in the server. Unspecified sub-objects will retain the existing value.
+  Sets the settings for the user. If a sub-object is specified, it will
+  overwrite the existing sub-object stored in the server. Unspecified
+  sub-objects will retain the existing value.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Books.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.Books.V1.Model.Usersettings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -320,23 +318,27 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   @spec books_myconfig_update_user_settings(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Books.V1.Model.Usersettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def books_myconfig_update_user_settings(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/myconfig/updateUserSettings", %{})
+      |> Request.url("/books/v1/myconfig/updateUserSettings", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

@@ -23,7 +23,7 @@ defmodule GoogleApi.Books.V1.Model.Dictlayerdata do
 
   *   `common` (*type:* `GoogleApi.Books.V1.Model.DictlayerdataCommon.t`, *default:* `nil`) - 
   *   `dict` (*type:* `GoogleApi.Books.V1.Model.DictlayerdataDict.t`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `books#dictlayerdata`) - 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

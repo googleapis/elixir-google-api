@@ -22,9 +22,11 @@ defmodule GoogleApi.Books.V1.Model.Annotations do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Books.V1.Model.Annotation.t)`, *default:* `nil`) - A list of annotations.
-  *   `kind` (*type:* `String.t`, *default:* `books#annotations`) - Resource type.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to pass in for pagination for the next page. This will not be present if this request does not have more results.
-  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - Total number of annotations found. This may be greater than the number of notes returned in this response if results have been paginated.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to pass in for pagination for the next page. This will not be present
+      if this request does not have more results.
+  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - Total number of annotations found. This may be greater than the number of
+      notes returned in this response if results have been paginated.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -25,7 +25,7 @@ defmodule GoogleApi.Books.V1.Model.AnnotationsSummaryLayers do
   *   `layerId` (*type:* `String.t`, *default:* `nil`) - 
   *   `limitType` (*type:* `String.t`, *default:* `nil`) - 
   *   `remainingCharacterCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - 
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,14 +35,14 @@ defmodule GoogleApi.Books.V1.Model.AnnotationsSummaryLayers do
           :layerId => String.t(),
           :limitType => String.t(),
           :remainingCharacterCount => integer(),
-          :updated => DateTime.t()
+          :updated => String.t()
         }
 
   field(:allowedCharacterCount)
   field(:layerId)
   field(:limitType)
   field(:remainingCharacterCount)
-  field(:updated, as: DateTime)
+  field(:updated)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.AnnotationsSummaryLayers do

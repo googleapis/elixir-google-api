@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.Series do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `books#series`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   *   `series` (*type:* `list(GoogleApi.Books.V1.Model.SeriesSeries.t)`, *default:* `nil`) - 
   """
 

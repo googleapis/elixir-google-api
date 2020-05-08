@@ -21,22 +21,23 @@ defmodule GoogleApi.Books.V1.Model.Annotationsdata do
 
   ## Attributes
 
-  *   `items` (*type:* `list(GoogleApi.Books.V1.Model.Annotationdata.t)`, *default:* `nil`) - A list of Annotation Data.
-  *   `kind` (*type:* `String.t`, *default:* `books#annotationsdata`) - Resource type
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to pass in for pagination for the next page. This will not be present if this request does not have more results.
+  *   `items` (*type:* `list(GoogleApi.Books.V1.Model.GeoAnnotationdata.t)`, *default:* `nil`) - A list of Annotation Data.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to pass in for pagination for the next page. This will not be present
+      if this request does not have more results.
   *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of volume annotations found.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :items => list(GoogleApi.Books.V1.Model.Annotationdata.t()),
+          :items => list(GoogleApi.Books.V1.Model.GeoAnnotationdata.t()),
           :kind => String.t(),
           :nextPageToken => String.t(),
           :totalItems => integer()
         }
 
-  field(:items, as: GoogleApi.Books.V1.Model.Annotationdata, type: :list)
+  field(:items, as: GoogleApi.Books.V1.Model.GeoAnnotationdata, type: :list)
   field(:kind)
   field(:nextPageToken)
   field(:totalItems)

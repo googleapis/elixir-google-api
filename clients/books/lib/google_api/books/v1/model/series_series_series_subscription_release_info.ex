@@ -21,24 +21,33 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfo do
 
   ## Attributes
 
-  *   `cancellationTimestampUs` (*type:* `String.t`, *default:* `nil`) - Cancellation date of the series subscription (or when it ends).
-  *   `currentReleaseInfo` (*type:* `GoogleApi.Books.V1.Model.BooksSubscriptionReleaseInfo.t`, *default:* `nil`) - Release information for the last release.
-  *   `nextReleaseInfo` (*type:* `GoogleApi.Books.V1.Model.BooksSubscriptionReleaseInfo.t`, *default:* `nil`) - Release information for the next release.
-  *   `seriesSubscriptionType` (*type:* `String.t`, *default:* `nil`) - series subscription type.
+  *   `cancelTime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `currentReleaseInfo` (*type:* `GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfo.t`, *default:* `nil`) - 
+  *   `nextReleaseInfo` (*type:* `GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfo.t`, *default:* `nil`) - 
+  *   `seriesSubscriptionType` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cancellationTimestampUs => String.t(),
-          :currentReleaseInfo => GoogleApi.Books.V1.Model.BooksSubscriptionReleaseInfo.t(),
-          :nextReleaseInfo => GoogleApi.Books.V1.Model.BooksSubscriptionReleaseInfo.t(),
+          :cancelTime => String.t(),
+          :currentReleaseInfo =>
+            GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfo.t(),
+          :nextReleaseInfo =>
+            GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfo.t(),
           :seriesSubscriptionType => String.t()
         }
 
-  field(:cancellationTimestampUs)
-  field(:currentReleaseInfo, as: GoogleApi.Books.V1.Model.BooksSubscriptionReleaseInfo)
-  field(:nextReleaseInfo, as: GoogleApi.Books.V1.Model.BooksSubscriptionReleaseInfo)
+  field(:cancelTime)
+
+  field(:currentReleaseInfo,
+    as: GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfo
+  )
+
+  field(:nextReleaseInfo,
+    as: GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfo
+  )
+
   field(:seriesSubscriptionType)
 end
 
