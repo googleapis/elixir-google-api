@@ -61,7 +61,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.PerformanceReport do
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.PerformanceReportList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_performance_report_list(
         connection,
         account_id,

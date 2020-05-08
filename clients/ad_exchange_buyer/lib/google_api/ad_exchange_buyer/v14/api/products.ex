@@ -50,7 +50,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
   @spec adexchangebuyer_products_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Product.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_products_get(connection, product_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -101,7 +101,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Products do
   @spec adexchangebuyer_products_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.GetOffersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_products_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
