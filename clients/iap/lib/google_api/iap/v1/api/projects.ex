@@ -60,7 +60,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec iap_projects_brands_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAP.V1.Model.Brand.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.IAP.V1.Model.Brand.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iap_projects_brands_create(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -120,7 +120,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec iap_projects_brands_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAP.V1.Model.Brand.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.IAP.V1.Model.Brand.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iap_projects_brands_get(
         connection,
         projects_id,
@@ -187,7 +187,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_brands_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAP.V1.Model.ListBrandsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iap_projects_brands_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -259,7 +259,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAP.V1.Model.IdentityAwareProxyClient.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_create(
         connection,
         projects_id,
@@ -336,8 +336,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.IAP.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.IAP.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_delete(
         connection,
         projects_id,
@@ -421,7 +420,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAP.V1.Model.IdentityAwareProxyClient.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_get(
         connection,
         projects_id,
@@ -511,7 +510,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAP.V1.Model.ListIdentityAwareProxyClientsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_list(
         connection,
         projects_id,
@@ -594,7 +593,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.IAP.V1.Model.IdentityAwareProxyClient.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_reset_secret(
         connection,
         projects_id,
