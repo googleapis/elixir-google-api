@@ -61,7 +61,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_get(
         connection,
         projects_id,
@@ -130,7 +130,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_list(
         connection,
         projects_id,
@@ -216,7 +216,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_create(
         connection,
         projects_id,
@@ -310,7 +310,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_deidentify(
         connection,
         projects_id,
@@ -394,7 +394,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_delete(
         connection,
         projects_id,
@@ -475,7 +475,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Dataset.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_get(
         connection,
         projects_id,
@@ -566,7 +566,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_get_iam_policy(
         connection,
         projects_id,
@@ -649,7 +649,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListDatasetsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_list(
         connection,
         projects_id,
@@ -733,7 +733,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Dataset.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_patch(
         connection,
         projects_id,
@@ -820,7 +820,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_set_iam_policy(
         connection,
         projects_id,
@@ -909,7 +909,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_test_iam_permissions(
         connection,
         projects_id,
@@ -1005,7 +1005,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_get_iam_policy(
         connection,
         projects_id,
@@ -1095,7 +1095,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_set_iam_policy(
         connection,
         projects_id,
@@ -1188,7 +1188,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_test_iam_permissions(
         connection,
         projects_id,
@@ -1276,7 +1276,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_create(
         connection,
         projects_id,
@@ -1376,7 +1376,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_deidentify(
         connection,
         projects_id,
@@ -1462,7 +1462,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_delete(
         connection,
         projects_id,
@@ -1554,7 +1554,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_export(
         connection,
         projects_id,
@@ -1639,7 +1639,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_get(
         connection,
         projects_id,
@@ -1734,7 +1734,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_get_iam_policy(
         connection,
         projects_id,
@@ -1829,7 +1829,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_import(
         connection,
         projects_id,
@@ -1918,7 +1918,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListDicomStoresResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_list(
         connection,
         projects_id,
@@ -2010,7 +2010,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_patch(
         connection,
         projects_id,
@@ -2098,7 +2098,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_search_for_instances(
         connection,
         projects_id,
@@ -2184,7 +2184,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_search_for_series(
         connection,
         projects_id,
@@ -2270,7 +2270,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_search_for_studies(
         connection,
         projects_id,
@@ -2359,7 +2359,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_set_iam_policy(
         connection,
         projects_id,
@@ -2448,7 +2448,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_store_instances(
         connection,
         projects_id,
@@ -2541,7 +2541,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_test_iam_permissions(
         connection,
         projects_id,
@@ -2631,7 +2631,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_delete(
         connection,
         projects_id,
@@ -2723,7 +2723,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_retrieve_metadata(
         connection,
         projects_id,
@@ -2814,7 +2814,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_retrieve_study(
         connection,
         projects_id,
@@ -2906,7 +2906,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_search_for_instances(
         connection,
         projects_id,
@@ -2997,7 +2997,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_search_for_series(
         connection,
         projects_id,
@@ -3090,7 +3090,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_store_instances(
         connection,
         projects_id,
@@ -3185,7 +3185,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_delete(
         connection,
         projects_id,
@@ -3281,7 +3281,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_retrieve_metadata(
         connection,
         projects_id,
@@ -3376,7 +3376,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_retrieve_series(
         connection,
         projects_id,
@@ -3472,7 +3472,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_search_for_instances(
         connection,
         projects_id,
@@ -3570,7 +3570,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_delete(
         connection,
         projects_id,
@@ -3670,7 +3670,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_retrieve_instance(
         connection,
         projects_id,
@@ -3771,7 +3771,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_retrieve_metadata(
         connection,
         projects_id,
@@ -3871,7 +3871,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_retrieve_rendered(
         connection,
         projects_id,
@@ -3973,7 +3973,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_frames_retrieve_frames(
         connection,
         projects_id,
@@ -4078,7 +4078,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_frames_retrieve_rendered(
         connection,
         projects_id,
@@ -4171,7 +4171,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.FhirStore.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_create(
         connection,
         projects_id,
@@ -4267,7 +4267,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_deidentify(
         connection,
         projects_id,
@@ -4352,7 +4352,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_delete(
         connection,
         projects_id,
@@ -4453,7 +4453,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_export(
         connection,
         projects_id,
@@ -4538,7 +4538,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.FhirStore.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_get(
         connection,
         projects_id,
@@ -4633,7 +4633,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_get_iam_policy(
         connection,
         projects_id,
@@ -4793,7 +4793,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_import(
         connection,
         projects_id,
@@ -4882,7 +4882,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListFhirStoresResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_list(
         connection,
         projects_id,
@@ -4974,7 +4974,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.FhirStore.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_patch(
         connection,
         projects_id,
@@ -5123,7 +5123,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_search(
         connection,
         projects_id,
@@ -5213,7 +5213,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_set_iam_policy(
         connection,
         projects_id,
@@ -5306,7 +5306,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_test_iam_permissions(
         connection,
         projects_id,
@@ -5417,7 +5417,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_search_translate(
         connection,
         projects_id,
@@ -5525,7 +5525,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_translate(
         connection,
         projects_id,
@@ -5649,7 +5649,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__observation_lastn(
         connection,
         projects_id,
@@ -5761,7 +5761,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__patient_everything(
         connection,
         projects_id,
@@ -5859,7 +5859,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__resource_purge(
         connection,
         projects_id,
@@ -5963,7 +5963,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_capabilities(
         connection,
         projects_id,
@@ -6069,7 +6069,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_delete(
         connection,
         projects_id,
@@ -6187,7 +6187,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_patch(
         connection,
         projects_id,
@@ -6311,7 +6311,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_update(
         connection,
         projects_id,
@@ -6431,7 +6431,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_create(
         connection,
         projects_id,
@@ -6534,7 +6534,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_delete(
         connection,
         projects_id,
@@ -6651,7 +6651,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_execute_bundle(
         connection,
         projects_id,
@@ -6777,7 +6777,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_history(
         connection,
         projects_id,
@@ -6892,7 +6892,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_patch(
         connection,
         projects_id,
@@ -7004,7 +7004,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_read(
         connection,
         projects_id,
@@ -7151,7 +7151,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_search(
         connection,
         projects_id,
@@ -7263,7 +7263,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_update(
         connection,
         projects_id,
@@ -7371,7 +7371,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_vread(
         connection,
         projects_id,
@@ -7462,7 +7462,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_create(
         connection,
         projects_id,
@@ -7547,7 +7547,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_delete(
         connection,
         projects_id,
@@ -7631,7 +7631,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_get(
         connection,
         projects_id,
@@ -7726,7 +7726,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_get_iam_policy(
         connection,
         projects_id,
@@ -7815,7 +7815,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListHl7V2StoresResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_list(
         connection,
         projects_id,
@@ -7907,7 +7907,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_patch(
         connection,
         projects_id,
@@ -7998,7 +7998,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_set_iam_policy(
         connection,
         projects_id,
@@ -8091,7 +8091,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_test_iam_permissions(
         connection,
         projects_id,
@@ -8184,7 +8184,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Message.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_create(
         connection,
         projects_id,
@@ -8271,7 +8271,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_delete(
         connection,
         projects_id,
@@ -8361,7 +8361,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Message.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_get(
         connection,
         projects_id,
@@ -8451,7 +8451,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.IngestMessageResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_ingest(
         connection,
         projects_id,
@@ -8577,7 +8577,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListMessagesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_list(
         connection,
         projects_id,
@@ -8682,7 +8682,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Message.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_patch(
         connection,
         projects_id,
@@ -8780,7 +8780,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_operations_cancel(
         connection,
         projects_id,
@@ -8867,7 +8867,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_operations_get(
         connection,
         projects_id,
@@ -8961,7 +8961,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_operations_list(
         connection,
         projects_id,
