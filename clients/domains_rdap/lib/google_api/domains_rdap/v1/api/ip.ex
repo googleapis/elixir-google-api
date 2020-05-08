@@ -56,7 +56,7 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.Ip do
   @spec domainsrdap_ip_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DomainsRDAP.V1.Model.RdapResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def domainsrdap_ip_get(connection, ip_id, ip_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
