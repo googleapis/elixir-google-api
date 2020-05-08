@@ -54,7 +54,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   @spec cloudidentity_groups_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,7 +114,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   @spec cloudidentity_groups_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -175,7 +175,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   @spec cloudidentity_groups_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Group.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -238,7 +238,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   @spec cloudidentity_groups_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.ListGroupsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -308,7 +308,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   @spec cloudidentity_groups_lookup(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.LookupGroupNameResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_lookup(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -375,7 +375,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   @spec cloudidentity_groups_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -443,7 +443,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   @spec cloudidentity_groups_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.SearchGroupsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -512,7 +512,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_create(
         connection,
         parent,
@@ -587,7 +587,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -651,7 +651,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   @spec cloudidentity_groups_memberships_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.Membership.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -723,7 +723,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.ListMembershipsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -806,7 +806,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.LookupMembershipNameResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_lookup(
         connection,
         parent,
