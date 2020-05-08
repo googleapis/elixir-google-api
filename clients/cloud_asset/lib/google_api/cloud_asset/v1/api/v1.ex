@@ -83,7 +83,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
         ) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.BatchGetAssetsHistoryResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudasset_batch_get_assets_history(
         connection,
         v1_id,
@@ -163,7 +163,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   @spec cloudasset_export_assets(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudasset_export_assets(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
