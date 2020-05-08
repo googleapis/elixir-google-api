@@ -64,7 +64,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_delete_access_approval_settings(
         connection,
         name,
@@ -133,7 +133,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_get_access_approval_settings(
         connection,
         name,
@@ -221,7 +221,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_update_access_approval_settings(
         connection,
         name,
@@ -298,7 +298,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1.Model.ApprovalRequest.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_approval_requests_approve(
         connection,
         name,
@@ -378,7 +378,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1.Model.ApprovalRequest.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_approval_requests_dismiss(
         connection,
         name,
@@ -448,7 +448,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1.Model.ApprovalRequest.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_approval_requests_get(
         connection,
         name,
@@ -531,7 +531,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Organizations do
         ) ::
           {:ok, GoogleApi.AccessApproval.V1.Model.ListApprovalRequestsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_approval_requests_list(
         connection,
         parent,
