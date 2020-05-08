@@ -51,7 +51,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_enterprises_acknowledge_notification_set(
         connection,
         optional_params \\ [],
@@ -106,7 +106,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   @spec androidenterprise_enterprises_complete_signup(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_complete_signup(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -163,7 +163,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_create_web_token(
         connection,
         enterprise_id,
@@ -223,7 +223,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   @spec androidenterprise_enterprises_enroll(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_enroll(connection, token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -279,7 +279,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.SignupInfo.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_generate_signup_url(
         connection,
         optional_params \\ [],
@@ -333,7 +333,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   @spec androidenterprise_enterprises_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_get(
         connection,
         enterprise_id,
@@ -401,7 +401,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_get_service_account(
         connection,
         enterprise_id,
@@ -463,7 +463,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_get_store_layout(
         connection,
         enterprise_id,
@@ -519,7 +519,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   @spec androidenterprise_enterprises_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_list(connection, domain, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -582,7 +582,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.NotificationSet.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_pull_notification_set(
         connection,
         optional_params \\ [],
@@ -642,7 +642,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           {:ok,
            GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificationResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_send_test_push_notification(
         connection,
         enterprise_id,
@@ -710,7 +710,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_set_account(
         connection,
         enterprise_id,
@@ -775,7 +775,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_set_store_layout(
         connection,
         enterprise_id,
@@ -834,7 +834,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_enterprises_unenroll(
         connection,
         enterprise_id,

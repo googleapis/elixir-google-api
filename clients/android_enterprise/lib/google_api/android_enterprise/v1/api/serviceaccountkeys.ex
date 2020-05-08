@@ -54,7 +54,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_serviceaccountkeys_delete(
         connection,
         enterprise_id,
@@ -120,7 +120,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_serviceaccountkeys_insert(
         connection,
         enterprise_id,
@@ -184,7 +184,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Serviceaccountkeys do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKeysListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_serviceaccountkeys_list(
         connection,
         enterprise_id,

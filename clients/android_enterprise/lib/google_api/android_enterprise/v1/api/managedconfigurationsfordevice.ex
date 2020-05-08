@@ -58,7 +58,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_managedconfigurationsfordevice_delete(
         connection,
         enterprise_id,
@@ -135,7 +135,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_managedconfigurationsfordevice_get(
         connection,
         enterprise_id,
@@ -213,7 +213,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
           {:ok,
            GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForDeviceListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_managedconfigurationsfordevice_list(
         connection,
         enterprise_id,
@@ -294,7 +294,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Managedconfigurationsfordevice do
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_managedconfigurationsfordevice_update(
         connection,
         enterprise_id,

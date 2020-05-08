@@ -51,7 +51,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Permissions do
   @spec androidenterprise_permissions_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.Permission.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_permissions_get(
         connection,
         permission_id,
