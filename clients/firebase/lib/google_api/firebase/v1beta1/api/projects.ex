@@ -85,7 +85,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_add_firebase(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_add_firebase(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -205,7 +205,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_add_google_analytics(
         connection,
         parent,
@@ -271,7 +271,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.FirebaseProject.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -340,7 +340,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.AdminSdkConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_get_admin_sdk_config(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -409,7 +409,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.AnalyticsDetails.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_get_analytics_details(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -489,7 +489,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.ListFirebaseProjectsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -560,7 +560,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.FirebaseProject.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -640,7 +640,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_remove_analytics(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_remove_analytics(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -715,7 +715,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_search_apps(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.SearchFirebaseAppsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_search_apps(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -789,7 +789,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_android_apps_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -853,7 +853,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_android_apps_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.AndroidApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_android_apps_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -922,7 +922,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.AndroidAppConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_android_apps_get_config(
         connection,
         name,
@@ -998,7 +998,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_android_apps_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.ListAndroidAppsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_android_apps_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1067,7 +1067,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_android_apps_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.AndroidApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_android_apps_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1138,7 +1138,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.ShaCertificate.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_android_apps_sha_create(
         connection,
         parent,
@@ -1212,7 +1212,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_android_apps_sha_delete(
         connection,
         name,
@@ -1286,7 +1286,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.ListShaCertificatesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_android_apps_sha_list(
         connection,
         parent,
@@ -1390,7 +1390,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.ListAvailableLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_available_locations_list(
         connection,
         parent,
@@ -1503,7 +1503,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_default_location_finalize(
         connection,
         parent,
@@ -1574,7 +1574,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_ios_apps_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_ios_apps_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1638,7 +1638,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_ios_apps_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.IosApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_ios_apps_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1706,7 +1706,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.IosAppConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_ios_apps_get_config(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1777,7 +1777,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_ios_apps_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.ListIosAppsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_ios_apps_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1844,7 +1844,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_ios_apps_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.IosApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_ios_apps_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1911,7 +1911,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_web_apps_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_web_apps_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1975,7 +1975,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_web_apps_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.WebApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_web_apps_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2043,7 +2043,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.WebAppConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_web_apps_get_config(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2114,7 +2114,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_web_apps_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.ListWebAppsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_web_apps_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2181,7 +2181,7 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @spec firebase_projects_web_apps_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Firebase.V1beta1.Model.WebApp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebase_projects_web_apps_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
