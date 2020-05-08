@@ -55,7 +55,7 @@ defmodule GoogleApi.Games.V1.Api.Revisions do
   @spec games_revisions_check(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.RevisionCheckResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_revisions_check(connection, client_revision, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
