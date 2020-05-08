@@ -59,7 +59,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Manifests do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.Manifest.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def deploymentmanager_manifests_get(
         connection,
         project,
@@ -140,7 +140,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Manifests do
         ) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.ManifestsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def deploymentmanager_manifests_list(
         connection,
         project,

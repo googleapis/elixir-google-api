@@ -64,7 +64,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Types do
   @spec deploymentmanager_types_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DeploymentManager.V2.Model.TypesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def deploymentmanager_types_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
