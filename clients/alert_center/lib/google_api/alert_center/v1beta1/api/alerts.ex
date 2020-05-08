@@ -54,7 +54,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
   @spec alertcenter_alerts_batch_delete(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AlertCenter.V1beta1.Model.BatchDeleteAlertsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def alertcenter_alerts_batch_delete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,7 +114,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
   @spec alertcenter_alerts_batch_undelete(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AlertCenter.V1beta1.Model.BatchUndeleteAlertsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def alertcenter_alerts_batch_undelete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -181,7 +181,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
   @spec alertcenter_alerts_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AlertCenter.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def alertcenter_alerts_delete(connection, alert_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -245,7 +245,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
   @spec alertcenter_alerts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AlertCenter.V1beta1.Model.Alert.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def alertcenter_alerts_get(connection, alert_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -309,7 +309,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
   @spec alertcenter_alerts_get_metadata(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AlertCenter.V1beta1.Model.AlertMetadata.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def alertcenter_alerts_get_metadata(connection, alert_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -388,7 +388,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
   @spec alertcenter_alerts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AlertCenter.V1beta1.Model.ListAlertsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def alertcenter_alerts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -457,7 +457,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
   @spec alertcenter_alerts_undelete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AlertCenter.V1beta1.Model.Alert.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def alertcenter_alerts_undelete(connection, alert_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -524,7 +524,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
   @spec alertcenter_alerts_feedback_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def alertcenter_alerts_feedback_create(connection, alert_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -595,7 +595,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Api.Alerts do
   @spec alertcenter_alerts_feedback_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AlertCenter.V1beta1.Model.ListAlertFeedbackResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def alertcenter_alerts_feedback_list(connection, alert_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
