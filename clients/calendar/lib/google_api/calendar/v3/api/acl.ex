@@ -49,7 +49,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   *   `{:error, info}` on failure
   """
   @spec calendar_acl_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def calendar_acl_delete(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,9 +100,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   *   `{:error, info}` on failure
   """
   @spec calendar_acl_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def calendar_acl_get(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -154,9 +152,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   *   `{:error, info}` on failure
   """
   @spec calendar_acl_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def calendar_acl_insert(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -214,9 +210,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   *   `{:error, info}` on failure
   """
   @spec calendar_acl_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Acl.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Calendar.V3.Model.Acl.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def calendar_acl_list(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -272,9 +266,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   *   `{:error, info}` on failure
   """
   @spec calendar_acl_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def calendar_acl_patch(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -329,9 +321,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   *   `{:error, info}` on failure
   """
   @spec calendar_acl_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Calendar.V3.Model.AclRule.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def calendar_acl_update(connection, calendar_id, rule_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -391,9 +381,7 @@ defmodule GoogleApi.Calendar.V3.Api.Acl do
   *   `{:error, info}` on failure
   """
   @spec calendar_acl_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Channel.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Calendar.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def calendar_acl_watch(connection, calendar_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
