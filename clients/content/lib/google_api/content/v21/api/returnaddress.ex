@@ -50,7 +50,7 @@ defmodule GoogleApi.Content.V21.Api.Returnaddress do
   @spec content_returnaddress_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnaddressCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_returnaddress_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -106,7 +106,7 @@ defmodule GoogleApi.Content.V21.Api.Returnaddress do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def content_returnaddress_delete(
         connection,
         merchant_id,
@@ -171,7 +171,7 @@ defmodule GoogleApi.Content.V21.Api.Returnaddress do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnAddress.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_returnaddress_get(
         connection,
         merchant_id,
@@ -230,7 +230,7 @@ defmodule GoogleApi.Content.V21.Api.Returnaddress do
   @spec content_returnaddress_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnAddress.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_returnaddress_insert(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -285,7 +285,7 @@ defmodule GoogleApi.Content.V21.Api.Returnaddress do
   @spec content_returnaddress_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.ReturnaddressListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_returnaddress_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

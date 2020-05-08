@@ -57,7 +57,7 @@ defmodule GoogleApi.Content.V21.Api.Settlementreports do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.SettlementReport.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_settlementreports_get(
         connection,
         merchant_id,
@@ -119,7 +119,7 @@ defmodule GoogleApi.Content.V21.Api.Settlementreports do
   @spec content_settlementreports_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.SettlementreportsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_settlementreports_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

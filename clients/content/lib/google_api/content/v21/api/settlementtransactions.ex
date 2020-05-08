@@ -60,7 +60,7 @@ defmodule GoogleApi.Content.V21.Api.Settlementtransactions do
         ) ::
           {:ok, GoogleApi.Content.V21.Model.SettlementtransactionsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_settlementtransactions_list(
         connection,
         merchant_id,

@@ -60,7 +60,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderreportsListDisbursementsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_orderreports_listdisbursements(
         connection,
         merchant_id,
@@ -135,7 +135,7 @@ defmodule GoogleApi.Content.V2.Api.Orderreports do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderreportsListTransactionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_orderreports_listtransactions(
         connection,
         merchant_id,

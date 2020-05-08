@@ -50,7 +50,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   @spec content_accountstatuses_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_accountstatuses_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -110,7 +110,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
         ) ::
           {:ok, GoogleApi.Content.V2.Model.AccountStatus.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_accountstatuses_get(
         connection,
         merchant_id,
@@ -172,7 +172,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   @spec content_accountstatuses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.AccountstatusesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def content_accountstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
