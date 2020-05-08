@@ -61,9 +61,7 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
   *   `{:error, info}` on failure
   """
   @spec genomics_operations_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Genomics.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Genomics.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def genomics_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -128,7 +126,7 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
   @spec genomics_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def genomics_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -222,7 +220,7 @@ defmodule GoogleApi.Genomics.V1.Api.Operations do
   @spec genomics_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Genomics.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def genomics_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
