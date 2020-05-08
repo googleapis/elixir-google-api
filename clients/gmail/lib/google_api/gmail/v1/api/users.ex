@@ -48,9 +48,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_get_profile(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Profile.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Profile.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_get_profile(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -99,7 +97,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_stop(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_stop(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -151,7 +149,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.WatchResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_watch(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -202,9 +200,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_drafts_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Draft.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Draft.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_create(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -264,10 +260,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           iodata,
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Draft.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Draft.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_create_iodata(
         connection,
         user_id,
@@ -334,7 +327,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_create_resumable(
         connection,
         user_id,
@@ -401,10 +394,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Draft.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Draft.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_create_simple(
         connection,
         user_id,
@@ -470,7 +460,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_delete(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -522,9 +512,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_drafts_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Draft.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Draft.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -581,7 +569,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_drafts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListDraftsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_drafts_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -635,9 +623,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_drafts_send(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_send(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -697,10 +683,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           iodata,
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_send_iodata(
         connection,
         user_id,
@@ -767,7 +750,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_send_resumable(
         connection,
         user_id,
@@ -834,10 +817,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_send_simple(
         connection,
         user_id,
@@ -904,10 +884,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Draft.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Draft.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_update(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -970,10 +947,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           iodata,
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Draft.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Draft.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_update_iodata(
         connection,
         user_id,
@@ -1044,7 +1018,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_update_resumable(
         connection,
         user_id,
@@ -1115,10 +1089,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Draft.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Draft.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_drafts_update_simple(
         connection,
         user_id,
@@ -1187,7 +1158,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_history_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListHistoryResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_history_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1242,9 +1213,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_labels_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Label.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Label.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_labels_create(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1300,7 +1269,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_labels_delete(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1351,9 +1320,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_labels_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Label.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Label.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_labels_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1405,7 +1372,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_labels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListLabelsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_labels_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1456,9 +1423,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_labels_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Label.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Label.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_labels_patch(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1516,10 +1481,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Label.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Label.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_labels_update(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1571,7 +1533,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_messages_batch_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_batch_delete(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1622,7 +1584,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_messages_batch_modify(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_batch_modify(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1678,7 +1640,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_delete(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1731,9 +1693,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_messages_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1790,9 +1750,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_messages_import(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_import(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1860,10 +1818,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           iodata,
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_import_iodata(
         connection,
         user_id,
@@ -1938,7 +1893,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_import_resumable(
         connection,
         user_id,
@@ -2013,10 +1968,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_import_simple(
         connection,
         user_id,
@@ -2083,9 +2035,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_messages_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_insert(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -2149,10 +2099,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           iodata,
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_insert_iodata(
         connection,
         user_id,
@@ -2223,7 +2170,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_insert_resumable(
         connection,
         user_id,
@@ -2294,10 +2241,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_insert_simple(
         connection,
         user_id,
@@ -2366,7 +2310,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_messages_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListMessagesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_messages_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -2427,10 +2371,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_modify(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -2482,9 +2423,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_messages_send(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_send(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -2544,10 +2483,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           iodata,
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_send_iodata(
         connection,
         user_id,
@@ -2614,7 +2550,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_send_resumable(
         connection,
         user_id,
@@ -2681,10 +2617,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_send_simple(
         connection,
         user_id,
@@ -2750,10 +2683,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_trash(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -2809,10 +2739,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Message.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Message.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_messages_untrash(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -2873,7 +2800,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Gmail.V1.Model.MessagePartBody.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_messages_attachments_get(
         connection,
         user_id,
@@ -2938,7 +2865,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Gmail.V1.Model.AutoForwarding.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_get_auto_forwarding(
         connection,
         user_id,
@@ -2994,7 +2921,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_settings_get_imap(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ImapSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_get_imap(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3045,7 +2972,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_settings_get_language(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.LanguageSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_get_language(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3094,9 +3021,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_settings_get_pop(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.PopSettings.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.PopSettings.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_get_pop(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3147,7 +3072,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_settings_get_vacation(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.VacationSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_get_vacation(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3206,7 +3131,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Gmail.V1.Model.AutoForwarding.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_update_auto_forwarding(
         connection,
         user_id,
@@ -3264,7 +3189,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_settings_update_imap(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ImapSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_update_imap(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3319,7 +3244,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_settings_update_language(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.LanguageSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_update_language(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3370,9 +3295,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_settings_update_pop(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.PopSettings.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.PopSettings.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_update_pop(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3425,7 +3348,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_settings_update_vacation(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.VacationSettings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_update_vacation(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3488,10 +3411,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Delegate.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Delegate.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_delegates_create(
         connection,
         user_id,
@@ -3556,7 +3476,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_delegates_delete(
         connection,
         user_id,
@@ -3622,10 +3542,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Delegate.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Delegate.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_delegates_get(
         connection,
         user_id,
@@ -3685,7 +3602,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_settings_delegates_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListDelegatesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_delegates_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3735,9 +3652,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_settings_filters_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Filter.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Filter.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_filters_create(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3793,7 +3708,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_filters_delete(
         connection,
         user_id,
@@ -3855,10 +3770,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Filter.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Filter.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_filters_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3910,7 +3822,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_settings_filters_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListFiltersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_filters_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -3969,7 +3881,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Gmail.V1.Model.ForwardingAddress.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_forwarding_addresses_create(
         connection,
         user_id,
@@ -4032,7 +3944,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_forwarding_addresses_delete(
         connection,
         user_id,
@@ -4097,7 +4009,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Gmail.V1.Model.ForwardingAddress.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_forwarding_addresses_get(
         connection,
         user_id,
@@ -4160,7 +4072,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListForwardingAddressesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_forwarding_addresses_list(
         connection,
         user_id,
@@ -4219,9 +4131,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_settings_send_as_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.SendAs.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.SendAs.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_create(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -4279,7 +4189,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_delete(
         connection,
         user_id,
@@ -4341,10 +4251,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.SendAs.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.SendAs.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_get(
         connection,
         user_id,
@@ -4402,7 +4309,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_settings_send_as_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListSendAsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_send_as_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -4460,10 +4367,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.SendAs.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.SendAs.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_patch(
         connection,
         user_id,
@@ -4529,10 +4433,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.SendAs.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.SendAs.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_update(
         connection,
         user_id,
@@ -4597,7 +4498,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_verify(
         connection,
         user_id,
@@ -4661,7 +4562,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_smime_info_delete(
         connection,
         user_id,
@@ -4728,9 +4629,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.SmimeInfo.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.SmimeInfo.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_smime_info_get(
         connection,
         user_id,
@@ -4796,9 +4695,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.SmimeInfo.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.SmimeInfo.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_smime_info_insert(
         connection,
         user_id,
@@ -4864,7 +4761,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
         ) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListSmimeInfoResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_settings_send_as_smime_info_list(
         connection,
         user_id,
@@ -4928,7 +4825,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_settings_send_as_smime_info_set_default(
         connection,
         user_id,
@@ -4995,7 +4892,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_threads_delete(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -5048,9 +4945,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec gmail_users_threads_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Thread.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Gmail.V1.Model.Thread.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_threads_get(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -5109,7 +5004,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @spec gmail_users_threads_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Gmail.V1.Model.ListThreadsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def gmail_users_threads_list(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -5170,10 +5065,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Thread.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Thread.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_threads_modify(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -5230,10 +5122,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Thread.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Thread.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_threads_trash(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -5289,10 +5178,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Gmail.V1.Model.Thread.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Gmail.V1.Model.Thread.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def gmail_users_threads_untrash(connection, user_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
