@@ -78,7 +78,7 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   *   `{:error, info}` on failure
   """
   @spec iam_roles_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.IAM.V1.Model.Role.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def iam_roles_get(connection, roles_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -170,7 +170,7 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   @spec iam_roles_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.ListRolesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_roles_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -234,7 +234,7 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   @spec iam_roles_query_grantable_roles(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.QueryGrantableRolesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def iam_roles_query_grantable_roles(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
