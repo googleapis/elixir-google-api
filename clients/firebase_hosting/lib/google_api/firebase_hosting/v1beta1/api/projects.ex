@@ -61,7 +61,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -126,7 +126,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.SiteConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_get_config(
         connection,
         name,
@@ -202,7 +202,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.SiteConfig.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_update_config(
         connection,
         name,
@@ -283,7 +283,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Release.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_channels_releases_create(
         connection,
         parent,
@@ -357,7 +357,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_channels_releases_list(
         connection,
         parent,
@@ -432,7 +432,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Domain.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_domains_create(
         connection,
         parent,
@@ -502,7 +502,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_domains_delete(
         connection,
         name,
@@ -571,7 +571,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Domain.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_domains_get(
         connection,
         name,
@@ -643,7 +643,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.ListDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_domains_list(
         connection,
         parent,
@@ -719,7 +719,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Domain.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_domains_update(
         connection,
         name,
@@ -799,7 +799,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Release.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_releases_create(
         connection,
         parent,
@@ -873,7 +873,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.ListReleasesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_releases_list(
         connection,
         parent,
@@ -952,7 +952,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Version.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_versions_create(
         connection,
         parent,
@@ -1025,7 +1025,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_versions_delete(
         connection,
         name,
@@ -1105,7 +1105,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.ListVersionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_versions_list(
         connection,
         parent,
@@ -1193,7 +1193,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.Version.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_versions_patch(
         connection,
         name,
@@ -1266,7 +1266,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.PopulateVersionFilesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_versions_populate_files(
         connection,
         parent,
@@ -1343,7 +1343,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.FirebaseHosting.V1beta1.Model.ListVersionFilesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def firebasehosting_projects_sites_versions_files_list(
         connection,
         parent,
