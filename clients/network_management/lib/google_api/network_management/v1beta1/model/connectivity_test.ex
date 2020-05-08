@@ -45,7 +45,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ConnectivityTest do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of a Connectivity Test.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user-provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource using the form:
-          `projects/{project_id}/tests/{test_id}`
+          `projects/{project_id}/locations/global/connectivityTests/{test}`
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - IP Protocol of the test. When not provided, "TCP" is assumed.
   *   `reachabilityDetails` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails.t`, *default:* `nil`) - Output only. The reachability details of this test from the latest run.
       The details are updated when creating a new test, updating an

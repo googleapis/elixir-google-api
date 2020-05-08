@@ -271,7 +271,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. Connectivity Test resource name using the form:
-          `projects/{project_id}/connectivityTests/{test_id}`
+          `projects/{project_id}/locations/global/connectivityTests/{test_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -436,6 +436,10 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -518,7 +522,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
 
           Examples:
           - Filter by name:
-            name = "projects/proj-1/connectivityTests/test-1
+            name = "projects/proj-1/locations/global/connectivityTests/test-1
 
           - Filter by labels:
             - Resources that have a key called `foo`
@@ -604,7 +608,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. Unique name of the resource using the form:
-          `projects/{project_id}/tests/{test_id}`
+          `projects/{project_id}/locations/global/connectivityTests/{test}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -690,7 +694,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. Connectivity Test resource name using the form:
-          `projects/{project_id}/connectivityTests/{test_id}`
+          `projects/{project_id}/locations/global/connectivityTests/{test_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -759,7 +763,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -833,7 +837,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
