@@ -63,7 +63,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   @spec cloudbilling_billing_accounts_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -124,7 +124,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   @spec cloudbilling_billing_accounts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -204,7 +204,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
         ) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_get_iam_policy(
         connection,
         resource,
@@ -281,7 +281,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   @spec cloudbilling_billing_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListBillingAccountsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -351,7 +351,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   @spec cloudbilling_billing_accounts_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -423,7 +423,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
         ) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_set_iam_policy(
         connection,
         resource,
@@ -497,7 +497,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
         ) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_test_iam_permissions(
         connection,
         resource,
@@ -578,7 +578,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
         ) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListProjectBillingInfoResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_projects_list(
         connection,
         name,
