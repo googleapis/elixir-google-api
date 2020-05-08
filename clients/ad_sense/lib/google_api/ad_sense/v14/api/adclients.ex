@@ -51,7 +51,7 @@ defmodule GoogleApi.AdSense.V14.Api.Adclients do
   @spec adsense_adclients_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdClients.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_adclients_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

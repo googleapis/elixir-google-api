@@ -50,7 +50,7 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
   @spec adsense_savedadstyles_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyle.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_savedadstyles_get(connection, saved_ad_style_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -102,7 +102,7 @@ defmodule GoogleApi.AdSense.V14.Api.Savedadstyles do
   @spec adsense_savedadstyles_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyles.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_savedadstyles_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
