@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudResourceManager.Mixfile do
   use Mix.Project
 
-  @version "0.28.3"
+  @version "0.29.0"
 
   def project() do
     [
