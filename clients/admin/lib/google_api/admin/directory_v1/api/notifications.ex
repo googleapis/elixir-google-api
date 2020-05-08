@@ -54,7 +54,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_notifications_delete(
         connection,
         customer,
@@ -119,7 +119,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Notification.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_notifications_get(
         connection,
         customer,
@@ -180,7 +180,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
   @spec directory_notifications_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Notifications.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_notifications_list(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -242,7 +242,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Notification.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_notifications_patch(
         connection,
         customer,
@@ -309,7 +309,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Notification.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_notifications_update(
         connection,
         customer,

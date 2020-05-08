@@ -52,7 +52,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.VerificationCodes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_verification_codes_generate(
         connection,
         user_key,
@@ -110,7 +110,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.VerificationCodes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_verification_codes_invalidate(
         connection,
         user_key,
@@ -166,7 +166,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.VerificationCodes do
   @spec directory_verification_codes_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.VerificationCodes.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_verification_codes_list(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

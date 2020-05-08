@@ -54,7 +54,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_resources_buildings_delete(
         connection,
         customer,
@@ -119,7 +119,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Building.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_buildings_get(
         connection,
         customer,
@@ -179,7 +179,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
   @spec directory_resources_buildings_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Building.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_buildings_insert(
         connection,
         customer,
@@ -239,7 +239,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
   @spec directory_resources_buildings_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Buildings.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_buildings_list(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -301,7 +301,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Building.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_buildings_patch(
         connection,
         customer,
@@ -370,7 +370,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Building.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_buildings_update(
         connection,
         customer,
@@ -434,7 +434,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_resources_calendars_delete(
         connection,
         customer,
@@ -499,7 +499,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.CalendarResource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_calendars_get(
         connection,
         customer,
@@ -558,7 +558,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
   @spec directory_resources_calendars_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.CalendarResource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_calendars_insert(
         connection,
         customer,
@@ -619,7 +619,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
   @spec directory_resources_calendars_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.CalendarResources.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_calendars_list(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -684,7 +684,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.CalendarResource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_calendars_patch(
         connection,
         customer,
@@ -753,7 +753,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.CalendarResource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_calendars_update(
         connection,
         customer,
@@ -816,7 +816,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_resources_features_delete(
         connection,
         customer,
@@ -881,7 +881,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Feature.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_features_get(
         connection,
         customer,
@@ -940,7 +940,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
   @spec directory_resources_features_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Feature.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_features_insert(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -994,7 +994,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
   @spec directory_resources_features_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Features.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_features_list(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1055,7 +1055,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Feature.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_features_patch(
         connection,
         customer,
@@ -1119,7 +1119,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_resources_features_rename(
         connection,
         customer,
@@ -1186,7 +1186,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
         ) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Feature.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_resources_features_update(
         connection,
         customer,

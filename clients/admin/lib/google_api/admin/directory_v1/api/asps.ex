@@ -49,7 +49,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Asps do
   *   `{:error, info}` on failure
   """
   @spec directory_asps_delete(Tesla.Env.client(), String.t(), integer(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_asps_delete(connection, user_key, code_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -102,7 +102,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Asps do
   @spec directory_asps_get(Tesla.Env.client(), String.t(), integer(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Asp.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_asps_get(connection, user_key, code_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -154,7 +154,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Asps do
   @spec directory_asps_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Asps.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_asps_list(connection, user_key, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

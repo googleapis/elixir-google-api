@@ -49,7 +49,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Domains do
   *   `{:error, info}` on failure
   """
   @spec directory_domains_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_domains_delete(
         connection,
         customer,
@@ -108,7 +108,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Domains do
   @spec directory_domains_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Domains.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_domains_get(connection, customer, domain_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -161,7 +161,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Domains do
   @spec directory_domains_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Domains.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_domains_insert(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -213,7 +213,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Domains do
   @spec directory_domains_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Domains2.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_domains_list(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

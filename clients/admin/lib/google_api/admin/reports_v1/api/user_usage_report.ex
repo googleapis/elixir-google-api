@@ -82,7 +82,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
         ) ::
           {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def reports_user_usage_report_get(connection, user_key, date, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

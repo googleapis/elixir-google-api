@@ -49,7 +49,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   *   `{:error, info}` on failure
   """
   @spec directory_roles_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def directory_roles_delete(connection, customer, role_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -102,7 +102,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   @spec directory_roles_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Role.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_roles_get(connection, customer, role_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -155,7 +155,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   @spec directory_roles_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Role.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_roles_insert(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -209,7 +209,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   @spec directory_roles_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Roles.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_roles_list(connection, customer, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -264,7 +264,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   @spec directory_roles_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Role.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_roles_patch(connection, customer, role_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -319,7 +319,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Roles do
   @spec directory_roles_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Admin.Directory_v1.Model.Role.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def directory_roles_update(connection, customer, role_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
