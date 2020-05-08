@@ -56,7 +56,7 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
   @spec indexing_url_notifications_get_metadata(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Indexing.V3.Model.UrlNotificationMetadata.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def indexing_url_notifications_get_metadata(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -114,7 +114,7 @@ defmodule GoogleApi.Indexing.V3.Api.UrlNotifications do
   @spec indexing_url_notifications_publish(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Indexing.V3.Model.PublishUrlNotificationResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def indexing_url_notifications_publish(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
