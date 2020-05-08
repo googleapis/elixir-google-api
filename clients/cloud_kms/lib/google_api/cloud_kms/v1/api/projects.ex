@@ -59,9 +59,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.Location.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.Location.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_get(
         connection,
         projects_id,
@@ -130,7 +128,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -201,9 +199,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_create(
         connection,
         projects_id,
@@ -278,9 +274,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_get(
         connection,
         projects_id,
@@ -366,9 +360,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_get_iam_policy(
         connection,
         projects_id,
@@ -462,7 +454,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ListKeyRingsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_list(
         connection,
         projects_id,
@@ -544,9 +536,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_set_iam_policy(
         connection,
         projects_id,
@@ -635,7 +625,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_test_iam_permissions(
         connection,
         projects_id,
@@ -731,7 +721,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_create(
         connection,
         projects_id,
@@ -819,7 +809,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.DecryptResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_decrypt(
         connection,
         projects_id,
@@ -911,7 +901,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.EncryptResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_encrypt(
         connection,
         projects_id,
@@ -997,7 +987,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_get(
         connection,
         projects_id,
@@ -1090,9 +1080,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_get_iam_policy(
         connection,
         projects_id,
@@ -1191,7 +1179,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ListCryptoKeysResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_list(
         connection,
         projects_id,
@@ -1281,7 +1269,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_patch(
         connection,
         projects_id,
@@ -1370,9 +1358,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_set_iam_policy(
         connection,
         projects_id,
@@ -1465,7 +1451,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_test_iam_permissions(
         connection,
         projects_id,
@@ -1555,7 +1541,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_update_primary_version(
         connection,
         projects_id,
@@ -1646,7 +1632,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_decrypt(
         connection,
         projects_id,
@@ -1738,7 +1724,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.AsymmetricSignResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_sign(
         connection,
         projects_id,
@@ -1831,7 +1817,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_create(
         connection,
         projects_id,
@@ -1930,7 +1916,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_destroy(
         connection,
         projects_id,
@@ -2019,7 +2005,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get(
         connection,
         projects_id,
@@ -2111,7 +2097,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.PublicKey.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get_public_key(
         connection,
         projects_id,
@@ -2203,7 +2189,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_import(
         connection,
         projects_id,
@@ -2305,7 +2291,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ListCryptoKeyVersionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_list(
         connection,
         projects_id,
@@ -2407,7 +2393,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_patch(
         connection,
         projects_id,
@@ -2504,7 +2490,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_restore(
         connection,
         projects_id,
@@ -2595,7 +2581,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ImportJob.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_create(
         connection,
         projects_id,
@@ -2679,7 +2665,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ImportJob.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_get(
         connection,
         projects_id,
@@ -2772,9 +2758,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_get_iam_policy(
         connection,
         projects_id,
@@ -2872,7 +2856,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ListImportJobsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_list(
         connection,
         projects_id,
@@ -2961,9 +2945,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_set_iam_policy(
         connection,
         projects_id,
@@ -3056,7 +3038,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_test_iam_permissions(
         connection,
         projects_id,
