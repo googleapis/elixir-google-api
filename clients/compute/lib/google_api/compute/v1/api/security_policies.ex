@@ -56,9 +56,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_security_policies_add_rule(
         connection,
         project,
@@ -127,9 +125,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_security_policies_delete(
         connection,
         project,
@@ -195,7 +191,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.SecurityPolicy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_security_policies_get(
         connection,
         project,
@@ -261,7 +257,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.SecurityPolicyRule.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_security_policies_get_rule(
         connection,
         project,
@@ -324,9 +320,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   *   `{:error, info}` on failure
   """
   @spec compute_security_policies_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_security_policies_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -393,7 +387,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
   @spec compute_security_policies_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.SecurityPolicyList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_security_policies_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -468,7 +462,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
           {:ok,
            GoogleApi.Compute.V1.Model.SecurityPoliciesListPreconfiguredExpressionSetsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_security_policies_list_preconfigured_expression_sets(
         connection,
         project,
@@ -545,9 +539,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_security_policies_patch(
         connection,
         project,
@@ -614,9 +606,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_security_policies_patch_rule(
         connection,
         project,
@@ -682,9 +672,7 @@ defmodule GoogleApi.Compute.V1.Api.SecurityPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_security_policies_remove_rule(
         connection,
         project,

@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.OperationAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_global_operations_aggregated_list(
         connection,
         project,
@@ -135,7 +135,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_global_operations_delete(
         connection,
         project,
@@ -198,9 +198,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_global_operations_get(
         connection,
         project,
@@ -272,7 +270,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
   @spec compute_global_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.OperationList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_global_operations_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -336,9 +334,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_global_operations_wait(
         connection,
         project,

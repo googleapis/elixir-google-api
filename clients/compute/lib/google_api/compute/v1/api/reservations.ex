@@ -65,7 +65,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
   @spec compute_reservations_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.ReservationAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_reservations_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -133,9 +133,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_reservations_delete(
         connection,
         project,
@@ -205,7 +203,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.Reservation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_reservations_get(
         connection,
         project,
@@ -271,10 +269,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_reservations_get_iam_policy(
         connection,
         project,
@@ -345,9 +340,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_reservations_insert(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -422,7 +415,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.ReservationList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_reservations_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -491,9 +484,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_reservations_resize(
         connection,
         project,
@@ -562,10 +553,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_reservations_set_iam_policy(
         connection,
         project,
@@ -636,7 +624,7 @@ defmodule GoogleApi.Compute.V1.Api.Reservations do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_reservations_test_iam_permissions(
         connection,
         project,

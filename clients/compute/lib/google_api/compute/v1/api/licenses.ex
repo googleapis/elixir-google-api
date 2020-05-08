@@ -54,9 +54,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   *   `{:error, info}` on failure
   """
   @spec compute_licenses_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_delete(connection, project, license, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -108,9 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   *   `{:error, info}` on failure
   """
   @spec compute_licenses_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.License.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.License.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_get(connection, project, license, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -166,10 +162,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_get_iam_policy(
         connection,
         project,
@@ -231,9 +224,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   *   `{:error, info}` on failure
   """
   @spec compute_licenses_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -300,7 +291,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   @spec compute_licenses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.LicensesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_licenses_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -360,10 +351,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_set_iam_policy(
         connection,
         project,
@@ -430,7 +418,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_licenses_test_iam_permissions(
         connection,
         project,

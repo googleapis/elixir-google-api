@@ -60,9 +60,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_interconnects_delete(
         connection,
         project,
@@ -128,7 +126,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.Interconnect.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_interconnects_get(
         connection,
         project,
@@ -193,7 +191,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectsGetDiagnosticsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_interconnects_get_diagnostics(
         connection,
         project,
@@ -257,9 +255,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
   *   `{:error, info}` on failure
   """
   @spec compute_interconnects_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_interconnects_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -326,7 +322,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
   @spec compute_interconnects_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_interconnects_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -392,9 +388,7 @@ defmodule GoogleApi.Compute.V1.Api.Interconnects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_interconnects_patch(
         connection,
         project,

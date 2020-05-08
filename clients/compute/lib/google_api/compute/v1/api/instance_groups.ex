@@ -63,9 +63,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_instance_groups_add_instances(
         connection,
         project,
@@ -147,7 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceGroupAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_instance_groups_aggregated_list(
         connection,
         project,
@@ -222,9 +220,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_instance_groups_delete(
         connection,
         project,
@@ -294,7 +290,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_instance_groups_get(
         connection,
         project,
@@ -365,9 +361,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_instance_groups_insert(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -442,7 +436,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceGroupList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_instance_groups_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -522,7 +516,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InstanceGroupsListInstances.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_instance_groups_list_instances(
         connection,
         project,
@@ -604,9 +598,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_instance_groups_remove_instances(
         connection,
         project,
@@ -681,9 +673,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_instance_groups_set_named_ports(
         connection,
         project,

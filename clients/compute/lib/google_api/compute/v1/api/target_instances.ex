@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetInstanceAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_target_instances_aggregated_list(
         connection,
         project,
@@ -145,9 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_target_instances_delete(
         connection,
         project,
@@ -217,7 +215,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetInstance.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_target_instances_get(
         connection,
         project,
@@ -288,9 +286,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_target_instances_insert(
         connection,
         project,
@@ -371,7 +367,7 @@ defmodule GoogleApi.Compute.V1.Api.TargetInstances do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TargetInstanceList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_target_instances_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

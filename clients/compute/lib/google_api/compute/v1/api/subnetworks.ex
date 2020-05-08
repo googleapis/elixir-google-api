@@ -65,7 +65,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   @spec compute_subnetworks_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.SubnetworkAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_subnetworks_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -133,9 +133,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_subnetworks_delete(
         connection,
         project,
@@ -209,9 +207,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_subnetworks_expand_ip_cidr_range(
         connection,
         project,
@@ -282,7 +278,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.Subnetwork.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_subnetworks_get(
         connection,
         project,
@@ -348,10 +344,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_subnetworks_get_iam_policy(
         connection,
         project,
@@ -422,9 +415,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_subnetworks_insert(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -493,7 +484,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   @spec compute_subnetworks_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.SubnetworkList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_subnetworks_list(connection, project, region, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -563,7 +554,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
   @spec compute_subnetworks_list_usable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.UsableSubnetworksAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_subnetworks_list_usable(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -634,9 +625,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_subnetworks_patch(
         connection,
         project,
@@ -706,10 +695,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Policy.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_subnetworks_set_iam_policy(
         connection,
         project,
@@ -783,9 +769,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_subnetworks_set_private_ip_google_access(
         connection,
         project,
@@ -860,7 +844,7 @@ defmodule GoogleApi.Compute.V1.Api.Subnetworks do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_subnetworks_test_iam_permissions(
         connection,
         project,

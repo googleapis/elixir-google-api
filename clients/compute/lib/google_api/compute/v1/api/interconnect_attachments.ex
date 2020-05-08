@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectAttachmentAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_interconnect_attachments_aggregated_list(
         connection,
         project,
@@ -145,9 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_interconnect_attachments_delete(
         connection,
         project,
@@ -220,7 +218,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectAttachment.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_interconnect_attachments_get(
         connection,
         project,
@@ -295,9 +293,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_interconnect_attachments_insert(
         connection,
         project,
@@ -379,7 +375,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.InterconnectAttachmentList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_interconnect_attachments_list(
         connection,
         project,
@@ -454,9 +450,7 @@ defmodule GoogleApi.Compute.V1.Api.InterconnectAttachments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_interconnect_attachments_patch(
         connection,
         project,

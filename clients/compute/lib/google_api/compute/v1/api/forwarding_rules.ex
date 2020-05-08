@@ -70,7 +70,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.ForwardingRuleAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_forwarding_rules_aggregated_list(
         connection,
         project,
@@ -145,9 +145,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_forwarding_rules_delete(
         connection,
         project,
@@ -217,7 +215,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.ForwardingRule.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_forwarding_rules_get(
         connection,
         project,
@@ -288,9 +286,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_forwarding_rules_insert(
         connection,
         project,
@@ -371,7 +367,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.ForwardingRuleList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_forwarding_rules_list(
         connection,
         project,
@@ -446,9 +442,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_forwarding_rules_patch(
         connection,
         project,
@@ -523,9 +517,7 @@ defmodule GoogleApi.Compute.V1.Api.ForwardingRules do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_forwarding_rules_set_target(
         connection,
         project,

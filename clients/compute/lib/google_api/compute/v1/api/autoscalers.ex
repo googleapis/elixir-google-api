@@ -65,7 +65,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
   @spec compute_autoscalers_aggregated_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.AutoscalerAggregatedList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_autoscalers_aggregated_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -133,9 +133,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_autoscalers_delete(
         connection,
         project,
@@ -205,7 +203,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
         ) ::
           {:ok, GoogleApi.Compute.V1.Model.Autoscaler.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_autoscalers_get(
         connection,
         project,
@@ -276,9 +274,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_autoscalers_insert(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -347,7 +343,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
   @spec compute_autoscalers_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Compute.V1.Model.AutoscalerList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def compute_autoscalers_list(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -415,9 +411,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_autoscalers_patch(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -484,9 +478,7 @@ defmodule GoogleApi.Compute.V1.Api.Autoscalers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_autoscalers_update(connection, project, zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
