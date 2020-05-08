@@ -52,7 +52,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   @spec bigquery_jobs_cancel(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.JobCancelResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigquery_jobs_cancel(connection, project_id, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -105,9 +105,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec bigquery_jobs_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Job.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_jobs_get(connection, project_id, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -172,7 +170,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         ) ::
           {:ok, GoogleApi.BigQuery.V2.Model.GetQueryResultsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigquery_jobs_get_query_results(
         connection,
         project_id,
@@ -234,9 +232,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec bigquery_jobs_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Job.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_jobs_insert(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -296,10 +292,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           iodata,
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Job.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_jobs_insert_iodata(
         connection,
         project_id,
@@ -366,7 +359,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_jobs_insert_resumable(
         connection,
         project_id,
@@ -433,10 +426,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Job.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_jobs_insert_simple(
         connection,
         project_id,
@@ -504,9 +494,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   *   `{:error, info}` on failure
   """
   @spec bigquery_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.JobList.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.JobList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_jobs_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -566,7 +554,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   @spec bigquery_jobs_query(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.QueryResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigquery_jobs_query(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

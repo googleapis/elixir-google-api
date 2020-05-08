@@ -60,7 +60,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
         ) ::
           {:ok, GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigquery_tabledata_insert_all(
         connection,
         project_id,
@@ -139,7 +139,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
         ) ::
           {:ok, GoogleApi.BigQuery.V2.Model.TableDataList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigquery_tabledata_list(
         connection,
         project_id,

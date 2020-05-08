@@ -56,7 +56,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Models do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_models_delete(
         connection,
         project_id,
@@ -125,10 +125,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Models do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Model.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Model.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_models_get(
         connection,
         project_id,
@@ -197,7 +194,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Models do
   @spec bigquery_models_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQuery.V2.Model.ListModelsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def bigquery_models_list(connection, project_id, dataset_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -258,10 +255,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Models do
           String.t(),
           keyword(),
           keyword()
-        ) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Model.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Model.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_models_patch(
         connection,
         project_id,
