@@ -57,7 +57,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   @spec run_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -130,7 +130,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListAuthorizedDomainsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_authorizeddomains_list(
         connection,
         projects_id,
@@ -212,7 +212,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudauditlogssources_create(
         connection,
         projects_id,
@@ -300,7 +300,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudauditlogssources_delete(
         connection,
         projects_id,
@@ -385,7 +385,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudauditlogssources_get(
         connection,
         projects_id,
@@ -479,7 +479,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudAuditLogsSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudauditlogssources_list(
         connection,
         projects_id,
@@ -566,7 +566,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudpubsubsources_create(
         connection,
         projects_id,
@@ -652,7 +652,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudpubsubsources_delete(
         connection,
         projects_id,
@@ -736,7 +736,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudpubsubsources_get(
         connection,
         projects_id,
@@ -827,7 +827,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudPubSubSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudpubsubsources_list(
         connection,
         projects_id,
@@ -914,7 +914,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudschedulersources_create(
         connection,
         projects_id,
@@ -1002,7 +1002,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudschedulersources_delete(
         connection,
         projects_id,
@@ -1087,7 +1087,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudschedulersources_get(
         connection,
         projects_id,
@@ -1181,7 +1181,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudSchedulerSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudschedulersources_list(
         connection,
         projects_id,
@@ -1277,7 +1277,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudschedulersources_replace_cloud_scheduler_source(
         connection,
         projects_id,
@@ -1361,7 +1361,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudstoragesources_create(
         connection,
         projects_id,
@@ -1447,7 +1447,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudstoragesources_delete(
         connection,
         projects_id,
@@ -1531,7 +1531,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudstoragesources_get(
         connection,
         projects_id,
@@ -1622,7 +1622,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudStorageSourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudstoragesources_list(
         connection,
         projects_id,
@@ -1718,7 +1718,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_cloudstoragesources_replace_cloud_storage_source(
         connection,
         projects_id,
@@ -1800,7 +1800,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Configuration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_configurations_get(
         connection,
         projects_id,
@@ -1891,7 +1891,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListConfigurationsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_configurations_list(
         connection,
         projects_id,
@@ -1975,7 +1975,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_create(
         connection,
         projects_id,
@@ -2063,7 +2063,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_delete(
         connection,
         projects_id,
@@ -2148,7 +2148,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_get(
         connection,
         projects_id,
@@ -2239,7 +2239,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListDomainMappingsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_list(
         connection,
         projects_id,
@@ -2335,7 +2335,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_revisions_delete(
         connection,
         projects_id,
@@ -2420,7 +2420,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Revision.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_revisions_get(
         connection,
         projects_id,
@@ -2510,7 +2510,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListRevisionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_revisions_list(
         connection,
         projects_id,
@@ -2595,7 +2595,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Route.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_routes_get(
         connection,
         projects_id,
@@ -2685,7 +2685,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListRoutesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_routes_list(
         connection,
         projects_id,
@@ -2766,7 +2766,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_create(
         connection,
         projects_id,
@@ -2856,7 +2856,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_delete(
         connection,
         projects_id,
@@ -2941,7 +2941,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_get(
         connection,
         projects_id,
@@ -3031,7 +3031,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_get_iam_policy(
         connection,
         projects_id,
@@ -3122,7 +3122,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_list(
         connection,
         projects_id,
@@ -3215,7 +3215,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_replace_service(
         connection,
         projects_id,
@@ -3299,7 +3299,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_set_iam_policy(
         connection,
         projects_id,
@@ -3384,7 +3384,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.TestIamPermissionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_test_iam_permissions(
         connection,
         projects_id,
@@ -3467,7 +3467,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_triggers_create(
         connection,
         projects_id,
@@ -3550,7 +3550,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_triggers_delete(
         connection,
         projects_id,
@@ -3634,7 +3634,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_triggers_get(
         connection,
         projects_id,
@@ -3725,7 +3725,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListTriggersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_triggers_list(
         connection,
         projects_id,
