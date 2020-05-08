@@ -56,7 +56,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_configuration_achievement_configurations_delete(
         connection,
         achievement_id,
@@ -125,7 +125,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
         ) ::
           {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_achievement_configurations_get(
         connection,
         achievement_id,
@@ -198,7 +198,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
         ) ::
           {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_achievement_configurations_insert(
         connection,
         application_id,
@@ -276,7 +276,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
           {:ok,
            GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_achievement_configurations_list(
         connection,
         application_id,
@@ -354,7 +354,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Api.AchievementConfigurat
         ) ::
           {:ok, GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfiguration.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def games_configuration_achievement_configurations_update(
         connection,
         achievement_id,
