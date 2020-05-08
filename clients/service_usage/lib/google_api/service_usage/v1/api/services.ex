@@ -122,7 +122,7 @@ defmodule GoogleApi.ServiceUsage.V1.Api.Services do
           An example name would be:
           `projects/123/services/serviceusage.googleapis.com` where `123` is the
           project number.
-          A single request can get a maximum of 20 services at a time.
+          A single request can get a maximum of 30 services at a time.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
