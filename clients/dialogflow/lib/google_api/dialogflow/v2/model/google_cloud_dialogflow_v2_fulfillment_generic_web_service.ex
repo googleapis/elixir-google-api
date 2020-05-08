@@ -31,6 +31,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FulfillmentGeneri
   *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. The password for HTTP Basic authentication.
   *   `requestHeaders` (*type:* `map()`, *default:* `nil`) - Optional. The HTTP request headers to send together with fulfillment requests.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The fulfillment URI for receiving POST requests.
+      It must use https protocol.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Optional. The user name for HTTP Basic authentication.
   """
 

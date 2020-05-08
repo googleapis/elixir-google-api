@@ -23,6 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext do
   ## Attributes
 
   *   `boost` (*type:* `number()`, *default:* `nil`) - Optional. Boost for this context compared to other contexts:
+
       * If the boost is positive, Dialogflow will increase the probability that
         the phrases in this context are recognized over similar sounding phrases.
       * If the boost is unspecified or non-positive, Dialogflow will not apply
