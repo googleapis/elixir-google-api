@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_ad_mob, "~> 0.3"}]
+  [{:google_api_ad_mob, "~> 0.4"}]
 end
 ```
 
