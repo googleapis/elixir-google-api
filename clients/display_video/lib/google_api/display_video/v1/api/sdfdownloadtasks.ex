@@ -70,7 +70,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Sdfdownloadtasks do
   @spec displayvideo_sdfdownloadtasks_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_sdfdownloadtasks_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -133,7 +133,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Sdfdownloadtasks do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_sdfdownloadtasks_operations_get(
         connection,
         name,

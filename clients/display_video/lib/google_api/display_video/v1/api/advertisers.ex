@@ -56,7 +56,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   @spec displayvideo_advertisers_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Advertiser.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -117,7 +117,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   @spec displayvideo_advertisers_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_delete(
         connection,
         advertiser_id,
@@ -181,7 +181,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   @spec displayvideo_advertisers_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Advertiser.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_get(connection, advertiser_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -281,7 +281,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   @spec displayvideo_advertisers_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListAdvertisersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -348,7 +348,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   @spec displayvideo_advertisers_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Advertiser.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_patch(connection, advertiser_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -418,7 +418,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.CreateAssetResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_assets_upload(
         connection,
         advertiser_id,
@@ -497,7 +497,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.CreateAssetResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_assets_upload_iodata(
         connection,
         advertiser_id,
@@ -581,7 +581,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.CreateAssetResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_assets_upload_simple(
         connection,
         advertiser_id,
@@ -658,7 +658,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Campaign.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_campaigns_create(
         connection,
         advertiser_id,
@@ -733,7 +733,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_campaigns_delete(
         connection,
         advertiser_id,
@@ -806,7 +806,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Campaign.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_campaigns_get(
         connection,
         advertiser_id,
@@ -919,7 +919,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListCampaignsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_campaigns_list(
         connection,
         advertiser_id,
@@ -997,7 +997,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Campaign.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_campaigns_patch(
         connection,
         advertiser_id,
@@ -1073,7 +1073,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Channel.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_channels_get(
         connection,
         advertiser_id,
@@ -1180,7 +1180,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListChannelsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_channels_list(
         connection,
         advertiser_id,
@@ -1256,7 +1256,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Creative.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_creatives_create(
         connection,
         advertiser_id,
@@ -1332,7 +1332,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_creatives_delete(
         connection,
         advertiser_id,
@@ -1405,7 +1405,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Creative.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_creatives_get(
         connection,
         advertiser_id,
@@ -1542,7 +1542,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListCreativesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_creatives_list(
         connection,
         advertiser_id,
@@ -1620,7 +1620,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Creative.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_creatives_patch(
         connection,
         advertiser_id,
@@ -1695,7 +1695,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.InsertionOrder.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_insertion_orders_create(
         connection,
         advertiser_id,
@@ -1771,7 +1771,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_insertion_orders_delete(
         connection,
         advertiser_id,
@@ -1845,7 +1845,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.InsertionOrder.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_insertion_orders_get(
         connection,
         advertiser_id,
@@ -1961,7 +1961,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListInsertionOrdersResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_insertion_orders_list(
         connection,
         advertiser_id,
@@ -2041,7 +2041,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.InsertionOrder.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_insertion_orders_patch(
         connection,
         advertiser_id,
@@ -2122,7 +2122,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
           {:ok,
            GoogleApi.DisplayVideo.V1.Model.BulkEditLineItemAssignedTargetingOptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_bulk_edit_line_item_assigned_targeting_options(
         connection,
         advertiser_id,
@@ -2247,7 +2247,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
           {:ok,
            GoogleApi.DisplayVideo.V1.Model.BulkListLineItemAssignedTargetingOptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_bulk_list_line_item_assigned_targeting_options(
         connection,
         advertiser_id,
@@ -2333,7 +2333,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.LineItem.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_create(
         connection,
         advertiser_id,
@@ -2409,7 +2409,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_delete(
         connection,
         advertiser_id,
@@ -2482,7 +2482,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.LineItem.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_get(
         connection,
         advertiser_id,
@@ -2601,7 +2601,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListLineItemsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_list(
         connection,
         advertiser_id,
@@ -2679,7 +2679,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.LineItem.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_patch(
         connection,
         advertiser_id,
@@ -2758,7 +2758,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_targeting_types_assigned_targeting_options_create(
         connection,
         advertiser_id,
@@ -2843,7 +2843,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_targeting_types_assigned_targeting_options_delete(
         connection,
         advertiser_id,
@@ -2929,7 +2929,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_targeting_types_assigned_targeting_options_get(
         connection,
         advertiser_id,
@@ -3051,7 +3051,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListLineItemAssignedTargetingOptionsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_line_items_targeting_types_assigned_targeting_options_list(
         connection,
         advertiser_id,
@@ -3136,7 +3136,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.LocationList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_location_lists_get(
         connection,
         advertiser_id,
@@ -3243,7 +3243,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListLocationListsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_location_lists_list(
         connection,
         advertiser_id,
@@ -3322,7 +3322,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_negative_keyword_lists_get(
         connection,
         advertiser_id,
@@ -3406,7 +3406,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
         ) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListNegativeKeywordListsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_advertisers_negative_keyword_lists_list(
         connection,
         advertiser_id,

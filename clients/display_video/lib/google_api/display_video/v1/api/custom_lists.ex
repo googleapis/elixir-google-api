@@ -56,7 +56,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CustomLists do
   @spec displayvideo_custom_lists_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.CustomList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_custom_lists_get(connection, custom_list_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -154,7 +154,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CustomLists do
   @spec displayvideo_custom_lists_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListCustomListsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_custom_lists_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

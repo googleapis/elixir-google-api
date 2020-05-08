@@ -56,7 +56,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.GoogleAudiences do
   @spec displayvideo_google_audiences_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.GoogleAudience.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_google_audiences_get(
         connection,
         google_audience_id,
@@ -160,7 +160,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.GoogleAudiences do
   @spec displayvideo_google_audiences_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DisplayVideo.V1.Model.ListGoogleAudiencesResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def displayvideo_google_audiences_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
