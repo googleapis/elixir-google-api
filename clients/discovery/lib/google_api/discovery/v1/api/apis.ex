@@ -51,7 +51,7 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
   @spec discovery_apis_get_rest(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Discovery.V1.Model.RestDescription.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def discovery_apis_get_rest(connection, api, version, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -104,7 +104,7 @@ defmodule GoogleApi.Discovery.V1.Api.Apis do
   @spec discovery_apis_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Discovery.V1.Model.DirectoryList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def discovery_apis_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
