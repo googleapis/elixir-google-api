@@ -64,7 +64,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_delete_events(
         connection,
         projects_id,
@@ -150,7 +150,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_events_list(
         connection,
         projects_id,
@@ -242,7 +242,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_events_report(
         connection,
         projects_id,
@@ -340,7 +340,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_group_stats_list(
         connection,
         projects_id,
@@ -431,7 +431,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_groups_get(
         connection,
         projects_id,
@@ -509,7 +509,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_groups_update(
         connection,
         projects_id,
