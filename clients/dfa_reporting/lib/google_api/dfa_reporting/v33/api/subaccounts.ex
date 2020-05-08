@@ -57,7 +57,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Subaccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_subaccounts_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -110,7 +110,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
   @spec dfareporting_subaccounts_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Subaccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_subaccounts_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -168,7 +168,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
   @spec dfareporting_subaccounts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.SubaccountsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_subaccounts_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -235,7 +235,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Subaccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_subaccounts_patch(
         connection,
         profile_id,
@@ -295,7 +295,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Subaccounts do
   @spec dfareporting_subaccounts_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Subaccount.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_subaccounts_update(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

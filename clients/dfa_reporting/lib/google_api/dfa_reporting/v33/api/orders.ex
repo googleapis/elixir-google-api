@@ -59,7 +59,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Orders do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.Order.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_orders_get(
         connection,
         profile_id,
@@ -130,7 +130,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Orders do
   @spec dfareporting_orders_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.OrdersListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_orders_list(
         connection,
         profile_id,

@@ -51,7 +51,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Files do
   @spec dfareporting_files_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.File.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_files_get(connection, report_id, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -108,7 +108,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Files do
   @spec dfareporting_files_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.FileList.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_files_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

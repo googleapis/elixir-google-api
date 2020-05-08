@@ -57,7 +57,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Projects do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.Project.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_projects_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -116,7 +116,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Projects do
   @spec dfareporting_projects_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.ProjectsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_projects_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

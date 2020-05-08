@@ -57,7 +57,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountUserProfiles do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountUserProfile.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_account_user_profiles_get(
         connection,
         profile_id,
@@ -121,7 +121,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountUserProfiles do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountUserProfile.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_account_user_profiles_insert(
         connection,
         profile_id,
@@ -192,7 +192,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountUserProfiles do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountUserProfilesListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_account_user_profiles_list(
         connection,
         profile_id,
@@ -267,7 +267,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountUserProfiles do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountUserProfile.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_account_user_profiles_patch(
         connection,
         profile_id,
@@ -332,7 +332,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountUserProfiles do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountUserProfile.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_account_user_profiles_update(
         connection,
         profile_id,

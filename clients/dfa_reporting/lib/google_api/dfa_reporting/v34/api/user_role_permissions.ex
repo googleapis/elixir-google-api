@@ -57,7 +57,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserRolePermissions do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.UserRolePermission.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_user_role_permissions_get(
         connection,
         profile_id,
@@ -121,7 +121,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.UserRolePermissions do
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.UserRolePermissionsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_user_role_permissions_list(
         connection,
         profile_id,

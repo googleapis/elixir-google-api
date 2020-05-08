@@ -57,7 +57,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_groups_get(
         connection,
         profile_id,
@@ -116,7 +116,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementGroups do
   @spec dfareporting_placement_groups_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_groups_insert(
         connection,
         profile_id,
@@ -192,7 +192,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementGroups do
   @spec dfareporting_placement_groups_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementGroupsListResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_groups_list(
         connection,
         profile_id,
@@ -277,7 +277,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementGroups do
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_groups_patch(
         connection,
         profile_id,
@@ -337,7 +337,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.PlacementGroups do
   @spec dfareporting_placement_groups_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.PlacementGroup.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_placement_groups_update(
         connection,
         profile_id,
