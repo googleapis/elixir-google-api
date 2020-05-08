@@ -70,7 +70,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Catalog do
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SearchCatalogResponse.t()}
           | {:ok, Tesla.Env.t()}
-          | {:error, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_catalog_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
