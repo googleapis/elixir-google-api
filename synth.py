@@ -51,7 +51,7 @@ if extra_args():
 
 log.debug(f"Running: {' '.join(command)}")
 
-shell.run(command, cwd=repository)
+shell.run(command, cwd=repository, hide_output=False)
 
 # clean destination before copying
 shutil.rmtree("clients", ignore_errors=True)
