@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.ExecutePatchJobRequest do
   @moduledoc """
-  A request message to initiate patching across Google Compute Engine
+  A request message to initiate patching across Compute Engine
   instances.
 
   ## Attributes

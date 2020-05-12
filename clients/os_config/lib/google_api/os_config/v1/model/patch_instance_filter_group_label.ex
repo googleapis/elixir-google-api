@@ -17,12 +17,18 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.PatchInstanceFilterGroupLabel do
   @moduledoc """
-  Represents a group of VMs that can be identified as having all these
-  labels, for example "env=prod and app=web".
+  Targets a group of VM instances by using their [assigned
+  labels](https://cloud.google.com/compute/docs/labeling-resources). Labels
+  are key-value pairs. A `GroupLabel` is a combination of labels
+  that is used to target VMs for a patch job.
+
+  For example, a patch job can target VMs that have the following
+  `GroupLabel`: `{"env":"test", "app":"web"}`. This means that the patch job
+  is applied to VMs that have both the labels `env=test` and `app=web`.
 
   ## Attributes
 
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Google Compute Engine instance labels that must be present for a VM
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Compute Engine instance labels that must be present for a VM
       instance to be targeted by this filter.
   """
 
