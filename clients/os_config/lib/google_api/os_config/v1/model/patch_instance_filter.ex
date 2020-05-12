@@ -26,8 +26,8 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchInstanceFilter do
 
   *   `all` (*type:* `boolean()`, *default:* `nil`) - Target all VM instances in the project. If true, no other criteria is
       permitted.
-  *   `groupLabels` (*type:* `list(GoogleApi.OSConfig.V1.Model.PatchInstanceFilterGroupLabel.t)`, *default:* `nil`) - Targets VM instances matching at least one of these label sets. This allows
-      targeting of disparate groups, for example "env=prod or env=staging".
+  *   `groupLabels` (*type:* `list(GoogleApi.OSConfig.V1.Model.PatchInstanceFilterGroupLabel.t)`, *default:* `nil`) - Targets VM instances matching ANY of these GroupLabels. This allows
+      targeting of disparate groups of VM instances.
   *   `instanceNamePrefixes` (*type:* `list(String.t)`, *default:* `nil`) - Targets VMs whose name starts with one of these prefixes. Similar to
       labels, this is another way to group VMs when targeting configs, for
       example prefix="prod-".

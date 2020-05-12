@@ -21,21 +21,19 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchDeployment do
   complete a patch. These configurations include instance filter, package
   repository settings, and a schedule. For more information about creating and
   managing patch deployments, see [Scheduling patch
-  jobs](/compute/docs/os-patch-management/schedule-patch-jobs).
+  jobs](https://cloud.google.com/compute/docs/os-patch-management/schedule-patch-jobs).
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the patch deployment was created. Timestamp is in
-      <a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank">RFC3339</a>
-      text format.
+      [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the patch deployment. Length of the description is limited
       to 1024 characters.
   *   `duration` (*type:* `String.t`, *default:* `nil`) - Optional. Duration of the patch. After the duration ends, the patch times out.
   *   `instanceFilter` (*type:* `GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t`, *default:* `nil`) - Required. VM instances to patch.
   *   `lastExecuteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time a patch job was started by this deployment.
-      Timestamp is in
-      <a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank">RFC3339</a>
-      text format.
+      Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text
+      format.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Unique name for the patch deployment resource in a project. The patch
       deployment name is in the form:
       `projects/{project_id}/patchDeployments/{patch_deployment_id}`.
@@ -44,8 +42,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchDeployment do
   *   `patchConfig` (*type:* `GoogleApi.OSConfig.V1.Model.PatchConfig.t`, *default:* `nil`) - Optional. Patch configuration that is applied.
   *   `recurringSchedule` (*type:* `GoogleApi.OSConfig.V1.Model.RecurringSchedule.t`, *default:* `nil`) - Required. Schedule recurring executions.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the patch deployment was last updated. Timestamp is in
-      <a href="https://www.ietf.org/rfc/rfc3339.txt" target="_blank">RFC3339</a>
-      text format.
+      [RFC3339]("https://www.ietf.org/rfc/rfc3339.txt) text format.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,7 +24,8 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJob do
   details, use ListPatchJobInstanceDetails.
 
   For more information about patch jobs, see
-  [Creating patch jobs](/compute/docs/os-patch-management/create-patch-job).
+  [Creating patch
+  jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
 
   ## Attributes
 

@@ -20,7 +20,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJobInstanceDetails do
   Patch details for a VM instance. For more information about reviewing VM
   instance details, see
   [Listing all VM instance details for a specific patch
-  job](/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
+  job](https://cloud.google.com/compute/docs/os-patch-management/manage-patch-jobs#list-instance-details).
 
   ## Attributes
 
