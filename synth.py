@@ -19,19 +19,13 @@ from synthtool import _tracked_paths
 import synthtool as s
 import synthtool.log as log
 import synthtool.shell as shell
-import synthtool.sources.git as git
 import logging
 import os
-import shutil
-import sys
 
 logging.basicConfig(level=logging.DEBUG)
 s.metadata.set_track_obsolete_files(False)  # TODO: enable again.
 
-repository_url = "https://github.com/googleapis/elixir-google-api.git"
-
-log.debug(f"Cloning {repository_url}.")
-repository = git.clone(repository_url)
+repository = os.getcwd()
 
 image = "gcr.io/cloud-devrel-public-resources/elixir19"
 generate_command = "scripts/generate_client.sh"
@@ -52,9 +46,3 @@ if extra_args():
 log.debug(f"Running: {' '.join(command)}")
 
 shell.run(command, cwd=repository, hide_output=False)
-
-# clean destination before copying
-shutil.rmtree("clients", ignore_errors=True)
-
-# copy all clients
-s.copy(repository / "clients")
