@@ -26,7 +26,7 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists log entries. Use this method to retrieve log entries that originated from a project/folder/organization/billing account. For ways to export log entries, see Exporting Logs.
+  Lists log entries. Use this method to retrieve log entries that originated from a project/folder/organization/billing account. For ways to export log entries, see Exporting Logs (https://cloud.google.com/logging/docs/export).
 
   ## Parameters
 
