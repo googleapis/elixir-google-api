@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.PromotionImage do
   @moduledoc """
-
+  Image belonging to a promotion.
 
   ## Attributes
 
-  *   `height` (*type:* `integer()`, *default:* `nil`) - 
-  *   `source` (*type:* `String.t`, *default:* `nil`) - 
-  *   `width` (*type:* `integer()`, *default:* `nil`) - 
+  *   `height` (*type:* `integer()`, *default:* `nil`) - Image height in pixels.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - URL of the image for this promotion link.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - Image width in pixels.
   """
 
   use GoogleApi.Gax.ModelBase
