@@ -42,10 +42,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig do
       60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
   *   `lowerBound` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Required. Lower bound value of buckets. All values less than `lower_bound` are
       grouped together into a single bucket; for example if `lower_bound` = 10,
-      then all values less than 10 are replaced with the value “-10”.
+      then all values less than 10 are replaced with the value "-10".
   *   `upperBound` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Required. Upper bound value of buckets. All values greater than upper_bound are
       grouped together into a single bucket; for example if `upper_bound` = 89,
-      then all values greater than 89 are replaced with the value “89+”.
+      then all values greater than 89 are replaced with the value "89+".
   """
 
   use GoogleApi.Gax.ModelBase
