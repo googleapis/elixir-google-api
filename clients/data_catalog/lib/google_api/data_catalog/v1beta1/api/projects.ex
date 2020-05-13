@@ -3736,8 +3736,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of project that the newly created taxonomies will
-      belong to.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of project that the imported taxonomies will belong to.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

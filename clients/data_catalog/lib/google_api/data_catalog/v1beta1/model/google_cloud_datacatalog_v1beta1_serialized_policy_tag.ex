@@ -26,6 +26,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Seria
       description is limited to 2000 bytes when encoded in UTF-8. If not set,
       defaults to an empty description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+  *   `policyTag` (*type:* `String.t`, *default:* `nil`) - Resource name of the policy tag.
+
+      This field will be ignored when calling ImportTaxonomies.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +39,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Seria
               GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SerializedPolicyTag.t()
             ),
           :description => String.t(),
-          :displayName => String.t()
+          :displayName => String.t(),
+          :policyTag => String.t()
         }
 
   field(:childPolicyTags,
@@ -46,6 +50,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Seria
 
   field(:description)
   field(:displayName)
+  field(:policyTag)
 end
 
 defimpl Poison.Decoder,
