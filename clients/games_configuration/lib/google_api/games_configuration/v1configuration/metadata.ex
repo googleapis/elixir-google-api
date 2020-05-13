@@ -20,7 +20,7 @@ defmodule GoogleApi.GamesConfiguration.V1configuration do
   API client metadata for GoogleApi.GamesConfiguration.V1configuration.
   """
 
-  @discovery_revision "20200416"
+  @discovery_revision "20200504"
 
   def discovery_revision(), do: @discovery_revision
 end
