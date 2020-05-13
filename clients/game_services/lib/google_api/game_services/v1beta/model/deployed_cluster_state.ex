@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.DeployedClusterState do
   @moduledoc """
-  The Game Server Cluster changes made by the Game Server Deployment.
+  The game server cluster changes made by the game server deployment.
 
   ## Attributes
 
   *   `cluster` (*type:* `String.t`, *default:* `nil`) - The name of the cluster.
   *   `fleetDetails` (*type:* `list(GoogleApi.GameServices.V1beta.Model.DeployedFleetDetails.t)`, *default:* `nil`) - The details about the Agones fleets and autoscalers created in the
-      Game Server Cluster.
+      game server cluster.
   """
 
   use GoogleApi.Gax.ModelBase

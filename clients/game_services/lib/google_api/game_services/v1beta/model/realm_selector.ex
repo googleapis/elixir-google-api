@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.RealmSelector do
   @moduledoc """
-  The Realm selector, used to match Realm resources.
+  The realm selector, used to match realm resources.
 
   ## Attributes
 
-  *   `realms` (*type:* `list(String.t)`, *default:* `nil`) - List of Realms to match.
+  *   `realms` (*type:* `list(String.t)`, *default:* `nil`) - List of realms to match.
   """
 
   use GoogleApi.Gax.ModelBase

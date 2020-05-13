@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.GameServerDeployment do
   @moduledoc """
-  A Game Server Deployment resource.
+  A game server deployment resource.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Human readable description of the Game Server Deployment.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Human readable description of the game server delpoyment.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this Game Server Deployment. Each label is a
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this game server deployment. Each label is a
       key-value pair.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Game Server Deployment. Uses the form:
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the game server deployment. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
       For example,

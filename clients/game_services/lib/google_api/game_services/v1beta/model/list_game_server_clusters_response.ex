@@ -21,10 +21,10 @@ defmodule GoogleApi.GameServices.V1beta.Model.ListGameServerClustersResponse do
 
   ## Attributes
 
-  *   `gameServerClusters` (*type:* `list(GoogleApi.GameServices.V1beta.Model.GameServerCluster.t)`, *default:* `nil`) - The list of Game Server Clusters.
+  *   `gameServerClusters` (*type:* `list(GoogleApi.GameServices.V1beta.Model.GameServerCluster.t)`, *default:* `nil`) - The list of game server clusters.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
       results in the list.
-  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - List of Locations that could not be reached.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - List of locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase

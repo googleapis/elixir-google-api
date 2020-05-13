@@ -155,7 +155,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Creates a new Game Server Deployment in a given project and Location.
+  Creates a new game server deployment in a given project and location.
 
   ## Parameters
 
@@ -174,7 +174,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deploymentId` (*type:* `String.t`) - Required. The ID of the Game Server Deployment resource to be created.
+      *   `:deploymentId` (*type:* `String.t`) - Required. The ID of the game server delpoyment resource to be created.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerDeployment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -229,12 +229,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Deletes a single Game Server Deployment.
+  Deletes a single game server deployment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Game Server Deployment to delete. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to delete. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -300,14 +300,14 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Retrieves information about the current state of the Game Server
-  Ddeployment. Gathers all the Agones fleets and Agones autoscalers,
-  including fleets running an older version of the Game Server Deployment.
+  Retrieves information about the current state of the game server
+  deployment. Gathers all the Agones fleets and Agones autoscalers,
+  including fleets running an older version of the game server deployment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Game Server Deployment. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -377,12 +377,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets details of a single Game Server Deployment.
+  Gets details of a single game server deployment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Game Server Deployment to retrieve. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to retrieve. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -479,6 +479,10 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -531,12 +535,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets details a single Game Server Deployment Rollout.
+  Gets details a single game server deployment rollout.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Game Server Deployment to retrieve. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the game server delpoyment to retrieve. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -604,7 +608,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Lists Game Server Deployments in a given project and Location.
+  Lists game server deployments in a given project and location.
 
   ## Parameters
 
@@ -626,8 +630,8 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results.
       *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following syntax at
           https://cloud.google.com/apis/design/design_patterns#sorting_order.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.  If unspecified, server
-          will pick an appropriate default. Server may return fewer items than
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.  If unspecified, the server
+          will pick an appropriate default. The server may return fewer items than
           requested. A caller should only rely on response's
           next_page_token to
           determine if there are more GameServerDeployments left to be queried.
@@ -690,12 +694,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Patches a Game Server Deployment.
+  Patches a game server deployment.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the Game Server Deployment. Uses the form:
+  *   `name` (*type:* `String.t`) - The resource name of the game server deployment. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
       For example,
@@ -773,13 +777,13 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Previews the Game Server Deployment Rollout. This API does not mutate the
-  Rollout resource.
+  Previews the game server deployment rollout. This API does not mutate the
+  rollout resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the Game Server Deployment Rollout. Uses the form:
+  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
       For example,
@@ -798,7 +802,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:previewTime` (*type:* `DateTime.t`) - Optional. The target timestamp to compute the preview. Defaults to the immediately
-          after the proposed Rollout completes.
+          after the proposed rollout completes.
       *   `:updateMask` (*type:* `String.t`) - Optional. Mask of fields to update. At least one path must be supplied in
           this field. For the `FieldMask` definition, see
 
@@ -1022,7 +1026,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Patches a single Game Server Deployment Rollout.
+  Patches a single game server deployment rollout.
   The method will not return an error if the update does not affect any
   existing realms. For example - if the default_game_server_config is changed
   but all existing realms use the override, that is valid. Similarly, if a
@@ -1032,7 +1036,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the Game Server Deployment Rollout. Uses the form:
+  *   `name` (*type:* `String.t`) - The resource name of the game server deployment rollout. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
       For example,
@@ -1110,9 +1114,9 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Creates a new Game Server Config in a given project, Location, and Game
-  Server Deployment. Game Server Configs are immutable, and are not applied
-  until referenced in the Game Server Deployment Rollout resource.
+  Creates a new game server config in a given project, location, and game
+  server deployment. Game server configs are immutable, and are not applied
+  until referenced in the game server deployment rollout resource.
 
   ## Parameters
 
@@ -1132,7 +1136,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:configId` (*type:* `String.t`) - Required. The ID of the Game Server Config resource to be created.
+      *   `:configId` (*type:* `String.t`) - Required. The ID of the game server config resource to be created.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1187,13 +1191,13 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Deletes a single Game Server Config. The deletion will fail if the Game
-  Server Config is referenced in a Game Server Deployment Rollout.
+  Deletes a single game server config. The deletion will fail if the game
+  server config is referenced in a game server deployment rollout.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Game Server Config to delete. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the game server config to delete. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1259,12 +1263,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets details of a single Game Server Config.
+  Gets details of a single game server config.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Game Server Config to retrieve. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the game server config to retrieve. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1330,8 +1334,8 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Lists Game Server Configs in a given project, Location, and Game Server
-  Deployment.
+  Lists game server configs in a given project, location, and game server
+  deployment.
 
   ## Parameters
 
@@ -1359,7 +1363,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
           requested. A caller should only rely on response's
           next_page_token to
           determine if there are more GameServerConfigs left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request, if any.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1726,7 +1730,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Creates a new Realm in a given project and Location.
+  Creates a new realm in a given project and location.
 
   ## Parameters
 
@@ -1745,7 +1749,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:realmId` (*type:* `String.t`) - Required. The ID of the Realm resource to be created.
+      *   `:realmId` (*type:* `String.t`) - Required. The ID of the realm resource to be created.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.Realm.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1800,12 +1804,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Deletes a single Realm.
+  Deletes a single realm.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Realm to delete. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the realm to delete. Uses the form:
       `projects/{project}/locations/{location}/realms/{realm}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1870,12 +1874,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Gets details of a single Realm.
+  Gets details of a single realm.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Realm to retrieve. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the realm to retrieve. Uses the form:
       `projects/{project}/locations/{location}/realms/{realm}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1940,7 +1944,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Lists Realms in a given project and Location.
+  Lists realms in a given project and location.
 
   ## Parameters
 
@@ -1966,7 +1970,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
           will pick an appropriate default. Server may return fewer items than
           requested. A caller should only rely on response's
           next_page_token to
-          determine if there are more Realms left to be queried.
+          determine if there are more realms left to be queried.
       *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous List request,
           if any.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2026,12 +2030,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Patches a single Realm.
+  Patches a single realm.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the Realm. Uses the form:
+  *   `name` (*type:* `String.t`) - The resource name of the realm. Uses the form:
       `projects/{project}/locations/{location}/realms/{realm}`. For
       example, `projects/my-project/locations/{location}/realms/my-realm`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2106,12 +2110,12 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Previews patches to a single Realm.
+  Previews patches to a single realm.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the Realm. Uses the form:
+  *   `name` (*type:* `String.t`) - The resource name of the realm. Uses the form:
       `projects/{project}/locations/{location}/realms/{realm}`. For
       example, `projects/my-project/locations/{location}/realms/my-realm`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2209,7 +2213,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gameServerClusterId` (*type:* `String.t`) - Required. The ID of the Game Server Cluster resource to be created.
+      *   `:gameServerClusterId` (*type:* `String.t`) - Required. The ID of the game server cluster resource to be created.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerCluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2269,7 +2273,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Game Server Cluster to delete. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete. Uses the form:
       `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2339,7 +2343,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Game Server Cluster to retrieve. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to retrieve. Uses the form:
 
       `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2405,7 +2409,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   end
 
   @doc """
-  Lists Game Server Clusters in a given project and location.
+  Lists game server clusters in a given project and location.
 
   ## Parameters
 
@@ -2427,8 +2431,8 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:filter` (*type:* `String.t`) - Optional. The filter to apply to list results.
       *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results following syntax at
           https://cloud.google.com/apis/design/design_patterns#sorting_order.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.  If unspecified, server
-          will pick an appropriate default. Server may return fewer items than
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.  If unspecified, the server
+          will pick an appropriate default. The server may return fewer items than
           requested. A caller should only rely on response's
           next_page_token to
           determine if there are more GameServerClusters left to be queried.
@@ -2495,7 +2499,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Game Server Cluster. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster. Uses the form:
 
       `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
       For example,
@@ -2593,7 +2597,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gameServerClusterId` (*type:* `String.t`) - Required. The ID of the Game Server Cluster resource to be created.
+      *   `:gameServerClusterId` (*type:* `String.t`) - Required. The ID of the game server cluster resource to be created.
       *   `:previewTime` (*type:* `DateTime.t`) - Optional. The target timestamp to compute the preview.
       *   `:body` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerCluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2658,7 +2662,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the Game Server Cluster to delete. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The name of the game server cluster to delete. Uses the form:
       `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2733,7 +2737,7 @@ defmodule GoogleApi.GameServices.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.GameServices.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Game Server Cluster. Uses the form:
+  *   `name` (*type:* `String.t`) - Required. The resource name of the game server cluster. Uses the form:
 
       `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
       For example,
