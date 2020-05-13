@@ -20,7 +20,7 @@ defmodule GoogleApi.Blogger.V3 do
   API client metadata for GoogleApi.Blogger.V3.
   """
 
-  @discovery_revision "20200509"
+  @discovery_revision "20200512"
 
   def discovery_revision(), do: @discovery_revision
 end
