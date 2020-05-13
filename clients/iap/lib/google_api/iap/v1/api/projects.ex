@@ -228,7 +228,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Path to create the client in.
       In the following format:
       projects/{project_number/id}/brands/{brand}.
-      The project must belong to a GSuite account.
+      The project must belong to a G Suite account.
   *   `brands_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

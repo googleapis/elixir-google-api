@@ -26,7 +26,7 @@ defmodule GoogleApi.IAP.V1.Model.PolicyName do
       The location of the Policy.
       Must be empty or "global" for Policies owned by global IAM.  Must name a
       region from prodspec/cloud-iam-cloudspec for Regional IAM Policies, see
-      http://go/iam-faq#where-is-iam-currently-deployed.
+      go/iam-faq#where-is-iam-currently-deployed.
 
       For Local IAM:
       This field should be set to "local".
