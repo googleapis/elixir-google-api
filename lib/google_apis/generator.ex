@@ -20,7 +20,7 @@ defmodule GoogleApis.Generator do
 
   def bump_version(api_config) do
     hex_version = current_hex_version(api_config)
-    bump_type = if ChangeAnalyzer.has_significant_changes?(api_config), do: :minor, else: :patch
+    bump_type = if ChangeAnalyzer.has_changes_of_significance?(api_config, :significant), do: :minor, else: :patch
     Logger.info("Bumping #{bump_type}")
     new_version = bump_version_string(hex_version, bump_type)
     mix_version = current_mix_version(api_config)
@@ -28,6 +28,13 @@ defmodule GoogleApis.Generator do
       set_mix_version(api_config, new_version)
       requirement = version_requirement_string(new_version)
       set_readme_version(api_config, requirement)
+    end
+  end
+
+  def rollback_if_not_significant(api_configs) do
+    if !Enum.any?(api_configs, &(ChangeAnalyzer.has_changes_of_significance?(&1, :documentation))) do
+      Logger.info("Found only discovery_revision and/or formatting changes. Not significant enough for a PR.")
+      System.cmd("git", ["reset", "--hard"])
     end
   end
 

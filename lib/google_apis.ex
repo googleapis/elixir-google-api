@@ -52,4 +52,8 @@ defmodule GoogleApis do
   def bump_version(api_config) do
     GoogleApis.Generator.bump_version(api_config)
   end
+
+  def rollback_if_not_significant(api_configs) do
+    GoogleApis.Generator.rollback_if_not_significant(api_configs)
+  end
 end

@@ -33,5 +33,6 @@ defmodule Mix.Tasks.GoogleApis.Generate do
       GoogleApis.generate_client(api)
       GoogleApis.format_client(api)
     end)
+    GoogleApis.rollback_if_not_significant(apis)
   end
 end
