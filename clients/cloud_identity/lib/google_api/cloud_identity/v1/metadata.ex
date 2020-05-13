@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudIdentity.V1 do
   API client metadata for GoogleApi.CloudIdentity.V1.
   """
 
-  @discovery_revision "20200505"
+  @discovery_revision "20200509"
 
   def discovery_revision(), do: @discovery_revision
 end
