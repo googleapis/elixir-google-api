@@ -22,9 +22,17 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Binding do
   ## Attributes
 
   *   `condition` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Expr.t`, *default:* `nil`) - The condition that is associated with this binding.
-      NOTE: An unsatisfied condition will not allow user access via current
-      binding. Different bindings, including their conditions, are examined
-      independently.
+
+      If the condition evaluates to `true`, then this binding applies to the
+      current request.
+
+      If the condition evaluates to `false`, then this binding does not apply to
+      the current request. However, a different role binding might grant the same
+      role to one or more of the members in this binding.
+
+      To learn which resources support conditions in their IAM policies, see the
+      [IAM
+      documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `members` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the identities requesting access for a Cloud Platform resource.
       `members` can have the following values:
 
