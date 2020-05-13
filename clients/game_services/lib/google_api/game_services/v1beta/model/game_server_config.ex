@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.GameServerConfig do
   @moduledoc """
-  A Game Server Config resource.
+  A game server config resource.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the Game Server Config.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the game server config.
   *   `fleetConfigs` (*type:* `list(GoogleApi.GameServices.V1beta.Model.FleetConfig.t)`, *default:* `nil`) - FleetConfig contains a list of Agones fleet specs. Only one FleetConfig
       is allowed.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this Game Server Config. Each label is a
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this game server config. Each label is a
       key-value pair.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Game Server Config. Uses the form:
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the game server config. Uses the form:
 
       `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
       For example,

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.GameServerConfigOverride do
   @moduledoc """
-  A Game Server Config override.
+  A game server config override.
 
   ## Attributes
 

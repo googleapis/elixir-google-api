@@ -23,8 +23,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.ListRealmsResponse do
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
       results in the list.
-  *   `realms` (*type:* `list(GoogleApi.GameServices.V1beta.Model.Realm.t)`, *default:* `nil`) - The list of Realms.
-  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - List of Locations that could not be reached.
+  *   `realms` (*type:* `list(GoogleApi.GameServices.V1beta.Model.Realm.t)`, *default:* `nil`) - The list of realms.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - List of locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase

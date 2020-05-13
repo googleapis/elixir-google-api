@@ -32,7 +32,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.Schedule do
       after the cron job's start time.
   *   `cronSpec` (*type:* `String.t`, *default:* `nil`) - The cron definition of the scheduled event. See
       https://en.wikipedia.org/wiki/Cron. Cron spec specifies the local time as
-      defined by the Realm.
+      defined by the realm.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time of the event.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the event.
   """

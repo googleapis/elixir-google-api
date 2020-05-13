@@ -21,8 +21,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.FetchDeploymentStateResponse do
 
   ## Attributes
 
-  *   `clusterState` (*type:* `list(GoogleApi.GameServices.V1beta.Model.DeployedClusterState.t)`, *default:* `nil`) - The state of the Game Server Deployment in each Game Server Cluster.
-  *   `unavailable` (*type:* `list(String.t)`, *default:* `nil`) - List of Locations that could not be reached.
+  *   `clusterState` (*type:* `list(GoogleApi.GameServices.V1beta.Model.DeployedClusterState.t)`, *default:* `nil`) - The state of the game server deployment in each game server cluster.
+  *   `unavailable` (*type:* `list(String.t)`, *default:* `nil`) - List of locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase

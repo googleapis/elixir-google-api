@@ -24,7 +24,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.OperationMetadata do
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - Output only. API version used to start the operation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation finished running.
-  *   `operationStatus` (*type:* `%{optional(String.t) => GoogleApi.GameServices.V1beta.Model.OperationStatus.t}`, *default:* `nil`) - Output only. Operation status for gameservices API operations. Operation status is in
+  *   `operationStatus` (*type:* `%{optional(String.t) => GoogleApi.GameServices.V1beta.Model.OperationStatus.t}`, *default:* `nil`) - Output only. Operation status for Game Services API operations. Operation status is in
       the form of key-value pairs where keys are resource IDs and the values show
       the status of the operation. In case of failures, the value includes an
       error code and error message.

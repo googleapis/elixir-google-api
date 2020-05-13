@@ -22,7 +22,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.PreviewGameServerDeploymentRollout
 
   ## Attributes
 
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the Game Server Deployment.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the game server deployment.
   *   `targetState` (*type:* `GoogleApi.GameServices.V1beta.Model.TargetState.t`, *default:* `nil`) - The target state.
   *   `unavailable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached on this request.
   """
