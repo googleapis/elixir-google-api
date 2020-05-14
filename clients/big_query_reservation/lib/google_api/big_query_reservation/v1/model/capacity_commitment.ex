@@ -20,8 +20,10 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
   Capacity commitment is a way to purchase compute capacity for BigQuery jobs
   (in the form of slots) with some committed period of usage. Annual
   commitments renew by default. Commitments can be removed after their
-  commitment end time passes. In order to remove annual commitment, its plan
-  needs to be changed to monthly or flex first.
+  commitment end time passes.
+
+  In order to remove annual commitment, its plan needs to be changed
+  to monthly or flex first.
 
   A capacity commitment resource exists as a child resource of the admin
   project.
@@ -32,11 +34,11 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
       capacity commitments.
   *   `failureStatus` (*type:* `GoogleApi.BigQueryReservation.V1.Model.Status.t`, *default:* `nil`) - Output only. For FAILED commitment plan, provides the reason of failure.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the capacity commitment, e.g.,
-         projects/myproject/locations/US/capacityCommitments/123
+      `projects/myproject/locations/US/capacityCommitments/123`
   *   `plan` (*type:* `String.t`, *default:* `nil`) - Capacity commitment commitment plan.
   *   `renewalPlan` (*type:* `String.t`, *default:* `nil`) - The plan this capacity commitment is converted to after commitment_end_time
       passes. Once the plan is changed, committed period is extended according to
-      commitment plan. Only applicable for ANNUAL commitments.
+      commitment plan. Only applicable for ANNUAL and TRIAL commitments.
   *   `slotCount` (*type:* `String.t`, *default:* `nil`) - Number of slots in this commitment.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the commitment.
   """
