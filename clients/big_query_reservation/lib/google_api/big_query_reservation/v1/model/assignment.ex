@@ -23,10 +23,10 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Assignment do
   ## Attributes
 
   *   `assignee` (*type:* `String.t`, *default:* `nil`) - The resource which will use the reservation. E.g.
-      projects/myproject, folders/123, organizations/456.
+      `projects/myproject`, `folders/123`, or `organizations/456`.
   *   `jobType` (*type:* `String.t`, *default:* `nil`) - Which type of jobs will use the reservation.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the resource. E.g.:
-      projects/myproject/locations/US/reservations/team1-prod/assignments/123.
+      `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the assignment.
   """
 
