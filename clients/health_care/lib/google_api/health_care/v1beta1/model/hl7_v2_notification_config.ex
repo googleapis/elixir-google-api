@@ -46,7 +46,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2NotificationConfig do
       map. For example, `labels."priority"="high"`. The operator `:*` can be
       used to assert the existence of a label. For example,
       `labels."priority":*`.
-  *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - The [Cloud Pubsub](https://cloud.google.com/pubsub/docs/) topic that
+  *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - The [Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that
       notifications of changes are published on. Supplied by the client. The
       notification is a `PubsubMessage` with the following fields:
 
@@ -58,13 +58,13 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2NotificationConfig do
 
       Note that notifications are only sent if the topic is non-empty. [Topic
       names](https://cloud.google.com/pubsub/docs/overview#names) must be
-      scoped to a project. cloud-healthcare@system.gserviceaccount.com must
-      have publisher permissions on the given Pubsub topic. Not having adequate
+      scoped to a project. Cloud Healthcare API service account must have
+      publisher permissions on the given Pub/Sub topic. Not having adequate
       permissions causes the calls that send notifications to fail.
 
       If a notification cannot be published to Cloud Pub/Sub, errors will be
-      logged to Stackdriver (see [Viewing logs](/healthcare/docs/how-
-      tos/stackdriver-logging)).
+      logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-
+      tos/logging)).
   """
 
   use GoogleApi.Gax.ModelBase

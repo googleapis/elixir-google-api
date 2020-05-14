@@ -50,9 +50,17 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.StreamConfig do
       enabled. For query convenience, the server also creates one view per
       table of the same name containing only the current resource version.
 
+      The streamed data in the BigQuery dataset is not guaranteed to be
+      completely unique. The combination of the id and meta.versionId columns
+      should ideally identify a single unique row. But in rare cases,
+      duplicates may exist. At query time, users may use the SQL select
+      statement to keep only one of the duplicate rows given an id and
+      meta.versionId pair. Alternatively, the server created view mentioned
+      above also filters out duplicates.
+
       If a resource mutation cannot be streamed to BigQuery, errors will be
-      logged to Stackdriver (see [Viewing logs](/healthcare/docs/how-
-      tos/stackdriver-logging)).
+      logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-
+      tos/logging)).
   *   `resourceTypes` (*type:* `list(String.t)`, *default:* `nil`) - Supply a FHIR resource type (such as "Patient" or "Observation").
       See https://www.hl7.org/fhir/valueset-resource-types.html for a list of
       all FHIR resource types.
