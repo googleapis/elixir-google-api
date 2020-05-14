@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.ProfileSettings do
   @moduledoc """
-  This is a JSON template for profile settings
+  Profile settings
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `gamesManagement#profileSettings`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#profileSettings.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesManagement#profileSettings`.
   *   `profileVisible` (*type:* `boolean()`, *default:* `nil`) - 
   """
 

@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.HiddenPlayer do
   @moduledoc """
-  This is a JSON template for the HiddenPlayer resource.
+  The HiddenPlayer resource.
 
   ## Attributes
 
-  *   `hiddenTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time this player was hidden.
-  *   `kind` (*type:* `String.t`, *default:* `gamesManagement#hiddenPlayer`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#hiddenPlayer.
-  *   `player` (*type:* `GoogleApi.GamesManagement.V1management.Model.Player.t`, *default:* `nil`) - The player information.
+  *   `hiddenTimeMillis` (*type:* `String.t`, *default:* `nil`) - Output only. The time this player was hidden.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesManagement#hiddenPlayer`.
+  *   `player` (*type:* `GoogleApi.GamesManagement.V1management.Model.Player.t`, *default:* `nil`) - Output only. The player information.
   """
 
   use GoogleApi.Gax.ModelBase

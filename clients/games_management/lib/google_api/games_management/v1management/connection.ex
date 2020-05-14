@@ -28,5 +28,5 @@ defmodule GoogleApi.GamesManagement.V1management.Connection do
       "https://www.googleapis.com/auth/games"
     ],
     otp_app: :google_api_games_management,
-    base_url: "https://www.googleapis.com/games/v1management/"
+    base_url: "https://www.googleapis.com/"
 end

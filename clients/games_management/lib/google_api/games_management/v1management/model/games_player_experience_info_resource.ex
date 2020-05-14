@@ -17,14 +17,16 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.GamesPlayerExperienceInfoResource do
   @moduledoc """
-  This is a JSON template for 1P/3P metadata about the player's experience.
+  1P/3P metadata about the player's experience.
 
   ## Attributes
 
   *   `currentExperiencePoints` (*type:* `String.t`, *default:* `nil`) - The current number of experience points for the player.
   *   `currentLevel` (*type:* `GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource.t`, *default:* `nil`) - The current level of the player.
-  *   `lastLevelUpTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The timestamp when the player was leveled up, in millis since Unix epoch UTC.
-  *   `nextLevel` (*type:* `GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource.t`, *default:* `nil`) - The next level of the player. If the current level is the maximum level, this should be same as the current level.
+  *   `lastLevelUpTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The timestamp when the player was leveled up, in millis since Unix epoch
+      UTC.
+  *   `nextLevel` (*type:* `GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource.t`, *default:* `nil`) - The next level of the player. If the current level is the maximum level,
+      this should be same as the current level.
   """
 
   use GoogleApi.Gax.ModelBase
