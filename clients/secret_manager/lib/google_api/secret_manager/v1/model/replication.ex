@@ -19,6 +19,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Replication do
   @moduledoc """
   A policy that defines the replication configuration of data.
 
+
   ## Attributes
 
   *   `automatic` (*type:* `GoogleApi.SecretManager.V1.Model.Automatic.t`, *default:* `nil`) - The Secret will automatically be replicated without any restrictions.
