@@ -43,6 +43,10 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.History do
 
       - In response always set
       - In create request: always set
+  *   `testPlatform` (*type:* `String.t`, *default:* `nil`) - The platform of the test history.
+
+      - In response: always set. Returns the platform of the last execution if
+      unknown.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -50,12 +54,14 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.History do
   @type t :: %__MODULE__{
           :displayName => String.t(),
           :historyId => String.t(),
-          :name => String.t()
+          :name => String.t(),
+          :testPlatform => String.t()
         }
 
   field(:displayName)
   field(:historyId)
   field(:name)
+  field(:testPlatform)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.History do
