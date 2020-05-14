@@ -29,7 +29,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.OperationMetadata do
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which execution was completed.
   *   `logsUrl` (*type:* `String.t`, *default:* `nil`) - A link to audit and error logs in the log viewer. Error logs are generated
       only by some operations, listed at
-      https://cloud.google.com/healthcare/docs/how-tos/stackdriver-logging.
+      [Viewing logs](/healthcare/docs/how-tos/logging).
   """
 
   use GoogleApi.Gax.ModelBase
