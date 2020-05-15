@@ -613,7 +613,7 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The number of connections to include in the response. Valid values are
-          between 1 and 2000, inclusive. Defaults to 100 if not set or set to 0.
+          between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListConnections` call.
           Provide this to retrieve the subsequent page.
 
