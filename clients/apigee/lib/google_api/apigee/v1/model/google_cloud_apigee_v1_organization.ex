@@ -32,7 +32,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   *   `environments` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of environments in the Apigee organization.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization was last modified in milliseconds
       since epoch.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Apigee organization.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Apigee organization.
   *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t`, *default:* `nil`) - Properties defined in the Apigee organization profile.
   *   `runtimeType` (*type:* `String.t`, *default:* `nil`) - Output only. Runtime type of the Apigee organization based on the Apigee subscription
       purchased.
