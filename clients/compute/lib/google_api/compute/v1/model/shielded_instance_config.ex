@@ -21,9 +21,9 @@ defmodule GoogleApi.Compute.V1.Model.ShieldedInstanceConfig do
 
   ## Attributes
 
-  *   `enableIntegrityMonitoring` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance has integrity monitoring enabled.
-  *   `enableSecureBoot` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance has Secure Boot enabled.
-  *   `enableVtpm` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance has the vTPM enabled.
+  *   `enableIntegrityMonitoring` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance has integrity monitoring enabled. Enabled by default.
+  *   `enableSecureBoot` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance has Secure Boot enabled. Disabled by default.
+  *   `enableVtpm` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance has the vTPM enabled. Enabled by default.
   """
 
   use GoogleApi.Gax.ModelBase

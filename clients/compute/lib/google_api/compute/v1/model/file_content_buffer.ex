@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.FileContentBuffer do
   ## Attributes
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - The raw content in the secure keys file.
-  *   `fileType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `fileType` (*type:* `String.t`, *default:* `nil`) - The file type of source file.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -86,7 +86,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
 
 
 
-      Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Blaancing).
+      Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol this BackendService uses to communicate with backends.
 
       Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.

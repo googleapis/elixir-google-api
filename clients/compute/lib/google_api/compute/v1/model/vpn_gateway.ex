@@ -17,7 +17,9 @@
 
 defmodule GoogleApi.Compute.V1.Model.VpnGateway do
   @moduledoc """
-  Represents a VPN gateway resource. Next ID: 13
+  Represents a HA VPN gateway.
+
+  HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely connect your on-premises network to your Google Cloud Virtual Private Cloud network through an IPsec VPN connection in a single region. For more information about Cloud HA VPN solutions, see  Cloud VPN topologies . (== resource_for {$api_version}.vpnGateways ==)
 
   ## Attributes
 

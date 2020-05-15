@@ -17,7 +17,9 @@
 
 defmodule GoogleApi.Compute.V1.Model.PacketMirroring do
   @moduledoc """
-  Represents a PacketMirroring resource.
+  Represents a Packet Mirroring resource.
+
+  Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for {$api_version}.packetMirrorings ==)
 
   ## Attributes
 
