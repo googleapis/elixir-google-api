@@ -2349,7 +2349,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Queries time series using the time series query language. This method does not require a Workspace.
+  Queries time series using Monitoring Query Language. This method does not require a Workspace.
 
   ## Parameters
 
