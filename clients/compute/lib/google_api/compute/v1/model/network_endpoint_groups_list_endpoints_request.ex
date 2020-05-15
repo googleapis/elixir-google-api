@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupsListEndpointsRequest d
 
   ## Attributes
 
-  *   `healthStatus` (*type:* `String.t`, *default:* `nil`) - Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specifiy this parameter, the health status of network endpoints will not be provided.
+  *   `healthStatus` (*type:* `String.t`, *default:* `nil`) - Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
   """
 
   use GoogleApi.Gax.ModelBase
