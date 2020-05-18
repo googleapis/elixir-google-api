@@ -137,6 +137,16 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
       field. Learn more about the [special configuration options for training
       with
       TPUs](/ml-engine/docs/tensorflow/using-tpus#configuring_a_custom_tpu_machine).
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Google Compute Engine
+      [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+      is peered. For example, projects/12345/global/networks/myVPC. Format is of
+      the form projects/{project}/global/networks/{network}. Where {project} is a
+      project number, as in '12345', and {network} is network name.".
+
+      Private services access must already be configured for the network. If left
+      unspecified, the Job is not peered with any network. Learn more -
+      Connecting Job to user network over private
+      IP.
   *   `packageUris` (*type:* `list(String.t)`, *default:* `nil`) - Required. The Google Cloud Storage location of the packages with
       the training program and any additional dependencies.
       The maximum number of package URIs is 100.
@@ -255,6 +265,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
           :jobDir => String.t(),
           :masterConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
           :masterType => String.t(),
+          :network => String.t(),
           :packageUris => list(String.t()),
           :parameterServerConfig =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
@@ -287,6 +298,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   field(:jobDir)
   field(:masterConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig)
   field(:masterType)
+  field(:network)
   field(:packageUris, type: :list)
 
   field(:parameterServerConfig,

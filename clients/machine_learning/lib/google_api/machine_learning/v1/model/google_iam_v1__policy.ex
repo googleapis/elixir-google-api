@@ -27,10 +27,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
   permissions; each `role` can be an IAM predefined role or a user-created
   custom role.
 
-  Optionally, a `binding` can specify a `condition`, which is a logical
-  expression that allows access to a resource only if the expression evaluates
-  to `true`. A condition can add constraints based on attributes of the
-  request, the resource, or both.
+  For some types of Google Cloud resources, a `binding` can also specify a
+  `condition`, which is a logical expression that allows access to a resource
+  only if the expression evaluates to `true`. A condition can add constraints
+  based on attributes of the request, the resource, or both. To learn which
+  resources support conditions in their IAM policies, see the
+  [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
 
   **JSON example:**
 
@@ -47,7 +49,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
           },
           {
             "role": "roles/resourcemanager.organizationViewer",
-            "members": ["user:eve@example.com"],
+            "members": [
+              "user:eve@example.com"
+            ],
             "condition": {
               "title": "expirable access",
               "description": "Does not grant access after Sep 2020",
@@ -120,6 +124,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
 
       If a policy does not include any conditions, operations on that policy may
       specify any valid version or leave the field unset.
+
+      To learn which resources support conditions in their IAM policies, see the
+      [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling do
   ## Attributes
 
   *   `maxRunningTime` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum job running time, expressed in seconds. The field can
-      contain up to nine fractional digits, terminated by `s`. By default there
-      is no limit to the running time.
+      contain up to nine fractional digits, terminated by `s`. If not specified,
+      this field defaults to `604800s` (seven days).
 
       If the training job is still running after this duration, AI Platform
       Training cancels it.
@@ -44,15 +44,18 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling do
           maxRunningTime: 7200s
         ...
       ```
+  *   `maxWaitTime` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :maxRunningTime => String.t()
+          :maxRunningTime => String.t(),
+          :maxWaitTime => String.t()
         }
 
   field(:maxRunningTime)
+  field(:maxWaitTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling do

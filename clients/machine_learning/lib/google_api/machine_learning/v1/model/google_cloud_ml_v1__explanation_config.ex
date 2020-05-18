@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig d
   There are two feature attribution methods supported for TensorFlow models:
   integrated gradients and sampled Shapley.
   [Learn more about feature
-  attributions.](/ml-engine/docs/ai-explanations/overview)
+  attributions.](/ai-platform/prediction/docs/ai-explanations/overview)
 
   ## Attributes
 

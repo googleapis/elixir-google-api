@@ -27,8 +27,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   @doc """
   Performs explanation on the data in the request.
-  AI Platform implements a custom `explain` verb on top of an HTTP POST
-  method.
+
+  <div>{% dynamic include "/ai-platform/includes/___explain-request" %}</div>
 
   ## Parameters
 
@@ -441,6 +441,10 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -671,7 +675,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -749,7 +753,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -2501,6 +2505,10 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2729,7 +2737,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -2807,7 +2815,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
