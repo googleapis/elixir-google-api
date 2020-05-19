@@ -20,8 +20,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
   A CryptoKey represents a logical key that can be used for cryptographic
   operations.
 
-  A CryptoKey is made up of one or more versions, which
-  represent the actual key material used in cryptographic operations.
+  A CryptoKey is made up of zero or more versions,
+  which represent the actual key material used in cryptographic operations.
 
   ## Attributes
 
