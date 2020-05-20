@@ -52,6 +52,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
       on-demand VM and therefore won't be preempted).
       See [Preemptible VMs](https://cloud.google.com/preemptible-vms/) for more
       details.
+  *   `vmImage` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the image used by each VM.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -66,7 +67,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
           :maxConcurrentActions => String.t(),
           :minCpuPlatform => String.t(),
           :networkAccess => String.t(),
-          :reserved => boolean()
+          :reserved => boolean(),
+          :vmImage => String.t()
         }
 
   field(:accelerator,
@@ -82,6 +84,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   field(:minCpuPlatform)
   field(:networkAccess)
   field(:reserved)
+  field(:vmImage)
 end
 
 defimpl Poison.Decoder,
