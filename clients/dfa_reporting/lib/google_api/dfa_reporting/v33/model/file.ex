@@ -21,7 +21,7 @@ defmodule GoogleApi.DFAReporting.V33.Model.File do
 
   ## Attributes
 
-  *   `dateRange` (*type:* `GoogleApi.DFAReporting.V33.Model.DateRange.t`, *default:* `nil`) - 
+  *   `dateRange` (*type:* `GoogleApi.DFAReporting.V33.Model.DateRange.t`, *default:* `nil`) - The date range for which the file has report data. The date range will always be the absolute date range for which the report is run.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `fileName` (*type:* `String.t`, *default:* `nil`) - The filename of the file.
   *   `format` (*type:* `String.t`, *default:* `nil`) - The output format of the report. Only available once the file is available.
