@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_web_security_scanner, "~> 0.12"}]
+  [{:google_api_web_security_scanner, "~> 0.13"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/security-scanner/](https://cloud.google.com/security-scanner/).
+Product documentation is available at [https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/](https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_web_security_scanner](https://hexdocs.pm/google_api_web_security_scanner).

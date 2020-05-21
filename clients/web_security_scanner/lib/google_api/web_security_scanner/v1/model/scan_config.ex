@@ -23,12 +23,12 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanConfig do
 
   *   `authentication` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.Authentication.t`, *default:* `nil`) - The authentication configuration. If specified, service will use the
       authentication configuration during scanning.
-  *   `blacklistPatterns` (*type:* `list(String.t)`, *default:* `nil`) - The blacklist URL patterns as described in
-      https://cloud.google.com/security-scanner/docs/excluded-urls
+  *   `blacklistPatterns` (*type:* `list(String.t)`, *default:* `nil`) - The excluded URL patterns as described in
+      https://cloud.google.com/security-command-center/docs/how-to-use-web-security-scanner#excluding_urls
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The user provided display name of the ScanConfig.
-  *   `exportToSecurityCommandCenter` (*type:* `String.t`, *default:* `nil`) - Controls export of scan configurations and results to Cloud Security
+  *   `exportToSecurityCommandCenter` (*type:* `String.t`, *default:* `nil`) - Controls export of scan configurations and results to Security
       Command Center.
-  *   `managedScan` (*type:* `boolean()`, *default:* `nil`) - Whether the scan config is managed by Cloud Web Security Scanner, output
+  *   `managedScan` (*type:* `boolean()`, *default:* `nil`) - Whether the scan config is managed by Web Security Scanner, output
       only.
   *   `maxQps` (*type:* `integer()`, *default:* `nil`) - The maximum QPS during scanning. A valid value ranges from 5 to 20
       inclusively. If the field is unspecified or its value is set 0, server will
