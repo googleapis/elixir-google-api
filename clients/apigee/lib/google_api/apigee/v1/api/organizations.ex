@@ -6303,6 +6303,10 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of debug sessions to return. The page size defaults
+          to 25.
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned from a previous ListDebugSessions call, that you
+          can use to retrieve the next page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -6336,7 +6340,9 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =
