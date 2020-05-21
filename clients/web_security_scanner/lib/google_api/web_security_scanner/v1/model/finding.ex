@@ -27,7 +27,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Finding do
   *   `finalUrl` (*type:* `String.t`, *default:* `nil`) - Output only. The URL where the browser lands when the vulnerability is detected.
   *   `findingType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the Finding.
       Detailed and up-to-date information on findings can be found here:
-      https://cloud.google.com/security-scanner/docs/scan-result-details
+      https://cloud.google.com/security-command-center/docs/how-to-remediate-web-security-scanner-findings
   *   `form` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.Form.t`, *default:* `nil`) - Output only. An addon containing information reported for a vulnerability with an HTML
       form, if any.
   *   `frameUrl` (*type:* `String.t`, *default:* `nil`) - Output only. If the vulnerability was originated from nested IFrame, the immediate
