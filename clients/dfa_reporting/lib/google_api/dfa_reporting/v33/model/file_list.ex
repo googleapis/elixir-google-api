@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DFAReporting.V33.Model.FileList do
   @moduledoc """
-
+  List of files for a report.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
-  *   `items` (*type:* `list(GoogleApi.DFAReporting.V33.Model.File.t)`, *default:* `nil`) - 
+  *   `items` (*type:* `list(GoogleApi.DFAReporting.V33.Model.File.t)`, *default:* `nil`) - The files returned in this response.
   *   `kind` (*type:* `String.t`, *default:* `dfareporting#fileList`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#fileList".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token used to page through files. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted.
   """

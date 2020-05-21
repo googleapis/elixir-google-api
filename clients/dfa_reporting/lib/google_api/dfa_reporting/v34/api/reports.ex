@@ -532,8 +532,8 @@ defmodule GoogleApi.DFAReporting.V34.Api.Reports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V34.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
-  *   `report_id` (*type:* `String.t`) - The ID of the report.
+  *   `profile_id` (*type:* `String.t`) - The DFA profile ID.
+  *   `report_id` (*type:* `String.t`) - The ID of the parent report.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.

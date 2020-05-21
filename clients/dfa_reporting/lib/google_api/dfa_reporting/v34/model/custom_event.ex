@@ -21,12 +21,12 @@ defmodule GoogleApi.DFAReporting.V34.Model.CustomEvent do
 
   ## Attributes
 
-  *   `annotateClickEvent` (*type:* `GoogleApi.DFAReporting.V34.Model.CustomEventClickAnnotation.t`, *default:* `nil`) - Annotate an impression. This field is mutually exclusive with insertEvent and annotateImpressionEvent. This or insertEvent and annotateImpressionEvent is a required field.
+  *   `annotateClickEvent` (*type:* `GoogleApi.DFAReporting.V34.Model.CustomEventClickAnnotation.t`, *default:* `nil`) - Annotate a click event. This field is mutually exclusive with insertEvent and annotateImpressionEvent. This or insertEvent and annotateImpressionEvent is a required field.
   *   `annotateImpressionEvent` (*type:* `GoogleApi.DFAReporting.V34.Model.CustomEventImpressionAnnotation.t`, *default:* `nil`) - Annotate an impression. This field is mutually exclusive with insertEvent and annotateClickEvent. This or insertEvent and annotateClickEvent is a required field.
   *   `customVariables` (*type:* `list(GoogleApi.DFAReporting.V34.Model.CustomVariable.t)`, *default:* `nil`) - Custom variables associated with the event.
   *   `eventType` (*type:* `String.t`, *default:* `nil`) - The type of event. If INSERT, the fields in insertEvent need to be populated. If ANNOTATE, the fields in either annotateClickEvent or annotateImpressionEvent need to be populated.
   *   `floodlightConfigurationId` (*type:* `String.t`, *default:* `nil`) - Floodlight configuration ID of the advertiser the event is linked to. This is a required field.
-  *   `insertEvent` (*type:* `GoogleApi.DFAReporting.V34.Model.CustomEventInsert.t`, *default:* `nil`) - Annotate an impression. This field is mutually exclusive with annotateClickEvent and annotateImpressionEvent. This or annotateClickEvent and annotateImpressionEvent is a required field.
+  *   `insertEvent` (*type:* `GoogleApi.DFAReporting.V34.Model.CustomEventInsert.t`, *default:* `nil`) - Insert custom event. This field is mutually exclusive with annotateClickEvent and annotateImpressionEvent. This or annotateClickEvent and annotateImpressionEvent is a required field.
   *   `kind` (*type:* `String.t`, *default:* `dfareporting#customEvent`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#customEvent".
   *   `ordinal` (*type:* `String.t`, *default:* `nil`) - The ordinal of this custom event. This is a required field.
   *   `timestampMicros` (*type:* `String.t`, *default:* `nil`) - The timestamp of this custom event, in Unix epoch micros. This is a required field.
