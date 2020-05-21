@@ -23,7 +23,7 @@ defmodule GoogleApi.Tasks.V1.Model.Tasks do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `items` (*type:* `list(GoogleApi.Tasks.V1.Model.Task.t)`, *default:* `nil`) - Collection of tasks.
-  *   `kind` (*type:* `String.t`, *default:* `tasks#tasks`) - Type of the resource. This is always "tasks#tasks".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Type of the resource. This is always "tasks#tasks".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to access the next page of this result.
   """
 
