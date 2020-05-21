@@ -34,8 +34,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
       is a project, folder, or organization, the ancestry path starts from the
       asset itself.
 
-      For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
-  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of the asset. For example: "compute.googleapis.com/Disk"
+      Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of the asset. Example: "compute.googleapis.com/Disk"
 
       See [Supported asset
       types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
@@ -49,7 +49,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
       the hierarchy. See
       [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
       more information.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The full name of the asset. For example:
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The full name of the asset. Example:
       "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
 
       See [Resource

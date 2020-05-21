@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ExportAssetsRequest do
 
   ## Attributes
 
-  *   `assetTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of asset types of which to take a snapshot for. For example:
+  *   `assetTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of asset types of which to take a snapshot for. Example:
       "compute.googleapis.com/Disk". If specified, only matching assets will be
       returned. See [Introduction to Cloud Asset
       Inventory](https://cloud.google.com/asset-inventory/docs/overview)
