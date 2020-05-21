@@ -125,7 +125,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The resource name of the admin project(containing project and location),
       e.g.:
-        "projects/myproject/locations/US".
+        `projects/myproject/locations/US`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -291,7 +291,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. Resource name of the parent reservation. E.g.,
-         projects/myproject/locations/US
+         `projects/myproject/locations/US`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -370,7 +370,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. Resource name of the capacity commitment to delete. E.g.,
-         projects/myproject/locations/US/capacityCommitments/123
+         `projects/myproject/locations/US/capacityCommitments/123`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -440,7 +440,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. Resource name of the capacity commitment to retrieve. E.g.,
-         projects/myproject/locations/US/capacityCommitments/123
+         `projects/myproject/locations/US/capacityCommitments/123`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -512,7 +512,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. Resource name of the parent reservation. E.g.,
-         projects/myproject/locations/US
+         `projects/myproject/locations/US`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -594,7 +594,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Parent resource that identifies admin project and location e.g.,
-      projects/myproject/locations/us
+       `projects/myproject/locations/us`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -757,7 +757,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. The resource name e.g.,:
-        projects/myproject/locations/US/capacityCommitments/123
+       `projects/myproject/locations/US/capacityCommitments/123`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1048,7 +1048,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name containing project and location, e.g.:
-        "projects/myproject/locations/US"
+        `projects/myproject/locations/US`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
