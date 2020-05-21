@@ -23,6 +23,7 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransactionIdentifiers do
 
   *   `adjustmentId` (*type:* `String.t`, *default:* `nil`) - The identifier of the adjustments, if it is available.
   *   `merchantOrderId` (*type:* `String.t`, *default:* `nil`) - The merchant provided order ID.
+  *   `orderItemId` (*type:* `String.t`, *default:* `nil`) - The identifier of the item.
   *   `settlementEntryId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the settlement transaction entry.
   *   `shipmentIds` (*type:* `list(String.t)`, *default:* `nil`) - The shipment ids for the item.
   *   `transactionId` (*type:* `String.t`, *default:* `nil`) - The Google transaction ID.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransactionIdentifiers do
   @type t :: %__MODULE__{
           :adjustmentId => String.t(),
           :merchantOrderId => String.t(),
+          :orderItemId => String.t(),
           :settlementEntryId => String.t(),
           :shipmentIds => list(String.t()),
           :transactionId => String.t()
@@ -40,6 +42,7 @@ defmodule GoogleApi.Content.V21.Model.SettlementTransactionIdentifiers do
 
   field(:adjustmentId)
   field(:merchantOrderId)
+  field(:orderItemId)
   field(:settlementEntryId)
   field(:shipmentIds, type: :list)
   field(:transactionId)
