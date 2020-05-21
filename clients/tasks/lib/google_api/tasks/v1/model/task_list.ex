@@ -23,10 +23,11 @@ defmodule GoogleApi.Tasks.V1.Model.TaskList do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Task list identifier.
-  *   `kind` (*type:* `String.t`, *default:* `tasks#taskList`) - Type of the resource. This is always "tasks#taskList".
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL pointing to this task list. Used to retrieve, update, or delete this task list.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Type of the resource. This is always "tasks#taskList".
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL pointing to this task list. Used to retrieve, update, or delete this
+      task list.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the task list.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Last modification time of the task list (as a RFC 3339 timestamp).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Last modification time of the task list (as a RFC 3339 timestamp).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,7 @@ defmodule GoogleApi.Tasks.V1.Model.TaskList do
           :kind => String.t(),
           :selfLink => String.t(),
           :title => String.t(),
-          :updated => DateTime.t()
+          :updated => String.t()
         }
 
   field(:etag)
@@ -45,7 +46,7 @@ defmodule GoogleApi.Tasks.V1.Model.TaskList do
   field(:kind)
   field(:selfLink)
   field(:title)
-  field(:updated, as: DateTime)
+  field(:updated)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Tasks.V1.Model.TaskList do
