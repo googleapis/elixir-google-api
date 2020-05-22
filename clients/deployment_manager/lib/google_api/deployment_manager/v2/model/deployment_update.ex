@@ -22,7 +22,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.DeploymentUpdate do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. An optional user-provided description of the deployment after the current update has been applied.
-  *   `labels` (*type:* `list(GoogleApi.DeploymentManager.V2.Model.DeploymentUpdateLabelEntry.t)`, *default:* `nil`) - Output only. Map of labels; provided by the client when the resource is created or updated. Specifically: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: [a-z]([-a-z0-9]*[a-z0-9])? Label values must be between 0 and 63 characters long and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?
+  *   `labels` (*type:* `list(GoogleApi.DeploymentManager.V2.Model.DeploymentUpdateLabelEntry.t)`, *default:* `nil`) - Output only. Map of labels; provided by the client when the resource is created or updated. Specifically: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?` Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
   *   `manifest` (*type:* `String.t`, *default:* `nil`) - Output only. URL of the manifest representing the update configuration of this deployment.
   """
 

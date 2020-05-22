@@ -25,12 +25,11 @@ defmodule GoogleApi.DeploymentManager.V2.Model.LogConfigCounterOptions do
 
   Supported field names: - "authority", which is "[token]" if IAMContext.token is present, otherwise the value of IAMContext.authority_selector if present, and otherwise a representation of IAMContext.principal; or - "iam_principal", a representation of IAMContext.principal even if a token or authority selector is present; or - "" (empty string), resulting in a counter with no fields.
 
-  Examples: counter { metric: "/debug_access_count" field: "iam_principal" } ==> increment counter /iam/policy/backend_debug_access_count {iam_principal=[value of IAMContext.principal]}
-
-  At this time we do not support multiple field names (though this may be supported in the future).
+  Examples: counter { metric: "/debug_access_count" field: "iam_principal" } ==> increment counter /iam/policy/debug_access_count {iam_principal=[value of IAMContext.principal]}
 
   ## Attributes
 
+  *   `customFields` (*type:* `list(GoogleApi.DeploymentManager.V2.Model.LogConfigCounterOptionsCustomField.t)`, *default:* `nil`) - Custom fields.
   *   `field` (*type:* `String.t`, *default:* `nil`) - The field value to attribute.
   *   `metric` (*type:* `String.t`, *default:* `nil`) - The metric to update.
   """
@@ -38,9 +37,16 @@ defmodule GoogleApi.DeploymentManager.V2.Model.LogConfigCounterOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customFields =>
+            list(GoogleApi.DeploymentManager.V2.Model.LogConfigCounterOptionsCustomField.t()),
           :field => String.t(),
           :metric => String.t()
         }
+
+  field(:customFields,
+    as: GoogleApi.DeploymentManager.V2.Model.LogConfigCounterOptionsCustomField,
+    type: :list
+  )
 
   field(:field)
   field(:metric)
