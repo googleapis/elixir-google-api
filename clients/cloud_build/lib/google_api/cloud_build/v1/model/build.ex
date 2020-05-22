@@ -83,6 +83,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
       granularity. If this amount of time elapses, work on the build will cease
       and the build status will be `TIMEOUT`.
 
+      `timeout` starts ticking from `startTime`.
+
       Default time is ten minutes.
   *   `timing` (*type:* `%{optional(String.t) => GoogleApi.CloudBuild.V1.Model.TimeSpan.t}`, *default:* `nil`) - Output only. Stores timing information for phases of the build. Valid keys
       are:
