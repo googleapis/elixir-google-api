@@ -24,7 +24,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ResourceUpdate do
   *   `accessControl` (*type:* `GoogleApi.DeploymentManager.V2.Model.ResourceAccessControl.t`, *default:* `nil`) - The Access Control Policy to set on this resource after updating the resource itself.
   *   `error` (*type:* `GoogleApi.DeploymentManager.V2.Model.ResourceUpdateError.t`, *default:* `nil`) - Output only. If errors are generated during update of the resource, this field will be populated.
   *   `finalProperties` (*type:* `String.t`, *default:* `nil`) - Output only. The expanded properties of the resource with reference values expanded. Returned as serialized YAML.
-  *   `intent` (*type:* `String.t`, *default:* `nil`) - Output only. The intent of the resource: PREVIEW, UPDATE, or CANCEL.
+  *   `intent` (*type:* `String.t`, *default:* `nil`) - Output only. The intent of the resource: `PREVIEW`, `UPDATE`, or `CANCEL`.
   *   `manifest` (*type:* `String.t`, *default:* `nil`) - Output only. URL of the manifest representing the update configuration of this resource.
   *   `properties` (*type:* `String.t`, *default:* `nil`) - Output only. The set of updated properties for this resource, before references are expanded. Returned as serialized YAML.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the resource.
