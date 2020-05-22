@@ -22,7 +22,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZonePeeringConfig do
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZonePeeringConfig`) - Identifies what kind of resource this is. Value: the fixed string "dns#managedZonePeeringConfig".
-  *   `targetNetwork` (*type:* `GoogleApi.DNS.V1.Model.ManagedZonePeeringConfigTargetNetwork.t`, *default:* `nil`) - The network with which to peer.
+  *   `targetNetwork` (*type:* `GoogleApi.DNS.V1.Model.ManagedZonePeeringConfigTargetNetwork.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

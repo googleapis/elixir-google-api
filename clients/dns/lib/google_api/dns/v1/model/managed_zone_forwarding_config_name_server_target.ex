@@ -21,17 +21,20 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfigNameServerTarget do
 
   ## Attributes
 
-  *   `ipv4Address` (*type:* `String.t`, *default:* `nil`) - IPv4 address of a target name server.
+  *   `forwardingPath` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ipv4Address` (*type:* `String.t`, *default:* `nil`) - 
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneForwardingConfigNameServerTarget`) - Identifies what kind of resource this is. Value: the fixed string "dns#managedZoneForwardingConfigNameServerTarget".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :forwardingPath => String.t(),
           :ipv4Address => String.t(),
           :kind => String.t()
         }
 
+  field(:forwardingPath)
   field(:ipv4Address)
   field(:kind)
 end
