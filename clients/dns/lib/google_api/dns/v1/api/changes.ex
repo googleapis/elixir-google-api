@@ -26,13 +26,13 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Atomically update the ResourceRecordSet collection.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -41,7 +41,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
       *   `:body` (*type:* `GoogleApi.DNS.V1.Model.Change.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -81,14 +81,14 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   end
 
   @doc """
-  Fetch the representation of an existing Change.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
-  *   `change_id` (*type:* `String.t`) - The identifier of the requested change, from a previous ResourceRecordSetsChangeResponse.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
+  *   `change_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -97,7 +97,7 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -149,13 +149,13 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
   end
 
   @doc """
-  Enumerate Changes to a ResourceRecordSet collection.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -164,10 +164,10 @@ defmodule GoogleApi.DNS.V1.Api.Changes do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
-      *   `:sortBy` (*type:* `String.t`) - Sorting criterion. The only supported value is change sequence.
-      *   `:sortOrder` (*type:* `String.t`) - Sorting order direction: 'ascending' or 'descending'.
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:pageToken` (*type:* `String.t`) - 
+      *   `:sortBy` (*type:* `String.t`) - 
+      *   `:sortOrder` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
