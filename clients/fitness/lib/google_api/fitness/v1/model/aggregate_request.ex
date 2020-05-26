@@ -21,14 +21,32 @@ defmodule GoogleApi.Fitness.V1.Model.AggregateRequest do
 
   ## Attributes
 
-  *   `aggregateBy` (*type:* `list(GoogleApi.Fitness.V1.Model.AggregateBy.t)`, *default:* `nil`) - The specification of data to be aggregated. At least one aggregateBy spec must be provided. All data that is specified will be aggregated using the same bucketing criteria. There will be one dataset in the response for every aggregateBy spec.
-  *   `bucketByActivitySegment` (*type:* `GoogleApi.Fitness.V1.Model.BucketByActivity.t`, *default:* `nil`) - Specifies that data be aggregated each activity segment recored for a user. Similar to bucketByActivitySegment, but bucketing is done for each activity segment rather than all segments of the same type. Mutually exclusive of other bucketing specifications.
-  *   `bucketByActivityType` (*type:* `GoogleApi.Fitness.V1.Model.BucketByActivity.t`, *default:* `nil`) - Specifies that data be aggregated by the type of activity being performed when the data was recorded. All data that was recorded during a certain activity type (for the given time range) will be aggregated into the same bucket. Data that was recorded while the user was not active will not be included in the response. Mutually exclusive of other bucketing specifications.
-  *   `bucketBySession` (*type:* `GoogleApi.Fitness.V1.Model.BucketBySession.t`, *default:* `nil`) - Specifies that data be aggregated by user sessions. Data that does not fall within the time range of a session will not be included in the response. Mutually exclusive of other bucketing specifications.
-  *   `bucketByTime` (*type:* `GoogleApi.Fitness.V1.Model.BucketByTime.t`, *default:* `nil`) - Specifies that data be aggregated by a single time interval. Mutually exclusive of other bucketing specifications.
-  *   `endTimeMillis` (*type:* `String.t`, *default:* `nil`) - The end of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive.
+  *   `aggregateBy` (*type:* `list(GoogleApi.Fitness.V1.Model.AggregateBy.t)`, *default:* `nil`) - The specification of data to be aggregated. At least one aggregateBy spec
+      must be provided. All data that is specified will be aggregated using the
+      same bucketing criteria. There will be one dataset in the response for
+      every aggregateBy spec.
+  *   `bucketByActivitySegment` (*type:* `GoogleApi.Fitness.V1.Model.BucketByActivity.t`, *default:* `nil`) - Specifies that data be aggregated each activity segment recored for a user.
+      Similar to bucketByActivitySegment, but bucketing is done for each activity
+      segment rather than all segments of the same type. Mutually exclusive of
+      other bucketing specifications.
+  *   `bucketByActivityType` (*type:* `GoogleApi.Fitness.V1.Model.BucketByActivity.t`, *default:* `nil`) - Specifies that data be aggregated by the type of activity being performed
+      when the data was recorded. All data that was recorded during a certain
+      activity type (for the given time range) will be aggregated into the same
+      bucket. Data that was recorded while the user was not active will not be
+      included in the response. Mutually exclusive of other bucketing
+      specifications.
+  *   `bucketBySession` (*type:* `GoogleApi.Fitness.V1.Model.BucketBySession.t`, *default:* `nil`) - Specifies that data be aggregated by user sessions. Data that does not fall
+      within the time range of a session will not be included in the response.
+      Mutually exclusive of other bucketing specifications.
+  *   `bucketByTime` (*type:* `GoogleApi.Fitness.V1.Model.BucketByTime.t`, *default:* `nil`) - Specifies that data be aggregated by a single time interval. Mutually
+      exclusive of other bucketing specifications.
+  *   `endTimeMillis` (*type:* `String.t`, *default:* `nil`) - The end of a window of time. Data that intersects with this time
+      window will be aggregated. The time is in milliseconds since epoch,
+      inclusive.
   *   `filteredDataQualityStandard` (*type:* `list(String.t)`, *default:* `nil`) - DO NOT POPULATE THIS FIELD. It is ignored.
-  *   `startTimeMillis` (*type:* `String.t`, *default:* `nil`) - The start of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive.
+  *   `startTimeMillis` (*type:* `String.t`, *default:* `nil`) - The start of a window of time. Data that intersects with this time
+      window will be aggregated. The time is in milliseconds since epoch,
+      inclusive.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,16 +17,23 @@
 
 defmodule GoogleApi.Fitness.V1.Model.Session do
   @moduledoc """
-  Sessions contain metadata, such as a user-friendly name and time interval information.
+  Sessions contain metadata, such as a user-friendly name and time interval
+  information.
 
   ## Attributes
 
-  *   `activeTimeMillis` (*type:* `String.t`, *default:* `nil`) - Session active time. While start_time_millis and end_time_millis define the full session time, the active time can be shorter and specified by active_time_millis. If the inactive time during the session is known, it should also be inserted via a com.google.activity.segment data point with a STILL activity value
+  *   `activeTimeMillis` (*type:* `String.t`, *default:* `nil`) - Session active time. While start_time_millis and end_time_millis define
+      the full session time, the active time can be shorter and specified by
+      active_time_millis.
+      If the inactive time during the session is known, it should also be
+      inserted via a com.google.activity.segment data point with a STILL
+      activity value
   *   `activityType` (*type:* `integer()`, *default:* `nil`) - The type of activity this session represents.
   *   `application` (*type:* `GoogleApi.Fitness.V1.Model.Application.t`, *default:* `nil`) - The application that created the session.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description for this session.
   *   `endTimeMillis` (*type:* `String.t`, *default:* `nil`) - An end time, in milliseconds since epoch, inclusive.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - A client-generated identifier that is unique across all sessions owned by this particular user.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A client-generated identifier that is unique across all sessions owned by
+      this particular user.
   *   `modifiedTimeMillis` (*type:* `String.t`, *default:* `nil`) - A timestamp that indicates when the session was last modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A human readable name of the session.
   *   `startTimeMillis` (*type:* `String.t`, *default:* `nil`) - A start time, in milliseconds since epoch, inclusive.

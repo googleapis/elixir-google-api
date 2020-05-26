@@ -22,7 +22,8 @@ defmodule GoogleApi.Fitness.V1.Model.DataType do
   ## Attributes
 
   *   `field` (*type:* `list(GoogleApi.Fitness.V1.Model.DataTypeField.t)`, *default:* `nil`) - A field represents one dimension of a data type.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Each data type has a unique, namespaced, name. All data types in the com.google namespace are shared as part of the platform.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Each data type has a unique, namespaced, name. All data types in the
+      com.google namespace are shared as part of the platform.
   """
 
   use GoogleApi.Gax.ModelBase

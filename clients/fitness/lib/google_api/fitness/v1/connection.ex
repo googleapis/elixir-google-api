@@ -79,5 +79,5 @@ defmodule GoogleApi.Fitness.V1.Connection do
       "https://www.googleapis.com/auth/fitness.reproductive_health.write"
     ],
     otp_app: :google_api_fitness,
-    base_url: "https://www.googleapis.com/fitness/v1/users/"
+    base_url: "https://www.googleapis.com/"
 end

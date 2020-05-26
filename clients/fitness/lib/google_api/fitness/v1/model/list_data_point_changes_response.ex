@@ -22,9 +22,12 @@ defmodule GoogleApi.Fitness.V1.Model.ListDataPointChangesResponse do
   ## Attributes
 
   *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - The data stream ID of the data source with data point changes.
-  *   `deletedDataPoint` (*type:* `list(GoogleApi.Fitness.V1.Model.DataPoint.t)`, *default:* `nil`) - Deleted data points for the user. Note, for modifications this should be parsed before handling insertions.
+  *   `deletedDataPoint` (*type:* `list(GoogleApi.Fitness.V1.Model.DataPoint.t)`, *default:* `nil`) - Deleted data points for the user. Note, for modifications this should be
+      parsed before handling insertions.
   *   `insertedDataPoint` (*type:* `list(GoogleApi.Fitness.V1.Model.DataPoint.t)`, *default:* `nil`) - Inserted data points for the user.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, which is used to page through large result sets.
+      Provide this value in a subsequent request to return the next page of
+      results.
   """
 
   use GoogleApi.Gax.ModelBase
