@@ -21,7 +21,8 @@ defmodule GoogleApi.Fitness.V1.Model.BucketBySession do
 
   ## Attributes
 
-  *   `minDurationMillis` (*type:* `String.t`, *default:* `nil`) - Specifies that only sessions of duration longer than minDurationMillis are considered and used as a container for aggregated data.
+  *   `minDurationMillis` (*type:* `String.t`, *default:* `nil`) - Specifies that only sessions of duration longer than minDurationMillis are
+      considered and used as a container for aggregated data.
   """
 
   use GoogleApi.Gax.ModelBase
