@@ -30,14 +30,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FieldMetadata do
       can be matched by "Patient.Address.String". Path also supports partial
       matching. For example, "Patient.Address.city" can be matched by
       "Address.city" (Patient omitted). Partial matching and type matching
-      can be combined, for example "Patient.Address.city" can be matched by
+      can be combined. For example, "Patient.Address.city" can be matched by
       "Address.String". For "choice" types (those defined in the FHIR spec
       with the form: field[x]), use two separate components. For example,
       "deceasedAge.unit" is matched by "Deceased.Age.unit". Supported types
       are: AdministrativeGenderCode, Code, Date, DateTime, Decimal,
       HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml.
-      The sub-type for HumanName(for example HumanName.given,
-      HumanName.family) can be omitted.
+      The sub-type for HumanName, such as HumanName.given or
+      HumanName.family, can be omitted.
   """
 
   use GoogleApi.Gax.ModelBase

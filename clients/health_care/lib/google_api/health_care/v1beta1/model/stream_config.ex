@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.StreamConfig do
   @moduledoc """
-  This structure contains configuration for streaming FHIR export.
+  Contains configuration for streaming FHIR export.
 
   ## Attributes
 

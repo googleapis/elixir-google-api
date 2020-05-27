@@ -18,10 +18,10 @@
 defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails do
   @moduledoc """
   Error response of importing resources.
-  This structure will be included in the
+  This structure is included in the
   error
-  details to describe the detailed error. It will
-  only be included when the operation finishes with some failure.
+  details to describe the detailed error
+  after the operation finishes with some failure.
 
   ## Attributes
 
