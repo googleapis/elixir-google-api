@@ -17,16 +17,25 @@
 
 defmodule GoogleApi.YouTube.V3.Model.Subscription do
   @moduledoc """
-  A subscription resource contains information about a YouTube user subscription. A subscription notifies a user when new videos are added to a channel or when another user takes one of several actions on YouTube, such as uploading a video, rating a video, or commenting on a video.
+  A <code><strong>subscription</strong></code> resource contains information
+  about a YouTube user subscription.  A subscription notifies a user when new
+  videos are added to a channel or when another user takes one of several
+  actions on YouTube, such as uploading a video, rating a video, or commenting
+  on a video.
 
   ## Attributes
 
-  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.SubscriptionContentDetails.t`, *default:* `nil`) - The contentDetails object contains basic statistics about the subscription.
+  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.SubscriptionContentDetails.t`, *default:* `nil`) - The <code>contentDetails</code> object contains basic statistics about the
+      subscription.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the subscription.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#subscription`) - Identifies what kind of resource this is. Value: the fixed string "youtube#subscription".
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.SubscriptionSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the subscription, including its title and the channel that the user subscribed to.
-  *   `subscriberSnippet` (*type:* `GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet.t`, *default:* `nil`) - The subscriberSnippet object contains basic details about the sbuscriber.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#subscription`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#subscription"</code>.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.SubscriptionSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the
+      subscription, including its title and the channel that the user subscribed
+      to.
+  *   `subscriberSnippet` (*type:* `GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet.t`, *default:* `nil`) - The <code>subscriberSnippet</code> object contains basic details about the
+      subscriber.
   """
 
   use GoogleApi.Gax.ModelBase

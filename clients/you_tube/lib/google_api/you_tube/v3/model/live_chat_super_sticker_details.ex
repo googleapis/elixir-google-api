@@ -25,7 +25,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails do
   *   `amountMicros` (*type:* `String.t`, *default:* `nil`) - The amount purchased by the user, in micros (1,750,000 micros = 1.75).
   *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency in which the purchase was made.
   *   `superStickerMetadata` (*type:* `GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t`, *default:* `nil`) - Information about the Super Sticker.
-  *   `tier` (*type:* `integer()`, *default:* `nil`) - The tier in which the amount belongs. Lower amounts belong to lower tiers. The lowest tier is 1.
+  *   `tier` (*type:* `integer()`, *default:* `nil`) - The tier in which the amount belongs. Lower amounts belong to lower
+      tiers. The lowest tier is <code>1</code>.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,9 +23,12 @@ defmodule GoogleApi.YouTube.V3.Model.I18nRegionListResponse do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
-  *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.I18nRegion.t)`, *default:* `nil`) - A list of regions where YouTube is available. In this map, the i18n region ID is the map key, and its value is the corresponding i18nRegion resource.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#i18nRegionListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#i18nRegionListResponse".
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
+  *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.I18nRegion.t)`, *default:* `nil`) - A list of regions where YouTube is available. In this map, the i18n region
+      ID is the map key, and its value is the corresponding
+      <code>i18nRegion</code> resource.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#i18nRegionListResponse`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#i18nRegionListResponse"</code>.
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

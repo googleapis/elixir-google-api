@@ -21,7 +21,11 @@ defmodule GoogleApi.YouTube.V3.Model.VideoSuggestionsTagSuggestion do
 
   ## Attributes
 
-  *   `categoryRestricts` (*type:* `list(String.t)`, *default:* `nil`) - A set of video categories for which the tag is relevant. You can use this information to display appropriate tag suggestions based on the video category that the video uploader associates with the video. By default, tag suggestions are relevant for all categories if there are no restricts defined for the keyword.
+  *   `categoryRestricts` (*type:* `list(String.t)`, *default:* `nil`) - A set of video categories for which the tag is relevant. You can use this
+      information to display appropriate tag suggestions based on the video
+      category that the video uploader associates with the video. By default,
+      tag suggestions are relevant for all categories if there are no restricts
+      defined for the keyword.
   *   `tag` (*type:* `String.t`, *default:* `nil`) - The keyword tag suggested for the video.
   """
 

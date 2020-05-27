@@ -24,7 +24,9 @@ defmodule GoogleApi.YouTube.V3.Model.SponsorSnippet do
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - The id of the channel being sponsored.
   *   `cumulativeDurationMonths` (*type:* `integer()`, *default:* `nil`) - The cumulative time a user has been a sponsor in months.
   *   `sponsorDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t`, *default:* `nil`) - Details about the sponsor.
-  *   `sponsorSince` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the user became a sponsor. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+  *   `sponsorSince` (*type:* `String.t`, *default:* `nil`) - The date and time when the user became a sponsor. The value is
+      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      (`YYYY-MM-DDThh:mm:ss.sZ`) format.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +35,13 @@ defmodule GoogleApi.YouTube.V3.Model.SponsorSnippet do
           :channelId => String.t(),
           :cumulativeDurationMonths => integer(),
           :sponsorDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t(),
-          :sponsorSince => DateTime.t()
+          :sponsorSince => String.t()
         }
 
   field(:channelId)
   field(:cumulativeDurationMonths)
   field(:sponsorDetails, as: GoogleApi.YouTube.V3.Model.ChannelProfileDetails)
-  field(:sponsorSince, as: DateTime)
+  field(:sponsorSince)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.SponsorSnippet do

@@ -21,8 +21,10 @@ defmodule GoogleApi.YouTube.V3.Model.AccessPolicy do
 
   ## Attributes
 
-  *   `allowed` (*type:* `boolean()`, *default:* `nil`) - The value of allowed indicates whether the access to the policy is allowed or denied by default.
-  *   `exception` (*type:* `list(String.t)`, *default:* `nil`) - A list of region codes that identify countries where the default policy do not apply.
+  *   `allowed` (*type:* `boolean()`, *default:* `nil`) - The value of <code>allowed</code> indicates whether the access to the
+      policy is allowed or denied by default.
+  *   `exception` (*type:* `list(String.t)`, *default:* `nil`) - A list of region codes that identify countries where the default policy do
+      not apply.
   """
 
   use GoogleApi.Gax.ModelBase

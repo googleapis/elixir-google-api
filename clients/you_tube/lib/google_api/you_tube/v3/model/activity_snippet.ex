@@ -17,16 +17,30 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ActivitySnippet do
   @moduledoc """
-  Basic details about an activity, including title, description, thumbnails, activity type and group.
+  Basic details about an activity, including title, description, thumbnails,
+  activity type and group.
+  Next ID: 12
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel associated with the activity.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel associated
+      with the activity.
   *   `channelTitle` (*type:* `String.t`, *default:* `nil`) - Channel title for the channel responsible for this activity
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the resource primarily associated with the activity.
-  *   `groupId` (*type:* `String.t`, *default:* `nil`) - The group ID associated with the activity. A group ID identifies user events that are associated with the same user and resource. For example, if a user rates a video and marks the same video as a favorite, the entries for those events would have the same group ID in the user's activity feed. In your user interface, you can avoid repetition by grouping events with the same groupId value.
-  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the video was uploaded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the resource that is primarily associated with the activity. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
+      @mutable youtube.activities.insert
+  *   `groupId` (*type:* `String.t`, *default:* `nil`) - The group ID associated with the activity. A group ID identifies user
+      events that are associated with the same user and resource. For example,
+      if a user rates a video and marks the same video as a favorite, the
+      entries for those events would have the same group ID in the user's
+      activity feed. In your user interface, you can avoid repetition by
+      grouping events with the same <code>groupId</code> value.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the video was uploaded. The value is specified
+      in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the resource that is primarily
+      associated with the activity. For each object in the map, the key is the
+      name of the thumbnail image, and the value is an object that contains
+      other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the resource primarily associated with the activity.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of activity that the resource describes.
   """
@@ -38,7 +52,7 @@ defmodule GoogleApi.YouTube.V3.Model.ActivitySnippet do
           :channelTitle => String.t(),
           :description => String.t(),
           :groupId => String.t(),
-          :publishedAt => DateTime.t(),
+          :publishedAt => String.t(),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
           :title => String.t(),
           :type => String.t()
@@ -48,7 +62,7 @@ defmodule GoogleApi.YouTube.V3.Model.ActivitySnippet do
   field(:channelTitle)
   field(:description)
   field(:groupId)
-  field(:publishedAt, as: DateTime)
+  field(:publishedAt)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)
   field(:type)

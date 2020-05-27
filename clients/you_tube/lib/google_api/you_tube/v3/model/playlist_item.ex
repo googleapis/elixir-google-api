@@ -17,25 +17,49 @@
 
 defmodule GoogleApi.YouTube.V3.Model.PlaylistItem do
   @moduledoc """
-  A playlistItem resource identifies another resource, such as a video, that is included in a playlist. In addition, the playlistItem  resource contains details about the included resource that pertain specifically to how that resource is used in that playlist.
-
-  YouTube uses playlists to identify special collections of videos for a channel, such as:  
-  - uploaded videos 
-  - favorite videos 
-  - positively rated (liked) videos 
-  - watch history 
-  - watch later  To be more specific, these lists are associated with a channel, which is a collection of a person, group, or company's videos, playlists, and other YouTube information.
-
-  You can retrieve the playlist IDs for each of these lists from the  channel resource  for a given channel. You can then use the   playlistItems.list method to retrieve any of those lists. You can also add or remove items from those lists by calling the   playlistItems.insert and   playlistItems.delete methods. For example, if a user gives a positive rating to a video, you would insert that video into the liked videos playlist for that user's channel.
+  A <code><strong>playlistItem</strong></code> resource identifies
+  another resource, such as a video, that is included in a playlist. In
+  addition, the <code>playlistItem </code> resource contains details
+  about the included resource that pertain specifically to how that
+  resource is used in that playlist.<br/><br/> YouTube uses playlists to
+  identify special collections of videos for a channel, such as:
+    <ul>
+      <li>uploaded videos</li>
+      <li>favorite videos</li>
+      <li>positively rated (liked) videos</li>
+      <li>watch history</li>
+      <li>watch later</li>
+    </ul>
+   To be more specific, these lists are associated with a channel, which
+  is a collection of a person, group, or company's videos, playlists,
+  and other YouTube information.
+  <br/><br/>
+   You can retrieve the playlist IDs for each of these lists from the
+  <code> <a href=\\"/youtube/v3/docs/channels\\">channel resource</a>
+  </code> for a given channel. You can then use the <code> <a
+  href=\\"/youtube/v3/docs/playlistItems/list\\">
+  playlistItems.list</a></code> method to retrieve any of those
+  lists. You can also add or remove items from those lists by calling
+  the <code> <a href=\\"/youtube/v3/docs/playlistItems/insert\\">
+  playlistItems.insert</a></code> and <code> <a
+  href=\\"/youtube/v3/docs/playlistItems/delete\\">
+  playlistItems.delete</a></code> methods. For example, if a user gives
+  a positive rating to a video, you would insert that video into the
+  liked videos playlist for that user's channel.
 
   ## Attributes
 
-  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails.t`, *default:* `nil`) - The contentDetails object is included in the resource if the included item is a YouTube video. The object contains additional information about the video.
+  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistItemContentDetails.t`, *default:* `nil`) - The <code>contentDetails</code> object is included in the resource if
+      the included item is a YouTube video. The object contains additional
+      information about the video.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the playlist item.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#playlistItem`) - Identifies what kind of resource this is. Value: the fixed string "youtube#playlistItem".
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistItemSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the playlist item, such as its title and position in the playlist.
-  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistItemStatus.t`, *default:* `nil`) - The status object contains information about the playlist item's privacy status.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#playlistItem`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#playlistItem"</code>.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistItemSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the
+      playlist item, such as its title and position in the playlist.
+  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistItemStatus.t`, *default:* `nil`) - The <code>status</code> object contains information about the playlist
+      item's privacy status.
   """
 
   use GoogleApi.Gax.ModelBase

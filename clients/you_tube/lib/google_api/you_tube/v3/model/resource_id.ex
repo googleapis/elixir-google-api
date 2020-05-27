@@ -21,10 +21,16 @@ defmodule GoogleApi.YouTube.V3.Model.ResourceId do
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the referred resource, if that resource is a channel. This property is only present if the resourceId.kind value is youtube#channel.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the referred resource, if
+      that resource is a channel. This property is only present if the
+      <code>resourceId.kind</code> value is <code>youtube#channel</code>.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The type of the API resource.
-  *   `playlistId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the referred resource, if that resource is a playlist. This property is only present if the resourceId.kind value is youtube#playlist.
-  *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the referred resource, if that resource is a video. This property is only present if the resourceId.kind value is youtube#video.
+  *   `playlistId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the referred resource, if
+      that resource is a playlist. This property is only present if the
+      <code>resourceId.kind</code> value is <code>youtube#playlist</code>.
+  *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the referred resource, if
+      that resource is a video. This property is only present if the
+      <code>resourceId.kind</code> value is <code>youtube#video</code>.
   """
 
   use GoogleApi.Gax.ModelBase

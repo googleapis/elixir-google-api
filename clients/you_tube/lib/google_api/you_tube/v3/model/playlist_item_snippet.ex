@@ -18,17 +18,29 @@
 defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
   @moduledoc """
   Basic details about a playlist, including title, description and thumbnails.
+  Basic details of a YouTube Playlist item provided by the author.
+  Next ID: 13
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the user that added the item to the playlist.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the user that added
+      the item to the playlist.
   *   `channelTitle` (*type:* `String.t`, *default:* `nil`) - Channel title for the channel that the playlist item belongs to.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The item's description.
-  *   `playlistId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the playlist that the playlist item is in.
-  *   `position` (*type:* `integer()`, *default:* `nil`) - The order in which the item appears in the playlist. The value uses a zero-based index, so the first item has a position of 0, the second item has a position of 1, and so forth.
-  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the item was added to the playlist. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The id object contains information that can be used to uniquely identify the resource that is included in the playlist as the playlist item.
-  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist item. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
+  *   `playlistId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify thGe playlist that the
+      playlist item is in.
+  *   `position` (*type:* `integer()`, *default:* `nil`) - The order in which the item appears in the playlist. The value uses a
+      zero-based index, so the first item has a position of <code>0</code>,
+      the second item has a position of <code>1</code>, and so forth.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the item was added to the playlist. The value is
+      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>id</code> object contains information that can be used to
+      uniquely identify the resource that is included in the playlist as
+      the playlist item.
+  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist item. For each
+      object in the map, the key is the name of the thumbnail image, and the
+      value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The item's title.
   """
 
@@ -40,7 +52,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
           :description => String.t(),
           :playlistId => String.t(),
           :position => integer(),
-          :publishedAt => DateTime.t(),
+          :publishedAt => String.t(),
           :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t(),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
           :title => String.t()
@@ -51,7 +63,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemSnippet do
   field(:description)
   field(:playlistId)
   field(:position)
-  field(:publishedAt, as: DateTime)
+  field(:publishedAt)
   field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)

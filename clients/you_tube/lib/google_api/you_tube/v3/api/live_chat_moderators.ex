@@ -26,20 +26,24 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Removes a chat moderator.
+  Deletes a chat moderator.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - The id parameter identifies the chat moderator to remove. The value uniquely identifies both the moderator and the chat.
+  *   `id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -51,13 +55,17 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_live_chat_moderators_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -74,20 +82,27 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
   end
 
   @doc """
-  Adds a new moderator for the chat.
+  Inserts a new resource into this collection.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response returns. Set the parameter value to snippet.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
+      this operation. It identifies the properties that the write operation will
+      set as well as the properties that the API response returns. Set the
+      parameter value to <code>snippet</code>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatModerator.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -96,19 +111,28 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.LiveChatModerator{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_live_chat_moderators_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_live_chat_moderators_insert(
+          Tesla.Env.client(),
+          list(String.t()),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.YouTube.V3.Model.LiveChatModerator.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def youtube_live_chat_moderators_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -126,23 +150,33 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
   end
 
   @doc """
-  Lists moderators for a live chat.
+  Retrieves a list of resources, possibly filtered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `live_chat_id` (*type:* `String.t`) - The liveChatId parameter specifies the YouTube live chat for which the API should return moderators.
-  *   `part` (*type:* `String.t`) - The part parameter specifies the liveChatModerator resource parts that the API response will include. Supported values are id and snippet.
+  *   `live_chat_id` (*type:* `String.t`) - The id of the live chat for which moderators should be returned.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
+      <code>liveChatModerator</code> resource parts that the API response will
+      include. Supported values are <code>id</code> and <code>snippet</code>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - The maxResults parameter specifies the maximum number of items that should be returned in the result set.
-      *   `:pageToken` (*type:* `String.t`) - The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
+          maximum number of items that should be returned in the result set.
+      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
+          page in the result set that should be returned. In an API response, the
+          <code>nextPageToken</code> and <code>prevPageToken</code> properties
+          identify other pages that could be retrieved.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -153,7 +187,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
   @spec youtube_live_chat_moderators_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
+          list(String.t()),
           keyword(),
           keyword()
         ) ::
@@ -168,13 +202,17 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatModerators do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :maxResults => :query,
       :pageToken => :query
     }

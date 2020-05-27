@@ -22,18 +22,42 @@ defmodule GoogleApi.YouTube.V3.Model.CaptionSnippet do
   ## Attributes
 
   *   `audioTrackType` (*type:* `String.t`, *default:* `nil`) - The type of audio track associated with the caption track.
-  *   `failureReason` (*type:* `String.t`, *default:* `nil`) - The reason that YouTube failed to process the caption track. This property is only present if the state property's value is failed.
-  *   `isAutoSynced` (*type:* `boolean()`, *default:* `nil`) - Indicates whether YouTube synchronized the caption track to the audio track in the video. The value will be true if a sync was explicitly requested when the caption track was uploaded. For example, when calling the captions.insert or captions.update methods, you can set the sync parameter to true to instruct YouTube to sync the uploaded track to the video. If the value is false, YouTube uses the time codes in the uploaded caption track to determine when to display captions.
-  *   `isCC` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the track contains closed captions for the deaf and hard of hearing. The default value is false.
-  *   `isDraft` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the caption track is a draft. If the value is true, then the track is not publicly visible. The default value is false.
-  *   `isEasyReader` (*type:* `boolean()`, *default:* `nil`) - Indicates whether caption track is formatted for "easy reader," meaning it is at a third-grade level for language learners. The default value is false.
-  *   `isLarge` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the caption track uses large text for the vision-impaired. The default value is false.
-  *   `language` (*type:* `String.t`, *default:* `nil`) - The language of the caption track. The property value is a BCP-47 language tag.
-  *   `lastUpdated` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the caption track was last updated. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the caption track. The name is intended to be visible to the user as an option during playback.
+  *   `failureReason` (*type:* `String.t`, *default:* `nil`) - The reason that YouTube failed to process the caption track. This
+      property is only present if the <code><a href="#state">state</a></code>
+      property's value is <code>failed</code>.
+  *   `isAutoSynced` (*type:* `boolean()`, *default:* `nil`) - Indicates whether YouTube synchronized the caption track to the audio
+      track in the video. The value will be <code>true</code> if a sync was
+      explicitly requested when the caption track was uploaded. For example,
+      when calling the <code>captions.insert</code> or
+      <code>captions.update</code> methods, you can set the <code>sync</code>
+      parameter to <code>true</code> to instruct YouTube to sync the uploaded
+      track to the video. If the value is <code>false</code>, YouTube uses
+      the time codes in the uploaded caption track to determine when to display
+      captions.
+  *   `isCC` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the track contains closed captions for the deaf
+      and hard of hearing. The default value is <code>false</code>.
+  *   `isDraft` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the caption track is a draft. If the value is
+      <code>true</code>, then the track is not publicly visible.
+      The default value is <code>false</code>.
+      @mutable youtube.captions.insert youtube.captions.update
+  *   `isEasyReader` (*type:* `boolean()`, *default:* `nil`) - Indicates whether caption track is formatted for "easy reader,"
+      meaning it is at a third-grade level for language learners.
+      The default value is <code>false</code>.
+  *   `isLarge` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the caption track uses large text for the
+      vision-impaired. The default value is <code>false</code>.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language of the caption track. The property value is a
+      <a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP-47</a>
+       language tag.
+  *   `lastUpdated` (*type:* `String.t`, *default:* `nil`) - The date and time when the caption track was last updated. The value is
+      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the caption track. The name is intended to be visible
+      to the user as an option during playback.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The caption track's status.
   *   `trackKind` (*type:* `String.t`, *default:* `nil`) - The caption track's type.
-  *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the video associated with the caption track.
+  *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the video associated
+      with the caption track.
+      @mutable youtube.captions.insert
   """
 
   use GoogleApi.Gax.ModelBase
@@ -47,7 +71,7 @@ defmodule GoogleApi.YouTube.V3.Model.CaptionSnippet do
           :isEasyReader => boolean(),
           :isLarge => boolean(),
           :language => String.t(),
-          :lastUpdated => DateTime.t(),
+          :lastUpdated => String.t(),
           :name => String.t(),
           :status => String.t(),
           :trackKind => String.t(),
@@ -62,7 +86,7 @@ defmodule GoogleApi.YouTube.V3.Model.CaptionSnippet do
   field(:isEasyReader)
   field(:isLarge)
   field(:language)
-  field(:lastUpdated, as: DateTime)
+  field(:lastUpdated)
   field(:name)
   field(:status)
   field(:trackKind)

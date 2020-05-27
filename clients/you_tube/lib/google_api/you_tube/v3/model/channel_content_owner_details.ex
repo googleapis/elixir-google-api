@@ -17,23 +17,27 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do
   @moduledoc """
-  The contentOwnerDetails object encapsulates channel data that is relevant for YouTube Partners linked with the channel.
+  The <code>contentOwnerDetails</code> object encapsulates channel data that
+  is relevant for YouTube Partners linked with the channel.
 
   ## Attributes
 
   *   `contentOwner` (*type:* `String.t`, *default:* `nil`) - The ID of the content owner linked to the channel.
-  *   `timeLinked` (*type:* `DateTime.t`, *default:* `nil`) - The date and time of when the channel was linked to the content owner. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+  *   `timeLinked` (*type:* `String.t`, *default:* `nil`) - The date and time of when the channel was linked to the content owner.
+      The value is specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO
+      8601</a>
+      format.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :contentOwner => String.t(),
-          :timeLinked => DateTime.t()
+          :timeLinked => String.t()
         }
 
   field(:contentOwner)
-  field(:timeLinked, as: DateTime)
+  field(:timeLinked)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ChannelContentOwnerDetails do

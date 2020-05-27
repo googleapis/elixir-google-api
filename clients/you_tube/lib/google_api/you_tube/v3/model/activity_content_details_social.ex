@@ -24,7 +24,8 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial do
   *   `author` (*type:* `String.t`, *default:* `nil`) - The author of the social network post.
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - An image of the post's author.
   *   `referenceUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the social network post.
-  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The resourceId object encapsulates information that identifies the resource associated with a social network post.
+  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>resourceId</code> object encapsulates information that
+      identifies the resource associated with a social network post.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The name of the social network.
   """
 

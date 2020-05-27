@@ -17,15 +17,27 @@
 
 defmodule GoogleApi.YouTube.V3.Model.Activity do
   @moduledoc """
-  An activity resource contains information about an action that a particular channel, or user, has taken on YouTube.The actions reported in activity feeds include rating a video, sharing a video, marking a video as a favorite, commenting on a video, uploading a video, and so forth. Each activity resource identifies the type of action, the channel associated with the action, and the resource(s) associated with the action, such as the video that was rated or uploaded.
+  An <code><strong>activity</strong></code> resource contains
+  information about an action that a particular channel, or user, has
+  taken on YouTube.The actions reported in activity feeds include rating
+  a video, sharing a video, marking a video as a favorite, commenting on
+  a video, uploading a video, and so forth. Each <code>activity</code>
+  resource identifies the type of action, the channel associated with
+  the action, and the resource(s) associated with the action, such as
+  the video that was rated or uploaded.
 
   ## Attributes
 
-  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetails.t`, *default:* `nil`) - The contentDetails object contains information about the content associated with the activity. For example, if the snippet.type value is videoRated, then the contentDetails object's content identifies the rated video.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
+  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetails.t`, *default:* `nil`) - The <code>contentDetails</code> object contains information about the
+      content associated with the activity. For example, if the
+      <code>snippet.type</code> value is <code>videoRated</code>, then the
+      <code>contentDetails</code> object's content identifies the rated video.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the activity.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#activity`) - Identifies what kind of resource this is. Value: the fixed string "youtube#activity".
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.ActivitySnippet.t`, *default:* `nil`) - The snippet object contains basic details about the activity, including the activity's type and group ID.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#activity`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#activity"</code>.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.ActivitySnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the
+      activity, including the activity's type and group ID.
   """
 
   use GoogleApi.Gax.ModelBase

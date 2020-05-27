@@ -17,27 +17,50 @@
 
 defmodule GoogleApi.YouTube.V3.Model.Playlist do
   @moduledoc """
-  A playlist resource represents a YouTube playlist. A playlist is a collection of videos that can be viewed sequentially and shared with other users. A playlist can contain up to 200 videos, and YouTube does not limit the number of playlists that each user creates. By default, playlists are publicly visible to other users, but playlists can be public or private.
-
-  YouTube also uses playlists to identify special collections of videos for a channel, such as:  
-  - uploaded videos 
-  - favorite videos 
-  - positively rated (liked) videos 
-  - watch history 
-  - watch later  To be more specific, these lists are associated with a channel, which is a collection of a person, group, or company's videos, playlists, and other YouTube information. You can retrieve the playlist IDs for each of these lists from the  channel resource for a given channel.
-
-  You can then use the   playlistItems.list method to retrieve any of those lists. You can also add or remove items from those lists by calling the   playlistItems.insert and   playlistItems.delete methods.
+  A <code><strong>playlist</strong></code> resource represents a YouTube
+  playlist. A playlist is a collection of videos that can be viewed
+  sequentially and shared with other users. A playlist can contain up to
+  200 videos, and YouTube does not limit the number of playlists that
+  each user creates. By default, playlists are publicly visible to other
+  users, but playlists can be public or private.  <br/><br/> YouTube
+  also uses playlists to identify special collections of videos for a
+  channel, such as:
+    <ul>
+      <li>uploaded videos</li>
+      <li>favorite videos</li>
+      <li>positively rated (liked) videos</li>
+      <li>watch history</li>
+      <li>watch later</li>
+    </ul>
+  To be more specific, these lists are associated with a channel, which
+  is a collection of a person, group, or company's videos, playlists,
+  and other YouTube information.  You can retrieve the playlist IDs for
+  each of these lists from the <code><a
+  href=\\"/youtube/v3/docs/channels\\"> channel resource</a></code> for a
+  given channel.<br/><br/> You can then use the <code> <a
+  href=\\"/youtube/v3/docs/playlistItems/list\\">
+  playlistItems.list</a></code> method to retrieve any of those
+  lists. You can also add or remove items from those lists by calling
+  the <code> <a href=\\"/youtube/v3/docs/playlistItems/insert\\">
+  playlistItems.insert</a></code> and <code> <a
+  href=\\"/youtube/v3/docs/playlistItems/delete\\">
+  playlistItems.delete</a></code> methods.
 
   ## Attributes
 
-  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistContentDetails.t`, *default:* `nil`) - The contentDetails object contains information like video count.
+  *   `contentDetails` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistContentDetails.t`, *default:* `nil`) - The <code>contentDetails</code> object contains information like
+      video count.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the playlist.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#playlist`) - Identifies what kind of resource this is. Value: the fixed string "youtube#playlist".
+  *   `kind` (*type:* `String.t`, *default:* `youtube#playlist`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#playlist"</code>.
   *   `localizations` (*type:* `%{optional(String.t) => GoogleApi.YouTube.V3.Model.PlaylistLocalization.t}`, *default:* `nil`) - Localizations for different languages
-  *   `player` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistPlayer.t`, *default:* `nil`) - The player object contains information that you would use to play the playlist in an embedded player.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the playlist, such as its title and description.
-  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistStatus.t`, *default:* `nil`) - The status object contains status information for the playlist.
+  *   `player` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistPlayer.t`, *default:* `nil`) - The <code>player</code> object contains information that you would use
+      to play the playlist in an embedded player.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the
+      playlist, such as its title and description.
+  *   `status` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistStatus.t`, *default:* `nil`) - The <code>status</code> object contains status information for the
+      playlist.
   """
 
   use GoogleApi.Gax.ModelBase

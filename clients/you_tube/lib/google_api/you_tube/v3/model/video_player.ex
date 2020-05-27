@@ -22,7 +22,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoPlayer do
   ## Attributes
 
   *   `embedHeight` (*type:* `String.t`, *default:* `nil`) - 
-  *   `embedHtml` (*type:* `String.t`, *default:* `nil`) - An <iframe> tag that embeds a player that will play the video.
+  *   `embedHtml` (*type:* `String.t`, *default:* `nil`) - An <code>&lt;iframe&gt;</code> tag that embeds a player that will
+      play the video.
   *   `embedWidth` (*type:* `String.t`, *default:* `nil`) - The embed width
   """
 

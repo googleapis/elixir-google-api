@@ -21,13 +21,21 @@ defmodule GoogleApi.YouTube.V3.Model.MonitorStreamInfo do
 
   ## Attributes
 
-  *   `broadcastStreamDelayMs` (*type:* `integer()`, *default:* `nil`) - If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay.
+  *   `broadcastStreamDelayMs` (*type:* `integer()`, *default:* `nil`) - If you have set the
+      <code><a href="#enableMonitorStream">enableMonitorStream</a></code>
+      property to <code>true</code>, then this property determines the
+      length of the live broadcast delay.
   *   `embedHtml` (*type:* `String.t`, *default:* `nil`) - HTML code that embeds a player that plays the monitor stream.
-  *   `enableMonitorStream` (*type:* `boolean()`, *default:* `nil`) - This value determines whether the monitor stream is enabled for the broadcast. If the monitor stream is enabled, then YouTube will broadcast the event content on a special stream intended only for the broadcaster's consumption. The broadcaster can use the stream to review the event content and also to identify the optimal times to insert cuepoints.
-
-      You need to set this value to true if you intend to have a broadcast delay for your event.
-
-      Note: This property cannot be updated once the broadcast is in the testing or live state.
+  *   `enableMonitorStream` (*type:* `boolean()`, *default:* `nil`) - This value determines whether the monitor stream is enabled for the
+      broadcast. If the monitor stream is enabled, then YouTube will
+      broadcast the event content on a special stream intended only for
+      the broadcaster's consumption. The broadcaster can use the stream
+      to review the event content and also to identify the optimal times
+      to insert cuepoints.<br><br>
+      You need to set this value to <code>true</code> if you intend to have
+      a broadcast delay for your event.<br><br>
+      <strong>Note:</strong> This property cannot be updated once the
+      broadcast is in the <code>testing</code> or <code>live</code> state.
   """
 
   use GoogleApi.Gax.ModelBase

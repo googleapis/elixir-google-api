@@ -17,21 +17,44 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetails do
   @moduledoc """
-  Details about the content of an activity: the video that was shared, the channel that was subscribed to, etc.
+  Details about the content of an activity: the video that was shared, the
+  channel that was subscribed to, etc.
 
   ## Attributes
 
-  *   `bulletin` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin.t`, *default:* `nil`) - The bulletin object contains details about a channel bulletin post. This object is only present if the snippet.type is bulletin.
-  *   `channelItem` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsChannelItem.t`, *default:* `nil`) - The channelItem object contains details about a resource which was added to a channel. This property is only present if the snippet.type is channelItem.
-  *   `comment` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment.t`, *default:* `nil`) - The comment object contains information about a resource that received a comment. This property is only present if the snippet.type is comment.
-  *   `favorite` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsFavorite.t`, *default:* `nil`) - The favorite object contains information about a video that was marked as a favorite video. This property is only present if the snippet.type is favorite.
-  *   `like` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsLike.t`, *default:* `nil`) - The like object contains information about a resource that received a positive (like) rating. This property is only present if the snippet.type is like.
-  *   `playlistItem` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem.t`, *default:* `nil`) - The playlistItem object contains information about a new playlist item. This property is only present if the snippet.type is playlistItem.
-  *   `promotedItem` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem.t`, *default:* `nil`) - The promotedItem object contains details about a resource which is being promoted. This property is only present if the snippet.type is promotedItem.
-  *   `recommendation` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation.t`, *default:* `nil`) - The recommendation object contains information about a recommended resource. This property is only present if the snippet.type is recommendation.
-  *   `social` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial.t`, *default:* `nil`) - The social object contains details about a social network post. This property is only present if the snippet.type is social.
-  *   `subscription` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription.t`, *default:* `nil`) - The subscription object contains information about a channel that a user subscribed to. This property is only present if the snippet.type is subscription.
-  *   `upload` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload.t`, *default:* `nil`) - The upload object contains information about the uploaded video. This property is only present if the snippet.type is upload.
+  *   `bulletin` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin.t`, *default:* `nil`) - The <code>bulletin</code> object contains details about a channel
+      bulletin post. This object is only present if the
+      <code>snippet.type</code> is <code>bulletin</code>.
+  *   `channelItem` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsChannelItem.t`, *default:* `nil`) - The <code>channelItem</code> object contains details about a resource
+      which was added to a channel. This property is only present if the
+      <code>snippet.type</code> is <code>channelItem</code>.
+  *   `comment` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment.t`, *default:* `nil`) - The <code>comment</code> object contains information about a resource
+      that received a comment. This property is only present if the
+      <code>snippet.type</code> is <code>comment</code>.
+  *   `favorite` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsFavorite.t`, *default:* `nil`) - The <code>favorite</code> object contains information about a video that
+      was marked as a favorite video. This property is only present if the
+      <code>snippet.type</code> is <code>favorite</code>.
+  *   `like` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsLike.t`, *default:* `nil`) - The <code>like</code> object contains information about a resource that
+      received a positive (like) rating. This property is only present if
+      the <code>snippet.type</code> is <code>like</code>.
+  *   `playlistItem` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem.t`, *default:* `nil`) - The <code>playlistItem</code> object contains information about a
+      new playlist item. This property is only present if the
+      <code>snippet.type</code> is <code>playlistItem</code>.
+  *   `promotedItem` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsPromotedItem.t`, *default:* `nil`) - The <code>promotedItem</code> object contains details about a resource
+      which is being promoted. This property is only present if the
+      <code>snippet.type</code> is <code>promotedItem</code>.
+  *   `recommendation` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsRecommendation.t`, *default:* `nil`) - The <code>recommendation</code> object contains information about a
+      recommended resource. This property is only present if the
+      <code>snippet.type</code> is <code>recommendation</code>.
+  *   `social` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsSocial.t`, *default:* `nil`) - The <code>social</code> object contains details about a social network
+      post. This property is only present if the <code>snippet.type</code>
+      is <code>social</code>.
+  *   `subscription` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsSubscription.t`, *default:* `nil`) - The <code>subscription</code> object contains information about a
+      channel that a user subscribed to. This property is only
+      present if the <code>snippet.type</code> is <code>subscription</code>.
+  *   `upload` (*type:* `GoogleApi.YouTube.V3.Model.ActivityContentDetailsUpload.t`, *default:* `nil`) - The <code>upload</code> object contains information about the uploaded
+      video. This property is only present if the <code>snippet.type</code>
+      is <code>upload</code>.
   """
 
   use GoogleApi.Gax.ModelBase

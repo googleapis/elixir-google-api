@@ -21,22 +21,35 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
 
   ## Attributes
 
-  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase
-  *   `displayMessage` (*type:* `String.t`, *default:* `nil`) - Contains a string that can be displayed to the user. If this field is not present the message is silent, at the moment only messages of type TOMBSTONE and CHAT_ENDED_EVENT are silent.
-  *   `fanFundingEventDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t`, *default:* `nil`) - Details about the funding event, this is only set if the type is 'fanFundingEvent'.
+  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always
+      filled.
+      textMessageEvent - the user that wrote the message
+      fanFundingEvent - the user that funded the broadcast
+      newSponsorEvent - the user that just became a sponsor
+      messageDeletedEvent - the moderator that took the action
+      messageRetractedEvent - the author that retracted their message
+      userBannedEvent - the moderator that took the action
+      superChatEvent - the user that made the purchase
+  *   `displayMessage` (*type:* `String.t`, *default:* `nil`) - Contains a string that can be displayed to the user.
+      If this field is not present the message is silent, at the moment only
+      messages of type TOMBSTONE and CHAT_ENDED_EVENT are silent.
+  *   `fanFundingEventDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t`, *default:* `nil`) - Details about the funding event, this is only set if the type is
+      'fanFundingEvent'.
   *   `hasDisplayContent` (*type:* `boolean()`, *default:* `nil`) - Whether the message has display content that should be displayed to users.
   *   `liveChatId` (*type:* `String.t`, *default:* `nil`) - 
   *   `messageDeletedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t`, *default:* `nil`) - 
   *   `messageRetractedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t`, *default:* `nil`) - 
-  *   `pollClosedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatPollClosedDetails.t`, *default:* `nil`) - 
-  *   `pollEditedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatPollEditedDetails.t`, *default:* `nil`) - 
-  *   `pollOpenedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails.t`, *default:* `nil`) - 
-  *   `pollVotedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails.t`, *default:* `nil`) - 
-  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the message was orignally published. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `superChatDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t`, *default:* `nil`) - Details about the Super Chat event, this is only set if the type is 'superChatEvent'.
-  *   `superStickerDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t`, *default:* `nil`) - Details about the Super Sticker event, this is only set if the type is 'superStickerEvent'.
-  *   `textMessageDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t`, *default:* `nil`) - Details about the text message, this is only set if the type is 'textMessageEvent'.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of message, this will always be present, it determines the contents of the message as well as which fields will be present.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the message was orignally published. The value is
+      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `superChatDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t`, *default:* `nil`) - Details about the Super Chat event, this is only set if the type is
+      'superChatEvent'.
+  *   `superStickerDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t`, *default:* `nil`) - Details about the Super Sticker event, this is only set if the type is
+      'superStickerEvent'.
+  *   `textMessageDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t`, *default:* `nil`) - Details about the text message, this is only set if the type is
+      'textMessageEvent'.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of message, this will always be present, it determines the
+      contents of the message as well as which fields will be present.
   *   `userBannedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails.t`, *default:* `nil`) - 
   """
 
@@ -52,11 +65,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
           :messageDeletedDetails => GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t(),
           :messageRetractedDetails =>
             GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t(),
-          :pollClosedDetails => GoogleApi.YouTube.V3.Model.LiveChatPollClosedDetails.t(),
-          :pollEditedDetails => GoogleApi.YouTube.V3.Model.LiveChatPollEditedDetails.t(),
-          :pollOpenedDetails => GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails.t(),
-          :pollVotedDetails => GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails.t(),
-          :publishedAt => DateTime.t(),
+          :publishedAt => String.t(),
           :superChatDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t(),
           :superStickerDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t(),
           :textMessageDetails => GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails.t(),
@@ -71,11 +80,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   field(:liveChatId)
   field(:messageDeletedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails)
   field(:messageRetractedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails)
-  field(:pollClosedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollClosedDetails)
-  field(:pollEditedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollEditedDetails)
-  field(:pollOpenedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollOpenedDetails)
-  field(:pollVotedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollVotedDetails)
-  field(:publishedAt, as: DateTime)
+  field(:publishedAt)
   field(:superChatDetails, as: GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails)
   field(:superStickerDetails, as: GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails)
   field(:textMessageDetails, as: GoogleApi.YouTube.V3.Model.LiveChatTextMessageDetails)

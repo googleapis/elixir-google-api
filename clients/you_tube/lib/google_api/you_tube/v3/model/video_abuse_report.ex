@@ -23,8 +23,11 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReport do
 
   *   `comments` (*type:* `String.t`, *default:* `nil`) - Additional comments regarding the abuse report.
   *   `language` (*type:* `String.t`, *default:* `nil`) - The language that the content was viewed in.
-  *   `reasonId` (*type:* `String.t`, *default:* `nil`) - The high-level, or primary, reason that the content is abusive. The value is an abuse report reason ID.
-  *   `secondaryReasonId` (*type:* `String.t`, *default:* `nil`) - The specific, or secondary, reason that this content is abusive (if available). The value is an abuse report reason ID that is a valid secondary reason for the primary reason.
+  *   `reasonId` (*type:* `String.t`, *default:* `nil`) - The high-level, or primary, reason that the content is abusive. The value
+      is an abuse report reason ID.
+  *   `secondaryReasonId` (*type:* `String.t`, *default:* `nil`) - The specific, or secondary, reason that this content is abusive (if
+      available). The value is an abuse report reason ID that is a valid
+      secondary reason for the primary reason.
   *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the video.
   """
 

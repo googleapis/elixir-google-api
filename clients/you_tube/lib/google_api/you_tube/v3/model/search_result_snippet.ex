@@ -17,16 +17,26 @@
 
 defmodule GoogleApi.YouTube.V3.Model.SearchResultSnippet do
   @moduledoc """
-  Basic details about a search result, including title, description and thumbnails of the item referenced by the search result.
+  Basic details about a search result, including title, description and
+  thumbnails of the item referenced by the search result.
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The value that YouTube uses to uniquely identify the channel that published the resource that the search result identifies.
-  *   `channelTitle` (*type:* `String.t`, *default:* `nil`) - The title of the channel that published the resource that the search result identifies.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The value that YouTube uses to uniquely identify the channel that
+      published the resource that the search result identifies.
+  *   `channelTitle` (*type:* `String.t`, *default:* `nil`) - The title of the channel that published the resource that the search result
+      identifies.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the search result.
-  *   `liveBroadcastContent` (*type:* `String.t`, *default:* `nil`) - It indicates if the resource (video or channel) has upcoming/active live broadcast content. Or it's "none" if there is not any upcoming/active live broadcasts.
-  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The creation date and time of the resource that the search result identifies. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the search result. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
+  *   `liveBroadcastContent` (*type:* `String.t`, *default:* `nil`) - It indicates if the resource (video or channel) has upcoming/active live
+      broadcast content. Or it's "none" if there is not any upcoming/active
+      live broadcasts.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The creation date and time of the resource that the search result
+      identifies. The value is specified in <a
+      href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the search result. For each
+      object in the map, the key is the name of the thumbnail image, and the
+      value is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the search result.
   """
 
@@ -37,7 +47,7 @@ defmodule GoogleApi.YouTube.V3.Model.SearchResultSnippet do
           :channelTitle => String.t(),
           :description => String.t(),
           :liveBroadcastContent => String.t(),
-          :publishedAt => DateTime.t(),
+          :publishedAt => String.t(),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
           :title => String.t()
         }
@@ -46,7 +56,7 @@ defmodule GoogleApi.YouTube.V3.Model.SearchResultSnippet do
   field(:channelTitle)
   field(:description)
   field(:liveBroadcastContent)
-  field(:publishedAt, as: DateTime)
+  field(:publishedAt)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)
 end

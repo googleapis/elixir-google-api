@@ -22,7 +22,8 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionContentDetails do
   ## Attributes
 
   *   `channels` (*type:* `list(String.t)`, *default:* `nil`) - The channel ids for type multiple_channels.
-  *   `playlists` (*type:* `list(String.t)`, *default:* `nil`) - The playlist ids for type single_playlist and multiple_playlists. For singlePlaylist, only one playlistId is allowed.
+  *   `playlists` (*type:* `list(String.t)`, *default:* `nil`) - The playlist ids for type single_playlist and multiple_playlists. For
+      singlePlaylist, only one playlistId is allowed.
   """
 
   use GoogleApi.Gax.ModelBase

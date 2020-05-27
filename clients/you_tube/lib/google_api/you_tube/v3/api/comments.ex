@@ -26,20 +26,24 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes a comment.
+  Deletes a resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - The id parameter specifies the comment ID for the resource that is being deleted.
+  *   `id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -51,13 +55,17 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_comments_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -74,20 +82,27 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   end
 
   @doc """
-  Creates a reply to an existing comment. Note: To create a top-level comment, use the commentThreads.insert method.
+  Inserts a new resource into this collection.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter identifies the properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter identifies the properties
+      that the API response will include. Set the parameter value to
+      <code>snippet</code>. The <code>snippet</code> part has a quota cost of 2
+      units.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Comment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -96,17 +111,21 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.Comment{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_comments_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_comments_insert(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_comments_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -124,31 +143,38 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   end
 
   @doc """
-  Returns a list of comments that match the API request parameters.
+  Retrieves a list of resources, possibly filtered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies a comma-separated list of one or more comment resource properties that the API response will include.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of one or more <code>comment</code> resource
+      properties that the API response will include.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:id` (*type:* `String.t`) - The id parameter specifies a comma-separated list of comment IDs for the resources that are being retrieved. In a comment resource, the id property specifies the comment's ID.
-      *   `:maxResults` (*type:* `integer()`) - The maxResults parameter specifies the maximum number of items that should be returned in the result set.
-
-          Note: This parameter is not supported for use in conjunction with the id parameter.
-      *   `:pageToken` (*type:* `String.t`) - The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identifies the next page of the result that can be retrieved.
-
-          Note: This parameter is not supported for use in conjunction with the id parameter.
-      *   `:parentId` (*type:* `String.t`) - The parentId parameter specifies the ID of the comment for which replies should be retrieved.
-
-          Note: YouTube currently supports replies only for top-level comments. However, replies to replies may be supported in the future.
-      *   `:textFormat` (*type:* `String.t`) - This parameter indicates whether the API should return comments formatted as HTML or as plain text.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:id` (*type:* `list(String.t)`) - Returns the comments with the given IDs for One Platform.
+      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
+          maximum number of items that should be returned in the result set.
+      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
+          page in the result set that should be returned. In an API response, the
+          <code>nextPageToken</code> and <code>prevPageToken</code> properties
+          identify other pages that could be retrieved.
+      *   `:parentId` (*type:* `String.t`) - Returns replies to the specified comment.
+          Note, currently YouTube features only one level of replies (ie replies
+          to top level comments). However replies to replies may be supported in
+          the future.
+      *   `:textFormat` (*type:* `String.t`) - The requested text format for the returned comments.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -156,19 +182,23 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.CommentListResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_comments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_comments_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.CommentListResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def youtube_comments_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :id => :query,
       :maxResults => :query,
       :pageToken => :query,
@@ -190,20 +220,25 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   end
 
   @doc """
-  Expresses the caller's opinion that one or more comments should be flagged as spam.
+  Expresses the caller's opinion that one or more comments should be flagged
+  as spam.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - The id parameter specifies a comma-separated list of IDs of comments that the caller believes should be classified as spam.
+  *   `id` (*type:* `list(String.t)`) - Flags the comments with the given IDs as spam in the caller's opinion.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -211,17 +246,21 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   *   `{:ok, %{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_comments_mark_as_spam(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_comments_mark_as_spam(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_comments_mark_as_spam(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -238,24 +277,33 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   end
 
   @doc """
-  Sets the moderation status of one or more comments. The API request must be authorized by the owner of the channel or video associated with the comments.
+  Sets the moderation status of one or more comments.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - The id parameter specifies a comma-separated list of IDs that identify the comments for which you are updating the moderation status.
-  *   `moderation_status` (*type:* `String.t`) - Identifies the new moderation status of the specified comments.
+  *   `id` (*type:* `list(String.t)`) - Modifies the moderation status of the comments with the given IDs
+  *   `moderation_status` (*type:* `String.t`) - Specifies the requested moderation status. Note, comments can be in
+      statuses, which are not available through this call. For example, this
+      call does not allow to mark a comment as 'likely spam'.
+      Valid values: MODERATION_STATUS_PUBLISHED,
+      MODERATION_STATUS_HELD_FOR_REVIEW, MODERATION_STATUS_REJECTED.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:banAuthor` (*type:* `boolean()`) - The banAuthor parameter lets you indicate that you want to automatically reject any additional comments written by the comment's author. Set the parameter value to true to ban the author.
-
-          Note: This parameter is only valid if the moderationStatus parameter is also set to rejected.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:banAuthor` (*type:* `boolean()`) - If set to true the author of the comment gets added to the ban list.
+          This means all future comments of the author will autmomatically be
+          rejected.
+          Only valid in combination with STATUS_REJECTED.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -265,7 +313,7 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   """
   @spec youtube_comments_set_moderation_status(
           Tesla.Env.client(),
-          String.t(),
+          list(String.t()),
           String.t(),
           keyword(),
           keyword()
@@ -278,13 +326,17 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :banAuthor => :query
     }
 
@@ -303,20 +355,27 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   end
 
   @doc """
-  Modifies a comment.
+  Updates an existing resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter identifies the properties that the API response will include. You must at least include the snippet part in the parameter value since that part contains all of the properties that the API request can update.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter identifies the properties
+      that the API response will include. You must at least include the
+      <code>snippet</code> part in the parameter value since that part contains
+      all of the properties that the API request can update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Comment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -325,17 +384,21 @@ defmodule GoogleApi.YouTube.V3.Api.Comments do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.Comment{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_comments_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_comments_update(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.Comment.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_comments_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 

@@ -26,64 +26,74 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource.
+  Retrieves a list of search resources
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies a comma-separated list of one or more search resource properties that the API response will include. Set the parameter value to snippet.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of one or more <code>search</code> resource properties
+      that the API response will include. Set the parameter value to
+      <code>snippet</code>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:channelId` (*type:* `String.t`) - The channelId parameter indicates that the API response should only contain resources created by the channel
-      *   `:channelType` (*type:* `String.t`) - The channelType parameter lets you restrict a search to a particular type of channel.
-      *   `:eventType` (*type:* `String.t`) - The eventType parameter restricts a search to broadcast events. If you specify a value for this parameter, you must also set the type parameter's value to video.
-      *   `:forContentOwner` (*type:* `boolean()`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The forContentOwner parameter restricts the search to only retrieve resources owned by the content owner specified by the onBehalfOfContentOwner parameter. The user must be authenticated using a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.
-      *   `:forDeveloper` (*type:* `boolean()`) - The forDeveloper parameter restricts the search to only retrieve videos uploaded via the developer's application or website. The API server uses the request's authorization credentials to identify the developer. Therefore, a developer can restrict results to videos uploaded through the developer's own app or website but not to videos uploaded through other apps or sites.
-      *   `:forMine` (*type:* `boolean()`) - The forMine parameter restricts the search to only retrieve videos owned by the authenticated user. If you set this parameter to true, then the type parameter's value must also be set to video.
-      *   `:location` (*type:* `String.t`) - The location parameter, in conjunction with the locationRadius parameter, defines a circular geographic area and also restricts a search to videos that specify, in their metadata, a geographic location that falls within that area. The parameter value is a string that specifies latitude/longitude coordinates e.g. (37.42307,-122.08427).
-
-
-          - The location parameter value identifies the point at the center of the area.
-          - The locationRadius parameter specifies the maximum distance that the location associated with a video can be from that point for the video to still be included in the search results.The API returns an error if your request specifies a value for the location parameter but does not also specify a value for the locationRadius parameter.
-      *   `:locationRadius` (*type:* `String.t`) - The locationRadius parameter, in conjunction with the location parameter, defines a circular geographic area.
-
-          The parameter value must be a floating point number followed by a measurement unit. Valid measurement units are m, km, ft, and mi. For example, valid parameter values include 1500m, 5km, 10000ft, and 0.75mi. The API does not support locationRadius parameter values larger than 1000 kilometers.
-
-          Note: See the definition of the location parameter for more information.
-      *   `:maxResults` (*type:* `integer()`) - The maxResults parameter specifies the maximum number of items that should be returned in the result set.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:order` (*type:* `String.t`) - The order parameter specifies the method that will be used to order resources in the API response.
-      *   `:pageToken` (*type:* `String.t`) - The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
-      *   `:publishedAfter` (*type:* `DateTime.t`) - The publishedAfter parameter indicates that the API response should only contain resources created after the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).
-      *   `:publishedBefore` (*type:* `DateTime.t`) - The publishedBefore parameter indicates that the API response should only contain resources created before the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).
-      *   `:q` (*type:* `String.t`) - The q parameter specifies the query term to search for.
-
-          Your request can also use the Boolean NOT (-) and OR (|) operators to exclude videos or to find videos that are associated with one of several search terms. For example, to search for videos matching either "boating" or "sailing", set the q parameter value to boating|sailing. Similarly, to search for videos matching either "boating" or "sailing" but not "fishing", set the q parameter value to boating|sailing -fishing. Note that the pipe character must be URL-escaped when it is sent in your API request. The URL-escaped value for the pipe character is %7C.
-      *   `:regionCode` (*type:* `String.t`) - The regionCode parameter instructs the API to return search results for the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
-      *   `:relatedToVideoId` (*type:* `String.t`) - The relatedToVideoId parameter retrieves a list of videos that are related to the video that the parameter value identifies. The parameter value must be set to a YouTube video ID and, if you are using this parameter, the type parameter must be set to video.
-      *   `:relevanceLanguage` (*type:* `String.t`) - The relevanceLanguage parameter instructs the API to return search results that are most relevant to the specified language. The parameter value is typically an ISO 639-1 two-letter language code. However, you should use the values zh-Hans for simplified Chinese and zh-Hant for traditional Chinese. Please note that results in other languages will still be returned if they are highly relevant to the search query term.
-      *   `:safeSearch` (*type:* `String.t`) - The safeSearch parameter indicates whether the search results should include restricted content as well as standard content.
-      *   `:topicId` (*type:* `String.t`) - The topicId parameter indicates that the API response should only contain resources associated with the specified topic. The value identifies a Freebase topic ID.
-      *   `:type` (*type:* `String.t`) - The type parameter restricts a search query to only retrieve a particular type of resource. The value is a comma-separated list of resource types.
-      *   `:videoCaption` (*type:* `String.t`) - The videoCaption parameter indicates whether the API should filter video search results based on whether they have captions. If you specify a value for this parameter, you must also set the type parameter's value to video.
-      *   `:videoCategoryId` (*type:* `String.t`) - The videoCategoryId parameter filters video search results based on their category. If you specify a value for this parameter, you must also set the type parameter's value to video.
-      *   `:videoDefinition` (*type:* `String.t`) - The videoDefinition parameter lets you restrict a search to only include either high definition (HD) or standard definition (SD) videos. HD videos are available for playback in at least 720p, though higher resolutions, like 1080p, might also be available. If you specify a value for this parameter, you must also set the type parameter's value to video.
-      *   `:videoDimension` (*type:* `String.t`) - The videoDimension parameter lets you restrict a search to only retrieve 2D or 3D videos. If you specify a value for this parameter, you must also set the type parameter's value to video.
-      *   `:videoDuration` (*type:* `String.t`) - The videoDuration parameter filters video search results based on their duration. If you specify a value for this parameter, you must also set the type parameter's value to video.
-      *   `:videoEmbeddable` (*type:* `String.t`) - The videoEmbeddable parameter lets you to restrict a search to only videos that can be embedded into a webpage. If you specify a value for this parameter, you must also set the type parameter's value to video.
-      *   `:videoLicense` (*type:* `String.t`) - The videoLicense parameter filters search results to only include videos with a particular license. YouTube lets video uploaders choose to attach either the Creative Commons license or the standard YouTube license to each of their videos. If you specify a value for this parameter, you must also set the type parameter's value to video.
-      *   `:videoSyndicated` (*type:* `String.t`) - The videoSyndicated parameter lets you to restrict a search to only videos that can be played outside youtube.com. If you specify a value for this parameter, you must also set the type parameter's value to video.
-      *   `:videoType` (*type:* `String.t`) - The videoType parameter lets you restrict a search to a particular type of videos. If you specify a value for this parameter, you must also set the type parameter's value to video.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:channelId` (*type:* `String.t`) - Filter on resources belonging to this channelId.
+      *   `:channelType` (*type:* `String.t`) - Add a filter on the channel search.
+      *   `:eventType` (*type:* `String.t`) - Filter on the livestream status of the videos.
+      *   `:forContentOwner` (*type:* `boolean()`) - Search owned by a content owner.
+      *   `:forDeveloper` (*type:* `boolean()`) - Restrict the search to only retrieve videos uploaded using the project id
+          of the authenticated user.
+      *   `:forMine` (*type:* `boolean()`) - Search for the private videos of the authenticated user.
+      *   `:location` (*type:* `String.t`) - Filter on location of the video
+      *   `:locationRadius` (*type:* `String.t`) - Filter on distance from the location (specified above).
+      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
+          maximum number of items that should be returned in the result set.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter value.
+          This parameter is intended for YouTube content partners that own and manage
+          many different YouTube channels. It allows content owners to authenticate
+          once and get access to all their video and channel data, without having to
+          provide authentication credentials for each individual channel. The CMS
+          account that the user authenticates with must be linked to the specified
+          YouTube content owner.
+      *   `:order` (*type:* `String.t`) - Sort order of the results.
+      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
+          page in the result set that should be returned. In an API response, the
+          <code>nextPageToken</code> and <code>prevPageToken</code> properties
+          identify other pages that could be retrieved.
+      *   `:publishedAfter` (*type:* `DateTime.t`) - Filter on resources published after this date.
+      *   `:publishedBefore` (*type:* `DateTime.t`) - Filter on resources published before this date.
+      *   `:q` (*type:* `String.t`) - Textual search terms to match.
+      *   `:regionCode` (*type:* `String.t`) - Display the content as seen by viewers in this country.
+      *   `:relatedToVideoId` (*type:* `String.t`) - Search related to a resource.
+      *   `:relevanceLanguage` (*type:* `String.t`) - Return results relevant to this language.
+      *   `:safeSearch` (*type:* `String.t`) - Indicates whether the search results should include restricted content as
+          well as standard content.
+      *   `:topicId` (*type:* `String.t`) - Restrict results to a particular topic.
+      *   `:type` (*type:* `list(String.t)`) - Restrict results to a particular set of resource types from One Platform.
+      *   `:videoCaption` (*type:* `String.t`) - Filter on the presence of captions on the videos.
+      *   `:videoCategoryId` (*type:* `String.t`) - Filter on videos in a specific category.
+      *   `:videoDefinition` (*type:* `String.t`) - Filter on the definition of the videos.
+      *   `:videoDimension` (*type:* `String.t`) - Filter on 3d videos.
+      *   `:videoDuration` (*type:* `String.t`) - Filter on the duration of the videos.
+      *   `:videoEmbeddable` (*type:* `String.t`) - Filter on embeddable videos.
+      *   `:videoLicense` (*type:* `String.t`) - Filter on the license of the videos.
+      *   `:videoSyndicated` (*type:* `String.t`) - Filter on syndicated videos.
+      *   `:videoType` (*type:* `String.t`) - Filter on videos of a specific type.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -91,19 +101,23 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.SearchListResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_search_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_search_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.SearchListResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def youtube_search_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :channelId => :query,
       :channelType => :query,
       :eventType => :query,

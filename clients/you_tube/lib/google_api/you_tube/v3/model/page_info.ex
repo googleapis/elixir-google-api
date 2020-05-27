@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.YouTube.V3.Model.PageInfo do
   @moduledoc """
-  Paging details for lists of resources, including total number of items available and number of resources returned in a single page.
+  Paging details for lists of resources, including total number of items
+  available and number of resources returned in a single page.
 
   ## Attributes
 

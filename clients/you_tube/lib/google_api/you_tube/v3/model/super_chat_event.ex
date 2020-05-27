@@ -17,14 +17,16 @@
 
 defmodule GoogleApi.YouTube.V3.Model.SuperChatEvent do
   @moduledoc """
-  A superChatEvent resource represents a Super Chat purchase on a YouTube channel.
+  A `__superChatEvent__` resource represents a Super Chat purchase on a YouTube
+  channel.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube assigns to uniquely identify the Super Chat event.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#superChatEvent`) - Identifies what kind of resource this is. Value: the fixed string "youtube#superChatEvent".
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.SuperChatEventSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the Super Chat event.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#superChatEvent`) - Identifies what kind of resource this is. Value: the fixed string
+      `"youtube#superChatEvent"`.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.SuperChatEventSnippet.t`, *default:* `nil`) - The `snippet` object contains basic details about the Super Chat event.
   """
 
   use GoogleApi.Gax.ModelBase

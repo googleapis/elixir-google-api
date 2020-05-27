@@ -21,7 +21,8 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsComment do
 
   ## Attributes
 
-  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The resourceId object contains information that identifies the resource associated with the comment.
+  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>resourceId</code> object contains information that
+      identifies the resource associated with the comment.
   """
 
   use GoogleApi.Gax.ModelBase

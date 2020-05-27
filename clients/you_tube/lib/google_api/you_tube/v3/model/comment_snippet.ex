@@ -21,27 +21,41 @@ defmodule GoogleApi.YouTube.V3.Model.CommentSnippet do
 
   ## Attributes
 
-  *   `authorChannelId` (*type:* `any()`, *default:* `nil`) - The id of the author's YouTube channel, if any.
+  *   `authorChannelId` (*type:* `GoogleApi.YouTube.V3.Model.CommentSnippetAuthorChannelId.t`, *default:* `nil`) - 
   *   `authorChannelUrl` (*type:* `String.t`, *default:* `nil`) - Link to the author's YouTube channel, if any.
   *   `authorDisplayName` (*type:* `String.t`, *default:* `nil`) - The name of the user who posted the comment.
   *   `authorProfileImageUrl` (*type:* `String.t`, *default:* `nil`) - The URL for the avatar of the user who posted the comment.
   *   `canRate` (*type:* `boolean()`, *default:* `nil`) - Whether the current viewer can rate this comment.
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The id of the corresponding YouTube channel. In case of a channel comment this is the channel the comment refers to. In case of a video comment it's the video's channel.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The id of the corresponding YouTube channel. In case of a channel comment
+      this is the channel the comment refers to. In case of a video comment
+      it's the video's channel.
   *   `likeCount` (*type:* `integer()`, *default:* `nil`) - The total number of likes this comment has received.
-  *   `moderationStatus` (*type:* `String.t`, *default:* `nil`) - The comment's moderation status. Will not be set if the comments were requested through the id filter.
+  *   `moderationStatus` (*type:* `String.t`, *default:* `nil`) - The comment's moderation status. Will not be set if the comments were
+      requested through the id filter.
   *   `parentId` (*type:* `String.t`, *default:* `nil`) - The unique id of the parent comment, only set for replies.
-  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the comment was orignally published. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `textDisplay` (*type:* `String.t`, *default:* `nil`) - The comment's text. The format is either plain text or HTML dependent on what has been requested. Even the plain text representation may differ from the text originally posted in that it may replace video links with video titles etc.
-  *   `textOriginal` (*type:* `String.t`, *default:* `nil`) - The comment's original raw text as initially posted or last updated. The original text will only be returned if it is accessible to the viewer, which is only guaranteed if the viewer is the comment's author.
-  *   `updatedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when was last updated . The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the comment was orignally published. The value is
+      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `textDisplay` (*type:* `String.t`, *default:* `nil`) - The comment's text. The format is either plain text or HTML dependent on
+      what has been requested. Even the plain text representation may differ
+      from the text originally posted in that it may replace video links with
+      video titles etc.
+  *   `textOriginal` (*type:* `String.t`, *default:* `nil`) - The comment's original raw text as initially posted or last updated. The
+      original text will only be returned if it is accessible to the viewer,
+      which is only guaranteed if the viewer is the comment's author.
+  *   `updatedAt` (*type:* `String.t`, *default:* `nil`) - The date and time when was last updated . The value is
+      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
   *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID of the video the comment refers to, if any.
-  *   `viewerRating` (*type:* `String.t`, *default:* `nil`) - The rating the viewer has given to this comment. For the time being this will never return RATE_TYPE_DISLIKE and instead return RATE_TYPE_NONE. This may change in the future.
+  *   `viewerRating` (*type:* `String.t`, *default:* `nil`) - The rating the viewer has given to this comment. For the time being this
+      will never return RATE_TYPE_DISLIKE and instead return RATE_TYPE_NONE.
+      This may change in the future.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorChannelId => any(),
+          :authorChannelId => GoogleApi.YouTube.V3.Model.CommentSnippetAuthorChannelId.t(),
           :authorChannelUrl => String.t(),
           :authorDisplayName => String.t(),
           :authorProfileImageUrl => String.t(),
@@ -50,15 +64,15 @@ defmodule GoogleApi.YouTube.V3.Model.CommentSnippet do
           :likeCount => integer(),
           :moderationStatus => String.t(),
           :parentId => String.t(),
-          :publishedAt => DateTime.t(),
+          :publishedAt => String.t(),
           :textDisplay => String.t(),
           :textOriginal => String.t(),
-          :updatedAt => DateTime.t(),
+          :updatedAt => String.t(),
           :videoId => String.t(),
           :viewerRating => String.t()
         }
 
-  field(:authorChannelId)
+  field(:authorChannelId, as: GoogleApi.YouTube.V3.Model.CommentSnippetAuthorChannelId)
   field(:authorChannelUrl)
   field(:authorDisplayName)
   field(:authorProfileImageUrl)
@@ -67,10 +81,10 @@ defmodule GoogleApi.YouTube.V3.Model.CommentSnippet do
   field(:likeCount)
   field(:moderationStatus)
   field(:parentId)
-  field(:publishedAt, as: DateTime)
+  field(:publishedAt)
   field(:textDisplay)
   field(:textOriginal)
-  field(:updatedAt, as: DateTime)
+  field(:updatedAt)
   field(:videoId)
   field(:viewerRating)
 end

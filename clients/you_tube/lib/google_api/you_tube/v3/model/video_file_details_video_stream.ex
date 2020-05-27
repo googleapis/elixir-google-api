@@ -21,14 +21,19 @@ defmodule GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream do
 
   ## Attributes
 
-  *   `aspectRatio` (*type:* `float()`, *default:* `nil`) - The video content's display aspect ratio, which specifies the aspect ratio in which the video should be displayed.
+  *   `aspectRatio` (*type:* `float()`, *default:* `nil`) - The video content's display aspect ratio, which specifies the aspect
+      ratio in which the video should be displayed.
   *   `bitrateBps` (*type:* `String.t`, *default:* `nil`) - The video stream's bitrate, in bits per second.
   *   `codec` (*type:* `String.t`, *default:* `nil`) - The video codec that the stream uses.
   *   `frameRateFps` (*type:* `float()`, *default:* `nil`) - The video stream's frame rate, in frames per second.
   *   `heightPixels` (*type:* `integer()`, *default:* `nil`) - The encoded video content's height in pixels.
-  *   `rotation` (*type:* `String.t`, *default:* `nil`) - The amount that YouTube needs to rotate the original source content to properly display the video.
-  *   `vendor` (*type:* `String.t`, *default:* `nil`) - A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code.
-  *   `widthPixels` (*type:* `integer()`, *default:* `nil`) - The encoded video content's width in pixels. You can calculate the video's encoding aspect ratio as width_pixels / height_pixels.
+  *   `rotation` (*type:* `String.t`, *default:* `nil`) - The amount that YouTube needs to rotate the original source content
+      to properly display the video.
+  *   `vendor` (*type:* `String.t`, *default:* `nil`) - A value that uniquely identifies a video vendor. Typically, the value is
+      a four-letter vendor code.
+  *   `widthPixels` (*type:* `integer()`, *default:* `nil`) - The encoded video content's width in pixels. You can calculate the
+      video's encoding aspect ratio as
+      <code>width_pixels</code>&nbsp;/&nbsp;<code>height_pixels</code>.
   """
 
   use GoogleApi.Gax.ModelBase

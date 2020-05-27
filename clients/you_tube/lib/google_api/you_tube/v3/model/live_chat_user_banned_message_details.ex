@@ -21,7 +21,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatUserBannedMessageDetails do
 
   ## Attributes
 
-  *   `banDurationSeconds` (*type:* `String.t`, *default:* `nil`) - The duration of the ban. This property is only present if the banType is temporary.
+  *   `banDurationSeconds` (*type:* `String.t`, *default:* `nil`) - The duration of the ban. This property is only present if the
+      <code>banType</code> is <code>temporary</code>.
   *   `banType` (*type:* `String.t`, *default:* `nil`) - The type of ban.
   *   `bannedUserDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t`, *default:* `nil`) - The details of the user that was banned.
   """

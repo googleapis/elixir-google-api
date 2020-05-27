@@ -21,7 +21,8 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsLike do
 
   ## Attributes
 
-  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The resourceId object contains information that identifies the rated resource.
+  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>resourceId</code> object contains information that identifies
+      the rated resource.
   """
 
   use GoogleApi.Gax.ModelBase
