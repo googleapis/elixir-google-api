@@ -33,8 +33,7 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `location_id` (*type:* `String.t`) - The geographic location to list info types. Reserved for future
-      extensions.
+  *   `parent` (*type:* `String.t`) - The parent resource name, for example locations/{location_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -52,6 +51,7 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
       *   `:languageCode` (*type:* `String.t`) - BCP-47 language code for localized infoType friendly
           names. If omitted, or if localized strings are not available,
           en-US strings will be returned.
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -63,7 +63,7 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
-  def dlp_locations_info_types_list(connection, location_id, optional_params \\ [], opts \\ []) do
+  def dlp_locations_info_types_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -77,14 +77,15 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
-      :languageCode => :query
+      :languageCode => :query,
+      :locationId => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/locations/{locationId}/infoTypes", %{
-        "locationId" => URI.encode(location_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/infoTypes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

@@ -272,8 +272,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:locationId` (*type:* `String.t`) - The geographic location where deidentifications templates will be retrieved
-          from. Use `-` for all locations. Reserved for future extensions.
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
       *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
@@ -663,8 +662,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:locationId` (*type:* `String.t`) - The geographic location where inspection templates will be retrieved from.
-          Use `-` for all locations. Reserved for future extensions.
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
       *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
@@ -825,8 +823,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
-  *   `location_id` (*type:* `String.t`) - The geographic location to store the deidentification template. Reserved
-      for future extensions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -850,7 +846,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   @spec dlp_organizations_locations_deidentify_templates_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -860,7 +855,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   def dlp_organizations_locations_deidentify_templates_create(
         connection,
         parent,
-        location_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -882,9 +876,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{+parent}/locations/{locationId}/deidentifyTemplates", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
-        "locationId" => URI.encode(location_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/deidentifyTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1054,8 +1047,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
-  *   `location_id` (*type:* `String.t`) - The geographic location where deidentifications templates will be retrieved
-      from. Use `-` for all locations. Reserved for future extensions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1068,6 +1059,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
       *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
@@ -1095,7 +1087,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   @spec dlp_organizations_locations_deidentify_templates_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1105,7 +1096,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   def dlp_organizations_locations_deidentify_templates_list(
         connection,
         parent,
-        location_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1121,6 +1111,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :locationId => :query,
       :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
@@ -1129,9 +1120,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{+parent}/locations/{locationId}/deidentifyTemplates", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
-        "locationId" => URI.encode(location_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/deidentifyTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1231,8 +1221,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
-  *   `location_id` (*type:* `String.t`) - The geographic location to store the inspection template. Reserved for
-      future extensions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1256,7 +1244,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   @spec dlp_organizations_locations_inspect_templates_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1266,7 +1253,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   def dlp_organizations_locations_inspect_templates_create(
         connection,
         parent,
-        location_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1288,9 +1274,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{+parent}/locations/{locationId}/inspectTemplates", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
-        "locationId" => URI.encode(location_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/inspectTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1457,8 +1442,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
-  *   `location_id` (*type:* `String.t`) - The geographic location where inspection templates will be retrieved from.
-      Use `-` for all locations. Reserved for future extensions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1471,6 +1454,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
       *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
@@ -1498,7 +1482,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   @spec dlp_organizations_locations_inspect_templates_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1508,7 +1491,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   def dlp_organizations_locations_inspect_templates_list(
         connection,
         parent,
-        location_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1524,6 +1506,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :locationId => :query,
       :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
@@ -1532,9 +1515,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{+parent}/locations/{locationId}/inspectTemplates", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
-        "locationId" => URI.encode(location_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/inspectTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1632,8 +1614,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
-  *   `location_id` (*type:* `String.t`) - The geographic location to store the stored infoType. Reserved for
-      future extensions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1657,7 +1637,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   @spec dlp_organizations_locations_stored_info_types_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1667,7 +1646,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   def dlp_organizations_locations_stored_info_types_create(
         connection,
         parent,
-        location_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1689,9 +1667,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{+parent}/locations/{locationId}/storedInfoTypes", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
-        "locationId" => URI.encode(location_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/storedInfoTypes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1861,8 +1838,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
       organizations/my-org-id.
-  *   `location_id` (*type:* `String.t`) - The geographic location where stored infoTypes will be retrieved from.
-      Use `-` for all locations. Reserved for future extensions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1875,6 +1850,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
       *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are
@@ -1903,7 +1879,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   @spec dlp_organizations_locations_stored_info_types_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1913,7 +1888,6 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
   def dlp_organizations_locations_stored_info_types_list(
         connection,
         parent,
-        location_id,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1929,6 +1903,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :locationId => :query,
       :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
@@ -1937,9 +1912,8 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{+parent}/locations/{locationId}/storedInfoTypes", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
-        "locationId" => URI.encode(location_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/storedInfoTypes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2270,8 +2244,7 @@ defmodule GoogleApi.DLP.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:locationId` (*type:* `String.t`) - The geographic location where stored infoTypes will be retrieved from.
-          Use `-` for all locations. Reserved for future extensions.
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
       *   `:orderBy` (*type:* `String.t`) - Comma separated list of fields to order by,
           followed by `asc` or `desc` postfix. This list is case-insensitive,
           default sorting order is ascending, redundant space characters are

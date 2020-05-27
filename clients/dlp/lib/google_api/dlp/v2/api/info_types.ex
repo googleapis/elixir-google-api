@@ -50,8 +50,8 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
       *   `:languageCode` (*type:* `String.t`) - BCP-47 language code for localized infoType friendly
           names. If omitted, or if localized strings are not available,
           en-US strings will be returned.
-      *   `:locationId` (*type:* `String.t`) - The geographic location to list info types. Reserved for future
-          extensions.
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
+      *   `:parent` (*type:* `String.t`) - The parent resource name, for example locations/{location_id}.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -78,7 +78,8 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
       :upload_protocol => :query,
       :filter => :query,
       :languageCode => :query,
-      :locationId => :query
+      :locationId => :query,
+      :parent => :query
     }
 
     request =

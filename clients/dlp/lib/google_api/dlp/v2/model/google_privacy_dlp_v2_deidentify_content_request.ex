@@ -38,8 +38,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentRequest do
       template. Repeated fields are appended. Singular sub-messages and groups
       are recursively merged.
   *   `item` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t`, *default:* `nil`) - The item to de-identify. Will be treated as text.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to process de-identification. Reserved for future
-      extensions.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   """
 
   use GoogleApi.Gax.ModelBase
