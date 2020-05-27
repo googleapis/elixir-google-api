@@ -32,11 +32,15 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   *   `gatewayAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field can be set only at resource creation time.
+  *   `ipv6CidrRange` (*type:* `String.t`, *default:* `nil`) - [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
   *   `kind` (*type:* `String.t`, *default:* `compute#subnetwork`) - [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
   *   `logConfig` (*type:* `GoogleApi.Compute.V1.Model.SubnetworkLogConfig.t`, *default:* `nil`) - This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Stackdriver.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
   *   `privateIpGoogleAccess` (*type:* `boolean()`, *default:* `nil`) - Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+  *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
+
+      This field can be both set at resource creation time and updated using patch.
   *   `purpose` (*type:* `String.t`, *default:* `nil`) - The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
   *   `region` (*type:* `String.t`, *default:* `nil`) - URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
   *   `role` (*type:* `String.t`, *default:* `nil`) - The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
@@ -55,11 +59,13 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
           :gatewayAddress => String.t(),
           :id => String.t(),
           :ipCidrRange => String.t(),
+          :ipv6CidrRange => String.t(),
           :kind => String.t(),
           :logConfig => GoogleApi.Compute.V1.Model.SubnetworkLogConfig.t(),
           :name => String.t(),
           :network => String.t(),
           :privateIpGoogleAccess => boolean(),
+          :privateIpv6GoogleAccess => String.t(),
           :purpose => String.t(),
           :region => String.t(),
           :role => String.t(),
@@ -75,11 +81,13 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   field(:gatewayAddress)
   field(:id)
   field(:ipCidrRange)
+  field(:ipv6CidrRange)
   field(:kind)
   field(:logConfig, as: GoogleApi.Compute.V1.Model.SubnetworkLogConfig)
   field(:name)
   field(:network)
   field(:privateIpGoogleAccess)
+  field(:privateIpv6GoogleAccess)
   field(:purpose)
   field(:region)
   field(:role)

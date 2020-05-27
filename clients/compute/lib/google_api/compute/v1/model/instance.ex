@@ -56,6 +56,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `networkInterfaces` (*type:* `list(GoogleApi.Compute.V1.Model.NetworkInterface.t)`, *default:* `nil`) - An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+  *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
   *   `reservationAffinity` (*type:* `GoogleApi.Compute.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Specifies the reservations that this instance can consume from.
   *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies applied to this instance.
   *   `scheduling` (*type:* `GoogleApi.Compute.V1.Model.Scheduling.t`, *default:* `nil`) - Sets the scheduling options for this instance.
@@ -66,7 +67,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - 
   *   `shieldedInstanceIntegrityPolicy` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceIntegrityPolicy.t`, *default:* `nil`) - 
   *   `startRestricted` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, STOPPED, SUSPENDING, SUSPENDED, and TERMINATED.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, and TERMINATED.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional, human-readable explanation of the status.
   *   `tags` (*type:* `GoogleApi.Compute.V1.Model.Tags.t`, *default:* `nil`) - Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
@@ -94,6 +95,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
           :minCpuPlatform => String.t(),
           :name => String.t(),
           :networkInterfaces => list(GoogleApi.Compute.V1.Model.NetworkInterface.t()),
+          :privateIpv6GoogleAccess => String.t(),
           :reservationAffinity => GoogleApi.Compute.V1.Model.ReservationAffinity.t(),
           :resourcePolicies => list(String.t()),
           :scheduling => GoogleApi.Compute.V1.Model.Scheduling.t(),
@@ -128,6 +130,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   field(:minCpuPlatform)
   field(:name)
   field(:networkInterfaces, as: GoogleApi.Compute.V1.Model.NetworkInterface, type: :list)
+  field(:privateIpv6GoogleAccess)
   field(:reservationAffinity, as: GoogleApi.Compute.V1.Model.ReservationAffinity)
   field(:resourcePolicies, type: :list)
   field(:scheduling, as: GoogleApi.Compute.V1.Model.Scheduling)
