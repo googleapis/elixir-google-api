@@ -43,6 +43,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Advertiser do
       supported and will be ignored if provided.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the advertiser.
   *   `partnerId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique ID of the partner that the advertiser belongs to.
+  *   `servingConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig.t`, *default:* `nil`) - Targeting settings related to ad serving of the advertiser.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the advertiser was last updated. Assigned by the system.
   """
 
@@ -59,6 +60,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Advertiser do
           :integrationDetails => GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t(),
           :name => String.t(),
           :partnerId => String.t(),
+          :servingConfig => GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig.t(),
           :updateTime => DateTime.t()
         }
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Advertiser do
   field(:integrationDetails, as: GoogleApi.DisplayVideo.V1.Model.IntegrationDetails)
   field(:name)
   field(:partnerId)
+  field(:servingConfig, as: GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig)
   field(:updateTime, as: DateTime)
 end
 
