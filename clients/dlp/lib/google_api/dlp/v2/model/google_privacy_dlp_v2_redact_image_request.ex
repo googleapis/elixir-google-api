@@ -27,9 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactImageRequest do
   *   `includeFindings` (*type:* `boolean()`, *default:* `nil`) - Whether the response should include findings along with the redacted
       image.
   *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - Configuration for the inspector.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to process the request. Reserved for future
-      extensions.
-      Location is restricted to 'global', 'us', 'asia', and 'europe'.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   """
 
   use GoogleApi.Gax.ModelBase

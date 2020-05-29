@@ -29,10 +29,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectContentRequest do
       template. Repeated fields are appended. Singular sub-messages and groups
       are recursively merged.
   *   `item` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t`, *default:* `nil`) - The item to inspect.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to process content inspection. Reserved for future
-      extensions.
-      When inspecting images location is restricted to 'global', 'us', 'asia',
-      and 'europe'.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   """
 
   use GoogleApi.Gax.ModelBase

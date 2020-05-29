@@ -28,8 +28,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReidentifyContentRequest do
       template. Repeated fields are appended. Singular sub-messages and groups
       are recursively merged.
   *   `item` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t`, *default:* `nil`) - The item to re-identify. Will be treated as text.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to process content reidentification.  Reserved for
-      future extensions.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   *   `reidentifyConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig.t`, *default:* `nil`) - Configuration for the re-identification of the content item.
       This field shares the same proto message type that is used for
       de-identification, however its usage here is for the reversal of the

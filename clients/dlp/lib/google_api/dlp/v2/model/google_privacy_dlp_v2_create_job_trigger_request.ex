@@ -22,8 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateJobTriggerRequest do
   ## Attributes
 
   *   `jobTrigger` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t`, *default:* `nil`) - Required. The JobTrigger to create.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to store the job trigger. Reserved for
-      future extensions.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   *   `triggerId` (*type:* `String.t`, *default:* `nil`) - The trigger id can contain uppercase and lowercase letters,
       numbers, and hyphens; that is, it must match the regular
       expression: `[a-zA-Z\\\\d-_]+`. The maximum length is 100
