@@ -33,6 +33,12 @@ defmodule GoogleApi.Run.V1.Model.DomainMappingStatus do
   *   `resourceRecords` (*type:* `list(GoogleApi.Run.V1.Model.ResourceRecord.t)`, *default:* `nil`) - The resource records required to configure this domain mapping. These
       records must be added to the domain's DNS configuration in order to
       serve the application via this domain mapping.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
+
+      Cloud Run on GKE: supported
+
+      Holds the URL that will serve the traffic of the DomainMapping.
+      +optional
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,13 +47,15 @@ defmodule GoogleApi.Run.V1.Model.DomainMappingStatus do
           :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()),
           :mappedRouteName => String.t(),
           :observedGeneration => integer(),
-          :resourceRecords => list(GoogleApi.Run.V1.Model.ResourceRecord.t())
+          :resourceRecords => list(GoogleApi.Run.V1.Model.ResourceRecord.t()),
+          :url => String.t()
         }
 
   field(:conditions, as: GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition, type: :list)
   field(:mappedRouteName)
   field(:observedGeneration)
   field(:resourceRecords, as: GoogleApi.Run.V1.Model.ResourceRecord, type: :list)
+  field(:url)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Run.V1.Model.DomainMappingStatus do
