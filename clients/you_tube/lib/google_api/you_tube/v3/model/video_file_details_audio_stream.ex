@@ -24,7 +24,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream do
   *   `bitrateBps` (*type:* `String.t`, *default:* `nil`) - The audio stream's bitrate, in bits per second.
   *   `channelCount` (*type:* `integer()`, *default:* `nil`) - The number of audio channels that the stream contains.
   *   `codec` (*type:* `String.t`, *default:* `nil`) - The audio codec that the stream uses.
-  *   `vendor` (*type:* `String.t`, *default:* `nil`) - A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code.
+  *   `vendor` (*type:* `String.t`, *default:* `nil`) - A value that uniquely identifies a video vendor. Typically, the value
+      is a four-letter vendor code.
   """
 
   use GoogleApi.Gax.ModelBase

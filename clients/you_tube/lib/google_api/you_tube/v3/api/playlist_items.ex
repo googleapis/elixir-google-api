@@ -26,23 +26,36 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes a playlist item.
+  Deletes a resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - The id parameter specifies the YouTube playlist item ID for the playlist item that is being deleted. In a playlistItem resource, the id property specifies the playlist item's ID.
+  *   `id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter value.
+          This parameter is intended for YouTube content partners that own and manage
+          many different YouTube channels. It allows content owners to authenticate
+          once and get access to all their video and channel data, without having to
+          provide authentication credentials for each individual channel. The CMS
+          account that the user authenticates with must be linked to the specified
+          YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -54,13 +67,17 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_playlist_items_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOfContentOwner => :query
     }
 
@@ -78,23 +95,38 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   end
 
   @doc """
-  Adds a resource to a playlist.
+  Inserts a new resource into this collection.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
+      this operation. It identifies the properties that the write operation will
+      set as well as the properties that the API response will include.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter value.
+          This parameter is intended for YouTube content partners that own and manage
+          many different YouTube channels. It allows content owners to authenticate
+          once and get access to all their video and channel data, without having to
+          provide authentication credentials for each individual channel. The CMS
+          account that the user authenticates with must be linked to the specified
+          YouTube content owner.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistItem.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -103,19 +135,23 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.PlaylistItem{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_playlist_items_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_playlist_items_insert(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.PlaylistItem.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def youtube_playlist_items_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOfContentOwner => :query,
       :body => :body
     }
@@ -134,30 +170,55 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   end
 
   @doc """
-  Returns a collection of playlist items that match the API request parameters. You can retrieve all of the playlist items in a specified playlist or retrieve one or more playlist items by their unique IDs.
+  Retrieves a list of resources, possibly filtered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include.
-
-      If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part=snippet, the API response will contain all of those properties.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of one or more <code>playlistItem</code> resource
+      properties that the API response will include.<br><br>If the parameter
+      identifies a property that contains child properties, the child properties
+      will be included in the response. For example, in a
+      <code>playlistItem</code> resource, the <code>snippet</code> property
+      contains numerous fields, including the <code>title</code>,
+      <code>description</code>, <code>position</code>, and
+      <code>resourceId</code> properties. As such, if you set
+      <code><strong>part=snippet</strong></code>, the API response will contain
+      all of those properties.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:id` (*type:* `String.t`) - The id parameter specifies a comma-separated list of one or more unique playlist item IDs.
-      *   `:maxResults` (*type:* `integer()`) - The maxResults parameter specifies the maximum number of items that should be returned in the result set.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:pageToken` (*type:* `String.t`) - The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
-      *   `:playlistId` (*type:* `String.t`) - The playlistId parameter specifies the unique ID of the playlist for which you want to retrieve playlist items. Note that even though this is an optional parameter, every request to retrieve playlist items must specify a value for either the id parameter or the playlistId parameter.
-      *   `:videoId` (*type:* `String.t`) - The videoId parameter specifies that the request should return only the playlist items that contain the specified video.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:id` (*type:* `list(String.t)`) - 
+      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
+          maximum number of items that should be returned in the result set.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter value.
+          This parameter is intended for YouTube content partners that own and manage
+          many different YouTube channels. It allows content owners to authenticate
+          once and get access to all their video and channel data, without having to
+          provide authentication credentials for each individual channel. The CMS
+          account that the user authenticates with must be linked to the specified
+          YouTube content owner.
+      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
+          page in the result set that should be returned. In an API response, the
+          <code>nextPageToken</code> and <code>prevPageToken</code> properties
+          identify other pages that could be retrieved.
+      *   `:playlistId` (*type:* `String.t`) - Return the playlist items within the given playlist.
+      *   `:videoId` (*type:* `String.t`) - Return the playlist items associated with the given video ID.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -165,19 +226,23 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.PlaylistItemListResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_playlist_items_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_playlist_items_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.PlaylistItemListResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def youtube_playlist_items_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :id => :query,
       :maxResults => :query,
       :onBehalfOfContentOwner => :query,
@@ -200,25 +265,49 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   end
 
   @doc """
-  Modifies a playlist item. For example, you could update the item's position in the playlist.
+  Updates an existing resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
-
-      Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a playlist item can specify a start time and end time, which identify the times portion of the video that should play when users watch the video in the playlist. If your request is updating a playlist item that sets these values, and the request's part parameter value includes the contentDetails part, the playlist item's start and end times will be updated to whatever value the request body specifies. If the request body does not specify values, the existing start and end times will be removed and replaced with the default settings.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
+      this operation. It identifies the properties that the write operation will
+      set as well as the properties that the API response will
+      include.<br/><br/>Note that this method will override the existing values
+      for all of the mutable properties that are contained in any parts that the
+      parameter value specifies. For example, a playlist item can specify a start
+      time and end time, which identify the times portion of the video that
+      should play when users watch the video in the playlist. If your request is
+      updating a playlist item that sets these values, and the
+      request's <code>part</code> parameter value includes the
+      <code>contentDetails</code> part, the playlist item's start and end times
+      will be updated to whatever value the request body specifies. If the
+      request body does not specify values, the existing start and end times will
+      be removed and replaced with the default settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter value.
+          This parameter is intended for YouTube content partners that own and manage
+          many different YouTube channels. It allows content owners to authenticate
+          once and get access to all their video and channel data, without having to
+          provide authentication credentials for each individual channel. The CMS
+          account that the user authenticates with must be linked to the specified
+          YouTube content owner.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistItem.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -227,19 +316,23 @@ defmodule GoogleApi.YouTube.V3.Api.PlaylistItems do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.PlaylistItem{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_playlist_items_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_playlist_items_update(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.PlaylistItem.t()}
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def youtube_playlist_items_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOfContentOwner => :query,
       :body => :body
     }

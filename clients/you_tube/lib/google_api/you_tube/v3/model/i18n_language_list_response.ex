@@ -23,9 +23,12 @@ defmodule GoogleApi.YouTube.V3.Model.I18nLanguageListResponse do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
-  *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.I18nLanguage.t)`, *default:* `nil`) - A list of supported i18n languages. In this map, the i18n language ID is the map key, and its value is the corresponding i18nLanguage resource.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#i18nLanguageListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#i18nLanguageListResponse".
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
+  *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.I18nLanguage.t)`, *default:* `nil`) - A list of supported i18n languages. In this map, the i18n language ID is
+      the map key, and its value is the corresponding <code>i18nLanguage</code>
+      resource.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#i18nLanguageListResponse`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#i18nLanguageListResponse"</code>.
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

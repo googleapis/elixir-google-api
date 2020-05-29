@@ -21,7 +21,8 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionSnippet do
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that published the channel section.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that published
+      the channel section.
   *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The language of the channel section's default title and description.
   *   `localized` (*type:* `GoogleApi.YouTube.V3.Model.ChannelSectionLocalization.t`, *default:* `nil`) - Localized title, read-only.
   *   `position` (*type:* `integer()`, *default:* `nil`) - The position of the channel section in the channel.

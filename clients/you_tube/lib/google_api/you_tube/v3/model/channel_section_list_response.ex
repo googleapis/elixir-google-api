@@ -24,8 +24,9 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSectionListResponse do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.ChannelSection.t)`, *default:* `nil`) - A list of ChannelSections that match the request criteria.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#channelSectionListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#channelSectionListResponse".
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#channelSectionListResponse`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#channelSectionListResponse"</code>.
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

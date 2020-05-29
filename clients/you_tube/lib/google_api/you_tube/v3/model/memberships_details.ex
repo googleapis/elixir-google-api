@@ -21,10 +21,14 @@ defmodule GoogleApi.YouTube.V3.Model.MembershipsDetails do
 
   ## Attributes
 
-  *   `accessibleLevels` (*type:* `list(String.t)`, *default:* `nil`) - Ids of all levels that the user has access to. This includes the currently active level and all other levels that are included because of a higher purchase.
+  *   `accessibleLevels` (*type:* `list(String.t)`, *default:* `nil`) - Ids of all levels that the user has access to. This includes the currently
+      active level and all other levels that are included because of a higher
+      purchase.
   *   `highestAccessibleLevel` (*type:* `String.t`, *default:* `nil`) - Id of the highest level that the user has access to at the moment.
-  *   `highestAccessibleLevelDisplayName` (*type:* `String.t`, *default:* `nil`) - Display name of the highest level that the user has access to at the moment.
-  *   `membershipsDuration` (*type:* `GoogleApi.YouTube.V3.Model.MembershipsDuration.t`, *default:* `nil`) - Data about memberships duration without taking into consideration pricing levels.
+  *   `highestAccessibleLevelDisplayName` (*type:* `String.t`, *default:* `nil`) - Display name for the highest level that the user has access to at the
+      moment.
+  *   `membershipsDuration` (*type:* `GoogleApi.YouTube.V3.Model.MembershipsDuration.t`, *default:* `nil`) - Data about memberships duration without taking into consideration pricing
+      levels.
   *   `membershipsDurationAtLevels` (*type:* `list(GoogleApi.YouTube.V3.Model.MembershipsDurationAtLevel.t)`, *default:* `nil`) - Data about memberships duration on particular pricing levels.
   """
 

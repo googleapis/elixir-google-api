@@ -21,10 +21,11 @@ defmodule GoogleApi.YouTube.V3.Model.CdnSettings do
 
   ## Attributes
 
-  *   `format` (*type:* `String.t`, *default:* `nil`) - The format of the video stream that you are sending to Youtube.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - The format of the video stream that you are sending to Youtube. <br><br>
   *   `frameRate` (*type:* `String.t`, *default:* `nil`) - The frame rate of the inbound video data.
-  *   `ingestionInfo` (*type:* `GoogleApi.YouTube.V3.Model.IngestionInfo.t`, *default:* `nil`) - The ingestionInfo object contains information that YouTube provides that you need to transmit your RTMP or HTTP stream to YouTube.
-  *   `ingestionType` (*type:* `String.t`, *default:* `nil`) - The method or protocol used to transmit the video stream.
+  *   `ingestionInfo` (*type:* `GoogleApi.YouTube.V3.Model.IngestionInfo.t`, *default:* `nil`) - The <code>ingestionInfo</code> object contains information that YouTube
+      provides that you need to transmit your RTMP or HTTP stream to YouTube.
+  *   `ingestionType` (*type:* `String.t`, *default:* `nil`) -  The method or protocol used to transmit the video stream.
   *   `resolution` (*type:* `String.t`, *default:* `nil`) - The resolution of the inbound video data.
   """
 

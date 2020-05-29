@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.YouTube.V3.Model.SubscriptionSubscriberSnippet do
   @moduledoc """
-  Basic details about a subscription's subscriber including title, description, channel ID and thumbnails.
+  Basic details about a subscription's subscriber including title,
+  description, channel ID and thumbnails.
 
   ## Attributes
 

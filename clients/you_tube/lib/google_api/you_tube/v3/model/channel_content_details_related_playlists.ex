@@ -21,11 +21,35 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelContentDetailsRelatedPlaylists do
 
   ## Attributes
 
-  *   `favorites` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s favorite videos. Use the  playlistItems.insert and  playlistItems.delete to add or remove items from that list.
-  *   `likes` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s liked videos. Use the   playlistItems.insert and  playlistItems.delete to add or remove items from that list.
-  *   `uploads` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s uploaded videos. Use the  videos.insert method to upload new videos and the videos.delete method to delete previously uploaded videos.
-  *   `watchHistory` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s watch history. Use the  playlistItems.insert and  playlistItems.delete to add or remove items from that list.
-  *   `watchLater` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s watch later playlist. Use the playlistItems.insert and  playlistItems.delete to add or remove items from that list.
+  *   `favorites` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s favorite videos. Use
+      the <code> <a
+      href="/youtube/v3/docs/playlistItems/insert">playlistItems.insert</a></code>
+      and <code> <a
+      href="/youtube/v3/docs/playlistItems/delete">playlistItems.delete</a></code>
+      to add or remove items from that list.
+  *   `likes` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s liked videos. Use the
+      <code> <a href="/youtube/v3/docs/playlistItems/insert">
+      playlistItems.insert</a></code> and <code> <a
+      href="/youtube/v3/docs/playlistItems/delete">playlistItems.delete</a></code>
+      to add or remove items from that list.
+  *   `uploads` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s uploaded videos. Use
+      the <code> <a
+      href="/youtube/v3/docs/videos/insert">videos.insert</a></code> method to
+      upload new videos and the <code><a
+      href="/youtube/v3/docs/videos/delete">videos.delete</a></code> method to
+      delete previously uploaded videos.
+  *   `watchHistory` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s watch history. Use the
+      <code> <a
+      href="/youtube/v3/docs/playlistItems/insert">playlistItems.insert</a></code>
+      and <code> <a
+      href="/youtube/v3/docs/playlistItems/delete">playlistItems.delete</a></code>
+      to add or remove items from that list.
+  *   `watchLater` (*type:* `String.t`, *default:* `nil`) - The ID of the playlist that contains the channel"s watch later playlist.
+      Use the <code><a
+      href="/youtube/v3/docs/playlistItems/insert">playlistItems.insert</a></code>
+      and <code> <a
+      href="/youtube/v3/docs/playlistItems/delete">playlistItems.delete</a></code>
+      to add or remove items from that list.
   """
 
   use GoogleApi.Gax.ModelBase

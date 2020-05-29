@@ -21,8 +21,13 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAgeGating do
 
   ## Attributes
 
-  *   `alcoholContent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether or not the video has alcoholic beverage content. Only users of legal purchasing age in a particular country, as identified by ICAP, can view the content.
-  *   `restricted` (*type:* `boolean()`, *default:* `nil`) - Age-restricted trailers. For redband trailers and adult-rated video-games. Only users aged 18+ can view the content. The the field is true the content is restricted to viewers aged 18+. Otherwise The field won't be present.
+  *   `alcoholContent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether or not the video has alcoholic beverage content. Only
+      users of legal purchasing age in a particular country, as identified by
+      ICAP, can view the content.
+  *   `restricted` (*type:* `boolean()`, *default:* `nil`) - Age-restricted trailers. For redband trailers and adult-rated video-games.
+      Only users aged 18+ can view the content. The the field is
+      <code>true</code> the content is restricted to viewers aged 18+. Otherwise
+      The field won't be present.
   *   `videoGameRating` (*type:* `String.t`, *default:* `nil`) - Video game rating, if any.
   """
 

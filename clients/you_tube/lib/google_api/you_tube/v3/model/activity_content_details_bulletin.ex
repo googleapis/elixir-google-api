@@ -21,7 +21,9 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsBulletin do
 
   ## Attributes
 
-  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The resourceId object contains information that identifies the resource associated with a bulletin post.
+  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>resourceId</code> object contains information that
+      identifies the resource associated with a bulletin post.
+      @mutable youtube.activities.insert
   """
 
   use GoogleApi.Gax.ModelBase

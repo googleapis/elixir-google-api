@@ -21,9 +21,17 @@ defmodule GoogleApi.YouTube.V3.Model.VideoTopicDetails do
 
   ## Attributes
 
-  *   `relevantTopicIds` (*type:* `list(String.t)`, *default:* `nil`) - Similar to topic_id, except that these topics are merely relevant to the video. These are topics that may be mentioned in, or appear in the video. You can retrieve information about each topic using Freebase Topic API.
-  *   `topicCategories` (*type:* `list(String.t)`, *default:* `nil`) - A list of Wikipedia URLs that provide a high-level description of the video's content.
-  *   `topicIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of Freebase topic IDs that are centrally associated with the video. These are topics that are centrally featured in the video, and it can be said that the video is mainly about each of these. You can retrieve information about each topic using the Freebase Topic API.
+  *   `relevantTopicIds` (*type:* `list(String.t)`, *default:* `nil`) - Similar to topic_id, except that these topics are merely relevant to the
+      video. These are topics that may be mentioned in, or appear in the video.
+      You can retrieve information about each topic using <a
+      href="http://wiki.freebase.com/wiki/Topic_API">Freebase Topic API</a>.
+  *   `topicCategories` (*type:* `list(String.t)`, *default:* `nil`) - A list of Wikipedia URLs that provide a high-level description of the
+      video's content.
+  *   `topicIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of Freebase topic IDs that are centrally associated with the video.
+      These are topics that are centrally featured in the video, and it can be
+      said that the video is mainly about each of these. You can retrieve
+      information about each topic using the < a
+      href="http://wiki.freebase.com/wiki/Topic_API">Freebase Topic API</a>.
   """
 
   use GoogleApi.Gax.ModelBase

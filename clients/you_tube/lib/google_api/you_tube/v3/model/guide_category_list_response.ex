@@ -23,13 +23,18 @@ defmodule GoogleApi.YouTube.V3.Model.GuideCategoryListResponse do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
-  *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.GuideCategory.t)`, *default:* `nil`) - A list of categories that can be associated with YouTube channels. In this map, the category ID is the map key, and its value is the corresponding guideCategory resource.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#guideCategoryListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#guideCategoryListResponse".
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.
+  *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.GuideCategory.t)`, *default:* `nil`) - A list of categories that can be associated with YouTube channels. In this
+      map, the category ID is the map key, and its value is the corresponding
+      <code>guideCategory</code> resource.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#guideCategoryListResponse`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#guideCategoryListResponse"</code>.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the <code>pageToken</code>
+      parameter to retrieve the next page in the result set.
   *   `pageInfo` (*type:* `GoogleApi.YouTube.V3.Model.PageInfo.t`, *default:* `nil`) - 
-  *   `prevPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.
+  *   `prevPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the <code>pageToken</code>
+      parameter to retrieve the previous page in the result set.
   *   `tokenPagination` (*type:* `GoogleApi.YouTube.V3.Model.TokenPagination.t`, *default:* `nil`) - 
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase

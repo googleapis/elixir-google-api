@@ -21,8 +21,10 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatus do
 
   ## Attributes
 
-  *   `isLinked` (*type:* `boolean()`, *default:* `nil`) - If true, then the user is linked to either a YouTube username or G+ account. Otherwise, the user doesn't have a public YouTube identity.
+  *   `isLinked` (*type:* `boolean()`, *default:* `nil`) - If true, then the user is linked to either a YouTube username or G+
+      account. Otherwise, the user doesn't have a public YouTube identity.
   *   `longUploadsStatus` (*type:* `String.t`, *default:* `nil`) - The long uploads status of this channel. See
+      https://support.google.com/youtube/answer/71673 for more information.
   *   `madeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   *   `privacyStatus` (*type:* `String.t`, *default:* `nil`) - Privacy status of the channel.
   *   `selfDeclaredMadeForKids` (*type:* `boolean()`, *default:* `nil`) - 

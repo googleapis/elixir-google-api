@@ -23,7 +23,8 @@ defmodule GoogleApi.YouTube.V3.Model.ActivityContentDetailsPlaylistItem do
 
   *   `playlistId` (*type:* `String.t`, *default:* `nil`) - The value that YouTube uses to uniquely identify the playlist.
   *   `playlistItemId` (*type:* `String.t`, *default:* `nil`) - ID of the item within the playlist.
-  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The resourceId object contains information about the resource that was added to the playlist.
+  *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The <code>resourceId</code> object contains information about the
+      resource that was added to the playlist.
   """
 
   use GoogleApi.Gax.ModelBase

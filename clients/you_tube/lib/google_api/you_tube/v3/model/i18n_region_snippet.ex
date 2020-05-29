@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.YouTube.V3.Model.I18nRegionSnippet do
   @moduledoc """
-  Basic details about an i18n region, such as region code and human-readable name.
+  Basic details about an i18n region, such as region code and human-readable
+  name.
 
   ## Attributes
 
