@@ -26,7 +26,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2NotificationConfig do
       empty, all messages are matched. Syntax:
       https://cloud.google.com/appengine/docs/standard/python/search/query_strings
 
-      Fields/functions available for filtering are:
+      The following fields and functions are available for filtering:
 
       *  `message_type`, from the MSH-9.1 field. For example,
       `NOT message_type = "ADT"`.
@@ -53,7 +53,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2NotificationConfig do
       *  `PubsubMessage.Data` contains the resource name.
       *  `PubsubMessage.MessageId` is the ID of this notification. It is
       guaranteed to be unique within the topic.
-      *  `PubsubMessage.PublishTime` is the time at which the message was
+      *  `PubsubMessage.PublishTime` is the time when the message was
       published.
 
       Note that notifications are only sent if the topic is non-empty. [Topic
@@ -62,9 +62,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2NotificationConfig do
       publisher permissions on the given Pub/Sub topic. Not having adequate
       permissions causes the calls that send notifications to fail.
 
-      If a notification cannot be published to Cloud Pub/Sub, errors will be
-      logged to Cloud Logging (see [Viewing logs](/healthcare/docs/how-
-      tos/logging)).
+      If a notification can't be published to Cloud Pub/Sub, errors are
+      logged to Cloud Logging. For more information, see
+      [Viewing error logs in Cloud Logging](/healthcare/docs/how-tos/logging).
   """
 
   use GoogleApi.Gax.ModelBase

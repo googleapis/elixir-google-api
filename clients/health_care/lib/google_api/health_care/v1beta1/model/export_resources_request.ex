@@ -26,14 +26,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportResourcesRequest do
       The BigQuery location requires two IAM roles:
       `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`.
 
-      The output will be one BigQuery table per resource type.
+      The output is one BigQuery table per resource type.
   *   `gcsDestination` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestGcsDestination.t`, *default:* `nil`) - The Cloud Storage output destination.
 
       The Cloud Storage location requires the `roles/storage.objectAdmin` Cloud
       IAM role.
 
       The exported outputs are
-      organized by FHIR resource types. The server will create one object per
+      organized by FHIR resource types. The server creates one object per
       resource type. Each object contains newline delimited JSON, and each line
       is a FHIR resource.
   """

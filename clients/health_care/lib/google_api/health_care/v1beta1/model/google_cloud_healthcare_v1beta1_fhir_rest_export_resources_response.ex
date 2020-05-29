@@ -18,9 +18,9 @@
 defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse do
   @moduledoc """
   Response when all resources export successfully.
-  This structure will be included in the
+  This structure is included in the
   response to describe the detailed
-  outcome. It will only be included when the operation finishes successfully.
+  outcome after the operation finishes successfully.
 
   ## Attributes
 

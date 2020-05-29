@@ -18,8 +18,9 @@
 defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
   @moduledoc """
   A complete HL7v2 message.
-  See http://www.hl7.org/implement/standards/index.cfm?ref=common for details
-  on the standard.
+  See [Introduction to HL7 Standards]
+  (https://www.hl7.org/implement/standards/index.cfm?ref=common) for
+  details on the standard.
 
   ## Attributes
 

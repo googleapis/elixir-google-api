@@ -44,7 +44,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store do
       as part of the notification. Supplied by the client.
   *   `parserConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ParserConfig.t`, *default:* `nil`) - The configuration for the parser. It determines how the server parses the
       messages.
-  *   `rejectDuplicateMessage` (*type:* `boolean()`, *default:* `nil`) - Determines whether duplicate messages should be rejected. A duplicate
+  *   `rejectDuplicateMessage` (*type:* `boolean()`, *default:* `nil`) - Determines whether to reject duplicate messages. A duplicate
       message is a message with the same raw bytes as a message that has already
       been ingested/created in this HL7v2 store.
       The default value is false, meaning that the store accepts the duplicate
