@@ -27,6 +27,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DetectIntentRespo
       multiple default text responses exist, they will be concatenated when
       generating audio. If no default platform text responses exist, the
       generated audio content will be empty.
+
+      In some scenarios, multiple output audio fields may be present in the
+      response structure. In these cases, only the top-most-level audio output
+      has content.
   *   `outputAudioConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t`, *default:* `nil`) - The config used by the speech synthesizer to generate the output audio.
   *   `queryResult` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryResult.t`, *default:* `nil`) - The selected results of the conversational query or event processing.
       See `alternative_query_results` for additional potential results.
