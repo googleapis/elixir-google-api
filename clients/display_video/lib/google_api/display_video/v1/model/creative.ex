@@ -214,6 +214,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
       combined with following creative_type:
 
       * `CREATIVE_TYPE_VIDEO`
+  *   `lineItemIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The IDs of the line items this creative associated with.
+
+      To associate a creative to a line item, use
+      LineItem.creative_ids instead.
   *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not the creative can serve.
 
       Accepted values are:
@@ -401,6 +405,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
           :cmPlacementId => String.t(),
           :skipOffset => GoogleApi.DisplayVideo.V1.Model.AudioVideoOffset.t(),
           :vastTagUrl => String.t(),
+          :lineItemIds => list(String.t()),
           :entityStatus => String.t(),
           :additionalDimensions => list(GoogleApi.DisplayVideo.V1.Model.Dimensions.t()),
           :timerEvents => list(GoogleApi.DisplayVideo.V1.Model.TimerEvent.t()),
@@ -447,6 +452,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
   field(:cmPlacementId)
   field(:skipOffset, as: GoogleApi.DisplayVideo.V1.Model.AudioVideoOffset)
   field(:vastTagUrl)
+  field(:lineItemIds, type: :list)
   field(:entityStatus)
   field(:additionalDimensions, as: GoogleApi.DisplayVideo.V1.Model.Dimensions, type: :list)
   field(:timerEvents, as: GoogleApi.DisplayVideo.V1.Model.TimerEvent, type: :list)
