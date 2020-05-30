@@ -23,17 +23,20 @@ defmodule GoogleApi.Monitoring.V3.Model.ListAlertPoliciesResponse do
 
   *   `alertPolicies` (*type:* `list(GoogleApi.Monitoring.V3.Model.AlertPolicy.t)`, *default:* `nil`) - The returned alert policies.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than were returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of alert policies in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :alertPolicies => list(GoogleApi.Monitoring.V3.Model.AlertPolicy.t()),
-          :nextPageToken => String.t()
+          :nextPageToken => String.t(),
+          :totalSize => integer()
         }
 
   field(:alertPolicies, as: GoogleApi.Monitoring.V3.Model.AlertPolicy, type: :list)
   field(:nextPageToken)
+  field(:totalSize)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ListAlertPoliciesResponse do
