@@ -21,7 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.CreateSessionRequest do
 
   ## Attributes
 
-  *   `session` (*type:* `GoogleApi.Spanner.V1.Model.Session.t`, *default:* `nil`) - The session to create.
+  *   `session` (*type:* `GoogleApi.Spanner.V1.Model.Session.t`, *default:* `nil`) - Required. The session to create.
   """
 
   use GoogleApi.Gax.ModelBase

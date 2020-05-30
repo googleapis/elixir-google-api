@@ -33,8 +33,7 @@ defmodule GoogleApi.Spanner.V1.Model.Session do
        * No more than 64 labels can be associated with a given session.
 
       See https://goo.gl/xmQnxf for more information on and examples of labels.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the session. This is always system-assigned; values provided
-      when creating a session are ignored.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the session. This is always system-assigned.
   """
 
   use GoogleApi.Gax.ModelBase
