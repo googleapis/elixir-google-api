@@ -24,22 +24,43 @@ defmodule GoogleApi.CloudKMS.V1.Model.PublicKey do
 
   *   `algorithm` (*type:* `String.t`, *default:* `nil`) - The Algorithm associated
       with this key.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the CryptoKeyVersion public key.
+      Provided here for verification.
+
+      NOTE: This field is in Beta.
   *   `pem` (*type:* `String.t`, *default:* `nil`) - The public key, encoded in PEM format. For more information, see the
       [RFC 7468](https://tools.ietf.org/html/rfc7468) sections for
       [General Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
       [Textual Encoding of Subject Public Key Info]
       (https://tools.ietf.org/html/rfc7468#section-13).
+  *   `pemCrc32c` (*type:* `String.t`, *default:* `nil`) - Integrity verification field. A CRC32C checksum of the returned
+      PublicKey.pem. An integrity check of PublicKey.pem can be performed
+      by computing the CRC32C checksum of PublicKey.pem and
+      comparing your results to this field. Discard the response in case of
+      non-matching checksum values, and perform a limited number of retries. A
+      persistent mismatch may indicate an issue in your computation of the CRC32C
+      checksum.
+      Note: This field is defined as int64 for reasons of compatibility across
+      different languages. However, it is a non-negative integer, which will
+      never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+      that support this type.
+
+      NOTE: This field is in Beta.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :algorithm => String.t(),
-          :pem => String.t()
+          :name => String.t(),
+          :pem => String.t(),
+          :pemCrc32c => String.t()
         }
 
   field(:algorithm)
+  field(:name)
   field(:pem)
+  field(:pemCrc32c)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudKMS.V1.Model.PublicKey do
