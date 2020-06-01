@@ -17,24 +17,56 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicense do
   @moduledoc """
-  Group license objects allow you to keep track of licenses (called entitlements) for both free and paid apps. For a free app, a group license is created when an enterprise admin first approves the product in Google Play or when the first entitlement for the product is created for a user via the API. For a paid app, a group license object is only created when an enterprise admin purchases the product in Google Play for the first time.
+  Group license objects allow you to keep track of licenses (called
+  <a href="/android/work/play/emm-api/v1/entitlements">entitlements</a>)
+  for both free and paid apps. For a free app, a group license is created when
+  an enterprise admin first approves the product in Google Play or when the
+  first entitlement for the product is created for a user via the API. For a
+  paid app, a group license object is only created when an enterprise admin
+  purchases the product in Google Play for the first time.
 
-  Use the API to query group licenses. A Grouplicenses resource includes the total number of licenses purchased (paid apps only) and the total number of licenses currently in use. In other words, the total number of Entitlements that exist for the product.
+  Use the API to query group licenses. A <code>Grouplicenses</code> resource
+  includes the total number of licenses purchased (paid apps only) and the
+  total number of licenses currently in use. In other words, the total number
+  of <code>Entitlements</code> that exist for the product.
 
-  Only one group license object is created per product and group license objects are never deleted. If a product is unapproved, its group license remains. This allows enterprise admins to keep track of any remaining entitlements for the product.
+  Only one group license object is created per product and group license
+  objects are never deleted. If a product is unapproved, its group license
+  remains. This allows enterprise admins to keep track of any remaining
+  entitlements for the product.
 
   ## Attributes
 
-  *   `acquisitionKind` (*type:* `String.t`, *default:* `nil`) - How this group license was acquired. "bulkPurchase" means that this Grouplicenses resource was created because the enterprise purchased licenses for this product; otherwise, the value is "free" (for free products).
-  *   `approval` (*type:* `String.t`, *default:* `nil`) - Whether the product to which this group license relates is currently approved by the enterprise. Products are approved when a group license is first created, but this approval may be revoked by an enterprise admin via Google Play. Unapproved products will not be visible to end users in collections, and new entitlements to them should not normally be created.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#groupLicense`) - 
-  *   `numProvisioned` (*type:* `integer()`, *default:* `nil`) - The total number of provisioned licenses for this product. Returned by read operations, but ignored in write operations.
-  *   `numPurchased` (*type:* `integer()`, *default:* `nil`) - The number of purchased licenses (possibly in multiple purchases). If this field is omitted, then there is no limit on the number of licenses that can be provisioned (for example, if the acquisition kind is "free").
-  *   `permissions` (*type:* `String.t`, *default:* `nil`) - The permission approval status of the product. This field is only set if the product is approved. Possible states are: 
-      - "currentApproved", the current set of permissions is approved, but additional permissions will require the administrator to reapprove the product (If the product was approved without specifying the approved permissions setting, then this is the default behavior.), 
-      - "needsReapproval", the product has unapproved permissions. No additional product licenses can be assigned until the product is reapproved, 
-      - "allCurrentAndFutureApproved", the current permissions are approved and any future permission updates will be automatically approved without administrator review.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product that the license is for. For example, "app:com.google.android.gm".
+  *   `acquisitionKind` (*type:* `String.t`, *default:* `nil`) - How this group license was acquired. <code>&quot;bulkPurchase&quot;</code>
+      means that this Grouplicenses resource was created because the enterprise
+      purchased licenses for this product; otherwise, the value is
+      <code>&quot;free&quot;</code> (for free products).
+  *   `approval` (*type:* `String.t`, *default:* `nil`) - Whether the product to which this group license relates is currently
+      approved by the enterprise. Products are approved when a group license is
+      first created, but this approval may be revoked by an enterprise admin via
+      Google Play. Unapproved products will not be visible to end users in
+      collections, and new entitlements to them should not normally be created.
+  *   `numProvisioned` (*type:* `integer()`, *default:* `nil`) - The total number of provisioned licenses for this product.
+      Returned by read operations, but ignored in write operations.
+  *   `numPurchased` (*type:* `integer()`, *default:* `nil`) - The number of purchased licenses (possibly in multiple purchases).
+      If this field is omitted, then there is no limit on the number of licenses
+      that can be provisioned (for example, if the acquisition kind is
+      <code>&quot;free&quot;</code>).
+  *   `permissions` (*type:* `String.t`, *default:* `nil`) - The permission approval status of the product. This field
+      is only set if the product is approved. Possible states are:<ul>
+      <li>"<code>currentApproved</code>", the current set
+      of permissions is approved, but additional permissions will require the
+      administrator to reapprove the product (If the product was approved
+      without specifying the approved permissions setting, then this is the
+      default behavior.),</li>
+      <li>"<code>needsReapproval</code>", the product has unapproved permissions.
+      No additional product licenses can be assigned until the product is
+      reapproved,</li>
+      <li>"<code>allCurrentAndFutureApproved</code>",
+      the current permissions are approved and any future permission updates
+      will be automatically approved without administrator review.</li></ul>
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product that the license is for. For example,
+      <code>&quot;app:com.google.android.gm&quot;</code>.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,7 +74,6 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicense do
   @type t :: %__MODULE__{
           :acquisitionKind => String.t(),
           :approval => String.t(),
-          :kind => String.t(),
           :numProvisioned => integer(),
           :numPurchased => integer(),
           :permissions => String.t(),
@@ -51,7 +82,6 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicense do
 
   field(:acquisitionKind)
   field(:approval)
-  field(:kind)
   field(:numProvisioned)
   field(:numPurchased)
   field(:permissions)

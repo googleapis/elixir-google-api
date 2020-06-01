@@ -21,18 +21,15 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#administratorWebToken`) - 
   *   `token` (*type:* `String.t`, *default:* `nil`) - An opaque token to be passed to the Play front-end to generate an iframe.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :token => String.t()
         }
 
-  field(:kind)
   field(:token)
 end
 

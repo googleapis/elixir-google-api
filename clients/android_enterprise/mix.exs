@@ -18,7 +18,7 @@
 defmodule GoogleApi.AndroidEnterprise.Mixfile do
   use Mix.Project
 
-  @version "0.17.0"
+  @version "0.18.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.AndroidEnterprise.Mixfile do
 
   defp description() do
     """
-    Google Play EMM API client library. Manages the deployment of apps to Android for Work users.
+    Google Play EMM API client library. Manages the deployment of apps to Android Enterprise devices.
     """
   end
 

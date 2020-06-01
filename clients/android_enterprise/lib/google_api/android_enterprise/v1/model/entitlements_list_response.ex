@@ -17,23 +17,22 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.EntitlementsListResponse do
   @moduledoc """
-  The entitlement resources for the user.
+
 
   ## Attributes
 
-  *   `entitlement` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t)`, *default:* `nil`) - An entitlement of a user to a product (e.g. an app). For example, a free app that they have installed, or a paid app that they have been allocated a license to.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#entitlementsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#entitlementsListResponse".
+  *   `entitlement` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t)`, *default:* `nil`) - An entitlement of a user to a product (e.g. an app).
+      For example, a free app that they have installed, or a paid app that they
+      have been allocated a license to.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entitlement => list(GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t()),
-          :kind => String.t()
+          :entitlement => list(GoogleApi.AndroidEnterprise.V1.Model.Entitlement.t())
         }
 
   field(:entitlement, as: GoogleApi.AndroidEnterprise.V1.Model.Entitlement, type: :list)
-  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.EntitlementsListResponse do

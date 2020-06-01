@@ -17,11 +17,13 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.VariableSet do
   @moduledoc """
-  A variable set is a key-value pair of EMM-provided placeholders and its corresponding value, which is attributed to a user. For example, $FIRSTNAME could be a placeholder, and its value could be Alice. Placeholders should start with a '$' sign and should be alphanumeric only.
+  A variable set is a key-value pair of EMM-provided placeholders and
+  its corresponding value, which is attributed to a user. For example,
+  $FIRSTNAME could be a placeholder, and its value could be Alice. Placeholders
+  should start with a '$' sign and should be alphanumeric only.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#variableSet`) - 
   *   `placeholder` (*type:* `String.t`, *default:* `nil`) - The placeholder string; defined by EMM.
   *   `userValue` (*type:* `String.t`, *default:* `nil`) - The value of the placeholder, specific to the user.
   """
@@ -29,12 +31,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.VariableSet do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :placeholder => String.t(),
           :userValue => String.t()
         }
 
-  field(:kind)
   field(:placeholder)
   field(:userValue)
 end

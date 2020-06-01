@@ -17,23 +17,20 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.DevicesListResponse do
   @moduledoc """
-  The device resources for the user.
+
 
   ## Attributes
 
   *   `device` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Device.t)`, *default:* `nil`) - A managed device.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#devicesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#devicesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :device => list(GoogleApi.AndroidEnterprise.V1.Model.Device.t()),
-          :kind => String.t()
+          :device => list(GoogleApi.AndroidEnterprise.V1.Model.Device.t())
         }
 
   field(:device, as: GoogleApi.AndroidEnterprise.V1.Model.Device, type: :list)
-  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.DevicesListResponse do

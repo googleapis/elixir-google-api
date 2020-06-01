@@ -21,19 +21,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo do
 
   ## Attributes
 
-  *   `approvalUrl` (*type:* `String.t`, *default:* `nil`) - A URL that displays a product's permissions and that can also be used to approve the product with the Products.approve call.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#approvalUrlInfo`) - 
+  *   `approvalUrl` (*type:* `String.t`, *default:* `nil`) - A URL that displays a product's permissions and that can also be used to
+      approve the product with the <code>Products.approve</code> call.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :approvalUrl => String.t(),
-          :kind => String.t()
+          :approvalUrl => String.t()
         }
 
   field(:approvalUrl)
-  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.ApprovalUrlInfo do
