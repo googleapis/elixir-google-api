@@ -26,8 +26,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.PullRequestFilter do
 
       The syntax of the regular expressions accepted is the syntax accepted by
       RE2 and described at https://github.com/google/re2/wiki/Syntax
-  *   `commentControl` (*type:* `String.t`, *default:* `nil`) - Configure builds to run only when a repository owner or collaborator
-      comments `/gcbrun`.
+  *   `commentControl` (*type:* `String.t`, *default:* `nil`) - Configure builds to run whether a repository owner or collaborator need to
+      comment `/gcbrun`.
   *   `invertRegex` (*type:* `boolean()`, *default:* `nil`) - If true, branches that do NOT match the git_ref will trigger a build.
   """
 
