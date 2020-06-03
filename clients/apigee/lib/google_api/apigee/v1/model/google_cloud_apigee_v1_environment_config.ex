@@ -35,12 +35,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
   *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - Name of the pubsub topic for this environment.
   *   `resourceReferences` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReferenceConfig.t)`, *default:* `nil`) - A list of resource references in the environment.
   *   `resources` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceConfig.t)`, *default:* `nil`) - A list of resource versions in the environment.
-  *   `sequenceNumber` (*type:* `String.t`, *default:* `nil`) - A sequence number that defines an ordering on environment configs. No two
-      configs under an environment will ever have the same sequence number.
-      A higher sequence number means that the config was deployed more
-      recently than one with a lower sequence number.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision id that defines the ordering on the environment config.
+      The higher the revision, the more recently the configuration
+      was deployed.
+  *   `sequenceNumber` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: use revision_id
   *   `targets` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig.t)`, *default:* `nil`) - A list of target servers in the environment. Disabled target servers are
       not included.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id for the environment config that will only change if the
+      environment is deleted and recreated.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -58,8 +60,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
           :resourceReferences =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ReferenceConfig.t()),
           :resources => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceConfig.t()),
+          :revisionId => String.t(),
           :sequenceNumber => String.t(),
-          :targets => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig.t())
+          :targets => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig.t()),
+          :uid => String.t()
         }
 
   field(:createTime, as: DateTime)
@@ -83,9 +87,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
   )
 
   field(:resources, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ResourceConfig, type: :list)
+  field(:revisionId)
   field(:sequenceNumber)
 
   field(:targets, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServerConfig, type: :list)
+
+  field(:uid)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do

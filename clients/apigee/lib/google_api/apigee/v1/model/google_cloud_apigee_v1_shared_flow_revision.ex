@@ -28,6 +28,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlowRevision do
   *   `contextInfo` (*type:* `String.t`, *default:* `nil`) - A textual description of the shared flow revision.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Time at which this shared flow revision was created, in milliseconds since
       epoch.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the shared flow revision.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of this shared flow.
   *   `entityMetaDataAsProperties` (*type:* `map()`, *default:* `nil`) - A Key-Value map of metadata about this shared flow revision.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Time at which this shared flow revision was most recently modified, in
@@ -48,6 +49,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlowRevision do
           :configurationVersion => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion.t(),
           :contextInfo => String.t(),
           :createdAt => String.t(),
+          :description => String.t(),
           :displayName => String.t(),
           :entityMetaDataAsProperties => map(),
           :lastModifiedAt => String.t(),
@@ -63,6 +65,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlowRevision do
   field(:configurationVersion, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConfigVersion)
   field(:contextInfo)
   field(:createdAt)
+  field(:description)
   field(:displayName)
   field(:entityMetaDataAsProperties, type: :map)
   field(:lastModifiedAt)
