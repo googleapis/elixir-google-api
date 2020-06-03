@@ -33,7 +33,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store do
       following PCRE regular expression: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63}
 
       No more than 64 labels can be associated with a given store.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the HL7v2 store, of the form
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the HL7v2 store, of the form
       `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
   *   `notificationConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.NotificationConfig.t`, *default:* `nil`) - The notification destination all messages (both Ingest & Create) are
       published on. Only the message name is sent as part of the notification. If

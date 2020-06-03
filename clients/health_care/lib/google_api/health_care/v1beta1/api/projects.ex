@@ -700,7 +700,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `dataset.name`. Output only. Resource name of the dataset, of the form
+  *   `projects_id` (*type:* `String.t`) - Part of `dataset.name`. Resource name of the dataset, of the form
       `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `dataset.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `dataset.name`. See documentation of `projectsId`.
@@ -1982,7 +1982,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `dicomStore.name`. Output only. Resource name of the DICOM store, of the form
+  *   `projects_id` (*type:* `String.t`) - Part of `dicomStore.name`. Resource name of the DICOM store, of the form
       `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
@@ -7768,7 +7768,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. Output only. Resource name of the HL7v2 store, of the form
+  *   `projects_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. Resource name of the HL7v2 store, of the form
       `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
