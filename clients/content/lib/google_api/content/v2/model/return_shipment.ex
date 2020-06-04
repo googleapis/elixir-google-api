@@ -38,7 +38,8 @@ defmodule GoogleApi.Content.V2.Model.ReturnShipment do
       - "`completed`" 
       - "`new`" 
       - "`shipped`" 
-      - "`undeliverable`"
+      - "`undeliverable`" 
+      - "`pending`"
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Content.V21.Model.OrderPromotion do
 
   ## Attributes
 
-  *   `applicableItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotionItem.t)`, *default:* `nil`) - Items which this promotion may be applied to. If empty, there are no restrictions on applicable items and quantity.
-  *   `appliedItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotionItem.t)`, *default:* `nil`) - Items which this promotion have been applied to. Do not provide for `orders.createtestorder`.
+  *   `applicableItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotionItem.t)`, *default:* `nil`) - Items that this promotion may be applied to. If empty, there are no restrictions on applicable items and quantity. This field will also be empty for shipping promotions because shipping is not tied to any specific item.
+  *   `appliedItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderPromotionItem.t)`, *default:* `nil`) - Items that this promotion have been applied to. Do not provide for `orders.createtestorder`. This field will be empty for shipping promotions because shipping is not tied to any specific item.
   *   `endTime` (*type:* `String.t`, *default:* `nil`) - Promotion end time in ISO 8601 format. Date, time, and offset required, e.g., "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z".
   *   `funder` (*type:* `String.t`, *default:* `nil`) - Required. The party funding the promotion. Only `merchant` is supported for `orders.createtestorder`.
 
