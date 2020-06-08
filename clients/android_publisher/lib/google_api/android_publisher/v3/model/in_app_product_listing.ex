@@ -21,17 +21,20 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProductListing do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - 
-  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `benefits` (*type:* `list(String.t)`, *default:* `nil`) - The localized entitlement benefits of the in-app product. These are supported only for subscriptions.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The localized description of the in-app product. These are deprecated for subscriptions.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The localized title of the in-app product.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :benefits => list(String.t()),
           :description => String.t(),
           :title => String.t()
         }
 
+  field(:benefits, type: :list)
   field(:description)
   field(:title)
 end
