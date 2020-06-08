@@ -28,7 +28,8 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchRequestEntryUpdateShipment
 
       Acceptable values are:  
       - "`delivered`" 
-      - "`undeliverable`"
+      - "`undeliverable`" 
+      - "`readyForPickup`"
   *   `trackingId` (*type:* `String.t`, *default:* `nil`) - The tracking ID for the shipment. Not updated if missing.
   """
 
