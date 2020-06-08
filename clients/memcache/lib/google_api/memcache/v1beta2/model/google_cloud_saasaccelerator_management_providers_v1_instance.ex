@@ -37,6 +37,7 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
       go/cloud-saas-mw-ug.
   *   `maintenanceSchedules` (*type:* `%{optional(String.t) => GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule.t}`, *default:* `nil`) - The MaintenanceSchedule contains the scheduling information of published
       maintenance schedule.
+  *   `maintenanceSettings` (*type:* `GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings.t`, *default:* `nil`) - Optional. The MaintenanceSettings associated with instance.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Unique name of the resource. It uses the form:
        `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
   *   `producerMetadata` (*type:* `map()`, *default:* `nil`) - Output only. Custom string attributes used primarily to expose
@@ -71,6 +72,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
             optional(String.t()) =>
               GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule.t()
           },
+          :maintenanceSettings =>
+            GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings.t(),
           :name => String.t(),
           :producerMetadata => map(),
           :provisionedResources =>
@@ -95,6 +98,11 @@ defmodule GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementP
     as:
       GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule,
     type: :map
+  )
+
+  field(:maintenanceSettings,
+    as:
+      GoogleApi.Memcache.V1beta2.Model.GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings
   )
 
   field(:name)
