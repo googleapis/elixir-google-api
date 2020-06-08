@@ -505,7 +505,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Settings do
 
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Name of the search application.
-      <br />Format: applications/{application_id}.
+      <br />Format: searchapplications/{application_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

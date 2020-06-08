@@ -32,7 +32,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions do
   *   `objectDisplayLabel` (*type:* `String.t`, *default:* `nil`) - The user friendly label to display in the search result to indicate the
       type of the item. This is OPTIONAL; if not provided, an object label isn't
       displayed on the context line of the search results. The maximum length
-      is 32 characters.
+      is 64 characters.
   """
 
   use GoogleApi.Gax.ModelBase
