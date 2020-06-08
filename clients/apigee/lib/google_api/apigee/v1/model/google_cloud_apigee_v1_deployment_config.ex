@@ -28,6 +28,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the API or shared flow revision to be deployed. Must be of the
       form 'organizations/{org}/apis/{api}/revisions/{rev}' or
       'organizations/{org}/sharedflows/{sf}/revisions/{rev}'.
+  *   `proxyUid` (*type:* `String.t`, *default:* `nil`) - The uid of the proxy revision.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id that will only change if the deployment is deleted and
+      recreated.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,13 +39,17 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
           :attributes => map(),
           :basePath => String.t(),
           :location => String.t(),
-          :name => String.t()
+          :name => String.t(),
+          :proxyUid => String.t(),
+          :uid => String.t()
         }
 
   field(:attributes, type: :map)
   field(:basePath)
   field(:location)
   field(:name)
+  field(:proxyUid)
+  field(:uid)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do

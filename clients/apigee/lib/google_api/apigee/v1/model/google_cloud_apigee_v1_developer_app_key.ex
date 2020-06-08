@@ -22,6 +22,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeveloperAppKey do
   ## Attributes
 
   *   `apiProducts` (*type:* `list(any())`, *default:* `nil`) - List of API products for which the credential can be used.
+
+      **Note**: Do not specify the list of API products when creating a consumer
+      key and secret for a developer app. Instead, use the
+      UpdateDeveloperAppKey API to
+      make the association after the consumer key and secret are created.
   *   `attributes` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Attribute.t)`, *default:* `nil`) - List of attributes associated with the credential.
   *   `consumerKey` (*type:* `String.t`, *default:* `nil`) - Consumer key.
   *   `consumerSecret` (*type:* `String.t`, *default:* `nil`) - Secret key.
