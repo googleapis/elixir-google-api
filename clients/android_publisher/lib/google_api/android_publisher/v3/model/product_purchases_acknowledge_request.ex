@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchasesAcknowledgeRequest do
   @moduledoc """
-
+  Request for the product.purchases.acknowledge API.
 
   ## Attributes
 

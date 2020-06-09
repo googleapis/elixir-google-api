@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ReviewReplyResult do
   @moduledoc """
-
+  The result of replying/updating a reply to review.
 
   ## Attributes
 

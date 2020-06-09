@@ -21,8 +21,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ApkBinary do
 
   ## Attributes
 
-  *   `sha1` (*type:* `String.t`, *default:* `nil`) - A sha1 hash of the APK payload, encoded as a hex string and matching the output of the sha1sum command.
-  *   `sha256` (*type:* `String.t`, *default:* `nil`) - A sha256 hash of the APK payload, encoded as a hex string and matching the output of the sha256sum command.
+  *   `sha1` (*type:* `String.t`, *default:* `nil`) - A sha1 hash of the APK payload, encoded as a hex string and matching the
+      output of the sha1sum command.
+  *   `sha256` (*type:* `String.t`, *default:* `nil`) - A sha256 hash of the APK payload, encoded as a hex string and matching
+      the output of the sha256sum command.
   """
 
   use GoogleApi.Gax.ModelBase

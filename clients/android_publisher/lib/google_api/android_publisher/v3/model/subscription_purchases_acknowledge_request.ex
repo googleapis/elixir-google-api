@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchasesAcknowledgeRequest do
   @moduledoc """
-
+  Request for the purchases.subscriptions.acknowledge API.
 
   ## Attributes
 

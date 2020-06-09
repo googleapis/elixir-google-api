@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ReviewsListResponse do
   @moduledoc """
-
+  Response listing reviews.
 
   ## Attributes
 
-  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PageInfo.t`, *default:* `nil`) - 
-  *   `reviews` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Review.t)`, *default:* `nil`) - 
-  *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t`, *default:* `nil`) - 
+  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PageInfo.t`, *default:* `nil`) - Information about the current page.
+  *   `reviews` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Review.t)`, *default:* `nil`) - List of reviews.
+  *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t`, *default:* `nil`) - Pagination token, to handle a number of products that is over one page.
   """
 
   use GoogleApi.Gax.ModelBase

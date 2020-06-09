@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Track do
   @moduledoc """
-
+  A track configuration. The resource for TracksService.
 
   ## Attributes
 
-  *   `releases` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.TrackRelease.t)`, *default:* `nil`) - A list of all active releases in this track during a read request. On an update request, it represents desired changes.
-  *   `track` (*type:* `String.t`, *default:* `nil`) - Identifier for this track.
+  *   `releases` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.TrackRelease.t)`, *default:* `nil`) - In a read request, represents all active releases in the track.
+      In an update request, represents desired changes.
+  *   `track` (*type:* `String.t`, *default:* `nil`) - Identifier of the track.
   """
 
   use GoogleApi.Gax.ModelBase

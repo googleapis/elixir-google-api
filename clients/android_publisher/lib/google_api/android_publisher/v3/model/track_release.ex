@@ -17,47 +17,43 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.TrackRelease do
   @moduledoc """
-
+  A release within a track.
 
   ## Attributes
 
-  *   `controls` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Control.t)`, *default:* `nil`) - 
-  *   `countryTargeting` (*type:* `GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t`, *default:* `nil`) - 
-  *   `inAppUpdatePriority` (*type:* `integer()`, *default:* `nil`) - In-app update priority of the release. All newly added APKs in the release will be considered at this priority. in_app_update_priority can take values between [0, 5]. 5 is the highest priority. Default priority is 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The release name, used to identify this release in the Play Console UI. Not required to be unique. This is optional, if not set it will be generated from the version_name in the APKs.
-  *   `pinnedVersions` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.TrackReleasePin.t)`, *default:* `nil`) - 
-  *   `releaseNotes` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t)`, *default:* `nil`) - The description of what is new in the app in this release.
-  *   `rollbackEnabled` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `sampling` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Sampling.t`, *default:* `nil`) - 
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The desired status of this release.
-  *   `userFraction` (*type:* `float()`, *default:* `nil`) - Fraction of users who are eligible to receive the release. 0 < fraction < 1. To be set, release status must be "inProgress" or "halted".
-  *   `versionCodes` (*type:* `list(String.t)`, *default:* `nil`) - A list of all version codes of APKs that will be exposed to the users of this track when this release is rolled out. Note that this list should contain all versions you wish to be active, including those you wish to retain from previous releases.
+  *   `countryTargeting` (*type:* `GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t`, *default:* `nil`) - Restricts a release to a specific set of countries.
+  *   `inAppUpdatePriority` (*type:* `integer()`, *default:* `nil`) - In-app update priority of the release. All newly added APKs in the
+      release will be considered at this priority. Can take values in the range
+      [0, 5], with 5 the highest priority. Defaults to 0.
+      in_app_update_priority can not be updated once the release is rolled out.
+      See https://developer.android.com/guide/playcore/in-app-updates.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The release name. Not required to be unique. If not set, the name is
+      generated from the APK's version_name. If the release contains multiple
+      APKs, the name is generated from the date.
+  *   `releaseNotes` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t)`, *default:* `nil`) - A description of what is new in this release.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the release.
+  *   `userFraction` (*type:* `float()`, *default:* `nil`) - Fraction of users who are eligible for a staged release. 0 < fraction < 1.
+      Can only be set when status is "inProgress" or "halted".
+  *   `versionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Version codes of all APKs in the release. Must include version codes to
+      retain from previous releases.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :controls => list(GoogleApi.AndroidPublisher.V3.Model.Control.t()),
           :countryTargeting => GoogleApi.AndroidPublisher.V3.Model.CountryTargeting.t(),
           :inAppUpdatePriority => integer(),
           :name => String.t(),
-          :pinnedVersions => list(GoogleApi.AndroidPublisher.V3.Model.TrackReleasePin.t()),
           :releaseNotes => list(GoogleApi.AndroidPublisher.V3.Model.LocalizedText.t()),
-          :rollbackEnabled => boolean(),
-          :sampling => GoogleApi.AndroidPublisher.V3.Model.Sampling.t(),
           :status => String.t(),
           :userFraction => float(),
           :versionCodes => list(String.t())
         }
 
-  field(:controls, as: GoogleApi.AndroidPublisher.V3.Model.Control, type: :list)
   field(:countryTargeting, as: GoogleApi.AndroidPublisher.V3.Model.CountryTargeting)
   field(:inAppUpdatePriority)
   field(:name)
-  field(:pinnedVersions, as: GoogleApi.AndroidPublisher.V3.Model.TrackReleasePin, type: :list)
   field(:releaseNotes, as: GoogleApi.AndroidPublisher.V3.Model.LocalizedText, type: :list)
-  field(:rollbackEnabled)
-  field(:sampling, as: GoogleApi.AndroidPublisher.V3.Model.Sampling)
   field(:status)
   field(:userFraction)
   field(:versionCodes, type: :list)

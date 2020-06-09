@@ -17,22 +17,31 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
   @moduledoc """
-
+  An in-app product. The resource for InappproductsService.
 
   ## Attributes
 
-  *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The default language of the localized data, as defined by BCP 47. e.g. "en-US", "en-GB".
-  *   `defaultPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Default price cannot be zero. In-app products can never be free. Default price is always in the developer's Checkout merchant currency.
-  *   `gracePeriod` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. It will allow developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values = "P3D" (three days), "P7D" (seven days), "P14D" (fourteen days), and "P30D" (thirty days)
-  *   `listings` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t}`, *default:* `nil`) - List of localized title and description data.
-  *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the parent app.
-  *   `prices` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.Price.t}`, *default:* `nil`) - Prices per buyer region. None of these prices should be zero. In-app products can never be free.
-  *   `purchaseType` (*type:* `String.t`, *default:* `nil`) - Purchase type enum value. Unmodifiable after creation.
-  *   `resubscribeEligibility` (*type:* `String.t`, *default:* `nil`) - Whether or not the developer wants the specific subscription to be resubscribable. If the developer doesn't use PBL2.0, this value is ignored since the feature is only for developers using PBL2.0. This feature allows users to resubscribe to an expired subscription directly from the subscription center by clicking on a "Resubscribe" CTA under the entry for the expired subscription.
-  *   `sku` (*type:* `String.t`, *default:* `nil`) - The stock-keeping-unit (SKU) of the product, unique within an app.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - 
-  *   `subscriptionPeriod` (*type:* `String.t`, *default:* `nil`) - Subscription period, specified in ISO 8601 format. Acceptable values are "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year).
-  *   `trialPeriod` (*type:* `String.t`, *default:* `nil`) - Trial period, specified in ISO 8601 format. Acceptable values are anything between "P7D" (seven days) and "P999D" (999 days). Seasonal subscriptions cannot have a trial period.
+  *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - Default language of the localized data, as defined by BCP-47. e.g. "en-US".
+  *   `defaultPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Default price. Cannot be zero, as in-app products are never free.
+      Always in the developer's Checkout merchant currency.
+  *   `gracePeriod` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. Allows
+      developers to give their subscribers a grace period when the payment
+      for the new recurrence period is declined.
+      Acceptable values are P0D (zero days), P3D (three days), P7D (seven days),
+      P14D (14 days), and P30D (30 days).
+  *   `listings` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.InAppProductListing.t}`, *default:* `nil`) - List of localized title and description data. Map key is the language of
+      the localized data, as defined by BCP-47, e.g. "en-US".
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Package name of the parent app.
+  *   `prices` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.Price.t}`, *default:* `nil`) - Prices per buyer region. None of these can be zero, as in-app products are
+      never free. Map key is region code, as defined by ISO 3166-2.
+  *   `purchaseType` (*type:* `String.t`, *default:* `nil`) - The type of the product, e.g. a recurring subscription.
+  *   `sku` (*type:* `String.t`, *default:* `nil`) - Stock-keeping-unit (SKU) of the product, unique within an app.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the product, e.g. whether it's active.
+  *   `subscriptionPeriod` (*type:* `String.t`, *default:* `nil`) - Subscription period, specified in ISO 8601 format. Acceptable values are
+      P1W (one week), P1M (one month), P3M (three months), P6M (six months),
+      and P1Y (one year).
+  *   `trialPeriod` (*type:* `String.t`, *default:* `nil`) - Trial period, specified in ISO 8601 format. Acceptable values are anything
+      between P7D (seven days) and P999D (999 days).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -47,7 +56,6 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
           :packageName => String.t(),
           :prices => %{optional(String.t()) => GoogleApi.AndroidPublisher.V3.Model.Price.t()},
           :purchaseType => String.t(),
-          :resubscribeEligibility => String.t(),
           :sku => String.t(),
           :status => String.t(),
           :subscriptionPeriod => String.t(),
@@ -61,7 +69,6 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProduct do
   field(:packageName)
   field(:prices, as: GoogleApi.AndroidPublisher.V3.Model.Price, type: :map)
   field(:purchaseType)
-  field(:resubscribeEligibility)
   field(:sku)
   field(:status)
   field(:subscriptionPeriod)

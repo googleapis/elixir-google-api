@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ApksAddExternallyHostedResponse do
   @moduledoc """
-
+  Response for creating a new externally hosted APK.
 
   ## Attributes
 

@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Price do
   @moduledoc """
-
+  Definition of a price, i.e. currency and units.
 
   ## Attributes
 
   *   `currency` (*type:* `String.t`, *default:* `nil`) - 3 letter Currency code, as defined by ISO 4217.
-  *   `priceMicros` (*type:* `String.t`, *default:* `nil`) - The price in millionths of the currency base unit represented as a string.
+      See java/com/google/common/money/CurrencyCode.java
+  *   `priceMicros` (*type:* `String.t`, *default:* `nil`) - Price in 1/million of the currency base unit, represented as a string.
   """
 
   use GoogleApi.Gax.ModelBase

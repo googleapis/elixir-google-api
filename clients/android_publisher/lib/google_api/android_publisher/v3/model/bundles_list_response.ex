@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.BundlesListResponse do
   @moduledoc """
-
+  Response listing all bundles.
 
   ## Attributes
 
-  *   `bundles` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Bundle.t)`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#bundlesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidpublisher#bundlesListResponse".
+  *   `bundles` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Bundle.t)`, *default:* `nil`) - All bundles.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this response ("androidpublisher#bundlesListResponse").
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.TracksListResponse do
   @moduledoc """
-
+  Response listing all tracks.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#tracksListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidpublisher#tracksListResponse".
-  *   `tracks` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Track.t)`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this response ("androidpublisher#tracksListResponse").
+  *   `tracks` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Track.t)`, *default:* `nil`) - All tracks.
   """
 
   use GoogleApi.Gax.ModelBase
