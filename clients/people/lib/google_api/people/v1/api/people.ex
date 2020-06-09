@@ -591,8 +591,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides a list of the authenticated user's contacts merged with any
-  connected profiles.
+  Provides a list of the authenticated user's contacts.
 
   The request throws a 400 error if 'personFields' is not specified.
 
