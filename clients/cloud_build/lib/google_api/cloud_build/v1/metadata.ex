@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudBuild.V1 do
   API client metadata for GoogleApi.CloudBuild.V1.
   """
 
-  @discovery_revision "20200520"
+  @discovery_revision "20200601"
 
   def discovery_revision(), do: @discovery_revision
 end
