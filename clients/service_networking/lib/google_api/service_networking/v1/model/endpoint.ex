@@ -47,7 +47,6 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Endpoint do
       receive and respond to HTTP OPTIONS requests. The response will be used by
       the browser to determine whether the subsequent cross-origin request is
       allowed to proceed.
-  *   `features` (*type:* `list(String.t)`, *default:* `nil`) - The list of features enabled on this endpoint.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The canonical name of this endpoint.
   *   `target` (*type:* `String.t`, *default:* `nil`) - The specification of an Internet routable address of API frontend that will
       handle requests to this [API
@@ -61,14 +60,12 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Endpoint do
   @type t :: %__MODULE__{
           :aliases => list(String.t()),
           :allowCors => boolean(),
-          :features => list(String.t()),
           :name => String.t(),
           :target => String.t()
         }
 
   field(:aliases, type: :list)
   field(:allowCors)
-  field(:features, type: :list)
   field(:name)
   field(:target)
 end
