@@ -29,7 +29,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.PropertyDisplayOptions do
       display name given was 'priority', then the user sees 'priority : 1' in
       the search results which provides clear context to search users. This is
       OPTIONAL; if not given, only the property values are displayed.
-      The maximum length is 32 characters.
+      The maximum length is 64 characters.
   """
 
   use GoogleApi.Gax.ModelBase
