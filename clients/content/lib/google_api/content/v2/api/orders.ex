@@ -1047,7 +1047,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   end
 
   @doc """
-  Returns and refunds a line item. Note that this method can only be called on fully shipped orders.
+  Returns and refunds a line item. Note that this method can only be called on fully shipped orders. Please also note that the Orderreturns API is the preferred way to handle returns after you receive a return from a customer. You can use Orderreturns.list or Orderreturns.get to search for the return, and then use Orderreturns.processreturn to issue the refund. If the return cannot be found, then we recommend using this API to issue a refund.
 
   ## Parameters
 

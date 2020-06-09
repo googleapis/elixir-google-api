@@ -65,6 +65,7 @@ defmodule GoogleApi.Content.V21.Model.OrderShipment do
   *   `deliveryDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been delivered, in ISO 8601 format. Present only if `status` is `delivered`
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the shipment.
   *   `lineItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderShipmentLineItemShipment.t)`, *default:* `nil`) - The line items that are shipped.
+  *   `scheduledDeliveryDetails` (*type:* `GoogleApi.Content.V21.Model.OrderShipmentScheduledDeliveryDetails.t`, *default:* `nil`) - Delivery details of the shipment if scheduling is needed.
   *   `shipmentGroupId` (*type:* `String.t`, *default:* `nil`) - The shipment group ID of the shipment. This is set in shiplineitems request.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the shipment.
 
@@ -84,6 +85,8 @@ defmodule GoogleApi.Content.V21.Model.OrderShipment do
           :deliveryDate => String.t(),
           :id => String.t(),
           :lineItems => list(GoogleApi.Content.V21.Model.OrderShipmentLineItemShipment.t()),
+          :scheduledDeliveryDetails =>
+            GoogleApi.Content.V21.Model.OrderShipmentScheduledDeliveryDetails.t(),
           :shipmentGroupId => String.t(),
           :status => String.t(),
           :trackingId => String.t()
@@ -94,6 +97,11 @@ defmodule GoogleApi.Content.V21.Model.OrderShipment do
   field(:deliveryDate)
   field(:id)
   field(:lineItems, as: GoogleApi.Content.V21.Model.OrderShipmentLineItemShipment, type: :list)
+
+  field(:scheduledDeliveryDetails,
+    as: GoogleApi.Content.V21.Model.OrderShipmentScheduledDeliveryDetails
+  )
+
   field(:shipmentGroupId)
   field(:status)
   field(:trackingId)

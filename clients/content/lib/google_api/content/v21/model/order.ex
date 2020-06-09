@@ -22,6 +22,7 @@ defmodule GoogleApi.Content.V21.Model.Order do
   ## Attributes
 
   *   `acknowledged` (*type:* `boolean()`, *default:* `nil`) - Whether the order was acknowledged.
+  *   `annotations` (*type:* `list(GoogleApi.Content.V21.Model.OrderOrderAnnotation.t)`, *default:* `nil`) - List of key-value pairs that are attached to a given order.
   *   `billingAddress` (*type:* `GoogleApi.Content.V21.Model.OrderAddress.t`, *default:* `nil`) - The billing address.
   *   `customer` (*type:* `GoogleApi.Content.V21.Model.OrderCustomer.t`, *default:* `nil`) - The details of the customer who placed the order.
   *   `deliveryDetails` (*type:* `GoogleApi.Content.V21.Model.OrderDeliveryDetails.t`, *default:* `nil`) - Delivery details for shipments of type `delivery`.
@@ -79,6 +80,7 @@ defmodule GoogleApi.Content.V21.Model.Order do
 
   @type t :: %__MODULE__{
           :acknowledged => boolean(),
+          :annotations => list(GoogleApi.Content.V21.Model.OrderOrderAnnotation.t()),
           :billingAddress => GoogleApi.Content.V21.Model.OrderAddress.t(),
           :customer => GoogleApi.Content.V21.Model.OrderCustomer.t(),
           :deliveryDetails => GoogleApi.Content.V21.Model.OrderDeliveryDetails.t(),
@@ -102,6 +104,7 @@ defmodule GoogleApi.Content.V21.Model.Order do
         }
 
   field(:acknowledged)
+  field(:annotations, as: GoogleApi.Content.V21.Model.OrderOrderAnnotation, type: :list)
   field(:billingAddress, as: GoogleApi.Content.V21.Model.OrderAddress)
   field(:customer, as: GoogleApi.Content.V21.Model.OrderCustomer)
   field(:deliveryDetails, as: GoogleApi.Content.V21.Model.OrderDeliveryDetails)
