@@ -31,17 +31,23 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application the inapp product was sold in (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application the inapp product was sold in (for
+      example, 'com.some.thing').
   *   `product_id` (*type:* `String.t`) - The inapp product SKU (for example, 'com.some.thing.inapp1').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the inapp product was
+      purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ProductPurchasesAcknowledgeRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -67,13 +73,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -102,17 +112,23 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application the inapp product was sold in (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application the inapp product was sold in (for
+      example, 'com.some.thing').
   *   `product_id` (*type:* `String.t`) - The inapp product SKU (for example, 'com.some.thing.inapp1').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the inapp product was purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the inapp product was
+      purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -140,13 +156,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -174,17 +194,23 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
+      purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
+      purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchasesAcknowledgeRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -210,13 +236,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -240,22 +270,29 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Cancels a user's subscription purchase. The subscription remains valid until its expiration time.
+  Cancels a user's subscription purchase. The subscription remains valid
+  until its expiration time.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
+      purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
+      purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -280,13 +317,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -309,22 +350,29 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Defers a user's subscription purchase until a specified future expiration time.
+  Defers a user's subscription purchase until a specified future expiration
+  time.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
+      purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
+      purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchasesDeferRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -353,13 +401,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -385,22 +437,29 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Checks whether a user's subscription purchase is valid and returns its expiry time.
+  Checks whether a user's subscription purchase is valid and returns its
+  expiry time.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
+      purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
+      purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -428,13 +487,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -459,22 +522,29 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Refunds a user's subscription purchase, but the subscription remains valid until its expiration time and it will continue to recur.
+  Refunds a user's subscription purchase, but the subscription remains valid
+  until its expiration time and it will continue to recur.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
-  *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
+      purchased (for example, 'com.some.thing').
+  *   `subscription_id` (*type:* `String.t`) - "The purchased subscription ID (for example, 'monthly001').
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
+      purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -499,13 +569,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -528,22 +602,29 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   end
 
   @doc """
-  Refunds and immediately revokes a user's subscription purchase. Access to the subscription will be terminated immediately and it will stop recurring.
+  Refunds and immediately revokes a user's subscription purchase. Access to
+  the subscription will be terminated immediately and it will stop recurring.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which this subscription was
+      purchased (for example, 'com.some.thing').
   *   `subscription_id` (*type:* `String.t`) - The purchased subscription ID (for example, 'monthly001').
-  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was purchased.
+  *   `token` (*type:* `String.t`) - The token provided to the user's device when the subscription was
+      purchased.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -568,13 +649,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -602,23 +687,53 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - The package name of the application for which voided purchases need to be returned (for example, 'com.some.thing').
+  *   `package_name` (*type:* `String.t`) - The package name of the application for which voided purchases need to be
+      returned (for example, 'com.some.thing').
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:endTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the newest voided purchase that you want to see in the response. The value of this parameter cannot be greater than the current time and is ignored if a pagination token is set. Default value is current time. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
-      *   `:maxResults` (*type:* `integer()`) - 
-      *   `:startIndex` (*type:* `integer()`) - 
-      *   `:startTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the oldest voided purchase that you want to see in the response. The value of this parameter cannot be older than 30 days and is ignored if a pagination token is set. Default value is current time minus 30 days. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
-      *   `:token` (*type:* `String.t`) - 
-      *   `:type` (*type:* `integer()`) - The type of voided purchases that you want to see in the response. Possible values are:  
-          - 0: Only voided in-app product purchases will be returned in the response. This is the default value.
-          - 1: Both voided in-app purchases and voided subscription purchases will be returned in the response.  Note: Before requesting to receive voided subscription purchases, you must switch to use orderId in the response which uniquely identifies one-time purchases and subscriptions. Otherwise, you will receive multiple subscription orders with the same PurchaseToken, because subscription renewal orders share the same PurchaseToken.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:endTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the newest voided purchase
+          that you want to see in the response. The value of this parameter cannot
+          be greater than the current time and is ignored if a pagination token is
+          set. Default value is current time.
+          Note: This filter is applied on the time at which the record is seen as
+          voided by our systems and not the actual voided time returned in the
+          response.
+      *   `:maxResults` (*type:* `integer()`) - Defines how many results the list operation should return.
+          The default number depends on the resource collection.
+      *   `:startIndex` (*type:* `integer()`) - Defines the index of the first element to return.
+          This can only be used if indexed paging is enabled.
+      *   `:startTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the oldest voided purchase
+          that you want to see in the response. The value of this parameter cannot
+          be older than 30 days and is ignored if a pagination token is set.
+          Default value is current time minus 30 days.
+          Note: This filter is applied on the time at which the record is seen as
+          voided by our systems and not the actual voided time returned in the
+          response.
+      *   `:token` (*type:* `String.t`) - Defines the token of the page to return, usually taken from
+          TokenPagination.
+          This can only be used if token paging is enabled.
+      *   `:type` (*type:* `integer()`) - The type of voided purchases that you want to see in the response.
+          Possible values are:
+          0. Only voided in-app product purchases will be returned in the
+             response. This is the default value.
+          1. Both voided in-app purchases and voided subscription purchases
+             will be returned in the response.
+
+          Note: Before requesting to receive voided subscription purchases, you
+          must switch to use orderId in the response which uniquely identifies
+          one-time purchases and subscriptions. Otherwise, you will receive multiple
+          subscription orders with the same PurchaseToken, because subscription
+          renewal orders share the same PurchaseToken.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -642,13 +757,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :endTime => :query,
       :maxResults => :query,
       :startIndex => :query,

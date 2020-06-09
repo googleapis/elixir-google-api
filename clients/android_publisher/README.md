@@ -1,8 +1,8 @@
 # GoogleApi.AndroidPublisher
 
-Google Play Developer API client library.
+Google Play Android Developer API client library.
 
-Accesses Android application developers' Google Play accounts.
+Lets Android application developers access their Google Play accounts.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_android_publisher, "~> 0.16"}]
+  [{:google_api_android_publisher, "~> 0.17"}]
 end
 ```
 

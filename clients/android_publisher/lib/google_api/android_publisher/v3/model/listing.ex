@@ -17,14 +17,15 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Listing do
   @moduledoc """
-
+  A localized store listing. The resource for ListingsService.
 
   ## Attributes
 
-  *   `fullDescription` (*type:* `String.t`, *default:* `nil`) - Full description of the app; this may be up to 4000 characters in length.
-  *   `language` (*type:* `String.t`, *default:* `nil`) - Language localization code (for example, "de-AT" for Austrian German).
-  *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - Short description of the app (previously known as promo text); this may be up to 80 characters in length.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - App's localized title.
+  *   `fullDescription` (*type:* `String.t`, *default:* `nil`) - Full description of the app.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
+      for Austrian German).
+  *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - Short description of the app.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Localized title of the app.
   *   `video` (*type:* `String.t`, *default:* `nil`) - URL of a promotional YouTube video for the app.
   """
 

@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Image do
   @moduledoc """
-
+  An uploaded image. The resource for ImagesService.
 
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - A unique id representing this image.
-  *   `sha1` (*type:* `String.t`, *default:* `nil`) - A sha1 hash of the image that was uploaded.
-  *   `sha256` (*type:* `String.t`, *default:* `nil`) - A sha256 hash of the image that was uploaded.
+  *   `sha1` (*type:* `String.t`, *default:* `nil`) - A sha1 hash of the image.
+  *   `sha256` (*type:* `String.t`, *default:* `nil`) - A sha256 hash of the image.
   *   `url` (*type:* `String.t`, *default:* `nil`) - A URL that will serve a preview of the image.
   """
 

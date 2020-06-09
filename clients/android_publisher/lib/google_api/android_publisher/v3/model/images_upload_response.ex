@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ImagesUploadResponse do
   @moduledoc """
-
+  Response for uploading an image.
 
   ## Attributes
 
-  *   `image` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Image.t`, *default:* `nil`) - 
+  *   `image` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Image.t`, *default:* `nil`) - The uploaded image.
   """
 
   use GoogleApi.Gax.ModelBase

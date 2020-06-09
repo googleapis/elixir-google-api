@@ -17,28 +17,35 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.VoidedPurchase do
   @moduledoc """
-  A VoidedPurchase resource indicates a purchase that was either canceled/refunded/charged-back.
+  A VoidedPurchase resource indicates a purchase that was either
+  canceled/refunded/charged-back.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#voidedPurchase`) - This kind represents a voided purchase object in the androidpublisher service.
-  *   `orderId` (*type:* `String.t`, *default:* `nil`) - The order id which uniquely identifies a one-time purchase, subscription purchase, or subscription renewal.
-  *   `purchaseTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the purchase was made, in milliseconds since the epoch (Jan 1, 1970).
-  *   `purchaseToken` (*type:* `String.t`, *default:* `nil`) - The token which uniquely identifies a one-time purchase or subscription. To uniquely identify subscription renewals use order_id (available starting from version 3 of the API).
-  *   `voidedReason` (*type:* `integer()`, *default:* `nil`) - The reason why the purchase was voided, possible values are:  
-      - Other 
-      - Remorse 
-      - Not_received 
-      - Defective 
-      - Accidental_purchase 
-      - Fraud 
-      - Friendly_fraud 
-      - Chargeback
-  *   `voidedSource` (*type:* `integer()`, *default:* `nil`) - The initiator of voided purchase, possible values are:  
-      - User 
-      - Developer 
-      - Google
-  *   `voidedTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the purchase was canceled/refunded/charged-back, in milliseconds since the epoch (Jan 1, 1970).
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This kind represents a voided purchase object in the androidpublisher
+      service.
+  *   `orderId` (*type:* `String.t`, *default:* `nil`) - The order id which uniquely identifies a one-time purchase, subscription
+      purchase, or subscription renewal.
+  *   `purchaseTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the purchase was made, in milliseconds since the
+      epoch (Jan 1, 1970).
+  *   `purchaseToken` (*type:* `String.t`, *default:* `nil`) - The token which uniquely identifies a one-time purchase or subscription.
+      To uniquely identify subscription renewals use order_id (available
+      starting from version 3 of the API).
+  *   `voidedReason` (*type:* `integer()`, *default:* `nil`) - The reason why the purchase was voided, possible values are:
+      0. Other
+      1. Remorse
+      2. Not_received
+      3. Defective
+      4. Accidental_purchase
+      5. Fraud
+      6. Friendly_fraud
+      7. Chargeback
+  *   `voidedSource` (*type:* `integer()`, *default:* `nil`) - The initiator of voided purchase, possible values are:
+      0. User
+      1. Developer
+      2. Google
+  *   `voidedTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the purchase was canceled/refunded/charged-back,
+      in milliseconds since the epoch (Jan 1, 1970).
   """
 
   use GoogleApi.Gax.ModelBase

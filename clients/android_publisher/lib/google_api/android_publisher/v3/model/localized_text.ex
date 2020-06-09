@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.LocalizedText do
   @moduledoc """
-
+  Release notes specification, i.e. language and text.
 
   ## Attributes
 
-  *   `language` (*type:* `String.t`, *default:* `nil`) - The language code, in BCP 47 format (eg "en-US").
-  *   `text` (*type:* `String.t`, *default:* `nil`) - The text in the given `language`.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - Language localization code (a BCP-47 language tag; for example, "de-AT"
+      for Austrian German).
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The text in the given language.
   """
 
   use GoogleApi.Gax.ModelBase

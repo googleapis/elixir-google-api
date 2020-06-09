@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchasesDeferResponse do
   @moduledoc """
-
+  Response for the purchases.subscriptions.defer API.
 
   ## Attributes
 

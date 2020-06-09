@@ -17,28 +17,19 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Testers do
   @moduledoc """
-
+  The testers of an app. The resource for TestersService.
 
   ## Attributes
 
-  *   `autoEnrolledAndroidGroups` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `autoEnrolledGoogleGroups` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `excludedGoogleGroups` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `googleGroups` (*type:* `list(String.t)`, *default:* `nil`) - A list of all Google Groups, as email addresses, that define testers for this track.
+  *   `googleGroups` (*type:* `list(String.t)`, *default:* `nil`) - All testing Google Groups, as email addresses.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoEnrolledAndroidGroups => list(String.t()),
-          :autoEnrolledGoogleGroups => list(String.t()),
-          :excludedGoogleGroups => list(String.t()),
           :googleGroups => list(String.t())
         }
 
-  field(:autoEnrolledAndroidGroups, type: :list)
-  field(:autoEnrolledGoogleGroups, type: :list)
-  field(:excludedGoogleGroups, type: :list)
   field(:googleGroups, type: :list)
 end
 

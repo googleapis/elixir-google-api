@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.DeveloperComment do
   @moduledoc """
-
+  Developer entry from conversation between user and developer.
 
   ## Attributes
 

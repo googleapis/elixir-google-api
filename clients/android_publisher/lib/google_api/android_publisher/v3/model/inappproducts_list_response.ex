@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.InappproductsListResponse do
   @moduledoc """
-
+  Response listing all in-app products.
 
   ## Attributes
 
-  *   `inappproduct` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t)`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#inappproductsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidpublisher#inappproductsListResponse".
-  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PageInfo.t`, *default:* `nil`) - 
-  *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t`, *default:* `nil`) - 
+  *   `inappproduct` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t)`, *default:* `nil`) - All in-app products.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this response ("androidpublisher#inappproductsListResponse").
+  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PageInfo.t`, *default:* `nil`) - Information about the current page.
+  *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t`, *default:* `nil`) - Pagination token, to handle a number of products that is over one page.
   """
 
   use GoogleApi.Gax.ModelBase

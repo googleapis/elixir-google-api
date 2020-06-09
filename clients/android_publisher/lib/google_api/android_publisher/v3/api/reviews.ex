@@ -26,22 +26,26 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns a single review.
+  Gets a single review.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
-  *   `review_id` (*type:* `String.t`) - 
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
+  *   `review_id` (*type:* `String.t`) - Unique identifier for a review.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:translationLanguage` (*type:* `String.t`) - 
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:translationLanguage` (*type:* `String.t`) - Language localization code.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -67,13 +71,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :translationLanguage => :query
     }
 
@@ -93,24 +101,28 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
   end
 
   @doc """
-  Returns a list of reviews. Only reviews from last week will be returned.
+  Lists all reviews.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - 
-      *   `:startIndex` (*type:* `integer()`) - 
-      *   `:token` (*type:* `String.t`) - 
-      *   `:translationLanguage` (*type:* `String.t`) - 
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:maxResults` (*type:* `integer()`) - How many results the list operation should return.
+      *   `:startIndex` (*type:* `integer()`) - The index of the first element to return.
+      *   `:token` (*type:* `String.t`) - Pagination token. If empty, list starts at the first review.
+      *   `:translationLanguage` (*type:* `String.t`) - Language localization code.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -124,13 +136,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
           | {:error, any()}
   def androidpublisher_reviews_list(connection, package_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :maxResults => :query,
       :startIndex => :query,
       :token => :query,
@@ -154,21 +170,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
   end
 
   @doc """
-  Reply to a single review, or update an existing reply.
+  Replies to a single review, or updates an existing reply.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
-  *   `review_id` (*type:* `String.t`) - 
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
+  *   `review_id` (*type:* `String.t`) - Unique identifier for a review.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ReviewsReplyRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -195,13 +215,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Reviews do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 

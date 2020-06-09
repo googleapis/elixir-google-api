@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ReviewsReplyRequest do
   @moduledoc """
-
+  Request to reply to review or update existing reply.
 
   ## Attributes
 
-  *   `replyText` (*type:* `String.t`, *default:* `nil`) - The text to set as the reply. Replies of more than approximately 350 characters will be rejected. HTML tags will be stripped.
+  *   `replyText` (*type:* `String.t`, *default:* `nil`) - The text to set as the reply. Replies of more than approximately 350
+      characters will be rejected. HTML tags will be stripped.
   """
 
   use GoogleApi.Gax.ModelBase

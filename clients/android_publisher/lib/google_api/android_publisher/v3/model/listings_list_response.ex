@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ListingsListResponse do
   @moduledoc """
-
+  Response listing all localized listings.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#listingsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidpublisher#listingsListResponse".
-  *   `listings` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Listing.t)`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this response ("androidpublisher#listingsListResponse").
+  *   `listings` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Listing.t)`, *default:* `nil`) - All localized listings.
   """
 
   use GoogleApi.Gax.ModelBase

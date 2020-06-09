@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.AppDetails do
   @moduledoc """
-
+  The app details. The resource for DetailsService.
 
   ## Attributes
 

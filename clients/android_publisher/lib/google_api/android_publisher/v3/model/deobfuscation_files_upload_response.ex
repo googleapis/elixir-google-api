@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFilesUploadResponse do
   @moduledoc """
-
+  Responses for the upload.
 
   ## Attributes
 
-  *   `deobfuscationFile` (*type:* `GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFile.t`, *default:* `nil`) - 
+  *   `deobfuscationFile` (*type:* `GoogleApi.AndroidPublisher.V3.Model.DeobfuscationFile.t`, *default:* `nil`) - The uploaded Deobfuscation File configuration.
   """
 
   use GoogleApi.Gax.ModelBase
