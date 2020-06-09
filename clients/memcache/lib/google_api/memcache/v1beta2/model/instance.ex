@@ -21,16 +21,16 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Instance do
 
   ## Attributes
 
-  *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Google Compute Engine
+  *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - The full name of the Google Compute Engine
       [network](/compute/docs/networks-and-firewalls#networks) to which the
       instance is connected. If left unspecified, the `default` network
       will be used.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
   *   `discoveryEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. Endpoint for Discovery API
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User provided name for the instance only used for display
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - User provided name for the instance only used for display
       purposes. Cannot be more than 80 characters.
   *   `instanceMessages` (*type:* `list(GoogleApi.Memcache.V1beta2.Model.InstanceMessage.t)`, *default:* `nil`) - List of messages that describe current statuses of memcached instance.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user-provided metadata.
       Refer to cloud documentation on labels for more details.
       https://cloud.google.com/compute/docs/labeling-resources
   *   `memcacheFullVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The full version of memcached server running on this instance.
@@ -39,7 +39,7 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Instance do
       The full version format will be "memcached-1.5.16".
   *   `memcacheNodes` (*type:* `list(GoogleApi.Memcache.V1beta2.Model.Node.t)`, *default:* `nil`) - Output only. List of Memcached nodes.
       Refer to [Node] message for more details.
-  *   `memcacheVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The major version of Memcached software.
+  *   `memcacheVersion` (*type:* `String.t`, *default:* `nil`) - The major version of Memcached software.
       If not provided, latest supported version will be used. Currently the
       latest supported major version is MEMCACHE_1_5.
       The minor version will be automatically determined by our system based on
@@ -58,7 +58,7 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Instance do
       on each node.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this Memcached instance.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was updated.
-  *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Zones where Memcached nodes should be provisioned in.
+  *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - Zones where Memcached nodes should be provisioned in.
       Memcached nodes will be equally distributed across these zones. If not
       provided, the service will by default create nodes in all zones in the
       region for the instance.
