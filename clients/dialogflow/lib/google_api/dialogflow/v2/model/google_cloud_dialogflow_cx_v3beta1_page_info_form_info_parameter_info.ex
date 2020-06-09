@@ -28,10 +28,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFo
   *   `justCollected` (*type:* `boolean()`, *default:* `nil`) - Optional for WebhookRequest. Ignored for WebhookResponse.
       Indicates if the parameter value was just collected on the last
       conversation turn.
-  *   `prompt` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t)`, *default:* `nil`) - Not set for WebhookRequest. Optional for WebhookResponse.
-      The prompt to send to the user to fill a required form parameter. This
-      field can be set by the webhook. If set, this field overrides the
-      prompt defined for the form parameter.
   *   `required` (*type:* `boolean()`, *default:* `nil`) - Optional for both WebhookRequest and WebhookResponse.
       Indicates whether the parameter is required. Optional parameters will
       not trigger prompts; however, they are filled if the user specifies
@@ -51,8 +47,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFo
   @type t :: %__MODULE__{
           :displayName => String.t(),
           :justCollected => boolean(),
-          :prompt =>
-            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage.t()),
           :required => boolean(),
           :state => String.t(),
           :value => any()
@@ -60,12 +54,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFo
 
   field(:displayName)
   field(:justCollected)
-
-  field(:prompt,
-    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessage,
-    type: :list
-  )
-
   field(:required)
   field(:state)
   field(:value)

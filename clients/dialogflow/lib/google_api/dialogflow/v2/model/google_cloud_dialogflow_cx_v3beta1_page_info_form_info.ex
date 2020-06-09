@@ -24,8 +24,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFo
   *   `parameterInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo.t)`, *default:* `nil`) - Optional for both WebhookRequest and WebhookResponse.
       The parameters contained in the form. Note that the webhook cannot add
       or remove any form parameter.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Always present for WebhookRequest. Ignored for WebhookResponse.
-      The current state of the form.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,16 +32,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFo
           :parameterInfo =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo.t()
-            ),
-          :state => String.t()
+            )
         }
 
   field(:parameterInfo,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo,
     type: :list
   )
-
-  field(:state)
 end
 
 defimpl Poison.Decoder,

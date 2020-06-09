@@ -27,14 +27,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo d
       ID>/flows/<Flow ID>/pages/<Page ID>`.
   *   `formInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfo.t`, *default:* `nil`) - Optional for both WebhookRequest and WebhookResponse.
       Information about the form.
-  *   `nextPage` (*type:* `String.t`, *default:* `nil`) - Deprecated. Please use WebhookResponse.target_page or
-      WebhookResponse.target_flow instead.
-
-      Optional for WebhookResponse.
-      The unique identifier of the next page. This field can be set by the
-      webhook to immediately transition to a page different from `current_page`.
-      Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-      ID>/flows/<Flow ID>/pages/<Page ID>`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,8 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo d
   @type t :: %__MODULE__{
           :currentPage => String.t(),
           :formInfo =>
-            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfo.t(),
-          :nextPage => String.t()
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfo.t()
         }
 
   field(:currentPage)
@@ -51,8 +42,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo d
   field(:formInfo,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfoFormInfo
   )
-
-  field(:nextPage)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1PageInfo do
