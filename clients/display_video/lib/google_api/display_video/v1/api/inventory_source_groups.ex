@@ -26,6 +26,152 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Creates a new inventory source group. Returns the newly created inventory
+  source group if successful.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the inventory source group.
+
+          The parent partner will not have access to this group.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the inventory source group.
+
+          Only this partner will have write access to this group. Only advertisers
+          to which this group is explicitly shared will have read access to this
+          group.
+      *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_inventory_source_groups_create(Tesla.Env.client(), keyword(), keyword()) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def displayvideo_inventory_source_groups_create(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :partnerId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/inventorySourceGroups", %{})
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup{}])
+  end
+
+  @doc """
+  Deletes an inventory source group.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to delete.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the inventory source group.
+
+          The parent partner does not have access to this group.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the inventory source group.
+
+          Only this partner has write access to this group.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_inventory_source_groups_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def displayvideo_inventory_source_groups_delete(
+        connection,
+        inventory_source_group_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :partnerId => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/inventorySourceGroups/{+inventorySourceGroupId}", %{
+        "inventorySourceGroupId" => URI.encode(inventory_source_group_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.Empty{}])
+  end
+
+  @doc """
   Gets an inventory source group.
 
   ## Parameters
@@ -202,6 +348,470 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.ListInventorySourceGroupsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates an inventory source group. Returns the updated inventory source
+  group if successful.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `inventory_source_group_id` (*type:* `String.t`) - Output only. The unique ID of the inventory source group. Assigned by the system.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the inventory source group.
+
+          The parent partner does not have access to this group.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the inventory source group.
+
+          Only this partner has write access to this group.
+      *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields to update.
+      *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_inventory_source_groups_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def displayvideo_inventory_source_groups_patch(
+        connection,
+        inventory_source_group_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :partnerId => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/inventorySourceGroups/{inventorySourceGroupId}", %{
+        "inventorySourceGroupId" => URI.encode(inventory_source_group_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup{}])
+  end
+
+  @doc """
+  Bulk edits multiple assignments between inventory sources and a single
+  inventory source group.
+
+  The operation will delete the assigned inventory sources provided in
+  BulkEditAssignedInventorySourcesRequest.deleted_assigned_inventory_sources
+  and then create the assigned inventory sources provided in
+  BulkEditAssignedInventorySourcesRequest.created_assigned_inventory_sources.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which the assignments are
+      assigned.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedInventorySourcesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedInventorySourcesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_inventory_source_groups_assigned_inventory_sources_bulk_edit(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedInventorySourcesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def displayvideo_inventory_source_groups_assigned_inventory_sources_bulk_edit(
+        connection,
+        inventory_source_group_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/inventorySourceGroups/{+inventorySourceGroupId}/assignedInventorySources:bulkEdit",
+        %{
+          "inventorySourceGroupId" =>
+            URI.encode(inventory_source_group_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedInventorySourcesResponse{}]
+    )
+  end
+
+  @doc """
+  Creates an assignment between an inventory source and an inventory source
+  group.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which the assignment will be
+      assigned.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent inventory source group.
+
+          The parent partner will not have access to this assigned inventory
+          source.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent inventory source group.
+
+          Only this partner will have write access to this assigned inventory
+          source.
+      *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_inventory_source_groups_assigned_inventory_sources_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def displayvideo_inventory_source_groups_assigned_inventory_sources_create(
+        connection,
+        inventory_source_group_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :partnerId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/inventorySourceGroups/{+inventorySourceGroupId}/assignedInventorySources",
+        %{
+          "inventorySourceGroupId" =>
+            URI.encode(inventory_source_group_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource{}]
+    )
+  end
+
+  @doc """
+  Deletes the assignment between an inventory source and an inventory source
+  group.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which this assignment is assigned.
+  *   `assigned_inventory_source_id` (*type:* `String.t`) - Required. The ID of the assigned inventory source to delete.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent inventory source group.
+
+          The parent partner does not have access to this assigned inventory
+          source.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent inventory source group.
+
+          Only this partner has write access to this assigned inventory source.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_inventory_source_groups_assigned_inventory_sources_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def displayvideo_inventory_source_groups_assigned_inventory_sources_delete(
+        connection,
+        inventory_source_group_id,
+        assigned_inventory_source_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :partnerId => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/inventorySourceGroups/{+inventorySourceGroupId}/assignedInventorySources/{+assignedInventorySourceId}",
+        %{
+          "inventorySourceGroupId" =>
+            URI.encode(inventory_source_group_id, &URI.char_unreserved?/1),
+          "assignedInventorySourceId" =>
+            URI.encode(assigned_inventory_source_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Lists inventory sources assigned to an inventory source group.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
+  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which these assignments are
+      assigned.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the assignment.
+
+          If the parent inventory source group is partner-owned, only advertisers
+          to which the parent group is explicitly shared can access the assigned
+          inventory source.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned inventory source fields.
+
+          Supported syntax:
+
+          * Filter expressions are made up of one or more restrictions.
+          * Restrictions can be combined by the logical operator `OR`.
+          * A restriction has the form of `{field} {operator} {value}`.
+          * The operator must be `EQUALS (=)`.
+          * Supported fields:
+              - `assignedInventorySourceId`
+
+          The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
+          Acceptable values are:
+
+          * `assignedInventorySourceId` (default)
+
+          The default sorting order is ascending. To specify descending order for a
+          field, a suffix " desc" should be added to the field name. Example:
+          `assignedInventorySourceId desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
+          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
+          is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
+
+          Typically, this is the value of
+          next_page_token
+          returned from the previous call to `ListAssignedInventorySources`
+          method. If not specified, the first page of results will be returned.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the assignment.
+
+          If the parent inventory source group is advertiser-owned, the assignment
+          cannot be accessed via a partner.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DisplayVideo.V1.Model.ListAssignedInventorySourcesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec displayvideo_inventory_source_groups_assigned_inventory_sources_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DisplayVideo.V1.Model.ListAssignedInventorySourcesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def displayvideo_inventory_source_groups_assigned_inventory_sources_list(
+        connection,
+        inventory_source_group_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :advertiserId => :query,
+      :filter => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :partnerId => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/inventorySourceGroups/{+inventorySourceGroupId}/assignedInventorySources",
+        %{
+          "inventorySourceGroupId" =>
+            URI.encode(inventory_source_group_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DisplayVideo.V1.Model.ListAssignedInventorySourcesResponse{}]
     )
   end
 end
