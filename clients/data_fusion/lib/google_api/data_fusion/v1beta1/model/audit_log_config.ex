@@ -29,7 +29,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.AuditLogConfig do
             ]
           },
           {
-            "log_type": "DATA_WRITE",
+            "log_type": "DATA_WRITE"
           }
         ]
       }
