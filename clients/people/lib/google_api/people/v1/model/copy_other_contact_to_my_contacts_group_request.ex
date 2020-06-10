@@ -28,8 +28,8 @@ defmodule GoogleApi.People.V1.Model.CopyOtherContactToMyContactsGroupRequest do
       * names
       * phoneNumbers
   *   `readMask` (*type:* `String.t`, *default:* `nil`) - Optional. A field mask to restrict which fields on the person are returned. Multiple
-      fields can be specified by separating them with commas. Defaults to empty
-      if not set, which will skip the post mutate get. Valid values are:
+      fields can be specified by separating them with commas. Defaults to the
+      copy mask with metadata and membership fields if not set. Valid values are:
 
       * addresses
       * ageRanges
@@ -56,17 +56,23 @@ defmodule GoogleApi.People.V1.Model.CopyOtherContactToMyContactsGroupRequest do
       * skills
       * urls
       * userDefined
+  *   `sources` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A mask of what source types to return. Defaults to
+      ReadSourceType.CONTACT and
+      ReadSourceType.PROFILE if not
+      set.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :copyMask => String.t(),
-          :readMask => String.t()
+          :readMask => String.t(),
+          :sources => list(String.t())
         }
 
   field(:copyMask)
   field(:readMask)
+  field(:sources, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.CopyOtherContactToMyContactsGroupRequest do

@@ -43,6 +43,39 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
+          fields can be specified by separating them with commas. Defaults to all
+          fields if not set. Valid values are:
+
+          * addresses
+          * ageRanges
+          * biographies
+          * birthdays
+          * coverPhotos
+          * emailAddresses
+          * events
+          * genders
+          * imClients
+          * interests
+          * locales
+          * memberships
+          * metadata
+          * names
+          * nicknames
+          * occupations
+          * organizations
+          * phoneNumbers
+          * photos
+          * relations
+          * residences
+          * sipAddresses
+          * skills
+          * urls
+          * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT and
+          ReadSourceType.PROFILE if not
+          set.
       *   `:body` (*type:* `GoogleApi.People.V1.Model.Person.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -66,6 +99,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :personFields => :query,
+      :sources => :query,
       :body => :body
     }
 
@@ -186,6 +221,10 @@ defmodule GoogleApi.People.V1.Api.People do
           * skills
           * urls
           * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT and
+          ReadSourceType.PROFILE if not
+          set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -210,7 +249,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :personFields => :query
+      :personFields => :query,
+      :sources => :query
     }
 
     request =
@@ -287,6 +327,11 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
           path should start with `person.`: for example, `person.names` or
           `person.photos`.
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.PROFILE
+          and
+          ReadSourceType.CONTACT
+          if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -310,7 +355,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :uploadType => :query,
       :upload_protocol => :query,
       :personFields => :query,
-      :"requestMask.includeField" => :query
+      :"requestMask.includeField" => :query,
+      :sources => :query
     }
 
     request =
@@ -390,6 +436,11 @@ defmodule GoogleApi.People.V1.Api.People do
           [`people.connections.list`](/people/api/rest/v1/people.connections/list).
 
           You can include up to 50 resource names in one request.
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT
+          and
+          ReadSourceType.PROFILE
+          if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -416,7 +467,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :upload_protocol => :query,
       :personFields => :query,
       :"requestMask.includeField" => :query,
-      :resourceNames => :query
+      :resourceNames => :query,
+      :sources => :query
     }
 
     request =
@@ -464,6 +516,39 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:personFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on each person are returned. Multiple
+          fields can be specified by separating them with commas. Defaults to all
+          fields if not set. Valid values are:
+
+          * addresses
+          * ageRanges
+          * biographies
+          * birthdays
+          * coverPhotos
+          * emailAddresses
+          * events
+          * genders
+          * imClients
+          * interests
+          * locales
+          * memberships
+          * metadata
+          * names
+          * nicknames
+          * occupations
+          * organizations
+          * phoneNumbers
+          * photos
+          * relations
+          * residences
+          * sipAddresses
+          * skills
+          * urls
+          * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT and
+          ReadSourceType.PROFILE if not
+          set.
       *   `:updatePersonFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on the person are updated. Multiple
           fields can be specified by separating them with commas.
           All updated fields will be replaced. Valid values are:
@@ -511,6 +596,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :personFields => :query,
+      :sources => :query,
       :updatePersonFields => :query,
       :body => :body
     }
@@ -655,6 +742,11 @@ defmodule GoogleApi.People.V1.Api.People do
           `request_sync_token` have an additional rate limit.
       *   `:sortOrder` (*type:* `String.t`) - Optional. The order in which the connections should be sorted. Defaults to
           `LAST_MODIFIED_ASCENDING`.
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT
+          and
+          ReadSourceType.PROFILE if not
+          set.
       *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListConnections` call.
           Provide this to retrieve only the resources changed since the last request.
           Sync requests that specify `sync_token` have an additional rate limit.
@@ -691,6 +783,7 @@ defmodule GoogleApi.People.V1.Api.People do
       :"requestMask.includeField" => :query,
       :requestSyncToken => :query,
       :sortOrder => :query,
+      :sources => :query,
       :syncToken => :query
     }
 
