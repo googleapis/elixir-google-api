@@ -17,14 +17,20 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.Permission do
   @moduledoc """
-  A Permissions resource represents some extra capability, to be granted to an Android app, which requires explicit consent. An enterprise admin must consent to these permissions on behalf of their users before an entitlement for the app can be created.
+  A Permissions resource represents some extra capability, to be granted to an
+  Android app, which requires explicit consent. An enterprise admin must
+  consent to these permissions on behalf of their users before an
+  entitlement for the app can be created.
 
-  The permissions collection is read-only. The information provided for each permission (localized name and description) is intended to be used in the MDM user interface when obtaining consent from the enterprise.
+  The permissions collection is read-only. The information provided for
+  each permission (localized name and description) is intended to be
+  used in the MDM user interface when obtaining consent from the
+  enterprise.
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A longer description of the Permissions resource, giving more details of what it affects.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#permission`) - 
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A longer description of the Permissions resource, giving more details of
+      what it affects.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the permission.
   *   `permissionId` (*type:* `String.t`, *default:* `nil`) - An opaque string uniquely identifying the permission.
   """
@@ -33,13 +39,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Permission do
 
   @type t :: %__MODULE__{
           :description => String.t(),
-          :kind => String.t(),
           :name => String.t(),
           :permissionId => String.t()
         }
 
   field(:description)
-  field(:kind)
   field(:name)
   field(:permissionId)
 end

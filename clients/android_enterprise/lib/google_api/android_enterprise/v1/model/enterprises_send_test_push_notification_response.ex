@@ -22,7 +22,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificati
   ## Attributes
 
   *   `messageId` (*type:* `String.t`, *default:* `nil`) - The message ID of the test push notification that was sent.
-  *   `topicName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Pub/Sub topic to which notifications for this enterprise's enrolled account will be sent.
+  *   `topicName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Pub/Sub topic to which notifications for this
+      enterprise's enrolled account will be sent.
   """
 
   use GoogleApi.Gax.ModelBase

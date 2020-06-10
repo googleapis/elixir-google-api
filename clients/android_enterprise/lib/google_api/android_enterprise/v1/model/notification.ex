@@ -24,14 +24,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
   *   `appRestrictionsSchemaChangeEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent.t`, *default:* `nil`) - Notifications about new app restrictions schema changes.
   *   `appUpdateEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AppUpdateEvent.t`, *default:* `nil`) - Notifications about app updates.
   *   `deviceReportUpdateEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent.t`, *default:* `nil`) - Notifications about device report updates.
-  *   `enterpriseId` (*type:* `String.t`, *default:* `nil`) - The ID of the enterprise for which the notification is sent. This will always be present.
+  *   `enterpriseId` (*type:* `String.t`, *default:* `nil`) - The ID of the enterprise for which the notification is sent.
+      This will always be present.
   *   `installFailureEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent.t`, *default:* `nil`) - Notifications about an app installation failure.
   *   `newDeviceEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent.t`, *default:* `nil`) - Notifications about new devices.
   *   `newPermissionsEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent.t`, *default:* `nil`) - Notifications about new app permissions.
   *   `notificationType` (*type:* `String.t`, *default:* `nil`) - Type of the notification.
   *   `productApprovalEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ProductApprovalEvent.t`, *default:* `nil`) - Notifications about changes to a product's approval status.
   *   `productAvailabilityChangeEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ProductAvailabilityChangeEvent.t`, *default:* `nil`) - Notifications about product availability changes.
-  *   `timestampMillis` (*type:* `String.t`, *default:* `nil`) - The time when the notification was published in milliseconds since 1970-01-01T00:00:00Z. This will always be present.
+  *   `timestampMillis` (*type:* `String.t`, *default:* `nil`) - The time when the notification was published in
+      milliseconds since 1970-01-01T00:00:00Z.
+      This will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

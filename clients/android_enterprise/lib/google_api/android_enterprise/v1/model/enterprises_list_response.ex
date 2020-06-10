@@ -17,23 +17,20 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse do
   @moduledoc """
-  The matching enterprise resources.
+
 
   ## Attributes
 
   *   `enterprise` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t)`, *default:* `nil`) - An enterprise.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#enterprisesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#enterprisesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enterprise => list(GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()),
-          :kind => String.t()
+          :enterprise => list(GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t())
         }
 
   field(:enterprise, as: GoogleApi.AndroidEnterprise.V1.Model.Enterprise, type: :list)
-  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse do

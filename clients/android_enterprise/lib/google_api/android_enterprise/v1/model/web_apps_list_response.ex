@@ -17,22 +17,19 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.WebAppsListResponse do
   @moduledoc """
-  The web app details for an enterprise.
+
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#webAppsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#webAppsListResponse".
   *   `webApp` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.WebApp.t)`, *default:* `nil`) - The manifest describing a web app.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :webApp => list(GoogleApi.AndroidEnterprise.V1.Model.WebApp.t())
         }
 
-  field(:kind)
   field(:webApp, as: GoogleApi.AndroidEnterprise.V1.Model.WebApp, type: :list)
 end
 

@@ -17,24 +17,23 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductPermissions do
   @moduledoc """
-  Information about the permissions required by a specific app and whether they have been accepted by the enterprise.
+  Information about the permissions required by a specific app and
+  whether they have been accepted by the enterprise.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#productPermissions`) - 
   *   `permission` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ProductPermission.t)`, *default:* `nil`) - The permissions required by the app.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the app that the permissions relate to, e.g. "app:com.google.android.gm".
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the app that the permissions relate to, e.g.
+      "app:com.google.android.gm".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :permission => list(GoogleApi.AndroidEnterprise.V1.Model.ProductPermission.t()),
           :productId => String.t()
         }
 
-  field(:kind)
   field(:permission, as: GoogleApi.AndroidEnterprise.V1.Model.ProductPermission, type: :list)
   field(:productId)
 end

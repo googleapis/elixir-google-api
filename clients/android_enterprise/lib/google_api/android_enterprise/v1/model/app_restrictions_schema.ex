@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchema do
   @moduledoc """
-  Represents the list of app restrictions available to be pre-configured for the product.
+  Represents the list of app restrictions available to be pre-configured for
+  the product.
 
   ## Attributes
 

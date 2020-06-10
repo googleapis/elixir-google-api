@@ -21,9 +21,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent do
 
   ## Attributes
 
-  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The Android ID of the device. This field will always be present.
-  *   `report` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t`, *default:* `nil`) - The device report updated with the latest app states. This field will always be present.
-  *   `userId` (*type:* `String.t`, *default:* `nil`) - The ID of the user. This field will always be present.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The Android ID of the device.
+      This field will always be present.
+  *   `report` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t`, *default:* `nil`) - The device report updated with the latest app states.
+      This field will always be present.
+  *   `userId` (*type:* `String.t`, *default:* `nil`) - The ID of the user.
+      This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

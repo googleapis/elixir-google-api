@@ -17,23 +17,21 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount do
   @moduledoc """
-  A service account that can be used to authenticate as the enterprise to API calls that require such authentication.
+  A service account that can be used to authenticate as the enterprise to
+  API calls that require such authentication.
 
   ## Attributes
 
   *   `accountEmail` (*type:* `String.t`, *default:* `nil`) - The email address of the service account.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#enterpriseAccount`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountEmail => String.t(),
-          :kind => String.t()
+          :accountEmail => String.t()
         }
 
   field(:accountEmail)
-  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount do

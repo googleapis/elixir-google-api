@@ -17,22 +17,19 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.UsersListResponse do
   @moduledoc """
-  The matching user resources.
+
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#usersListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#usersListResponse".
   *   `user` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.User.t)`, *default:* `nil`) - A user of an enterprise.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :user => list(GoogleApi.AndroidEnterprise.V1.Model.User.t())
         }
 
-  field(:kind)
   field(:user, as: GoogleApi.AndroidEnterprise.V1.Model.User, type: :list)
 end
 

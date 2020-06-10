@@ -17,23 +17,22 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.InstallsListResponse do
   @moduledoc """
-  The install resources for the device.
+
 
   ## Attributes
 
-  *   `install` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Install.t)`, *default:* `nil`) - An installation of an app for a user on a specific device. The existence of an install implies that the user must have an entitlement to the app.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#installsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#installsListResponse".
+  *   `install` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Install.t)`, *default:* `nil`) - An installation of an app for a user on a specific device.
+      The existence of an install implies that the user must have an
+      entitlement to the app.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :install => list(GoogleApi.AndroidEnterprise.V1.Model.Install.t()),
-          :kind => String.t()
+          :install => list(GoogleApi.AndroidEnterprise.V1.Model.Install.t())
         }
 
   field(:install, as: GoogleApi.AndroidEnterprise.V1.Model.Install, type: :list)
-  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.InstallsListResponse do

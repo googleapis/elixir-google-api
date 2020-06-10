@@ -34,13 +34,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -63,19 +67,23 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
@@ -88,7 +96,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Generates an authentication token which the device policy client can use to provision the given EMM-managed user account on a device. The generated token is single-use and expires after a few minutes.
+  Generates an authentication token which the device policy client can use to
+  provision the given EMM-managed user account on a device.
+  The generated token is single-use and expires after a few minutes.
 
   You can provision a maximum of 10 devices per user.
 
@@ -100,13 +110,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -132,22 +146,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/authenticationToken", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/authenticationToken",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -167,13 +188,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -199,19 +224,23 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
@@ -232,13 +261,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -264,22 +297,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/availableProductSet", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/availableProductSet",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -291,21 +331,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   @doc """
   Creates a new EMM-managed user.
 
-  The Users resource passed in the body of the request should include an accountIdentifier and an accountType.
-  If a corresponding user already exists with the same account identifier, the user will be updated with the resource. In this case only the displayName field can be changed.
+  The <a href="/android/work/play/emm-api/v1/users.html">Users</a> resource
+  passed in the body of the request should include an
+  <code>accountIdentifier</code> and an <code>accountType</code>.
+  <p>If a corresponding user already exists with the same account identifier,
+  the user will be updated with the resource. In this case only the
+  <code>displayName</code> field can be changed.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.User.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -320,20 +368,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
           | {:error, any()}
   def androidenterprise_users_insert(connection, enterprise_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/{enterpriseId}/users", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/users", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -345,21 +397,28 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Looks up a user by primary email address. This is only supported for Google-managed users. Lookup of the id is not needed for EMM-managed users because the id is already returned in the result of the Users.insert call.
+  Looks up a user by primary email address.
+  This is only supported for Google-managed users.  Lookup of the id is not
+  needed for EMM-managed users because the id is already returned in the
+  result of the Users.insert call.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
-  *   `email` (*type:* `String.t`) - The exact primary email address of the user to look up.
+  *   `email` (*type:* `String.t`) - Required. The exact primary email address of the user to look up.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -385,19 +444,23 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/users", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/users", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :email, email)
@@ -412,7 +475,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Revokes access to all devices currently provisioned to the user. The user will no longer be able to use the managed Play store on any of their managed devices.
+  Revokes access to all devices currently provisioned to the user. The user
+  will no longer be able to use the managed Play store on any of their
+  managed devices.
 
   This call only works with EMM-managed accounts.
 
@@ -422,13 +487,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -451,22 +520,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/deviceAccess", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/deviceAccess",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -476,7 +552,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   end
 
   @doc """
-  Modifies the set of products that a user is entitled to access (referred to as whitelisted products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted.
+  Modifies the set of products that a user is entitled to access (referred to
+  as <em>whitelisted</em> products). Only products that are
+  <a href="/android/work/play/emm-api/v1/products/approve">approved</a>
+  or products that were previously approved (products with revoked approval)
+  can be whitelisted.
 
   ## Parameters
 
@@ -484,13 +564,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ProductSet.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -517,23 +601,30 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/availableProductSet", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/availableProductSet",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -545,7 +636,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   @doc """
   Updates the details of an EMM-managed user.
 
-  Can be used with EMM-managed users only (not Google managed users). Pass the new details in the Users resource in the request body. Only the displayName field can be changed. Other fields must either be unset or have the currently active value.
+  Can be used with EMM-managed users only (not Google managed users).
+  Pass the new details in the
+  <a href="/android/work/play/emm-api/v1/users.html">Users</a>
+  resource in the request body. Only the <code>displayName</code> field
+  can be changed. Other fields must either be unset or have the
+  currently active value.
 
   ## Parameters
 
@@ -553,13 +649,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.User.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -586,20 +686,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
