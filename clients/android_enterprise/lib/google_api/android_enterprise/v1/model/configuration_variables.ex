@@ -17,11 +17,13 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables do
   @moduledoc """
-  A configuration variables resource contains the managed configuration settings ID to be applied to a single user, as well as the variable set that is attributed to the user. The variable set will be used to replace placeholders in the managed configuration settings.
+  A configuration variables resource contains the managed configuration
+  settings ID to be applied to a single user, as well as the variable set that
+  is attributed to the user. The variable set will be used to replace
+  placeholders in the managed configuration settings.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#configurationVariables`) - 
   *   `mcmId` (*type:* `String.t`, *default:* `nil`) - The ID of the managed configurations settings.
   *   `variableSet` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.VariableSet.t)`, *default:* `nil`) - The variable set that is attributed to the user.
   """
@@ -29,12 +31,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :mcmId => String.t(),
           :variableSet => list(GoogleApi.AndroidEnterprise.V1.Model.VariableSet.t())
         }
 
-  field(:kind)
   field(:mcmId)
   field(:variableSet, as: GoogleApi.AndroidEnterprise.V1.Model.VariableSet, type: :list)
 end

@@ -17,12 +17,15 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
   @moduledoc """
-  A managed configurations settings resource contains the set of managed properties that have been configured for an Android app to be applied to a set of users. The app's developer would have defined configurable properties in the managed configurations schema.
+  A managed configurations settings resource contains the set of
+  managed properties that have been configured for an Android app to be applied
+  to a set of users. The app's developer would have
+  defined configurable properties in the managed configurations schema.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfigurationsSettings`) - 
-  *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The last updated time of the managed configuration settings in milliseconds since 1970-01-01T00:00:00Z.
+  *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The last updated time of the managed configuration settings in
+      milliseconds since 1970-01-01T00:00:00Z.
   *   `mcmId` (*type:* `String.t`, *default:* `nil`) - The ID of the managed configurations settings.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the managed configurations settings.
   """
@@ -30,13 +33,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :lastUpdatedTimestampMillis => String.t(),
           :mcmId => String.t(),
           :name => String.t()
         }
 
-  field(:kind)
   field(:lastUpdatedTimestampMillis)
   field(:mcmId)
   field(:name)

@@ -17,37 +17,57 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.Install do
   @moduledoc """
-  The existence of an Installs resource indicates that an app is installed on a particular device (or that an install is pending).
+  The existence of an Installs resource indicates that an app is
+  installed on a particular device (or that an install is pending).
 
-  The API can be used to create an install resource using the update method. This triggers the actual install of the app on the device. If the user does not already have an entitlement for the app, then an attempt is made to create one. If this fails (for example, because the app is not free and there is no available license), then the creation of the install fails.
+  The API can be used to create an install resource using the
+  <a class="method-link" method="androidenterprise.installs.update">update</a>
+  method. This triggers the actual install of the app on the device. If the
+  user does not already have an entitlement for the app, then an attempt is
+  made to create one. If this fails (for example, because the app is not free
+  and there is no available license), then the creation of the install fails.
 
-  The API can also be used to update an installed app. If the update method is used on an existing install, then the app will be updated to the latest available version.
+  The API can also be used to update an installed app. If
+  the&nbsp;<a class="method-link" method="androidenterprise.installs.update"
+  style="font-style: normal; font-size: 14px; font-family: Roboto, sans-serif;
+  line-height: 22.3999996185303px;">update</a>&nbsp;method is
+  used on an existing install, then the app will be updated to the latest
+  available version.
 
-  Note that it is not possible to force the installation of a specific version of an app: the version code is read-only.
+  Note that it is not possible to force the installation of a specific version
+  of an app: the version code is read-only.
 
-  If a user installs an app themselves (as permitted by the enterprise), then again an install resource and possibly an entitlement resource are automatically created.
+  If a user installs an app themselves (as permitted by the enterprise), then
+  again an install resource and possibly an entitlement resource are
+  automatically created.
 
-  The API can also be used to delete an install resource, which triggers the removal of the app from the device. Note that deleting an install does not automatically remove the corresponding entitlement, even if there are no remaining installs. The install resource will also be deleted if the user uninstalls the app themselves.
+  The API can also be used to delete an install resource, which triggers the
+  removal of the app from the device. Note that deleting an install does not
+  automatically remove the corresponding entitlement, even if there are no
+  remaining installs. The install resource will also be deleted if the user
+  uninstalls the app themselves.
 
   ## Attributes
 
-  *   `installState` (*type:* `String.t`, *default:* `nil`) - Install state. The state "installPending" means that an install request has recently been made and download to the device is in progress. The state "installed" means that the app has been installed. This field is read-only.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#install`) - 
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product that the install is for. For example, "app:com.google.android.gm".
-  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The version of the installed product. Guaranteed to be set only if the install state is "installed".
+  *   `installState` (*type:* `String.t`, *default:* `nil`) - Install state. The state <code>&quot;installPending&quot;</code>
+      means that an install request has recently been made and download to the
+      device is in progress. The state <code>&quot;installed&quot;</code>
+      means that the app has been installed. This field is read-only.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product that the install is for. For example,
+      <code>&quot;app:com.google.android.gm&quot;</code>.
+  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The version of the installed product. Guaranteed to be set only if the
+      install state is <code>&quot;installed&quot;</code>.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :installState => String.t(),
-          :kind => String.t(),
           :productId => String.t(),
           :versionCode => integer()
         }
 
   field(:installState)
-  field(:kind)
   field(:productId)
   field(:versionCode)
 end

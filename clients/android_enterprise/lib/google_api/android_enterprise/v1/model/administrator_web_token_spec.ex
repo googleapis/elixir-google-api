@@ -17,14 +17,17 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
   @moduledoc """
-  Specification for a token used to generate iframes. The token specifies what data the admin is allowed to modify and the URI the iframe is allowed to communiate with.
+  Specification for a token used to generate iframes. The token specifies
+  what data the admin is allowed to modify and the URI the iframe is
+  allowed to communiate with.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#administratorWebTokenSpec`) - 
   *   `managedConfigurations` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations.t`, *default:* `nil`) - Options for displaying the Managed Configuration page.
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - The URI of the parent frame hosting the iframe. To prevent XSS, the iframe may not be hosted at other URIs. This URI must be https. Use whitespaces to separate multiple parent URIs.
-  *   `permission` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use PlaySearch.approveApps.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - The URI of the parent frame hosting the iframe. To prevent XSS, the iframe
+      may not be hosted at other URIs. This URI must be https.
+      Use whitespaces to separate multiple parent URIs.
+  *   `permission` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use <code>PlaySearch.approveApps</code>.
   *   `playSearch` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPlaySearch.t`, *default:* `nil`) - Options for displaying the managed Play Search apps page.
   *   `privateApps` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecPrivateApps.t`, *default:* `nil`) - Options for displaying the Private Apps page.
   *   `storeBuilder` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder.t`, *default:* `nil`) - Options for displaying the Organize apps page.
@@ -34,7 +37,6 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :managedConfigurations =>
             GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations.t(),
           :parent => String.t(),
@@ -47,8 +49,6 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec do
             GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecStoreBuilder.t(),
           :webApps => GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecWebApps.t()
         }
-
-  field(:kind)
 
   field(:managedConfigurations,
     as: GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpecManagedConfigurations

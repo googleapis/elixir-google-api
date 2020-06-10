@@ -17,22 +17,19 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutPagesListResponse do
   @moduledoc """
-  The store page resources for the enterprise.
+
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#storeLayoutPagesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeLayoutPagesListResponse".
   *   `page` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.StorePage.t)`, *default:* `nil`) - A store page of an enterprise.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :page => list(GoogleApi.AndroidEnterprise.V1.Model.StorePage.t())
         }
 
-  field(:kind)
   field(:page, as: GoogleApi.AndroidEnterprise.V1.Model.StorePage, type: :list)
 end
 

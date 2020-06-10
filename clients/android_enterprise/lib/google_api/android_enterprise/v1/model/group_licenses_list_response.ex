@@ -17,23 +17,20 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse do
   @moduledoc """
-  The grouplicense resources for the enterprise.
+
 
   ## Attributes
 
   *   `groupLicense` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t)`, *default:* `nil`) - A group license for a product approved for use in the enterprise.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#groupLicensesListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#groupLicensesListResponse".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groupLicense => list(GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t()),
-          :kind => String.t()
+          :groupLicense => list(GoogleApi.AndroidEnterprise.V1.Model.GroupLicense.t())
         }
 
   field(:groupLicense, as: GoogleApi.AndroidEnterprise.V1.Model.GroupLicense, type: :list)
-  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.GroupLicensesListResponse do

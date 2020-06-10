@@ -17,26 +17,24 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ProductsListResponse do
   @moduledoc """
-  The matching products.
+
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#productsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#productsListResponse".
   *   `pageInfo` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.PageInfo.t`, *default:* `nil`) - General pagination information.
-  *   `product` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Product.t)`, *default:* `nil`) - Information about a product (e.g. an app) in the Google Play store, for display to an enterprise admin.
+  *   `product` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Product.t)`, *default:* `nil`) - Information about a product (e.g. an app) in the Google Play store, for
+      display to an enterprise admin.
   *   `tokenPagination` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.TokenPagination.t`, *default:* `nil`) - Pagination information for token pagination.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :pageInfo => GoogleApi.AndroidEnterprise.V1.Model.PageInfo.t(),
           :product => list(GoogleApi.AndroidEnterprise.V1.Model.Product.t()),
           :tokenPagination => GoogleApi.AndroidEnterprise.V1.Model.TokenPagination.t()
         }
 
-  field(:kind)
   field(:pageInfo, as: GoogleApi.AndroidEnterprise.V1.Model.PageInfo)
   field(:product, as: GoogleApi.AndroidEnterprise.V1.Model.Product, type: :list)
   field(:tokenPagination, as: GoogleApi.AndroidEnterprise.V1.Model.TokenPagination)

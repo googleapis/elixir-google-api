@@ -17,23 +17,20 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettingsListResponse do
   @moduledoc """
-  The managed configurations settings for a product.
+
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfigurationsSettingsListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsSettingsListResponse".
-  *   `managedConfigurationsSettings` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings.t)`, *default:* `nil`) - A managed configurations settings for an app that may be assigned to a group of users in an enterprise.
+  *   `managedConfigurationsSettings` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings.t)`, *default:* `nil`) - A managed configurations settings for an app that may be assigned to a
+      group of users in an enterprise.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :managedConfigurationsSettings =>
             list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings.t())
         }
-
-  field(:kind)
 
   field(:managedConfigurationsSettings,
     as: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsSettings,
