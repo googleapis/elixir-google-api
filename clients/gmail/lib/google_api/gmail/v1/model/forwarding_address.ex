@@ -22,7 +22,8 @@ defmodule GoogleApi.Gmail.V1.Model.ForwardingAddress do
   ## Attributes
 
   *   `forwardingEmail` (*type:* `String.t`, *default:* `nil`) - An email address to which messages can be forwarded.
-  *   `verificationStatus` (*type:* `String.t`, *default:* `nil`) - Indicates whether this address has been verified and is usable for forwarding. Read-only.
+  *   `verificationStatus` (*type:* `String.t`, *default:* `nil`) - Indicates whether this address has been verified and is usable for
+      forwarding.  Read-only.
   """
 
   use GoogleApi.Gax.ModelBase

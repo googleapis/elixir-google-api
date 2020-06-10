@@ -22,7 +22,8 @@ defmodule GoogleApi.Gmail.V1.Model.PopSettings do
   ## Attributes
 
   *   `accessWindow` (*type:* `String.t`, *default:* `nil`) - The range of messages which are accessible via POP.
-  *   `disposition` (*type:* `String.t`, *default:* `nil`) - The action that will be executed on a message after it has been fetched via POP.
+  *   `disposition` (*type:* `String.t`, *default:* `nil`) - The action that will be executed on a message after it has been fetched via
+      POP.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -2,7 +2,8 @@
 
 Gmail API client library.
 
-Access Gmail mailboxes including sending user email.
+The Gmail API lets you view and manage Gmail mailbox data like
+    threads, messages, and labels.
 
 ## Installation
 
@@ -11,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_gmail, "~> 0.9"}]
+  [{:google_api_gmail, "~> 0.10"}]
 end
 ```
 
