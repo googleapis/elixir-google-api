@@ -22,7 +22,8 @@ defmodule GoogleApi.Gmail.V1.Model.AutoForwarding do
   ## Attributes
 
   *   `disposition` (*type:* `String.t`, *default:* `nil`) - The state that a message should be left in after it has been forwarded.
-  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - Email address to which all incoming messages are forwarded. This email address must be a verified member of the forwarding addresses.
+  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - Email address to which all incoming messages are forwarded.  This email
+      address must be a verified member of the forwarding addresses.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether all incoming mail is automatically forwarded to another address.
   """
 

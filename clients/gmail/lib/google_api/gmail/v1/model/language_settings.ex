@@ -17,15 +17,30 @@
 
 defmodule GoogleApi.Gmail.V1.Model.LanguageSettings do
   @moduledoc """
-  Language settings for an account. These settings correspond to the "Language settings" feature in the web interface.
+  Language settings for an account. These settings correspond to
+  the <a href="https://support.google.com/mail/answer/17091">"Language
+  settings"</a> feature in the web interface.
 
   ## Attributes
 
-  *   `displayLanguage` (*type:* `String.t`, *default:* `nil`) - The language to display Gmail in, formatted as an RFC 3066 Language Tag (for example en-GB, fr or ja for British English, French, or Japanese respectively).
+  *   `displayLanguage` (*type:* `String.t`, *default:* `nil`) - The language to display Gmail in, formatted as an
+      <a href="https://www.w3.org/International/articles/language-tags/">RFC 3066
+      Language Tag</a> (for example <code>en-GB</code>, <code>fr</code> or
+      <code>ja</code> for British English, French, or Japanese respectively).
 
-      The set of languages supported by Gmail evolves over time, so please refer to the "Language" dropdown in the Gmail settings  for all available options, as described in the language settings help article. A table of sample values is also provided in the Managing Language Settings guide 
+      The set of languages supported by Gmail evolves over time, so please refer
+      to the "Language" dropdown in the
+      <a href="https://mail.google.com/mail/u/0/#settings/general">Gmail settings
+      </a> for all available options, as described in the
+      <a href="https://support.google.com/mail/answer/17091">language settings
+      help article</a>. A table of sample values is also provided in the
+      <a href="/gmail/api/guides/language_settings#display_language">Managing
+      Language Settings guide</a>
 
-      Not all Gmail clients can display the same set of languages. In the case that a user's display language is not available for use on a particular client, said client automatically chooses to display in the closest supported variant (or a reasonable default).
+      Not all Gmail clients can display the same set of languages. In the case
+      that a user's display language is not available for use on a particular
+      client, said client automatically chooses to display in the closest
+      supported variant (or a reasonable default).
   """
 
   use GoogleApi.Gax.ModelBase
