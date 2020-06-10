@@ -21,15 +21,18 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Version do
 
   ## Attributes
 
+  *   `defaultVersion` (*type:* `boolean()`, *default:* `nil`) - Whether this is currently the default version for Cloud Data Fusion
   *   `versionNumber` (*type:* `String.t`, *default:* `nil`) - The version number of the Data Fusion instance, such as '6.0.1.0'.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :defaultVersion => boolean(),
           :versionNumber => String.t()
         }
 
+  field(:defaultVersion)
   field(:versionNumber)
 end
 

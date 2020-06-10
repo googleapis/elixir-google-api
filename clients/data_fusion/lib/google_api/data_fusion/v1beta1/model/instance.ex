@@ -27,7 +27,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   *   `availableVersion` (*type:* `list(GoogleApi.DataFusion.V1beta1.Model.Version.t)`, *default:* `nil`) - Available versions that the instance can be upgraded to using
       UpdateInstanceRequest.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. An optional description of this instance.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this instance.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for an instance.
   *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Option to enable Stackdriver Logging.
   *   `enableStackdriverMonitoring` (*type:* `boolean()`, *default:* `nil`) - Option to enable Stackdriver Monitoring.
