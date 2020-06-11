@@ -188,7 +188,7 @@ defmodule GoogleApi.Gax.Connection do
 
     body =
       Enum.reduce(body_params, body, fn {body_name, data}, b ->
-        {res, type} = try_encode_multipart_field(data)
+        {res, type} = try_encode_multipart_field(data, meta)
         Tesla.Multipart.add_field(
           b,
           body_name,
@@ -212,11 +212,19 @@ defmodule GoogleApi.Gax.Connection do
     end
   end
 
-  defp try_encode_multipart_field(data) do
+  defp try_encode_multipart_field(data, meta) when is_map(data) do
     case Poison.encode(data) do
       {:ok, json} -> {json, "application/json"}
-      _ -> {data, "application/octet-stream"}
+      _ -> try_encode_multipart_field(inspect(data), meta)
     end
+  end
+
+  defp try_encode_multipart_field(data, meta) when is_map(meta) do
+    {data, Map.get(meta, :contentType, "application/octet-stream")}
+  end
+
+  defp try_encode_multipart_field(data, _meta) do
+    {data, "application/octet-stream"}
   end
 
   @required_body_methods [:post, :patch, :put, :delete]

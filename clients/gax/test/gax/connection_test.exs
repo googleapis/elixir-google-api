@@ -81,6 +81,57 @@ defmodule Gax.ConnectionTest do
     assert 4 == length(body.parts)
   end
 
+  test "builds a multipart upload request with iodata and content type" do
+    metadata = %{contentType: "text/plain"}
+    data = ["1", ["2"]]
+    request =
+      Request.new()
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Connection.build_request()
+
+    body = %Tesla.Multipart{} = Keyword.get(request, :body)
+    [part1, part2] = body.parts
+    assert "{\"contentType\":\"text/plain\"}" == part1.body
+    assert [{:"Content-Type", "application/json"}] == part1.headers
+    assert data == part2.body
+    assert [{:"Content-Type", "text/plain"}] == part2.headers
+  end
+
+  test "builds a multipart upload request with iodata but no content type" do
+    metadata = %{foo: "bar"}
+    data = ["1", ["2"]]
+    request =
+      Request.new()
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Connection.build_request()
+
+    body = %Tesla.Multipart{} = Keyword.get(request, :body)
+    [part1, part2] = body.parts
+    assert "{\"foo\":\"bar\"}" == part1.body
+    assert [{:"Content-Type", "application/json"}] == part1.headers
+    assert data == part2.body
+    assert [{:"Content-Type", "application/octet-stream"}] == part2.headers
+  end
+
+  test "builds a multipart upload request with a JSON decodable struct" do
+    metadata = %{foo: "bar"}
+    data = %{baz: "qux"}
+    request =
+      Request.new()
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Connection.build_request()
+
+    body = %Tesla.Multipart{} = Keyword.get(request, :body)
+    [part1, part2] = body.parts
+    assert "{\"foo\":\"bar\"}" == part1.body
+    assert [{:"Content-Type", "application/json"}] == part1.headers
+    assert "{\"baz\":\"qux\"}" == part2.body
+    assert [{:"Content-Type", "application/json"}] == part2.headers
+  end
+
   test "creates api client header without library version" do
     request =
       Request.new()
