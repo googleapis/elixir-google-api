@@ -20,7 +20,7 @@ defmodule GoogleApi.People.V1 do
   API client metadata for GoogleApi.People.V1.
   """
 
-  @discovery_revision "20200606"
+  @discovery_revision "20200608"
 
   def discovery_revision(), do: @discovery_revision
 end

@@ -26,118 +26,121 @@ defmodule GoogleApi.People.V1.Model.Person do
 
   ## Attributes
 
+  *   `relationshipStatuses` (*type:* `list(GoogleApi.People.V1.Model.RelationshipStatus.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned
+      The person's relationship statuses.
+  *   `genders` (*type:* `list(GoogleApi.People.V1.Model.Gender.t)`, *default:* `nil`) - The person's genders.
+  *   `biographies` (*type:* `list(GoogleApi.People.V1.Model.Biography.t)`, *default:* `nil`) - The person's biographies.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the
+      resource. Used for web cache validation.
+  *   `names` (*type:* `list(GoogleApi.People.V1.Model.Name.t)`, *default:* `nil`) - The person's names.
+  *   `taglines` (*type:* `list(GoogleApi.People.V1.Model.Tagline.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned
+      The person's taglines.
+  *   `residences` (*type:* `list(GoogleApi.People.V1.Model.Residence.t)`, *default:* `nil`) - The person's residences.
+  *   `sipAddresses` (*type:* `list(GoogleApi.People.V1.Model.SipAddress.t)`, *default:* `nil`) - The person's SIP addresses.
+  *   `metadata` (*type:* `GoogleApi.People.V1.Model.PersonMetadata.t`, *default:* `nil`) - Output only. Metadata about the person.
+  *   `occupations` (*type:* `list(GoogleApi.People.V1.Model.Occupation.t)`, *default:* `nil`) - The person's occupations.
+  *   `imClients` (*type:* `list(GoogleApi.People.V1.Model.ImClient.t)`, *default:* `nil`) - The person's instant messaging clients.
   *   `addresses` (*type:* `list(GoogleApi.People.V1.Model.Address.t)`, *default:* `nil`) - The person's street addresses.
+  *   `skills` (*type:* `list(GoogleApi.People.V1.Model.Skill.t)`, *default:* `nil`) - The person's skills.
+  *   `phoneNumbers` (*type:* `list(GoogleApi.People.V1.Model.PhoneNumber.t)`, *default:* `nil`) - The person's phone numbers.
+  *   `relations` (*type:* `list(GoogleApi.People.V1.Model.Relation.t)`, *default:* `nil`) - The person's relations.
+  *   `ageRanges` (*type:* `list(GoogleApi.People.V1.Model.AgeRangeType.t)`, *default:* `nil`) - Output only. The person's age ranges.
+  *   `coverPhotos` (*type:* `list(GoogleApi.People.V1.Model.CoverPhoto.t)`, *default:* `nil`) - Output only. The person's cover photos.
+  *   `birthdays` (*type:* `list(GoogleApi.People.V1.Model.Birthday.t)`, *default:* `nil`) - The person's birthdays.
+  *   `locales` (*type:* `list(GoogleApi.People.V1.Model.Locale.t)`, *default:* `nil`) - The person's locale preferences.
+  *   `interests` (*type:* `list(GoogleApi.People.V1.Model.Interest.t)`, *default:* `nil`) - The person's interests.
+  *   `nicknames` (*type:* `list(GoogleApi.People.V1.Model.Nickname.t)`, *default:* `nil`) - The person's nicknames.
+  *   `braggingRights` (*type:* `list(GoogleApi.People.V1.Model.BraggingRights.t)`, *default:* `nil`) - **DEPRECATED**: No data will be returned
+      The person's bragging rights.
+  *   `fileAses` (*type:* `list(GoogleApi.People.V1.Model.FileAs.t)`, *default:* `nil`) - The person's file-ases.
+  *   `photos` (*type:* `list(GoogleApi.People.V1.Model.Photo.t)`, *default:* `nil`) - Output only. The person's photos.
+  *   `events` (*type:* `list(GoogleApi.People.V1.Model.Event.t)`, *default:* `nil`) - The person's events.
+  *   `userDefined` (*type:* `list(GoogleApi.People.V1.Model.UserDefined.t)`, *default:* `nil`) - The person's user defined data.
+  *   `relationshipInterests` (*type:* `list(GoogleApi.People.V1.Model.RelationshipInterest.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned
+      The person's relationship interests.
+  *   `memberships` (*type:* `list(GoogleApi.People.V1.Model.Membership.t)`, *default:* `nil`) - The person's group memberships.
+  *   `emailAddresses` (*type:* `list(GoogleApi.People.V1.Model.EmailAddress.t)`, *default:* `nil`) - The person's email addresses.
   *   `ageRange` (*type:* `String.t`, *default:* `nil`) - Output only. **DEPRECATED** (Please use `person.ageRanges` instead)
 
       The person's age range.
-  *   `ageRanges` (*type:* `list(GoogleApi.People.V1.Model.AgeRangeType.t)`, *default:* `nil`) - Output only. The person's age ranges.
-  *   `biographies` (*type:* `list(GoogleApi.People.V1.Model.Biography.t)`, *default:* `nil`) - The person's biographies.
-  *   `birthdays` (*type:* `list(GoogleApi.People.V1.Model.Birthday.t)`, *default:* `nil`) - The person's birthdays.
-  *   `braggingRights` (*type:* `list(GoogleApi.People.V1.Model.BraggingRights.t)`, *default:* `nil`) - **DEPRECATED**: No data will be returned
-      The person's bragging rights.
-  *   `coverPhotos` (*type:* `list(GoogleApi.People.V1.Model.CoverPhoto.t)`, *default:* `nil`) - Output only. The person's cover photos.
-  *   `emailAddresses` (*type:* `list(GoogleApi.People.V1.Model.EmailAddress.t)`, *default:* `nil`) - The person's email addresses.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the
-      resource. Used for web cache validation.
-  *   `events` (*type:* `list(GoogleApi.People.V1.Model.Event.t)`, *default:* `nil`) - The person's events.
-  *   `genders` (*type:* `list(GoogleApi.People.V1.Model.Gender.t)`, *default:* `nil`) - The person's genders.
-  *   `imClients` (*type:* `list(GoogleApi.People.V1.Model.ImClient.t)`, *default:* `nil`) - The person's instant messaging clients.
-  *   `interests` (*type:* `list(GoogleApi.People.V1.Model.Interest.t)`, *default:* `nil`) - The person's interests.
-  *   `locales` (*type:* `list(GoogleApi.People.V1.Model.Locale.t)`, *default:* `nil`) - The person's locale preferences.
-  *   `memberships` (*type:* `list(GoogleApi.People.V1.Model.Membership.t)`, *default:* `nil`) - The person's group memberships.
-  *   `metadata` (*type:* `GoogleApi.People.V1.Model.PersonMetadata.t`, *default:* `nil`) - Output only. Metadata about the person.
-  *   `names` (*type:* `list(GoogleApi.People.V1.Model.Name.t)`, *default:* `nil`) - The person's names.
-  *   `nicknames` (*type:* `list(GoogleApi.People.V1.Model.Nickname.t)`, *default:* `nil`) - The person's nicknames.
-  *   `occupations` (*type:* `list(GoogleApi.People.V1.Model.Occupation.t)`, *default:* `nil`) - The person's occupations.
-  *   `organizations` (*type:* `list(GoogleApi.People.V1.Model.Organization.t)`, *default:* `nil`) - The person's past or current organizations.
-  *   `phoneNumbers` (*type:* `list(GoogleApi.People.V1.Model.PhoneNumber.t)`, *default:* `nil`) - The person's phone numbers.
-  *   `photos` (*type:* `list(GoogleApi.People.V1.Model.Photo.t)`, *default:* `nil`) - Output only. The person's photos.
-  *   `relations` (*type:* `list(GoogleApi.People.V1.Model.Relation.t)`, *default:* `nil`) - The person's relations.
-  *   `relationshipInterests` (*type:* `list(GoogleApi.People.V1.Model.RelationshipInterest.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned
-      The person's relationship interests.
-  *   `relationshipStatuses` (*type:* `list(GoogleApi.People.V1.Model.RelationshipStatus.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned
-      The person's relationship statuses.
-  *   `residences` (*type:* `list(GoogleApi.People.V1.Model.Residence.t)`, *default:* `nil`) - The person's residences.
+  *   `urls` (*type:* `list(GoogleApi.People.V1.Model.Url.t)`, *default:* `nil`) - The person's associated URLs.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the person, assigned by the server. An ASCII string
       with a max length of 27 characters, in the form of
       `people/{person_id}`.
-  *   `sipAddresses` (*type:* `list(GoogleApi.People.V1.Model.SipAddress.t)`, *default:* `nil`) - The person's SIP addresses.
-  *   `skills` (*type:* `list(GoogleApi.People.V1.Model.Skill.t)`, *default:* `nil`) - The person's skills.
-  *   `taglines` (*type:* `list(GoogleApi.People.V1.Model.Tagline.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned
-      The person's taglines.
-  *   `urls` (*type:* `list(GoogleApi.People.V1.Model.Url.t)`, *default:* `nil`) - The person's associated URLs.
-  *   `userDefined` (*type:* `list(GoogleApi.People.V1.Model.UserDefined.t)`, *default:* `nil`) - The person's user defined data.
+  *   `organizations` (*type:* `list(GoogleApi.People.V1.Model.Organization.t)`, *default:* `nil`) - The person's past or current organizations.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :addresses => list(GoogleApi.People.V1.Model.Address.t()),
-          :ageRange => String.t(),
-          :ageRanges => list(GoogleApi.People.V1.Model.AgeRangeType.t()),
-          :biographies => list(GoogleApi.People.V1.Model.Biography.t()),
-          :birthdays => list(GoogleApi.People.V1.Model.Birthday.t()),
-          :braggingRights => list(GoogleApi.People.V1.Model.BraggingRights.t()),
-          :coverPhotos => list(GoogleApi.People.V1.Model.CoverPhoto.t()),
-          :emailAddresses => list(GoogleApi.People.V1.Model.EmailAddress.t()),
-          :etag => String.t(),
-          :events => list(GoogleApi.People.V1.Model.Event.t()),
-          :genders => list(GoogleApi.People.V1.Model.Gender.t()),
-          :imClients => list(GoogleApi.People.V1.Model.ImClient.t()),
-          :interests => list(GoogleApi.People.V1.Model.Interest.t()),
-          :locales => list(GoogleApi.People.V1.Model.Locale.t()),
-          :memberships => list(GoogleApi.People.V1.Model.Membership.t()),
-          :metadata => GoogleApi.People.V1.Model.PersonMetadata.t(),
-          :names => list(GoogleApi.People.V1.Model.Name.t()),
-          :nicknames => list(GoogleApi.People.V1.Model.Nickname.t()),
-          :occupations => list(GoogleApi.People.V1.Model.Occupation.t()),
-          :organizations => list(GoogleApi.People.V1.Model.Organization.t()),
-          :phoneNumbers => list(GoogleApi.People.V1.Model.PhoneNumber.t()),
-          :photos => list(GoogleApi.People.V1.Model.Photo.t()),
-          :relations => list(GoogleApi.People.V1.Model.Relation.t()),
-          :relationshipInterests => list(GoogleApi.People.V1.Model.RelationshipInterest.t()),
           :relationshipStatuses => list(GoogleApi.People.V1.Model.RelationshipStatus.t()),
-          :residences => list(GoogleApi.People.V1.Model.Residence.t()),
-          :resourceName => String.t(),
-          :sipAddresses => list(GoogleApi.People.V1.Model.SipAddress.t()),
-          :skills => list(GoogleApi.People.V1.Model.Skill.t()),
+          :genders => list(GoogleApi.People.V1.Model.Gender.t()),
+          :biographies => list(GoogleApi.People.V1.Model.Biography.t()),
+          :etag => String.t(),
+          :names => list(GoogleApi.People.V1.Model.Name.t()),
           :taglines => list(GoogleApi.People.V1.Model.Tagline.t()),
+          :residences => list(GoogleApi.People.V1.Model.Residence.t()),
+          :sipAddresses => list(GoogleApi.People.V1.Model.SipAddress.t()),
+          :metadata => GoogleApi.People.V1.Model.PersonMetadata.t(),
+          :occupations => list(GoogleApi.People.V1.Model.Occupation.t()),
+          :imClients => list(GoogleApi.People.V1.Model.ImClient.t()),
+          :addresses => list(GoogleApi.People.V1.Model.Address.t()),
+          :skills => list(GoogleApi.People.V1.Model.Skill.t()),
+          :phoneNumbers => list(GoogleApi.People.V1.Model.PhoneNumber.t()),
+          :relations => list(GoogleApi.People.V1.Model.Relation.t()),
+          :ageRanges => list(GoogleApi.People.V1.Model.AgeRangeType.t()),
+          :coverPhotos => list(GoogleApi.People.V1.Model.CoverPhoto.t()),
+          :birthdays => list(GoogleApi.People.V1.Model.Birthday.t()),
+          :locales => list(GoogleApi.People.V1.Model.Locale.t()),
+          :interests => list(GoogleApi.People.V1.Model.Interest.t()),
+          :nicknames => list(GoogleApi.People.V1.Model.Nickname.t()),
+          :braggingRights => list(GoogleApi.People.V1.Model.BraggingRights.t()),
+          :fileAses => list(GoogleApi.People.V1.Model.FileAs.t()),
+          :photos => list(GoogleApi.People.V1.Model.Photo.t()),
+          :events => list(GoogleApi.People.V1.Model.Event.t()),
+          :userDefined => list(GoogleApi.People.V1.Model.UserDefined.t()),
+          :relationshipInterests => list(GoogleApi.People.V1.Model.RelationshipInterest.t()),
+          :memberships => list(GoogleApi.People.V1.Model.Membership.t()),
+          :emailAddresses => list(GoogleApi.People.V1.Model.EmailAddress.t()),
+          :ageRange => String.t(),
           :urls => list(GoogleApi.People.V1.Model.Url.t()),
-          :userDefined => list(GoogleApi.People.V1.Model.UserDefined.t())
+          :resourceName => String.t(),
+          :organizations => list(GoogleApi.People.V1.Model.Organization.t())
         }
 
-  field(:addresses, as: GoogleApi.People.V1.Model.Address, type: :list)
-  field(:ageRange)
-  field(:ageRanges, as: GoogleApi.People.V1.Model.AgeRangeType, type: :list)
-  field(:biographies, as: GoogleApi.People.V1.Model.Biography, type: :list)
-  field(:birthdays, as: GoogleApi.People.V1.Model.Birthday, type: :list)
-  field(:braggingRights, as: GoogleApi.People.V1.Model.BraggingRights, type: :list)
-  field(:coverPhotos, as: GoogleApi.People.V1.Model.CoverPhoto, type: :list)
-  field(:emailAddresses, as: GoogleApi.People.V1.Model.EmailAddress, type: :list)
-  field(:etag)
-  field(:events, as: GoogleApi.People.V1.Model.Event, type: :list)
-  field(:genders, as: GoogleApi.People.V1.Model.Gender, type: :list)
-  field(:imClients, as: GoogleApi.People.V1.Model.ImClient, type: :list)
-  field(:interests, as: GoogleApi.People.V1.Model.Interest, type: :list)
-  field(:locales, as: GoogleApi.People.V1.Model.Locale, type: :list)
-  field(:memberships, as: GoogleApi.People.V1.Model.Membership, type: :list)
-  field(:metadata, as: GoogleApi.People.V1.Model.PersonMetadata)
-  field(:names, as: GoogleApi.People.V1.Model.Name, type: :list)
-  field(:nicknames, as: GoogleApi.People.V1.Model.Nickname, type: :list)
-  field(:occupations, as: GoogleApi.People.V1.Model.Occupation, type: :list)
-  field(:organizations, as: GoogleApi.People.V1.Model.Organization, type: :list)
-  field(:phoneNumbers, as: GoogleApi.People.V1.Model.PhoneNumber, type: :list)
-  field(:photos, as: GoogleApi.People.V1.Model.Photo, type: :list)
-  field(:relations, as: GoogleApi.People.V1.Model.Relation, type: :list)
-  field(:relationshipInterests, as: GoogleApi.People.V1.Model.RelationshipInterest, type: :list)
   field(:relationshipStatuses, as: GoogleApi.People.V1.Model.RelationshipStatus, type: :list)
-  field(:residences, as: GoogleApi.People.V1.Model.Residence, type: :list)
-  field(:resourceName)
-  field(:sipAddresses, as: GoogleApi.People.V1.Model.SipAddress, type: :list)
-  field(:skills, as: GoogleApi.People.V1.Model.Skill, type: :list)
+  field(:genders, as: GoogleApi.People.V1.Model.Gender, type: :list)
+  field(:biographies, as: GoogleApi.People.V1.Model.Biography, type: :list)
+  field(:etag)
+  field(:names, as: GoogleApi.People.V1.Model.Name, type: :list)
   field(:taglines, as: GoogleApi.People.V1.Model.Tagline, type: :list)
-  field(:urls, as: GoogleApi.People.V1.Model.Url, type: :list)
+  field(:residences, as: GoogleApi.People.V1.Model.Residence, type: :list)
+  field(:sipAddresses, as: GoogleApi.People.V1.Model.SipAddress, type: :list)
+  field(:metadata, as: GoogleApi.People.V1.Model.PersonMetadata)
+  field(:occupations, as: GoogleApi.People.V1.Model.Occupation, type: :list)
+  field(:imClients, as: GoogleApi.People.V1.Model.ImClient, type: :list)
+  field(:addresses, as: GoogleApi.People.V1.Model.Address, type: :list)
+  field(:skills, as: GoogleApi.People.V1.Model.Skill, type: :list)
+  field(:phoneNumbers, as: GoogleApi.People.V1.Model.PhoneNumber, type: :list)
+  field(:relations, as: GoogleApi.People.V1.Model.Relation, type: :list)
+  field(:ageRanges, as: GoogleApi.People.V1.Model.AgeRangeType, type: :list)
+  field(:coverPhotos, as: GoogleApi.People.V1.Model.CoverPhoto, type: :list)
+  field(:birthdays, as: GoogleApi.People.V1.Model.Birthday, type: :list)
+  field(:locales, as: GoogleApi.People.V1.Model.Locale, type: :list)
+  field(:interests, as: GoogleApi.People.V1.Model.Interest, type: :list)
+  field(:nicknames, as: GoogleApi.People.V1.Model.Nickname, type: :list)
+  field(:braggingRights, as: GoogleApi.People.V1.Model.BraggingRights, type: :list)
+  field(:fileAses, as: GoogleApi.People.V1.Model.FileAs, type: :list)
+  field(:photos, as: GoogleApi.People.V1.Model.Photo, type: :list)
+  field(:events, as: GoogleApi.People.V1.Model.Event, type: :list)
   field(:userDefined, as: GoogleApi.People.V1.Model.UserDefined, type: :list)
+  field(:relationshipInterests, as: GoogleApi.People.V1.Model.RelationshipInterest, type: :list)
+  field(:memberships, as: GoogleApi.People.V1.Model.Membership, type: :list)
+  field(:emailAddresses, as: GoogleApi.People.V1.Model.EmailAddress, type: :list)
+  field(:ageRange)
+  field(:urls, as: GoogleApi.People.V1.Model.Url, type: :list)
+  field(:resourceName)
+  field(:organizations, as: GoogleApi.People.V1.Model.Organization, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.Person do
