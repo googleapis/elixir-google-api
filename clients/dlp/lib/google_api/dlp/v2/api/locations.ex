@@ -33,7 +33,8 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example locations/{location_id}.
+  *   `parent` (*type:* `String.t`) - The parent resource name.
+      - Format:locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

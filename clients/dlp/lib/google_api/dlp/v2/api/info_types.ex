@@ -51,7 +51,8 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
           names. If omitted, or if localized strings are not available,
           en-US strings will be returned.
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:parent` (*type:* `String.t`) - The parent resource name, for example locations/{location_id}.
+      *   `:parent` (*type:* `String.t`) - The parent resource name.
+          - Format:locations/[LOCATION-ID]
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
