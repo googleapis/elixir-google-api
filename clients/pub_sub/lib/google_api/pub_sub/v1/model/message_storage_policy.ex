@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PubSub.V1.Model.MessageStoragePolicy do
   @moduledoc """
-
+  A policy constraining the storage of messages published to the topic.
 
   ## Attributes
 

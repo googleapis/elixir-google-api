@@ -59,9 +59,6 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
       then only `PubsubMessage`s whose `attributes` field matches the filter are
       delivered on this subscription. If empty, then no messages are filtered
       out.
-      <b>EXPERIMENTAL:</b> This feature is part of a closed alpha release. This
-      API might be changed in backward-incompatible ways and is not recommended
-      for production use. It is not subject to any SLA or deprecation policy.
   *   `labels` (*type:* `map()`, *default:* `nil`) - See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
       managing labels</a>.
   *   `messageRetentionDuration` (*type:* `String.t`, *default:* `nil`) - How long to retain unacknowledged messages in the subscription's backlog,
@@ -86,6 +83,13 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
       <a
       href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time">
       Seek to a timestamp</a>.
+  *   `retryPolicy` (*type:* `GoogleApi.PubSub.V1.Model.RetryPolicy.t`, *default:* `nil`) - A policy that specifies how Pub/Sub retries message delivery for this
+      subscription.
+
+      If not set, the default retry policy is applied. This generally implies
+      that messages will be retried as soon as possible for healthy subscribers.
+      RetryPolicy will be triggered on NACKs or acknowledgement deadline
+      exceeded events for a given message.
   *   `topic` (*type:* `String.t`, *default:* `nil`) - Required. The name of the topic from which this subscription is receiving messages.
       Format is `projects/{project}/topics/{topic}`.
       The value of this field will be `_deleted-topic_` if the topic has been
@@ -104,6 +108,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
           :name => String.t(),
           :pushConfig => GoogleApi.PubSub.V1.Model.PushConfig.t(),
           :retainAckedMessages => boolean(),
+          :retryPolicy => GoogleApi.PubSub.V1.Model.RetryPolicy.t(),
           :topic => String.t()
         }
 
@@ -116,6 +121,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
   field(:name)
   field(:pushConfig, as: GoogleApi.PubSub.V1.Model.PushConfig)
   field(:retainAckedMessages)
+  field(:retryPolicy, as: GoogleApi.PubSub.V1.Model.RetryPolicy)
   field(:topic)
 end
 
