@@ -214,7 +214,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Creative do
       combined with following creative_type:
 
       * `CREATIVE_TYPE_VIDEO`
-  *   `lineItemIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The IDs of the line items this creative associated with.
+  *   `lineItemIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The IDs of the line items this creative is associated with.
 
       To associate a creative to a line item, use
       LineItem.creative_ids instead.
