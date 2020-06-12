@@ -34,12 +34,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `resource`. Name of the resource for the `Policy` to clear.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -69,12 +67,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -118,12 +114,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -143,12 +137,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   def cloudresourcemanager_projects_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -199,12 +191,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Required.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -228,12 +218,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -268,12 +256,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Required.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -292,12 +278,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   def cloudresourcemanager_projects_get(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -332,12 +316,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Required.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -367,12 +349,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -409,12 +389,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `resource`. The name of the resource to start computing the effective `Policy`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -444,12 +422,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -488,12 +464,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -523,12 +497,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -564,12 +536,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `resource`. Name of the resource the `Policy` is set on.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -599,12 +569,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -649,12 +617,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -715,12 +681,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   def cloudresourcemanager_projects_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -753,12 +717,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `resource`. Name of the resource to list `Constraints` for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -789,12 +751,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -831,12 +791,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `resource`. Name of the resource to list Policies for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -866,12 +824,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -896,8 +852,14 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   end
 
   @doc """
-  Sets the IAM access control policy for the specified Project. Overwrites
-  any existing policy.
+  Sets the IAM access control policy for the specified Project.
+
+  CAUTION: This method will replace the existing policy, and cannot be used
+  to append additional IAM settings.
+
+  NOTE: Removing service accounts from policies or changing their roles can
+  render services completely inoperable. It is important to understand how
+  the service account is being used before removing or updating its roles.
 
   The following constraints apply when using `setIamPolicy()`:
 
@@ -935,14 +897,6 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   IAM policies will be rejected until the lack of a ToS-accepting owner is
   rectified.
 
-  + This method will replace the existing policy, and cannot be used to
-  append additional IAM settings.
-
-  Note: Removing service accounts from policies or changing their roles
-  can render services completely inoperable. It is important to understand
-  how the service account is being used before removing or updating its
-  roles.
-
   Authorization requires the Google IAM permission
   `resourcemanager.projects.setIamPolicy` on the project
 
@@ -953,12 +907,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -988,12 +940,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1028,12 +978,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `resource`. Resource name of the resource to attach the `Policy`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1063,12 +1011,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1102,12 +1048,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1137,12 +1081,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1183,12 +1125,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Required.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1218,12 +1158,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1259,12 +1197,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       Required.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1289,12 +1225,10 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
