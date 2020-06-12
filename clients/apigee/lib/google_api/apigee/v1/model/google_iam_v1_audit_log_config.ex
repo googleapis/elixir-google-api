@@ -29,7 +29,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleIamV1AuditLogConfig do
             ]
           },
           {
-            "log_type": "DATA_WRITE",
+            "log_type": "DATA_WRITE"
           }
         ]
       }
