@@ -132,6 +132,17 @@ defmodule Gax.ConnectionTest do
     assert [{:"Content-Type", "application/json"}] == part2.headers
   end
 
+  test "builds a multipart upload request with a non-JSON struct" do
+    metadata = %{foo: "bar"}
+    data = %{baz: {}}
+    assert_raise(Poison.EncodeError, fn ->
+      Request.new()
+      |> Request.add_param(:body, :metadata, metadata)
+      |> Request.add_param(:body, :data, data)
+      |> Connection.build_request()
+    end)
+  end
+
   test "creates api client header without library version" do
     request =
       Request.new()

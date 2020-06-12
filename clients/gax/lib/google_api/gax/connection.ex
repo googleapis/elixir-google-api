@@ -212,11 +212,8 @@ defmodule GoogleApi.Gax.Connection do
     end
   end
 
-  defp try_encode_multipart_field(data, meta) when is_map(data) do
-    case Poison.encode(data) do
-      {:ok, json} -> {json, "application/json"}
-      _ -> try_encode_multipart_field(inspect(data), meta)
-    end
+  defp try_encode_multipart_field(data, _meta) when is_map(data) do
+    {Poison.encode!(data), "application/json"}
   end
 
   defp try_encode_multipart_field(data, meta) when is_map(meta) do
