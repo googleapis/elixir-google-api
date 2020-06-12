@@ -38,7 +38,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -109,7 +111,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -176,6 +180,8 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -241,8 +247,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -460,8 +469,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -698,7 +710,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -885,7 +899,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1004,7 +1020,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - The parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1069,8 +1087,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1270,8 +1291,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1485,7 +1509,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1669,7 +1695,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example `projects/my-project-id`.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1849,7 +1877,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1930,7 +1960,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2007,6 +2039,8 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2082,8 +2116,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2306,8 +2343,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2554,7 +2594,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2905,7 +2947,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3024,7 +3068,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - The parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3089,8 +3135,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3310,8 +3359,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3555,7 +3607,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3843,7 +3897,9 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example `projects/my-project-id`.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4038,8 +4094,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4262,8 +4321,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4437,8 +4499,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4641,8 +4706,11 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource name, for example projects/my-project-id or
-      organizations/my-org-id.
+  *   `parent` (*type:* `String.t`) - Required. Parent resource name.
+      - Format:projects/[PROJECT-ID]
+      - Format:organizations/[ORGANIZATION-ID]
+      - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+      - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
