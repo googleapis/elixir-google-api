@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.TimeWindow do
   @moduledoc """
-  A time window specified by its "start_time" and "end_time".
+  A time window specified by its `start_time` and `end_time`.
 
   ## Attributes
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.BigQueryDestination do
   @moduledoc """
-  A BigQuery destination.
+  A BigQuery destination for exporting assets to.
 
   ## Attributes
 
