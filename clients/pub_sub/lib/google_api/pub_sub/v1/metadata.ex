@@ -20,7 +20,7 @@ defmodule GoogleApi.PubSub.V1 do
   API client metadata for GoogleApi.PubSub.V1.
   """
 
-  @discovery_revision "20200525"
+  @discovery_revision "20200603"
 
   def discovery_revision(), do: @discovery_revision
 end
