@@ -35,7 +35,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
       asset itself.
 
       Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
-  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of the asset. Example: "compute.googleapis.com/Disk"
+  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of the asset. Example: `compute.googleapis.com/Disk`
 
       See [Supported asset
       types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
@@ -50,7 +50,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
       [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
       more information.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full name of the asset. Example:
-      "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
+      `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
 
       See [Resource
       names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -61,6 +61,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
       set on a given resource.
   *   `resource` (*type:* `GoogleApi.CloudAsset.V1.Model.Resource.t`, *default:* `nil`) - A representation of the resource.
   *   `servicePerimeter` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t`, *default:* `nil`) - 
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of an asset. update_time is updated when
+      create/update/delete operation is performed.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -77,7 +79,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
           :orgPolicy => list(GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy.t()),
           :resource => GoogleApi.CloudAsset.V1.Model.Resource.t(),
           :servicePerimeter =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t()
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t(),
+          :updateTime => DateTime.t()
         }
 
   field(:accessLevel,
@@ -98,6 +101,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
   field(:servicePerimeter,
     as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter
   )
+
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudAsset.V1.Model.Asset do

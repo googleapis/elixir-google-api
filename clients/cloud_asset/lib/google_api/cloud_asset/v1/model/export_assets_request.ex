@@ -28,8 +28,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ExportAssetsRequest do
       for all supported asset types.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Asset content type. If not specified, no content but the asset name will be
       returned.
-  *   `outputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.OutputConfig.t`, *default:* `nil`) - Required. Output configuration indicating where the results will be output
-      to. All results will be in newline delimited JSON format.
+  *   `outputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.OutputConfig.t`, *default:* `nil`) - Required. Output configuration indicating where the results will be output to.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp to take an asset snapshot. This can only be set to a timestamp
       between the current time and the current time minus 35 days (inclusive).
       If not specified, the current time will be used. Due to delays in resource
