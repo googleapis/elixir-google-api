@@ -33,6 +33,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization was last modified in milliseconds
       since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Apigee organization.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID associated with the Apigee organization.
   *   `properties` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t`, *default:* `nil`) - Properties defined in the Apigee organization profile.
   *   `runtimeType` (*type:* `String.t`, *default:* `nil`) - Output only. Runtime type of the Apigee organization based on the Apigee subscription
       purchased.
@@ -55,6 +56,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
           :environments => list(String.t()),
           :lastModifiedAt => String.t(),
           :name => String.t(),
+          :projectId => String.t(),
           :properties => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties.t(),
           :runtimeType => String.t(),
           :subscriptionType => String.t(),
@@ -70,6 +72,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   field(:environments, type: :list)
   field(:lastModifiedAt)
   field(:name)
+  field(:projectId)
   field(:properties, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Properties)
   field(:runtimeType)
   field(:subscriptionType)
