@@ -30,7 +30,6 @@ defmodule GoogleApi.People.V1.Model.UpdateContactPhotoRequest do
       * ageRanges
       * biographies
       * birthdays
-      * braggingRights
       * coverPhotos
       * emailAddresses
       * events
@@ -47,26 +46,29 @@ defmodule GoogleApi.People.V1.Model.UpdateContactPhotoRequest do
       * phoneNumbers
       * photos
       * relations
-      * relationshipInterests
-      * relationshipStatuses
       * residences
       * sipAddresses
       * skills
-      * taglines
       * urls
       * userDefined
   *   `photoBytes` (*type:* `String.t`, *default:* `nil`) - Required. Raw photo bytes
+  *   `sources` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A mask of what source types to return. Defaults to
+      ReadSourceType.CONTACT and
+      ReadSourceType.PROFILE if not
+      set.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :personFields => String.t(),
-          :photoBytes => String.t()
+          :photoBytes => String.t(),
+          :sources => list(String.t())
         }
 
   field(:personFields)
   field(:photoBytes)
+  field(:sources, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.UpdateContactPhotoRequest do

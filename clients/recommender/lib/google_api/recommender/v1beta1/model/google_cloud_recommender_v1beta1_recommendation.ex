@@ -25,6 +25,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
   *   `additionalImpact` (*type:* `list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impact.t)`, *default:* `nil`) - Optional set of additional impact that this recommendation may have when
       trying to optimize for the primary category. These may be positive
       or negative.
+  *   `associatedInsights` (*type:* `list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationInsightReference.t)`, *default:* `nil`) - Insights that led to this recommendation.
   *   `content` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationContent.t`, *default:* `nil`) - Content of the recommendation describing recommended changes to resources.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Free-form human readable summary in English. The maximum length is 500
       characters.
@@ -33,9 +34,6 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
   *   `lastRefreshTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time this recommendation was refreshed by the system that created it
       in the first place.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of recommendation.
-
-      A project recommendation is represented as
-        projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/recommendations/[RECOMMENDATION_ID]
   *   `primaryImpact` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impact.t`, *default:* `nil`) - The primary impact that this recommendation can have while trying to
       optimize for one category.
   *   `recommenderSubtype` (*type:* `String.t`, *default:* `nil`) - Contains an identifier for a subtype of recommendations produced for the
@@ -55,6 +53,10 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
   @type t :: %__MODULE__{
           :additionalImpact =>
             list(GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impact.t()),
+          :associatedInsights =>
+            list(
+              GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationInsightReference.t()
+            ),
           :content =>
             GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationContent.t(),
           :description => String.t(),
@@ -70,6 +72,12 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
 
   field(:additionalImpact,
     as: GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impact,
+    type: :list
+  )
+
+  field(:associatedInsights,
+    as:
+      GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationInsightReference,
     type: :list
   )
 

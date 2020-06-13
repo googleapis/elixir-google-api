@@ -31,7 +31,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Resource name of the parent workspace. Of the form projects/{project_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent workspace. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -45,7 +47,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:serviceId` (*type:* `String.t`) - Optional. The Service id to use for this Service. If omitted, an id will be generated instead. Must match the pattern a-z0-9-+
+      *   `:serviceId` (*type:* `String.t`) - Optional. The Service id to use for this Service. If omitted, an id will be generated instead. Must match the pattern [a-z0-9\\-]+
       *   `:body` (*type:* `GoogleApi.Monitoring.V3.Model.Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -60,7 +62,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_services_create(connection, v3_id, v3_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -99,7 +104,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the Service to delete. Of the form projects/{project_id}/service/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service to delete. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -128,7 +135,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_services_delete(
         connection,
         v3_id,
@@ -173,7 +181,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the Service. Of the form projects/{project_id}/services/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -202,7 +212,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_services_get(
         connection,
         v3_id,
@@ -247,7 +260,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Resource name of the parent Workspace. Of the form projects/{project_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed services, either a project or a Monitoring Workspace. The formats are:
+      projects/[PROJECT_ID_OR_NUMBER]
+      workspaces/[HOST_PROJECT_ID_OR_NUMBER]
+
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -280,7 +296,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec monitoring_services_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ListServicesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.ListServicesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_services_list(connection, v3_id, v3_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -320,7 +338,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `service.name`. Resource name for this Service. Of the form projects/{project_id}/services/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `service.name`. Resource name for this Service. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+
   *   `v3_id1` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -351,7 +371,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_services_patch(
         connection,
         v3_id,
@@ -398,7 +421,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Resource name of the parent Service. Of the form projects/{project_id}/services/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent Service. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -413,7 +438,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:serviceLevelObjectiveId` (*type:* `String.t`) - Optional. The ServiceLevelObjective id to use for this ServiceLevelObjective. If omitted, an id will be generated instead. Must match the pattern a-z0-9-+
+      *   `:serviceLevelObjectiveId` (*type:* `String.t`) - Optional. The ServiceLevelObjective id to use for this ServiceLevelObjective. If omitted, an id will be generated instead. Must match the pattern [a-z0-9\\-]+
       *   `:body` (*type:* `GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -430,7 +455,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_services_service_level_objectives_create(
         connection,
         v3_id,
@@ -477,7 +504,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the ServiceLevelObjective to delete. Of the form projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}.
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to delete. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
+
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `service_level_objectives_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
@@ -508,7 +537,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_services_service_level_objectives_delete(
         connection,
         v3_id,
@@ -559,7 +589,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Resource name of the ServiceLevelObjective to get. Of the form projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}.
+  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to get. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
+
   *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
   *   `service_level_objectives_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
@@ -592,7 +624,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_services_service_level_objectives_get(
         connection,
         v3_id,
@@ -644,7 +678,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Resource name of the parent Service. Of the form projects/{project_id}/services/{service_id}.
+  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed SLOs, either a project or a Monitoring Workspace. The formats are:
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+      workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
+
   *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -679,7 +716,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListServiceLevelObjectivesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_services_service_level_objectives_list(
         connection,
         v3_id,
@@ -730,7 +768,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. Resource name for this ServiceLevelObjective. Of the form projects/{project_id}/services/{service_id}/serviceLevelObjectives/{slo_name}.
+  *   `v3_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. Resource name for this ServiceLevelObjective. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
+
   *   `v3_id1` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
   *   `service_level_objectives_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
@@ -764,7 +804,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_services_service_level_objectives_patch(
         connection,
         v3_id,

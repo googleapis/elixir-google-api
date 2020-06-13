@@ -53,7 +53,9 @@ defmodule GoogleApi.DomainsRDAP.V1.Api.Entity do
   *   `{:error, info}` on failure
   """
   @spec domainsrdap_entity_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DomainsRDAP.V1.Model.RdapResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DomainsRDAP.V1.Model.RdapResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def domainsrdap_entity_get(connection, entity_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

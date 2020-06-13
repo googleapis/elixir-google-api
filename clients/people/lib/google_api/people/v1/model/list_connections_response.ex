@@ -17,13 +17,16 @@
 
 defmodule GoogleApi.People.V1.Model.ListConnectionsResponse do
   @moduledoc """
-
+  The response to a request for the authenticated user's connections.
 
   ## Attributes
 
   *   `connections` (*type:* `list(GoogleApi.People.V1.Model.Person.t)`, *default:* `nil`) - The list of people that the requestor is connected to.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used to retrieve the next page of results.
-  *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used to retrieve changes since the last request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page.
+      If this field is omitted, there are no subsequent pages.
+  *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `sync_token` to retrieve changes since the
+      last request. Request must set `request_sync_token` to return the sync
+      token.
   *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of items in the list without pagination.
   *   `totalPeople` (*type:* `integer()`, *default:* `nil`) - **DEPRECATED** (Please use totalItems)
       The total number of people in the list without pagination.

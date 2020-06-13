@@ -21,7 +21,8 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistPlayer do
 
   ## Attributes
 
-  *   `embedHtml` (*type:* `String.t`, *default:* `nil`) - An <iframe> tag that embeds a player that will play the playlist.
+  *   `embedHtml` (*type:* `String.t`, *default:* `nil`) - An <code>&lt;iframe&gt;</code> tag that embeds a player that will
+      play the playlist.
   """
 
   use GoogleApi.Gax.ModelBase

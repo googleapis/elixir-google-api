@@ -21,10 +21,14 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamSnippet do
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that is transmitting the stream.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The stream's description. The value cannot be longer than 10000 characters.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that
+      is transmitting the stream.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The stream's description. The value cannot be longer than 10000
+      characters.
   *   `isDefaultStream` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the stream was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the stream was created. The value is specified in
+      <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The stream's title. The value must be between 1 and 128 characters long.
   """
 
@@ -34,14 +38,14 @@ defmodule GoogleApi.YouTube.V3.Model.LiveStreamSnippet do
           :channelId => String.t(),
           :description => String.t(),
           :isDefaultStream => boolean(),
-          :publishedAt => DateTime.t(),
+          :publishedAt => String.t(),
           :title => String.t()
         }
 
   field(:channelId)
   field(:description)
   field(:isDefaultStream)
-  field(:publishedAt, as: DateTime)
+  field(:publishedAt)
   field(:title)
 end
 

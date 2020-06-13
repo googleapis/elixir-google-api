@@ -24,23 +24,26 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig do
 
   *   `enablePrivateEndpoint` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true`, access to the public endpoint of the GKE cluster is
       denied.
-  *   `masterIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP range in CIDR notation to use for the hosted master network. This
+  *   `masterIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IPv4 range for GKE master will be reserved. If
+      left blank, the default value of '172.16.0.0/23' is used.
+  *   `masterIpv4ReservedRange` (*type:* `String.t`, *default:* `nil`) - Output only. The IP range in CIDR notation to use for the hosted master network. This
       range is used for assigning internal IP addresses to the cluster
       master or set of masters and to the internal load balancer virtual IP.
       This range must not overlap with any other ranges in use
-      within the cluster's network. If left blank, the default value of
-      '172.16.0.0/28' is used.
+      within the cluster's network.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :enablePrivateEndpoint => boolean(),
-          :masterIpv4CidrBlock => String.t()
+          :masterIpv4CidrBlock => String.t(),
+          :masterIpv4ReservedRange => String.t()
         }
 
   field(:enablePrivateEndpoint)
   field(:masterIpv4CidrBlock)
+  field(:masterIpv4ReservedRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig do

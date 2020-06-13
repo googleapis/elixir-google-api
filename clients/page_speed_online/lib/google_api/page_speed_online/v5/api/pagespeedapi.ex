@@ -26,23 +26,32 @@ defmodule GoogleApi.PageSpeedOnline.V5.Api.Pagespeedapi do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Runs PageSpeed analysis on the page at the specified URL, and returns PageSpeed scores, a list of suggestions to make that page faster, and other information.
+  Runs PageSpeed analysis on the page at the specified URL, and returns
+  PageSpeed scores, a list of suggestions to make that page faster, and other
+  information.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PageSpeedOnline.V5.Connection.t`) - Connection to server
-  *   `url` (*type:* `String.t`) - The URL to fetch and analyze
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:category` (*type:* `list(String.t)`) - A Lighthouse category to run; if none are given, only Performance category will be run
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:captchaToken` (*type:* `String.t`) - The captcha token passed when filling out a captcha.
+      *   `:category` (*type:* `list(String.t)`) - A Lighthouse category to run; if none are given, only Performance category
+          will be run
       *   `:locale` (*type:* `String.t`) - The locale used to localize formatted results
-      *   `:strategy` (*type:* `String.t`) - The analysis strategy (desktop or mobile) to use, and desktop is the default
+      *   `:strategy` (*type:* `String.t`) - The analysis strategy (desktop or mobile) to use, and desktop is the
+          default
+      *   `:url` (*type:* `String.t`) - The URL to fetch and analyze
       *   `:utm_campaign` (*type:* `String.t`) - Campaign name for analytics.
       *   `:utm_source` (*type:* `String.t`) - Campaign source for analytics.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -52,31 +61,28 @@ defmodule GoogleApi.PageSpeedOnline.V5.Api.Pagespeedapi do
   *   `{:ok, %GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pagespeedonline_pagespeedapi_runpagespeed(
-          Tesla.Env.client(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pagespeedonline_pagespeedapi_runpagespeed(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiPagespeedResponseV5.t()}
-          | {:error, Tesla.Env.t()}
-  def pagespeedonline_pagespeedapi_runpagespeed(
-        connection,
-        url,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def pagespeedonline_pagespeedapi_runpagespeed(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :captchaToken => :query,
       :category => :query,
       :locale => :query,
       :strategy => :query,
+      :url => :query,
       :utm_campaign => :query,
       :utm_source => :query
     }
@@ -84,8 +90,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Api.Pagespeedapi do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/runPagespeed", %{})
-      |> Request.add_param(:query, :url, url)
+      |> Request.url("/pagespeedonline/v5/runPagespeed", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_asset, "~> 0.2"}]
+  [{:google_api_cloud_asset, "~> 0.11"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/quickstart-cloud-asset-inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/quickstart-cloud-asset-inventory).
+Product documentation is available at [https://cloud.google.com/asset-inventory/docs/quickstart](https://cloud.google.com/asset-inventory/docs/quickstart).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_cloud_asset](https://hexdocs.pm/google_api_cloud_asset).

@@ -21,17 +21,17 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplainRequest do
 
   ## Attributes
 
-  *   `httpBody` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody.t`, *default:* `nil`) - Required.
+  *   `httpBody` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t`, *default:* `nil`) - Required.
       The explanation request body.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :httpBody => GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody.t()
+          :httpBody => GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t()
         }
 
-  field(:httpBody, as: GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody)
+  field(:httpBody, as: GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplainRequest do

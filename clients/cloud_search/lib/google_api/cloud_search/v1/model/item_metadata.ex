@@ -57,6 +57,8 @@ defmodule GoogleApi.CloudSearch.V1.Model.ItemMetadata do
   *   `searchQualityMetadata` (*type:* `GoogleApi.CloudSearch.V1.Model.SearchQualityMetadata.t`, *default:* `nil`) - Additional search quality metadata of the item
   *   `sourceRepositoryUrl` (*type:* `String.t`, *default:* `nil`) - Link to the source repository serving the data.  &#83;earch results apply
       this link to the title.
+      Whitespace or special characters may cause Cloud &#83;earch result links to
+      trigger a redirect notice; to avoid this, encode the URL.
       The maximum length is 2048 characters.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the item.  If given, this will be the displayed title of the
       Search result.

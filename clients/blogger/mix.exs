@@ -18,7 +18,7 @@
 defmodule GoogleApi.Blogger.Mixfile do
   use Mix.Project
 
-  @version "0.8.0"
+  @version "0.11.2"
 
   def project() do
     [
@@ -48,7 +48,8 @@ defmodule GoogleApi.Blogger.Mixfile do
 
   defp description() do
     """
-    Blogger API client library. API for access to the data within Blogger.
+    Blogger API v3 client library. The Blogger API provides access to posts, comments and pages of a
+    Blogger blog.
     """
   end
 

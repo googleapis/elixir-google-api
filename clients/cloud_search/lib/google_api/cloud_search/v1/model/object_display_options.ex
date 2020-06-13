@@ -21,18 +21,18 @@ defmodule GoogleApi.CloudSearch.V1.Model.ObjectDisplayOptions do
 
   ## Attributes
 
-  *   `metalines` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Metaline.t)`, *default:* `nil`) - Defines the properties that will be displayed in the metalines of the
-      search results. The property values will be displayed in the order given
-      here. If a property holds multiple values, all of the values will be
-      diplayed before the next properties. For this reason, it is a good practice
-      to specify singular properties before repeated properties in this list. All
-      of the properties must set
+  *   `metalines` (*type:* `list(GoogleApi.CloudSearch.V1.Model.Metaline.t)`, *default:* `nil`) - Defines the properties that are displayed in the metalines of the
+      search results. The property values are displayed in the order given
+      here. If a property holds multiple values, all of the values are
+      displayed before the next properties. For this reason, it is a good
+      practice to specify singular properties before repeated properties in this
+      list. All of the properties must set
       is_returnable
       to true. The maximum number of metalines is 3.
-  *   `objectDisplayLabel` (*type:* `String.t`, *default:* `nil`) - The user friendly label to display in the search result to inidicate the
-      type of the item. This is OPTIONAL; if not given, an object label will not
-      be displayed on the context line of the search results. The maximum length
-      is 32 characters.
+  *   `objectDisplayLabel` (*type:* `String.t`, *default:* `nil`) - The user friendly label to display in the search result to indicate the
+      type of the item. This is OPTIONAL; if not provided, an object label isn't
+      displayed on the context line of the search results. The maximum length
+      is 64 characters.
   """
 
   use GoogleApi.Gax.ModelBase

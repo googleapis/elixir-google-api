@@ -25,8 +25,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyDatasetRequest do
   *   `destinationDataset` (*type:* `String.t`, *default:* `nil`) - The name of the dataset resource to create and write the redacted data to.
 
        * The destination dataset must not exist.
-       * The destination dataset must be in the same project as the source
-         dataset. De-identifying data across multiple projects is not supported.
+       * The destination dataset must be in the same project and location as the
+       source dataset. De-identifying data across multiple projects or locations
+       is not supported.
   """
 
   use GoogleApi.Gax.ModelBase

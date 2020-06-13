@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcher do
   ## Attributes
 
   *   `config` (*type:* `GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcherConfig.t`, *default:* `nil`) - The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+  *   `expr` (*type:* `GoogleApi.Compute.V1.Model.Expr.t`, *default:* `nil`) - User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
   *   `versionedExpr` (*type:* `String.t`, *default:* `nil`) - Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcher do
 
   @type t :: %__MODULE__{
           :config => GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcherConfig.t(),
+          :expr => GoogleApi.Compute.V1.Model.Expr.t(),
           :versionedExpr => String.t()
         }
 
   field(:config, as: GoogleApi.Compute.V1.Model.SecurityPolicyRuleMatcherConfig)
+  field(:expr, as: GoogleApi.Compute.V1.Model.Expr)
   field(:versionedExpr)
 end
 

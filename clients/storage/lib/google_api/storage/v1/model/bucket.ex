@@ -42,11 +42,13 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - The project number of the project the bucket belongs to.
   *   `retentionPolicy` (*type:* `GoogleApi.Storage.V1.Model.BucketRetentionPolicy.t`, *default:* `nil`) - The bucket's retention policy. The retention policy enforces a minimum retention time for all objects contained in the bucket, based on their creation time. Any attempt to overwrite or delete objects younger than the retention period will result in a PERMISSION_DENIED error. An unlocked retention policy can be modified or removed from the bucket via a storage.buckets.update operation. A locked retention policy cannot be removed or shortened in duration for the lifetime of the bucket. Attempting to remove or decrease period of a locked retention policy will result in a PERMISSION_DENIED error.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this bucket.
-  *   `storageClass` (*type:* `String.t`, *default:* `nil`) - The bucket's default storage class, used whenever no storageClass is specified for a newly-created object. This defines how objects in the bucket are stored and determines the SLA and the cost of storage. Values include MULTI_REGIONAL, REGIONAL, STANDARD, NEARLINE, COLDLINE, and DURABLE_REDUCED_AVAILABILITY. If this value is not specified when the bucket is created, it will default to STANDARD. For more information, see storage classes.
+  *   `storageClass` (*type:* `String.t`, *default:* `nil`) - The bucket's default storage class, used whenever no storageClass is specified for a newly-created object. This defines how objects in the bucket are stored and determines the SLA and the cost of storage. Values include MULTI_REGIONAL, REGIONAL, STANDARD, NEARLINE, COLDLINE, ARCHIVE, and DURABLE_REDUCED_AVAILABILITY. If this value is not specified when the bucket is created, it will default to STANDARD. For more information, see storage classes.
   *   `timeCreated` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the bucket in RFC 3339 format.
   *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - The modification time of the bucket in RFC 3339 format.
   *   `versioning` (*type:* `GoogleApi.Storage.V1.Model.BucketVersioning.t`, *default:* `nil`) - The bucket's versioning configuration.
   *   `website` (*type:* `GoogleApi.Storage.V1.Model.BucketWebsite.t`, *default:* `nil`) - The bucket's website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the Static Website Examples for more information.
+  *   `zoneAffinity` (*type:* `list(String.t)`, *default:* `nil`) - The zone or zones from which the bucket is intended to use zonal quota. Requests for data from outside the specified affinities are still allowed but won't be able to use zonal quota. The zone or zones need to be within the bucket location otherwise the requests will fail with a 400 Bad Request response.
+  *   `zoneSeparation` (*type:* `boolean()`, *default:* `nil`) - If set, objects placed in this bucket are required to be separated by disaster domain.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -77,7 +79,9 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :timeCreated => DateTime.t(),
           :updated => DateTime.t(),
           :versioning => GoogleApi.Storage.V1.Model.BucketVersioning.t(),
-          :website => GoogleApi.Storage.V1.Model.BucketWebsite.t()
+          :website => GoogleApi.Storage.V1.Model.BucketWebsite.t(),
+          :zoneAffinity => list(String.t()),
+          :zoneSeparation => boolean()
         }
 
   field(:acl, as: GoogleApi.Storage.V1.Model.BucketAccessControl, type: :list)
@@ -106,6 +110,8 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   field(:updated, as: DateTime)
   field(:versioning, as: GoogleApi.Storage.V1.Model.BucketVersioning)
   field(:website, as: GoogleApi.Storage.V1.Model.BucketWebsite)
+  field(:zoneAffinity, type: :list)
+  field(:zoneSeparation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Bucket do

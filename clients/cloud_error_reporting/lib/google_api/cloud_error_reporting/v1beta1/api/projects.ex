@@ -32,9 +32,10 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
-      as `projects/` plus the
+      as `projects/{projectID}`, where `{projectID}` is the
       [Google Cloud Platform project
       ID](https://support.google.com/cloud/answer/6158840).
+
       Example: `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -62,7 +63,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.DeleteEventsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_delete_events(
         connection,
         projects_id,
@@ -106,9 +108,10 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
-      as `projects/` plus the
+      as `projects/{projectID}`, where `{projectID}` is the
       [Google Cloud Platform project
       ID](https://support.google.com/cloud/answer/6158840).
+
       Example: `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -146,7 +149,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListEventsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_events_list(
         connection,
         projects_id,
@@ -199,16 +203,17 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   a `key` parameter. For example:
 
   `POST
-  https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
+  https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
-      as `projects/` plus the
+      as `projects/{projectId}`, where `{projectId}` is the
       [Google Cloud Platform project
-      ID](https://support.google.com/cloud/answer/6158840). Example:
-      `projects/my-project-123`.
+      ID](https://support.google.com/cloud/answer/6158840).
+
+      Example: // `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -236,7 +241,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ReportErrorEventResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_events_report(
         connection,
         projects_id,
@@ -281,11 +287,11 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `projectName`. Required. The resource name of the Google Cloud Platform project. Written
-      as <code>projects/</code> plus the
-      <a href="https://support.google.com/cloud/answer/6158840">Google Cloud
-      Platform project ID</a>.
+      as `projects/{projectID}`, where `{projectID}` is the
+      [Google Cloud Platform project
+      ID](https://support.google.com/cloud/answer/6158840).
 
-      Example: <code>projects/my-project-123</code>.
+      Example: `projects/my-project-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -333,7 +339,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ListGroupStatsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_group_stats_list(
         connection,
         projects_id,
@@ -423,7 +430,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_groups_get(
         connection,
         projects_id,
@@ -470,7 +478,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `group.name`. The group resource name.
-      Example: <code>projects/my-project-123/groups/my-groupid</code>
+      Example: <code>projects/my-project-123/groups/CNSgkpnppqKCUw</code>
   *   `groups_id` (*type:* `String.t`) - Part of `group.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -500,7 +508,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def clouderrorreporting_projects_groups_update(
         connection,
         projects_id,

@@ -17,12 +17,17 @@
 
 defmodule GoogleApi.CloudDebugger.V2.Model.Breakpoint do
   @moduledoc """
+  ------------------------------------------------------------------------------
+  ## Breakpoint (the resource)
+
   Represents the breakpoint specification, status and results.
 
   ## Attributes
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - Action that the agent should perform when the code at the
       breakpoint location is hit.
+  *   `canaryExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - The deadline for the breakpoint to stay in CANARY_ACTIVE state. The value
+      is meaningless when the breakpoint is not in CANARY_ACTIVE state.
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition that triggers the breakpoint.
       The condition is a compound boolean expression composed using expressions
       in a programming language at the source location.
@@ -57,6 +62,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Breakpoint do
       `expressions` = `[ message.id, message.count ]`.
   *   `stackFrames` (*type:* `list(GoogleApi.CloudDebugger.V2.Model.StackFrame.t)`, *default:* `nil`) - The stack at breakpoint time, where stack_frames[0] represents the most
       recently entered function.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the breakpoint.
   *   `status` (*type:* `GoogleApi.CloudDebugger.V2.Model.StatusMessage.t`, *default:* `nil`) - Breakpoint status.
 
       The status includes an error flag and a human readable message.
@@ -91,6 +97,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Breakpoint do
 
   @type t :: %__MODULE__{
           :action => String.t(),
+          :canaryExpireTime => DateTime.t(),
           :condition => String.t(),
           :createTime => DateTime.t(),
           :evaluatedExpressions => list(GoogleApi.CloudDebugger.V2.Model.Variable.t()),
@@ -103,12 +110,14 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Breakpoint do
           :logLevel => String.t(),
           :logMessageFormat => String.t(),
           :stackFrames => list(GoogleApi.CloudDebugger.V2.Model.StackFrame.t()),
+          :state => String.t(),
           :status => GoogleApi.CloudDebugger.V2.Model.StatusMessage.t(),
           :userEmail => String.t(),
           :variableTable => list(GoogleApi.CloudDebugger.V2.Model.Variable.t())
         }
 
   field(:action)
+  field(:canaryExpireTime, as: DateTime)
   field(:condition)
   field(:createTime, as: DateTime)
   field(:evaluatedExpressions, as: GoogleApi.CloudDebugger.V2.Model.Variable, type: :list)
@@ -121,6 +130,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Breakpoint do
   field(:logLevel)
   field(:logMessageFormat)
   field(:stackFrames, as: GoogleApi.CloudDebugger.V2.Model.StackFrame, type: :list)
+  field(:state)
   field(:status, as: GoogleApi.CloudDebugger.V2.Model.StatusMessage)
   field(:userEmail)
   field(:variableTable, as: GoogleApi.CloudDebugger.V2.Model.Variable, type: :list)

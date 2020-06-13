@@ -21,14 +21,19 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that published the playlist.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that
+      published the playlist.
   *   `channelTitle` (*type:* `String.t`, *default:* `nil`) - The channel title of the channel that the video belongs to.
   *   `defaultLanguage` (*type:* `String.t`, *default:* `nil`) - The language of the playlist's default title and description.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The playlist's description.
   *   `localized` (*type:* `GoogleApi.YouTube.V3.Model.PlaylistLocalization.t`, *default:* `nil`) - Localized title and description, read-only.
-  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the playlist was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the playlist was created. The value is specified
+      in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Keyword tags associated with the playlist.
-  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
+  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the playlist. For each object
+      in the map, the key is the name of the thumbnail image, and the value
+      is an object that contains other information about the thumbnail.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The playlist's title.
   """
 
@@ -40,7 +45,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
           :defaultLanguage => String.t(),
           :description => String.t(),
           :localized => GoogleApi.YouTube.V3.Model.PlaylistLocalization.t(),
-          :publishedAt => DateTime.t(),
+          :publishedAt => String.t(),
           :tags => list(String.t()),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
           :title => String.t()
@@ -51,7 +56,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistSnippet do
   field(:defaultLanguage)
   field(:description)
   field(:localized, as: GoogleApi.YouTube.V3.Model.PlaylistLocalization)
-  field(:publishedAt, as: DateTime)
+  field(:publishedAt)
   field(:tags, type: :list)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)

@@ -55,7 +55,8 @@ defmodule GoogleApi.PolicyTroubleshooter.V1beta.Api.Iam do
   @spec policytroubleshooter_iam_troubleshoot(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleCloudPolicytroubleshooterV1betaTroubleshootIamPolicyResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def policytroubleshooter_iam_troubleshoot(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

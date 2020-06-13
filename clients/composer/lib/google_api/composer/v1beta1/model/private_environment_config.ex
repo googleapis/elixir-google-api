@@ -22,21 +22,33 @@ defmodule GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do
 
   ## Attributes
 
+  *   `cloudSqlIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range in tenant project will be reserved for
+      Cloud SQL. Needs to be disjoint from web_server_ipv4_cidr_block
   *   `enablePrivateEnvironment` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true`, a Private IP Cloud Composer environment is created.
       If this field is true, `use_ip_aliases` must be true.
   *   `privateClusterConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Optional. Configuration for the private GKE cluster for a Private IP
       Cloud Composer environment.
+  *   `webServerIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR block from which IP range for web server will be reserved. Needs
+      to be disjoint from private_cluster_config.master_ipv4_cidr_block and
+      cloud_sql_ipv4_cidr_block.
+  *   `webServerIpv4ReservedRange` (*type:* `String.t`, *default:* `nil`) - Output only. The IP range reserved for the tenant project's App Engine VMs.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudSqlIpv4CidrBlock => String.t(),
           :enablePrivateEnvironment => boolean(),
-          :privateClusterConfig => GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig.t()
+          :privateClusterConfig => GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig.t(),
+          :webServerIpv4CidrBlock => String.t(),
+          :webServerIpv4ReservedRange => String.t()
         }
 
+  field(:cloudSqlIpv4CidrBlock)
   field(:enablePrivateEnvironment)
   field(:privateClusterConfig, as: GoogleApi.Composer.V1beta1.Model.PrivateClusterConfig)
+  field(:webServerIpv4CidrBlock)
+  field(:webServerIpv4ReservedRange)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Composer.V1beta1.Model.PrivateEnvironmentConfig do

@@ -83,7 +83,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2BatchReadBlobsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def remotebuildexecution_blobs_batch_read(
         connection,
         instance_name,
@@ -187,7 +188,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2BatchUpdateBlobsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def remotebuildexecution_blobs_batch_update(
         connection,
         instance_name,
@@ -235,6 +237,9 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
   Clients can use this API before uploading blobs to determine which ones are
   already present in the CAS and do not need to be uploaded again.
 
+  Servers SHOULD increase the TTLs of the referenced blobs if necessary and
+  applicable.
+
   There are no method-specific errors.
 
   ## Parameters
@@ -273,7 +278,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2FindMissingBlobsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def remotebuildexecution_blobs_find_missing(
         connection,
         instance_name,
@@ -336,6 +342,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
   If part of the tree is missing from the CAS, the server will return the
   portion present and omit the rest.
 
+  Errors:
+
   * `NOT_FOUND`: The requested tree root is not present in the CAS.
 
   ## Parameters
@@ -367,7 +375,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
           require the client to retrieve more items using a subsequent request.
       *   `:pageToken` (*type:* `String.t`) - A page token, which must be a value received in a previous
           GetTreeResponse.
-          If present, the server will use it to return the following page of results.
+          If present, the server will use that token as an offset, returning only
+          that page and the ones that succeed it.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -385,7 +394,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Blobs do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2GetTreeResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def remotebuildexecution_blobs_get_tree(
         connection,
         instance_name,

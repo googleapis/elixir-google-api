@@ -19,11 +19,15 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   @moduledoc """
   Represents a Forwarding Rule resource.
 
+  Forwarding rule resources in GCP can be either regional or global in scope:
+
+  * [Global](/compute/docs/reference/rest/{$api_version}/globalForwardingRules) * [Regional](/compute/docs/reference/rest/{$api_version}/forwardingRules)
+
   A forwarding rule and its corresponding IP address represent the frontend configuration of a Google Cloud Platform load balancer. Forwarding rules can also reference target instances and Cloud VPN Classic gateways (targetVpnGateway).
 
   For more information, read Forwarding rule concepts and Using protocol forwarding.
 
-  (== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (== resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (== resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+  (== resource_for {$api_version}.forwardingRules ==) (== resource_for {$api_version}.globalForwardingRules ==) (== resource_for {$api_version}.regionForwardingRules ==)
 
   ## Attributes
 
@@ -40,21 +44,33 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `allPorts` (*type:* `boolean()`, *default:* `nil`) - This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. This field cannot be used with port or portRange fields.
 
       When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
+  *   `allowGlobalAccess` (*type:* `boolean()`, *default:* `nil`) - This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
   *   `backendService` (*type:* `String.t`, *default:* `nil`) - This field is only used for INTERNAL load balancing.
 
       For internal load balancing, this field identifies the BackendService resource to receive the matched traffic.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ForwardingRule. Include the fingerprint in patch request to ensure that you do not overwrite changes that were applied from another concurrent request.
+
+      To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `ipVersion` (*type:* `String.t`, *default:* `nil`) - The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+  *   `isMirroringCollector` (*type:* `boolean()`, *default:* `nil`) - Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if a PacketMirroring rule applies to them. This can only be set to true for load balancers that have their loadBalancingScheme set to INTERNAL.
   *   `kind` (*type:* `String.t`, *default:* `compute#forwardingRule`) - [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule resources.
-  *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Specifies the forwarding rule type. EXTERNAL is used for: - Classic Cloud VPN gateways - Protocol forwarding to VMs from an external IP address - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP.
+  *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Specifies the forwarding rule type.
 
-      INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address - Internal TCP/UDP load balancers
-
-      INTERNAL_MANAGED is used for: - Internal HTTP(S) load balancers
-
-      INTERNAL_SELF_MANAGED is used for: - Traffic Director
+       
+      - EXTERNAL is used for:  
+      - Classic Cloud VPN gateways 
+      - Protocol forwarding to VMs from an external IP address 
+      - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP    
+      - INTERNAL is used for:  
+      - Protocol forwarding to VMs from an internal IP address 
+      - Internal TCP/UDP load balancers   
+      - INTERNAL_MANAGED is used for:  
+      - Internal HTTP(S) load balancers   
+      - INTERNAL_SELF_MANAGED is used for:  
+      - Traffic Director    
 
       For more information about forwarding rules, refer to Forwarding rule concepts.
   *   `metadataFilters` (*type:* `list(GoogleApi.Compute.V1.Model.MetadataFilter.t)`, *default:* `nil`) - Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. If a match takes place, the relevant configuration is made available to those proxies. Otherwise, all the resources (e.g. TargetHttpProxy, UrlMap) referenced by the ForwardingRule will not be visible to those proxies.
@@ -65,7 +81,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   *   `network` (*type:* `String.t`, *default:* `nil`) - This field is not used for external load balancing.
 
       For INTERNAL and INTERNAL_SELF_MANAGED load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
-  *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM , STANDARD.
+  *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.
 
       For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
 
@@ -102,7 +118,7 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
       For internal load balancing, this field identifies the subnetwork that the load balanced IP should belong to for this Forwarding Rule.
 
       If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
-  *   `target` (*type:* `String.t`, *default:* `nil`) - The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must live in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only HTTP and HTTPS targets are valid.
+  *   `target` (*type:* `String.t`, *default:* `nil`) - The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must live in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only targetHttpProxy is valid, not targetHttpsProxy.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -111,11 +127,14 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
           :IPAddress => String.t(),
           :IPProtocol => String.t(),
           :allPorts => boolean(),
+          :allowGlobalAccess => boolean(),
           :backendService => String.t(),
           :creationTimestamp => String.t(),
           :description => String.t(),
+          :fingerprint => String.t(),
           :id => String.t(),
           :ipVersion => String.t(),
+          :isMirroringCollector => boolean(),
           :kind => String.t(),
           :loadBalancingScheme => String.t(),
           :metadataFilters => list(GoogleApi.Compute.V1.Model.MetadataFilter.t()),
@@ -135,11 +154,14 @@ defmodule GoogleApi.Compute.V1.Model.ForwardingRule do
   field(:IPAddress)
   field(:IPProtocol)
   field(:allPorts)
+  field(:allowGlobalAccess)
   field(:backendService)
   field(:creationTimestamp)
   field(:description)
+  field(:fingerprint)
   field(:id)
   field(:ipVersion)
+  field(:isMirroringCollector)
   field(:kind)
   field(:loadBalancingScheme)
   field(:metadataFilters, as: GoogleApi.Compute.V1.Model.MetadataFilter, type: :list)

@@ -2,7 +2,8 @@
 
 PageSpeed Insights API client library.
 
-Analyzes the performance of a web page and provides tailored suggestions to make that page faster.
+The PageSpeed Insights API lets you analyze the performance of your website with a simple API.  It offers tailored suggestions for how you can optimize your site, and lets you easily integrate PageSpeed Insights analysis into your development tools and workflow.
+
 
 ## Installation
 
@@ -11,13 +12,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_page_speed_online, "~> 0.5"}]
+  [{:google_api_page_speed_online, "~> 0.8"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/speed/docs/insights/v5/get-started](https://developers.google.com/speed/docs/insights/v5/get-started).
+Product documentation is available at [https://developers.google.com/speed/docs/insights/v5/about](https://developers.google.com/speed/docs/insights/v5/about).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_page_speed_online](https://hexdocs.pm/google_api_page_speed_online).

@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudDebugger.Mixfile do
   use Mix.Project
 
-  @version "0.10.0"
+  @version "0.15.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.CloudDebugger.Mixfile do
 
   defp description() do
     """
-    Stackdriver Debugger API client library. Examines the call stack and variables of a running application without stopping or slowing it down.
+    Cloud Debugger API client library. Examines the call stack and variables of a running application without stopping or slowing it down.
 
     """
   end

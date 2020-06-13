@@ -48,7 +48,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_accounts_get(Tesla.Env.client(), integer(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Account.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_accounts_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -96,7 +98,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.AccountsList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.AccountsList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -145,7 +149,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_accounts_patch(Tesla.Env.client(), integer(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Account.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_accounts_patch(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -198,7 +204,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_accounts_update(Tesla.Env.client(), integer(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Account.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_accounts_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

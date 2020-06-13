@@ -17,14 +17,18 @@
 
 defmodule GoogleApi.YouTube.V3.Model.MembershipsLevel do
   @moduledoc """
-  A membershipsLevel resource represents an offer made by YouTube creators for their fans. Users can become members of the channel by joining one of the available levels. They will provide recurring monetary support and receives special benefits.
+  A <code><strong>membershipsLevel</strong></code> resource represents an offer
+  made by YouTube creators for their fans. Users can become members of the
+  channel by joining one of the available levels. They will provide recurring
+  monetary support and receives special benefits.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube assigns to uniquely identify the memberships level.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#membershipsLevel`) - Identifies what kind of resource this is. Value: the fixed string "youtube#membershipsLevel".
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.MembershipsLevelSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the level.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#membershipsLevel`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#membershipsLevelListResponse"</code>.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.MembershipsLevelSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the level.
   """
 
   use GoogleApi.Gax.ModelBase

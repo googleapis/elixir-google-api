@@ -28,6 +28,8 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
       [network](/compute/docs/networks-and-firewalls#networks) to which the
       instance is connected. If left unspecified, the `default` network
       will be used.
+  *   `connectMode` (*type:* `String.t`, *default:* `nil`) - Optional. The network connect mode of the Redis instance.
+      If not provided, the connect mode defaults to DIRECT_PEERING.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
   *   `currentLocationId` (*type:* `String.t`, *default:* `nil`) - Output only. The current zone where the Redis endpoint is placed. For Basic
       Tier instances, this will always be the same as the location_id
@@ -63,23 +65,29 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
       http://redis.io/topics/config. Currently, the only supported parameters
       are:
 
-       Redis 3.2 and above:
+       Redis version 3.2 and newer:
 
        *   maxmemory-policy
        *   notify-keyspace-events
 
-       Redis 4.0 and above:
+       Redis version 4.0 and newer:
 
        *   activedefrag
-       *   lfu-log-factor
        *   lfu-decay-time
-  *   `redisVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Redis software.
-      If not provided, latest supported version will be used. Updating the
-      version will perform an upgrade/downgrade to the new version. Currently,
-      the supported values are:
+       *   lfu-log-factor
+       *   maxmemory-gb
 
-       *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+       Redis version 5.0 and newer:
+
+       *   stream-node-max-bytes
+       *   stream-node-max-entries
+  *   `redisVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Redis software.
+      If not provided, latest supported version will be used. Currently, the
+      supported values are:
+
        *   `REDIS_3_2` for Redis 3.2 compatibility
+       *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+       *   `REDIS_5_0` for Redis 5.0 compatibility
   *   `reservedIpRange` (*type:* `String.t`, *default:* `nil`) - Optional. The CIDR range of internal addresses that are reserved for this
       instance. If not provided, the service will choose an unused /29 block,
       for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
@@ -95,6 +103,7 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
   @type t :: %__MODULE__{
           :alternativeLocationId => String.t(),
           :authorizedNetwork => String.t(),
+          :connectMode => String.t(),
           :createTime => DateTime.t(),
           :currentLocationId => String.t(),
           :displayName => String.t(),
@@ -115,6 +124,7 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
 
   field(:alternativeLocationId)
   field(:authorizedNetwork)
+  field(:connectMode)
   field(:createTime, as: DateTime)
   field(:currentLocationId)
   field(:displayName)

@@ -41,12 +41,24 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
 
       If the subscriber never acknowledges the message, the Pub/Sub
       system will eventually redeliver the message.
+  *   `deadLetterPolicy` (*type:* `GoogleApi.PubSub.V1.Model.DeadLetterPolicy.t`, *default:* `nil`) - A policy that specifies the conditions for dead lettering messages in
+      this subscription. If dead_letter_policy is not set, dead lettering
+      is disabled.
+
+      The Cloud Pub/Sub service account associated with this subscriptions's
+      parent project (i.e.,
+      service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have
+      permission to Acknowledge() messages on this subscription.
   *   `expirationPolicy` (*type:* `GoogleApi.PubSub.V1.Model.ExpirationPolicy.t`, *default:* `nil`) - A policy that specifies the conditions for this subscription's expiration.
       A subscription is considered active as long as any connected subscriber is
       successfully consuming messages from the subscription or is issuing
       operations on the subscription. If `expiration_policy` is not set, a
       *default policy* with `ttl` of 31 days will be used. The minimum allowed
       value for `expiration_policy.ttl` is 1 day.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - An expression written in the Cloud Pub/Sub filter language. If non-empty,
+      then only `PubsubMessage`s whose `attributes` field matches the filter are
+      delivered on this subscription. If empty, then no messages are filtered
+      out.
   *   `labels` (*type:* `map()`, *default:* `nil`) - See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
       managing labels</a>.
   *   `messageRetentionDuration` (*type:* `String.t`, *default:* `nil`) - How long to retain unacknowledged messages in the subscription's backlog,
@@ -55,7 +67,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
       of acknowledged messages, and thus configures how far back in time a `Seek`
       can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
       minutes.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the subscription. It must have the format
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the subscription. It must have the format
       `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
       start with a letter, and contain only letters (`[A-Za-z]`), numbers
       (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
@@ -71,7 +83,14 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
       <a
       href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time">
       Seek to a timestamp</a>.
-  *   `topic` (*type:* `String.t`, *default:* `nil`) - The name of the topic from which this subscription is receiving messages.
+  *   `retryPolicy` (*type:* `GoogleApi.PubSub.V1.Model.RetryPolicy.t`, *default:* `nil`) - A policy that specifies how Pub/Sub retries message delivery for this
+      subscription.
+
+      If not set, the default retry policy is applied. This generally implies
+      that messages will be retried as soon as possible for healthy subscribers.
+      RetryPolicy will be triggered on NACKs or acknowledgement deadline
+      exceeded events for a given message.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - Required. The name of the topic from which this subscription is receiving messages.
       Format is `projects/{project}/topics/{topic}`.
       The value of this field will be `_deleted-topic_` if the topic has been
       deleted.
@@ -81,22 +100,28 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
 
   @type t :: %__MODULE__{
           :ackDeadlineSeconds => integer(),
+          :deadLetterPolicy => GoogleApi.PubSub.V1.Model.DeadLetterPolicy.t(),
           :expirationPolicy => GoogleApi.PubSub.V1.Model.ExpirationPolicy.t(),
+          :filter => String.t(),
           :labels => map(),
           :messageRetentionDuration => String.t(),
           :name => String.t(),
           :pushConfig => GoogleApi.PubSub.V1.Model.PushConfig.t(),
           :retainAckedMessages => boolean(),
+          :retryPolicy => GoogleApi.PubSub.V1.Model.RetryPolicy.t(),
           :topic => String.t()
         }
 
   field(:ackDeadlineSeconds)
+  field(:deadLetterPolicy, as: GoogleApi.PubSub.V1.Model.DeadLetterPolicy)
   field(:expirationPolicy, as: GoogleApi.PubSub.V1.Model.ExpirationPolicy)
+  field(:filter)
   field(:labels, type: :map)
   field(:messageRetentionDuration)
   field(:name)
   field(:pushConfig, as: GoogleApi.PubSub.V1.Model.PushConfig)
   field(:retainAckedMessages)
+  field(:retryPolicy, as: GoogleApi.PubSub.V1.Model.RetryPolicy)
   field(:topic)
 end
 

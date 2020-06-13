@@ -35,15 +35,17 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
       If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
 
       Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+  *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - The size of the disk in GB.
   *   `guestOsFeatures` (*type:* `list(GoogleApi.Compute.V1.Model.GuestOsFeature.t)`, *default:* `nil`) - A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
   *   `index` (*type:* `integer()`, *default:* `nil`) - [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
   *   `initializeParams` (*type:* `GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams.t`, *default:* `nil`) - [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
 
       This property is mutually exclusive with the source property; you can only define one or the other, but not both.
-  *   `interface` (*type:* `String.t`, *default:* `nil`) - Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance. TODO(b/131765817): Update documentation when NVME is supported.
+  *   `interface` (*type:* `String.t`, *default:* `nil`) - Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
   *   `kind` (*type:* `String.t`, *default:* `compute#attachedDisk`) - [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
   *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] Any valid publicly visible licenses.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+  *   `shieldedInstanceInitialState` (*type:* `GoogleApi.Compute.V1.Model.InitialStateConfig.t`, *default:* `nil`) - [Output Only] shielded vm initial state stored on disk
   *   `source` (*type:* `String.t`, *default:* `nil`) - Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
 
       If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
@@ -59,6 +61,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
           :boot => boolean(),
           :deviceName => String.t(),
           :diskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t(),
+          :diskSizeGb => String.t(),
           :guestOsFeatures => list(GoogleApi.Compute.V1.Model.GuestOsFeature.t()),
           :index => integer(),
           :initializeParams => GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams.t(),
@@ -66,6 +69,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
           :kind => String.t(),
           :licenses => list(String.t()),
           :mode => String.t(),
+          :shieldedInstanceInitialState => GoogleApi.Compute.V1.Model.InitialStateConfig.t(),
           :source => String.t(),
           :type => String.t()
         }
@@ -74,6 +78,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
   field(:boot)
   field(:deviceName)
   field(:diskEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
+  field(:diskSizeGb)
   field(:guestOsFeatures, as: GoogleApi.Compute.V1.Model.GuestOsFeature, type: :list)
   field(:index)
   field(:initializeParams, as: GoogleApi.Compute.V1.Model.AttachedDiskInitializeParams)
@@ -81,6 +86,7 @@ defmodule GoogleApi.Compute.V1.Model.AttachedDisk do
   field(:kind)
   field(:licenses, type: :list)
   field(:mode)
+  field(:shieldedInstanceInitialState, as: GoogleApi.Compute.V1.Model.InitialStateConfig)
   field(:source)
   field(:type)
 end

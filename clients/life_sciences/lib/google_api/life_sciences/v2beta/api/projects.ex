@@ -58,7 +58,10 @@ defmodule GoogleApi.LifeSciences.V2beta.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.LifeSciences.V2beta.Model.Location.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.LifeSciences.V2beta.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def lifesciences_projects_locations_get(
         connection,
         projects_id,
@@ -126,7 +129,8 @@ defmodule GoogleApi.LifeSciences.V2beta.Api.Projects do
   """
   @spec lifesciences_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.LifeSciences.V2beta.Model.ListLocationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def lifesciences_projects_locations_list(
         connection,
         projects_id,
@@ -210,7 +214,10 @@ defmodule GoogleApi.LifeSciences.V2beta.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.LifeSciences.V2beta.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.LifeSciences.V2beta.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def lifesciences_projects_locations_operations_cancel(
         connection,
         projects_id,
@@ -293,7 +300,10 @@ defmodule GoogleApi.LifeSciences.V2beta.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.LifeSciences.V2beta.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.LifeSciences.V2beta.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def lifesciences_projects_locations_operations_get(
         connection,
         projects_id,
@@ -387,7 +397,8 @@ defmodule GoogleApi.LifeSciences.V2beta.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.LifeSciences.V2beta.Model.ListOperationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def lifesciences_projects_locations_operations_list(
         connection,
         projects_id,
@@ -478,7 +489,10 @@ defmodule GoogleApi.LifeSciences.V2beta.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.LifeSciences.V2beta.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.LifeSciences.V2beta.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def lifesciences_projects_locations_pipelines_run(
         connection,
         projects_id,

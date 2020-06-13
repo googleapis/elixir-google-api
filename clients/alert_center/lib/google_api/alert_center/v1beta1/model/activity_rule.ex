@@ -27,10 +27,10 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ActivityRule do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Alert display name.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Rule name.
   *   `query` (*type:* `String.t`, *default:* `nil`) - Query that is used to get the data from the associated source.
-  *   `supersededAlerts` (*type:* `list(String.t)`, *default:* `nil`) - List of alert ids superseded by this alert. It is used to indicate that
+  *   `supersededAlerts` (*type:* `list(String.t)`, *default:* `nil`) - List of alert IDs superseded by this alert. It is used to indicate that
       this alert is essentially extension of superseded alerts and we found the
       relationship after creating these alerts.
-  *   `supersedingAlert` (*type:* `String.t`, *default:* `nil`) - Alert id superseding this alert. It is used to indicate that superseding
+  *   `supersedingAlert` (*type:* `String.t`, *default:* `nil`) - Alert ID superseding this alert. It is used to indicate that superseding
       alert is essentially extension of this alert and we found the relationship
       after creating both alerts.
   *   `threshold` (*type:* `String.t`, *default:* `nil`) - Alert threshold is for example “COUNT > 5”.

@@ -24,8 +24,28 @@ defmodule GoogleApi.Content.V2.Model.OrderLegacyPromotionBenefit do
   *   `discount` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The discount in the order price when the promotion is applied.
   *   `offerIds` (*type:* `list(String.t)`, *default:* `nil`) - The OfferId(s) that were purchased in this order and map to this specific benefit of the promotion.
   *   `subType` (*type:* `String.t`, *default:* `nil`) - Further describes the benefit of the promotion. Note that we will expand on this enumeration as we support new promotion sub-types.
+
+      Acceptable values are:  
+      - "`buyMGetMoneyOff`" 
+      - "`buyMGetNMoneyOff`" 
+      - "`buyMGetNPercentOff`" 
+      - "`buyMGetPercentOff`" 
+      - "`freeGift`" 
+      - "`freeGiftWithItemId`" 
+      - "`freeGiftWithValue`" 
+      - "`freeOvernightShipping`" 
+      - "`freeShipping`" 
+      - "`freeTwoDayShipping`" 
+      - "`moneyOff`" 
+      - "`percentageOff`" 
+      - "`rewardPoints`" 
+      - "`salePrice`"
   *   `taxImpact` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - The impact on tax when the promotion is applied.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Describes whether the promotion applies to products (e.g. 20% off) or to shipping (e.g. Free Shipping).
+
+      Acceptable values are:  
+      - "`product`" 
+      - "`shipping`"
   """
 
   use GoogleApi.Gax.ModelBase

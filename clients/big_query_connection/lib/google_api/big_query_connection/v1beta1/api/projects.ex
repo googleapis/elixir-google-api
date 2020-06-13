@@ -61,7 +61,8 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Connection.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryconnection_projects_locations_connections_create(
         connection,
         parent,
@@ -130,7 +131,10 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryconnection_projects_locations_connections_delete(
         connection,
         name,
@@ -199,7 +203,8 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Connection.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryconnection_projects_locations_connections_get(
         connection,
         name,
@@ -270,7 +275,9 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryconnection_projects_locations_connections_get_iam_policy(
         connection,
         resource,
@@ -342,7 +349,8 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.ListConnectionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryconnection_projects_locations_connections_list(
         connection,
         parent,
@@ -418,7 +426,8 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Connection.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryconnection_projects_locations_connections_patch(
         connection,
         name,
@@ -459,7 +468,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -492,7 +501,9 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryconnection_projects_locations_connections_set_iam_policy(
         connection,
         resource,
@@ -531,7 +542,7 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -569,7 +580,8 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryconnection_projects_locations_connections_test_iam_permissions(
         connection,
         resource,
@@ -640,7 +652,10 @@ defmodule GoogleApi.BigQueryConnection.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQueryConnection.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryconnection_projects_locations_connections_update_credential(
         connection,
         name,

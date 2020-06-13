@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.YouTube.V3.Model.VideoRating do
   @moduledoc """
-
+  Basic details about rating of a video.
 
   ## Attributes
 
-  *   `rating` (*type:* `String.t`, *default:* `nil`) - 
-  *   `videoId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `rating` (*type:* `String.t`, *default:* `nil`) - Rating of a video.
+  *   `videoId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the video.
   """
 
   use GoogleApi.Gax.ModelBase

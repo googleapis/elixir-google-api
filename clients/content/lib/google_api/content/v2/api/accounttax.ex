@@ -50,7 +50,8 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
   """
   @spec content_accounttax_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.AccounttaxCustomBatchResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accounttax_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -84,7 +85,7 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to get/update account tax settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -102,7 +103,9 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
   *   `{:error, info}` on failure
   """
   @spec content_accounttax_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.AccountTax.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.AccountTax.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accounttax_get(
         connection,
         merchant_id,
@@ -160,7 +163,9 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
   *   `{:error, info}` on failure
   """
   @spec content_accounttax_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.AccounttaxListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.AccounttaxListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accounttax_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -194,7 +199,7 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to get/update account tax settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -219,7 +224,10 @@ defmodule GoogleApi.Content.V2.Api.Accounttax do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Content.V2.Model.AccountTax.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Content.V2.Model.AccountTax.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accounttax_update(
         connection,
         merchant_id,

@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.Project do
   @moduledoc """
   Represents a Project resource.
 
-  A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the  Resource Hierarchy. (== resource_for v1.projects ==) (== resource_for beta.projects ==)
+  A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the  Resource Hierarchy. (== resource_for {$api_version}.projects ==)
 
   ## Attributes
 

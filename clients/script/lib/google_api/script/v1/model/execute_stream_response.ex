@@ -22,7 +22,6 @@ defmodule GoogleApi.Script.V1.Model.ExecuteStreamResponse do
   ## Attributes
 
   *   `result` (*type:* `GoogleApi.Script.V1.Model.ScriptExecutionResult.t`, *default:* `nil`) - The result of the execution.
-      TODO (johnlattin): Add debugging and logging.
   """
 
   use GoogleApi.Gax.ModelBase

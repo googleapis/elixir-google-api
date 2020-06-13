@@ -21,11 +21,25 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Policy do
 
   ## Attributes
 
-  *   `autoUpdatePolicy` (*type:* `String.t`, *default:* `nil`) - The auto-update policy for apps installed on the device. "choiceToTheUser" allows the device's user to configure the app update policy. "always" enables auto updates. "never" disables auto updates. "wifiOnly" enables auto updates only when the device is connected to wifi.
-  *   `deviceReportPolicy` (*type:* `String.t`, *default:* `nil`) - Whether the device reports app states to the EMM. The default value is "deviceReportDisabled".
-  *   `maintenanceWindow` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow.t`, *default:* `nil`) - The maintenance window defining when apps running in the foreground should be updated.
-  *   `productAvailabilityPolicy` (*type:* `String.t`, *default:* `nil`) - The availability granted to the device for the specified products. "all" gives the device access to all products, regardless of approval status. "all" does not enable automatic visibility of "alpha" or "beta" tracks. "whitelist" grants the device access the products specified in productPolicy[]. Only products that are approved or products that were previously approved (products with revoked approval) by the enterprise can be whitelisted. If no value is provided, the availability set at the user level is applied by default.
-  *   `productPolicy` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy.t)`, *default:* `nil`) - The list of product policies.
+  *   `autoUpdatePolicy` (*type:* `String.t`, *default:* `nil`) - The auto-update policy for apps installed on the device. "choiceToTheUser"
+      allows the device's user to configure the app update policy. "always"
+      enables auto updates. "never" disables auto updates. "wifiOnly" enables
+      auto updates only when the device is connected to wifi.
+  *   `deviceReportPolicy` (*type:* `String.t`, *default:* `nil`) - Whether the device reports app states to the EMM. The default value is
+      "deviceReportDisabled".
+  *   `maintenanceWindow` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.MaintenanceWindow.t`, *default:* `nil`) - The maintenance window defining when apps running in the foreground should
+      be updated.
+  *   `productAvailabilityPolicy` (*type:* `String.t`, *default:* `nil`) - The availability granted to the device for the specified products. "all"
+      gives the device access to all products, regardless of approval status.
+      "all" does not enable automatic visibility of "alpha" or "beta" tracks.
+      "whitelist" grants the device access the products specified in
+      productPolicy[]. Only products that are approved or products that were
+      previously approved (products with revoked approval) by the enterprise can
+      be whitelisted. If no value is provided, the availability set at the user
+      level is applied by default.
+  *   `productPolicy` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ProductPolicy.t)`, *default:* `nil`) - The list of product policies. The <code>productAvailabilityPolicy</code>
+      needs to be set to <code>WHITELIST</code> or <code>ALL</code> for the
+      product policies to be applied.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,9 +17,9 @@
 
 defmodule GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions do
   @moduledoc """
-  [ExternalProtectionLevelOptions] stores a group of additional fields for
-  configuring a [CryptoKeyVersion] that are specific to the [EXTERNAL]
-  protection level.
+  ExternalProtectionLevelOptions stores a group of additional fields for
+  configuring a CryptoKeyVersion that are specific to the
+  EXTERNAL protection level.
 
   ## Attributes
 

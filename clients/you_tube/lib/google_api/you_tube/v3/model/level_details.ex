@@ -21,7 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.LevelDetails do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name that should be used when referring to this level.
   """
 
   use GoogleApi.Gax.ModelBase

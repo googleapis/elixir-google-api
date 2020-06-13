@@ -30,18 +30,18 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
 
       Read-only.
   *   `assignedGrade` (*type:* `float()`, *default:* `nil`) - Optional grade. If unset, no grade was set.
-      This value must be non-negative. Decimal (i.e. non-integer) values are
-      allowed, but will be rounded to two decimal places.
+      This value must be non-negative. Decimal (that is, non-integer) values are
+      allowed, but are rounded to two decimal places.
 
       This may be modified only by course teachers.
   *   `assignmentSubmission` (*type:* `GoogleApi.Classroom.V1.Model.AssignmentSubmission.t`, *default:* `nil`) - Submission content when course_work_type is ASSIGNMENT.
 
       Students can modify this content using
-      google.classroom.Work.ModifyAttachments.
+      ModifyAttachments.
   *   `associatedWithDeveloper` (*type:* `boolean()`, *default:* `nil`) - Whether this student submission is associated with the Developer Console
       project making the request.
 
-      See google.classroom.Work.CreateCourseWork for more
+      See CreateCourseWork for more
       details.
 
       Read-only.
@@ -59,8 +59,8 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
 
       Read-only.
   *   `draftGrade` (*type:* `float()`, *default:* `nil`) - Optional pending grade. If unset, no grade was set.
-      This value must be non-negative. Decimal (i.e. non-integer) values are
-      allowed, but will be rounded to two decimal places.
+      This value must be non-negative. Decimal (that is, non-integer) values are
+      allowed, but are rounded to two decimal places.
 
       This is only visible to and modifiable by course teachers.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Classroom-assigned Identifier for the student submission.

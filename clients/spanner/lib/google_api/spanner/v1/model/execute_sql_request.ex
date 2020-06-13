@@ -49,6 +49,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
   *   `queryMode` (*type:* `String.t`, *default:* `nil`) - Used to control the amount of debugging information returned in
       ResultSetStats. If partition_token is set, query_mode can only
       be set to QueryMode.NORMAL.
+  *   `queryOptions` (*type:* `GoogleApi.Spanner.V1.Model.QueryOptions.t`, *default:* `nil`) - Query optimizer configuration to use for the given query.
   *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - If this request is resuming a previously interrupted SQL statement
       execution, `resume_token` should be copied from the last
       PartialResultSet yielded before the interruption. Doing this
@@ -85,6 +86,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
           :params => map(),
           :partitionToken => String.t(),
           :queryMode => String.t(),
+          :queryOptions => GoogleApi.Spanner.V1.Model.QueryOptions.t(),
           :resumeToken => String.t(),
           :seqno => String.t(),
           :sql => String.t(),
@@ -95,6 +97,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteSqlRequest do
   field(:params, type: :map)
   field(:partitionToken)
   field(:queryMode)
+  field(:queryOptions, as: GoogleApi.Spanner.V1.Model.QueryOptions)
   field(:resumeToken)
   field(:seqno)
   field(:sql)

@@ -24,7 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SaveFindings do
 
   ## Attributes
 
-  *   `outputConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OutputStorageConfig.t`, *default:* `nil`) - 
+  *   `outputConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OutputStorageConfig.t`, *default:* `nil`) - Location to store findings outside of DLP.
   """
 
   use GoogleApi.Gax.ModelBase

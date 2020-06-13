@@ -62,7 +62,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
   """
   @spec clouddebugger_controller_debuggees_register(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.RegisterDebuggeeResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def clouddebugger_controller_debuggees_register(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -124,6 +125,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:agentId` (*type:* `String.t`) - Identifies the agent.
+          This is the ID returned in the RegisterDebuggee response.
       *   `:successOnTimeout` (*type:* `boolean()`) - If set to `true` (recommended), returns `google.rpc.Code.OK` status and
           sets the `wait_expired` response field to `true` when the server-selected
           timeout has expired.
@@ -148,7 +151,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.ListActiveBreakpointsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def clouddebugger_controller_debuggees_breakpoints_list(
         connection,
         debuggee_id,
@@ -167,6 +171,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :agentId => :query,
       :successOnTimeout => :query,
       :waitToken => :query
     }
@@ -230,7 +235,8 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Controller do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudDebugger.V2.Model.UpdateActiveBreakpointResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def clouddebugger_controller_debuggees_breakpoints_update(
         connection,
         debuggee_id,

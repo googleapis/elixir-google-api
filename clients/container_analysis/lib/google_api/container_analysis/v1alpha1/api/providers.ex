@@ -62,7 +62,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_providers_notes_create(
         connection,
         providers_id,
@@ -134,7 +137,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_providers_notes_delete(
         connection,
         providers_id,
@@ -205,7 +211,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_providers_notes_get(
         connection,
         providers_id,
@@ -288,7 +297,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_providers_notes_get_iam_policy(
         connection,
         providers_id,
@@ -365,7 +376,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ListNotesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_providers_notes_list(
         connection,
         providers_id,
@@ -442,7 +454,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_providers_notes_patch(
         connection,
         providers_id,
@@ -528,7 +543,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_providers_notes_set_iam_policy(
         connection,
         providers_id,
@@ -610,7 +627,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_providers_notes_test_iam_permissions(
         connection,
         providers_id,
@@ -691,7 +709,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ListNoteOccurrencesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_providers_notes_occurrences_list(
         connection,
         providers_id,

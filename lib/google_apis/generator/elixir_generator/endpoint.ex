@@ -246,7 +246,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
         _ -> ", " <> param_specs
       end
 
-    "#{name}(Tesla.Env.client()#{param_specs}, keyword(), keyword()) :: {:ok, #{ret.typespec}} | {:error, Tesla.Env.t()}"
+    "#{name}(Tesla.Env.client()#{param_specs}, keyword(), keyword()) :: {:ok, #{ret.typespec}} | {:ok, Tesla.Env.t()} | {:error, any()}"
   end
 
   defp return_type(%{response: nil}, _context), do: Type.empty()
@@ -257,7 +257,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
 
   defp method_name_to_endpoint_name(method_name) do
     method_name
-    |> String.replace(".", "_")
+    |> String.replace(~r{[\.-]}, "_")
     |> Macro.underscore()
   end
 end

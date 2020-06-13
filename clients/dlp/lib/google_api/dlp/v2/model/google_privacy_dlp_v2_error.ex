@@ -19,11 +19,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error do
   @moduledoc """
   Details information about an error encountered during job execution or
   the results of an unsuccessful activation of the JobTrigger.
-  Output only field.
 
   ## Attributes
 
-  *   `details` (*type:* `GoogleApi.DLP.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - 
+  *   `details` (*type:* `GoogleApi.DLP.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Detailed error codes and messages.
   *   `timestamps` (*type:* `list(DateTime.t)`, *default:* `nil`) - The times the error occurred.
   """
 

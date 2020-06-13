@@ -17,22 +17,28 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   @moduledoc """
-  Optional. The config settings for Compute Engine resources in an instance group, such as a master or worker group.
+  The config settings for Compute Engine resources in an instance group, such as a master or worker group.
 
   ## Attributes
 
   *   `accelerators` (*type:* `list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Optional. The Compute Engine accelerator configuration for these instances.
   *   `diskConfig` (*type:* `GoogleApi.Dataproc.V1.Model.DiskConfig.t`, *default:* `nil`) - Optional. Disk option config settings.
-  *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine image resource used for cluster instances. It can be specified or may be inferred from SoftwareConfig.image_version.
-  *   `instanceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of instance names. Cloud Dataproc derives the names from cluster_name, num_instances, and the instance group.
-  *   `isPreemptible` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies that this instance group contains preemptible instances.
+  *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine image resource used for cluster instances.The URI can represent an image or image family.Image examples:
+      https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/[image-id]
+      projects/[project_id]/global/images/[image-id]
+      image-idImage family examples. Dataproc will use the most recent image from the family:
+      https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/family/[custom-image-family-name]
+      projects/[project_id]/global/images/family/[custom-image-family-name]If the URI is unspecified, it will be inferred from SoftwareConfig.image_version or the system default.
+  *   `instanceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of instance names. Dataproc derives the names from cluster_name, num_instances, and the instance group.
+  *   `isPreemptible` (*type:* `boolean()`, *default:* `nil`) - Output only. Specifies that this instance group contains preemptible instances.
   *   `machineTypeUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples:
       https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
       projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
-      n1-standard-2Auto Zone Exception: If you are using the Cloud Dataproc Auto Zone Placement feature, you must use the short name of the machine type resource, for example, n1-standard-2.
+      n1-standard-2Auto Zone Exception: If you are using the Dataproc Auto Zone Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the machine type resource, for example, n1-standard-2.
   *   `managedGroupConfig` (*type:* `GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t`, *default:* `nil`) - Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
-  *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the minimum cpu platform for the Instance Group. See Cloud Dataproc&rarr;Minimum CPU Platform.
+  *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the minimum cpu platform for the Instance Group. See Dataproc -&gt; Minimum CPU Platform (https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu).
   *   `numInstances` (*type:* `integer()`, *default:* `nil`) - Optional. The number of VM instances in the instance group. For master instance groups, must be set to 1.
+  *   `preemptibility` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the preemptibility of the instance group.The default value for master and worker groups is NON_PREEMPTIBLE. This default cannot be changed.The default value for secondary instances is PREEMPTIBLE.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,7 +52,8 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
           :machineTypeUri => String.t(),
           :managedGroupConfig => GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t(),
           :minCpuPlatform => String.t(),
-          :numInstances => integer()
+          :numInstances => integer(),
+          :preemptibility => String.t()
         }
 
   field(:accelerators, as: GoogleApi.Dataproc.V1.Model.AcceleratorConfig, type: :list)
@@ -58,6 +65,7 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
   field(:managedGroupConfig, as: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig)
   field(:minCpuPlatform)
   field(:numInstances)
+  field(:preemptibility)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do

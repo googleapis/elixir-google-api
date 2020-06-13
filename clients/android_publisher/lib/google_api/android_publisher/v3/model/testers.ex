@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Testers do
   @moduledoc """
-
+  The testers of an app. The resource for TestersService.
 
   ## Attributes
 
-  *   `googleGroups` (*type:* `list(String.t)`, *default:* `nil`) - A list of all Google Groups, as email addresses, that define testers for this track.
+  *   `googleGroups` (*type:* `list(String.t)`, *default:* `nil`) - All testing Google Groups, as email addresses.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,25 +21,26 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
   An asset feed filter controls what updates are exported.
   The asset feed must be created within a project, organization, or
   folder. Supported destinations are:
-  Cloud Pub/Sub topics.
+  Pub/Sub topics.
 
   ## Attributes
 
   *   `assetNames` (*type:* `list(String.t)`, *default:* `nil`) - A list of the full names of the assets to receive updates. You must specify
       either or both of asset_names and asset_types. Only asset updates matching
-      specified asset_names and asset_types are exported to the feed. For
-      example:
+      specified asset_names or asset_types are exported to the feed.
+      Example:
       `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
       See [Resource
       Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
       for more info.
   *   `assetTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of types of the assets to receive updates. You must specify either
       or both of asset_names and asset_types. Only asset updates matching
-      specified asset_names and asset_types are exported to the feed.
-      For example:
-      "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
-      Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
-      for all supported asset types.
+      specified asset_names or asset_types are exported to the feed.
+      Example: `"compute.googleapis.com/Disk"`
+
+      See [this
+      topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+      for a list of all supported asset types.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Asset content type. If not specified, no content but the asset name and
       type will be returned.
   *   `feedOutputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.FeedOutputConfig.t`, *default:* `nil`) - Required. Feed output configuration defining where the asset updates are

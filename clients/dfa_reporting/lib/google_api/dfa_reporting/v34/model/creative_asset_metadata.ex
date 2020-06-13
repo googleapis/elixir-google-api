@@ -22,11 +22,15 @@ defmodule GoogleApi.DFAReporting.V34.Model.CreativeAssetMetadata do
   ## Attributes
 
   *   `assetIdentifier` (*type:* `GoogleApi.DFAReporting.V34.Model.CreativeAssetId.t`, *default:* `nil`) - ID of the creative asset. This is a required field.
-  *   `clickTags` (*type:* `list(GoogleApi.DFAReporting.V34.Model.ClickTag.t)`, *default:* `nil`) - List of detected click tags for assets. This is a read-only auto-generated field.
+  *   `clickTags` (*type:* `list(GoogleApi.DFAReporting.V34.Model.ClickTag.t)`, *default:* `nil`) - List of detected click tags for assets. This is a read-only, auto-generated field. This field is empty for a rich media asset.
+  *   `counterCustomEvents` (*type:* `list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t)`, *default:* `nil`) - List of counter events configured for the asset. This is a read-only, auto-generated field and only applicable to a rich media asset.
   *   `detectedFeatures` (*type:* `list(String.t)`, *default:* `nil`) - List of feature dependencies for the creative asset that are detected by Campaign Manager. Feature dependencies are features that a browser must be able to support in order to render your HTML5 creative correctly. This is a read-only, auto-generated field.
+  *   `exitCustomEvents` (*type:* `list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t)`, *default:* `nil`) - List of exit events configured for the asset. This is a read-only, auto-generated field and only applicable to a rich media asset.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Numeric ID of the asset. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the numeric ID of the asset. This is a read-only, auto-generated field.
   *   `kind` (*type:* `String.t`, *default:* `dfareporting#creativeAssetMetadata`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeAssetMetadata".
+  *   `richMedia` (*type:* `boolean()`, *default:* `nil`) - True if the uploaded asset is a rich media asset. This is a read-only, auto-generated field.
+  *   `timerCustomEvents` (*type:* `list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t)`, *default:* `nil`) - List of timer events configured for the asset. This is a read-only, auto-generated field and only applicable to a rich media asset.
   *   `warnedValidationRules` (*type:* `list(String.t)`, *default:* `nil`) - Rules validated during code generation that generated a warning. This is a read-only, auto-generated field.
 
       Possible values are:
@@ -61,19 +65,32 @@ defmodule GoogleApi.DFAReporting.V34.Model.CreativeAssetMetadata do
   @type t :: %__MODULE__{
           :assetIdentifier => GoogleApi.DFAReporting.V34.Model.CreativeAssetId.t(),
           :clickTags => list(GoogleApi.DFAReporting.V34.Model.ClickTag.t()),
+          :counterCustomEvents => list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t()),
           :detectedFeatures => list(String.t()),
+          :exitCustomEvents => list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t()),
           :id => String.t(),
           :idDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
           :kind => String.t(),
+          :richMedia => boolean(),
+          :timerCustomEvents => list(GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent.t()),
           :warnedValidationRules => list(String.t())
         }
 
   field(:assetIdentifier, as: GoogleApi.DFAReporting.V34.Model.CreativeAssetId)
   field(:clickTags, as: GoogleApi.DFAReporting.V34.Model.ClickTag, type: :list)
+
+  field(:counterCustomEvents,
+    as: GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent,
+    type: :list
+  )
+
   field(:detectedFeatures, type: :list)
+  field(:exitCustomEvents, as: GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent, type: :list)
   field(:id)
   field(:idDimensionValue, as: GoogleApi.DFAReporting.V34.Model.DimensionValue)
   field(:kind)
+  field(:richMedia)
+  field(:timerCustomEvents, as: GoogleApi.DFAReporting.V34.Model.CreativeCustomEvent, type: :list)
   field(:warnedValidationRules, type: :list)
 end
 

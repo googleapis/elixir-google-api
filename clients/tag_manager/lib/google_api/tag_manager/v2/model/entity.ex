@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.TagManager.V2.Model.Entity do
   @moduledoc """
-  A workspace entity that may represent a tag, trigger, variable, or folder in addition to its status in the workspace.
+  A workspace entity that may represent a tag, trigger, variable, or folder in
+  addition to its status in the workspace.
 
   ## Attributes
 

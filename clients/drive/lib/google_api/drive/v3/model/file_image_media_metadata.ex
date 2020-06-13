@@ -36,7 +36,7 @@ defmodule GoogleApi.Drive.V3.Model.FileImageMediaMetadata do
   *   `location` (*type:* `GoogleApi.Drive.V3.Model.FileImageMediaMetadataLocation.t`, *default:* `nil`) - Geographic location information stored in the image.
   *   `maxApertureValue` (*type:* `number()`, *default:* `nil`) - The smallest f-number of the lens at the focal length used to create the photo (APEX value).
   *   `meteringMode` (*type:* `String.t`, *default:* `nil`) - The metering mode used to create the photo.
-  *   `rotation` (*type:* `integer()`, *default:* `nil`) - The rotation in clockwise degrees from the image's original orientation.
+  *   `rotation` (*type:* `integer()`, *default:* `nil`) - The number of clockwise 90 degree rotations applied from the image's original orientation.
   *   `sensor` (*type:* `String.t`, *default:* `nil`) - The type of sensor used to create the photo.
   *   `subjectDistance` (*type:* `integer()`, *default:* `nil`) - The distance to the subject of the photo, in meters.
   *   `time` (*type:* `String.t`, *default:* `nil`) - The date and time the photo was taken (EXIF DateTime).

@@ -30,10 +30,8 @@ use Mix.Config
 #     import_config "#{Mix.env}.exs"
 
 config :google_apis,
-  spec_converter: GoogleApis.Converter.ApiSpecConverter,
   hex_api_key: System.get_env("HEX_API_KEY") || "invalidkey",
   client_generator: GoogleApis.Generator.ElixirGenerator,
-  swagger_cli_image: "swaggerapi/swagger-codegen-cli:v2.3.1",
   oauth_client: System.get_env("GOOGLE_CLIENT_ID"),
   oauth_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
   template: System.get_env("TEMPLATE") || "gax",

@@ -38,6 +38,7 @@ defmodule GoogleApi.People.V1.Model.Name do
   *   `phoneticHonorificPrefix` (*type:* `String.t`, *default:* `nil`) - The honorific prefixes spelled as they sound.
   *   `phoneticHonorificSuffix` (*type:* `String.t`, *default:* `nil`) - The honorific suffixes spelled as they sound.
   *   `phoneticMiddleName` (*type:* `String.t`, *default:* `nil`) - The middle name(s) spelled as they sound.
+  *   `unstructuredName` (*type:* `String.t`, *default:* `nil`) - The free form name value.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -56,7 +57,8 @@ defmodule GoogleApi.People.V1.Model.Name do
           :phoneticGivenName => String.t(),
           :phoneticHonorificPrefix => String.t(),
           :phoneticHonorificSuffix => String.t(),
-          :phoneticMiddleName => String.t()
+          :phoneticMiddleName => String.t(),
+          :unstructuredName => String.t()
         }
 
   field(:displayName)
@@ -73,6 +75,7 @@ defmodule GoogleApi.People.V1.Model.Name do
   field(:phoneticHonorificPrefix)
   field(:phoneticHonorificSuffix)
   field(:phoneticMiddleName)
+  field(:unstructuredName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.People.V1.Model.Name do

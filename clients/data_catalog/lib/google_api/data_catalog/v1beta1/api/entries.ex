@@ -58,11 +58,11 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Entries do
 
           Examples:
 
-            * `cloud_pubsub.project_id.topic_id`
+            * `pubsub.project_id.topic_id`
             * ``pubsub.project_id.`topic.id.with.dots` ``
             * `bigquery.table.project_id.dataset_id.table_id`
             * `bigquery.dataset.project_id.dataset_id`
-            * `datacatalog.project_id.location_id.entry_group_id.entry_id`
+            * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
 
           `*_id`s shoud satisfy the standard SQL rules for identifiers.
           https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
@@ -75,7 +75,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Entries do
   """
   @spec datacatalog_entries_lookup(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_entries_lookup(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

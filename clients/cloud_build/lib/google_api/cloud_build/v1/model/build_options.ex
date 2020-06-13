@@ -27,6 +27,11 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
       allocated for the build -- the build may run with a larger disk than
       requested. At present, the maximum disk size is 1000GB; builds that request
       more than the maximum are rejected with an error.
+  *   `dynamicSubstitutions` (*type:* `boolean()`, *default:* `nil`) - Option to specify whether or not to apply bash style string
+      operations to the substitutions.
+
+      NOTE: this is always enabled for triggered builds and cannot be
+      overridden in the build configuration file.
   *   `env` (*type:* `list(String.t)`, *default:* `nil`) - A list of global environment variable definitions that will exist for all
       build steps in this build. If a variable is defined in both globally and in
       a build step, the variable will use the build step value.
@@ -46,6 +51,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
   *   `sourceProvenanceHash` (*type:* `list(String.t)`, *default:* `nil`) - Requested hash for SourceProvenance.
   *   `substitutionOption` (*type:* `String.t`, *default:* `nil`) - Option to specify behavior when there is an error in the substitution
       checks.
+
+      NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
+      be overridden in the build configuration file.
   *   `volumes` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Volume.t)`, *default:* `nil`) - Global list of volumes to mount for ALL build steps
 
       Each volume is created as an empty volume prior to starting the build
@@ -65,6 +73,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
 
   @type t :: %__MODULE__{
           :diskSizeGb => String.t(),
+          :dynamicSubstitutions => boolean(),
           :env => list(String.t()),
           :logStreamingOption => String.t(),
           :logging => String.t(),
@@ -78,6 +87,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
         }
 
   field(:diskSizeGb)
+  field(:dynamicSubstitutions)
   field(:env, type: :list)
   field(:logStreamingOption)
   field(:logging)

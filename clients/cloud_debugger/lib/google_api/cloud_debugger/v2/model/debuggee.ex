@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Debuggee do
   *   `agentVersion` (*type:* `String.t`, *default:* `nil`) - Version ID of the agent.
       Schema: `domain/language-platform/vmajor.minor` (for example
       `google.com/java-gcp/v1.1`).
+  *   `canaryMode` (*type:* `String.t`, *default:* `nil`) - Used when setting breakpoint canary for this debuggee.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human readable description of the debuggee.
       Including a human-readable project name, environment name and version
       information is recommended.
@@ -59,6 +60,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Debuggee do
 
   @type t :: %__MODULE__{
           :agentVersion => String.t(),
+          :canaryMode => String.t(),
           :description => String.t(),
           :extSourceContexts => list(GoogleApi.CloudDebugger.V2.Model.ExtendedSourceContext.t()),
           :id => String.t(),
@@ -72,6 +74,7 @@ defmodule GoogleApi.CloudDebugger.V2.Model.Debuggee do
         }
 
   field(:agentVersion)
+  field(:canaryMode)
   field(:description)
 
   field(:extSourceContexts,

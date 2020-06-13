@@ -22,10 +22,14 @@ defmodule GoogleApi.Content.V2.Model.AccounttaxCustomBatchRequestEntry do
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account for which to get/update account tax settings.
-  *   `accountTax` (*type:* `GoogleApi.Content.V2.Model.AccountTax.t`, *default:* `nil`) - The account tax settings to update. Only defined if the method is update.
+  *   `accountTax` (*type:* `GoogleApi.Content.V2.Model.AccountTax.t`, *default:* `nil`) - The account tax settings to update. Only defined if the method is `update`.
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "`get`" 
+      - "`update`"
   """
 
   use GoogleApi.Gax.ModelBase

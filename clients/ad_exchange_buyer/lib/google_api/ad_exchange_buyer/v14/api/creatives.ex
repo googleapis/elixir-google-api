@@ -56,7 +56,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adexchangebuyer_creatives_add_deal(
         connection,
         account_id,
@@ -120,7 +120,10 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_creatives_get(
         connection,
         account_id,
@@ -176,7 +179,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_creatives_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.Creative.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_creatives_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -229,7 +234,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
   *   `{:error, info}` on failure
   """
   @spec adexchangebuyer_creatives_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreativesList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreativesList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_creatives_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -289,7 +296,9 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V14.Model.CreativeDealIds.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_creatives_list_deals(
         connection,
         account_id,
@@ -353,7 +362,7 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Creatives do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adexchangebuyer_creatives_remove_deal(
         connection,
         account_id,

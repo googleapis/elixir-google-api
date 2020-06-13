@@ -60,7 +60,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Operations do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_operations_get(
         connection,
         name,

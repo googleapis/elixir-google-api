@@ -26,11 +26,13 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Alpha feature.
-  Creates an EntryGroup.
-  The user should enable the Data Catalog API in the project identified by
+  A maximum of 10,000 entry groups may be created per organization across all
+  locations.
+
+  Users should enable the Data Catalog API in the project identified by
   the `parent` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -73,7 +75,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_create(
         connection,
         projects_id,
@@ -116,11 +119,11 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Alpha feature.
   Deletes an EntryGroup. Only entry groups that do not contain entries can be
-  deleted. The user should enable the Data Catalog API in the project
+  deleted. Users should enable the Data Catalog API in the project
   identified by the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -156,7 +159,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_delete(
         connection,
         projects_id,
@@ -200,7 +206,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Alpha feature.
   Gets an EntryGroup.
 
   ## Parameters
@@ -239,7 +244,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_get(
         connection,
         projects_id,
@@ -294,9 +300,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
@@ -338,7 +343,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_get_iam_policy(
         connection,
         projects_id,
@@ -382,15 +390,200 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
+  Lists entry groups.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the location that contains the entry groups, which can be
+      provided in URL format. Example:
+
+      * projects/{project_id}/locations/{location}
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. Default is 10. Max limit is 1000.
+          Throws an invalid argument for `page_size > 1000`.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Token that specifies which page is requested. If empty, the first page is
+          returned.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntryGroupsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datacatalog_projects_locations_entry_groups_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntryGroupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def datacatalog_projects_locations_entry_groups_list(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntryGroupsResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Updates an EntryGroup. The user should enable the Data Catalog API in the
+  project identified by the `entry_group.name` parameter (see [Data Catalog
+  Resource Project]
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `entryGroup.name`. The resource name of the entry group in URL format. Example:
+
+      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+
+      Note that this EntryGroup and its child resources may not actually be
+      stored in the location in this name.
+  *   `locations_id` (*type:* `String.t`) - Part of `entryGroup.name`. See documentation of `projectsId`.
+  *   `entry_groups_id` (*type:* `String.t`) - Part of `entryGroup.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The fields to update on the entry group. If absent or empty, all modifiable
+          fields are updated.
+      *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datacatalog_projects_locations_entry_groups_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def datacatalog_projects_locations_entry_groups_patch(
+        connection,
+        projects_id,
+        locations_id,
+        entry_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup{}]
+    )
+  end
+
+  @doc """
   Sets the access control policy for a resource. Replaces any existing
   policy.
   Supported resources are:
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
@@ -432,7 +625,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_set_iam_policy(
         connection,
         projects_id,
@@ -484,9 +680,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   A caller is not required to have Google IAM permission to make this
   request.
@@ -527,7 +722,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_test_iam_permissions(
         connection,
         projects_id,
@@ -573,11 +769,15 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Alpha feature.
-  Creates an entry. Currently only entries of 'FILESET' type can be created.
-  The user should enable the Data Catalog API in the project identified by
+  Creates an entry. Only entries of 'FILESET' type or user-specified type can
+  be created.
+
+  Users should enable the Data Catalog API in the project identified by
   the `parent` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
+
+  A maximum of 100,000 entries may be created per entry group.
 
   ## Parameters
 
@@ -620,7 +820,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_create(
         connection,
         projects_id,
@@ -667,13 +868,13 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Alpha feature.
   Deletes an existing entry. Only entries created through
   CreateEntry
   method can be deleted.
-  The user should enable the Data Catalog API in the project identified by
+  Users should enable the Data Catalog API in the project identified by
   the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -711,7 +912,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_delete(
         connection,
         projects_id,
@@ -764,11 +968,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry. Example:
 
       * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-
-      Entry groups are logical groupings of entries. Currently, users cannot
-      create/modify entry groups. They are created by Data Catalog; they include
-      `@bigquery` for all BigQuery entries, and `@pubsub` for all Cloud Pub/Sub
-      entries.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -801,7 +1000,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_get(
         connection,
         projects_id,
@@ -856,9 +1056,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
@@ -902,7 +1101,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_get_iam_policy(
         connection,
         projects_id,
@@ -948,10 +1150,112 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
+  Lists entries.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the entry group that contains the entries, which can
+      be provided in URL format. Example:
+
+      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. Default is 10. Max limit is 1000.
+          Throws an invalid argument for `page_size > 1000`.
+      *   `:pageToken` (*type:* `String.t`) - Token that specifies which page is requested. If empty, the first page is
+          returned.
+      *   `:readMask` (*type:* `String.t`) - The fields to return for each Entry. If not set or empty, all
+          fields are returned.
+          For example, setting read_mask to contain only one path "name" will cause
+          ListEntries to return a list of Entries with only "name" field.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntriesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datacatalog_projects_locations_entry_groups_entries_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def datacatalog_projects_locations_entry_groups_entries_list(
+        connection,
+        projects_id,
+        locations_id,
+        entry_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :readMask => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntriesResponse{}
+        ]
+    )
+  end
+
+  @doc """
   Updates an existing entry.
-  The user should enable the Data Catalog API in the project identified by
+  Users should enable the Data Catalog API in the project identified by
   the `entry.name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -989,6 +1293,14 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
              * `description`
              * `gcs_fileset_spec`
              * `gcs_fileset_spec.file_patterns`
+          * For entries with `user_specified_type`
+             * `schema`
+             * `display_name`
+             * `description`
+             * user_specified_type
+             * user_specified_system
+             * linked_resource
+             * source_system_timestamps
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1007,7 +1319,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_patch(
         connection,
         projects_id,
@@ -1056,104 +1369,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy for a resource. Replaces any existing
-  policy.
-  Supported resources are:
-    - Tag templates.
-    - Entries.
-    - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
-
-  Callers must have following Google IAM permission
-    - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
-      templates.
-    - `datacatalog.entries.setIamPolicy` to set policies on entries.
-    - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.SetIamPolicyRequest.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.DataCatalog.V1beta1.Model.Policy{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec datacatalog_projects_locations_entry_groups_entries_set_iam_policy(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
-  def datacatalog_projects_locations_entry_groups_entries_set_iam_policy(
-        connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1)
-        }
-      )
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.DataCatalog.V1beta1.Model.Policy{}])
-  end
-
-  @doc """
   Returns the caller's permissions on a resource.
   If the resource does not exist, an empty set of permissions is returned
   (We don't return a `NOT_FOUND` error).
@@ -1162,9 +1377,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   A caller is not required to have Google IAM permission to make this
   request.
@@ -1207,7 +1421,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_test_iam_permissions(
         connection,
         projects_id,
@@ -1257,10 +1472,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @doc """
   Creates a tag on an Entry.
   Note: The project identified by the `parent` parameter for the
-  [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+  [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
   and the
   [tag
-  template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+  template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
   used to create the tag must be from the same organization.
 
   ## Parameters
@@ -1306,7 +1521,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_tags_create(
         connection,
         projects_id,
@@ -1394,7 +1610,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_tags_delete(
         connection,
         projects_id,
@@ -1446,8 +1665,14 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Data Catalog resource to list the tags of. The
-      resource could be an Entry.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Data Catalog resource to list the tags of. The resource
+      could be an Entry or an
+      EntryGroup.
+
+      Examples:
+
+      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -1484,7 +1709,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTagsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_tags_list(
         connection,
         projects_id,
@@ -1585,7 +1811,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_tags_patch(
         connection,
         projects_id,
@@ -1636,21 +1863,398 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a tag template. The user should enable the Data Catalog API in
-  the project identified by the `parent` parameter (see [Data Catalog
-  Resource Project](/data-catalog/docs/concepts/resource-project) for more
-  information).
+  Creates a tag on an Entry.
+  Note: The project identified by the `parent` parameter for the
+  [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+  and the
+  [tag
+  template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+  used to create the tag must be from the same organization.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the location this template is in.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the resource to attach this tag to. Tags can be attached to
+      Entries. Example:
+
+      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+
+      Note that this Tag and its child resources may not actually be stored in
+      the location in this name.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datacatalog_projects_locations_entry_groups_tags_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def datacatalog_projects_locations_entry_groups_tags_create(
+        connection,
+        projects_id,
+        locations_id,
+        entry_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/tags",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag{}]
+    )
+  end
+
+  @doc """
+  Deletes a tag.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag to delete. Example:
+
+      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `tags_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataCatalog.V1beta1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datacatalog_projects_locations_entry_groups_tags_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def datacatalog_projects_locations_entry_groups_tags_delete(
+        connection,
+        projects_id,
+        locations_id,
+        entry_groups_id,
+        tags_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/tags/{tagsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
+          "tagsId" => URI.encode(tags_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.DataCatalog.V1beta1.Model.Empty{}])
+  end
+
+  @doc """
+  Lists the tags on an Entry.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Data Catalog resource to list the tags of. The resource
+      could be an Entry or an
+      EntryGroup.
+
+      Examples:
+
+      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of tags to return. Default is 10. Max limit is 1000.
+      *   `:pageToken` (*type:* `String.t`) - Token that specifies which page is requested. If empty, the first page is
+          returned.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTagsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datacatalog_projects_locations_entry_groups_tags_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTagsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def datacatalog_projects_locations_entry_groups_tags_list(
+        connection,
+        projects_id,
+        locations_id,
+        entry_groups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/tags",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTagsResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Updates an existing tag.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. The resource name of the tag in URL format. Example:
+
+      * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+
+      where `tag_id` is a system-generated identifier.
+      Note that this Tag may not actually be stored in the location in this name.
+  *   `locations_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
+  *   `entry_groups_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
+  *   `tags_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - The fields to update on the Tag. If absent or empty, all modifiable fields
+          are updated. Currently the only modifiable field is the field `fields`.
+      *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datacatalog_projects_locations_entry_groups_tags_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def datacatalog_projects_locations_entry_groups_tags_patch(
+        connection,
+        projects_id,
+        locations_id,
+        entry_groups_id,
+        tags_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/tags/{tagsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
+          "tagsId" => URI.encode(tags_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag{}]
+    )
+  end
+
+  @doc """
+  Creates a tag template. The user should enable the Data Catalog API in
+  the project identified by the `parent` parameter (see [Data Catalog
+  Resource
+  Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+  for more information).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location
+      [region](https://cloud.google.com/data-catalog/docs/concepts/regions.
+
       Example:
 
-      * projects/{project_id}/locations/{location}
-
-      TagTemplate and its child resources may not actually be stored in the
-      location in this name.
+      * projects/{project_id}/locations/us-central1
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1681,7 +2285,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplate.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_create(
         connection,
         projects_id,
@@ -1725,9 +2330,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
 
   @doc """
   Deletes a tag template and all tags using the template.
-  The user should enable the Data Catalog API in the project identified by
+  Users should enable the Data Catalog API in the project identified by
   the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -1766,7 +2372,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_delete(
         connection,
         projects_id,
@@ -1848,7 +2457,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplate.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_get(
         connection,
         projects_id,
@@ -1902,9 +2512,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
@@ -1946,7 +2555,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_get_iam_policy(
         connection,
         projects_id,
@@ -1993,9 +2605,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   Updates a tag template. This method cannot be used to update the fields of
   a template. The tag template fields are represented as separate resources
   and should be updated using their own create/update/delete methods.
-  The user should enable the Data Catalog API in the project identified by
+  Users should enable the Data Catalog API in the project identified by
   the `tag_template.name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -2044,7 +2657,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplate.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_patch(
         connection,
         projects_id,
@@ -2098,9 +2712,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   Callers must have following Google IAM permission
     - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
@@ -2142,7 +2755,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_set_iam_policy(
         connection,
         projects_id,
@@ -2194,9 +2810,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     - Tag templates.
     - Entries.
     - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Cloud
-  Pub/Sub and any external Google Cloud Platform resources synced to Cloud
-  Data Catalog.
+  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
+  and any external Google Cloud Platform resources synced to Data Catalog.
 
   A caller is not required to have Google IAM permission to make this
   request.
@@ -2237,7 +2852,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_test_iam_permissions(
         connection,
         projects_id,
@@ -2286,18 +2902,18 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   Creates a field in a tag template. The user should enable the Data Catalog
   API in the project identified by the `parent` parameter (see
   [Data Catalog Resource
-  Project](/data-catalog/docs/concepts/resource-project) for more
-  information).
+  Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+  for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project this template is in. Example:
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location
+      [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
 
-      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+      Example:
 
-      Note that this TagTemplateField may not actually be stored in the location
-      in this name.
+      * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2335,7 +2951,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_fields_create(
         connection,
         projects_id,
@@ -2387,9 +3004,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
 
   @doc """
   Deletes a field in a tag template and all uses of that field.
-  The user should enable the Data Catalog API in the project identified by
+  Users should enable the Data Catalog API in the project identified by
   the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -2430,7 +3048,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_fields_delete(
         connection,
         projects_id,
@@ -2477,9 +3098,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
 
   @doc """
   Updates a field in a tag template. This method cannot be used to update the
-  field type. The user should enable the Data Catalog API in the project
+  field type. Users should enable the Data Catalog API in the project
   identified by the `name` parameter (see [Data Catalog Resource Project]
-  (/data-catalog/docs/concepts/resource-project) for more information).
+  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
+  more information).
 
   ## Parameters
 
@@ -2535,7 +3157,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_fields_patch(
         connection,
         projects_id,
@@ -2590,8 +3213,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @doc """
   Renames a field in a tag template. The user should enable the Data Catalog
   API in the project identified by the `name` parameter (see [Data Catalog
-  Resource Project](/data-catalog/docs/concepts/resource-project) for more
-  information).
+  Resource
+  Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
+  for more information).
 
   ## Parameters
 
@@ -2633,7 +3257,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_tag_templates_fields_rename(
         connection,
         projects_id,
@@ -2720,7 +3345,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_create(
         connection,
         projects_id,
@@ -2798,7 +3424,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_delete(
         connection,
         projects_id,
@@ -2882,7 +3511,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ExportTaxonomiesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_export(
         connection,
         projects_id,
@@ -2967,7 +3597,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_get(
         connection,
         projects_id,
@@ -3049,7 +3680,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_get_iam_policy(
         connection,
         projects_id,
@@ -3102,8 +3736,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of project that the newly created taxonomies will
-      belong to.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of project that the imported taxonomies will belong to.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3134,7 +3767,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ImportTaxonomiesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_import(
         connection,
         projects_id,
@@ -3222,7 +3856,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTaxonomiesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_list(
         connection,
         projects_id,
@@ -3310,7 +3945,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_patch(
         connection,
         projects_id,
@@ -3394,7 +4030,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_set_iam_policy(
         connection,
         projects_id,
@@ -3477,7 +4116,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_test_iam_permissions(
         connection,
         projects_id,
@@ -3560,7 +4200,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1PolicyTag.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_create(
         connection,
         projects_id,
@@ -3644,7 +4285,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_delete(
         connection,
         projects_id,
@@ -3727,7 +4371,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1PolicyTag.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_get(
         connection,
         projects_id,
@@ -3813,7 +4458,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_get_iam_policy(
         connection,
         projects_id,
@@ -3900,7 +4548,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         ) ::
           {:ok,
            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListPolicyTagsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_list(
         connection,
         projects_id,
@@ -3998,7 +4647,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1PolicyTag.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_patch(
         connection,
         projects_id,
@@ -4086,7 +4736,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DataCatalog.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_set_iam_policy(
         connection,
         projects_id,
@@ -4173,7 +4826,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.DataCatalog.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_test_iam_permissions(
         connection,
         projects_id,

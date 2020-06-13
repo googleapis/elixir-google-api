@@ -23,7 +23,7 @@ defmodule GoogleApi.Blogger.V3.Model.BlogUserInfo do
 
   *   `blog` (*type:* `GoogleApi.Blogger.V3.Model.Blog.t`, *default:* `nil`) - The Blog resource.
   *   `blog_user_info` (*type:* `GoogleApi.Blogger.V3.Model.BlogPerUserInfo.t`, *default:* `nil`) - Information about a User for the Blog.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#blogUserInfo`) - The kind of this entity. Always blogger#blogUserInfo
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entity. Always blogger#blogUserInfo.
   """
 
   use GoogleApi.Gax.ModelBase

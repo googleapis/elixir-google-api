@@ -40,6 +40,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
@@ -54,7 +55,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_copy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_copy(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -64,6 +65,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
@@ -100,6 +102,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
@@ -115,7 +118,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -125,6 +128,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
@@ -163,6 +167,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
@@ -183,7 +188,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_create_iodata(
         connection,
         upload_type,
@@ -200,6 +205,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
@@ -238,6 +244,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
@@ -253,7 +260,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_create_resumable(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_create_resumable(connection, upload_type, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -263,6 +270,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
@@ -302,6 +310,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. Requests that specify more than one parent fail.
       *   `:ignoreDefaultVisibility` (*type:* `boolean()`) - Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
@@ -322,7 +331,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_create_simple(
         connection,
         upload_type,
@@ -339,6 +348,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :enforceSingleParent => :query,
       :ignoreDefaultVisibility => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
@@ -387,7 +397,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_delete(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -437,7 +447,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_empty_trash(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_empty_trash(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -485,7 +495,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_export(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_export(connection, file_id, mime_type, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -536,7 +546,9 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_generate_ids(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.GeneratedIds.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.GeneratedIds.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def drive_files_generate_ids(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -588,7 +600,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_get(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -634,7 +646,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:corpora` (*type:* `String.t`) - Bodies of items (files/documents) to which the query applies. Supported bodies are 'user', 'domain', 'drive' and 'allDrives'. Prefer 'user' or 'drive' to 'allDrives' for efficiency.
       *   `:corpus` (*type:* `String.t`) - The source of files to list. Deprecated: use 'corpora' instead.
       *   `:driveId` (*type:* `String.t`) - ID of the shared drive to search.
-      *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Deprecated - Whether both My Drive and shared drive items should be included in results. This parameter will only be effective until June 1, 2020. Afterwards shared drive items will be included in the results.
+      *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Deprecated - Whether both My Drive and shared drive items should be included in results. This parameter will only be effective until June 1, 2020. Afterwards shared drive items are included in the results.
       *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated use includeItemsFromAllDrives instead.
       *   `:orderBy` (*type:* `String.t`) - A comma-separated list of sort keys. Valid keys are 'createdTime', 'folder', 'modifiedByMeTime', 'modifiedTime', 'name', 'name_natural', 'quotaBytesUsed', 'recency', 'sharedWithMeTime', 'starred', and 'viewedByMeTime'. Each key sorts ascending by default, but may be reversed with the 'desc' modifier. Example usage: ?orderBy=folder,modifiedTime desc,name. Please note that there is a current limitation for users with approximately one million files in which the requested sort order is ignored.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of files to return per page. Partial or empty result pages are possible even before the end of the files list has been reached.
@@ -652,7 +664,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.FileList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.FileList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -705,6 +717,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. If the item's owner makes a request to add a single parent, the item is removed from all current folders and placed in the requested folder. Other requests that increase the number of parents fail, except when the canAddMyDriveParent file capability is true and a single parent is being added.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
@@ -720,7 +733,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_update(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -731,6 +744,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :quotaUser => :query,
       :userIp => :query,
       :addParents => :query,
+      :enforceSingleParent => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :removeParents => :query,
@@ -773,6 +787,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. If the item's owner makes a request to add a single parent, the item is removed from all current folders and placed in the requested folder. Other requests that increase the number of parents fail, except when the canAddMyDriveParent file capability is true and a single parent is being added.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
@@ -794,7 +809,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_update_iodata(
         connection,
         file_id,
@@ -813,6 +828,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :quotaUser => :query,
       :userIp => :query,
       :addParents => :query,
+      :enforceSingleParent => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :removeParents => :query,
@@ -855,6 +871,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. If the item's owner makes a request to add a single parent, the item is removed from all current folders and placed in the requested folder. Other requests that increase the number of parents fail, except when the canAddMyDriveParent file capability is true and a single parent is being added.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
@@ -875,7 +892,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_update_resumable(
         connection,
         file_id,
@@ -892,6 +909,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :quotaUser => :query,
       :userIp => :query,
       :addParents => :query,
+      :enforceSingleParent => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :removeParents => :query,
@@ -935,6 +953,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:addParents` (*type:* `String.t`) - A comma-separated list of parent IDs to add.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. If the item's owner makes a request to add a single parent, the item is removed from all current folders and placed in the requested folder. Other requests that increase the number of parents fail, except when the canAddMyDriveParent file capability is true and a single parent is being added.
       *   `:keepRevisionForever` (*type:* `boolean()`) - Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.
       *   `:ocrLanguage` (*type:* `String.t`) - A language hint for OCR processing during image import (ISO 639-1 code).
       *   `:removeParents` (*type:* `String.t`) - A comma-separated list of parent IDs to remove.
@@ -956,7 +975,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_update_simple(
         connection,
         file_id,
@@ -975,6 +994,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       :quotaUser => :query,
       :userIp => :query,
       :addParents => :query,
+      :enforceSingleParent => :query,
       :keepRevisionForever => :query,
       :ocrLanguage => :query,
       :removeParents => :query,
@@ -1027,7 +1047,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   *   `{:error, info}` on failure
   """
   @spec drive_files_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Channel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_watch(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

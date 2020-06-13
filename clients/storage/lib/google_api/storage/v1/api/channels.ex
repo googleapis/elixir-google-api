@@ -48,7 +48,7 @@ defmodule GoogleApi.Storage.V1.Api.Channels do
   *   `{:error, info}` on failure
   """
   @spec storage_channels_stop(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_channels_stop(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

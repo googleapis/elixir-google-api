@@ -21,10 +21,15 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemShippingDetails do
 
   ## Attributes
 
-  *   `deliverByDate` (*type:* `String.t`, *default:* `nil`) - The delivery by date, in ISO 8601 format.
-  *   `method` (*type:* `GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod.t`, *default:* `nil`) - Details of the shipping method.
-  *   `shipByDate` (*type:* `String.t`, *default:* `nil`) - The ship by date, in ISO 8601 format.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of shipment. Indicates whether deliveryDetails or pickupDetails is applicable for this shipment.
+  *   `deliverByDate` (*type:* `String.t`, *default:* `nil`) - Required. The delivery by date, in ISO 8601 format.
+  *   `method` (*type:* `GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod.t`, *default:* `nil`) - Required. Details of the shipping method.
+  *   `pickupPromiseInMinutes` (*type:* `integer()`, *default:* `nil`) - The promised time in minutes in which the order will be ready for pickup. This only applies to buy-online-pickup-in-store same-day order.
+  *   `shipByDate` (*type:* `String.t`, *default:* `nil`) - Required. The ship by date, in ISO 8601 format.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of shipment. Indicates whether `deliveryDetails` or `pickupDetails` is applicable for this shipment.
+
+      Acceptable values are:  
+      - "`delivery`" 
+      - "`pickup`"
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +37,14 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemShippingDetails do
   @type t :: %__MODULE__{
           :deliverByDate => String.t(),
           :method => GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod.t(),
+          :pickupPromiseInMinutes => integer(),
           :shipByDate => String.t(),
           :type => String.t()
         }
 
   field(:deliverByDate)
   field(:method, as: GoogleApi.Content.V21.Model.OrderLineItemShippingDetailsMethod)
+  field(:pickupPromiseInMinutes)
   field(:shipByDate)
   field(:type)
 end

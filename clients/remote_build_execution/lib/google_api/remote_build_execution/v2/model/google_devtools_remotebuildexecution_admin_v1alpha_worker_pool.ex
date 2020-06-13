@@ -21,6 +21,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
 
   ## Attributes
 
+  *   `autoscale` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale.t`, *default:* `nil`) - The autoscale policy to apply on a pool.
+  *   `channel` (*type:* `String.t`, *default:* `nil`) - Channel specifies the release channel of the pool.
   *   `name` (*type:* `String.t`, *default:* `nil`) - WorkerPool resource name formatted as:
       `projects/[PROJECT_ID]/instances/[INSTANCE_ID]/workerpools/[POOL_ID]`.
       name should not be populated when creating a worker pool since it is
@@ -29,12 +31,15 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
   *   `workerConfig` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig.t`, *default:* `nil`) - Specifies the properties, such as machine type and disk size, used for
       creating workers in a worker pool.
   *   `workerCount` (*type:* `String.t`, *default:* `nil`) - The desired number of workers in the worker pool. Must be a value between
-      0 and 1000.
+      0 and 15000.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoscale =>
+            GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale.t(),
+          :channel => String.t(),
           :name => String.t(),
           :state => String.t(),
           :workerConfig =>
@@ -42,6 +47,12 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
           :workerCount => String.t()
         }
 
+  field(:autoscale,
+    as:
+      GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecutionAdminV1alphaAutoscale
+  )
+
+  field(:channel)
   field(:name)
   field(:state)
 

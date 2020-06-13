@@ -22,7 +22,9 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelTopicDetails do
   ## Attributes
 
   *   `topicCategories` (*type:* `list(String.t)`, *default:* `nil`) - A list of Wikipedia URLs that describe the channel's content.
-  *   `topicIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of Freebase topic IDs associated with the channel. You can retrieve information about each topic using the Freebase Topic API.
+  *   `topicIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of Freebase topic IDs associated with the channel. You can retrieve
+      information about each topic using the <a
+      href="http://wiki.freebase.com/wiki/Topic_API">Freebase Topic API</a>.
   """
 
   use GoogleApi.Gax.ModelBase

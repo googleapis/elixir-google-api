@@ -17,17 +17,18 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse do
   @moduledoc """
-  This is a JSON template for an achievement reset response.
+  An achievement reset response.
 
   ## Attributes
 
-  *   `currentState` (*type:* `String.t`, *default:* `nil`) - The current state of the achievement. This is the same as the initial state of the achievement.
-      Possible values are:  
-      - "HIDDEN"- Achievement is hidden. 
-      - "REVEALED" - Achievement is revealed. 
-      - "UNLOCKED" - Achievement is unlocked.
+  *   `currentState` (*type:* `String.t`, *default:* `nil`) - The current state of the achievement.  This is the same as the initial
+      state of the achievement. <br/>Possible values are: <ul>
+      <li>"`HIDDEN`"- Achievement is hidden.</li>
+      <li>"`REVEALED`" - Achievement is revealed.</li>
+      <li>"`UNLOCKED`" - Achievement is unlocked.</li> </ul>
   *   `definitionId` (*type:* `String.t`, *default:* `nil`) - The ID of an achievement for which player state has been updated.
-  *   `kind` (*type:* `String.t`, *default:* `gamesManagement#achievementResetResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesManagement#achievementResetResponse`.
   *   `updateOccurred` (*type:* `boolean()`, *default:* `nil`) - Flag to indicate if the requested update actually occurred.
   """
 

@@ -17,14 +17,17 @@
 
 defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportReason do
   @moduledoc """
-  A videoAbuseReportReason resource identifies a reason that a video could be reported as abusive. Video abuse report reasons are used with video.ReportAbuse.
+  A `__videoAbuseReportReason__` resource identifies a reason that a video
+  could be reported as abusive. Video abuse report reasons are used with
+  `video.ReportAbuse`.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this abuse report reason.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#videoAbuseReportReason`) - Identifies what kind of resource this is. Value: the fixed string "youtube#videoAbuseReportReason".
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the abuse report reason.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#videoAbuseReportReason`) - Identifies what kind of resource this is. Value: the fixed string
+      `"youtube#videoAbuseReportReason"`.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet.t`, *default:* `nil`) - The `snippet` object contains basic details about the abuse report reason.
   """
 
   use GoogleApi.Gax.ModelBase

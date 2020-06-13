@@ -56,7 +56,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_compose(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_compose(
         connection,
         destination_bucket,
@@ -114,6 +114,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:destinationKmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
       *   `:destinationPredefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to the destination object.
       *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the destination object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
       *   `:ifGenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the destination object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -143,7 +144,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_copy(
         connection,
         source_bucket,
@@ -161,6 +162,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :destinationKmsKeyName => :query,
       :destinationPredefinedAcl => :query,
       :ifGenerationMatch => :query,
       :ifGenerationNotMatch => :query,
@@ -228,7 +230,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_delete(connection, bucket, object, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -294,7 +296,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_get(connection, bucket, object, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -361,7 +363,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_get_iam_policy(
         connection,
         bucket,
@@ -432,7 +434,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_insert(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -514,7 +516,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_insert_iodata(
         connection,
         bucket,
@@ -603,7 +605,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_insert_resumable(
         connection,
         bucket,
@@ -692,7 +694,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_insert_simple(
         connection,
         bucket,
@@ -756,12 +758,14 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:delimiter` (*type:* `String.t`) - Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
+      *   `:endOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically before endOffset. If startOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:includeTrailingDelimiter` (*type:* `boolean()`) - If true, objects that end in exactly one instance of delimiter will have their metadata included in items in addition to prefixes.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
       *   `:prefix` (*type:* `String.t`) - Filter results to objects whose names begin with this prefix.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
+      *   `:startOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -772,7 +776,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Objects.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.Objects.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_list(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -783,12 +787,14 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :quotaUser => :query,
       :userIp => :query,
       :delimiter => :query,
+      :endOffset => :query,
       :includeTrailingDelimiter => :query,
       :maxResults => :query,
       :pageToken => :query,
       :prefix => :query,
       :projection => :query,
       :provisionalUserProject => :query,
+      :startOffset => :query,
       :userProject => :query,
       :versions => :query
     }
@@ -841,7 +847,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_patch(connection, bucket, object, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -928,7 +934,10 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.RewriteResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.RewriteResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storage_objects_rewrite(
         connection,
         source_bucket,
@@ -1018,7 +1027,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Storage.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_set_iam_policy(
         connection,
         bucket,
@@ -1091,7 +1100,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
           keyword()
         ) ::
           {:ok, GoogleApi.Storage.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storage_objects_test_iam_permissions(
         connection,
         bucket,
@@ -1163,7 +1173,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_update(connection, bucket, object, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1216,12 +1226,14 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:delimiter` (*type:* `String.t`) - Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
+      *   `:endOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically before endOffset. If startOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:includeTrailingDelimiter` (*type:* `boolean()`) - If true, objects that end in exactly one instance of delimiter will have their metadata included in items in addition to prefixes.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
       *   `:prefix` (*type:* `String.t`) - Filter results to objects whose names begin with this prefix.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
       *   `:provisionalUserProject` (*type:* `String.t`) - The project to be billed for this request if the target bucket is requester-pays bucket.
+      *   `:startOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
       *   `:resource` (*type:* `GoogleApi.Storage.V1.Model.Channel.t`) - 
@@ -1233,7 +1245,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:error, info}` on failure
   """
   @spec storage_objects_watch_all(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.Channel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_watch_all(connection, bucket, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1244,12 +1256,14 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :quotaUser => :query,
       :userIp => :query,
       :delimiter => :query,
+      :endOffset => :query,
       :includeTrailingDelimiter => :query,
       :maxResults => :query,
       :pageToken => :query,
       :prefix => :query,
       :projection => :query,
       :provisionalUserProject => :query,
+      :startOffset => :query,
       :userProject => :query,
       :versions => :query,
       :resource => :body

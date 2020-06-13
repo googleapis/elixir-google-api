@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListLocationsRespon
 
   ## Attributes
 
-  *   `locations` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Location.t)`, *default:* `nil`) - Locations where at least one type of CMLE capability is available.
+  *   `locations` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location.t)`, *default:* `nil`) - Locations where at least one type of CMLE capability is available.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a
       subsequent call.
   """
@@ -29,11 +29,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListLocationsRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :locations => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Location.t()),
+          :locations => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location.t()),
           :nextPageToken => String.t()
         }
 
-  field(:locations, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Location, type: :list)
+  field(:locations, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location, type: :list)
   field(:nextPageToken)
 end
 

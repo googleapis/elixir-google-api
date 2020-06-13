@@ -103,18 +103,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta do
   *   `generation` (*type:* `integer()`, *default:* `nil`) - A sequence number representing a specific generation of the desired state.
       Populated by the system. Read-only.
       +optional
-  *   `initializers` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Initializers.t`, *default:* `nil`) - Not currently supported by Cloud Run.
-
-      An initializer is a controller which enforces some system invariant at
-      object creation time. This field is a list of initializers that have not
-      yet acted on this object. If nil or empty, this object has been completely
-      initialized. Otherwise, the object is considered uninitialized and is
-      hidden (in list/watch and get calls) from clients that haven't explicitly
-      asked to observe uninitialized objects.
-
-      When an object is created, the system will populate this list with the
-      current set of initializers. Only privileged users may set or modify this
-      list. Once it is empty, it may not be modified further by any user.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Map of string keys and values that can be used to organize and categorize
       (scope and select) objects. May match selectors of replication controllers
       and routes.
@@ -172,7 +160,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta do
           :finalizers => list(String.t()),
           :generateName => String.t(),
           :generation => integer(),
-          :initializers => GoogleApi.CloudRun.V1alpha1.Model.Initializers.t(),
           :labels => map(),
           :name => String.t(),
           :namespace => String.t(),
@@ -190,7 +177,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta do
   field(:finalizers, type: :list)
   field(:generateName)
   field(:generation)
-  field(:initializers, as: GoogleApi.CloudRun.V1alpha1.Model.Initializers)
   field(:labels, type: :map)
   field(:name)
   field(:namespace)

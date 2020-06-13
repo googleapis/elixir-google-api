@@ -20,24 +20,29 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
   Conditions that determine which objects will be transferred. Applies only
   to S3 and Cloud Storage objects.
 
+  The "last modification time" refers to the time of the
+  last change to the object's content or metadata — specifically, this is
+  the `updated` property of Cloud Storage objects and the `LastModified`
+  field of S3 objects.
+
   ## Attributes
 
-  *   `excludePrefixes` (*type:* `list(String.t)`, *default:* `nil`) - `excludePrefixes` must follow the requirements described for
-      `includePrefixes`.
+  *   `excludePrefixes` (*type:* `list(String.t)`, *default:* `nil`) - `exclude_prefixes` must follow the requirements described for
+      include_prefixes.
 
-      The max size of `excludePrefixes` is 1000.
-  *   `includePrefixes` (*type:* `list(String.t)`, *default:* `nil`) - If `includePrefixes` is specified, objects that satisfy the object
-      conditions must have names that start with one of the `includePrefixes`
-      and that do not start with any of the `excludePrefixes`. If
-      `includePrefixes` is not specified, all objects except those that have
-      names starting with one of the `excludePrefixes` must satisfy the object
+      The max size of `exclude_prefixes` is 1000.
+  *   `includePrefixes` (*type:* `list(String.t)`, *default:* `nil`) - If `include_prefixes` is specified, objects that satisfy the object
+      conditions must have names that start with one of the `include_prefixes`
+      and that do not start with any of the exclude_prefixes. If
+      `include_prefixes` is not specified, all objects except those that have
+      names starting with one of the `exclude_prefixes` must satisfy the object
       conditions.
 
       Requirements:
 
         * Each include-prefix and exclude-prefix can contain any sequence of
-          Unicode characters, of max length 1024 bytes when UTF8-encoded, and
-          must not contain Carriage Return or Line Feed characters.  Wildcard
+          Unicode characters, to a max length of 1024 bytes when UTF8-encoded,
+          and must not contain Carriage Return or Line Feed characters.  Wildcard
           matching and regular expression matching are not supported.
 
         * Each include-prefix and exclude-prefix must omit the leading slash.
@@ -49,37 +54,46 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
           if specified.
 
         * Each include-prefix must include a distinct portion of the object
-          namespace, i.e., no include-prefix may be a prefix of another
+          namespace. No include-prefix may be a prefix of another
           include-prefix.
 
         * Each exclude-prefix must exclude a distinct portion of the object
-          namespace, i.e., no exclude-prefix may be a prefix of another
+          namespace. No exclude-prefix may be a prefix of another
           exclude-prefix.
 
-        * If `includePrefixes` is specified, then each exclude-prefix must start
-          with the value of a path explicitly included by `includePrefixes`.
+        * If `include_prefixes` is specified, then each exclude-prefix must start
+          with the value of a path explicitly included by `include_prefixes`.
 
-      The max size of `includePrefixes` is 1000.
-  *   `maxTimeElapsedSinceLastModification` (*type:* `String.t`, *default:* `nil`) - If specified, only objects with a `lastModificationTime` on or after
-      `NOW` - `maxTimeElapsedSinceLastModification` and objects that don't have
-      a `lastModificationTime` are transferred.
+      The max size of `include_prefixes` is 1000.
+  *   `lastModifiedBefore` (*type:* `DateTime.t`, *default:* `nil`) - If specified, only objects with a "last modification time" before this
+      timestamp and objects that don't have a "last modification time" will be
+      transferred.
+  *   `lastModifiedSince` (*type:* `DateTime.t`, *default:* `nil`) - If specified, only objects with a "last modification time" on or after
+      this timestamp and objects that don't have a "last modification time" are
+      transferred.
 
-      Note that, for each `TransferOperation` started by this `TransferJob`,
-      `NOW` refers to the `start_time` of the 'TransferOperation`. Also,
-      `lastModificationTime` refers to the time of the last change to the
-      object's content or metadata - specifically, this would be the `updated`
-      property of Cloud Storage objects and the `LastModified` field of S3
-      objects.
-  *   `minTimeElapsedSinceLastModification` (*type:* `String.t`, *default:* `nil`) - If specified, only objects with a `lastModificationTime` before
-      `NOW` - `minTimeElapsedSinceLastModification` and objects that don't have a
-      `lastModificationTime` are transferred.
+      The `last_modified_since` and `last_modified_before` fields can be used
+      together for chunked data processing. For example, consider a script that
+      processes each day's worth of data at a time. For that you'd set each
+      of the fields as follows:
 
-      Note that, for each `TransferOperation` started by this `TransferJob`,
-      `NOW` refers to the `start_time` of the 'TransferOperation`. Also,
-      `lastModificationTime` refers to the time of the last change to the
-      object's content or metadata - specifically, this would be the `updated`
-      property of Cloud Storage objects and the `LastModified` field of S3
-      objects.
+      *  `last_modified_since` to the start of the day
+
+      *  `last_modified_before` to the end of the day
+  *   `maxTimeElapsedSinceLastModification` (*type:* `String.t`, *default:* `nil`) - If specified, only objects with a "last modification time" on or after
+      `NOW` - `max_time_elapsed_since_last_modification` and objects that don't
+      have a "last modification time" are transferred.
+
+      For each TransferOperation started by this TransferJob,
+      `NOW` refers to the start_time of the
+      `TransferOperation`.
+  *   `minTimeElapsedSinceLastModification` (*type:* `String.t`, *default:* `nil`) - If specified, only objects with a "last modification time" before
+      `NOW` - `min_time_elapsed_since_last_modification` and objects that don't
+       have a "last modification time" are transferred.
+
+      For each TransferOperation started by this TransferJob, `NOW`
+      refers to the start_time of the
+      `TransferOperation`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -87,12 +101,16 @@ defmodule GoogleApi.StorageTransfer.V1.Model.ObjectConditions do
   @type t :: %__MODULE__{
           :excludePrefixes => list(String.t()),
           :includePrefixes => list(String.t()),
+          :lastModifiedBefore => DateTime.t(),
+          :lastModifiedSince => DateTime.t(),
           :maxTimeElapsedSinceLastModification => String.t(),
           :minTimeElapsedSinceLastModification => String.t()
         }
 
   field(:excludePrefixes, type: :list)
   field(:includePrefixes, type: :list)
+  field(:lastModifiedBefore, as: DateTime)
+  field(:lastModifiedSince, as: DateTime)
   field(:maxTimeElapsedSinceLastModification)
   field(:minTimeElapsedSinceLastModification)
 end

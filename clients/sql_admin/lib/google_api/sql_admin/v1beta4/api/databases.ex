@@ -46,9 +46,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of the database to delete.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/databases/{database}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -63,7 +60,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_delete(
         connection,
         project,
@@ -83,8 +83,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -128,9 +127,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - Name of the resource database.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/databases/{database}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -145,7 +141,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Database.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Database.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_get(
         connection,
         project,
@@ -165,8 +164,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -209,8 +207,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should add this database.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.Database.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -220,7 +216,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   *   `{:error, info}` on failure
   """
   @spec sql_databases_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_insert(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -234,7 +232,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -273,8 +270,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of databases.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -284,7 +279,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
   """
   @spec sql_databases_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.DatabasesListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_list(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -297,8 +293,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -340,9 +335,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of the database for Cloud SQL to update.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/databases/{database}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.Database.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -358,7 +350,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_patch(
         connection,
         project,
@@ -379,7 +374,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :resourceName => :query,
       :body => :body
     }
 
@@ -424,9 +418,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of the database for Cloud SQL to update.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/databases/{database}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.Database.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -442,7 +433,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_databases_update(
         connection,
         project,
@@ -463,7 +457,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Databases do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :resourceName => :query,
       :body => :body
     }
 

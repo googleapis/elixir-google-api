@@ -22,9 +22,9 @@ defmodule GoogleApi.Blogger.V3.Model.PageAuthor do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of the Page creator.
-  *   `image` (*type:* `GoogleApi.Blogger.V3.Model.PageAuthorImage.t`, *default:* `nil`) - The page author's avatar.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the Page creator's Profile page.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of the creator.
+  *   `image` (*type:* `GoogleApi.Blogger.V3.Model.PageAuthorImage.t`, *default:* `nil`) - The creator's avatar.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the creator's Profile page.
   """
 
   use GoogleApi.Gax.ModelBase

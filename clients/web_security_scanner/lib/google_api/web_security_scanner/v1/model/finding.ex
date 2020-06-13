@@ -27,7 +27,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Finding do
   *   `finalUrl` (*type:* `String.t`, *default:* `nil`) - Output only. The URL where the browser lands when the vulnerability is detected.
   *   `findingType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the Finding.
       Detailed and up-to-date information on findings can be found here:
-      https://cloud.google.com/security-scanner/docs/scan-result-details
+      https://cloud.google.com/security-command-center/docs/how-to-remediate-web-security-scanner-findings
   *   `form` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.Form.t`, *default:* `nil`) - Output only. An addon containing information reported for a vulnerability with an HTML
       form, if any.
   *   `frameUrl` (*type:* `String.t`, *default:* `nil`) - Output only. If the vulnerability was originated from nested IFrame, the immediate
@@ -42,6 +42,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Finding do
   *   `outdatedLibrary` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.OutdatedLibrary.t`, *default:* `nil`) - Output only. An addon containing information about outdated libraries.
   *   `reproductionUrl` (*type:* `String.t`, *default:* `nil`) - Output only. The URL containing human-readable payload that user can leverage to
       reproduce the vulnerability.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - Output only. The severity level of the reported vulnerability.
   *   `trackingId` (*type:* `String.t`, *default:* `nil`) - Output only. The tracking ID uniquely identifies a vulnerability instance across
       multiple ScanRuns.
   *   `violatingResource` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.ViolatingResource.t`, *default:* `nil`) - Output only. An addon containing detailed information regarding any resource causing the
@@ -66,6 +67,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Finding do
           :name => String.t(),
           :outdatedLibrary => GoogleApi.WebSecurityScanner.V1.Model.OutdatedLibrary.t(),
           :reproductionUrl => String.t(),
+          :severity => String.t(),
           :trackingId => String.t(),
           :violatingResource => GoogleApi.WebSecurityScanner.V1.Model.ViolatingResource.t(),
           :vulnerableHeaders => GoogleApi.WebSecurityScanner.V1.Model.VulnerableHeaders.t(),
@@ -84,6 +86,7 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.Finding do
   field(:name)
   field(:outdatedLibrary, as: GoogleApi.WebSecurityScanner.V1.Model.OutdatedLibrary)
   field(:reproductionUrl)
+  field(:severity)
   field(:trackingId)
   field(:violatingResource, as: GoogleApi.WebSecurityScanner.V1.Model.ViolatingResource)
   field(:vulnerableHeaders, as: GoogleApi.WebSecurityScanner.V1.Model.VulnerableHeaders)

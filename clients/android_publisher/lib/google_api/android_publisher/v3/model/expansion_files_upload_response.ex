@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ExpansionFilesUploadResponse do
   @moduledoc """
-
+  Response for uploading an expansion file.
 
   ## Attributes
 
-  *   `expansionFile` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t`, *default:* `nil`) - 
+  *   `expansionFile` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ExpansionFile.t`, *default:* `nil`) - The uploaded expansion file configuration.
   """
 
   use GoogleApi.Gax.ModelBase

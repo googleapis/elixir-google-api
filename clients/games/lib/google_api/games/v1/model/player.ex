@@ -26,12 +26,12 @@ defmodule GoogleApi.Games.V1.Model.Player do
   *   `bannerUrlPortrait` (*type:* `String.t`, *default:* `nil`) - The url to the portrait mode player banner image.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the player.
   *   `experienceInfo` (*type:* `GoogleApi.Games.V1.Model.PlayerExperienceInfo.t`, *default:* `nil`) - An object to represent Play Game experience information for the player.
+  *   `friendStatus` (*type:* `String.t`, *default:* `nil`) - The friend status of the given player, relative to the requester. This is unset if the player is not sharing their friends list with the game.
   *   `kind` (*type:* `String.t`, *default:* `games#player`) - Uniquely identifies the type of this resource. Value is always the fixed string games#player.
   *   `lastPlayedWith` (*type:* `GoogleApi.Games.V1.Model.Played.t`, *default:* `nil`) - Details about the last time this player played a multiplayer game with the currently authenticated player. Populated for PLAYED_WITH player collection members.
   *   `name` (*type:* `GoogleApi.Games.V1.Model.PlayerName.t`, *default:* `nil`) - An object representation of the individual components of the player's name. For some players, these fields may not be present.
   *   `originalPlayerId` (*type:* `String.t`, *default:* `nil`) - The player ID that was used for this player the first time they signed into the game in question. This is only populated for calls to player.get for the requesting player, only if the player ID has subsequently changed, and only to clients that support remapping player IDs.
   *   `playerId` (*type:* `String.t`, *default:* `nil`) - The ID of the player.
-  *   `playerStattus` (*type:* `String.t`, *default:* `nil`) - 
   *   `profileSettings` (*type:* `GoogleApi.Games.V1.Model.ProfileSettings.t`, *default:* `nil`) - The player's profile settings. Controls whether or not the player's profile is visible to other players.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The player's title rewarded for their game activities.
   """
@@ -44,12 +44,12 @@ defmodule GoogleApi.Games.V1.Model.Player do
           :bannerUrlPortrait => String.t(),
           :displayName => String.t(),
           :experienceInfo => GoogleApi.Games.V1.Model.PlayerExperienceInfo.t(),
+          :friendStatus => String.t(),
           :kind => String.t(),
           :lastPlayedWith => GoogleApi.Games.V1.Model.Played.t(),
           :name => GoogleApi.Games.V1.Model.PlayerName.t(),
           :originalPlayerId => String.t(),
           :playerId => String.t(),
-          :playerStattus => String.t(),
           :profileSettings => GoogleApi.Games.V1.Model.ProfileSettings.t(),
           :title => String.t()
         }
@@ -59,12 +59,12 @@ defmodule GoogleApi.Games.V1.Model.Player do
   field(:bannerUrlPortrait)
   field(:displayName)
   field(:experienceInfo, as: GoogleApi.Games.V1.Model.PlayerExperienceInfo)
+  field(:friendStatus)
   field(:kind)
   field(:lastPlayedWith, as: GoogleApi.Games.V1.Model.Played)
   field(:name, as: GoogleApi.Games.V1.Model.PlayerName)
   field(:originalPlayerId)
   field(:playerId)
-  field(:playerStattus)
   field(:profileSettings, as: GoogleApi.Games.V1.Model.ProfileSettings)
   field(:title)
 end

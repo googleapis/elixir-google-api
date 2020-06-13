@@ -23,6 +23,11 @@ defmodule GoogleApi.Content.V21.Model.OrderLineItemProduct do
 
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition or state of the item.
+
+      Acceptable values are:  
+      - "`new`" 
+      - "`refurbished`" 
+      - "`used`"
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language code for the item.
   *   `fees` (*type:* `list(GoogleApi.Content.V21.Model.OrderLineItemProductFee.t)`, *default:* `nil`) - Associated fees at order creation time.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item.

@@ -55,7 +55,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
   """
   @spec androiddeviceprovisioning_customers_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListCustomersResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -124,7 +125,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_configurations_create(
         connection,
         parent,
@@ -197,7 +199,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_configurations_delete(
         connection,
         name,
@@ -266,7 +270,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_configurations_get(
         connection,
         name,
@@ -338,7 +343,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
         ) ::
           {:ok,
            GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListConfigurationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_configurations_list(
         connection,
         parent,
@@ -419,7 +425,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_configurations_patch(
         connection,
         name,
@@ -494,7 +501,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_devices_apply_configuration(
         connection,
         parent,
@@ -563,7 +572,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Device.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_devices_get(
         connection,
         name,
@@ -635,7 +646,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDevicesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_devices_list(
         connection,
         parent,
@@ -709,7 +721,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_devices_remove_configuration(
         connection,
         parent,
@@ -783,7 +797,9 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_devices_unclaim(
         connection,
         parent,
@@ -854,7 +870,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidDeviceProvisioning.V1.Model.CustomerListDpcsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androiddeviceprovisioning_customers_dpcs_list(
         connection,
         parent,

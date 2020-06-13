@@ -27,7 +27,7 @@ defmodule GoogleApi.IAP.V1.Model.Brand do
       NOTE: GCP project number achieves the same brand identification purpose as
       only one brand per project can be created.
   *   `orgInternalOnly` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the brand is only intended for usage inside the
-      GSuite organization only.
+      G Suite organization only.
   *   `supportEmail` (*type:* `String.t`, *default:* `nil`) - Support email displayed on the OAuth consent screen.
   """
 

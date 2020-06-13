@@ -18,7 +18,7 @@
 defmodule GoogleApi.SearchConsole.Mixfile do
   use Mix.Project
 
-  @version "0.8.0"
+  @version "0.10.2"
 
   def project() do
     [

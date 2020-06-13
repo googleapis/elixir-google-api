@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.Errors do
 
   ## Attributes
 
-  *   `code` (*type:* `integer()`, *default:* `nil`) - The HTTP status of the first error in errors.
+  *   `code` (*type:* `integer()`, *default:* `nil`) - The HTTP status of the first error in `errors`.
   *   `errors` (*type:* `list(GoogleApi.Content.V2.Model.Error.t)`, *default:* `nil`) - A list of errors.
-  *   `message` (*type:* `String.t`, *default:* `nil`) - The message of the first error in errors.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - The message of the first error in `errors`.
   """
 
   use GoogleApi.Gax.ModelBase

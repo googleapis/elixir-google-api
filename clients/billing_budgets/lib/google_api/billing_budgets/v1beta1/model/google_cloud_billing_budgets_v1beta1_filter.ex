@@ -22,7 +22,11 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   ## Attributes
 
   *   `creditTypesTreatment` (*type:* `String.t`, *default:* `nil`) - Optional. If not set, default behavior is `INCLUDE_ALL_CREDITS`.
-  *   `projects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of projects of the form `projects/{project_id}`,
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A single label and value pair specifying that usage from only this set of
+      labeled resources should be included in the budget. Multiple entries or
+      multiple values per entry are not allowed. If omitted, the report will
+      include all labeled and unlabeled usage.
+  *   `projects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of projects of the form `projects/{project}`,
       specifying that usage from only this set of projects should be
       included in the budget. If omitted, the report will include all usage for
       the billing account, regardless of which project the usage occurred on.
@@ -33,19 +37,28 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
       all the services.
       The service names are available through the Catalog API:
       https://cloud.google.com/billing/v1/how-tos/catalog-api.
+  *   `subaccounts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+      that usage from only this set of subaccounts should be included in the
+      budget. If a subaccount is set to the name of the master account, usage
+      from the master account will be included. If omitted, the report will
+      include usage from the master account and all subaccounts, if they exist.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :creditTypesTreatment => String.t(),
+          :labels => map(),
           :projects => list(String.t()),
-          :services => list(String.t())
+          :services => list(String.t()),
+          :subaccounts => list(String.t())
         }
 
   field(:creditTypesTreatment)
+  field(:labels, type: :map)
   field(:projects, type: :list)
   field(:services, type: :list)
+  field(:subaccounts, type: :list)
 end
 
 defimpl Poison.Decoder,

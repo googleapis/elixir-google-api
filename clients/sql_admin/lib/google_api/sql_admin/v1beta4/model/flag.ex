@@ -21,6 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
 
   ## Attributes
 
+  *   `allowedIntValues` (*type:* `list(String.t)`, *default:* `nil`) - Use this field if only certain integers are accepted. Can be combined
+      with min_value and max_value to add additional values.
   *   `allowedStringValues` (*type:* `list(String.t)`, *default:* `nil`) - For <code>STRING</code> flags, a list of strings that the value can be set
       to.
   *   `appliesTo` (*type:* `list(String.t)`, *default:* `nil`) - The database version this flag applies to. Can be <code>MYSQL_5_5</code>,
@@ -43,6 +45,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allowedIntValues => list(String.t()),
           :allowedStringValues => list(String.t()),
           :appliesTo => list(String.t()),
           :inBeta => boolean(),
@@ -54,6 +57,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
           :type => String.t()
         }
 
+  field(:allowedIntValues, type: :list)
   field(:allowedStringValues, type: :list)
   field(:appliesTo, type: :list)
   field(:inBeta)

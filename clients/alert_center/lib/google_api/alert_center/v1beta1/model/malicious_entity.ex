@@ -22,6 +22,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The header from display name.
+  *   `entity` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.User.t`, *default:* `nil`) - The actor who triggered a gmail phishing alert.
   *   `fromHeader` (*type:* `String.t`, *default:* `nil`) - The sender email address.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.MaliciousEntity do
 
   @type t :: %__MODULE__{
           :displayName => String.t(),
+          :entity => GoogleApi.AlertCenter.V1beta1.Model.User.t(),
           :fromHeader => String.t()
         }
 
   field(:displayName)
+  field(:entity, as: GoogleApi.AlertCenter.V1beta1.Model.User)
   field(:fromHeader)
 end
 

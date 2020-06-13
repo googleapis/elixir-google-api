@@ -19,7 +19,11 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   @moduledoc """
   Represents a Health Check resource.
 
-  Health checks are used for most GCP load balancers and managed instance group auto-healing. For more information, read Health Check Concepts.
+  Google Compute Engine has two Health Check resources:
+
+  * [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) * [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
+
+  Internal HTTP(S) load balancers use regional health checks. All other types of GCP load balancers and managed instance group auto-healing use global health checks. For more information, read Health Check Concepts.
 
   To perform health checks on network load balancers, you must use either httpHealthChecks or httpsHealthChecks.
 

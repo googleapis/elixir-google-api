@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceMetadata do
   @moduledoc """
-
+  Characteristics of the user's device.
 
   ## Attributes
 
-  *   `cpuMake` (*type:* `String.t`, *default:* `nil`) - Device CPU make e.g. "Qualcomm"
-  *   `cpuModel` (*type:* `String.t`, *default:* `nil`) - Device CPU model e.g. "MSM8974"
+  *   `cpuMake` (*type:* `String.t`, *default:* `nil`) - Device CPU make, e.g. "Qualcomm"
+  *   `cpuModel` (*type:* `String.t`, *default:* `nil`) - Device CPU model, e.g. "MSM8974"
   *   `deviceClass` (*type:* `String.t`, *default:* `nil`) - Device class (e.g. tablet)
   *   `glEsVersion` (*type:* `integer()`, *default:* `nil`) - OpenGL version
   *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - Device manufacturer (e.g. Motorola)
   *   `nativePlatform` (*type:* `String.t`, *default:* `nil`) - Comma separated list of native platforms (e.g. "arm", "arm7")
   *   `productName` (*type:* `String.t`, *default:* `nil`) - Device model name (e.g. Droid)
-  *   `ramMb` (*type:* `integer()`, *default:* `nil`) - Device RAM in Megabytes e.g. "2048"
+  *   `ramMb` (*type:* `integer()`, *default:* `nil`) - Device RAM in Megabytes, e.g. "2048"
   *   `screenDensityDpi` (*type:* `integer()`, *default:* `nil`) - Screen density in DPI
   *   `screenHeightPx` (*type:* `integer()`, *default:* `nil`) - Screen height in pixels
   *   `screenWidthPx` (*type:* `integer()`, *default:* `nil`) - Screen width in pixels

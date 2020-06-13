@@ -58,7 +58,7 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def licensing_license_assignments_delete(
         connection,
         product_id,
@@ -126,7 +126,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def licensing_license_assignments_get(
         connection,
         product_id,
@@ -191,7 +194,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def licensing_license_assignments_insert(
         connection,
         product_id,
@@ -258,7 +264,9 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignmentList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignmentList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def licensing_license_assignments_list_for_product(
         connection,
         product_id,
@@ -328,7 +336,9 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignmentList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignmentList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def licensing_license_assignments_list_for_product_and_sku(
         connection,
         product_id,
@@ -399,7 +409,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def licensing_license_assignments_patch(
         connection,
         product_id,
@@ -469,7 +482,10 @@ defmodule GoogleApi.Licensing.V1.Api.LicenseAssignments do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Licensing.V1.Model.LicenseAssignment.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def licensing_license_assignments_update(
         connection,
         product_id,

@@ -23,7 +23,7 @@ defmodule GoogleApi.Blogger.V3.Model.PageList do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the response.
   *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.Page.t)`, *default:* `nil`) - The list of Pages for a Blog.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#pageList`) - The kind of this entity. Always blogger#pageList
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entity. Always blogger#pageList.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the next page, if one exists.
   """
 

@@ -49,7 +49,7 @@ defmodule GoogleApi.Games.V1.Api.Leaderboards do
   *   `{:error, info}` on failure
   """
   @spec games_leaderboards_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Leaderboard.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.Leaderboard.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_leaderboards_get(connection, leaderboard_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -101,7 +101,9 @@ defmodule GoogleApi.Games.V1.Api.Leaderboards do
   *   `{:error, info}` on failure
   """
   @spec games_leaderboards_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.LeaderboardListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.LeaderboardListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_leaderboards_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

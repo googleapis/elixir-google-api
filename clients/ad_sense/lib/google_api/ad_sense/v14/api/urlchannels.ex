@@ -50,7 +50,9 @@ defmodule GoogleApi.AdSense.V14.Api.Urlchannels do
   *   `{:error, info}` on failure
   """
   @spec adsense_urlchannels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.UrlChannels.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.UrlChannels.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_urlchannels_list(connection, ad_client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

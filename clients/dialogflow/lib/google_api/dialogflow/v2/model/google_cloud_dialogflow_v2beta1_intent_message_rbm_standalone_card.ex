@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
   with media and suggestions.
 
   For more details about RBM rich cards, please see:
-  https://developers.google.com/rcs-business-messaging/rbm/guides/build/send-messages#rich-cards.
+  https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send#rich-cards
   You can group multiple rich cards into one using RbmCarouselCard but
   carousel cards will give you less control over the card layout.
 

@@ -28,12 +28,14 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelSettings do
   *   `featuredChannelsTitle` (*type:* `String.t`, *default:* `nil`) - Title for the featured channels tab.
   *   `featuredChannelsUrls` (*type:* `list(String.t)`, *default:* `nil`) - The list of featured channels.
   *   `keywords` (*type:* `String.t`, *default:* `nil`) - Lists keywords associated with the channel, comma-separated.
-  *   `moderateComments` (*type:* `boolean()`, *default:* `nil`) - Whether user-submitted comments left on the channel page need to be approved by the channel owner to be publicly visible.
+  *   `moderateComments` (*type:* `boolean()`, *default:* `nil`) - Whether user-submitted comments left on the channel page need to be
+      approved by the channel owner to be publicly visible.
   *   `profileColor` (*type:* `String.t`, *default:* `nil`) - A prominent color that can be rendered on this channel page.
   *   `showBrowseView` (*type:* `boolean()`, *default:* `nil`) - Whether the tab to browse the videos should be displayed.
   *   `showRelatedChannels` (*type:* `boolean()`, *default:* `nil`) - Whether related channels should be proposed.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Specifies the channel title.
-  *   `trackingAnalyticsAccountId` (*type:* `String.t`, *default:* `nil`) - The ID for a Google Analytics account to track and measure traffic to the channels.
+  *   `trackingAnalyticsAccountId` (*type:* `String.t`, *default:* `nil`) - The ID for a Google Analytics account to track and measure traffic to the
+      channels.
   *   `unsubscribedTrailer` (*type:* `String.t`, *default:* `nil`) - The trailer of the channel, for users that are not subscribers.
   """
 

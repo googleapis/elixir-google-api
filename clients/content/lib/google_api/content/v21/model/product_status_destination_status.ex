@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.ProductStatusDestinationStatus do
   ## Attributes
 
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination
-  *   `status` (*type:* `String.t`, *default:* `nil`) - 
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Destination approval status in targetCountry of the offer.
   """
 
   use GoogleApi.Gax.ModelBase

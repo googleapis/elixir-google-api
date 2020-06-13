@@ -28,6 +28,8 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
   @doc """
   Sends new spans to new or existing traces. You cannot update
   existing spans.
+  In this case, writing traces is not considered an active developer
+  method since traces are machine generated.
 
   ## Parameters
 
@@ -59,7 +61,8 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTrace.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTrace.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtrace_projects_traces_batch_write(
         connection,
         projects_id,
@@ -97,6 +100,8 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
 
   @doc """
   Creates a new span.
+  In this case, writing traces is not considered an active developer
+  method since traces are machine generated.
 
   ## Parameters
 
@@ -137,7 +142,8 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTrace.V2.Model.Span.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTrace.V2.Model.Span.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtrace_projects_traces_spans_create_span(
         connection,
         projects_id,

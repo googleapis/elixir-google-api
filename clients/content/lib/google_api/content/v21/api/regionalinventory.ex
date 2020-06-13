@@ -49,7 +49,8 @@ defmodule GoogleApi.Content.V21.Api.Regionalinventory do
   """
   @spec content_regionalinventory_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.RegionalinventoryCustomBatchResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_regionalinventory_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -106,7 +107,10 @@ defmodule GoogleApi.Content.V21.Api.Regionalinventory do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Content.V21.Model.RegionalInventory.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Content.V21.Model.RegionalInventory.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_regionalinventory_insert(
         connection,
         merchant_id,

@@ -26,12 +26,12 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a new Policy
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
+  *   `project` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -40,7 +40,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
       *   `:body` (*type:* `GoogleApi.DNS.V1.Model.Policy.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -50,7 +50,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   *   `{:error, info}` on failure
   """
   @spec dns_policies_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_policies_create(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -79,13 +79,13 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Delete a previously created Policy. Will fail if the policy is still being referenced by a network.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `policy` (*type:* `String.t`) - User given friendly name of the policy addressed by this request.
+  *   `project` (*type:* `String.t`) - 
+  *   `policy` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -94,7 +94,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -103,7 +103,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   *   `{:error, info}` on failure
   """
   @spec dns_policies_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_policies_delete(connection, project, policy, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -132,13 +132,13 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Fetch the representation of an existing Policy.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `policy` (*type:* `String.t`) - User given friendly name of the policy addressed by this request.
+  *   `project` (*type:* `String.t`) - 
+  *   `policy` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -147,7 +147,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -156,7 +156,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   *   `{:error, info}` on failure
   """
   @spec dns_policies_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_policies_get(connection, project, policy, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -185,12 +185,12 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Enumerate all Policies associated with a project.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
+  *   `project` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -199,8 +199,8 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:pageToken` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -209,7 +209,9 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   *   `{:error, info}` on failure
   """
   @spec dns_policies_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.PoliciesListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.PoliciesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dns_policies_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -238,13 +240,13 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Apply a partial update to an existing Policy.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `policy` (*type:* `String.t`) - User given friendly name of the policy addressed by this request.
+  *   `project` (*type:* `String.t`) - 
+  *   `policy` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -253,7 +255,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
       *   `:body` (*type:* `GoogleApi.DNS.V1.Model.Policy.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -263,7 +265,9 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   *   `{:error, info}` on failure
   """
   @spec dns_policies_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.PoliciesPatchResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.PoliciesPatchResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dns_policies_patch(connection, project, policy, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -293,13 +297,13 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   end
 
   @doc """
-  Update an existing Policy.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `policy` (*type:* `String.t`) - User given friendly name of the policy addressed by this request.
+  *   `project` (*type:* `String.t`) - 
+  *   `policy` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -308,7 +312,7 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
       *   `:body` (*type:* `GoogleApi.DNS.V1.Model.Policy.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -318,7 +322,9 @@ defmodule GoogleApi.DNS.V1.Api.Policies do
   *   `{:error, info}` on failure
   """
   @spec dns_policies_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.PoliciesUpdateResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.PoliciesUpdateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dns_policies_update(connection, project, policy, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

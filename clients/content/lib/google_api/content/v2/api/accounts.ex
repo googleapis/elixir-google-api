@@ -47,7 +47,9 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_authinfo(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.AccountsAuthInfoResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.AccountsAuthInfoResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accounts_authinfo(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -77,7 +79,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account whose website is claimed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -87,7 +89,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:overwrite` (*type:* `boolean()`) - Only available to selected merchants. When set to True, this flag removes any existing claim on the requested website by another account and replaces it with a claim from this account.
+      *   `:overwrite` (*type:* `boolean()`) - Only available to selected merchants. When set to `True`, this flag removes any existing claim on the requested website by another account and replaces it with a claim from this account.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -103,7 +105,8 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.AccountsClaimWebsiteResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accounts_claimwebsite(
         connection,
         merchant_id,
@@ -164,7 +167,8 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   """
   @spec content_accounts_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.AccountsCustomBatchResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accounts_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -218,7 +222,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def content_accounts_delete(
         connection,
         merchant_id,
@@ -259,7 +263,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -277,7 +281,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.Account.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def content_accounts_get(connection, merchant_id, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -329,7 +333,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.Account.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def content_accounts_insert(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -363,7 +367,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account that should be linked.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -382,7 +386,9 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_link(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.AccountsLinkResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.AccountsLinkResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accounts_link(
         connection,
         merchant_id,
@@ -441,7 +447,9 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.AccountsListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.AccountsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accounts_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -475,7 +483,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -495,7 +503,7 @@ defmodule GoogleApi.Content.V2.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec content_accounts_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.Account.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def content_accounts_update(
         connection,
         merchant_id,

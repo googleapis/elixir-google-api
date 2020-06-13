@@ -17,23 +17,19 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfigurationsForDeviceListResponse do
   @moduledoc """
-  The managed configuration resources for the device.
+
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfigurationsForDeviceListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#managedConfigurationsForDeviceListResponse".
   *   `managedConfigurationForDevice` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t)`, *default:* `nil`) - A managed configuration for an app on a specific device.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :managedConfigurationForDevice =>
             list(GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration.t())
         }
-
-  field(:kind)
 
   field(:managedConfigurationForDevice,
     as: GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration,

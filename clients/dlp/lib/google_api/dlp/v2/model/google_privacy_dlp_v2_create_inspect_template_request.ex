@@ -21,9 +21,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CreateInspectTemplateRequest 
 
   ## Attributes
 
-  *   `inspectTemplate` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t`, *default:* `nil`) - The InspectTemplate to create.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to store the inspection template. Reserved for
-      future extensions.
+  *   `inspectTemplate` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t`, *default:* `nil`) - Required. The InspectTemplate to create.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   *   `templateId` (*type:* `String.t`, *default:* `nil`) - The template id can contain uppercase and lowercase letters,
       numbers, and hyphens; that is, it must match the regular
       expression: `[a-zA-Z\\\\d-_]+`. The maximum length is 100

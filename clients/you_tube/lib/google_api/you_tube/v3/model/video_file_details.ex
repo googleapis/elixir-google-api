@@ -17,22 +17,35 @@
 
 defmodule GoogleApi.YouTube.V3.Model.VideoFileDetails do
   @moduledoc """
-  Describes original video file properties, including technical details about audio and video streams, but also metadata information like content length, digitization time, or geotagging information.
+  Describes original video file properties, including technical details about
+  audio and video streams, but also metadata information like content length,
+  digitization time, or geotagging information.
 
   ## Attributes
 
-  *   `audioStreams` (*type:* `list(GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream.t)`, *default:* `nil`) - A list of audio streams contained in the uploaded video file. Each item in the list contains detailed metadata about an audio stream.
-  *   `bitrateBps` (*type:* `String.t`, *default:* `nil`) - The uploaded video file's combined (video and audio) bitrate in bits per second.
+  *   `audioStreams` (*type:* `list(GoogleApi.YouTube.V3.Model.VideoFileDetailsAudioStream.t)`, *default:* `nil`) - A list of audio streams contained in the uploaded video file. Each item
+      in the list contains detailed metadata about an audio stream.
+  *   `bitrateBps` (*type:* `String.t`, *default:* `nil`) - The uploaded video file's combined (video and audio) bitrate in bits
+      per second.
   *   `container` (*type:* `String.t`, *default:* `nil`) - The uploaded video file's container format.
-  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - The date and time when the uploaded video file was created. The value is specified in ISO 8601 format. Currently, the following ISO 8601 formats are supported:  
-      - Date only: YYYY-MM-DD 
-      - Naive time: YYYY-MM-DDTHH:MM:SS 
-      - Time with timezone: YYYY-MM-DDTHH:MM:SS+HH:MM
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - The date and time when the uploaded video file was created. The value is
+      specified in <a href="http://www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format. Currently, the following ISO 8601 formats are supported:
+      <ul>
+      <li>Date only: <code>YYYY-MM-DD</code></li>
+      <li>Naive time: <code>YYYY-MM-DDTHH:MM:SS</code></li>
+      <li>Time with timezone: <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code></li>
+      </ul>
   *   `durationMs` (*type:* `String.t`, *default:* `nil`) - The length of the uploaded video in milliseconds.
-  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The uploaded file's name. This field is present whether a video file or another type of file was uploaded.
-  *   `fileSize` (*type:* `String.t`, *default:* `nil`) - The uploaded file's size in bytes. This field is present whether a video file or another type of file was uploaded.
-  *   `fileType` (*type:* `String.t`, *default:* `nil`) - The uploaded file's type as detected by YouTube's video processing engine. Currently, YouTube only processes video files, but this field is present whether a video file or another type of file was uploaded.
-  *   `videoStreams` (*type:* `list(GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream.t)`, *default:* `nil`) - A list of video streams contained in the uploaded video file. Each item in the list contains detailed metadata about a video stream.
+  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The uploaded file's name. This field is present whether a video file or
+      another type of file was uploaded.
+  *   `fileSize` (*type:* `String.t`, *default:* `nil`) - The uploaded file's size in bytes. This field is present whether
+      a video file or another type of file was uploaded.
+  *   `fileType` (*type:* `String.t`, *default:* `nil`) - The uploaded file's type as detected by YouTube's video processing
+      engine. Currently, YouTube only processes video files, but this field
+      is present whether a video file or another type of file was uploaded.
+  *   `videoStreams` (*type:* `list(GoogleApi.YouTube.V3.Model.VideoFileDetailsVideoStream.t)`, *default:* `nil`) - A list of video streams contained in the uploaded video file. Each item
+      in the list contains detailed metadata about a video stream.
   """
 
   use GoogleApi.Gax.ModelBase

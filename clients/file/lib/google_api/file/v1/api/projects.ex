@@ -34,12 +34,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - Resource name for the location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -52,16 +50,14 @@ defmodule GoogleApi.File.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec file_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.File.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.File.V1.Model.Location.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def file_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -91,17 +87,17 @@ defmodule GoogleApi.File.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:includeUnrevealedLocations` (*type:* `boolean()`) - If true, the returned list will include locations which are not yet
+          revealed.
       *   `:pageSize` (*type:* `integer()`) - The standard list page size.
       *   `:pageToken` (*type:* `String.t`) - The standard list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -112,21 +108,22 @@ defmodule GoogleApi.File.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec file_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.File.V1.Model.ListLocationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.File.V1.Model.ListLocationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def file_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :includeUnrevealedLocations => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -151,22 +148,20 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The instance's project and location, in the format
+  *   `parent` (*type:* `String.t`) - Required. The instance's project and location, in the format
       projects/{project_id}/locations/{location}. In Cloud Filestore,
       locations map to GCP zones, for example **us-west1-b**.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:instanceId` (*type:* `String.t`) - The name of the instance to create.
+      *   `:instanceId` (*type:* `String.t`) - Required. The name of the instance to create.
           The name must be unique for the specified project and location.
       *   `:body` (*type:* `GoogleApi.File.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -181,7 +176,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.File.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.File.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def file_projects_locations_instances_create(
         connection,
         parent,
@@ -190,12 +185,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -224,16 +217,14 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The instance resource name, in the format
+  *   `name` (*type:* `String.t`) - Required. The instance resource name, in the format
       projects/{project_id}/locations/{location}/instances/{instance_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -250,7 +241,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.File.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.File.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def file_projects_locations_instances_delete(
         connection,
         name,
@@ -259,12 +250,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -291,16 +280,14 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The instance resource name, in the format
+  *   `name` (*type:* `String.t`) - Required. The instance resource name, in the format
       projects/{project_id}/locations/{location}/instances/{instance_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -317,16 +304,14 @@ defmodule GoogleApi.File.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.File.V1.Model.Instance.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.File.V1.Model.Instance.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def file_projects_locations_instances_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -354,19 +339,17 @@ defmodule GoogleApi.File.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The project and location for which to retrieve instance information,
+  *   `parent` (*type:* `String.t`) - Required. The project and location for which to retrieve instance information,
       in the format projects/{project_id}/locations/{location}. In Cloud
       Filestore, locations map to GCP zones, for example **us-west1-b**. To
       retrieve instance information for all locations, use "-" for the {location}
       value.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -388,7 +371,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.File.V1.Model.ListInstancesResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.File.V1.Model.ListInstancesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def file_projects_locations_instances_list(
         connection,
         parent,
@@ -397,12 +383,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -434,15 +418,13 @@ defmodule GoogleApi.File.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.File.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Output only. The resource name of the instance, in the format
-      projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+      projects/{project}/locations/{location}/instances/{instance}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -450,9 +432,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
       *   `:updateMask` (*type:* `String.t`) - Mask of fields to update.  At least one path must be supplied in this
           field.  The elements of the repeated paths field may only include these
           fields:
-          "description"
-          "file_shares"
-          "labels"
+
+          * "description"
+          * "file_shares"
+          * "labels"
       *   `:body` (*type:* `GoogleApi.File.V1.Model.Instance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -466,16 +449,14 @@ defmodule GoogleApi.File.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.File.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.File.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def file_projects_locations_instances_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -516,12 +497,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -539,7 +518,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.File.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.File.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def file_projects_locations_operations_cancel(
         connection,
         name,
@@ -548,12 +527,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -587,12 +564,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -609,7 +584,7 @@ defmodule GoogleApi.File.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.File.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.File.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def file_projects_locations_operations_delete(
         connection,
         name,
@@ -618,12 +593,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -655,12 +628,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -677,16 +648,14 @@ defmodule GoogleApi.File.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.File.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.File.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def file_projects_locations_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -725,12 +694,10 @@ defmodule GoogleApi.File.V1.Api.Projects do
   *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -750,16 +717,17 @@ defmodule GoogleApi.File.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.File.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.File.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def file_projects_locations_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,

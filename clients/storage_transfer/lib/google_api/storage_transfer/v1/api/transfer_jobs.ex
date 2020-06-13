@@ -52,7 +52,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   *   `{:error, info}` on failure
   """
   @spec storagetransfer_transfer_jobs_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_transfer_jobs_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -110,7 +112,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   *   `{:error, info}` on failure
   """
   @spec storagetransfer_transfer_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_transfer_jobs_get(connection, job_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -160,13 +164,16 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Required. A list of query parameters specified as JSON text in the form of:
-          {"project_id":"my_project_id",
+          {"project<span>_</span>id":"my_project_id",
            "job_names":["jobid1","jobid2",...],
            "job_statuses":["status1","status2",...]}.
           Since `job_names` and `job_statuses` support multiple values, their values
-          must be specified with array notation. `project_id` is required.
-          `job_names` and `job_statuses` are optional.  The valid values for
-          `job_statuses` are case-insensitive: `ENABLED`, `DISABLED`, and `DELETED`.
+          must be specified with array notation. `project`<span>`_`</span>`id` is
+          required.  `job_names` and `job_statuses` are optional.  The valid values
+          for `job_statuses` are case-insensitive:
+          ENABLED,
+          DISABLED, and
+          DELETED.
       *   `:pageSize` (*type:* `integer()`) - The list page size. The max allowed value is 256.
       *   `:pageToken` (*type:* `String.t`) - The list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -178,7 +185,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   """
   @spec storagetransfer_transfer_jobs_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.ListTransferJobsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_transfer_jobs_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -216,8 +224,11 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   transfer operations that are running already. Updating a job's schedule
   is not allowed.
 
-  Note: The job's `status` field can be modified using this RPC (for example,
-  to set a job's status to `DELETED`, `DISABLED`, or `ENABLED`).
+  **Note:** The job's status field can be modified
+  using this RPC (for example, to set a job's status to
+  DELETED,
+  DISABLED, or
+  ENABLED).
 
   ## Parameters
 
@@ -244,7 +255,9 @@ defmodule GoogleApi.StorageTransfer.V1.Api.TransferJobs do
   *   `{:error, info}` on failure
   """
   @spec storagetransfer_transfer_jobs_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.StorageTransfer.V1.Model.TransferJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_transfer_jobs_patch(connection, job_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

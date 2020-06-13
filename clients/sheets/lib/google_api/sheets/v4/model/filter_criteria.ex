@@ -26,12 +26,17 @@ defmodule GoogleApi.Sheets.V4.Model.FilterCriteria do
        it will still be hidden.)
   *   `hiddenValues` (*type:* `list(String.t)`, *default:* `nil`) - Values that should be hidden.
   *   `visibleBackgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background fill color to filter by; only cells with this fill color are
-      shown. Mutually exclusive with all other filter criteria. Requests to set
-      this field will fail with a 400 error if any other filter criteria field is
-      set.
-  *   `visibleForegroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The text color to filter by; only cells with this text color are shown.
-      Mutually exclusive with all other filter criteria. Requests to set this
-      field will fail with a 400 error if any other filter criteria field is set.
+      shown. Mutually exclusive with visible_foreground_color.
+  *   `visibleBackgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background fill color to filter by; only cells with this fill color are
+      shown. This field is mutually exclusive with visible_foreground_color,
+      and must be set to an RGB-type color. If visible_background_color is
+      also set, this field takes precedence.
+  *   `visibleForegroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The foreground color to filter by; only cells with this foreground color
+      are shown. Mutually exclusive with visible_background_color.
+  *   `visibleForegroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The foreground color to filter by; only cells with this foreground color
+      are shown. This field is mutually exclusive with
+      visible_background_color, and must be set to an RGB-type color. If
+      visible_foreground_color is also set, this field takes precedence.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,13 +45,17 @@ defmodule GoogleApi.Sheets.V4.Model.FilterCriteria do
           :condition => GoogleApi.Sheets.V4.Model.BooleanCondition.t(),
           :hiddenValues => list(String.t()),
           :visibleBackgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :visibleForegroundColor => GoogleApi.Sheets.V4.Model.Color.t()
+          :visibleBackgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
+          :visibleForegroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :visibleForegroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t()
         }
 
   field(:condition, as: GoogleApi.Sheets.V4.Model.BooleanCondition)
   field(:hiddenValues, type: :list)
   field(:visibleBackgroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:visibleBackgroundColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:visibleForegroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:visibleForegroundColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.FilterCriteria do

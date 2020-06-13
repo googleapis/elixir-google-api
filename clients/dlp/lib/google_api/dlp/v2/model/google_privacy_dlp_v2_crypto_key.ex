@@ -25,9 +25,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoKey do
 
   ## Attributes
 
-  *   `kmsWrapped` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KmsWrappedCryptoKey.t`, *default:* `nil`) - 
-  *   `transient` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransientCryptoKey.t`, *default:* `nil`) - 
-  *   `unwrapped` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UnwrappedCryptoKey.t`, *default:* `nil`) - 
+  *   `kmsWrapped` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2KmsWrappedCryptoKey.t`, *default:* `nil`) - Kms wrapped key
+  *   `transient` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransientCryptoKey.t`, *default:* `nil`) - Transient crypto key
+  *   `unwrapped` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2UnwrappedCryptoKey.t`, *default:* `nil`) - Unwrapped crypto key
   """
 
   use GoogleApi.Gax.ModelBase

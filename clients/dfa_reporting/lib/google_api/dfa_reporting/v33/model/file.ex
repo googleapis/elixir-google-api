@@ -22,11 +22,11 @@ defmodule GoogleApi.DFAReporting.V33.Model.File do
   ## Attributes
 
   *   `dateRange` (*type:* `GoogleApi.DFAReporting.V33.Model.DateRange.t`, *default:* `nil`) - The date range for which the file has report data. The date range will always be the absolute date range for which the report is run.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - The eTag of this response for caching purposes.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `fileName` (*type:* `String.t`, *default:* `nil`) - The filename of the file.
   *   `format` (*type:* `String.t`, *default:* `nil`) - The output format of the report. Only available once the file is available.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of this report file.
-  *   `kind` (*type:* `String.t`, *default:* `dfareporting#file`) - The kind of resource this is, in this case dfareporting#file.
+  *   `kind` (*type:* `String.t`, *default:* `dfareporting#file`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#file".
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - The timestamp in milliseconds since epoch when this file was last modified.
   *   `reportId` (*type:* `String.t`, *default:* `nil`) - The ID of the report this file was generated from.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the report file.

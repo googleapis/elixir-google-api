@@ -58,6 +58,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.V1beta1 do
   """
   @spec proximitybeacon_get_eidparams(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.EphemeralIdRegistrationParams.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def proximitybeacon_get_eidparams(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{

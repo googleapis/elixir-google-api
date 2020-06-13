@@ -59,7 +59,9 @@ defmodule GoogleApi.TextToSpeech.V1.Api.Voices do
   *   `{:error, info}` on failure
   """
   @spec texttospeech_voices_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.TextToSpeech.V1.Model.ListVoicesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.TextToSpeech.V1.Model.ListVoicesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def texttospeech_voices_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

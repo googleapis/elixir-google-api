@@ -57,7 +57,10 @@ defmodule GoogleApi.Mirror.V1.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Mirror.V1.Model.Account.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Mirror.V1.Model.Account.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_accounts_insert(
         connection,
         user_token,

@@ -18,7 +18,7 @@
 defmodule GoogleApi.YouTube.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.19.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.YouTube.Mixfile do
 
   defp description() do
     """
-    YouTube Data API client library. Supports core YouTube features, such as uploading videos, creating and managing playlists, searching for content, and much more.
+    YouTube Data API v3 client library. The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.YouTube.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/you_tube",
-        "Homepage" => "https://developers.google.com/youtube/v3"
+        "Homepage" => "https://developers.google.com/youtube/"
       }
     ]
   end

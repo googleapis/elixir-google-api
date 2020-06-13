@@ -21,22 +21,24 @@ defmodule GoogleApi.Books.V1.Model.Annotation do
 
   ## Attributes
 
-  *   `afterSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text after excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty.
-  *   `beforeSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text before excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty.
+  *   `afterSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text after excerpt. For requests, if the user bookmarked a screen
+      that has no flowing text on it, then this field should be empty.
+  *   `beforeSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text before excerpt. For requests, if the user bookmarked a screen
+      that has no flowing text on it, then this field should be empty.
   *   `clientVersionRanges` (*type:* `GoogleApi.Books.V1.Model.AnnotationClientVersionRanges.t`, *default:* `nil`) - Selection ranges sent from the client.
-  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the created time of this annotation.
+  *   `created` (*type:* `String.t`, *default:* `nil`) - Timestamp for the created time of this annotation.
   *   `currentVersionRanges` (*type:* `GoogleApi.Books.V1.Model.AnnotationCurrentVersionRanges.t`, *default:* `nil`) - Selection ranges for the most recent content version.
   *   `data` (*type:* `String.t`, *default:* `nil`) - User-created data for this annotation.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Indicates that this annotation is deleted.
   *   `highlightStyle` (*type:* `String.t`, *default:* `nil`) - The highlight style for this annotation.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Id of this annotation, in the form of a GUID.
-  *   `kind` (*type:* `String.t`, *default:* `books#annotation`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   *   `layerId` (*type:* `String.t`, *default:* `nil`) - The layer this annotation is for.
   *   `layerSummary` (*type:* `GoogleApi.Books.V1.Model.AnnotationLayerSummary.t`, *default:* `nil`) - 
   *   `pageIds` (*type:* `list(String.t)`, *default:* `nil`) - Pages that this annotation spans.
   *   `selectedText` (*type:* `String.t`, *default:* `nil`) - Excerpt from the volume.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the last time this annotation was modified.
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp for the last time this annotation was modified.
   *   `volumeId` (*type:* `String.t`, *default:* `nil`) - The volume that this annotation belongs to.
   """
 
@@ -46,7 +48,7 @@ defmodule GoogleApi.Books.V1.Model.Annotation do
           :afterSelectedText => String.t(),
           :beforeSelectedText => String.t(),
           :clientVersionRanges => GoogleApi.Books.V1.Model.AnnotationClientVersionRanges.t(),
-          :created => DateTime.t(),
+          :created => String.t(),
           :currentVersionRanges => GoogleApi.Books.V1.Model.AnnotationCurrentVersionRanges.t(),
           :data => String.t(),
           :deleted => boolean(),
@@ -58,14 +60,14 @@ defmodule GoogleApi.Books.V1.Model.Annotation do
           :pageIds => list(String.t()),
           :selectedText => String.t(),
           :selfLink => String.t(),
-          :updated => DateTime.t(),
+          :updated => String.t(),
           :volumeId => String.t()
         }
 
   field(:afterSelectedText)
   field(:beforeSelectedText)
   field(:clientVersionRanges, as: GoogleApi.Books.V1.Model.AnnotationClientVersionRanges)
-  field(:created, as: DateTime)
+  field(:created)
   field(:currentVersionRanges, as: GoogleApi.Books.V1.Model.AnnotationCurrentVersionRanges)
   field(:data)
   field(:deleted)
@@ -77,7 +79,7 @@ defmodule GoogleApi.Books.V1.Model.Annotation do
   field(:pageIds, type: :list)
   field(:selectedText)
   field(:selfLink)
-  field(:updated, as: DateTime)
+  field(:updated)
   field(:volumeId)
 end
 

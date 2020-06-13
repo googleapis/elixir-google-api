@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudSearch.V1.Model.ItemAcl do
   @moduledoc """
   Access control list information for the item. For more information see
-  https://developers.google.com/cloud-search/docs/guides/index-your-data#acls
+  [Map ACLs](/cloud-search/docs/guides/acls).
 
   ## Attributes
 

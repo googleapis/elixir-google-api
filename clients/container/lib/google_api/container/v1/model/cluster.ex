@@ -34,12 +34,13 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       range. This field will only be set when cluster is in route-based network
       mode.
   *   `legacyAbac` (*type:* `GoogleApi.Container.V1.Model.LegacyAbac.t`, *default:* `nil`) - Configuration for the legacy ABAC authorization mode.
+  *   `shieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Shielded Nodes configuration.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Additional information about the current status of this
       cluster, if available.
   *   `createTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster was created, in
       [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `currentNodeVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated, use
-      [NodePools.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+      [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
       instead. The current version of the node software components. If they are
       currently at multiple versions because they're in the process of being
       upgraded, this reflects the minimum version of all nodes.
@@ -48,13 +49,19 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `monitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics.
       Currently available options:
 
-      * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-      * `none` - no metrics will be exported from the cluster.
-      * if left as an empty string, `monitoring.googleapis.com` will be used.
+      * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+      service with a Kubernetes-native resource model
+      * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+        longer available as of GKE 1.15).
+      * `none` - No metrics will be exported from the cluster.
+
+      If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+      used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
+  *   `workloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for the use of Kubernetes Service Accounts in GCP IAM
+      policies.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine
-      [zone](/compute/docs/zones#available) in which the cluster
-      resides.
-      This field is deprecated, use location instead.
+      [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster resides. This field is deprecated, use location instead.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this cluster.
   *   `privateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Configuration for private cluster.
   *   `enableKubernetesAlpha` (*type:* `boolean()`, *default:* `nil`) - Kubernetes alpha features are enabled on this cluster. This includes alpha
@@ -66,11 +73,14 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `loggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs.
       Currently available options:
 
-      * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-      service with Kubernetes-native resource model
-      * `logging.googleapis.com` - the Google Cloud Logging service.
+      * `logging.googleapis.com/kubernetes` - The Cloud Logging
+      service with a Kubernetes-native resource model
+      * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+        available as of GKE 1.15).
       * `none` - no logs will be exported from the cluster.
-      * if left as an empty string,`logging.googleapis.com` will be used.
+
+      If left as an empty string,`logging.googleapis.com/kubernetes` will be
+      used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
   *   `resourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - Configuration for exporting resource usages. Resource usage export is
       disabled when this config is unspecified.
   *   `endpoint` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address of this cluster's master endpoint.
@@ -105,17 +115,18 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       be set to "admin", a random password will be generated, and a client
       certificate will be issued.
   *   `location` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine
-      [zone](/compute/docs/regions-zones/regions-zones#available) or
-      [region](/compute/docs/regions-zones/regions-zones#available) in which
-      the cluster resides.
+      [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+      or
+      [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+      in which the cluster resides.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine
-      [subnetwork](/compute/docs/subnetworks) to which the
-      cluster is connected.
+      [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+      the cluster is connected.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output only] The current status of this cluster.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine
-      [network](/compute/docs/networks-and-firewalls#networks) to which the
-      cluster is connected. If left unspecified, the `default` network
-      will be used.
+      [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+      to which the cluster is connected. If left unspecified, the `default`
+      network will be used.
   *   `nodeConfig` (*type:* `GoogleApi.Container.V1.Model.NodeConfig.t`, *default:* `nil`) - Parameters used in creating the cluster's nodes.
       For requests, this field should only be used in lieu of a
       "node_pool" object, since this configuration (along with the
@@ -133,8 +144,8 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `ipAllocationPolicy` (*type:* `GoogleApi.Container.V1.Model.IPAllocationPolicy.t`, *default:* `nil`) - Configuration for cluster IP allocation.
   *   `addonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
   *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine
-      [zones](/compute/docs/zones#available) in which the cluster's nodes
-      should be located.
+      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster's nodes should be located.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The resource labels for the cluster to use to annotate any related
       Google Compute Engine resources.
   *   `labelFingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the set of labels for this cluster.
@@ -184,12 +195,14 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :enableTpu => boolean(),
           :nodeIpv4CidrSize => integer(),
           :legacyAbac => GoogleApi.Container.V1.Model.LegacyAbac.t(),
+          :shieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t(),
           :statusMessage => String.t(),
           :createTime => String.t(),
           :currentNodeVersion => String.t(),
           :autoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t(),
           :conditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()),
           :monitoringService => String.t(),
+          :workloadIdentityConfig => GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t(),
           :zone => String.t(),
           :description => String.t(),
           :privateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t(),
@@ -236,12 +249,14 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:enableTpu)
   field(:nodeIpv4CidrSize)
   field(:legacyAbac, as: GoogleApi.Container.V1.Model.LegacyAbac)
+  field(:shieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
   field(:statusMessage)
   field(:createTime)
   field(:currentNodeVersion)
   field(:autoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
   field(:conditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
   field(:monitoringService)
+  field(:workloadIdentityConfig, as: GoogleApi.Container.V1.Model.WorkloadIdentityConfig)
   field(:zone)
   field(:description)
   field(:privateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)

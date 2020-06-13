@@ -23,11 +23,13 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanConfig do
 
   *   `authentication` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.Authentication.t`, *default:* `nil`) - The authentication configuration. If specified, service will use the
       authentication configuration during scanning.
-  *   `blacklistPatterns` (*type:* `list(String.t)`, *default:* `nil`) - The blacklist URL patterns as described in
-      https://cloud.google.com/security-scanner/docs/excluded-urls
+  *   `blacklistPatterns` (*type:* `list(String.t)`, *default:* `nil`) - The excluded URL patterns as described in
+      https://cloud.google.com/security-command-center/docs/how-to-use-web-security-scanner#excluding_urls
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The user provided display name of the ScanConfig.
-  *   `exportToSecurityCommandCenter` (*type:* `String.t`, *default:* `nil`) - Controls export of scan configurations and results to Cloud Security
+  *   `exportToSecurityCommandCenter` (*type:* `String.t`, *default:* `nil`) - Controls export of scan configurations and results to Security
       Command Center.
+  *   `managedScan` (*type:* `boolean()`, *default:* `nil`) - Whether the scan config is managed by Web Security Scanner, output
+      only.
   *   `maxQps` (*type:* `integer()`, *default:* `nil`) - The maximum QPS during scanning. A valid value ranges from 5 to 20
       inclusively. If the field is unspecified or its value is set 0, server will
       default to 15. Other values outside of [5, 20] range will be rejected with
@@ -38,6 +40,8 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanConfig do
   *   `riskLevel` (*type:* `String.t`, *default:* `nil`) - The risk level selected for the scan
   *   `schedule` (*type:* `GoogleApi.WebSecurityScanner.V1.Model.Schedule.t`, *default:* `nil`) - The schedule of the ScanConfig.
   *   `startingUrls` (*type:* `list(String.t)`, *default:* `nil`) - Required. The starting URLs from which the scanner finds site pages.
+  *   `staticIpScan` (*type:* `boolean()`, *default:* `nil`) - Whether the scan configuration has enabled static IP address scan feature.
+      If enabled, the scanner will access applications from static IP addresses.
   *   `userAgent` (*type:* `String.t`, *default:* `nil`) - The user agent used during scanning.
   """
 
@@ -48,11 +52,13 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanConfig do
           :blacklistPatterns => list(String.t()),
           :displayName => String.t(),
           :exportToSecurityCommandCenter => String.t(),
+          :managedScan => boolean(),
           :maxQps => integer(),
           :name => String.t(),
           :riskLevel => String.t(),
           :schedule => GoogleApi.WebSecurityScanner.V1.Model.Schedule.t(),
           :startingUrls => list(String.t()),
+          :staticIpScan => boolean(),
           :userAgent => String.t()
         }
 
@@ -60,11 +66,13 @@ defmodule GoogleApi.WebSecurityScanner.V1.Model.ScanConfig do
   field(:blacklistPatterns, type: :list)
   field(:displayName)
   field(:exportToSecurityCommandCenter)
+  field(:managedScan)
   field(:maxQps)
   field(:name)
   field(:riskLevel)
   field(:schedule, as: GoogleApi.WebSecurityScanner.V1.Model.Schedule)
   field(:startingUrls, type: :list)
+  field(:staticIpScan)
   field(:userAgent)
 end
 

@@ -27,6 +27,9 @@ defmodule GoogleApi.YouTube.V3.Connection do
       # Manage your YouTube account
       "https://www.googleapis.com/auth/youtube",
 
+      # See a list of your current active channel members, their current level, and when they became a member
+      "https://www.googleapis.com/auth/youtube.channel-memberships.creator",
+
       # See, edit, and permanently delete your YouTube videos, ratings, comments and captions
       "https://www.googleapis.com/auth/youtube.force-ssl",
 

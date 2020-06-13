@@ -26,7 +26,10 @@ defmodule GoogleApi.Content.V21.Model.DatafeedstatusesCustomBatchRequestEntry do
   *   `datafeedId` (*type:* `String.t`, *default:* `nil`) - The ID of the data feed to get.
   *   `language` (*type:* `String.t`, *default:* `nil`) - The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that for multi-target datafeeds this parameter is required.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "`get`"
   """
 
   use GoogleApi.Gax.ModelBase

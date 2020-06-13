@@ -54,7 +54,8 @@ defmodule GoogleApi.TextToSpeech.V1.Api.Text do
   """
   @spec texttospeech_text_synthesize(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.TextToSpeech.V1.Model.SynthesizeSpeechResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def texttospeech_text_synthesize(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

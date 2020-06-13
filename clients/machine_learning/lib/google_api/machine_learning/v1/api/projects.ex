@@ -27,11 +27,8 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   @doc """
   Performs explanation on the data in the request.
-  AI Platform implements a custom `explain` verb on top of an HTTP POST
-  method.
 
-  For details of the request and response format, see the **guide
-  to the [explain request format](/ml-engine/docs/v1/explain-request)**.
+  <div>{% dynamic include "/ai-platform/includes/___explain-request" %}</div>
 
   ## Parameters
 
@@ -51,17 +48,18 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ExplainRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplainRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_explain(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_explain(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -89,9 +87,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody{}])
   end
 
   @doc """
@@ -120,12 +116,13 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__GetConfigResponse{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_GetConfigResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_get_config(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__GetConfigResponse.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_GetConfigResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_get_config(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -153,17 +150,14 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__GetConfigResponse{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_GetConfigResponse{}]
     )
   end
 
   @doc """
-  Performs prediction on the data in the request.
-  AI Platform implements a custom `predict` verb on top of an HTTP POST
-  method.
+  Performs online prediction on the data in the request.
 
-  For details of the request and response format, see the **guide
-  to the [predict request format](/ml-engine/docs/v1/predict-request)**.
+  <div>{% dynamic include "/ai-platform/includes/___predict-request" %}</div>
 
   ## Parameters
 
@@ -183,17 +177,18 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__PredictRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_PredictRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_predict(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_predict(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -221,9 +216,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleApi__HttpBody{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleApi_HttpBody{}])
   end
 
   @doc """
@@ -246,17 +239,18 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__CancelJobRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CancelJobRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf__Empty{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_jobs_cancel(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf__Empty.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_jobs_cancel(connection, projects_id, jobs_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -286,7 +280,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf__Empty{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}]
     )
   end
 
@@ -309,17 +303,18 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_jobs_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_jobs_create(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -348,7 +343,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job{}]
     )
   end
 
@@ -376,12 +371,13 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_jobs_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_jobs_get(connection, projects_id, jobs_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -410,7 +406,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job{}]
     )
   end
 
@@ -445,11 +441,15 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_jobs_get_iam_policy(
@@ -459,8 +459,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_jobs_get_iam_policy(
         connection,
         projects_id,
@@ -495,9 +496,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy{}])
   end
 
   @doc """
@@ -544,12 +543,13 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListJobsResponse{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListJobsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListJobsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_jobs_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -580,7 +580,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListJobsResponse{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListJobsResponse{}]
     )
   end
 
@@ -625,17 +625,18 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           recalculated.
 
           Currently the only supported update masks are `labels` and `etag`.
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_jobs_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_jobs_patch(connection, projects_id, jobs_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -666,7 +667,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Job{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Job{}]
     )
   end
 
@@ -674,7 +675,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -694,12 +695,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1__SetIamPolicyRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1_SetIamPolicyRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_jobs_set_iam_policy(
@@ -709,8 +710,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_jobs_set_iam_policy(
         connection,
         projects_id,
@@ -745,15 +747,13 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy{}])
   end
 
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -777,12 +777,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1__TestIamPermissionsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__TestIamPermissionsResponse{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_jobs_test_iam_permissions(
@@ -792,8 +792,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1__TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_jobs_test_iam_permissions(
         connection,
         projects_id,
@@ -830,7 +831,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__TestIamPermissionsResponse{}]
+        [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsResponse{}]
     )
   end
 
@@ -859,7 +860,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Location{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_locations_get(
@@ -869,8 +870,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Location.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_locations_get(
         connection,
         projects_id,
@@ -905,7 +907,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Location{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Location{}]
     )
   end
 
@@ -942,12 +944,13 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListLocationsResponse{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListLocationsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListLocationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListLocationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -978,7 +981,1279 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListLocationsResponse{}]
+        [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListLocationsResponse{}]
+    )
+  end
+
+  @doc """
+  Starts asynchronous cancellation on a long-running operation.  The server
+  makes a best effort to cancel the operation, but success is not
+  guaranteed.  If the server doesn't support this method, it returns
+  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
+  Operations.GetOperation or
+  other methods to check whether the cancellation succeeded or whether the
+  operation completed despite cancellation. On successful cancellation,
+  the operation is not deleted; instead, it becomes an operation with
+  an Operation.error value with a google.rpc.Status.code of 1,
+  corresponding to `Code.CANCELLED`.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_operations_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_operations_cancel(
+        connection,
+        projects_id,
+        locations_id,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}:cancel",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}]
+    )
+  end
+
+  @doc """
+  Gets the latest state of a long-running operation.  Clients can use this
+  method to poll the operation result at intervals as recommended by the API
+  service.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_operations_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_operations_get(
+        connection,
+        projects_id,
+        locations_id,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}]
+    )
+  end
+
+  @doc """
+  Creates a study.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location that the study belongs to.
+      Format: projects/{project}/locations/{location}
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:studyId` (*type:* `String.t`) - Required. The ID to use for the study, which will become the final component of
+          the study's resource name.
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_create(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :studyId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/studies", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study{}]
+    )
+  end
+
+  @doc """
+  Deletes a study.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The study name.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_delete(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+        "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}]
+    )
+  end
+
+  @doc """
+  Gets a study.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The study name.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_get(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+        "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Study{}]
+    )
+  end
+
+  @doc """
+  Lists all the studies in a region for an associated project.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location that the study belongs to.
+      Format: projects/{project}/locations/{location}
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListStudiesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListStudiesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_list(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/studies", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListStudiesResponse{}]
+    )
+  end
+
+  @doc """
+  Adds a measurement of the objective metrics to a trial. This measurement
+  is assumed to have been taken before the trial is complete.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The trial name.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `trials_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AddTrialMeasurementRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_trials_add_measurement(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_trials_add_measurement(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        trials_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}/trials/{trialsId}:addMeasurement",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
+          "trialsId" => URI.encode(trials_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}]
+    )
+  end
+
+  @doc """
+  Checks  whether a trial should stop or not. Returns a
+  long-running operation. When the operation is successful,
+  it will contain a
+  CheckTrialEarlyStoppingStateResponse.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The trial name.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `trials_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CheckTrialEarlyStoppingStateRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_trials_check_early_stopping_state(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_trials_check_early_stopping_state(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        trials_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}/trials/{trialsId}:checkEarlyStoppingState",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
+          "trialsId" => URI.encode(trials_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}]
+    )
+  end
+
+  @doc """
+  Marks a trial as complete.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The trial name.metat
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `trials_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_CompleteTrialRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_trials_complete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_trials_complete(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        trials_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}/trials/{trialsId}:complete",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
+          "trialsId" => URI.encode(trials_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}]
+    )
+  end
+
+  @doc """
+  Adds a user provided trial to a study.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the study that the trial belongs to.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_trials_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_trials_create(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}/trials",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}]
+    )
+  end
+
+  @doc """
+  Deletes a trial.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The trial name.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `trials_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_trials_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_trials_delete(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        trials_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}/trials/{trialsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
+          "trialsId" => URI.encode(trials_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}]
+    )
+  end
+
+  @doc """
+  Gets a trial.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The trial name.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `trials_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_trials_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_trials_get(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        trials_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}/trials/{trialsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
+          "trialsId" => URI.encode(trials_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}]
+    )
+  end
+
+  @doc """
+  Lists the trials associated with a study.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the study that the trial belongs to.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListTrialsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_trials_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListTrialsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_trials_list(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}/trials",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListTrialsResponse{}]
+    )
+  end
+
+  @doc """
+  Stops a trial.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The trial name.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `trials_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_StopTrialRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_trials_stop(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_trials_stop(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        trials_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}/trials/{trialsId}:stop",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
+          "trialsId" => URI.encode(trials_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Trial{}]
+    )
+  end
+
+  @doc """
+  Adds one or more trials to a study, with parameter values
+  suggested by AI Platform Optimizer. Returns a long-running
+  operation associated with the generation of trial suggestions.
+  When this long-running operation succeeds, it will contain
+  a SuggestTrialsResponse.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.MachineLearning.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the study that the trial belongs to.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SuggestTrialsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec ml_projects_locations_studies_trials_suggest(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def ml_projects_locations_studies_trials_suggest(
+        connection,
+        projects_id,
+        locations_id,
+        studies_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/studies/{studiesId}/trials:suggest",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}]
     )
   end
 
@@ -1005,17 +2280,18 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_create(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1044,7 +2320,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model{}]
     )
   end
 
@@ -1076,7 +2352,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_delete(
@@ -1086,8 +2362,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_delete(
         connection,
         projects_id,
@@ -1122,7 +2399,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}]
     )
   end
 
@@ -1152,12 +2429,13 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_get(
         connection,
         projects_id,
@@ -1192,7 +2470,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model{}]
     )
   end
 
@@ -1227,11 +2505,15 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_get_iam_policy(
@@ -1241,8 +2523,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_get_iam_policy(
         connection,
         projects_id,
@@ -1277,9 +2560,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy{}])
   end
 
   @doc """
@@ -1321,12 +2602,13 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListModelsResponse{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListModelsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListModelsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListModelsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1357,7 +2639,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListModelsResponse{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListModelsResponse{}]
     )
   end
 
@@ -1399,17 +2681,18 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
           Currently the supported update masks are `description` and
           `default_version.name`.
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Model.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_patch(
         connection,
         projects_id,
@@ -1446,7 +2729,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}]
     )
   end
 
@@ -1454,7 +2737,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -1474,12 +2757,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1__SetIamPolicyRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1_SetIamPolicyRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_set_iam_policy(
@@ -1489,8 +2772,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_set_iam_policy(
         connection,
         projects_id,
@@ -1525,15 +2809,13 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy{}]
-    )
+    |> Response.decode(opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy{}])
   end
 
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -1557,12 +2839,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1__TestIamPermissionsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__TestIamPermissionsResponse{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_test_iam_permissions(
@@ -1572,8 +2854,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1__TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_test_iam_permissions(
         connection,
         projects_id,
@@ -1610,7 +2893,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1__TestIamPermissionsResponse{}]
+        [struct: %GoogleApi.MachineLearning.V1.Model.GoogleIamV1_TestIamPermissionsResponse{}]
     )
   end
 
@@ -1641,12 +2924,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_versions_create(
@@ -1656,8 +2939,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_versions_create(
         connection,
         projects_id,
@@ -1693,7 +2977,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}]
     )
   end
 
@@ -1730,7 +3014,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_versions_delete(
@@ -1741,8 +3025,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_versions_delete(
         connection,
         projects_id,
@@ -1779,7 +3064,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}]
     )
   end
 
@@ -1813,7 +3098,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_versions_get(
@@ -1824,8 +3109,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_versions_get(
         connection,
         projects_id,
@@ -1862,7 +3148,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version{}]
     )
   end
 
@@ -1907,7 +3193,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListVersionsResponse{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListVersionsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_versions_list(
@@ -1917,8 +3203,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListVersionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListVersionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_versions_list(
         connection,
         projects_id,
@@ -1956,8 +3243,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++
-        [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ListVersionsResponse{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListVersionsResponse{}]
     )
   end
 
@@ -2003,12 +3289,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           However, you can only update `manualScaling.nodes` if the version uses a
           [Compute Engine (N1)
           machine type](/ml-engine/docs/machine-types-online-prediction).
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_versions_patch(
@@ -2019,8 +3305,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_versions_patch(
         connection,
         projects_id,
@@ -2059,7 +3346,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}]
     )
   end
 
@@ -2093,12 +3380,12 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__SetDefaultVersionRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SetDefaultVersionRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_models_versions_set_default(
@@ -2109,8 +3396,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_models_versions_set_default(
         connection,
         projects_id,
@@ -2151,7 +3439,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version{}]
     )
   end
 
@@ -2188,7 +3476,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf__Empty{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_operations_cancel(
@@ -2198,8 +3486,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf__Empty.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_operations_cancel(
         connection,
         projects_id,
@@ -2234,7 +3523,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf__Empty{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleProtobuf_Empty{}]
     )
   end
 
@@ -2264,7 +3553,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_operations_get(
@@ -2274,8 +3563,9 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_operations_get(
         connection,
         projects_id,
@@ -2310,7 +3600,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__Operation{}]
+      opts ++ [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_Operation{}]
     )
   end
 
@@ -2349,12 +3639,13 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__ListOperationsResponse{}}` on success
+  *   `{:ok, %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_ListOperationsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec ml_projects_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__ListOperationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def ml_projects_operations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2386,7 +3677,7 @@ defmodule GoogleApi.MachineLearning.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning__ListOperationsResponse{}]
+        [struct: %GoogleApi.MachineLearning.V1.Model.GoogleLongrunning_ListOperationsResponse{}]
     )
   end
 end

@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.Usersettings do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `books#usersettings`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   *   `notesExport` (*type:* `GoogleApi.Books.V1.Model.UsersettingsNotesExport.t`, *default:* `nil`) - User settings in sub-objects, each for different purposes.
   *   `notification` (*type:* `GoogleApi.Books.V1.Model.UsersettingsNotification.t`, *default:* `nil`) - 
   """

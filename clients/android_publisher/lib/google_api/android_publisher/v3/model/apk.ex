@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Apk do
   @moduledoc """
-
+  Information about an APK. The resource for ApksService.
 
   ## Attributes
 
   *   `binary` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ApkBinary.t`, *default:* `nil`) - Information about the binary payload of this APK.
-  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The version code of the APK, as specified in the APK's manifest file.
+  *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The version code of the APK, as specified in the manifest file.
   """
 
   use GoogleApi.Gax.ModelBase

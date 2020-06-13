@@ -21,13 +21,19 @@ defmodule GoogleApi.Sheets.V4.Model.SortSpec do
 
   ## Attributes
 
-  *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background fill color to sort by. Mutually exclusive with sorting by
-      text color. Requests to set this field will fail with a 400 error if
-      foreground color is also set.
+  *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background fill color to sort by; cells with this fill color are sorted
+      to the top. Mutually exclusive with foreground_color.
+  *   `backgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background fill color to sort by; cells with this fill color are sorted
+      to the top. Mutually exclusive with foreground_color, and must be an
+      RGB-type color. If background_color is also set, this field takes
+      precedence.
   *   `dimensionIndex` (*type:* `integer()`, *default:* `nil`) - The dimension the sort should be applied to.
-  *   `foregroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The text color to sort by. Mutually exclusive with sorting by background
-      fill color. Requests to set this field will fail with a 400 error if
-      background color is also set.
+  *   `foregroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The foreground color to sort by; cells with this foreground color are
+      sorted to the top. Mutually exclusive with background_color.
+  *   `foregroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The foreground color to sort by; cells with this foreground color are
+      sorted to the top. Mutually exclusive with background_color, and must
+      be an RGB-type color. If foreground_color is also set, this field takes
+      precedence.
   *   `sortOrder` (*type:* `String.t`, *default:* `nil`) - The order data should be sorted.
   """
 
@@ -35,14 +41,18 @@ defmodule GoogleApi.Sheets.V4.Model.SortSpec do
 
   @type t :: %__MODULE__{
           :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :backgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :dimensionIndex => integer(),
           :foregroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :foregroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :sortOrder => String.t()
         }
 
   field(:backgroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:backgroundColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:dimensionIndex)
   field(:foregroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:foregroundColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:sortOrder)
 end
 

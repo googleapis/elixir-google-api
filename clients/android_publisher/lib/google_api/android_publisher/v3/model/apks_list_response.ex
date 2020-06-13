@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ApksListResponse do
   @moduledoc """
-
+  Response listing all APKs.
 
   ## Attributes
 
-  *   `apks` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Apk.t)`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `androidpublisher#apksListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidpublisher#apksListResponse".
+  *   `apks` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Apk.t)`, *default:* `nil`) - All APKs.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this response ("androidpublisher#apksListResponse").
   """
 
   use GoogleApi.Gax.ModelBase

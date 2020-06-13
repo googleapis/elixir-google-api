@@ -21,7 +21,9 @@ defmodule GoogleApi.TagManager.V2.Model.RevertTagResponse do
 
   ## Attributes
 
-  *   `tag` (*type:* `GoogleApi.TagManager.V2.Model.Tag.t`, *default:* `nil`) - Tag as it appears in the latest container version since the last workspace synchronization operation. If no tag is present, that means the tag was deleted in the latest container version.
+  *   `tag` (*type:* `GoogleApi.TagManager.V2.Model.Tag.t`, *default:* `nil`) - Tag as it appears in the latest container version since the last
+      workspace synchronization operation. If no tag is present, that means
+      the tag was deleted in the latest container version.
   """
 
   use GoogleApi.Gax.ModelBase

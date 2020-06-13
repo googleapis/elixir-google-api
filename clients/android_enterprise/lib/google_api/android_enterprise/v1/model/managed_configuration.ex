@@ -17,14 +17,18 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ManagedConfiguration do
   @moduledoc """
-  A managed configuration resource contains the set of managed properties defined by the app developer in the app's managed configurations schema, as well as any configuration variables defined for the user.
+  A managed configuration resource contains the set of managed properties
+  defined by the app developer in the app's managed configurations schema,
+  as well as any configuration variables defined for the user.
 
   ## Attributes
 
-  *   `configurationVariables` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables.t`, *default:* `nil`) - Contains the ID of the managed configuration profile and the set of configuration variables (if any) defined for the user.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#managedConfiguration`) - 
+  *   `configurationVariables` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.ConfigurationVariables.t`, *default:* `nil`) - Contains the ID of the managed configuration profile and the set of
+      configuration variables (if any) defined for the user.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Deprecated.
   *   `managedProperty` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.ManagedProperty.t)`, *default:* `nil`) - The set of managed properties for this configuration.
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product that the managed configuration is for, e.g. "app:com.google.android.gm".
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product that the managed configuration is for, e.g.
+      "app:com.google.android.gm".
   """
 
   use GoogleApi.Gax.ModelBase

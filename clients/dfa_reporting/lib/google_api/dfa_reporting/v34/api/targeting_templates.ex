@@ -55,7 +55,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.TargetingTemplates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_targeting_templates_get(
         connection,
         profile_id,
@@ -117,7 +119,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.TargetingTemplates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_targeting_templates_insert(
         connection,
         profile_id,
@@ -185,7 +189,8 @@ defmodule GoogleApi.DFAReporting.V34.Api.TargetingTemplates do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.TargetingTemplatesListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_targeting_templates_list(
         connection,
         profile_id,
@@ -256,7 +261,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.TargetingTemplates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_targeting_templates_patch(
         connection,
         profile_id,
@@ -319,7 +326,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.TargetingTemplates do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.TargetingTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_targeting_templates_update(
         connection,
         profile_id,

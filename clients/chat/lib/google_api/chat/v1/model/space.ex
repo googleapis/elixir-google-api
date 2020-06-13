@@ -25,7 +25,10 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the space, in the form "spaces/*".
 
       Example: spaces/AAAAMpdlehYs
+  *   `singleUserBotDm` (*type:* `boolean()`, *default:* `nil`) - Whether the space is a DM between a bot and a single human.
+  *   `threaded` (*type:* `boolean()`, *default:* `nil`) - Whether the messages are threaded in this space.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of a space.
+      This is deprecated. Use `single_user_bot_dm` instead.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,11 +36,15 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   @type t :: %__MODULE__{
           :displayName => String.t(),
           :name => String.t(),
+          :singleUserBotDm => boolean(),
+          :threaded => boolean(),
           :type => String.t()
         }
 
   field(:displayName)
   field(:name)
+  field(:singleUserBotDm)
+  field(:threaded)
   field(:type)
 end
 

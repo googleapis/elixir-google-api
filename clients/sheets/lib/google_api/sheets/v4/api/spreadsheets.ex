@@ -72,7 +72,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   """
   @spec sheets_spreadsheets_batch_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchUpdateSpreadsheetResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_batch_update(
         connection,
         spreadsheet_id,
@@ -137,7 +138,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `{:error, info}` on failure
   """
   @spec sheets_spreadsheets_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -216,7 +219,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `{:error, info}` on failure
   """
   @spec sheets_spreadsheets_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_get(connection, spreadsheet_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -301,7 +306,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Sheets.V4.Model.Spreadsheet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_get_by_data_filter(
         connection,
         spreadsheet_id,
@@ -372,7 +380,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           integer(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Sheets.V4.Model.DeveloperMetadata.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_developer_metadata_get(
         connection,
         spreadsheet_id,
@@ -447,7 +458,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           keyword()
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.SearchDeveloperMetadataResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_developer_metadata_search(
         connection,
         spreadsheet_id,
@@ -520,7 +532,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           integer(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Sheets.V4.Model.SheetProperties.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Sheets.V4.Model.SheetProperties.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_sheets_copy_to(
         connection,
         spreadsheet_id,
@@ -579,7 +594,7 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `connection` (*type:* `GoogleApi.Sheets.V4.Connection.t`) - Connection to server
   *   `spreadsheet_id` (*type:* `String.t`) - The ID of the spreadsheet to update.
   *   `range` (*type:* `String.t`) - The A1 notation of a range to search for a logical table of data.
-      Values will be appended after the last row of the table.
+      Values are appended after the last row of the table.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -617,7 +632,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Sheets.V4.Model.AppendValuesResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Sheets.V4.Model.AppendValuesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_values_append(
         connection,
         spreadsheet_id,
@@ -696,7 +714,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Sheets.V4.Model.BatchClearValuesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Sheets.V4.Model.BatchClearValuesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_values_batch_clear(
         connection,
         spreadsheet_id,
@@ -770,7 +790,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           keyword()
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchClearValuesByDataFilterResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_values_batch_clear_by_data_filter(
         connection,
         spreadsheet_id,
@@ -835,9 +856,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       *   `:majorDimension` (*type:* `String.t`) - The major dimension that results should use.
 
           For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`,
-          then requesting `range=A1:B2,majorDimension=ROWS` will return
-          `[[1,2],[3,4]]`,
-          whereas requesting `range=A1:B2,majorDimension=COLUMNS` will return
+          then requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`,
+          whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns
           `[[1,3],[2,4]]`.
       *   `:ranges` (*type:* `list(String.t)`) - The A1 notation of the values to retrieve.
       *   `:valueRenderOption` (*type:* `String.t`) - How values should be represented in the output.
@@ -850,7 +870,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
   *   `{:error, info}` on failure
   """
   @spec sheets_spreadsheets_values_batch_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Sheets.V4.Model.BatchGetValuesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Sheets.V4.Model.BatchGetValuesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_values_batch_get(
         connection,
         spreadsheet_id,
@@ -926,7 +948,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           keyword()
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchGetValuesByDataFilterResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_values_batch_get_by_data_filter(
         connection,
         spreadsheet_id,
@@ -1000,7 +1023,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Sheets.V4.Model.BatchUpdateValuesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_values_batch_update(
         connection,
         spreadsheet_id,
@@ -1073,7 +1098,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           keyword()
         ) ::
           {:ok, GoogleApi.Sheets.V4.Model.BatchUpdateValuesByDataFilterResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_values_batch_update_by_data_filter(
         connection,
         spreadsheet_id,
@@ -1148,7 +1174,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Sheets.V4.Model.ClearValuesResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Sheets.V4.Model.ClearValuesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_values_clear(
         connection,
         spreadsheet_id,
@@ -1213,10 +1242,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
       *   `:majorDimension` (*type:* `String.t`) - The major dimension that results should use.
 
-          For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`,
-          then requesting `range=A1:B2,majorDimension=ROWS` will return
-          `[[1,2],[3,4]]`,
-          whereas requesting `range=A1:B2,majorDimension=COLUMNS` will return
+          For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then
+          requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`,
+          whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns
           `[[1,3],[2,4]]`.
       *   `:valueRenderOption` (*type:* `String.t`) - How values should be represented in the output.
           The default render option is ValueRenderOption.FORMATTED_VALUE.
@@ -1233,7 +1261,8 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Sheets.V4.Model.ValueRange.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Sheets.V4.Model.ValueRange.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def sheets_spreadsheets_values_get(
         connection,
         spreadsheet_id,
@@ -1298,9 +1327,9 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
       *   `:includeValuesInResponse` (*type:* `boolean()`) - Determines if the update response should include the values
           of the cells that were updated. By default, responses
           do not include the updated values.
-          If the range to write was larger than than the range actually written,
-          the response will include all values in the requested range (excluding
-          trailing empty rows and columns).
+          If the range to write was larger than the range actually written, the
+          response includes all values in the requested range (excluding trailing
+          empty rows and columns).
       *   `:responseDateTimeRenderOption` (*type:* `String.t`) - Determines how dates, times, and durations in the response should be
           rendered. This is ignored if response_value_render_option is
           FORMATTED_VALUE.
@@ -1323,7 +1352,10 @@ defmodule GoogleApi.Sheets.V4.Api.Spreadsheets do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Sheets.V4.Model.UpdateValuesResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Sheets.V4.Model.UpdateValuesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sheets_spreadsheets_values_update(
         connection,
         spreadsheet_id,

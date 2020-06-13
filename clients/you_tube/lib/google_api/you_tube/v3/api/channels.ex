@@ -26,36 +26,61 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns a collection of zero or more channel resources that match the request criteria.
+  Retrieves a list of resources, possibly filtered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies a comma-separated list of one or more channel resource properties that the API response will include.
-
-      If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channel resource, the contentDetails property contains other properties, such as the uploads properties. As such, if you set part=contentDetails, the API response will also contain all of those nested properties.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of one or more <code>channel</code> resource
+      properties that the API response will include.<br><br>If the parameter
+      identifies a property that contains child properties, the child properties
+      will be included in the response. For example, in a <code>channel</code>
+      resource, the <code>contentDetails</code> property contains other
+      properties, such as the <code>uploads</code> properties. As such, if you
+      set <code><strong>part=contentDetails</strong></code>, the API response
+      will also contain all of those nested properties.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:categoryId` (*type:* `String.t`) - The categoryId parameter specifies a YouTube guide category, thereby requesting YouTube channels associated with that category.
-      *   `:forUsername` (*type:* `String.t`) - The forUsername parameter specifies a YouTube username, thereby requesting the channel associated with that username.
-      *   `:hl` (*type:* `String.t`) - The hl parameter should be used for filter out the properties that are not in the given language. Used for the brandingSettings part.
-      *   `:id` (*type:* `String.t`) - The id parameter specifies a comma-separated list of the YouTube channel ID(s) for the resource(s) that are being retrieved. In a channel resource, the id property specifies the channel's YouTube channel ID.
-      *   `:managedByMe` (*type:* `boolean()`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          Set this parameter's value to true to instruct the API to only return channels managed by the content owner that the onBehalfOfContentOwner parameter specifies. The user must be authenticated as a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.
-      *   `:maxResults` (*type:* `integer()`) - The maxResults parameter specifies the maximum number of items that should be returned in the result set.
-      *   `:mine` (*type:* `boolean()`) - Set this parameter's value to true to instruct the API to only return channels owned by the authenticated user.
-      *   `:mySubscribers` (*type:* `boolean()`) - Use the subscriptions.list method and its mySubscribers parameter to retrieve a list of subscribers to the authenticated user's channel.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:pageToken` (*type:* `String.t`) - The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:categoryId` (*type:* `String.t`) - Return the channels within the specified guide category ID.
+      *   `:forUsername` (*type:* `String.t`) - Return the channel associated with a YouTube username.
+      *   `:hl` (*type:* `String.t`) - Stands for "host language". Specifies the localization language of the
+          metadata to be filled into snippet.localized. The field is filled with the
+          default metadata if there is no localization in the specified language.
+          The parameter value must be a language code included in the list returned
+          by the i18nLanguages.list method (e.g. en_US, es_MX).
+      *   `:id` (*type:* `list(String.t)`) - Return the channels with the specified IDs.
+      *   `:managedByMe` (*type:* `boolean()`) - Return the channels managed by the authenticated user.
+      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
+          maximum number of items that should be returned in the result set.
+      *   `:mine` (*type:* `boolean()`) - Return the ids of channels owned by the authenticated user.
+      *   `:mySubscribers` (*type:* `boolean()`) - Return the channels subscribed to the authenticated user
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the
+          request's authorization credentials identify a YouTube CMS user who is
+          acting on behalf of the content owner specified in the parameter value.
+          This parameter is intended for YouTube content partners that own and manage
+          many different YouTube channels. It allows content owners to authenticate
+          once and get access to all their video and channel data, without having to
+          provide authentication credentials for each individual channel. The CMS
+          account that the user authenticates with must be linked to the specified
+          YouTube content owner.
+      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
+          page in the result set that should be returned. In an API response, the
+          <code>nextPageToken</code> and <code>prevPageToken</code> properties
+          identify other pages that could be retrieved.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -63,17 +88,23 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.ChannelListResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_channels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.ChannelListResponse.t()} | {:error, Tesla.Env.t()}
+  @spec youtube_channels_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
+          {:ok, GoogleApi.YouTube.V3.Model.ChannelListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_channels_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :categoryId => :query,
       :forUsername => :query,
       :hl => :query,
@@ -100,25 +131,41 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
   end
 
   @doc """
-  Updates a channel's metadata. Note that this method currently only supports updates to the channel resource's brandingSettings and invideoPromotion objects and their child properties.
+  Updates an existing resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
-
-      The API currently only allows the parameter value to be set to either brandingSettings or invideoPromotion. (You cannot update both of those parts with a single request.)
-
-      Note that this method overrides the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter serves two purposes in
+      this operation. It identifies the properties that the write operation will
+      set as well as the properties that the API response will
+      include.<br/><br/>The API currently only allows the parameter value to be
+      set to either <code>brandingSettings</code> or
+      <code>invideoPromotion</code>. (You cannot update both of those parts with
+      a single request.)<br/><br/>Note that this method overrides the existing
+      values for all of the mutable properties that are contained in any parts
+      that the parameter value specifies.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - The <code><strong>onBehalfOfContentOwner</strong></code> parameter
+          indicates that the authenticated user is acting on behalf of the content
+          owner specified in the parameter value. This parameter is intended for
+          YouTube content partners that own and manage many different YouTube
+          channels. It allows content owners to authenticate once and get access to
+          all their video and channel data, without having to provide authentication
+          credentials for each individual channel. The actual CMS account that the
+          user authenticates with needs to be linked to the specified YouTube content
+          owner.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Channel.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -127,17 +174,21 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.Channel{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_channels_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Channel.t()} | {:error, Tesla.Env.t()}
+  @spec youtube_channels_update(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_channels_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOfContentOwner => :query,
       :body => :body
     }

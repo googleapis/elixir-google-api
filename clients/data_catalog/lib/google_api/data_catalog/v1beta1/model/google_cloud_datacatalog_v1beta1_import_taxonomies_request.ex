@@ -22,7 +22,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Impor
 
   ## Attributes
 
-  *   `inlineSource` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1InlineSource.t`, *default:* `nil`) - Inline source used for taxonomies import
+  *   `inlineSource` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1InlineSource.t`, *default:* `nil`) - Inline source used for taxonomies to be imported.
   """
 
   use GoogleApi.Gax.ModelBase

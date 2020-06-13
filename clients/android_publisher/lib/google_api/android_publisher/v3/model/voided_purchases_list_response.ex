@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.VoidedPurchasesListResponse do
   @moduledoc """
-
+  Response for the voidedpurchases.list API.
 
   ## Attributes
 
-  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PageInfo.t`, *default:* `nil`) - 
-  *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t`, *default:* `nil`) - 
+  *   `pageInfo` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PageInfo.t`, *default:* `nil`) - General pagination information.
+  *   `tokenPagination` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TokenPagination.t`, *default:* `nil`) - Pagination information for token pagination.
   *   `voidedPurchases` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.VoidedPurchase.t)`, *default:* `nil`) - 
   """
 

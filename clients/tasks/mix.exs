@@ -18,7 +18,7 @@
 defmodule GoogleApi.Tasks.Mixfile do
   use Mix.Project
 
-  @version "0.7.0"
+  @version "0.10.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Tasks.Mixfile do
 
   defp description() do
     """
-    Tasks API client library. Manages your tasks and task lists.
+    Tasks API client library. The Google Tasks API lets you manage your tasks and task lists.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Tasks.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/tasks",
-        "Homepage" => "https://developers.google.com/google-apps/tasks/firstapp"
+        "Homepage" => ""
       }
     ]
   end

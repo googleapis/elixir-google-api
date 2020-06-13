@@ -17,6 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.BraggingRights do
   @moduledoc """
+  **DEPRECATED**: No data will be returned
   A person's bragging rights.
 
   ## Attributes

@@ -21,9 +21,17 @@ defmodule GoogleApi.Content.V21.Model.OrderPickupDetails do
 
   ## Attributes
 
-  *   `address` (*type:* `GoogleApi.Content.V21.Model.OrderAddress.t`, *default:* `nil`) - Address of the pickup location where the shipment should be sent. Note that recipientName in the address is the name of the business at the pickup location.
+  *   `address` (*type:* `GoogleApi.Content.V21.Model.OrderAddress.t`, *default:* `nil`) - Address of the pickup location where the shipment should be sent. Note that `recipientName` in the address is the name of the business at the pickup location.
   *   `collectors` (*type:* `list(GoogleApi.Content.V21.Model.OrderPickupDetailsCollector.t)`, *default:* `nil`) - Collectors authorized to pick up shipment from the pickup location.
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - ID of the pickup location.
+  *   `pickupType` (*type:* `String.t`, *default:* `nil`) - The pickup type of this order.
+
+      Acceptable values are:  
+      - "`merchantStore`" 
+      - "`merchantStoreCurbside`" 
+      - "`merchantStoreLocker`" 
+      - "`thirdPartyPickupPoint`" 
+      - "`thirdPartyLocker`"
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +39,14 @@ defmodule GoogleApi.Content.V21.Model.OrderPickupDetails do
   @type t :: %__MODULE__{
           :address => GoogleApi.Content.V21.Model.OrderAddress.t(),
           :collectors => list(GoogleApi.Content.V21.Model.OrderPickupDetailsCollector.t()),
-          :locationId => String.t()
+          :locationId => String.t(),
+          :pickupType => String.t()
         }
 
   field(:address, as: GoogleApi.Content.V21.Model.OrderAddress)
   field(:collectors, as: GoogleApi.Content.V21.Model.OrderPickupDetailsCollector, type: :list)
   field(:locationId)
+  field(:pickupType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.OrderPickupDetails do

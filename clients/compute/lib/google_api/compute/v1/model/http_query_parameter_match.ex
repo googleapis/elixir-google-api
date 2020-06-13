@@ -28,6 +28,7 @@ defmodule GoogleApi.Compute.V1.Model.HttpQueryParameterMatch do
       Only one of presentMatch, exactMatch or regexMatch must be set.
   *   `regexMatch` (*type:* `String.t`, *default:* `nil`) - The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript 
       Only one of presentMatch, exactMatch or regexMatch must be set.
+      Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,21 +17,24 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.InAppProductListing do
   @moduledoc """
-
+  Store listing of a single in-app product.
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - 
-  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `benefits` (*type:* `list(String.t)`, *default:* `nil`) - Localized entitlement benefits for a subscription.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description for the store listing.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title for the store listing.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :benefits => list(String.t()),
           :description => String.t(),
           :title => String.t()
         }
 
+  field(:benefits, type: :list)
   field(:description)
   field(:title)
 end

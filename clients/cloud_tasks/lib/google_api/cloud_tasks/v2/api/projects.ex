@@ -52,7 +52,9 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2.Model.Location.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudTasks.V2.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudtasks_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -112,7 +114,9 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudtasks_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudTasks.V2.Model.ListLocationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudTasks.V2.Model.ListLocationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudtasks_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -193,7 +197,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_create(
         connection,
         parent,
@@ -273,7 +278,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_delete(
         connection,
         name,
@@ -340,7 +346,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_get(
         connection,
         name,
@@ -416,7 +423,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_get_iam_policy(
         connection,
         resource,
@@ -512,7 +520,10 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.ListQueuesResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.ListQueuesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudtasks_projects_locations_queues_list(
         connection,
         parent,
@@ -617,7 +628,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_patch(
         connection,
         name,
@@ -693,7 +705,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_pause(
         connection,
         name,
@@ -767,7 +780,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_purge(
         connection,
         name,
@@ -848,7 +862,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Queue.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_resume(
         connection,
         name,
@@ -927,7 +942,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_set_iam_policy(
         connection,
         resource,
@@ -1004,7 +1020,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudTasks.V2.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudtasks_projects_locations_queues_test_iam_permissions(
         connection,
         resource,
@@ -1081,7 +1098,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Task.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Task.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_tasks_create(
         connection,
         parent,
@@ -1153,7 +1171,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_tasks_delete(
         connection,
         name,
@@ -1232,7 +1251,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Task.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Task.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_tasks_get(
         connection,
         name,
@@ -1337,7 +1357,10 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.ListTasksResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.ListTasksResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudtasks_projects_locations_queues_tasks_list(
         connection,
         parent,
@@ -1431,7 +1454,8 @@ defmodule GoogleApi.CloudTasks.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTasks.V2.Model.Task.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTasks.V2.Model.Task.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtasks_projects_locations_queues_tasks_run(
         connection,
         name,

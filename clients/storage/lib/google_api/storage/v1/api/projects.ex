@@ -55,7 +55,8 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.HmacKey.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.HmacKey.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_projects_hmac_keys_create(
         connection,
         project_id,
@@ -119,7 +120,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_projects_hmac_keys_delete(
         connection,
         project_id,
@@ -183,7 +184,10 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.HmacKeyMetadata.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.HmacKeyMetadata.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storage_projects_hmac_keys_get(
         connection,
         project_id,
@@ -245,7 +249,9 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec storage_projects_hmac_keys_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.HmacKeysMetadata.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.HmacKeysMetadata.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storage_projects_hmac_keys_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -307,7 +313,10 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Storage.V1.Model.HmacKeyMetadata.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.HmacKeyMetadata.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storage_projects_hmac_keys_update(
         connection,
         project_id,
@@ -367,7 +376,9 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec storage_projects_service_account_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Storage.V1.Model.ServiceAccount.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Storage.V1.Model.ServiceAccount.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storage_projects_service_account_get(
         connection,
         project_id,

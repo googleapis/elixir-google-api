@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.YouTube.V3.Model.I18nLanguageSnippet do
   @moduledoc """
-  Basic details about an i18n language, such as language code and human-readable name.
+  Basic details about an i18n language, such as language code and
+  human-readable name.
 
   ## Attributes
 

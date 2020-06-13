@@ -21,9 +21,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageConfig do
 
   ## Attributes
 
-  *   `bigQueryOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions.t`, *default:* `nil`) - BigQuery options specification.
-  *   `cloudStorageOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t`, *default:* `nil`) - Google Cloud Storage options specification.
-  *   `datastoreOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions.t`, *default:* `nil`) - Google Cloud Datastore options specification.
+  *   `bigQueryOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions.t`, *default:* `nil`) - BigQuery options.
+  *   `cloudStorageOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t`, *default:* `nil`) - Google Cloud Storage options.
+  *   `datastoreOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions.t`, *default:* `nil`) - Google Cloud Datastore options.
+  *   `hybridOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridOptions.t`, *default:* `nil`) - Hybrid inspection options.
+      Early access feature is in a pre-release state and might change or have
+      limited support. For more information, see
+      https://cloud.google.com/products#product-launch-stages.
   *   `timespanConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig.t`, *default:* `nil`) - 
   """
 
@@ -34,12 +38,14 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageConfig do
           :cloudStorageOptions =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t(),
           :datastoreOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions.t(),
+          :hybridOptions => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridOptions.t(),
           :timespanConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig.t()
         }
 
   field(:bigQueryOptions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions)
   field(:cloudStorageOptions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions)
   field(:datastoreOptions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions)
+  field(:hybridOptions, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridOptions)
   field(:timespanConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig)
 end
 

@@ -21,31 +21,37 @@ defmodule GoogleApi.YouTube.V3.Model.MembershipsDetails do
 
   ## Attributes
 
-  *   `accessibleLevels` (*type:* `list(String.t)`, *default:* `nil`) - All levels that the user has access to. This includes the purchased level and all other levels that are included because of a higher purchase.
-  *   `memberSince` (*type:* `String.t`, *default:* `nil`) - The date and time when the user became a continuous member across all levels.
-  *   `memberSinceCurrentLevel` (*type:* `String.t`, *default:* `nil`) - The date and time when the user started to continuously have access to the currently highest level.
-  *   `memberTotalDuration` (*type:* `integer()`, *default:* `nil`) - The cumulative time the user has been a member across all levels in complete months (the time is rounded down to the nearest integer).
-  *   `memberTotalDurationCurrentLevel` (*type:* `integer()`, *default:* `nil`) - The cumulative time the user has had access to the currently highest level in complete months (the time is rounded down to the nearest integer).
-  *   `purchasedLevel` (*type:* `String.t`, *default:* `nil`) - The highest level the user has access to at the moment.
+  *   `accessibleLevels` (*type:* `list(String.t)`, *default:* `nil`) - Ids of all levels that the user has access to. This includes the currently
+      active level and all other levels that are included because of a higher
+      purchase.
+  *   `highestAccessibleLevel` (*type:* `String.t`, *default:* `nil`) - Id of the highest level that the user has access to at the moment.
+  *   `highestAccessibleLevelDisplayName` (*type:* `String.t`, *default:* `nil`) - Display name for the highest level that the user has access to at the
+      moment.
+  *   `membershipsDuration` (*type:* `GoogleApi.YouTube.V3.Model.MembershipsDuration.t`, *default:* `nil`) - Data about memberships duration without taking into consideration pricing
+      levels.
+  *   `membershipsDurationAtLevels` (*type:* `list(GoogleApi.YouTube.V3.Model.MembershipsDurationAtLevel.t)`, *default:* `nil`) - Data about memberships duration on particular pricing levels.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :accessibleLevels => list(String.t()),
-          :memberSince => String.t(),
-          :memberSinceCurrentLevel => String.t(),
-          :memberTotalDuration => integer(),
-          :memberTotalDurationCurrentLevel => integer(),
-          :purchasedLevel => String.t()
+          :highestAccessibleLevel => String.t(),
+          :highestAccessibleLevelDisplayName => String.t(),
+          :membershipsDuration => GoogleApi.YouTube.V3.Model.MembershipsDuration.t(),
+          :membershipsDurationAtLevels =>
+            list(GoogleApi.YouTube.V3.Model.MembershipsDurationAtLevel.t())
         }
 
   field(:accessibleLevels, type: :list)
-  field(:memberSince)
-  field(:memberSinceCurrentLevel)
-  field(:memberTotalDuration)
-  field(:memberTotalDurationCurrentLevel)
-  field(:purchasedLevel)
+  field(:highestAccessibleLevel)
+  field(:highestAccessibleLevelDisplayName)
+  field(:membershipsDuration, as: GoogleApi.YouTube.V3.Model.MembershipsDuration)
+
+  field(:membershipsDurationAtLevels,
+    as: GoogleApi.YouTube.V3.Model.MembershipsDurationAtLevel,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.MembershipsDetails do

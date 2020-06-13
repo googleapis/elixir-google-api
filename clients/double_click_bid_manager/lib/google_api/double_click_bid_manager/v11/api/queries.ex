@@ -39,6 +39,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:asynchronous` (*type:* `boolean()`) - If true, tries to run the query asynchronously. Only applicable when the frequency is ONE_TIME.
       *   `:body` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.Query.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -48,7 +49,9 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
   *   `{:error, info}` on failure
   """
   @spec doubleclickbidmanager_queries_createquery(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DoubleClickBidManager.V11.Model.Query.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickBidManager.V11.Model.Query.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclickbidmanager_queries_createquery(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -58,6 +61,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :asynchronous => :query,
       :body => :body
     }
 
@@ -100,7 +104,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def doubleclickbidmanager_queries_deletequery(
         connection,
         query_id,
@@ -158,7 +162,10 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DoubleClickBidManager.V11.Model.Query.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DoubleClickBidManager.V11.Model.Query.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclickbidmanager_queries_getquery(
         connection,
         query_id,
@@ -214,7 +221,8 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
   """
   @spec doubleclickbidmanager_queries_listqueries(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickBidManager.V11.Model.ListQueriesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclickbidmanager_queries_listqueries(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -257,6 +265,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:asynchronous` (*type:* `boolean()`) - If true, tries to run the query asynchronously.
       *   `:body` (*type:* `GoogleApi.DoubleClickBidManager.V11.Model.RunQueryRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -270,7 +279,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def doubleclickbidmanager_queries_runquery(
         connection,
         query_id,
@@ -285,6 +294,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Queries do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :asynchronous => :query,
       :body => :body
     }
 

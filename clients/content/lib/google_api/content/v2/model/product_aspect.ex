@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.ProductAspect do
 
   ## Attributes
 
-  *   `aspectName` (*type:* `String.t`, *default:* `nil`) - The name of the aspect.
-  *   `destinationName` (*type:* `String.t`, *default:* `nil`) - The name of the destination. Leave out to apply to all destinations.
-  *   `intention` (*type:* `String.t`, *default:* `nil`) - Whether the aspect is required, excluded or should be validated.
+  *   `aspectName` (*type:* `String.t`, *default:* `nil`) - Deprecated.
+  *   `destinationName` (*type:* `String.t`, *default:* `nil`) - Deprecated.
+  *   `intention` (*type:* `String.t`, *default:* `nil`) - Deprecated.
   """
 
   use GoogleApi.Gax.ModelBase

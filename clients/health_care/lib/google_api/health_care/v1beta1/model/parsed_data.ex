@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ParsedData do
   @moduledoc """
-  The content of a HL7v2 message in a structured format.
+  The content of an HL7v2 message in a structured format.
 
   ## Attributes
 

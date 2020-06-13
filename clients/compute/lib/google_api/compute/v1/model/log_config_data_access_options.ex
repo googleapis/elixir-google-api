@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.LogConfigDataAccessOptions do
 
   ## Attributes
 
-  *   `logMode` (*type:* `String.t`, *default:* `nil`) - Whether Gin logging should happen in a fail-closed manner at the caller. This is relevant only in the LocalIAM implementation, for now.
+  *   `logMode` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,13 +24,10 @@ git clean -fdx clients
 function ensure_file_permissions {
     echo "fixing file permissions"
     if [[ ! -z "${USER_GROUP}" ]]; then
-        chown -R ${USER_GROUP} clients
+        chown -R ${USER_GROUP} .
     fi
 }
 trap ensure_file_permissions EXIT
-
-# install npm dependencies
-npm install
 
 # install dependencies
 mix deps.get

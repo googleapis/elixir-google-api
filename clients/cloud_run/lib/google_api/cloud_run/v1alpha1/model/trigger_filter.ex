@@ -21,31 +21,24 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter do
 
   ## Attributes
 
-  *   `attributes` (*type:* `map()`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run on GKE: supported
-
-      Attributes filters events by exact match on event context attributes.
+  *   `attributes` (*type:* `map()`, *default:* `nil`) - Optional. Attributes filters events by exact match on event context attributes.
       Each key in the map is compared with the equivalent key in the event
       context. An event passes the filter if all values are equal to the
       specified values.
 
       Nested context attributes are not supported as keys.
       Only string values are supported.
-
-      +optional
-  *   `sourceAndType` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType.t`, *default:* `nil`) - SourceAndType is DEPRECATED and replaced by the Attributes field.
+      Note that this field is optional in knative. In fully managed, 'type'
+      attribute is required due to different broker implementation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => map(),
-          :sourceAndType => GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType.t()
+          :attributes => map()
         }
 
   field(:attributes, type: :map)
-  field(:sourceAndType, as: GoogleApi.CloudRun.V1alpha1.Model.TriggerFilterSourceAndType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter do

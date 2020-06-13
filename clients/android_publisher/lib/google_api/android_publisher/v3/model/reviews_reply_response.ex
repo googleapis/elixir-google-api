@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ReviewsReplyResponse do
   @moduledoc """
-
+  Response on status of replying to a review.
 
   ## Attributes
 
-  *   `result` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ReviewReplyResult.t`, *default:* `nil`) - 
+  *   `result` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ReviewReplyResult.t`, *default:* `nil`) - The result of replying/updating a reply to review.
   """
 
   use GoogleApi.Gax.ModelBase

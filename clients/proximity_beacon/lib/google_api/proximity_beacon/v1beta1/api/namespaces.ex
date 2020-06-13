@@ -61,6 +61,7 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Namespaces do
   """
   @spec proximitybeacon_namespaces_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.ListNamespacesResponse.t()}
+          | {:ok, Tesla.Env.t()}
           | {:error, Tesla.Env.t()}
   def proximitybeacon_namespaces_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
@@ -126,7 +127,9 @@ defmodule GoogleApi.ProximityBeacon.V1beta1.Api.Namespaces do
   *   `{:error, info}` on failure
   """
   @spec proximitybeacon_namespaces_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Namespace.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ProximityBeacon.V1beta1.Model.Namespace.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def proximitybeacon_namespaces_update(
         connection,
         namespace_name,

@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransientCryptoKey do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the key. [required]
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the key.
       This is an arbitrary string used to differentiate different keys.
       A unique key is generated per name: two separate `TransientCryptoKey`
       protos share the same generated key if their names are the same.

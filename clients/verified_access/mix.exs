@@ -18,7 +18,7 @@
 defmodule GoogleApi.VerifiedAccess.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.5.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.VerifiedAccess.Mixfile do
 
   defp description() do
     """
-    Verified Access API client library. API for Verified Access chrome extension to provide credential verification for chrome devices connecting to an enterprise network
+    Chrome Verified Access API client library. API for Verified Access chrome extension to provide credential verification for chrome devices connecting to an enterprise network
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.VerifiedAccess.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/verified_access",
-        "Homepage" => "https://www.google.com/work/chrome/"
+        "Homepage" => "https://developers.google.com/chrome/verified-access"
       }
     ]
   end

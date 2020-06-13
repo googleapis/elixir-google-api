@@ -23,8 +23,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryOptions do
 
   *   `excludedFields` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - References to fields excluded from scanning. This allows you to skip
       inspection of entire columns which you know have no findings.
-  *   `identifyingFields` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - References to fields uniquely identifying rows within the table.
-      Nested fields in the format, like `person.birthdate.year`, are allowed.
+  *   `identifyingFields` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FieldId.t)`, *default:* `nil`) - Table fields that may uniquely identify a row within the table. When
+      `actions.saveFindings.outputConfig.table` is specified, the values of
+      columns specified here are available in the output table under
+      `location.content_locations.record_location.record_key.id_values`. Nested
+      fields such as `person.birthdate.year` are allowed.
   *   `rowsLimit` (*type:* `String.t`, *default:* `nil`) - Max number of rows to scan. If the table has more rows than this value, the
       rest of the rows are omitted. If not set, or if set to 0, all rows will be
       scanned. Only one of rows_limit and rows_limit_percent can be specified.

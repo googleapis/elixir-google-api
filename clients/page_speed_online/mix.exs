@@ -18,7 +18,7 @@
 defmodule GoogleApi.PageSpeedOnline.Mixfile do
   use Mix.Project
 
-  @version "0.5.0"
+  @version "0.8.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.PageSpeedOnline.Mixfile do
 
   defp description() do
     """
-    PageSpeed Insights API client library. Analyzes the performance of a web page and provides tailored suggestions to make that page faster.
+    PageSpeed Insights API client library.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.PageSpeedOnline.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/page_speed_online",
-        "Homepage" => "https://developers.google.com/speed/docs/insights/v5/get-started"
+        "Homepage" => "https://developers.google.com/speed/docs/insights/v5/about"
       }
     ]
   end

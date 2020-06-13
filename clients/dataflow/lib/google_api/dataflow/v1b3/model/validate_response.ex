@@ -22,15 +22,18 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ValidateResponse do
   ## Attributes
 
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Will be empty if validation succeeds.
+  *   `queryInfo` (*type:* `GoogleApi.Dataflow.V1b3.Model.QueryInfo.t`, *default:* `nil`) - Information about the validated query. Not defined if validation fails.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorMessage => String.t()
+          :errorMessage => String.t(),
+          :queryInfo => GoogleApi.Dataflow.V1b3.Model.QueryInfo.t()
         }
 
   field(:errorMessage)
+  field(:queryInfo, as: GoogleApi.Dataflow.V1b3.Model.QueryInfo)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.ValidateResponse do

@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FindingLimits do
   @moduledoc """
-
+  Configuration to control the number of findings returned.
 
   ## Attributes
 
   *   `maxFindingsPerInfoType` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeLimit.t)`, *default:* `nil`) - Configuration of findings limit given for specified infoTypes.
   *   `maxFindingsPerItem` (*type:* `integer()`, *default:* `nil`) - Max number of findings that will be returned for each item scanned.
-      When set within `InspectDataSourceRequest`,
+      When set within `InspectJobConfig`,
       the maximum returned is 2000 regardless if this is set higher.
       When set within `InspectContentRequest`, this field is ignored.
   *   `maxFindingsPerRequest` (*type:* `integer()`, *default:* `nil`) - Max number of findings that will be returned per request/job.

@@ -21,17 +21,24 @@ defmodule GoogleApi.Content.V21.Model.AccountGoogleMyBusinessLink do
 
   ## Attributes
 
+  *   `gmbAccountId` (*type:* `String.t`, *default:* `nil`) - The ID of the GMB account. If this is provided, then `gmbEmail` is ignored. The value of this field should match the `accountId` used by the GMB API.
   *   `gmbEmail` (*type:* `String.t`, *default:* `nil`) - The GMB email address of which a specific account within a GMB account. A sample account within a GMB account could be a business account with set of locations, managed under the GMB account.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the link between this Merchant Center account and the GMB account.
+
+      Acceptable values are:  
+      - "`active`" 
+      - "`pending`"
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :gmbAccountId => String.t(),
           :gmbEmail => String.t(),
           :status => String.t()
         }
 
+  field(:gmbAccountId)
   field(:gmbEmail)
   field(:status)
 end

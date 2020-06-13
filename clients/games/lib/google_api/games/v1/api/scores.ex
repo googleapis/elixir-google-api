@@ -63,7 +63,8 @@ defmodule GoogleApi.Games.V1.Api.Scores do
           keyword()
         ) ::
           {:ok, GoogleApi.Games.V1.Model.PlayerLeaderboardScoreListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_scores_get(
         connection,
         player_id,
@@ -138,7 +139,10 @@ defmodule GoogleApi.Games.V1.Api.Scores do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Games.V1.Model.LeaderboardScores.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Games.V1.Model.LeaderboardScores.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_scores_list(
         connection,
         leaderboard_id,
@@ -212,7 +216,10 @@ defmodule GoogleApi.Games.V1.Api.Scores do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Games.V1.Model.LeaderboardScores.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Games.V1.Model.LeaderboardScores.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_scores_list_window(
         connection,
         leaderboard_id,
@@ -278,7 +285,9 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   *   `{:error, info}` on failure
   """
   @spec games_scores_submit(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.PlayerScoreResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.PlayerScoreResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_scores_submit(connection, leaderboard_id, score, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -331,7 +340,9 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   *   `{:error, info}` on failure
   """
   @spec games_scores_submit_multiple(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.PlayerScoreListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.PlayerScoreListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_scores_submit_multiple(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

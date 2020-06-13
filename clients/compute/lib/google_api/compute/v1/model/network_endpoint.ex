@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
 
   ## Attributes
 
+  *   `fqdn` (*type:* `String.t`, *default:* `nil`) - Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
 
       The name must be 1-63 characters long, and comply with RFC1035.
@@ -31,11 +32,13 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :fqdn => String.t(),
           :instance => String.t(),
           :ipAddress => String.t(),
           :port => integer()
         }
 
+  field(:fqdn)
   field(:instance)
   field(:ipAddress)
   field(:port)

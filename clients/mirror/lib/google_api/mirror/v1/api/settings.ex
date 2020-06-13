@@ -50,7 +50,9 @@ defmodule GoogleApi.Mirror.V1.Api.Settings do
   *   `{:error, info}` on failure
   """
   @spec mirror_settings_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Setting.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.Setting.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_settings_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

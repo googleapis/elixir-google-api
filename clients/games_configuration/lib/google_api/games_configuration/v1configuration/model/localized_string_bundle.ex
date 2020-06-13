@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedStringBundle do
   @moduledoc """
-  This is a JSON template for a localized string bundle resource.
+  A localized string bundle resource.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `gamesConfiguration#localizedStringBundle`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesConfiguration#localizedStringBundle.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesConfiguration#localizedStringBundle`.
   *   `translations` (*type:* `list(GoogleApi.GamesConfiguration.V1configuration.Model.LocalizedString.t)`, *default:* `nil`) - The locale strings.
   """
 

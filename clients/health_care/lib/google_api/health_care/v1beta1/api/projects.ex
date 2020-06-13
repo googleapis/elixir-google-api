@@ -58,7 +58,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Location.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Location.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_get(
         connection,
         projects_id,
@@ -126,7 +129,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   """
   @spec healthcare_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListLocationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_list(
         connection,
         projects_id,
@@ -209,7 +213,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_create(
         connection,
         projects_id,
@@ -259,8 +266,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   error
   details field type is
   DeidentifyErrorDetails.
-  Errors are also logged to Stackdriver Logging. For more information,
-  see [Viewing logs](/healthcare/docs/how-tos/stackdriver-logging).
+  The LRO result may still be successful if de-identification fails for some
+  DICOM instances. The new de-identified dataset will not contain these
+  failed resources. Failed resource totals are tracked in
+  DeidentifySummary.failure_resource_count.
+  Error details are also logged to Cloud Logging. For more information,
+  see [Viewing logs](/healthcare/docs/how-tos/logging).
 
   ## Parameters
 
@@ -296,7 +307,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_deidentify(
         connection,
         projects_id,
@@ -377,7 +391,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_delete(
         connection,
         projects_id,
@@ -455,7 +472,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Dataset.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Dataset.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_get(
         connection,
         projects_id,
@@ -529,6 +549,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -543,7 +567,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_get_iam_policy(
         connection,
         projects_id,
@@ -625,7 +652,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListDatasetsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_list(
         connection,
         projects_id,
@@ -672,7 +700,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `dataset.name`. Output only. Resource name of the dataset, of the form
+  *   `projects_id` (*type:* `String.t`) - Part of `dataset.name`. Resource name of the dataset, of the form
       `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `dataset.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `dataset.name`. See documentation of `projectsId`.
@@ -706,7 +734,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Dataset.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Dataset.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_patch(
         connection,
         projects_id,
@@ -754,7 +785,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -790,7 +821,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_set_iam_policy(
         connection,
         projects_id,
@@ -836,7 +870,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -878,7 +912,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_test_iam_permissions(
         connection,
         projects_id,
@@ -911,6 +946,291 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
+  Gets the access control policy for a resource.
+  Returns an empty policy if the resource exists and does not have a policy
+  set.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `annotation_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
+
+          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+          rejected.
+
+          Requests for policies with any conditional bindings must specify version 3.
+          Policies without any conditional bindings may specify any valid value or
+          leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_annotation_stores_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_annotation_stores_get_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        annotation_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Policy{}])
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any
+  existing policy.
+
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `annotation_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_annotation_stores_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_annotation_stores_set_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        annotation_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource.
+  If the resource does not exist, this will return an empty set of
+  permissions, not a `NOT_FOUND` error.
+
+  Note: This operation is designed to be used for building permission-aware
+  UIs and command-line tools, not for authorization checking. This operation
+  may "fail open" without warning.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
+      See the operation documentation for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `annotation_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_annotation_stores_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_annotation_stores_test_iam_permissions(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        annotation_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -961,7 +1281,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_create(
         connection,
         projects_id,
@@ -1006,7 +1329,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a new DICOM store containing de-identified data from the source
+  De-identifies data from the source store and writes it to the destination
   store. The metadata field type
   is OperationMetadata.
   If the request is successful, the
@@ -1015,8 +1338,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   error
   details field type is
   DeidentifyErrorDetails.
-  Errors are also logged to Stackdriver
-  (see [Viewing logs](/healthcare/docs/how-tos/stackdriver-logging)).
+  The LRO result may still be successful if de-identification fails for some
+  DICOM instances. The output DICOM store will not contain
+  these failed resources. Failed resource totals are tracked in
+  DeidentifySummary.failure_resource_count.
+  Error details are also logged to Cloud Logging
+  (see [Viewing logs](/healthcare/docs/how-tos/logging)).
 
   ## Parameters
 
@@ -1054,7 +1381,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_deidentify(
         connection,
         projects_id,
@@ -1137,7 +1467,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_delete(
         connection,
         projects_id,
@@ -1184,6 +1517,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Exports data to the specified destination by copying it from the DICOM
   store.
+  Errors are also logged to Cloud Logging. For more information,
+  see [Viewing logs](/healthcare/docs/how-tos/logging).
   The metadata field type is
   OperationMetadata.
 
@@ -1224,7 +1559,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_export(
         connection,
         projects_id,
@@ -1306,7 +1644,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_get(
         connection,
         projects_id,
@@ -1383,6 +1724,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1398,7 +1743,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_get_iam_policy(
         connection,
         projects_id,
@@ -1447,9 +1795,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Imports data into the DICOM store by copying it from the specified source.
   For errors, the Operation is populated with error details (in the form
   of ImportDicomDataErrorDetails in error.details), which hold
-  finer-grained error information. Errors are also logged to Stackdriver
-  Logging. For more information,
-  see [Viewing logs](/healthcare/docs/how-tos/stackdriver-logging).
+  finer-grained error information. Errors are also logged to Cloud Logging.
+  For more information, see [Viewing logs](/healthcare/docs/how-tos/logging).
   The metadata field type is
   OperationMetadata.
 
@@ -1490,7 +1837,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_import(
         connection,
         projects_id,
@@ -1578,7 +1928,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListDicomStoresResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_list(
         connection,
         projects_id,
@@ -1631,7 +1982,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `dicomStore.name`. Output only. Resource name of the DICOM store, of the form
+  *   `projects_id` (*type:* `String.t`) - Part of `dicomStore.name`. Resource name of the DICOM store, of the form
       `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
@@ -1667,7 +2018,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.DicomStore.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_patch(
         connection,
         projects_id,
@@ -1715,7 +2069,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   SearchForInstances returns a list of matching instances. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -1752,7 +2106,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_search_for_instances(
         connection,
         projects_id,
@@ -1798,7 +2155,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   SearchForSeries returns a list of matching series. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -1835,7 +2192,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_search_for_series(
         connection,
         projects_id,
@@ -1881,7 +2241,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   SearchForStudies returns a list of matching studies. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -1918,7 +2278,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_search_for_studies(
         connection,
         projects_id,
@@ -1966,7 +2329,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -2004,7 +2367,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_set_iam_policy(
         connection,
         projects_id,
@@ -2052,7 +2418,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   StoreInstances stores DICOM instances associated with study instance unique
   identifiers (SUID). See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.5.
+  [Store
+  Transaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.5).
 
   ## Parameters
 
@@ -2090,7 +2457,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_store_instances(
         connection,
         projects_id,
@@ -2138,7 +2508,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -2182,7 +2552,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_test_iam_permissions(
         connection,
         projects_id,
@@ -2231,7 +2602,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   DeleteStudy deletes all instances within the given study. Delete requests
-  are equivalent to the GET requests specified in the WADO-RS standard.
+  are equivalent to the GET requests specified in the Retrieve transaction.
 
   ## Parameters
 
@@ -2269,7 +2640,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_delete(
         connection,
         projects_id,
@@ -2318,7 +2692,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   RetrieveStudyMetadata returns instance associated with the given study
   presented as metadata with the bulk data removed. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -2358,7 +2732,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_retrieve_metadata(
         connection,
         projects_id,
@@ -2406,7 +2783,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   RetrieveStudy returns all instances within the given study. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -2446,7 +2823,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_retrieve_study(
         connection,
         projects_id,
@@ -2494,7 +2874,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   SearchForInstances returns a list of matching instances. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -2535,7 +2915,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_search_for_instances(
         connection,
         projects_id,
@@ -2583,7 +2966,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   SearchForSeries returns a list of matching series. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -2623,7 +3006,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_search_for_series(
         connection,
         projects_id,
@@ -2672,7 +3058,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   StoreInstances stores DICOM instances associated with study instance unique
   identifiers (SUID). See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.5.
+  [Store
+  Transaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.5).
 
   ## Parameters
 
@@ -2713,7 +3100,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_store_instances(
         connection,
         projects_id,
@@ -2762,8 +3152,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   DeleteSeries deletes all instances within the given study and series.
-  Delete requests are equivalent to the GET requests specified in the WADO-RS
-  standard.
+  Delete requests are equivalent to the GET requests specified in the
+  Retrieve transaction.
 
   ## Parameters
 
@@ -2805,7 +3195,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_delete(
         connection,
         projects_id,
@@ -2856,7 +3249,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   RetrieveSeriesMetadata returns instance associated with the given study and
   series, presented as metadata with the bulk data removed. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -2898,7 +3291,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_retrieve_metadata(
         connection,
         projects_id,
@@ -2948,7 +3344,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   RetrieveSeries returns all instances within the given study and series. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -2990,7 +3386,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_retrieve_series(
         connection,
         projects_id,
@@ -3040,7 +3439,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   @doc """
   SearchForInstances returns a list of matching instances. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -3083,7 +3482,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_search_for_instances(
         connection,
         projects_id,
@@ -3134,7 +3536,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   DeleteInstance deletes an instance associated with the given study, series,
   and SOP Instance UID. Delete requests are equivalent to the GET requests
-  specified in the WADO-RS standard.
+  specified in the Retrieve transaction.
 
   ## Parameters
 
@@ -3178,7 +3580,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_delete(
         connection,
         projects_id,
@@ -3231,7 +3636,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   RetrieveInstance returns instance associated with the given study, series,
   and SOP Instance UID. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -3275,7 +3680,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_retrieve_instance(
         connection,
         projects_id,
@@ -3329,7 +3737,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   RetrieveInstanceMetadata returns instance associated with the given study,
   series, and SOP Instance UID presented as metadata with the bulk data
   removed. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -3373,7 +3781,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_retrieve_metadata(
         connection,
         projects_id,
@@ -3426,7 +3837,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   RetrieveRenderedInstance returns instance associated with the given study,
   series, and SOP Instance UID in an acceptable Rendered Media Type. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -3470,7 +3881,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_retrieve_rendered(
         connection,
         projects_id,
@@ -3523,7 +3937,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   RetrieveFrames returns instances associated with the given study, series,
   SOP Instance UID and frame numbers. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -3569,7 +3983,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_frames_retrieve_frames(
         connection,
         projects_id,
@@ -3625,7 +4042,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   RetrieveRenderedFrames returns instances associated with the given study,
   series, SOP Instance UID and frame numbers in an acceptable Rendered Media
   Type. See
-  http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4.
+  [RetrieveTransaction](http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4).
 
   ## Parameters
 
@@ -3671,7 +4088,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_frames_retrieve_rendered(
         connection,
         projects_id,
@@ -3761,7 +4181,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.FhirStore.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.FhirStore.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_create(
         connection,
         projects_id,
@@ -3806,7 +4229,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a new FHIR store containing de-identified data from the source
+  De-identifies data from the source store and writes it to the destination
   store. The metadata field type
   is OperationMetadata.
   If the request is successful, the
@@ -3815,8 +4238,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   error
   details field type is
   DeidentifyErrorDetails.
-  Errors are also logged to Stackdriver
-  (see [Viewing logs](/healthcare/docs/how-tos/stackdriver-logging)).
+  Errors are also logged to Cloud Logging
+  (see [Viewing logs](/healthcare/docs/how-tos/logging)).
 
   ## Parameters
 
@@ -3854,7 +4277,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_deidentify(
         connection,
         projects_id,
@@ -3936,7 +4362,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_delete(
         connection,
         projects_id,
@@ -3989,8 +4418,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   Immediate fatal errors appear in the
   error field, errors are also logged
-  to Stackdriver (see [Viewing
-  logs](/healthcare/docs/how-tos/stackdriver-logging)).
+  to Cloud Logging (see [Viewing
+  logs](/healthcare/docs/how-tos/logging)).
   Otherwise, when the operation finishes, a detailed response of type
   ExportResourcesResponse is returned in the
   response field.
@@ -4000,8 +4429,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the FHIR store to export resource from. The name should be in
-      the format of
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the FHIR store to export resource from, in the format of
       `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -4034,7 +4462,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_export(
         connection,
         projects_id,
@@ -4116,7 +4547,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.FhirStore.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.FhirStore.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_get(
         connection,
         projects_id,
@@ -4193,6 +4627,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4208,7 +4646,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_get_iam_policy(
         connection,
         projects_id,
@@ -4262,8 +4703,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   where this method is not appropriate, consider using ExecuteBundle to
   load data.
 
-  Every resource in the input must contain a client-supplied ID, and will be
-  stored using that ID regardless of the
+  Every resource in the input must contain a client-supplied ID. Each
+  resource is stored using the supplied ID regardless of the
   enable_update_create setting on the FHIR
   store.
 
@@ -4276,6 +4717,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   be imported, the FHIR store might be left in a state that violates
   referential integrity.
 
+  The import process does not trigger Cloud Pub/Sub notification or BigQuery
+  streaming update, regardless of how those are configured on the FHIR store.
+
   If a resource with the specified ID already exists, the most recent
   version of the resource is overwritten without creating a new historical
   version, regardless of the
@@ -4286,10 +4730,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   The import operation is idempotent unless the input data contains multiple
   valid resources with the same ID but different contents. In that case,
-  after the import completes, the store will contain exactly one resource
+  after the import completes, the store contains exactly one resource
   with that ID but there is no ordering guarantee on which version of the
   contents it will have. The operation result counters do not count
-  duplicate IDs as an error and will count one success for each resource in
+  duplicate IDs as an error and count one success for each resource in
   the input, which might result in a success count larger than the number
   of resources in the FHIR store. This often occurs when importing data
   organized in bundles produced by Patient-everything
@@ -4318,8 +4762,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   Immediate fatal errors appear in the
   error field, errors are also logged
-  to Stackdriver (see [Viewing
-  logs](/healthcare/docs/how-tos/stackdriver-logging)). Otherwise, when the
+  to Cloud Logging (see [Viewing
+  logs](/healthcare/docs/how-tos/logging)). Otherwise, when the
   operation finishes, a detailed response of type ImportResourcesResponse
   is returned in the response field.
   The metadata field type for this
@@ -4328,8 +4772,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the FHIR store to import FHIR resources to. The name should be
-      in the format of
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the FHIR store to import FHIR resources to, in the format of
       `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -4362,7 +4805,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_import(
         connection,
         projects_id,
@@ -4450,7 +4896,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListFhirStoresResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_list(
         connection,
         projects_id,
@@ -4539,7 +4986,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.FhirStore.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.FhirStore.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_patch(
         connection,
         projects_id,
@@ -4589,7 +5039,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -4627,7 +5077,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_set_iam_policy(
         connection,
         projects_id,
@@ -4675,7 +5128,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -4719,7 +5172,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_test_iam_permissions(
         connection,
         projects_id,
@@ -4767,12 +5221,237 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
+  Translates a code from one value set to another by searching for
+  appropriate concept maps.
+
+  Implements the FHIR standard $translate operation
+  ([DSTU2](https://www.hl7.org/fhir/DSTU2/operation-conceptmap-translate.html),
+  [STU3](https://www.hl7.org/fhir/STU3/operation-conceptmap-translate.html),
+  [R4](https://www.hl7.org/fhir/R4/operation-conceptmap-translate.html)).
+
+  On success, the response body contains a JSON-encoded representation
+  of a FHIR Parameters resource, which includes the translation result.
+  Errors generated by the FHIR store contain a JSON-encoded
+  `OperationOutcome` resource describing the reason for the error. If the
+  request cannot be mapped to a valid API method on a FHIR store, a generic
+  GCP error might be returned instead.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name for the FHIR store containing the concept map(s) to use for the
+      translation.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:code` (*type:* `String.t`) - The code to translate.
+      *   `:conceptMapVersion` (*type:* `String.t`) - The version of the concept map to use. If unset, the most current version
+          is used.
+      *   `:source` (*type:* `String.t`) - The source value set of the concept map to be used. If unset, target is
+          used to search for concept maps.
+      *   `:system` (*type:* `String.t`) - The system for the code to be translated.
+      *   `:target` (*type:* `String.t`) - The target value set of the concept map to be used. If unset, source is
+          used to search for concept maps.
+      *   `:url` (*type:* `String.t`) - The canonical url of the concept map to use. If unset, the source and
+          target is used to search for concept maps.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.HttpBody{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_search_translate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_search_translate(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :code => :query,
+      :conceptMapVersion => :query,
+      :source => :query,
+      :system => :query,
+      :target => :query,
+      :url => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/ConceptMap/$translate",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.HttpBody{}])
+  end
+
+  @doc """
+  Translates a code from one value set to another using a concept map.
+
+  Implements the FHIR standard $translate operation
+  ([DSTU2](https://www.hl7.org/fhir/DSTU2/operation-conceptmap-translate.html),
+  [STU3](https://www.hl7.org/fhir/STU3/operation-conceptmap-translate.html),
+  [R4](https://www.hl7.org/fhir/R4/operation-conceptmap-translate.html)).
+
+  On success, the response body contains a JSON-encoded representation
+  of a FHIR Parameters resource, which includes the translation result.
+  Errors generated by the FHIR store contain a JSON-encoded
+  `OperationOutcome` resource describing the reason for the error. If the
+  request cannot be mapped to a valid API method on a FHIR store, a generic
+  GCP error might be returned instead.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The URL for the concept map to use for the translation.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `concept_map_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:code` (*type:* `String.t`) - The code to translate.
+      *   `:conceptMapVersion` (*type:* `String.t`) - The version of the concept map to use. If unset, the most current version
+          is used.
+      *   `:system` (*type:* `String.t`) - The system for the code to be translated.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.HttpBody{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_translate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_translate(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        concept_map_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :code => :query,
+      :conceptMapVersion => :query,
+      :system => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/ConceptMap/{ConceptMapId}/$translate",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
+          "ConceptMapId" => URI.encode(concept_map_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.HttpBody{}])
+  end
+
+  @doc """
   Retrieves the N most recent `Observation` resources for a subject matching
   search criteria specified as query parameters, grouped by
   `Observation.code`, sorted from most recent to oldest.
 
-  Implements the FHIR extended operation
-  [Observation-lastn](http://hl7.org/implement/standards/fhir/STU3/observation-operations.html#lastn).
+  Implements the FHIR extended operation Observation-lastn
+  ([STU3](https://hl7.org/implement/standards/fhir/STU3/observation-operations.html#lastn),
+  [R4](https://hl7.org/implement/standards/fhir/R4/observation-operations.html#lastn)).
+
+  DSTU2 doesn't define the Observation-lastn method, but the server supports
+  it the same way it supports STU3.
 
   Search terms are provided as query parameters following the same pattern as
   the search method. The following search parameters must
@@ -4792,10 +5471,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   constrain these searches using Observation search parameters such as
   `_lastUpdated` or `date`.
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of a `Bundle` resource of type `searchset`, containing the results of the
   operation.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
@@ -4826,26 +5505,27 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.HttpBody{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__observation -
-          lastn(
-            Tesla.Env.client(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            keyword(),
-            keyword()
-          ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
-  def healthcare_projects_locations_datasets_fhir_stores_fhir__observation -
-        lastn(
-          connection,
-          projects_id,
-          locations_id,
-          datasets_id,
-          fhir_stores_id,
-          optional_params \\ [],
-          opts \\ []
-        ) do
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__observation_lastn(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir__observation_lastn(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -4881,13 +5561,32 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  On success, the response body will contain a JSON-encoded representation
+  Retrieves a Patient resource and resources related to that patient.
+
+  Implements the FHIR extended operation Patient-everything
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/patient-operations.html#everything),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/patient-operations.html#everything),
+  [R4](https://hl7.org/implement/standards/fhir/R4/patient-operations.html#everything)).
+
+  On success, the response body contains a JSON-encoded representation
   of a `Bundle` resource of type `searchset`, containing the results of the
   operation.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
+
+  The resources in scope for the response are:
+
+  * The patient resource itself.
+  * All the resources directly referenced by the patient resource.
+  * Resources directly referencing the patient resource that meet the
+    inclusion criteria. The inclusion criteria are based on the membership
+    rules in the patient compartment definition
+    ([DSTU2](https://hl7.org/fhir/DSTU2/compartment-patient.html),
+    [STU3](http://www.hl7.org/fhir/stu3/compartmentdefinition-patient.html),
+    [R4](https://hl7.org/fhir/R4/compartmentdefinition-patient.html)), which
+    details the eligible resource types and referencing search parameters.
 
   ## Parameters
 
@@ -4911,8 +5610,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:_count` (*type:* `integer()`) - Maximum number of resources in a page. Defaults to 100.
       *   `:_page_token` (*type:* `String.t`) - Used to retrieve the next or previous page of results
-          when using pagination. Value should be set to the value of page_token set
-          in next or previous page links' urls. Next and previous page are returned
+          when using pagination. Value should be set to the value of `page_token` set
+          in next or previous page links' URLs. Next and previous page are returned
           in the response bundle's links field, where `link.relation` is "previous"
           or "next".
 
@@ -4928,28 +5627,29 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.HttpBody{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__patient -
-          everything(
-            Tesla.Env.client(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            keyword(),
-            keyword()
-          ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
-  def healthcare_projects_locations_datasets_fhir_stores_fhir__patient -
-        everything(
-          connection,
-          projects_id,
-          locations_id,
-          datasets_id,
-          fhir_stores_id,
-          patient_id,
-          optional_params \\ [],
-          opts \\ []
-        ) do
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__patient_everything(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir__patient_everything(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        patient_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -5024,30 +5724,31 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__resource -
-          purge(
-            Tesla.Env.client(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            String.t(),
-            keyword(),
-            keyword()
-          ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def healthcare_projects_locations_datasets_fhir_stores_fhir__resource -
-        purge(
-          connection,
-          projects_id,
-          locations_id,
-          datasets_id,
-          fhir_stores_id,
-          fhir_id,
-          fhir_id1,
-          optional_params \\ [],
-          opts \\ []
-        ) do
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir__resource_purge(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir__resource_purge(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        fhir_id,
+        fhir_id1,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -5085,15 +5786,22 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the FHIR [capability
-  statement](http://hl7.org/implement/standards/fhir/STU3/capabilitystatement.html)
-  for the store, which contains a description of functionality supported by
-  the server.
+  Gets the FHIR capability statement
+  ([STU3](https://hl7.org/implement/standards/fhir/STU3/capabilitystatement.html),
+  [R4](https://hl7.org/implement/standards/fhir/R4/capabilitystatement.html)),
+  or the [conformance
+  statement](https://hl7.org/implement/standards/fhir/DSTU2/conformance.html)
+  in the DSTU2 case for the store, which contains a description of
+  functionality supported by the server.
 
-  Implements the FHIR standard [capabilities
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#capabilities).
+  Implements the FHIR standard capabilities interaction
+  ([STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#capabilities),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#capabilities)),
+  or the [conformance
+  interaction](https://hl7.org/implement/standards/fhir/DSTU2/http.html#conformance)
+  in the DSTU2 case.
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of a `CapabilityStatement` resource.
 
   ## Parameters
@@ -5130,7 +5838,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_capabilities(
         connection,
         projects_id,
@@ -5177,19 +5888,24 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Deletes FHIR resources that match a search query.
 
-  Implements the FHIR standard [conditional delete
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.13.1).
-  If multiple resources match, all of them will be deleted.
+  Implements the FHIR standard conditional delete interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.12.1),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.13.1),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#3.1.0.7.1)).
+  If multiple resources match, all matching resources are deleted.
 
   Search terms are provided as query parameters following the same pattern as
   the search method.
 
   Note: Unless resource versioning is disabled by setting the
   disable_resource_versioning flag
-  on the FHIR store, the deleted resources will be moved to a history
+  on the FHIR store, the deleted resources are moved to a history
   repository that can still be retrieved through vread
   and related methods, unless they are removed by the
   purge method.
+
+  This method requires the`healthcare.fhirStores.searchResources` and
+  `healthcare.fhirResources.delete` permissions on the parent FHIR store.
 
   ## Parameters
 
@@ -5199,8 +5915,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type to delete, such as Patient or Observation. For a
-      complete list, see the [FHIR Resource
-      Index](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html).
+      complete list, see the FHIR Resource Index
+      ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html),
+      [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html),
+      [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5229,7 +5947,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_delete(
         connection,
         projects_id,
@@ -5280,24 +6001,32 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   parameters, updates part of that resource by applying the operations
   specified in a [JSON Patch](http://jsonpatch.com/) document.
 
-  Implements the FHIR standard [conditional patch
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#patch).
+  Implements the FHIR standard conditional patch interaction
+  ([STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#patch),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#patch)).
+
+  DSTU2 doesn't define a conditional patch method, but the server supports it
+  in the same way it supports STU3.
 
   Search terms are provided as query parameters following the same pattern as
   the search method.
 
-  If the search criteria identify more than one match, the request will
-  return a `412 Precondition Failed` error.
+  If the search criteria identify more than one match, the request
+  returns a `412 Precondition Failed` error.
 
   The request body must contain a JSON Patch document, and the request
   headers must contain `Content-Type: application/json-patch+json`.
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of the updated resource, including the server-assigned version ID.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
+
+  This method requires the`healthcare.fhirStores.searchResources` permission
+  on the parent FHIR store and the `healthcare.fhirResources.patch`
+  permission on the requested FHIR store resource.
 
   ## Parameters
 
@@ -5307,8 +6036,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type to update, such as Patient or Observation. For a
-      complete list, see the [FHIR Resource
-      Index](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html).
+      complete list, see the FHIR Resource Index
+      ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html),
+      [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html),
+      [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5338,7 +6069,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_patch(
         connection,
         projects_id,
@@ -5389,31 +6123,36 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   If a resource is found based on the search criteria specified in the query
   parameters, updates the entire contents of that resource.
 
-  Implements the FHIR standard [conditional update
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#cond-update).
+  Implements the FHIR standard conditional update interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.10.2),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#cond-update),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#cond-update)).
 
   Search terms are provided as query parameters following the same pattern as
   the search method.
 
-  If the search criteria identify more than one match, the request will
-  return a `412 Precondition Failed` error.
+  If the search criteria identify more than one match, the request
+  returns a `412 Precondition Failed` error.
   If the search criteria identify zero matches, and the supplied resource
   body contains an `id`, and the FHIR store has
   enable_update_create set, creates the
   resource with the client-specified ID. If the search criteria identify zero
   matches, and the supplied resource body does not contain an `id`, the
-  resource will be created with a server-assigned ID as per the
+  resource is created with a server-assigned ID as per the
   create method.
 
   The request body must contain a JSON-encoded FHIR resource, and the request
   headers must contain `Content-Type: application/fhir+json`.
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of the updated resource, including the server-assigned version ID.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
+
+  This method requires the`healthcare.fhirStores.searchResources` and
+  `healthcare.fhirResources.update` permissions on the parent FHIR store.
 
   ## Parameters
 
@@ -5423,8 +6162,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type to update, such as Patient or Observation. For a
-      complete list, see the [FHIR Resource
-      Index](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html).
+      complete list, see the FHIR Resource Index
+      ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html),
+      [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html),
+      [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
       Must match the resource type in the provided content.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -5455,7 +6196,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_update(
         connection,
         projects_id,
@@ -5505,12 +6249,16 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Creates a FHIR resource.
 
-  Implements the FHIR standard [create
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#create),
+  Implements the FHIR standard create interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#create),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#create),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#create)),
   which creates a new resource with a server-assigned resource ID.
 
-  Also supports the FHIR standard [conditional create
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#ccreate),
+  Also supports the FHIR standard conditional create interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#ccreate),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#ccreate),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#ccreate)),
   specified by supplying an `If-None-Exist` header containing a FHIR search
   query. If no resources match this search query, the server processes the
   create operation as normal.
@@ -5518,10 +6266,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   The request body must contain a JSON-encoded FHIR resource, and the request
   headers must contain `Content-Type: application/fhir+json`.
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of the resource as it was created on the server, including the
   server-assigned resource ID and version ID.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
@@ -5534,8 +6282,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type to create, such as Patient or Observation. For a
-      complete list, see the [FHIR Resource
-      Index](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html).
+      complete list, see the FHIR Resource Index
+      ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html),
+      [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html),
+      [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
       Must match the resource type in the provided content.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -5566,7 +6316,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_create(
         connection,
         projects_id,
@@ -5616,12 +6369,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Deletes a FHIR resource.
 
-  Implements the FHIR standard [delete
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#delete).
+  Implements the FHIR standard delete interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#delete),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#delete),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#delete)).
 
   Note: Unless resource versioning is disabled by setting the
   disable_resource_versioning flag
-  on the FHIR store, the deleted resources will be moved to a history
+  on the FHIR store, the deleted resources are moved to a history
   repository that can still be retrieved through vread
   and related methods, unless they are removed by the
   purge method.
@@ -5664,7 +6419,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_delete(
         connection,
         projects_id,
@@ -5715,27 +6473,41 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Executes all the requests in the given Bundle.
 
-  Implements the FHIR standard [batch/transaction
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#transaction).
+  Implements the FHIR standard batch/transaction interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#transaction),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#transaction),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#transaction)).
 
   Supports all interactions within a bundle, except search. This method
   accepts Bundles of type `batch` and `transaction`, processing them
-  according to the [batch processing
-  rules](http://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.1)
-  and [transaction processing
-  rules](http://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.2).
+  according to the batch processing rules
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.16.1),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.1),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#brules))
+  and transaction processing rules
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.16.2),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.2),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#trules)).
 
   The request body must contain a JSON-encoded FHIR `Bundle` resource, and
   the request headers must contain `Content-Type: application/fhir+json`.
 
-  For a batch bundle or a successful transaction the response body will
-  contain a JSON-encoded representation of a `Bundle` resource of type
+  For a batch bundle or a successful transaction the response body
+  contains a JSON-encoded representation of a `Bundle` resource of type
   `batch-response` or `transaction-response` containing one entry for each
   entry in the request, with the outcome of processing the entry. In the
-  case of an error for a transaction bundle, the response body will contain
+  case of an error for a transaction bundle, the response body contains
   a JSON-encoded `OperationOutcome` resource describing the reason for the
   error. If the request cannot be mapped to a valid API method on a FHIR
   store, a generic GCP error might be returned instead.
+
+  This method requires permission for executing the requests in the bundle.
+  The `executeBundle` permission grants permission to execute the request in
+  the bundle but you must grant sufficient permissions to execute the
+  individual requests in the bundle. For example, if the bundle contains a
+  `create` request, you must have permission to execute the `create` request.
+
+  Logging is available for the `executeBundle` permission.
 
   ## Parameters
 
@@ -5772,7 +6544,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_execute_bundle(
         connection,
         projects_id,
@@ -5821,13 +6596,15 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Lists all the versions of a resource (including the current version and
   deleted versions) from the FHIR store.
 
-  Implements the per-resource form of the FHIR standard [history
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#history).
+  Implements the per-resource form of the FHIR standard history interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#history),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#history),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#history)).
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of a `Bundle` resource of type `history`, containing the version history
   sorted from most recent to oldest versions.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
@@ -5893,7 +6670,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_history(
         connection,
         projects_id,
@@ -5949,15 +6729,19 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Updates part of an existing resource by applying the operations specified
   in a [JSON Patch](http://jsonpatch.com/) document.
 
-  Implements the FHIR standard [patch
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#patch).
+  Implements the FHIR standard patch interaction
+  ([STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#patch),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#patch)).
+
+  DSTU2 doesn't define a patch method, but the server supports it in the same
+  way it supports STU3.
 
   The request body must contain a JSON Patch document, and the request
   headers must contain `Content-Type: application/json-patch+json`.
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of the updated resource, including the server-assigned version ID.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
@@ -6001,7 +6785,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_patch(
         connection,
         projects_id,
@@ -6053,17 +6840,21 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Gets the contents of a FHIR resource.
 
-  Implements the FHIR standard [read
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#read).
+  Implements the FHIR standard read interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#read),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#read),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#read)).
 
-  Also supports the FHIR standard [conditional read
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#cread)
+  Also supports the FHIR standard conditional read interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#cread),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#cread),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#cread))
   specified by supplying an `If-Modified-Since` header with a date/time value
   or an `If-None-Match` header with an ETag value.
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of the resource.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
@@ -6106,7 +6897,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_read(
         connection,
         projects_id,
@@ -6158,10 +6952,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Searches for resources in the given FHIR store according to criteria
   specified as query parameters.
 
-  Implements the FHIR standard [search
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#search)
-  using the search semantics described in the [FHIR Search
-  specification](http://hl7.org/implement/standards/fhir/STU3/search.html).
+  Implements the FHIR standard search interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#search),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#search),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#search))
+  using the search semantics described in the FHIR Search specification
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/search.html),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/search.html),
+  [R4](https://hl7.org/implement/standards/fhir/R4/search.html)).
 
   Supports three methods of search defined by the specification:
 
@@ -6174,20 +6972,23 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   The `GET` methods do not support compartment searches. The `POST` method
   does not support `application/x-www-form-urlencoded` search parameters.
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of a `Bundle` resource of type `searchset`, containing the results of the
   search.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
 
   The server's capability statement, retrieved through
-  capabilities, indicates the search parameters
-  that are supported on each FHIR resource. For the list of search
-  parameters for STU3, see the
-  [STU3 FHIR Search Parameter
-  Registry](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html).
+  capabilities, indicates what search parameters
+  are supported on each FHIR resource. A list of all search parameters
+  defined by the specification can be found in the FHIR Search Parameter
+  Registry
+  ([STU3](https://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html),
+  [R4](https://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)).
+  FHIR search parameters for DSTU2 can be found on each resource's definition
+  page.
 
   Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`,
   `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`.
@@ -6197,7 +6998,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   The maximum number of search results returned defaults to 100, which can
   be overridden by the `_count` parameter up to a maximum limit of 1000. If
-  there are additional results, the returned `Bundle` will contain
+  there are additional results, the returned `Bundle` contains
   pagination links.
 
   Resources with a total size larger than 5MB or a field count larger than
@@ -6243,7 +7044,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_search(
         connection,
         projects_id,
@@ -6291,8 +7095,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Updates the entire contents of a resource.
 
-  Implements the FHIR standard [update
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#update).
+  Implements the FHIR standard update interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#update),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#update),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#update)).
 
   If the specified resource does
   not exist and the FHIR store has
@@ -6304,9 +7110,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   must contain an `id` element having an identical value to the ID in the
   REST path of the request.
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of the updated resource, including the server-assigned version ID.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
@@ -6350,7 +7156,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_update(
         connection,
         projects_id,
@@ -6403,12 +7212,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Gets the contents of a version (current or historical) of a FHIR resource
   by version ID.
 
-  Implements the FHIR standard [vread
-  interaction](http://hl7.org/implement/standards/fhir/STU3/http.html#vread).
+  Implements the FHIR standard vread interaction
+  ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#vread),
+  [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#vread),
+  [R4](https://hl7.org/implement/standards/fhir/R4/http.html#vread)).
 
-  On success, the response body will contain a JSON-encoded representation
+  On success, the response body contains a JSON-encoded representation
   of the resource.
-  Errors generated by the FHIR store will contain a JSON-encoded
+  Errors generated by the FHIR store contain a JSON-encoded
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
@@ -6453,7 +7264,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_vread(
         connection,
         projects_id,
@@ -6541,7 +7355,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_create(
         connection,
         projects_id,
@@ -6586,8 +7403,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes the specified HL7v2 store and removes all messages that are
-  contained within it.
+  Deletes the specified HL7v2 store and removes all messages that it
+  contains.
 
   ## Parameters
 
@@ -6623,7 +7440,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_delete(
         connection,
         projects_id,
@@ -6704,7 +7524,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_get(
         connection,
         projects_id,
@@ -6781,6 +7604,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -6796,7 +7623,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_get_iam_policy(
         connection,
         projects_id,
@@ -6884,7 +7714,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListHl7V2StoresResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_list(
         connection,
         projects_id,
@@ -6937,7 +7768,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. Output only. Resource name of the HL7v2 store, of the form
+  *   `projects_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. Resource name of the HL7v2 store, of the form
       `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
@@ -6973,7 +7804,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Hl7V2Store.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_patch(
         connection,
         projects_id,
@@ -7023,7 +7857,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -7061,7 +7895,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_set_iam_policy(
         connection,
         projects_id,
@@ -7109,7 +7946,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -7153,7 +7990,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_test_iam_permissions(
         connection,
         projects_id,
@@ -7243,7 +8081,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Message.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_create(
         connection,
         projects_id,
@@ -7327,7 +8168,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_delete(
         connection,
         projects_id,
@@ -7397,6 +8241,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:view` (*type:* `String.t`) - Specifies which parts of the Message resource to return in the response.
+          When unspecified, equivalent to FULL.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7413,7 +8258,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Message.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_get(
         connection,
         projects_id,
@@ -7463,9 +8311,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Ingests a new HL7v2 message from the hospital and sends a notification to
   the Cloud Pub/Sub topic. Return is an HL7v2 ACK message if the message was
-  successfully stored. Otherwise an error is returned.  If an identical
-  HL7v2 message is created twice only one resource is created on the server
-  and no error is reported.
+  successfully stored. Otherwise an error is returned.
 
   ## Parameters
 
@@ -7504,7 +8350,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.IngestMessageResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_ingest(
         connection,
         projects_id,
@@ -7580,9 +8427,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:filter` (*type:* `String.t`) - Restricts messages returned to those matching a filter. Syntax:
           https://cloud.google.com/appengine/docs/standard/python/search/query_strings
 
-          Fields/functions available for filtering are:
+          The following fields and functions are available for filtering:
 
-          *  `message_type`, from the MSH-9 segment. For example,
+          *  `message_type`, from the MSH-9.1 field. For example,
           `NOT message_type = "ADT"`.
           *  `send_date` or `sendDate`, the YYYY-MM-DD date the message was sent in
           the dataset's time_zone, from the MSH-7 segment. For example,
@@ -7599,21 +8446,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Message.labels
           map. For example, `labels."priority"="high"`. The operator `:*` can be used
           to assert the existence of a label. For example, `labels."priority":*`.
-
-          Limitations on conjunctions:
-
-          *  Negation on the patient ID function or the labels field is not
-          supported. For example, these queries are invalid:
-          `NOT PatientId("123456", "MRN")`, `NOT labels."tag1":*`,
-          `NOT labels."tag2"="val2"`.
-          *  Conjunction of multiple patient ID functions is not supported, for
-          example this query is invalid:
-          `PatientId("123456", "MRN") AND PatientId("456789", "MRN")`.
-          *  Conjunction of multiple labels fields is also not supported, for
-          example this query is invalid: `labels."tag1":* AND labels."tag2"="val2"`.
-          *  Conjunction of one patient ID function, one labels field and conditions
-          on other fields is supported. For example, this query is valid:
-          `PatientId("123456", "MRN") AND labels."tag1":* AND message_type = "ADT"`.
       *   `:orderBy` (*type:* `String.t`) - Orders messages returned by the specified order_by clause.
           Syntax: https://cloud.google.com/apis/design/design_patterns#sorting_order
 
@@ -7623,6 +8455,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:pageSize` (*type:* `integer()`) - Limit on the number of messages to return in a single response.
           If zero the default page size of 100 is used.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from the previous List request, if any.
+      *   `:view` (*type:* `String.t`) - Specifies the parts of the Message to return in the response.
+          When unspecified, equivalent to BASIC. Setting this to anything other than
+          BASIC with a `page_size` larger than the default can generate a large
+          response, which impacts the performance of this method.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7640,7 +8476,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListMessagesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_list(
         connection,
         projects_id,
@@ -7665,7 +8502,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :view => :query
     }
 
     request =
@@ -7693,6 +8531,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @doc """
   Update the message.
 
+  The contents of the message in Message.data and data extracted from
+  the contents such as Message.create_time can't be altered. Only the
+  Message.labels field is allowed to be updated. The labels in the
+  request are merged with the existing set of labels. Existing labels with
+  the same keys are updated.
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -7718,9 +8562,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition,
           see
           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-          Only the `labels` field is allowed to be updated.
-          The labels in the request are merged with the existing set of labels.
-          Existing labels with the same keys are updated.
       *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -7738,7 +8579,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Message.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Message.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_patch(
         connection,
         projects_id,
@@ -7787,6 +8631,101 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   end
 
   @doc """
+  Starts asynchronous cancellation on a long-running operation.  The server
+  makes a best effort to cancel the operation, but success is not
+  guaranteed.  If the server doesn't support this method, it returns
+  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
+  Operations.GetOperation or
+  other methods to check whether the cancellation succeeded or whether the
+  operation completed despite cancellation. On successful cancellation,
+  the operation is not deleted; instead, it becomes an operation with
+  an Operation.error value with a google.rpc.Status.code of 1,
+  corresponding to `Code.CANCELLED`.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.CancelOperationRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_operations_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_operations_cancel(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/operations/{operationsId}:cancel",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Empty{}])
+  end
+
+  @doc """
   Gets the latest state of a long-running operation.  Clients can use this
   method to poll the operation result at intervals as recommended by the API
   service.
@@ -7825,7 +8764,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_operations_get(
         connection,
         projects_id,
@@ -7918,7 +8860,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.ListOperationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def healthcare_projects_locations_datasets_operations_list(
         connection,
         projects_id,

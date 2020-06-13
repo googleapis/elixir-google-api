@@ -21,7 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.GuideCategorySnippet do
 
   ## Attributes
 
-  *   `channelId` (*type:* `String.t`, *default:* `UCBR8-60-B28hp2BmDPdntcQ`) - 
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - 
   *   `title` (*type:* `String.t`, *default:* `nil`) - Description of the guide category.
   """
 

@@ -27,12 +27,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
   *   `frameLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t)`, *default:* `nil`) - Label annotations on frame level.
       There is exactly one element for each unique label.
   *   `inputUri` (*type:* `String.t`, *default:* `nil`) - Video file location in
-      [Google Cloud Storage](https://cloud.google.com/storage/).
+      [Cloud Storage](https://cloud.google.com/storage/).
+  *   `logoRecognitionAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LogoRecognitionAnnotation.t)`, *default:* `nil`) - Annotations for list of logos detected, tracked and recognized in video.
   *   `objectAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingAnnotation.t)`, *default:* `nil`) - Annotations for list of objects detected and tracked in video.
   *   `segment` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_VideoSegment.t`, *default:* `nil`) - Video segment on which the annotation is run.
-  *   `segmentLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on video level or user specified segment level.
+  *   `segmentLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t)`, *default:* `nil`) - Topical label annotations on video level or user-specified segment level.
       There is exactly one element for each unique label.
-  *   `segmentPresenceLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t)`, *default:* `nil`) - Presence label annotations on video level or user specified segment level.
+  *   `segmentPresenceLabelAnnotations` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t)`, *default:* `nil`) - Presence label annotations on video level or user-specified segment level.
       There is exactly one element for each unique label. Compared to the
       existing topical `segment_label_annotations`, this field presents more
       fine-grained, segment-level labels detected in video content and is made
@@ -63,6 +64,10 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation.t()
             ),
           :inputUri => String.t(),
+          :logoRecognitionAnnotations =>
+            list(
+              GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LogoRecognitionAnnotation.t()
+            ),
           :objectAnnotations =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingAnnotation.t()
@@ -113,6 +118,12 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1b
   )
 
   field(:inputUri)
+
+  field(:logoRecognitionAnnotations,
+    as:
+      GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1p1beta1_LogoRecognitionAnnotation,
+    type: :list
+  )
 
   field(:objectAnnotations,
     as:

@@ -17,7 +17,11 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage do
   @moduledoc """
-  Corresponds to the `Response` field in the Dialogflow console.
+  A rich response message.
+  Corresponds to the intent `Response` field in the Dialogflow console.
+  For more information, see
+  [Rich response
+  messages](https://cloud.google.com/dialogflow/docs/intents-rich-messages).
 
   ## Attributes
 
@@ -29,9 +33,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage do
   *   `linkOutSuggestion` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion.t`, *default:* `nil`) - The link out suggestion chip for Actions on Google.
   *   `listSelect` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageListSelect.t`, *default:* `nil`) - The list card response for Actions on Google.
   *   `mediaContent` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageMediaContent.t`, *default:* `nil`) - The media content card for Actions on Google.
-  *   `payload` (*type:* `map()`, *default:* `nil`) - Returns a response containing a custom, platform-specific payload.
-      See the Intent.Message.Platform type for a description of the
-      structure that may be required for your platform.
+  *   `payload` (*type:* `map()`, *default:* `nil`) - A custom platform-specific response.
   *   `platform` (*type:* `String.t`, *default:* `nil`) - Optional. The platform that this message is intended for.
   *   `quickReplies` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageQuickReplies.t`, *default:* `nil`) - The quick replies response.
   *   `simpleResponses` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessageSimpleResponses.t`, *default:* `nil`) - The voice and text-only responses for Actions on Google.

@@ -21,6 +21,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
 
   ## Attributes
 
+  *   `shortcutDetails` (*type:* `GoogleApi.Drive.V3.Model.FileShortcutDetails.t`, *default:* `nil`) - Shortcut file details. Only populated for shortcut files, which have the mimeType field set to application/vnd.google-apps.shortcut.
   *   `modifiedByMe` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been modified by this user.
   *   `fullFileExtension` (*type:* `String.t`, *default:* `nil`) - The full file extension extracted from the name field. May contain multiple concatenated extensions, such as "tar.gz". This is only available for files with binary content in Google Drive.
       This is automatically updated when the name field changes, however it is not cleared if the new name does not contain a valid extension.
@@ -89,6 +90,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :shortcutDetails => GoogleApi.Drive.V3.Model.FileShortcutDetails.t(),
           :modifiedByMe => boolean(),
           :fullFileExtension => String.t(),
           :folderColorRgb => String.t(),
@@ -146,6 +148,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
           :hasAugmentedPermissions => boolean()
         }
 
+  field(:shortcutDetails, as: GoogleApi.Drive.V3.Model.FileShortcutDetails)
   field(:modifiedByMe)
   field(:fullFileExtension)
   field(:folderColorRgb)

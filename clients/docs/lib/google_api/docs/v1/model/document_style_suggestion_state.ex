@@ -31,12 +31,16 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState do
   *   `firstPageFooterIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to first_page_footer_id.
   *   `firstPageHeaderIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to first_page_header_id.
   *   `marginBottomSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_bottom.
+  *   `marginFooterSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_footer.
+  *   `marginHeaderSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_header.
   *   `marginLeftSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_left.
   *   `marginRightSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_right.
   *   `marginTopSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_top.
   *   `pageNumberStartSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to page_number_start.
   *   `pageSizeSuggestionState` (*type:* `GoogleApi.Docs.V1.Model.SizeSuggestionState.t`, *default:* `nil`) - A mask that indicates which of the fields in size have been changed in this
       suggestion.
+  *   `useCustomHeaderFooterMarginsSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to
+      use_custom_header_footer_margins.
   *   `useEvenPageHeaderFooterSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to use_even_page_header_footer.
   *   `useFirstPageHeaderFooterSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to use_first_page_header_footer.
   """
@@ -52,11 +56,14 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState do
           :firstPageFooterIdSuggested => boolean(),
           :firstPageHeaderIdSuggested => boolean(),
           :marginBottomSuggested => boolean(),
+          :marginFooterSuggested => boolean(),
+          :marginHeaderSuggested => boolean(),
           :marginLeftSuggested => boolean(),
           :marginRightSuggested => boolean(),
           :marginTopSuggested => boolean(),
           :pageNumberStartSuggested => boolean(),
           :pageSizeSuggestionState => GoogleApi.Docs.V1.Model.SizeSuggestionState.t(),
+          :useCustomHeaderFooterMarginsSuggested => boolean(),
           :useEvenPageHeaderFooterSuggested => boolean(),
           :useFirstPageHeaderFooterSuggested => boolean()
         }
@@ -69,11 +76,14 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState do
   field(:firstPageFooterIdSuggested)
   field(:firstPageHeaderIdSuggested)
   field(:marginBottomSuggested)
+  field(:marginFooterSuggested)
+  field(:marginHeaderSuggested)
   field(:marginLeftSuggested)
   field(:marginRightSuggested)
   field(:marginTopSuggested)
   field(:pageNumberStartSuggested)
   field(:pageSizeSuggestionState, as: GoogleApi.Docs.V1.Model.SizeSuggestionState)
+  field(:useCustomHeaderFooterMarginsSuggested)
   field(:useEvenPageHeaderFooterSuggested)
   field(:useFirstPageHeaderFooterSuggested)
 end

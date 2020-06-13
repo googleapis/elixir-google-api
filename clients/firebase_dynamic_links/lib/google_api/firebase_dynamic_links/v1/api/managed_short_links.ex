@@ -65,7 +65,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.ManagedShortLinks do
   """
   @spec firebasedynamiclinks_managed_short_links_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.CreateManagedShortLinkResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def firebasedynamiclinks_managed_short_links_create(
         connection,
         optional_params \\ [],

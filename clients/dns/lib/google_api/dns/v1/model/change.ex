@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.DNS.V1.Model.Change do
   @moduledoc """
-  A Change represents a set of ResourceRecordSet additions and deletions applied atomically to a ManagedZone. ResourceRecordSets within a ManagedZone are modified by creating a new Change element in the Changes collection. In turn the Changes collection also records the past modifications to the ResourceRecordSets in a ManagedZone. The current state of the ManagedZone is the sum effect of applying all Change elements in the Changes collection in sequence.
+
 
   ## Attributes
 
-  *   `additions` (*type:* `list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t)`, *default:* `nil`) - Which ResourceRecordSets to add?
-  *   `deletions` (*type:* `list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t)`, *default:* `nil`) - Which ResourceRecordSets to remove? Must match existing data exactly.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier for the resource; defined by the server (output only).
-  *   `isServing` (*type:* `boolean()`, *default:* `nil`) - If the DNS queries for the zone will be served.
+  *   `additions` (*type:* `list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t)`, *default:* `nil`) - 
+  *   `deletions` (*type:* `list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t)`, *default:* `nil`) - 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - 
+  *   `isServing` (*type:* `boolean()`, *default:* `nil`) - 
   *   `kind` (*type:* `String.t`, *default:* `dns#change`) - Identifies what kind of resource this is. Value: the fixed string "dns#change".
-  *   `startTime` (*type:* `String.t`, *default:* `nil`) - The time that this operation was started by the server (output only). This is in RFC3339 text format.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the operation (output only). A status of "done" means that the request to update the authoritative servers has been sent, but the servers might not be updated yet.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `status` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

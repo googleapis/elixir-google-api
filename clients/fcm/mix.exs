@@ -18,7 +18,7 @@
 defmodule GoogleApi.FCM.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.5.0"
 
   def project() do
     [

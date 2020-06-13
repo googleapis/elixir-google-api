@@ -22,6 +22,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Sym
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the symlink.
+  *   `nodeProperties` (*type:* `list(GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t)`, *default:* `nil`) - The node properties of the SymlinkNode.
   *   `target` (*type:* `String.t`, *default:* `nil`) - The target path of the symlink. The path separator is a forward slash `/`.
       The target path can be relative to the parent directory of the symlink or
       it can be an absolute path starting with `/`. Support for absolute paths
@@ -34,10 +35,20 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Sym
 
   @type t :: %__MODULE__{
           :name => String.t(),
+          :nodeProperties =>
+            list(
+              GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty.t()
+            ),
           :target => String.t()
         }
 
   field(:name)
+
+  field(:nodeProperties,
+    as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2NodeProperty,
+    type: :list
+  )
+
   field(:target)
 end
 

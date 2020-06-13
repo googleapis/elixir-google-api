@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.TimeWindow do
   @moduledoc """
-  A time window of (start_time, end_time].
+  A time window specified by its `start_time` and `end_time`.
 
   ## Attributes
 
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the time window (inclusive).
-      Current timestamp if not specified.
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the time window (inclusive). If not specified, the current
+      timestamp is used instead.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Start time of the time window (exclusive).
   """
 

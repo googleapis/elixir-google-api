@@ -23,15 +23,21 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FieldMetadata do
   ## Attributes
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - Deidentify action for one field.
-  *   `paths` (*type:* `list(String.t)`, *default:* `nil`) - List of paths to FHIR fields to be redacted. Each path is a
+  *   `paths` (*type:* `list(String.t)`, *default:* `nil`) - List of paths to FHIR fields to redact. Each path is a
       period-separated list where each component is either a field name or
-      FHIR type name, for example: Patient, HumanName.
-      For "choice" types (those defined in the FHIR spec with the form:
-      field[x]) we use two separate components. For example,
-      "deceasedAge.unit" is matched by "Deceased.Age.unit".
-      Supported types are: AdministrativeGenderCode, Code, Date, DateTime,
-      Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid,
-      Xhtml.
+      FHIR type name. All types begin with an upper case letter. For example,
+      the resource field "Patient.Address.city", which uses a string type,
+      can be matched by "Patient.Address.String". Path also supports partial
+      matching. For example, "Patient.Address.city" can be matched by
+      "Address.city" (Patient omitted). Partial matching and type matching
+      can be combined. For example, "Patient.Address.city" can be matched by
+      "Address.String". For "choice" types (those defined in the FHIR spec
+      with the form: field[x]), use two separate components. For example,
+      "deceasedAge.unit" is matched by "Deceased.Age.unit". Supported types
+      are: AdministrativeGenderCode, Code, Date, DateTime, Decimal,
+      HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml.
+      The sub-type for HumanName, such as HumanName.given or
+      HumanName.family, can be omitted.
   """
 
   use GoogleApi.Gax.ModelBase

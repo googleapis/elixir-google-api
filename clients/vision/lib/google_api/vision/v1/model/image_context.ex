@@ -29,7 +29,7 @@ defmodule GoogleApi.Vision.V1.Model.ImageContext do
       setting a hint will help get better results (although it will be a
       significant hindrance if the hint is wrong). Text detection returns an
       error if one or more of the specified languages is not one of the
-      [supported languages](/vision/docs/languages).
+      [supported languages](https://cloud.google.com/vision/docs/languages).
   *   `latLongRect` (*type:* `GoogleApi.Vision.V1.Model.LatLongRect.t`, *default:* `nil`) - Not used.
   *   `productSearchParams` (*type:* `GoogleApi.Vision.V1.Model.ProductSearchParams.t`, *default:* `nil`) - Parameters for product search.
   *   `webDetectionParams` (*type:* `GoogleApi.Vision.V1.Model.WebDetectionParams.t`, *default:* `nil`) - Parameters for web detection.

@@ -29,6 +29,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location do
   *   `codepointRange` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t`, *default:* `nil`) - Unicode character offsets delimiting the finding.
       These are relative to the finding's containing element.
       Provided when the content is text.
+  *   `container` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container.t`, *default:* `nil`) - Information about the container where this finding occurred, if available.
   *   `contentLocations` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation.t)`, *default:* `nil`) - List of nested objects pointing to the precise location of the finding
       within the file or record.
   """
@@ -38,11 +39,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location do
   @type t :: %__MODULE__{
           :byteRange => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t(),
           :codepointRange => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range.t(),
+          :container => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container.t(),
           :contentLocations => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation.t())
         }
 
   field(:byteRange, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range)
   field(:codepointRange, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Range)
+  field(:container, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Container)
 
   field(:contentLocations,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation,

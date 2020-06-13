@@ -27,6 +27,9 @@ defmodule GoogleApi.Testing.V1.Model.IosXcTest do
   ## Attributes
 
   *   `appBundleId` (*type:* `String.t`, *default:* `nil`) - Output only. The bundle id for the application under test.
+  *   `testSpecialEntitlements` (*type:* `boolean()`, *default:* `nil`) - The option to test special app entitlements. Setting this would re-sign the
+      app having special entitlements with an explicit application-identifier.
+      Currently supports testing aps-environment entitlement.
   *   `testsZip` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - Required. The .zip containing the .xctestrun file and the contents of the
       DerivedData/Build/Products directory.
       The .xctestrun file in this zip is ignored if the xctestrun field is
@@ -44,12 +47,14 @@ defmodule GoogleApi.Testing.V1.Model.IosXcTest do
 
   @type t :: %__MODULE__{
           :appBundleId => String.t(),
+          :testSpecialEntitlements => boolean(),
           :testsZip => GoogleApi.Testing.V1.Model.FileReference.t(),
           :xcodeVersion => String.t(),
           :xctestrun => GoogleApi.Testing.V1.Model.FileReference.t()
         }
 
   field(:appBundleId)
+  field(:testSpecialEntitlements)
   field(:testsZip, as: GoogleApi.Testing.V1.Model.FileReference)
   field(:xcodeVersion)
   field(:xctestrun, as: GoogleApi.Testing.V1.Model.FileReference)

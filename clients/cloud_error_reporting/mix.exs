@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudErrorReporting.Mixfile do
   use Mix.Project
 
-  @version "0.10.0"
+  @version "0.15.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.CloudErrorReporting.Mixfile do
 
   defp description() do
     """
-    Stackdriver Error Reporting API client library. Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors.
+    Error Reporting API client library. Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors.
 
     """
   end

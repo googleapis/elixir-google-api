@@ -21,12 +21,21 @@ defmodule GoogleApi.YouTube.V3.Model.IngestionInfo do
 
   ## Attributes
 
-  *   `backupIngestionAddress` (*type:* `String.t`, *default:* `nil`) - The backup ingestion URL that you should use to stream video to YouTube. You have the option of simultaneously streaming the content that you are sending to the ingestionAddress to this URL.
-  *   `ingestionAddress` (*type:* `String.t`, *default:* `nil`) - The primary ingestion URL that you should use to stream video to YouTube. You must stream video to this URL.
-
-      Depending on which application or tool you use to encode your video stream, you may need to enter the stream URL and stream name separately or you may need to concatenate them in the following format:
-
-      STREAM_URL/STREAM_NAME
+  *   `backupIngestionAddress` (*type:* `String.t`, *default:* `nil`) - The backup ingestion URL that you should use to stream video to
+      YouTube. You have the option of simultaneously streaming the content
+      that you are sending to the <code>ingestionAddress</code> to this URL.
+  *   `ingestionAddress` (*type:* `String.t`, *default:* `nil`) - The primary ingestion URL that you should use to stream video to
+      YouTube. You must stream video to this URL.<br><br>
+      Depending on which application or tool you use to encode
+      your video stream, you may need to enter the stream URL and stream
+      name separately or you may need to concatenate them in the following
+      format:<br><pre><strong>STREAM_URL/STREAM_NAME</strong></pre>
+  *   `rtmpsBackupIngestionAddress` (*type:* `String.t`, *default:* `nil`) - This ingestion url may be used instead of
+      <code>backupIngestionAddress</code> in order to stream via RTMPS. Not
+      applicable to non-RTMP streams.
+  *   `rtmpsIngestionAddress` (*type:* `String.t`, *default:* `nil`) - This ingestion url may be used instead of
+      <code>ingestionAddress</code> in order to stream via RTMPS. Not applicable
+      to non-RTMP streams.
   *   `streamName` (*type:* `String.t`, *default:* `nil`) - The HTTP or RTMP stream name that YouTube assigns to the video stream.
   """
 
@@ -35,11 +44,15 @@ defmodule GoogleApi.YouTube.V3.Model.IngestionInfo do
   @type t :: %__MODULE__{
           :backupIngestionAddress => String.t(),
           :ingestionAddress => String.t(),
+          :rtmpsBackupIngestionAddress => String.t(),
+          :rtmpsIngestionAddress => String.t(),
           :streamName => String.t()
         }
 
   field(:backupIngestionAddress)
   field(:ingestionAddress)
+  field(:rtmpsBackupIngestionAddress)
+  field(:rtmpsIngestionAddress)
   field(:streamName)
 end
 

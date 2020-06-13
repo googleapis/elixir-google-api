@@ -54,7 +54,10 @@ defmodule GoogleApi.AdSense.V14.Api.Customchannels do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.CustomChannel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_customchannels_get(
         connection,
         ad_client_id,
@@ -112,7 +115,9 @@ defmodule GoogleApi.AdSense.V14.Api.Customchannels do
   *   `{:error, info}` on failure
   """
   @spec adsense_customchannels_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_customchannels_list(connection, ad_client_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -172,7 +177,8 @@ defmodule GoogleApi.AdSense.V14.Api.Customchannels do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_customchannels_adunits_list(
         connection,
         ad_client_id,

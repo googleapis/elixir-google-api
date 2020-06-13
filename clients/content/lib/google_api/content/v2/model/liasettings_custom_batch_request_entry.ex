@@ -21,15 +21,23 @@ defmodule GoogleApi.Content.V2.Model.LiasettingsCustomBatchRequestEntry do
 
   ## Attributes
 
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account for which to get/update account shipping settings.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account for which to get/update account LIA settings.
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `contactEmail` (*type:* `String.t`, *default:* `nil`) - Inventory validation contact email. Required only for SetInventoryValidationContact.
   *   `contactName` (*type:* `String.t`, *default:* `nil`) - Inventory validation contact name. Required only for SetInventoryValidationContact.
   *   `country` (*type:* `String.t`, *default:* `nil`) - The country code. Required only for RequestInventoryVerification.
   *   `gmbEmail` (*type:* `String.t`, *default:* `nil`) - The GMB account. Required only for RequestGmbAccess.
-  *   `liaSettings` (*type:* `GoogleApi.Content.V2.Model.LiaSettings.t`, *default:* `nil`) - The account Lia settings to update. Only defined if the method is update.
+  *   `liaSettings` (*type:* `GoogleApi.Content.V2.Model.LiaSettings.t`, *default:* `nil`) - The account Lia settings to update. Only defined if the method is `update`.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "`get`" 
+      - "`getAccessibleGmbAccounts`" 
+      - "`requestGmbAccess`" 
+      - "`requestInventoryVerification`" 
+      - "`setInventoryVerificationContact`" 
+      - "`update`"
   *   `posDataProviderId` (*type:* `String.t`, *default:* `nil`) - The ID of POS data provider. Required only for SetPosProvider.
   *   `posExternalAccountId` (*type:* `String.t`, *default:* `nil`) - The account ID by which this merchant is known to the POS provider.
   """

@@ -21,8 +21,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ListMessagesResponse do
 
   ## Attributes
 
-  *   `messages` (*type:* `list(String.t)`, *default:* `nil`) - The returned message names. Won't be more values than the value of
-      page_size in the request.
+  *   `hl7V2Messages` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Message.t)`, *default:* `nil`) - The returned Messages. Won't be more Messages than the value of
+      page_size in the request. See
+      view for
+      populated fields.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more
       results in the list.
   """
@@ -30,11 +32,11 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ListMessagesResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messages => list(String.t()),
+          :hl7V2Messages => list(GoogleApi.HealthCare.V1beta1.Model.Message.t()),
           :nextPageToken => String.t()
         }
 
-  field(:messages, type: :list)
+  field(:hl7V2Messages, as: GoogleApi.HealthCare.V1beta1.Model.Message, type: :list)
   field(:nextPageToken)
 end
 

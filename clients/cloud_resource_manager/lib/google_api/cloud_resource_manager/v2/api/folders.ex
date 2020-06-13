@@ -59,12 +59,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V2.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -80,16 +78,16 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -128,12 +126,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       Must be of the form `folders/{folder_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -146,7 +142,9 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_delete(
         connection,
         folders_id,
@@ -155,12 +153,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -195,12 +191,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       Must be of the form `folders/{folder_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -213,16 +207,16 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_get(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -257,12 +251,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -280,7 +272,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudResourceManager.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_get_iam_policy(
         connection,
         folders_id,
@@ -289,12 +284,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -330,12 +323,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V2.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -360,16 +351,15 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   """
   @spec cloudresourcemanager_folders_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V2.Model.ListFoldersResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -420,12 +410,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       Must be of the form folders/{folder_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -439,16 +427,16 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_move(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_move(connection, folders_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -494,12 +482,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       Its format is `folders/{folder_id}`, for example: "folders/1234".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -515,7 +501,9 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `{:error, info}` on failure
   """
   @spec cloudresourcemanager_folders_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_patch(
         connection,
         folders_id,
@@ -524,12 +512,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -565,12 +551,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V2.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -585,16 +569,15 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
   """
   @spec cloudresourcemanager_folders_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudResourceManager.V2.Model.SearchFoldersResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -630,12 +613,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -653,7 +634,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudResourceManager.V2.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_set_iam_policy(
         connection,
         folders_id,
@@ -662,12 +646,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -703,12 +685,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -728,7 +708,8 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudResourceManager.V2.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_test_iam_permissions(
         connection,
         folders_id,
@@ -737,12 +718,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -785,12 +764,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       Must be of the form `folders/{folder_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -808,7 +785,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudResourceManager.V2.Model.Folder.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudresourcemanager_folders_undelete(
         connection,
         folders_id,
@@ -817,12 +797,10 @@ defmodule GoogleApi.CloudResourceManager.V2.Api.Folders do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,

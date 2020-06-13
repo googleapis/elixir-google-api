@@ -49,7 +49,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_create_auth_uri(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.CreateAuthUriResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_create_auth_uri(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,7 +101,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_delete_account(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.DeleteAccountResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_delete_account(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -151,7 +153,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_download_account(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.DownloadAccountResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_download_account(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -202,7 +205,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_email_link_signin(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.EmailLinkSigninResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_email_link_signin(
         connection,
         optional_params \\ [],
@@ -257,7 +261,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_get_account_info(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.GetAccountInfoResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_get_account_info(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -312,7 +317,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
           keyword()
         ) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.GetOobConfirmationCodeResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_get_oob_confirmation_code(
         connection,
         optional_params \\ [],
@@ -369,7 +375,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_get_project_config(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetProjectConfigResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_get_project_config(
         connection,
         optional_params \\ [],
@@ -429,7 +436,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_get_public_keys(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyGetPublicKeysResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_get_public_keys(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -482,7 +490,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_get_recaptcha_param(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.GetRecaptchaParamResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_get_recaptcha_param(
         connection,
         optional_params \\ [],
@@ -536,7 +545,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_reset_password(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.ResetPasswordResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_reset_password(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -592,7 +602,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
         ) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySendVerificationCodeResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_send_verification_code(
         connection,
         optional_params \\ [],
@@ -651,7 +662,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_set_account_info(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.SetAccountInfoResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_set_account_info(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -703,7 +715,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_set_project_config(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySetProjectConfigResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_set_project_config(
         connection,
         optional_params \\ [],
@@ -763,7 +776,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_sign_out_user(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartySignOutUserResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_sign_out_user(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -818,7 +832,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_signup_new_user(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.SignupNewUserResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_signup_new_user(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -869,7 +884,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_upload_account(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.UploadAccountResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_upload_account(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -920,7 +936,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_verify_assertion(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_verify_assertion(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -971,7 +988,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_verify_custom_token(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.VerifyCustomTokenResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_verify_custom_token(
         connection,
         optional_params \\ [],
@@ -1026,7 +1044,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   """
   @spec identitytoolkit_relyingparty_verify_password(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IdentityToolkit.V3.Model.VerifyPasswordResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_verify_password(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -1078,7 +1097,8 @@ defmodule GoogleApi.IdentityToolkit.V3.Api.Relyingparty do
   @spec identitytoolkit_relyingparty_verify_phone_number(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok,
            GoogleApi.IdentityToolkit.V3.Model.IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def identitytoolkit_relyingparty_verify_phone_number(
         connection,
         optional_params \\ [],

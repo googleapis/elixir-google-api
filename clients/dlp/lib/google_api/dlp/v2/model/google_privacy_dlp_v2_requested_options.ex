@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RequestedOptions do
   @moduledoc """
-
+  Snapshot of the inspection configuration.
 
   ## Attributes
 
-  *   `jobConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig.t`, *default:* `nil`) - 
+  *   `jobConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectJobConfig.t`, *default:* `nil`) - Inspect config.
   *   `snapshotInspectTemplate` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t`, *default:* `nil`) - If run with an InspectTemplate, a snapshot of its state at the time of
       this run.
   """

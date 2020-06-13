@@ -64,6 +64,11 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
       Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
   *   `options` (*type:* `GoogleApi.CloudBuild.V1.Model.BuildOptions.t`, *default:* `nil`) - Special options for this build.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the project.
+  *   `queueTtl` (*type:* `String.t`, *default:* `nil`) - TTL in queue for this build. If provided and the build is enqueued longer
+      than this value, the build will expire and the build status will be
+      `EXPIRED`.
+
+      The TTL starts ticking from create_time.
   *   `results` (*type:* `GoogleApi.CloudBuild.V1.Model.Results.t`, *default:* `nil`) - Output only. Results of the build.
   *   `secrets` (*type:* `list(GoogleApi.CloudBuild.V1.Model.Secret.t)`, *default:* `nil`) - Secrets to decrypt using Cloud Key Management Service.
   *   `source` (*type:* `GoogleApi.CloudBuild.V1.Model.Source.t`, *default:* `nil`) - The location of the source files to build.
@@ -77,6 +82,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Amount of time that this build should be allowed to run, to second
       granularity. If this amount of time elapses, work on the build will cease
       and the build status will be `TIMEOUT`.
+
+      `timeout` starts ticking from `startTime`.
 
       Default time is ten minutes.
   *   `timing` (*type:* `%{optional(String.t) => GoogleApi.CloudBuild.V1.Model.TimeSpan.t}`, *default:* `nil`) - Output only. Stores timing information for phases of the build. Valid keys
@@ -103,6 +110,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
           :logsBucket => String.t(),
           :options => GoogleApi.CloudBuild.V1.Model.BuildOptions.t(),
           :projectId => String.t(),
+          :queueTtl => String.t(),
           :results => GoogleApi.CloudBuild.V1.Model.Results.t(),
           :secrets => list(GoogleApi.CloudBuild.V1.Model.Secret.t()),
           :source => GoogleApi.CloudBuild.V1.Model.Source.t(),
@@ -127,6 +135,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Build do
   field(:logsBucket)
   field(:options, as: GoogleApi.CloudBuild.V1.Model.BuildOptions)
   field(:projectId)
+  field(:queueTtl)
   field(:results, as: GoogleApi.CloudBuild.V1.Model.Results)
   field(:secrets, as: GoogleApi.CloudBuild.V1.Model.Secret, type: :list)
   field(:source, as: GoogleApi.CloudBuild.V1.Model.Source)

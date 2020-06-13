@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
 
   For zonal Managed Instance Group, use the instanceGroupManagers resource.
 
-  For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (== resource_for beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (== resource_for beta.regionInstanceGroupManagers ==) (== resource_for v1.regionInstanceGroupManagers ==)
+  For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (== resource_for {$api_version}.instanceGroupManagers ==) (== resource_for {$api_version}.regionInstanceGroupManagers ==)
 
   ## Attributes
 
@@ -46,7 +46,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL for this managed instance group. The server defines this URL.
   *   `status` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus.t`, *default:* `nil`) - [Output Only] The status of this managed instance group.
   *   `targetPools` (*type:* `list(String.t)`, *default:* `nil`) - The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
-  *   `targetSize` (*type:* `integer()`, *default:* `nil`) - The target number of running instances for this managed instance group. Deleting or abandoning instances reduces this number. Resizing the group changes this number.
+  *   `targetSize` (*type:* `integer()`, *default:* `nil`) - The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
   *   `updatePolicy` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy.t`, *default:* `nil`) - The update policy for this managed instance group.
   *   `versions` (*type:* `list(GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion.t)`, *default:* `nil`) - Specifies the instance templates used by this managed instance group to create instances.
 

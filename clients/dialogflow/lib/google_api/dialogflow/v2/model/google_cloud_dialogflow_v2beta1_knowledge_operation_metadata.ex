@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1KnowledgeOpe
 
   ## Attributes
 
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Required. The current state of this operation.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Required. Output only. The current state of this operation.
   """
 
   use GoogleApi.Gax.ModelBase

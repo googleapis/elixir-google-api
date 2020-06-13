@@ -25,7 +25,14 @@ defmodule GoogleApi.Content.V21.Model.DatafeedsCustomBatchRequestEntry do
   *   `datafeed` (*type:* `GoogleApi.Content.V21.Model.Datafeed.t`, *default:* `nil`) - The data feed to insert.
   *   `datafeedId` (*type:* `String.t`, *default:* `nil`) - The ID of the data feed to get, delete or fetch.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - 
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
+
+      Acceptable values are:  
+      - "`delete`" 
+      - "`fetchNow`" 
+      - "`get`" 
+      - "`insert`" 
+      - "`update`"
   """
 
   use GoogleApi.Gax.ModelBase

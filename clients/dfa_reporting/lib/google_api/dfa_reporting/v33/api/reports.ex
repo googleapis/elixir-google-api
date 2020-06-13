@@ -54,7 +54,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_reports_delete(
         connection,
         profile_id,
@@ -111,7 +111,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_reports_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.Report.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.Report.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_reports_get(
         connection,
         profile_id,
@@ -168,7 +170,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_reports_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.Report.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.Report.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_reports_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -223,7 +227,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_reports_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.ReportList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.ReportList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_reports_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -284,7 +290,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.Report.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.Report.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_reports_patch(
         connection,
         profile_id,
@@ -343,7 +352,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_reports_run(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.File.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.File.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_reports_run(
         connection,
         profile_id,
@@ -407,7 +418,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.Report.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.Report.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_reports_update(
         connection,
         profile_id,
@@ -470,7 +484,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.CompatibleFields.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.CompatibleFields.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_reports_compatible_fields_query(
         connection,
         profile_id,
@@ -506,12 +522,12 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
   end
 
   @doc """
-  Retrieves a report file. This method supports media download.
+  Retrieves a report file by its report ID and file ID. This method supports media download.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V33.Connection.t`) - Connection to server
-  *   `profile_id` (*type:* `String.t`) - The DFA profile ID.
+  *   `profile_id` (*type:* `String.t`) - The DFA user profile ID.
   *   `report_id` (*type:* `String.t`) - The ID of the report.
   *   `file_id` (*type:* `String.t`) - The ID of the report file.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -536,7 +552,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.File.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.File.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_reports_files_get(
         connection,
         profile_id,
@@ -607,7 +626,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.FileList.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.FileList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_reports_files_list(
         connection,
         profile_id,

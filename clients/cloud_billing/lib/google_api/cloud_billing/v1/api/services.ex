@@ -56,7 +56,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
   """
   @spec cloudbilling_services_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListServicesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_services_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -92,7 +93,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The name of the service.
+  *   `parent` (*type:* `String.t`) - Required. The name of the service.
       Example: "services/DA34-426B-A397"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -133,7 +134,9 @@ defmodule GoogleApi.CloudBilling.V1.Api.Services do
   *   `{:error, info}` on failure
   """
   @spec cloudbilling_services_skus_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudBilling.V1.Model.ListSkusResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBilling.V1.Model.ListSkusResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_services_skus_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

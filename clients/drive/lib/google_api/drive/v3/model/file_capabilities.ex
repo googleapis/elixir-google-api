@@ -22,6 +22,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   ## Attributes
 
   *   `canAddChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add children to this folder. This is always false when the item is not a folder.
+  *   `canAddMyDriveParent` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add a parent for the item without removing an existing parent in the same request. Not populated for shared drive files.
   *   `canChangeCopyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the copyRequiresWriterPermission restriction of this file.
   *   `canChangeViewersCanCopyContent` (*type:* `boolean()`, *default:* `nil`) - Deprecated
   *   `canComment` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can comment on this file.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   *   `canReadRevisions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be read.
   *   `canReadTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use canReadDrive instead.
   *   `canRemoveChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can remove children from this folder. This is always false when the item is not a folder. For a folder in a shared drive, use canDeleteChildren or canTrashChildren instead.
+  *   `canRemoveMyDriveParent` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can remove a parent from the item without adding another parent in the same request. Not populated for shared drive files.
   *   `canRename` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename this file.
   *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can modify the sharing settings for this file.
   *   `canTrash` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can move this file to trash.
@@ -57,6 +59,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
 
   @type t :: %__MODULE__{
           :canAddChildren => boolean(),
+          :canAddMyDriveParent => boolean(),
           :canChangeCopyRequiresWriterPermission => boolean(),
           :canChangeViewersCanCopyContent => boolean(),
           :canComment => boolean(),
@@ -81,6 +84,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
           :canReadRevisions => boolean(),
           :canReadTeamDrive => boolean(),
           :canRemoveChildren => boolean(),
+          :canRemoveMyDriveParent => boolean(),
           :canRename => boolean(),
           :canShare => boolean(),
           :canTrash => boolean(),
@@ -89,6 +93,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
         }
 
   field(:canAddChildren)
+  field(:canAddMyDriveParent)
   field(:canChangeCopyRequiresWriterPermission)
   field(:canChangeViewersCanCopyContent)
   field(:canComment)
@@ -113,6 +118,7 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
   field(:canReadRevisions)
   field(:canReadTeamDrive)
   field(:canRemoveChildren)
+  field(:canRemoveMyDriveParent)
   field(:canRename)
   field(:canShare)
   field(:canTrash)

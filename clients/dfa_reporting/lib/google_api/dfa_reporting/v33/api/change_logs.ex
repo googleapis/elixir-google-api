@@ -54,7 +54,10 @@ defmodule GoogleApi.DFAReporting.V33.Api.ChangeLogs do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DFAReporting.V33.Model.ChangeLog.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.DFAReporting.V33.Model.ChangeLog.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_change_logs_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -115,7 +118,8 @@ defmodule GoogleApi.DFAReporting.V33.Api.ChangeLogs do
   """
   @spec dfareporting_change_logs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.ChangeLogsListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_change_logs_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

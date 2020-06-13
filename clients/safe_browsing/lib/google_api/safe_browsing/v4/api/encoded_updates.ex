@@ -56,7 +56,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.EncodedUpdates do
   """
   @spec safebrowsing_encoded_updates_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SafeBrowsing.V4.Model.FetchThreatListUpdatesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def safebrowsing_encoded_updates_get(
         connection,
         encoded_request,

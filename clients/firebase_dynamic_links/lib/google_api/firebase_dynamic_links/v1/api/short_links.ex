@@ -61,7 +61,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.ShortLinks do
   """
   @spec firebasedynamiclinks_short_links_create(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.CreateShortDynamicLinkResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def firebasedynamiclinks_short_links_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -29,6 +29,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow do
   *   `impressionsWon` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that won the auction.
   *   `measurableImpressions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids for which the corresponding impression was measurable
       for viewability (as defined by Active View).
+  *   `reachedQueries` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that won the auction and also won the mediation
+      waterfall (if any).
   *   `rowDimensions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t`, *default:* `nil`) - The values of all dimensions associated with metric values in this row.
   *   `viewableImpressions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids for which the corresponding impression was viewable (as
       defined by Active View).
@@ -42,6 +44,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow do
           :billedImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
           :impressionsWon => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
           :measurableImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
+          :reachedQueries => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t(),
           :rowDimensions => GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions.t(),
           :viewableImpressions => GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t()
         }
@@ -51,6 +54,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow do
   field(:billedImpressions, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)
   field(:impressionsWon, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)
   field(:measurableImpressions, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)
+  field(:reachedQueries, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)
   field(:rowDimensions, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.RowDimensions)
   field(:viewableImpressions, as: GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue)
 end

@@ -19,42 +19,45 @@ from synthtool import _tracked_paths
 import synthtool as s
 import synthtool.log as log
 import synthtool.shell as shell
-import synthtool.sources.git as git
 import logging
 import os
+import pathlib
 import shutil
-import sys
+import tempfile
 
 logging.basicConfig(level=logging.DEBUG)
 s.metadata.set_track_obsolete_files(False)  # TODO: enable again.
 
-repository_url = "https://github.com/googleapis/elixir-google-api.git"
+# Copy the repo into a temporary directory, removing the build and deps, and
+# perform generation there. This is because the docker command may be a
+# cross-compile whose build environment should be isolated from the current
+# git clone.
+with tempfile.TemporaryDirectory() as tmpdir:
+    repository = pathlib.Path(tmpdir) / "repo"
+    shutil.copytree(os.getcwd(), repository)
+    shutil.rmtree(repository / "_build", ignore_errors=True)
+    shutil.rmtree(repository / "deps", ignore_errors=True)
 
-log.debug(f"Cloning {repository_url}.")
-repository = git.clone(repository_url, depth=1)
+    image = "gcr.io/cloud-devrel-public-resources/elixir19"
+    generate_command = "scripts/generate_client.sh"
+    command = [
+        "docker",
+        "run",
+        "--rm",
+        f"-v{repository}:/workspace",
+        "-v/var/run/docker.sock:/var/run/docker.sock",
+        "-e", f"USER_GROUP={os.getuid()}:{os.getgid()}",
+        "-w", "/workspace",
+        image,
+        generate_command]
 
-image = "gcr.io/cloud-devrel-public-resources/elixir19"
-generate_command = "scripts/generate_client.sh"
-command = [
-    "docker",
-    "run",
-    "--rm",
-    f"-v{repository}:/workspace",
-    "-v/var/run/docker.sock:/var/run/docker.sock",
-    "-e", f"USER_GROUP={os.getuid()}:{os.getgid()}",
-    "-w", "/workspace",
-    image,
-    generate_command]
+    if extra_args():
+        command.extend(extra_args())
 
-if extra_args():
-    command.extend(extra_args())
+    log.debug(f"Running: {' '.join(command)}")
 
-log.debug(f"Running: {' '.join(command)}")
+    shell.run(command, cwd=repository, hide_output=False)
 
-shell.run(command, cwd=repository)
-
-# clean destination before copying
-shutil.rmtree("clients", ignore_errors=True)
-
-# copy all clients
-s.copy(repository / "clients")
+    # Copy the resulting clients directory back into the git clone.
+    shutil.rmtree("clients", ignore_errors=True)
+    shutil.move(repository / "clients", "clients")

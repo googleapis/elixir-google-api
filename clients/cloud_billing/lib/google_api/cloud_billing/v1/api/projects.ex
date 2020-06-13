@@ -34,7 +34,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the project for which billing information is
+  *   `name` (*type:* `String.t`) - Required. The resource name of the project for which billing information is
       retrieved. For example, `projects/tokyo-rain-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -61,7 +61,9 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_projects_get_billing_info(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -127,7 +129,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the project associated with the billing information
+  *   `name` (*type:* `String.t`) - Required. The resource name of the project associated with the billing information
       that you want to update. For example, `projects/tokyo-rain-123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -155,7 +157,9 @@ defmodule GoogleApi.CloudBilling.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBilling.V1.Model.ProjectBillingInfo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_projects_update_billing_info(
         connection,
         name,

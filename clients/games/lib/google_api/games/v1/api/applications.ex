@@ -50,7 +50,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   *   `{:error, info}` on failure
   """
   @spec games_applications_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Application.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.Application.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_applications_get(connection, application_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -92,7 +92,6 @@ defmodule GoogleApi.Games.V1.Api.Applications do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:builtinGameId` (*type:* `String.t`) - Override used only by built-in games in Play Games application.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -101,7 +100,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   *   `{:error, info}` on failure
   """
   @spec games_applications_played(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_applications_played(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -110,8 +109,7 @@ defmodule GoogleApi.Games.V1.Api.Applications do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
-      :builtinGameId => :query
+      :userIp => :query
     }
 
     request =
@@ -149,7 +147,9 @@ defmodule GoogleApi.Games.V1.Api.Applications do
   *   `{:error, info}` on failure
   """
   @spec games_applications_verify(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.ApplicationVerifyResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.ApplicationVerifyResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_applications_verify(connection, application_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

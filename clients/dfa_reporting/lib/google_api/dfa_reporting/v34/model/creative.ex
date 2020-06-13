@@ -31,6 +31,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Creative do
   *   `autoAdvanceImages` (*type:* `boolean()`, *default:* `nil`) - Whether images are automatically advanced for image gallery creatives. Applicable to the following creative types: DISPLAY_IMAGE_GALLERY.
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this creative. This field, if left unset, will be auto-generated for both insert and update operations. Applicable to all creative types.
   *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t`, *default:* `nil`) - Creative last modification information. This is a read-only field. Applicable to all creative types.
+  *   `obaIcon` (*type:* `GoogleApi.DFAReporting.V34.Model.ObaIcon.t`, *default:* `nil`) - Online behavioral advertising icon to be added to the creative. Applicable to the following creative types: all INSTREAM_VIDEO.
   *   `creativeAssets` (*type:* `list(GoogleApi.DFAReporting.V34.Model.CreativeAsset.t)`, *default:* `nil`) - Assets associated with a creative. Applicable to all but the following creative types: INTERNAL_REDIRECT, INTERSTITIAL_INTERNAL_REDIRECT, and REDIRECT
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this creative. This field, if left unset, will be auto-generated for both insert and update operations. Applicable to all creative types.
   *   `authoringSource` (*type:* `String.t`, *default:* `nil`) - Source application where creative was authored. Presently, only DBM authored creatives will have this field set. Applicable to all creative types.
@@ -110,6 +111,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Creative do
           :autoAdvanceImages => boolean(),
           :subaccountId => String.t(),
           :lastModifiedInfo => GoogleApi.DFAReporting.V34.Model.LastModifiedInfo.t(),
+          :obaIcon => GoogleApi.DFAReporting.V34.Model.ObaIcon.t(),
           :creativeAssets => list(GoogleApi.DFAReporting.V34.Model.CreativeAsset.t()),
           :accountId => String.t(),
           :authoringSource => String.t(),
@@ -178,6 +180,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.Creative do
   field(:autoAdvanceImages)
   field(:subaccountId)
   field(:lastModifiedInfo, as: GoogleApi.DFAReporting.V34.Model.LastModifiedInfo)
+  field(:obaIcon, as: GoogleApi.DFAReporting.V34.Model.ObaIcon)
   field(:creativeAssets, as: GoogleApi.DFAReporting.V34.Model.CreativeAsset, type: :list)
   field(:accountId)
   field(:authoringSource)

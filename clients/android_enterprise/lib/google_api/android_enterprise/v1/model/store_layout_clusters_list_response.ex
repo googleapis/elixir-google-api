@@ -17,23 +17,20 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse do
   @moduledoc """
-  The store page resources for the enterprise.
+
 
   ## Attributes
 
   *   `cluster` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t)`, *default:* `nil`) - A store cluster of an enterprise.
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#storeLayoutClustersListResponse`) - Identifies what kind of resource this is. Value: the fixed string "androidenterprise#storeLayoutClustersListResponse".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cluster => list(GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t()),
-          :kind => String.t()
+          :cluster => list(GoogleApi.AndroidEnterprise.V1.Model.StoreCluster.t())
         }
 
   field(:cluster, as: GoogleApi.AndroidEnterprise.V1.Model.StoreCluster, type: :list)
-  field(:kind)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.StoreLayoutClustersListResponse do

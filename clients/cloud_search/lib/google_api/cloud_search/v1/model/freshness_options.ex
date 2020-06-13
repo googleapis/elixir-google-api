@@ -41,7 +41,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.FreshnessOptions do
       as the freshness indicator.
       The maximum length is 256 characters.
 
-      When a property is used to calculate fresheness, the value defaults
+      When a property is used to calculate freshness, the value defaults
       to 2 years from the current time.
   """
 

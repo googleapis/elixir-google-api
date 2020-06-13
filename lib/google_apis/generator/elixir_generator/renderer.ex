@@ -38,6 +38,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     :base_url
   ])
 
+  EEx.function_from_file(:def, :metadata, Path.expand("./template/elixir/metadata.ex.eex"), [
+    :namespace,
+    :discovery_revision
+  ])
+
   EEx.function_from_file(:def, :mix_exs, Path.expand("./template/elixir/mix.exs.eex"), [
     :namespace,
     :library_name,

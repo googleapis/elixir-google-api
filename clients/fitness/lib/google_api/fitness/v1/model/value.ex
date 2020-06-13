@@ -19,14 +19,20 @@ defmodule GoogleApi.Fitness.V1.Model.Value do
   @moduledoc """
   Holder object for the value of a single field in a data point.
 
-  A field value has a particular format and is only ever set to one of an integer or a floating point value. LINT.IfChange
+  A field value has a particular format and is only ever set to one of an
+  integer or a floating point value.
 
   ## Attributes
 
   *   `fpVal` (*type:* `float()`, *default:* `nil`) - Floating point value. When this is set, other values must not be set.
   *   `intVal` (*type:* `integer()`, *default:* `nil`) - Integer value. When this is set, other values must not be set.
-  *   `mapVal` (*type:* `list(GoogleApi.Fitness.V1.Model.ValueMapValEntry.t)`, *default:* `nil`) - Map value. The valid key space and units for the corresponding value of each entry should be documented as part of the data type definition. Keys should be kept small whenever possible. Data streams with large keys and high data frequency may be down sampled.
-  *   `stringVal` (*type:* `String.t`, *default:* `nil`) - String value. When this is set, other values must not be set. Strings should be kept small whenever possible. Data streams with large string values and high data frequency may be down sampled.
+  *   `mapVal` (*type:* `list(GoogleApi.Fitness.V1.Model.ValueMapValEntry.t)`, *default:* `nil`) - Map value.  The valid key space and units for the corresponding value
+      of each entry should be documented as part of the data type definition.
+      Keys should be kept small whenever possible. Data streams with large keys
+      and high data frequency may be down sampled.
+  *   `stringVal` (*type:* `String.t`, *default:* `nil`) - String value.  When this is set, other values must not be set.
+      Strings should be kept small whenever possible.  Data streams with large
+      string values and high data frequency may be down sampled.
   """
 
   use GoogleApi.Gax.ModelBase

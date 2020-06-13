@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5 do
   @moduledoc """
-
+  The CrUX loading experience object that contains CrUX data breakdowns.
 
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - The url, pattern or origin which the metrics are on.
-  *   `initial_url` (*type:* `String.t`, *default:* `nil`) - 
-  *   `metrics` (*type:* `map()`, *default:* `nil`) - 
-  *   `overall_category` (*type:* `String.t`, *default:* `nil`) - 
+  *   `initial_url` (*type:* `String.t`, *default:* `nil`) - The requested URL, which may differ from the resolved "id".
+  *   `metrics` (*type:* `%{optional(String.t) => GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5.t}`, *default:* `nil`) - The map of <metrics, data>.
+  *   `overall_category` (*type:* `String.t`, *default:* `nil`) - The human readable speed "category" of the id.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,13 +32,15 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5 do
   @type t :: %__MODULE__{
           :id => String.t(),
           :initial_url => String.t(),
-          :metrics => map(),
+          :metrics => %{
+            optional(String.t()) => GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5.t()
+          },
           :overall_category => String.t()
         }
 
   field(:id)
   field(:initial_url)
-  field(:metrics, type: :map)
+  field(:metrics, as: GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5, type: :map)
   field(:overall_category)
 end
 

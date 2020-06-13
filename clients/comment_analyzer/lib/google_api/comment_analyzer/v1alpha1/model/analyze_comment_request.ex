@@ -47,7 +47,7 @@ defmodule GoogleApi.CommentAnalyzer.V1alpha1.Model.AnalyzeCommentRequest do
       For the prod installation, known as Perspective API, at
       blade:commentanalyzer-esf and commentanalyzer.googleapis.com, see
       go/checker-models (internal) and
-      https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md#models.
+      https://github.com/conversationai/perspectiveapi/blob/master/2-api/models.md#all-attribute-types.
   *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Session ID. Used to join related RPCs into a single session. For example,
       an interactive tool that calls both the AnalyzeComment and
       SuggestCommentScore RPCs should set all invocations of both RPCs to the

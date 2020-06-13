@@ -21,20 +21,19 @@ defmodule GoogleApi.CloudAsset.V1.Model.ExportAssetsRequest do
 
   ## Attributes
 
-  *   `assetTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of asset types of which to take a snapshot for. For example:
+  *   `assetTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of asset types of which to take a snapshot for. Example:
       "compute.googleapis.com/Disk". If specified, only matching assets will be
       returned. See [Introduction to Cloud Asset
       Inventory](https://cloud.google.com/asset-inventory/docs/overview)
       for all supported asset types.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Asset content type. If not specified, no content but the asset name will be
       returned.
-  *   `outputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.OutputConfig.t`, *default:* `nil`) - Required. Output configuration indicating where the results will be output
-      to. All results will be in newline delimited JSON format.
+  *   `outputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.OutputConfig.t`, *default:* `nil`) - Required. Output configuration indicating where the results will be output to.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp to take an asset snapshot. This can only be set to a timestamp
-      between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-      the current time will be used. Due to delays in resource data collection
-      and indexing, there is a volatile window during which running the same
-      query may get different results.
+      between the current time and the current time minus 35 days (inclusive).
+      If not specified, the current time will be used. Due to delays in resource
+      data collection and indexing, there is a volatile window during which
+      running the same query may get different results.
   """
 
   use GoogleApi.Gax.ModelBase

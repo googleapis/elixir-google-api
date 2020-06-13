@@ -69,7 +69,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclicksearch_conversion_get(
         connection,
         agency_id,
@@ -142,7 +144,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   *   `{:error, info}` on failure
   """
   @spec doubleclicksearch_conversion_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclicksearch_conversion_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -159,90 +163,6 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/conversion", %{})
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{}])
-  end
-
-  @doc """
-  Updates a batch of conversions in DoubleClick Search. This method supports patch semantics.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.DoubleClickSearch.V2.Connection.t`) - Connection to server
-  *   `advertiser_id` (*type:* `String.t`) - Numeric ID of the advertiser.
-  *   `agency_id` (*type:* `String.t`) - Numeric ID of the agency.
-  *   `end_date` (*type:* `integer()`) - Last date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
-  *   `engine_account_id` (*type:* `String.t`) - Numeric ID of the engine account.
-  *   `row_count` (*type:* `integer()`) - The number of conversions to return per call.
-  *   `start_date` (*type:* `integer()`) - First date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
-  *   `start_row` (*type:* `integer()`) - The 0-based starting index for retrieving conversions results.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:body` (*type:* `GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.DoubleClickSearch.V2.Model.ConversionList{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec doubleclicksearch_conversion_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          integer(),
-          String.t(),
-          integer(),
-          integer(),
-          integer(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
-  def doubleclicksearch_conversion_patch(
-        connection,
-        advertiser_id,
-        agency_id,
-        end_date,
-        engine_account_id,
-        row_count,
-        start_date,
-        start_row,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:patch)
-      |> Request.url("/conversion", %{})
-      |> Request.add_param(:query, :advertiserId, advertiser_id)
-      |> Request.add_param(:query, :agencyId, agency_id)
-      |> Request.add_param(:query, :endDate, end_date)
-      |> Request.add_param(:query, :engineAccountId, engine_account_id)
-      |> Request.add_param(:query, :rowCount, row_count)
-      |> Request.add_param(:query, :startDate, start_date)
-      |> Request.add_param(:query, :startRow, start_row)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -274,7 +194,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   *   `{:error, info}` on failure
   """
   @spec doubleclicksearch_conversion_update(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DoubleClickSearch.V2.Model.ConversionList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclicksearch_conversion_update(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -323,7 +245,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   """
   @spec doubleclicksearch_conversion_update_availability(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickSearch.V2.Model.UpdateAvailabilityResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclicksearch_conversion_update_availability(
         connection,
         optional_params \\ [],

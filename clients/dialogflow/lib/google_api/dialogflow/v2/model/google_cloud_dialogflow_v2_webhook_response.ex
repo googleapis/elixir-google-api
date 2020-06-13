@@ -34,45 +34,39 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2WebhookResponse d
 
   ## Attributes
 
-  *   `followupEventInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t`, *default:* `nil`) - Optional. Makes the platform immediately invoke another `DetectIntent` call
-      internally with the specified event as input.
+  *   `followupEventInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t`, *default:* `nil`) - Optional. Invokes the supplied events.
       When this field is set, Dialogflow ignores the `fulfillment_text`,
       `fulfillment_messages`, and `payload` fields.
-  *   `fulfillmentMessages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage.t)`, *default:* `nil`) - Optional. The collection of rich messages to present to the user. This
-      value is passed directly to `QueryResult.fulfillment_messages`.
-  *   `fulfillmentText` (*type:* `String.t`, *default:* `nil`) - Optional. The text to be shown on the screen. This value is passed directly
-      to `QueryResult.fulfillment_text`.
-  *   `outputContexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - Optional. The collection of output contexts. This value is passed directly
-      to `QueryResult.output_contexts`.
-  *   `payload` (*type:* `map()`, *default:* `nil`) - Optional. This value is passed directly to `QueryResult.webhook_payload`.
-      See the related `fulfillment_messages[i].payload field`, which may be used
-      as an alternative to this field.
-
-      This field can be used for Actions on Google responses.
-      It should have a structure similar to the JSON message shown here. For more
-      information, see
-      [Actions on Google Webhook
-      Format](https://developers.google.com/actions/dialogflow/webhook)
-      <pre>{
-        "google": {
-          "expectUserResponse": true,
-          "richResponse": {
-            "items": [
-              {
-                "simpleResponse": {
-                  "textToSpeech": "this is a simple response"
-                }
-              }
-            ]
-          }
-        }
-      }</pre>
+  *   `fulfillmentMessages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentMessage.t)`, *default:* `nil`) - Optional. The rich response messages intended for the end-user.
+      When provided, Dialogflow uses this field to populate
+      QueryResult.fulfillment_messages sent to the integration or API caller.
+  *   `fulfillmentText` (*type:* `String.t`, *default:* `nil`) - Optional. The text response message intended for the end-user.
+      It is recommended to use `fulfillment_messages.text.text[0]` instead.
+      When provided, Dialogflow uses this field to populate
+      QueryResult.fulfillment_text sent to the integration or API caller.
+  *   `outputContexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - Optional. The collection of output contexts that will overwrite currently
+      active contexts for the session and reset their lifespans.
+      When provided, Dialogflow uses this field to populate
+      QueryResult.output_contexts sent to the integration or API caller.
+  *   `payload` (*type:* `map()`, *default:* `nil`) - Optional. This field can be used to pass custom data from your webhook to the
+      integration or API caller. Arbitrary JSON objects are supported.
+      When provided, Dialogflow uses this field to populate
+      QueryResult.webhook_payload sent to the integration or API caller.
+      This field is also used by the
+      [Google Assistant
+      integration](https://cloud.google.com/dialogflow/docs/integrations/aog)
+      for rich response messages.
+      See the format definition at [Google Assistant Dialogflow webhook
+      format](https://developers.google.com/assistant/actions/build/json/dialogflow-webhook-json)
   *   `sessionEntityTypes` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t)`, *default:* `nil`) - Optional. Additional session entity types to replace or extend developer
       entity types with. The entity synonyms apply to all languages and persist
-      for the session of this query. Setting the session entity types inside
-      webhook overwrites the session entity types that have been set through
-      `DetectIntentRequest.query_params.session_entity_types`.
-  *   `source` (*type:* `String.t`, *default:* `nil`) - Optional. This value is passed directly to `QueryResult.webhook_source`.
+      for the session. Setting this data from a webhook overwrites
+      the session entity types that have been set using `detectIntent`,
+      `streamingDetectIntent` or SessionEntityType management methods.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Optional. A custom field used to identify the webhook source.
+      Arbitrary strings are supported.
+      When provided, Dialogflow uses this field to populate
+      QueryResult.webhook_source sent to the integration or API caller.
   """
 
   use GoogleApi.Gax.ModelBase

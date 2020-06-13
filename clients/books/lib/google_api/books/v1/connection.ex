@@ -28,5 +28,5 @@ defmodule GoogleApi.Books.V1.Connection do
       "https://www.googleapis.com/auth/books"
     ],
     otp_app: :google_api_books,
-    base_url: "https://www.googleapis.com/books/v1/"
+    base_url: "https://www.googleapis.com/"
 end

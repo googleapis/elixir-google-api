@@ -24,7 +24,9 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidTest do
   *   `androidAppInfo` (*type:* `GoogleApi.ToolResults.V1beta3.Model.AndroidAppInfo.t`, *default:* `nil`) - Information about the application under test.
   *   `androidInstrumentationTest` (*type:* `GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest.t`, *default:* `nil`) - An Android instrumentation test.
   *   `androidRoboTest` (*type:* `GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest.t`, *default:* `nil`) - An Android robo test.
-  *   `testTimeout` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - Max time a test is allowed to run before it is automatically cancelled.
+  *   `androidTestLoop` (*type:* `GoogleApi.ToolResults.V1beta3.Model.AndroidTestLoop.t`, *default:* `nil`) - An Android test loop.
+  *   `testTimeout` (*type:* `GoogleApi.ToolResults.V1beta3.Model.Duration.t`, *default:* `nil`) - Max time a test is allowed to run before it is
+      automatically cancelled.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,6 +36,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidTest do
           :androidInstrumentationTest =>
             GoogleApi.ToolResults.V1beta3.Model.AndroidInstrumentationTest.t(),
           :androidRoboTest => GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest.t(),
+          :androidTestLoop => GoogleApi.ToolResults.V1beta3.Model.AndroidTestLoop.t(),
           :testTimeout => GoogleApi.ToolResults.V1beta3.Model.Duration.t()
         }
 
@@ -44,6 +47,7 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.AndroidTest do
   )
 
   field(:androidRoboTest, as: GoogleApi.ToolResults.V1beta3.Model.AndroidRoboTest)
+  field(:androidTestLoop, as: GoogleApi.ToolResults.V1beta3.Model.AndroidTestLoop)
   field(:testTimeout, as: GoogleApi.ToolResults.V1beta3.Model.Duration)
 end
 

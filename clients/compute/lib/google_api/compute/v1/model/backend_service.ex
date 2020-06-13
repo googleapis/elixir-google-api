@@ -21,9 +21,13 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
 
   A backend service contains configuration values for Google Cloud Platform load balancing services.
 
+  Backend services in Google Compute Engine can be either regionally or globally scoped.
+
+  * [Global](/compute/docs/reference/rest/{$api_version}/backendServices) * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
+
   For more information, read Backend Services.
 
-  (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+  (== resource_for {$api_version}.backendService ==)
 
   ## Attributes
 
@@ -45,12 +49,11 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `customRequestHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the HTTP/S load balancer should add to proxied requests.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `enableCDN` (*type:* `boolean()`, *default:* `nil`) - If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+  *   `failoverPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy.t`, *default:* `nil`) - Applicable only to Failover for Internal TCP/UDP Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
 
       To see the latest fingerprint, make a get() request to retrieve a BackendService.
-  *   `healthChecks` (*type:* `list(String.t)`, *default:* `nil`) - The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this BackendService. Currently at most one health check can be specified, and a health check is required for Compute Engine backend services. A health check must not be specified for App Engine backend and Cloud Function backend.
-
-      For internal load balancing, a URL to a HealthCheck resource must be specified instead.
+  *   `healthChecks` (*type:* `list(String.t)`, *default:* `nil`) - The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently at most one health check can be specified. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet NEG backends must not have a health check. A health check must
   *   `iap` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceIAP.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#backendService`) - [Output Only] Type of resource. Always compute#backendService for backend services.
@@ -68,7 +71,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
       - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.  
 
       If sessionAffinity is not NONE, and this field is not set to >MAGLEV or RING_HASH, session affinity settings will not take effect.
+  *   `logConfig` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceLogConfig.t`, *default:* `nil`) - This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which this backend service belongs. This field can only be spcified when the load balancing scheme is set to INTERNAL.
   *   `outlierDetection` (*type:* `GoogleApi.Compute.V1.Model.OutlierDetection.t`, *default:* `nil`) - Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
 
       This field is applicable to either:  
@@ -77,14 +82,14 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `port` (*type:* `integer()`, *default:* `nil`) - Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
 
       This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
-  *   `portName` (*type:* `String.t`, *default:* `nil`) - A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
+  *   `portName` (*type:* `String.t`, *default:* `nil`) - A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
 
 
 
-      Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Blaancing).
+      Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol this BackendService uses to communicate with backends.
 
-      Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP, depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
+      Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this backend service.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
@@ -111,6 +116,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :customRequestHeaders => list(String.t()),
           :description => String.t(),
           :enableCDN => boolean(),
+          :failoverPolicy => GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy.t(),
           :fingerprint => String.t(),
           :healthChecks => list(String.t()),
           :iap => GoogleApi.Compute.V1.Model.BackendServiceIAP.t(),
@@ -118,7 +124,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :kind => String.t(),
           :loadBalancingScheme => String.t(),
           :localityLbPolicy => String.t(),
+          :logConfig => GoogleApi.Compute.V1.Model.BackendServiceLogConfig.t(),
           :name => String.t(),
+          :network => String.t(),
           :outlierDetection => GoogleApi.Compute.V1.Model.OutlierDetection.t(),
           :port => integer(),
           :portName => String.t(),
@@ -140,6 +148,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:customRequestHeaders, type: :list)
   field(:description)
   field(:enableCDN)
+  field(:failoverPolicy, as: GoogleApi.Compute.V1.Model.BackendServiceFailoverPolicy)
   field(:fingerprint)
   field(:healthChecks, type: :list)
   field(:iap, as: GoogleApi.Compute.V1.Model.BackendServiceIAP)
@@ -147,7 +156,9 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:kind)
   field(:loadBalancingScheme)
   field(:localityLbPolicy)
+  field(:logConfig, as: GoogleApi.Compute.V1.Model.BackendServiceLogConfig)
   field(:name)
+  field(:network)
   field(:outlierDetection, as: GoogleApi.Compute.V1.Model.OutlierDetection)
   field(:port)
   field(:portName)

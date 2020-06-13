@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.ShippingSettings do
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the account to which these account shipping settings belong. Ignored upon update, always present in get request responses.
-  *   `postalCodeGroups` (*type:* `list(GoogleApi.Content.V21.Model.PostalCodeGroup.t)`, *default:* `nil`) - A list of postal code groups that can be referred to in services. Optional.
+  *   `postalCodeGroups` (*type:* `list(GoogleApi.Content.V21.Model.PostalCodeGroup.t)`, *default:* `nil`) - A list of postal code groups that can be referred to in `services`. Optional.
   *   `services` (*type:* `list(GoogleApi.Content.V21.Model.Service.t)`, *default:* `nil`) - The target account's list of services. Optional.
   """
 

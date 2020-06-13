@@ -31,19 +31,23 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
       NOTE: Set the "desired_node_pool" field as well.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
   *   `desiredLocations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine
-      [zones](/compute/docs/zones#available) in which the cluster's nodes
-      should be located. Changing the locations a cluster is in will result
-      in nodes being either created or removed from the cluster, depending on
-      whether locations are being added or removed.
+      [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+      cluster's nodes should be located. Changing the locations a cluster is in
+      will result in nodes being either created or removed from the cluster,
+      depending on whether locations are being added or removed.
 
       This list must always include the cluster's primary zone.
   *   `desiredLoggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs.
       Currently available options:
 
-      * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-      service with Kubernetes-native resource model
-      * "logging.googleapis.com" - the Google Cloud Logging service
-      * "none" - no logs will be exported from the cluster
+      * `logging.googleapis.com/kubernetes` - The Cloud Logging
+      service with a Kubernetes-native resource model
+      * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+        available as of GKE 1.15).
+      * `none` - no logs will be exported from the cluster.
+
+      If left as an empty string,`logging.googleapis.com/kubernetes` will be
+      used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
   *   `desiredMasterVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the master to.
 
@@ -58,10 +62,14 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredMonitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics.
       Currently available options:
 
-      * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-      service with Kubernetes-native resource model
-      * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-      * "none" - no metrics will be exported from the cluster
+      * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+      service with a Kubernetes-native resource model
+      * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+        longer available as of GKE 1.15).
+      * `none` - No metrics will be exported from the cluster.
+
+      If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+      used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
   *   `desiredNodePoolAutoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for the node pool specified in
       desired_node_pool_id. If there is only one pool in the
       cluster and desired_node_pool_id is not provided then
@@ -82,7 +90,9 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
       - "1.X.Y-gke.N": picks an explicit Kubernetes version
       - "-": picks the Kubernetes master version
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
+  *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
   *   `desiredVerticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
+  *   `desiredWorkloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for Workload Identity.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -106,8 +116,11 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredNodeVersion => String.t(),
           :desiredResourceUsageExportConfig =>
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t(),
+          :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t(),
           :desiredVerticalPodAutoscaling =>
-            GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t()
+            GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t(),
+          :desiredWorkloadIdentityConfig =>
+            GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t()
         }
 
   field(:desiredAddonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
@@ -137,7 +150,9 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
     as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig
   )
 
+  field(:desiredShieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
   field(:desiredVerticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
+  field(:desiredWorkloadIdentityConfig, as: GoogleApi.Container.V1.Model.WorkloadIdentityConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ClusterUpdate do

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.PopulateVersionFilesRequest do
   @moduledoc """
-
+  The request to populate a Version's Files.
 
   ## Attributes
 

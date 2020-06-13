@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.GetIamPolicyRequest do
 
   ## Attributes
 
-  *   `options` (*type:* `GoogleApi.Dataproc.V1.Model.GetPolicyOptions.t`, *default:* `nil`) - OPTIONAL: A GetPolicyOptions object for specifying options to GetIamPolicy. This field is only used by Cloud IAM.
+  *   `options` (*type:* `GoogleApi.Dataproc.V1.Model.GetPolicyOptions.t`, *default:* `nil`) - OPTIONAL: A GetPolicyOptions object for specifying options to GetIamPolicy.
   """
 
   use GoogleApi.Gax.ModelBase

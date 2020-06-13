@@ -21,8 +21,40 @@ defmodule GoogleApi.Content.V2.Model.ShipmentTrackingInfo do
 
   ## Attributes
 
-  *   `carrier` (*type:* `String.t`, *default:* `nil`) - 
-  *   `trackingNumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `carrier` (*type:* `String.t`, *default:* `nil`) - The shipping carrier that handles the package.
+
+      Acceptable values are:  
+      - "`boxtal`" 
+      - "`bpost`" 
+      - "`chronopost`" 
+      - "`colisPrive`" 
+      - "`colissimo`" 
+      - "`cxt`" 
+      - "`deliv`" 
+      - "`dhl`" 
+      - "`dpd`" 
+      - "`dynamex`" 
+      - "`eCourier`" 
+      - "`easypost`" 
+      - "`efw`" 
+      - "`fedex`" 
+      - "`fedexSmartpost`" 
+      - "`geodis`" 
+      - "`gls`" 
+      - "`googleCourier`" 
+      - "`gsx`" 
+      - "`jdLogistics`" 
+      - "`laPoste`" 
+      - "`lasership`" 
+      - "`manual`" 
+      - "`mpx`" 
+      - "`onTrac`" 
+      - "`other`" 
+      - "`tnt`" 
+      - "`uds`" 
+      - "`ups`" 
+      - "`usps`"
+  *   `trackingNumber` (*type:* `String.t`, *default:* `nil`) - The tracking number for the package.
   """
 
   use GoogleApi.Gax.ModelBase

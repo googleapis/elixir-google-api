@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.Reservation do
   @moduledoc """
-  Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read  Reserving zonal resources. (== resource_for beta.reservations ==) (== resource_for v1.reservations ==)
+  Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read  Reserving zonal resources. (== resource_for {$api_version}.reservations ==)
 
   ## Attributes
 

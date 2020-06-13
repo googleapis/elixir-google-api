@@ -19,10 +19,11 @@ defmodule GoogleApi.Compute.V1.Model.MachineType do
   @moduledoc """
   Represents a Machine Type resource.
 
-  You can use specific machine types for your VM instances based on performance and pricing requirements. For more information, read Machine Types. (== resource_for v1.machineTypes ==) (== resource_for beta.machineTypes ==)
+  You can use specific machine types for your VM instances based on performance and pricing requirements. For more information, read Machine Types. (== resource_for {$api_version}.machineTypes ==)
 
   ## Attributes
 
+  *   `accelerators` (*type:* `list(GoogleApi.Compute.V1.Model.MachineTypeAccelerators.t)`, *default:* `nil`) - [Output Only] A list of accelerator configurations assigned to this machine type.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `deprecated` (*type:* `GoogleApi.Compute.V1.Model.DeprecationStatus.t`, *default:* `nil`) - [Output Only] The deprecation status associated with this machine type.
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional textual description of the resource.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accelerators => list(GoogleApi.Compute.V1.Model.MachineTypeAccelerators.t()),
           :creationTimestamp => String.t(),
           :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t(),
           :description => String.t(),
@@ -60,6 +62,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineType do
           :zone => String.t()
         }
 
+  field(:accelerators, as: GoogleApi.Compute.V1.Model.MachineTypeAccelerators, type: :list)
   field(:creationTimestamp)
   field(:deprecated, as: GoogleApi.Compute.V1.Model.DeprecationStatus)
   field(:description)

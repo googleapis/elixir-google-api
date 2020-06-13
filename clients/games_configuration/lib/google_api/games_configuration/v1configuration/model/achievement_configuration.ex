@@ -17,24 +17,18 @@
 
 defmodule GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfiguration do
   @moduledoc """
-  This is a JSON template for an achievement configuration resource.
+  An achievement configuration resource.
 
   ## Attributes
 
   *   `achievementType` (*type:* `String.t`, *default:* `nil`) - The type of the achievement.
-      Possible values are:  
-      - "STANDARD" - Achievement is either locked or unlocked. 
-      - "INCREMENTAL" - Achievement is incremental.
   *   `draft` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail.t`, *default:* `nil`) - The draft data of the achievement.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the achievement.
   *   `initialState` (*type:* `String.t`, *default:* `nil`) - The initial state of the achievement.
-      Possible values are:  
-      - "HIDDEN" - Achievement is hidden. 
-      - "REVEALED" - Achievement is revealed. 
-      - "UNLOCKED" - Achievement is unlocked.
-  *   `kind` (*type:* `String.t`, *default:* `gamesConfiguration#achievementConfiguration`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesConfiguration#achievementConfiguration.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesConfiguration#achievementConfiguration`.
   *   `published` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.AchievementConfigurationDetail.t`, *default:* `nil`) - The read-only published data of the achievement.
-  *   `stepsToUnlock` (*type:* `integer()`, *default:* `nil`) - Steps to unlock. Only applicable to incremental achievements.
+  *   `stepsToUnlock` (*type:* `integer()`, *default:* `nil`) - Steps to unlock.  Only applicable to incremental achievements.
   *   `token` (*type:* `String.t`, *default:* `nil`) - The token for this resource.
   """
 

@@ -22,24 +22,43 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
   ## Attributes
 
   *   `audioEncoding` (*type:* `String.t`, *default:* `nil`) - Required. Audio encoding of the audio content to process.
+  *   `enableWordInfo` (*type:* `boolean()`, *default:* `nil`) - If `true`, Dialogflow returns SpeechWordInfo in
+      StreamingRecognitionResult with information about the recognized speech
+      words, e.g. start and end time offsets. If false or unspecified, Speech
+      doesn't return any word-level information.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Required. The language of the supplied audio. Dialogflow does not do
       translations. See [Language
       Support](https://cloud.google.com/dialogflow/docs/reference/language)
       for a list of the currently supported language codes. Note that queries in
       the same session do not necessarily need to specify the same language.
-  *   `modelVariant` (*type:* `String.t`, *default:* `nil`) - Optional. Which variant of the Speech model to use.
-  *   `phraseHints` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of strings containing words and phrases that the speech
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Which Speech model to select for the given request. Select the
+      model best suited to your domain to get best results. If a model is not
+      explicitly specified, then we auto-select a model based on the parameters
+      in the InputAudioConfig.
+      If enhanced speech model is enabled for the agent and an enhanced
+      version of the specified model for the language does not exist, then the
+      speech is recognized using the standard version of the specified model.
+      Refer to
+      [Cloud Speech API
+      documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+      for more details.
+  *   `modelVariant` (*type:* `String.t`, *default:* `nil`) - Which variant of the Speech model to use.
+  *   `phraseHints` (*type:* `list(String.t)`, *default:* `nil`) - A list of strings containing words and phrases that the speech
       recognizer should recognize with higher likelihood.
 
       See [the Cloud Speech
       documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
       for more details.
+
+      This field is deprecated. Please use [speech_contexts]() instead. If you
+      specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
+      treat the [phrase_hints]() as a single additional [SpeechContext]().
   *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - Required. Sample rate (in Hertz) of the audio content sent in the query.
       Refer to
       [Cloud Speech API
       documentation](https://cloud.google.com/speech-to-text/docs/basics) for
       more details.
-  *   `singleUtterance` (*type:* `boolean()`, *default:* `nil`) - Optional. If `false` (default), recognition does not cease until the
+  *   `singleUtterance` (*type:* `boolean()`, *default:* `nil`) - If `false` (default), recognition does not cease until the
       client closes the stream.
       If `true`, the recognizer will detect a single spoken utterance in input
       audio. Recognition ceases when it detects the audio's voice has
@@ -49,25 +68,41 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
       Note: This setting is relevant only for streaming methods.
       Note: When specified, InputAudioConfig.single_utterance takes precedence
       over StreamingDetectIntentRequest.single_utterance.
+  *   `speechContexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext.t)`, *default:* `nil`) - Context information to assist speech recognition.
+
+      See [the Cloud Speech
+      documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
+      for more details.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :audioEncoding => String.t(),
+          :enableWordInfo => boolean(),
           :languageCode => String.t(),
+          :model => String.t(),
           :modelVariant => String.t(),
           :phraseHints => list(String.t()),
           :sampleRateHertz => integer(),
-          :singleUtterance => boolean()
+          :singleUtterance => boolean(),
+          :speechContexts =>
+            list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext.t())
         }
 
   field(:audioEncoding)
+  field(:enableWordInfo)
   field(:languageCode)
+  field(:model)
   field(:modelVariant)
   field(:phraseHints, type: :list)
   field(:sampleRateHertz)
   field(:singleUtterance)
+
+  field(:speechContexts,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig do

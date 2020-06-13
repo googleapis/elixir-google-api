@@ -17,20 +17,35 @@
 
 defmodule GoogleApi.Gmail.V1.Model.Label do
   @moduledoc """
-  Labels are used to categorize messages and threads within the user's mailbox.
+  Labels are used to categorize messages and threads within the
+  user's mailbox.
 
   ## Attributes
 
-  *   `color` (*type:* `GoogleApi.Gmail.V1.Model.LabelColor.t`, *default:* `nil`) - The color to assign to the label. Color is only available for labels that have their type set to user.
+  *   `color` (*type:* `GoogleApi.Gmail.V1.Model.LabelColor.t`, *default:* `nil`) - The color to assign to the label. Color is only available for labels that
+      have their <code>type</code> set to <code>user</code>.
+      @mutable gmail.users.labels.create gmail.users.labels.update
   *   `id` (*type:* `String.t`, *default:* `nil`) - The immutable ID of the label.
   *   `labelListVisibility` (*type:* `String.t`, *default:* `nil`) - The visibility of the label in the label list in the Gmail web interface.
-  *   `messageListVisibility` (*type:* `String.t`, *default:* `nil`) - The visibility of the label in the message list in the Gmail web interface.
+      @mutable gmail.users.labels.create gmail.users.labels.update
+  *   `messageListVisibility` (*type:* `String.t`, *default:* `nil`) - The visibility of the label in the message list in the
+      Gmail web interface.
+      @mutable gmail.users.labels.create gmail.users.labels.update
   *   `messagesTotal` (*type:* `integer()`, *default:* `nil`) - The total number of messages with the label.
   *   `messagesUnread` (*type:* `integer()`, *default:* `nil`) - The number of unread messages with the label.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The display name of the label.
+      @mutable gmail.users.labels.create gmail.users.labels.update
   *   `threadsTotal` (*type:* `integer()`, *default:* `nil`) - The total number of threads with the label.
   *   `threadsUnread` (*type:* `integer()`, *default:* `nil`) - The number of unread threads with the label.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The owner type for the label. User labels are created by the user and can be modified and deleted by the user and can be applied to any message or thread. System labels are internally created and cannot be added, modified, or deleted. System labels may be able to be applied to or removed from messages and threads under some circumstances but this is not guaranteed. For example, users can apply and remove the INBOX and UNREAD labels from messages and threads, but cannot apply or remove the DRAFTS or SENT labels from messages or threads.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The owner type for the label. User labels are created by the user and
+      can be modified and deleted by the user and can be applied to any
+      message or thread. System labels are internally created and cannot be
+      added, modified, or deleted. System labels may be able to be applied to or
+      removed from messages and threads under some circumstances but this is
+      not guaranteed. For example, users can apply and remove the
+      <code>INBOX</code> and <code>UNREAD</code> labels from messages and
+      threads, but cannot apply or remove the <code>DRAFTS</code> or
+      <code>SENT</code> labels from messages or threads.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -93,16 +93,12 @@ defmodule GoogleApi.Run.V1.Model.Container do
       Name of the container specified as a DNS_LABEL.
   *   `ports` (*type:* `list(GoogleApi.Run.V1.Model.ContainerPort.t)`, *default:* `nil`) - (Optional)
 
-      Cloud Run fully managed: not supported
+      List of ports to expose from the container. Only a single port can be
+      specified. The specified ports must be listening on all interfaces
+      (0.0.0.0) within the container to be accessible.
 
-      Cloud Run for Anthos: supported
-
-      List of ports to expose from the container. Exposing a port here gives
-      the system additional information about the network connections a
-      container uses, but is primarily informational. Not specifying a port here
-      DOES NOT prevent that port from being exposed. Any port which is
-      listening on the default "0.0.0.0" address inside a container will be
-      accessible from the network.
+      If omitted, a port number will be chosen and passed to the container
+      through the PORT environment variable for the container to listen on.
   *   `readinessProbe` (*type:* `GoogleApi.Run.V1.Model.Probe.t`, *default:* `nil`) - (Optional)
 
       Cloud Run fully managed: not supported

@@ -26,7 +26,7 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists log entries. Use this method to retrieve log entries that originated from a project/folder/organization/billing account. For ways to export log entries, see Exporting Logs.
+  Lists log entries. Use this method to retrieve log entries that originated from a project/folder/organization/billing account. For ways to export log entries, see Exporting Logs (https://cloud.google.com/logging/docs/export).
 
   ## Parameters
 
@@ -52,7 +52,9 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
   *   `{:error, info}` on failure
   """
   @spec logging_entries_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListLogEntriesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListLogEntriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def logging_entries_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -108,7 +110,9 @@ defmodule GoogleApi.Logging.V2.Api.Entries do
   *   `{:error, info}` on failure
   """
   @spec logging_entries_write(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.WriteLogEntriesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.WriteLogEntriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def logging_entries_write(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

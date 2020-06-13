@@ -49,7 +49,7 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
   *   `{:error, info}` on failure
   """
   @spec games_snapshots_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.Snapshot.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.Snapshot.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def games_snapshots_get(connection, snapshot_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -102,7 +102,9 @@ defmodule GoogleApi.Games.V1.Api.Snapshots do
   *   `{:error, info}` on failure
   """
   @spec games_snapshots_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.SnapshotListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.SnapshotListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_snapshots_list(connection, player_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

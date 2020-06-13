@@ -21,9 +21,12 @@ defmodule GoogleApi.YouTube.V3.Model.SuperStickerMetadata do
 
   ## Attributes
 
-  *   `altText` (*type:* `String.t`, *default:* `nil`) - Internationalized alt text that describes the sticker image and any animation associated with it.
+  *   `altText` (*type:* `String.t`, *default:* `nil`) - Internationalized alt text that describes the sticker image and any
+      animation associated with it.
   *   `altTextLanguage` (*type:* `String.t`, *default:* `nil`) - Specifies the localization language in which the alt text is returned.
-  *   `stickerId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the Super Sticker. This is a shorter form of the alt_text that includes pack name and a recognizable characteristic of the sticker.
+  *   `stickerId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the Super Sticker. This is a shorter form of the
+      alt_text that includes pack name and a recognizable characteristic of the
+      sticker.
   """
 
   use GoogleApi.Gax.ModelBase

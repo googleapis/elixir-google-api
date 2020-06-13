@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.ScoresResetMultipleForAllRequest do
   @moduledoc """
-  This is a JSON template for multiple scores reset all request.
+
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `gamesManagement#scoresResetMultipleForAllRequest`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#scoresResetMultipleForAllRequest.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesManagement#scoresResetMultipleForAllRequest`.
   *   `leaderboard_ids` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of leaderboards to reset.
   """
 

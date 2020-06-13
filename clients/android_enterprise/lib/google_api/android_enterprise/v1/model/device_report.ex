@@ -17,12 +17,16 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.DeviceReport do
   @moduledoc """
-  Device report updated with the latest app states for managed apps on the device.
+  Device report updated with the latest app states for managed apps on the
+  device.
 
   ## Attributes
 
-  *   `appState` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppState.t)`, *default:* `nil`) - List of app states set by managed apps on the device. App states are defined by the app's developers. This field will always be present.
-  *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The timestamp of the last report update in milliseconds since epoch. This field will always be present.
+  *   `appState` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.AppState.t)`, *default:* `nil`) - List of app states set by managed apps on the device. App states are
+      defined by the app's developers.
+      This field will always be present.
+  *   `lastUpdatedTimestampMillis` (*type:* `String.t`, *default:* `nil`) - The timestamp of the last report update in milliseconds since epoch.
+      This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,6 +24,7 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
 
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Optional. The disk size in GB used for node VMs. Minimum size is 20GB.
       If unspecified, defaults to 100GB. Cannot be updated.
+  *   `ipAllocationPolicy` (*type:* `GoogleApi.Composer.V1.Model.IPAllocationPolicy.t`, *default:* `nil`) - Optional. The configuration for controlling how IPs are allocated in the GKE cluster.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine [zone](/compute/docs/regions-zones) in which
       to deploy the VMs used to run the Apache Airflow software, specified as a
       [relative resource
@@ -95,6 +96,7 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
 
   @type t :: %__MODULE__{
           :diskSizeGb => integer(),
+          :ipAllocationPolicy => GoogleApi.Composer.V1.Model.IPAllocationPolicy.t(),
           :location => String.t(),
           :machineType => String.t(),
           :network => String.t(),
@@ -105,6 +107,7 @@ defmodule GoogleApi.Composer.V1.Model.NodeConfig do
         }
 
   field(:diskSizeGb)
+  field(:ipAllocationPolicy, as: GoogleApi.Composer.V1.Model.IPAllocationPolicy)
   field(:location)
   field(:machineType)
   field(:network)

@@ -49,7 +49,8 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   """
   @spec content_liasettings_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsCustomBatchResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -82,7 +83,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to get or update LIA settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -100,7 +101,9 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   *   `{:error, info}` on failure
   """
   @spec content_liasettings_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.LiaSettings.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.LiaSettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_get(
         connection,
         merchant_id,
@@ -139,7 +142,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to retrieve accessible Google My Business accounts.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -164,7 +167,8 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsGetAccessibleGmbAccountsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_getaccessiblegmbaccounts(
         connection,
         merchant_id,
@@ -224,7 +228,9 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   *   `{:error, info}` on failure
   """
   @spec content_liasettings_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V21.Model.LiasettingsListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V21.Model.LiasettingsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -275,7 +281,8 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   """
   @spec content_liasettings_listposdataproviders(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsListPosDataProvidersResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_listposdataproviders(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -307,7 +314,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which GMB access is requested.
   *   `gmb_email` (*type:* `String.t`) - The email of the Google My Business account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -334,7 +341,8 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsRequestGmbAccessResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_requestgmbaccess(
         connection,
         merchant_id,
@@ -377,7 +385,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
   *   `country` (*type:* `String.t`) - The country for which inventory validation is requested.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -404,7 +412,8 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsRequestInventoryVerificationResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_requestinventoryverification(
         connection,
         merchant_id,
@@ -451,7 +460,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account that manages the order. This cannot be a multi-client account.
   *   `contact_email` (*type:* `String.t`) - The email of the inventory verification contact.
   *   `contact_name` (*type:* `String.t`) - The name of the inventory verification contact.
@@ -485,7 +494,8 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
         ) ::
           {:ok,
            GoogleApi.Content.V21.Model.LiasettingsSetInventoryVerificationContactResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_setinventoryverificationcontact(
         connection,
         merchant_id,
@@ -538,7 +548,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to retrieve accessible Google My Business accounts.
   *   `country` (*type:* `String.t`) - The country for which the POS data provider is selected.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -567,7 +577,8 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V21.Model.LiasettingsSetPosDataProviderResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_setposdataprovider(
         connection,
         merchant_id,
@@ -612,7 +623,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V21.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account for which to get or update LIA settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -636,7 +647,10 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Content.V21.Model.LiaSettings.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Content.V21.Model.LiaSettings.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_liasettings_update(
         connection,
         merchant_id,

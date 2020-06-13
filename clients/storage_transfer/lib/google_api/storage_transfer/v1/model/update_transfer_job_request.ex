@@ -24,15 +24,21 @@ defmodule GoogleApi.StorageTransfer.V1.Model.UpdateTransferJobRequest do
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the Google Cloud Platform Console project that owns the
       job.
   *   `transferJob` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferJob.t`, *default:* `nil`) - Required. The job to update. `transferJob` is expected to specify only
-      three fields: `description`, `transferSpec`, and `status`.  An
-      UpdateTransferJobRequest that specifies other fields will be rejected with
-      an error `INVALID_ARGUMENT`.
+      four fields: description,
+      transfer_spec,
+      notification_config, and
+      status.  An `UpdateTransferJobRequest` that specifies
+      other fields will be rejected with the error
+      INVALID_ARGUMENT.
   *   `updateTransferJobFieldMask` (*type:* `String.t`, *default:* `nil`) - The field mask of the fields in `transferJob` that are to be updated in
       this request.  Fields in `transferJob` that can be updated are:
-      `description`, `transferSpec`, and `status`.  To update the `transferSpec`
-      of the job, a complete transfer specification has to be provided. An
-      incomplete specification which misses any required fields will be rejected
-      with the error `INVALID_ARGUMENT`.
+      description,
+      transfer_spec,
+      notification_config, and
+      status.  To update the `transfer_spec` of the job, a
+      complete transfer specification must be provided. An incomplete
+      specification missing any required fields will be rejected with the error
+      INVALID_ARGUMENT.
   """
 
   use GoogleApi.Gax.ModelBase

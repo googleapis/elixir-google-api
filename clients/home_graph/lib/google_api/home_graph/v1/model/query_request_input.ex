@@ -21,7 +21,7 @@ defmodule GoogleApi.HomeGraph.V1.Model.QueryRequestInput do
 
   ## Attributes
 
-  *   `payload` (*type:* `GoogleApi.HomeGraph.V1.Model.QueryRequestPayload.t`, *default:* `nil`) - Payload containing third-party partner's device IDs.
+  *   `payload` (*type:* `GoogleApi.HomeGraph.V1.Model.QueryRequestPayload.t`, *default:* `nil`) - Payload containing third-party device IDs.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -73,7 +73,9 @@ defmodule GoogleApi.Docs.V1.Api.Documents do
   *   `{:error, info}` on failure
   """
   @spec docs_documents_batch_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Docs.V1.Model.BatchUpdateDocumentResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Docs.V1.Model.BatchUpdateDocumentResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def docs_documents_batch_update(connection, document_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -134,7 +136,7 @@ defmodule GoogleApi.Docs.V1.Api.Documents do
   *   `{:error, info}` on failure
   """
   @spec docs_documents_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Docs.V1.Model.Document.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Docs.V1.Model.Document.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def docs_documents_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -194,7 +196,7 @@ defmodule GoogleApi.Docs.V1.Api.Documents do
   *   `{:error, info}` on failure
   """
   @spec docs_documents_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Docs.V1.Model.Document.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Docs.V1.Model.Document.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def docs_documents_get(connection, document_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

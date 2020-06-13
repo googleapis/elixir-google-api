@@ -25,6 +25,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.PushFilter do
 
       The syntax of the regular expressions accepted is the syntax accepted by
       RE2 and described at https://github.com/google/re2/wiki/Syntax
+  *   `invertRegex` (*type:* `boolean()`, *default:* `nil`) - When true, only trigger a build if the revision regex does NOT match the
+      git_ref regex.
   *   `tag` (*type:* `String.t`, *default:* `nil`) - Regexes matching tags to build.
 
       The syntax of the regular expressions accepted is the syntax accepted by
@@ -35,10 +37,12 @@ defmodule GoogleApi.CloudBuild.V1.Model.PushFilter do
 
   @type t :: %__MODULE__{
           :branch => String.t(),
+          :invertRegex => boolean(),
           :tag => String.t()
         }
 
   field(:branch)
+  field(:invertRegex)
   field(:tag)
 end
 

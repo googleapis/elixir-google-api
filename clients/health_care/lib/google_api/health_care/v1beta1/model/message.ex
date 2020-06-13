@@ -18,8 +18,9 @@
 defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
   @moduledoc """
   A complete HL7v2 message.
-  See http://www.hl7.org/implement/standards/index.cfm?ref=common for details
-  on the standard.
+  See [Introduction to HL7 Standards]
+  (https://www.hl7.org/implement/standards/index.cfm?ref=common) for
+  details on the standard.
 
   ## Attributes
 
@@ -37,13 +38,15 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
       following PCRE regular expression: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63}
 
       No more than 64 labels can be associated with a given store.
-  *   `messageType` (*type:* `String.t`, *default:* `nil`) - The message type and trigger event for this message. MSH-9.
+  *   `messageType` (*type:* `String.t`, *default:* `nil`) - The message type for this message. MSH-9.1.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Message, of the form
       `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`.
       Assigned by the server.
   *   `parsedData` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ParsedData.t`, *default:* `nil`) - Output only. The parsed version of the raw message data.
   *   `patientIds` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.PatientId.t)`, *default:* `nil`) - All patient IDs listed in the PID-2, PID-3, and PID-4 segments of this
       message.
+  *   `schematizedData` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SchematizedData.t`, *default:* `nil`) - The parsed version of the raw message data schematized according to this
+      store's schemas and type definitions.
   *   `sendFacility` (*type:* `String.t`, *default:* `nil`) - The hospital that this message came from. MSH-4.
   *   `sendTime` (*type:* `DateTime.t`, *default:* `nil`) - The datetime the sending application sent this message. MSH-7.
   """
@@ -58,6 +61,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
           :name => String.t(),
           :parsedData => GoogleApi.HealthCare.V1beta1.Model.ParsedData.t(),
           :patientIds => list(GoogleApi.HealthCare.V1beta1.Model.PatientId.t()),
+          :schematizedData => GoogleApi.HealthCare.V1beta1.Model.SchematizedData.t(),
           :sendFacility => String.t(),
           :sendTime => DateTime.t()
         }
@@ -69,6 +73,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Message do
   field(:name)
   field(:parsedData, as: GoogleApi.HealthCare.V1beta1.Model.ParsedData)
   field(:patientIds, as: GoogleApi.HealthCare.V1beta1.Model.PatientId, type: :list)
+  field(:schematizedData, as: GoogleApi.HealthCare.V1beta1.Model.SchematizedData)
   field(:sendFacility)
   field(:sendTime, as: DateTime)
 end

@@ -21,8 +21,8 @@ defmodule GoogleApi.DNS.V1.Model.DnsKeyDigest do
 
   ## Attributes
 
-  *   `digest` (*type:* `String.t`, *default:* `nil`) - The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Specifies the algorithm used to calculate this digest.
+  *   `digest` (*type:* `String.t`, *default:* `nil`) - 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

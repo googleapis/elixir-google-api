@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.Route do
   @moduledoc """
   Represents a Route resource.
 
-  A route defines a path from VM instances in the VPC network to a specific destination. This destination can be inside or outside the VPC network. For more information, read the Routes overview. (== resource_for beta.routes ==) (== resource_for v1.routes ==)
+  A route defines a path from VM instances in the VPC network to a specific destination. This destination can be inside or outside the VPC network. For more information, read the Routes overview. (== resource_for {$api_version}.routes ==)
 
   ## Attributes
 

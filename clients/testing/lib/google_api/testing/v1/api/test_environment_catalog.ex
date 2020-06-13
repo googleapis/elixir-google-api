@@ -59,7 +59,9 @@ defmodule GoogleApi.Testing.V1.Api.TestEnvironmentCatalog do
   *   `{:error, info}` on failure
   """
   @spec testing_test_environment_catalog_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Testing.V1.Model.TestEnvironmentCatalog.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Testing.V1.Model.TestEnvironmentCatalog.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def testing_test_environment_catalog_get(
         connection,
         environment_type,

@@ -18,7 +18,7 @@
 defmodule GoogleApi.Fitness.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.19.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Fitness.Mixfile do
 
   defp description() do
     """
-    Fitness client library. Stores and accesses user data in the fitness store from apps on any platform.
+    Fitness API client library. The Fitness API for managing users' fitness tracking data.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.Fitness.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/fitness",
-        "Homepage" => "https://developers.google.com/fit/rest/"
+        "Homepage" => "https://developers.google.com/fit/rest/v1/get-started"
       }
     ]
   end

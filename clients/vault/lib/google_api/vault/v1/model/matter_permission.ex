@@ -23,7 +23,7 @@ defmodule GoogleApi.Vault.V1.Model.MatterPermission do
 
   ## Attributes
 
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account id, as provided by <a
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account ID, as provided by <a
       href="https://developers.google.com/admin-sdk/">Admin SDK</a>.
   *   `role` (*type:* `String.t`, *default:* `nil`) - The user's role in this matter.
   """

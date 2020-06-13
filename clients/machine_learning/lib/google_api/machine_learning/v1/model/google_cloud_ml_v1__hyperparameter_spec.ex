@@ -56,7 +56,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec 
       the specified hyperparameters.
 
       Defaults to one.
-  *   `params` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ParameterSpec.t)`, *default:* `nil`) - Required. The set of parameters to tune.
+  *   `params` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ParameterSpec.t)`, *default:* `nil`) - Required. The set of parameters to tune.
   *   `resumePreviousJobId` (*type:* `String.t`, *default:* `nil`) - Optional. The prior hyperparameter tuning job id that users hope to
       continue with. The job id will be used to find the corresponding vizier
       study guid and resume the study.
@@ -72,7 +72,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec 
           :maxFailedTrials => integer(),
           :maxParallelTrials => integer(),
           :maxTrials => integer(),
-          :params => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ParameterSpec.t()),
+          :params => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ParameterSpec.t()),
           :resumePreviousJobId => String.t()
         }
 
@@ -84,10 +84,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterSpec 
   field(:maxParallelTrials)
   field(:maxTrials)
 
-  field(:params,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ParameterSpec,
-    type: :list
-  )
+  field(:params, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ParameterSpec, type: :list)
 
   field(:resumePreviousJobId)
 end

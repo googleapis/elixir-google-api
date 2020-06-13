@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.Metaline do
 
   ## Attributes
 
-  *   `properties` (*type:* `list(GoogleApi.CloudSearch.V1.Model.DisplayedProperty.t)`, *default:* `nil`) - The list of displayed properties for the metaline. The maxiumum number of
+  *   `properties` (*type:* `list(GoogleApi.CloudSearch.V1.Model.DisplayedProperty.t)`, *default:* `nil`) - The list of displayed properties for the metaline. The maximum number of
       properties is 5.
   """
 

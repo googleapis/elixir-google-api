@@ -21,7 +21,7 @@ defmodule GoogleApi.Books.V1.Model.Seriesmembership do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `books#series#membership`) - Resorce type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resorce type.
   *   `member` (*type:* `list(GoogleApi.Books.V1.Model.Volume.t)`, *default:* `nil`) - 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
   """

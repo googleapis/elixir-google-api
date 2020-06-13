@@ -27,20 +27,7 @@ defmodule GoogleApi.Spanner.V1.Model.Instance do
       ListInstanceConfigs.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The descriptive name for this instance as it appears in UIs.
       Must be unique per project and between 4 and 30 characters in length.
-  *   `endpointUris` (*type:* `list(String.t)`, *default:* `nil`) - Output only. A set of endpoint URIs based on your instance config
-      that you can use instead of the global endpoint `spanner.googleapis.com`.
-
-      For example, if your instance config is `us-central1` (a regional config
-      in Iowa), then your instance specific endpoints may include
-      `us-central1-spanner.googleapis.com`. By calling these endpoints instead of
-      the global endpoint, you optimize network routing which could reduce
-      network latency.
-
-      The client libraries, JDBC drivers, and other SDK clients automatically
-      call these instance specific endpoints.
-
-      If you are using DNS whitelists, firewalls, or filtering to control access
-      to endpoints, make sure you grant access to `*spanner.googleapis.com`.
+  *   `endpointUris` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. This field is not populated.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Cloud Labels are a flexible and lightweight mechanism for organizing cloud
       resources into groups that reflect a customer's organizational needs and
       deployment strategies. Cloud Labels can be used to filter collections of

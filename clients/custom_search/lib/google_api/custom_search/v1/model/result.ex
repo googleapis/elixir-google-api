@@ -17,25 +17,30 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.Result do
   @moduledoc """
-
+  A custom search result.
 
   ## Attributes
 
-  *   `cacheId` (*type:* `String.t`, *default:* `nil`) - 
-  *   `displayLink` (*type:* `String.t`, *default:* `nil`) - 
-  *   `fileFormat` (*type:* `String.t`, *default:* `nil`) - 
-  *   `formattedUrl` (*type:* `String.t`, *default:* `nil`) - 
-  *   `htmlFormattedUrl` (*type:* `String.t`, *default:* `nil`) - 
-  *   `htmlSnippet` (*type:* `String.t`, *default:* `nil`) - 
-  *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - 
-  *   `image` (*type:* `GoogleApi.CustomSearch.V1.Model.ResultImage.t`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `customsearch#result`) - 
-  *   `labels` (*type:* `list(GoogleApi.CustomSearch.V1.Model.ResultLabels.t)`, *default:* `nil`) - 
-  *   `link` (*type:* `String.t`, *default:* `nil`) - 
-  *   `mime` (*type:* `String.t`, *default:* `nil`) - 
-  *   `pagemap` (*type:* `map()`, *default:* `nil`) - 
-  *   `snippet` (*type:* `String.t`, *default:* `nil`) - 
-  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `cacheId` (*type:* `String.t`, *default:* `nil`) - Indicates the ID of Google's cached version of the search result.
+  *   `displayLink` (*type:* `String.t`, *default:* `nil`) - An abridged version of this search result’s URL, e.g. www.example.com.
+  *   `fileFormat` (*type:* `String.t`, *default:* `nil`) - The file format of the search result.
+  *   `formattedUrl` (*type:* `String.t`, *default:* `nil`) - The URL displayed after the snippet for each search result.
+  *   `htmlFormattedUrl` (*type:* `String.t`, *default:* `nil`) - The HTML-formatted URL displayed after the snippet for each search result.
+  *   `htmlSnippet` (*type:* `String.t`, *default:* `nil`) - The snippet of the search result, in HTML.
+  *   `htmlTitle` (*type:* `String.t`, *default:* `nil`) - The title of the search result, in HTML.
+  *   `image` (*type:* `GoogleApi.CustomSearch.V1.Model.ResultImage.t`, *default:* `nil`) - Image belonging to a custom search result.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - A unique identifier for the type of current object. For this API, it is
+      `customsearch#result.`
+  *   `labels` (*type:* `list(GoogleApi.CustomSearch.V1.Model.ResultLabels.t)`, *default:* `nil`) - Encapsulates all information about [refinement
+      labels](https://developers.google.com/custom-search/docs/xml_results).
+  *   `link` (*type:* `String.t`, *default:* `nil`) - The full URL to which the search result is pointing, e.g.
+      http://www.example.com/foo/bar.
+  *   `mime` (*type:* `String.t`, *default:* `nil`) - The MIME type of the search result.
+  *   `pagemap` (*type:* `map()`, *default:* `nil`) - Contains
+      [PageMap](https://developers.google.com/custom-search/docs/structured_data#pagemaps)
+      information for this search result.
+  *   `snippet` (*type:* `String.t`, *default:* `nil`) - The snippet of the search result, in plain text.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the search result, in plain text.
   """
 
   use GoogleApi.Gax.ModelBase

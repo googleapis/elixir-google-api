@@ -28,7 +28,7 @@ defmodule GoogleApi.Books.V1.Model.Notification do
   *   `dont_show_notification` (*type:* `boolean()`, *default:* `nil`) - 
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - 
   *   `is_document_mature` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `books#notification`) - Resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
   *   `notificationGroup` (*type:* `String.t`, *default:* `nil`) - 
   *   `notification_type` (*type:* `String.t`, *default:* `nil`) - 
   *   `pcampaign_id` (*type:* `String.t`, *default:* `nil`) - 

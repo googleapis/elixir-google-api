@@ -23,9 +23,14 @@ defmodule GoogleApi.Content.V21.Model.ReturnaddressCustomBatchRequestEntry do
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The Merchant Center account ID.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - 
-  *   `returnAddress` (*type:* `GoogleApi.Content.V21.Model.ReturnAddress.t`, *default:* `nil`) - The return address to submit. Set this only if the method is insert.
-  *   `returnAddressId` (*type:* `String.t`, *default:* `nil`) - The return address ID. Set this only if the method is delete or get.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - Method of the batch request entry.
+
+      Acceptable values are:  
+      - "`delete`" 
+      - "`get`" 
+      - "`insert`"
+  *   `returnAddress` (*type:* `GoogleApi.Content.V21.Model.ReturnAddress.t`, *default:* `nil`) - The return address to submit. Set this only if the method is `insert`.
+  *   `returnAddressId` (*type:* `String.t`, *default:* `nil`) - The return address ID. Set this only if the method is `delete` or `get`.
   """
 
   use GoogleApi.Gax.ModelBase

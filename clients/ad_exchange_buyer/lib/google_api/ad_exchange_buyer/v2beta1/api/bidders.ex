@@ -72,7 +72,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_create(
         connection,
         bidders_id,
@@ -157,7 +159,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_delete(
         connection,
         bidders_id,
@@ -246,7 +251,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_get(
         connection,
         bidders_id,
@@ -340,7 +347,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_list(
         connection,
         bidders_id,
@@ -435,7 +443,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_bid_metrics_list(
         connection,
         bidders_id,
@@ -536,7 +545,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponseErrorsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_bid_response_errors_list(
         connection,
         bidders_id,
@@ -637,7 +647,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_bid_responses_without_bids_list(
         connection,
         bidders_id,
@@ -739,7 +750,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_filtered_bid_requests_list(
         connection,
         bidders_id,
@@ -840,7 +852,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_filtered_bids_list(
         connection,
         bidders_id,
@@ -947,7 +960,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         ) ::
           {:ok,
            GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByCreativeResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_filtered_bids_creatives_list(
         connection,
         bidders_id,
@@ -1060,7 +1074,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         ) ::
           {:ok,
            GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByDetailResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_filtered_bids_details_list(
         connection,
         bidders_id,
@@ -1166,7 +1181,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_impression_metrics_list(
         connection,
         bidders_id,
@@ -1267,7 +1283,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListLosingBidsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_losing_bids_list(
         connection,
         bidders_id,
@@ -1368,7 +1385,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_accounts_filter_sets_non_billable_winning_bids_list(
         connection,
         bidders_id,
@@ -1460,7 +1478,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_create(
         connection,
         bidders_id,
@@ -1541,7 +1561,10 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_delete(
         connection,
         bidders_id,
@@ -1623,7 +1646,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.FilterSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_get(
         connection,
         bidders_id,
@@ -1710,7 +1735,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilterSetsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_list(
         connection,
         bidders_id,
@@ -1801,7 +1827,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidMetricsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_bid_metrics_list(
         connection,
         bidders_id,
@@ -1895,7 +1922,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponseErrorsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_bid_response_errors_list(
         connection,
         bidders_id,
@@ -1992,7 +2020,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListBidResponsesWithoutBidsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_bid_responses_without_bids_list(
         connection,
         bidders_id,
@@ -2090,7 +2119,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidRequestsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_filtered_bid_requests_list(
         connection,
         bidders_id,
@@ -2187,7 +2217,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListFilteredBidsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_filtered_bids_list(
         connection,
         bidders_id,
@@ -2287,7 +2318,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         ) ::
           {:ok,
            GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByCreativeResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_filtered_bids_creatives_list(
         connection,
         bidders_id,
@@ -2396,7 +2428,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
         ) ::
           {:ok,
            GoogleApi.AdExchangeBuyer.V2beta1.Model.ListCreativeStatusBreakdownByDetailResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_filtered_bids_details_list(
         connection,
         bidders_id,
@@ -2498,7 +2531,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListImpressionMetricsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_impression_metrics_list(
         connection,
         bidders_id,
@@ -2595,7 +2629,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListLosingBidsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_losing_bids_list(
         connection,
         bidders_id,
@@ -2689,7 +2724,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Api.Bidders do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V2beta1.Model.ListNonBillableWinningBidsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer2_bidders_filter_sets_non_billable_winning_bids_list(
         connection,
         bidders_id,

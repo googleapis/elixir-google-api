@@ -48,7 +48,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       https://cloud.google.com/compute/docs/disks/local-ssd
       for more information.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The name of a Google Compute Engine [machine
-      type](/compute/docs/machine-types) (e.g.
+      type](https://cloud.google.com/compute/docs/machine-types) (e.g.
       `n1-standard-1`).
 
       If unspecified, the default machine type is
@@ -65,8 +65,9 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
        "configure-sh"
        "containerd-configure-sh"
        "enable-os-login"
-       "gci-update-strategy"
        "gci-ensure-gke-docker"
+       "gci-metrics-enabled"
+       "gci-update-strategy"
        "instance-template"
        "kube-env"
        "startup-script"
@@ -101,15 +102,22 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       persistent storage on your nodes.
       * `https://www.googleapis.com/auth/devstorage.read_only` is required for
       communicating with **gcr.io**
-      (the [Google Container Registry](/container-registry/)).
+      (the [Google Container
+      Registry](https://cloud.google.com/container-registry/)).
 
       If unspecified, no scopes are added, unless Cloud Logging or Cloud
       Monitoring are enabled, in which case their required scopes will be added.
   *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - Whether the nodes are created as preemptible VM instances. See:
       https://cloud.google.com/compute/docs/instances/preemptible for more
       information about preemptible VM instances.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs. If
-      no Service Account is specified, the "default" service account is used.
+  *   `reservationAffinity` (*type:* `GoogleApi.Container.V1.Model.ReservationAffinity.t`, *default:* `nil`) - The optional reservation affinity. Setting this field will apply
+      the specified [Zonal Compute
+      Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+      to this node pool.
+  *   `sandboxConfig` (*type:* `GoogleApi.Container.V1.Model.SandboxConfig.t`, *default:* `nil`) - Sandbox configuration for this node.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform Service Account to be used by the node VMs.
+      Specify the email address of the Service Account; otherwise, if no Service
+      Account is specified, the "default" service account is used.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Shielded Instance options.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - The list of instance tags applied to all nodes. Tags are used to identify
       valid sources or targets for network firewalls and are specified by
@@ -119,6 +127,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
 
       For more information, including usage and the valid values, see:
       https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+  *   `workloadMetadataConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t`, *default:* `nil`) - The workload metadata configuration for this node.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -135,10 +144,13 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :minCpuPlatform => String.t(),
           :oauthScopes => list(String.t()),
           :preemptible => boolean(),
+          :reservationAffinity => GoogleApi.Container.V1.Model.ReservationAffinity.t(),
+          :sandboxConfig => GoogleApi.Container.V1.Model.SandboxConfig.t(),
           :serviceAccount => String.t(),
           :shieldedInstanceConfig => GoogleApi.Container.V1.Model.ShieldedInstanceConfig.t(),
           :tags => list(String.t()),
-          :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t())
+          :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t()),
+          :workloadMetadataConfig => GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t()
         }
 
   field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)
@@ -152,10 +164,13 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:minCpuPlatform)
   field(:oauthScopes, type: :list)
   field(:preemptible)
+  field(:reservationAffinity, as: GoogleApi.Container.V1.Model.ReservationAffinity)
+  field(:sandboxConfig, as: GoogleApi.Container.V1.Model.SandboxConfig)
   field(:serviceAccount)
   field(:shieldedInstanceConfig, as: GoogleApi.Container.V1.Model.ShieldedInstanceConfig)
   field(:tags, type: :list)
   field(:taints, as: GoogleApi.Container.V1.Model.NodeTaint, type: :list)
+  field(:workloadMetadataConfig, as: GoogleApi.Container.V1.Model.WorkloadMetadataConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodeConfig do

@@ -38,7 +38,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the budget.
       The resource name implies the scope of a budget. Values are of the form
       `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
-  *   `thresholdRules` (*type:* `list(GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1ThresholdRule.t)`, *default:* `nil`) - Required. Rules that trigger alerts (notifications of thresholds
+  *   `thresholdRules` (*type:* `list(GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1ThresholdRule.t)`, *default:* `nil`) - Optional. Rules that trigger alerts (notifications of thresholds
       being crossed) when spend exceeds the specified percentages of the budget.
   """
 

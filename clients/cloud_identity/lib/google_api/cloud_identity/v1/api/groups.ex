@@ -52,7 +52,9 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec cloudidentity_groups_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -87,7 +89,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
       Group in the format: `groups/{group_id}`, where `group_id` is the unique ID
       assigned to the Group.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -110,7 +112,9 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec cloudidentity_groups_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -146,7 +150,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
       Group in the format: `groups/{group_id}`, where `group_id` is the unique ID
       assigned to the Group.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -169,7 +173,9 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec cloudidentity_groups_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudIdentity.V1.Model.Group.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIdentity.V1.Model.Group.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -200,7 +206,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  List groups within a customer or a domain.
+  Lists groups within a customer or a domain.
 
   ## Parameters
 
@@ -220,8 +226,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:pageSize` (*type:* `integer()`) - The default page size is 200 (max 1000) for the BASIC view, and 50
           (max 500) for the FULL view.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
-      *   `:parent` (*type:* `String.t`) - `Required`. May be made Optional in the future.
-          Customer ID to list all groups from.
+      *   `:parent` (*type:* `String.t`) - Required. Customer ID to list all groups from.
       *   `:view` (*type:* `String.t`) - Group resource view to be returned. Defaults to [View.BASIC]().
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -231,7 +236,9 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec cloudidentity_groups_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudIdentity.V1.Model.ListGroupsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIdentity.V1.Model.ListGroupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -300,7 +307,8 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   """
   @spec cloudidentity_groups_lookup(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.LookupGroupNameResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_lookup(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -355,7 +363,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Editable fields: `display_name`, `description`
+      *   `:updateMask` (*type:* `String.t`) - Required. Editable fields: `display_name`, `description`
       *   `:body` (*type:* `GoogleApi.CloudIdentity.V1.Model.Group.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -365,7 +373,9 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec cloudidentity_groups_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -418,7 +428,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:pageSize` (*type:* `integer()`) - The default page size is 200 (max 1000) for the BASIC view, and 50
           (max 500) for the FULL view.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous search request, if any.
-      *   `:query` (*type:* `String.t`) - `Required`. Query string for performing search on groups. Users can search
+      *   `:query` (*type:* `String.t`) - Required. `Required`. Query string for performing search on groups. Users can search
           on parent and label attributes of groups.
           EXACT match ('==') is supported on parent, and CONTAINS match ('in') is
           supported on labels.
@@ -432,7 +442,8 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   """
   @spec cloudidentity_groups_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.SearchGroupsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -470,7 +481,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+  *   `parent` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
       Group to create Membership within. Format: `groups/{group_id}`, where
       `group_id` is the unique ID assigned to the Group.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -498,7 +509,10 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_create(
         connection,
         parent,
@@ -540,7 +554,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
       Membership to be deleted.
 
       Format: `groups/{group_id}/memberships/{member_id}`, where `group_id` is
@@ -570,7 +584,10 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudIdentity.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -606,7 +623,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+  *   `name` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
       Membership to be retrieved.
 
       Format: `groups/{group_id}/memberships/{member_id}`, where `group_id` is
@@ -632,7 +649,9 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   *   `{:error, info}` on failure
   """
   @spec cloudidentity_groups_memberships_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudIdentity.V1.Model.Membership.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudIdentity.V1.Model.Membership.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -663,12 +682,12 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   end
 
   @doc """
-  List Memberships within a Group.
+  Lists Memberships within a Group.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+  *   `parent` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
       Group to list Memberships within.
 
       Format: `groups/{group_id}`, where `group_id` is the unique ID assigned to
@@ -703,7 +722,8 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.ListMembershipsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -746,7 +766,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudIdentity.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+  *   `parent` (*type:* `String.t`) - Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
       Group to lookup Membership within.
 
       Format: `groups/{group_id}`, where `group_id` is the unique ID assigned to
@@ -785,7 +805,8 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudIdentity.V1.Model.LookupMembershipNameResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudidentity_groups_memberships_lookup(
         connection,
         parent,

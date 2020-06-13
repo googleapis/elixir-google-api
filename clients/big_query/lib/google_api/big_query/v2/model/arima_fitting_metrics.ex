@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ArimaFittingMetrics do
 
   ## Attributes
 
-  *   `aic` (*type:* `float()`, *default:* `nil`) - AIC
-  *   `logLikelihood` (*type:* `float()`, *default:* `nil`) - log-likelihood
-  *   `variance` (*type:* `float()`, *default:* `nil`) - variance.
+  *   `aic` (*type:* `float()`, *default:* `nil`) - AIC.
+  *   `logLikelihood` (*type:* `float()`, *default:* `nil`) - Log-likelihood.
+  *   `variance` (*type:* `float()`, *default:* `nil`) - Variance.
   """
 
   use GoogleApi.Gax.ModelBase

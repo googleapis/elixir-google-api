@@ -21,6 +21,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Result do
 
   ## Attributes
 
+  *   `hybridStats` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics.t`, *default:* `nil`) - Statistics related to the processing of hybrid inspect.
+      Early access feature is in a pre-release state and might change or have
+      limited support. For more information, see
+      https://cloud.google.com/products#product-launch-stages.
   *   `infoTypeStats` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeStats.t)`, *default:* `nil`) - Statistics of how many instances of each info type were found during
       inspect job.
   *   `processedBytes` (*type:* `String.t`, *default:* `nil`) - Total size in bytes that were processed.
@@ -30,11 +34,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Result do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :hybridStats => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics.t(),
           :infoTypeStats => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeStats.t()),
           :processedBytes => String.t(),
           :totalEstimatedBytes => String.t()
         }
 
+  field(:hybridStats, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridInspectStatistics)
   field(:infoTypeStats, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeStats, type: :list)
   field(:processedBytes)
   field(:totalEstimatedBytes)

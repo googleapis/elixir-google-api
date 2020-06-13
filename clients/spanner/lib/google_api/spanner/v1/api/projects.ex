@@ -57,7 +57,10 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.InstanceConfig.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.InstanceConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instance_configs_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -127,7 +130,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.ListInstanceConfigsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instance_configs_list(
         connection,
         parent,
@@ -228,7 +232,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec spanner_projects_instances_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -297,7 +301,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec spanner_projects_instances_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -358,7 +362,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec spanner_projects_instances_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Instance.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Instance.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -425,7 +429,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_get_iam_policy(
         connection,
         resource,
@@ -513,7 +517,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec spanner_projects_instances_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.ListInstancesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.ListInstancesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -616,7 +622,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec spanner_projects_instances_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -683,7 +689,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_set_iam_policy(
         connection,
         resource,
@@ -758,7 +764,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_test_iam_permissions(
         connection,
         resource,
@@ -795,12 +802,362 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a database resource.
-  Returns an empty policy if a database exists but does
-  not have a policy set.
+  Lists the backup long-running operations in
+  the given instance. A backup operation has a name of the form
+  `projects/<project>/instances/<instance>/backups/<backup>/operations/<operation>`.
+  The long-running operation
+  metadata field type
+  `metadata.type_url` describes the type of the metadata. Operations returned
+  include those that have completed/failed/canceled within the last 7 days,
+  and pending operations. Operations returned are ordered by
+  `operation.metadata.value.progress.start_time` in descending order starting
+  from the most recently started operation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The instance of the backup operations. Values are of
+      the form `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - An expression that filters the list of returned backup operations.
+
+          A filter expression consists of a field name, a
+          comparison operator, and a value for filtering.
+          The value must be a string, a number, or a boolean. The comparison operator
+          must be one of: `<`, `>`, `<=`, `>=`, `!=`, `=`, or `:`.
+          Colon `:` is the contains operator. Filter rules are not case sensitive.
+
+          The following fields in the operation
+          are eligible for filtering:
+
+            * `name` - The name of the long-running operation
+            * `done` - False if the operation is in progress, else true.
+            * `metadata.@type` - the type of metadata. For example, the type string
+               for CreateBackupMetadata is
+               `type.googleapis.com/google.spanner.admin.database.v1.CreateBackupMetadata`.
+            * `metadata.<field_name>` - any field in metadata.value.
+            * `error` - Error associated with the long-running operation.
+            * `response.@type` - the type of response.
+            * `response.<field_name>` - any field in response.value.
+
+          You can combine multiple expressions by enclosing each expression in
+          parentheses. By default, expressions are combined with AND logic, but
+          you can specify AND, OR, and NOT logic explicitly.
+
+          Here are a few examples:
+
+            * `done:true` - The operation is complete.
+            * `metadata.database:prod` - The database the backup was taken from has
+               a name containing the string "prod".
+            * `(metadata.@type=type.googleapis.com/google.spanner.admin.database.v1.CreateBackupMetadata) AND` \\
+              `(metadata.name:howl) AND` \\
+              `(metadata.progress.start_time < \\"2018-03-28T14:50:00Z\\") AND` \\
+              `(error:*)` - Returns operations where:
+              * The operation's metadata type is CreateBackupMetadata.
+              * The backup name contains the string "howl".
+              * The operation started before 2018-03-28T14:50:00Z.
+              * The operation resulted in an error.
+      *   `:pageSize` (*type:* `integer()`) - Number of operations to be returned in the response. If 0 or
+          less, defaults to the server's maximum allowed page size.
+      *   `:pageToken` (*type:* `String.t`) - If non-empty, `page_token` should contain a
+          next_page_token
+          from a previous ListBackupOperationsResponse to the
+          same `parent` and with the same `filter`.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.ListBackupOperationsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backup_operations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ListBackupOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def spanner_projects_instances_backup_operations_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/backupOperations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Spanner.V1.Model.ListBackupOperationsResponse{}]
+    )
+  end
+
+  @doc """
+  Starts creating a new Cloud Spanner Backup.
+  The returned backup long-running operation
+  will have a name of the format
+  `projects/<project>/instances/<instance>/backups/<backup>/operations/<operation_id>`
+  and can be used to track creation of the backup. The
+  metadata field type is
+  CreateBackupMetadata. The
+  response field type is
+  Backup, if successful. Cancelling the returned operation will stop the
+  creation and delete the backup.
+  There can be only one pending backup creation per database. Backup creation
+  of different databases can run concurrently.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the instance in which the backup will be
+      created. This must be the same instance that contains the database the
+      backup will be created from. The backup will be stored in the
+      location(s) specified in the instance configuration of this
+      instance. Values are of the form
+      `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:backupId` (*type:* `String.t`) - Required. The id of the backup to be created. The `backup_id` appended to
+          `parent` forms the full backup name of the form
+          `projects/<project>/instances/<instance>/backups/<backup_id>`.
+      *   `:body` (*type:* `GoogleApi.Spanner.V1.Model.Backup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def spanner_projects_instances_backups_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :backupId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/backups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Deletes a pending or completed Backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Name of the backup to delete.
+      Values are of the form
+      `projects/<project>/instances/<instance>/backups/<backup>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def spanner_projects_instances_backups_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Empty{}])
+  end
+
+  @doc """
+  Gets metadata on a pending or completed Backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Name of the backup.
+      Values are of the form
+      `projects/<project>/instances/<instance>/backups/<backup>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Backup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Backup.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def spanner_projects_instances_backups_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Backup{}])
+  end
+
+  @doc """
+  Gets the access control policy for a database or backup resource.
+  Returns an empty policy if a database or backup exists but does not have a
+  policy set.
 
   Authorization requires `spanner.databases.getIamPolicy` permission on
   resource.
+  For backups, authorization requires `spanner.backups.getIamPolicy`
+  permission on resource.
 
   ## Parameters
 
@@ -831,7 +1188,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_get_iam_policy(
         connection,
         resource,
@@ -868,10 +1225,213 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a database resource.
+  Lists completed and pending backups.
+  Backups returned are ordered by `create_time` in descending order,
+  starting from the most recent `create_time`.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The instance to list backups from.  Values are of the
+      form `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - An expression that filters the list of returned backups.
+
+          A filter expression consists of a field name, a comparison operator, and a
+          value for filtering.
+          The value must be a string, a number, or a boolean. The comparison operator
+          must be one of: `<`, `>`, `<=`, `>=`, `!=`, `=`, or `:`.
+          Colon `:` is the contains operator. Filter rules are not case sensitive.
+
+          The following fields in the Backup are eligible for filtering:
+
+            * `name`
+            * `database`
+            * `state`
+            * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+            * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+            * `size_bytes`
+
+          You can combine multiple expressions by enclosing each expression in
+          parentheses. By default, expressions are combined with AND logic, but
+          you can specify AND, OR, and NOT logic explicitly.
+
+          Here are a few examples:
+
+            * `name:Howl` - The backup's name contains the string "howl".
+            * `database:prod`
+                   - The database's name contains the string "prod".
+            * `state:CREATING` - The backup is pending creation.
+            * `state:READY` - The backup is fully created and ready for use.
+            * `(name:howl) AND (create_time < \\"2018-03-28T14:50:00Z\\")`
+                   - The backup name contains the string "howl" and `create_time`
+                       of the backup is before 2018-03-28T14:50:00Z.
+            * `expire_time < \\"2018-03-28T14:50:00Z\\"`
+                   - The backup `expire_time` is before 2018-03-28T14:50:00Z.
+            * `size_bytes > 10000000000` - The backup's size is greater than 10GB
+      *   `:pageSize` (*type:* `integer()`) - Number of backups to be returned in the response. If 0 or
+          less, defaults to the server's maximum allowed page size.
+      *   `:pageToken` (*type:* `String.t`) - If non-empty, `page_token` should contain a
+          next_page_token from a
+          previous ListBackupsResponse to the same `parent` and with the same
+          `filter`.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.ListBackupsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ListBackupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def spanner_projects_instances_backups_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/backups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.ListBackupsResponse{}])
+  end
+
+  @doc """
+  Updates a pending or completed Backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Output only for the CreateBackup operation.
+      Required for the UpdateBackup operation.
+
+      A globally unique identifier for the backup which cannot be
+      changed. Values are of the form
+      `projects/<project>/instances/<instance>/backups/a-z*[a-z0-9]`
+      The final segment of the name must be between 2 and 60 characters
+      in length.
+
+      The backup is stored in the location(s) specified in the instance
+      configuration of the instance containing the backup, identified
+      by the prefix of the backup name of the form
+      `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. A mask specifying which fields (e.g. `expire_time`) in the
+          Backup resource should be updated. This mask is relative to the Backup
+          resource, not to the request message. The field mask must always be
+          specified; this prevents any future fields from being erased accidentally
+          by clients that do not know about them.
+      *   `:body` (*type:* `GoogleApi.Spanner.V1.Model.Backup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Backup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_backups_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Backup.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def spanner_projects_instances_backups_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Backup{}])
+  end
+
+  @doc """
+  Sets the access control policy on a database or backup resource.
   Replaces any existing policy.
 
   Authorization requires `spanner.databases.setIamPolicy`
+  permission on resource.
+  For backups, authorization requires `spanner.backups.setIamPolicy`
   permission on resource.
 
   ## Parameters
@@ -903,7 +1463,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_set_iam_policy(
         connection,
         resource,
@@ -940,12 +1500,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified database resource.
+  Returns permissions that the caller has on the specified database or backup
+  resource.
 
   Attempting this RPC on a non-existent Cloud Spanner database will
   result in a NOT_FOUND error if the user has
   `spanner.databases.list` permission on the containing Cloud
   Spanner instance. Otherwise returns an empty set of permissions.
+  Calling this method on a backup that does not exist will
+  result in a NOT_FOUND error if the user has
+  `spanner.backups.list` permission on the containing instance.
 
   ## Parameters
 
@@ -978,7 +1542,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_backups_test_iam_permissions(
         connection,
         resource,
@@ -1054,7 +1619,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_operations_cancel(
         connection,
         name,
@@ -1123,7 +1688,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_operations_delete(
         connection,
         name,
@@ -1191,7 +1756,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_backups_operations_get(
         connection,
         name,
@@ -1270,7 +1836,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_backups_operations_list(
         connection,
         name,
@@ -1306,6 +1874,134 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.ListOperationsResponse{}])
+  end
+
+  @doc """
+  Lists database longrunning-operations.
+  A database operation has a name of the form
+  `projects/<project>/instances/<instance>/databases/<database>/operations/<operation>`.
+  The long-running operation
+  metadata field type
+  `metadata.type_url` describes the type of the metadata. Operations returned
+  include those that have completed/failed/canceled within the last 7 days,
+  and pending operations.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The instance of the database operations.
+      Values are of the form `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - An expression that filters the list of returned operations.
+
+          A filter expression consists of a field name, a
+          comparison operator, and a value for filtering.
+          The value must be a string, a number, or a boolean. The comparison operator
+          must be one of: `<`, `>`, `<=`, `>=`, `!=`, `=`, or `:`.
+          Colon `:` is the contains operator. Filter rules are not case sensitive.
+
+          The following fields in the Operation
+          are eligible for filtering:
+
+            * `name` - The name of the long-running operation
+            * `done` - False if the operation is in progress, else true.
+            * `metadata.@type` - the type of metadata. For example, the type string
+               for RestoreDatabaseMetadata is
+               `type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabaseMetadata`.
+            * `metadata.<field_name>` - any field in metadata.value.
+            * `error` - Error associated with the long-running operation.
+            * `response.@type` - the type of response.
+            * `response.<field_name>` - any field in response.value.
+
+          You can combine multiple expressions by enclosing each expression in
+          parentheses. By default, expressions are combined with AND logic. However,
+          you can specify AND, OR, and NOT logic explicitly.
+
+          Here are a few examples:
+
+            * `done:true` - The operation is complete.
+            * `(metadata.@type=type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabaseMetadata) AND` \\
+              `(metadata.source_type:BACKUP) AND` \\
+              `(metadata.backup_info.backup:backup_howl) AND` \\
+              `(metadata.name:restored_howl) AND` \\
+              `(metadata.progress.start_time < \\"2018-03-28T14:50:00Z\\") AND` \\
+              `(error:*)` - Return operations where:
+              * The operation's metadata type is RestoreDatabaseMetadata.
+              * The database is restored from a backup.
+              * The backup name contains "backup_howl".
+              * The restored database's name contains "restored_howl".
+              * The operation started before 2018-03-28T14:50:00Z.
+              * The operation resulted in an error.
+      *   `:pageSize` (*type:* `integer()`) - Number of operations to be returned in the response. If 0 or
+          less, defaults to the server's maximum allowed page size.
+      *   `:pageToken` (*type:* `String.t`) - If non-empty, `page_token` should contain a
+          next_page_token
+          from a previous ListDatabaseOperationsResponse to the
+          same `parent` and with the same `filter`.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.ListDatabaseOperationsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_database_operations_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ListDatabaseOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def spanner_projects_instances_database_operations_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/databaseOperations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Spanner.V1.Model.ListDatabaseOperationsResponse{}]
+    )
   end
 
   @doc """
@@ -1348,7 +2044,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_create(
         connection,
         parent,
@@ -1386,6 +2083,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
 
   @doc """
   Drops (aka deletes) a Cloud Spanner database.
+  Completed backups for the database will be retained according to their
+  `expire_time`.
 
   ## Parameters
 
@@ -1415,7 +2114,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_drop_database(
         connection,
         database,
@@ -1482,7 +2181,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Database.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Database.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_get(
         connection,
         name,
@@ -1551,7 +2251,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.GetDatabaseDdlResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.GetDatabaseDdlResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_get_ddl(
         connection,
         database,
@@ -1587,12 +2289,14 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a database resource.
-  Returns an empty policy if a database exists but does
-  not have a policy set.
+  Gets the access control policy for a database or backup resource.
+  Returns an empty policy if a database or backup exists but does not have a
+  policy set.
 
   Authorization requires `spanner.databases.getIamPolicy` permission on
   resource.
+  For backups, authorization requires `spanner.backups.getIamPolicy`
+  permission on resource.
 
   ## Parameters
 
@@ -1623,7 +2327,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_get_iam_policy(
         connection,
         resource,
@@ -1696,7 +2400,10 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.ListDatabasesResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ListDatabasesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_list(
         connection,
         parent,
@@ -1734,10 +2441,101 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a database resource.
+  Create a new database by restoring from a completed backup. The new
+  database must be in the same project and in an instance with the same
+  instance configuration as the instance containing
+  the backup. The returned database long-running
+  operation has a name of the format
+  `projects/<project>/instances/<instance>/databases/<database>/operations/<operation_id>`,
+  and can be used to track the progress of the operation, and to cancel it.
+  The metadata field type is
+  RestoreDatabaseMetadata.
+  The response type
+  is Database, if
+  successful. Cancelling the returned operation will stop the restore and
+  delete the database.
+  There can be only one database being restored into an instance at a time.
+  Once the restore operation completes, a new restore operation can be
+  initiated, without waiting for the optimize operation associated with the
+  first restore to complete.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The name of the instance in which to create the
+      restored database. This instance must be in the same project and
+      have the same instance configuration as the instance containing
+      the source backup. Values are of the form
+      `projects/<project>/instances/<instance>`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Spanner.V1.Model.RestoreDatabaseRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Spanner.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec spanner_projects_instances_databases_restore(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def spanner_projects_instances_databases_restore(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/databases:restore", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Spanner.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Sets the access control policy on a database or backup resource.
   Replaces any existing policy.
 
   Authorization requires `spanner.databases.setIamPolicy`
+  permission on resource.
+  For backups, authorization requires `spanner.backups.setIamPolicy`
   permission on resource.
 
   ## Parameters
@@ -1769,7 +2567,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_set_iam_policy(
         connection,
         resource,
@@ -1806,12 +2604,16 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified database resource.
+  Returns permissions that the caller has on the specified database or backup
+  resource.
 
   Attempting this RPC on a non-existent Cloud Spanner database will
   result in a NOT_FOUND error if the user has
   `spanner.databases.list` permission on the containing Cloud
   Spanner instance. Otherwise returns an empty set of permissions.
+  Calling this method on a backup that does not exist will
+  result in a NOT_FOUND error if the user has
+  `spanner.backups.list` permission on the containing instance.
 
   ## Parameters
 
@@ -1844,7 +2646,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_test_iam_permissions(
         connection,
         resource,
@@ -1918,7 +2721,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_update_ddl(
         connection,
         database,
@@ -1994,7 +2798,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_operations_cancel(
         connection,
         name,
@@ -2063,7 +2867,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_operations_delete(
         connection,
         name,
@@ -2131,7 +2935,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_operations_get(
         connection,
         name,
@@ -2210,7 +3015,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_operations_list(
         connection,
         name,
@@ -2285,7 +3092,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Spanner.V1.Model.BatchCreateSessionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_batch_create(
         connection,
         database,
@@ -2358,7 +3166,10 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Transaction.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Transaction.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_begin_transaction(
         connection,
         session,
@@ -2433,7 +3244,10 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.CommitResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.CommitResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_commit(
         connection,
         session,
@@ -2483,7 +3297,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
 
   Active sessions use additional server resources, so it is a good idea to
   delete idle and unneeded sessions.
-  Aside from explicit deletes, Cloud Spanner can delete sessions for which no
+  Aside from explicit deletes, Cloud Spanner may delete sessions for which no
   operations are sent for more than an hour. If a session is deleted,
   requests to it return `NOT_FOUND`.
 
@@ -2519,7 +3333,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Session.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Session.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_create(
         connection,
         database,
@@ -2588,7 +3403,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_delete(
         connection,
         name,
@@ -2666,7 +3481,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.ExecuteBatchDmlResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.ExecuteBatchDmlResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_execute_batch_dml(
         connection,
         session,
@@ -2744,7 +3561,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.ResultSet.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ResultSet.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_execute_sql(
         connection,
         session,
@@ -2816,7 +3634,10 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.PartialResultSet.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.PartialResultSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_execute_streaming_sql(
         connection,
         session,
@@ -2885,7 +3706,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Session.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Session.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_get(
         connection,
         name,
@@ -2966,7 +3788,10 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.ListSessionsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ListSessionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_list(
         connection,
         database,
@@ -3046,7 +3871,10 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.PartitionResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.PartitionResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_partition_query(
         connection,
         session,
@@ -3126,7 +3954,10 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.PartitionResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.PartitionResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_partition_read(
         connection,
         session,
@@ -3206,7 +4037,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.ResultSet.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.ResultSet.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_read(
         connection,
         session,
@@ -3281,7 +4113,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_databases_sessions_rollback(
         connection,
         session,
@@ -3353,7 +4185,10 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.PartialResultSet.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.PartialResultSet.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_databases_sessions_streaming_read(
         connection,
         session,
@@ -3429,7 +4264,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_operations_cancel(
         connection,
         name,
@@ -3498,7 +4333,7 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Spanner.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_operations_delete(
         connection,
         name,
@@ -3566,7 +4401,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Spanner.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def spanner_projects_instances_operations_get(
         connection,
         name,
@@ -3645,7 +4481,9 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Spanner.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Spanner.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def spanner_projects_instances_operations_list(
         connection,
         name,

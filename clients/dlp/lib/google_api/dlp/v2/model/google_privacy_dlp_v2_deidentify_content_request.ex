@@ -24,7 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentRequest do
   *   `deidentifyConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyConfig.t`, *default:* `nil`) - Configuration for the de-identification of the content item.
       Items specified here will override the template referenced by the
       deidentify_template_name argument.
-  *   `deidentifyTemplateName` (*type:* `String.t`, *default:* `nil`) - Optional template to use. Any configuration directly specified in
+  *   `deidentifyTemplateName` (*type:* `String.t`, *default:* `nil`) - Template to use. Any configuration directly specified in
       deidentify_config will override those set in the template. Singular fields
       that are set in this request will replace their corresponding fields in the
       template. Repeated fields are appended. Singular sub-messages and groups
@@ -32,14 +32,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyContentRequest do
   *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - Configuration for the inspector.
       Items specified here will override the template referenced by the
       inspect_template_name argument.
-  *   `inspectTemplateName` (*type:* `String.t`, *default:* `nil`) - Optional template to use. Any configuration directly specified in
+  *   `inspectTemplateName` (*type:* `String.t`, *default:* `nil`) - Template to use. Any configuration directly specified in
       inspect_config will override those set in the template. Singular fields
       that are set in this request will replace their corresponding fields in the
       template. Repeated fields are appended. Singular sub-messages and groups
       are recursively merged.
   *   `item` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem.t`, *default:* `nil`) - The item to de-identify. Will be treated as text.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The geographic location to process de-identification. Reserved for future
-      extensions.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. This field has no effect.
   """
 
   use GoogleApi.Gax.ModelBase

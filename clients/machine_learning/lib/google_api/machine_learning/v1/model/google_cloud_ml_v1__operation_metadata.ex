@@ -30,7 +30,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_OperationMetadata d
   *   `operationType` (*type:* `String.t`, *default:* `nil`) - The operation type.
   *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - Contains the project number associated with the operation.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time operation processing started.
-  *   `version` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t`, *default:* `nil`) - Contains the version associated with the operation.
+  *   `version` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t`, *default:* `nil`) - Contains the version associated with the operation.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,7 +44,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_OperationMetadata d
           :operationType => String.t(),
           :projectNumber => String.t(),
           :startTime => DateTime.t(),
-          :version => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t()
+          :version => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t()
         }
 
   field(:createTime, as: DateTime)
@@ -55,7 +55,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_OperationMetadata d
   field(:operationType)
   field(:projectNumber)
   field(:startTime, as: DateTime)
-  field(:version, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version)
+  field(:version, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_OperationMetadata do

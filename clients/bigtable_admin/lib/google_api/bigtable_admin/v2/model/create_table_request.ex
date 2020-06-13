@@ -38,9 +38,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateTableRequest do
           - Tablet 3 `[customer_1, customer_2) => {"customer_1"}.`
           - Tablet 4 `[customer_2, other)      => {"customer_2"}.`
           - Tablet 5 `[other, )                => {"other", "zz"}.`
-  *   `table` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Table.t`, *default:* `nil`) - The Table to create.
-  *   `tableId` (*type:* `String.t`, *default:* `nil`) - The name by which the new table should be referred to within the parent
-      instance, e.g., `foobar` rather than `<parent>/tables/foobar`.
+  *   `table` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Table.t`, *default:* `nil`) - Required. The Table to create.
+  *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The name by which the new table should be referred to within the parent
+      instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
       Maximum 50 characters.
   """
 

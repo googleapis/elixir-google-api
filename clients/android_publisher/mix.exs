@@ -18,7 +18,7 @@
 defmodule GoogleApi.AndroidPublisher.Mixfile do
   use Mix.Project
 
-  @version "0.9.0"
+  @version "0.17.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.AndroidPublisher.Mixfile do
 
   defp description() do
     """
-    Google Play Developer API client library. Accesses Android application developers' Google Play accounts.
+    Google Play Android Developer API client library. Lets Android application developers access their Google Play accounts.
     """
   end
 

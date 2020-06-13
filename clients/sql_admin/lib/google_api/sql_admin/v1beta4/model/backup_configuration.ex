@@ -21,11 +21,12 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
 
   ## Attributes
 
-  *   `binaryLogEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether binary log is enabled. If backup configuration is disabled, binary
-      log must be disabled as well.
+  *   `binaryLogEnabled` (*type:* `boolean()`, *default:* `nil`) - (MySQL only) Whether binary log is enabled. If backup configuration is
+      disabled, binarylog must be disabled as well.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether this configuration is enabled.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#backupConfiguration</code>.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the backup
+  *   `pointInTimeRecoveryEnabled` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
   *   `replicationLogArchivingEnabled` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - Start time for the daily backup configuration in UTC timezone in the 24
       hour format - <code>HH:MM</code>.
@@ -38,6 +39,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
           :enabled => boolean(),
           :kind => String.t(),
           :location => String.t(),
+          :pointInTimeRecoveryEnabled => boolean(),
           :replicationLogArchivingEnabled => boolean(),
           :startTime => String.t()
         }
@@ -46,6 +48,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupConfiguration do
   field(:enabled)
   field(:kind)
   field(:location)
+  field(:pointInTimeRecoveryEnabled)
   field(:replicationLogArchivingEnabled)
   field(:startTime)
 end

@@ -20,31 +20,43 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig d
   Message holding configuration options for explaining model predictions.
   There are two feature attribution methods supported for TensorFlow models:
   integrated gradients and sampled Shapley.
-  <a href="/ml-engine/docs/ai-explanations/overview">Learn more about feature
-  attributions</a>.
+  [Learn more about feature
+  attributions.](/ai-platform/prediction/docs/ai-explanations/overview)
 
   ## Attributes
 
-  *   `integratedGradientsAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__IntegratedGradientsAttribution.t`, *default:* `nil`) - 
-  *   `sampledShapleyAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__SampledShapleyAttribution.t`, *default:* `nil`) - 
+  *   `integratedGradientsAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution.t`, *default:* `nil`) - Attributes credit by computing the Aumann-Shapley value taking advantage
+      of the model's fully differentiable structure. Refer to this paper for
+      more details: http://proceedings.mlr.press/v70/sundararajan17a.html
+  *   `sampledShapleyAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttribution.t`, *default:* `nil`) - An attribution method that approximates Shapley values for features that
+      contribute to the label being predicted. A sampling strategy is used to
+      approximate the value rather than considering all subsets of features.
+  *   `xraiAttribution` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_XraiAttribution.t`, *default:* `nil`) - Attributes credit by computing the XRAI taking advantage
+      of the model's fully differentiable structure. Refer to this paper for
+      more details: https://arxiv.org/abs/1906.02825
+      Currently only implemented for models with natural image inputs.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :integratedGradientsAttribution =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__IntegratedGradientsAttribution.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution.t(),
           :sampledShapleyAttribution =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__SampledShapleyAttribution.t()
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttribution.t(),
+          :xraiAttribution =>
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_XraiAttribution.t()
         }
 
   field(:integratedGradientsAttribution,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__IntegratedGradientsAttribution
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_IntegratedGradientsAttribution
   )
 
   field(:sampledShapleyAttribution,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__SampledShapleyAttribution
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_SampledShapleyAttribution
   )
+
+  field(:xraiAttribution, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_XraiAttribution)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig do

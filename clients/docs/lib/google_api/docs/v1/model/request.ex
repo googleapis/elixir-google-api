@@ -22,10 +22,13 @@ defmodule GoogleApi.Docs.V1.Model.Request do
   ## Attributes
 
   *   `createFooter` (*type:* `GoogleApi.Docs.V1.Model.CreateFooterRequest.t`, *default:* `nil`) - Creates a footer.
+  *   `createFootnote` (*type:* `GoogleApi.Docs.V1.Model.CreateFootnoteRequest.t`, *default:* `nil`) - Creates a footnote.
   *   `createHeader` (*type:* `GoogleApi.Docs.V1.Model.CreateHeaderRequest.t`, *default:* `nil`) - Creates a header.
   *   `createNamedRange` (*type:* `GoogleApi.Docs.V1.Model.CreateNamedRangeRequest.t`, *default:* `nil`) - Creates a named range.
   *   `createParagraphBullets` (*type:* `GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest.t`, *default:* `nil`) - Creates bullets for paragraphs.
   *   `deleteContentRange` (*type:* `GoogleApi.Docs.V1.Model.DeleteContentRangeRequest.t`, *default:* `nil`) - Deletes content from the document.
+  *   `deleteFooter` (*type:* `GoogleApi.Docs.V1.Model.DeleteFooterRequest.t`, *default:* `nil`) - Deletes a footer from the document.
+  *   `deleteHeader` (*type:* `GoogleApi.Docs.V1.Model.DeleteHeaderRequest.t`, *default:* `nil`) - Deletes a header from the document.
   *   `deleteNamedRange` (*type:* `GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest.t`, *default:* `nil`) - Deletes a named range.
   *   `deleteParagraphBullets` (*type:* `GoogleApi.Docs.V1.Model.DeleteParagraphBulletsRequest.t`, *default:* `nil`) - Deletes bullets from paragraphs.
   *   `deletePositionedObject` (*type:* `GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest.t`, *default:* `nil`) - Deletes a positioned object from the document.
@@ -56,10 +59,13 @@ defmodule GoogleApi.Docs.V1.Model.Request do
 
   @type t :: %__MODULE__{
           :createFooter => GoogleApi.Docs.V1.Model.CreateFooterRequest.t(),
+          :createFootnote => GoogleApi.Docs.V1.Model.CreateFootnoteRequest.t(),
           :createHeader => GoogleApi.Docs.V1.Model.CreateHeaderRequest.t(),
           :createNamedRange => GoogleApi.Docs.V1.Model.CreateNamedRangeRequest.t(),
           :createParagraphBullets => GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest.t(),
           :deleteContentRange => GoogleApi.Docs.V1.Model.DeleteContentRangeRequest.t(),
+          :deleteFooter => GoogleApi.Docs.V1.Model.DeleteFooterRequest.t(),
+          :deleteHeader => GoogleApi.Docs.V1.Model.DeleteHeaderRequest.t(),
           :deleteNamedRange => GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest.t(),
           :deleteParagraphBullets => GoogleApi.Docs.V1.Model.DeleteParagraphBulletsRequest.t(),
           :deletePositionedObject => GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest.t(),
@@ -89,10 +95,13 @@ defmodule GoogleApi.Docs.V1.Model.Request do
         }
 
   field(:createFooter, as: GoogleApi.Docs.V1.Model.CreateFooterRequest)
+  field(:createFootnote, as: GoogleApi.Docs.V1.Model.CreateFootnoteRequest)
   field(:createHeader, as: GoogleApi.Docs.V1.Model.CreateHeaderRequest)
   field(:createNamedRange, as: GoogleApi.Docs.V1.Model.CreateNamedRangeRequest)
   field(:createParagraphBullets, as: GoogleApi.Docs.V1.Model.CreateParagraphBulletsRequest)
   field(:deleteContentRange, as: GoogleApi.Docs.V1.Model.DeleteContentRangeRequest)
+  field(:deleteFooter, as: GoogleApi.Docs.V1.Model.DeleteFooterRequest)
+  field(:deleteHeader, as: GoogleApi.Docs.V1.Model.DeleteHeaderRequest)
   field(:deleteNamedRange, as: GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest)
   field(:deleteParagraphBullets, as: GoogleApi.Docs.V1.Model.DeleteParagraphBulletsRequest)
   field(:deletePositionedObject, as: GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest)

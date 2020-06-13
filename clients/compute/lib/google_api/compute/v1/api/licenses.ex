@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the specified license.
+  Deletes the specified license.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -54,7 +54,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   *   `{:error, info}` on failure
   """
   @spec compute_licenses_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_delete(connection, project, license, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -83,7 +83,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Returns the specified License resource.
+  Returns the specified License resource.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -106,7 +106,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   *   `{:error, info}` on failure
   """
   @spec compute_licenses_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.License.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.License.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_get(connection, project, license, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -134,7 +134,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+  Gets the access control policy for a resource. May be empty if no such policy or resource exists.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -162,7 +162,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_get_iam_policy(
         connection,
         project,
@@ -196,7 +196,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Create a License resource in the specified project.
+  Create a License resource in the specified project.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -224,7 +224,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   *   `{:error, info}` on failure
   """
   @spec compute_licenses_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -253,7 +253,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Retrieves the list of licenses available in the specified project. This method does not get any licenses that belong to other projects, including licenses attached to publicly-available images, like Debian 9. If you want to get a list of publicly-available licenses, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.
+  Retrieves the list of licenses available in the specified project. This method does not get any licenses that belong to other projects, including licenses attached to publicly-available images, like Debian 9. If you want to get a list of publicly-available licenses, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -267,20 +267,20 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:filter` (*type:* `String.t`) - A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either =, !=, >, or <.
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`.
 
-          For example, if you are filtering Compute Engine instances, you can exclude instances named example-instance by specifying name != example-instance.
+          For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
 
-          You can also filter nested fields. For example, you could specify scheduling.automaticRestart = false to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
+          You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
 
-          To filter on multiple expressions, provide each separate expression within parentheses. For example, (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake"). By default, each expression is an AND expression. However, you can include AND and OR expressions explicitly. For example, (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true).
-      *   `:maxResults` (*type:* `integer()`) - The maximum number of results per page that should be returned. If the number of available results is larger than maxResults, Compute Engine returns a nextPageToken that can be used to get the next page of results in subsequent list requests. Acceptable values are 0 to 500, inclusive. (Default: 500)
+          To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
       *   `:orderBy` (*type:* `String.t`) - Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
 
-          You can also sort results in descending order based on the creation timestamp using orderBy="creationTimestamp desc". This sorts results based on the creationTimestamp field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
+          You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
 
-          Currently, only sorting by name or creationTimestamp desc is supported.
-      *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set pageToken to the nextPageToken returned by a previous list request to get the next page of results.
+          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+      *   `:pageToken` (*type:* `String.t`) - Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -289,7 +289,9 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   *   `{:error, info}` on failure
   """
   @spec compute_licenses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Compute.V1.Model.LicensesListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.LicensesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def compute_licenses_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -320,7 +322,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.
+  Sets the access control policy on the specified resource. Replaces any existing policy.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -349,7 +351,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Compute.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def compute_licenses_set_iam_policy(
         connection,
         project,
@@ -384,7 +386,7 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -414,7 +416,9 @@ defmodule GoogleApi.Compute.V1.Api.Licenses do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def compute_licenses_test_iam_permissions(
         connection,
         project,

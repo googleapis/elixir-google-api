@@ -21,10 +21,14 @@ defmodule GoogleApi.YouTube.V3.Model.PromotedItem do
 
   ## Attributes
 
-  *   `customMessage` (*type:* `String.t`, *default:* `nil`) - A custom message to display for this promotion. This field is currently ignored unless the promoted item is a website.
+  *   `customMessage` (*type:* `String.t`, *default:* `nil`) - A custom message to display for this promotion. This field is currently
+      ignored unless the promoted item is a website.
   *   `id` (*type:* `GoogleApi.YouTube.V3.Model.PromotedItemId.t`, *default:* `nil`) - Identifies the promoted item.
-  *   `promotedByContentOwner` (*type:* `boolean()`, *default:* `nil`) - If true, the content owner's name will be used when displaying the promotion. This field can only be set when the update is made on behalf of the content owner.
-  *   `timing` (*type:* `GoogleApi.YouTube.V3.Model.InvideoTiming.t`, *default:* `nil`) - The temporal position within the video where the promoted item will be displayed. If present, it overrides the default timing.
+  *   `promotedByContentOwner` (*type:* `boolean()`, *default:* `nil`) - If true, the content owner's name will be used when displaying the
+      promotion. This field can only be set when the update is made on behalf of
+      the content owner.
+  *   `timing` (*type:* `GoogleApi.YouTube.V3.Model.InvideoTiming.t`, *default:* `nil`) - The temporal position within the video where the promoted item will be
+      displayed. If present, it overrides the default timing.
   """
 
   use GoogleApi.Gax.ModelBase

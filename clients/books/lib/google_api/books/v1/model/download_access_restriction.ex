@@ -22,16 +22,21 @@ defmodule GoogleApi.Books.V1.Model.DownloadAccessRestriction do
   ## Attributes
 
   *   `deviceAllowed` (*type:* `boolean()`, *default:* `nil`) - If restricted, whether access is granted for this (user, device, volume).
-  *   `downloadsAcquired` (*type:* `integer()`, *default:* `nil`) - If restricted, the number of content download licenses already acquired (including the requesting client, if licensed).
+  *   `downloadsAcquired` (*type:* `integer()`, *default:* `nil`) - If restricted, the number of content download licenses already acquired
+      (including the requesting client, if licensed).
   *   `justAcquired` (*type:* `boolean()`, *default:* `nil`) - If deviceAllowed, whether access was just acquired with this request.
-  *   `kind` (*type:* `String.t`, *default:* `books#downloadAccessRestriction`) - Resource type.
-  *   `maxDownloadDevices` (*type:* `integer()`, *default:* `nil`) - If restricted, the maximum number of content download licenses for this volume.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type.
+  *   `maxDownloadDevices` (*type:* `integer()`, *default:* `nil`) - If restricted, the maximum number of content download licenses for this
+      volume.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Error/warning message.
   *   `nonce` (*type:* `String.t`, *default:* `nil`) - Client nonce for verification. Download access and client-validation only.
-  *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - Error/warning reason code. Additional codes may be added in the future. 0 OK 100 ACCESS_DENIED_PUBLISHER_LIMIT 101 ACCESS_DENIED_LIMIT 200 WARNING_USED_LAST_ACCESS
+  *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - Error/warning reason code.  Additional codes may be added in the future. 0
+      OK 100   ACCESS_DENIED_PUBLISHER_LIMIT 101   ACCESS_DENIED_LIMIT 200
+      WARNING_USED_LAST_ACCESS
   *   `restricted` (*type:* `boolean()`, *default:* `nil`) - Whether this volume has any download access restrictions.
   *   `signature` (*type:* `String.t`, *default:* `nil`) - Response signature.
-  *   `source` (*type:* `String.t`, *default:* `nil`) - Client app identifier for verification. Download access and client-validation only.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Client app identifier for verification. Download access and
+      client-validation only.
   *   `volumeId` (*type:* `String.t`, *default:* `nil`) - Identifies the volume for which this entry applies.
   """
 

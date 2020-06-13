@@ -49,7 +49,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Ads do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_ads_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.Ad.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.Ad.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_ads_get(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,7 +100,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Ads do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_ads_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.Ad.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.Ad.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_ads_insert(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -173,7 +173,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.Ads do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_ads_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.AdsListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.AdsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_ads_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -247,7 +249,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Ads do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_ads_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.Ad.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.Ad.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_ads_patch(connection, profile_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -299,7 +301,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.Ads do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_ads_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.Ad.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.Ad.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_ads_update(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

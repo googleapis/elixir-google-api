@@ -29,6 +29,7 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
       range will be used for assigning internal IP addresses to the master or
       set of masters, as well as the ILB VIP. This range must not overlap with
       any other ranges in use within the cluster's network.
+  *   `peeringName` (*type:* `String.t`, *default:* `nil`) - Output only. The peering name in the customer VPC used by this cluster.
   *   `privateEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The internal IP address of this cluster's master endpoint.
   *   `publicEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The external IP address of this cluster's master endpoint.
   """
@@ -39,6 +40,7 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
           :enablePrivateEndpoint => boolean(),
           :enablePrivateNodes => boolean(),
           :masterIpv4CidrBlock => String.t(),
+          :peeringName => String.t(),
           :privateEndpoint => String.t(),
           :publicEndpoint => String.t()
         }
@@ -46,6 +48,7 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
   field(:enablePrivateEndpoint)
   field(:enablePrivateNodes)
   field(:masterIpv4CidrBlock)
+  field(:peeringName)
   field(:privateEndpoint)
   field(:publicEndpoint)
 end

@@ -48,9 +48,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of the backupRun to delete.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/backupRuns/{backupRun}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -65,7 +62,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_backup_runs_delete(connection, project, instance, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -78,8 +78,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -119,9 +118,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - Name of the resource backupRun.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/backupRuns/{backupRun}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -136,7 +132,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_backup_runs_get(connection, project, instance, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -149,8 +148,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -190,8 +188,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should create this backupRun.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BackupRun.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -201,7 +197,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   *   `{:error, info}` on failure
   """
   @spec sql_backup_runs_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_backup_runs_insert(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -215,7 +213,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -258,8 +255,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       *   `:maxResults` (*type:* `integer()`) - Maximum number of backup runs per response.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
           results to view.
-      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of backupRuns.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -269,7 +264,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
   """
   @spec sql_backup_runs_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.BackupRunsListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_backup_runs_list(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -284,8 +280,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.BackupRuns do
       :uploadType => :query,
       :upload_protocol => :query,
       :maxResults => :query,
-      :pageToken => :query,
-      :parent => :query
+      :pageToken => :query
     }
 
     request =

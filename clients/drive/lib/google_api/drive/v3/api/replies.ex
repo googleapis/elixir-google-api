@@ -50,7 +50,7 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
   *   `{:error, info}` on failure
   """
   @spec drive_replies_create(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Reply.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.Reply.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_replies_create(connection, file_id, comment_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -109,7 +109,7 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_replies_delete(
         connection,
         file_id,
@@ -176,7 +176,7 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Drive.V3.Model.Reply.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.Reply.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_replies_get(
         connection,
         file_id,
@@ -239,7 +239,7 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
   *   `{:error, info}` on failure
   """
   @spec drive_replies_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.ReplyList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.ReplyList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_replies_list(connection, file_id, comment_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -301,7 +301,7 @@ defmodule GoogleApi.Drive.V3.Api.Replies do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Drive.V3.Model.Reply.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Drive.V3.Model.Reply.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_replies_update(
         connection,
         file_id,

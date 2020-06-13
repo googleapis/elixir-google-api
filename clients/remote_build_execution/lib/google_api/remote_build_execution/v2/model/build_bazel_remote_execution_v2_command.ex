@@ -65,6 +65,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Com
       Directories leading up to the output directories (but not the output
       directories themselves) are created by the worker prior to execution, even
       if they are not explicitly part of the input root.
+
+      DEPRECATED since 2.1: Use `output_paths` instead.
   *   `outputFiles` (*type:* `list(String.t)`, *default:* `nil`) - A list of the output files that the client expects to retrieve from the
       action. Only the listed files, as well as directories listed in
       `output_directories`, will be returned to the client as output.
@@ -86,6 +88,36 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Com
 
       Directories leading up to the output files are created by the worker prior
       to execution, even if they are not explicitly part of the input root.
+
+      DEPRECATED since v2.1: Use `output_paths` instead.
+  *   `outputPaths` (*type:* `list(String.t)`, *default:* `nil`) - A list of the output paths that the client expects to retrieve from the
+      action. Only the listed paths will be returned to the client as output.
+      The type of the output (file or directory) is not specified, and will be
+      determined by the server after action execution. If the resulting path is
+      a file, it will be returned in an
+      OutputFile) typed field.
+      If the path is a directory, the entire directory structure will be returned
+      as a Tree message digest, see
+      OutputDirectory)
+      Other files or directories that may be created during command execution
+      are discarded.
+
+      The paths are relative to the working directory of the action execution.
+      The paths are specified using a single forward slash (`/`) as a path
+      separator, even if the execution platform natively uses a different
+      separator. The path MUST NOT include a trailing slash, nor a leading slash,
+      being a relative path.
+
+      In order to ensure consistent hashing of the same Action, the output paths
+      MUST be deduplicated and sorted lexicographically by code point (or,
+      equivalently, by UTF-8 bytes).
+
+      Directories leading up to the output paths are created by the worker prior
+      to execution, even if they are not explicitly part of the input root.
+
+      New in v2.1: this field supersedes the DEPRECATED `output_files` and
+      `output_directories` fields. If `output_paths` is used, `output_files` and
+      `output_directories` will be ignored!
   *   `platform` (*type:* `GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Platform.t`, *default:* `nil`) - The platform requirements for the execution environment. The server MAY
       choose to execute the action on any worker satisfying the requirements, so
       the client SHOULD ensure that running the action on any such worker will
@@ -106,6 +138,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Com
             ),
           :outputDirectories => list(String.t()),
           :outputFiles => list(String.t()),
+          :outputPaths => list(String.t()),
           :platform =>
             GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Platform.t(),
           :workingDirectory => String.t()
@@ -121,6 +154,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Com
 
   field(:outputDirectories, type: :list)
   field(:outputFiles, type: :list)
+  field(:outputPaths, type: :list)
 
   field(:platform, as: GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2Platform)
 

@@ -59,7 +59,10 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Operations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQueryReservation.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQueryReservation.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_operations_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -129,7 +132,8 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Operations do
   """
   @spec bigqueryreservation_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigQueryReservation.V1.Model.ListOperationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigqueryreservation_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -18,7 +18,7 @@
 defmodule GoogleApi.OSLogin.Mixfile do
   use Mix.Project
 
-  @version "0.16.0"
+  @version "0.19.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.OSLogin.Mixfile do
 
   defp description() do
     """
-    Cloud OS Login API client library. You can use OS Login to manage access to your VM instances using IAM roles. For more information, read [OS Login](/compute/docs/oslogin/).
+    Cloud OS Login API client library. You can use OS Login to manage access to your VM instances using IAM roles.
     """
   end
 

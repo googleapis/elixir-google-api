@@ -21,17 +21,17 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
 
   ## Attributes
 
-  *   `bucketingConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BucketingConfig.t`, *default:* `nil`) - 
-  *   `characterMaskConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig.t`, *default:* `nil`) - 
-  *   `cryptoDeterministicConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig.t`, *default:* `nil`) - 
-  *   `cryptoHashConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig.t`, *default:* `nil`) - 
-  *   `cryptoReplaceFfxFpeConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig.t`, *default:* `nil`) - 
-  *   `dateShiftConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig.t`, *default:* `nil`) - 
-  *   `fixedSizeBucketingConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig.t`, *default:* `nil`) - 
-  *   `redactConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig.t`, *default:* `nil`) - 
-  *   `replaceConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig.t`, *default:* `nil`) - 
-  *   `replaceWithInfoTypeConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceWithInfoTypeConfig.t`, *default:* `nil`) - 
-  *   `timePartConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig.t`, *default:* `nil`) - 
+  *   `bucketingConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BucketingConfig.t`, *default:* `nil`) - Bucketing
+  *   `characterMaskConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig.t`, *default:* `nil`) - Mask
+  *   `cryptoDeterministicConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig.t`, *default:* `nil`) - Deterministic Crypto
+  *   `cryptoHashConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig.t`, *default:* `nil`) - Crypto
+  *   `cryptoReplaceFfxFpeConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig.t`, *default:* `nil`) - Ffx-Fpe
+  *   `dateShiftConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig.t`, *default:* `nil`) - Date Shift
+  *   `fixedSizeBucketingConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig.t`, *default:* `nil`) - Fixed size bucketing
+  *   `redactConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig.t`, *default:* `nil`) - Redact
+  *   `replaceConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceValueConfig.t`, *default:* `nil`) - Replace
+  *   `replaceWithInfoTypeConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceWithInfoTypeConfig.t`, *default:* `nil`) - Replace with infotype
+  *   `timePartConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimePartConfig.t`, *default:* `nil`) - Time extraction
   """
 
   use GoogleApi.Gax.ModelBase

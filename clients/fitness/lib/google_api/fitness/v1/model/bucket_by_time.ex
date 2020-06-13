@@ -21,7 +21,9 @@ defmodule GoogleApi.Fitness.V1.Model.BucketByTime do
 
   ## Attributes
 
-  *   `durationMillis` (*type:* `String.t`, *default:* `nil`) - Specifies that result buckets aggregate data by exactly durationMillis time frames. Time frames that contain no data will be included in the response with an empty dataset.
+  *   `durationMillis` (*type:* `String.t`, *default:* `nil`) - Specifies that result buckets aggregate data by exactly durationMillis time
+      frames. Time frames that contain no data will be included in the response
+      with an empty dataset.
   *   `period` (*type:* `GoogleApi.Fitness.V1.Model.BucketByTimePeriod.t`, *default:* `nil`) - 
   """
 

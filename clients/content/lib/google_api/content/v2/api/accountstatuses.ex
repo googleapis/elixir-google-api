@@ -49,7 +49,8 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   """
   @spec content_accountstatuses_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.AccountstatusesCustomBatchResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accountstatuses_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -82,7 +83,7 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
-  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and accountId must be the ID of a sub-account of this account.
+  *   `merchant_id` (*type:* `String.t`) - The ID of the managing account. If this parameter is not the same as accountId, then this account must be a multi-client account and `accountId` must be the ID of a sub-account of this account.
   *   `account_id` (*type:* `String.t`) - The ID of the account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -106,7 +107,10 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Content.V2.Model.AccountStatus.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Content.V2.Model.AccountStatus.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accountstatuses_get(
         connection,
         merchant_id,
@@ -167,7 +171,8 @@ defmodule GoogleApi.Content.V2.Api.Accountstatuses do
   """
   @spec content_accountstatuses_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.AccountstatusesListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_accountstatuses_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

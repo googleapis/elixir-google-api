@@ -53,7 +53,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.ThreatMatches do
   """
   @spec safebrowsing_threat_matches_find(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SafeBrowsing.V4.Model.FindThreatMatchesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def safebrowsing_threat_matches_find(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

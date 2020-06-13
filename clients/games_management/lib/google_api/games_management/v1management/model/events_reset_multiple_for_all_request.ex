@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.EventsResetMultipleForAllRequest do
   @moduledoc """
-  This is a JSON template for multiple events reset all request.
+  Multiple events reset all request.
 
   ## Attributes
 
   *   `event_ids` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of events to reset.
-  *   `kind` (*type:* `String.t`, *default:* `gamesManagement#eventsResetMultipleForAllRequest`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#eventsResetMultipleForAllRequest.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesManagement#eventsResetMultipleForAllRequest`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -57,7 +57,8 @@ defmodule GoogleApi.Content.V2.Api.Orderinvoices do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderinvoicesCreateChargeInvoiceResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orderinvoices_createchargeinvoice(
         connection,
         merchant_id,
@@ -94,7 +95,7 @@ defmodule GoogleApi.Content.V2.Api.Orderinvoices do
   end
 
   @doc """
-  Creates a refund invoice for one or more shipment groups, and triggers a refund for orderinvoice enabled orders. This can only be used for line items that have previously been charged using createChargeInvoice. All amounts (except for the summary) are incremental with respect to the previous invoice.
+  Creates a refund invoice for one or more shipment groups, and triggers a refund for orderinvoice enabled orders. This can only be used for line items that have previously been charged using `createChargeInvoice`. All amounts (except for the summary) are incremental with respect to the previous invoice.
 
   ## Parameters
 
@@ -125,7 +126,8 @@ defmodule GoogleApi.Content.V2.Api.Orderinvoices do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrderinvoicesCreateRefundInvoiceResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orderinvoices_createrefundinvoice(
         connection,
         merchant_id,

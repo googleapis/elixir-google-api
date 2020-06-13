@@ -26,11 +26,11 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
   ## Attributes
 
-  *   `acceleratorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig.t`, *default:* `nil`) - Optional. Accelerator config for using GPUs for online prediction (beta).
+  *   `acceleratorConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t`, *default:* `nil`) - Optional. Accelerator config for using GPUs for online prediction (beta).
       Only specify this field if you have specified a Compute Engine (N1) machine
       type in the `machineType` field. Learn more about [using GPUs for online
       prediction](/ml-engine/docs/machine-types-online-prediction#gpus).
-  *   `autoScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AutoScaling.t`, *default:* `nil`) - Automatically scale the number of nodes used to serve the model in
+  *   `autoScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutoScaling.t`, *default:* `nil`) - Automatically scale the number of nodes used to serve the model in
       response to increases and decreases in traffic. Care should be
       taken to ramp up traffic according to the model's ability to scale
       or you will start seeing increases in latency and 429 response codes.
@@ -60,7 +60,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
       conditions: An `etag` is returned in the response to `GetVersion`, and
       systems are expected to put that etag in the request to `UpdateVersion` to
       ensure that their change will be applied to the model as intended.
-  *   `explanationConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ExplanationConfig.t`, *default:* `nil`) - Optional. Configures explainability features on the model's version.
+  *   `explanationConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig.t`, *default:* `nil`) - Optional. Configures explainability features on the model's version.
       Some explanation features require additional metadata to be loaded
       as part of the model payload.
   *   `framework` (*type:* `String.t`, *default:* `nil`) - Optional. The machine learning framework AI Platform uses to train
@@ -115,7 +115,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
       `mls1-c1-m2` is generally available. All other machine types are available
       in beta. Learn more about the [differences between machine
       types](/ml-engine/docs/machine-types-online-prediction).
-  *   `manualScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ManualScaling.t`, *default:* `nil`) - Manually select the number of nodes to use for serving the
+  *   `manualScaling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling.t`, *default:* `nil`) - Manually select the number of nodes to use for serving the
       model. You should generally use `auto_scaling` with an appropriate
       `min_nodes` instead, but this option is available if you want more
       predictable billing. Beware that latency and error rates will increase
@@ -193,10 +193,20 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
       Learn more about [the Predictor interface and custom prediction
       routines](/ml-engine/docs/tensorflow/custom-prediction-routines).
-  *   `pythonVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Python used in prediction. If not set, the default
-      version is '2.7'. Python '3.5' is available when `runtime_version` is set
-      to '1.4' and above. Python '2.7' works with all supported runtime versions.
-  *   `requestLoggingConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__RequestLoggingConfig.t`, *default:* `nil`) - Optional. *Only* specify this field in a
+  *   `pythonVersion` (*type:* `String.t`, *default:* `nil`) - Required. The version of Python used in prediction.
+
+      The following Python versions are available:
+
+      * Python '3.7' is available when `runtime_version` is set to '1.15' or
+        later.
+      * Python '3.5' is available when `runtime_version` is set to a version
+        from '1.4' to '1.14'.
+      * Python '2.7' is available when `runtime_version` is set to '1.15' or
+        earlier.
+
+      Read more about the Python versions available for [each runtime
+      version](/ml-engine/docs/runtime-version-list).
+  *   `requestLoggingConfig` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RequestLoggingConfig.t`, *default:* `nil`) - Optional. *Only* specify this field in a
       projects.models.versions.patch
       request. Specifying it in a
       projects.models.versions.create
@@ -204,9 +214,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
       Configures the request-response pair logging on predictions from this
       Version.
-  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The AI Platform runtime version to use for this deployment.
-      If not set, AI Platform uses the default stable version, 1.0. For more
-      information, see the
+  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Required. The AI Platform runtime version to use for this deployment.
+
+      For more information, see the
       [runtime version list](/ml-engine/docs/runtime-version-list) and
       [how to manage runtime versions](/ml-engine/docs/versioning).
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the service account for resource access control.
@@ -217,37 +227,37 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
 
   @type t :: %__MODULE__{
           :acceleratorConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig.t(),
-          :autoScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AutoScaling.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig.t(),
+          :autoScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutoScaling.t(),
           :createTime => DateTime.t(),
           :deploymentUri => String.t(),
           :description => String.t(),
           :errorMessage => String.t(),
           :etag => String.t(),
           :explanationConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ExplanationConfig.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig.t(),
           :framework => String.t(),
           :isDefault => boolean(),
           :labels => map(),
           :lastUseTime => DateTime.t(),
           :machineType => String.t(),
-          :manualScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ManualScaling.t(),
+          :manualScaling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling.t(),
           :name => String.t(),
           :packageUris => list(String.t()),
           :predictionClass => String.t(),
           :pythonVersion => String.t(),
           :requestLoggingConfig =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__RequestLoggingConfig.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RequestLoggingConfig.t(),
           :runtimeVersion => String.t(),
           :serviceAccount => String.t(),
           :state => String.t()
         }
 
   field(:acceleratorConfig,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AcceleratorConfig
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AcceleratorConfig
   )
 
-  field(:autoScaling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__AutoScaling)
+  field(:autoScaling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_AutoScaling)
   field(:createTime, as: DateTime)
   field(:deploymentUri)
   field(:description)
@@ -255,7 +265,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   field(:etag)
 
   field(:explanationConfig,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ExplanationConfig
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ExplanationConfig
   )
 
   field(:framework)
@@ -263,14 +273,14 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version do
   field(:labels, type: :map)
   field(:lastUseTime, as: DateTime)
   field(:machineType)
-  field(:manualScaling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__ManualScaling)
+  field(:manualScaling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ManualScaling)
   field(:name)
   field(:packageUris, type: :list)
   field(:predictionClass)
   field(:pythonVersion)
 
   field(:requestLoggingConfig,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__RequestLoggingConfig
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_RequestLoggingConfig
   )
 
   field(:runtimeVersion)

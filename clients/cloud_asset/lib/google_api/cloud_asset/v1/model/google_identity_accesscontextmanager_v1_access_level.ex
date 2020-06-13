@@ -17,19 +17,20 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessLevel do
   @moduledoc """
-  An `AccessLevel` is a label that can be applied to requests to GCP services,
-  along with a list of requirements necessary for the label to be applied.
+  An `AccessLevel` is a label that can be applied to requests to Google Cloud
+  services, along with a list of requirements necessary for the label to be
+  applied.
 
   ## Attributes
 
   *   `basic` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel.t`, *default:* `nil`) - A `BasicLevel` composed of `Conditions`.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `AccessLevel` was created in UTC.
+  *   `custom` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1CustomLevel.t`, *default:* `nil`) - A `CustomLevel` written in the Common Expression Language.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `AccessLevel` and its use. Does not affect behavior.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Resource name for the Access Level. The `short_name` component
       must begin with a letter and only include alphanumeric and '_'. Format:
-      `accessPolicies/{policy_id}/accessLevels/{short_name}`
+      `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
+      of the `short_name` component is 50 characters.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Human readable title. Must be unique within the Policy.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `AccessLevel` was updated in UTC.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,19 +38,20 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
   @type t :: %__MODULE__{
           :basic =>
             GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel.t(),
-          :createTime => DateTime.t(),
+          :custom =>
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1CustomLevel.t(),
           :description => String.t(),
           :name => String.t(),
-          :title => String.t(),
-          :updateTime => DateTime.t()
+          :title => String.t()
         }
 
   field(:basic, as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel)
-  field(:createTime, as: DateTime)
+
+  field(:custom, as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1CustomLevel)
+
   field(:description)
   field(:name)
   field(:title)
-  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder,

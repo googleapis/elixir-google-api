@@ -24,8 +24,26 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when finding was detected.
   *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - The type of content that might have been found.
       Provided if `excluded_types` is false.
+  *   `jobCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time the job started that produced this finding.
+  *   `jobName` (*type:* `String.t`, *default:* `nil`) - The job that stored the finding.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this `Finding`.
+
+      Label keys must be between 1 and 63 characters long and must conform
+      to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+
+      Label values must be between 0 and 63 characters long and must conform
+      to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+
+      No more than 10 labels can be associated with a given finding.
+
+      Examples:
+      * `"environment" : "production"`
+      * `"pipeline" : "etl"`
   *   `likelihood` (*type:* `String.t`, *default:* `nil`) - Confidence of how likely it is that the `info_type` is correct.
   *   `location` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location.t`, *default:* `nil`) - Where the content was found.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name in format
+      projects/{project}/locations/{location}/findings/{finding} Populated only
+      when viewing persisted findings.
   *   `quote` (*type:* `String.t`, *default:* `nil`) - The content that was found. Even if the content is not textual, it
       may be converted to a textual representation here.
       Provided if `include_quote` is true and the finding is
@@ -34,6 +52,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
   *   `quoteInfo` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuoteInfo.t`, *default:* `nil`) - Contains data parsed from quotes. Only populated if include_quote was set
       to true and a supported infoType was requested. Currently supported
       infoTypes: DATE, DATE_OF_BIRTH and TIME.
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The job that stored the finding.
+  *   `triggerName` (*type:* `String.t`, *default:* `nil`) - Job trigger name, if applicable, for this finding.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,18 +61,30 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do
   @type t :: %__MODULE__{
           :createTime => DateTime.t(),
           :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t(),
+          :jobCreateTime => DateTime.t(),
+          :jobName => String.t(),
+          :labels => map(),
           :likelihood => String.t(),
           :location => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location.t(),
+          :name => String.t(),
           :quote => String.t(),
-          :quoteInfo => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuoteInfo.t()
+          :quoteInfo => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuoteInfo.t(),
+          :resourceName => String.t(),
+          :triggerName => String.t()
         }
 
   field(:createTime, as: DateTime)
   field(:infoType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType)
+  field(:jobCreateTime, as: DateTime)
+  field(:jobName)
+  field(:labels, type: :map)
   field(:likelihood)
   field(:location, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Location)
+  field(:name)
   field(:quote)
   field(:quoteInfo, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2QuoteInfo)
+  field(:resourceName)
+  field(:triggerName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Finding do

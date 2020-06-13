@@ -22,15 +22,18 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.Specification do
   ## Attributes
 
   *   `androidTest` (*type:* `GoogleApi.ToolResults.V1beta3.Model.AndroidTest.t`, *default:* `nil`) - An Android mobile test execution specification.
+  *   `iosTest` (*type:* `GoogleApi.ToolResults.V1beta3.Model.IosTest.t`, *default:* `nil`) - An iOS mobile test execution specification.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :androidTest => GoogleApi.ToolResults.V1beta3.Model.AndroidTest.t()
+          :androidTest => GoogleApi.ToolResults.V1beta3.Model.AndroidTest.t(),
+          :iosTest => GoogleApi.ToolResults.V1beta3.Model.IosTest.t()
         }
 
   field(:androidTest, as: GoogleApi.ToolResults.V1beta3.Model.AndroidTest)
+  field(:iosTest, as: GoogleApi.ToolResults.V1beta3.Model.IosTest)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ToolResults.V1beta3.Model.Specification do

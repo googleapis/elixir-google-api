@@ -23,6 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
 
   *   `allowLargeResults` (*type:* `boolean()`, *default:* `false`) - [Optional] If true and query uses legacy SQL dialect, allows the query to produce arbitrarily large result tables at a slight cost in performance. Requires destinationTable to be set. For standard SQL queries, this flag is ignored and large results are always allowed. However, you must still set destinationTable when result size exceeds the allowed maximum response size.
   *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - [Beta] Clustering specification for the destination table. Must be specified with time-based partitioning, data in the table will be first partitioned and subsequently clustered.
+  *   `connectionProperties` (*type:* `list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t)`, *default:* `nil`) - Connection properties.
   *   `createDisposition` (*type:* `String.t`, *default:* `nil`) - [Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion.
   *   `defaultDataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Optional] Specifies the default dataset to use for unqualified table names in the query. Note that this does not alter behavior of unqualified dataset names.
   *   `destinationEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
@@ -50,6 +51,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
   @type t :: %__MODULE__{
           :allowLargeResults => boolean(),
           :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t(),
+          :connectionProperties => list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t()),
           :createDisposition => String.t(),
           :defaultDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t(),
           :destinationEncryptionConfiguration =>
@@ -78,6 +80,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
 
   field(:allowLargeResults)
   field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)
+  field(:connectionProperties, as: GoogleApi.BigQuery.V2.Model.ConnectionProperty, type: :list)
   field(:createDisposition)
   field(:defaultDataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
 

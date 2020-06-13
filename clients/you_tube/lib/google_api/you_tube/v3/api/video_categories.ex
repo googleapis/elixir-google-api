@@ -26,23 +26,29 @@ defmodule GoogleApi.YouTube.V3.Api.VideoCategories do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns a list of categories that can be associated with YouTube videos.
+  Retrieves a list of resources, possibly filtered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies the videoCategory resource properties that the API response will include. Set the parameter value to snippet.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
+      <code>videoCategory</code> resource properties that the API response will
+      include. Set the parameter value to <code>snippet</code>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:hl` (*type:* `String.t`) - The hl parameter specifies the language that should be used for text values in the API response.
-      *   `:id` (*type:* `String.t`) - The id parameter specifies a comma-separated list of video category IDs for the resources that you are retrieving.
-      *   `:regionCode` (*type:* `String.t`) - The regionCode parameter instructs the API to return the list of video categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:hl` (*type:* `String.t`) - 
+      *   `:id` (*type:* `list(String.t)`) - Returns the video categories with the given IDs for Stubby or Apiary.
+      *   `:regionCode` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -50,18 +56,23 @@ defmodule GoogleApi.YouTube.V3.Api.VideoCategories do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.VideoCategoryListResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_video_categories_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_video_categories_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.VideoCategoryListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_video_categories_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :hl => :query,
       :id => :query,
       :regionCode => :query

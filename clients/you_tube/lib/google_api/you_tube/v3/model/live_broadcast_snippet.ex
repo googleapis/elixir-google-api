@@ -17,51 +17,74 @@
 
 defmodule GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet do
   @moduledoc """
-
+  Basic broadcast information.
 
   ## Attributes
 
-  *   `actualEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast actually ended. This information is only available once the broadcast's state is complete. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `actualStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast actually started. This information is only available once the broadcast's state is live. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `broadcastType` (*type:* `String.t`, *default:* `nil`) - 
-  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that is publishing the broadcast.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The broadcast's description. As with the title, you can set this field by modifying the broadcast resource or by setting the description field of the corresponding video resource.
-  *   `isDefaultBroadcast` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `actualEndTime` (*type:* `String.t`, *default:* `nil`) - The date and time that the broadcast actually ended. This information is
+      only available once the broadcast's state is <code>complete</code>. The
+      value is specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `actualStartTime` (*type:* `String.t`, *default:* `nil`) - The date and time that the broadcast actually started. This information is
+      only available once the broadcast's state is <code>live</code>. The
+      value is specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the channel that
+      is publishing the broadcast.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The broadcast's description. As with the <code>title</code>, you can set
+      this field by modifying the broadcast resource or by setting the
+      <code><a
+      href="/youtube/v3/docs/videos#snippet.description">description</a></code>
+      field of the corresponding video resource.
+  *   `isDefaultBroadcast` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this broadcast is the default broadcast.
+      Internal only.
   *   `liveChatId` (*type:* `String.t`, *default:* `nil`) - The id of the live chat for this broadcast.
-  *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast was added to YouTube's live broadcast schedule. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `scheduledEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast is scheduled to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `scheduledStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the broadcast is scheduled to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the broadcast. For each nested object in this object, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The broadcast's title. Note that the broadcast represents exactly one YouTube video. You can set this field by modifying the broadcast resource or by setting the title field of the corresponding video resource.
+  *   `publishedAt` (*type:* `String.t`, *default:* `nil`) - The date and time that the broadcast was added to YouTube's live broadcast
+      schedule. The value is specified in
+      <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `scheduledEndTime` (*type:* `String.t`, *default:* `nil`) - The date and time that the broadcast is scheduled to end. The value
+      is specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `scheduledStartTime` (*type:* `String.t`, *default:* `nil`) - The date and time that the broadcast is scheduled to start. The value
+      is specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `thumbnails` (*type:* `GoogleApi.YouTube.V3.Model.ThumbnailDetails.t`, *default:* `nil`) - A map of thumbnail images associated with the broadcast. For each nested
+      object in this object, the key is the name of the thumbnail image, and
+      the value is an object that contains other information about the
+      thumbnail.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The broadcast's title. Note that the broadcast represents exactly one
+      YouTube video. You can set this field by modifying the broadcast resource
+      or by setting the
+      <code><a href="/youtube/v3/docs/videos#snippet.title">title</a></code>
+      field of the corresponding video resource.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :actualEndTime => DateTime.t(),
-          :actualStartTime => DateTime.t(),
-          :broadcastType => String.t(),
+          :actualEndTime => String.t(),
+          :actualStartTime => String.t(),
           :channelId => String.t(),
           :description => String.t(),
           :isDefaultBroadcast => boolean(),
           :liveChatId => String.t(),
-          :publishedAt => DateTime.t(),
-          :scheduledEndTime => DateTime.t(),
-          :scheduledStartTime => DateTime.t(),
+          :publishedAt => String.t(),
+          :scheduledEndTime => String.t(),
+          :scheduledStartTime => String.t(),
           :thumbnails => GoogleApi.YouTube.V3.Model.ThumbnailDetails.t(),
           :title => String.t()
         }
 
-  field(:actualEndTime, as: DateTime)
-  field(:actualStartTime, as: DateTime)
-  field(:broadcastType)
+  field(:actualEndTime)
+  field(:actualStartTime)
   field(:channelId)
   field(:description)
   field(:isDefaultBroadcast)
   field(:liveChatId)
-  field(:publishedAt, as: DateTime)
-  field(:scheduledEndTime, as: DateTime)
-  field(:scheduledStartTime, as: DateTime)
+  field(:publishedAt)
+  field(:scheduledEndTime)
+  field(:scheduledStartTime)
   field(:thumbnails, as: GoogleApi.YouTube.V3.Model.ThumbnailDetails)
   field(:title)
 end

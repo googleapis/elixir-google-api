@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Resource do
   @moduledoc """
-  Information related to the Google Cloud Platform (GCP) resource that is
+  Information related to the Google Cloud resource that is
   associated with this finding.
 
   ## Attributes

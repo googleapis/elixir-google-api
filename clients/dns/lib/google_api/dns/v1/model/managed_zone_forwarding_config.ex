@@ -22,7 +22,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfig do
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneForwardingConfig`) - Identifies what kind of resource this is. Value: the fixed string "dns#managedZoneForwardingConfig".
-  *   `targetNameServers` (*type:* `list(GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfigNameServerTarget.t)`, *default:* `nil`) - List of target name servers to forward to. Cloud DNS will select the best available name server if more than one target is given.
+  *   `targetNameServers` (*type:* `list(GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfigNameServerTarget.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

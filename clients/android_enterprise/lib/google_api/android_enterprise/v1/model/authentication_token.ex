@@ -17,22 +17,22 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AuthenticationToken do
   @moduledoc """
-  An AuthenticationToken is used by the EMM's device policy client on a device to provision the given EMM-managed user on that device.
+  An AuthenticationToken is used by the EMM's device policy client on a device
+  to provision the given EMM-managed user on that device.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `androidenterprise#authenticationToken`) - 
-  *   `token` (*type:* `String.t`, *default:* `nil`) - The authentication token to be passed to the device policy client on the device where it can be used to provision the account for which this token was generated.
+  *   `token` (*type:* `String.t`, *default:* `nil`) - The authentication token to be passed to the device policy client on the
+      device where it can be used to provision the account for which this token
+      was generated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :kind => String.t(),
           :token => String.t()
         }
 
-  field(:kind)
   field(:token)
 end
 

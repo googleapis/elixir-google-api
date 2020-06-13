@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetMultipleForAllRequest do
   @moduledoc """
-  This is a JSON template for multiple achievements reset all request.
+
 
   ## Attributes
 
   *   `achievement_ids` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of achievements to reset.
-  *   `kind` (*type:* `String.t`, *default:* `gamesManagement#achievementResetMultipleForAllRequest`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetMultipleForAllRequest.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesManagement#achievementResetMultipleForAllRequest`.
   """
 
   use GoogleApi.Gax.ModelBase

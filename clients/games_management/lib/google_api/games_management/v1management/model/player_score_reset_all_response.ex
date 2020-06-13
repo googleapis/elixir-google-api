@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetAllResponse do
   @moduledoc """
-  This is a JSON template for a list of leaderboard reset resources.
+  A list of leaderboard reset resources.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `gamesManagement#playerScoreResetAllResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#playerScoreResetResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesManagement#playerScoreResetAllResponse`.
   *   `results` (*type:* `list(GoogleApi.GamesManagement.V1management.Model.PlayerScoreResetResponse.t)`, *default:* `nil`) - The leaderboard reset results.
   """
 

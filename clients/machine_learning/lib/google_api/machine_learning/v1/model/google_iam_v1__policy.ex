@@ -27,10 +27,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
   permissions; each `role` can be an IAM predefined role or a user-created
   custom role.
 
-  Optionally, a `binding` can specify a `condition`, which is a logical
-  expression that allows access to a resource only if the expression evaluates
-  to `true`. A condition can add constraints based on attributes of the
-  request, the resource, or both.
+  For some types of Google Cloud resources, a `binding` can also specify a
+  `condition`, which is a logical expression that allows access to a resource
+  only if the expression evaluates to `true`. A condition can add constraints
+  based on attributes of the request, the resource, or both. To learn which
+  resources support conditions in their IAM policies, see the
+  [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
 
   **JSON example:**
 
@@ -47,7 +49,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
           },
           {
             "role": "roles/resourcemanager.organizationViewer",
-            "members": ["user:eve@example.com"],
+            "members": [
+              "user:eve@example.com"
+            ],
             "condition": {
               "title": "expirable access",
               "description": "Does not grant access after Sep 2020",
@@ -83,8 +87,8 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
 
   ## Attributes
 
-  *   `auditConfigs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditConfig.t)`, *default:* `nil`) - Specifies cloud audit logging configuration for this policy.
-  *   `bindings` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Binding.t)`, *default:* `nil`) - Associates a list of `members` to a `role`. Optionally, may specify a
+  *   `auditConfigs` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig.t)`, *default:* `nil`) - Specifies cloud audit logging configuration for this policy.
+  *   `bindings` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding.t)`, *default:* `nil`) - Associates a list of `members` to a `role`. Optionally, may specify a
       `condition` that determines how and when the `bindings` are applied. Each
       of the `bindings` must contain at least one member.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - `etag` is used for optimistic concurrency control as a way to help
@@ -120,23 +124,23 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy do
 
       If a policy does not include any conditions, operations on that policy may
       specify any valid version or leave the field unset.
+
+      To learn which resources support conditions in their IAM policies, see the
+      [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :auditConfigs => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditConfig.t()),
-          :bindings => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Binding.t()),
+          :auditConfigs => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig.t()),
+          :bindings => list(GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding.t()),
           :etag => String.t(),
           :version => integer()
         }
 
-  field(:auditConfigs,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1__AuditConfig,
-    type: :list
-  )
+  field(:auditConfigs, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditConfig, type: :list)
 
-  field(:bindings, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Binding, type: :list)
+  field(:bindings, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Binding, type: :list)
   field(:etag)
   field(:version)
 end

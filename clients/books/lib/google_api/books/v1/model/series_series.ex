@@ -25,7 +25,9 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeries do
   *   `eligibleForSubscription` (*type:* `boolean()`, *default:* `nil`) - 
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - 
   *   `isComplete` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `seriesFormatType` (*type:* `String.t`, *default:* `nil`) - 
   *   `seriesId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `seriesSubscriptionReleaseInfo` (*type:* `GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfo.t`, *default:* `nil`) - 
   *   `seriesType` (*type:* `String.t`, *default:* `nil`) - 
   *   `subscriptionId` (*type:* `String.t`, *default:* `nil`) - 
   *   `title` (*type:* `String.t`, *default:* `nil`) - 
@@ -38,7 +40,10 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeries do
           :eligibleForSubscription => boolean(),
           :imageUrl => String.t(),
           :isComplete => boolean(),
+          :seriesFormatType => String.t(),
           :seriesId => String.t(),
+          :seriesSubscriptionReleaseInfo =>
+            GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfo.t(),
           :seriesType => String.t(),
           :subscriptionId => String.t(),
           :title => String.t()
@@ -48,7 +53,13 @@ defmodule GoogleApi.Books.V1.Model.SeriesSeries do
   field(:eligibleForSubscription)
   field(:imageUrl)
   field(:isComplete)
+  field(:seriesFormatType)
   field(:seriesId)
+
+  field(:seriesSubscriptionReleaseInfo,
+    as: GoogleApi.Books.V1.Model.SeriesSeriesSeriesSubscriptionReleaseInfo
+  )
+
   field(:seriesType)
   field(:subscriptionId)
   field(:title)

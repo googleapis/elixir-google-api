@@ -23,18 +23,18 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ListVersionsRespons
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. Pass this token as the `page_token` field of the request for a
       subsequent call.
-  *   `versions` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t)`, *default:* `nil`) - The list of versions.
+  *   `versions` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t)`, *default:* `nil`) - The list of versions.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nextPageToken => String.t(),
-          :versions => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t())
+          :versions => list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t())
         }
 
   field(:nextPageToken)
-  field(:versions, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version, type: :list)
+  field(:versions, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version, type: :list)
 end
 
 defimpl Poison.Decoder,

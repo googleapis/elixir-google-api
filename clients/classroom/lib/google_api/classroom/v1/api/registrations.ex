@@ -82,7 +82,9 @@ defmodule GoogleApi.Classroom.V1.Api.Registrations do
   *   `{:error, info}` on failure
   """
   @spec classroom_registrations_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Registration.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Registration.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_registrations_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -139,7 +141,7 @@ defmodule GoogleApi.Classroom.V1.Api.Registrations do
   *   `{:error, info}` on failure
   """
   @spec classroom_registrations_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_registrations_delete(
         connection,
         registration_id,

@@ -49,6 +49,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   *   `supportedVersionIds` (*type:* `list(String.t)`, *default:* `nil`) - The set of Android versions this device supports.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension.
       Examples: "default", "preview", "deprecated".
+  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the device.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -67,7 +68,8 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
           :screenY => integer(),
           :supportedAbis => list(String.t()),
           :supportedVersionIds => list(String.t()),
-          :tags => list(String.t())
+          :tags => list(String.t()),
+          :thumbnailUrl => String.t()
         }
 
   field(:brand)
@@ -84,6 +86,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   field(:supportedAbis, type: :list)
   field(:supportedVersionIds, type: :list)
   field(:tags, type: :list)
+  field(:thumbnailUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Testing.V1.Model.AndroidModel do

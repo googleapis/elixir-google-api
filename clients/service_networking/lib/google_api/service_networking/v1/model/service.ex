@@ -54,6 +54,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Service do
   *   `configVersion` (*type:* `integer()`, *default:* `nil`) - The semantic version of the service configuration. The config version
       affects the interpretation of the service configuration. For example,
       certain features are enabled by default for certain config versions.
+
       The latest config version is `3`.
   *   `context` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Context.t`, *default:* `nil`) - Context configuration.
   *   `control` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Control.t`, *default:* `nil`) - Configuration for the service control plane.

@@ -23,6 +23,8 @@ defmodule GoogleApi.FirebaseRules.V1.Model.SourcePosition do
   ## Attributes
 
   *   `column` (*type:* `integer()`, *default:* `nil`) - First column on the source line associated with the source fragment.
+  *   `currentOffset` (*type:* `integer()`, *default:* `nil`) - Start position relative to the beginning of the file.
+  *   `endOffset` (*type:* `integer()`, *default:* `nil`) - End position relative to the beginning of the file.
   *   `fileName` (*type:* `String.t`, *default:* `nil`) - Name of the `File`.
   *   `line` (*type:* `integer()`, *default:* `nil`) - Line number of the source fragment. 1-based.
   """
@@ -31,11 +33,15 @@ defmodule GoogleApi.FirebaseRules.V1.Model.SourcePosition do
 
   @type t :: %__MODULE__{
           :column => integer(),
+          :currentOffset => integer(),
+          :endOffset => integer(),
           :fileName => String.t(),
           :line => integer()
         }
 
   field(:column)
+  field(:currentOffset)
+  field(:endOffset)
   field(:fileName)
   field(:line)
 end

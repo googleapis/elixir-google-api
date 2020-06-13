@@ -53,7 +53,8 @@ defmodule GoogleApi.SafeBrowsing.V4.Api.FullHashes do
   """
   @spec safebrowsing_full_hashes_find(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.SafeBrowsing.V4.Model.FindFullHashesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def safebrowsing_full_hashes_find(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

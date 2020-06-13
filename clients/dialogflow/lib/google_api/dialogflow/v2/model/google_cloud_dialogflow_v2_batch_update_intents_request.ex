@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateIntentsRequest do
   @moduledoc """
-  The request message for Intents.BatchUpdateIntents.
+
 
   ## Attributes
 
@@ -26,12 +26,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2BatchUpdateIntent
       create. The file format can either be a serialized proto (of IntentBatch
       type) or JSON object. Note: The URI must start with "gs://".
   *   `intentView` (*type:* `String.t`, *default:* `nil`) - Optional. The resource view to apply to the returned intent.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language of training phrases, parameters and rich messages
-      defined in `intents`. If not specified, the agent's default language is
-      used. [Many
-      languages](https://cloud.google.com/dialogflow/docs/reference/language)
-      are supported. Note: languages must be enabled in the agent before they can
-      be used.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The language used to access language-specific data.
+      If not specified, the agent's default language is used.
+      For more information, see
+      [Multilingual intent and entity
+      data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. The mask to control which fields get updated.
   """
 

@@ -17,12 +17,17 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionDeferralInfo do
   @moduledoc """
-  A SubscriptionDeferralInfo contains the data needed to defer a subscription purchase to a future expiry time.
+  A SubscriptionDeferralInfo contains the data needed to defer a
+  subscription purchase to a future expiry time.
 
   ## Attributes
 
-  *   `desiredExpiryTimeMillis` (*type:* `String.t`, *default:* `nil`) - The desired next expiry time to assign to the subscription, in milliseconds since the Epoch. The given time must be later/greater than the current expiry time for the subscription.
-  *   `expectedExpiryTimeMillis` (*type:* `String.t`, *default:* `nil`) - The expected expiry time for the subscription. If the current expiry time for the subscription is not the value specified here, the deferral will not occur.
+  *   `desiredExpiryTimeMillis` (*type:* `String.t`, *default:* `nil`) - The desired next expiry time to assign to the subscription, in
+      milliseconds since the Epoch. The given time must be later/greater
+      than the current expiry time for the subscription.
+  *   `expectedExpiryTimeMillis` (*type:* `String.t`, *default:* `nil`) - The expected expiry time for the subscription.  If the current
+      expiry time for the subscription is not the value specified
+      here, the deferral will not occur.
   """
 
   use GoogleApi.Gax.ModelBase

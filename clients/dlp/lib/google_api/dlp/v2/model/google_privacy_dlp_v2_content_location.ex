@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
   @moduledoc """
-  Findings container location data.
+  Precise location of the finding within a document, record, image, or metadata
+  container.
 
   ## Attributes
 
@@ -25,9 +26,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
       The top level name is the source file name or table name. Names of some
       common storage containers are formatted as follows:
 
-      * BigQuery tables:  `<project_id>:<dataset_id>.<table_id>`
-      * Cloud Storage files: `gs://<bucket>/<path>`
-      * Datastore namespace: <namespace>
+      * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
+      * Cloud Storage files: `gs://{bucket}/{path}`
+      * Datastore namespace: {namespace}
 
       Nested names could be absent if the embedded object has no string
       identifier (for an example an image contained within a document).
@@ -39,6 +40,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
       ("generation" for Google Cloud Storage).
   *   `documentLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DocumentLocation.t`, *default:* `nil`) - Location data for document files.
   *   `imageLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageLocation.t`, *default:* `nil`) - Location within an image's pixels.
+  *   `metadataLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2MetadataLocation.t`, *default:* `nil`) - Location within the metadata for inspected content.
   *   `recordLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordLocation.t`, *default:* `nil`) - Location within a row or record of a database table.
   """
 
@@ -50,6 +52,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
           :containerVersion => String.t(),
           :documentLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DocumentLocation.t(),
           :imageLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageLocation.t(),
+          :metadataLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2MetadataLocation.t(),
           :recordLocation => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordLocation.t()
         }
 
@@ -58,6 +61,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentLocation do
   field(:containerVersion)
   field(:documentLocation, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DocumentLocation)
   field(:imageLocation, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageLocation)
+  field(:metadataLocation, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2MetadataLocation)
   field(:recordLocation, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordLocation)
 end
 

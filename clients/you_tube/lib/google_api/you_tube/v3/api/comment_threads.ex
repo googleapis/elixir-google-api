@@ -26,20 +26,27 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new top-level comment. To add a reply to an existing comment, use the comments.insert method instead.
+  Inserts a new resource into this collection.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter identifies the properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter identifies the properties
+      that the API response will include. Set the parameter value to
+      <code>snippet</code>. The <code>snippet</code> part has a quota cost of 2
+      units.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.CommentThread.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -48,17 +55,23 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.CommentThread{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_comment_threads_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()} | {:error, Tesla.Env.t()}
+  @spec youtube_comment_threads_insert(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
+          {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_comment_threads_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -76,40 +89,45 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   end
 
   @doc """
-  Returns a list of comment threads that match the API request parameters.
+  Retrieves a list of resources, possibly filtered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies a comma-separated list of one or more commentThread resource properties that the API response will include.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of one or more <code>commentThread</code> resource
+      properties that the API response will include.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:allThreadsRelatedToChannelId` (*type:* `String.t`) - The allThreadsRelatedToChannelId parameter instructs the API to return all comment threads associated with the specified channel. The response can include comments about the channel or about the channel's videos.
-      *   `:channelId` (*type:* `String.t`) - The channelId parameter instructs the API to return comment threads containing comments about the specified channel. (The response will not include comments left on videos that the channel uploaded.)
-      *   `:id` (*type:* `String.t`) - The id parameter specifies a comma-separated list of comment thread IDs for the resources that should be retrieved.
-      *   `:maxResults` (*type:* `integer()`) - The maxResults parameter specifies the maximum number of items that should be returned in the result set.
-
-          Note: This parameter is not supported for use in conjunction with the id parameter.
-      *   `:moderationStatus` (*type:* `String.t`) - Set this parameter to limit the returned comment threads to a particular moderation state.
-
-          Note: This parameter is not supported for use in conjunction with the id parameter.
-      *   `:order` (*type:* `String.t`) - The order parameter specifies the order in which the API response should list comment threads. Valid values are: 
-          - time - Comment threads are ordered by time. This is the default behavior.
-          - relevance - Comment threads are ordered by relevance.Note: This parameter is not supported for use in conjunction with the id parameter.
-      *   `:pageToken` (*type:* `String.t`) - The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identifies the next page of the result that can be retrieved.
-
-          Note: This parameter is not supported for use in conjunction with the id parameter.
-      *   `:searchTerms` (*type:* `String.t`) - The searchTerms parameter instructs the API to limit the API response to only contain comments that contain the specified search terms.
-
-          Note: This parameter is not supported for use in conjunction with the id parameter.
-      *   `:textFormat` (*type:* `String.t`) - Set this parameter's value to html or plainText to instruct the API to return the comments left by users in html formatted or in plain text.
-      *   `:videoId` (*type:* `String.t`) - The videoId parameter instructs the API to return comment threads associated with the specified video ID.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allThreadsRelatedToChannelId` (*type:* `String.t`) - Returns the comment threads of all videos of the channel and the
+          channel comments as well.
+      *   `:channelId` (*type:* `String.t`) - Returns the comment threads for all the channel comments (ie does not
+          include comments left on videos).
+      *   `:id` (*type:* `list(String.t)`) - Returns the comment threads with the given IDs for Stubby or Apiary.
+      *   `:maxResults` (*type:* `integer()`) - The <code><strong>maxResults</strong></code> parameter specifies the
+          maximum number of items that should be returned in the result set.
+      *   `:moderationStatus` (*type:* `String.t`) - Limits the returned comment threads to those with the specified
+          moderation status. Not compatible with the 'id' filter.
+          Valid values: published, heldForReview, likelySpam.
+      *   `:order` (*type:* `String.t`) - 
+      *   `:pageToken` (*type:* `String.t`) - The <code><strong>pageToken</strong></code> parameter identifies a specific
+          page in the result set that should be returned. In an API response, the
+          <code>nextPageToken</code> and <code>prevPageToken</code> properties
+          identify other pages that could be retrieved.
+      *   `:searchTerms` (*type:* `String.t`) - Limits the returned comment threads to those matching the specified
+          key words. Not compatible with the 'id' filter.
+      *   `:textFormat` (*type:* `String.t`) - The requested text format for the returned comments.
+      *   `:videoId` (*type:* `String.t`) - Returns the comment threads of the specified video.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -117,18 +135,23 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.CommentThreadListResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_comment_threads_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec youtube_comment_threads_list(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTube.V3.Model.CommentThreadListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_comment_threads_list(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :allThreadsRelatedToChannelId => :query,
       :channelId => :query,
       :id => :query,
@@ -155,20 +178,28 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   end
 
   @doc """
-  Modifies the top-level comment in a comment thread.
+  Updates an existing resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies a comma-separated list of commentThread resource properties that the API response will include. You must at least include the snippet part in the parameter value since that part contains all of the properties that the API request can update.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of <code>commentThread</code> resource properties that
+      the API response will include. You must at least include the
+      <code>snippet</code> part in the parameter value since that part contains
+      all of the properties that the API request can update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.CommentThread.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -177,17 +208,23 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.CommentThread{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_comment_threads_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()} | {:error, Tesla.Env.t()}
+  @spec youtube_comment_threads_update(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
+          {:ok, GoogleApi.YouTube.V3.Model.CommentThread.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def youtube_comment_threads_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 

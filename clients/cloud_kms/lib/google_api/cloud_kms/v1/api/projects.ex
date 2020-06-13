@@ -58,7 +58,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Location.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.Location.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_get(
         connection,
         projects_id,
@@ -125,7 +126,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudkms_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.ListLocationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.ListLocationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -195,7 +198,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_create(
         connection,
         projects_id,
@@ -269,7 +273,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.KeyRing.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_get(
         connection,
         projects_id,
@@ -340,6 +345,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -354,7 +363,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_get_iam_policy(
         connection,
         projects_id,
@@ -445,7 +455,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.ListKeyRingsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.ListKeyRingsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_list(
         connection,
         projects_id,
@@ -490,7 +503,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -526,7 +539,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_set_iam_policy(
         connection,
         projects_id,
@@ -572,7 +586,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -614,7 +628,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_test_iam_permissions(
         connection,
         projects_id,
@@ -707,7 +722,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_create(
         connection,
         projects_id,
@@ -792,7 +810,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.DecryptResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.DecryptResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_decrypt(
         connection,
         projects_id,
@@ -881,7 +902,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.EncryptResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.EncryptResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_encrypt(
         connection,
         projects_id,
@@ -964,7 +988,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_get(
         connection,
         projects_id,
@@ -1041,6 +1068,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1056,7 +1087,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_get_iam_policy(
         connection,
         projects_id,
@@ -1153,7 +1185,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.ListCryptoKeysResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.ListCryptoKeysResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_list(
         connection,
         projects_id,
@@ -1240,7 +1274,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_patch(
         connection,
         projects_id,
@@ -1290,7 +1327,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -1328,7 +1365,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_set_iam_policy(
         connection,
         projects_id,
@@ -1376,7 +1414,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -1420,7 +1458,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_test_iam_permissions(
         connection,
         projects_id,
@@ -1507,7 +1546,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKey.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_update_primary_version(
         connection,
         projects_id,
@@ -1597,7 +1639,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.AsymmetricDecryptResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_decrypt(
         connection,
         projects_id,
@@ -1687,7 +1730,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.AsymmetricSignResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.AsymmetricSignResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_sign(
         connection,
         projects_id,
@@ -1777,7 +1822,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_create(
         connection,
         projects_id,
@@ -1873,7 +1921,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_destroy(
         connection,
         projects_id,
@@ -1959,7 +2010,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get(
         connection,
         projects_id,
@@ -2048,7 +2102,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.PublicKey.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.PublicKey.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get_public_key(
         connection,
         projects_id,
@@ -2137,7 +2194,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_import(
         connection,
         projects_id,
@@ -2238,7 +2298,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.ListCryptoKeyVersionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_list(
         connection,
         projects_id,
@@ -2337,7 +2398,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_patch(
         connection,
         projects_id,
@@ -2431,7 +2495,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_restore(
         connection,
         projects_id,
@@ -2519,7 +2586,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.ImportJob.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.ImportJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_create(
         connection,
         projects_id,
@@ -2600,7 +2670,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.ImportJob.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.ImportJob.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_get(
         connection,
         projects_id,
@@ -2677,6 +2750,10 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2692,7 +2769,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_get_iam_policy(
         connection,
         projects_id,
@@ -2788,7 +2866,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudKMS.V1.Model.ListImportJobsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudKMS.V1.Model.ListImportJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_list(
         connection,
         projects_id,
@@ -2838,7 +2918,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   Sets the access control policy on the specified resource. Replaces any
   existing policy.
 
-  Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
@@ -2876,7 +2956,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_set_iam_policy(
         connection,
         projects_id,
@@ -2924,7 +3005,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @doc """
   Returns permissions that a caller has on the specified resource.
   If the resource does not exist, this will return an empty set of
-  permissions, not a NOT_FOUND error.
+  permissions, not a `NOT_FOUND` error.
 
   Note: This operation is designed to be used for building permission-aware
   UIs and command-line tools, not for authorization checking. This operation
@@ -2968,7 +3049,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_test_iam_permissions(
         connection,
         projects_id,

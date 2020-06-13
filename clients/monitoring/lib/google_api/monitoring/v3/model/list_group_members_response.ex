@@ -22,7 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ListGroupMembersResponse do
   ## Attributes
 
   *   `members` (*type:* `list(GoogleApi.Monitoring.V3.Model.MonitoredResource.t)`, *default:* `nil`) - A set of monitored resources in the group.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of elements matching this request.
   """
 

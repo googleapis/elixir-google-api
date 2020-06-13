@@ -21,8 +21,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.PartialUpdateInstanceRequest do
 
   ## Attributes
 
-  *   `instance` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Instance.t`, *default:* `nil`) - The Instance which will (partially) replace the current value.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - The subset of Instance fields which should be replaced.
+  *   `instance` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Instance.t`, *default:* `nil`) - Required. The Instance which will (partially) replace the current value.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. The subset of Instance fields which should be replaced.
       Must be explicitly set.
   """
 

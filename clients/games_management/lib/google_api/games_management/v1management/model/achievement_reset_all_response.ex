@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.AchievementResetAllResponse do
   @moduledoc """
-  This is a JSON template for achievement reset all response.
+  Achievement reset all response.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `gamesManagement#achievementResetAllResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetAllResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesManagement#achievementResetAllResponse`.
   *   `results` (*type:* `list(GoogleApi.GamesManagement.V1management.Model.AchievementResetResponse.t)`, *default:* `nil`) - The achievement reset results.
   """
 

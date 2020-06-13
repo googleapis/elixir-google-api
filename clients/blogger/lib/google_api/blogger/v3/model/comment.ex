@@ -26,12 +26,12 @@ defmodule GoogleApi.Blogger.V3.Model.Comment do
   *   `content` (*type:* `String.t`, *default:* `nil`) - The actual content of the comment. May include HTML markup.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this resource.
   *   `inReplyTo` (*type:* `GoogleApi.Blogger.V3.Model.CommentInReplyTo.t`, *default:* `nil`) - Data about the comment this is in reply to.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#comment`) - The kind of this entry. Always blogger#comment
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entry. Always blogger#comment.
   *   `post` (*type:* `GoogleApi.Blogger.V3.Model.CommentPost.t`, *default:* `nil`) - Data about the post containing this comment.
-  *   `published` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this comment was published.
+  *   `published` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this comment was published.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The API REST URL to fetch this resource from.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the comment (only populated for admin users)
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - RFC 3339 date-time when this comment was last updated.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the comment (only populated for admin users).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - RFC 3339 date-time when this comment was last updated.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,10 +44,10 @@ defmodule GoogleApi.Blogger.V3.Model.Comment do
           :inReplyTo => GoogleApi.Blogger.V3.Model.CommentInReplyTo.t(),
           :kind => String.t(),
           :post => GoogleApi.Blogger.V3.Model.CommentPost.t(),
-          :published => DateTime.t(),
+          :published => String.t(),
           :selfLink => String.t(),
           :status => String.t(),
-          :updated => DateTime.t()
+          :updated => String.t()
         }
 
   field(:author, as: GoogleApi.Blogger.V3.Model.CommentAuthor)
@@ -57,10 +57,10 @@ defmodule GoogleApi.Blogger.V3.Model.Comment do
   field(:inReplyTo, as: GoogleApi.Blogger.V3.Model.CommentInReplyTo)
   field(:kind)
   field(:post, as: GoogleApi.Blogger.V3.Model.CommentPost)
-  field(:published, as: DateTime)
+  field(:published)
   field(:selfLink)
   field(:status)
-  field(:updated, as: DateTime)
+  field(:updated)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Blogger.V3.Model.Comment do

@@ -21,7 +21,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_GetConfigResponse d
 
   ## Attributes
 
-  *   `config` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Config.t`, *default:* `nil`) - 
+  *   `config` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Config.t`, *default:* `nil`) - 
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account Cloud ML uses to access resources in the project.
   *   `serviceAccountProject` (*type:* `String.t`, *default:* `nil`) - The project number for `service_account`.
   """
@@ -29,12 +29,12 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_GetConfigResponse d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :config => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Config.t(),
+          :config => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Config.t(),
           :serviceAccount => String.t(),
           :serviceAccountProject => String.t()
         }
 
-  field(:config, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Config)
+  field(:config, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Config)
   field(:serviceAccount)
   field(:serviceAccountProject)
 end

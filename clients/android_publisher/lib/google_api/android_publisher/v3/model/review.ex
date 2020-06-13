@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.Review do
   @moduledoc """
-
+  An Android app review.
 
   ## Attributes
 

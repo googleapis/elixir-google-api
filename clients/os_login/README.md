@@ -2,7 +2,7 @@
 
 Cloud OS Login API client library.
 
-You can use OS Login to manage access to your VM instances using IAM roles. For more information, read [OS Login](/compute/docs/oslogin/).
+You can use OS Login to manage access to your VM instances using IAM roles.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_os_login, "~> 0.16"}]
+  [{:google_api_os_login, "~> 0.19"}]
 end
 ```
 

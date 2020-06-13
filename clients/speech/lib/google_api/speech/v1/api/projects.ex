@@ -58,7 +58,8 @@ defmodule GoogleApi.Speech.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Speech.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Speech.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def speech_projects_locations_operations_get(
         connection,
         name,
@@ -136,7 +137,10 @@ defmodule GoogleApi.Speech.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Speech.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Speech.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def speech_projects_locations_operations_list(
         connection,
         name,

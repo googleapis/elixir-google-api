@@ -21,25 +21,25 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_SetIamPolicyRequest do
 
   ## Attributes
 
-  *   `policy` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy.t`, *default:* `nil`) - REQUIRED: The complete policy to be applied to the `resource`. The size of
+  *   `policy` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t`, *default:* `nil`) - REQUIRED: The complete policy to be applied to the `resource`. The size of
       the policy is limited to a few 10s of KB. An empty policy is a
       valid policy but certain Cloud Platform services (such as Projects)
       might reject them.
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
       the fields in the mask will be modified. If no mask is provided, the
       following default mask is used:
-      paths: "bindings, etag"
-      This field is only used by Cloud IAM.
+
+      `paths: "bindings, etag"`
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :policy => GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy.t(),
+          :policy => GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy.t(),
           :updateMask => String.t()
         }
 
-  field(:policy, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1__Policy)
+  field(:policy, as: GoogleApi.MachineLearning.V1.Model.GoogleIamV1_Policy)
   field(:updateMask)
 end
 

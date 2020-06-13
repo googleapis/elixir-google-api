@@ -52,7 +52,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.Cities do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_cities_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.CitiesListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.CitiesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_cities_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

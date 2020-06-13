@@ -50,7 +50,8 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
   """
   @spec content_inventory_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.InventoryCustomBatchResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_inventory_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -85,7 +86,7 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
 
   *   `connection` (*type:* `GoogleApi.Content.V2.Connection.t`) - Connection to server
   *   `merchant_id` (*type:* `String.t`) - The ID of the account that contains the product. This account cannot be a multi-client account.
-  *   `store_code` (*type:* `String.t`) - The code of the store for which to update price and availability. Use online to update price and availability of an online product.
+  *   `store_code` (*type:* `String.t`) - The code of the store for which to update price and availability. Use `online` to update price and availability of an online product.
   *   `product_id` (*type:* `String.t`) - The REST ID of the product for which to update price and availability.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -111,7 +112,10 @@ defmodule GoogleApi.Content.V2.Api.Inventory do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Content.V2.Model.InventorySetResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Content.V2.Model.InventorySetResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_inventory_set(
         connection,
         merchant_id,

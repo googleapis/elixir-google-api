@@ -17,15 +17,20 @@
 
 defmodule GoogleApi.YouTube.V3.Model.CommentThread do
   @moduledoc """
-  A comment thread represents information that applies to a top level comment and all its replies. It can also include the top level comment itself and some of the replies.
+  A <code><strong>comment thread</strong></code> represents information that
+  applies to a top level comment and all its replies. It can also include the
+  top level comment itself and some of the replies.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the comment thread.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#commentThread`) - Identifies what kind of resource this is. Value: the fixed string "youtube#commentThread".
-  *   `replies` (*type:* `GoogleApi.YouTube.V3.Model.CommentThreadReplies.t`, *default:* `nil`) - The replies object contains a limited number of replies (if any) to the top level comment found in the snippet.
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.CommentThreadSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the comment thread and also the top level comment.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#commentThread`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#commentThread"</code>.
+  *   `replies` (*type:* `GoogleApi.YouTube.V3.Model.CommentThreadReplies.t`, *default:* `nil`) - The <code>replies</code> object contains a limited number of replies (if
+      any) to the top level comment found in the snippet.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.CommentThreadSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the comment
+      thread and also the top level comment.
   """
 
   use GoogleApi.Gax.ModelBase

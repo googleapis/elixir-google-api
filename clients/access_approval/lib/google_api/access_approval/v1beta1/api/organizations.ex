@@ -61,7 +61,10 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Organizations do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AccessApproval.V1beta1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AccessApproval.V1beta1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_delete_access_approval_settings(
         connection,
         name,
@@ -129,7 +132,8 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Organizations do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.AccessApprovalSettings.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_get_access_approval_settings(
         connection,
         name,
@@ -210,7 +214,8 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Organizations do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.AccessApprovalSettings.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_update_access_approval_settings(
         connection,
         name,
@@ -286,7 +291,8 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Organizations do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ApprovalRequest.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_approval_requests_approve(
         connection,
         name,
@@ -367,7 +373,8 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Organizations do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ApprovalRequest.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_approval_requests_dismiss(
         connection,
         name,
@@ -438,7 +445,8 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Organizations do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ApprovalRequest.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_approval_requests_get(
         connection,
         name,
@@ -522,7 +530,8 @@ defmodule GoogleApi.AccessApproval.V1beta1.Api.Organizations do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessApproval.V1beta1.Model.ListApprovalRequestsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accessapproval_organizations_approval_requests_list(
         connection,
         parent,

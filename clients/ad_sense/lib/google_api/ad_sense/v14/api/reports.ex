@@ -60,7 +60,8 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   """
   @spec adsense_reports_generate(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_reports_generate(
         connection,
         start_date,
@@ -131,7 +132,8 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   """
   @spec adsense_reports_saved_generate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_reports_saved_generate(
         connection,
         saved_report_id,
@@ -191,7 +193,9 @@ defmodule GoogleApi.AdSense.V14.Api.Reports do
   *   `{:error, info}` on failure
   """
   @spec adsense_reports_saved_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.SavedReports.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.SavedReports.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_reports_saved_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

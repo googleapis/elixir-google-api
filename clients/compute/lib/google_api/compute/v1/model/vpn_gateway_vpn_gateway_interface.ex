@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface do
   ## Attributes
 
   *   `id` (*type:* `integer()`, *default:* `nil`) - The numeric ID of this VPN gateway interface.
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The external IP address for this VPN gateway interface.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] The external IP address for this VPN gateway interface.
   """
 
   use GoogleApi.Gax.ModelBase

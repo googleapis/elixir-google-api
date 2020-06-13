@@ -54,7 +54,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightActivities do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dfareporting_floodlight_activities_delete(
         connection,
         profile_id,
@@ -117,7 +117,8 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightActivities do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivitiesGenerateTagResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_activities_generatetag(
         connection,
         profile_id,
@@ -185,7 +186,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightActivities do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_activities_get(
         connection,
         profile_id,
@@ -247,7 +250,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightActivities do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_activities_insert(
         connection,
         profile_id,
@@ -321,7 +326,8 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightActivities do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivitiesListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_activities_list(
         connection,
         profile_id,
@@ -398,7 +404,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightActivities do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_activities_patch(
         connection,
         profile_id,
@@ -461,7 +469,9 @@ defmodule GoogleApi.DFAReporting.V34.Api.FloodlightActivities do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V34.Model.FloodlightActivity.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_floodlight_activities_update(
         connection,
         profile_id,

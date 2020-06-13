@@ -24,14 +24,14 @@ defmodule GoogleApi.OAuth2.V2.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Associate you with your personal info on Google
-      "https://www.googleapis.com/auth/plus.me",
-
       # View your email address
       "https://www.googleapis.com/auth/userinfo.email",
 
       # See your personal info, including any personal info you've made publicly available
-      "https://www.googleapis.com/auth/userinfo.profile"
+      "https://www.googleapis.com/auth/userinfo.profile",
+
+      # Associate you with your personal info on Google
+      "openid"
     ],
     otp_app: :google_api_o_auth2,
     base_url: "https://www.googleapis.com/"

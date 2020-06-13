@@ -19,8 +19,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType
   @moduledoc """
   Represents a session entity type.
 
-  Extends or replaces a developer entity type at the user session level (we
-  refer to the entity types defined at the agent level as "developer entity
+  Extends or replaces a custom entity type at the user session level (we
+  refer to the entity types defined at the agent level as "custom entity
   types").
 
   Note: session entity types apply to all queries, regardless of the language.
@@ -30,10 +30,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType
   *   `entities` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EntityTypeEntity.t)`, *default:* `nil`) - Required. The collection of entities associated with this session entity
       type.
   *   `entityOverrideMode` (*type:* `String.t`, *default:* `nil`) - Required. Indicates whether the additional data should override or
-      supplement the developer entity type definition.
+      supplement the custom entity type definition.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of this session entity type. Format:
       `projects/<Project ID>/agent/sessions/<Session ID>/entityTypes/<Entity Type
-      Display Name>`.
+      Display Name>`, or `projects/<Project ID>/agent/environments/<Environment
+      ID>/users/<User ID>/sessions/<Session ID>/entityTypes/<Entity Type Display
+      Name>`.
+      If `Environment ID` is not specified, we assume default 'draft'
+      environment. If `User ID` is not specified, we assume default '-' user.
 
       `<Entity Type Display Name>` must be the display name of an existing entity
       type in the same agent that will be overridden or supplemented.

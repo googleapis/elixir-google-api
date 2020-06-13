@@ -26,14 +26,14 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Fetch the representation of an existing DnsKey.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
-  *   `dns_key_id` (*type:* `String.t`) - The identifier of the requested DnsKey.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
+  *   `dns_key_id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -42,8 +42,8 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
-      *   `:digestType` (*type:* `String.t`) - An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type will be computed and displayed.
+      *   `:clientOperationId` (*type:* `String.t`) - 
+      *   `:digestType` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -58,7 +58,7 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.DNS.V1.Model.DnsKey.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.DNS.V1.Model.DnsKey.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_dns_keys_get(
         connection,
         project,
@@ -96,13 +96,13 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   end
 
   @doc """
-  Enumerate DnsKeys to a ResourceRecordSet collection.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -111,9 +111,9 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:digestType` (*type:* `String.t`) - An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type will be computed and displayed.
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
+      *   `:digestType` (*type:* `String.t`) - 
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:pageToken` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -122,7 +122,9 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   *   `{:error, info}` on failure
   """
   @spec dns_dns_keys_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.DnsKeysListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.DnsKeysListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dns_dns_keys_list(connection, project, managed_zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

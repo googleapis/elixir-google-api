@@ -18,7 +18,7 @@
 defmodule GoogleApi.BigQueryDataTransfer.Mixfile do
   use Mix.Project
 
-  @version "0.17.0"
+  @version "0.20.1"
 
   def project() do
     [

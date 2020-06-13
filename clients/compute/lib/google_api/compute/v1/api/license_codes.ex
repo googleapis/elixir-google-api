@@ -26,7 +26,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Return a specified license code. License codes are mirrored across all projects that have permissions to read the License Code.
+  Return a specified license code. License codes are mirrored across all projects that have permissions to read the License Code.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -54,7 +54,10 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Compute.V1.Model.LicenseCode.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Compute.V1.Model.LicenseCode.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def compute_license_codes_get(
         connection,
         project,
@@ -88,7 +91,7 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
+  Returns permissions that a caller has on the specified resource.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
 
   ## Parameters
 
@@ -118,7 +121,9 @@ defmodule GoogleApi.Compute.V1.Api.LicenseCodes do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Compute.V1.Model.TestPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def compute_license_codes_test_iam_permissions(
         connection,
         project,

@@ -35,6 +35,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
   *   `fileType` (*type:* `String.t`, *default:* `nil`) - The file type for the specified uri. <br><code>SQL</code>: The file
       contains SQL statements. <br><code>CSV</code>: The file contains CSV data.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#exportContext</code>.
+  *   `offload` (*type:* `boolean()`, *default:* `nil`) - Option for export offload.
   *   `sqlExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions.t`, *default:* `nil`) - Options for exporting data as SQL statements.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The path to the file in Google Cloud Storage where the export will be
       stored. The URI is in the form <code>gs:
@@ -51,6 +52,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
           :databases => list(String.t()),
           :fileType => String.t(),
           :kind => String.t(),
+          :offload => boolean(),
           :sqlExportOptions => GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions.t(),
           :uri => String.t()
         }
@@ -59,6 +61,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContext do
   field(:databases, type: :list)
   field(:fileType)
   field(:kind)
+  field(:offload)
   field(:sqlExportOptions, as: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions)
   field(:uri)
 end

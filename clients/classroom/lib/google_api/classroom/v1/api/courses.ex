@@ -66,7 +66,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -130,7 +130,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -195,7 +195,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -284,7 +284,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.ListCoursesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.ListCoursesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -376,7 +378,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_patch(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -446,7 +448,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Course.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -517,7 +519,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_aliases_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.CourseAlias.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.CourseAlias.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_aliases_create(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -593,7 +597,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_aliases_delete(
         connection,
         course_id,
@@ -677,7 +682,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   """
   @spec classroom_courses_aliases_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListCourseAliasesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_aliases_list(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -755,7 +761,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_announcements_create(
         connection,
         course_id,
@@ -840,7 +849,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_announcements_delete(
         connection,
         course_id,
@@ -919,7 +929,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_announcements_get(
         connection,
         course_id,
@@ -1014,7 +1027,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   """
   @spec classroom_courses_announcements_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListAnnouncementsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_announcements_list(
         connection,
         course_id,
@@ -1101,7 +1115,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_announcements_modify_assignees(
         connection,
         course_id,
@@ -1175,7 +1192,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           fields are specified. If a field supports empty values, it can be cleared
           by specifying it in the update mask and not in the Announcement object. If
           a field that does not support empty values is included in the update mask
-          and not set in the Announcement object, an `INVALID_ARGUMENT` error will be
+          and not set in the Announcement object, an `INVALID_ARGUMENT` error is
           returned.
 
           The following fields may be specified by teachers:
@@ -1197,7 +1214,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Announcement.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_announcements_patch(
         connection,
         course_id,
@@ -1283,7 +1303,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_course_work_create(
         connection,
         course_id,
@@ -1368,7 +1390,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_course_work_delete(
         connection,
         course_id,
@@ -1447,7 +1470,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_course_work_get(
         connection,
         course_id,
@@ -1542,7 +1568,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_course_work_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.ListCourseWorkResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.ListCourseWorkResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_course_work_list(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1622,7 +1650,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_course_work_modify_assignees(
         connection,
         course_id,
@@ -1706,7 +1737,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           fields are specified. If a field supports empty values, it can be cleared
           by specifying it in the update mask and not in the CourseWork object. If a
           field that does not support empty values is included in the update mask and
-          not set in the CourseWork object, an `INVALID_ARGUMENT` error will be
+          not set in the CourseWork object, an `INVALID_ARGUMENT` error is
           returned.
 
           The following fields may be specified by teachers:
@@ -1734,7 +1765,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.CourseWork.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_course_work_patch(
         connection,
         course_id,
@@ -1817,7 +1851,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.StudentSubmission.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.StudentSubmission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_course_work_student_submissions_get(
         connection,
         course_id,
@@ -1934,7 +1971,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           keyword()
         ) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListStudentSubmissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_course_work_student_submissions_list(
         connection,
         course_id,
@@ -2033,7 +2071,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.StudentSubmission.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.StudentSubmission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_course_work_student_submissions_modify_attachments(
         connection,
         course_id,
@@ -2139,7 +2180,10 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.StudentSubmission.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.StudentSubmission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_course_work_student_submissions_patch(
         connection,
         course_id,
@@ -2241,7 +2285,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_course_work_student_submissions_reclaim(
         connection,
         course_id,
@@ -2343,7 +2388,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_course_work_student_submissions_return(
         connection,
         course_id,
@@ -2443,7 +2489,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_course_work_student_submissions_turn_in(
         connection,
         course_id,
@@ -2533,7 +2580,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_students_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Student.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Student.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_students_create(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2612,7 +2659,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_students_delete(
         connection,
         course_id,
@@ -2696,7 +2744,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Student.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Student.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_students_get(
         connection,
         course_id,
@@ -2778,7 +2827,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_students_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.ListStudentsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.ListStudentsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_students_list(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2854,7 +2905,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_teachers_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Teacher.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Teacher.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_teachers_create(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2934,7 +2985,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_teachers_delete(
         connection,
         course_id,
@@ -3018,7 +3070,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Teacher.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Teacher.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_teachers_get(
         connection,
         course_id,
@@ -3100,7 +3153,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_teachers_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.ListTeachersResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.ListTeachersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_teachers_list(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -3170,7 +3225,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_topics_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_topics_create(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -3244,7 +3299,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_topics_delete(
         connection,
         course_id,
@@ -3321,7 +3377,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_topics_get(connection, course_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -3399,7 +3456,9 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
   *   `{:error, info}` on failure
   """
   @spec classroom_courses_topics_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.ListTopicResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.ListTopicResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_courses_topics_list(connection, course_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -3465,7 +3524,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           fields are specified. If a field supports empty values, it can be cleared
           by specifying it in the update mask and not in the Topic object. If a
           field that does not support empty values is included in the update mask and
-          not set in the Topic object, an `INVALID_ARGUMENT` error will be
+          not set in the Topic object, an `INVALID_ARGUMENT` error is
           returned.
 
           The following fields may be specified:
@@ -3485,7 +3544,8 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Topic.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_courses_topics_patch(connection, course_id, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -61,7 +61,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_create(
         connection,
         projects_id,
@@ -136,7 +139,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_delete(
         connection,
         projects_id,
@@ -215,7 +218,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_get(
         connection,
         projects_id,
@@ -293,7 +299,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_get_iam_policy(
         connection,
         projects_id,
@@ -375,7 +382,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListAutoscalingPoliciesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_list(
         connection,
         projects_id,
@@ -417,7 +425,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.
 
   ## Parameters
 
@@ -452,7 +460,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_set_iam_policy(
         connection,
         projects_id,
@@ -533,7 +542,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_test_iam_permissions(
         connection,
         projects_id,
@@ -616,7 +626,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_update(
         connection,
         projects_id,
@@ -695,7 +708,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_create(
         connection,
         projects_id,
@@ -771,7 +787,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_locations_workflow_templates_delete(
         connection,
         projects_id,
@@ -852,7 +868,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_get(
         connection,
         projects_id,
@@ -931,7 +950,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_locations_workflow_templates_get_iam_policy(
         connection,
         projects_id,
@@ -975,7 +995,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Instantiates a template and begins execution.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata. Also see Using WorkflowMetadata.On successful completion, Operation.response will be Empty.
+  Instantiates a template and begins execution.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata). Also see Using WorkflowMetadata (https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).On successful completion, Operation.response will be Empty.
 
   ## Parameters
 
@@ -1012,7 +1032,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_instantiate(
         connection,
         projects_id,
@@ -1056,7 +1079,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Instantiates a template and begins execution.This method is equivalent to executing the sequence CreateWorkflowTemplate, InstantiateWorkflowTemplate, DeleteWorkflowTemplate.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata. Also see Using WorkflowMetadata.On successful completion, Operation.response will be Empty.
+  Instantiates a template and begins execution.This method is equivalent to executing the sequence CreateWorkflowTemplate, InstantiateWorkflowTemplate, DeleteWorkflowTemplate.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata). Also see Using WorkflowMetadata (https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).On successful completion, Operation.response will be Empty.
 
   ## Parameters
 
@@ -1092,7 +1115,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_instantiate_inline(
         connection,
         projects_id,
@@ -1173,7 +1199,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_list(
         connection,
         projects_id,
@@ -1215,7 +1242,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.
 
   ## Parameters
 
@@ -1250,7 +1277,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_locations_workflow_templates_set_iam_policy(
         connection,
         projects_id,
@@ -1331,7 +1359,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_test_iam_permissions(
         connection,
         projects_id,
@@ -1414,7 +1443,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_locations_workflow_templates_update(
         connection,
         projects_id,
@@ -1493,7 +1525,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_create(
         connection,
         projects_id,
@@ -1568,7 +1603,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_delete(
         connection,
         projects_id,
@@ -1647,7 +1682,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_get(
         connection,
         projects_id,
@@ -1725,7 +1763,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_get_iam_policy(
         connection,
         projects_id,
@@ -1807,7 +1846,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListAutoscalingPoliciesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_list(
         connection,
         projects_id,
@@ -1849,7 +1889,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.
 
   ## Parameters
 
@@ -1884,7 +1924,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_set_iam_policy(
         connection,
         projects_id,
@@ -1965,7 +2006,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_test_iam_permissions(
         connection,
         projects_id,
@@ -2048,7 +2090,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.AutoscalingPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_update(
         connection,
         projects_id,
@@ -2092,13 +2137,13 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Creates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata.
+  Creates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2126,7 +2171,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_clusters_create(
         connection,
         project_id,
@@ -2166,13 +2214,13 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata.
+  Deletes a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `cluster_name` (*type:* `String.t`) - Required. The cluster name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2202,7 +2250,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_clusters_delete(
         connection,
         project_id,
@@ -2244,13 +2295,13 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Gets cluster diagnostic information. The returned Operation.metadata will be ClusterOperationMetadata. After the operation completes, Operation.response contains DiagnoseClusterResults.
+  Gets cluster diagnostic information. The returned Operation.metadata will be ClusterOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata). After the operation completes, Operation.response contains DiagnoseClusterResults (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `cluster_name` (*type:* `String.t`) - Required. The cluster name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2279,7 +2330,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_clusters_diagnose(
         connection,
         project_id,
@@ -2329,7 +2383,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `cluster_name` (*type:* `String.t`) - Required. The cluster name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2357,7 +2411,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Cluster.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Cluster.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_clusters_get(
         connection,
         project_id,
@@ -2432,7 +2487,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_clusters_get_iam_policy(
         connection,
         projects_id,
@@ -2476,13 +2532,13 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Lists all regions/{region}/clusters in a project.
+  Lists all regions/{region}/clusters in a project alphabetically.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2511,7 +2567,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.ListClustersResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.ListClustersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_clusters_list(
         connection,
         project_id,
@@ -2552,13 +2611,13 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata.
+  Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project the cluster belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `cluster_name` (*type:* `String.t`) - Required. The cluster name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2572,7 +2631,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:gracefulDecommissionTimeout` (*type:* `String.t`) - Optional. Timeout for graceful YARN decomissioning. Graceful decommissioning allows removing nodes from the cluster without interrupting jobs in progress. Timeout specifies how long to wait for jobs in progress to finish before forcefully removing nodes (and potentially interrupting jobs). Default timeout is 0 (for forceful decommission), and the maximum allowed timeout is 1 day.Only supported on Dataproc image versions 1.2 and higher.
+      *   `:gracefulDecommissionTimeout` (*type:* `String.t`) - Optional. Timeout for graceful YARN decomissioning. Graceful decommissioning allows removing nodes from the cluster without interrupting jobs in progress. Timeout specifies how long to wait for jobs in progress to finish before forcefully removing nodes (and potentially interrupting jobs). Default timeout is 0 (for forceful decommission), and the maximum allowed timeout is 1 day. (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).Only supported on Dataproc image versions 1.2 and higher.
       *   `:requestId` (*type:* `String.t`) - Optional. A unique id used to identify the request. If the server receives two UpdateClusterRequest requests with the same id, then the second request will be ignored and the first google.longrunning.Operation created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters.
       *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to Cluster, of the field to update. For example, to change the number of workers in a cluster to 5, the update_mask parameter would be specified as config.worker_config.num_instances, and the PATCH request body would specify the new value, as follows:
           {
@@ -2606,7 +2665,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_clusters_patch(
         connection,
         project_id,
@@ -2650,7 +2712,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.
 
   ## Parameters
 
@@ -2685,7 +2747,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_clusters_set_iam_policy(
         connection,
         projects_id,
@@ -2766,7 +2829,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_clusters_test_iam_permissions(
         connection,
         projects_id,
@@ -2812,13 +2876,13 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Starts a job cancellation request. To access the job resource after cancellation, call regions/{region}/jobs.list or regions/{region}/jobs.get.
+  Starts a job cancellation request. To access the job resource after cancellation, call regions/{region}/jobs.list (https://cloud.google.com/dataproc/docs/reference/rest/v1/projects.regions.jobs/list) or regions/{region}/jobs.get (https://cloud.google.com/dataproc/docs/reference/rest/v1/projects.regions.jobs/get).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `job_id` (*type:* `String.t`) - Required. The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2847,7 +2911,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_jobs_cancel(
         connection,
         project_id,
@@ -2894,7 +2958,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `job_id` (*type:* `String.t`) - Required. The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2922,7 +2986,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_jobs_delete(
         connection,
         project_id,
@@ -2968,7 +3032,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `job_id` (*type:* `String.t`) - Required. The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2996,7 +3060,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_jobs_get(
         connection,
         project_id,
@@ -3071,7 +3135,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_jobs_get_iam_policy(
         connection,
         projects_id,
@@ -3121,7 +3186,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3152,7 +3217,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_jobs_list(
         connection,
         project_id,
@@ -3201,7 +3269,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `job_id` (*type:* `String.t`) - Required. The job ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3231,7 +3299,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_jobs_patch(
         connection,
         project_id,
@@ -3273,7 +3341,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.
 
   ## Parameters
 
@@ -3308,7 +3376,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_jobs_set_iam_policy(
         connection,
         projects_id,
@@ -3358,7 +3427,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
   *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
-  *   `region` (*type:* `String.t`) - Required. The Cloud Dataproc region in which to handle the request.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3385,7 +3454,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_jobs_submit(
         connection,
         project_id,
@@ -3421,6 +3490,81 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Job{}])
+  end
+
+  @doc """
+  Submits job to a cluster.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project that the job belongs to.
+  *   `region` (*type:* `String.t`) - Required. The Dataproc region in which to handle the request.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dataproc.V1.Model.SubmitJobRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataproc.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataproc_projects_regions_jobs_submit_as_operation(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataproc_projects_regions_jobs_submit_as_operation(
+        connection,
+        project_id,
+        region,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/projects/{projectId}/regions/{region}/jobs:submitAsOperation", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataproc.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3461,7 +3605,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_jobs_test_iam_permissions(
         connection,
         projects_id,
@@ -3541,7 +3686,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_operations_cancel(
         connection,
         projects_id,
@@ -3618,7 +3763,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_operations_delete(
         connection,
         projects_id,
@@ -3692,7 +3837,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_operations_get(
         connection,
         projects_id,
@@ -3767,7 +3915,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_operations_get_iam_policy(
         connection,
         projects_id,
@@ -3847,7 +3996,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataproc.V1.Model.ListOperationsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataproc.V1.Model.ListOperationsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_operations_list(
         connection,
         projects_id,
@@ -3888,7 +4039,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.
 
   ## Parameters
 
@@ -3923,7 +4074,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_operations_set_iam_policy(
         connection,
         projects_id,
@@ -4004,7 +4156,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_operations_test_iam_permissions(
         connection,
         projects_id,
@@ -4085,7 +4238,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_create(
         connection,
         projects_id,
@@ -4161,7 +4317,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_workflow_templates_delete(
         connection,
         projects_id,
@@ -4242,7 +4398,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_get(
         connection,
         projects_id,
@@ -4321,7 +4480,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_workflow_templates_get_iam_policy(
         connection,
         projects_id,
@@ -4365,7 +4525,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Instantiates a template and begins execution.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata. Also see Using WorkflowMetadata.On successful completion, Operation.response will be Empty.
+  Instantiates a template and begins execution.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata). Also see Using WorkflowMetadata (https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).On successful completion, Operation.response will be Empty.
 
   ## Parameters
 
@@ -4402,7 +4562,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_instantiate(
         connection,
         projects_id,
@@ -4446,7 +4609,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Instantiates a template and begins execution.This method is equivalent to executing the sequence CreateWorkflowTemplate, InstantiateWorkflowTemplate, DeleteWorkflowTemplate.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata. Also see Using WorkflowMetadata.On successful completion, Operation.response will be Empty.
+  Instantiates a template and begins execution.This method is equivalent to executing the sequence CreateWorkflowTemplate, InstantiateWorkflowTemplate, DeleteWorkflowTemplate.The returned Operation can be used to track execution of workflow by polling operations.get. The Operation will complete when entire workflow is finished.The running workflow can be aborted via operations.cancel. This will cause any inflight jobs to be cancelled and workflow-owned clusters to be deleted.The Operation.metadata will be WorkflowMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata). Also see Using WorkflowMetadata (https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).On successful completion, Operation.response will be Empty.
 
   ## Parameters
 
@@ -4482,7 +4645,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_instantiate_inline(
         connection,
         projects_id,
@@ -4563,7 +4729,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_list(
         connection,
         projects_id,
@@ -4605,7 +4772,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any existing policy.Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.
 
   ## Parameters
 
@@ -4640,7 +4807,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataproc_projects_regions_workflow_templates_set_iam_policy(
         connection,
         projects_id,
@@ -4721,7 +4889,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataproc.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_test_iam_permissions(
         connection,
         projects_id,
@@ -4804,7 +4973,10 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataproc_projects_regions_workflow_templates_update(
         connection,
         projects_id,

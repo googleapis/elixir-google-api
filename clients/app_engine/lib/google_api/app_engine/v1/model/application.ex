@@ -23,6 +23,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
 
   *   `authDomain` (*type:* `String.t`, *default:* `nil`) - Google Apps authentication domain that controls which users can access this application.Defaults to open access for any Google Account.
   *   `codeBucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket that can be used for storing files associated with this application. This bucket is associated with the application and can be used by the gcloud deployment commands.@OutputOnly
+  *   `databaseType` (*type:* `String.t`, *default:* `nil`) - The type of the Cloud Firestore or Cloud Datastore database associated with this application.
   *   `defaultBucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket that can be used by this application to store content.@OutputOnly
   *   `defaultCookieExpiration` (*type:* `String.t`, *default:* `nil`) - Cookie expiration policy for this application.
   *   `defaultHostname` (*type:* `String.t`, *default:* `nil`) - Hostname used to reach this application, as resolved by App Engine.@OutputOnly
@@ -41,6 +42,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
   @type t :: %__MODULE__{
           :authDomain => String.t(),
           :codeBucket => String.t(),
+          :databaseType => String.t(),
           :defaultBucket => String.t(),
           :defaultCookieExpiration => String.t(),
           :defaultHostname => String.t(),
@@ -56,6 +58,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
 
   field(:authDomain)
   field(:codeBucket)
+  field(:databaseType)
   field(:defaultBucket)
   field(:defaultCookieExpiration)
   field(:defaultHostname)

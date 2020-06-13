@@ -41,6 +41,8 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:emailMessage` (*type:* `String.t`) - A plain text custom message to include in the notification email.
+      *   `:enforceSingleParent` (*type:* `boolean()`) - Set to true to opt in to API behavior that aims for all items to have exactly one parent. This parameter only takes effect if the item is not in a shared drive. See moveToNewOwnersRoot for details.
+      *   `:moveToNewOwnersRoot` (*type:* `boolean()`) - This parameter only takes effect if the item is not in a shared drive and the request is attempting to transfer the ownership of the item. When set to true, the item is moved to the new owner's My Drive root folder and all prior parents removed. If set to false, when enforceSingleParent=true, parents are not changed. If set to false, when enforceSingleParent=false, existing parents are not changed; however, the file will be added to the new owner's My Drive root folder, unless it is already in the new owner's My Drive.
       *   `:sendNotificationEmail` (*type:* `boolean()`) - Whether to send a notification email when sharing to users or groups. This defaults to true for users and groups, and is not allowed for other requests. It must not be disabled for ownership transfers.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
@@ -55,7 +57,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec drive_permissions_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Permission.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.Permission.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_permissions_create(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -66,6 +68,8 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
       :quotaUser => :query,
       :userIp => :query,
       :emailMessage => :query,
+      :enforceSingleParent => :query,
+      :moveToNewOwnersRoot => :query,
       :sendNotificationEmail => :query,
       :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
@@ -115,7 +119,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec drive_permissions_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_permissions_delete(
         connection,
         file_id,
@@ -178,7 +182,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec drive_permissions_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Permission.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.Permission.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_permissions_get(connection, file_id, permission_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -236,7 +240,9 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec drive_permissions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.PermissionList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.PermissionList.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def drive_permissions_list(connection, file_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -297,7 +303,7 @@ defmodule GoogleApi.Drive.V3.Api.Permissions do
   *   `{:error, info}` on failure
   """
   @spec drive_permissions_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Drive.V3.Model.Permission.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Drive.V3.Model.Permission.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_permissions_update(
         connection,
         file_id,

@@ -34,7 +34,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
       Mutually exclusive with `trigger_template`.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the trigger.
   *   `ignoredFiles` (*type:* `list(String.t)`, *default:* `nil`) - ignored_files and included_files are file glob matches using
-      http://godoc/pkg/path/filepath#Match extended with support for "**".
+      https://golang.org/pkg/path/filepath/#Match extended with support for "**".
 
       If ignored_files and changed files are both empty, then they are
       not used to determine whether or not to trigger a build.
@@ -56,7 +56,9 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
       + They must contain only alphanumeric characters and dashes.
       + They can be 1-64 characters long.
       + They must begin and end with an alphanumeric character.
-  *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions data for Build resource.
+  *   `substitutions` (*type:* `map()`, *default:* `nil`) - Substitutions for Build resource. The keys must match the following
+      regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
+      keys in bindings.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for annotation of a `BuildTrigger`
   *   `triggerTemplate` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - Template describing the types of source changes to trigger a build.
 

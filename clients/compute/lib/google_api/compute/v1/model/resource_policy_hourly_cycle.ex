@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyHourlyCycle do
   ## Attributes
 
   *   `duration` (*type:* `String.t`, *default:* `nil`) - [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
-  *   `hoursInCycle` (*type:* `integer()`, *default:* `nil`) - Allows to define schedule that runs every nth hour.
+  *   `hoursInCycle` (*type:* `integer()`, *default:* `nil`) - Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
   """
 

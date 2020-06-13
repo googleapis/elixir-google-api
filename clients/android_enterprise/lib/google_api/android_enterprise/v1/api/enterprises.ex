@@ -26,20 +26,27 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Acknowledges notifications that were received from Enterprises.PullNotificationSet to prevent subsequent calls from returning the same notifications.
+  Acknowledges notifications that were received from
+  Enterprises.PullNotificationSet to prevent subsequent calls from returning
+  the same notifications.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:notificationSetId` (*type:* `String.t`) - The notification set ID as returned by Enterprises.PullNotificationSet. This must be provided.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:notificationSetId` (*type:* `String.t`) - The notification set ID as returned by Enterprises.PullNotificationSet.
+          This must be provided.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -51,27 +58,31 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_enterprises_acknowledge_notification_set(
         connection,
         optional_params \\ [],
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :notificationSetId => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/acknowledgeNotificationSet", %{})
+      |> Request.url("/androidenterprise/v1/enterprises/acknowledgeNotificationSet", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -81,19 +92,26 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Completes the signup flow, by specifying the Completion token and Enterprise token. This request must not be called multiple times for a given Enterprise Token.
+  Completes the signup flow, by specifying the Completion token and
+  Enterprise token.
+  This request must not be called multiple times for a given Enterprise
+  Token.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:completionToken` (*type:* `String.t`) - The Completion token initially returned by GenerateSignupUrl.
       *   `:enterpriseToken` (*type:* `String.t`) - The Enterprise token appended to the Callback URL.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -104,16 +122,22 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   *   `{:error, info}` on failure
   """
   @spec androidenterprise_enterprises_complete_signup(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_complete_signup(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :completionToken => :query,
       :enterpriseToken => :query
     }
@@ -121,7 +145,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/completeSignup", %{})
+      |> Request.url("/androidenterprise/v1/enterprises/completeSignup", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -131,20 +155,27 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Returns a unique token to access an embeddable UI. To generate a web UI, pass the generated token into the managed Google Play javascript API. Each token may only be used to start one UI session. See the javascript API documentation for further information.
+  Returns a unique token to access an embeddable UI. To generate a
+  web UI, pass the generated token into the managed Google Play javascript
+  API. Each token may only be used to start one UI session. See the
+  javascript API documentation for further information.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebTokenSpec.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -160,7 +191,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.AdministratorWebToken.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_create_web_token(
         connection,
         enterprise_id,
@@ -168,20 +200,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/{enterpriseId}/createWebToken", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/createWebToken", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -200,15 +236,19 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
-  *   `token` (*type:* `String.t`) - The token provided by the enterprise to register the EMM.
+  *   `token` (*type:* `String.t`) - Required. The token provided by the enterprise to register the EMM.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -218,23 +258,29 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   *   `{:error, info}` on failure
   """
   @spec androidenterprise_enterprises_enroll(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_enroll(connection, token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/enroll", %{})
+      |> Request.url("/androidenterprise/v1/enterprises/enroll", %{})
       |> Request.add_param(:query, :token, token)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -251,15 +297,25 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:callbackUrl` (*type:* `String.t`) - The callback URL to which the Admin will be redirected after successfully creating an enterprise. Before redirecting there the system will add a single query parameter to this URL named "enterpriseToken" which will contain an opaque token to be used for the CompleteSignup request.
-          Beware that this means that the URL will be parsed, the parameter added and then a new URL formatted, i.e. there may be some minor formatting changes and, more importantly, the URL must be well-formed so that it can be parsed.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:callbackUrl` (*type:* `String.t`) - The callback URL to which the Admin will be redirected after successfully
+          creating an enterprise. Before redirecting there the system will add a
+          single query parameter to this URL named "enterpriseToken" which will
+          contain an opaque token to be used for the CompleteSignup request.<br>
+          Beware that this means that the URL will be parsed, the parameter added
+          and then a new URL formatted, i.e. there may be some minor formatting
+          changes and, more importantly, the URL must be well-formed so that it can
+          be parsed.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -271,27 +327,34 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.SignupInfo.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.SignupInfo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_generate_signup_url(
         connection,
         optional_params \\ [],
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :callbackUrl => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/signupUrl", %{})
+      |> Request.url("/androidenterprise/v1/enterprises/signupUrl", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -308,13 +371,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -323,7 +390,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   *   `{:error, info}` on failure
   """
   @spec androidenterprise_enterprises_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Enterprise.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_get(
         connection,
         enterprise_id,
@@ -331,19 +400,23 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -355,26 +428,38 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Returns a service account and credentials. The service account can be bound to the enterprise by calling setAccount. The service account is unique to this enterprise and EMM, and will be deleted if the enterprise is unbound. The credentials contain private key data and are not stored server-side.
-
-  This method can only be called after calling Enterprises.Enroll or Enterprises.CompleteSignup, and before Enterprises.SetAccount; at other times it will return an error.
-
-  Subsequent calls after the first will generate a new, unique set of credentials, and invalidate the previously generated credentials.
-
-  Once the service account is bound to the enterprise, it can be managed using the serviceAccountKeys resource.
+  Returns a service account and credentials. The service account
+  can be bound to the enterprise by calling setAccount. The service account
+  is unique to this enterprise and EMM, and will be deleted if the enterprise
+  is unbound. The credentials contain private key data and are not stored
+  server-side.
+  <br> <br>
+  This method can only be called after calling
+  Enterprises.Enroll or Enterprises.CompleteSignup, and before
+  Enterprises.SetAccount; at other times it will return an error.
+  <br> <br>
+  Subsequent calls after the first will generate a new, unique set of
+  credentials, and invalidate the previously generated credentials.
+  <br> <br>
+  Once the service account is bound to the enterprise, it can be managed
+  using the serviceAccountKeys resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:keyType` (*type:* `String.t`) - The type of credential to return with the service account. Required.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -389,7 +474,9 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.ServiceAccount.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_get_service_account(
         connection,
         enterprise_id,
@@ -397,20 +484,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :keyType => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/serviceAccount", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/serviceAccount", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -422,20 +513,26 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Returns the store layout for the enterprise. If the store layout has not been set, returns "basic" as the store layout type and no homepage.
+  Returns the store layout for the enterprise. If the store layout
+  has not been set, returns "basic" as the store layout type and no
+  homepage.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -448,7 +545,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_get_store_layout(
         connection,
         enterprise_id,
@@ -456,19 +556,23 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/storeLayout", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/storeLayout", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -480,20 +584,28 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Looks up an enterprise by domain name. This is only supported for enterprises created via the Google-initiated creation flow. Lookup of the id is not needed for enterprises created via the EMM-initiated flow since the EMM learns the enterprise ID in the callback specified in the Enterprises.generateSignupUrl call.
+  Looks up an enterprise by domain name.
+  This is only supported for enterprises created via the Google-initiated
+  creation flow.  Lookup of the id is not needed for enterprises created via
+  the EMM-initiated flow since the EMM learns the enterprise ID in the
+  callback specified in the Enterprises.generateSignupUrl call.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
-  *   `domain` (*type:* `String.t`) - The exact primary domain name of the enterprise to look up.
+  *   `domain` (*type:* `String.t`) - Required. The exact primary domain name of the enterprise to look up.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -503,22 +615,27 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   """
   @spec androidenterprise_enterprises_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.EnterprisesListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_list(connection, domain, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises", %{})
+      |> Request.url("/androidenterprise/v1/enterprises", %{})
       |> Request.add_param(:query, :domain, domain)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -531,27 +648,53 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Pulls and returns a notification set for the enterprises associated with the service account authenticated for the request. The notification set may be empty if no notification are pending.
-  A notification set returned needs to be acknowledged within 20 seconds by calling Enterprises.AcknowledgeNotificationSet, unless the notification set is empty.
-  Notifications that are not acknowledged within the 20 seconds will eventually be included again in the response to another PullNotificationSet request, and those that are never acknowledged will ultimately be deleted according to the Google Cloud Platform Pub/Sub system policy.
-  Multiple requests might be performed concurrently to retrieve notifications, in which case the pending notifications (if any) will be split among each caller, if any are pending.
-  If no notifications are present, an empty notification list is returned. Subsequent requests may return more notifications once they become available.
+  Pulls and returns a notification set for the enterprises associated with
+  the service account authenticated for the request. The notification set may
+  be empty if no notification are pending.
+  <br>
+  A notification set returned needs to be acknowledged within 20 seconds
+  by calling Enterprises.AcknowledgeNotificationSet, unless the
+  notification set is empty.
+  <br>
+  Notifications that are not acknowledged within the 20 seconds will
+  eventually be included again in the response to another PullNotificationSet
+  request, and those that are never acknowledged will ultimately be deleted
+  according to the Google Cloud Platform Pub/Sub system policy.
+  <br>
+  Multiple requests might be performed concurrently to retrieve
+  notifications, in which case the pending notifications (if any) will be
+  split among each caller, if any are pending.
+  <br>
+  If no notifications are present, an empty notification list is returned.
+  Subsequent requests may return more notifications once they become
+  available.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:requestMode` (*type:* `String.t`) - The request mode for pulling notifications.
-          Specifying waitForNotifications will cause the request to block and wait until one or more notifications are present, or return an empty notification list if no notifications are present after some time.
-          Speciying returnImmediately will cause the request to immediately return the pending notifications, or an empty list if no notifications are present.
-          If omitted, defaults to waitForNotifications.
+          <br>
+          Specifying <code>waitForNotifications</code> will cause the request to
+          block and wait until one or more notifications are present, or return an
+          empty notification list if no notifications are present after some time.
+          <br>
+          Speciying <code>returnImmediately</code> will cause the request to
+          immediately return the pending notifications, or an empty list if no
+          notifications are present.
+          <br>
+          If omitted, defaults to <code>waitForNotifications</code>.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -565,27 +708,32 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.NotificationSet.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_pull_notification_set(
         connection,
         optional_params \\ [],
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :requestMode => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/pullNotificationSet", %{})
+      |> Request.url("/androidenterprise/v1/enterprises/pullNotificationSet", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -595,20 +743,25 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Sends a test notification to validate the EMM integration with the Google Cloud Pub/Sub service for this enterprise.
+  Sends a test notification to validate the EMM integration with
+  the Google Cloud Pub/Sub service for this enterprise.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -624,7 +777,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         ) ::
           {:ok,
            GoogleApi.AndroidEnterprise.V1.Model.EnterprisesSendTestPushNotificationResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_send_test_push_notification(
         connection,
         enterprise_id,
@@ -632,21 +786,28 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/{enterpriseId}/sendTestPushNotification", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/androidenterprise/v1/enterprises/{enterpriseId}/sendTestPushNotification",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -662,20 +823,25 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Sets the account that will be used to authenticate to the API as the enterprise.
+  Sets the account that will be used to authenticate to the API as the
+  enterprise.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -691,7 +857,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.EnterpriseAccount.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_set_account(
         connection,
         enterprise_id,
@@ -699,20 +866,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/enterprises/{enterpriseId}/account", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/account", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -726,20 +897,32 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Sets the store layout for the enterprise. By default, storeLayoutType is set to "basic" and the basic store layout is enabled. The basic layout only contains apps approved by the admin, and that have been added to the available product set for a user (using the  setAvailableProductSet call). Apps on the page are sorted in order of their product ID value. If you create a custom store layout (by setting storeLayoutType = "custom" and setting a homepage), the basic store layout is disabled.
+  Sets the store layout for the enterprise. By default, storeLayoutType
+  is set to "basic" and the basic store layout is enabled. The basic
+  layout only contains apps approved by the admin, and that have
+  been added to the available product set for a user (using the
+  <a href="/android/work/play/emm-api/v1/users/setAvailableProductSet">
+  setAvailableProductSet</a> call). Apps on the page are sorted in order of
+  their product ID value. If you create a custom store layout (by setting
+  storeLayoutType = "custom" and setting a homepage), the basic store
+  layout is disabled.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -753,7 +936,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.StoreLayout.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_enterprises_set_store_layout(
         connection,
         enterprise_id,
@@ -761,20 +947,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/enterprises/{enterpriseId}/storeLayout", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/storeLayout", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -793,13 +983,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -812,7 +1006,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_enterprises_unenroll(
         connection,
         enterprise_id,
@@ -820,19 +1014,23 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/enterprises/{enterpriseId}/unenroll", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/unenroll", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

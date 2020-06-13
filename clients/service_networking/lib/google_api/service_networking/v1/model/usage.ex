@@ -35,6 +35,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Usage do
   *   `rules` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.UsageRule.t)`, *default:* `nil`) - A list of usage rules that apply to individual API methods.
 
       **NOTE:** All service configuration rules follow "last one wins" order.
+  *   `serviceIdentity` (*type:* `GoogleApi.ServiceNetworking.V1.Model.ServiceIdentity.t`, *default:* `nil`) - The configuration of a per-product per-project service identity.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,12 +43,14 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Usage do
   @type t :: %__MODULE__{
           :producerNotificationChannel => String.t(),
           :requirements => list(String.t()),
-          :rules => list(GoogleApi.ServiceNetworking.V1.Model.UsageRule.t())
+          :rules => list(GoogleApi.ServiceNetworking.V1.Model.UsageRule.t()),
+          :serviceIdentity => GoogleApi.ServiceNetworking.V1.Model.ServiceIdentity.t()
         }
 
   field(:producerNotificationChannel)
   field(:requirements, type: :list)
   field(:rules, as: GoogleApi.ServiceNetworking.V1.Model.UsageRule, type: :list)
+  field(:serviceIdentity, as: GoogleApi.ServiceNetworking.V1.Model.ServiceIdentity)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.Usage do

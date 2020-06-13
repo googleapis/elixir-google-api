@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_abusive_experience_report, "~> 0.2"}]
+  [{:google_api_abusive_experience_report, "~> 0.5"}]
 end
 ```
 

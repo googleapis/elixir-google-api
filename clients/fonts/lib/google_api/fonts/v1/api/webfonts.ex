@@ -48,7 +48,7 @@ defmodule GoogleApi.Fonts.V1.Api.Webfonts do
   *   `{:error, info}` on failure
   """
   @spec webfonts_webfonts_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Fonts.V1.Model.WebfontList.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Fonts.V1.Model.WebfontList.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def webfonts_webfonts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

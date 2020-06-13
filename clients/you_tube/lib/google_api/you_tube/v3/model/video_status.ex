@@ -18,16 +18,31 @@
 defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
   @moduledoc """
   Basic details about a video category, such as its localized title.
+  Next Id: 16
 
   ## Attributes
 
   *   `embeddable` (*type:* `boolean()`, *default:* `nil`) - This value indicates if the video can be embedded on another website.
-  *   `failureReason` (*type:* `String.t`, *default:* `nil`) - This value explains why a video failed to upload. This property is only present if the uploadStatus property indicates that the upload failed.
+      @mutable youtube.videos.insert youtube.videos.update
+  *   `failureReason` (*type:* `String.t`, *default:* `nil`) - This value explains why a video failed to upload. This property is
+      only present if the <code>uploadStatus</code> property indicates that
+      the upload failed.
   *   `license` (*type:* `String.t`, *default:* `nil`) - The video's license.
+      @mutable youtube.videos.insert youtube.videos.update
+  *   `madeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   *   `privacyStatus` (*type:* `String.t`, *default:* `nil`) - The video's privacy status.
-  *   `publicStatsViewable` (*type:* `boolean()`, *default:* `nil`) - This value indicates if the extended video statistics on the watch page can be viewed by everyone. Note that the view count, likes, etc will still be visible if this is disabled.
-  *   `publishAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the video is scheduled to publish. It can be set only if the privacy status of the video is private. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `rejectionReason` (*type:* `String.t`, *default:* `nil`) - This value explains why YouTube rejected an uploaded video. This property is only present if the uploadStatus property indicates that the upload was rejected.
+  *   `publicStatsViewable` (*type:* `boolean()`, *default:* `nil`) - This value indicates if the extended video statistics on the watch page
+      can be viewed by everyone. Note that the view count, likes, etc will still
+      be visible if this is disabled.
+      @mutable youtube.videos.insert youtube.videos.update
+  *   `publishAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the video is scheduled to publish. It can be set
+      only if the privacy status of the video is private. The value is specified
+      in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `rejectionReason` (*type:* `String.t`, *default:* `nil`) - This value explains why YouTube rejected an uploaded video. This
+      property is only present if the <code>uploadStatus</code> property
+      indicates that the upload was rejected.
+  *   `selfDeclaredMadeForKids` (*type:* `boolean()`, *default:* `nil`) - 
   *   `uploadStatus` (*type:* `String.t`, *default:* `nil`) - The status of the uploaded video.
   """
 
@@ -37,20 +52,24 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
           :embeddable => boolean(),
           :failureReason => String.t(),
           :license => String.t(),
+          :madeForKids => boolean(),
           :privacyStatus => String.t(),
           :publicStatsViewable => boolean(),
-          :publishAt => DateTime.t(),
+          :publishAt => String.t(),
           :rejectionReason => String.t(),
+          :selfDeclaredMadeForKids => boolean(),
           :uploadStatus => String.t()
         }
 
   field(:embeddable)
   field(:failureReason)
   field(:license)
+  field(:madeForKids)
   field(:privacyStatus)
   field(:publicStatsViewable)
-  field(:publishAt, as: DateTime)
+  field(:publishAt)
   field(:rejectionReason)
+  field(:selfDeclaredMadeForKids)
   field(:uploadStatus)
 end
 

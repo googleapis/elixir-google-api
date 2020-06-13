@@ -22,9 +22,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.OutputConfig do
   ## Attributes
 
   *   `bigqueryDestination` (*type:* `GoogleApi.CloudAsset.V1.Model.BigQueryDestination.t`, *default:* `nil`) - Destination on BigQuery. The output table stores the fields in asset
-      proto as columns in BigQuery. The resource/iam_policy field is converted
-      to a record with each field to a column, except metadata to a single JSON
-      string.
+      proto as columns in BigQuery.
   *   `gcsDestination` (*type:* `GoogleApi.CloudAsset.V1.Model.GcsDestination.t`, *default:* `nil`) - Destination on Cloud Storage.
   """
 

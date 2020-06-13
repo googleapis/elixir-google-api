@@ -21,8 +21,12 @@ defmodule GoogleApi.Content.V2.Model.Weight do
 
   ## Attributes
 
-  *   `unit` (*type:* `String.t`, *default:* `nil`) - The weight unit.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The weight represented as a number.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - Required. The weight unit.
+
+      Acceptable values are:  
+      - "`kg`" 
+      - "`lb`"
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Required. The weight represented as a number.
   """
 
   use GoogleApi.Gax.ModelBase

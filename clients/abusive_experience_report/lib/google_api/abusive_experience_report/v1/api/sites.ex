@@ -56,7 +56,8 @@ defmodule GoogleApi.AbusiveExperienceReport.V1.Api.Sites do
   """
   @spec abusiveexperiencereport_sites_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AbusiveExperienceReport.V1.Model.SiteSummaryResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def abusiveexperiencereport_sites_get(connection, sites_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

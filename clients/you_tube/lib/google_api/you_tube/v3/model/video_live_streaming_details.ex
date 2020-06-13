@@ -21,31 +21,54 @@ defmodule GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails do
 
   ## Attributes
 
-  *   `activeLiveChatId` (*type:* `String.t`, *default:* `nil`) - The ID of the currently active live chat attached to this video. This field is filled only if the video is a currently live broadcast that has live chat. Once the broadcast transitions to complete this field will be removed and the live chat closed down. For persistent broadcasts that live chat id will no longer be tied to this video but rather to the new video being displayed at the persistent page.
-  *   `actualEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the broadcast actually ended. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. This value will not be available until the broadcast is over.
-  *   `actualStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the broadcast actually started. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. This value will not be available until the broadcast begins.
-  *   `concurrentViewers` (*type:* `String.t`, *default:* `nil`) - The number of viewers currently watching the broadcast. The property and its value will be present if the broadcast has current viewers and the broadcast owner has not hidden the viewcount for the video. Note that YouTube stops tracking the number of concurrent viewers for a broadcast when the broadcast ends. So, this property would not identify the number of viewers watching an archived video of a live broadcast that already ended.
-  *   `scheduledEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the broadcast is scheduled to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format. If the value is empty or the property is not present, then the broadcast is scheduled to continue indefinitely.
-  *   `scheduledStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the broadcast is scheduled to begin. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+  *   `activeLiveChatId` (*type:* `String.t`, *default:* `nil`) - The ID of the currently active live chat attached to this video. This
+      field is filled only if the video is a currently live broadcast that has
+      live chat. Once the broadcast transitions to complete this field will be
+      removed and the live chat closed down. For persistent broadcasts that live
+      chat id will no longer be tied to this video but rather to the new video
+      being displayed at the persistent page.
+  *   `actualEndTime` (*type:* `String.t`, *default:* `nil`) - The time that the broadcast actually ended. The value is specified
+      in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format. This value will not be
+      available until the broadcast is over.
+  *   `actualStartTime` (*type:* `String.t`, *default:* `nil`) - The time that the broadcast actually started. The value is specified
+      in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format. This value will not be
+      available until the broadcast begins.
+  *   `concurrentViewers` (*type:* `String.t`, *default:* `nil`) - The number of viewers currently watching the broadcast. The property and
+      its value will be present if the broadcast has current viewers and the
+      broadcast owner has not hidden the viewcount for the video. Note that
+      YouTube stops tracking the number of concurrent viewers for a broadcast
+      when the broadcast ends. So, this property would not identify the number
+      of viewers watching an archived video of a live broadcast that already
+      ended.
+  *   `scheduledEndTime` (*type:* `String.t`, *default:* `nil`) - The time that the broadcast is scheduled to end. The value is specified
+      in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format. If the value is empty or
+      the property is not present, then the broadcast is scheduled to continue
+      indefinitely.
+  *   `scheduledStartTime` (*type:* `String.t`, *default:* `nil`) - The time that the broadcast is scheduled to begin. The value is specified
+      in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :activeLiveChatId => String.t(),
-          :actualEndTime => DateTime.t(),
-          :actualStartTime => DateTime.t(),
+          :actualEndTime => String.t(),
+          :actualStartTime => String.t(),
           :concurrentViewers => String.t(),
-          :scheduledEndTime => DateTime.t(),
-          :scheduledStartTime => DateTime.t()
+          :scheduledEndTime => String.t(),
+          :scheduledStartTime => String.t()
         }
 
   field(:activeLiveChatId)
-  field(:actualEndTime, as: DateTime)
-  field(:actualStartTime, as: DateTime)
+  field(:actualEndTime)
+  field(:actualStartTime)
   field(:concurrentViewers)
-  field(:scheduledEndTime, as: DateTime)
-  field(:scheduledStartTime, as: DateTime)
+  field(:scheduledEndTime)
+  field(:scheduledStartTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails do

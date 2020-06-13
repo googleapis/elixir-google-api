@@ -18,9 +18,7 @@
 defmodule GoogleApi.Script.V1.Model.Value do
   @moduledoc """
   `Value` represents a dynamically typed value which is the outcome of an
-  executed script
-  Based on Value at:
-  google3/apps/maestro/api/struct.proto?q=message%5c%20Value
+  executed script.
 
   ## Attributes
 

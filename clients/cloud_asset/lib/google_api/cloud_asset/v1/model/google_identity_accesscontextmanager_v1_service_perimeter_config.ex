@@ -17,8 +17,8 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeterConfig do
   @moduledoc """
-  `ServicePerimeterConfig` specifies a set of GCP resources that describe
-  specific Service Perimeter configuration.
+  `ServicePerimeterConfig` specifies a set of Google Cloud resources that
+  describe specific Service Perimeter configuration.
 
   ## Attributes
 
@@ -26,15 +26,17 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
       `ServicePerimeter` to be accessed from the internet. `AccessLevels` listed
       must be in the same policy as this `ServicePerimeter`. Referencing a
       nonexistent `AccessLevel` is a syntax error. If no `AccessLevel` names are
-      listed, resources within the perimeter can only be accessed via GCP calls
-      with request origins within the perimeter. Example:
+      listed, resources within the perimeter can only be accessed via Google
+      Cloud calls with request origins within the perimeter. Example:
       `"accessPolicies/MY_POLICY/accessLevels/MY_LEVEL"`.
       For Service Perimeter Bridge, must be empty.
-  *   `resources` (*type:* `list(String.t)`, *default:* `nil`) - A list of GCP resources that are inside of the service perimeter.
+  *   `resources` (*type:* `list(String.t)`, *default:* `nil`) - A list of Google Cloud resources that are inside of the service perimeter.
       Currently only projects are allowed. Format: `projects/{project_number}`
-  *   `restrictedServices` (*type:* `list(String.t)`, *default:* `nil`) - GCP services that are subject to the Service Perimeter restrictions. For
-      example, if `storage.googleapis.com` is specified, access to the storage
-      buckets inside the perimeter must meet the perimeter's access restrictions.
+  *   `restrictedServices` (*type:* `list(String.t)`, *default:* `nil`) - Google Cloud services that are subject to the Service Perimeter
+      restrictions. For example, if `storage.googleapis.com` is specified, access
+      to the storage buckets inside the perimeter must meet the perimeter's
+      access restrictions.
+  *   `vpcAccessibleServices` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1VpcAccessibleServices.t`, *default:* `nil`) - Configuration for APIs allowed within Perimeter.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,12 +44,18 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Serv
   @type t :: %__MODULE__{
           :accessLevels => list(String.t()),
           :resources => list(String.t()),
-          :restrictedServices => list(String.t())
+          :restrictedServices => list(String.t()),
+          :vpcAccessibleServices =>
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1VpcAccessibleServices.t()
         }
 
   field(:accessLevels, type: :list)
   field(:resources, type: :list)
   field(:restrictedServices, type: :list)
+
+  field(:vpcAccessibleServices,
+    as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1VpcAccessibleServices
+  )
 end
 
 defimpl Poison.Decoder,

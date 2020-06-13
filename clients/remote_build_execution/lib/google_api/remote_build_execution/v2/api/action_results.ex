@@ -86,7 +86,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ActionResult.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def remotebuildexecution_action_results_get(
         connection,
         instance_name,
@@ -201,7 +202,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.ActionResults do
         ) ::
           {:ok,
            GoogleApi.RemoteBuildExecution.V2.Model.BuildBazelRemoteExecutionV2ActionResult.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def remotebuildexecution_action_results_update(
         connection,
         instance_name,

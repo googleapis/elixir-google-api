@@ -86,7 +86,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.SearchTenancyUnitsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_search(
         connection,
         parent,
@@ -166,7 +167,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_tenancy_units_add_project(
         connection,
         parent,
@@ -255,7 +257,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_tenancy_units_apply_project_config(
         connection,
         name,
@@ -338,7 +341,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_tenancy_units_attach_project(
         connection,
         name,
@@ -419,7 +423,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.TenancyUnit.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_tenancy_units_create(
         connection,
         parent,
@@ -492,7 +497,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_tenancy_units_delete(
         connection,
         name,
@@ -573,7 +579,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_tenancy_units_delete_project(
         connection,
         name,
@@ -658,7 +665,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.ListTenancyUnitsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_tenancy_units_list(
         connection,
         parent,
@@ -740,7 +748,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_tenancy_units_remove_project(
         connection,
         name,
@@ -819,7 +828,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
           keyword()
         ) ::
           {:ok, GoogleApi.ServiceConsumerManagement.V1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def serviceconsumermanagement_services_tenancy_units_undelete_project(
         connection,
         name,

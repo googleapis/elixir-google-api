@@ -45,13 +45,14 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional filter to only return infoTypes supported by certain parts of the
+      *   `:filter` (*type:* `String.t`) - filter to only return infoTypes supported by certain parts of the
           API. Defaults to supported_by=INSPECT.
-      *   `:languageCode` (*type:* `String.t`) - Optional BCP-47 language code for localized infoType friendly
+      *   `:languageCode` (*type:* `String.t`) - BCP-47 language code for localized infoType friendly
           names. If omitted, or if localized strings are not available,
           en-US strings will be returned.
-      *   `:locationId` (*type:* `String.t`) - The geographic location to list info types. Reserved for future
-          extensions.
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
+      *   `:parent` (*type:* `String.t`) - The parent resource name.
+          - Format:locations/[LOCATION-ID]
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -61,7 +62,8 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
   """
   @spec dlp_info_types_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dlp_info_types_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -77,7 +79,8 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
       :upload_protocol => :query,
       :filter => :query,
       :languageCode => :query,
-      :locationId => :query
+      :locationId => :query,
+      :parent => :query
     }
 
     request =

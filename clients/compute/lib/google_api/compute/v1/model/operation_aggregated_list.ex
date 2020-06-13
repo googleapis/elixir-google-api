@@ -23,8 +23,8 @@ defmodule GoogleApi.Compute.V1.Model.OperationAggregatedList do
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `items` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.OperationsScopedList.t}`, *default:* `nil`) - [Output Only] A map of scoped operation lists.
-  *   `kind` (*type:* `String.t`, *default:* `compute#operationAggregatedList`) - [Output Only] Type of resource. Always compute#operationAggregatedList for aggregated lists of operations.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+  *   `kind` (*type:* `String.t`, *default:* `compute#operationAggregatedList`) - [Output Only] Type of resource. Always `compute#operationAggregatedList` for aggregated lists of operations.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than `maxResults`, use the `nextPageToken` as a value for the query parameter `pageToken` in the next list request. Subsequent list requests will have their own `nextPageToken` to continue paging through the results.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource.
   *   `warning` (*type:* `GoogleApi.Compute.V1.Model.OperationAggregatedListWarning.t`, *default:* `nil`) - [Output Only] Informational warning message.
   """

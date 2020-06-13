@@ -26,24 +26,36 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes a specified caption track.
+  Deletes a resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - The id parameter identifies the caption track that is being deleted. The value is a caption track ID as identified by the id property in a caption resource.
+  *   `id` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the request's authorization credentials identify a YouTube CMS user
+          who is acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that own and
+          manage many different YouTube channels. It allows content owners to
+          authenticate once and get access to all their video and channel data,
+          without having to provide authentication credentials for each individual
+          channel. The actual CMS account that the user authenticates with must be
+          linked to the specified YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -52,16 +64,20 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:error, info}` on failure
   """
   @spec youtube_captions_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_captions_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOf => :query,
       :onBehalfOfContentOwner => :query
     }
@@ -80,26 +96,40 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   end
 
   @doc """
-  Downloads a caption track. The caption track is returned in its original format unless the request specifies a value for the tfmt parameter and in its original language unless the request specifies a value for the tlang parameter.
+  Downloads a caption track.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - The id parameter identifies the caption track that is being retrieved. The value is a caption track ID as identified by the id property in a caption resource.
+  *   `id` (*type:* `String.t`) - The ID of the caption track to download, required for One Platform.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:tfmt` (*type:* `String.t`) - The tfmt parameter specifies that the caption track should be returned in a specific format. If the parameter is not included in the request, the track is returned in its original format.
-      *   `:tlang` (*type:* `String.t`) - The tlang parameter specifies that the API response should return a translation of the specified caption track. The parameter value is an ISO 639-1 two-letter language code that identifies the desired caption language. The translation is generated by using machine translation, such as Google Translate.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the request's authorization credentials identify a YouTube CMS user
+          who is acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that own and
+          manage many different YouTube channels. It allows content owners to
+          authenticate once and get access to all their video and channel data,
+          without having to provide authentication credentials for each individual
+          channel. The actual CMS account that the user authenticates with must be
+          linked to the specified YouTube content owner.
+      *   `:tfmt` (*type:* `String.t`) - Convert the captions into this format. Supported options are
+          sbv, srt, and vtt.
+      *   `:tlang` (*type:* `String.t`) - tlang is the language code; machine translate the captions into
+          this language.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -108,16 +138,20 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:error, info}` on failure
   """
   @spec youtube_captions_download(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_captions_download(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOf => :query,
       :onBehalfOfContentOwner => :query,
       :tfmt => :query,
@@ -139,27 +173,40 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   end
 
   @doc """
-  Uploads a caption track.
+  Inserts a new resource into this collection.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies the caption resource parts that the API response will include. Set the parameter value to snippet.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
+      <code>caption</code> resource parts that the API response will include. Set
+      the parameter value to <code>snippet</code>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will disregard any time codes that are in the uploaded caption file and generate new time codes for the captions.
-
-          You should set the sync parameter to true if you are uploading a transcript, which has no time codes, or if you suspect the time codes in your file are incorrect and want YouTube to try to fix them.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the request's authorization credentials identify a YouTube CMS user
+          who is acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that own and
+          manage many different YouTube channels. It allows content owners to
+          authenticate once and get access to all their video and channel data,
+          without having to provide authentication credentials for each individual
+          channel. The actual CMS account that the user authenticates with must be
+          linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
+          caption/transcript with the audio.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -168,17 +215,21 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.Caption{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_captions_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+  @spec youtube_captions_insert(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_captions_insert(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOf => :query,
       :onBehalfOfContentOwner => :query,
       :sync => :query,
@@ -199,30 +250,43 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   end
 
   @doc """
-  Uploads a caption track.
+  Inserts a new resource into this collection.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies the caption resource parts that the API response will include. Set the parameter value to snippet.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
+      <code>caption</code> resource parts that the API response will include. Set
+      the parameter value to <code>snippet</code>.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will disregard any time codes that are in the uploaded caption file and generate new time codes for the captions.
-
-          You should set the sync parameter to true if you are uploading a transcript, which has no time codes, or if you suspect the time codes in your file are incorrect and want YouTube to try to fix them.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the request's authorization credentials identify a YouTube CMS user
+          who is acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that own and
+          manage many different YouTube channels. It allows content owners to
+          authenticate once and get access to all their video and channel data,
+          without having to provide authentication credentials for each individual
+          channel. The actual CMS account that the user authenticates with must be
+          linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
+          caption/transcript with the audio.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -232,13 +296,14 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_insert_iodata(
           Tesla.Env.client(),
-          String.t(),
+          list(String.t()),
           String.t(),
           GoogleApi.YouTube.V3.Model.Caption.t(),
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_captions_insert_iodata(
         connection,
         part,
@@ -249,13 +314,17 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOf => :query,
       :onBehalfOfContentOwner => :query,
       :sync => :query
@@ -278,103 +347,43 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   end
 
   @doc """
-  Uploads a caption track.
+  Inserts a new resource into this collection.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies the caption resource parts that the API response will include. Set the parameter value to snippet.
-  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will disregard any time codes that are in the uploaded caption file and generate new time codes for the captions.
-
-          You should set the sync parameter to true if you are uploading a transcript, which has no time codes, or if you suspect the time codes in your file are incorrect and want YouTube to try to fix them.
-      *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec youtube_captions_insert_resumable(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_captions_insert_resumable(
-        connection,
-        part,
-        upload_type,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :onBehalfOf => :query,
-      :onBehalfOfContentOwner => :query,
-      :sync => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/resumable/upload/youtube/v3/captions", %{})
-      |> Request.add_param(:query, :part, part)
-      |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
-  end
-
-  @doc """
-  Uploads a caption track.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies the caption resource parts that the API response will include. Set the parameter value to snippet.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies the
+      <code>caption</code> resource parts that the API response will include. Set
+      the parameter value to <code>snippet</code>.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will disregard any time codes that are in the uploaded caption file and generate new time codes for the captions.
-
-          You should set the sync parameter to true if you are uploading a transcript, which has no time codes, or if you suspect the time codes in your file are incorrect and want YouTube to try to fix them.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the request's authorization credentials identify a YouTube CMS user
+          who is acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that own and
+          manage many different YouTube channels. It allows content owners to
+          authenticate once and get access to all their video and channel data,
+          without having to provide authentication credentials for each individual
+          channel. The actual CMS account that the user authenticates with must be
+          linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
+          caption/transcript with the audio.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -384,13 +393,14 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_insert_simple(
           Tesla.Env.client(),
-          String.t(),
+          list(String.t()),
           String.t(),
           GoogleApi.YouTube.V3.Model.Caption.t(),
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_captions_insert_simple(
         connection,
         part,
@@ -401,13 +411,17 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOf => :query,
       :onBehalfOfContentOwner => :query,
       :sync => :query
@@ -430,26 +444,42 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   end
 
   @doc """
-  Returns a list of caption tracks that are associated with a specified video. Note that the API response does not contain the actual captions and that the captions.download method provides the ability to retrieve a caption track.
+  Retrieves a list of resources, possibly filtered.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter specifies a comma-separated list of one or more caption resource parts that the API response will include. The part names that you can include in the parameter value are id and snippet.
-  *   `video_id` (*type:* `String.t`) - The videoId parameter specifies the YouTube video ID of the video for which the API should return caption tracks.
+  *   `video_id` (*type:* `String.t`) - Returns the captions for the specified video.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of one or more <code>caption</code> resource parts
+      that the API response will include. The <code>part</code> names that you
+      can include in the parameter value are <code>id</code> and
+      <code>snippet</code>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:id` (*type:* `String.t`) - The id parameter specifies a comma-separated list of IDs that identify the caption resources that should be retrieved. Each ID must identify a caption track associated with the specified video.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:id` (*type:* `list(String.t)`) - Returns the captions with the given IDs for Stubby or Apiary.
       *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is on behalf of.
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the request's authorization credentials identify a YouTube CMS user
+          who is acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that own and
+          manage many different YouTube channels. It allows content owners to
+          authenticate once and get access to all their video and channel data,
+          without having to provide authentication credentials for each individual
+          channel. The actual CMS account that the user authenticates with must be
+          linked to the specified YouTube content owner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -457,17 +487,29 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.CaptionListResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_captions_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.CaptionListResponse.t()} | {:error, Tesla.Env.t()}
-  def youtube_captions_list(connection, part, video_id, optional_params \\ [], opts \\ []) do
+  @spec youtube_captions_list(
+          Tesla.Env.client(),
+          String.t(),
+          list(String.t()),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.CaptionListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def youtube_captions_list(connection, video_id, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :id => :query,
       :onBehalfOf => :query,
       :onBehalfOfContentOwner => :query
@@ -477,8 +519,8 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/youtube/v3/captions", %{})
-      |> Request.add_param(:query, :part, part)
       |> Request.add_param(:query, :videoId, video_id)
+      |> Request.add_param(:query, :part, part)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -488,27 +530,42 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   end
 
   @doc """
-  Updates a caption track. When updating a caption track, you can change the track's draft status, upload a new caption file for the track, or both.
+  Updates an existing resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Set the property value to snippet if you are updating the track's draft status. Otherwise, set the property value to id.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of one or more <code>caption</code> resource parts
+      that the API response will include. The <code>part</code> names that you
+      can include in the parameter value are <code>id</code> and
+      <code>snippet</code>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Note: The API server only processes the parameter value if the request contains an updated caption file.
-
-          The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will automatically synchronize the caption track with the audio track.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is on behalf of.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the request's authorization credentials identify a YouTube CMS user
+          who is acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that own and
+          manage many different YouTube channels. It allows content owners to
+          authenticate once and get access to all their video and channel data,
+          without having to provide authentication credentials for each individual
+          channel. The actual CMS account that the user authenticates with must be
+          linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
+          caption/transcript with the audio.
       *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -517,17 +574,21 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   *   `{:ok, %GoogleApi.YouTube.V3.Model.Caption{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec youtube_captions_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+  @spec youtube_captions_update(Tesla.Env.client(), list(String.t()), keyword(), keyword()) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_captions_update(connection, part, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOf => :query,
       :onBehalfOfContentOwner => :query,
       :sync => :query,
@@ -548,30 +609,45 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   end
 
   @doc """
-  Updates a caption track. When updating a caption track, you can change the track's draft status, upload a new caption file for the track, or both.
+  Updates an existing resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Set the property value to snippet if you are updating the track's draft status. Otherwise, set the property value to id.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of one or more <code>caption</code> resource parts
+      that the API response will include. The <code>part</code> names that you
+      can include in the parameter value are <code>id</code> and
+      <code>snippet</code>.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Note: The API server only processes the parameter value if the request contains an updated caption file.
-
-          The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will automatically synchronize the caption track with the audio track.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is on behalf of.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the request's authorization credentials identify a YouTube CMS user
+          who is acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that own and
+          manage many different YouTube channels. It allows content owners to
+          authenticate once and get access to all their video and channel data,
+          without having to provide authentication credentials for each individual
+          channel. The actual CMS account that the user authenticates with must be
+          linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
+          caption/transcript with the audio.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -581,13 +657,14 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_update_iodata(
           Tesla.Env.client(),
-          String.t(),
+          list(String.t()),
           String.t(),
           GoogleApi.YouTube.V3.Model.Caption.t(),
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_captions_update_iodata(
         connection,
         part,
@@ -598,13 +675,17 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOf => :query,
       :onBehalfOfContentOwner => :query,
       :sync => :query
@@ -627,103 +708,45 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   end
 
   @doc """
-  Updates a caption track. When updating a caption track, you can change the track's draft status, upload a new caption file for the track, or both.
+  Updates an existing resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Set the property value to snippet if you are updating the track's draft status. Otherwise, set the property value to id.
-  *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Note: The API server only processes the parameter value if the request contains an updated caption file.
-
-          The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will automatically synchronize the caption track with the audio track.
-      *   `:body` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec youtube_captions_update_resumable(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
-  def youtube_captions_update_resumable(
-        connection,
-        part,
-        upload_type,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :onBehalfOf => :query,
-      :onBehalfOfContentOwner => :query,
-      :sync => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:put)
-      |> Request.url("/resumable/upload/youtube/v3/captions", %{})
-      |> Request.add_param(:query, :part, part)
-      |> Request.add_param(:query, :uploadType, upload_type)
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
-  end
-
-  @doc """
-  Updates a caption track. When updating a caption track, you can change the track's draft status, upload a new caption file for the track, or both.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `part` (*type:* `String.t`) - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Set the property value to snippet if you are updating the track's draft status. Otherwise, set the property value to id.
+  *   `part` (*type:* `list(String.t)`) - The <code><strong>part</strong></code> parameter specifies a
+      comma-separated list of one or more <code>caption</code> resource parts
+      that the API response will include. The <code>part</code> names that you
+      can include in the parameter value are <code>id</code> and
+      <code>snippet</code>.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.YouTube.V3.Model.Caption.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is be on behalf of
-      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - Note: This parameter is intended exclusively for YouTube content partners.
-
-          The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
-      *   `:sync` (*type:* `boolean()`) - Note: The API server only processes the parameter value if the request contains an updated caption file.
-
-          The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will automatically synchronize the caption track with the audio track.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:onBehalfOf` (*type:* `String.t`) - ID of the Google+ Page for the channel that the request is on behalf of.
+      *   `:onBehalfOfContentOwner` (*type:* `String.t`) - <strong>Note:</strong> This parameter is intended exclusively for YouTube
+          content partners.<br><br>The
+          <code><strong>onBehalfOfContentOwner</strong></code> parameter indicates
+          that the request's authorization credentials identify a YouTube CMS user
+          who is acting on behalf of the content owner specified in the parameter
+          value. This parameter is intended for YouTube content partners that own and
+          manage many different YouTube channels. It allows content owners to
+          authenticate once and get access to all their video and channel data,
+          without having to provide authentication credentials for each individual
+          channel. The actual CMS account that the user authenticates with must be
+          linked to the specified YouTube content owner.
+      *   `:sync` (*type:* `boolean()`) - Extra parameter to allow automatically syncing the uploaded
+          caption/transcript with the audio.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -733,13 +756,14 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   """
   @spec youtube_captions_update_simple(
           Tesla.Env.client(),
-          String.t(),
+          list(String.t()),
           String.t(),
           GoogleApi.YouTube.V3.Model.Caption.t(),
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.YouTube.V3.Model.Caption.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_captions_update_simple(
         connection,
         part,
@@ -750,13 +774,17 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :onBehalfOf => :query,
       :onBehalfOfContentOwner => :query,
       :sync => :query

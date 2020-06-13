@@ -25,9 +25,13 @@ defmodule GoogleApi.Content.V2.Model.OrdersCustomBatchResponseEntry do
   *   `errors` (*type:* `GoogleApi.Content.V2.Model.Errors.t`, *default:* `nil`) - A list of errors defined if and only if the request failed.
   *   `executionStatus` (*type:* `String.t`, *default:* `nil`) - The status of the execution. Only defined if  
       - the request was successful; and 
-      - the method is not get, getByMerchantOrderId, or one of the test methods.
-  *   `kind` (*type:* `String.t`, *default:* `content#ordersCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "content#ordersCustomBatchResponseEntry".
-  *   `order` (*type:* `GoogleApi.Content.V2.Model.Order.t`, *default:* `nil`) - The retrieved order. Only defined if the method is get and if the request was successful.
+      - the method is not `get`, `getByMerchantOrderId`, or one of the test methods.  
+
+      Acceptable values are:  
+      - "`duplicate`" 
+      - "`executed`"
+  *   `kind` (*type:* `String.t`, *default:* `content#ordersCustomBatchResponseEntry`) - Identifies what kind of resource this is. Value: the fixed string "`content#ordersCustomBatchResponseEntry`"
+  *   `order` (*type:* `GoogleApi.Content.V2.Model.Order.t`, *default:* `nil`) - The retrieved order. Only defined if the method is `get` and if the request was successful.
   """
 
   use GoogleApi.Gax.ModelBase

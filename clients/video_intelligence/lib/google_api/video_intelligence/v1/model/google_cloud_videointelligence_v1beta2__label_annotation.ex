@@ -22,12 +22,13 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
   ## Attributes
 
   *   `categoryEntities` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_Entity.t)`, *default:* `nil`) - Common categories for the detected entity.
-      E.g. when the label is `Terrier` the category is likely `dog`. And in some
-      cases there might be more than one categories e.g. `Terrier` could also be
-      a `pet`.
+      For example, when the label is `Terrier`, the category is likely `dog`. And
+      in some cases there might be more than one categories e.g., `Terrier` could
+      also be a `pet`.
   *   `entity` (*type:* `GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_Entity.t`, *default:* `nil`) - Detected entity.
   *   `frames` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelFrame.t)`, *default:* `nil`) - All video frames where a label was detected.
   *   `segments` (*type:* `list(GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelSegment.t)`, *default:* `nil`) - All video segments where a label was detected.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Feature version.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,7 +47,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
           :segments =>
             list(
               GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelSegment.t()
-            )
+            ),
+          :version => String.t()
         }
 
   field(:categoryEntities,
@@ -67,6 +69,8 @@ defmodule GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1bet
     as: GoogleApi.VideoIntelligence.V1.Model.GoogleCloudVideointelligenceV1beta2_LabelSegment,
     type: :list
   )
+
+  field(:version)
 end
 
 defimpl Poison.Decoder,

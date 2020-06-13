@@ -57,7 +57,8 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
           keyword()
         ) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementIncrementResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_achievements_increment(
         connection,
         achievement_id,
@@ -119,7 +120,8 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   """
   @spec games_achievements_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.PlayerAchievementListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_achievements_list(connection, player_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -174,7 +176,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   *   `{:error, info}` on failure
   """
   @spec games_achievements_reveal(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.AchievementRevealResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.AchievementRevealResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_achievements_reveal(connection, achievement_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -231,7 +235,8 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
           keyword()
         ) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementSetStepsAtLeastResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_achievements_set_steps_at_least(
         connection,
         achievement_id,
@@ -281,7 +286,6 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:builtinGameId` (*type:* `String.t`) - Override used only by built-in games in Play Games application.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -290,7 +294,9 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   *   `{:error, info}` on failure
   """
   @spec games_achievements_unlock(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Games.V1.Model.AchievementUnlockResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Games.V1.Model.AchievementUnlockResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_achievements_unlock(connection, achievement_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -299,8 +305,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
-      :builtinGameId => :query
+      :userIp => :query
     }
 
     request =
@@ -331,7 +336,6 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:builtinGameId` (*type:* `String.t`) - Override used only by built-in games in Play Games application.
       *   `:body` (*type:* `GoogleApi.Games.V1.Model.AchievementUpdateMultipleRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -342,7 +346,8 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
   """
   @spec games_achievements_update_multiple(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def games_achievements_update_multiple(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -352,7 +357,6 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
-      :builtinGameId => :query,
       :body => :body
     }
 

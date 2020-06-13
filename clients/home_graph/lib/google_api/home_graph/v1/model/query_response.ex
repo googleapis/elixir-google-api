@@ -18,9 +18,10 @@
 defmodule GoogleApi.HomeGraph.V1.Model.QueryResponse do
   @moduledoc """
   Response type for the
-  [`Query`](#google.home.graph.v1.HomeGraphApiService.Query) call. This should
-  follow the same format as the Actions on Google `action.devices.QUERY`
-  [response](/actions/smarthome/create-app#actiondevicesquery).
+  [`Query`](#google.home.graph.v1.HomeGraphApiService.Query) call.
+  This should follow the same format as the Google smart home
+  `action.devices.QUERY`
+  [response](https://developers.google.com/assistant/smarthome/reference/intent/query).
   # Example
 
   ```json

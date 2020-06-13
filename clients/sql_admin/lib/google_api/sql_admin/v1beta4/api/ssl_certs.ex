@@ -48,8 +48,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL creates this ephemeral certificate.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCertsCreateEphemeralRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -64,7 +62,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_ssl_certs_create_ephemeral(
         connection,
         project,
@@ -84,7 +85,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -125,9 +125,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of SSL certificate to delete.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/sslCerts/{sslCert}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -142,7 +139,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_ssl_certs_delete(
         connection,
         project,
@@ -162,8 +162,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -208,9 +207,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - Name of the resource ssl certificate.
-          Format:
-          projects/{project}/locations/{location}/instances/{instance}/sslCerts/{sslCert}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -225,7 +221,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_ssl_certs_get(
         connection,
         project,
@@ -245,8 +244,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -290,8 +288,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL creates this SSL certificate.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -302,7 +298,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   """
   @spec sql_ssl_certs_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCertsInsertResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_ssl_certs_insert(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -316,7 +313,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -357,8 +353,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of SSL certificates.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -368,7 +362,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
   """
   @spec sql_ssl_certs_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.SslCertsListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_ssl_certs_list(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -381,8 +376,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =

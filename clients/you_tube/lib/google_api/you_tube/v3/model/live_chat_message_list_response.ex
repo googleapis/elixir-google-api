@@ -23,14 +23,17 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
-  *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t)`, *default:* `nil`) - A list of live chat messages.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatMessageListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#liveChatMessageListResponse".
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.
-  *   `offlineAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the underlying stream went offline. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `pageInfo` (*type:* `GoogleApi.YouTube.V3.Model.PageInfo.t`, *default:* `nil`) - 
+  *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t)`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `youtube#liveChatMessageListResponse`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#liveChatMessageListResponse"</code>.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
+  *   `offlineAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the underlying stream went offline. The value is
+      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `pageInfo` (*type:* `GoogleApi.YouTube.V3.Model.PageInfo.t`, *default:* `nil`) - General pagination information.
   *   `pollingIntervalMillis` (*type:* `integer()`, *default:* `nil`) - The amount of time the client should wait before polling again.
   *   `tokenPagination` (*type:* `GoogleApi.YouTube.V3.Model.TokenPagination.t`, *default:* `nil`) - 
-  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The visitorId identifies the visitor.
+  *   `visitorId` (*type:* `String.t`, *default:* `nil`) - The <code>visitorId</code> identifies the visitor.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +44,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
           :items => list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t()),
           :kind => String.t(),
           :nextPageToken => String.t(),
-          :offlineAt => DateTime.t(),
+          :offlineAt => String.t(),
           :pageInfo => GoogleApi.YouTube.V3.Model.PageInfo.t(),
           :pollingIntervalMillis => integer(),
           :tokenPagination => GoogleApi.YouTube.V3.Model.TokenPagination.t(),
@@ -53,7 +56,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
   field(:items, as: GoogleApi.YouTube.V3.Model.LiveChatMessage, type: :list)
   field(:kind)
   field(:nextPageToken)
-  field(:offlineAt, as: DateTime)
+  field(:offlineAt)
   field(:pageInfo, as: GoogleApi.YouTube.V3.Model.PageInfo)
   field(:pollingIntervalMillis)
   field(:tokenPagination, as: GoogleApi.YouTube.V3.Model.TokenPagination)

@@ -55,7 +55,9 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec oslogin_users_get_login_profile(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OSLogin.V1.Model.LoginProfile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.OSLogin.V1.Model.LoginProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def oslogin_users_get_login_profile(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -119,7 +121,8 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   """
   @spec oslogin_users_import_ssh_public_key(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.OSLogin.V1.Model.ImportSshPublicKeyResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def oslogin_users_import_ssh_public_key(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -180,7 +183,7 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec oslogin_users_projects_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OSLogin.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.OSLogin.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def oslogin_users_projects_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -239,7 +242,7 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec oslogin_users_ssh_public_keys_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OSLogin.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.OSLogin.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def oslogin_users_ssh_public_keys_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -298,7 +301,9 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec oslogin_users_ssh_public_keys_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OSLogin.V1.Model.SshPublicKey.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.OSLogin.V1.Model.SshPublicKey.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def oslogin_users_ssh_public_keys_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -360,7 +365,9 @@ defmodule GoogleApi.OSLogin.V1.Api.Users do
   *   `{:error, info}` on failure
   """
   @spec oslogin_users_ssh_public_keys_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OSLogin.V1.Model.SshPublicKey.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.OSLogin.V1.Model.SshPublicKey.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def oslogin_users_ssh_public_keys_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

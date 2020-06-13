@@ -23,7 +23,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeAccessInfoEpub do
 
   *   `acsTokenLink` (*type:* `String.t`, *default:* `nil`) - URL to retrieve ACS token for epub download. (In LITE projection.)
   *   `downloadLink` (*type:* `String.t`, *default:* `nil`) - URL to download epub. (In LITE projection.)
-  *   `isAvailable` (*type:* `boolean()`, *default:* `nil`) - Is a flowing text epub available either as public domain or for purchase. (In LITE projection.)
+  *   `isAvailable` (*type:* `boolean()`, *default:* `nil`) - Is a flowing text epub available either as public domain or for
+      purchase. (In LITE projection.)
   """
 
   use GoogleApi.Gax.ModelBase

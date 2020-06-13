@@ -66,7 +66,8 @@ defmodule GoogleApi.StorageTransfer.V1.Api.GoogleServiceAccounts do
           keyword()
         ) ::
           {:ok, GoogleApi.StorageTransfer.V1.Model.GoogleServiceAccount.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def storagetransfer_google_service_accounts_get(
         connection,
         project_id,

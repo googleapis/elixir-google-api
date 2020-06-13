@@ -17,31 +17,33 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Asset do
   @moduledoc """
-  Cloud Security Command Center's (Cloud SCC) representation of a Google Cloud
-  Platform (GCP) resource.
+  Security Command Center representation of a Google Cloud
+  resource.
 
-  The Asset is a Cloud SCC resource that captures information about a single
-  GCP resource. All modifications to an Asset are only within the context of
-  Cloud SCC and don't affect the referenced GCP resource.
+  The Asset is a Security Command Center resource that captures information
+  about a single Google Cloud resource. All modifications to an Asset are only
+  within the context of Security Command Center and don't affect the referenced
+  Google Cloud resource.
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the asset was created in Cloud SCC.
-  *   `iamPolicy` (*type:* `GoogleApi.SecurityCenter.V1.Model.IamPolicy.t`, *default:* `nil`) - IAM Policy information associated with the GCP resource described by the
-      Cloud SCC asset. This information is managed and defined by the GCP
-      resource and cannot be modified by the user.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the asset was created in Security Command Center.
+  *   `iamPolicy` (*type:* `GoogleApi.SecurityCenter.V1.Model.IamPolicy.t`, *default:* `nil`) - Cloud IAM Policy information associated with the Google Cloud resource
+      described by the Security Command Center asset. This information is managed
+      and defined by the Google Cloud resource and cannot be modified by the
+      user.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of this asset. See:
       https://cloud.google.com/apis/design/resource_names#relative_resource_name
       Example:
       "organizations/{organization_id}/assets/{asset_id}".
   *   `resourceProperties` (*type:* `map()`, *default:* `nil`) - Resource managed properties. These properties are managed and defined by
-      the GCP resource and cannot be modified by the user.
-  *   `securityCenterProperties` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties.t`, *default:* `nil`) - Cloud SCC managed properties. These properties are managed by
-      Cloud SCC and cannot be modified by the user.
+      the Google Cloud resource and cannot be modified by the user.
+  *   `securityCenterProperties` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityCenterProperties.t`, *default:* `nil`) - Security Command Center managed properties. These properties are managed by
+      Security Command Center and cannot be modified by the user.
   *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t`, *default:* `nil`) - User specified security marks. These marks are entirely managed by the user
       and come from the SecurityMarks resource that belongs to the asset.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the asset was last updated, added, or deleted in Cloud
-      SCC.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the asset was last updated, added, or deleted in Security
+      Command Center.
   """
 
   use GoogleApi.Gax.ModelBase

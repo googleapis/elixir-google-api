@@ -26,7 +26,11 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Uploads a report containing any changes in app states on the device since the last report was generated. You can call this method up to 3 times every 24 hours for a given device.
+  Uploads a report containing any changes in app states on the device since
+  the last report was generated. You can call this method up to 3 times every
+  24 hours for a given device.
+  If you exceed the quota, then the Google Play EMM API returns <code>HTTP
+  429 Too Many Requests</code>.
 
   ## Parameters
 
@@ -35,13 +39,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The ID of the device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -56,7 +64,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidenterprise_devices_force_report_upload(
         connection,
         enterprise_id,
@@ -66,20 +74,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/forceReportUpload",
+        "/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/forceReportUpload",
         %{
           "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
@@ -104,13 +116,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The ID of the device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -125,7 +141,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Device.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_devices_get(
         connection,
         enterprise_id,
@@ -135,23 +154,30 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+          "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -161,7 +187,13 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   end
 
   @doc """
-  Retrieves whether a device's access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.
+  Retrieves whether a device's access to Google services is enabled or
+  disabled.
+  The device state takes effect only if enforcing EMM policies on Android
+  devices is enabled in the Google Admin Console.
+  Otherwise, the device state is ignored and all devices are allowed access
+  to Google services.
+  This is only supported for Google-managed users.
 
   ## Parameters
 
@@ -170,13 +202,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The ID of the device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -191,7 +227,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.DeviceState.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.DeviceState.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_devices_get_state(
         connection,
         enterprise_id,
@@ -201,23 +240,30 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/state", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/state",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+          "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -235,13 +281,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -257,7 +307,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           keyword()
         ) ::
           {:ok, GoogleApi.AndroidEnterprise.V1.Model.DevicesListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_devices_list(
         connection,
         enterprise_id,
@@ -266,19 +317,23 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/devices", %{
+      |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/devices", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
         "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
       })
@@ -293,7 +348,12 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   end
 
   @doc """
-  Updates the device policy. This method supports patch semantics.
+  Sets whether a device's access to Google services is enabled or disabled.
+  The device state takes effect only if enforcing EMM policies on Android
+  devices is enabled in the Google Admin Console.
+  Otherwise, the device state is ignored and all devices are allowed access
+  to Google services.
+  This is only supported for Google-managed users.
 
   ## Parameters
 
@@ -302,85 +362,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The ID of the device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields to update. If not set, all modifiable fields will be modified.
-
-          When set in a query parameter, this field should be specified as updateMask=<field1>,<field2>,...
-      *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.Device.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.AndroidEnterprise.V1.Model.Device{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec androidenterprise_devices_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
-  def androidenterprise_devices_patch(
-        connection,
-        enterprise_id,
-        user_id,
-        device_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :alt => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :userIp => :query,
-      :updateMask => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:patch)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.AndroidEnterprise.V1.Model.Device{}])
-  end
-
-  @doc """
-  Sets whether a device's access to Google services is enabled or disabled. The device state takes effect only if enforcing EMM policies on Android devices is enabled in the Google Admin Console. Otherwise, the device state is ignored and all devices are allowed access to Google services. This is only supported for Google-managed users.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.AndroidEnterprise.V1.Connection.t`) - Connection to server
-  *   `enterprise_id` (*type:* `String.t`) - The ID of the enterprise.
-  *   `user_id` (*type:* `String.t`) - The ID of the user.
-  *   `device_id` (*type:* `String.t`) - The ID of the device.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.DeviceState.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -396,7 +388,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.DeviceState.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.DeviceState.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_devices_set_state(
         connection,
         enterprise_id,
@@ -406,24 +401,31 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/state", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}/state",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+          "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -442,16 +444,22 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
   *   `user_id` (*type:* `String.t`) - The ID of the user.
   *   `device_id` (*type:* `String.t`) - The ID of the device.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields to update. If not set, all modifiable fields will be modified.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields to update. If not set, all modifiable
+          fields will be modified.
 
-          When set in a query parameter, this field should be specified as updateMask=<field1>,<field2>,...
+          When set in a query parameter, this field should be specified as
+          <code>updateMask=&lt;field1&gt;,&lt;field2&gt;,...</code>
       *   `:body` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.Device.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -467,7 +475,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidEnterprise.V1.Model.Device.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidEnterprise.V1.Model.Device.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidenterprise_devices_update(
         connection,
         enterprise_id,
@@ -477,13 +488,17 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :updateMask => :query,
       :body => :body
     }
@@ -491,11 +506,14 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Devices do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}", %{
-        "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-        "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}",
+        %{
+          "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
+          "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+          "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

@@ -49,8 +49,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should add this server CA.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -64,7 +62,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_add_server_ca(
         connection,
         project,
@@ -83,8 +84,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -103,7 +103,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Creates a Cloud SQL instance as a clone of the source instance.
+  Creates a Cloud SQL instance as a clone of the source instance. Using this
+  operation might cause your instance to restart.
 
   ## Parameters
 
@@ -123,8 +124,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL should clone this instance.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesCloneRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -134,7 +133,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_clone(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_clone(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -148,7 +149,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -187,8 +187,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of database instance to delete.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -197,7 +195,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_delete(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -210,8 +210,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -250,8 +249,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL demotes this master database instance.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesDemoteMasterRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -266,7 +263,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_demote_master(
         connection,
         project,
@@ -286,7 +286,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -326,8 +325,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL exports this database instance.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesExportRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -337,7 +334,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_export(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_export(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -351,7 +350,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -371,7 +369,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Failover the instance to its failover replica instance.
+  Failover the instance to its failover replica instance. Using this
+  operation might cause your instance to restart.
 
   ## Parameters
 
@@ -390,9 +389,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL sends this database instance during a
-          failover. Format:
-          projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesFailoverRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -402,7 +398,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_failover(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_failover(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -416,7 +414,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -455,8 +452,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - Name of the resource database instance.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -465,7 +460,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_get(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -478,8 +475,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :resourceName => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -518,8 +514,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL imports this database instance.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesImportRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -529,7 +523,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_import(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_import(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -543,7 +539,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -582,8 +577,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL creates this database instance.
-          Format: projects/{project}/locations/{location}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -593,7 +586,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_insert(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_insert(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -607,7 +602,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -644,8 +638,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request, such as by name or
-          label.
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters resources listed in the response.
+          The expression is in the form of field:value. For example,
+          'instanceType:CLOUD_SQL_INSTANCE'. Fields can be nested as needed as per
+          their JSON representation, such as 'settings.userLabels.auto_start:true'.
+
+          Multiple filter queries are space-separated. For example.
+          'state:RUNNABLE instanceType:CLOUD_SQL_INSTANCE'. By default, each
+          expression is an AND expression. However, you can include AND and OR
+          expressions explicitly.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return per response.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of
           results to view.
@@ -658,7 +659,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   """
   @spec sql_instances_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.InstancesListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -717,8 +719,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent, which owns this collection of server CAs.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -734,7 +734,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           keyword()
         ) ::
           {:ok, GoogleApi.SQLAdmin.V1beta4.Model.InstancesListServerCasResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_list_server_cas(
         connection,
         project,
@@ -753,8 +754,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -795,8 +795,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of the database instance for Cloud SQL to update.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -806,7 +804,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_patch(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -820,7 +820,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :resourceName => :query,
       :body => :body
     }
 
@@ -841,6 +840,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
 
   @doc """
   Promotes the read replica instance to be a stand-alone Cloud SQL instance.
+  Using this operation might cause your instance to restart.
 
   ## Parameters
 
@@ -859,8 +859,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL promotes this replica database
-          instance. Format: projects/{project}/locations/{location}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -874,7 +872,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_promote_replica(
         connection,
         project,
@@ -893,8 +894,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -933,8 +933,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL resets this SSL config.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -948,7 +946,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_reset_ssl_config(
         connection,
         project,
@@ -967,8 +968,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -1006,8 +1006,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL restarts this database instance.
-          Format: projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1016,7 +1014,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_restart(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_restart(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1029,8 +1029,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -1049,7 +1048,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Restores a backup of a Cloud SQL instance.
+  Restores a backup of a Cloud SQL instance. Using this operation might cause
+  your instance to restart.
 
   ## Parameters
 
@@ -1068,9 +1068,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL restores this database instance from
-          backup. Format:
-          projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1085,7 +1082,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_restore_backup(
         connection,
         project,
@@ -1105,7 +1105,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -1145,8 +1144,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL rotates these server CAs.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesRotateServerCaRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1161,7 +1158,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_rotate_server_ca(
         connection,
         project,
@@ -1181,7 +1181,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -1220,9 +1219,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL starts this database instance
-          replication. Format:
-          projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1236,7 +1232,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_start_replica(
         connection,
         project,
@@ -1255,8 +1254,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -1294,9 +1292,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL stops this database instance
-          replication. Format:
-          projects/{project}/locations/{location}/instances/{instance}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1310,7 +1305,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_stop_replica(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1323,8 +1321,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :parent => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -1362,8 +1359,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - The parent resource where Cloud SQL truncates this log.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstancesTruncateLogRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1378,7 +1373,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_truncate_log(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1392,7 +1390,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :parent => :query,
       :body => :body
     }
 
@@ -1412,11 +1409,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Updates settings of a Cloud SQL instance. <aside
-  class="caution"><strong>Caution:</strong> This is not a partial update, so
-  you must include values for all the settings that you want to retain. For
-  partial updates, use <a
-  href="/sql/docs/db_path/admin-api/rest/v1beta4/instances/patch">patch</a>.</aside>
+  Updates settings of a Cloud SQL instance. Using this operation might cause
+  your instance to restart.
 
   ## Parameters
 
@@ -1435,8 +1429,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:resourceName` (*type:* `String.t`) - The name of the database instance for Cloud SQL to update.
-          Format: projects/{project}/locations/{location}/instances/{instance}
       *   `:body` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1446,7 +1438,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   *   `{:error, info}` on failure
   """
   @spec sql_instances_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SQLAdmin.V1beta4.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sql_instances_update(connection, project, instance, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -1460,7 +1454,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :resourceName => :query,
       :body => :body
     }
 

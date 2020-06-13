@@ -26,12 +26,12 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a new ManagedZone.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
+  *   `project` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -40,7 +40,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
       *   `:body` (*type:* `GoogleApi.DNS.V1.Model.ManagedZone.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -50,7 +50,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.ManagedZone.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.ManagedZone.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_managed_zones_create(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -79,13 +79,13 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Delete a previously created ManagedZone.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -94,7 +94,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -103,7 +103,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_delete(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_managed_zones_delete(
         connection,
         project,
@@ -138,13 +138,13 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Fetch the representation of an existing ManagedZone.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -153,7 +153,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -162,7 +162,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.ManagedZone.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.ManagedZone.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_managed_zones_get(connection, project, managed_zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -191,12 +191,12 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Enumerate ManagedZones that have been created but not yet deleted.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
+  *   `project` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -205,9 +205,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:dnsName` (*type:* `String.t`) - Restricts the list to return only zones with this domain name.
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
+      *   `:dnsName` (*type:* `String.t`) - 
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:pageToken` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -216,7 +216,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.ManagedZonesListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.ManagedZonesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dns_managed_zones_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -246,13 +248,13 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Apply a partial update to an existing ManagedZone.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -261,7 +263,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
       *   `:body` (*type:* `GoogleApi.DNS.V1.Model.ManagedZone.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -271,7 +273,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_patch(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_managed_zones_patch(
         connection,
         project,
@@ -307,13 +309,13 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   end
 
   @doc """
-  Update an existing ManagedZone.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -322,7 +324,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.
+      *   `:clientOperationId` (*type:* `String.t`) - 
       *   `:body` (*type:* `GoogleApi.DNS.V1.Model.ManagedZone.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -332,7 +334,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:error, info}` on failure
   """
   @spec dns_managed_zones_update(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DNS.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DNS.V1.Model.Operation.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dns_managed_zones_update(
         connection,
         project,

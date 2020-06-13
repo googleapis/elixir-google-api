@@ -23,7 +23,7 @@ defmodule GoogleApi.PubSub.V1.Model.CreateSnapshotRequest do
 
   *   `labels` (*type:* `map()`, *default:* `nil`) - See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
       managing labels</a>.
-  *   `subscription` (*type:* `String.t`, *default:* `nil`) - The subscription whose backlog the snapshot retains.
+  *   `subscription` (*type:* `String.t`, *default:* `nil`) - Required. The subscription whose backlog the snapshot retains.
       Specifically, the created snapshot is guaranteed to retain:
        (a) The existing backlog on the subscription. More precisely, this is
            defined as the messages in the subscription's backlog that are

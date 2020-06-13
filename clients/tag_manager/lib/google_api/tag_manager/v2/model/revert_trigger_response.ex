@@ -21,7 +21,9 @@ defmodule GoogleApi.TagManager.V2.Model.RevertTriggerResponse do
 
   ## Attributes
 
-  *   `trigger` (*type:* `GoogleApi.TagManager.V2.Model.Trigger.t`, *default:* `nil`) - Trigger as it appears in the latest container version since the last workspace synchronization operation. If no trigger is present, that means the trigger was deleted in the latest container version.
+  *   `trigger` (*type:* `GoogleApi.TagManager.V2.Model.Trigger.t`, *default:* `nil`) - Trigger as it appears in the latest container version since the last
+      workspace synchronization operation. If no trigger is present, that means
+      the trigger was deleted in the latest container version.
   """
 
   use GoogleApi.Gax.ModelBase

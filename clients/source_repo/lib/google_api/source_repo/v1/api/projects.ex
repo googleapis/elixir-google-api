@@ -53,7 +53,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec sourcerepo_projects_get_config(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SourceRepo.V1.Model.ProjectConfig.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SourceRepo.V1.Model.ProjectConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sourcerepo_projects_get_config(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -112,7 +114,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec sourcerepo_projects_update_config(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SourceRepo.V1.Model.ProjectConfig.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SourceRepo.V1.Model.ProjectConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sourcerepo_projects_update_config(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -175,7 +179,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec sourcerepo_projects_repos_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SourceRepo.V1.Model.Repo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SourceRepo.V1.Model.Repo.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def sourcerepo_projects_repos_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -234,7 +238,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec sourcerepo_projects_repos_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SourceRepo.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SourceRepo.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def sourcerepo_projects_repos_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -292,7 +296,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec sourcerepo_projects_repos_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SourceRepo.V1.Model.Repo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SourceRepo.V1.Model.Repo.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def sourcerepo_projects_repos_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -344,6 +348,18 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
+
+          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+          rejected.
+
+          Requests for policies with any conditional bindings must specify version 3.
+          Policies without any conditional bindings may specify any valid value or
+          leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -356,7 +372,8 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SourceRepo.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SourceRepo.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def sourcerepo_projects_repos_get_iam_policy(
         connection,
         resource,
@@ -374,7 +391,8 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
     }
 
     request =
@@ -425,7 +443,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec sourcerepo_projects_repos_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SourceRepo.V1.Model.ListReposResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SourceRepo.V1.Model.ListReposResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sourcerepo_projects_repos_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -486,7 +506,7 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec sourcerepo_projects_repos_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SourceRepo.V1.Model.Repo.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SourceRepo.V1.Model.Repo.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def sourcerepo_projects_repos_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -551,7 +571,8 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.SourceRepo.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.SourceRepo.V1.Model.Policy.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def sourcerepo_projects_repos_set_iam_policy(
         connection,
         resource,
@@ -618,7 +639,9 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec sourcerepo_projects_repos_sync(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.SourceRepo.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.SourceRepo.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sourcerepo_projects_repos_sync(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -686,7 +709,8 @@ defmodule GoogleApi.SourceRepo.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.SourceRepo.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def sourcerepo_projects_repos_test_iam_permissions(
         connection,
         resource,

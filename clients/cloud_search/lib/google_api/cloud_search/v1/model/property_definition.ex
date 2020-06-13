@@ -38,7 +38,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.PropertyDefinition do
   *   `isRepeatable` (*type:* `boolean()`, *default:* `nil`) - Indicates that multiple values are allowed for the property. For example, a
       document only has one description but can have multiple comments. Cannot be
       true for properties whose type is a boolean.
-      If set to false, properties that contain more than one value will cause the
+      If set to false, properties that contain more than one value cause the
       indexing request for that item to be rejected.
   *   `isReturnable` (*type:* `boolean()`, *default:* `nil`) - Indicates that the property identifies data that should be returned in
       search results via the Query API. If set to *true*, indicates that Query
@@ -57,8 +57,6 @@ defmodule GoogleApi.CloudSearch.V1.Model.PropertyDefinition do
       property. Only supported for Text properties. IsReturnable must be true to
       set this option. In a given datasource maximum of 5 properties can be
       marked as is_wildcard_searchable.
-
-      Note: This is an alpha feature and is enabled for whitelisted users only.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the property. Item indexing requests sent to the Indexing API
       should set the property name
       equal to this value. For example, if name is *subject_line*, then indexing

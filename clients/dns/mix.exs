@@ -18,7 +18,7 @@
 defmodule GoogleApi.DNS.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.15.0"
 
   def project() do
     [

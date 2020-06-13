@@ -79,7 +79,10 @@ defmodule GoogleApi.Admin.Reports_v1.Api.EntityUsageReports do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Admin.Reports_v1.Model.UsageReports.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def reports_entity_usage_reports_get(
         connection,
         entity_type,

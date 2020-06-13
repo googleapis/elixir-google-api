@@ -18,7 +18,7 @@
 defmodule GoogleApi.GamesConfiguration.Mixfile do
   use Mix.Project
 
-  @version "0.5.0"
+  @version "0.7.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.GamesConfiguration.Mixfile do
 
   defp description() do
     """
-    Google Play Game Services Publishing API client library. The Publishing API for Google Play Game Services.
+    Google Play Game Services Publishing API client library. The Google Play Game Services Publishing API allows developers to configure their games in Game Services.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.GamesConfiguration.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/games_configuration",
-        "Homepage" => "https://developers.google.com/games/services"
+        "Homepage" => "https://developers.google.com/games/"
       }
     ]
   end

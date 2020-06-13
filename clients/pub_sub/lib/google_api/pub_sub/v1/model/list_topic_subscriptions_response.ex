@@ -24,7 +24,7 @@ defmodule GoogleApi.PubSub.V1.Model.ListTopicSubscriptionsResponse do
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more subscriptions that match
       the request; this value should be passed in a new
       `ListTopicSubscriptionsRequest` to get more subscriptions.
-  *   `subscriptions` (*type:* `list(String.t)`, *default:* `nil`) - The names of the subscriptions that match the request.
+  *   `subscriptions` (*type:* `list(String.t)`, *default:* `nil`) - The names of subscriptions attached to the topic specified in the request.
   """
 
   use GoogleApi.Gax.ModelBase

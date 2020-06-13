@@ -67,7 +67,8 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Analytics.V3.Model.GaData.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Analytics.V3.Model.GaData.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_data_ga_get(
         connection,
         ids,
@@ -151,7 +152,8 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Analytics.V3.Model.McfData.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Analytics.V3.Model.McfData.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def analytics_data_mcf_get(
         connection,
         ids,
@@ -226,7 +228,10 @@ defmodule GoogleApi.Analytics.V3.Api.Data do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Analytics.V3.Model.RealtimeData.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Analytics.V3.Model.RealtimeData.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_data_realtime_get(connection, ids, metrics, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

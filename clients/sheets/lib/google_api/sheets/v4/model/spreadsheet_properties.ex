@@ -26,8 +26,8 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
       CellData.effectiveFormat will not be set if
       the cell's format is equal to this default format. This field is read-only.
   *   `iterativeCalculationSettings` (*type:* `GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t`, *default:* `nil`) - Determines whether and how circular references are resolved with iterative
-      calculation.  Absence of this field means that circular references will
-      result in calculation errors.
+      calculation.  Absence of this field means that circular references result
+      in calculation errors.
   *   `locale` (*type:* `String.t`, *default:* `nil`) - The locale of the spreadsheet in one of the following formats:
 
       * an ISO 639-1 language code such as `en`

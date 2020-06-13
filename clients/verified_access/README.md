@@ -1,6 +1,6 @@
 # GoogleApi.VerifiedAccess
 
-Verified Access API client library.
+Chrome Verified Access API client library.
 
 API for Verified Access chrome extension to provide credential verification for chrome devices connecting to an enterprise network
 
@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_verified_access, "~> 0.2"}]
+  [{:google_api_verified_access, "~> 0.5"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://www.google.com/work/chrome/](https://www.google.com/work/chrome/).
+Product documentation is available at [https://developers.google.com/chrome/verified-access](https://developers.google.com/chrome/verified-access).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_verified_access](https://hexdocs.pm/google_api_verified_access).

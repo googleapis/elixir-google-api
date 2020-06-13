@@ -56,7 +56,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   *   `{:error, info}` on failure
   """
   @spec accesscontextmanager_access_policies_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -122,7 +124,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_delete(
         connection,
         name,
@@ -192,7 +196,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.AccessPolicy.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_get(
         connection,
         name,
@@ -263,7 +268,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   """
   @spec accesscontextmanager_access_policies_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.ListAccessPoliciesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -335,7 +341,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_patch(
         connection,
         name,
@@ -412,7 +420,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_access_levels_create(
         connection,
         parent,
@@ -486,7 +496,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_access_levels_delete(
         connection,
         name,
@@ -564,7 +576,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.AccessLevel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.AccessLevel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_access_levels_get(
         connection,
         name,
@@ -644,7 +658,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.ListAccessLevelsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_access_levels_list(
         connection,
         parent,
@@ -696,7 +711,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Required. Resource name for the Access Level. The `short_name` component
       must begin with a letter and only include alphanumeric and '_'. Format:
-      `accessPolicies/{policy_id}/accessLevels/{short_name}`
+      `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
+      of the `short_name` component is 50 characters.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -724,7 +740,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_access_levels_patch(
         connection,
         name,
@@ -762,7 +780,178 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Create an Service Perimeter. The
+  Replace all existing Access Levels in an Access
+  Policy with
+  the Access Levels provided. This
+  is done atomically. The longrunning operation from this RPC will have a
+  successful status once all replacements have propagated to long-lasting
+  storage. Replacements containing errors will result in an error response
+  for the first error encountered.  Replacement will be cancelled on error,
+  existing Access Levels will not be
+  affected. Operation.response field will contain
+  ReplaceAccessLevelsResponse. Removing Access Levels contained in existing
+  Service Perimeters will result in
+  error.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns these
+      Access Levels.
+
+      Format: `accessPolicies/{policy_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AccessContextManager.V1.Model.ReplaceAccessLevelsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AccessContextManager.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec accesscontextmanager_access_policies_access_levels_replace_all(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def accesscontextmanager_access_policies_access_levels_replace_all(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/accessLevels:replaceAll", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AccessContextManager.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Commit the dry-run spec for all the Service Perimeters in an
+  Access Policy.
+  A commit operation on a Service Perimeter involves copying its `spec` field
+  to that Service Perimeter's `status` field. Only Service Perimeters with
+  `use_explicit_dry_run_spec` field set to true are affected by a commit
+  operation. The longrunning operation from this RPC will have a successful
+  status once the dry-run specs for all the Service Perimeters have been
+  committed. If a commit fails, it will cause the longrunning operation to
+  return an error response and the entire commit operation will be cancelled.
+  When successful, Operation.response field will contain
+  CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will
+  be cleared after a successful commit operation.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the parent Access Policy which owns all
+      Service Perimeters in scope for
+      the commit operation.
+
+      Format: `accessPolicies/{policy_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AccessContextManager.V1.Model.CommitServicePerimetersRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AccessContextManager.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec accesscontextmanager_access_policies_service_perimeters_commit(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def accesscontextmanager_access_policies_service_perimeters_commit(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/servicePerimeters:commit", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AccessContextManager.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Create a Service Perimeter. The
   longrunning operation from this RPC will have a successful status once the
   Service Perimeter has
   propagated to long-lasting storage. Service Perimeters containing
@@ -801,7 +990,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_service_perimeters_create(
         connection,
         parent,
@@ -838,7 +1029,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Delete an Service Perimeter by resource
+  Delete a Service Perimeter by resource
   name. The longrunning operation from this RPC will have a successful status
   once the Service Perimeter has been
   removed from long-lasting storage.
@@ -875,7 +1066,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_service_perimeters_delete(
         connection,
         name,
@@ -911,7 +1104,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Get an Service Perimeter by resource
+  Get a Service Perimeter by resource
   name.
 
   ## Parameters
@@ -947,7 +1140,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.ServicePerimeter.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_service_perimeters_get(
         connection,
         name,
@@ -1025,7 +1219,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword()
         ) ::
           {:ok, GoogleApi.AccessContextManager.V1.Model.ListServicePerimetersResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_service_perimeters_list(
         connection,
         parent,
@@ -1065,7 +1260,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   end
 
   @doc """
-  Update an Service Perimeter. The
+  Update a Service Perimeter. The
   longrunning operation from this RPC will have a successful status once the
   changes to the Service Perimeter have
   propagated to long-lasting storage. Service Perimeter containing
@@ -1104,7 +1299,9 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def accesscontextmanager_access_policies_service_perimeters_patch(
         connection,
         name,
@@ -1132,6 +1329,89 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
       |> Request.method(:patch)
       |> Request.url("/v1/{+name}", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.AccessContextManager.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Replace all existing Service Perimeters in an
+  Access Policy
+  with the Service Perimeters provided.
+  This is done atomically. The longrunning operation from this
+  RPC will have a successful status once all replacements have propagated to
+  long-lasting storage. Replacements containing errors will result in an
+  error response for the first error encountered. Replacement will be
+  cancelled on error, existing Service Perimeters will not be
+  affected. Operation.response field will contain
+  ReplaceServicePerimetersResponse.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource name for the access policy which owns these
+      Service Perimeters.
+
+      Format: `accessPolicies/{policy_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AccessContextManager.V1.Model.ReplaceServicePerimetersRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AccessContextManager.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec accesscontextmanager_access_policies_service_perimeters_replace_all(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AccessContextManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def accesscontextmanager_access_policies_service_perimeters_replace_all(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/servicePerimeters:replaceAll", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

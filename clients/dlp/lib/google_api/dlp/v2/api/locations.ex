@@ -33,8 +33,8 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `location_id` (*type:* `String.t`) - The geographic location to list info types. Reserved for future
-      extensions.
+  *   `parent` (*type:* `String.t`) - The parent resource name.
+      - Format:locations/[LOCATION-ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -47,11 +47,12 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional filter to only return infoTypes supported by certain parts of the
+      *   `:filter` (*type:* `String.t`) - filter to only return infoTypes supported by certain parts of the
           API. Defaults to supported_by=INSPECT.
-      *   `:languageCode` (*type:* `String.t`) - Optional BCP-47 language code for localized infoType friendly
+      *   `:languageCode` (*type:* `String.t`) - BCP-47 language code for localized infoType friendly
           names. If omitted, or if localized strings are not available,
           en-US strings will be returned.
+      *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -61,8 +62,9 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
   """
   @spec dlp_locations_info_types_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInfoTypesResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def dlp_locations_info_types_list(connection, location_id, optional_params \\ [], opts \\ []) do
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dlp_locations_info_types_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -76,14 +78,15 @@ defmodule GoogleApi.DLP.V2.Api.Locations do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
-      :languageCode => :query
+      :languageCode => :query,
+      :locationId => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/locations/{locationId}/infoTypes", %{
-        "locationId" => URI.encode(location_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/infoTypes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

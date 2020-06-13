@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.ClusterIstio do
   @moduledoc """
-  Istio service. Learn more at http://istio.io.
+  Istio service scoped to a single Kubernetes cluster. Learn more at http://istio.io.
 
   ## Attributes
 

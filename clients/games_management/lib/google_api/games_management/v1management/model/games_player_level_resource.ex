@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.GamesPlayerLevelResource do
   @moduledoc """
-  This is a JSON template for 1P/3P metadata about a user's level.
+  1P/3P metadata about a user's level.
 
   ## Attributes
 

@@ -61,7 +61,9 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   *   `{:error, info}` on failure
   """
   @spec cloudbilling_billing_accounts_create(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_create(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -98,7 +100,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the billing account to retrieve. For example,
+  *   `name` (*type:* `String.t`) - Required. The resource name of the billing account to retrieve. For example,
       `billingAccounts/012345-567890-ABCDEF`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -120,7 +122,9 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   *   `{:error, info}` on failure
   """
   @spec cloudbilling_billing_accounts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -181,6 +185,10 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -193,7 +201,10 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudBilling.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudBilling.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_get_iam_policy(
         connection,
         resource,
@@ -269,7 +280,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   """
   @spec cloudbilling_billing_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListBillingAccountsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -313,7 +325,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the billing account resource to be updated.
+  *   `name` (*type:* `String.t`) - Required. The name of the billing account resource to be updated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -337,7 +349,9 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   *   `{:error, info}` on failure
   """
   @spec cloudbilling_billing_accounts_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudBilling.V1.Model.BillingAccount.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -406,7 +420,10 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudBilling.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudBilling.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_set_iam_policy(
         connection,
         resource,
@@ -479,7 +496,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_test_iam_permissions(
         connection,
         resource,
@@ -526,7 +544,7 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBilling.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the billing account associated with the projects that
+  *   `name` (*type:* `String.t`) - Required. The resource name of the billing account associated with the projects that
       you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -559,7 +577,8 @@ defmodule GoogleApi.CloudBilling.V1.Api.BillingAccounts do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudBilling.V1.Model.ListProjectBillingInfoResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudbilling_billing_accounts_projects_list(
         connection,
         name,

@@ -24,6 +24,8 @@ defmodule GoogleApi.Sheets.V4.Model.SlicerSpec do
   *   `applyToPivotTables` (*type:* `boolean()`, *default:* `nil`) - True if the filter should apply to pivot tables.
       If not set, default to `True`.
   *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color of the slicer.
+  *   `backgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color of the slicer.
+      If background_color is also set, this field takes precedence.
   *   `columnIndex` (*type:* `integer()`, *default:* `nil`) - The column index in the data table on which the filter is applied to.
   *   `dataRange` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The data range of the slicer.
   *   `filterCriteria` (*type:* `GoogleApi.Sheets.V4.Model.FilterCriteria.t`, *default:* `nil`) - The filtering criteria of the slicer.
@@ -38,6 +40,7 @@ defmodule GoogleApi.Sheets.V4.Model.SlicerSpec do
   @type t :: %__MODULE__{
           :applyToPivotTables => boolean(),
           :backgroundColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :backgroundColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :columnIndex => integer(),
           :dataRange => GoogleApi.Sheets.V4.Model.GridRange.t(),
           :filterCriteria => GoogleApi.Sheets.V4.Model.FilterCriteria.t(),
@@ -48,6 +51,7 @@ defmodule GoogleApi.Sheets.V4.Model.SlicerSpec do
 
   field(:applyToPivotTables)
   field(:backgroundColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:backgroundColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:columnIndex)
   field(:dataRange, as: GoogleApi.Sheets.V4.Model.GridRange)
   field(:filterCriteria, as: GoogleApi.Sheets.V4.Model.FilterCriteria)

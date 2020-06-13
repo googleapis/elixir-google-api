@@ -57,7 +57,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersAcknowledgeResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_acknowledge(
         connection,
         merchant_id,
@@ -92,7 +93,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   end
 
   @doc """
-  Sandbox only. Moves a test order from state "inProgress" to state "pendingShipment".
+  Sandbox only. Moves a test order from state "`inProgress`" to state "`pendingShipment`".
 
   ## Parameters
 
@@ -122,7 +123,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersAdvanceTestOrderResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_advancetestorder(
         connection,
         merchant_id,
@@ -182,7 +184,9 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   *   `{:error, info}` on failure
   """
   @spec content_orders_cancel(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.OrdersCancelResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.OrdersCancelResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_cancel(connection, merchant_id, order_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -242,7 +246,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersCancelLineItemResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_cancellineitem(
         connection,
         merchant_id,
@@ -310,7 +315,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersCancelTestOrderByCustomerResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_canceltestorderbycustomer(
         connection,
         merchant_id,
@@ -371,7 +377,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   """
   @spec content_orders_createtestorder(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersCreateTestOrderResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_createtestorder(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -432,7 +439,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersCreateTestReturnResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_createtestreturn(
         connection,
         merchant_id,
@@ -492,7 +500,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   """
   @spec content_orders_custombatch(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersCustomBatchResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_custombatch(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -541,7 +550,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   *   `{:error, info}` on failure
   """
   @spec content_orders_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.Order.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.Order.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def content_orders_get(connection, merchant_id, order_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -599,7 +608,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersGetByMerchantOrderIdResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_getbymerchantorderid(
         connection,
         merchant_id,
@@ -650,7 +660,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:country` (*type:* `String.t`) - The country of the template to retrieve. Defaults to US.
+      *   `:country` (*type:* `String.t`) - The country of the template to retrieve. Defaults to `US`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -666,7 +676,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersGetTestOrderTemplateResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_gettestordertemplate(
         connection,
         merchant_id,
@@ -735,7 +746,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersInStoreRefundLineItemResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_instorerefundlineitem(
         connection,
         merchant_id,
@@ -787,7 +799,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:acknowledged` (*type:* `boolean()`) - Obtains orders that match the acknowledgement status. When set to true, obtains orders that have been acknowledged. When false, obtains orders that have not been acknowledged.
-          We recommend using this filter set to false, in conjunction with the acknowledge call, such that only un-acknowledged orders are returned.
+          We recommend using this filter set to `false`, in conjunction with the `acknowledge` call, such that only un-acknowledged orders are returned.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of orders to return in the response, used for paging. The default value is 25 orders per page, and the maximum allowed value is 250 orders per page.
       *   `:orderBy` (*type:* `String.t`) - Order results by placement date in descending or ascending order.
 
@@ -797,7 +809,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
       *   `:pageToken` (*type:* `String.t`) - The token returned by the previous request.
       *   `:placedDateEnd` (*type:* `String.t`) - Obtains orders placed before this date (exclusively), in ISO 8601 format.
       *   `:placedDateStart` (*type:* `String.t`) - Obtains orders placed after this date (inclusively), in ISO 8601 format.
-      *   `:statuses` (*type:* `list(String.t)`) - Obtains orders that match any of the specified statuses. Please note that active is a shortcut for pendingShipment and partiallyShipped, and completed is a shortcut for shipped, partiallyDelivered, delivered, partiallyReturned, returned, and canceled.
+      *   `:statuses` (*type:* `list(String.t)`) - Obtains orders that match any of the specified statuses. Please note that `active` is a shortcut for `pendingShipment` and `partiallyShipped`, and `completed` is a shortcut for `shipped`, `partiallyDelivered`, `delivered`, `partiallyReturned`, `returned`, and `canceled`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -806,7 +818,9 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   *   `{:error, info}` on failure
   """
   @spec content_orders_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.OrdersListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.OrdersListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_list(connection, merchant_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -864,7 +878,9 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   *   `{:error, info}` on failure
   """
   @spec content_orders_refund(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Content.V2.Model.OrdersRefundResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Content.V2.Model.OrdersRefundResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_refund(connection, merchant_id, order_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -924,7 +940,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersRejectReturnLineItemResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_rejectreturnlineitem(
         connection,
         merchant_id,
@@ -992,7 +1009,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersReturnLineItemResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_returnlineitem(
         connection,
         merchant_id,
@@ -1029,7 +1047,7 @@ defmodule GoogleApi.Content.V2.Api.Orders do
   end
 
   @doc """
-  Returns and refunds a line item. Note that this method can only be called on fully shipped orders.
+  Returns and refunds a line item. Note that this method can only be called on fully shipped orders. Please also note that the Orderreturns API is the preferred way to handle returns after you receive a return from a customer. You can use Orderreturns.list or Orderreturns.get to search for the return, and then use Orderreturns.processreturn to issue the refund. If the return cannot be found, then we recommend using this API to issue a refund.
 
   ## Parameters
 
@@ -1060,7 +1078,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersReturnRefundLineItemResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_returnrefundlineitem(
         connection,
         merchant_id,
@@ -1128,7 +1147,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersSetLineItemMetadataResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_setlineitemmetadata(
         connection,
         merchant_id,
@@ -1196,7 +1216,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersShipLineItemsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_shiplineitems(
         connection,
         merchant_id,
@@ -1264,7 +1285,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersUpdateLineItemShippingDetailsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_updatelineitemshippingdetails(
         connection,
         merchant_id,
@@ -1332,7 +1354,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersUpdateMerchantOrderIdResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_updatemerchantorderid(
         connection,
         merchant_id,
@@ -1400,7 +1423,8 @@ defmodule GoogleApi.Content.V2.Api.Orders do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V2.Model.OrdersUpdateShipmentResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orders_updateshipment(
         connection,
         merchant_id,

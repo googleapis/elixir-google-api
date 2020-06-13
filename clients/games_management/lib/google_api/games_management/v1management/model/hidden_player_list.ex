@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.GamesManagement.V1management.Model.HiddenPlayerList do
   @moduledoc """
-  This is a JSON template for a list of hidden players.
+  A list of hidden players.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.GamesManagement.V1management.Model.HiddenPlayer.t)`, *default:* `nil`) - The players.
-  *   `kind` (*type:* `String.t`, *default:* `gamesManagement#hiddenPlayerList`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#hiddenPlayerList.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesManagement#hiddenPlayerList`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token for the next page of results.
   """
 

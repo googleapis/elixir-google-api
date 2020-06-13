@@ -55,7 +55,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.DeleteOrderDealsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_marketplacedeals_delete(
         connection,
         proposal_id,
@@ -119,7 +120,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.AddOrderDealsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_marketplacedeals_insert(
         connection,
         proposal_id,
@@ -183,7 +185,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.GetOrderDealsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_marketplacedeals_list(
         connection,
         proposal_id,
@@ -247,7 +250,8 @@ defmodule GoogleApi.AdExchangeBuyer.V14.Api.Marketplacedeals do
           keyword()
         ) ::
           {:ok, GoogleApi.AdExchangeBuyer.V14.Model.EditAllOrderDealsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adexchangebuyer_marketplacedeals_update(
         connection,
         proposal_id,

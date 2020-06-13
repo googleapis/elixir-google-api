@@ -26,7 +26,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutpu
 
   *   `allMetrics` (*type:* `list(GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t)`, *default:* `nil`) - All recorded object metrics for this trial. This field is not currently
       populated.
-  *   `builtInAlgorithmOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__BuiltInAlgorithmOutput.t`, *default:* `nil`) - Details related to built-in algorithms jobs.
+  *   `builtInAlgorithmOutput` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t`, *default:* `nil`) - Details related to built-in algorithms jobs.
       Only set for trials of built-in algorithms jobs that have succeeded.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. End time for the trial.
   *   `finalMetric` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t`, *default:* `nil`) - The final objective metric seen for this trial.
@@ -45,7 +45,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutpu
               GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t()
             ),
           :builtInAlgorithmOutput =>
-            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__BuiltInAlgorithmOutput.t(),
+            GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput.t(),
           :endTime => DateTime.t(),
           :finalMetric =>
             GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric.t(),
@@ -63,7 +63,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_HyperparameterOutpu
   )
 
   field(:builtInAlgorithmOutput,
-    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__BuiltInAlgorithmOutput
+    as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_BuiltInAlgorithmOutput
   )
 
   field(:endTime, as: DateTime)

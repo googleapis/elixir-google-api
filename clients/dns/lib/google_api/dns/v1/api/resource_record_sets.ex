@@ -26,13 +26,13 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Enumerate ResourceRecordSets that have been created but not yet deleted.
+
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
-  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed zone name or id.
+  *   `project` (*type:* `String.t`) - 
+  *   `managed_zone` (*type:* `String.t`) - 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -41,10 +41,10 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
-      *   `:name` (*type:* `String.t`) - Restricts the list to return only records with this fully qualified domain name.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
-      *   `:type` (*type:* `String.t`) - Restricts the list to return only records of this type. If present, the "name" parameter must also be present.
+      *   `:maxResults` (*type:* `integer()`) - 
+      *   `:name` (*type:* `String.t`) - 
+      *   `:pageToken` (*type:* `String.t`) - 
+      *   `:type` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -60,7 +60,8 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
           keyword()
         ) ::
           {:ok, GoogleApi.DNS.V1.Model.ResourceRecordSetsListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dns_resource_record_sets_list(
         connection,
         project,

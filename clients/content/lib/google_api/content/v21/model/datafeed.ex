@@ -22,13 +22,18 @@ defmodule GoogleApi.Content.V21.Model.Datafeed do
   ## Attributes
 
   *   `attributeLanguage` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO 639-1 language in which the attributes are defined in the data feed.
-  *   `contentType` (*type:* `String.t`, *default:* `nil`) - The type of data feed. For product inventory feeds, only feeds for local stores, not online stores, are supported.
+  *   `contentType` (*type:* `String.t`, *default:* `nil`) - Required. The type of data feed. For product inventory feeds, only feeds for local stores, not online stores, are supported.
+
+      Acceptable values are:  
+      - "`local products`" 
+      - "`product inventory`" 
+      - "`products`"
   *   `fetchSchedule` (*type:* `GoogleApi.Content.V21.Model.DatafeedFetchSchedule.t`, *default:* `nil`) - Fetch schedule for the feed file.
-  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The filename of the feed. All feeds must have a unique file name.
+  *   `fileName` (*type:* `String.t`, *default:* `nil`) - Required. The filename of the feed. All feeds must have a unique file name.
   *   `format` (*type:* `GoogleApi.Content.V21.Model.DatafeedFormat.t`, *default:* `nil`) - Format of the feed file.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the data feed.
-  *   `kind` (*type:* `String.t`, *default:* `content#datafeed`) - Identifies what kind of resource this is. Value: the fixed string "content#datafeed".
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A descriptive name of the data feed.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required for update. The ID of the data feed.
+  *   `kind` (*type:* `String.t`, *default:* `content#datafeed`) - Identifies what kind of resource this is. Value: the fixed string "`content#datafeed`"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required for insert. A descriptive name of the data feed.
   *   `targets` (*type:* `list(GoogleApi.Content.V21.Model.DatafeedTarget.t)`, *default:* `nil`) - The targets this feed should apply to (country, language, destinations).
   """
 

@@ -48,7 +48,7 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
   *   `{:error, info}` on failure
   """
   @spec mirror_contacts_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:error, Tesla.Env.t()}
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, Tesla.Env.t()}
   def mirror_contacts_delete(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -97,7 +97,9 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
   *   `{:error, info}` on failure
   """
   @spec mirror_contacts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Contact.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.Contact.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_contacts_get(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -146,7 +148,9 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
   *   `{:error, info}` on failure
   """
   @spec mirror_contacts_insert(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Contact.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.Contact.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_contacts_insert(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -193,7 +197,9 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
   *   `{:error, info}` on failure
   """
   @spec mirror_contacts_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.ContactsListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.ContactsListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_contacts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -241,7 +247,9 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
   *   `{:error, info}` on failure
   """
   @spec mirror_contacts_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Contact.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.Contact.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_contacts_patch(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -292,7 +300,9 @@ defmodule GoogleApi.Mirror.V1.Api.Contacts do
   *   `{:error, info}` on failure
   """
   @spec mirror_contacts_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Mirror.V1.Model.Contact.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Mirror.V1.Model.Contact.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, Tesla.Env.t()}
   def mirror_contacts_update(connection, id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

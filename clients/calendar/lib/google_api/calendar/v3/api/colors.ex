@@ -47,7 +47,7 @@ defmodule GoogleApi.Calendar.V3.Api.Colors do
   *   `{:error, info}` on failure
   """
   @spec calendar_colors_get(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Calendar.V3.Model.Colors.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Calendar.V3.Model.Colors.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def calendar_colors_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

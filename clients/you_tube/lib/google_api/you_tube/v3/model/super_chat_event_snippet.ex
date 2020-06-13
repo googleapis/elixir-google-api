@@ -21,17 +21,21 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
 
   ## Attributes
 
-  *   `amountMicros` (*type:* `String.t`, *default:* `nil`) - The purchase amount, in micros of the purchase currency. e.g., 1 is represented as 1000000.
+  *   `amountMicros` (*type:* `String.t`, *default:* `nil`) - The purchase amount, in micros of the purchase currency.  e.g., 1 is
+      represented as 1000000.
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - Channel id where the event occurred.
   *   `commentText` (*type:* `String.t`, *default:* `nil`) - The text contents of the comment left by the user.
-  *   `createdAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the event occurred. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
-  *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency in which the purchase was made. ISO 4217.
-  *   `displayString` (*type:* `String.t`, *default:* `nil`) - A rendered string that displays the purchase amount and currency (e.g., "$1.00"). The string is rendered for the given language.
-  *   `isSuperChatForGood` (*type:* `boolean()`, *default:* `nil`) - True if this event is a Super Chat for Good purchase.
+  *   `createdAt` (*type:* `String.t`, *default:* `nil`) - The date and time when the event occurred. The value is
+      specified in <a href="//www.w3.org/TR/NOTE-datetime">ISO 8601</a>
+      format.
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - The currency in which the purchase was made.  ISO 4217.
+  *   `displayString` (*type:* `String.t`, *default:* `nil`) - A rendered string that displays the purchase amount and currency
+      (e.g., "$1.00").  The string is rendered for the given language.
   *   `isSuperStickerEvent` (*type:* `boolean()`, *default:* `nil`) - True if this event is a Super Sticker event.
-  *   `messageType` (*type:* `integer()`, *default:* `nil`) - The tier for the paid message, which is based on the amount of money spent to purchase the message.
-  *   `nonprofit` (*type:* `GoogleApi.YouTube.V3.Model.Nonprofit.t`, *default:* `nil`) - If this event is a Super Chat for Good purchase, this field will contain information about the charity the purchase is donated to.
-  *   `superStickerMetadata` (*type:* `GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t`, *default:* `nil`) - If this event is a Super Sticker event, this field will contain metadata about the Super Sticker.
+  *   `messageType` (*type:* `integer()`, *default:* `nil`) - The tier for the paid message, which is based on the amount of money spent
+      to purchase the message.
+  *   `superStickerMetadata` (*type:* `GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t`, *default:* `nil`) - If this event is a Super Sticker event, this field will contain metadata
+      about the Super Sticker.
   *   `supporterDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t`, *default:* `nil`) - Details about the supporter.
   """
 
@@ -41,13 +45,11 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
           :amountMicros => String.t(),
           :channelId => String.t(),
           :commentText => String.t(),
-          :createdAt => DateTime.t(),
+          :createdAt => String.t(),
           :currency => String.t(),
           :displayString => String.t(),
-          :isSuperChatForGood => boolean(),
           :isSuperStickerEvent => boolean(),
           :messageType => integer(),
-          :nonprofit => GoogleApi.YouTube.V3.Model.Nonprofit.t(),
           :superStickerMetadata => GoogleApi.YouTube.V3.Model.SuperStickerMetadata.t(),
           :supporterDetails => GoogleApi.YouTube.V3.Model.ChannelProfileDetails.t()
         }
@@ -55,13 +57,11 @@ defmodule GoogleApi.YouTube.V3.Model.SuperChatEventSnippet do
   field(:amountMicros)
   field(:channelId)
   field(:commentText)
-  field(:createdAt, as: DateTime)
+  field(:createdAt)
   field(:currency)
   field(:displayString)
-  field(:isSuperChatForGood)
   field(:isSuperStickerEvent)
   field(:messageType)
-  field(:nonprofit, as: GoogleApi.YouTube.V3.Model.Nonprofit)
   field(:superStickerMetadata, as: GoogleApi.YouTube.V3.Model.SuperStickerMetadata)
   field(:supporterDetails, as: GoogleApi.YouTube.V3.Model.ChannelProfileDetails)
 end

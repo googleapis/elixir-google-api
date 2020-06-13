@@ -23,9 +23,14 @@ defmodule GoogleApi.Content.V21.Model.ReturnpolicyCustomBatchRequestEntry do
 
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The Merchant Center account ID.
-  *   `method` (*type:* `String.t`, *default:* `nil`) - 
-  *   `returnPolicy` (*type:* `GoogleApi.Content.V21.Model.ReturnPolicy.t`, *default:* `nil`) - The return policy to submit. Set this only if the method is insert.
-  *   `returnPolicyId` (*type:* `String.t`, *default:* `nil`) - The return policy ID. Set this only if the method is delete or get.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - Method of the batch request entry.
+
+      Acceptable values are:  
+      - "`delete`" 
+      - "`get`" 
+      - "`insert`"
+  *   `returnPolicy` (*type:* `GoogleApi.Content.V21.Model.ReturnPolicy.t`, *default:* `nil`) - The return policy to submit. Set this only if the method is `insert`.
+  *   `returnPolicyId` (*type:* `String.t`, *default:* `nil`) - The return policy ID. Set this only if the method is `delete` or `get`.
   """
 
   use GoogleApi.Gax.ModelBase

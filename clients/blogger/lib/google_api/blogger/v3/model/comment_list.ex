@@ -23,7 +23,7 @@ defmodule GoogleApi.Blogger.V3.Model.CommentList do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of the response.
   *   `items` (*type:* `list(GoogleApi.Blogger.V3.Model.Comment.t)`, *default:* `nil`) - The List of Comments for a Post.
-  *   `kind` (*type:* `String.t`, *default:* `blogger#commentList`) - The kind of this entry. Always blogger#commentList
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this entry. Always blogger#commentList.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the next page, if one exists.
   *   `prevPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token to fetch the previous page, if one exists.
   """

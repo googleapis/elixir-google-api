@@ -25,8 +25,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Condition do
   *   `op` (*type:* `String.t`, *default:* `nil`) - An operator to apply the subject with.
   *   `svc` (*type:* `String.t`, *default:* `nil`) - Trusted attributes discharged by the service.
   *   `sys` (*type:* `String.t`, *default:* `nil`) - Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - DEPRECATED. Use 'values' instead.
-  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - The objects of the condition. This is mutually exclusive with 'value'.
+  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - The objects of the condition.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +35,6 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Condition do
           :op => String.t(),
           :svc => String.t(),
           :sys => String.t(),
-          :value => String.t(),
           :values => list(String.t())
         }
 
@@ -44,7 +42,6 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Condition do
   field(:op)
   field(:svc)
   field(:sys)
-  field(:value)
   field(:values, type: :list)
 end
 

@@ -14,15 +14,28 @@
 
 defmodule GoogleApis.Generator do
   @callback generate_client(GoogleApis.ApiConfig.t()) :: any()
-  alias GoogleApis.ApiConfig
+  alias GoogleApis.{ApiConfig, ChangeAnalyzer}
 
   require Logger
 
   def bump_version(api_config) do
-    version = api_config |> current_hex_version() |> bump_version_string()
-    set_mix_version(api_config, version)
-    requirement = version_requirement_string(version)
-    set_readme_version(api_config, requirement)
+    hex_version = current_hex_version(api_config)
+    bump_type = if ChangeAnalyzer.has_changes_of_significance?(api_config, :significant), do: :minor, else: :patch
+    Logger.info("Bumping #{bump_type}")
+    new_version = bump_version_string(hex_version, bump_type)
+    mix_version = current_mix_version(api_config)
+    if Version.parse!(new_version) > Version.parse!(mix_version) do
+      set_mix_version(api_config, new_version)
+      requirement = version_requirement_string(new_version)
+      set_readme_version(api_config, requirement)
+    end
+  end
+
+  def rollback_if_not_significant(api_configs) do
+    if !Enum.any?(api_configs, &(ChangeAnalyzer.has_changes_of_significance?(&1, :documentation))) do
+      Logger.info("Found only discovery_revision and/or formatting changes. Not significant enough for a PR.")
+      System.cmd("git", ["reset", "--hard"])
+    end
   end
 
   defp current_hex_version(api_config) do
@@ -116,12 +129,21 @@ defmodule GoogleApis.Generator do
     end
   end
 
-  defp bump_version_string(str) do
+  defp bump_version_string(str, :minor) do
     v =
       str
       |> Version.parse!()
       |> Map.update!(:minor, fn v -> v + 1 end)
       |> Map.put(:patch, 0)
+
+    "#{v.major}.#{v.minor}.#{v.patch}"
+  end
+
+  defp bump_version_string(str, :patch) do
+    v =
+      str
+      |> Version.parse!()
+      |> Map.update!(:patch, fn v -> v + 1 end)
 
     "#{v.major}.#{v.minor}.#{v.patch}"
   end

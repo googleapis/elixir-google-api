@@ -57,7 +57,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
   """
   @spec firebasedynamiclinks_get_link_stats(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def firebasedynamiclinks_get_link_stats(
         connection,
         dynamic_link,
@@ -124,7 +125,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
   """
   @spec firebasedynamiclinks_install_attribution(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def firebasedynamiclinks_install_attribution(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -184,7 +186,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Api.V1 do
   """
   @spec firebasedynamiclinks_reopen_attribution(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def firebasedynamiclinks_reopen_attribution(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -54,7 +54,8 @@ defmodule GoogleApi.AcceleratedMobilePageUrl.V1.Api.AmpUrls do
   """
   @spec acceleratedmobilepageurl_amp_urls_batch_get(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AcceleratedMobilePageUrl.V1.Model.BatchGetAmpUrlsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def acceleratedmobilepageurl_amp_urls_batch_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

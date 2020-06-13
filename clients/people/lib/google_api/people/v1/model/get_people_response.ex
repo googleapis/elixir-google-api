@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.GetPeopleResponse do
   @moduledoc """
-
+  The response to a get request for a list of people by resource name.
 
   ## Attributes
 

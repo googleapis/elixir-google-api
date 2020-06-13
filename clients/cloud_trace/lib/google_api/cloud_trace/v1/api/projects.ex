@@ -31,6 +31,8 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   in the existing trace and its spans are overwritten by the provided values,
   and any new fields provided are merged with the existing trace data. If the
   ID does not match, a new trace is created.
+  In this case, writing traces is not considered an active developer
+  method since traces are machine generated.
 
   ## Parameters
 
@@ -57,7 +59,7 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudtrace_projects_patch_traces(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudTrace.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudTrace.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtrace_projects_patch_traces(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -90,6 +92,8 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
 
   @doc """
   Gets a single trace by its ID.
+  In this case, getting for traces is considered an active developer method,
+  even though it is technically a read-only method.
 
   ## Parameters
 
@@ -121,7 +125,8 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudTrace.V1.Model.Trace.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudTrace.V1.Model.Trace.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudtrace_projects_traces_get(
         connection,
         project_id,
@@ -160,6 +165,8 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
 
   @doc """
   Returns of a list of traces that match the specified filter conditions.
+  In this case, listing for traces is considered an active developer method,
+  even though it is technically a read-only method.
 
   ## Parameters
 
@@ -239,7 +246,9 @@ defmodule GoogleApi.CloudTrace.V1.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec cloudtrace_projects_traces_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudTrace.V1.Model.ListTracesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudTrace.V1.Model.ListTracesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudtrace_projects_traces_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -64,7 +64,9 @@ defmodule GoogleApi.IAM.V1.Api.IamPolicies do
   *   `{:error, info}` on failure
   """
   @spec iam_iam_policies_lint_policy(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.IAM.V1.Model.LintPolicyResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.IAM.V1.Model.LintPolicyResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def iam_iam_policies_lint_policy(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -122,7 +124,8 @@ defmodule GoogleApi.IAM.V1.Api.IamPolicies do
   """
   @spec iam_iam_policies_query_auditable_services(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.QueryAuditableServicesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def iam_iam_policies_query_auditable_services(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

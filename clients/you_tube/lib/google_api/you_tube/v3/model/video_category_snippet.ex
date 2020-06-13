@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoCategorySnippet do
   ## Attributes
 
   *   `assignable` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `channelId` (*type:* `String.t`, *default:* `UCBR8-60-B28hp2BmDPdntcQ`) - The YouTube channel that created the video category.
+  *   `channelId` (*type:* `String.t`, *default:* `nil`) - The YouTube channel that created the video category.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The video category's title.
   """
 

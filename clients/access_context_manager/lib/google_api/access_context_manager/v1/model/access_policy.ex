@@ -18,38 +18,38 @@
 defmodule GoogleApi.AccessContextManager.V1.Model.AccessPolicy do
   @moduledoc """
   `AccessPolicy` is a container for `AccessLevels` (which define the necessary
-  attributes to use GCP services) and `ServicePerimeters` (which define regions
-  of services able to freely pass data within a perimeter). An access policy is
-  globally visible within an organization, and the restrictions it specifies
-  apply to all projects within an organization.
+  attributes to use Google Cloud services) and `ServicePerimeters` (which
+  define regions of services able to freely pass data within a perimeter). An
+  access policy is globally visible within an organization, and the
+  restrictions it specifies apply to all projects within an organization.
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `AccessPolicy` was created in UTC.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. An opaque identifier for the current version of the
+      `AccessPolicy`. This will always be a strongly validated etag, meaning that
+      two Access Polices will be identical if and only if their etags are
+      identical. Clients should not expect this to be in any specific format.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the `AccessPolicy`. Format:
       `accessPolicies/{policy_id}`
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The parent of this `AccessPolicy` in the Cloud Resource
       Hierarchy. Currently immutable once created. Format:
       `organizations/{organization_id}`
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. Human readable title. Does not affect behavior.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `AccessPolicy` was updated in UTC.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
+          :etag => String.t(),
           :name => String.t(),
           :parent => String.t(),
-          :title => String.t(),
-          :updateTime => DateTime.t()
+          :title => String.t()
         }
 
-  field(:createTime, as: DateTime)
+  field(:etag)
   field(:name)
   field(:parent)
   field(:title)
-  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessContextManager.V1.Model.AccessPolicy do

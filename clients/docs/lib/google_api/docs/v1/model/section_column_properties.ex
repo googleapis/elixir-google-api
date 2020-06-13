@@ -22,7 +22,7 @@ defmodule GoogleApi.Docs.V1.Model.SectionColumnProperties do
   ## Attributes
 
   *   `paddingEnd` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The padding at the end of the column.
-  *   `width` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The width of the column.
+  *   `width` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - Output only. The width of the column.
   """
 
   use GoogleApi.Gax.ModelBase

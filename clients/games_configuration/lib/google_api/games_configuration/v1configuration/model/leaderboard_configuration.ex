@@ -17,20 +17,18 @@
 
 defmodule GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfiguration do
   @moduledoc """
-  This is a JSON template for an leaderboard configuration resource.
+  An leaderboard configuration resource.
 
   ## Attributes
 
   *   `draft` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationDetail.t`, *default:* `nil`) - The draft data of the leaderboard.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the leaderboard.
-  *   `kind` (*type:* `String.t`, *default:* `gamesConfiguration#leaderboardConfiguration`) - Uniquely identifies the type of this resource. Value is always the fixed string gamesConfiguration#leaderboardConfiguration.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `gamesConfiguration#leaderboardConfiguration`.
   *   `published` (*type:* `GoogleApi.GamesConfiguration.V1configuration.Model.LeaderboardConfigurationDetail.t`, *default:* `nil`) - The read-only published data of the leaderboard.
   *   `scoreMax` (*type:* `String.t`, *default:* `nil`) - Maximum score that can be posted to this leaderboard.
   *   `scoreMin` (*type:* `String.t`, *default:* `nil`) - Minimum score that can be posted to this leaderboard.
-  *   `scoreOrder` (*type:* `String.t`, *default:* `nil`) - The type of the leaderboard.
-      Possible values are:  
-      - "LARGER_IS_BETTER" - Larger scores posted are ranked higher. 
-      - "SMALLER_IS_BETTER" - Smaller scores posted are ranked higher.
+  *   `scoreOrder` (*type:* `String.t`, *default:* `nil`) - 
   *   `token` (*type:* `String.t`, *default:* `nil`) - The token for this resource.
   """
 

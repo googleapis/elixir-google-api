@@ -21,8 +21,8 @@ defmodule GoogleApi.Compute.V1.Model.PerInstanceConfig do
 
   ## Attributes
 
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this per-instance config. This field may be used in optimistic locking. It will be ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the per-instance config and the corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operation, i.e. if per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in a failure.
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
   """
 
   use GoogleApi.Gax.ModelBase

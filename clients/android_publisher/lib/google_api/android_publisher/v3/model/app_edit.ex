@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.AppEdit do
   @moduledoc """
-  Represents an edit of an app. An edit allows clients to make multiple changes before committing them in one operation.
+  An app edit. The resource for EditsService.
 
   ## Attributes
 
-  *   `expiryTimeSeconds` (*type:* `String.t`, *default:* `nil`) - The time at which the edit will expire and will be no longer valid for use in any subsequent API calls (encoded as seconds since the Epoch).
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the edit that can be used in subsequent API calls.
+  *   `expiryTimeSeconds` (*type:* `String.t`, *default:* `nil`) - Output only. The time (as seconds since Epoch) at which the edit will expire and
+      will be no longer valid for use.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier of the edit. Can be used in subsequent API calls.
   """
 
   use GoogleApi.Gax.ModelBase

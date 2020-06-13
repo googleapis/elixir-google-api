@@ -22,7 +22,7 @@ defmodule GoogleApi.Books.V1.Model.Discoveryclusters do
   ## Attributes
 
   *   `clusters` (*type:* `list(GoogleApi.Books.V1.Model.DiscoveryclustersClusters.t)`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `books#discovery#clusters`) - Resorce type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resorce type.
   *   `totalClusters` (*type:* `integer()`, *default:* `nil`) - 
   """
 

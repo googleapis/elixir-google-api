@@ -32,24 +32,27 @@ defmodule GoogleApi.Run.V1.Model.TCPSocketAction do
       Cloud Run for Anthos: supported
 
       Optional: Host name to connect to, defaults to the pod IP.
-  *   `port` (*type:* `GoogleApi.Run.V1.Model.IntOrString.t`, *default:* `nil`) - Cloud Run fully managed: not supported
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Cloud Run fully managed: not supported
 
       Cloud Run for Anthos: supported
 
       Number or name of the port to access on the container.
       Number must be in the range 1 to 65535.
       Name must be an IANA_SVC_NAME.
+
+      This field is currently limited to integer types only because of proto's
+      inability to properly support the IntOrString golang type.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :host => String.t(),
-          :port => GoogleApi.Run.V1.Model.IntOrString.t()
+          :port => integer()
         }
 
   field(:host)
-  field(:port, as: GoogleApi.Run.V1.Model.IntOrString)
+  field(:port)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Run.V1.Model.TCPSocketAction do

@@ -31,7 +31,6 @@ defmodule GoogleApi.TPU.V1.Model.Node do
       conflicts with any subnetworks in the user's provided network, or the
       provided network is peered with another network that is using that CIDR
       block.
-      Required.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the node was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The user-supplied description of the TPU. Maximum of 512 characters.
   *   `health` (*type:* `String.t`, *default:* `nil`) - The health status of the TPU node.

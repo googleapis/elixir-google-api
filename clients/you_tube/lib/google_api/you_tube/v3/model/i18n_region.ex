@@ -17,14 +17,17 @@
 
 defmodule GoogleApi.YouTube.V3.Model.I18nRegion do
   @moduledoc """
-  A i18nRegion resource identifies a region where YouTube is available.
+  A <code><strong>i18nRegion</strong></code> resource identifies a region where
+  YouTube is available.
 
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the i18n region.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#i18nRegion`) - Identifies what kind of resource this is. Value: the fixed string "youtube#i18nRegion".
-  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.I18nRegionSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the i18n region, such as region code and human-readable name.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#i18nRegion`) - Identifies what kind of resource this is. Value: the fixed string
+      <code>"youtube#i18nRegion"</code>.
+  *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.I18nRegionSnippet.t`, *default:* `nil`) - The <code>snippet</code> object contains basic details about the i18n
+      region, such as region code and human-readable name.
   """
 
   use GoogleApi.Gax.ModelBase

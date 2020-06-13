@@ -49,7 +49,8 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Sdf do
   """
   @spec doubleclickbidmanager_sdf_download(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.DoubleClickBidManager.V11.Model.DownloadResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def doubleclickbidmanager_sdf_download(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

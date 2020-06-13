@@ -23,7 +23,10 @@ defmodule GoogleApi.PageSpeedOnline.V5.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [],
+    scopes: [
+      # Associate you with your personal info on Google
+      "openid"
+    ],
     otp_app: :google_api_page_speed_online,
-    base_url: "https://www.googleapis.com/pagespeedonline/v5/"
+    base_url: "https://pagespeedonline.googleapis.com/"
 end

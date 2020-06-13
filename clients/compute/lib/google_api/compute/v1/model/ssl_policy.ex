@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.SslPolicy do
   @moduledoc """
   Represents a Cloud Armor Security Policy resource.
 
-  Only external backend services used by HTTP or HTTPS load balancers can reference a Security Policy. For more information, read read  Cloud Armor Security Policy Concepts. (== resource_for beta.sslPolicies ==) (== resource_for v1.sslPolicies ==)
+  Only external backend services used by HTTP or HTTPS load balancers can reference a Security Policy. For more information, read read  Cloud Armor Security Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
 
   ## Attributes
 

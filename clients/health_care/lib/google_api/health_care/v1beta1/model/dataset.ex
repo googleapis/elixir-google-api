@@ -25,7 +25,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Dataset do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the dataset, of the form
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the dataset, of the form
       `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The default timezone used by this dataset. Must be a either a valid IANA
       time zone name such as "America/New_York" or empty, which defaults to UTC.

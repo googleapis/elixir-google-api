@@ -17,7 +17,20 @@
 
 defmodule GoogleApi.DeploymentManager.V2.Model.Operation do
   @moduledoc """
-  An Operation resource, used to manage asynchronous API requests. (== resource_for v1.globalOperations ==) (== resource_for beta.globalOperations ==) (== resource_for v1.regionOperations ==) (== resource_for beta.regionOperations ==) (== resource_for v1.zoneOperations ==) (== resource_for beta.zoneOperations ==)
+  Represents an Operation resource.
+
+  Google Compute Engine has three Operation resources:
+
+  * [Global](/compute/docs/reference/rest/{$api_version}/globalOperations) * [Regional](/compute/docs/reference/rest/{$api_version}/regionOperations) * [Zonal](/compute/docs/reference/rest/{$api_version}/zoneOperations)
+
+  You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses.
+
+  Operations can be global, regional or zonal.  
+  - For global operations, use the `globalOperations` resource. 
+  - For regional operations, use the `regionOperations` resource. 
+  - For zonal operations, use the `zonalOperations` resource.  
+
+  For more information, read  Global, Regional, and Zonal Resources. (== resource_for {$api_version}.globalOperations ==) (== resource_for {$api_version}.regionOperations ==) (== resource_for {$api_version}.zoneOperations ==)
 
   ## Attributes
 
@@ -26,24 +39,24 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Operation do
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Output Only] A textual description of the operation, which is set when the operation is created.
   *   `endTime` (*type:* `String.t`, *default:* `nil`) - [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
   *   `error` (*type:* `GoogleApi.DeploymentManager.V2.Model.OperationError.t`, *default:* `nil`) - [Output Only] If errors are generated during processing of the operation, this field will be populated.
-  *   `httpErrorMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as NOT FOUND.
-  *   `httpErrorStatusCode` (*type:* `integer()`, *default:* `nil`) - [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a 404 means the resource was not found.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+  *   `httpErrorMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+  *   `httpErrorStatusCode` (*type:* `integer()`, *default:* `nil`) - [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the operation. This identifier is defined by the server.
   *   `insertTime` (*type:* `String.t`, *default:* `nil`) - [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
-  *   `kind` (*type:* `String.t`, *default:* `deploymentmanager#operation`) - [Output Only] Type of the resource. Always compute#operation for Operation resources.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the resource.
-  *   `operationType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of operation, such as insert, update, or delete, and so on.
+  *   `kind` (*type:* `String.t`, *default:* `deploymentmanager#operation`) - [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the operation.
+  *   `operationType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
   *   `progress` (*type:* `integer()`, *default:* `nil`) - [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the operation resides. Only available when performing regional operations. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the operation, which can be one of the following: PENDING, RUNNING, or DONE.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional textual description of the current status of the operation.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
   *   `targetLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
-  *   `user` (*type:* `String.t`, *default:* `nil`) - [Output Only] User who requested the operation, for example: user@example.com.
+  *   `user` (*type:* `String.t`, *default:* `nil`) - [Output Only] User who requested the operation, for example: `user@example.com`.
   *   `warnings` (*type:* `list(GoogleApi.DeploymentManager.V2.Model.OperationWarnings.t)`, *default:* `nil`) - [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the zone where the operation resides. Only available when performing per-zone operations. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
   """
 
   use GoogleApi.Gax.ModelBase

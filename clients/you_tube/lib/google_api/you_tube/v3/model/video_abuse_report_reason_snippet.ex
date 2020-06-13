@@ -22,7 +22,8 @@ defmodule GoogleApi.YouTube.V3.Model.VideoAbuseReportReasonSnippet do
   ## Attributes
 
   *   `label` (*type:* `String.t`, *default:* `nil`) - The localized label belonging to this abuse report reason.
-  *   `secondaryReasons` (*type:* `list(GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason.t)`, *default:* `nil`) - The secondary reasons associated with this reason, if any are available. (There might be 0 or more.)
+  *   `secondaryReasons` (*type:* `list(GoogleApi.YouTube.V3.Model.VideoAbuseReportSecondaryReason.t)`, *default:* `nil`) - The secondary reasons associated with this reason, if any are available.
+      (There might be 0 or more.)
   """
 
   use GoogleApi.Gax.ModelBase

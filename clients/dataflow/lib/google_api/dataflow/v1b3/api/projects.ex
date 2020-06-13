@@ -26,6 +26,74 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Deletes a snapshot.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the snapshot belongs to.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:location` (*type:* `String.t`) - The location that contains this snapshot.
+      *   `:snapshotId` (*type:* `String.t`) - The ID of the snapshot.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_delete_snapshots(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_delete_snapshots(
+        connection,
+        project_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :location => :query,
+      :snapshotId => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1b3/projects/{projectId}/snapshots", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse{}])
+  end
+
+  @doc """
   Send a worker_message to the service.
 
   ## Parameters
@@ -54,7 +122,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   """
   @spec dataflow_projects_worker_messages(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_worker_messages(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -85,6 +154,453 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse{}]
     )
+  end
+
+  @doc """
+  Creates a new TemplateVersion (Important: not new Template) entry in the
+  spanner table. Requires project_id and display_name (template).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The location of the template, name includes project_id and display_name.
+
+      Commit using project_id(pid1) and display_name(tid1).
+        Format: projects/{pid1}/catalogTemplates/{tid1}
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.CommitTemplateVersionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.TemplateVersion{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_catalog_templates_commit(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.TemplateVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_catalog_templates_commit(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1b3/{+name}:commit", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.TemplateVersion{}])
+  end
+
+  @doc """
+  Deletes an existing Template. Do nothing if Template does not exist.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - name includes project_id and display_name.
+
+      Delete by project_id(pid1) and display_name(tid1).
+        Format: projects/{pid1}/catalogTemplates/{tid1}
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_catalog_templates_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+  def dataflow_projects_catalog_templates_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1b3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.Empty{}])
+  end
+
+  @doc """
+  Get TemplateVersion using project_id and display_name with an optional
+  version_id field. Get latest (has tag "latest") TemplateVersion if
+  version_id not set.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Resource name includes project_id and display_name. version_id is optional.
+      Get the latest TemplateVersion if version_id not set.
+
+      Get by project_id(pid1) and display_name(tid1):
+        Format: projects/{pid1}/catalogTemplates/{tid1}
+
+      Get by project_id(pid1), display_name(tid1), and version_id(vid1):
+        Format: projects/{pid1}/catalogTemplates/{tid1@vid}
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.TemplateVersion{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_catalog_templates_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.TemplateVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_catalog_templates_get(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.TemplateVersion{}])
+  end
+
+  @doc """
+  Updates the label of the TemplateVersion. Label can be duplicated in
+  Template, so either add or remove the label in the TemplateVersion.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Resource name includes project_id, display_name, and version_id.
+
+      Updates by project_id(pid1), display_name(tid1), and version_id(vid1):
+        Format: projects/{pid1}/catalogTemplates/{tid1@vid}
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionLabelRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionLabelResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_catalog_templates_label(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionLabelResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_catalog_templates_label(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1b3/{+name}:label", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionLabelResponse{}]
+    )
+  end
+
+  @doc """
+  Updates the tag of the TemplateVersion, and tag is unique in Template.
+  If tag exists in another TemplateVersion in the Template, updates the tag
+  to this TemplateVersion will remove it from the old TemplateVersion and add
+  it to this TemplateVersion. If request is remove_only (remove_only = true),
+  remove the tag from this TemplateVersion.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Resource name includes project_id, display_name, and version_id.
+
+      Updates by project_id(pid1), display_name(tid1), and version_id(vid1):
+        Format: projects/{pid1}/catalogTemplates/{tid1@vid}
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionTagRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionTagResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_catalog_templates_tag(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionTagResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_catalog_templates_tag(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1b3/{+name}:tag", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ModifyTemplateVersionTagResponse{}]
+    )
+  end
+
+  @doc """
+  Creates a new Template with TemplateVersion. Requires
+  project_id(projects) and template display_name(catalogTemplates).
+  The template display_name is set by the user.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The parent project and template that the TemplateVersion will be created
+      under.
+
+      Create using project_id(pid1) and display_name(tid1).
+        Format: projects/{pid1}/catalogTemplates/{tid1}
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.CreateTemplateVersionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.TemplateVersion{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_catalog_templates_template_versions_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.TemplateVersion.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_catalog_templates_template_versions_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1b3/{+parent}/templateVersions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.TemplateVersion{}])
   end
 
   @doc """
@@ -124,7 +640,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_jobs_aggregated(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_jobs_aggregated(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -198,7 +716,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_jobs_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataflow_projects_jobs_create(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -275,7 +793,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataflow_projects_jobs_get(
         connection,
         project_id,
@@ -358,7 +876,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.JobMetrics.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.JobMetrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_jobs_get_metrics(
         connection,
         project_id,
@@ -441,7 +962,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_jobs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_jobs_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -474,6 +997,81 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ListJobsResponse{}])
+  end
+
+  @doc """
+  Snapshot the state of a streaming job.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The project which owns the job to be snapshotted.
+  *   `job_id` (*type:* `String.t`) - The job to be snapshotted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.SnapshotJobRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.Snapshot{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_jobs_snapshot(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Snapshot.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_jobs_snapshot(
+        connection,
+        project_id,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1b3/projects/{projectId}/jobs/{jobId}:snapshot", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.Snapshot{}])
   end
 
   @doc """
@@ -519,7 +1117,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataflow_projects_jobs_update(
         connection,
         project_id,
@@ -594,7 +1192,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.GetDebugConfigResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_jobs_debug_get_config(
         connection,
         project_id,
@@ -668,7 +1267,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_jobs_debug_send_capture(
         connection,
         project_id,
@@ -763,7 +1363,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobMessagesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_jobs_messages_list(
         connection,
         project_id,
@@ -841,7 +1442,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_jobs_work_items_lease(
         connection,
         project_id,
@@ -915,7 +1518,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_jobs_work_items_report_status(
         connection,
         project_id,
@@ -993,7 +1597,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_worker_messages(
         connection,
         project_id,
@@ -1030,6 +1635,85 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.SendWorkerMessagesResponse{}]
+    )
+  end
+
+  @doc """
+  Launch a job with a FlexTemplate.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - Required. The ID of the Cloud Platform project that the job belongs to.
+  *   `location` (*type:* `String.t`) - Required. The [regional endpoint]
+      (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
+      which to direct the request. E.g., us-central1, us-west1.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_locations_flex_templates_launch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_locations_flex_templates_launch(
+        connection,
+        project_id,
+        location,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/flexTemplates:launch", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.LaunchFlexTemplateResponse{}]
     )
   end
 
@@ -1077,7 +1761,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataflow_projects_locations_jobs_create(
         connection,
         project_id,
@@ -1161,7 +1845,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataflow_projects_locations_jobs_get(
         connection,
         project_id,
@@ -1246,7 +1930,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.JobMetrics.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.JobMetrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_jobs_get_metrics(
         connection,
         project_id,
@@ -1335,7 +2022,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_jobs_list(
         connection,
         project_id,
@@ -1374,6 +2064,85 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ListJobsResponse{}])
+  end
+
+  @doc """
+  Snapshot the state of a streaming job.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The project which owns the job to be snapshotted.
+  *   `location` (*type:* `String.t`) - The location that contains this job.
+  *   `job_id` (*type:* `String.t`) - The job to be snapshotted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Dataflow.V1b3.Model.SnapshotJobRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.Snapshot{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_locations_jobs_snapshot(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Snapshot.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_locations_jobs_snapshot(
+        connection,
+        project_id,
+        location,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}:snapshot", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.Snapshot{}])
   end
 
   @doc """
@@ -1420,7 +2189,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataflow_projects_locations_jobs_update(
         connection,
         project_id,
@@ -1500,7 +2269,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.GetDebugConfigResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_jobs_debug_get_config(
         connection,
         project_id,
@@ -1583,7 +2353,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.SendDebugCaptureResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_jobs_debug_send_capture(
         connection,
         project_id,
@@ -1684,7 +2455,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.ListJobMessagesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_jobs_messages_list(
         connection,
         project_id,
@@ -1729,6 +2501,83 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
+  Lists snapshots.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The project ID to list snapshots for.
+  *   `location` (*type:* `String.t`) - The location to list snapshots in.
+  *   `job_id` (*type:* `String.t`) - If specified, list snapshots created from this job.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_locations_jobs_snapshots_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_locations_jobs_snapshots_list(
+        connection,
+        project_id,
+        location,
+        job_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/snapshots", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}])
+  end
+
+  @doc """
   Leases a dataflow WorkItem to run.
 
   ## Parameters
@@ -1767,7 +2616,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_jobs_work_items_lease(
         connection,
         project_id,
@@ -1850,7 +2701,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.ReportWorkItemStatusResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_jobs_work_items_report_status(
         connection,
         project_id,
@@ -1896,6 +2748,235 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
+  Deletes a snapshot.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the snapshot belongs to.
+  *   `location` (*type:* `String.t`) - The location that contains this snapshot.
+  *   `snapshot_id` (*type:* `String.t`) - The ID of the snapshot.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_locations_snapshots_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_locations_snapshots_delete(
+        connection,
+        project_id,
+        location,
+        snapshot_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/snapshots/{snapshotId}", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.DeleteSnapshotResponse{}])
+  end
+
+  @doc """
+  Gets information about a snapshot.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the snapshot belongs to.
+  *   `location` (*type:* `String.t`) - The location that contains this snapshot.
+  *   `snapshot_id` (*type:* `String.t`) - The ID of the snapshot.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.Snapshot{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_locations_snapshots_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Snapshot.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_locations_snapshots_get(
+        connection,
+        project_id,
+        location,
+        snapshot_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/snapshots/{snapshotId}", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1),
+        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.Snapshot{}])
+  end
+
+  @doc """
+  Lists snapshots.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The project ID to list snapshots for.
+  *   `location` (*type:* `String.t`) - The location to list snapshots in.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:jobId` (*type:* `String.t`) - If specified, list snapshots created from this job.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_locations_snapshots_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_locations_snapshots_list(
+        connection,
+        project_id,
+        location,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :jobId => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/locations/{location}/snapshots", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}])
+  end
+
+  @doc """
   Validates a GoogleSQL query for Cloud Dataflow syntax. Will always
   confirm the given query parses correctly, and if able to look up
   schema information from DataCatalog, will validate that the query
@@ -1934,7 +3015,10 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.ValidateResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ValidateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_sql_validate(
         connection,
         project_id,
@@ -2008,7 +3092,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataflow_projects_locations_templates_create(
         connection,
         project_id,
@@ -2086,7 +3170,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_templates_get(
         connection,
         project_id,
@@ -2172,7 +3258,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.LaunchTemplateResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_locations_templates_launch(
         connection,
         project_id,
@@ -2215,6 +3302,228 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   end
 
   @doc """
+  Gets information about a snapshot.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The ID of the Cloud Platform project that the snapshot belongs to.
+  *   `snapshot_id` (*type:* `String.t`) - The ID of the snapshot.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:location` (*type:* `String.t`) - The location that contains this snapshot.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.Snapshot{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_snapshots_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Snapshot.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_snapshots_get(
+        connection,
+        project_id,
+        snapshot_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :location => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/snapshots/{snapshotId}", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+        "snapshotId" => URI.encode(snapshot_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.Snapshot{}])
+  end
+
+  @doc """
+  Lists snapshots.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `project_id` (*type:* `String.t`) - The project ID to list snapshots for.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:jobId` (*type:* `String.t`) - If specified, list snapshots created from this job.
+      *   `:location` (*type:* `String.t`) - The location to list snapshots in.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_snapshots_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_snapshots_list(connection, project_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :jobId => :query,
+      :location => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/projects/{projectId}/snapshots", %{
+        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ListSnapshotsResponse{}])
+  end
+
+  @doc """
+  List TemplateVersions using project_id and an optional display_name field.
+  List all the TemplateVersions in the Template if display set.
+  List all the TemplateVersions in the Project if display_name not set.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Dataflow.V1b3.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - parent includes project_id, and display_name is optional.
+
+      List by project_id(pid1) and display_name(tid1).
+        Format: projects/{pid1}/catalogTemplates/{tid1}
+
+      List by project_id(pid1).
+        Format: projects/{pid1}
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of TemplateVersions to return per page.
+      *   `:pageToken` (*type:* `String.t`) - The page token, received from a previous ListTemplateVersions call.
+          Provide this to retrieve the subsequent page.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Dataflow.V1b3.Model.ListTemplateVersionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec dataflow_projects_template_versions_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Dataflow.V1b3.Model.ListTemplateVersionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def dataflow_projects_template_versions_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1b3/{+parent}/templateVersions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataflow.V1b3.Model.ListTemplateVersionsResponse{}]
+    )
+  end
+
+  @doc """
   Creates a Cloud Dataflow job from a template.
 
   ## Parameters
@@ -2242,7 +3551,7 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_templates_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.Job.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def dataflow_projects_templates_create(
         connection,
         project_id,
@@ -2312,7 +3621,9 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec dataflow_projects_templates_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Dataflow.V1b3.Model.GetTemplateResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_templates_get(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -2386,7 +3697,8 @@ defmodule GoogleApi.Dataflow.V1b3.Api.Projects do
   """
   @spec dataflow_projects_templates_launch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Dataflow.V1b3.Model.LaunchTemplateResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dataflow_projects_templates_launch(
         connection,
         project_id,

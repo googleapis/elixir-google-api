@@ -62,7 +62,8 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
           keyword()
         ) ::
           {:ok, GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1Budget.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def billingbudgets_billing_accounts_budgets_create(
         connection,
         parent,
@@ -135,7 +136,8 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
           keyword()
         ) ::
           {:ok, GoogleApi.BillingBudgets.V1beta1.Model.GoogleProtobufEmpty.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def billingbudgets_billing_accounts_budgets_delete(
         connection,
         name,
@@ -175,6 +177,11 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   @doc """
   Returns a budget.
 
+  WARNING: There are some fields exposed on the Google Cloud Console that
+  aren't available on this API. When reading from the API, you will not
+  see these fields in the return value, though they may have been set
+  in the Cloud Console.
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BillingBudgets.V1beta1.Connection.t`) - Connection to server
@@ -206,7 +213,8 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
           keyword()
         ) ::
           {:ok, GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1Budget.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def billingbudgets_billing_accounts_budgets_get(
         connection,
         name,
@@ -247,6 +255,11 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   @doc """
   Returns a list of budgets for a billing account.
 
+  WARNING: There are some fields exposed on the Google Cloud Console that
+  aren't available on this API. When reading from the API, you will not
+  see these fields in the return value, though they may have been set
+  in the Cloud Console.
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BillingBudgets.V1beta1.Connection.t`) - Connection to server
@@ -284,7 +297,8 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
         ) ::
           {:ok,
            GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1ListBudgetsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def billingbudgets_billing_accounts_budgets_list(
         connection,
         parent,
@@ -330,6 +344,10 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
   @doc """
   Updates a budget and returns the updated budget.
 
+  WARNING: There are some fields exposed on the Google Cloud Console that
+  aren't available on this API. Budget fields that are not exposed in
+  this API will not be changed by this method.
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BillingBudgets.V1beta1.Connection.t`) - Connection to server
@@ -363,7 +381,8 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
           keyword()
         ) ::
           {:ok, GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1Budget.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def billingbudgets_billing_accounts_budgets_patch(
         connection,
         name,

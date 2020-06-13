@@ -27,10 +27,10 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
 
   @doc """
   Batch gets the update history of assets that overlap a time window.
-  For RESOURCE content, this API outputs history with asset in both
-  non-delete or deleted status.
   For IAM_POLICY content, this API outputs history when the asset and its
   attached IAM POLICY both exist. This can create gaps in the output history.
+  Otherwise, this API outputs history with asset in both non-delete or
+  deleted status.
   If a specified asset does not exist, this API returns an INVALID_ARGUMENT
   error.
 
@@ -53,19 +53,17 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:assetNames` (*type:* `list(String.t)`) - A list of the full names of the assets. For example:
+      *   `:assetNames` (*type:* `list(String.t)`) - A list of the full names of the assets.
+          See: https://cloud.google.com/asset-inventory/docs/resource-name-format
+          Example:
+
           `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-          See [Resource
-          Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-          and [Resource Name
-          Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-          for more info.
 
           The request becomes a no-op if the asset name list is empty, and the max
           size of the asset name list is 100 in one request.
       *   `:contentType` (*type:* `String.t`) - Optional. The content type.
-      *   `:"readTimeWindow.endTime"` (*type:* `DateTime.t`) - End time of the time window (inclusive).
-          Current timestamp if not specified.
+      *   `:"readTimeWindow.endTime"` (*type:* `DateTime.t`) - End time of the time window (inclusive). If not specified, the current
+          timestamp is used instead.
       *   `:"readTimeWindow.startTime"` (*type:* `DateTime.t`) - Start time of the time window (exclusive).
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -82,7 +80,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.BatchGetAssetsHistoryResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudasset_batch_get_assets_history(
         connection,
         v1_id,
@@ -127,9 +126,15 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
 
   @doc """
   Exports assets with time and resource types to a given Cloud Storage
-  location. The output format is newline-delimited JSON.
-  This API implements the google.longrunning.Operation API allowing you
-  to keep track of the export.
+  location/BigQuery table. For Cloud Storage location destinations, the
+  output format is newline-delimited JSON. Each line represents a
+  google.cloud.asset.v1.Asset in the JSON format; for BigQuery table
+  destinations, the output table stores the fields in asset proto as columns.
+  This API implements the google.longrunning.Operation API
+  , which allows you to keep track of the export. We recommend intervals of
+  at least 2 seconds with exponential retry to poll the export operation
+  result. For regular-size resource parent, the export operation usually
+  finishes within 5 minutes.
 
   ## Parameters
 
@@ -160,7 +165,9 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   *   `{:error, info}` on failure
   """
   @spec cloudasset_export_assets(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudasset_export_assets(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

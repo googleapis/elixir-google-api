@@ -59,7 +59,8 @@ defmodule GoogleApi.Content.V21.Api.Orderreports do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrderreportsListDisbursementsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orderreports_listdisbursements(
         connection,
         merchant_id,
@@ -133,7 +134,8 @@ defmodule GoogleApi.Content.V21.Api.Orderreports do
           keyword()
         ) ::
           {:ok, GoogleApi.Content.V21.Model.OrderreportsListTransactionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def content_orderreports_listtransactions(
         connection,
         merchant_id,

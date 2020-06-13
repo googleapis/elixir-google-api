@@ -21,9 +21,13 @@ defmodule GoogleApi.Content.V21.Model.OrderCustomerMarketingRightsInfo do
 
   ## Attributes
 
-  *   `explicitMarketingPreference` (*type:* `String.t`, *default:* `nil`) - Last known customer selection regarding marketing preferences. In certain cases this selection might not be known, so this field would be empty. If a customer selected granted in their most recent order, they can be subscribed to marketing emails. Customers who have chosen denied must not be subscribed, or must be unsubscribed if already opted-in.
+  *   `explicitMarketingPreference` (*type:* `String.t`, *default:* `nil`) - Last known customer selection regarding marketing preferences. In certain cases this selection might not be known, so this field would be empty. If a customer selected `granted` in their most recent order, they can be subscribed to marketing emails. Customers who have chosen `denied` must not be subscribed, or must be unsubscribed if already opted-in.
+
+      Acceptable values are:  
+      - "`denied`" 
+      - "`granted`"
   *   `lastUpdatedTimestamp` (*type:* `String.t`, *default:* `nil`) - Timestamp when last time marketing preference was updated. Could be empty, if user wasn't offered a selection yet.
-  *   `marketingEmailAddress` (*type:* `String.t`, *default:* `nil`) - Email address that can be used for marketing purposes. The field may be empty even if explicitMarketingPreference is 'granted'. This happens when retrieving an old order from the customer who deleted their account.
+  *   `marketingEmailAddress` (*type:* `String.t`, *default:* `nil`) - Email address that can be used for marketing purposes. The field may be empty even if `explicitMarketingPreference` is 'granted'. This happens when retrieving an old order from the customer who deleted their account.
   """
 
   use GoogleApi.Gax.ModelBase

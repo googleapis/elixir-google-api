@@ -55,7 +55,8 @@ defmodule GoogleApi.DFAReporting.V34.Api.CustomEvents do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V34.Model.CustomEventsBatchInsertResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_custom_events_batchinsert(
         connection,
         profile_id,

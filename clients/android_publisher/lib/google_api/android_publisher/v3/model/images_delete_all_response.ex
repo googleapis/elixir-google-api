@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ImagesDeleteAllResponse do
   @moduledoc """
-
+  Response for deleting all images.
 
   ## Attributes
 
-  *   `deleted` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Image.t)`, *default:* `nil`) - 
+  *   `deleted` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Image.t)`, *default:* `nil`) - The deleted images.
   """
 
   use GoogleApi.Gax.ModelBase

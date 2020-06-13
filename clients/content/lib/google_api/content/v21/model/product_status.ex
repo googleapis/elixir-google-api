@@ -25,7 +25,7 @@ defmodule GoogleApi.Content.V21.Model.ProductStatus do
   *   `destinationStatuses` (*type:* `list(GoogleApi.Content.V21.Model.ProductStatusDestinationStatus.t)`, *default:* `nil`) - The intended destinations for the product.
   *   `googleExpirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item expires in Google Shopping, in ISO 8601 format.
   *   `itemLevelIssues` (*type:* `list(GoogleApi.Content.V21.Model.ProductStatusItemLevelIssue.t)`, *default:* `nil`) - A list of all issues associated with the product.
-  *   `kind` (*type:* `String.t`, *default:* `content#productStatus`) - Identifies what kind of resource this is. Value: the fixed string "content#productStatus".
+  *   `kind` (*type:* `String.t`, *default:* `content#productStatus`) - Identifies what kind of resource this is. Value: the fixed string "`content#productStatus`"
   *   `lastUpdateDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item has been last updated, in ISO 8601 format.
   *   `link` (*type:* `String.t`, *default:* `nil`) - The link to the product.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The ID of the product for which status is reported.

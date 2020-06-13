@@ -31,7 +31,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project in which to create the alerting policy. The format is projects/[PROJECT_ID].Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[POLICY_ID], identifying the policy in the container.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project in which to create the alerting policy. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+      Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. |name| must be a host project of a workspace, otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[ALERT_POLICY_ID], identifying the policy in the container.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -57,7 +59,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_alert_policies_create(
         connection,
         projects_id,
@@ -99,8 +104,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The alerting policy to delete. The format is:
-      projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The alerting policy to delete. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
       For more information, see AlertPolicy.
   *   `alert_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -128,7 +133,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_alert_policies_delete(
         connection,
         projects_id,
@@ -171,8 +177,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The alerting policy to retrieve. The format is
-      projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The alerting policy to retrieve. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
 
   *   `alert_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -200,7 +206,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_alert_policies_get(
         connection,
         projects_id,
@@ -238,13 +247,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Lists the existing alerting policies for the project.
+  Lists the existing alerting policies for the workspace.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project whose alert policies are to be listed. The format is
-      projects/[PROJECT_ID]
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project whose alert policies are to be listed. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
       Note that this field names the parent container in which the alerting policies to be listed are stored. To retrieve a single alerting policy by name, use the GetAlertPolicy operation, instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -258,8 +267,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - If provided, this field specifies the criteria that must be met by alert policies to be included in the response.For more details, see sorting and filtering.
-      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields by which to sort the result. Supports the same set of field references as the filter field. Entries can be prefixed with a minus sign to sort by the field in descending order.For more details, see sorting and filtering.
+      *   `:filter` (*type:* `String.t`) - If provided, this field specifies the criteria that must be met by alert policies to be included in the response.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields by which to sort the result. Supports the same set of field references as the filter field. Entries can be prefixed with a minus sign to sort by the field in descending order.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return in a single response.
       *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -276,7 +285,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListAlertPoliciesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_alert_policies_list(
         connection,
         projects_id,
@@ -323,8 +333,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `alertPolicy.name`. Required if the policy exists. The resource name for this policy. The syntax is:
-      projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
+  *   `projects_id` (*type:* `String.t`) - Part of `alertPolicy.name`. Required if the policy exists. The resource name for this policy. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
       [ALERT_POLICY_ID] is assigned by Stackdriver Monitoring when the policy is created. When calling the alertPolicies.create method, do not include the name field in the alerting policy passed as part of the request.
   *   `alert_policies_id` (*type:* `String.t`) - Part of `alertPolicy.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -356,7 +366,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.AlertPolicy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_alert_policies_patch(
         connection,
         projects_id,
@@ -401,7 +414,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project in which to create the time series. The format is "projects/PROJECT_ID_OR_NUMBER".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project in which to create the time series. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -429,7 +444,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.CreateCollectdTimeSeriesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_collectd_time_series_create(
         connection,
         projects_id,
@@ -473,7 +489,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project in which to create the group. The format is "projects/{project_id_or_number}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project in which to create the group. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -496,7 +514,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec monitoring_projects_groups_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_groups_create(
         connection,
         projects_id,
@@ -539,7 +557,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The group to delete. The format is "projects/{project_id_or_number}/groups/{group_id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The group to delete. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+
   *   `groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -567,7 +587,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_groups_delete(
         connection,
         projects_id,
@@ -611,7 +632,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The group to retrieve. The format is "projects/{project_id_or_number}/groups/{group_id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The group to retrieve. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+
   *   `groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -638,7 +661,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_groups_get(
         connection,
         projects_id,
@@ -681,7 +705,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project whose groups are to be listed. The format is "projects/{project_id_or_number}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project whose groups are to be listed. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -694,11 +720,17 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ancestorsOfGroup` (*type:* `String.t`) - A group name: "projects/{project_id_or_number}/groups/{group_id}". Returns groups that are ancestors of the specified group. The groups are returned in order, starting with the immediate parent and ending with the most distant ancestor. If the specified group has no immediate parent, the results are empty.
-      *   `:childrenOfGroup` (*type:* `String.t`) - A group name: "projects/{project_id_or_number}/groups/{group_id}". Returns groups whose parentName field contains the group name. If no groups have this parent, the results are empty.
-      *   `:descendantsOfGroup` (*type:* `String.t`) - A group name: "projects/{project_id_or_number}/groups/{group_id}". Returns the descendants of the specified group. This is a superset of the results returned by the childrenOfGroup filter, and includes children-of-children, and so forth.
+      *   `:ancestorsOfGroup` (*type:* `String.t`) - A group name. The format is:
+          projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+          Returns groups that are ancestors of the specified group. The groups are returned in order, starting with the immediate parent and ending with the most distant ancestor. If the specified group has no immediate parent, the results are empty.
+      *   `:childrenOfGroup` (*type:* `String.t`) - A group name. The format is:
+          projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+          Returns groups whose parent_name field contains the group name. If no groups have this parent, the results are empty.
+      *   `:descendantsOfGroup` (*type:* `String.t`) - A group name. The format is:
+          projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+          Returns the descendants of the specified group. This is a superset of the results returned by the children_of_group filter, and includes children-of-children, and so forth.
       *   `:pageSize` (*type:* `integer()`) - A positive number that is the maximum number of results to return.
-      *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
+      *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the next_page_token value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -707,7 +739,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `{:error, info}` on failure
   """
   @spec monitoring_projects_groups_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.ListGroupsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.ListGroupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_groups_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -748,7 +782,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `group.name`. Output only. The name of this group. The format is "projects/{project_id_or_number}/groups/{group_id}". When creating a group, this field is ignored and a new name is created consisting of the project specified in the call to CreateGroup and a unique {group_id} that is generated automatically.
+  *   `projects_id` (*type:* `String.t`) - Part of `group.name`. Output only. The name of this group. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+      When creating a group, this field is ignored and a new name is created consisting of the project specified in the call to CreateGroup and a unique [GROUP_ID] that is generated automatically.
   *   `groups_id` (*type:* `String.t`) - Part of `group.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -777,7 +813,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Group.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_groups_update(
         connection,
         projects_id,
@@ -822,7 +859,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The group whose members are listed. The format is "projects/{project_id_or_number}/groups/{group_id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The group whose members are listed. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+
   *   `groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -836,13 +875,13 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - An optional list filter describing the members to be returned. The filter may reference the type, labels, and metadata of monitored resources that comprise the group. For example, to return only resources representing Compute Engine VM instances, use this filter:
-          resource.type = "gce_instance"
+      *   `:filter` (*type:* `String.t`) - An optional list filter (https://cloud.google.com/monitoring/api/learn_more#filtering) describing the members to be returned. The filter may reference the type, labels, and metadata of monitored resources that comprise the group. For example, to return only resources representing Compute Engine VM instances, use this filter:
+          `resource.type = "gce_instance"`
 
       *   `:"interval.endTime"` (*type:* `DateTime.t`) - Required. The end of the time interval.
       *   `:"interval.startTime"` (*type:* `DateTime.t`) - Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
       *   `:pageSize` (*type:* `integer()`) - A positive number that is the maximum number of results to return.
-      *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
+      *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the next_page_token value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -858,7 +897,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListGroupMembersResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_groups_members_list(
         connection,
         projects_id,
@@ -903,12 +943,14 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Creates a new metric descriptor. User-created metric descriptors define custom metrics.
+  Creates a new metric descriptor. User-created metric descriptors define custom metrics (https://cloud.google.com/monitoring/custom-metrics).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -934,7 +976,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.MetricDescriptor.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.MetricDescriptor.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_metric_descriptors_create(
         connection,
         projects_id,
@@ -971,12 +1016,14 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Deletes a metric descriptor. Only user-created custom metrics can be deleted.
+  Deletes a metric descriptor. Only user-created custom metrics (https://cloud.google.com/monitoring/custom-metrics) can be deleted.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The metric descriptor on which to execute the request. The format is "projects/{project_id_or_number}/metricDescriptors/{metric_id}". An example of {metric_id} is: "custom.googleapis.com/my_test_metric".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The metric descriptor on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
+      An example of [METRIC_ID] is: "custom.googleapis.com/my_test_metric".
   *   `metric_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1003,7 +1050,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_metric_descriptors_delete(
         connection,
         projects_id,
@@ -1041,12 +1089,14 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Gets a single metric descriptor. This method does not require a Stackdriver account.
+  Gets a single metric descriptor. This method does not require a Workspace.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The metric descriptor on which to execute the request. The format is "projects/{project_id_or_number}/metricDescriptors/{metric_id}". An example value of {metric_id} is "compute.googleapis.com/instance/disk/read_bytes_count".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The metric descriptor on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
+      An example value of [METRIC_ID] is "compute.googleapis.com/instance/disk/read_bytes_count".
   *   `metric_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1073,7 +1123,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.MetricDescriptor.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.MetricDescriptor.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_metric_descriptors_get(
         connection,
         projects_id,
@@ -1111,12 +1164,14 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Lists metric descriptors that match a filter. This method does not require a Stackdriver account.
+  Lists metric descriptors that match a filter. This method does not require a Workspace.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1129,7 +1184,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - If this field is empty, all custom and system-defined metric descriptors are returned. Otherwise, the filter specifies which metric descriptors are to be returned. For example, the following filter matches all custom metrics:
+      *   `:filter` (*type:* `String.t`) - If this field is empty, all custom and system-defined metric descriptors are returned. Otherwise, the filter (https://cloud.google.com/monitoring/api/v3/filters) specifies which metric descriptors are to be returned. For example, the following filter matches all custom metrics (https://cloud.google.com/monitoring/custom-metrics):
           metric.type = starts_with("custom.googleapis.com/")
 
       *   `:pageSize` (*type:* `integer()`) - A positive number that is the maximum number of results to return.
@@ -1148,7 +1203,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListMetricDescriptorsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_metric_descriptors_list(
         connection,
         projects_id,
@@ -1189,12 +1245,14 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Gets a single monitored resource descriptor. This method does not require a Stackdriver account.
+  Gets a single monitored resource descriptor. This method does not require a Workspace.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The monitored resource descriptor to get. The format is "projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}". The {resource_type} is a predefined type, such as cloudsql_database.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The monitored resource descriptor to get. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
+      The [RESOURCE_TYPE] is a predefined type, such as cloudsql_database.
   *   `monitored_resource_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1223,7 +1281,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.MonitoredResourceDescriptor.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_monitored_resource_descriptors_get(
         connection,
         projects_id,
@@ -1267,12 +1326,14 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Lists monitored resource descriptors that match a filter. This method does not require a Stackdriver account.
+  Lists monitored resource descriptors that match a filter. This method does not require a Workspace.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1285,7 +1346,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - An optional filter describing the descriptors to be returned. The filter can reference the descriptor's type and labels. For example, the following filter returns only Google Compute Engine descriptors that have an id label:
+      *   `:filter` (*type:* `String.t`) - An optional filter (https://cloud.google.com/monitoring/api/v3/filters) describing the descriptors to be returned. The filter can reference the descriptor's type and labels. For example, the following filter returns only Google Compute Engine descriptors that have an id label:
           resource.type = starts_with("gce_") AND resource.label:id
 
       *   `:pageSize` (*type:* `integer()`) - A positive number that is the maximum number of results to return.
@@ -1304,7 +1365,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListMonitoredResourceDescriptorsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_monitored_resource_descriptors_list(
         connection,
         projects_id,
@@ -1350,7 +1412,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The channel type for which to execute the request. The format is projects/[PROJECT_ID]/notificationChannelDescriptors/{channel_type}.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The channel type for which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
+
   *   `notification_channel_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1379,7 +1443,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channel_descriptors_get(
         connection,
         projects_id,
@@ -1428,8 +1493,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The REST resource name of the parent from which to retrieve the notification channel descriptors. The expected syntax is:
-      projects/[PROJECT_ID]
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The REST resource name of the parent from which to retrieve the notification channel descriptors. The expected syntax is:
+      projects/[PROJECT_ID_OR_NUMBER]
       Note that this names the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor operation, instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1459,7 +1524,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListNotificationChannelDescriptorsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channel_descriptors_list(
         connection,
         projects_id,
@@ -1505,9 +1571,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is:
-      projects/[PROJECT_ID]
-      Note that this names the container into which the channel will be written. This does not name the newly created channel. The resulting channel's name will have a normalized version of this field as a prefix, but will add /notificationChannels/[CHANNEL_ID] to identify the channel.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+      This names the container into which the channel will be written, this does not name the newly created channel. The resulting channel's name will have a normalized version of this field as a prefix, but will add /notificationChannels/[CHANNEL_ID] to identify the channel.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1534,7 +1600,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_create(
         connection,
         projects_id,
@@ -1576,7 +1644,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The channel for which to execute the request. The format is projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID].
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The channel for which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1604,7 +1674,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_notification_channels_delete(
         connection,
         projects_id,
@@ -1648,7 +1719,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The channel for which to execute the request. The format is projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID].
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The channel for which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1676,7 +1749,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_get(
         connection,
         projects_id,
@@ -1719,7 +1794,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The notification channel for which a verification code is to be generated and retrieved. This must name a channel that is already verified; if the specified channel is not verified, the request will fail.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The notification channel for which a verification code is to be generated and retrieved. This must name a channel that is already verified; if the specified channel is not verified, the request will fail.
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1749,7 +1824,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.GetNotificationChannelVerificationCodeResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_get_verification_code(
         connection,
         projects_id,
@@ -1800,7 +1876,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is projects/[PROJECT_ID]. That is, this names the container in which to look for the notification channels; it does not name a specific channel. To query a specific channel by REST resource name, use the GetNotificationChannel operation.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+      This names the container in which to look for the notification channels; it does not name a specific channel. To query a specific channel by REST resource name, use the GetNotificationChannel operation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1813,8 +1891,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - If provided, this field specifies the criteria that must be met by notification channels to be included in the response.For more details, see sorting and filtering.
-      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields by which to sort the result. Supports the same set of fields as in filter. Entries can be prefixed with a minus sign to sort in descending rather than ascending order.For more details, see sorting and filtering.
+      *   `:filter` (*type:* `String.t`) - If provided, this field specifies the criteria that must be met by notification channels to be included in the response.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields by which to sort the result. Supports the same set of fields as in filter. Entries can be prefixed with a minus sign to sort in descending rather than ascending order.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return in a single response. If not set to a positive number, a reasonable value will be chosen by the service.
       *   `:pageToken` (*type:* `String.t`) - If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1831,7 +1909,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListNotificationChannelsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_list(
         connection,
         projects_id,
@@ -1878,8 +1957,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `notificationChannel.name`. The full REST resource name for this channel. The syntax is:
-      projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
+  *   `projects_id` (*type:* `String.t`) - Part of `notificationChannel.name`. The full REST resource name for this channel. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
       The [CHANNEL_ID] is automatically assigned by the server on creation.
   *   `notification_channels_id` (*type:* `String.t`) - Part of `notificationChannel.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1910,7 +1989,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_patch(
         connection,
         projects_id,
@@ -1955,7 +2036,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The notification channel to which to send a verification code.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The notification channel to which to send a verification code.
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1983,7 +2064,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_notification_channels_send_verification_code(
         connection,
         projects_id,
@@ -2031,7 +2113,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The notification channel to verify.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The notification channel to verify.
   *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2060,7 +2142,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Monitoring.V3.Model.NotificationChannel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_notification_channels_verify(
         connection,
         projects_id,
@@ -2108,7 +2192,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2134,7 +2220,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_time_series_create(
         connection,
         projects_id,
@@ -2171,12 +2258,14 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
-  Lists time series that match a filter. This method does not require a Stackdriver account.
+  Lists time series that match a filter. This method does not require a Workspace.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project on which to execute the request. The format is "projects/{project_id_or_number}".
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2189,11 +2278,11 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"aggregation.alignmentPeriod"` (*type:* `String.t`) - The alignment period for per-time series alignment. If present, alignmentPeriod must be at least 60 seconds. After per-time series alignment, each time series will contain data points only on the period boundaries. If perSeriesAligner is not specified or equals ALIGN_NONE, then this field is ignored. If perSeriesAligner is specified and does not equal ALIGN_NONE, then this field must be defined; otherwise an error is returned.
-      *   `:"aggregation.crossSeriesReducer"` (*type:* `String.t`) - The approach to be used to combine time series. Not all reducer functions may be applied to all time series, depending on the metric type and the value type of the original time series. Reduction may change the metric type of value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
-      *   `:"aggregation.groupByFields"` (*type:* `list(String.t)`) - The set of fields to preserve when crossSeriesReducer is specified. The groupByFields determine how the time series are partitioned into subsets prior to applying the aggregation function. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The crossSeriesReducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in groupByFields are aggregated away. If groupByFields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If crossSeriesReducer is not defined, this field is ignored.
-      *   `:"aggregation.perSeriesAligner"` (*type:* `String.t`) - The approach to be used to align individual time series. Not all alignment functions may be applied to all time series, depending on the metric type and value type of the original time series. Alignment may change the metric type or the value type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If crossSeriesReducer is specified, then perSeriesAligner must be specified and not equal ALIGN_NONE and alignmentPeriod must be specified; otherwise, an error is returned.
-      *   `:filter` (*type:* `String.t`) - A monitoring filter that specifies which time series should be returned. The filter must specify a single metric type, and can additionally specify metric labels and other information. For example:
+      *   `:"aggregation.alignmentPeriod"` (*type:* `String.t`) - The alignment_period specifies a time interval, in seconds, that is used to divide the data in all the time series into consistent blocks of time. This will be done before the per-series aligner can be applied to the data.The value must be at least 60 seconds. If a per-series aligner other than ALIGN_NONE is specified, this field is required or an error is returned. If no per-series aligner is specified, or the aligner ALIGN_NONE is specified, then this field is ignored.
+      *   `:"aggregation.crossSeriesReducer"` (*type:* `String.t`) - The reduction operation to be used to combine time series into a single time series, where the value of each data point in the resulting series is a function of all the already aligned values in the input time series.Not all reducer operations can be applied to all time series. The valid choices depend on the metric_kind and the value_type of the original time series. Reduction can yield a time series with a different metric_kind or value_type than the input time series.Time series data must first be aligned (see per_series_aligner) in order to perform cross-time series reduction. If cross_series_reducer is specified, then per_series_aligner must be specified, and must not be ALIGN_NONE. An alignment_period must also be specified; otherwise, an error is returned.
+      *   `:"aggregation.groupByFields"` (*type:* `list(String.t)`) - The set of fields to preserve when cross_series_reducer is specified. The group_by_fields determine how the time series are partitioned into subsets prior to applying the aggregation operation. Each subset contains time series that have the same value for each of the grouping fields. Each individual time series is a member of exactly one subset. The cross_series_reducer is applied to each subset of time series. It is not possible to reduce across different resource types, so this field implicitly contains resource.type. Fields not specified in group_by_fields are aggregated away. If group_by_fields is not specified and all the time series have the same resource type, then the time series are aggregated into a single output time series. If cross_series_reducer is not defined, this field is ignored.
+      *   `:"aggregation.perSeriesAligner"` (*type:* `String.t`) - An Aligner describes how to bring the data points in a single time series into temporal alignment. Except for ALIGN_NONE, all alignments cause all the data points in an alignment_period to be mathematically grouped together, resulting in a single data point for each alignment_period with end timestamp at the end of the period.Not all alignment operations may be applied to all time series. The valid choices depend on the metric_kind and value_type of the original time series. Alignment can change the metric_kind or the value_type of the time series.Time series data must be aligned in order to perform cross-time series reduction. If cross_series_reducer is specified, then per_series_aligner must be specified and not equal to ALIGN_NONE and alignment_period must be specified; otherwise, an error is returned.
+      *   `:filter` (*type:* `String.t`) - Required. A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters) that specifies which time series should be returned. The filter must specify a single metric type, and can additionally specify metric labels and other information. For example:
           metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
               metric.labels.instance_name = "my-instance-name"
 
@@ -2202,7 +2291,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:orderBy` (*type:* `String.t`) - Unsupported: must be left blank. The points in each time series are currently returned in reverse time order (most recent to oldest).
       *   `:pageSize` (*type:* `integer()`) - A positive number that is the maximum number of results to return. If page_size is empty or more than 100,000 results, the effective page_size is 100,000 results. If view is set to FULL, this is the maximum number of Points returned. If view is set to HEADERS, this is the maximum number of TimeSeries returned.
       *   `:pageToken` (*type:* `String.t`) - If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
-      *   `:view` (*type:* `String.t`) - Specifies which information is returned about the time series.
+      *   `:view` (*type:* `String.t`) - Required. Specifies which information is returned about the time series.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2212,7 +2301,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   """
   @spec monitoring_projects_time_series_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListTimeSeriesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_time_series_list(
         connection,
         projects_id,
@@ -2259,12 +2349,87 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   end
 
   @doc """
+  Queries time series using Monitoring Query Language. This method does not require a Workspace.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project on which to execute the request. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Monitoring.V3.Model.QueryTimeSeriesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Monitoring.V3.Model.QueryTimeSeriesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec monitoring_projects_time_series_query(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.QueryTimeSeriesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def monitoring_projects_time_series_query(
+        connection,
+        projects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v3/projects/{projectsId}/timeSeries:query", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Monitoring.V3.Model.QueryTimeSeriesResponse{}])
+  end
+
+  @doc """
   Creates a new Uptime check configuration.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project in which to create the Uptime check. The format  is projects/[PROJECT_ID].
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project in which to create the Uptime check. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2290,7 +2455,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_uptime_check_configs_create(
         connection,
         projects_id,
@@ -2332,7 +2500,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The Uptime check configuration to delete. The format  is projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The Uptime check configuration to delete. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+
   *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2359,7 +2529,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def monitoring_projects_uptime_check_configs_delete(
         connection,
         projects_id,
@@ -2402,7 +2573,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The Uptime check configuration to retrieve. The format  is projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The Uptime check configuration to retrieve. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+
   *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2429,7 +2602,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_uptime_check_configs_get(
         connection,
         projects_id,
@@ -2472,7 +2648,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project whose Uptime check configurations are listed. The format  is projects/[PROJECT_ID].
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project whose Uptime check configurations are listed. The format is:
+      projects/[PROJECT_ID_OR_NUMBER]
+
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2501,7 +2679,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListUptimeCheckConfigsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_uptime_check_configs_list(
         connection,
         projects_id,
@@ -2546,7 +2725,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. A unique resource name for this Uptime check configuration. The format is:projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID].This field should be omitted when creating the Uptime check configuration; on create, the resource name is assigned by the server and included in the response.
+  *   `projects_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. A unique resource name for this Uptime check configuration. The format is:
+       projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+      This field should be omitted when creating the Uptime check configuration; on create, the resource name is assigned by the server and included in the response.
   *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2575,7 +2756,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Monitoring.V3.Model.UptimeCheckConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def monitoring_projects_uptime_check_configs_patch(
         connection,
         projects_id,

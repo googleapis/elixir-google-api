@@ -95,12 +95,21 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupAssetsRequest do
       * resource_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
       * security_marks.marks: `=`, `:`
       * security_center_properties.resource_name: `=`, `:`
+      * security_center_properties.resource_display_name: `=`, `:`
       * security_center_properties.resource_type: `=`, `:`
       * security_center_properties.resource_parent: `=`, `:`
+      * security_center_properties.resource_parent_display_name: `=`, `:`
       * security_center_properties.resource_project: `=`, `:`
+      * security_center_properties.resource_project_display_name: `=`, `:`
       * security_center_properties.resource_owners: `=`, `:`
 
       For example, `resource_properties.size = 100` is a valid filter string.
+
+      Use a partial match on the empty string to filter based on a property
+      existing: "resource_properties.my_property : \\"\\""
+
+      Use a negated partial match on the empty string to filter based on a
+      property not existing: "-resource_properties.my_property : \\"\\""
   *   `groupBy` (*type:* `String.t`, *default:* `nil`) - Required. Expression that defines what assets fields to use for grouping. The string
       value should follow SQL syntax: comma separated list of fields. For
       example:
@@ -109,12 +118,16 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupAssetsRequest do
       The following fields are supported when compare_duration is not set:
 
       * security_center_properties.resource_project
+      * security_center_properties.resource_project_display_name
       * security_center_properties.resource_type
       * security_center_properties.resource_parent
+      * security_center_properties.resource_parent_display_name
 
       The following fields are supported when compare_duration is set:
 
       * security_center_properties.resource_type
+      * security_center_properties.resource_project_display_name
+      * security_center_properties.resource_parent_display_name
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The maximum number of results to return in a single response. Default is
       10, minimum is 1, maximum is 1000.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - The value returned by the last `GroupAssetsResponse`; indicates

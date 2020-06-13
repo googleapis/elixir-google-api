@@ -25,46 +25,55 @@ defmodule GoogleApi.Content.V21.Model.OrderShipment do
 
       For supported carriers, Google includes the carrier name and tracking URL in emails to customers. For select supported carriers, Google also automatically updates the shipment status based on the provided shipment ID. Note: You can also use unsupported carriers, but emails to customers will not include the carrier name or tracking URL, and there will be no automatic order status updates. 
       Supported carriers for US are:  
-      - "ups" (United Parcel Service) automatic status updates 
-      - "usps" (United States Postal Service) automatic status updates 
-      - "fedex" (FedEx) automatic status updates  
-      - "dhl" (DHL eCommerce) automatic status updates (US only) 
-      - "ontrac" (OnTrac) automatic status updates  
-      - "dhl express" (DHL Express)
-      - "deliv" (Deliv) 
-      - "dynamex" (TForce) 
-      - "lasership" (LaserShip) 
-      - "mpx" (Military Parcel Xpress) 
-      - "uds" (United Delivery Service) 
-      - "efw" (Estes Forwarding Worldwide) 
-      - "jd logistics" (JD Logistics) 
-      - "yunexpress" (YunExpress) 
-      - "china post" (China Post) 
-      - "china ems" (China Post Express Mail Service) 
-      - "singapore post" (Singapore Post) 
-      - "pos malaysia" (Pos Malaysia) 
-      - "postnl" (PostNL) 
-      - "ptt" (PTT Turkish Post) 
-      - "eub" (ePacket) 
-      - "chukou1" (Chukou1 Logistics)  
+      - "`ups`" (United Parcel Service) automatic status updates 
+      - "`usps`" (United States Postal Service) automatic status updates 
+      - "`fedex`" (FedEx) automatic status updates  
+      - "`dhl`" (DHL eCommerce) automatic status updates (US only) 
+      - "`ontrac`" (OnTrac) automatic status updates  
+      - "`dhl express`" (DHL Express)
+      - "`deliv`" (Deliv) 
+      - "`dynamex`" (TForce) 
+      - "`lasership`" (LaserShip) 
+      - "`mpx`" (Military Parcel Xpress) 
+      - "`uds`" (United Delivery Service) 
+      - "`efw`" (Estes Forwarding Worldwide) 
+      - "`jd logistics`" (JD Logistics) 
+      - "`yunexpress`" (YunExpress) 
+      - "`china post`" (China Post) 
+      - "`china ems`" (China Post Express Mail Service) 
+      - "`singapore post`" (Singapore Post) 
+      - "`pos malaysia`" (Pos Malaysia) 
+      - "`postnl`" (PostNL) 
+      - "`ptt`" (PTT Turkish Post) 
+      - "`eub`" (ePacket) 
+      - "`chukou1`" (Chukou1 Logistics)  
       Supported carriers for FR are:  
-      - "la poste" (La Poste) automatic status updates  
-      - "colissimo" (Colissimo by La Poste) automatic status updates 
-      - "ups" (United Parcel Service) automatic status updates  
-      - "chronopost" (Chronopost by La Poste) 
-      - "gls" (General Logistics Systems France) 
-      - "dpd" (DPD Group by GeoPost) 
-      - "bpost" (Belgian Post Group) 
-      - "colis prive" (Colis Privé) 
-      - "boxtal" (Boxtal) 
-      - "geodis" (GEODIS) 
-      - "tnt" (TNT)
+      - "`la poste`" (La Poste) automatic status updates  
+      - "`colissimo`" (Colissimo by La Poste) automatic status updates 
+      - "`ups`" (United Parcel Service) automatic status updates  
+      - "`chronopost`" (Chronopost by La Poste) 
+      - "`gls`" (General Logistics Systems France) 
+      - "`dpd`" (DPD Group by GeoPost) 
+      - "`bpost`" (Belgian Post Group) 
+      - "`colis prive`" (Colis Privé) 
+      - "`boxtal`" (Boxtal) 
+      - "`geodis`" (GEODIS) 
+      - "`tnt`" (TNT) 
+      - "`db schenker`" (DB Schenker) 
+      - "`aramex`" (Aramex)
   *   `creationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been created, in ISO 8601 format.
-  *   `deliveryDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been delivered, in ISO 8601 format. Present only if status is delivered
+  *   `deliveryDate` (*type:* `String.t`, *default:* `nil`) - Date on which the shipment has been delivered, in ISO 8601 format. Present only if `status` is `delivered`
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the shipment.
   *   `lineItems` (*type:* `list(GoogleApi.Content.V21.Model.OrderShipmentLineItemShipment.t)`, *default:* `nil`) - The line items that are shipped.
+  *   `scheduledDeliveryDetails` (*type:* `GoogleApi.Content.V21.Model.OrderShipmentScheduledDeliveryDetails.t`, *default:* `nil`) - Delivery details of the shipment if scheduling is needed.
   *   `shipmentGroupId` (*type:* `String.t`, *default:* `nil`) - The shipment group ID of the shipment. This is set in shiplineitems request.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the shipment.
+
+      Acceptable values are:  
+      - "`delivered`" 
+      - "`readyForPickup`" 
+      - "`shipped`" 
+      - "`undeliverable`"
   *   `trackingId` (*type:* `String.t`, *default:* `nil`) - The tracking ID for the shipment.
   """
 
@@ -76,6 +85,8 @@ defmodule GoogleApi.Content.V21.Model.OrderShipment do
           :deliveryDate => String.t(),
           :id => String.t(),
           :lineItems => list(GoogleApi.Content.V21.Model.OrderShipmentLineItemShipment.t()),
+          :scheduledDeliveryDetails =>
+            GoogleApi.Content.V21.Model.OrderShipmentScheduledDeliveryDetails.t(),
           :shipmentGroupId => String.t(),
           :status => String.t(),
           :trackingId => String.t()
@@ -86,6 +97,11 @@ defmodule GoogleApi.Content.V21.Model.OrderShipment do
   field(:deliveryDate)
   field(:id)
   field(:lineItems, as: GoogleApi.Content.V21.Model.OrderShipmentLineItemShipment, type: :list)
+
+  field(:scheduledDeliveryDetails,
+    as: GoogleApi.Content.V21.Model.OrderShipmentScheduledDeliveryDetails
+  )
+
   field(:shipmentGroupId)
   field(:status)
   field(:trackingId)

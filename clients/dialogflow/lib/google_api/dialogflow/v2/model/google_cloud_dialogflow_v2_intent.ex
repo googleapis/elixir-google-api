@@ -31,6 +31,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
   *   `events` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The collection of event names that trigger the intent.
       If the collection of input contexts is not empty, all of the contexts must
       be present in the active user session for an event to trigger this intent.
+      Event names are limited to 150 characters.
   *   `followupIntentInfo` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2IntentFollowupIntentInfo.t)`, *default:* `nil`) - Read-only. Information about all followup intents that have this intent as
       a direct or indirect parent. We populate this field only in the output.
   *   `inputContextNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of context names required for this intent to be
@@ -43,7 +44,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Intent do
       Note: If `ml_disabled` setting is set to true, then this intent is not
       taken into account during inference in `ML ONLY` match mode. Also,
       auto-markup in the UI is turned off.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of this intent.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of this intent.
       Required for Intents.UpdateIntent and Intents.BatchUpdateIntents
       methods.
       Format: `projects/<Project ID>/agent/intents/<Intent ID>`.

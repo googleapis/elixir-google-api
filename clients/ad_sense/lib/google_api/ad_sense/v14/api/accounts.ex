@@ -49,7 +49,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adsense_accounts_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.Account.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.Account.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_get(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -100,7 +100,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adsense_accounts_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.Accounts.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.Accounts.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -155,7 +155,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdCode.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.AdCode.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_adclients_get_ad_code(
         connection,
         account_id,
@@ -213,7 +214,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adsense_accounts_adclients_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.AdClients.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.AdClients.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_adclients_list(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -272,7 +275,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdUnit.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.AdUnit.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_adunits_get(
         connection,
         account_id,
@@ -338,7 +342,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdCode.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.AdCode.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_adunits_get_ad_code(
         connection,
         account_id,
@@ -405,7 +410,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_adunits_list(
         connection,
         account_id,
@@ -474,7 +480,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_adunits_customchannels_list(
         connection,
         account_id,
@@ -543,7 +552,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_alerts_delete(
         connection,
         account_id,
@@ -600,7 +609,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adsense_accounts_alerts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.Alerts.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.Alerts.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_alerts_list(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -658,7 +667,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannel.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.CustomChannel.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_customchannels_get(
         connection,
         account_id,
@@ -727,7 +739,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.CustomChannels.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_customchannels_list(
         connection,
         account_id,
@@ -796,7 +811,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.AdUnits.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_customchannels_adunits_list(
         connection,
         account_id,
@@ -860,7 +876,7 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adsense_accounts_payments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.Payments.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.Payments.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def adsense_accounts_payments_list(connection, account_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -928,7 +944,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_reports_generate(
         connection,
         account_id,
@@ -1008,7 +1025,8 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           keyword()
         ) ::
           {:ok, GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_reports_saved_generate(
         connection,
         account_id,
@@ -1071,7 +1089,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adsense_accounts_reports_saved_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.SavedReports.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.SavedReports.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_reports_saved_list(
         connection,
         account_id,
@@ -1133,7 +1153,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyle.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyle.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_savedadstyles_get(
         connection,
         account_id,
@@ -1191,7 +1214,9 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
   *   `{:error, info}` on failure
   """
   @spec adsense_accounts_savedadstyles_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyles.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSense.V14.Model.SavedAdStyles.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_savedadstyles_list(
         connection,
         account_id,
@@ -1255,7 +1280,10 @@ defmodule GoogleApi.AdSense.V14.Api.Accounts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AdSense.V14.Model.UrlChannels.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AdSense.V14.Model.UrlChannels.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsense_accounts_urlchannels_list(
         connection,
         account_id,

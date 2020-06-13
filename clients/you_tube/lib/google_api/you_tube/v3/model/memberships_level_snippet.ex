@@ -22,7 +22,7 @@ defmodule GoogleApi.YouTube.V3.Model.MembershipsLevelSnippet do
   ## Attributes
 
   *   `creatorChannelId` (*type:* `String.t`, *default:* `nil`) - The id of the channel that's offering channel memberships.
-  *   `levelDetails` (*type:* `GoogleApi.YouTube.V3.Model.LevelDetails.t`, *default:* `nil`) - 
+  *   `levelDetails` (*type:* `GoogleApi.YouTube.V3.Model.LevelDetails.t`, *default:* `nil`) - Details about the pricing level.
   """
 
   use GoogleApi.Gax.ModelBase

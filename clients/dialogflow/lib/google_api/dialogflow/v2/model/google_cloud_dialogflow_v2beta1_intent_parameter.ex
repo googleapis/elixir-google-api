@@ -37,6 +37,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentParame
   *   `prompts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The collection of prompts that the agent can present to the
       user in order to collect a value for the parameter.
   *   `value` (*type:* `String.t`, *default:* `nil`) - Optional. The definition of the parameter value. It can be:
+
       - a constant string,
       - a parameter value defined as `$parameter_name`,
       - an original parameter value defined as `$parameter_name.original`,

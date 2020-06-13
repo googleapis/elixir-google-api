@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V2.Model.TestOrderLineItem do
 
   ## Attributes
 
-  *   `product` (*type:* `GoogleApi.Content.V2.Model.TestOrderLineItemProduct.t`, *default:* `nil`) - Product data from the time of the order placement.
-  *   `quantityOrdered` (*type:* `integer()`, *default:* `nil`) - Number of items ordered.
-  *   `returnInfo` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t`, *default:* `nil`) - Details of the return policy for the line item.
-  *   `shippingDetails` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t`, *default:* `nil`) - Details of the requested shipping for the line item.
+  *   `product` (*type:* `GoogleApi.Content.V2.Model.TestOrderLineItemProduct.t`, *default:* `nil`) - Required. Product data from the time of the order placement.
+  *   `quantityOrdered` (*type:* `integer()`, *default:* `nil`) - Required. Number of items ordered.
+  *   `returnInfo` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemReturnInfo.t`, *default:* `nil`) - Required. Details of the return policy for the line item.
+  *   `shippingDetails` (*type:* `GoogleApi.Content.V2.Model.OrderLineItemShippingDetails.t`, *default:* `nil`) - Required. Details of the requested shipping for the line item.
   *   `unitTax` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Deprecated. Ignored if provided.
   """
 

@@ -18,7 +18,7 @@
 defmodule GoogleApi.GamesManagement.Mixfile do
   use Mix.Project
 
-  @version "0.10.0"
+  @version "0.14.0"
 
   def project() do
     [
@@ -48,7 +48,8 @@ defmodule GoogleApi.GamesManagement.Mixfile do
 
   defp description() do
     """
-    Google Play Game Services Management API client library. The Management API for Google Play Game Services.
+    Google Play Game Management client library. The Google Play Game Management API allows developers to manage resources from the Google
+     Play Game service.
     """
   end
 
@@ -59,7 +60,7 @@ defmodule GoogleApi.GamesManagement.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/games_management",
-        "Homepage" => "https://developers.google.com/games/services"
+        "Homepage" => "https://developers.google.com/games/"
       }
     ]
   end

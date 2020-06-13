@@ -19,11 +19,15 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   @moduledoc """
   Represents a Persistent Disk resource.
 
+  Google Compute Engine has two Disk resources:
+
+  * [Zonal](/compute/docs/reference/rest/{$api_version}/disks) * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
+
   Persistent disks are required for running your VM instances. Create both boot and non-boot (data) persistent disks. For more information, read Persistent Disks. For more storage options, read Storage options.
 
   The disks resource represents a zonal persistent disk. For more information, read Zonal persistent disks.
 
-  The regionDisks resource represents a regional persistent disk. For more information, read  Regional resources. (== resource_for beta.disks ==) (== resource_for v1.disks ==) (== resource_for v1.regionDisks ==) (== resource_for beta.regionDisks ==)
+  The regionDisks resource represents a regional persistent disk. For more information, read  Regional resources. (== resource_for {$api_version}.disks ==) (== resource_for {$api_version}.regionDisks ==)
 
   ## Attributes
 

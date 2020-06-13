@@ -28,7 +28,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Resource do
   *   `manifest` (*type:* `String.t`, *default:* `nil`) - Output only. URL of the manifest representing the current configuration of this resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the resource as it appears in the YAML config.
   *   `properties` (*type:* `String.t`, *default:* `nil`) - Output only. The current properties of the resource before any references have been filled in. Returned as serialized YAML.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the resource, for example compute.v1.instance, or cloudfunctions.v1beta1.function.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the resource, for example `compute.v1.instance`, or `cloudfunctions.v1beta1.function`.
   *   `update` (*type:* `GoogleApi.DeploymentManager.V2.Model.ResourceUpdate.t`, *default:* `nil`) - Output only. If Deployment Manager is currently updating or previewing an update to this resource, the updated configuration appears here.
   *   `updateTime` (*type:* `String.t`, *default:* `nil`) - Output only. Update timestamp in RFC3339 text format.
   *   `url` (*type:* `String.t`, *default:* `nil`) - Output only. The URL of the actual resource.

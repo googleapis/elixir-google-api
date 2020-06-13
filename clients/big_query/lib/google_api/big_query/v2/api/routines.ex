@@ -56,7 +56,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_routines_delete(
         connection,
         project_id,
@@ -127,7 +127,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_routines_get(
         connection,
         project_id,
@@ -191,7 +192,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
   *   `{:error, info}` on failure
   """
   @spec bigquery_routines_insert(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_routines_insert(
         connection,
         project_id,
@@ -263,7 +264,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
   *   `{:error, info}` on failure
   """
   @spec bigquery_routines_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.BigQuery.V2.Model.ListRoutinesResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.BigQuery.V2.Model.ListRoutinesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def bigquery_routines_list(
         connection,
         project_id,
@@ -333,7 +336,8 @@ defmodule GoogleApi.BigQuery.V2.Api.Routines do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.BigQuery.V2.Model.Routine.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def bigquery_routines_update(
         connection,
         project_id,

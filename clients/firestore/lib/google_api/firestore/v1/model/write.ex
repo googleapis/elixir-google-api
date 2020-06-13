@@ -27,9 +27,6 @@ defmodule GoogleApi.Firestore.V1.Model.Write do
   *   `delete` (*type:* `String.t`, *default:* `nil`) - A document name to delete. In the format:
       `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
   *   `transform` (*type:* `GoogleApi.Firestore.V1.Model.DocumentTransform.t`, *default:* `nil`) - Applies a transformation to a document.
-      At most one `transform` per document is allowed in a given request.
-      An `update` cannot follow a `transform` on the same document in a given
-      request.
   *   `update` (*type:* `GoogleApi.Firestore.V1.Model.Document.t`, *default:* `nil`) - A document to write.
   *   `updateMask` (*type:* `GoogleApi.Firestore.V1.Model.DocumentMask.t`, *default:* `nil`) - The fields to update in this write.
 
@@ -41,6 +38,11 @@ defmodule GoogleApi.Firestore.V1.Model.Write do
       Fields referenced in the mask, but not present in the input document, are
       deleted from the document on the server.
       The field paths in this mask must not contain a reserved field name.
+  *   `updateTransforms` (*type:* `list(GoogleApi.Firestore.V1.Model.FieldTransform.t)`, *default:* `nil`) - The transforms to perform after update.
+
+      This field can be set only when the operation is `update`. If present, this
+      write is equivalent to performing `update` and `transform` to the same
+      document atomically and in order.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -50,7 +52,8 @@ defmodule GoogleApi.Firestore.V1.Model.Write do
           :delete => String.t(),
           :transform => GoogleApi.Firestore.V1.Model.DocumentTransform.t(),
           :update => GoogleApi.Firestore.V1.Model.Document.t(),
-          :updateMask => GoogleApi.Firestore.V1.Model.DocumentMask.t()
+          :updateMask => GoogleApi.Firestore.V1.Model.DocumentMask.t(),
+          :updateTransforms => list(GoogleApi.Firestore.V1.Model.FieldTransform.t())
         }
 
   field(:currentDocument, as: GoogleApi.Firestore.V1.Model.Precondition)
@@ -58,6 +61,7 @@ defmodule GoogleApi.Firestore.V1.Model.Write do
   field(:transform, as: GoogleApi.Firestore.V1.Model.DocumentTransform)
   field(:update, as: GoogleApi.Firestore.V1.Model.Document)
   field(:updateMask, as: GoogleApi.Firestore.V1.Model.DocumentMask)
+  field(:updateTransforms, as: GoogleApi.Firestore.V1.Model.FieldTransform, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1.Model.Write do

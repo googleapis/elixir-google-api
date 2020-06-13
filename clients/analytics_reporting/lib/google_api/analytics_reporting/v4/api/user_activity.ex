@@ -53,7 +53,8 @@ defmodule GoogleApi.AnalyticsReporting.V4.Api.UserActivity do
   """
   @spec analyticsreporting_user_activity_search(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.AnalyticsReporting.V4.Model.SearchUserActivityResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def analyticsreporting_user_activity_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

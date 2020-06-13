@@ -19,12 +19,13 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
 
   @type t :: %__MODULE__{
           :name => String.t(),
+          :filename => String.t(),
           :description => String.t(),
           :properties => list(Property.t()),
           :schema => JsonSchema.t()
         }
 
-  defstruct [:name, :description, :properties, :schema]
+  defstruct [:name, :filename, :description, :properties, :schema]
 
   alias GoogleApi.Discovery.V1.Model.JsonSchema
   alias GoogleApis.Generator.ElixirGenerator.{Property, ResourceContext}
@@ -79,6 +80,17 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
     }
 
     [model | property_models]
+  end
+
+  defp from_schema(name, schema = %JsonSchema{type: "object", id: name}, context) do
+    model = %__MODULE__{
+      name: ResourceContext.name(context, name),
+      description: schema.description,
+      properties: [],
+      schema: %JsonSchema{schema | properties: []}
+    }
+
+    [model]
   end
 
   defp from_schema(name, %JsonSchema{type: "array", items: items}, context) do

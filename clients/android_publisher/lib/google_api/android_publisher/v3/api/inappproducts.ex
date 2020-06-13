@@ -26,21 +26,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Delete an in-app product for an app.
+  Deletes an in-app product (i.e. a managed product or a subscriptions).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app with the in-app product; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `sku` (*type:* `String.t`) - Unique identifier for the in-app product.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -54,7 +58,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, nil} | {:error, Tesla.Env.t()}
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def androidpublisher_inappproducts_delete(
         connection,
         package_name,
@@ -63,13 +67,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -88,21 +96,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   end
 
   @doc """
-  Returns information about the in-app product specified.
+  Gets an in-app product, which can be a managed product or a subscription.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - 
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `sku` (*type:* `String.t`) - Unique identifier for the in-app product.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -116,7 +128,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidpublisher_inappproducts_get(
         connection,
         package_name,
@@ -125,13 +140,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
@@ -150,21 +169,27 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   end
 
   @doc """
-  Creates a new in-app product for an app.
+  Creates an in-app product (i.e. a managed product or a subscriptions).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't
+          have a price specified for this in-app product will be auto converted to
+          the target currency based on the default price. Defaults to false.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -178,7 +203,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidpublisher_inappproducts_insert(
         connection,
         package_name,
@@ -186,13 +214,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :autoConvertMissingPrices => :query,
       :body => :body
     }
@@ -212,23 +244,27 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   end
 
   @doc """
-  List all the in-app products for an Android app, both subscriptions and managed in-app products..
+  Lists all in-app products - both managed products and subscriptions.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app with in-app products; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - 
-      *   `:startIndex` (*type:* `integer()`) - 
-      *   `:token` (*type:* `String.t`) - 
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:maxResults` (*type:* `integer()`) - How many results the list operation should return.
+      *   `:startIndex` (*type:* `integer()`) - The index of the first element to return.
+      *   `:token` (*type:* `String.t`) - Pagination token. If empty, list starts at the first product.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -238,7 +274,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   """
   @spec androidpublisher_inappproducts_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.AndroidPublisher.V3.Model.InappproductsListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidpublisher_inappproducts_list(
         connection,
         package_name,
@@ -246,13 +283,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :maxResults => :query,
       :startIndex => :query,
       :token => :query
@@ -275,22 +316,28 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   end
 
   @doc """
-  Updates the details of an in-app product. This method supports patch semantics.
+  Patches an in-app product (i.e. a managed product or a subscriptions).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app with the in-app product; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `sku` (*type:* `String.t`) - Unique identifier for the in-app product.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't
+          have a price specified for this in-app product will be auto converted to
+          the target currency based on the default price. Defaults to false.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -305,7 +352,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidpublisher_inappproducts_patch(
         connection,
         package_name,
@@ -314,13 +364,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :autoConvertMissingPrices => :query,
       :body => :body
     }
@@ -341,22 +395,28 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
   end
 
   @doc """
-  Updates the details of an in-app product.
+  Updates an in-app product (i.e. a managed product or a subscriptions).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
-  *   `package_name` (*type:* `String.t`) - Unique identifier for the Android app with the in-app product; for example, "com.spiffygame".
+  *   `package_name` (*type:* `String.t`) - Package name of the app.
   *   `sku` (*type:* `String.t`) - Unique identifier for the in-app product.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:autoConvertMissingPrices` (*type:* `boolean()`) - If true the prices for all regions targeted by the parent app that don't
+          have a price specified for this in-app product will be auto converted to
+          the target currency based on the default price. Defaults to false.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -371,7 +431,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.InAppProduct.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def androidpublisher_inappproducts_update(
         connection,
         package_name,
@@ -380,13 +443,17 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Inappproducts do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :autoConvertMissingPrices => :query,
       :body => :body
     }

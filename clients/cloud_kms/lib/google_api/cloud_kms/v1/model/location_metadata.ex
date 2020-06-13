@@ -21,6 +21,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.LocationMetadata do
 
   ## Attributes
 
+  *   `ekmAvailable` (*type:* `boolean()`, *default:* `nil`) - Indicates whether CryptoKeys with
+      protection_level
+      EXTERNAL can be created in this location.
   *   `hsmAvailable` (*type:* `boolean()`, *default:* `nil`) - Indicates whether CryptoKeys with
       protection_level
       HSM can be created in this location.
@@ -29,9 +32,11 @@ defmodule GoogleApi.CloudKMS.V1.Model.LocationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :ekmAvailable => boolean(),
           :hsmAvailable => boolean()
         }
 
+  field(:ekmAvailable)
   field(:hsmAvailable)
 end
 

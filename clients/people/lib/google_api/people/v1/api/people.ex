@@ -43,6 +43,39 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
+          fields can be specified by separating them with commas. Defaults to all
+          fields if not set. Valid values are:
+
+          * addresses
+          * ageRanges
+          * biographies
+          * birthdays
+          * coverPhotos
+          * emailAddresses
+          * events
+          * genders
+          * imClients
+          * interests
+          * locales
+          * memberships
+          * metadata
+          * names
+          * nicknames
+          * occupations
+          * organizations
+          * phoneNumbers
+          * photos
+          * relations
+          * residences
+          * sipAddresses
+          * skills
+          * urls
+          * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT and
+          ReadSourceType.PROFILE if not
+          set.
       *   `:body` (*type:* `GoogleApi.People.V1.Model.Person.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -52,7 +85,7 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_create_contact(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.Person.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def people_people_create_contact(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -66,6 +99,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :personFields => :query,
+      :sources => :query,
       :body => :body
     }
 
@@ -108,7 +143,7 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_delete_contact(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def people_people_delete_contact(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -165,7 +200,6 @@ defmodule GoogleApi.People.V1.Api.People do
           * ageRanges
           * biographies
           * birthdays
-          * braggingRights
           * coverPhotos
           * emailAddresses
           * events
@@ -182,14 +216,15 @@ defmodule GoogleApi.People.V1.Api.People do
           * phoneNumbers
           * photos
           * relations
-          * relationshipInterests
-          * relationshipStatuses
           * residences
           * sipAddresses
           * skills
-          * taglines
           * urls
           * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT and
+          ReadSourceType.PROFILE if not
+          set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -199,7 +234,8 @@ defmodule GoogleApi.People.V1.Api.People do
   """
   @spec people_people_delete_contact_photo(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.DeleteContactPhotoResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def people_people_delete_contact_photo(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -213,7 +249,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :personFields => :query
+      :personFields => :query,
+      :sources => :query
     }
 
     request =
@@ -233,7 +270,7 @@ defmodule GoogleApi.People.V1.Api.People do
   @doc """
   Provides information about a person by specifying a resource name. Use
   `people/me` to indicate the authenticated user.
-  <br>
+
   The request throws a 400 error if 'personFields' is not specified.
 
   ## Parameters
@@ -243,7 +280,7 @@ defmodule GoogleApi.People.V1.Api.People do
 
       - To get information about the authenticated user, specify `people/me`.
       - To get information about a google account, specify
-       `people/`<var>account_id</var>.
+       `people/{account_id}`.
       - To get information about a contact, specify the resource name that
         identifies the contact as returned by
       [`people.connections.list`](/people/api/rest/v1/people.connections/list).
@@ -266,7 +303,6 @@ defmodule GoogleApi.People.V1.Api.People do
           * ageRanges
           * biographies
           * birthdays
-          * braggingRights
           * coverPhotos
           * emailAddresses
           * events
@@ -283,17 +319,19 @@ defmodule GoogleApi.People.V1.Api.People do
           * phoneNumbers
           * photos
           * relations
-          * relationshipInterests
-          * relationshipStatuses
           * residences
           * sipAddresses
           * skills
-          * taglines
           * urls
           * userDefined
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
           path should start with `person.`: for example, `person.names` or
           `person.photos`.
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.PROFILE
+          and
+          ReadSourceType.CONTACT
+          if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -302,7 +340,7 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.Person.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def people_people_get(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -317,7 +355,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :uploadType => :query,
       :upload_protocol => :query,
       :personFields => :query,
-      :"requestMask.includeField" => :query
+      :"requestMask.includeField" => :query,
+      :sources => :query
     }
 
     request =
@@ -338,7 +377,7 @@ defmodule GoogleApi.People.V1.Api.People do
   Provides information about a list of specific people by specifying a list
   of requested resource names. Use `people/me` to indicate the authenticated
   user.
-  <br>
+
   The request throws a 400 error if 'personFields' is not specified.
 
   ## Parameters
@@ -363,7 +402,6 @@ defmodule GoogleApi.People.V1.Api.People do
           * ageRanges
           * biographies
           * birthdays
-          * braggingRights
           * coverPhotos
           * emailAddresses
           * events
@@ -380,12 +418,9 @@ defmodule GoogleApi.People.V1.Api.People do
           * phoneNumbers
           * photos
           * relations
-          * relationshipInterests
-          * relationshipStatuses
           * residences
           * sipAddresses
           * skills
-          * taglines
           * urls
           * userDefined
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
@@ -395,12 +430,17 @@ defmodule GoogleApi.People.V1.Api.People do
 
           - To get information about the authenticated user, specify `people/me`.
           - To get information about a google account, specify
-            `people/`<var>account_id</var>.
+            `people/{account_id}`.
           - To get information about a contact, specify the resource name that
             identifies the contact as returned by
           [`people.connections.list`](/people/api/rest/v1/people.connections/list).
 
           You can include up to 50 resource names in one request.
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT
+          and
+          ReadSourceType.PROFILE
+          if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -409,7 +449,9 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_get_batch_get(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.GetPeopleResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.GetPeopleResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def people_people_get_batch_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -425,7 +467,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :upload_protocol => :query,
       :personFields => :query,
       :"requestMask.includeField" => :query,
-      :resourceNames => :query
+      :resourceNames => :query,
+      :sources => :query
     }
 
     request =
@@ -441,26 +484,12 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Update contact data for an existing contact person. Any non-contact data
-  will not be modified.
-
-  The request throws a 400 error if `updatePersonFields` is not specified.
-  <br>
-  The request throws a 400 error if `person.metadata.sources` is not
-  specified for the contact to be updated.
-  <br>
-  The request throws a 400 error with an error with reason
-  `"failedPrecondition"` if `person.metadata.sources.etag` is different than
-  the contact's etag, which indicates the contact has changed since its data
-  was read. Clients should get the latest person and re-apply their updates
-  to the latest person.
+  Provides a list of domain profiles and domain contacts in the authenticated
+  user's domain directory.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `person.resourceName`. The resource name for the person, assigned by the server. An ASCII string
-      with a max length of 27 characters, in the form of
-      `people/`<var>person_id</var>.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -473,6 +502,268 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:mergeSources` (*type:* `list(String.t)`) - Optional. Additional data to merge into the directory sources if they are connected
+          through verified join keys such as email addresses or phone numbers.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of people to include in the response. Valid values are
+          between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListDirectoryPeople` call.
+          Provide this to retrieve the subsequent page.
+
+          When paginating, all other parameters provided to `ListDirectoryPeople`
+          must match the call that provided the page token.
+      *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
+          fields can be specified by separating them with commas. Valid values are:
+
+          * addresses
+          * ageRanges
+          * biographies
+          * birthdays
+          * coverPhotos
+          * emailAddresses
+          * events
+          * genders
+          * imClients
+          * interests
+          * locales
+          * memberships
+          * metadata
+          * names
+          * nicknames
+          * occupations
+          * organizations
+          * phoneNumbers
+          * photos
+          * relations
+          * residences
+          * sipAddresses
+          * skills
+          * urls
+          * userDefined
+      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include `next_sync_token`, which can be used to
+          get all changes since the last request. For subsequent sync requests use
+          the `sync_token` param instead.
+      *   `:sources` (*type:* `list(String.t)`) - Required. Directory sources to return.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListDirectoryPeople` call.
+          Provide this to retrieve only the resources changed since the last request.
+
+          When syncing, all other parameters provided to `ListDirectoryPeople`
+          must match the call that provided the sync token.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.People.V1.Model.ListDirectoryPeopleResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec people_people_list_directory_people(Tesla.Env.client(), keyword(), keyword()) ::
+          {:ok, GoogleApi.People.V1.Model.ListDirectoryPeopleResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def people_people_list_directory_people(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :mergeSources => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :readMask => :query,
+      :requestSyncToken => :query,
+      :sources => :query,
+      :syncToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/people:listDirectoryPeople", %{})
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.People.V1.Model.ListDirectoryPeopleResponse{}])
+  end
+
+  @doc """
+  Provides a list of domain profiles and domain contacts in the authenticated
+  user's domain directory that match the search query.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:mergeSources` (*type:* `list(String.t)`) - Optional. Additional data to merge into the directory sources if they are connected
+          through verified join keys such as email addresses or phone numbers.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of people to include in the response. Valid values are
+          between 1 and 500, inclusive. Defaults to 100 if not set or set to 0.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `SearchDirectoryPeople` call.
+          Provide this to retrieve the subsequent page.
+
+          When paginating, all other parameters provided to `SearchDirectoryPeople`
+          must match the call that provided the page token.
+      *   `:query` (*type:* `String.t`) - Required. Prefix query that matches fields in the person. Does NOT use the
+          read_mask for determining what fields to match.
+      *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
+          fields can be specified by separating them with commas. Valid values are:
+
+          * addresses
+          * ageRanges
+          * biographies
+          * birthdays
+          * coverPhotos
+          * emailAddresses
+          * events
+          * genders
+          * imClients
+          * interests
+          * locales
+          * memberships
+          * metadata
+          * names
+          * nicknames
+          * occupations
+          * organizations
+          * phoneNumbers
+          * photos
+          * relations
+          * residences
+          * sipAddresses
+          * skills
+          * urls
+          * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Required. Directory sources to return.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.People.V1.Model.SearchDirectoryPeopleResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec people_people_search_directory_people(Tesla.Env.client(), keyword(), keyword()) ::
+          {:ok, GoogleApi.People.V1.Model.SearchDirectoryPeopleResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def people_people_search_directory_people(connection, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :mergeSources => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :query => :query,
+      :readMask => :query,
+      :sources => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/people:searchDirectoryPeople", %{})
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.People.V1.Model.SearchDirectoryPeopleResponse{}]
+    )
+  end
+
+  @doc """
+  Update contact data for an existing contact person. Any non-contact data
+  will not be modified.
+
+  The request throws a 400 error if `updatePersonFields` is not specified.
+
+  The request throws a 400 error if `person.metadata.sources` is not
+  specified for the contact to be updated.
+
+  The request throws a 400 error with an error with reason
+  `"failedPrecondition"` if `person.metadata.sources.etag` is different than
+  the contact's etag, which indicates the contact has changed since its data
+  was read. Clients should get the latest person and re-apply their updates
+  to the latest person.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
+  *   `people_id` (*type:* `String.t`) - Part of `person.resourceName`. The resource name for the person, assigned by the server. An ASCII string
+      with a max length of 27 characters, in the form of
+      `people/{person_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:personFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on each person are returned. Multiple
+          fields can be specified by separating them with commas. Defaults to all
+          fields if not set. Valid values are:
+
+          * addresses
+          * ageRanges
+          * biographies
+          * birthdays
+          * coverPhotos
+          * emailAddresses
+          * events
+          * genders
+          * imClients
+          * interests
+          * locales
+          * memberships
+          * metadata
+          * names
+          * nicknames
+          * occupations
+          * organizations
+          * phoneNumbers
+          * photos
+          * relations
+          * residences
+          * sipAddresses
+          * skills
+          * urls
+          * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT and
+          ReadSourceType.PROFILE if not
+          set.
       *   `:updatePersonFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on the person are updated. Multiple
           fields can be specified by separating them with commas.
           All updated fields will be replaced. Valid values are:
@@ -506,7 +797,7 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_update_contact(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.Person.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.Person.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def people_people_update_contact(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -520,6 +811,8 @@ defmodule GoogleApi.People.V1.Api.People do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :personFields => :query,
+      :sources => :query,
       :updatePersonFields => :query,
       :body => :body
     }
@@ -567,7 +860,8 @@ defmodule GoogleApi.People.V1.Api.People do
   """
   @spec people_people_update_contact_photo(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.People.V1.Model.UpdateContactPhotoResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def people_people_update_contact_photo(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -599,9 +893,8 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides a list of the authenticated user's contacts merged with any
-  connected profiles.
-  <br>
+  Provides a list of the authenticated user's contacts.
+
   The request throws a 400 error if 'personFields' is not specified.
 
   ## Parameters
@@ -621,8 +914,12 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The number of connections to include in the response. Valid values are
-          between 1 and 2000, inclusive. Defaults to 100 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - The token of the page to be returned.
+          between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListConnections` call.
+          Provide this to retrieve the subsequent page.
+
+          When paginating, all other parameters provided to `ListConnections`
+          must match the call that provided the page token.
       *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
           fields can be specified by separating them with commas. Valid values are:
 
@@ -630,7 +927,6 @@ defmodule GoogleApi.People.V1.Api.People do
           * ageRanges
           * biographies
           * birthdays
-          * braggingRights
           * coverPhotos
           * emailAddresses
           * events
@@ -647,26 +943,31 @@ defmodule GoogleApi.People.V1.Api.People do
           * phoneNumbers
           * photos
           * relations
-          * relationshipInterests
-          * relationshipStatuses
           * residences
           * sipAddresses
           * skills
-          * taglines
           * urls
           * userDefined
       *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
           path should start with `person.`: for example, `person.names` or
           `person.photos`.
-      *   `:requestSyncToken` (*type:* `boolean()`) - Whether the response should include a sync token, which can be used to get
-          all changes since the last request. For subsequent sync requests use the
-          `sync_token` param instead. Initial sync requests that specify
+      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include `next_sync_token`, which can be used to
+          get all changes since the last request. For subsequent sync requests use
+          the `sync_token` param instead. Initial sync requests that specify
           `request_sync_token` have an additional rate limit.
-      *   `:sortOrder` (*type:* `String.t`) - The order in which the connections should be sorted. Defaults to
+      *   `:sortOrder` (*type:* `String.t`) - Optional. The order in which the connections should be sorted. Defaults to
           `LAST_MODIFIED_ASCENDING`.
-      *   `:syncToken` (*type:* `String.t`) - A sync token returned by a previous call to `people.connections.list`.
-          Only resources changed since the sync token was created will be returned.
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
+          ReadSourceType.CONTACT
+          and
+          ReadSourceType.PROFILE if not
+          set.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListConnections` call.
+          Provide this to retrieve only the resources changed since the last request.
           Sync requests that specify `sync_token` have an additional rate limit.
+
+          When syncing, all other parameters provided to `ListConnections`
+          must match the call that provided the sync token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -675,7 +976,9 @@ defmodule GoogleApi.People.V1.Api.People do
   *   `{:error, info}` on failure
   """
   @spec people_people_connections_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.People.V1.Model.ListConnectionsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.People.V1.Model.ListConnectionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def people_people_connections_list(connection, people_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -695,6 +998,7 @@ defmodule GoogleApi.People.V1.Api.People do
       :"requestMask.includeField" => :query,
       :requestSyncToken => :query,
       :sortOrder => :query,
+      :sources => :query,
       :syncToken => :query
     }
 

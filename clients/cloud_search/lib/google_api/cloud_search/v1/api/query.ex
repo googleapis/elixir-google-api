@@ -32,6 +32,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   that you have indexed from a third party.
 
   **Note:** This API requires a standard end user account to execute.
+  A service account can't perform Query API requests directly; to use a
+  service account to perform queries, set up [G Suite domain-wide delegation
+  of
+  authority](https://developers.google.com/cloud-search/docs/guides/delegation/).
 
   ## Parameters
 
@@ -57,7 +61,9 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   *   `{:error, info}` on failure
   """
   @spec cloudsearch_query_search(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudSearch.V1.Model.SearchResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudSearch.V1.Model.SearchResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_query_search(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -90,6 +96,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   Provides suggestions for autocompleting the query.
 
   **Note:** This API requires a standard end user account to execute.
+  A service account can't perform Query API requests directly; to use a
+  service account to perform queries, set up [G Suite domain-wide delegation
+  of
+  authority](https://developers.google.com/cloud-search/docs/guides/delegation/).
 
   ## Parameters
 
@@ -115,7 +125,9 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   *   `{:error, info}` on failure
   """
   @spec cloudsearch_query_suggest(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudSearch.V1.Model.SuggestResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudSearch.V1.Model.SuggestResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_query_suggest(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -148,6 +160,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   Returns list of sources that user can use for Search and Suggest APIs.
 
   **Note:** This API requires a standard end user account to execute.
+  A service account can't perform Query API requests directly; to use a
+  service account to perform queries, set up [G Suite domain-wide delegation
+  of
+  authority](https://developers.google.com/cloud-search/docs/guides/delegation/).
 
   ## Parameters
 
@@ -181,7 +197,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
 
           The suggest API does not use this parameter. Instead, suggest autocompletes
           only based on characters in the query.
-      *   `:"requestOptions.searchApplicationId"` (*type:* `String.t`) - Id of the application created using SearchApplicationsService.
+      *   `:"requestOptions.searchApplicationId"` (*type:* `String.t`) - The ID generated when you create a search application using the
+          [admin console](https://support.google.com/a/answer/9043922).
       *   `:"requestOptions.timeZone"` (*type:* `String.t`) - Current user's time zone id, such as "America/Los_Angeles" or
           "Australia/Sydney". These IDs are defined by
           [Unicode Common Locale Data Repository (CLDR)](http://cldr.unicode.org/)
@@ -198,7 +215,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Query do
   """
   @spec cloudsearch_query_sources_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSearch.V1.Model.ListQuerySourcesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_query_sources_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

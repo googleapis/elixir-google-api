@@ -56,7 +56,9 @@ defmodule GoogleApi.Translate.V2.Api.Languages do
   *   `{:error, info}` on failure
   """
   @spec language_languages_list(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Translate.V2.Model.LanguagesListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Translate.V2.Model.LanguagesListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def language_languages_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -18,7 +18,7 @@
 defmodule GoogleApi.SecurityCenter.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.11.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.SecurityCenter.Mixfile do
 
   defp description() do
     """
-    Cloud Security Command Center API client library. Cloud Security Command Center API provides access to temporal views of assets and findings within an organization.
+    Security Command Center API client library. Security Command Center API provides access to temporal views of assets and findings within an organization.
     """
   end
 

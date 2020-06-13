@@ -68,7 +68,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
   """
   @spec streetviewpublish_photos_batch_delete(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.StreetViewPublish.V1.Model.BatchDeletePhotosResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def streetviewpublish_photos_batch_delete(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -151,7 +152,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
   """
   @spec streetviewpublish_photos_batch_get(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.StreetViewPublish.V1.Model.BatchGetPhotosResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def streetviewpublish_photos_batch_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -244,7 +246,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
   """
   @spec streetviewpublish_photos_batch_update(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.StreetViewPublish.V1.Model.BatchUpdatePhotosResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def streetviewpublish_photos_batch_update(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -326,7 +329,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Api.Photos do
   """
   @spec streetviewpublish_photos_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.StreetViewPublish.V1.Model.ListPhotosResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def streetviewpublish_photos_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

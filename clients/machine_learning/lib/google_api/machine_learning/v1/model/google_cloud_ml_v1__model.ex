@@ -25,7 +25,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model do
 
   ## Attributes
 
-  *   `defaultVersion` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t`, *default:* `nil`) - Output only. The default version of the model. This version will be used to
+  *   `defaultVersion` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t`, *default:* `nil`) - Output only. The default version of the model. This version will be used to
       handle prediction requests that do not specify a version.
 
       You can change the default version by calling
@@ -64,7 +64,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model do
 
       Default is false.
   *   `regions` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of regions where the model is going to be deployed.
-      Currently only one region per model is supported.
+      Only one region per model is supported.
       Defaults to 'us-central1' if nothing is set.
       See the <a href="/ml-engine/docs/tensorflow/regions">available regions</a>
       for AI Platform services.
@@ -79,7 +79,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :defaultVersion => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version.t(),
+          :defaultVersion => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version.t(),
           :description => String.t(),
           :etag => String.t(),
           :labels => map(),
@@ -89,7 +89,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Model do
           :regions => list(String.t())
         }
 
-  field(:defaultVersion, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1__Version)
+  field(:defaultVersion, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Version)
   field(:description)
   field(:etag)
   field(:labels, type: :map)

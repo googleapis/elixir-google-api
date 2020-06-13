@@ -41,6 +41,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:callbackUrl` (*type:* `String.t`) - The URL to redirect the user to once association is completed. It receives a token parameter that can then be used to retrieve the associated account.
       *   `:userLocale` (*type:* `String.t`) - The preferred locale of the user.
       *   `:websiteLocale` (*type:* `String.t`) - The locale of the user's hosted website.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -57,7 +58,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsensehost_associationsessions_start(
         connection,
         product_code,
@@ -73,6 +76,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
       :prettyPrint => :query,
       :quotaUser => :query,
       :userIp => :query,
+      :callbackUrl => :query,
       :userLocale => :query,
       :websiteLocale => :query
     }
@@ -119,7 +123,9 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Associationsessions do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.AdSenseHost.V41.Model.AssociationSession.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def adsensehost_associationsessions_verify(connection, token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

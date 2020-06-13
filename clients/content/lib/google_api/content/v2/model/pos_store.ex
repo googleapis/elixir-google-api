@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V2.Model.PosStore do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `content#posStore`) - Identifies what kind of resource this is. Value: the fixed string "content#posStore".
-  *   `storeAddress` (*type:* `String.t`, *default:* `nil`) - The street address of the store.
-  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - A store identifier that is unique for the given merchant.
+  *   `kind` (*type:* `String.t`, *default:* `content#posStore`) - Identifies what kind of resource this is. Value: the fixed string "`content#posStore`"
+  *   `storeAddress` (*type:* `String.t`, *default:* `nil`) - Required. The street address of the store.
+  *   `storeCode` (*type:* `String.t`, *default:* `nil`) - Required. A store identifier that is unique for the given merchant.
   """
 
   use GoogleApi.Gax.ModelBase

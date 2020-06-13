@@ -65,7 +65,8 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Api.Operations do
           keyword()
         ) ::
           {:ok, GoogleApi.RemoteBuildExecution.V2.Model.GoogleLongrunningOperation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def remotebuildexecution_operations_wait_execution(
         connection,
         name,

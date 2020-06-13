@@ -17,7 +17,8 @@
 
 defmodule GoogleApi.YouTube.V3.Model.ChannelAuditDetails do
   @moduledoc """
-  The auditDetails object encapsulates channel data that is relevant for YouTube Partners during the audit process.
+  The <code>auditDetails</code> object encapsulates channel data that is
+  relevant for YouTube Partners during the audit process.
 
   ## Attributes
 

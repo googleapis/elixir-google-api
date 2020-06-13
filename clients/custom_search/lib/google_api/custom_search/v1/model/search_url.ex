@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.CustomSearch.V1.Model.SearchUrl do
   @moduledoc """
-
+  OpenSearch template and URL.
 
   ## Attributes
 
-  *   `template` (*type:* `String.t`, *default:* `https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json`) - 
-  *   `type` (*type:* `String.t`, *default:* `application/json`) - 
+  *   `template` (*type:* `String.t`, *default:* `nil`) - The actual [OpenSearch
+      template](http://www.opensearch.org/specifications/opensearch/1.1#opensearch_url_template_syntax)
+      for this API.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The MIME type of the OpenSearch URL template for the Custom Search API.
   """
 
   use GoogleApi.Gax.ModelBase

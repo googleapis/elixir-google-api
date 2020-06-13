@@ -55,7 +55,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountPermissions do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.AccountPermission.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.AccountPermission.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_account_permissions_get(
         connection,
         profile_id,
@@ -117,7 +119,8 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountPermissions do
           keyword()
         ) ::
           {:ok, GoogleApi.DFAReporting.V33.Model.AccountPermissionsListResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_account_permissions_list(
         connection,
         profile_id,

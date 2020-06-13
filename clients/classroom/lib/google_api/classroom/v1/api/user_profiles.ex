@@ -63,7 +63,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
   *   `{:error, info}` on failure
   """
   @spec classroom_user_profiles_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Classroom.V1.Model.UserProfile.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.UserProfile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_user_profiles_get(connection, user_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -154,7 +156,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_user_profiles_guardian_invitations_create(
         connection,
         student_id,
@@ -236,7 +241,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_user_profiles_guardian_invitations_get(
         connection,
         student_id,
@@ -316,20 +324,20 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:invitedEmailAddress` (*type:* `String.t`) - If specified, only results with the specified `invited_email_address`
-          will be returned.
+          are returned.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero or unspecified indicates that the
           server may assign a maximum.
 
           The server may return fewer than the specified number of results.
       *   `:pageToken` (*type:* `String.t`) - nextPageToken
           value returned from a previous
-          list call,
-          indicating that the subsequent page of results should be returned.
+          list
+          call, indicating that the subsequent page of results should be returned.
 
-          The list request
-          must be otherwise identical to the one that resulted in this token.
-      *   `:states` (*type:* `list(String.t)`) - If specified, only results with the specified `state` values will be
-          returned. Otherwise, results with a `state` of `PENDING` will be returned.
+          The list
+          request must be otherwise identical to the one that resulted in this token.
+      *   `:states` (*type:* `list(String.t)`) - If specified, only results with the specified `state` values are
+          returned. Otherwise, results with a `state` of `PENDING` are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -344,7 +352,8 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           keyword()
         ) ::
           {:ok, GoogleApi.Classroom.V1.Model.ListGuardianInvitationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_user_profiles_guardian_invitations_list(
         connection,
         student_id,
@@ -423,7 +432,7 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Mask that identifies which fields on the course to update.
-          This field is required to do an update. The update will fail if invalid
+          This field is required to do an update. The update fails if invalid
           fields are specified. The following fields are valid:
 
           * `state`
@@ -445,7 +454,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.GuardianInvitation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_user_profiles_guardian_invitations_patch(
         connection,
         student_id,
@@ -538,7 +550,8 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def classroom_user_profiles_guardians_delete(
         connection,
         student_id,
@@ -626,7 +639,10 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Classroom.V1.Model.Guardian.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Classroom.V1.Model.Guardian.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_user_profiles_guardians_get(
         connection,
         student_id,
@@ -735,7 +751,9 @@ defmodule GoogleApi.Classroom.V1.Api.UserProfiles do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Classroom.V1.Model.ListGuardiansResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Classroom.V1.Model.ListGuardiansResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def classroom_user_profiles_guardians_list(
         connection,
         student_id,

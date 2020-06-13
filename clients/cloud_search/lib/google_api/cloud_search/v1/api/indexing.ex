@@ -61,7 +61,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_delete_schema(
         connection,
         name,
@@ -133,7 +136,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Schema.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Schema.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_get_schema(
         connection,
         name,
@@ -206,7 +212,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_update_schema(
         connection,
         name,
@@ -291,7 +300,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_items_delete(
         connection,
         name,
@@ -367,7 +379,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_items_delete_queue_items(
         connection,
         name,
@@ -442,7 +457,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Item.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Item.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudsearch_indexing_datasources_items_get(
         connection,
         name,
@@ -521,7 +537,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_items_index(
         connection,
         name,
@@ -620,7 +639,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.ListItemsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.ListItemsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_items_list(
         connection,
         name,
@@ -720,7 +742,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.PollItemsResponse.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.PollItemsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_items_poll(
         connection,
         name,
@@ -795,7 +820,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Item.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Item.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudsearch_indexing_datasources_items_push(
         connection,
         name,
@@ -869,7 +895,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_items_unreserve(
         connection,
         name,
@@ -919,6 +948,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
   *   `connection` (*type:* `GoogleApi.CloudSearch.V1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - Name of the Item to start a resumable upload.
       Format: datasources/{source_id}/items/{item_id}.
+      The maximum length is 1536 bytes.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -944,7 +974,10 @@ defmodule GoogleApi.CloudSearch.V1.Api.Indexing do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.UploadItemRef.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.UploadItemRef.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudsearch_indexing_datasources_items_upload(
         connection,
         name,

@@ -48,7 +48,9 @@ defmodule GoogleApi.DFAReporting.V33.Api.Metros do
   *   `{:error, info}` on failure
   """
   @spec dfareporting_metros_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.DFAReporting.V33.Model.MetrosListResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.DFAReporting.V33.Model.MetrosListResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def dfareporting_metros_list(connection, profile_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,

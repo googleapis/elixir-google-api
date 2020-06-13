@@ -69,7 +69,10 @@ defmodule GoogleApi.CloudProfiler.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudProfiler.V2.Model.Profile.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudProfiler.V2.Model.Profile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudprofiler_projects_profiles_create(
         connection,
         parent,
@@ -139,7 +142,10 @@ defmodule GoogleApi.CloudProfiler.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudProfiler.V2.Model.Profile.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudProfiler.V2.Model.Profile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudprofiler_projects_profiles_create_offline(
         connection,
         parent,
@@ -214,7 +220,10 @@ defmodule GoogleApi.CloudProfiler.V2.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudProfiler.V2.Model.Profile.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudProfiler.V2.Model.Profile.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudprofiler_projects_profiles_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

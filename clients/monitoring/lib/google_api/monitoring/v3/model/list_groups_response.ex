@@ -22,7 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ListGroupsResponse do
   ## Attributes
 
   *   `group` (*type:* `list(GoogleApi.Monitoring.V3.Model.Group.t)`, *default:* `nil`) - The groups that match the specified filters.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as pageToken in the next call to this method.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method.
   """
 
   use GoogleApi.Gax.ModelBase

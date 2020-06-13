@@ -63,7 +63,8 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.ReportTypes do
   """
   @spec youtubereporting_report_types_list(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.YouTubeReporting.V1.Model.ListReportTypesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def youtubereporting_report_types_list(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

@@ -21,15 +21,21 @@ defmodule GoogleApi.ToolResults.V1beta3.Model.ShardSummary do
 
   ## Attributes
 
+  *   `runs` (*type:* `list(GoogleApi.ToolResults.V1beta3.Model.StepSummary.t)`, *default:* `nil`) - Summaries of the steps belonging to the shard.
+
+      With flaky_test_attempts enabled from TestExecutionService, more than one
+      run (Step) can present. And the runs will be sorted by multistep_number.
   *   `shardResult` (*type:* `GoogleApi.ToolResults.V1beta3.Model.MergedResult.t`, *default:* `nil`) - Merged result of the shard.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :runs => list(GoogleApi.ToolResults.V1beta3.Model.StepSummary.t()),
           :shardResult => GoogleApi.ToolResults.V1beta3.Model.MergedResult.t()
         }
 
+  field(:runs, as: GoogleApi.ToolResults.V1beta3.Model.StepSummary, type: :list)
   field(:shardResult, as: GoogleApi.ToolResults.V1beta3.Model.MergedResult)
 end
 

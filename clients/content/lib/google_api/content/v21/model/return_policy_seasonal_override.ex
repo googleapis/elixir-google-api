@@ -21,10 +21,10 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicySeasonalOverride do
 
   ## Attributes
 
-  *   `endDate` (*type:* `String.t`, *default:* `nil`) - Last day on which the override applies. In ISO 8601 format.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the seasonal override as shown in Merchant Center.
-  *   `policy` (*type:* `GoogleApi.Content.V21.Model.ReturnPolicyPolicy.t`, *default:* `nil`) - The policy which is in effect during that time.
-  *   `startDate` (*type:* `String.t`, *default:* `nil`) - First day on which the override applies. In ISO 8601 format.
+  *   `endDate` (*type:* `String.t`, *default:* `nil`) - Required. Last day on which the override applies. In ISO 8601 format.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the seasonal override as shown in Merchant Center.
+  *   `policy` (*type:* `GoogleApi.Content.V21.Model.ReturnPolicyPolicy.t`, *default:* `nil`) - Required. The policy which is in effect during that time.
+  *   `startDate` (*type:* `String.t`, *default:* `nil`) - Required. First day on which the override applies. In ISO 8601 format.
   """
 
   use GoogleApi.Gax.ModelBase

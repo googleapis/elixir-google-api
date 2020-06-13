@@ -17,11 +17,15 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.AppRestrictionsSchemaChangeEvent do
   @moduledoc """
-  An event generated when a new app version is uploaded to Google Play and its app restrictions schema changed. To fetch the app restrictions schema for an app, use Products.getAppRestrictionsSchema on the EMM API.
+  An event generated when a new app version is uploaded to Google Play and its
+  app restrictions schema changed.
+  To fetch the app restrictions schema for an app, use
+  Products.getAppRestrictionsSchema on the EMM API.
 
   ## Attributes
 
-  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") for which the app restriction schema changed. This field will always be present.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - The id of the product (e.g. "app:com.google.android.gm") for which the
+      app restriction schema changed. This field will always be present.
   """
 
   use GoogleApi.Gax.ModelBase

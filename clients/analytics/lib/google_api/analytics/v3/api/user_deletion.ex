@@ -51,7 +51,10 @@ defmodule GoogleApi.Analytics.V3.Api.UserDeletion do
           Tesla.Env.client(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Analytics.V3.Model.UserDeletionRequest.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.Analytics.V3.Model.UserDeletionRequest.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def analytics_user_deletion_user_deletion_request_upsert(
         connection,
         optional_params \\ [],

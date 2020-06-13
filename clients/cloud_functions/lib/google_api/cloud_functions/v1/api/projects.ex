@@ -61,7 +61,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.ListLocationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_list(
         connection,
         projects_id,
@@ -142,7 +143,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.CallFunctionResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_call(
         connection,
         projects_id,
@@ -224,7 +226,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_create(
         connection,
         projects_id,
@@ -299,7 +304,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_delete(
         connection,
         projects_id,
@@ -384,7 +392,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.GenerateDownloadUrlResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_generate_download_url(
         connection,
         projects_id,
@@ -490,7 +499,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.GenerateUploadUrlResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_generate_upload_url(
         connection,
         projects_id,
@@ -568,7 +578,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.CloudFunction.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudFunctions.V1.Model.CloudFunction.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_get(
         connection,
         projects_id,
@@ -642,6 +655,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -656,7 +673,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudFunctions.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_get_iam_policy(
         connection,
         projects_id,
@@ -744,7 +764,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.ListFunctionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_list(
         connection,
         projects_id,
@@ -823,7 +844,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudFunctions.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_patch(
         connection,
         projects_id,
@@ -905,7 +929,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudFunctions.V1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudFunctions.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_set_iam_policy(
         connection,
         projects_id,
@@ -990,7 +1017,8 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudFunctions.V1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def cloudfunctions_projects_locations_functions_test_iam_permissions(
         connection,
         projects_id,

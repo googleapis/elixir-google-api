@@ -17,24 +17,25 @@
 
 defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5 do
   @moduledoc """
-
+  The Lighthouse result object.
 
   ## Attributes
 
   *   `audits` (*type:* `%{optional(String.t) => GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5.t}`, *default:* `nil`) - Map of audits in the LHR.
-  *   `categories` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5Categories.t`, *default:* `nil`) - Map of categories in the LHR.
-  *   `categoryGroups` (*type:* `map()`, *default:* `nil`) - Map of category groups in the LHR.
-  *   `configSettings` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5ConfigSettings.t`, *default:* `nil`) - The configuration settings for this LHR.
-  *   `environment` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5Environment.t`, *default:* `nil`) - Environment settings that were used when making this LHR.
+  *   `categories` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.Categories.t`, *default:* `nil`) - Map of categories in the LHR.
+  *   `categoryGroups` (*type:* `%{optional(String.t) => GoogleApi.PageSpeedOnline.V5.Model.CategoryGroupV5.t}`, *default:* `nil`) - Map of category groups in the LHR.
+  *   `configSettings` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.ConfigSettings.t`, *default:* `nil`) - The configuration settings for this LHR.
+  *   `environment` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.Environment.t`, *default:* `nil`) - Environment settings that were used when making this LHR.
   *   `fetchTime` (*type:* `String.t`, *default:* `nil`) - The time that this run was fetched.
   *   `finalUrl` (*type:* `String.t`, *default:* `nil`) - The final resolved url that was audited.
-  *   `i18n` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5I18n.t`, *default:* `nil`) - The internationalization strings that are required to render the LHR.
+  *   `i18n` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.I18n.t`, *default:* `nil`) - The internationalization strings that are required to render the LHR.
   *   `lighthouseVersion` (*type:* `String.t`, *default:* `nil`) - The lighthouse version that was used to generate this LHR.
   *   `requestedUrl` (*type:* `String.t`, *default:* `nil`) - The original requested url.
-  *   `runWarnings` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.GoogleprotobufListValue.t`, *default:* `nil`) - List of all run warnings in the LHR. Will always output to at least `[]`.
-  *   `runtimeError` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5RuntimeError.t`, *default:* `nil`) - A top-level error message that, if present, indicates a serious enough problem that this Lighthouse result may need to be discarded.
-  *   `stackPacks` (*type:* `list(GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5StackPacks.t)`, *default:* `nil`) - The Stack Pack advice strings.
-  *   `timing` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5Timing.t`, *default:* `nil`) - Timing information for this LHR.
+  *   `runWarnings` (*type:* `list(any())`, *default:* `nil`) - List of all run warnings in the LHR.  Will always output to at least `[]`.
+  *   `runtimeError` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.RuntimeError.t`, *default:* `nil`) - A top-level error message that, if present, indicates a serious enough
+      problem that this Lighthouse result may need to be discarded.
+  *   `stackPacks` (*type:* `list(GoogleApi.PageSpeedOnline.V5.Model.StackPack.t)`, *default:* `nil`) - The Stack Pack advice strings.
+  *   `timing` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.Timing.t`, *default:* `nil`) - Timing information for this LHR.
   *   `userAgent` (*type:* `String.t`, *default:* `nil`) - The user agent that was used to run this LHR.
   """
 
@@ -44,43 +45,38 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5 do
           :audits => %{
             optional(String.t()) => GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5.t()
           },
-          :categories => GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5Categories.t(),
-          :categoryGroups => map(),
-          :configSettings =>
-            GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5ConfigSettings.t(),
-          :environment => GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5Environment.t(),
+          :categories => GoogleApi.PageSpeedOnline.V5.Model.Categories.t(),
+          :categoryGroups => %{
+            optional(String.t()) => GoogleApi.PageSpeedOnline.V5.Model.CategoryGroupV5.t()
+          },
+          :configSettings => GoogleApi.PageSpeedOnline.V5.Model.ConfigSettings.t(),
+          :environment => GoogleApi.PageSpeedOnline.V5.Model.Environment.t(),
           :fetchTime => String.t(),
           :finalUrl => String.t(),
-          :i18n => GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5I18n.t(),
+          :i18n => GoogleApi.PageSpeedOnline.V5.Model.I18n.t(),
           :lighthouseVersion => String.t(),
           :requestedUrl => String.t(),
-          :runWarnings => GoogleApi.PageSpeedOnline.V5.Model.GoogleprotobufListValue.t(),
-          :runtimeError => GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5RuntimeError.t(),
-          :stackPacks =>
-            list(GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5StackPacks.t()),
-          :timing => GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5Timing.t(),
+          :runWarnings => list(any()),
+          :runtimeError => GoogleApi.PageSpeedOnline.V5.Model.RuntimeError.t(),
+          :stackPacks => list(GoogleApi.PageSpeedOnline.V5.Model.StackPack.t()),
+          :timing => GoogleApi.PageSpeedOnline.V5.Model.Timing.t(),
           :userAgent => String.t()
         }
 
   field(:audits, as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5, type: :map)
-  field(:categories, as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5Categories)
-  field(:categoryGroups, type: :map)
-  field(:configSettings, as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5ConfigSettings)
-  field(:environment, as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5Environment)
+  field(:categories, as: GoogleApi.PageSpeedOnline.V5.Model.Categories)
+  field(:categoryGroups, as: GoogleApi.PageSpeedOnline.V5.Model.CategoryGroupV5, type: :map)
+  field(:configSettings, as: GoogleApi.PageSpeedOnline.V5.Model.ConfigSettings)
+  field(:environment, as: GoogleApi.PageSpeedOnline.V5.Model.Environment)
   field(:fetchTime)
   field(:finalUrl)
-  field(:i18n, as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5I18n)
+  field(:i18n, as: GoogleApi.PageSpeedOnline.V5.Model.I18n)
   field(:lighthouseVersion)
   field(:requestedUrl)
-  field(:runWarnings, as: GoogleApi.PageSpeedOnline.V5.Model.GoogleprotobufListValue)
-  field(:runtimeError, as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5RuntimeError)
-
-  field(:stackPacks,
-    as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5StackPacks,
-    type: :list
-  )
-
-  field(:timing, as: GoogleApi.PageSpeedOnline.V5.Model.LighthouseResultV5Timing)
+  field(:runWarnings, type: :list)
+  field(:runtimeError, as: GoogleApi.PageSpeedOnline.V5.Model.RuntimeError)
+  field(:stackPacks, as: GoogleApi.PageSpeedOnline.V5.Model.StackPack, type: :list)
+  field(:timing, as: GoogleApi.PageSpeedOnline.V5.Model.Timing)
   field(:userAgent)
 end
 

@@ -34,32 +34,55 @@ defmodule GoogleApi.Sheets.V4.Model.BandingProperties do
   ## Attributes
 
   *   `firstBandColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The first color that is alternating. (Required)
+  *   `firstBandColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The first color that is alternating. (Required)
+      If first_band_color is also set, this field takes precedence.
   *   `footerColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the last row or column. If this field is not set, the last
-      row or column will be filled with either first_band_color or
+      row or column is filled with either first_band_color or
       second_band_color, depending on the color of the previous row or
       column.
-  *   `headerColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the first row or column. If this field is set, the first
-      row or column will be filled with this color and the colors will
-      alternate between first_band_color and second_band_color starting
-      from the second row or column. Otherwise, the first row or column will be
-      filled with first_band_color and the colors will proceed to alternate
-      as they normally would.
+  *   `footerColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the last row or column. If this field is not set, the last
+      row or column is filled with either first_band_color or
+      second_band_color, depending on the color of the previous row or
+      column.
+      If footer_color is also set, this field takes precedence.
+  *   `headerColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The color of the first row or column. If this field is set, the first row
+      or column is filled with this color and the colors alternate between
+      first_band_color and second_band_color starting from the second
+      row or column. Otherwise, the first row or column is filled with
+      first_band_color and the colors proceed to alternate as they normally
+      would.
+  *   `headerColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The color of the first row or column. If this field is set, the first row
+      or column is filled with this color and the colors alternate between
+      first_band_color and second_band_color starting from the second
+      row or column. Otherwise, the first row or column is filled with
+      first_band_color and the colors proceed to alternate as they normally
+      would. If header_color is also set, this field takes precedence.
   *   `secondBandColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The second color that is alternating. (Required)
+  *   `secondBandColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The second color that is alternating. (Required)
+      If second_band_color is also set, this field takes precedence.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :firstBandColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :firstBandColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :footerColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :footerColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
           :headerColor => GoogleApi.Sheets.V4.Model.Color.t(),
-          :secondBandColor => GoogleApi.Sheets.V4.Model.Color.t()
+          :headerColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t(),
+          :secondBandColor => GoogleApi.Sheets.V4.Model.Color.t(),
+          :secondBandColorStyle => GoogleApi.Sheets.V4.Model.ColorStyle.t()
         }
 
   field(:firstBandColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:firstBandColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:footerColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:footerColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:headerColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:headerColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
   field(:secondBandColor, as: GoogleApi.Sheets.V4.Model.Color)
+  field(:secondBandColorStyle, as: GoogleApi.Sheets.V4.Model.ColorStyle)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.BandingProperties do

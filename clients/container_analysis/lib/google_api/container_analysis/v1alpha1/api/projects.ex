@@ -62,7 +62,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_notes_create(
         connection,
         projects_id,
@@ -134,7 +137,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_notes_delete(
         connection,
         projects_id,
@@ -205,7 +211,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_notes_get(
         connection,
         projects_id,
@@ -288,7 +297,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_notes_get_iam_policy(
         connection,
         projects_id,
@@ -365,7 +376,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ListNotesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_notes_list(
         connection,
         projects_id,
@@ -442,7 +454,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_notes_patch(
         connection,
         projects_id,
@@ -528,7 +543,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_notes_set_iam_policy(
         connection,
         projects_id,
@@ -610,7 +627,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_notes_test_iam_permissions(
         connection,
         projects_id,
@@ -691,7 +709,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ListNoteOccurrencesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_notes_occurrences_list(
         connection,
         projects_id,
@@ -770,7 +789,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_create(
         connection,
         projects_id,
@@ -842,7 +862,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_delete(
         connection,
         projects_id,
@@ -915,7 +938,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_get(
         connection,
         projects_id,
@@ -998,7 +1022,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_get_iam_policy(
         connection,
         projects_id,
@@ -1073,7 +1099,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Note.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_get_notes(
         connection,
         projects_id,
@@ -1144,7 +1173,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.GetVulnzOccurrencesSummaryResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_get_vulnerability_summary(
         connection,
         projects_id,
@@ -1223,7 +1253,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ListOccurrencesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_list(
         connection,
         projects_id,
@@ -1303,7 +1334,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_patch(
         connection,
         projects_id,
@@ -1389,7 +1421,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_set_iam_policy(
         connection,
         projects_id,
@@ -1474,7 +1508,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_occurrences_test_iam_permissions(
         connection,
         projects_id,
@@ -1551,7 +1586,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_operations_create(
         connection,
         projects_id,
@@ -1626,7 +1662,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_operations_patch(
         connection,
         projects_id,
@@ -1700,7 +1737,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ScanConfig.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_scan_configs_get(
         connection,
         projects_id,
@@ -1773,7 +1811,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ListScanConfigsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_scan_configs_list(
         connection,
         projects_id,
@@ -1851,7 +1890,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.ContainerAnalysis.V1alpha1.Model.ScanConfig.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def containeranalysis_projects_scan_configs_patch(
         connection,
         projects_id,

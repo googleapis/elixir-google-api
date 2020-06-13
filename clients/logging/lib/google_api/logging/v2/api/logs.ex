@@ -65,7 +65,7 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) :: {:ok, GoogleApi.Logging.V2.Model.Empty.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def logging_logs_delete(connection, v2_id, v2_id1, logs_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -132,7 +132,9 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
   *   `{:error, info}` on failure
   """
   @spec logging_logs_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def logging_logs_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,

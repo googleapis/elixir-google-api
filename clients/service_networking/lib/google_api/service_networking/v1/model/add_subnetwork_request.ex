@@ -37,6 +37,10 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
       range notation, such as `30` to provision a subnet with an
       `x.x.x.x/30` CIDR range. The IP address range is drawn from a
       pool of available ranges in the service consumer's allocated range.
+  *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - Optional. The private IPv6 google access type for the VMs in this subnet.
+      For information about the access types that can be set using this field,
+      see [subnetwork](/compute/docs/reference/rest/v1/subnetworks)
+      in the Compute API documentation.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Required. The name of a [region](/compute/docs/regions-zones)
       for the subnet, such `europe-west1`.
   *   `requestedAddress` (*type:* `String.t`, *default:* `nil`) - Optional. The starting address of a range. The address must be a valid
@@ -58,6 +62,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
           :consumerNetwork => String.t(),
           :description => String.t(),
           :ipPrefixLength => integer(),
+          :privateIpv6GoogleAccess => String.t(),
           :region => String.t(),
           :requestedAddress => String.t(),
           :subnetwork => String.t(),
@@ -68,6 +73,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   field(:consumerNetwork)
   field(:description)
   field(:ipPrefixLength)
+  field(:privateIpv6GoogleAccess)
   field(:region)
   field(:requestedAddress)
   field(:subnetwork)

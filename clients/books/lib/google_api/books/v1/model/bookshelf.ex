@@ -22,42 +22,45 @@ defmodule GoogleApi.Books.V1.Model.Bookshelf do
   ## Attributes
 
   *   `access` (*type:* `String.t`, *default:* `nil`) - Whether this bookshelf is PUBLIC or PRIVATE.
-  *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Created time for this bookshelf (formatted UTC timestamp with millisecond resolution).
+  *   `created` (*type:* `String.t`, *default:* `nil`) - Created time for this bookshelf (formatted UTC timestamp with millisecond
+      resolution).
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of this bookshelf.
   *   `id` (*type:* `integer()`, *default:* `nil`) - Id of this bookshelf, only unique by user.
-  *   `kind` (*type:* `String.t`, *default:* `books#bookshelf`) - Resource type for bookshelf metadata.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type for bookshelf metadata.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of this bookshelf.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Last modified time of this bookshelf (formatted UTC timestamp with millisecond resolution).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Last modified time of this bookshelf (formatted UTC timestamp with
+      millisecond resolution).
   *   `volumeCount` (*type:* `integer()`, *default:* `nil`) - Number of volumes in this bookshelf.
-  *   `volumesLastUpdated` (*type:* `DateTime.t`, *default:* `nil`) - Last time a volume was added or removed from this bookshelf (formatted UTC timestamp with millisecond resolution).
+  *   `volumesLastUpdated` (*type:* `String.t`, *default:* `nil`) - Last time a volume was added or removed from this bookshelf (formatted UTC
+      timestamp with millisecond resolution).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :access => String.t(),
-          :created => DateTime.t(),
+          :created => String.t(),
           :description => String.t(),
           :id => integer(),
           :kind => String.t(),
           :selfLink => String.t(),
           :title => String.t(),
-          :updated => DateTime.t(),
+          :updated => String.t(),
           :volumeCount => integer(),
-          :volumesLastUpdated => DateTime.t()
+          :volumesLastUpdated => String.t()
         }
 
   field(:access)
-  field(:created, as: DateTime)
+  field(:created)
   field(:description)
   field(:id)
   field(:kind)
   field(:selfLink)
   field(:title)
-  field(:updated, as: DateTime)
+  field(:updated)
   field(:volumeCount)
-  field(:volumesLastUpdated, as: DateTime)
+  field(:volumesLastUpdated)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Books.V1.Model.Bookshelf do

@@ -34,12 +34,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -56,16 +54,15 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   """
   @spec run_projects_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListLocationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -101,12 +98,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -128,7 +123,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListAuthorizedDomainsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_authorizeddomains_list(
         connection,
         projects_id,
@@ -138,12 +134,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -173,42 +167,43 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Creates a new cloudauditlog.
+  Creates a new cloudauditlogssource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number in which this cloudauditlog should
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number in which this cloudauditlogssource should
       be created.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog.t`) - 
+      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog{}}` on success
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_projects_locations_cloudauditlogs_create(
+  @spec run_projects_locations_cloudauditlogssources_create(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_cloudauditlogs_create(
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudauditlogssources_create(
         connection,
         projects_id,
         locations_id,
@@ -217,12 +212,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -233,36 +226,39 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudauditlogs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudauditlogssources",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource{}]
+    )
   end
 
   @doc """
-  Rpc to delete a cloudauditlog.
+  Rpc to delete a cloudauditlogssource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the cloudauditlog being deleted. If needed, replace
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the cloudauditlogssource being deleted. If needed, replace
       {namespace_id} with the project ID.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `cloudauditlogs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudauditlogssources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -280,30 +276,31 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_projects_locations_cloudauditlogs_delete(
+  @spec run_projects_locations_cloudauditlogssources_delete(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_cloudauditlogs_delete(
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudauditlogssources_delete(
         connection,
         projects_id,
         locations_id,
-        cloudauditlogs_id,
+        cloudauditlogssources_id,
         optional_params \\ [],
         opts \\ []
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -317,11 +314,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       Request.new()
       |> Request.method(:delete)
       |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudauditlogs/{cloudauditlogsId}",
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudauditlogssources/{cloudauditlogssourcesId}",
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "cloudauditlogsId" => URI.encode(cloudauditlogs_id, &URI.char_unreserved?/1)
+          "cloudauditlogssourcesId" =>
+            URI.encode(cloudauditlogssources_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -333,23 +331,21 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Rpc to get information about a cloudauditlog.
+  Rpc to get information about a cloudauditlogssource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the cloudauditlog being retrieved. If needed, replace
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the cloudauditlogssource being retrieved. If needed, replace
       {namespace_id} with the project ID.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `cloudauditlogs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudauditlogssources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -358,33 +354,34 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog{}}` on success
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_projects_locations_cloudauditlogs_get(
+  @spec run_projects_locations_cloudauditlogssources_get(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_cloudauditlogs_get(
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudauditlogssources_get(
         connection,
         projects_id,
         locations_id,
-        cloudauditlogs_id,
+        cloudauditlogssources_id,
         optional_params \\ [],
         opts \\ []
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -395,11 +392,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudauditlogs/{cloudauditlogsId}",
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudauditlogssources/{cloudauditlogssourcesId}",
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "cloudauditlogsId" => URI.encode(cloudauditlogs_id, &URI.char_unreserved?/1)
+          "cloudauditlogssourcesId" =>
+            URI.encode(cloudauditlogssources_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -407,26 +405,26 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource{}]
+    )
   end
 
   @doc """
-  Rpc to list cloudauditlogs.
+  Rpc to list cloudauditlogssources.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number from which the cloudauditlogs should
-      be listed.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number from which the cloudauditlogssources
+      should be listed.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -447,19 +445,20 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.ListCloudAuditLogsResponse{}}` on success
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.ListCloudAuditLogsSourcesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_projects_locations_cloudauditlogs_list(
+  @spec run_projects_locations_cloudauditlogssources_list(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudAuditLogsResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def run_projects_locations_cloudauditlogs_list(
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudAuditLogsSourcesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudauditlogssources_list(
         connection,
         projects_id,
         locations_id,
@@ -468,12 +467,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -490,22 +487,695 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudauditlogs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudauditlogssources",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListCloudAuditLogsResponse{}]
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListCloudAuditLogsSourcesResponse{}]
     )
   end
 
   @doc """
-  Rpc to replace a cloudauditlog.
+  Creates a new cloudpubsubsource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number in which this cloudpubsubsource should
+      be created.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudpubsubsources_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudpubsubsources_create(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudpubsubsources",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource{}])
+  end
+
+  @doc """
+  Rpc to delete a cloudpubsubsource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the cloudpubsubsource being deleted. If needed, replace
+      {namespace_id} with the project ID.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudpubsubsources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
+      *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
+      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores
+          this setting, and deletes in the background. Please see
+          kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for
+          more information.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudpubsubsources_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudpubsubsources_delete(
+        connection,
+        projects_id,
+        locations_id,
+        cloudpubsubsources_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :apiVersion => :query,
+      :kind => :query,
+      :propagationPolicy => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudpubsubsources/{cloudpubsubsourcesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "cloudpubsubsourcesId" => URI.encode(cloudpubsubsources_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Empty{}])
+  end
+
+  @doc """
+  Rpc to get information about a cloudpubsubsource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the cloudpubsubsource being retrieved. If needed, replace
+      {namespace_id} with the project ID.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudpubsubsources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudpubsubsources_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudpubsubsources_get(
+        connection,
+        projects_id,
+        locations_id,
+        cloudpubsubsources_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudpubsubsources/{cloudpubsubsourcesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "cloudpubsubsourcesId" => URI.encode(cloudpubsubsources_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource{}])
+  end
+
+  @doc """
+  Rpc to list cloudpubsubsources.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number from which the cloudpubsubsources should
+      be listed.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
+      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
+          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
+          Not currently used by Cloud Run.
+      *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
+      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
+          =, !=, exists, in, and notIn.
+      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
+      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
+          start. Not currently used by Cloud Run.
+      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
+          Not currently used by Cloud Run.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.ListCloudPubSubSourcesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudpubsubsources_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudPubSubSourcesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudpubsubsources_list(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :continue => :query,
+      :fieldSelector => :query,
+      :includeUninitialized => :query,
+      :labelSelector => :query,
+      :limit => :query,
+      :resourceVersion => :query,
+      :watch => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudpubsubsources",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListCloudPubSubSourcesResponse{}]
+    )
+  end
+
+  @doc """
+  Creates a new cloudschedulersource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project ID or project number in which this cloudschedulersource should
+      be created.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudschedulersources_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudschedulersources_create(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudschedulersources",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource{}]
+    )
+  end
+
+  @doc """
+  Rpc to delete a cloudschedulersource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the cloudschedulersource being deleted. If needed, replace
+      {namespace_id} with the project ID.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudschedulersources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
+      *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
+      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores
+          this setting, and deletes in the background. Please see
+          kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for
+          more information.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudschedulersources_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudschedulersources_delete(
+        connection,
+        projects_id,
+        locations_id,
+        cloudschedulersources_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :apiVersion => :query,
+      :kind => :query,
+      :propagationPolicy => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudschedulersources/{cloudschedulersourcesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "cloudschedulersourcesId" =>
+            URI.encode(cloudschedulersources_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Empty{}])
+  end
+
+  @doc """
+  Rpc to get information about a cloudschedulersource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the cloudschedulersource being retrieved. If needed, replace
+      {namespace_id} with the project ID.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudschedulersources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudschedulersources_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudschedulersources_get(
+        connection,
+        projects_id,
+        locations_id,
+        cloudschedulersources_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudschedulersources/{cloudschedulersourcesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "cloudschedulersourcesId" =>
+            URI.encode(cloudschedulersources_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource{}]
+    )
+  end
+
+  @doc """
+  Rpc to list cloudschedulersources.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project ID or project number from which the cloudschedulersources
+      should be listed.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
+      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
+          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
+          Not currently used by Cloud Run.
+      *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
+      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
+          =, !=, exists, in, and notIn.
+      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
+      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
+          start. Not currently used by Cloud Run.
+      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
+          Not currently used by Cloud Run.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.ListCloudSchedulerSourcesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudschedulersources_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudSchedulerSourcesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudschedulersources_list(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :continue => :query,
+      :fieldSelector => :query,
+      :includeUninitialized => :query,
+      :labelSelector => :query,
+      :limit => :query,
+      :resourceVersion => :query,
+      :watch => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudschedulersources",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListCloudSchedulerSourcesResponse{}]
+    )
+  end
+
+  @doc """
+  Rpc to replace a cloudschedulersource.
 
   Only the spec and metadata labels and annotations are modifiable. After
   the Update request, Cloud Run will work to make the 'status'
@@ -517,54 +1187,53 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the cloudauditlog being retrieved. If needed, replace
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the cloudschedulersource being retrieved. If needed, replace
       {namespace_id} with the project ID.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `cloudauditlogs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudschedulersources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog.t`) - 
+      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog{}}` on success
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_projects_locations_cloudauditlogs_replace_cloud_audit_log(
+  @spec run_projects_locations_cloudschedulersources_replace_cloud_scheduler_source(
           Tesla.Env.client(),
           String.t(),
           String.t(),
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_cloudauditlogs_replace_cloud_audit_log(
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudschedulersources_replace_cloud_scheduler_source(
         connection,
         projects_id,
         locations_id,
-        cloudauditlogs_id,
+        cloudschedulersources_id,
         optional_params \\ [],
         opts \\ []
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -576,11 +1245,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       Request.new()
       |> Request.method(:put)
       |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudauditlogs/{cloudauditlogsId}",
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudschedulersources/{cloudschedulersourcesId}",
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "cloudauditlogsId" => URI.encode(cloudauditlogs_id, &URI.char_unreserved?/1)
+          "cloudschedulersourcesId" =>
+            URI.encode(cloudschedulersources_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -588,7 +1258,427 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLog{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource{}]
+    )
+  end
+
+  @doc """
+  Creates a new cloudstoragesource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project ID or project number in which this cloudstoragesource should
+      be created.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudstoragesources_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudstoragesources_create(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudstoragesources",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource{}])
+  end
+
+  @doc """
+  Rpc to delete a cloudstoragesource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the cloudstoragesource being deleted. If needed, replace
+      {namespace_id} with the project ID.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudstoragesources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
+      *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
+      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores
+          this setting, and deletes in the background. Please see
+          kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for
+          more information.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudstoragesources_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudstoragesources_delete(
+        connection,
+        projects_id,
+        locations_id,
+        cloudstoragesources_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :apiVersion => :query,
+      :kind => :query,
+      :propagationPolicy => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudstoragesources/{cloudstoragesourcesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "cloudstoragesourcesId" => URI.encode(cloudstoragesources_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Empty{}])
+  end
+
+  @doc """
+  Rpc to get information about a cloudstoragesource.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the cloudstoragesource being retrieved. If needed, replace
+      {namespace_id} with the project ID.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudstoragesources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudstoragesources_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudstoragesources_get(
+        connection,
+        projects_id,
+        locations_id,
+        cloudstoragesources_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudstoragesources/{cloudstoragesourcesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "cloudstoragesourcesId" => URI.encode(cloudstoragesources_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource{}])
+  end
+
+  @doc """
+  Rpc to list cloudstoragesources.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project ID or project number from which the cloudstoragesources should
+      be listed.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
+      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
+          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
+          Not currently used by Cloud Run.
+      *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
+      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
+          =, !=, exists, in, and notIn.
+      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
+      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
+          start. Not currently used by Cloud Run.
+      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
+          Not currently used by Cloud Run.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.ListCloudStorageSourcesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudstoragesources_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListCloudStorageSourcesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudstoragesources_list(
+        connection,
+        projects_id,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :continue => :query,
+      :fieldSelector => :query,
+      :includeUninitialized => :query,
+      :labelSelector => :query,
+      :limit => :query,
+      :resourceVersion => :query,
+      :watch => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudstoragesources",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListCloudStorageSourcesResponse{}]
+    )
+  end
+
+  @doc """
+  Rpc to replace a cloudstoragesource.
+
+  Only the spec and metadata labels and annotations are modifiable. After
+  the Update request, Cloud Run will work to make the 'status'
+  match the requested 'spec'.
+
+  May provide metadata.resourceVersion to enforce update from last read for
+  optimistic concurrency control.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the cloudstoragesource being retrieved. If needed, replace
+      {namespace_id} with the project ID.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `cloudstoragesources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_cloudstoragesources_replace_cloud_storage_source(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def run_projects_locations_cloudstoragesources_replace_cloud_storage_source(
+        connection,
+        projects_id,
+        locations_id,
+        cloudstoragesources_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url(
+        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/cloudstoragesources/{cloudstoragesourcesId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "cloudstoragesourcesId" => URI.encode(cloudstoragesources_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource{}])
   end
 
   @doc """
@@ -603,12 +1693,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `configurations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -627,7 +1715,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Configuration.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Configuration.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_configurations_get(
         connection,
         projects_id,
@@ -638,12 +1729,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -680,12 +1769,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -717,7 +1804,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListConfigurationsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_configurations_list(
         connection,
         projects_id,
@@ -727,12 +1815,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -774,12 +1860,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -798,7 +1882,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_create(
         connection,
         projects_id,
@@ -808,12 +1895,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -848,12 +1933,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -883,7 +1966,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_delete(
         connection,
         projects_id,
@@ -894,12 +1980,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -941,12 +2025,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -965,7 +2047,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.DomainMapping.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_get(
         connection,
         projects_id,
@@ -976,12 +2061,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1018,12 +2101,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1055,7 +2136,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListDomainMappingsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_domainmappings_list(
         connection,
         projects_id,
@@ -1065,12 +2147,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1102,595 +2182,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Rpc to get information about an EventType.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the trigger being retrieved. If needed, replace
-      {namespace_id} with the project ID.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `eventtypes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.EventType{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_eventtypes_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.EventType.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_eventtypes_get(
-        connection,
-        projects_id,
-        locations_id,
-        eventtypes_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/eventtypes/{eventtypesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "eventtypesId" => URI.encode(eventtypes_id, &URI.char_unreserved?/1)
-        }
-      )
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.EventType{}])
-  end
-
-  @doc """
-  Rpc to list EventTypes.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number from which the EventTypes should be
-      listed.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
-      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
-          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
-          Not currently used by Cloud Run.
-      *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
-      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
-          =, !=, exists, in, and notIn.
-      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
-      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
-          start. Not currently used by Cloud Run.
-      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
-          Not currently used by Cloud Run.
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.ListEventTypesResponse{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_eventtypes_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListEventTypesResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def run_projects_locations_eventtypes_list(
-        connection,
-        projects_id,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :continue => :query,
-      :fieldSelector => :query,
-      :includeUninitialized => :query,
-      :labelSelector => :query,
-      :limit => :query,
-      :resourceVersion => :query,
-      :watch => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1alpha1/projects/{projectsId}/locations/{locationsId}/eventtypes", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListEventTypesResponse{}]
-    )
-  end
-
-  @doc """
-  Creates a new pubsub.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number in which this pubsub should
-      be created.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.PubSub.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.PubSub{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_pubsubs_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.PubSub.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_pubsubs_create(
-        connection,
-        projects_id,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1alpha1/projects/{projectsId}/locations/{locationsId}/pubsubs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.PubSub{}])
-  end
-
-  @doc """
-  Rpc to delete a pubsub.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the pubsub being deleted. If needed, replace
-      {namespace_id} with the project ID.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `pubsubs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores
-          this setting, and deletes in the background. Please see
-          kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for
-          more information.
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Empty{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_pubsubs_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_pubsubs_delete(
-        connection,
-        projects_id,
-        locations_id,
-        pubsubs_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :apiVersion => :query,
-      :kind => :query,
-      :propagationPolicy => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:delete)
-      |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/pubsubs/{pubsubsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "pubsubsId" => URI.encode(pubsubs_id, &URI.char_unreserved?/1)
-        }
-      )
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Empty{}])
-  end
-
-  @doc """
-  Rpc to get information about a pubsub.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the pubsub being retrieved. If needed, replace
-      {namespace_id} with the project ID.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `pubsubs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.PubSub{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_pubsubs_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.PubSub.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_pubsubs_get(
-        connection,
-        projects_id,
-        locations_id,
-        pubsubs_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/pubsubs/{pubsubsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "pubsubsId" => URI.encode(pubsubs_id, &URI.char_unreserved?/1)
-        }
-      )
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.PubSub{}])
-  end
-
-  @doc """
-  Rpc to list pubsubs.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number from which the pubsubs should
-      be listed.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
-      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
-          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
-          Not currently used by Cloud Run.
-      *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
-      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
-          =, !=, exists, in, and notIn.
-      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
-      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
-          start. Not currently used by Cloud Run.
-      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
-          Not currently used by Cloud Run.
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.ListPubSubsResponse{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_pubsubs_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListPubSubsResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def run_projects_locations_pubsubs_list(
-        connection,
-        projects_id,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :continue => :query,
-      :fieldSelector => :query,
-      :includeUninitialized => :query,
-      :labelSelector => :query,
-      :limit => :query,
-      :resourceVersion => :query,
-      :watch => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1alpha1/projects/{projectsId}/locations/{locationsId}/pubsubs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListPubSubsResponse{}])
-  end
-
-  @doc """
-  Rpc to replace a pubsub.
-
-  Only the spec and metadata labels and annotations are modifiable. After
-  the Update request, Cloud Run will work to make the 'status'
-  match the requested 'spec'.
-
-  May provide metadata.resourceVersion to enforce update from last read for
-  optimistic concurrency control.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the pubsub being retrieved. If needed, replace
-      {namespace_id} with the project ID.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `pubsubs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.PubSub.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.PubSub{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_pubsubs_replace_pub_sub(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.PubSub.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_pubsubs_replace_pub_sub(
-        connection,
-        projects_id,
-        locations_id,
-        pubsubs_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:put)
-      |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/pubsubs/{pubsubsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "pubsubsId" => URI.encode(pubsubs_id, &URI.char_unreserved?/1)
-        }
-      )
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.PubSub{}])
-  end
-
-  @doc """
   Rpc to delete a revision.
 
   ## Parameters
@@ -1702,12 +2193,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1737,7 +2226,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_revisions_delete(
         connection,
         projects_id,
@@ -1748,12 +2240,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1795,12 +2285,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1819,7 +2307,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Revision.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Revision.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_revisions_get(
         connection,
         projects_id,
@@ -1830,12 +2321,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1871,12 +2360,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1908,7 +2395,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListRevisionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_revisions_list(
         connection,
         projects_id,
@@ -1918,12 +2406,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1966,12 +2452,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `routes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1990,7 +2474,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Route.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Route.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_routes_get(
         connection,
         projects_id,
@@ -2001,12 +2488,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2042,12 +2527,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -2079,7 +2562,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListRoutesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_routes_list(
         connection,
         projects_id,
@@ -2089,12 +2573,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2133,12 +2615,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -2157,7 +2637,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_create(
         connection,
         projects_id,
@@ -2167,12 +2650,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2209,12 +2690,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -2244,7 +2723,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_delete(
         connection,
         projects_id,
@@ -2255,12 +2737,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2302,12 +2782,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -2326,7 +2804,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_get(
         connection,
         projects_id,
@@ -2337,12 +2818,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2381,12 +2860,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -2399,6 +2876,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           Requests for policies with any conditional bindings must specify version 3.
           Policies without any conditional bindings may specify any valid value or
           leave the field unset.
+
+          To learn which resources support conditions in their IAM policies, see the
+          [IAM
+          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2413,7 +2894,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_get_iam_policy(
         connection,
         projects_id,
@@ -2424,12 +2908,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2466,12 +2948,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -2503,7 +2983,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListServicesResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_list(
         connection,
         projects_id,
@@ -2513,12 +2994,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2568,12 +3047,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -2593,7 +3070,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Service.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_replace_service(
         connection,
         projects_id,
@@ -2604,12 +3084,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2649,12 +3127,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -2674,7 +3150,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Policy.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_set_iam_policy(
         connection,
         projects_id,
@@ -2685,12 +3164,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2731,12 +3208,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -2758,7 +3233,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.TestIamPermissionsResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_services_test_iam_permissions(
         connection,
         projects_id,
@@ -2769,12 +3245,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -2804,425 +3278,6 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   end
 
   @doc """
-  Creates a new storage.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number in which this storage should
-      be created.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Storage.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Storage{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_storages_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Storage.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_storages_create(
-        connection,
-        projects_id,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1alpha1/projects/{projectsId}/locations/{locationsId}/storages", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Storage{}])
-  end
-
-  @doc """
-  Rpc to delete a storage.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the storage being deleted. If needed, replace
-      {namespace_id} with the project ID.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `storages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores
-          this setting, and deletes in the background. Please see
-          kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for
-          more information.
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Empty{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_storages_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_storages_delete(
-        connection,
-        projects_id,
-        locations_id,
-        storages_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :apiVersion => :query,
-      :kind => :query,
-      :propagationPolicy => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:delete)
-      |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/storages/{storagesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "storagesId" => URI.encode(storages_id, &URI.char_unreserved?/1)
-        }
-      )
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Empty{}])
-  end
-
-  @doc """
-  Rpc to get information about a storage.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the storage being retrieved. If needed, replace
-      {namespace_id} with the project ID.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `storages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Storage{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_storages_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Storage.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_storages_get(
-        connection,
-        projects_id,
-        locations_id,
-        storages_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/storages/{storagesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "storagesId" => URI.encode(storages_id, &URI.char_unreserved?/1)
-        }
-      )
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Storage{}])
-  end
-
-  @doc """
-  Rpc to list storages.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The project ID or project number from which the storages should
-      be listed.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
-      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
-          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
-          Not currently used by Cloud Run.
-      *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
-      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
-          =, !=, exists, in, and notIn.
-      *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
-      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
-          start. Not currently used by Cloud Run.
-      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
-          Not currently used by Cloud Run.
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.ListStoragesResponse{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_storages_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListStoragesResponse.t()}
-          | {:error, Tesla.Env.t()}
-  def run_projects_locations_storages_list(
-        connection,
-        projects_id,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :continue => :query,
-      :fieldSelector => :query,
-      :includeUninitialized => :query,
-      :labelSelector => :query,
-      :limit => :query,
-      :resourceVersion => :query,
-      :watch => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1alpha1/projects/{projectsId}/locations/{locationsId}/storages", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListStoragesResponse{}]
-    )
-  end
-
-  @doc """
-  Rpc to replace a storage.
-
-  Only the spec and metadata labels and annotations are modifiable. After
-  the Update request, Cloud Run will work to make the 'status'
-  match the requested 'spec'.
-
-  May provide metadata.resourceVersion to enforce update from last read for
-  optimistic concurrency control.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the storage being retrieved. If needed, replace
-      {namespace_id} with the project ID.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `storages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Storage.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Storage{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_storages_replace_storage(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Storage.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_storages_replace_storage(
-        connection,
-        projects_id,
-        locations_id,
-        storages_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:put)
-      |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/storages/{storagesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "storagesId" => URI.encode(storages_id, &URI.char_unreserved?/1)
-        }
-      )
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Storage{}])
-  end
-
-  @doc """
   Creates a new trigger.
 
   ## Parameters
@@ -3233,12 +3288,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -3257,7 +3310,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_triggers_create(
         connection,
         projects_id,
@@ -3267,12 +3323,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -3307,12 +3361,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `triggers_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -3337,7 +3389,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_triggers_delete(
         connection,
         projects_id,
@@ -3348,12 +3403,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -3394,12 +3447,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `triggers_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -3418,7 +3469,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_triggers_get(
         connection,
         projects_id,
@@ -3429,12 +3483,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -3471,17 +3523,15 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
+      *   `:continue` (*type:* `String.t`) - Optional. Encoded string to continue paging.
       *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
           Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
           Not currently used by Cloud Run.
@@ -3508,7 +3558,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.CloudRun.V1alpha1.Model.ListTriggersResponse.t()}
-          | {:error, Tesla.Env.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
   def run_projects_locations_triggers_list(
         connection,
         projects_id,
@@ -3518,12 +3569,10 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
-      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
-      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -3552,92 +3601,5 @@ defmodule GoogleApi.CloudRun.V1alpha1.Api.Projects do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.ListTriggersResponse{}]
     )
-  end
-
-  @doc """
-  Rpc to replace a trigger.
-
-  Only the spec and metadata labels and annotations are modifiable. After
-  the Update request, Cloud Run will work to make the 'status'
-  match the requested 'spec'.
-
-  May provide metadata.resourceVersion to enforce update from last read for
-  optimistic concurrency control.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.CloudRun.V1alpha1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the trigger being retrieved. If needed, replace
-      {namespace_id} with the project ID.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `triggers_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Trigger.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.CloudRun.V1alpha1.Model.Trigger{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec run_projects_locations_triggers_replace_trigger(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) :: {:ok, GoogleApi.CloudRun.V1alpha1.Model.Trigger.t()} | {:error, Tesla.Env.t()}
-  def run_projects_locations_triggers_replace_trigger(
-        connection,
-        projects_id,
-        locations_id,
-        triggers_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:put)
-      |> Request.url(
-        "/v1alpha1/projects/{projectsId}/locations/{locationsId}/triggers/{triggersId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "triggersId" => URI.encode(triggers_id, &URI.char_unreserved?/1)
-        }
-      )
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CloudRun.V1alpha1.Model.Trigger{}])
   end
 end

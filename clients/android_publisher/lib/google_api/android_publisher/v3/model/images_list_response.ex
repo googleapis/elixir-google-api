@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.ImagesListResponse do
   @moduledoc """
-
+  Response listing all images.
 
   ## Attributes
 
-  *   `images` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Image.t)`, *default:* `nil`) - 
+  *   `images` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.Image.t)`, *default:* `nil`) - All listed Images.
   """
 
   use GoogleApi.Gax.ModelBase

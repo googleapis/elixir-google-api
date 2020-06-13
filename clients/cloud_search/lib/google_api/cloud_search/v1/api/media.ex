@@ -75,7 +75,7 @@ defmodule GoogleApi.CloudSearch.V1.Api.Media do
   *   `{:error, info}` on failure
   """
   @spec cloudsearch_media_upload(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CloudSearch.V1.Model.Media.t()} | {:error, Tesla.Env.t()}
+          {:ok, GoogleApi.CloudSearch.V1.Model.Media.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudsearch_media_upload(connection, resource_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
@@ -165,7 +165,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Media do
           iodata,
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Media.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Media.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudsearch_media_upload_iodata(
         connection,
         resource_name,
@@ -265,7 +266,8 @@ defmodule GoogleApi.CloudSearch.V1.Api.Media do
           String.t(),
           keyword(),
           keyword()
-        ) :: {:ok, GoogleApi.CloudSearch.V1.Model.Media.t()} | {:error, Tesla.Env.t()}
+        ) ::
+          {:ok, GoogleApi.CloudSearch.V1.Model.Media.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def cloudsearch_media_upload_simple(
         connection,
         resource_name,

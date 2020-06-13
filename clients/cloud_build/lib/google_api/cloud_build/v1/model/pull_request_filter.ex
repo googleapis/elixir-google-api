@@ -26,19 +26,22 @@ defmodule GoogleApi.CloudBuild.V1.Model.PullRequestFilter do
 
       The syntax of the regular expressions accepted is the syntax accepted by
       RE2 and described at https://github.com/google/re2/wiki/Syntax
-  *   `commentControl` (*type:* `String.t`, *default:* `nil`) - Whether to block builds on a "/gcbrun" comment from a repository admin or
-      collaborator.
+  *   `commentControl` (*type:* `String.t`, *default:* `nil`) - Configure builds to run whether a repository owner or collaborator need to
+      comment `/gcbrun`.
+  *   `invertRegex` (*type:* `boolean()`, *default:* `nil`) - If true, branches that do NOT match the git_ref will trigger a build.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :branch => String.t(),
-          :commentControl => String.t()
+          :commentControl => String.t(),
+          :invertRegex => boolean()
         }
 
   field(:branch)
   field(:commentControl)
+  field(:invertRegex)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V1.Model.PullRequestFilter do
