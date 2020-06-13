@@ -176,13 +176,26 @@ defmodule GoogleApi.Gax.Connection do
   defp build_body(output, body_params, file_params) do
     body = Tesla.Multipart.new()
 
+    {meta, body_params} = extract_metadata(body_params)
+
+    body = case meta do
+      nil -> body
+      _   -> Tesla.Multipart.add_field(
+        body,
+        :metadata,
+        Poison.encode!(meta),
+        headers: [{:"Content-Type", "application/json"}]
+      )
+    end
+
     body =
       Enum.reduce(body_params, body, fn {body_name, data}, b ->
+        {res, type} = try_encode_multipart_field(data, meta)
         Tesla.Multipart.add_field(
           b,
           body_name,
-          Poison.encode!(data),
-          headers: [{:"Content-Type", "application/json"}]
+          res,
+          headers: [{:"Content-Type", type}]
         )
       end)
 
@@ -192,6 +205,25 @@ defmodule GoogleApi.Gax.Connection do
       end)
 
     Keyword.put(output, :body, body)
+  end
+
+  defp extract_metadata(body_params) do
+    case Keyword.fetch(body_params, :metadata) do
+      :error -> {nil, body_params}
+      {:ok, meta} -> {meta, Keyword.delete(body_params, :metadata)}
+    end
+  end
+
+  defp try_encode_multipart_field(data, _meta) when is_map(data) do
+    {Poison.encode!(data), "application/json"}
+  end
+
+  defp try_encode_multipart_field(data, meta) when is_map(meta) do
+    {data, Map.get(meta, :contentType, "application/octet-stream")}
+  end
+
+  defp try_encode_multipart_field(data, _meta) do
+    {data, "application/octet-stream"}
   end
 
   @required_body_methods [:post, :patch, :put, :delete]
