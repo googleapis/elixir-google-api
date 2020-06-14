@@ -26,7 +26,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new Role.
+  Creates a new custom Role.
 
   ## Parameters
 
@@ -104,13 +104,23 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Soft deletes a role. The role is suspended and cannot be used to create new
-  IAM Policy Bindings.
-  The Role will not be included in `ListRoles()` unless `show_deleted` is set
-  in the `ListRolesRequest`. The Role contains the deleted boolean set.
-  Existing Bindings remains, but are inactive. The Role can be undeleted
-  within 7 days. After 7 days the Role is deleted and all Bindings associated
-  with the role are removed.
+  Deletes a custom Role.
+
+  When you delete a custom role, the following changes occur immediately:
+
+  * You cannot bind a member to the custom role in an IAM
+  Policy.
+  * Existing bindings to the custom role are not changed, but they have no
+  effect.
+  * By default, the response from ListRoles does not include the custom
+  role.
+
+  You have 7 days to undelete the custom role. After 7 days, the following
+  changes occur:
+
+  * The custom role is permanently deleted and cannot be recovered.
+  * If an IAM policy contains a binding to the custom role, the binding is
+  permanently removed.
 
   ## Parameters
 
@@ -201,7 +211,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Gets a Role definition.
+  Gets the definition of a Role.
 
   ## Parameters
 
@@ -286,7 +296,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Lists the Roles defined on a resource.
+  Lists every predefined Role that IAM supports, or every custom role
+  that is defined for an organization or project.
 
   ## Parameters
 
@@ -382,7 +393,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Updates a Role definition.
+  Updates the definition of a custom Role.
 
   ## Parameters
 
@@ -470,7 +481,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Undelete a Role, bringing it back in its previous state.
+  Undeletes a custom Role.
 
   ## Parameters
 
@@ -561,8 +572,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Creates a ServiceAccount
-  and returns it.
+  Creates a ServiceAccount.
 
   ## Parameters
 
@@ -630,6 +640,20 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
 
   @doc """
   Deletes a ServiceAccount.
+
+  **Warning:** After you delete a service account, you might not be able to
+  undelete it. If you know that you need to re-enable the service account in
+  the future, use DisableServiceAccount instead.
+
+  If you delete a service account, IAM permanently removes the service
+  account 30 days later. Google Cloud cannot recover the service account
+  after it is permanently removed, even if you file a support request.
+
+  To help avoid unplanned outages, we recommend that you disable the service
+  account before you delete it. Use DisableServiceAccount to disable the
+  service account, then wait at least 24 hours and watch for unintended
+  consequences. If there are no unintended consequences, you can delete the
+  service account.
 
   ## Parameters
 
@@ -703,29 +727,22 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  DisableServiceAccount is currently in the alpha launch stage.
+  Disables a ServiceAccount immediately.
 
-  Disables a ServiceAccount,
-  which immediately prevents the service account from authenticating and
-  gaining access to APIs.
+  If an application uses the service account to authenticate, that
+  application can no longer call Google APIs or access Google Cloud
+  resources. Existing access tokens for the service account are rejected, and
+  requests for new access tokens will fail.
 
-  Disabled service accounts can be safely restored by using
-  EnableServiceAccount at any point. Deleted service accounts cannot be
-  restored using this method.
+  To re-enable the service account, use EnableServiceAccount. After you
+  re-enable the service account, its existing access tokens will be accepted,
+  and you can request new access tokens.
 
-  Disabling a service account that is bound to VMs, Apps, Functions, or
-  other jobs will cause those jobs to lose access to resources if they are
-  using the disabled service account.
-
-  Previously issued Access tokens for a service account will be rejected
-  while the service account is disabled but will start working again if the
-  account is re-enabled. Issuance of new tokens will fail while the account
-  is disabled.
-
-  To improve reliability of your services and avoid unexpected outages, it
-  is recommended to first disable a service account rather than delete it.
-  After disabling the service account, wait at least 24 hours to verify there
-  are no unintended consequences, and then delete the service account.
+  To help avoid unplanned outages, we recommend that you disable the service
+  account before you delete it. Use this method to disable the service
+  account, then wait at least 24 hours and watch for unintended consequences.
+  If there are no unintended consequences, you can delete the service account
+  with DeleteServiceAccount.
 
   ## Parameters
 
@@ -801,16 +818,14 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  EnableServiceAccount is currently in the alpha launch stage.
+  Enables a ServiceAccount that was disabled by
+  DisableServiceAccount.
 
-   Restores a disabled ServiceAccount
-   that has been manually disabled by using DisableServiceAccount. Service
-   accounts that have been disabled by other means or for other reasons,
-   such as abuse, cannot be restored using this method.
+  If the service account is already enabled, then this method has no effect.
 
-   EnableServiceAccount will have no effect on a service account that is
-   not disabled.  Enabling an already enabled service account will have no
-   effect.
+  If the service account was disabled by other means—for example, if Google
+  disabled the service account because it was compromised—you cannot use this
+  method to enable the service account.
 
   ## Parameters
 
@@ -963,20 +978,15 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Returns the Cloud IAM access control policy for a
-  ServiceAccount.
+  Gets the IAM policy that is attached to a ServiceAccount. This IAM
+  policy specifies which members have access to the service account.
 
-  Note: Service accounts are both
-  [resources and
-  identities](/iam/docs/service-accounts#service_account_permissions). This
-  method treats the service account as a resource. It returns the Cloud IAM
-  policy that reflects what members have access to the service account.
-
-  This method does not return what resources the service account has access
-  to. To see if a service account has access to a resource, call the
-  `getIamPolicy` method on the target resource. For example, to view grants
-  for a project, call the
-  [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy)
+  This method does not tell you whether the service account has been granted
+  any roles on other resources. To check whether a service account has role
+  grants on a resource, use the `getIamPolicy` method for that resource. For
+  example, to view the role grants for a project, call the Resource Manager
+  API's
+  [`projects.getIamPolicy`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
   method.
 
   ## Parameters
@@ -1064,7 +1074,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Lists ServiceAccounts for a project.
+  Lists every ServiceAccount that belongs to a specific project.
 
   ## Parameters
 
@@ -1139,26 +1149,28 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   @doc """
   Patches a ServiceAccount.
 
-  Currently, only the following fields are updatable:
-  `display_name` and `description`.
-
-  Only fields specified in the request are guaranteed to be returned in
-  the response. Other fields in the response may be empty.
-
-  Note: The field mask is required.
-
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `serviceAccount.name`. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `serviceAccount.name`. The resource name of the service account.
 
-      Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-      project from the `account` and the `ACCOUNT` value can be the `email`
-      address or the `unique_id` of the service account.
+      Use one of the following formats:
 
-      In responses the resource name will always be in the format
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+      * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+      * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+
+      As an alternative, you can use the `-` wildcard character instead of the
+      project ID:
+
+      * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+      * `projects/-/serviceAccounts/{UNIQUE_ID}`
+
+      When possible, avoid using the `-` wildcard character, because it can cause
+      response messages to contain misleading error codes. For example, if you
+      try to get the service account
+      `projects/-/serviceAccounts/fake@example.com`, which does not exist, the
+      response contains an HTTP `403 Forbidden` error instead of a `404 Not
+      Found` error.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `serviceAccount.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1228,22 +1240,23 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Sets the Cloud IAM access control policy for a
-  ServiceAccount.
+  Sets the IAM policy that is attached to a ServiceAccount.
 
-  Note: Service accounts are both
-  [resources and
-  identities](/iam/docs/service-accounts#service_account_permissions). This
-  method treats the service account as a resource. Use it to grant members
-  access to the service account, such as when they need to impersonate it.
+  Use this method to grant or revoke access to the service account. For
+  example, you could grant a member the ability to impersonate the service
+  account.
 
-  This method does not grant the service account access to other resources,
-  such as projects. To grant a service account access to resources, include
-  the service account in the Cloud IAM policy for the desired resource, then
-  call the appropriate `setIamPolicy` method on the target resource. For
-  example, to grant a service account access to a project, call the
-  [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy)
-  method.
+  This method does not enable the service account to access other resources.
+  To grant roles to a service account on a resource, follow these steps:
+
+  1. Call the resource's `getIamPolicy` method to get its current IAM policy.
+  2. Edit the policy so that it binds the service account to an IAM role for
+  the resource.
+  3. Call the resource's `setIamPolicy` method to update its IAM policy.
+
+  For detailed instructions, see
+  [Granting roles to a service account for specific
+  resources](https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
 
   ## Parameters
 
@@ -1319,11 +1332,11 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  **Note**: This method is in the process of being deprecated. Call the
-  [`signBlob()`](/iam/credentials/reference/rest/v1/projects.serviceAccounts/signBlob)
-  method of the Cloud IAM Service Account Credentials API instead.
+  **Note:** We are in the process of deprecating this method. Use the
+  [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+  method in the IAM Service Account Credentials API instead.
 
-  Signs a blob using a service account's system-managed private key.
+  Signs a blob using the system-managed private key for a ServiceAccount.
 
   ## Parameters
 
@@ -1402,15 +1415,12 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  **Note**: This method is in the process of being deprecated. Call the
-  [`signJwt()`](/iam/credentials/reference/rest/v1/projects.serviceAccounts/signJwt)
-  method of the Cloud IAM Service Account Credentials API instead.
+  **Note:** We are in the process of deprecating this method. Use the
+  [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+  method in the IAM Service Account Credentials API instead.
 
-  Signs a JWT using a service account's system-managed private key.
-
-  If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an
-  an expiry time of one hour by default. If you request an expiry time of
-  more than one hour, the request will fail.
+  Signs a JSON Web Token (JWT) using the system-managed private key for a
+  ServiceAccount.
 
   ## Parameters
 
@@ -1489,8 +1499,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Tests the specified permissions against the IAM access control policy
-  for a ServiceAccount.
+  Tests whether the caller has the specified permissions on a
+  ServiceAccount.
 
   ## Parameters
 
@@ -1570,8 +1580,13 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
 
   @doc """
   Restores a deleted ServiceAccount.
-  This is to be used as an action of last resort.  A service account may
-  not always be restorable.
+
+  **Important:** It is not always possible to restore a deleted service
+  account. Use this method only as a last resort.
+
+  After you delete a service account, IAM permanently removes the service
+  account 30 days later. There is no way to restore a deleted service account
+  that has been permanently removed.
 
   ## Parameters
 
@@ -1649,26 +1664,35 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Note: This method is in the process of being deprecated. Use
+  **Note:** We are in the process of deprecating this method. Use
   PatchServiceAccount instead.
 
   Updates a ServiceAccount.
 
-  Currently, only the following fields are updatable:
-  `display_name` and `description`.
+  You can update only the `display_name` and `description` fields.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account in the following format:
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the service account.
 
-      Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
-      project from the `account` and the `ACCOUNT` value can be the `email`
-      address or the `unique_id` of the service account.
+      Use one of the following formats:
 
-      In responses the resource name will always be in the format
-      `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+      * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}`
+      * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}`
+
+      As an alternative, you can use the `-` wildcard character instead of the
+      project ID:
+
+      * `projects/-/serviceAccounts/{EMAIL_ADDRESS}`
+      * `projects/-/serviceAccounts/{UNIQUE_ID}`
+
+      When possible, avoid using the `-` wildcard character, because it can cause
+      response messages to contain misleading error codes. For example, if you
+      try to get the service account
+      `projects/-/serviceAccounts/fake@example.com`, which does not exist, the
+      response contains an HTTP `403 Forbidden` error instead of a `404 Not
+      Found` error.
   *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1738,8 +1762,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Creates a ServiceAccountKey
-  and returns it.
+  Creates a ServiceAccountKey.
 
   ## Parameters
 
@@ -1899,8 +1922,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Gets the ServiceAccountKey
-  by key id.
+  Gets a ServiceAccountKey.
 
   ## Parameters
 
@@ -1988,7 +2010,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Lists ServiceAccountKeys.
+  Lists every ServiceAccountKey for a service account.
 
   ## Parameters
 
@@ -2070,10 +2092,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
   end
 
   @doc """
-  Upload public key for a given service account.
-  This rpc will create a
-  ServiceAccountKey that has the
-  provided public key and returns it.
+  Creates a ServiceAccountKey, using a public key that you provide.
 
   ## Parameters
 

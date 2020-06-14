@@ -26,7 +26,7 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Gets a Role definition.
+  Gets the definition of a Role.
 
   ## Parameters
 
@@ -109,7 +109,8 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   end
 
   @doc """
-  Lists the Roles defined on a resource.
+  Lists every predefined Role that IAM supports, or every custom role
+  that is defined for an organization or project.
 
   ## Parameters
 
@@ -204,9 +205,9 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
   end
 
   @doc """
-  Queries roles that can be granted on a particular resource.
-  A role is grantable if it can be used as the role in a binding for a policy
-  for that resource.
+  Lists roles that can be granted on a Google Cloud resource. A role is
+  grantable if the IAM policy for the resource can contain bindings to the
+  role.
 
   ## Parameters
 
