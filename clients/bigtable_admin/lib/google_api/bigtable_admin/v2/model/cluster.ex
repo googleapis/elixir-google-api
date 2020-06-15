@@ -23,21 +23,17 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
 
   ## Attributes
 
-  *   `defaultStorageType` (*type:* `String.t`, *default:* `nil`) - (`CreationOnly`)
-      The type of storage used by this cluster to serve its
+  *   `defaultStorageType` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of storage used by this cluster to serve its
       parent instance's tables, unless explicitly overridden.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - (`CreationOnly`)
-      The location where this cluster's nodes and storage reside. For best
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Immutable. The location where this cluster's nodes and storage reside. For best
       performance, clients should be located as close as possible to this
       cluster. Currently only zones are supported, so values should be of the
       form `projects/{project}/locations/{zone}`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. (`OutputOnly`)
-      The unique name of the cluster. Values are of the form
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the cluster. Values are of the form
       `projects/{project}/instances/{instance}/clusters/a-z*`.
   *   `serveNodes` (*type:* `integer()`, *default:* `nil`) - Required. The number of nodes allocated to this cluster. More nodes enable higher
       throughput and more consistent performance.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - (`OutputOnly`)
-      The current state of the cluster.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the cluster.
   """
 
   use GoogleApi.Gax.ModelBase
