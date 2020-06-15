@@ -26,7 +26,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new Role.
+  Creates a new custom Role.
 
   ## Parameters
 
@@ -109,13 +109,23 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
   end
 
   @doc """
-  Soft deletes a role. The role is suspended and cannot be used to create new
-  IAM Policy Bindings.
-  The Role will not be included in `ListRoles()` unless `show_deleted` is set
-  in the `ListRolesRequest`. The Role contains the deleted boolean set.
-  Existing Bindings remains, but are inactive. The Role can be undeleted
-  within 7 days. After 7 days the Role is deleted and all Bindings associated
-  with the role are removed.
+  Deletes a custom Role.
+
+  When you delete a custom role, the following changes occur immediately:
+
+  * You cannot bind a member to the custom role in an IAM
+  Policy.
+  * Existing bindings to the custom role are not changed, but they have no
+  effect.
+  * By default, the response from ListRoles does not include the custom
+  role.
+
+  You have 7 days to undelete the custom role. After 7 days, the following
+  changes occur:
+
+  * The custom role is permanently deleted and cannot be recovered.
+  * If an IAM policy contains a binding to the custom role, the binding is
+  permanently removed.
 
   ## Parameters
 
@@ -206,7 +216,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
   end
 
   @doc """
-  Gets a Role definition.
+  Gets the definition of a Role.
 
   ## Parameters
 
@@ -302,7 +312,8 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
   end
 
   @doc """
-  Lists the Roles defined on a resource.
+  Lists every predefined Role that IAM supports, or every custom role
+  that is defined for an organization or project.
 
   ## Parameters
 
@@ -403,7 +414,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
   end
 
   @doc """
-  Updates a Role definition.
+  Updates the definition of a custom Role.
 
   ## Parameters
 
@@ -496,7 +507,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
   end
 
   @doc """
-  Undelete a Role, bringing it back in its previous state.
+  Undeletes a custom Role.
 
   ## Parameters
 
