@@ -38,11 +38,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Instance do
         the regular expression: `[\\p{Ll}\\p{Lo}\\p{N}_-]{0,63}`.
       * No more than 64 labels can be associated with a given resource.
       * Keys and values must both be under 128 bytes.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. (`OutputOnly`)
-      The unique name of the instance. Values are of the form
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the instance. Values are of the form
       `projects/{project}/instances/a-z+[a-z0-9]`.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - (`OutputOnly`)
-      The current state of the instance.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the instance.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the instance. Defaults to `PRODUCTION`.
   """
 

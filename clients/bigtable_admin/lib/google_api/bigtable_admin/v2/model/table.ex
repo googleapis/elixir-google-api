@@ -27,16 +27,14 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Table do
       particular cluster (for example, if its zone is unavailable), then
       there will be an entry for the cluster with UNKNOWN `replication_status`.
       Views: `REPLICATION_VIEW`, `FULL`
-  *   `columnFamilies` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t}`, *default:* `nil`) - (`CreationOnly`)
-      The column families configured for this table, mapped by column family ID.
+  *   `columnFamilies` (*type:* `%{optional(String.t) => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t}`, *default:* `nil`) - The column families configured for this table, mapped by column family ID.
       Views: `SCHEMA_VIEW`, `FULL`
-  *   `granularity` (*type:* `String.t`, *default:* `nil`) - (`CreationOnly`)
-      The granularity (i.e. `MILLIS`) at which timestamps are stored in
-      this table. Timestamps not matching the granularity will be rejected.
+  *   `granularity` (*type:* `String.t`, *default:* `nil`) - Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+      table. Timestamps not matching the granularity will be rejected.
       If unspecified at creation time, the value will be set to `MILLIS`.
       Views: `SCHEMA_VIEW`, `FULL`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique name of the table. Values are of the form
-      `projects/<project>/instances/<instance>/tables/_a-zA-Z0-9*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the table. Values are of the form
+      `projects/{project}/instances/{instance}/tables/_a-zA-Z0-9*`.
       Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
   """
 

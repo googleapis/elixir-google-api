@@ -403,8 +403,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `instance.name`. Required. (`OutputOnly`)
-      The unique name of the instance. Values are of the form
+  *   `projects_id` (*type:* `String.t`) - Part of `instance.name`. The unique name of the instance. Values are of the form
       `projects/{project}/instances/a-z+[a-z0-9]`.
   *   `instances_id` (*type:* `String.t`) - Part of `instance.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -640,8 +639,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. (`OutputOnly`)
-      The unique name of the instance. Values are of the form
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The unique name of the instance. Values are of the form
       `projects/{project}/instances/a-z+[a-z0-9]`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1055,9 +1053,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `appProfile.name`. (`OutputOnly`)
-      The unique name of the app profile. Values are of the form
-      `projects/<project>/instances/<instance>/appProfiles/_a-zA-Z0-9*`.
+  *   `projects_id` (*type:* `String.t`) - Part of `appProfile.name`. The unique name of the app profile. Values are of the form
+      `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.
   *   `instances_id` (*type:* `String.t`) - Part of `appProfile.name`. See documentation of `projectsId`.
   *   `app_profiles_id` (*type:* `String.t`) - Part of `appProfile.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1459,8 +1456,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. (`OutputOnly`)
-      The unique name of the cluster. Values are of the form
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The unique name of the cluster. Values are of the form
       `projects/{project}/instances/{instance}/clusters/a-z*`.
   *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.

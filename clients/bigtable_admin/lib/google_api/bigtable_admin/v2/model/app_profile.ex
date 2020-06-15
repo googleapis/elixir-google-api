@@ -22,7 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional long form description of the use case for this AppProfile.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Long form description of the use case for this AppProfile.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Strongly validated etag for optimistic concurrency control. Preserve the
       value returned from `GetAppProfile` when calling `UpdateAppProfile` to
       fail the request if there has been a modification in the mean time. The
@@ -32,9 +32,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
       [RFC 7232](https://tools.ietf.org/html/rfc7232#section-2.3) for more
       details.
   *   `multiClusterRoutingUseAny` (*type:* `GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny.t`, *default:* `nil`) - Use a multi-cluster routing policy.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - (`OutputOnly`)
-      The unique name of the app profile. Values are of the form
-      `projects/<project>/instances/<instance>/appProfiles/_a-zA-Z0-9*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the app profile. Values are of the form
+      `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.
   *   `singleClusterRouting` (*type:* `GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting.t`, *default:* `nil`) - Use a single-cluster routing policy.
   """
 
