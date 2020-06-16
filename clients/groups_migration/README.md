@@ -2,7 +2,8 @@
 
 Groups Migration API client library.
 
-Groups Migration Api.
+The Groups Migration API allows domain administrators to archive
+    emails into Google groups.
 
 ## Installation
 
@@ -11,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_groups_migration, "~> 0.7"}]
+  [{:google_api_groups_migration, "~> 0.8"}]
 end
 ```
 
