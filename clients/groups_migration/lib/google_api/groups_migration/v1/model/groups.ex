@@ -21,7 +21,7 @@ defmodule GoogleApi.GroupsMigration.V1.Model.Groups do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `groupsmigration#groups`) - The kind of insert resource this is.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of insert resource this is.
   *   `responseCode` (*type:* `String.t`, *default:* `nil`) - The status of the insert request.
   """
 
