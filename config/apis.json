@@ -655,16 +655,6 @@
     "name": "OSLogin"
   },
   {
-    "version": "v2",
-    "url": "https://www.googleapis.com/discovery/v1/apis/pagespeedonline/v2/rest",
-    "name": "PageSpeedOnline"
-  },
-  {
-    "version": "v4",
-    "url": "https://www.googleapis.com/discovery/v1/apis/pagespeedonline/v4/rest",
-    "name": "PageSpeedOnline"
-  },
-  {
     "version": "v5",
     "url": "https://www.googleapis.com/discovery/v1/apis/pagespeedonline/v5/rest",
     "name": "PageSpeedOnline"
