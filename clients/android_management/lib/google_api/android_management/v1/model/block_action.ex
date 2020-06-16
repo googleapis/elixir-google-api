@@ -22,15 +22,18 @@ defmodule GoogleApi.AndroidManagement.V1.Model.BlockAction do
   ## Attributes
 
   *   `blockAfterDays` (*type:* `integer()`, *default:* `nil`) - Number of days the policy is non-compliant before the device or work profile is blocked. To block access immediately, set to 0. blockAfterDays must be less than wipeAfterDays.
+  *   `blockScope` (*type:* `String.t`, *default:* `nil`) - Specifies the scope of this BlockAction. Only applicable to devices that are company-owned.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :blockAfterDays => integer()
+          :blockAfterDays => integer(),
+          :blockScope => String.t()
         }
 
   field(:blockAfterDays)
+  field(:blockScope)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.BlockAction do

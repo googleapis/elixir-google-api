@@ -24,6 +24,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `keyguardDisabledFeatures` (*type:* `list(String.t)`, *default:* `nil`) - Disabled keyguard customizations, such as widgets.
   *   `cameraDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether all cameras on the device are disabled.
   *   `wifiConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring Wi-Fi access points is disabled.
+  *   `personalUsagePolicies` (*type:* `GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies.t`, *default:* `nil`) - Policies managing personal usage on a company-owned device.
   *   `skipFirstUseHintsEnabled` (*type:* `boolean()`, *default:* `nil`) - Flag to skip hints on the first use. Enterprise admin can enable the system recommendation for apps to skip their user tutorial and other introductory hints on first start-up.
   *   `stayOnPluggedModes` (*type:* `list(String.t)`, *default:* `nil`) - The battery plugged in modes for which the device stays on. When using this setting, it is recommended to clear maximum_time_to_lock so that the device doesn't lock itself while it stays on.
   *   `autoTimeRequired` (*type:* `boolean()`, *default:* `nil`) - Whether auto time is required, which prevents the user from manually setting the date and time.
@@ -109,6 +110,8 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :keyguardDisabledFeatures => list(String.t()),
           :cameraDisabled => boolean(),
           :wifiConfigDisabled => boolean(),
+          :personalUsagePolicies =>
+            GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies.t(),
           :skipFirstUseHintsEnabled => boolean(),
           :stayOnPluggedModes => list(String.t()),
           :autoTimeRequired => boolean(),
@@ -199,6 +202,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:keyguardDisabledFeatures, type: :list)
   field(:cameraDisabled)
   field(:wifiConfigDisabled)
+  field(:personalUsagePolicies, as: GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies)
   field(:skipFirstUseHintsEnabled)
   field(:stayOnPluggedModes, type: :list)
   field(:autoTimeRequired)
