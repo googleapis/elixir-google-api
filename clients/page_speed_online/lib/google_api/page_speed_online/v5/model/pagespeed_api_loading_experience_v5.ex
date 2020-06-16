@@ -24,6 +24,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5 do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The url, pattern or origin which the metrics are on.
   *   `initial_url` (*type:* `String.t`, *default:* `nil`) - The requested URL, which may differ from the resolved "id".
   *   `metrics` (*type:* `%{optional(String.t) => GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5.t}`, *default:* `nil`) - The map of <metrics, data>.
+  *   `origin_fallback` (*type:* `boolean()`, *default:* `nil`) - True if the result is an origin fallback from a page, false otherwise.
   *   `overall_category` (*type:* `String.t`, *default:* `nil`) - The human readable speed "category" of the id.
   """
 
@@ -35,12 +36,14 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.PagespeedApiLoadingExperienceV5 do
           :metrics => %{
             optional(String.t()) => GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5.t()
           },
+          :origin_fallback => boolean(),
           :overall_category => String.t()
         }
 
   field(:id)
   field(:initial_url)
   field(:metrics, as: GoogleApi.PageSpeedOnline.V5.Model.UserPageLoadMetricV5, type: :map)
+  field(:origin_fallback)
   field(:overall_category)
 end
 
