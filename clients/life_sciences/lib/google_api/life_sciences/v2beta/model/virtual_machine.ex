@@ -48,6 +48,11 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.VirtualMachine do
       For more information about the effect of this parameter, see
       https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
   *   `disks` (*type:* `list(GoogleApi.LifeSciences.V2beta.Model.Disk.t)`, *default:* `nil`) - The list of disks to create and attach to the VM.
+  *   `dockerCacheImages` (*type:* `list(String.t)`, *default:* `nil`) - The Compute Engine Disk Images to use as a Docker cache. The disks will be
+      mounted into the Docker folder in a way that the images present in the
+      cache will not need to be pulled. The digests of the cached images must
+      match those of the tags used or the latest version will still be pulled.
+      Only a single image is supported.
   *   `enableStackdriverMonitoring` (*type:* `boolean()`, *default:* `nil`) - Whether Stackdriver monitoring should be enabled on the VM.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional set of labels to apply to the VM and any attached disk resources.
       These labels must adhere to the [name and value
@@ -83,6 +88,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.VirtualMachine do
           :bootImage => String.t(),
           :cpuPlatform => String.t(),
           :disks => list(GoogleApi.LifeSciences.V2beta.Model.Disk.t()),
+          :dockerCacheImages => list(String.t()),
           :enableStackdriverMonitoring => boolean(),
           :labels => map(),
           :machineType => String.t(),
@@ -97,6 +103,7 @@ defmodule GoogleApi.LifeSciences.V2beta.Model.VirtualMachine do
   field(:bootImage)
   field(:cpuPlatform)
   field(:disks, as: GoogleApi.LifeSciences.V2beta.Model.Disk, type: :list)
+  field(:dockerCacheImages, type: :list)
   field(:enableStackdriverMonitoring)
   field(:labels, type: :map)
   field(:machineType)
