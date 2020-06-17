@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.CopyOtherContactToMyContactsGroupRequest do
   @moduledoc """
-  A request to copy an other contact to my contacts group.
+  A request to copy an "Other contact" to my contacts group.
 
   ## Attributes
 

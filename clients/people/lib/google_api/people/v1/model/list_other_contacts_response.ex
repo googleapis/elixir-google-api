@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.ListOtherContactsResponse do
   @moduledoc """
-  The response to a request for the authenticated user's other contacts.
+  The response to a request for the authenticated user's "Other contacts".
 
   ## Attributes
 
@@ -26,8 +26,8 @@ defmodule GoogleApi.People.V1.Model.ListOtherContactsResponse do
   *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `sync_token` to retrieve changes since the
       last request. Request must set `request_sync_token` to return the sync
       token.
-  *   `otherContacts` (*type:* `list(GoogleApi.People.V1.Model.Person.t)`, *default:* `nil`) - The list of other contacts returned as Person resources. Other contacts
-      support a limited subset of supported fields. See
+  *   `otherContacts` (*type:* `list(GoogleApi.People.V1.Model.Person.t)`, *default:* `nil`) - The list of "Other contacts" returned as Person resources. "Other contacts"
+      support a limited subset of fields. See
       ListOtherContactsRequest.request_mask for more detailed information.
   """
 
