@@ -26,12 +26,12 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Copies an other contact to a new contact in the user's MY_CONTACTS group
+  Copies an "Other contact" to a new contact in the user's "myContacts" group
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `other_contacts_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the other contact to copy.
+  *   `other_contacts_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the "Other contact" to copy.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -94,8 +94,9 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
   end
 
   @doc """
-  List all other contacts, that is contacts that are not in a contact group.
-  Other contacts are typically auto created contacts from interactions.
+  List all "Other contacts", that is contacts that are not in a contact
+  group. "Other contacts" are typically auto created contacts from
+  interactions.
 
   ## Parameters
 
@@ -112,7 +113,7 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The number of other contacts to include in the response. Valid values are
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of "Other contacts" to include in the response. Valid values are
           between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListOtherContacts` call.
           Provide this to retrieve the subsequent page.
