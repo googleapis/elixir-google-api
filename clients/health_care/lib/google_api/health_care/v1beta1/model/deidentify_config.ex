@@ -24,6 +24,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
 
   ## Attributes
 
+  *   `annotation` (*type:* `GoogleApi.HealthCare.V1beta1.Model.AnnotationConfig.t`, *default:* `nil`) - Configures how annotations, meaning that the location and infoType
+      of sensitive information findings, are created during de-identification.
+      If unspecified, no annotations are created.
   *   `dicom` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomConfig.t`, *default:* `nil`) - Configures de-id of application/DICOM content.
   *   `fhir` (*type:* `GoogleApi.HealthCare.V1beta1.Model.FhirConfig.t`, *default:* `nil`) - Configures de-id of application/FHIR content.
   *   `image` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t`, *default:* `nil`) - Configures de-identification of image pixels wherever they are found in the
@@ -35,12 +38,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotation => GoogleApi.HealthCare.V1beta1.Model.AnnotationConfig.t(),
           :dicom => GoogleApi.HealthCare.V1beta1.Model.DicomConfig.t(),
           :fhir => GoogleApi.HealthCare.V1beta1.Model.FhirConfig.t(),
           :image => GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t(),
           :text => GoogleApi.HealthCare.V1beta1.Model.TextConfig.t()
         }
 
+  field(:annotation, as: GoogleApi.HealthCare.V1beta1.Model.AnnotationConfig)
   field(:dicom, as: GoogleApi.HealthCare.V1beta1.Model.DicomConfig)
   field(:fhir, as: GoogleApi.HealthCare.V1beta1.Model.FhirConfig)
   field(:image, as: GoogleApi.HealthCare.V1beta1.Model.ImageConfig)
