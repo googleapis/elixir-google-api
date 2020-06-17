@@ -89,8 +89,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupFindingsRequest do
 
         Usage: This should be milliseconds since epoch or an RFC3339 string.
         Examples:
-          "event_time = \\"2019-06-10T16:07:18-07:00\\""
-          "event_time = 1560208038000"
+          `event_time = "2019-06-10T16:07:18-07:00"`
+          `event_time = 1560208038000`
 
       * security_marks.marks: `=`, `:`
       * source_properties: `=`, `:`, `>`, `<`, `>=`, `<=`
@@ -98,10 +98,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GroupFindingsRequest do
       For example, `source_properties.size = 100` is a valid filter string.
 
       Use a partial match on the empty string to filter based on a property
-      existing: "source_properties.my_property : \\"\\""
+      existing: `source_properties.my_property : ""`
 
       Use a negated partial match on the empty string to filter based on a
-      property not existing: "-source_properties.my_property : \\"\\""
+      property not existing: `-source_properties.my_property : ""`
   *   `groupBy` (*type:* `String.t`, *default:* `nil`) - Required. Expression that defines what assets fields to use for grouping (including
       `state_change`). The string value should follow SQL syntax: comma separated
       list of fields. For example: "parent,resource_name".
