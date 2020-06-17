@@ -40,7 +40,7 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:driveId` (*type:* `String.t`) - The ID of the shared drive for which the starting pageToken for listing future changes from that shared drive is returned.
-      *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
+      *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
       *   `:teamDriveId` (*type:* `String.t`) - Deprecated use driveId instead.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -98,13 +98,13 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:driveId` (*type:* `String.t`) - The shared drive from which changes are returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
       *   `:includeCorpusRemovals` (*type:* `boolean()`) - Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
-      *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Deprecated - Whether both My Drive and shared drive items should be included in results. This parameter will only be effective until June 1, 2020. Afterwards shared drive items are included in the results.
+      *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Whether both My Drive and shared drive items should be included in results.
       *   `:includeRemoved` (*type:* `boolean()`) - Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
       *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated use includeItemsFromAllDrives instead.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of changes to return per page.
       *   `:restrictToMyDrive` (*type:* `boolean()`) - Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
       *   `:spaces` (*type:* `String.t`) - A comma-separated list of spaces to query within the user corpus. Supported values are 'drive', 'appDataFolder' and 'photos'.
-      *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
+      *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
       *   `:teamDriveId` (*type:* `String.t`) - Deprecated use driveId instead.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -168,13 +168,13 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:driveId` (*type:* `String.t`) - The shared drive from which changes are returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
       *   `:includeCorpusRemovals` (*type:* `boolean()`) - Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
-      *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Deprecated - Whether both My Drive and shared drive items should be included in results. This parameter will only be effective until June 1, 2020. Afterwards shared drive items are included in the results.
+      *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Whether both My Drive and shared drive items should be included in results.
       *   `:includeRemoved` (*type:* `boolean()`) - Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
       *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated use includeItemsFromAllDrives instead.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of changes to return per page.
       *   `:restrictToMyDrive` (*type:* `boolean()`) - Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
       *   `:spaces` (*type:* `String.t`) - A comma-separated list of spaces to query within the user corpus. Supported values are 'drive', 'appDataFolder' and 'photos'.
-      *   `:supportsAllDrives` (*type:* `boolean()`) - Deprecated - Whether the requesting application supports both My Drives and shared drives. This parameter will only be effective until June 1, 2020. Afterwards all applications are assumed to support shared drives.
+      *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
       *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
       *   `:teamDriveId` (*type:* `String.t`) - Deprecated use driveId instead.
       *   `:resource` (*type:* `GoogleApi.Drive.V3.Model.Channel.t`) - 
