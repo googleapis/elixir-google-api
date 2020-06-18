@@ -29,7 +29,7 @@ defmodule GoogleApi.SecretManager.V1.Model.AuditLogConfig do
             ]
           },
           {
-            "log_type": "DATA_WRITE",
+            "log_type": "DATA_WRITE"
           }
         ]
       }
