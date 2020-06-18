@@ -342,6 +342,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of roles to include in the response.
+
+          The default is 300, and the maximum is 1,000.
       *   `:pageToken` (*type:* `String.t`) - Optional pagination token returned in an earlier ListRolesResponse.
       *   `:showDeleted` (*type:* `boolean()`) - Include Roles that have been deleted.
       *   `:view` (*type:* `String.t`) - Optional view for the returned Role objects. When `FULL` is specified,
@@ -1097,6 +1099,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
           response. Further accounts can subsequently be obtained by including the
           ListServiceAccountsResponse.next_page_token
           in a subsequent request.
+
+          The default is 20, and the maximum is 100.
       *   `:pageToken` (*type:* `String.t`) - Optional pagination token returned in an earlier
           ListServiceAccountsResponse.next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options

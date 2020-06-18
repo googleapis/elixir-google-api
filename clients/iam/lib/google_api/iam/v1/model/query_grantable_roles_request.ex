@@ -27,6 +27,8 @@ defmodule GoogleApi.IAM.V1.Model.QueryGrantableRolesRequest do
       For example, a Cloud Platform project with id `my-project` will be named
       `//cloudresourcemanager.googleapis.com/projects/my-project`.
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Optional limit on the number of roles to include in the response.
+
+      The default is 300, and the maximum is 1,000.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional pagination token returned in an earlier
       QueryGrantableRolesResponse.
   *   `view` (*type:* `String.t`, *default:* `nil`) - 

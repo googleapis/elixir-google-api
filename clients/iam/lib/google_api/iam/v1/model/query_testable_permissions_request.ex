@@ -28,6 +28,8 @@ defmodule GoogleApi.IAM.V1.Model.QueryTestablePermissionsRequest do
       For example, a Cloud Platform project with id `my-project` will be named
       `//cloudresourcemanager.googleapis.com/projects/my-project`.
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Optional limit on the number of permissions to include in the response.
+
+      The default is 100, and the maximum is 1,000.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional pagination token returned in an earlier
       QueryTestablePermissionsRequest.
   """
