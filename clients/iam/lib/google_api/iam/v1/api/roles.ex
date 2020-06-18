@@ -128,6 +128,8 @@ defmodule GoogleApi.IAM.V1.Api.Roles do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional limit on the number of roles to include in the response.
+
+          The default is 300, and the maximum is 1,000.
       *   `:pageToken` (*type:* `String.t`) - Optional pagination token returned in an earlier ListRolesResponse.
       *   `:parent` (*type:* `String.t`) - The `parent` parameter's value depends on the target resource for the
           request, namely

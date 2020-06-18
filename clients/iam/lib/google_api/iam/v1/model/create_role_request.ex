@@ -23,6 +23,10 @@ defmodule GoogleApi.IAM.V1.Model.CreateRoleRequest do
 
   *   `role` (*type:* `GoogleApi.IAM.V1.Model.Role.t`, *default:* `nil`) - The Role resource to create.
   *   `roleId` (*type:* `String.t`, *default:* `nil`) - The role ID to use for this role.
+
+      A role ID may contain alphanumeric characters, underscores (`_`), and
+      periods (`.`). It must contain a minimum of 3 characters and a maximum of
+      64 characters.
   """
 
   use GoogleApi.Gax.ModelBase
