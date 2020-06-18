@@ -395,13 +395,11 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
   *   `projects_id` (*type:* `String.t`) - Part of `groupName`. Required. The group resource name. Written as
-      <code>projects/<var>projectID</var>/groups/<var>group_name</var></code>.
-      Call
-      <a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list">
-      <code>groupStats.list</code></a> to return a list of groups belonging to
-      this project.
+      `projects/{projectID}/groups/{group_name}`. Call
+      [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
+      to return a list of groups belonging to this project.
 
-      Example: <code>projects/my-project-123/groups/my-group</code>
+      Example: `projects/my-project-123/groups/my-group`
   *   `groups_id` (*type:* `String.t`) - Part of `groupName`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
