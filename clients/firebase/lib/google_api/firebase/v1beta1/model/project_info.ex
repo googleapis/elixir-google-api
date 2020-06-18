@@ -34,7 +34,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ProjectInfo do
       add Firebase resources to your project.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The resource name of the GCP `Project` to which Firebase resources can be
       added, in the format:
-      <br><code>projects/<var>projectId</var></code>
+      <br><code>projects/<var>PROJECT_NUMBER</var></code>
   """
 
   use GoogleApi.Gax.ModelBase

@@ -34,18 +34,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebAppConfig do
       finalized yet. To set your project's default GCP resource location,
       call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize)
       after you add Firebase services to your project.
-  *   `measurementId` (*type:* `String.t`, *default:* `nil`) - The unique Google-assigned identifier of the Google Analytics web stream
-      associated with the Firebase Web App. Firebase SDKs use this ID to interact
-      with Google Analytics APIs.
-      <br>
-      <br>This field is only present if the App is linked to a web stream in a
-      Google Analytics App + Web property. Learn more about this ID and Google
-      Analytics web streams in the [Analytics
-      documentation](https://support.google.com/analytics/topic/9303475).
-      <br>
-      <br>To generate a `measurementId` and link the Web App with a Google
-      Analytics web stream, call
-      [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics).
+  *   `measurementId` (*type:* `String.t`, *default:* `nil`) - This field will no longer be provided here. Instead, use
+      `GetAnalyticsDetails`
   *   `messagingSenderId` (*type:* `String.t`, *default:* `nil`) - The sender ID for use with Firebase Cloud Messaging.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, user-assigned project ID of the parent
       Project for the App.
