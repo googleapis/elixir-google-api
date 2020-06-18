@@ -23,11 +23,11 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StreamMapping do
 
   *   `app` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the Firebase App associated with the
       Google Analytics data stream, in the format:
-      <br><code>projects/<var>projectId</var>/androidApps/<var>appId</var></code>
+      <br><code>projects/<var>PROJECT_NUMBER</var>/androidApps/<var>APP_ID</var></code>
       or
-      <code>projects/<var>projectId</var>/iosApps/<var>appId</var></code>
+      <code>projects/<var>PROJECT_NUMBER</var>/iosApps/<var>APP_ID</var></code>
       or
-      <code>projects/<var>projectId</var>/webApps/<var>appId</var></code>
+      <code>projects/<var>PROJECT_NUMBER</var>/webApps/<var>APP_ID</var></code>
   *   `measurementId` (*type:* `String.t`, *default:* `nil`) - Applicable for Firebase Web Apps only.<br>
       <br>The unique Google-assigned identifier of the Google Analytics web
       stream associated with the Firebase Web App. Firebase SDKs use this ID to
