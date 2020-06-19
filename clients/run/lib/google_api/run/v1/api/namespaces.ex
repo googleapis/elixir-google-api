@@ -34,10 +34,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Application resource. Example: `apps/myapp`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -68,10 +70,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -109,10 +113,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `configurations_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -141,10 +147,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -180,10 +188,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       or number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -219,10 +229,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -261,10 +273,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       or number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -287,10 +301,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -324,10 +340,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -361,10 +379,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -404,10 +424,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -436,10 +458,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -475,10 +499,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       or number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -514,10 +540,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -557,10 +585,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -594,10 +624,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -637,10 +669,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -668,10 +702,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -707,10 +743,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       or number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -741,10 +779,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   def run_namespaces_revisions_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -784,10 +824,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `routes_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -815,10 +857,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -854,10 +898,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       or number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -888,10 +934,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   def run_namespaces_routes_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -930,10 +978,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       or number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -951,10 +1001,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   def run_namespaces_services_create(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -990,10 +1042,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1027,10 +1081,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1070,10 +1126,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1101,10 +1159,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1140,10 +1200,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       or number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1174,10 +1236,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   def run_namespaces_services_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
@@ -1224,10 +1288,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
       *   `:alt` (*type:* `String.t`) - Data format for response.
       *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
@@ -1256,10 +1322,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
       :callback => :query,
       :fields => :query,
       :key => :query,
+      :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
