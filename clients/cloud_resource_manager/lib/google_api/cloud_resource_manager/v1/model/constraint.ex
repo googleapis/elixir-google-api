@@ -21,12 +21,12 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Constraint do
   restricted. For example, it controls which cloud services can be activated
   across an organization, or whether a Compute Engine instance can have
   serial port connections established. `Constraints` can be configured by the
-  organization's policy adminstrator to fit the needs of the organzation by
+  organization's policy administrator to fit the needs of the organzation by
   setting Policies for `Constraints` at different locations in the
   organization's resource hierarchy. Policies are inherited down the resource
   hierarchy from higher levels, but can also be overridden. For details about
   the inheritance rules please read about
-  Policies.
+  [Policies](/resource-manager/reference/rest/v1/Policy).
 
   `Constraints` have a default behavior determined by the `constraint_default`
   field, which is the enforcement behavior that is used in the absence of a
@@ -35,7 +35,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Constraint do
   ## Attributes
 
   *   `booleanConstraint` (*type:* `GoogleApi.CloudResourceManager.V1.Model.BooleanConstraint.t`, *default:* `nil`) - Defines this constraint as being a BooleanConstraint.
-  *   `constraintDefault` (*type:* `String.t`, *default:* `nil`) - The evaluation behavior of this constraint in the absense of 'Policy'.
+  *   `constraintDefault` (*type:* `String.t`, *default:* `nil`) - The evaluation behavior of this constraint in the absence of 'Policy'.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Detailed description of what this `Constraint` controls as well as how and
       where it is enforced.
 
