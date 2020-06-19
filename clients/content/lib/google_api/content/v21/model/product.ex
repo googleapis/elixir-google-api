@@ -35,6 +35,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `maxHandlingTime` (*type:* `String.t`, *default:* `nil`) - Maximal product handling time (in business days).
   *   `offerId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details.
       Note: Content API methods that operate on products take the REST ID of the product, not this identifier.
+  *   `productHighlights` (*type:* `list(String.t)`, *default:* `nil`) - List of important bullet points describing the product
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign.
   *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (e.g. polka dots).
   *   `mpn` (*type:* `String.t`, *default:* `nil`) - Manufacturer Part Number (MPN) of the item.
@@ -48,6 +49,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `displayAdsTitle` (*type:* `String.t`, *default:* `nil`) - Title of an item for dynamic remarketing campaigns.
   *   `shippingWidth` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Width of the item for shipping.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the item.
+  *   `subscriptionCost` (*type:* `GoogleApi.Content.V21.Model.ProductSubscriptionCost.t`, *default:* `nil`) - Number of periods (months or years) and amount of payment per period for an item with an associated subscription contract.
   *   `gtin` (*type:* `String.t`, *default:* `nil`) - Global Trade Item Number (GTIN) of the item.
   *   `displayAdsId` (*type:* `String.t`, *default:* `nil`) - An identifier for an item for dynamic remarketing campaigns.
   *   `displayAdsLink` (*type:* `String.t`, *default:* `nil`) - URL directly to your item's landing page for dynamic remarketing campaigns.
@@ -59,7 +61,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `salePrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Advertised sale price of the item.
   *   `multipack` (*type:* `String.t`, *default:* `nil`) - The number of identical products in a merchant-defined multipack.
   *   `adsGrouping` (*type:* `String.t`, *default:* `nil`) - Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise.
-  *   `installment` (*type:* `GoogleApi.Content.V21.Model.Installment.t`, *default:* `nil`) - Number and amount of installments to pay for an item. Brazil only.
+  *   `installment` (*type:* `GoogleApi.Content.V21.Model.Installment.t`, *default:* `nil`) - Number and amount of installments to pay for an item.
   *   `costOfGoodsSold` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Cost of goods sold. Used for gross profit reporting.
   *   `adsRedirect` (*type:* `String.t`, *default:* `nil`) - Allows advertisers to override the item URL when the product is shown within the context of Product Ads.
   *   `shipping` (*type:* `list(GoogleApi.Content.V21.Model.ProductShipping.t)`, *default:* `nil`) - Shipping rules.
@@ -99,6 +101,8 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Required. The two-letter ISO 639-1 language code for the item.
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability status of the item.
   *   `availabilityDate` (*type:* `String.t`, *default:* `nil`) - The day a pre-ordered product becomes available for delivery, in ISO 8601 format.
+  *   `productDetails` (*type:* `list(GoogleApi.Content.V21.Model.ProductProductDetail.t)`, *default:* `nil`) - Technical specification or additional product details
+  *   `canonicalLink` (*type:* `String.t`, *default:* `nil`) - Link to the canonical version of the landing page.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the item.
   *   `maxEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `customLabel3` (*type:* `String.t`, *default:* `nil`) - Custom label 3 for custom grouping of items in a Shopping campaign.
@@ -126,6 +130,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :itemGroupId => String.t(),
           :maxHandlingTime => String.t(),
           :offerId => String.t(),
+          :productHighlights => list(String.t()),
           :customLabel1 => String.t(),
           :pattern => String.t(),
           :mpn => String.t(),
@@ -139,6 +144,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :displayAdsTitle => String.t(),
           :shippingWidth => GoogleApi.Content.V21.Model.ProductShippingDimension.t(),
           :description => String.t(),
+          :subscriptionCost => GoogleApi.Content.V21.Model.ProductSubscriptionCost.t(),
           :gtin => String.t(),
           :displayAdsId => String.t(),
           :displayAdsLink => String.t(),
@@ -185,6 +191,8 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :contentLanguage => String.t(),
           :availability => String.t(),
           :availabilityDate => String.t(),
+          :productDetails => list(GoogleApi.Content.V21.Model.ProductProductDetail.t()),
+          :canonicalLink => String.t(),
           :title => String.t(),
           :maxEnergyEfficiencyClass => String.t(),
           :customLabel3 => String.t(),
@@ -203,6 +211,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:itemGroupId)
   field(:maxHandlingTime)
   field(:offerId)
+  field(:productHighlights, type: :list)
   field(:customLabel1)
   field(:pattern)
   field(:mpn)
@@ -216,6 +225,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:displayAdsTitle)
   field(:shippingWidth, as: GoogleApi.Content.V21.Model.ProductShippingDimension)
   field(:description)
+  field(:subscriptionCost, as: GoogleApi.Content.V21.Model.ProductSubscriptionCost)
   field(:gtin)
   field(:displayAdsId)
   field(:displayAdsLink)
@@ -262,6 +272,8 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:contentLanguage)
   field(:availability)
   field(:availabilityDate)
+  field(:productDetails, as: GoogleApi.Content.V21.Model.ProductProductDetail, type: :list)
+  field(:canonicalLink)
   field(:title)
   field(:maxEnergyEfficiencyClass)
   field(:customLabel3)

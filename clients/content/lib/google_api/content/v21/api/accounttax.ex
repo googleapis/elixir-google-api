@@ -192,7 +192,7 @@ defmodule GoogleApi.Content.V21.Api.Accounttax do
   end
 
   @doc """
-  Updates the tax settings of the account.
+  Updates the tax settings of the account. Any fields that are not provided are deleted from the resource.
 
   ## Parameters
 

@@ -81,7 +81,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   *   `salePrice` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Advertised sale price of the item.
   *   `multipack` (*type:* `String.t`, *default:* `nil`) - The number of identical products in a merchant-defined multipack.
   *   `onlineOnly` (*type:* `boolean()`, *default:* `nil`) - Deprecated.
-  *   `installment` (*type:* `GoogleApi.Content.V2.Model.Installment.t`, *default:* `nil`) - Number and amount of installments to pay for an item. Brazil only.
+  *   `installment` (*type:* `GoogleApi.Content.V2.Model.Installment.t`, *default:* `nil`) - Number and amount of installments to pay for an item.
   *   `additionalProductTypes` (*type:* `list(String.t)`, *default:* `nil`) - Additional categories of the item (formatted as in products data specification).
   *   `costOfGoodsSold` (*type:* `GoogleApi.Content.V2.Model.Price.t`, *default:* `nil`) - Cost of goods sold. Used for gross profit reporting.
   *   `destinations` (*type:* `list(GoogleApi.Content.V2.Model.ProductDestination.t)`, *default:* `nil`) - Specifies the intended destinations for the product.
@@ -157,6 +157,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
       - "`out of stock`" 
       - "`preorder`"
   *   `availabilityDate` (*type:* `String.t`, *default:* `nil`) - The day a pre-ordered product becomes available for delivery, in ISO 8601 format.
+  *   `canonicalLink` (*type:* `String.t`, *default:* `nil`) - Link to the canonical version of the landing page.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the item.
   *   `maxEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
 
@@ -269,6 +270,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
           :contentLanguage => String.t(),
           :availability => String.t(),
           :availabilityDate => String.t(),
+          :canonicalLink => String.t(),
           :title => String.t(),
           :maxEnergyEfficiencyClass => String.t(),
           :customLabel3 => String.t(),
@@ -349,6 +351,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
   field(:contentLanguage)
   field(:availability)
   field(:availabilityDate)
+  field(:canonicalLink)
   field(:title)
   field(:maxEnergyEfficiencyClass)
   field(:customLabel3)
