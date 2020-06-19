@@ -19,7 +19,7 @@ defmodule GoogleApi.Compute.V1.Model.Router do
   @moduledoc """
   Represents a Cloud Router resource.
 
-  For more information about Cloud Router, read the the Cloud Router overview.
+  For more information about Cloud Router, read the Cloud Router overview.
 
   ## Attributes
 

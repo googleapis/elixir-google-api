@@ -67,7 +67,7 @@ defmodule GoogleApi.Compute.V1.Model.Instance do
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - 
   *   `shieldedInstanceIntegrityPolicy` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceIntegrityPolicy.t`, *default:* `nil`) - 
   *   `startRestricted` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, and TERMINATED.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional, human-readable explanation of the status.
   *   `tags` (*type:* `GoogleApi.Compute.V1.Model.Tags.t`, *default:* `nil`) - Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
