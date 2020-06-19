@@ -21,6 +21,9 @@ defmodule GoogleApi.ServiceUsage.V1.Model.QuotaOverride do
 
   ## Attributes
 
+  *   `adminOverrideAncestor` (*type:* `String.t`, *default:* `nil`) - The resource name of the ancestor that requested the override. For example:
+      "organizations/12345" or "folders/67890".
+      Used by admin overrides only.
   *   `dimensions` (*type:* `map()`, *default:* `nil`) - If this map is nonempty, then this override applies only to specific values
       for dimensions defined in the limit unit.
 
@@ -68,6 +71,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.QuotaOverride do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :adminOverrideAncestor => String.t(),
           :dimensions => map(),
           :metric => String.t(),
           :name => String.t(),
@@ -75,6 +79,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.QuotaOverride do
           :unit => String.t()
         }
 
+  field(:adminOverrideAncestor)
   field(:dimensions, type: :map)
   field(:metric)
   field(:name)
