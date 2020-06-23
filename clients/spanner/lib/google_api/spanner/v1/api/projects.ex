@@ -2226,6 +2226,8 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
   *   `database` (*type:* `String.t`) - Required. The database whose schema we wish to get.
+      Values are of the form
+      `projects/<project>/instances/<instance>/databases/<database>`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
