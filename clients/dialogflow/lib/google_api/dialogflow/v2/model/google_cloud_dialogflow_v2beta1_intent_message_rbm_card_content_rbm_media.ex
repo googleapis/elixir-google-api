@@ -43,7 +43,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessag
       the HTTP headers when the platform fetches the file. The content-type
       field must be present and accurate in the HTTP response from the URL.
   *   `height` (*type:* `String.t`, *default:* `nil`) - Required for cards with vertical orientation. The height of the media
-      within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+      within a rich card with a vertical layout.
       For a standalone card with horizontal layout, height is not
       customizable, and this field is ignored.
   *   `thumbnailUri` (*type:* `String.t`, *default:* `nil`) - Optional. Publicly reachable URI of the thumbnail.If you don't
