@@ -18,8 +18,7 @@
 defmodule GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption do
   @moduledoc """
   A single assigned targeting option, which defines the state of a targeting
-  option for an entity with targeting settings, such as a Line Item or
-  Insertion Order.
+  option for an entity with targeting settings.
 
   ## Attributes
 
