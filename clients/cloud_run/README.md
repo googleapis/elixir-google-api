@@ -1,6 +1,6 @@
 # GoogleApi.CloudRun
 
-Cloud Run API client library.
+Cloud Run Admin API client library.
 
 Deploy and manage user provided container images that scale automatically based on HTTP traffic.
 

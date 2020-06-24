@@ -48,7 +48,7 @@ defmodule GoogleApi.CloudRun.Mixfile do
 
   defp description() do
     """
-    Cloud Run API client library. Deploy and manage user provided container images that scale automatically based on HTTP traffic.
+    Cloud Run Admin API client library. Deploy and manage user provided container images that scale automatically based on HTTP traffic.
     """
   end
 
