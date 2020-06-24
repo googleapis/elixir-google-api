@@ -233,11 +233,11 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return. Max allowed value is 100.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:orderBy` (*type:* `String.t`) - Column to use for sorting results
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
-      *   `:query` (*type:* `String.t`) - Search string in the format given at http://support.google.com/a/bin/answer.py?answer=1408863#search
+      *   `:query` (*type:* `String.t`) - Search string in the format provided by this Help Center article.
       *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Only of use when orderBy is also used
   *   `opts` (*type:* `keyword()`) - Call options
 
