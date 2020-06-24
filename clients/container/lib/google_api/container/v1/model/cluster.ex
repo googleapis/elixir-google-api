@@ -40,7 +40,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `createTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster was created, in
       [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `currentNodeVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated, use
-      [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+      [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
       instead. The current version of the node software components. If they are
       currently at multiple versions because they're in the process of being
       upgraded, this reflects the minimum version of all nodes.

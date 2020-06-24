@@ -22,7 +22,7 @@ defmodule GoogleApi.Container.V1.Model.CreateClusterRequest do
   ## Attributes
 
   *   `cluster` (*type:* `GoogleApi.Container.V1.Model.Cluster.t`, *default:* `nil`) - Required. A [cluster
-      resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters)
+      resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.locations.clusters)
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The parent (project and location) where the cluster will be created.
       Specified in the format `projects/*/locations/*`.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project
