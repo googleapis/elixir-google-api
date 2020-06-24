@@ -56,6 +56,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `autoUpdateExpiration` (*type:* `String.t`, *default:* `nil`) - (Read-only) The timestamp after which the device will stop receiving Chrome updates or support
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes added by the administrator
   *   `willAutoRenew` (*type:* `boolean()`, *default:* `nil`) - Will Chromebook auto renew after support end date (Read-only)
+  *   `lastKnownNetwork` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t)`, *default:* `nil`) - Contains last used network (Read-only)
   """
 
   use GoogleApi.Gax.ModelBase
@@ -99,7 +100,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :dockMacAddress => String.t(),
           :autoUpdateExpiration => String.t(),
           :notes => String.t(),
-          :willAutoRenew => boolean()
+          :willAutoRenew => boolean(),
+          :lastKnownNetwork =>
+            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t())
         }
 
   field(:systemRamTotal)
@@ -166,6 +169,11 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   field(:autoUpdateExpiration)
   field(:notes)
   field(:willAutoRenew)
+
+  field(:lastKnownNetwork,
+    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
