@@ -21,9 +21,9 @@ defmodule GoogleApi.Dataproc.V1.Model.SparkRJob do
 
   ## Attributes
 
-  *   `archiveUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of archives to be extracted in the working directory of Spark drivers and tasks. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip.
+  *   `archiveUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of archives to be extracted into the working directory of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip.
   *   `args` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The arguments to pass to the driver. Do not include arguments, such as --conf, that can be set as job properties, since a collision may occur that causes an incorrect job submission.
-  *   `fileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of files to be copied to the working directory of R drivers and distributed tasks. Useful for naively parallel tasks.
+  *   `fileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of files to be placed in the working directory of each executor. Useful for naively parallel tasks.
   *   `loggingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.LoggingConfig.t`, *default:* `nil`) - Optional. The runtime log config for job execution.
   *   `mainRFileUri` (*type:* `String.t`, *default:* `nil`) - Required. The HCFS URI of the main R file to use as the driver. Must be a .R file.
   *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure SparkR. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
