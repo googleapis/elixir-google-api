@@ -24,28 +24,118 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
 
   ## Attributes
 
+  *   `activeDisplayAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for the Display network in the past month.
+
+      If the size is less than 1000, the number will be hidden and 0 will be
+      returned due to privacy reasons. Otherwise, the number will be rounded off
+      to two significant digits.
+
+      Only returned in GET request.
+  *   `audienceSource` (*type:* `String.t`, *default:* `nil`) - Output only. The source of the audience.
+  *   `audienceType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the audience.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. The description of the first and third party audience.
+
+      Only applicable to first party audiences.
+  *   `displayAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for the Display network.
+
+      If the size is less than 1000, the number will be hidden and 0 will be
+      returned due to privacy reasons. Otherwise, the number will be rounded off
+      to two significant digits.
+
+      Only returned in GET request.
+  *   `displayDesktopAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated desktop audience size in Display network.
+
+      If the size is less than 1000, the number will be hidden and 0 will be
+      returned due to privacy reasons. Otherwise, the number will be rounded off
+      to two significant digits.
+
+      Only applicable to first party audiences.
+
+      Only returned in GET request.
+  *   `displayMobileAppAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated mobile app audience size in Display network.
+
+      If the size is less than 1000, the number will be hidden and 0 will be
+      returned due to privacy reasons. Otherwise, the number will be rounded off
+      to two significant digits.
+
+      Only applicable to first party audiences.
+
+      Only returned in GET request.
+  *   `displayMobileWebAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated mobile web audience size in Display network.
+
+      If the size is less than 1000, the number will be hidden and 0 will be
+      returned due to privacy reasons. Otherwise, the number will be rounded off
+      to two significant digits.
+
+      Only applicable to first party audiences.
+
+      Only returned in GET request.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the first and third party audience.
       .
   *   `firstAndThirdPartyAudienceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the first and third party audience. Assigned by the
       system.
   *   `firstAndThirdPartyAudienceType` (*type:* `String.t`, *default:* `nil`) - Output only. Whether the audience is a first or third party audience.
       .
+  *   `gmailAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for Gmail network.
+
+      If the size is less than 1000, the number will be hidden and 0 will be
+      returned due to privacy reasons. Otherwise, the number will be rounded off
+      to two significant digits.
+
+      Only applicable to first party audiences.
+
+      Only returned in GET request.
+  *   `membershipDurationDays` (*type:* `String.t`, *default:* `nil`) - Output only. The duration in days that an entry remains in the audience after the
+      qualifying event.
+
+      Only applicable to first party audiences.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the first and third party audience.
+  *   `youtubeAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for YouTube network.
+
+      If the size is less than 1000, the number will be hidden and 0 will be
+      returned due to privacy reasons. Otherwise, the number will be rounded off
+      to two significant digits.
+
+      Only applicable to first party audiences.
+
+      Only returned in GET request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :activeDisplayAudienceSize => String.t(),
+          :audienceSource => String.t(),
+          :audienceType => String.t(),
+          :description => String.t(),
+          :displayAudienceSize => String.t(),
+          :displayDesktopAudienceSize => String.t(),
+          :displayMobileAppAudienceSize => String.t(),
+          :displayMobileWebAudienceSize => String.t(),
           :displayName => String.t(),
           :firstAndThirdPartyAudienceId => String.t(),
           :firstAndThirdPartyAudienceType => String.t(),
-          :name => String.t()
+          :gmailAudienceSize => String.t(),
+          :membershipDurationDays => String.t(),
+          :name => String.t(),
+          :youtubeAudienceSize => String.t()
         }
 
+  field(:activeDisplayAudienceSize)
+  field(:audienceSource)
+  field(:audienceType)
+  field(:description)
+  field(:displayAudienceSize)
+  field(:displayDesktopAudienceSize)
+  field(:displayMobileAppAudienceSize)
+  field(:displayMobileWebAudienceSize)
   field(:displayName)
   field(:firstAndThirdPartyAudienceId)
   field(:firstAndThirdPartyAudienceType)
+  field(:gmailAudienceSize)
+  field(:membershipDurationDays)
   field(:name)
+  field(:youtubeAudienceSize)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
