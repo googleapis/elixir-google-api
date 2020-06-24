@@ -22,6 +22,8 @@ defmodule GoogleApi.PlayCustomApp.V1.Model.CustomApp do
   ## Attributes
 
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Default listing language in BCP 47 format.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Output only. Package name of the created Android app.
+      Only present in the API response.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title for the Android app.
   """
 
@@ -29,10 +31,12 @@ defmodule GoogleApi.PlayCustomApp.V1.Model.CustomApp do
 
   @type t :: %__MODULE__{
           :languageCode => String.t(),
+          :packageName => String.t(),
           :title => String.t()
         }
 
   field(:languageCode)
+  field(:packageName)
   field(:title)
 end
 

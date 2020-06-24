@@ -18,7 +18,7 @@
 defmodule GoogleApi.PlayCustomApp.Mixfile do
   use Mix.Project
 
-  @version "0.7.0"
+  @version "0.8.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.PlayCustomApp.Mixfile do
 
   defp description() do
     """
-    Google Play Custom App Publishing API client library. An API to publish custom Android apps.
+    Google Play Custom App Publishing API client library. API to create and publish custom Android apps
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.PlayCustomApp.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/play_custom_app",
-        "Homepage" => "https://developers.google.com/android/work/play/custom-app-api"
+        "Homepage" => "https://developers.google.com/android/work/play/custom-app-api/"
       }
     ]
   end
