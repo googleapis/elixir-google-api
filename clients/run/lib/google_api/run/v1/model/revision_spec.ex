@@ -41,9 +41,7 @@ defmodule GoogleApi.Run.V1.Model.RevisionSpec do
       of the service. The service account represents the identity of the
       running revision, and determines what permissions the revision has. If
       not provided, the revision will use the project's default service account.
-  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - TimeoutSeconds holds the max duration the instance is allowed for
-      responding to a request.
-      Not currently used by Cloud Run.
+  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - 
   *   `volumes` (*type:* `list(GoogleApi.Run.V1.Model.Volume.t)`, *default:* `nil`) - 
   """
 
