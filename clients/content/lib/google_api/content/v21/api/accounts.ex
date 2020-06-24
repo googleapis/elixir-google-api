@@ -541,7 +541,7 @@ defmodule GoogleApi.Content.V21.Api.Accounts do
   end
 
   @doc """
-  Updates a Merchant Center account.
+  Updates a Merchant Center account. Any fields that are not provided are deleted from the resource.
 
   ## Parameters
 

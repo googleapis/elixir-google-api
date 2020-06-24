@@ -618,7 +618,7 @@ defmodule GoogleApi.Content.V21.Api.Liasettings do
   end
 
   @doc """
-  Updates the LIA settings of the account.
+  Updates the LIA settings of the account. Any fields that are not provided are deleted from the resource.
 
   ## Parameters
 

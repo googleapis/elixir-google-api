@@ -392,7 +392,7 @@ defmodule GoogleApi.Content.V2.Api.Shippingsettings do
   end
 
   @doc """
-  Updates the shipping settings of the account.
+  Updates the shipping settings of the account. Any fields that are not provided are deleted from the resource.
 
   ## Parameters
 

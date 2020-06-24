@@ -363,7 +363,7 @@ defmodule GoogleApi.Content.V21.Api.Datafeeds do
   end
 
   @doc """
-  Updates a datafeed configuration of your Merchant Center account.
+  Updates a datafeed configuration of your Merchant Center account. Any fields that are not provided are deleted from the resource.
 
   ## Parameters
 
