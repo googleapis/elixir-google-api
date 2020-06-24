@@ -17,8 +17,8 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstraintsRequest do
   @moduledoc """
-  The request sent to the [ListAvailableOrgPolicyConstraints]
-  google.cloud.OrgPolicy.v1.ListAvailableOrgPolicyConstraints] method.
+  The request sent to the `ListAvailableOrgPolicyConstraints` method on the
+  project, folder, or organization.
 
   ## Attributes
 

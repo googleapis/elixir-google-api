@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse do
   @moduledoc """
-  The response returned from the ListOrgPolicies method. It will be empty
+  The response returned from the `ListOrgPolicies` method. It will be empty
   if no `Policies` are set on the resource.
 
   ## Attributes

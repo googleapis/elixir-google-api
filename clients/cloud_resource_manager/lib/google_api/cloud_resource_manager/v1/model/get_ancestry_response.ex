@@ -17,7 +17,9 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.GetAncestryResponse do
   @moduledoc """
-  Response from the GetAncestry method.
+  Response from the
+  projects.getAncestry
+  method.
 
   ## Attributes
 
