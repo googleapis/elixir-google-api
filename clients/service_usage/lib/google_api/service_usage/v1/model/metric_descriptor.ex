@@ -21,6 +21,18 @@ defmodule GoogleApi.ServiceUsage.V1.Model.MetricDescriptor do
   deleting or altering it stops data collection and makes the metric type's
   existing data unusable.
 
+  The following are specific rules for service defined Monitoring metric
+  descriptors:
+
+  * `type`, `metric_kind`, `value_type`, `description`, `display_name`,
+    `launch_stage` fields are all required. The `unit` field must be specified
+    if the `value_type` is any of DOUBLE, INT64, DISTRIBUTION.
+  * Maximum of default 500 metric descriptors per service is allowed.
+  * Maximum of default 10 labels per metric descriptor is allowed.
+
+  The default maximum limit can be overridden. Please follow
+  https://cloud.google.com/monitoring/quotas
+
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - A detailed description of the metric, which can be used in documentation.
@@ -29,7 +41,16 @@ defmodule GoogleApi.ServiceUsage.V1.Model.MetricDescriptor do
       This field is optional but it is recommended to be set for any metrics
       associated with user-visible concepts, such as Quota.
   *   `labels` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.LabelDescriptor.t)`, *default:* `nil`) - The set of labels that can be used to describe a specific
-      instance of this metric type. For example, the
+      instance of this metric type.
+
+      The label key name must follow:
+
+      * Only upper and lower-case letters, digits and underscores (_) are
+        allowed.
+      * Label name must start with a letter or digit.
+      * The maximum length of a label name is 100 characters.
+
+      For example, the
       `appengine.googleapis.com/http/server/response_latencies` metric
       type has a label for the HTTP response code, `response_code`, so
       you can look at latencies for successful responses or just
@@ -45,9 +66,23 @@ defmodule GoogleApi.ServiceUsage.V1.Model.MetricDescriptor do
       resource types listed here.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the metric descriptor.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The metric type, including its DNS name prefix. The type is not
-      URL-encoded.  All user-defined metric types have the DNS name
-      `custom.googleapis.com` or `external.googleapis.com`.  Metric types should
-      use a natural hierarchical grouping. For example:
+      URL-encoded.
+
+      All service defined metrics must be prefixed with the service name, in the
+      format of `{service name}/{relative metric name}`, such as
+      `cloudsql.googleapis.com/database/cpu/utilization`. The relative metric
+      name must follow:
+
+      * Only upper and lower-case letters, digits, '/' and underscores '_' are
+        allowed.
+      * The maximum number of characters allowed for the relative_metric_name is
+        100.
+
+      All user-defined metric types have the DNS name
+      `custom.googleapis.com`, `external.googleapis.com`, or
+      `logging.googleapis.com/user/`.
+
+      Metric types should use a natural hierarchical grouping. For example:
 
           "custom.googleapis.com/invoice/paid/amount"
           "external.googleapis.com/prometheus/up"
@@ -83,6 +118,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.MetricDescriptor do
       * `min`   minute
       * `h`     hour
       * `d`     day
+      * `1`     dimensionless
 
       **Prefixes (PREFIX)**
 
