@@ -121,7 +121,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - The FieldMask to use when updating the settings resource.
 
-           If empty all mutable fields will be updated.
+          If empty all mutable fields will be updated.
       *   `:body` (*type:* `GoogleApi.SecurityCenter.V1.Model.OrganizationSettings.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -294,7 +294,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           If compare_duration is not specified, then the only possible state_change
           is "UNUSED",  which will be the state_change set for all assets present at
           read_time.
-      *   `:fieldMask` (*type:* `String.t`) - Optional. A field mask to specify the ListAssetsResult fields to be listed in the
+      *   `:fieldMask` (*type:* `String.t`) - A field mask to specify the ListAssetsResult fields to be listed in the
           response.
           An empty field mask will list all fields.
       *   `:filter` (*type:* `String.t`) - Expression that defines the filter to apply across assets.
@@ -924,7 +924,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
 
   @doc """
 
-  Updates a notification config.
+  Updates a notification config. The following update
+  fields are allowed: description, pubsub_topic, streaming_config.filter
 
   ## Parameters
 
@@ -2086,7 +2087,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           If compare_duration is not specified, then the only possible state_change
           is "UNUSED", which will be the state_change set for all findings present at
           read_time.
-      *   `:fieldMask` (*type:* `String.t`) - Optional. A field mask to specify the Finding fields to be listed in the response.
+      *   `:fieldMask` (*type:* `String.t`) - A field mask to specify the Finding fields to be listed in the response.
           An empty field mask will list all fields.
       *   `:filter` (*type:* `String.t`) - Expression that defines the filter to apply across findings.
           The expression is a list of one or more restrictions combined via logical
