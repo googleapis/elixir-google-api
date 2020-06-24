@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DoubleClickSearch.V2.Model.CustomMetric do
   @moduledoc """
-  A message containing the custome metric.
+  A message containing the custom metric.
 
   ## Attributes
 

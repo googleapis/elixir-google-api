@@ -21,7 +21,8 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.SavedColumn do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `doubleclicksearch#savedColumn`) - Identifies this as a SavedColumn resource. Value: the fixed string doubleclicksearch#savedColumn.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies this as a SavedColumn resource. Value: the fixed string
+      <code>doubleclicksearch#savedColumn</code>.
   *   `savedColumnName` (*type:* `String.t`, *default:* `nil`) - The name of the saved column.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of data this saved column will produce.
   """

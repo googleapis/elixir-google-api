@@ -21,8 +21,10 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy do
 
   ## Attributes
 
-  *   `column` (*type:* `GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t`, *default:* `nil`) - Column to perform the sort on. This can be a DoubleClick Search-defined column or a saved column.
-  *   `sortOrder` (*type:* `String.t`, *default:* `nil`) - The sort direction, which is either ascending or descending.
+  *   `column` (*type:* `GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t`, *default:* `nil`) - Column to perform the sort on. This can be a DoubleClick Search-defined
+      column or a saved column.
+  *   `sortOrder` (*type:* `String.t`, *default:* `nil`) - The sort direction, which is either `ascending` or
+      `descending`.
   """
 
   use GoogleApi.Gax.ModelBase

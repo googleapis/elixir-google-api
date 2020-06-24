@@ -21,23 +21,52 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequest do
 
   ## Attributes
 
-  *   `columns` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t)`, *default:* `nil`) - The columns to include in the report. This includes both DoubleClick Search columns and saved columns. For DoubleClick Search columns, only the columnName parameter is required. For saved columns only the savedColumnName parameter is required. Both columnName and savedColumnName cannot be set in the same stanza.
+  *   `columns` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t)`, *default:* `nil`) - The columns to include in the report. This includes both DoubleClick Search
+      columns and saved columns. For DoubleClick Search columns, only the
+      `columnName` parameter is required. For saved columns only the
+      `savedColumnName` parameter is required. Both
+      `columnName` and `savedColumnName` cannot be set in
+      the same stanza.\\
       The maximum number of columns per request is 300.
-  *   `downloadFormat` (*type:* `String.t`, *default:* `nil`) - Format that the report should be returned in. Currently csv or tsv is supported.
-  *   `filters` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters.t)`, *default:* `nil`) - A list of filters to be applied to the report.
+  *   `downloadFormat` (*type:* `String.t`, *default:* `nil`) - Format that the report should be returned in. Currently `csv` or
+      `tsv` is supported.
+  *   `filters` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters.t)`, *default:* `nil`) - A list of filters to be applied to the report.\\
       The maximum number of filters per request is 300.
-  *   `includeDeletedEntities` (*type:* `boolean()`, *default:* `false`) - Determines if removed entities should be included in the report. Defaults to false. Deprecated, please use includeRemovedEntities instead.
-  *   `includeRemovedEntities` (*type:* `boolean()`, *default:* `false`) - Determines if removed entities should be included in the report. Defaults to false.
-  *   `maxRowsPerFile` (*type:* `integer()`, *default:* `nil`) - Asynchronous report only. The maximum number of rows per report file. A large report is split into many files based on this field. Acceptable values are 1000000 to 100000000, inclusive.
-  *   `orderBy` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy.t)`, *default:* `nil`) - Synchronous report only. A list of columns and directions defining sorting to be performed on the report rows.
+  *   `includeDeletedEntities` (*type:* `boolean()`, *default:* `nil`) - Determines if removed entities should be included in the report. Defaults
+      to `false`. Deprecated, please use
+      `includeRemovedEntities` instead.
+  *   `includeRemovedEntities` (*type:* `boolean()`, *default:* `nil`) - Determines if removed entities should be included in the report. Defaults
+      to `false`.
+  *   `maxRowsPerFile` (*type:* `integer()`, *default:* `nil`) - Asynchronous report only. The maximum number of rows per report file. A
+      large report is split into many files based on this field. Acceptable
+      values are `1000000` to `100000000`, inclusive.
+  *   `orderBy` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.ReportRequestOrderBy.t)`, *default:* `nil`) - Synchronous report only. A list of columns and directions defining sorting
+      to be performed on the report rows.\\
       The maximum number of orderings per request is 300.
-  *   `reportScope` (*type:* `GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope.t`, *default:* `nil`) - The reportScope is a set of IDs that are used to determine which subset of entities will be returned in the report. The full lineage of IDs from the lowest scoped level desired up through agency is required.
-  *   `reportType` (*type:* `String.t`, *default:* `nil`) - Determines the type of rows that are returned in the report. For example, if you specify reportType: keyword, each row in the report will contain data about a keyword. See the Types of Reports reference for the columns that are available for each type.
-  *   `rowCount` (*type:* `integer()`, *default:* `10000`) - Synchronous report only. The maximum number of rows to return; additional rows are dropped. Acceptable values are 0 to 10000, inclusive. Defaults to 10000.
-  *   `startRow` (*type:* `integer()`, *default:* `0`) - Synchronous report only. Zero-based index of the first row to return. Acceptable values are 0 to 50000, inclusive. Defaults to 0.
-  *   `statisticsCurrency` (*type:* `String.t`, *default:* `nil`) - Specifies the currency in which monetary will be returned. Possible values are: usd, agency (valid if the report is scoped to agency or lower), advertiser (valid if the report is scoped to * advertiser or lower), or account (valid if the report is scoped to engine account or lower).
-  *   `timeRange` (*type:* `GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange.t`, *default:* `nil`) - If metrics are requested in a report, this argument will be used to restrict the metrics to a specific time range.
-  *   `verifySingleTimeZone` (*type:* `boolean()`, *default:* `false`) - If true, the report would only be created if all the requested stat data are sourced from a single timezone. Defaults to false.
+  *   `reportScope` (*type:* `GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope.t`, *default:* `nil`) - The reportScope is a set of IDs that are used to determine which subset of
+      entities will be returned in the report. The full lineage of IDs from the
+      lowest scoped level desired up through agency is required.
+  *   `reportType` (*type:* `String.t`, *default:* `nil`) - Determines the type of rows that are returned in the report. For example,
+      if you specify `reportType: keyword`, each row in the report
+      will contain data about a keyword. See the [Types of
+      Reports](/search-ads/v2/report-types/) reference for the columns that are
+      available for each type.
+  *   `rowCount` (*type:* `integer()`, *default:* `nil`) - Synchronous report only. The maximum number of rows to return; additional
+      rows are dropped. Acceptable values are `0` to
+      `10000`, inclusive. Defaults to `10000`.
+  *   `startRow` (*type:* `integer()`, *default:* `nil`) - Synchronous report only. Zero-based index of the first row to return.
+      Acceptable values are `0` to `50000`, inclusive.
+      Defaults to `0`.
+  *   `statisticsCurrency` (*type:* `String.t`, *default:* `nil`) - Specifies the currency in which monetary will be returned. Possible values
+      are: `usd`, `agency` (valid if the report is scoped
+      to agency or lower), `advertiser` (valid if the report is scoped
+      to * advertiser or lower), or `account` (valid if the report is
+      scoped to engine account or lower).
+  *   `timeRange` (*type:* `GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange.t`, *default:* `nil`) - If metrics are requested in a report, this argument will be used to
+      restrict the metrics to a specific time range.
+  *   `verifySingleTimeZone` (*type:* `boolean()`, *default:* `nil`) - If `true`, the report would only be created if all the requested
+      stat data are sourced from a single timezone. Defaults to
+      `false`.
   """
 
   use GoogleApi.Gax.ModelBase
