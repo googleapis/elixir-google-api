@@ -40,8 +40,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
       being given the value "VALUE".
   *   `logStreamingOption` (*type:* `String.t`, *default:* `nil`) - Option to define build log streaming behavior to Google Cloud
       Storage.
-  *   `logging` (*type:* `String.t`, *default:* `nil`) - Option to specify the logging mode, which determines where the logs are
-      stored.
+  *   `logging` (*type:* `String.t`, *default:* `nil`) - Option to specify the logging mode, which determines if and where build
+      logs are stored.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Compute Engine machine type on which to run the build.
   *   `requestedVerifyOption` (*type:* `String.t`, *default:* `nil`) - Requested verifiability options.
   *   `secretEnv` (*type:* `list(String.t)`, *default:* `nil`) - A list of global environment variables, which are encrypted using a Cloud
