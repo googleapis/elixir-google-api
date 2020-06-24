@@ -24,8 +24,8 @@ defmodule GoogleApi.Container.V1.Model.ServerConfig do
   *   `defaultClusterVersion` (*type:* `String.t`, *default:* `nil`) - Version of Kubernetes the service deploys by default.
   *   `defaultImageType` (*type:* `String.t`, *default:* `nil`) - Default image type.
   *   `validImageTypes` (*type:* `list(String.t)`, *default:* `nil`) - List of valid image types.
-  *   `validMasterVersions` (*type:* `list(String.t)`, *default:* `nil`) - List of valid master versions.
-  *   `validNodeVersions` (*type:* `list(String.t)`, *default:* `nil`) - List of valid node upgrade target versions.
+  *   `validMasterVersions` (*type:* `list(String.t)`, *default:* `nil`) - List of valid master versions, in descending order.
+  *   `validNodeVersions` (*type:* `list(String.t)`, *default:* `nil`) - List of valid node upgrade target versions, in descending order.
   """
 
   use GoogleApi.Gax.ModelBase

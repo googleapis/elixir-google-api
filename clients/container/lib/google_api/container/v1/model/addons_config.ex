@@ -24,6 +24,7 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
 
   *   `cloudRunConfig` (*type:* `GoogleApi.Container.V1.Model.CloudRunConfig.t`, *default:* `nil`) - Configuration for the Cloud Run addon, which allows the user to use a
       managed Knative service.
+  *   `dnsCacheConfig` (*type:* `GoogleApi.Container.V1.Model.DnsCacheConfig.t`, *default:* `nil`) - Configuration for NodeLocalDNS, a dns cache running on cluster nodes
   *   `horizontalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t`, *default:* `nil`) - Configuration for the horizontal pod autoscaling feature, which
       increases or decreases the number of replica pods a replication controller
       has based on the resource usage of the existing pods.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
 
   @type t :: %__MODULE__{
           :cloudRunConfig => GoogleApi.Container.V1.Model.CloudRunConfig.t(),
+          :dnsCacheConfig => GoogleApi.Container.V1.Model.DnsCacheConfig.t(),
           :horizontalPodAutoscaling => GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t(),
           :httpLoadBalancing => GoogleApi.Container.V1.Model.HttpLoadBalancing.t(),
           :kubernetesDashboard => GoogleApi.Container.V1.Model.KubernetesDashboard.t(),
@@ -50,6 +52,7 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
         }
 
   field(:cloudRunConfig, as: GoogleApi.Container.V1.Model.CloudRunConfig)
+  field(:dnsCacheConfig, as: GoogleApi.Container.V1.Model.DnsCacheConfig)
   field(:horizontalPodAutoscaling, as: GoogleApi.Container.V1.Model.HorizontalPodAutoscaling)
   field(:httpLoadBalancing, as: GoogleApi.Container.V1.Model.HttpLoadBalancing)
   field(:kubernetesDashboard, as: GoogleApi.Container.V1.Model.KubernetesDashboard)
