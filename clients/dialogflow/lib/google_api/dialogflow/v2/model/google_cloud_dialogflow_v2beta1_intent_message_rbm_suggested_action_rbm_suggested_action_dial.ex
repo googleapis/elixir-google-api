@@ -18,7 +18,7 @@
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedActionRbmSuggestedActionDial do
   @moduledoc """
   Opens the user's default dialer app with the specified phone number
-  but does not dial automatically (https://goo.gl/ergbB2).
+  but does not dial automatically.
 
   ## Attributes
 
