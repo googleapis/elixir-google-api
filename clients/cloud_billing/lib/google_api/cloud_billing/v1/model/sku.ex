@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudBilling.V1.Model.Sku do
   *   `category` (*type:* `GoogleApi.CloudBilling.V1.Model.Category.t`, *default:* `nil`) - The category hierarchy of this SKU, purely for organizational purpose.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A human readable description of the SKU, has a maximum length of 256
       characters.
+  *   `geoTaxonomy` (*type:* `GoogleApi.CloudBilling.V1.Model.GeoTaxonomy.t`, *default:* `nil`) - The geographic taxonomy for this sku.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the SKU.
       Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
   *   `pricingInfo` (*type:* `list(GoogleApi.CloudBilling.V1.Model.PricingInfo.t)`, *default:* `nil`) - A timeline of pricing info for this SKU in chronological order.
@@ -41,6 +42,7 @@ defmodule GoogleApi.CloudBilling.V1.Model.Sku do
   @type t :: %__MODULE__{
           :category => GoogleApi.CloudBilling.V1.Model.Category.t(),
           :description => String.t(),
+          :geoTaxonomy => GoogleApi.CloudBilling.V1.Model.GeoTaxonomy.t(),
           :name => String.t(),
           :pricingInfo => list(GoogleApi.CloudBilling.V1.Model.PricingInfo.t()),
           :serviceProviderName => String.t(),
@@ -50,6 +52,7 @@ defmodule GoogleApi.CloudBilling.V1.Model.Sku do
 
   field(:category, as: GoogleApi.CloudBilling.V1.Model.Category)
   field(:description)
+  field(:geoTaxonomy, as: GoogleApi.CloudBilling.V1.Model.GeoTaxonomy)
   field(:name)
   field(:pricingInfo, as: GoogleApi.CloudBilling.V1.Model.PricingInfo, type: :list)
   field(:serviceProviderName)
