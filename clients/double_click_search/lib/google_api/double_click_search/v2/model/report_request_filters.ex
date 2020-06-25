@@ -21,9 +21,11 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestFilters do
 
   ## Attributes
 
-  *   `column` (*type:* `GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t`, *default:* `nil`) - Column to perform the filter on. This can be a DoubleClick Search column or a saved column.
-  *   `operator` (*type:* `String.t`, *default:* `nil`) - Operator to use in the filter. See the filter reference for a list of available operators.
-  *   `values` (*type:* `list(any())`, *default:* `nil`) - A list of values to filter the column value against.
+  *   `column` (*type:* `GoogleApi.DoubleClickSearch.V2.Model.ReportApiColumnSpec.t`, *default:* `nil`) - Column to perform the filter on. This can be a DoubleClick Search column
+      or a saved column.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - Operator to use in the filter. See the filter reference for a list of
+      available operators.
+  *   `values` (*type:* `list(any())`, *default:* `nil`) - A list of values to filter the column value against.\\
       The maximum number of filter values per request is 300.
   """
 

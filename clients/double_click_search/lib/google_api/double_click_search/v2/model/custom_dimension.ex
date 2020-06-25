@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DoubleClickSearch.V2.Model.CustomDimension do
   @moduledoc """
-  A message containing the custome dimension.
+  A message containing the custom dimension.
 
   ## Attributes
 

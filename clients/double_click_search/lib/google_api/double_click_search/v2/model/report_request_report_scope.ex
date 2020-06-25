@@ -17,7 +17,9 @@
 
 defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestReportScope do
   @moduledoc """
-  The reportScope is a set of IDs that are used to determine which subset of entities will be returned in the report. The full lineage of IDs from the lowest scoped level desired up through agency is required.
+  The reportScope is a set of IDs that are used to determine which subset of
+  entities will be returned in the report. The full lineage of IDs from the
+  lowest scoped level desired up through agency is required.
 
   ## Attributes
 

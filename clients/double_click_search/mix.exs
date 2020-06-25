@@ -18,7 +18,7 @@
 defmodule GoogleApi.DoubleClickSearch.Mixfile do
   use Mix.Project
 
-  @version "0.11.1"
+  @version "0.12.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.DoubleClickSearch.Mixfile do
 
   defp description() do
     """
-    Search Ads 360 API client library. Reports and modifies your advertising data in DoubleClick Search (for example, campaigns, ad groups, keywords, and conversions).
+    Search Ads 360 API client library. The Search Ads 360 API allows developers to automate uploading conversions and downloading reports from Search Ads 360.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.DoubleClickSearch.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/double_click_search",
-        "Homepage" => "https://developers.google.com/doubleclick-search/"
+        "Homepage" => "https://developers.google.com/search-ads"
       }
     ]
   end

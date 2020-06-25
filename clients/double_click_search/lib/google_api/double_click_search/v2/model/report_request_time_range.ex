@@ -17,12 +17,17 @@
 
 defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange do
   @moduledoc """
-  If metrics are requested in a report, this argument will be used to restrict the metrics to a specific time range.
+  If metrics are requested in a report, this argument will be used to
+  restrict the metrics to a specific time range.
 
   ## Attributes
 
-  *   `changedAttributesSinceTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Inclusive UTC timestamp in RFC format, e.g., 2013-07-16T10:16:23.555Z. See additional references on how changed attribute reports work.
-  *   `changedMetricsSinceTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Inclusive UTC timestamp in RFC format, e.g., 2013-07-16T10:16:23.555Z. See additional references on how changed metrics reports work.
+  *   `changedAttributesSinceTimestamp` (*type:* `String.t`, *default:* `nil`) - Inclusive UTC timestamp in RFC format, e.g.,
+      `2013-07-16T10:16:23.555Z`. See additional references on how
+      changed attribute reports work.
+  *   `changedMetricsSinceTimestamp` (*type:* `String.t`, *default:* `nil`) - Inclusive UTC timestamp in RFC format, e.g.,
+      `2013-07-16T10:16:23.555Z`. See additional references on how
+      changed metrics reports work.
   *   `endDate` (*type:* `String.t`, *default:* `nil`) - Inclusive date in YYYY-MM-DD format.
   *   `startDate` (*type:* `String.t`, *default:* `nil`) - Inclusive date in YYYY-MM-DD format.
   """
@@ -30,14 +35,14 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ReportRequestTimeRange do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :changedAttributesSinceTimestamp => DateTime.t(),
-          :changedMetricsSinceTimestamp => DateTime.t(),
+          :changedAttributesSinceTimestamp => String.t(),
+          :changedMetricsSinceTimestamp => String.t(),
           :endDate => String.t(),
           :startDate => String.t()
         }
 
-  field(:changedAttributesSinceTimestamp, as: DateTime)
-  field(:changedMetricsSinceTimestamp, as: DateTime)
+  field(:changedAttributesSinceTimestamp)
+  field(:changedMetricsSinceTimestamp)
   field(:endDate)
   field(:startDate)
 end
