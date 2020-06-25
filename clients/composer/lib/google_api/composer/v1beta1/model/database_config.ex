@@ -22,8 +22,9 @@ defmodule GoogleApi.Composer.V1beta1.Model.DatabaseConfig do
 
   ## Attributes
 
-  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud SQL tier used by Airflow database.
-      If not specified, db-n1-standard-2 will be used.
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud SQL machine type used by Airflow database.
+      It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8
+      or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
   """
 
   use GoogleApi.Gax.ModelBase
