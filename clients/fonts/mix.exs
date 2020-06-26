@@ -18,7 +18,7 @@
 defmodule GoogleApi.Fonts.Mixfile do
   use Mix.Project
 
-  @version "0.7.0"
+  @version "0.8.0"
 
   def project() do
     [
@@ -48,7 +48,8 @@ defmodule GoogleApi.Fonts.Mixfile do
 
   defp description() do
     """
-    Google Fonts Developer API client library. Accesses the metadata for all families served by Google Fonts, providing a list of families currently available (including available styles and a list of supported script subsets).
+    Web Fonts Developer API client library. The Google Web Fonts Developer API lets you retrieve information about web fonts served
+    by Google.
     """
   end
 

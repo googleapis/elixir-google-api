@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.Fonts.V1.Model.WebfontList do
   @moduledoc """
-
+  Response containing the list of fonts currently served by the
+  Google Fonts API.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Fonts.V1.Model.Webfont.t)`, *default:* `nil`) - The list of fonts currently served by the Google Fonts API.
-  *   `kind` (*type:* `String.t`, *default:* `webfonts#webfontList`) - This kind represents a list of webfont objects in the webfonts service.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This kind represents a list of webfont objects in the webfonts service.
   """
 
   use GoogleApi.Gax.ModelBase

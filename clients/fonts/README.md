@@ -1,8 +1,9 @@
 # GoogleApi.Fonts
 
-Google Fonts Developer API client library.
+Web Fonts Developer API client library.
 
-Accesses the metadata for all families served by Google Fonts, providing a list of families currently available (including available styles and a list of supported script subsets).
+The Google Web Fonts Developer API lets you retrieve information about web fonts served
+    by Google.
 
 ## Installation
 
@@ -11,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_fonts, "~> 0.7"}]
+  [{:google_api_fonts, "~> 0.8"}]
 end
 ```
 
