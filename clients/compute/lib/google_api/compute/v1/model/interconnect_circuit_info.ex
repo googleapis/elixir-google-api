@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InterconnectCircuitInfo do
   @moduledoc """
-  Describes a single physical circuit between the Customer and Google. CircuitInfo objects are created by Google, so all fields are output only. Next id: 4
+  Describes a single physical circuit between the Customer and Google. CircuitInfo objects are created by Google, so all fields are output only.
 
   ## Attributes
 

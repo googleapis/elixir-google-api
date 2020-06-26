@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.RouterStatusNatStatus do
   @moduledoc """
-  Status of a NAT contained in this router. Next tag: 9
+  Status of a NAT contained in this router.
 
   ## Attributes
 

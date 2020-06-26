@@ -28,9 +28,9 @@ defmodule GoogleApi.Compute.V1.Model.AcceleratorType do
   *   `description` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional textual description of the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#acceleratorType`) - [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
-  *   `maximumCardsPerInstance` (*type:* `integer()`, *default:* `nil`) - [Output Only] Maximum accelerator cards allowed per instance.
+  *   `maximumCardsPerInstance` (*type:* `integer()`, *default:* `nil`) - [Output Only] Maximum number of accelerator cards allowed per instance.
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the resource.
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined fully-qualified URL for this resource.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined, fully qualified URL for this resource.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   """
 

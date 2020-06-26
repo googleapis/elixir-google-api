@@ -1048,7 +1048,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Sets an instance's scheduling options.
+  Sets an instance's scheduling options. You can only call this method on a stopped instance, that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
 
   ## Parameters
 
@@ -2246,7 +2246,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   end
 
   @doc """
-  Retrieves the list of referrers to instances contained within the specified zone. For more information, read Viewing Referrers to VM Instances.
+  Retrieves a list of resources that refer to the VM instance specified in the request. For example, if the VM instance is part of a managed instance group, the referrers list includes the managed instance group. For more information, read Viewing Referrers to VM Instances.
 
   ## Parameters
 

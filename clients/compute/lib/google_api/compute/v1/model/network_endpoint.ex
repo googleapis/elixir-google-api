@@ -17,10 +17,11 @@
 
 defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
   @moduledoc """
-  The network endpoint. Next ID: 7
+  The network endpoint.
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Metadata defined as annotations on the network endpoint.
   *   `fqdn` (*type:* `String.t`, *default:* `nil`) - Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
 
@@ -32,12 +33,14 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map(),
           :fqdn => String.t(),
           :instance => String.t(),
           :ipAddress => String.t(),
           :port => integer()
         }
 
+  field(:annotations, type: :map)
   field(:fqdn)
   field(:instance)
   field(:ipAddress)

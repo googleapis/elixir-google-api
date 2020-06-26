@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceGroupHealth do
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Metadata defined as annotations on the network endpoint group.
   *   `healthStatus` (*type:* `list(GoogleApi.Compute.V1.Model.HealthStatus.t)`, *default:* `nil`) - Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
   *   `kind` (*type:* `String.t`, *default:* `compute#backendServiceGroupHealth`) - [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceGroupHealth do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map(),
           :healthStatus => list(GoogleApi.Compute.V1.Model.HealthStatus.t()),
           :kind => String.t()
         }
 
+  field(:annotations, type: :map)
   field(:healthStatus, as: GoogleApi.Compute.V1.Model.HealthStatus, type: :list)
   field(:kind)
 end
