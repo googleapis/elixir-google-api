@@ -27,6 +27,9 @@ defmodule GoogleApi.People.V1.Connection do
       # See, edit, download, and permanently delete your contacts
       "https://www.googleapis.com/auth/contacts",
 
+      # See and download contact info automatically saved in your "Other contacts"
+      "https://www.googleapis.com/auth/contacts.other.readonly",
+
       # See and download your contacts
       "https://www.googleapis.com/auth/contacts.readonly",
 
