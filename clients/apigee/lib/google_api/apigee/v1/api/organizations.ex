@@ -7631,8 +7631,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The organization and environment name for which the interactive
-      query will be executed. Must be of the form
+  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed.
+      Must be of the form
         `organizations/{organization_id}/environments/{environment_id/stats/{dimensions}`
       Dimensions let you view metrics in meaningful groupings. E.g. apiproxy,
       target_host. The value of dimensions should be comma separated list as
@@ -7650,20 +7650,20 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:accuracy` (*type:* `String.t`) - Legacy field. not used anymore
+      *   `:accuracy` (*type:* `String.t`) - Legacy field: not used anymore.
       *   `:aggTable` (*type:* `String.t`) - If customers want to query custom aggregate tables, then this parameter
           can be used to specify the table name. If this parameter is skipped, then
           Edge Query will try to retrieve the data from fact tables which will be
           expensive.
-      *   `:filter` (*type:* `String.t`) - Enables drill-down on specific dimension values
+      *   `:filter` (*type:* `String.t`) - Enables drill-down on specific dimension values.
       *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items.
-          Default and the max value is 14400
+          Default and the max value is 14400.
       *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example,
           to display results 11-20, set limit to '10' and offset to '10'.
-      *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore
-      *   `:select` (*type:* `String.t`) - Required. The select parameter contains a comma separated list of metrics
+      *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore.
+      *   `:select` (*type:* `String.t`) - Required. The select parameter contains a comma separated list of metrics.
           E.g. sum(message_count),sum(error_count)
-      *   `:sonar` (*type:* `boolean()`) - This parameter routes the query to api monitoring service for last hour
+      *   `:sonar` (*type:* `boolean()`) - This parameter routes the query to api monitoring service for last hour.
       *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or
           descending Supported values are DESC and ASC.
       *   `:sortby` (*type:* `String.t`) - Comma separated list of columns to sort the final result.
@@ -7675,7 +7675,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
           results 'topk=5'.
       *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting
           this value to true if you are using sortby with sort=DESC.
-      *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value
+      *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7752,7 +7752,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent organization and environment names.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name.
       Must be of the form `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -7976,7 +7976,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent organization and environment names.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource name.
       Must be of the form `organizations/{org}/environments/{env}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -7996,10 +7996,9 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:from` (*type:* `String.t`) - Filter response list by returning asynchronous queries that
           created after this date time.
           Time must be in ISO date-time format like '2011-12-03T10:15:30Z'.
-      *   `:inclQueriesWithoutReport` (*type:* `String.t`) - Flag to include asynchronous queries that don't have a report
-          denifition.
-      *   `:status` (*type:* `String.t`) - Filter response list by asynchronous query status
-      *   `:submittedBy` (*type:* `String.t`) - Filter response list by user who submitted queries
+      *   `:inclQueriesWithoutReport` (*type:* `String.t`) - Flag to include asynchronous queries that don't have a report denifition.
+      *   `:status` (*type:* `String.t`) - Filter response list by asynchronous query status.
+      *   `:submittedBy` (*type:* `String.t`) - Filter response list by user who submitted queries.
       *   `:to` (*type:* `String.t`) - Filter response list by returning asynchronous queries that
           created before this date time.
           Time must be in ISO date-time format like '2011-12-03T10:16:30Z'.
@@ -9088,8 +9087,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The organization and environment name for which the interactive
-      query will be executed. Must be of the form
+  *   `name` (*type:* `String.t`) - Required. The resource name for which the interactive query will be executed.
+      Must be of the form
         `organizations/{organization_id}/environments/{environment_id/stats/{dimensions}`
       Dimensions let you view metrics in meaningful groupings. E.g. apiproxy,
       target_host. The value of dimensions should be comma separated list as
@@ -9107,21 +9106,21 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:accuracy` (*type:* `String.t`) - Legacy field. not used anymore
-          This field is present to support UI calls which still use this parameter
+      *   `:accuracy` (*type:* `String.t`) - Legacy field: not used anymore.
+          This field is present to support UI calls which still use this parameter.
       *   `:aggTable` (*type:* `String.t`) - If customers want to query custom aggregate tables, then this parameter
           can be used to specify the table name. If this parameter is skipped, then
           Edge Query will try to retrieve the data from fact tables which will be
           expensive.
       *   `:filter` (*type:* `String.t`) - Enables drill-down on specific dimension values
       *   `:limit` (*type:* `String.t`) - This parameter is used to limit the number of result items.
-          Default and the max value is 14400
+          Default and the max value is 14400.
       *   `:offset` (*type:* `String.t`) - Use offset with limit to enable pagination of results. For example,
           to display results 11-20, set limit to '10' and offset to '10'.
-      *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore
-      *   `:select` (*type:* `String.t`) - The select parameter contains a comma separated list of metrics
+      *   `:realtime` (*type:* `boolean()`) - Legacy field: not used anymore.
+      *   `:select` (*type:* `String.t`) - The select parameter contains a comma separated list of metrics.
           E.g. sum(message_count),sum(error_count)
-      *   `:sonar` (*type:* `boolean()`) - This parameter routes the query to api monitoring service for last hour
+      *   `:sonar` (*type:* `boolean()`) - This parameter routes the query to api monitoring service for last hour.
       *   `:sort` (*type:* `String.t`) - This parameter specifies if the sort order should be ascending or
           descending Supported values are DESC and ASC.
       *   `:sortby` (*type:* `String.t`) - Comma separated list of columns to sort the final result.
@@ -9133,7 +9132,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
           results 'topk=5'.
       *   `:tsAscending` (*type:* `boolean()`) - Lists timestamps in ascending order if set to true. Recommend setting
           this value to true if you are using sortby with sort=DESC.
-      *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value
+      *   `:tzo` (*type:* `String.t`) - This parameters contains the timezone offset value.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

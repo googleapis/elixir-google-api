@@ -22,7 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQueryResult do
   ## Attributes
 
   *   `expires` (*type:* `String.t`, *default:* `nil`) - Query result will be unaccessable after this time.
-  *   `self` (*type:* `String.t`, *default:* `nil`) - Self link of the query results
+  *   `self` (*type:* `String.t`, *default:* `nil`) - Self link of the query results.
 
       Example:
       `/organizations/myorg/environments/myenv/queries/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd/result`

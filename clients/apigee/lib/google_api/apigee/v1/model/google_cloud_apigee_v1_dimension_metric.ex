@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DimensionMetric do
   @moduledoc """
-  This message type encapsulates a metric grouped by dimension
+  This message type encapsulates a metric grouped by dimension.
 
   ## Attributes
 
-  *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t)`, *default:* `nil`) - This field contains a list of metrics
-  *   `name` (*type:* `String.t`, *default:* `nil`) - This field contains the name of the dimension
+  *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t)`, *default:* `nil`) - This field contains a list of metrics.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - This field contains the name of the dimension.
   """
 
   use GoogleApi.Gax.ModelBase

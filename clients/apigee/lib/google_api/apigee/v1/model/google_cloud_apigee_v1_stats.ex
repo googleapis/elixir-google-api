@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Stats do
   @moduledoc """
-  This message type encapsulates a stats response
+  This message type encapsulates a stats response.
 
   ## Attributes
 
-  *   `environments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats.t)`, *default:* `nil`) - 
-  *   `metaData` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t`, *default:* `nil`) - This field contains the metadata information
+  *   `environments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats.t)`, *default:* `nil`) - This field contains a list of query results on environment level.
+  *   `metaData` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata.t`, *default:* `nil`) - This field contains the metadata information.
   """
 
   use GoogleApi.Gax.ModelBase

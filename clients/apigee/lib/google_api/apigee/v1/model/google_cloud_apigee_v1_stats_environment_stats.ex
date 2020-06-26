@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats do
   @moduledoc """
-  This message type encapsulates the environment wrapper
+  This message type encapsulates the environment wrapper:
       "environments": [
        {
            "metrics": [
@@ -34,7 +34,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats do
 
   ## Attributes
 
-  *   `dimensions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DimensionMetric.t)`, *default:* `nil`) - This field contains the list of metrics grouped under dimensions
+  *   `dimensions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DimensionMetric.t)`, *default:* `nil`) - This field contains the list of metrics grouped under dimensions.
   *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t)`, *default:* `nil`) - In the final response, only one of the following fields will be present
       based on the dimensions provided. If no dimensions are provided, then
       only a top level metrics is provided. If dimensions are included, then
@@ -74,7 +74,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1StatsEnvironmentStats do
                      "name": "prod"
                  }
              ]
-      This field contains the list of metric values
+      This field contains the list of metric values.
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   """
 

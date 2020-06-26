@@ -25,7 +25,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Query do
       to `csv`. Defaults to the `,` (comma) character.
       Supported delimiter characters include comma (`,`), pipe (`|`),
       and tab (`\\t`).
-  *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of dimensions
+  *   `dimensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of dimensions.
       https://docs.apigee.com/api-platform/analytics/analytics-reference#dimensions
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Boolean expression that can be used to filter data.
       Filter expressions can be combined using AND/OR terms and should be fully
@@ -44,7 +44,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Query do
       If a query omits groupByTimeUnit, then the resultant timestamp includes
       milliseconds precision.
   *   `limit` (*type:* `integer()`, *default:* `nil`) - Maximum number of rows that can be returned in the result.
-  *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetric.t)`, *default:* `nil`) - A list of Metrics
+  *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetric.t)`, *default:* `nil`) - A list of Metrics.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Asynchronous Query Name.
   *   `outputFormat` (*type:* `String.t`, *default:* `nil`) - Valid values include: `csv` or `json`. Defaults to `json`.
       Note: Configure the delimiter for CSV output using the csvDelimiter

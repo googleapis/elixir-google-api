@@ -17,8 +17,8 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric do
   @moduledoc """
-  This message type encapsulates the metric data point
-  Example
+  This message type encapsulates the metric data point.
+  Example:
   {
      "name": "sum(message_count)",
      "values" : [ {
@@ -38,9 +38,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - This field contains the metric name
-  *   `values` (*type:* `list(any())`, *default:* `nil`) - List of metric values
-      Possible value format
+  *   `name` (*type:* `String.t`, *default:* `nil`) - This field contains the metric name.
+  *   `values` (*type:* `list(any())`, *default:* `nil`) - List of metric values.
+      Possible value format:
       "values":["39.0"] or
       "values":[ { "value": "39.0", "timestamp": 1232434354} ]
   """
