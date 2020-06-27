@@ -25,7 +25,7 @@ defmodule GoogleApi.Redis.V1.Model.Instance do
       against zonal failures by provisioning it across two zones. If provided, it
       must be a different zone from the one provided in location_id.
   *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Google Compute Engine
-      [network](/compute/docs/networks-and-firewalls#networks) to which the
+      [network](https://cloud.google.com/vpc/docs/vpc) to which the
       instance is connected. If left unspecified, the `default` network
       will be used.
   *   `connectMode` (*type:* `String.t`, *default:* `nil`) - Optional. The network connect mode of the Redis instance.
