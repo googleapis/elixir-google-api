@@ -22,7 +22,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
   ## Attributes
 
   *   `absenteeVotingInfoUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for information on absentee voting.
-  *   `addressLines` (*type:* `list(String.t)`, *default:* `nil`) - 
   *   `ballotInfoUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body to give contest information to the voter.
   *   `correspondenceAddress` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The mailing address of this administrative body.
   *   `electionInfoUrl` (*type:* `String.t`, *default:* `nil`) - A URL provided by this administrative body for looking up general election information.
@@ -41,7 +40,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
 
   @type t :: %__MODULE__{
           :absenteeVotingInfoUrl => String.t(),
-          :addressLines => list(String.t()),
           :ballotInfoUrl => String.t(),
           :correspondenceAddress => GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t(),
           :electionInfoUrl => String.t(),
@@ -57,7 +55,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.AdministrativeBody do
         }
 
   field(:absenteeVotingInfoUrl)
-  field(:addressLines, type: :list)
   field(:ballotInfoUrl)
   field(:correspondenceAddress, as: GoogleApi.CivicInfo.V2.Model.SimpleAddressType)
   field(:electionInfoUrl)
