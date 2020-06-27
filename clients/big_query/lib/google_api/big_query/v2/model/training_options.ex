@@ -21,7 +21,23 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
 
   ## Attributes
 
-  *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Batch size for dnn models.
+  *   `subsample` (*type:* `float()`, *default:* `nil`) - Subsample fraction of the training data to grow tree to prevent
+      overfitting for boosted tree models.
+  *   `modelUri` (*type:* `String.t`, *default:* `nil`) - [Beta] Google Cloud Storage URI from which the model was imported. Only
+      applicable for imported models.
+  *   `learnRateStrategy` (*type:* `String.t`, *default:* `nil`) - The strategy to determine learn rate for the current iteration.
+  *   `labelClassWeights` (*type:* `map()`, *default:* `nil`) - Weights associated with each label class, for rebalancing the
+      training data. Only applicable for classification models.
+  *   `l2Regularization` (*type:* `float()`, *default:* `nil`) - L2 regularization coefficient.
+  *   `userColumn` (*type:* `String.t`, *default:* `nil`) - User column specified for matrix factorization models.
+  *   `lossType` (*type:* `String.t`, *default:* `nil`) - Type of loss function used during training run.
+  *   `learnRate` (*type:* `float()`, *default:* `nil`) - Learning rate in training. Used only for iterative training algorithms.
+  *   `hiddenUnits` (*type:* `list(String.t)`, *default:* `nil`) - Hidden units for dnn models.
+  *   `numFactors` (*type:* `String.t`, *default:* `nil`) - Num factors specified for matrix factorization models.
+  *   `dataSplitEvalFraction` (*type:* `float()`, *default:* `nil`) - The fraction of evaluation data over the whole input data. The rest
+      of data will be used as training data. The format should be double.
+      Accurate to two decimal places.
+      Default value is 0.2.
   *   `dataSplitColumn` (*type:* `String.t`, *default:* `nil`) - The column to split data with. This column won't be used as a
       feature.
       1. When data_split_method is CUSTOM, the corresponding column should
@@ -32,122 +48,112 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
       as training data, and the rest are eval data. It respects the order
       in Orderable data types:
       https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#data-type-properties
-  *   `dataSplitEvalFraction` (*type:* `float()`, *default:* `nil`) - The fraction of evaluation data over the whole input data. The rest
-      of data will be used as training data. The format should be double.
-      Accurate to two decimal places.
-      Default value is 0.2.
-  *   `dataSplitMethod` (*type:* `String.t`, *default:* `nil`) - The data split type for training and evaluation, e.g. RANDOM.
-  *   `distanceType` (*type:* `String.t`, *default:* `nil`) - Distance type for clustering models.
-  *   `dropout` (*type:* `float()`, *default:* `nil`) - Dropout probability for dnn models.
+  *   `walsAlpha` (*type:* `float()`, *default:* `nil`) - Hyperparameter for matrix factoration when implicit feedback type is
+      specified.
   *   `earlyStop` (*type:* `boolean()`, *default:* `nil`) - Whether to stop early when the loss doesn't improve significantly
       any more (compared to min_relative_progress). Used only for iterative
       training algorithms.
-  *   `feedbackType` (*type:* `String.t`, *default:* `nil`) - Feedback type that specifies which algorithm to run for matrix
-      factorization.
-  *   `hiddenUnits` (*type:* `list(String.t)`, *default:* `nil`) - Hidden units for dnn models.
-  *   `initialLearnRate` (*type:* `float()`, *default:* `nil`) - Specifies the initial learning rate for the line search learn rate
-      strategy.
-  *   `inputLabelColumns` (*type:* `list(String.t)`, *default:* `nil`) - Name of input label columns in training data.
-  *   `itemColumn` (*type:* `String.t`, *default:* `nil`) - Item column specified for matrix factorization models.
+  *   `dropout` (*type:* `float()`, *default:* `nil`) - Dropout probability for dnn models.
+  *   `l1Regularization` (*type:* `float()`, *default:* `nil`) - L1 regularization coefficient.
   *   `kmeansInitializationColumn` (*type:* `String.t`, *default:* `nil`) - The column used to provide the initial centroids for kmeans algorithm
       when kmeans_initialization_method is CUSTOM.
-  *   `kmeansInitializationMethod` (*type:* `String.t`, *default:* `nil`) - The method used to initialize the centroids for kmeans algorithm.
-  *   `l1Regularization` (*type:* `float()`, *default:* `nil`) - L1 regularization coefficient.
-  *   `l2Regularization` (*type:* `float()`, *default:* `nil`) - L2 regularization coefficient.
-  *   `labelClassWeights` (*type:* `map()`, *default:* `nil`) - Weights associated with each label class, for rebalancing the
-      training data. Only applicable for classification models.
-  *   `learnRate` (*type:* `float()`, *default:* `nil`) - Learning rate in training. Used only for iterative training algorithms.
-  *   `learnRateStrategy` (*type:* `String.t`, *default:* `nil`) - The strategy to determine learn rate for the current iteration.
-  *   `lossType` (*type:* `String.t`, *default:* `nil`) - Type of loss function used during training run.
-  *   `maxIterations` (*type:* `String.t`, *default:* `nil`) - The maximum number of iterations in training. Used only for iterative
-      training algorithms.
-  *   `maxTreeDepth` (*type:* `String.t`, *default:* `nil`) - Maximum depth of a tree for boosted tree models.
   *   `minRelativeProgress` (*type:* `float()`, *default:* `nil`) - When early_stop is true, stops training when accuracy improvement is
       less than 'min_relative_progress'. Used only for iterative training
       algorithms.
+  *   `dataSplitMethod` (*type:* `String.t`, *default:* `nil`) - The data split type for training and evaluation, e.g. RANDOM.
   *   `minSplitLoss` (*type:* `float()`, *default:* `nil`) - Minimum split loss for boosted tree models.
-  *   `modelUri` (*type:* `String.t`, *default:* `nil`) - [Beta] Google Cloud Storage URI from which the model was imported. Only
-      applicable for imported models.
-  *   `numClusters` (*type:* `String.t`, *default:* `nil`) - Number of clusters for clustering models.
-  *   `numFactors` (*type:* `String.t`, *default:* `nil`) - Num factors specified for matrix factorization models.
-  *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
-  *   `subsample` (*type:* `float()`, *default:* `nil`) - Subsample fraction of the training data to grow tree to prevent
-      overfitting for boosted tree models.
-  *   `userColumn` (*type:* `String.t`, *default:* `nil`) - User column specified for matrix factorization models.
-  *   `walsAlpha` (*type:* `float()`, *default:* `nil`) - Hyperparameter for matrix factoration when implicit feedback type is
-      specified.
   *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - Whether to train a model from the last checkpoint.
+  *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
+  *   `preserveInputStructs` (*type:* `boolean()`, *default:* `nil`) - Whether to preserve the input structs in output feature names.
+      Suppose there is a struct A with field b.
+      When false (default), the output feature name is A_b.
+      When true, the output feature name is A.b.
+  *   `feedbackType` (*type:* `String.t`, *default:* `nil`) - Feedback type that specifies which algorithm to run for matrix
+      factorization.
+  *   `distanceType` (*type:* `String.t`, *default:* `nil`) - Distance type for clustering models.
+  *   `maxTreeDepth` (*type:* `String.t`, *default:* `nil`) - Maximum depth of a tree for boosted tree models.
+  *   `inputLabelColumns` (*type:* `list(String.t)`, *default:* `nil`) - Name of input label columns in training data.
+  *   `numClusters` (*type:* `String.t`, *default:* `nil`) - Number of clusters for clustering models.
+  *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Batch size for dnn models.
+  *   `kmeansInitializationMethod` (*type:* `String.t`, *default:* `nil`) - The method used to initialize the centroids for kmeans algorithm.
+  *   `initialLearnRate` (*type:* `float()`, *default:* `nil`) - Specifies the initial learning rate for the line search learn rate
+      strategy.
+  *   `maxIterations` (*type:* `String.t`, *default:* `nil`) - The maximum number of iterations in training. Used only for iterative
+      training algorithms.
+  *   `itemColumn` (*type:* `String.t`, *default:* `nil`) - Item column specified for matrix factorization models.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :batchSize => String.t(),
-          :dataSplitColumn => String.t(),
-          :dataSplitEvalFraction => float(),
-          :dataSplitMethod => String.t(),
-          :distanceType => String.t(),
-          :dropout => float(),
-          :earlyStop => boolean(),
-          :feedbackType => String.t(),
-          :hiddenUnits => list(String.t()),
-          :initialLearnRate => float(),
-          :inputLabelColumns => list(String.t()),
-          :itemColumn => String.t(),
-          :kmeansInitializationColumn => String.t(),
-          :kmeansInitializationMethod => String.t(),
-          :l1Regularization => float(),
-          :l2Regularization => float(),
-          :labelClassWeights => map(),
-          :learnRate => float(),
-          :learnRateStrategy => String.t(),
-          :lossType => String.t(),
-          :maxIterations => String.t(),
-          :maxTreeDepth => String.t(),
-          :minRelativeProgress => float(),
-          :minSplitLoss => float(),
-          :modelUri => String.t(),
-          :numClusters => String.t(),
-          :numFactors => String.t(),
-          :optimizationStrategy => String.t(),
           :subsample => float(),
+          :modelUri => String.t(),
+          :learnRateStrategy => String.t(),
+          :labelClassWeights => map(),
+          :l2Regularization => float(),
           :userColumn => String.t(),
+          :lossType => String.t(),
+          :learnRate => float(),
+          :hiddenUnits => list(String.t()),
+          :numFactors => String.t(),
+          :dataSplitEvalFraction => float(),
+          :dataSplitColumn => String.t(),
           :walsAlpha => float(),
-          :warmStart => boolean()
+          :earlyStop => boolean(),
+          :dropout => float(),
+          :l1Regularization => float(),
+          :kmeansInitializationColumn => String.t(),
+          :minRelativeProgress => float(),
+          :dataSplitMethod => String.t(),
+          :minSplitLoss => float(),
+          :warmStart => boolean(),
+          :optimizationStrategy => String.t(),
+          :preserveInputStructs => boolean(),
+          :feedbackType => String.t(),
+          :distanceType => String.t(),
+          :maxTreeDepth => String.t(),
+          :inputLabelColumns => list(String.t()),
+          :numClusters => String.t(),
+          :batchSize => String.t(),
+          :kmeansInitializationMethod => String.t(),
+          :initialLearnRate => float(),
+          :maxIterations => String.t(),
+          :itemColumn => String.t()
         }
 
-  field(:batchSize)
-  field(:dataSplitColumn)
-  field(:dataSplitEvalFraction)
-  field(:dataSplitMethod)
-  field(:distanceType)
-  field(:dropout)
-  field(:earlyStop)
-  field(:feedbackType)
-  field(:hiddenUnits, type: :list)
-  field(:initialLearnRate)
-  field(:inputLabelColumns, type: :list)
-  field(:itemColumn)
-  field(:kmeansInitializationColumn)
-  field(:kmeansInitializationMethod)
-  field(:l1Regularization)
-  field(:l2Regularization)
-  field(:labelClassWeights, type: :map)
-  field(:learnRate)
-  field(:learnRateStrategy)
-  field(:lossType)
-  field(:maxIterations)
-  field(:maxTreeDepth)
-  field(:minRelativeProgress)
-  field(:minSplitLoss)
-  field(:modelUri)
-  field(:numClusters)
-  field(:numFactors)
-  field(:optimizationStrategy)
   field(:subsample)
+  field(:modelUri)
+  field(:learnRateStrategy)
+  field(:labelClassWeights, type: :map)
+  field(:l2Regularization)
   field(:userColumn)
+  field(:lossType)
+  field(:learnRate)
+  field(:hiddenUnits, type: :list)
+  field(:numFactors)
+  field(:dataSplitEvalFraction)
+  field(:dataSplitColumn)
   field(:walsAlpha)
+  field(:earlyStop)
+  field(:dropout)
+  field(:l1Regularization)
+  field(:kmeansInitializationColumn)
+  field(:minRelativeProgress)
+  field(:dataSplitMethod)
+  field(:minSplitLoss)
   field(:warmStart)
+  field(:optimizationStrategy)
+  field(:preserveInputStructs)
+  field(:feedbackType)
+  field(:distanceType)
+  field(:maxTreeDepth)
+  field(:inputLabelColumns, type: :list)
+  field(:numClusters)
+  field(:batchSize)
+  field(:kmeansInitializationMethod)
+  field(:initialLearnRate)
+  field(:maxIterations)
+  field(:itemColumn)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TrainingOptions do

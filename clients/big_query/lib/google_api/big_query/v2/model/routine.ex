@@ -48,6 +48,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
 
       Note that both \\n are replaced with linebreaks.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. [Experimental] The description of the routine if defined.
+  *   `determinismLevel` (*type:* `String.t`, *default:* `nil`) - Optional. [Experimental] The determinism level of the JavaScript UDF if defined.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of this resource.
   *   `importedLibraries` (*type:* `list(String.t)`, *default:* `nil`) - Optional. If language = "JAVASCRIPT", this field stores the path of the
       imported JAVASCRIPT libraries.
@@ -87,6 +88,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
           :creationTime => String.t(),
           :definitionBody => String.t(),
           :description => String.t(),
+          :determinismLevel => String.t(),
           :etag => String.t(),
           :importedLibraries => list(String.t()),
           :language => String.t(),
@@ -100,6 +102,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Routine do
   field(:creationTime)
   field(:definitionBody)
   field(:description)
+  field(:determinismLevel)
   field(:etag)
   field(:importedLibraries, type: :list)
   field(:language)
