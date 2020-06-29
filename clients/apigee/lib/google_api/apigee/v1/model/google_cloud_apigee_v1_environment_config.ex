@@ -22,6 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this environment config was created.
+  *   `dataCollectors` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t)`, *default:* `nil`) - The list of Data Collectors used by deployments in the environment.
   *   `debugMask` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask.t`, *default:* `nil`) - Debug mask that applies to all deployments in the environment.
   *   `deployments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig.t)`, *default:* `nil`) - A list of deployments in the environment
   *   `featureFlags` (*type:* `map()`, *default:* `nil`) - Feature flags inherited from the org and environment parents.
@@ -49,6 +50,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t(),
+          :dataCollectors =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t()),
           :debugMask => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask.t(),
           :deployments => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig.t()),
           :featureFlags => map(),
@@ -67,6 +70,12 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
         }
 
   field(:createTime, as: DateTime)
+
+  field(:dataCollectors,
+    as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig,
+    type: :list
+  )
+
   field(:debugMask, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask)
 
   field(:deployments,

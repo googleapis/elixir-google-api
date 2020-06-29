@@ -21,23 +21,21 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQuery do
 
   ## Attributes
 
-  *   `created` (*type:* `String.t`, *default:* `nil`) - Creation time of the query
-  *   `error` (*type:* `String.t`, *default:* `nil`) - Error is set when query fails
-  *   `executionTime` (*type:* `String.t`, *default:* `nil`) - ExecutionTime is available only after the query is completed
+  *   `created` (*type:* `String.t`, *default:* `nil`) - Creation time of the query.
+  *   `error` (*type:* `String.t`, *default:* `nil`) - Error is set when query fails.
+  *   `executionTime` (*type:* `String.t`, *default:* `nil`) - ExecutionTime is available only after the query is completed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Asynchronous Query Name.
-  *   `queryParams` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetadata.t`, *default:* `nil`) - Contains information like metrics, dimenstions etc
-      of the AsyncQuery
+  *   `queryParams` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetadata.t`, *default:* `nil`) - Contains information like metrics, dimenstions etc of the AsyncQuery.
   *   `reportDefinitionId` (*type:* `String.t`, *default:* `nil`) - Asynchronous Report ID.
-  *   `result` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQueryResult.t`, *default:* `nil`) - Result is available only after the query is completed
-  *   `resultFileSize` (*type:* `String.t`, *default:* `nil`) - ResultFileSize is available only after the query is completed
-  *   `resultRows` (*type:* `String.t`, *default:* `nil`) - ResultRows is available only after the query is completed
-  *   `self` (*type:* `String.t`, *default:* `nil`) - Self link of the query
+  *   `result` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AsyncQueryResult.t`, *default:* `nil`) - Result is available only after the query is completed.
+  *   `resultFileSize` (*type:* `String.t`, *default:* `nil`) - ResultFileSize is available only after the query is completed.
+  *   `resultRows` (*type:* `String.t`, *default:* `nil`) - ResultRows is available only after the query is completed.
+  *   `self` (*type:* `String.t`, *default:* `nil`) - Self link of the query.
 
       Example:
       `/organizations/myorg/environments/myenv/queries/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd`
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Query state could be "enqueued", "running", "completed",
-      "failed"
-  *   `updated` (*type:* `String.t`, *default:* `nil`) - Last updated timestamp for the query
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Query state could be "enqueued", "running", "completed", "failed".
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Last updated timestamp for the query.
   """
 
   use GoogleApi.Gax.ModelBase

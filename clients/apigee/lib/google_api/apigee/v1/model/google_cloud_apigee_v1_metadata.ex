@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metadata do
   @moduledoc """
-  This message type encapsulates additional information about query execution
+  This message type encapsulates additional information about query execution.
 
   ## Attributes
 
-  *   `errors` (*type:* `list(String.t)`, *default:* `nil`) - List of error messages as strings
+  *   `errors` (*type:* `list(String.t)`, *default:* `nil`) - List of error messages as strings.
   *   `notices` (*type:* `list(String.t)`, *default:* `nil`) - List of additional information such as data source, if result was
       truncated etc.
       E.g

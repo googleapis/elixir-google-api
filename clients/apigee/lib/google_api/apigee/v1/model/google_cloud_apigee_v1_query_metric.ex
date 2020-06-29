@@ -24,9 +24,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1QueryMetric do
 
   *   `alias` (*type:* `String.t`, *default:* `nil`) - Alias for the metric. Alias will be used to replace metric name
       in query results.
-  *   `function` (*type:* `String.t`, *default:* `nil`) - Aggregation function: avg, min, max, or sum
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Metric name
-  *   `operator` (*type:* `String.t`, *default:* `nil`) - One of `+`, `-`, `/`, `%`, `*`
+  *   `function` (*type:* `String.t`, *default:* `nil`) - Aggregation function: avg, min, max, or sum.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Metric name.
+  *   `operator` (*type:* `String.t`, *default:* `nil`) - One of `+`, `-`, `/`, `%`, `*`.
   *   `value` (*type:* `String.t`, *default:* `nil`) - Operand value should be provided when operator is set.
   """
 
