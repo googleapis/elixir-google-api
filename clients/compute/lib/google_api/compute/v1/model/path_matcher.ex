@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.PathMatcher do
 
   *   `defaultRouteAction` (*type:* `GoogleApi.Compute.V1.Model.HttpRouteAction.t`, *default:* `nil`) - defaultRouteAction takes effect when none of the  pathRules or routeRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
       Only one of defaultRouteAction or defaultUrlRedirect must be set.
+      UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathMatcher's defaultRouteAction.
   *   `defaultService` (*type:* `String.t`, *default:* `nil`) - The full or partial URL to the BackendService resource. This will be used if none of the pathRules or routeRules defined by this PathMatcher are matched. For example, the following are all valid URLs to a BackendService resource:  
       - https://www.googleapis.com/compute/v1/projects/project/global/backendServices/backendService 
       - compute/v1/projects/project/global/backendServices/backendService 

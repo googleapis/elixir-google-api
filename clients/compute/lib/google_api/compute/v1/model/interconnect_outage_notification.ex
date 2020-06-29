@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InterconnectOutageNotification do
   @moduledoc """
-  Description of a planned outage on this Interconnect. Next id: 9
+  Description of a planned outage on this Interconnect.
 
   ## Attributes
 

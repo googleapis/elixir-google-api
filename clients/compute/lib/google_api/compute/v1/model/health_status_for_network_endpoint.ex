@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint do
   *   `backendService` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceReference.t`, *default:* `nil`) - URL of the backend service associated with the health state of the network endpoint.
   *   `forwardingRule` (*type:* `GoogleApi.Compute.V1.Model.ForwardingRuleReference.t`, *default:* `nil`) - URL of the forwarding rule associated with the health state of the network endpoint.
   *   `healthCheck` (*type:* `GoogleApi.Compute.V1.Model.HealthCheckReference.t`, *default:* `nil`) - URL of the health check associated with the health state of the network endpoint.
+  *   `healthCheckService` (*type:* `GoogleApi.Compute.V1.Model.HealthCheckServiceReference.t`, *default:* `nil`) - URL of the health check service associated with the health state of the network endpoint.
   *   `healthState` (*type:* `String.t`, *default:* `nil`) - Health state of the network endpoint determined based on the health checks configured.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint do
           :backendService => GoogleApi.Compute.V1.Model.BackendServiceReference.t(),
           :forwardingRule => GoogleApi.Compute.V1.Model.ForwardingRuleReference.t(),
           :healthCheck => GoogleApi.Compute.V1.Model.HealthCheckReference.t(),
+          :healthCheckService => GoogleApi.Compute.V1.Model.HealthCheckServiceReference.t(),
           :healthState => String.t()
         }
 
   field(:backendService, as: GoogleApi.Compute.V1.Model.BackendServiceReference)
   field(:forwardingRule, as: GoogleApi.Compute.V1.Model.ForwardingRuleReference)
   field(:healthCheck, as: GoogleApi.Compute.V1.Model.HealthCheckReference)
+  field(:healthCheckService, as: GoogleApi.Compute.V1.Model.HealthCheckServiceReference)
   field(:healthState)
 end
 

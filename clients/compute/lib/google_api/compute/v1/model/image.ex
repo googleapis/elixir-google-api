@@ -55,17 +55,23 @@ defmodule GoogleApi.Compute.V1.Model.Image do
       - zones/zone/disks/disk
   *   `sourceDiskEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
   *   `sourceDiskId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
-  *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - URL of the source image used to create this image. This can be a full or valid partial URL. You must provide exactly one of:  
-      - this property, or  
-      - the rawDisk.source property, or  
-      - the sourceDisk property   in order to create an image.
+  *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - URL of the source image used to create this image.
+
+      In order to create an image, you must provide the full or partial URL of one of the following:  
+      - The selfLink URL  
+      - This property  
+      - The rawDisk.source URL  
+      - The sourceDisk URL
   *   `sourceImageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
   *   `sourceImageId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
-  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - URL of the source snapshot used to create this image. This can be a full or valid partial URL. You must provide exactly one of:  
-      - this property, or  
-      - the sourceImage property, or  
-      - the rawDisk.source property, or  
-      - the sourceDisk property   in order to create an image.
+  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - URL of the source snapshot used to create this image.
+
+      In order to create an image, you must provide the full or partial URL of one of the following:  
+      - The selfLink URL  
+      - This property 
+      - The sourceImage URL  
+      - The rawDisk.source URL  
+      - The sourceDisk URL
   *   `sourceSnapshotEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
   *   `sourceSnapshotId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
   *   `sourceType` (*type:* `String.t`, *default:* `RAW`) - The type of the image used to create this disk. The default and only value is RAW

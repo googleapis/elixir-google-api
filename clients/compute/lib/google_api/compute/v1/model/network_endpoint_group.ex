@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Metadata defined as annotations on the network endpoint group.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `defaultPort` (*type:* `integer()`, *default:* `nil`) - The default port used if the port number is not specified in the network endpoint.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map(),
           :creationTimestamp => String.t(),
           :defaultPort => integer(),
           :description => String.t(),
@@ -54,6 +56,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
           :zone => String.t()
         }
 
+  field(:annotations, type: :map)
   field(:creationTimestamp)
   field(:defaultPort)
   field(:description)

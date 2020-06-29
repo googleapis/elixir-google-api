@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Metadata defined as annotations for network endpoint.
   *   `healthState` (*type:* `String.t`, *default:* `nil`) - Health state of the instance.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - URL of the instance resource.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - A forwarding rule IP address assigned to this instance.
@@ -30,12 +31,14 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map(),
           :healthState => String.t(),
           :instance => String.t(),
           :ipAddress => String.t(),
           :port => integer()
         }
 
+  field(:annotations, type: :map)
   field(:healthState)
   field(:instance)
   field(:ipAddress)
