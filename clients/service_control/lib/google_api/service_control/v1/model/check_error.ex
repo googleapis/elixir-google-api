@@ -29,9 +29,10 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckError do
       error.
   *   `subject` (*type:* `String.t`, *default:* `nil`) - Subject to whom this error applies. See the specific code enum for more
       details on this field. For example:
-          - “project:<project-id or project-number>”
-          - “folder:<folder-id>”
-          - “organization:<organization-id>”
+
+      - "project:<project-id or project-number>"
+      - "folder:<folder-id>"
+      - "organization:<organization-id>"
   """
 
   use GoogleApi.Gax.ModelBase

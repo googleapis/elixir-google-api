@@ -36,6 +36,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the operation.
       Required when the operation is used in ServiceController.Report,
       but optional when the operation is used in ServiceController.Check.
+  *   `extensions` (*type:* `list(map())`, *default:* `nil`) - Unimplemented.
   *   `importance` (*type:* `String.t`, *default:* `nil`) - DO NOT USE. This is an experimental field.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels describing the operation. Only the following labels are allowed:
 
@@ -93,6 +94,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
   @type t :: %__MODULE__{
           :consumerId => String.t(),
           :endTime => DateTime.t(),
+          :extensions => list(map()),
           :importance => String.t(),
           :labels => map(),
           :logEntries => list(GoogleApi.ServiceControl.V1.Model.LogEntry.t()),
@@ -108,6 +110,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.Operation do
 
   field(:consumerId)
   field(:endTime, as: DateTime)
+  field(:extensions, type: :list)
   field(:importance)
   field(:labels, type: :map)
   field(:logEntries, as: GoogleApi.ServiceControl.V1.Model.LogEntry, type: :list)
