@@ -21,7 +21,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse do
 
   ## Attributes
 
-  *   `divisions` (*type:* `%{optional(String.t) => GoogleApi.CivicInfo.V2.Model.GeographicDivision.t}`, *default:* `nil`) - Political geographic divisions that contain the requested address.
+  *   `divisions` (*type:* `%{optional(String.t) => GoogleApi.CivicInfo.V2.Model.GeographicDivision.t}`, *default:* `nil`) - A map of political geographic divisions that contain the requested address, keyed by the unique Open Civic Data identifier for this division.
   *   `kind` (*type:* `String.t`, *default:* `civicinfo#representativeInfoResponse`) - Identifies what kind of resource this is. Value: the fixed string "civicinfo#representativeInfoResponse".
   *   `normalizedInput` (*type:* `GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t`, *default:* `nil`) - The normalized version of the requested address
   *   `offices` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Office.t)`, *default:* `nil`) - Elected offices referenced by the divisions listed above. Will only be present if includeOffices was true in the request.

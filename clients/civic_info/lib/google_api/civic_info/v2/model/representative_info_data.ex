@@ -21,7 +21,7 @@ defmodule GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData do
 
   ## Attributes
 
-  *   `divisions` (*type:* `%{optional(String.t) => GoogleApi.CivicInfo.V2.Model.GeographicDivision.t}`, *default:* `nil`) - Political geographic divisions that contain the requested address.
+  *   `divisions` (*type:* `%{optional(String.t) => GoogleApi.CivicInfo.V2.Model.GeographicDivision.t}`, *default:* `nil`) - A map of political geographic divisions that contain the requested address, keyed by the unique Open Civic Data identifier for this division.
   *   `offices` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Office.t)`, *default:* `nil`) - Elected offices referenced by the divisions listed above. Will only be present if includeOffices was true in the request.
   *   `officials` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Official.t)`, *default:* `nil`) - Officials holding the offices listed above. Will only be present if includeOffices was true in the request.
   """

@@ -22,7 +22,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.ElectoralDistrict do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - An identifier for this district, relative to its scope. For example, the 34th State Senate district would have id "34" and a scope of stateUpper.
-  *   `kgForeignKey` (*type:* `String.t`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the district.
   *   `scope` (*type:* `String.t`, *default:* `nil`) - The geographic scope of this district. If unspecified the district's geography is not known. One of: national, statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, cityWide, township, countyCouncil, cityCouncil, ward, special
   """
@@ -31,13 +30,11 @@ defmodule GoogleApi.CivicInfo.V2.Model.ElectoralDistrict do
 
   @type t :: %__MODULE__{
           :id => String.t(),
-          :kgForeignKey => String.t(),
           :name => String.t(),
           :scope => String.t()
         }
 
   field(:id)
-  field(:kgForeignKey)
   field(:name)
   field(:scope)
 end
