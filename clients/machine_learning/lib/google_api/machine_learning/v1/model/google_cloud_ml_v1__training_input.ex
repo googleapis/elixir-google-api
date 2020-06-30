@@ -207,6 +207,9 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   *   `scaleTier` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the machine types, the number of replicas for workers
       and parameter servers.
   *   `scheduling` (*type:* `GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling.t`, *default:* `nil`) - Optional. Scheduling options for a training job.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the service account for workload run-as account.
+      Users submitting jobs must have act-as permission on this run-as account.
+      If not specified, then CMLE P4SA will be used by default.
   *   `useChiefInTfConfig` (*type:* `boolean()`, *default:* `nil`) - Optional. Use `chief` instead of `master` in the `TF_CONFIG` environment
       variable when training with a custom container. Defaults to `false`. [Learn
       more about this
@@ -277,6 +280,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
           :runtimeVersion => String.t(),
           :scaleTier => String.t(),
           :scheduling => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling.t(),
+          :serviceAccount => String.t(),
           :useChiefInTfConfig => boolean(),
           :workerConfig => GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig.t(),
           :workerCount => String.t(),
@@ -313,6 +317,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_TrainingInput do
   field(:runtimeVersion)
   field(:scaleTier)
   field(:scheduling, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_Scheduling)
+  field(:serviceAccount)
   field(:useChiefInTfConfig)
   field(:workerConfig, as: GoogleApi.MachineLearning.V1.Model.GoogleCloudMlV1_ReplicaConfig)
   field(:workerCount)
