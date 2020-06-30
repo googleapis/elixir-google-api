@@ -22,6 +22,10 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState do
 
   ## Attributes
 
+  *   `completeWorkStatus` (*type:* `GoogleApi.Dataflow.V1b3.Model.Status.t`, *default:* `nil`) - If set, a request to complete the work item with the given status. This
+      will not be set to OK, unless supported by the specific kind of WorkItem.
+      It can be used for the backend to indicate a WorkItem must terminate, e.g.,
+      for aborting work.
   *   `harnessData` (*type:* `map()`, *default:* `nil`) - Other data returned by the service, specific to the particular
       worker harness.
   *   `hotKeyDetection` (*type:* `GoogleApi.Dataflow.V1b3.Model.HotKeyDetection.t`, *default:* `nil`) - A hot key is a symptom of poor data distribution in which there are enough
@@ -47,6 +51,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :completeWorkStatus => GoogleApi.Dataflow.V1b3.Model.Status.t(),
           :harnessData => map(),
           :hotKeyDetection => GoogleApi.Dataflow.V1b3.Model.HotKeyDetection.t(),
           :leaseExpireTime => DateTime.t(),
@@ -58,6 +63,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkItemServiceState do
           :suggestedStopPosition => GoogleApi.Dataflow.V1b3.Model.Position.t()
         }
 
+  field(:completeWorkStatus, as: GoogleApi.Dataflow.V1b3.Model.Status)
   field(:harnessData, type: :map)
   field(:hotKeyDetection, as: GoogleApi.Dataflow.V1b3.Model.HotKeyDetection)
   field(:leaseExpireTime, as: DateTime)
