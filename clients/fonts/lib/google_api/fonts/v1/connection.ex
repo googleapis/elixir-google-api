@@ -25,5 +25,5 @@ defmodule GoogleApi.Fonts.V1.Connection do
   use GoogleApi.Gax.Connection,
     scopes: [],
     otp_app: :google_api_fonts,
-    base_url: "https://www.googleapis.com/webfonts/v1/"
+    base_url: "https://www.googleapis.com/"
 end

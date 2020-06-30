@@ -17,15 +17,16 @@
 
 defmodule GoogleApi.Fonts.V1.Model.Webfont do
   @moduledoc """
-
+  Metadata describing a family of fonts.
 
   ## Attributes
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - The category of the font.
   *   `family` (*type:* `String.t`, *default:* `nil`) - The name of the font.
-  *   `files` (*type:* `map()`, *default:* `nil`) - The font files (with all supported scripts) for each one of the available variants, as a key : value map.
-  *   `kind` (*type:* `String.t`, *default:* `webfonts#webfont`) - This kind represents a webfont object in the webfonts service.
-  *   `lastModified` (*type:* `Date.t`, *default:* `nil`) - The date (format "yyyy-MM-dd") the font was modified for the last time.
+  *   `files` (*type:* `map()`, *default:* `nil`) - The font files (with all supported scripts) for each one of the available
+      variants, as a key : value map.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This kind represents a webfont object in the webfonts service.
+  *   `lastModified` (*type:* `String.t`, *default:* `nil`) - The date (format "yyyy-MM-dd") the font was modified for the last time.
   *   `subsets` (*type:* `list(String.t)`, *default:* `nil`) - The scripts supported by the font.
   *   `variants` (*type:* `list(String.t)`, *default:* `nil`) - The available variants for the font.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The font version.
@@ -38,7 +39,7 @@ defmodule GoogleApi.Fonts.V1.Model.Webfont do
           :family => String.t(),
           :files => map(),
           :kind => String.t(),
-          :lastModified => Date.t(),
+          :lastModified => String.t(),
           :subsets => list(String.t()),
           :variants => list(String.t()),
           :version => String.t()
@@ -48,7 +49,7 @@ defmodule GoogleApi.Fonts.V1.Model.Webfont do
   field(:family)
   field(:files, type: :map)
   field(:kind)
-  field(:lastModified, as: Date)
+  field(:lastModified)
   field(:subsets, type: :list)
   field(:variants, type: :list)
   field(:version)
