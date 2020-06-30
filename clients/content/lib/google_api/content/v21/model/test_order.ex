@@ -21,10 +21,12 @@ defmodule GoogleApi.Content.V21.Model.TestOrder do
 
   ## Attributes
 
+  *   `deliveryDetails` (*type:* `GoogleApi.Content.V21.Model.TestOrderDeliveryDetails.t`, *default:* `nil`) - Overrides the predefined delivery details if provided.
   *   `enableOrderinvoices` (*type:* `boolean()`, *default:* `nil`) - Whether the orderinvoices service should support this order.
   *   `kind` (*type:* `String.t`, *default:* `content#testOrder`) - Identifies what kind of resource this is. Value: the fixed string "`content#testOrder`"
   *   `lineItems` (*type:* `list(GoogleApi.Content.V21.Model.TestOrderLineItem.t)`, *default:* `nil`) - Required. Line items that are ordered. At least one line item must be provided.
   *   `notificationMode` (*type:* `String.t`, *default:* `nil`) - Restricted. Do not use.
+  *   `pickupDetails` (*type:* `GoogleApi.Content.V21.Model.TestOrderPickupDetails.t`, *default:* `nil`) - Overrides the predefined pickup details if provided.
   *   `predefinedBillingAddress` (*type:* `String.t`, *default:* `nil`) - Required. The billing address.
 
       Acceptable values are:  
@@ -65,10 +67,12 @@ defmodule GoogleApi.Content.V21.Model.TestOrder do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :deliveryDetails => GoogleApi.Content.V21.Model.TestOrderDeliveryDetails.t(),
           :enableOrderinvoices => boolean(),
           :kind => String.t(),
           :lineItems => list(GoogleApi.Content.V21.Model.TestOrderLineItem.t()),
           :notificationMode => String.t(),
+          :pickupDetails => GoogleApi.Content.V21.Model.TestOrderPickupDetails.t(),
           :predefinedBillingAddress => String.t(),
           :predefinedDeliveryAddress => String.t(),
           :predefinedEmail => String.t(),
@@ -78,10 +82,12 @@ defmodule GoogleApi.Content.V21.Model.TestOrder do
           :shippingOption => String.t()
         }
 
+  field(:deliveryDetails, as: GoogleApi.Content.V21.Model.TestOrderDeliveryDetails)
   field(:enableOrderinvoices)
   field(:kind)
   field(:lineItems, as: GoogleApi.Content.V21.Model.TestOrderLineItem, type: :list)
   field(:notificationMode)
+  field(:pickupDetails, as: GoogleApi.Content.V21.Model.TestOrderPickupDetails)
   field(:predefinedBillingAddress)
   field(:predefinedDeliveryAddress)
   field(:predefinedEmail)
