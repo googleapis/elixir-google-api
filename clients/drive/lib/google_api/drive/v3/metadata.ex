@@ -20,7 +20,7 @@ defmodule GoogleApi.Drive.V3 do
   API client metadata for GoogleApi.Drive.V3.
   """
 
-  @discovery_revision "20200609"
+  @discovery_revision "20200618"
 
   def discovery_revision(), do: @discovery_revision
 end
