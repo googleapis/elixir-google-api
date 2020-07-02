@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudRun.Mixfile do
   use Mix.Project
 
-  @version "0.35.0"
+  @version "0.36.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.CloudRun.Mixfile do
 
   defp description() do
     """
-    Cloud Run Admin API client library. Deploy and manage user provided container images that scale automatically based on HTTP traffic.
+    Cloud Run API client library. Deploy and manage user provided container images that scale automatically based on HTTP traffic.
     """
   end
 
