@@ -1,6 +1,6 @@
 # GoogleApi.Run
 
-Cloud Run Admin API client library.
+Cloud Run API client library.
 
 Deploy and manage user provided container images that scale automatically based on HTTP traffic.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_run, "~> 0.14"}]
+  [{:google_api_run, "~> 0.15"}]
 end
 ```
 

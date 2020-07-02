@@ -41,14 +41,7 @@ defmodule GoogleApi.Run.V1.Model.RevisionSpec do
       of the service. The service account represents the identity of the
       running revision, and determines what permissions the revision has. If
       not provided, the revision will use the project's default service account.
-  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - TimeoutSeconds holds the max duration the instance is allowed for
-      responding to a request.
-
-      Cloud Run fully managed: defaults to 300 seconds (5 minutes). Maximum
-      allowed value is 900 seconds (15 minutes).
-
-      Cloud Run for Anthos: defaults to 300 seconds (5 minutes). Maximum allowed
-      value is configurable by the cluster operator.
+  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - 
   *   `volumes` (*type:* `list(GoogleApi.Run.V1.Model.Volume.t)`, *default:* `nil`) - 
   """
 
