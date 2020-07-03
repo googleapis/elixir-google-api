@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.Games.V1.Model.AchievementUpdateMultipleRequest do
   @moduledoc """
-  This is a JSON template for a list of achievement update requests.
+  A list of achievement update requests.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#achievementUpdateMultipleRequest`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementUpdateMultipleRequest.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#achievementUpdateMultipleRequest`.
   *   `updates` (*type:* `list(GoogleApi.Games.V1.Model.AchievementUpdateRequest.t)`, *default:* `nil`) - The individual achievement update requests.
   """
 

@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.EventDefinitionListResponse do
   @moduledoc """
-  This is a JSON template for a ListDefinitions response.
+  A ListDefinitions response.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.EventDefinition.t)`, *default:* `nil`) - The event definitions.
-  *   `kind` (*type:* `String.t`, *default:* `games#eventDefinitionListResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#eventDefinitionListResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#eventDefinitionListResponse`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token for the next page of results.
   """
 

@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.Games.V1.Model.EventRecordRequest do
   @moduledoc """
-  This is a JSON template for an event period update resource.
+  An event period update resource.
 
   ## Attributes
 
-  *   `currentTimeMillis` (*type:* `String.t`, *default:* `nil`) - The current time when this update was sent, in milliseconds, since 1970 UTC (Unix Epoch).
-  *   `kind` (*type:* `String.t`, *default:* `games#eventRecordRequest`) - Uniquely identifies the type of this resource. Value is always the fixed string games#eventRecordRequest.
+  *   `currentTimeMillis` (*type:* `String.t`, *default:* `nil`) - The current time when this update was sent, in milliseconds, since 1970 UTC
+      (Unix Epoch).
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#eventRecordRequest`.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - The request ID used to identify this attempt to record events.
   *   `timePeriods` (*type:* `list(GoogleApi.Games.V1.Model.EventPeriodUpdate.t)`, *default:* `nil`) - A list of the time period updates being made in this request.
   """

@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.EventBatchRecordFailure do
   @moduledoc """
-  This is a JSON template for a batch update failure resource.
+  A batch update failure resource.
 
   ## Attributes
 
   *   `failureCause` (*type:* `String.t`, *default:* `nil`) - The cause for the update failure.
-      Possible values are:  
-      - "TOO_LARGE": A batch request was issued with more events than are allowed in a single batch. 
-      - "TIME_PERIOD_EXPIRED": A batch was sent with data too far in the past to record. 
-      - "TIME_PERIOD_SHORT": A batch was sent with a time range that was too short. 
-      - "TIME_PERIOD_LONG": A batch was sent with a time range that was too long. 
-      - "ALREADY_UPDATED": An attempt was made to record a batch of data which was already seen. 
-      - "RECORD_RATE_HIGH": An attempt was made to record data faster than the server will apply updates.
-  *   `kind` (*type:* `String.t`, *default:* `games#eventBatchRecordFailure`) - Uniquely identifies the type of this resource. Value is always the fixed string games#eventBatchRecordFailure.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#eventBatchRecordFailure`.
   *   `range` (*type:* `GoogleApi.Games.V1.Model.EventPeriodRange.t`, *default:* `nil`) - The time range which was rejected; empty for a request-wide failure.
   """
 

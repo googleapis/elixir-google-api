@@ -31,5 +31,5 @@ defmodule GoogleApi.Games.V1.Connection do
       "https://www.googleapis.com/auth/games"
     ],
     otp_app: :google_api_games,
-    base_url: "https://www.googleapis.com/games/v1/"
+    base_url: "https://www.googleapis.com/"
 end

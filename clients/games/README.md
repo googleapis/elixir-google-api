@@ -1,8 +1,9 @@
 # GoogleApi.Games
 
-Google Play Game Services API client library.
+Google Play Game Services client library.
 
-The API for Google Play Game Services.
+The Google Play games service allows developers to enhance games with social leaderboards,
+    achievements, game state, sign-in with Google, and more.
 
 ## Installation
 
@@ -11,13 +12,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_games, "~> 0.13"}]
+  [{:google_api_games, "~> 0.14"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/games/services/](https://developers.google.com/games/services/).
+Product documentation is available at [https://developers.google.com/games/](https://developers.google.com/games/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_games](https://hexdocs.pm/google_api_games).

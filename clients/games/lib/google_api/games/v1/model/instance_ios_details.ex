@@ -17,15 +17,18 @@
 
 defmodule GoogleApi.Games.V1.Model.InstanceIosDetails do
   @moduledoc """
-  This is a JSON template for the iOS details resource.
+  The iOS details resource.
 
   ## Attributes
 
   *   `bundleIdentifier` (*type:* `String.t`, *default:* `nil`) - Bundle identifier.
   *   `itunesAppId` (*type:* `String.t`, *default:* `nil`) - iTunes App ID.
-  *   `kind` (*type:* `String.t`, *default:* `games#instanceIosDetails`) - Uniquely identifies the type of this resource. Value is always the fixed string games#instanceIosDetails.
-  *   `preferredForIpad` (*type:* `boolean()`, *default:* `nil`) - Indicates that this instance is the default for new installations on iPad devices.
-  *   `preferredForIphone` (*type:* `boolean()`, *default:* `nil`) - Indicates that this instance is the default for new installations on iPhone devices.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#instanceIosDetails`.
+  *   `preferredForIpad` (*type:* `boolean()`, *default:* `nil`) - Indicates that this instance is the default for new installations on iPad
+      devices.
+  *   `preferredForIphone` (*type:* `boolean()`, *default:* `nil`) - Indicates that this instance is the default for new installations on iPhone
+      devices.
   *   `supportIpad` (*type:* `boolean()`, *default:* `nil`) - Flag to indicate if this instance supports iPad.
   *   `supportIphone` (*type:* `boolean()`, *default:* `nil`) - Flag to indicate if this instance supports iPhone.
   """

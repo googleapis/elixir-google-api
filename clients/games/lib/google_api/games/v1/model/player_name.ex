@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.Games.V1.Model.PlayerName do
   @moduledoc """
-  An object representation of the individual components of the player's name. For some players, these fields may not be present.
+  A representation of the individual components of the name.
 
   ## Attributes
 
-  *   `familyName` (*type:* `String.t`, *default:* `nil`) - The family name of this player. In some places, this is known as the last name.
-  *   `givenName` (*type:* `String.t`, *default:* `nil`) - The given name of this player. In some places, this is known as the first name.
+  *   `familyName` (*type:* `String.t`, *default:* `nil`) - The family name of this player. In some places, this is known as the last
+      name.
+  *   `givenName` (*type:* `String.t`, *default:* `nil`) - The given name of this player. In some places, this is known as the first
+      name.
   """
 
   use GoogleApi.Gax.ModelBase

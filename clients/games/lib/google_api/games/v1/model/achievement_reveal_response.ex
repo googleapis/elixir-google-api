@@ -17,15 +17,14 @@
 
 defmodule GoogleApi.Games.V1.Model.AchievementRevealResponse do
   @moduledoc """
-  This is a JSON template for an achievement reveal response
+  An achievement reveal response
 
   ## Attributes
 
-  *   `currentState` (*type:* `String.t`, *default:* `nil`) - The current state of the achievement for which a reveal was attempted. This might be UNLOCKED if the achievement was already unlocked.
-      Possible values are:  
-      - "REVEALED" - Achievement is revealed. 
-      - "UNLOCKED" - Achievement is unlocked.
-  *   `kind` (*type:* `String.t`, *default:* `games#achievementRevealResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementRevealResponse.
+  *   `currentState` (*type:* `String.t`, *default:* `nil`) - The current state of the achievement for which a reveal was attempted. This
+      might be `UNLOCKED` if the achievement was already unlocked.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#achievementRevealResponse`.
   """
 
   use GoogleApi.Gax.ModelBase

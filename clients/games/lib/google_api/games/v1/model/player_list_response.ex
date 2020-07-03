@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.PlayerListResponse do
   @moduledoc """
-  This is a JSON template for a third party player list response.
+  A third party player list response.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.Player.t)`, *default:* `nil`) - The players.
-  *   `kind` (*type:* `String.t`, *default:* `games#playerListResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#playerListResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#playerListResponse`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token corresponding to the next page of results.
   """
 

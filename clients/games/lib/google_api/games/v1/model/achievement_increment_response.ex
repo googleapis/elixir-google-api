@@ -17,13 +17,15 @@
 
 defmodule GoogleApi.Games.V1.Model.AchievementIncrementResponse do
   @moduledoc """
-  This is a JSON template for an achievement increment response
+  An achievement increment response
 
   ## Attributes
 
   *   `currentSteps` (*type:* `integer()`, *default:* `nil`) - The current steps recorded for this incremental achievement.
-  *   `kind` (*type:* `String.t`, *default:* `games#achievementIncrementResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementIncrementResponse.
-  *   `newlyUnlocked` (*type:* `boolean()`, *default:* `nil`) - Whether the current steps for the achievement has reached the number of steps required to unlock.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#achievementIncrementResponse`.
+  *   `newlyUnlocked` (*type:* `boolean()`, *default:* `nil`) - Whether the current steps for the achievement has reached the number of
+      steps required to unlock.
   """
 
   use GoogleApi.Gax.ModelBase

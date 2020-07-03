@@ -17,13 +17,15 @@
 
 defmodule GoogleApi.Games.V1.Model.SnapshotListResponse do
   @moduledoc """
-  This is a JSON template for a list of snapshot objects.
+  A third party list snapshots response.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.Snapshot.t)`, *default:* `nil`) - The snapshots.
-  *   `kind` (*type:* `String.t`, *default:* `games#snapshotListResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#snapshotListResponse.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token corresponding to the next page of results. If there are no more results, the token is omitted.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#snapshotListResponse`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token corresponding to the next page of results. If there are no more
+      results, the token is omitted.
   """
 
   use GoogleApi.Gax.ModelBase

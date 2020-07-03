@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.Games.V1.Model.LeaderboardScoreRank do
   @moduledoc """
-  This is a JSON template for a score rank in a leaderboard.
+  A score rank in a leaderboard.
 
   ## Attributes
 
   *   `formattedNumScores` (*type:* `String.t`, *default:* `nil`) - The number of scores in the leaderboard as a string.
   *   `formattedRank` (*type:* `String.t`, *default:* `nil`) - The rank in the leaderboard as a string.
-  *   `kind` (*type:* `String.t`, *default:* `games#leaderboardScoreRank`) - Uniquely identifies the type of this resource. Value is always the fixed string games#leaderboardScoreRank.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#leaderboardScoreRank`.
   *   `numScores` (*type:* `String.t`, *default:* `nil`) - The number of scores in the leaderboard.
   *   `rank` (*type:* `String.t`, *default:* `nil`) - The rank in the leaderboard.
   """

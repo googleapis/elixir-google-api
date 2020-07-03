@@ -17,11 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.GamesAchievementIncrement do
   @moduledoc """
-  This is a JSON template for the payload to request to increment an achievement.
+  The payload to request to increment an
+  achievement.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#GamesAchievementIncrement`) - Uniquely identifies the type of this resource. Value is always the fixed string games#GamesAchievementIncrement.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#GamesAchievementIncrement`.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - The requestId associated with an increment to an achievement.
   *   `steps` (*type:* `integer()`, *default:* `nil`) - The number of steps to be incremented.
   """

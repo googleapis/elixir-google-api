@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.CategoryListResponse do
   @moduledoc """
-  This is a JSON template for a list of category data objects.
+  A third party list metagame categories response.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.Category.t)`, *default:* `nil`) - The list of categories with usage data.
-  *   `kind` (*type:* `String.t`, *default:* `games#categoryListResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#categoryListResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#categoryListResponse`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token corresponding to the next page of results.
   """
 

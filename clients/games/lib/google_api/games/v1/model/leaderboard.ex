@@ -17,19 +17,18 @@
 
 defmodule GoogleApi.Games.V1.Model.Leaderboard do
   @moduledoc """
-  This is a JSON template for the Leaderboard resource.
+  The Leaderboard resource.
 
   ## Attributes
 
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - The icon for the leaderboard.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The leaderboard ID.
-  *   `isIconUrlDefault` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the icon image being returned is a default image, or is game-provided.
-  *   `kind` (*type:* `String.t`, *default:* `games#leaderboard`) - Uniquely identifies the type of this resource. Value is always the fixed string games#leaderboard.
+  *   `isIconUrlDefault` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the icon image being returned is a default image, or is
+      game-provided.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#leaderboard`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the leaderboard.
   *   `order` (*type:* `String.t`, *default:* `nil`) - How scores are ordered.
-      Possible values are:  
-      - "LARGER_IS_BETTER" - Larger values are better; scores are sorted in descending order. 
-      - "SMALLER_IS_BETTER" - Smaller values are better; scores are sorted in ascending order.
   """
 
   use GoogleApi.Gax.ModelBase

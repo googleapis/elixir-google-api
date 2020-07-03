@@ -17,11 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.GamesAchievementSetStepsAtLeast do
   @moduledoc """
-  This is a JSON template for the payload to request to increment an achievement.
+  The payload to request to increment an
+  achievement.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#GamesAchievementSetStepsAtLeast`) - Uniquely identifies the type of this resource. Value is always the fixed string games#GamesAchievementSetStepsAtLeast.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#GamesAchievementSetStepsAtLeast`.
   *   `steps` (*type:* `integer()`, *default:* `nil`) - The minimum number of steps for the achievement to be set to.
   """
 
