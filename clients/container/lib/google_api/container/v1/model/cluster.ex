@@ -90,7 +90,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       See the `masterAuth` property of this resource for username and
       password information.
   *   `initialNodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes to create in this cluster. You must ensure that your
-      Compute Engine <a href="/compute/docs/resource-quotas">resource quota</a>
+      Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
       is sufficient for this number of instances. You must also have available
       firewall and routes quota.
       For requests, this field should only be used in lieu of a
@@ -109,6 +109,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
       * Lowercase letters, numbers, and hyphens only.
       * Must start with a letter.
       * Must end with a number or a letter.
+  *   `releaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - Release channel configuration.
   *   `masterAuth` (*type:* `GoogleApi.Container.V1.Model.MasterAuth.t`, *default:* `nil`) - The authentication information for accessing the master endpoint.
       If unspecified, the defaults are used:
       For clusters before v1.12, if master_auth is unspecified, `username` will
@@ -217,6 +218,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
             GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t(),
           :networkPolicy => GoogleApi.Container.V1.Model.NetworkPolicy.t(),
           :name => String.t(),
+          :releaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t(),
           :masterAuth => GoogleApi.Container.V1.Model.MasterAuth.t(),
           :location => String.t(),
           :subnetwork => String.t(),
@@ -273,6 +275,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
 
   field(:networkPolicy, as: GoogleApi.Container.V1.Model.NetworkPolicy)
   field(:name)
+  field(:releaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
   field(:masterAuth, as: GoogleApi.Container.V1.Model.MasterAuth)
   field(:location)
   field(:subnetwork)

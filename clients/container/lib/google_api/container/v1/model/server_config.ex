@@ -21,6 +21,7 @@ defmodule GoogleApi.Container.V1.Model.ServerConfig do
 
   ## Attributes
 
+  *   `channels` (*type:* `list(GoogleApi.Container.V1.Model.ReleaseChannelConfig.t)`, *default:* `nil`) - List of release channel configurations.
   *   `defaultClusterVersion` (*type:* `String.t`, *default:* `nil`) - Version of Kubernetes the service deploys by default.
   *   `defaultImageType` (*type:* `String.t`, *default:* `nil`) - Default image type.
   *   `validImageTypes` (*type:* `list(String.t)`, *default:* `nil`) - List of valid image types.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Container.V1.Model.ServerConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :channels => list(GoogleApi.Container.V1.Model.ReleaseChannelConfig.t()),
           :defaultClusterVersion => String.t(),
           :defaultImageType => String.t(),
           :validImageTypes => list(String.t()),
@@ -38,6 +40,7 @@ defmodule GoogleApi.Container.V1.Model.ServerConfig do
           :validNodeVersions => list(String.t())
         }
 
+  field(:channels, as: GoogleApi.Container.V1.Model.ReleaseChannelConfig, type: :list)
   field(:defaultClusterVersion)
   field(:defaultImageType)
   field(:validImageTypes, type: :list)

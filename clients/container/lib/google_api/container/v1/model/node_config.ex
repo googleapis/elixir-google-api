@@ -24,6 +24,13 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `accelerators` (*type:* `list(GoogleApi.Container.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of hardware accelerators to be attached to each node.
       See https://cloud.google.com/compute/docs/gpus for more information about
       support for GPUs.
+  *   `bootDiskKmsKey` (*type:* `String.t`, *default:* `nil`) - 
+      The Customer Managed Encryption Key used to encrypt the boot disk attached
+      to each node in the node pool. This should be of the form
+      projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+      For more information about protecting resources with Cloud KMS Keys please
+      see:
+      https://cloud.google.com/compute/docs/disks/customer-managed-encryption
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size of the disk attached to each node, specified in GB.
       The smallest allowed disk size is 10GB.
 
@@ -134,6 +141,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
 
   @type t :: %__MODULE__{
           :accelerators => list(GoogleApi.Container.V1.Model.AcceleratorConfig.t()),
+          :bootDiskKmsKey => String.t(),
           :diskSizeGb => integer(),
           :diskType => String.t(),
           :imageType => String.t(),
@@ -154,6 +162,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
         }
 
   field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)
+  field(:bootDiskKmsKey)
   field(:diskSizeGb)
   field(:diskType)
   field(:imageType)
