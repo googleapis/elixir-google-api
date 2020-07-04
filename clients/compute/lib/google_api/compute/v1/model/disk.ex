@@ -61,6 +61,11 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   *   `sizeGb` (*type:* `String.t`, *default:* `nil`) - Size of the persistent disk, specified in GB. You can specify this field when creating a persistent disk using the sourceImage or sourceSnapshot parameter, or specify it alone to create an empty persistent disk.
 
       If you specify this field along with sourceImage or sourceSnapshot, the value of sizeGb must not be less than the size of the sourceImage or the size of the snapshot. Acceptable values are 1 to 65536, inclusive.
+  *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:  
+      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk 
+      - projects/project/zones/zone/disks/disk 
+      - zones/zone/disks/disk
+  *   `sourceDiskId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
   *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - The source image used to create this disk. If the source image is deleted, this field will not be set.
 
       To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
@@ -114,6 +119,8 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
           :resourcePolicies => list(String.t()),
           :selfLink => String.t(),
           :sizeGb => String.t(),
+          :sourceDisk => String.t(),
+          :sourceDiskId => String.t(),
           :sourceImage => String.t(),
           :sourceImageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t(),
           :sourceImageId => String.t(),
@@ -146,6 +153,8 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   field(:resourcePolicies, type: :list)
   field(:selfLink)
   field(:sizeGb)
+  field(:sourceDisk)
+  field(:sourceDiskId)
   field(:sourceImage)
   field(:sourceImageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
   field(:sourceImageId)

@@ -468,7 +468,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroups do
   end
 
   @doc """
-  Lists the instances in the specified instance group.
+  Lists the instances in the specified instance group. The orderBy query parameter is not supported.
 
   ## Parameters
 

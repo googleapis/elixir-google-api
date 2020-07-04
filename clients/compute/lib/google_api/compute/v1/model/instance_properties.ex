@@ -21,22 +21,22 @@ defmodule GoogleApi.Compute.V1.Model.InstanceProperties do
 
   ## Attributes
 
-  *   `canIpForward` (*type:* `boolean()`, *default:* `nil`) - Enables instances created based on this template to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional text description for the instances that are created from this instance template.
-  *   `disks` (*type:* `list(GoogleApi.Compute.V1.Model.AttachedDisk.t)`, *default:* `nil`) - An array of disks that are associated with the instances that are created from this template.
-  *   `guestAccelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of guest accelerator cards' type and count to use for instances created from the instance template.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to instances that are created from this template.
-  *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for instances that are created from this template.
-  *   `metadata` (*type:* `GoogleApi.Compute.V1.Model.Metadata.t`, *default:* `nil`) - The metadata key/value pairs to assign to instances that are created from this template. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
-  *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum cpu/platform to be used by this instance. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+  *   `canIpForward` (*type:* `boolean()`, *default:* `nil`) - Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional text description for the instances that are created from these properties.
+  *   `disks` (*type:* `list(GoogleApi.Compute.V1.Model.AttachedDisk.t)`, *default:* `nil`) - An array of disks that are associated with the instances that are created from these properties.
+  *   `guestAccelerators` (*type:* `list(GoogleApi.Compute.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of guest accelerator cards' type and count to use for instances created from these properties.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to instances that are created from these properties.
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for instances that are created from these properties.
+  *   `metadata` (*type:* `GoogleApi.Compute.V1.Model.Metadata.t`, *default:* `nil`) - The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+  *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
   *   `networkInterfaces` (*type:* `list(GoogleApi.Compute.V1.Model.NetworkInterface.t)`, *default:* `nil`) - An array of network access configurations for this interface.
-  *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
-  *   `reservationAffinity` (*type:* `GoogleApi.Compute.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Specifies the reservations that this instance can consume from.
-  *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies (names, not ULRs) applied to instances created from this template.
-  *   `scheduling` (*type:* `GoogleApi.Compute.V1.Model.Scheduling.t`, *default:* `nil`) - Specifies the scheduling options for the instances that are created from this template.
-  *   `serviceAccounts` (*type:* `list(GoogleApi.Compute.V1.Model.ServiceAccount.t)`, *default:* `nil`) - A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from this template. Use metadata queries to obtain the access tokens for these instances.
+  *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+  *   `reservationAffinity` (*type:* `GoogleApi.Compute.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Specifies the reservations that instances can consume from.
+  *   `resourcePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Resource policies (names, not ULRs) applied to instances created from these properties.
+  *   `scheduling` (*type:* `GoogleApi.Compute.V1.Model.Scheduling.t`, *default:* `nil`) - Specifies the scheduling options for the instances that are created from these properties.
+  *   `serviceAccounts` (*type:* `list(GoogleApi.Compute.V1.Model.ServiceAccount.t)`, *default:* `nil`) - A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Compute.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - 
-  *   `tags` (*type:* `GoogleApi.Compute.V1.Model.Tags.t`, *default:* `nil`) - A list of tags to apply to the instances that are created from this template. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+  *   `tags` (*type:* `GoogleApi.Compute.V1.Model.Tags.t`, *default:* `nil`) - A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
   """
 
   use GoogleApi.Gax.ModelBase

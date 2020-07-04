@@ -178,7 +178,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroups do
   end
 
   @doc """
-  Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running.
+  Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running. The orderBy query parameter is not supported.
 
   ## Parameters
 
