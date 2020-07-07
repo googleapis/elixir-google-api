@@ -17,14 +17,23 @@
 
 defmodule GoogleApi.DNS.V1.Model.DnsKeysListResponse do
   @moduledoc """
-
+  The response to a request to enumerate DnsKeys in a ManagedZone.
 
   ## Attributes
 
-  *   `dnsKeys` (*type:* `list(GoogleApi.DNS.V1.Model.DnsKey.t)`, *default:* `nil`) - 
+  *   `dnsKeys` (*type:* `list(GoogleApi.DNS.V1.Model.DnsKey.t)`, *default:* `nil`) - The requested resources.
   *   `header` (*type:* `GoogleApi.DNS.V1.Model.ResponseHeader.t`, *default:* `nil`) - 
   *   `kind` (*type:* `String.t`, *default:* `dns#dnsKeysListResponse`) - Type of resource.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - 
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The presence of this field indicates that there exist more results
+      following your last page of results in pagination order. To fetch them,
+      make another list request using this value as your pagination token.
+
+      In this way you can retrieve the complete contents of even very large
+      collections one page at a time. However, if the contents of the collection
+      change between the first and last paginated list request, the set of all
+      elements returned will be an inconsistent view of the collection. There is
+      no way to retrieve a "snapshot" of collections larger than the maximum
+      page size.
   """
 
   use GoogleApi.Gax.ModelBase

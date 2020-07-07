@@ -21,8 +21,10 @@ defmodule GoogleApi.DNS.V1.Model.PolicyNetwork do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dns#policyNetwork`) - Identifies what kind of resource this is. Value: the fixed string "dns#policyNetwork".
-  *   `networkUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `dns#policyNetwork`) - 
+  *   `networkUrl` (*type:* `String.t`, *default:* `nil`) - The fully qualified URL of the VPC network to bind to.
+      This should be formatted like
+      https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
   """
 
   use GoogleApi.Gax.ModelBase
