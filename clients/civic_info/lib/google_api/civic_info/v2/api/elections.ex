@@ -102,7 +102,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:electionId` (*type:* `String.t`) - The unique ID of the election to look up. A list of election IDs can be obtained at https://www.googleapis.com/civicinfo/{version}/elections. If no election ID is specified in the query and there is more than one election with data for the given voter, the additional elections are provided in the otherElections response field.
       *   `:officialOnly` (*type:* `boolean()`) - If set to true, only data from official state sources will be returned.
-      *   `:returnAllAvailableData` (*type:* `boolean()`) - If set to true, the query will return the success codeand include any partial information when it is unable to determine a matching address or unable to determine the election for electionId=0 queries.
+      *   `:returnAllAvailableData` (*type:* `boolean()`) - If set to true, the query will return the success code and include any partial information when it is unable to determine a matching address or unable to determine the election for electionId=0 queries.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
