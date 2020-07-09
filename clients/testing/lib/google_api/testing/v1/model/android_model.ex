@@ -49,7 +49,8 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   *   `supportedVersionIds` (*type:* `list(String.t)`, *default:* `nil`) - The set of Android versions this device supports.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags for this dimension.
       Examples: "default", "preview", "deprecated".
-  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image of the device.
+  *   `thumbnailUrl` (*type:* `String.t`, *default:* `nil`) - URL of a thumbnail image (photo) of the device.
+      e.g. https://lh3.googleusercontent.com/90WcauuJiCYABEl8U0lcZeuS5STUbf2yW...
   """
 
   use GoogleApi.Gax.ModelBase
