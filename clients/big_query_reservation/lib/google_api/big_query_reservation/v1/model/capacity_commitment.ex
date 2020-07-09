@@ -32,6 +32,8 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
 
   *   `commitmentEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The end of the current commitment period. It is applicable only for ACTIVE
       capacity commitments.
+  *   `commitmentStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The start of the current commitment period. It is applicable only for
+      ACTIVE capacity commitments.
   *   `failureStatus` (*type:* `GoogleApi.BigQueryReservation.V1.Model.Status.t`, *default:* `nil`) - Output only. For FAILED commitment plan, provides the reason of failure.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the capacity commitment, e.g.,
       `projects/myproject/locations/US/capacityCommitments/123`
@@ -47,6 +49,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
 
   @type t :: %__MODULE__{
           :commitmentEndTime => DateTime.t(),
+          :commitmentStartTime => DateTime.t(),
           :failureStatus => GoogleApi.BigQueryReservation.V1.Model.Status.t(),
           :name => String.t(),
           :plan => String.t(),
@@ -56,6 +59,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
         }
 
   field(:commitmentEndTime, as: DateTime)
+  field(:commitmentStartTime, as: DateTime)
   field(:failureStatus, as: GoogleApi.BigQueryReservation.V1.Model.Status)
   field(:name)
   field(:plan)
