@@ -20,16 +20,17 @@ defmodule GoogleApi.PubSub.V1.Model.PubsubMessage do
   A message that is published by publishers and consumed by subscribers. The
   message must contain either a non-empty data field or at least one attribute.
   Note that client libraries represent this object differently
-  depending on the language. See the corresponding
-  <a href="https://cloud.google.com/pubsub/docs/reference/libraries">client
-  library documentation</a> for more information. See
-  <a href="https://cloud.google.com/pubsub/quotas">Quotas and limits</a>
-  for more information about message limits.
+  depending on the language. See the corresponding [client library
+  documentation](https://cloud.google.com/pubsub/docs/reference/libraries) for
+  more information. See [quotas and limits]
+  (https://cloud.google.com/pubsub/quotas) for more information about message
+  limits.
 
   ## Attributes
 
   *   `attributes` (*type:* `map()`, *default:* `nil`) - Attributes for this message. If this field is empty, the message must
-      contain non-empty data.
+      contain non-empty data. This can be used to filter messages on the
+      subscription.
   *   `data` (*type:* `String.t`, *default:* `nil`) - The message data field. If this field is empty, the message must contain
       at least one attribute.
   *   `messageId` (*type:* `String.t`, *default:* `nil`) - ID of this message, assigned by the server when the message is published.

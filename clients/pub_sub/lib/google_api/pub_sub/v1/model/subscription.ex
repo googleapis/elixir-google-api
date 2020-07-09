@@ -55,7 +55,8 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
       operations on the subscription. If `expiration_policy` is not set, a
       *default policy* with `ttl` of 31 days will be used. The minimum allowed
       value for `expiration_policy.ttl` is 1 day.
-  *   `filter` (*type:* `String.t`, *default:* `nil`) - An expression written in the Cloud Pub/Sub filter language. If non-empty,
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - An expression written in the Pub/Sub [filter
+      language](https://cloud.google.com/pubsub/docs/filtering). If non-empty,
       then only `PubsubMessage`s whose `attributes` field matches the filter are
       delivered on this subscription. If empty, then no messages are filtered
       out.
@@ -79,10 +80,8 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
   *   `retainAckedMessages` (*type:* `boolean()`, *default:* `nil`) - Indicates whether to retain acknowledged messages. If true, then
       messages are not expunged from the subscription's backlog, even if they are
       acknowledged, until they fall out of the `message_retention_duration`
-      window. This must be true if you would like to
-      <a
-      href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time">
-      Seek to a timestamp</a>.
+      window. This must be true if you would like to [Seek to a timestamp]
+      (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
   *   `retryPolicy` (*type:* `GoogleApi.PubSub.V1.Model.RetryPolicy.t`, *default:* `nil`) - A policy that specifies how Pub/Sub retries message delivery for this
       subscription.
 
