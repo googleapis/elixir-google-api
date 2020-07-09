@@ -31,7 +31,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdMob.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the publisher account to retrieve.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the publisher account to retrieve.
       Example: accounts/pub-9876543210987654
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
