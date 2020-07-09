@@ -320,7 +320,8 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:courseId` (*type:* `String.t`) - Restricts returned invitations to those for a course with the specified
           identifier.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero means no maximum.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. The default is 500 if unspecified or
+          `0`.
 
           The server may return fewer than the specified number of results.
       *   `:pageToken` (*type:* `String.t`) - nextPageToken
