@@ -513,6 +513,7 @@ defmodule GoogleApi.AccessApproval.V1.Api.Projects do
             <li>PENDING: Only pending requests.</li>
             <li>ACTIVE: Only active (i.e. currently approved) requests.</li>
             <li>DISMISSED: Only dismissed (including expired) requests.</li>
+            <li>HISTORY: Active and dismissed (including expired) requests.</li>
           </ol>
       *   `:pageSize` (*type:* `integer()`) - Requested page size.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return.
