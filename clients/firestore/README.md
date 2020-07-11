@@ -12,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_firestore, "~> 0.17"}]
+  [{:google_api_firestore, "~> 0.18"}]
 end
 ```
 
