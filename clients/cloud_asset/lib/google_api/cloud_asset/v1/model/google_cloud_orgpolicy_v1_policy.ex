@@ -26,6 +26,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1Policy do
   *   `constraint` (*type:* `String.t`, *default:* `nil`) - The name of the `Constraint` the `Policy` is configuring, for example,
       `constraints/serviceuser.services`.
 
+      A [list of available
+      constraints](/resource-manager/docs/organization-policy/org-policy-constraints)
+      is available.
+
       Immutable after creation.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - An opaque tag indicating the current version of the `Policy`, used for
       concurrency control.

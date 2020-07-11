@@ -41,6 +41,14 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
       See [this
       topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
       for a list of all supported asset types.
+  *   `condition` (*type:* `GoogleApi.CloudAsset.V1.Model.Expr.t`, *default:* `nil`) - A condition which determines whether an asset update should be published.
+      If specified, an asset will be returned only when the expression evaluates
+      to true.
+      When set, `expression` field in the `Expr` must be a valid [CEL expression]
+      (https://github.com/google/cel-spec) on a TemporalAsset with name
+      `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+      == true") will only publish Asset deletions. Other fields of `Expr` are
+      optional.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Asset content type. If not specified, no content but the asset name and
       type will be returned.
   *   `feedOutputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.FeedOutputConfig.t`, *default:* `nil`) - Required. Feed output configuration defining where the asset updates are
@@ -59,6 +67,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
   @type t :: %__MODULE__{
           :assetNames => list(String.t()),
           :assetTypes => list(String.t()),
+          :condition => GoogleApi.CloudAsset.V1.Model.Expr.t(),
           :contentType => String.t(),
           :feedOutputConfig => GoogleApi.CloudAsset.V1.Model.FeedOutputConfig.t(),
           :name => String.t()
@@ -66,6 +75,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Feed do
 
   field(:assetNames, type: :list)
   field(:assetTypes, type: :list)
+  field(:condition, as: GoogleApi.CloudAsset.V1.Model.Expr)
   field(:contentType)
   field(:feedOutputConfig, as: GoogleApi.CloudAsset.V1.Model.FeedOutputConfig)
   field(:name)

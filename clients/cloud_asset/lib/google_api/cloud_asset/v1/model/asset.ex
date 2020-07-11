@@ -21,12 +21,17 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
   [resource
   hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
   a resource outside the Google Cloud resource hierarchy (such as Google
-  Kubernetes Engine clusters and objects), or a Cloud IAM policy.
+  Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
+  See [Supported asset
+  types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+  for more information.
 
   ## Attributes
 
-  *   `accessLevel` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessLevel.t`, *default:* `nil`) - 
-  *   `accessPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessPolicy.t`, *default:* `nil`) - 
+  *   `accessLevel` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessLevel.t`, *default:* `nil`) - Please also refer to the [access level user
+      guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+  *   `accessPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1AccessPolicy.t`, *default:* `nil`) - Please also refer to the [access policy user
+      guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
   *   `ancestors` (*type:* `list(String.t)`, *default:* `nil`) - The ancestry path of an asset in Google Cloud [resource
       hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
       represented as a list of relative resource names. An ancestry path starts
@@ -60,7 +65,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.Asset do
       There can be more than one organization policy with different constraints
       set on a given resource.
   *   `resource` (*type:* `GoogleApi.CloudAsset.V1.Model.Resource.t`, *default:* `nil`) - A representation of the resource.
-  *   `servicePerimeter` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t`, *default:* `nil`) - 
+  *   `servicePerimeter` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ServicePerimeter.t`, *default:* `nil`) - Please also refer to the [service perimeter user
+      guide](https://cloud.google.com/vpc-service-controls/docs/overview).
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last update timestamp of an asset. update_time is updated when
       create/update/delete operation is performed.
   """

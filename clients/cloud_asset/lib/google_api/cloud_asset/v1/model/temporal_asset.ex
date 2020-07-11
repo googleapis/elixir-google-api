@@ -24,6 +24,9 @@ defmodule GoogleApi.CloudAsset.V1.Model.TemporalAsset do
 
   *   `asset` (*type:* `GoogleApi.CloudAsset.V1.Model.Asset.t`, *default:* `nil`) - An asset in Google Cloud.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Whether the asset has been deleted or not.
+  *   `priorAsset` (*type:* `GoogleApi.CloudAsset.V1.Model.Asset.t`, *default:* `nil`) - Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+      Currently this is only set for responses in Real-Time Feed.
+  *   `priorAssetState` (*type:* `String.t`, *default:* `nil`) - State of prior_asset.
   *   `window` (*type:* `GoogleApi.CloudAsset.V1.Model.TimeWindow.t`, *default:* `nil`) - The time window when the asset data and state was observed.
   """
 
@@ -32,11 +35,15 @@ defmodule GoogleApi.CloudAsset.V1.Model.TemporalAsset do
   @type t :: %__MODULE__{
           :asset => GoogleApi.CloudAsset.V1.Model.Asset.t(),
           :deleted => boolean(),
+          :priorAsset => GoogleApi.CloudAsset.V1.Model.Asset.t(),
+          :priorAssetState => String.t(),
           :window => GoogleApi.CloudAsset.V1.Model.TimeWindow.t()
         }
 
   field(:asset, as: GoogleApi.CloudAsset.V1.Model.Asset)
   field(:deleted)
+  field(:priorAsset, as: GoogleApi.CloudAsset.V1.Model.Asset)
+  field(:priorAssetState)
   field(:window, as: GoogleApi.CloudAsset.V1.Model.TimeWindow)
 end
 

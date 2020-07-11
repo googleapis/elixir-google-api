@@ -48,7 +48,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudOrgpolicyV1ListPolicy do
       is set to `ALL_VALUES_UNSPECIFIED`.
   *   `inheritFromParent` (*type:* `boolean()`, *default:* `nil`) - Determines the inheritance behavior for this `Policy`.
 
-      By default, a `ListPolicy` set at a resource supercedes any `Policy` set
+      By default, a `ListPolicy` set at a resource supersedes any `Policy` set
       anywhere up the resource hierarchy. However, if `inherit_from_parent` is
       set to `true`, then the values from the effective `Policy` of the parent
       resource are inherited, meaning the values set in this `Policy` are
