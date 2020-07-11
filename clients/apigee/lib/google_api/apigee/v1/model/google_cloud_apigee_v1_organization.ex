@@ -25,6 +25,17 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
       [Create an
       organization](https://docs.apigee.com/hybrid/latest/precog-provision).
   *   `attributes` (*type:* `list(String.t)`, *default:* `nil`) - Not used by Apigee.
+  *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Compute Engine network used for ServiceNetworking to
+      be peered with Apigee runtime instances. See
+      [Getting started with the Service Networking
+      API](https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started).
+      Valid only when [RuntimeType] is set to CLOUD. The value can be updated
+      only when there are no runtime instances.
+      For example: "default".
+
+      **Note:** Not supported for Apigee hybrid.
+  *   `caCertificate` (*type:* `String.t`, *default:* `nil`) - Output only. Base64-encoded public certificate for the root CA of the Apigee
+      organization. Valid only when [RuntimeType] is CLOUD.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time that the Apigee organization was created in milliseconds since epoch.
   *   `customerName` (*type:* `String.t`, *default:* `nil`) - Not used by Apigee.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the Apigee organization.
@@ -49,6 +60,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
   @type t :: %__MODULE__{
           :analyticsRegion => String.t(),
           :attributes => list(String.t()),
+          :authorizedNetwork => String.t(),
+          :caCertificate => String.t(),
           :createdAt => String.t(),
           :customerName => String.t(),
           :description => String.t(),
@@ -65,6 +78,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Organization do
 
   field(:analyticsRegion)
   field(:attributes, type: :list)
+  field(:authorizedNetwork)
+  field(:caCertificate)
   field(:createdAt)
   field(:customerName)
   field(:description)
