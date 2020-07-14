@@ -28,8 +28,6 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
   @doc """
   Sends new spans to new or existing traces. You cannot update
   existing spans.
-  In this case, writing traces is not considered an active developer
-  method since traces are machine generated.
 
   ## Parameters
 
@@ -100,13 +98,11 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
 
   @doc """
   Creates a new span.
-  In this case, writing traces is not considered an active developer
-  method since traces are machine generated.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudTrace.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the span in the following format:
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the span in the following format:
 
           projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/SPAN_ID is a unique identifier for a trace within a project;
       it is a 32-character hexadecimal encoding of a 16-byte array.

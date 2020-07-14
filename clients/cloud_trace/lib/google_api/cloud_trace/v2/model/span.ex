@@ -41,7 +41,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
       the local machine where the span execution ends. On the server side, this
       is the time when the server application handler stops running.
   *   `links` (*type:* `GoogleApi.CloudTrace.V2.Model.Links.t`, *default:* `nil`) - Links associated with the span. You can have up to 128 links per Span.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the span in the following format:
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the span in the following format:
 
           projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/SPAN_ID is a unique identifier for a trace within a project;
       it is a 32-character hexadecimal encoding of a 16-byte array.
@@ -55,7 +55,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
       Stackdriver Trace is unable to take advantage of this helpful
       information.
   *   `spanId` (*type:* `String.t`, *default:* `nil`) - Required. The [SPAN_ID] portion of the span's resource name.
-  *   `spanKind` (*type:* `String.t`, *default:* `nil`) - Distinguishes between spans generated in a particular context. For example,
+  *   `spanKind` (*type:* `String.t`, *default:* `nil`) - Optional. Distinguishes between spans generated in a particular context. For example,
       two spans with the same name may be distinguished using `CLIENT` (caller)
       and `SERVER` (callee) to identify an RPC call.
   *   `stackTrace` (*type:* `GoogleApi.CloudTrace.V2.Model.StackTrace.t`, *default:* `nil`) - Stack trace captured at the start of the span.
