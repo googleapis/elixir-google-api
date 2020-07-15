@@ -17,12 +17,21 @@
 
 defmodule GoogleApi.IAM.V1.Model.SignJwtResponse do
   @moduledoc """
+  Deprecated. [Migrate to Service Account Credentials
+  API](https://cloud.google.com/iam/help/credentials/migrate-api).
+
   The service account sign JWT response.
 
   ## Attributes
 
-  *   `keyId` (*type:* `String.t`, *default:* `nil`) - The id of the key used to sign the JWT.
-  *   `signedJwt` (*type:* `String.t`, *default:* `nil`) - The signed JWT.
+  *   `keyId` (*type:* `String.t`, *default:* `nil`) - Deprecated. [Migrate to Service Account Credentials
+      API](https://cloud.google.com/iam/help/credentials/migrate-api).
+
+      The id of the key used to sign the JWT.
+  *   `signedJwt` (*type:* `String.t`, *default:* `nil`) - Deprecated. [Migrate to Service Account Credentials
+      API](https://cloud.google.com/iam/help/credentials/migrate-api).
+
+      The signed JWT.
   """
 
   use GoogleApi.Gax.ModelBase
