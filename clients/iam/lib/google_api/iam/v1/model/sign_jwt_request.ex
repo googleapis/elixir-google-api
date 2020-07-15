@@ -17,11 +17,17 @@
 
 defmodule GoogleApi.IAM.V1.Model.SignJwtRequest do
   @moduledoc """
+  Deprecated. [Migrate to Service Account Credentials
+  API](https://cloud.google.com/iam/help/credentials/migrate-api).
+
   The service account sign JWT request.
 
   ## Attributes
 
-  *   `payload` (*type:* `String.t`, *default:* `nil`) - Required. The JWT payload to sign. Must be a serialized JSON object that contains a
+  *   `payload` (*type:* `String.t`, *default:* `nil`) - Required. Deprecated. [Migrate to Service Account Credentials
+      API](https://cloud.google.com/iam/help/credentials/migrate-api).
+
+      The JWT payload to sign. Must be a serialized JSON object that contains a
       JWT Claims Set. For example: `{"sub": "user@example.com", "iat": 313435}`
 
       If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
