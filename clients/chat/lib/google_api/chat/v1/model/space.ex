@@ -22,6 +22,8 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name (only if the space is a room).
+      Please note that this field might not be populated in direct messages
+      between humans.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the space, in the form "spaces/*".
 
       Example: spaces/AAAAMpdlehYs

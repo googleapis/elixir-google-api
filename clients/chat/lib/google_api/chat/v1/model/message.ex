@@ -25,6 +25,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
       posted.
   *   `annotations` (*type:* `list(GoogleApi.Chat.V1.Model.Annotation.t)`, *default:* `nil`) - Output only. Annotations associated with the text in this message.
   *   `argumentText` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message with all bot mentions stripped out.
+  *   `attachment` (*type:* `list(GoogleApi.Chat.V1.Model.Attachment.t)`, *default:* `nil`) - User uploaded attachment.
   *   `cards` (*type:* `list(GoogleApi.Chat.V1.Model.Card.t)`, *default:* `nil`) - Rich, formatted and interactive cards that can be used to display UI
       elements such as: formatted texts, buttons, clickable images. Cards are
       normally displayed below the plain-text body of the message.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
           :actionResponse => GoogleApi.Chat.V1.Model.ActionResponse.t(),
           :annotations => list(GoogleApi.Chat.V1.Model.Annotation.t()),
           :argumentText => String.t(),
+          :attachment => list(GoogleApi.Chat.V1.Model.Attachment.t()),
           :cards => list(GoogleApi.Chat.V1.Model.Card.t()),
           :createTime => DateTime.t(),
           :fallbackText => String.t(),
@@ -64,6 +66,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   field(:actionResponse, as: GoogleApi.Chat.V1.Model.ActionResponse)
   field(:annotations, as: GoogleApi.Chat.V1.Model.Annotation, type: :list)
   field(:argumentText)
+  field(:attachment, as: GoogleApi.Chat.V1.Model.Attachment, type: :list)
   field(:cards, as: GoogleApi.Chat.V1.Model.Card, type: :list)
   field(:createTime, as: DateTime)
   field(:fallbackText)
