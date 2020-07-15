@@ -1,8 +1,8 @@
 # GoogleApi.SearchConsole
 
-Google Search Console URL Testing Tools API client library.
+Google Search Console API client library.
 
-Provides tools for running validation tests against single URLs
+The Search Console API provides access to both Search Console data (verified users only) and to public information on an URL basis (anyone)
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_search_console, "~> 0.10"}]
+  [{:google_api_search_console, "~> 0.11"}]
 end
 ```
 

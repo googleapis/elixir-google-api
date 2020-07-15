@@ -18,7 +18,7 @@
 defmodule GoogleApi.SearchConsole.Mixfile do
   use Mix.Project
 
-  @version "0.10.2"
+  @version "0.11.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.SearchConsole.Mixfile do
 
   defp description() do
     """
-    Google Search Console URL Testing Tools API client library. Provides tools for running validation tests against single URLs
+    Google Search Console API client library. The Search Console API provides access to both Search Console data (verified users only) and to public information on an URL basis (anyone)
     """
   end
 
