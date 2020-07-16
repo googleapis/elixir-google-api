@@ -89,6 +89,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
       - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
       - "1.X.Y-gke.N": picks an explicit Kubernetes version
       - "-": picks the Kubernetes master version
+  *   `desiredReleaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - The desired release channel configuration.
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
   *   `desiredVerticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
@@ -114,6 +115,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredNodePoolAutoscaling => GoogleApi.Container.V1.Model.NodePoolAutoscaling.t(),
           :desiredNodePoolId => String.t(),
           :desiredNodeVersion => String.t(),
+          :desiredReleaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t(),
           :desiredResourceUsageExportConfig =>
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t(),
           :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t(),
@@ -145,6 +147,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredNodePoolAutoscaling, as: GoogleApi.Container.V1.Model.NodePoolAutoscaling)
   field(:desiredNodePoolId)
   field(:desiredNodeVersion)
+  field(:desiredReleaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
 
   field(:desiredResourceUsageExportConfig,
     as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig
