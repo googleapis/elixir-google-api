@@ -21,9 +21,13 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneForwardingConfigNameServerTarget do
 
   ## Attributes
 
-  *   `forwardingPath` (*type:* `String.t`, *default:* `nil`) - 
-  *   `ipv4Address` (*type:* `String.t`, *default:* `nil`) - 
-  *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneForwardingConfigNameServerTarget`) - Identifies what kind of resource this is. Value: the fixed string "dns#managedZoneForwardingConfigNameServerTarget".
+  *   `forwardingPath` (*type:* `String.t`, *default:* `nil`) - Forwarding path for this NameServerTarget, if unset or set to DEFAULT,
+      Cloud DNS will make forwarding decision based on address ranges,
+      i.e. RFC1918 addresses go to the VPC, Non-RFC1918 addresses go to the
+      Internet. When set to PRIVATE, Cloud DNS will always send queries
+      through VPC for this target
+  *   `ipv4Address` (*type:* `String.t`, *default:* `nil`) - IPv4 address of a target name server.
+  *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneForwardingConfigNameServerTarget`) - 
   """
 
   use GoogleApi.Gax.ModelBase
