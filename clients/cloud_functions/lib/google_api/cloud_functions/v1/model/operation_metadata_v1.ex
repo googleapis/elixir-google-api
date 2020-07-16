@@ -21,6 +21,8 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
 
   ## Attributes
 
+  *   `buildId` (*type:* `String.t`, *default:* `nil`) - The Cloud Build ID of the function created or updated by an API call.
+      This field is only populated for Create and Update operations.
   *   `request` (*type:* `map()`, *default:* `nil`) - The original request that started the operation.
   *   `target` (*type:* `String.t`, *default:* `nil`) - Target of the operation - for example
       projects/project-1/locations/region-1/functions/function-1
@@ -33,6 +35,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :buildId => String.t(),
           :request => map(),
           :target => String.t(),
           :type => String.t(),
@@ -40,6 +43,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OperationMetadataV1 do
           :versionId => String.t()
         }
 
+  field(:buildId)
   field(:request, type: :map)
   field(:target)
   field(:type)
