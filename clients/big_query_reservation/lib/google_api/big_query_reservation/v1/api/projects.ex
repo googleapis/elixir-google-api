@@ -117,6 +117,110 @@ defmodule GoogleApi.BigQueryReservation.V1.Api.Projects do
   3. Parent here is `projects/*/locations/*`, instead of
      `projects/*/locations/*reservations/*`.
 
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.BigQueryReservation.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The resource name with location (project name could be the wildcard '-'),
+      e.g.:
+        `projects/-/locations/US`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return per page.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any.
+      *   `:query` (*type:* `String.t`) - Please specify resource name as assignee in the query.
+
+          Examples:
+
+          * `assignee=projects/myproject`
+          * `assignee=folders/123`
+          * `assignee=organizations/456`
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.BigQueryReservation.V1.Model.SearchAllAssignmentsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec bigqueryreservation_projects_locations_search_all_assignments(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.BigQueryReservation.V1.Model.SearchAllAssignmentsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def bigqueryreservation_projects_locations_search_all_assignments(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :query => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}:searchAllAssignments", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.BigQueryReservation.V1.Model.SearchAllAssignmentsResponse{}]
+    )
+  end
+
+  @doc """
+  Looks up assignments for a specified resource for a particular region.
+  If the request is about a project:
+
+  1. Assignments created on the project will be returned if they exist.
+  2. Otherwise assignments created on the closest ancestor will be
+     returned.
+  3. Assignments for different JobTypes will all be returned.
+
+  The same logic applies if the request is about a folder.
+
+  If the request is about an organization, then assignments created on the
+  organization will be returned (organization doesn't have ancestors).
+
+  Comparing to ListAssignments, there are some behavior
+  differences:
+
+  1. permission on the assignee will be verified in this API.
+  2. Hierarchy lookup (project->folder->organization) happens in this API.
+  3. Parent here is `projects/*/locations/*`, instead of
+     `projects/*/locations/*reservations/*`.
+
   **Note** "-" cannot be used for projects
   nor locations.
 

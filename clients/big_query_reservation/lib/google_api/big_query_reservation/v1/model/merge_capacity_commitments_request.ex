@@ -24,6 +24,8 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.MergeCapacityCommitmentsRequest
   *   `capacityCommitmentIds` (*type:* `list(String.t)`, *default:* `nil`) - Ids of capacity commitments to merge.
       These capacity commitments must exist under admin project and location
       specified in the parent.
+      ID is the last portion of capacity commitment name e.g., 'abc' for
+      projects/myproject/locations/US/capacityCommitments/abc
   """
 
   use GoogleApi.Gax.ModelBase
