@@ -25,8 +25,8 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
       to messages published on this topic.
 
       The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - See <a href="https://cloud.google.com/pubsub/docs/labels"> Creating and
-      managing labels</a>.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - See [Creating and managing labels]
+      (https://cloud.google.com/pubsub/docs/labels).
   *   `messageStoragePolicy` (*type:* `GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t`, *default:* `nil`) - Policy constraining the set of Google Cloud Platform regions where messages
       published to the topic may be stored. If not present, then no constraints
       are in effect.
