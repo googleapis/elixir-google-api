@@ -25,13 +25,14 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
   *   `additionalApks` (*type:* `list(GoogleApi.Testing.V1.Model.Apk.t)`, *default:* `nil`) - APKs to install in addition to those being directly tested.
       Currently capped at 100.
   *   `directoriesToPull` (*type:* `list(String.t)`, *default:* `nil`) - List of directories on the device to upload to GCS at the end of the test;
-      they must be absolute paths under /sdcard or /data/local/tmp.
+      they must be absolute paths under /sdcard, /storage or /data/local/tmp.
       Path names are restricted to characters a-z A-Z 0-9 _ - . + and /
 
       Note: The paths /sdcard and /data will be made available and treated as
       implicit path substitutions. E.g. if /sdcard on a particular device does
       not map to external storage, the system will replace it with the external
       storage path prefix for that device.
+  *   `dontAutograntPermissions` (*type:* `boolean()`, *default:* `nil`) - Whether to prevent all runtime permissions to be granted at app install
   *   `environmentVariables` (*type:* `list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t)`, *default:* `nil`) - Environment variables to set for the test (only applicable for
       instrumentation tests).
   *   `filesToPush` (*type:* `list(GoogleApi.Testing.V1.Model.DeviceFile.t)`, *default:* `nil`) - List of files to push to the device before starting the test.
@@ -51,6 +52,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
           :account => GoogleApi.Testing.V1.Model.Account.t(),
           :additionalApks => list(GoogleApi.Testing.V1.Model.Apk.t()),
           :directoriesToPull => list(String.t()),
+          :dontAutograntPermissions => boolean(),
           :environmentVariables => list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t()),
           :filesToPush => list(GoogleApi.Testing.V1.Model.DeviceFile.t()),
           :networkProfile => String.t(),
@@ -60,6 +62,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
   field(:account, as: GoogleApi.Testing.V1.Model.Account)
   field(:additionalApks, as: GoogleApi.Testing.V1.Model.Apk, type: :list)
   field(:directoriesToPull, type: :list)
+  field(:dontAutograntPermissions)
   field(:environmentVariables, as: GoogleApi.Testing.V1.Model.EnvironmentVariable, type: :list)
   field(:filesToPush, as: GoogleApi.Testing.V1.Model.DeviceFile, type: :list)
   field(:networkProfile)

@@ -25,7 +25,9 @@ defmodule GoogleApi.Testing.V1.Model.UniformSharding do
 
   ## Attributes
 
-  *   `numShards` (*type:* `integer()`, *default:* `nil`) - Required. Total number of shards. The number must be >= 1 and <= 50.
+  *   `numShards` (*type:* `integer()`, *default:* `nil`) - Required. Total number of shards. When any physical devices are selected,
+      the number must be >= 1 and <= 50. When no physical devices are selected,
+      the number must be >= 1 and <= 250.
   """
 
   use GoogleApi.Gax.ModelBase
