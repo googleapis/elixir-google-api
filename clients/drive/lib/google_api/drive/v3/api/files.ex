@@ -26,7 +26,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a copy of a file and applies any requested updates with patch semantics.
+  Creates a copy of a file and applies any requested updates with patch semantics. Folders cannot be copied.
 
   ## Parameters
 
@@ -643,7 +643,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:corpora` (*type:* `String.t`) - Bodies of items (files/documents) to which the query applies. Supported bodies are 'user', 'domain', 'drive' and 'allDrives'. Prefer 'user' or 'drive' to 'allDrives' for efficiency.
+      *   `:corpora` (*type:* `String.t`) - Groupings of files to which the query applies. Supported groupings are: 'user' (files created by, opened by, or shared directly with the user), 'drive' (files in the specified shared drive as indicated by the 'driveId'), 'domain' (files shared to the user's domain), and 'allDrives' (A combination of 'user' and 'drive' for all drives where the user is a member). When able, use 'user' or 'drive', instead of 'allDrives', for efficiency.
       *   `:corpus` (*type:* `String.t`) - The source of files to list. Deprecated: use 'corpora' instead.
       *   `:driveId` (*type:* `String.t`) - ID of the shared drive to search.
       *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Whether both My Drive and shared drive items should be included in results.
@@ -702,7 +702,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Updates a file's metadata and/or content with patch semantics.
+  Updates a file's metadata and/or content. This method supports patch semantics.
 
   ## Parameters
 
@@ -769,7 +769,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Updates a file's metadata and/or content with patch semantics.
+  Updates a file's metadata and/or content. This method supports patch semantics.
 
   ## Parameters
 
@@ -855,7 +855,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Updates a file's metadata and/or content with patch semantics.
+  Updates a file's metadata and/or content. This method supports patch semantics.
 
   ## Parameters
 
@@ -935,7 +935,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   end
 
   @doc """
-  Updates a file's metadata and/or content with patch semantics.
+  Updates a file's metadata and/or content. This method supports patch semantics.
 
   ## Parameters
 

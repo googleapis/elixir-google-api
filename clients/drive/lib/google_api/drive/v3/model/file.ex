@@ -29,6 +29,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
       If an unsupported color is specified, the closest color in the palette will be used instead.
   *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the file was modified by anyone (RFC 3339 date-time).
       Note that setting modifiedTime will also update modifiedByMeTime for the user.
+  *   `contentRestrictions` (*type:* `list(GoogleApi.Drive.V3.Model.ContentRestriction.t)`, *default:* `nil`) - Restrictions for accessing the content of the file. Only populated if such a restriction exists.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the file's content in bytes. This is only applicable to files with binary content in Google Drive.
   *   `spaces` (*type:* `list(String.t)`, *default:* `nil`) - The list of spaces which contain the file. The currently supported values are 'drive', 'appDataFolder' and 'photos'.
   *   `trashingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - If the file has been explicitly trashed, the user who trashed it. Only populated for items in shared drives.
@@ -64,7 +65,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `teamDriveId` (*type:* `String.t`, *default:* `nil`) - Deprecated - use driveId instead.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the file.
   *   `shared` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been shared. Not populated for items in shared drives.
-  *   `trashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been trashed, either explicitly or from a trashed parent folder. Only the owner may trash a file, and other users cannot see files in the owner's trash.
+  *   `trashed` (*type:* `boolean()`, *default:* `nil`) - Whether the file has been trashed, either explicitly or from a trashed parent folder. Only the owner may trash a file. The trashed item is excluded from all files.list responses returned for any user who does not own the file. However, all users with access to the file can see the trashed item metadata in an API response. All users with access can copy, download, export, and share the file.
   *   `appProperties` (*type:* `map()`, *default:* `nil`) - A collection of arbitrary key-value pairs which are private to the requesting app.
       Entries with null values are cleared in update and copy requests.
   *   `isAppAuthorized` (*type:* `boolean()`, *default:* `nil`) - Whether the file was created or opened by the requesting app.
@@ -95,6 +96,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
           :fullFileExtension => String.t(),
           :folderColorRgb => String.t(),
           :modifiedTime => DateTime.t(),
+          :contentRestrictions => list(GoogleApi.Drive.V3.Model.ContentRestriction.t()),
           :size => String.t(),
           :spaces => list(String.t()),
           :trashingUser => GoogleApi.Drive.V3.Model.User.t(),
@@ -153,6 +155,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   field(:fullFileExtension)
   field(:folderColorRgb)
   field(:modifiedTime, as: DateTime)
+  field(:contentRestrictions, as: GoogleApi.Drive.V3.Model.ContentRestriction, type: :list)
   field(:size)
   field(:spaces, type: :list)
   field(:trashingUser, as: GoogleApi.Drive.V3.Model.User)
