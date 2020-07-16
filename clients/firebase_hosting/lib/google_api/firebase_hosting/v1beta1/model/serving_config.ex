@@ -18,20 +18,24 @@
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.ServingConfig do
   @moduledoc """
   The configuration for how incoming requests to a site should be routed and
-  processed before serving content. The patterns are matched and applied
-  according to a specific
+  processed before serving content. The URL request paths are matched against
+  the specified URL patterns in the configuration, then Hosting applies the
+  applicable configuration according to a specific
   [priority order](/docs/hosting/full-config#hosting_priority_order).
 
   ## Attributes
 
   *   `appAssociation` (*type:* `String.t`, *default:* `nil`) - How to handle well known App Association files.
   *   `cleanUrls` (*type:* `boolean()`, *default:* `nil`) - Defines whether to drop the file extension from uploaded files.
-  *   `headers` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Header.t)`, *default:* `nil`) - A list of custom response headers that are added to the content if the
-      request URL path matches the glob.
-  *   `redirects` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Redirect.t)`, *default:* `nil`) - A list of globs that will cause the response to redirect to another
-      location.
-  *   `rewrites` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite.t)`, *default:* `nil`) - A list of rewrites that will act as if the service were given the
-      destination URL.
+  *   `headers` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Header.t)`, *default:* `nil`) - An array of objects, where each object specifies a URL pattern that, if
+      matched to the request URL path, triggers Hosting to apply the specified
+      custom response headers.
+  *   `redirects` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Redirect.t)`, *default:* `nil`) - An array of objects (called redirect rules), where each rule specifies a
+      URL pattern that, if matched to the request URL path, triggers Hosting to
+      respond with a redirect to the specified destination path.
+  *   `rewrites` (*type:* `list(GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite.t)`, *default:* `nil`) - An array of objects (called rewrite rules), where each rule specifies a URL
+      pattern that, if matched to the request URL path, triggers Hosting to
+      respond as if the service were given the specified destination URL.
   *   `trailingSlashBehavior` (*type:* `String.t`, *default:* `nil`) - Defines how to handle a trailing slash in the URL path.
   """
 

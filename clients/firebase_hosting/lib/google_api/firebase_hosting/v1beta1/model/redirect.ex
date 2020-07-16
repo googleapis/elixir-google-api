@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Redirect do
   @moduledoc """
-  A [`redirect`](/docs/hosting/full-config#redirects) represents the
-  configuration for returning an HTTP redirect response given a matching
-  request URL path.
+  A [`redirect`](/docs/hosting/full-config#redirects) object specifies a URL
+  pattern that, if matched to the request URL path, triggers Hosting to
+  respond with a redirect to the specified destination path.
 
   ## Attributes
 
-  *   `glob` (*type:* `String.t`, *default:* `nil`) - The user-supplied [glob
-      pattern](/docs/hosting/full-config#glob_pattern_matching) to match
+  *   `glob` (*type:* `String.t`, *default:* `nil`) - The user-supplied
+      [glob](/docs/hosting/full-config#glob_pattern_matching) to match
       against the request URL path.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Required. The value to put in the HTTP location header of the response.
       <br>The location can contain capture group values from the pattern using
