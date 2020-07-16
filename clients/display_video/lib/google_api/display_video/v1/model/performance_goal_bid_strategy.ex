@@ -30,9 +30,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PerformanceGoalBidStrategy do
 
       For example, 1500000 represents 1.5 standard units of the currency.
   *   `performanceGoalAmountMicros` (*type:* `String.t`, *default:* `nil`) - Required. The performance goal the bidding strategy will attempt to
-      meet or beat, in micros of the advertiser's currency.
-      Must be greater than or equal to a billable unit of the given currency and
-      smaller or equal to upper bounds. Each
+      meet or beat, in micros of the advertiser's currency or in micro of the
+      ROAS (Return On Advertising Spend) value which is also based on
+      advertiser's currency. Must be greater than or equal to a billable unit of
+      the given currency and smaller or equal to upper bounds. Each
       performance_goal_type
       has its upper bound:
 
@@ -48,6 +49,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PerformanceGoalBidStrategy do
       performance_goal_type
       is `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_VIEWABLE_CPM`, upper bound is
       1000.00 USD.
+      * when
+      performance_goal_type
+      is `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CUSTOM_ALGO`, upper bound is
+      1000.00 and lower bound is 0.01.
 
       Example: If set to
       `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_VIEWABLE_CPM`, the bid price will
@@ -55,7 +60,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PerformanceGoalBidStrategy do
       viewable. For example, if viewable CPM target is $2 and an impression is
       40% likely to be viewable, the bid price will be $0.80 CPM (40% of $2).
 
-      For example, 1500000 represents 1.5 standard units of the currency.
+      For example, 1500000 represents 1.5 standard units of the currency or ROAS
+      value.
   *   `performanceGoalType` (*type:* `String.t`, *default:* `nil`) - Required. The type of the performance goal that the bidding strategy
       will try to meet or beat.
 
@@ -63,7 +69,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.PerformanceGoalBidStrategy do
 
       * `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPA`
       * `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CPC`
-      * `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_VIEWABLE_CPM`.
+      * `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_VIEWABLE_CPM`
+      * `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CUSTOM_ALGO`.
   """
 
   use GoogleApi.Gax.ModelBase

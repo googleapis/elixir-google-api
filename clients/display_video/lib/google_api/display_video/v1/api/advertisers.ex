@@ -1312,8 +1312,6 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Updates an existing inventory source.
-  Returns the updated inventory source if successful.
   Gets a channel for a partner or advertiser.
 
   ## Parameters
@@ -3270,7 +3268,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
               - `campaignId`
               - `insertionOrderId`
               - `entityStatus`
-              - `lineItemType`.
+              - `lineItemType`
 
           Examples:
 
@@ -3287,6 +3285,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
 
           * "displayName" (default)
           * "entityStatus"
+          * “flight.dateRange.endDate”
 
           The default sorting order is ascending. To specify descending order for
           a field, a suffix "desc" should be added to the field name. Example:
