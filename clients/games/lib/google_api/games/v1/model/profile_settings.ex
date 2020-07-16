@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.Games.V1.Model.ProfileSettings do
   @moduledoc """
-  This is a JSON template for profile settings
+  Profile settings
 
   ## Attributes
 
-  *   `friendsListVisibility` (*type:* `String.t`, *default:* `nil`) - Whether the player's friends list is visible to the game.
-  *   `kind` (*type:* `String.t`, *default:* `games#profileSettings`) - Uniquely identifies the type of this resource. Value is always the fixed string games#profileSettings.
-  *   `profileVisible` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `friendsListVisibility` (*type:* `String.t`, *default:* `nil`) - 
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#profileSettings`.
+  *   `profileVisible` (*type:* `boolean()`, *default:* `nil`) - Whether the player's profile is visible to the currently signed in player.
   """
 
   use GoogleApi.Gax.ModelBase

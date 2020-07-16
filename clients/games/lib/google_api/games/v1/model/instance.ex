@@ -17,20 +17,17 @@
 
 defmodule GoogleApi.Games.V1.Model.Instance do
   @moduledoc """
-  This is a JSON template for the Instance resource.
+  The Instance resource.
 
   ## Attributes
 
   *   `acquisitionUri` (*type:* `String.t`, *default:* `nil`) - URI which shows where a user can acquire this instance.
   *   `androidInstance` (*type:* `GoogleApi.Games.V1.Model.InstanceAndroidDetails.t`, *default:* `nil`) - Platform dependent details for Android.
   *   `iosInstance` (*type:* `GoogleApi.Games.V1.Model.InstanceIosDetails.t`, *default:* `nil`) - Platform dependent details for iOS.
-  *   `kind` (*type:* `String.t`, *default:* `games#instance`) - Uniquely identifies the type of this resource. Value is always the fixed string games#instance.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#instance`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Localized display name.
   *   `platformType` (*type:* `String.t`, *default:* `nil`) - The platform type.
-      Possible values are:  
-      - "ANDROID" - Instance is for Android. 
-      - "IOS" - Instance is for iOS 
-      - "WEB_APP" - Instance is for Web App.
   *   `realtimePlay` (*type:* `boolean()`, *default:* `nil`) - Flag to show if this game instance supports realtime play.
   *   `turnBasedPlay` (*type:* `boolean()`, *default:* `nil`) - Flag to show if this game instance supports turn based play.
   *   `webInstance` (*type:* `GoogleApi.Games.V1.Model.InstanceWebDetails.t`, *default:* `nil`) - Platform dependent details for Web.

@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.ImageAsset do
   @moduledoc """
-  This is a JSON template for an image asset object.
+  An image asset object.
 
   ## Attributes
 
   *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the asset.
-  *   `kind` (*type:* `String.t`, *default:* `games#imageAsset`) - Uniquely identifies the type of this resource. Value is always the fixed string games#imageAsset.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#imageAsset`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the asset.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the asset.
   *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the asset.

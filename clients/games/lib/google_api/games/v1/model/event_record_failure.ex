@@ -17,16 +17,14 @@
 
 defmodule GoogleApi.Games.V1.Model.EventRecordFailure do
   @moduledoc """
-  This is a JSON template for an event update failure resource.
+  An event update failure resource.
 
   ## Attributes
 
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - The ID of the event that was not updated.
   *   `failureCause` (*type:* `String.t`, *default:* `nil`) - The cause for the update failure.
-      Possible values are:  
-      - "NOT_FOUND" - An attempt was made to set an event that was not defined. 
-      - "INVALID_UPDATE_VALUE" - An attempt was made to increment an event by a non-positive value.
-  *   `kind` (*type:* `String.t`, *default:* `games#eventRecordFailure`) - Uniquely identifies the type of this resource. Value is always the fixed string games#eventRecordFailure.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#eventRecordFailure`.
   """
 
   use GoogleApi.Gax.ModelBase

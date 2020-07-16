@@ -17,13 +17,16 @@
 
 defmodule GoogleApi.Games.V1.Model.PlayerEvent do
   @moduledoc """
-  This is a JSON template for an event status resource.
+  An event status resource.
 
   ## Attributes
 
   *   `definitionId` (*type:* `String.t`, *default:* `nil`) - The ID of the event definition.
-  *   `formattedNumEvents` (*type:* `String.t`, *default:* `nil`) - The current number of times this event has occurred, as a string. The formatting of this string depends on the configuration of your event in the Play Games Developer Console.
-  *   `kind` (*type:* `String.t`, *default:* `games#playerEvent`) - Uniquely identifies the type of this resource. Value is always the fixed string games#playerEvent.
+  *   `formattedNumEvents` (*type:* `String.t`, *default:* `nil`) - The current number of times this event has occurred, as a string. The
+      formatting of this string depends on the configuration of your event in the
+      Play Games Developer Console.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#playerEvent`.
   *   `numEvents` (*type:* `String.t`, *default:* `nil`) - The current number of times this event has occurred.
   *   `playerId` (*type:* `String.t`, *default:* `nil`) - The ID of the player.
   """

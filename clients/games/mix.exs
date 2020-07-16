@@ -18,7 +18,7 @@
 defmodule GoogleApi.Games.Mixfile do
   use Mix.Project
 
-  @version "0.13.0"
+  @version "0.14.0"
 
   def project() do
     [
@@ -48,7 +48,8 @@ defmodule GoogleApi.Games.Mixfile do
 
   defp description() do
     """
-    Google Play Game Services API client library. The API for Google Play Game Services.
+    Google Play Game Services client library. The Google Play games service allows developers to enhance games with social leaderboards,
+    achievements, game state, sign-in with Google, and more.
     """
   end
 
@@ -59,7 +60,7 @@ defmodule GoogleApi.Games.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/games",
-        "Homepage" => "https://developers.google.com/games/services/"
+        "Homepage" => "https://developers.google.com/games/"
       }
     ]
   end

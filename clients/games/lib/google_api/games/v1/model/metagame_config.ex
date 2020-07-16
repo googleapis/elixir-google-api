@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.Games.V1.Model.MetagameConfig do
   @moduledoc """
-  This is a JSON template for the metagame config resource
+  The metagame config resource
 
   ## Attributes
 
-  *   `currentVersion` (*type:* `integer()`, *default:* `nil`) - Current version of the metagame configuration data. When this data is updated, the version number will be increased by one.
-  *   `kind` (*type:* `String.t`, *default:* `games#metagameConfig`) - Uniquely identifies the type of this resource. Value is always the fixed string games#metagameConfig.
+  *   `currentVersion` (*type:* `integer()`, *default:* `nil`) - Current version of the metagame configuration data. When this data is
+      updated, the version number will be increased by one.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#metagameConfig`.
   *   `playerLevels` (*type:* `list(GoogleApi.Games.V1.Model.PlayerLevel.t)`, *default:* `nil`) - The list of player levels.
   """
 

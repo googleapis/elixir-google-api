@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Games.V1.Model.Application do
   @moduledoc """
-  This is a JSON template for the Application resource.
+  The Application resource.
 
   ## Attributes
 
@@ -27,15 +27,15 @@ defmodule GoogleApi.Games.V1.Model.Application do
   *   `category` (*type:* `GoogleApi.Games.V1.Model.ApplicationCategory.t`, *default:* `nil`) - The category of the application.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the application.
   *   `enabledFeatures` (*type:* `list(String.t)`, *default:* `nil`) - A list of features that have been enabled for the application.
-      Possible values are:  
-      - "SNAPSHOTS" - Snapshots has been enabled
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the application.
   *   `instances` (*type:* `list(GoogleApi.Games.V1.Model.Instance.t)`, *default:* `nil`) - The instances of the application.
-  *   `kind` (*type:* `String.t`, *default:* `games#application`) - Uniquely identifies the type of this resource. Value is always the fixed string games#application.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#application`.
   *   `lastUpdatedTimestamp` (*type:* `String.t`, *default:* `nil`) - The last updated timestamp of the application.
   *   `leaderboard_count` (*type:* `integer()`, *default:* `nil`) - The number of leaderboards visible to the currently authenticated player.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the application.
-  *   `themeColor` (*type:* `String.t`, *default:* `nil`) - A hint to the client UI for what color to use as an app-themed color. The color is given as an RGB triplet (e.g. "E0E0E0").
+  *   `themeColor` (*type:* `String.t`, *default:* `nil`) - A hint to the client UI for what color to use as an app-themed color. The
+      color is given as an RGB triplet (e.g. "E0E0E0").
   """
 
   use GoogleApi.Gax.ModelBase

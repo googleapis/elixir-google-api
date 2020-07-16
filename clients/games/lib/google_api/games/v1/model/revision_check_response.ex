@@ -17,17 +17,15 @@
 
 defmodule GoogleApi.Games.V1.Model.RevisionCheckResponse do
   @moduledoc """
-  This is a JSON template for the result of checking a revision.
+  A third party checking a revision response.
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API this client revision should use when calling API methods.
-  *   `kind` (*type:* `String.t`, *default:* `games#revisionCheckResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#revisionCheckResponse.
+  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API this client revision should use when calling API
+      methods.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#revisionCheckResponse`.
   *   `revisionStatus` (*type:* `String.t`, *default:* `nil`) - The result of the revision check.
-      Possible values are:  
-      - "OK" - The revision being used is current. 
-      - "DEPRECATED" - There is currently a newer version available, but the revision being used still works. 
-      - "INVALID" - The revision being used is not supported in any released version.
   """
 
   use GoogleApi.Gax.ModelBase
