@@ -32,12 +32,14 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   *   `checkIntervalSec` (*type:* `integer()`, *default:* `nil`) - How often (in seconds) to send a health check. The default value is 5 seconds.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in 3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `grpcHealthCheck` (*type:* `GoogleApi.Compute.V1.Model.GRPCHealthCheck.t`, *default:* `nil`) - 
   *   `healthyThreshold` (*type:* `integer()`, *default:* `nil`) - A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
   *   `http2HealthCheck` (*type:* `GoogleApi.Compute.V1.Model.HTTP2HealthCheck.t`, *default:* `nil`) - 
   *   `httpHealthCheck` (*type:* `GoogleApi.Compute.V1.Model.HTTPHealthCheck.t`, *default:* `nil`) - 
   *   `httpsHealthCheck` (*type:* `GoogleApi.Compute.V1.Model.HTTPSHealthCheck.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#healthCheck`) - Type of the resource.
+  *   `logConfig` (*type:* `GoogleApi.Compute.V1.Model.HealthCheckLogConfig.t`, *default:* `nil`) - Configure logging on this health check.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] Region where the health check resides. Not applicable to global health checks.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
@@ -54,12 +56,14 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
           :checkIntervalSec => integer(),
           :creationTimestamp => String.t(),
           :description => String.t(),
+          :grpcHealthCheck => GoogleApi.Compute.V1.Model.GRPCHealthCheck.t(),
           :healthyThreshold => integer(),
           :http2HealthCheck => GoogleApi.Compute.V1.Model.HTTP2HealthCheck.t(),
           :httpHealthCheck => GoogleApi.Compute.V1.Model.HTTPHealthCheck.t(),
           :httpsHealthCheck => GoogleApi.Compute.V1.Model.HTTPSHealthCheck.t(),
           :id => String.t(),
           :kind => String.t(),
+          :logConfig => GoogleApi.Compute.V1.Model.HealthCheckLogConfig.t(),
           :name => String.t(),
           :region => String.t(),
           :selfLink => String.t(),
@@ -73,12 +77,14 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   field(:checkIntervalSec)
   field(:creationTimestamp)
   field(:description)
+  field(:grpcHealthCheck, as: GoogleApi.Compute.V1.Model.GRPCHealthCheck)
   field(:healthyThreshold)
   field(:http2HealthCheck, as: GoogleApi.Compute.V1.Model.HTTP2HealthCheck)
   field(:httpHealthCheck, as: GoogleApi.Compute.V1.Model.HTTPHealthCheck)
   field(:httpsHealthCheck, as: GoogleApi.Compute.V1.Model.HTTPSHealthCheck)
   field(:id)
   field(:kind)
+  field(:logConfig, as: GoogleApi.Compute.V1.Model.HealthCheckLogConfig)
   field(:name)
   field(:region)
   field(:selfLink)

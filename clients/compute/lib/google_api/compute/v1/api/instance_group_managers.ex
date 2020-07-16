@@ -721,7 +721,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Lists all errors thrown by actions on instances for a given managed instance group.
+  Lists all errors thrown by actions on instances for a given managed instance group. The filter and orderBy query parameters are not supported.
 
   ## Parameters
 
@@ -813,7 +813,7 @@ defmodule GoogleApi.Compute.V1.Api.InstanceGroupManagers do
   end
 
   @doc """
-  Lists all of the instances in the managed instance group. Each instance in the list has a currentAction, which indicates the action that the managed instance group is performing on the instance. For example, if the group is still creating an instance, the currentAction is CREATING. If a previous action failed, the list displays the errors for that failed action.
+  Lists all of the instances in the managed instance group. Each instance in the list has a currentAction, which indicates the action that the managed instance group is performing on the instance. For example, if the group is still creating an instance, the currentAction is CREATING. If a previous action failed, the list displays the errors for that failed action. The orderBy query parameter is not supported.
 
   ## Parameters
 
