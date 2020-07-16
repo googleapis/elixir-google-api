@@ -28,7 +28,7 @@ defmodule GoogleApi.Monitoring.V3.Model.NotificationChannelDescriptor do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full REST resource name for this descriptor. The format is:
       projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
       In the above, [TYPE] is the value of the type field.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of notification channel, such as "email", "sms", etc. Notification channel types are globally unique.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of notification channel, such as "email" and "sms". To view the full list of channels, see Channel descriptors (https://cloud.google.com/monitoring/alerts/using-channels-api#ncd). Notification channel types are globally unique.
   """
 
   use GoogleApi.Gax.ModelBase
