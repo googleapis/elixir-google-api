@@ -2809,7 +2809,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero means no maximum.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. The default is 30 if unspecified or `0`.
 
           The server may return fewer than the specified number of results.
       *   `:pageToken` (*type:* `String.t`) - nextPageToken
@@ -3135,7 +3135,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. Zero means no maximum.
+      *   `:pageSize` (*type:* `integer()`) - Maximum number of items to return. The default is 30 if unspecified or `0`.
 
           The server may return fewer than the specified number of results.
       *   `:pageToken` (*type:* `String.t`) - nextPageToken
