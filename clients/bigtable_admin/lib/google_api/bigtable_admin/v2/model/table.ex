@@ -36,6 +36,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Table do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the table. Values are of the form
       `projects/{project}/instances/{instance}/tables/_a-zA-Z0-9*`.
       Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
+  *   `restoreInfo` (*type:* `GoogleApi.BigtableAdmin.V2.Model.RestoreInfo.t`, *default:* `nil`) - Output only. If this table was restored from another data source (e.g. a backup), this
+      field will be populated with information about the restore.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,13 +50,15 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Table do
             optional(String.t()) => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t()
           },
           :granularity => String.t(),
-          :name => String.t()
+          :name => String.t(),
+          :restoreInfo => GoogleApi.BigtableAdmin.V2.Model.RestoreInfo.t()
         }
 
   field(:clusterStates, as: GoogleApi.BigtableAdmin.V2.Model.ClusterState, type: :map)
   field(:columnFamilies, as: GoogleApi.BigtableAdmin.V2.Model.ColumnFamily, type: :map)
   field(:granularity)
   field(:name)
+  field(:restoreInfo, as: GoogleApi.BigtableAdmin.V2.Model.RestoreInfo)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigtableAdmin.V2.Model.Table do

@@ -1531,6 +1531,276 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
+  Starts creating a new Cloud Bigtable Backup.  The returned backup
+  long-running operation can be used to
+  track creation of the backup. The
+  metadata field type is
+  CreateBackupMetadata. The
+  response field type is
+  Backup, if successful. Cancelling the returned operation will stop the
+  creation and delete the backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. This must be one of the clusters in the instance in which this
+      table is located. The backup will be stored in this cluster. Values are
+      of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
+  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `clusters_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:backupId` (*type:* `String.t`) - Required. The id of the backup to be created. The `backup_id` along with
+          the parent `parent` are combined as {parent}/backups/{backup_id} to create
+          the full backup name, of the form:
+          `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup_id}`.
+          This string must be between 1 and 50 characters in length and match the
+          regex _a-zA-Z0-9*.
+      *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Backup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.BigtableAdmin.V2.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec bigtableadmin_projects_instances_clusters_backups_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def bigtableadmin_projects_instances_clusters_backups_create(
+        connection,
+        projects_id,
+        instances_id,
+        clusters_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :backupId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
+          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigtableAdmin.V2.Model.Operation{}])
+  end
+
+  @doc """
+  Deletes a pending or completed Cloud Bigtable backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the backup to delete.
+      Values are of the form
+      `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
+  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `backups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.BigtableAdmin.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec bigtableadmin_projects_instances_clusters_backups_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def bigtableadmin_projects_instances_clusters_backups_delete(
+        connection,
+        projects_id,
+        instances_id,
+        clusters_id,
+        backups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups/{backupsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
+          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
+          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigtableAdmin.V2.Model.Empty{}])
+  end
+
+  @doc """
+  Gets metadata on a pending or completed Cloud Bigtable Backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the backup.
+      Values are of the form
+      `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
+  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `backups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.BigtableAdmin.V2.Model.Backup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec bigtableadmin_projects_instances_clusters_backups_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Backup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def bigtableadmin_projects_instances_clusters_backups_get(
+        connection,
+        projects_id,
+        instances_id,
+        clusters_id,
+        backups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups/{backupsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
+          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
+          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigtableAdmin.V2.Model.Backup{}])
+  end
+
+  @doc """
   Gets the access control policy for a Table resource.
   Returns an empty policy if the resource exists but does not have a policy
   set.
@@ -1617,6 +1887,253 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.BigtableAdmin.V2.Model.Policy{}])
+  end
+
+  @doc """
+  Lists Cloud Bigtable backups. Returns both completed and pending
+  backups.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The cluster to list backups from.  Values are of the
+      form `projects/{project}/instances/{instance}/clusters/{cluster}`.
+      Use `{cluster} = '-'` to list backups for all clusters in an instance,
+      e.g., `projects/{project}/instances/{instance}/clusters/-`.
+  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `clusters_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - A filter expression that filters backups listed in the response.
+          The expression must specify the field name, a comparison operator,
+          and the value that you want to use for filtering. The value must be a
+          string, a number, or a boolean. The comparison operator must be
+          <, >, <=, >=, !=, =, or :. Colon ‘:’ represents a HAS operator which is
+          roughly synonymous with equality. Filter rules are case insensitive.
+
+          The fields eligible for filtering are:
+            * `name`
+            * `source_table`
+            * `state`
+            * `start_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+            * `end_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+            * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+            * `size_bytes`
+
+          To filter on multiple expressions, provide each separate expression within
+          parentheses. By default, each expression is an AND expression. However,
+          you can include AND, OR, and NOT expressions explicitly.
+
+          Some examples of using filters are:
+
+            * `name:"exact"` --> The backup's name is the string "exact".
+            * `name:howl` --> The backup's name contains the string "howl".
+            * `source_table:prod`
+                   --> The source_table's name contains the string "prod".
+            * `state:CREATING` --> The backup is pending creation.
+            * `state:READY` --> The backup is fully created and ready for use.
+            * `(name:howl) AND (start_time < \\"2018-03-28T14:50:00Z\\")`
+                   --> The backup name contains the string "howl" and start_time
+                       of the backup is before 2018-03-28T14:50:00Z.
+            * `size_bytes > 10000000000` --> The backup's size is greater than 10GB
+      *   `:orderBy` (*type:* `String.t`) - An expression for specifying the sort order of the results of the request.
+          The string value should specify one or more fields in Backup. The full
+          syntax is described at https://aip.dev/132#ordering.
+
+          Fields supported are:
+             * name
+             * source_table
+             * expire_time
+             * start_time
+             * end_time
+             * size_bytes
+             * state
+
+          For example, "start_time". The default sorting order is ascending.
+          To specify descending order for the field, a suffix " desc" should
+          be appended to the field name. For example, "start_time desc".
+          Redundant space characters in the syntax are insigificant.
+
+          If order_by is empty, results will be sorted by `start_time` in descending
+          order starting from the most recently created backup.
+      *   `:pageSize` (*type:* `integer()`) - Number of backups to be returned in the response. If 0 or
+          less, defaults to the server's maximum allowed page size.
+      *   `:pageToken` (*type:* `String.t`) - If non-empty, `page_token` should contain a
+          next_page_token from a
+          previous ListBackupsResponse to the same `parent` and with the same
+          `filter`.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.BigtableAdmin.V2.Model.ListBackupsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec bigtableadmin_projects_instances_clusters_backups_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.ListBackupsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def bigtableadmin_projects_instances_clusters_backups_list(
+        connection,
+        projects_id,
+        instances_id,
+        clusters_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
+          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigtableAdmin.V2.Model.ListBackupsResponse{}])
+  end
+
+  @doc """
+  Updates a pending or completed Cloud Bigtable Backup.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `backup.name`. A globally unique identifier for the backup which cannot be
+      changed. Values are of the form
+      `projects/{project}/instances/{instance}/clusters/{cluster}/
+         backups/_a-zA-Z0-9*`
+      The final segment of the name must be between 1 and 50 characters
+      in length.
+
+      The backup is stored in the cluster identified by the prefix of the backup
+      name of the form
+      `projects/{project}/instances/{instance}/clusters/{cluster}`.
+  *   `instances_id` (*type:* `String.t`) - Part of `backup.name`. See documentation of `projectsId`.
+  *   `clusters_id` (*type:* `String.t`) - Part of `backup.name`. See documentation of `projectsId`.
+  *   `backups_id` (*type:* `String.t`) - Part of `backup.name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. A mask specifying which fields (e.g. `expire_time`) in the
+          Backup resource should be updated. This mask is relative to the Backup
+          resource, not to the request message. The field mask must always be
+          specified; this prevents any future fields from being erased accidentally
+          by clients that do not know about them.
+      *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Backup.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.BigtableAdmin.V2.Model.Backup{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec bigtableadmin_projects_instances_clusters_backups_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Backup.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def bigtableadmin_projects_instances_clusters_backups_patch(
+        connection,
+        projects_id,
+        instances_id,
+        clusters_id,
+        backups_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url(
+        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups/{backupsId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
+          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
+          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigtableAdmin.V2.Model.Backup{}])
   end
 
   @doc """
@@ -2557,6 +3074,90 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.BigtableAdmin.V2.Model.Table{}])
+  end
+
+  @doc """
+  Create a new table by restoring from a completed backup. The new table
+  must be in the same instance as the instance containing the backup.  The
+  returned table long-running operation can
+  be used to track the progress of the operation, and to cancel it.  The
+  metadata field type is
+  RestoreTableMetadata.  The
+  response type is
+  Table, if successful.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the instance in which to create the restored
+      table. This instance must be the parent of the source backup. Values are
+      of the form `projects/<project>/instances/<instance>`.
+  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.BigtableAdmin.V2.Model.RestoreTableRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.BigtableAdmin.V2.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec bigtableadmin_projects_instances_tables_restore(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.BigtableAdmin.V2.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:error, any()}
+  def bigtableadmin_projects_instances_tables_restore(
+        connection,
+        projects_id,
+        instances_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/tables:restore", %{
+        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.BigtableAdmin.V2.Model.Operation{}])
   end
 
   @doc """
