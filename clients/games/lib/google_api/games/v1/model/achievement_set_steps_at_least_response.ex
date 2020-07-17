@@ -17,13 +17,15 @@
 
 defmodule GoogleApi.Games.V1.Model.AchievementSetStepsAtLeastResponse do
   @moduledoc """
-  This is a JSON template for an achievement set steps at least response.
+  An achievement set steps at least response.
 
   ## Attributes
 
   *   `currentSteps` (*type:* `integer()`, *default:* `nil`) - The current steps recorded for this incremental achievement.
-  *   `kind` (*type:* `String.t`, *default:* `games#achievementSetStepsAtLeastResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementSetStepsAtLeastResponse.
-  *   `newlyUnlocked` (*type:* `boolean()`, *default:* `nil`) - Whether the the current steps for the achievement has reached the number of steps required to unlock.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#achievementSetStepsAtLeastResponse`.
+  *   `newlyUnlocked` (*type:* `boolean()`, *default:* `nil`) - Whether the current steps for the achievement has reached the number of
+      steps required to unlock.
   """
 
   use GoogleApi.Gax.ModelBase

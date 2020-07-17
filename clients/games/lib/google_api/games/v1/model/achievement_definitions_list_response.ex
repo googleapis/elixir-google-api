@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.AchievementDefinitionsListResponse do
   @moduledoc """
-  This is a JSON template for a list of achievement definition objects.
+  A list of achievement definition objects.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.AchievementDefinition.t)`, *default:* `nil`) - The achievement definitions.
-  *   `kind` (*type:* `String.t`, *default:* `games#achievementDefinitionsListResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementDefinitionsListResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#achievementDefinitionsListResponse`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token corresponding to the next page of results.
   """
 

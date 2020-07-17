@@ -17,14 +17,16 @@
 
 defmodule GoogleApi.Games.V1.Model.SnapshotImage do
   @moduledoc """
-  This is a JSON template for an image of a snapshot.
+  An image of a snapshot.
 
   ## Attributes
 
   *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the image.
-  *   `kind` (*type:* `String.t`, *default:* `games#snapshotImage`) - Uniquely identifies the type of this resource. Value is always the fixed string games#snapshotImage.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#snapshotImage`.
   *   `mime_type` (*type:* `String.t`, *default:* `nil`) - The MIME type of the image.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the image. This URL may be invalidated at any time and should not be cached.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the image. This URL may be invalidated at any time and should
+      not be cached.
   *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the image.
   """
 

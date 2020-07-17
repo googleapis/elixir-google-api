@@ -17,20 +17,19 @@
 
 defmodule GoogleApi.Games.V1.Model.PlayerAchievement do
   @moduledoc """
-  This is a JSON template for an achievement object.
+  An achievement object.
 
   ## Attributes
 
   *   `achievementState` (*type:* `String.t`, *default:* `nil`) - The state of the achievement.
-      Possible values are:  
-      - "HIDDEN" - Achievement is hidden. 
-      - "REVEALED" - Achievement is revealed. 
-      - "UNLOCKED" - Achievement is unlocked.
   *   `currentSteps` (*type:* `integer()`, *default:* `nil`) - The current steps for an incremental achievement.
-  *   `experiencePoints` (*type:* `String.t`, *default:* `nil`) - Experience points earned for the achievement. This field is absent for achievements that have not yet been unlocked and 0 for achievements that have been unlocked by testers but that are unpublished.
+  *   `experiencePoints` (*type:* `String.t`, *default:* `nil`) - Experience points earned for the achievement. This field is absent for
+      achievements that have not yet been unlocked and 0 for achievements that
+      have been unlocked by testers but that are unpublished.
   *   `formattedCurrentStepsString` (*type:* `String.t`, *default:* `nil`) - The current steps for an incremental achievement as a string.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the achievement.
-  *   `kind` (*type:* `String.t`, *default:* `games#playerAchievement`) - Uniquely identifies the type of this resource. Value is always the fixed string games#playerAchievement.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#playerAchievement`.
   *   `lastUpdatedTimestamp` (*type:* `String.t`, *default:* `nil`) - The timestamp of the last modification to this achievement's state.
   """
 

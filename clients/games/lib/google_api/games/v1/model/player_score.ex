@@ -17,19 +17,17 @@
 
 defmodule GoogleApi.Games.V1.Model.PlayerScore do
   @moduledoc """
-  This is a JSON template for a player score.
+  A player score.
 
   ## Attributes
 
   *   `formattedScore` (*type:* `String.t`, *default:* `nil`) - The formatted score for this player score.
-  *   `kind` (*type:* `String.t`, *default:* `games#playerScore`) - Uniquely identifies the type of this resource. Value is always the fixed string games#playerScore.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#playerScore`.
   *   `score` (*type:* `String.t`, *default:* `nil`) - The numerical value for this player score.
-  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986.
+  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about this score.  Values will contain no more than
+      64 URI-safe characters as defined by section 2.3 of RFC 3986.
   *   `timeSpan` (*type:* `String.t`, *default:* `nil`) - The time span for this player score.
-      Possible values are:  
-      - "ALL_TIME" - The score is an all-time score. 
-      - "WEEKLY" - The score is a weekly score. 
-      - "DAILY" - The score is a daily score.
   """
 
   use GoogleApi.Gax.ModelBase

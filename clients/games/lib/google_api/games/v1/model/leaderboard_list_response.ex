@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.LeaderboardListResponse do
   @moduledoc """
-  This is a JSON template for a list of leaderboard objects.
+  A list of leaderboard objects.
 
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.Games.V1.Model.Leaderboard.t)`, *default:* `nil`) - The leaderboards.
-  *   `kind` (*type:* `String.t`, *default:* `games#leaderboardListResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#leaderboardListResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#leaderboardListResponse`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token corresponding to the next page of results.
   """
 

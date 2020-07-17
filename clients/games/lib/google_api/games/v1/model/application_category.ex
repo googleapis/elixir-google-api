@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.Games.V1.Model.ApplicationCategory do
   @moduledoc """
-  This is a JSON template for an application category object.
+  An application category object.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#applicationCategory`) - Uniquely identifies the type of this resource. Value is always the fixed string games#applicationCategory.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#applicationCategory`.
   *   `primary` (*type:* `String.t`, *default:* `nil`) - The primary category.
   *   `secondary` (*type:* `String.t`, *default:* `nil`) - The secondary category.
   """

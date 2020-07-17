@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse do
   @moduledoc """
-  This is a JSON template for an achievement unlock response.
+
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#achievementUpdateMultipleResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementUpdateMultipleResponse.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#achievementUpdateMultipleResponse`.
   *   `updatedAchievements` (*type:* `list(GoogleApi.Games.V1.Model.AchievementUpdateResponse.t)`, *default:* `nil`) - The updated state of the achievements.
   """
 

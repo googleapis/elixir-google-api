@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.Games.V1.Model.InstanceWebDetails do
   @moduledoc """
-  This is a JSON template for the Web details resource.
+  The Web details resource.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#instanceWebDetails`) - Uniquely identifies the type of this resource. Value is always the fixed string games#instanceWebDetails.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#instanceWebDetails`.
   *   `launchUrl` (*type:* `String.t`, *default:* `nil`) - Launch URL for the game.
   *   `preferred` (*type:* `boolean()`, *default:* `nil`) - Indicates that this instance is the default for new installations.
   """

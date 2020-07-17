@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.Games.V1.Model.AchievementUnlockResponse do
   @moduledoc """
-  This is a JSON template for an achievement unlock response
+  An achievement unlock response
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#achievementUnlockResponse`) - Uniquely identifies the type of this resource. Value is always the fixed string games#achievementUnlockResponse.
-  *   `newlyUnlocked` (*type:* `boolean()`, *default:* `nil`) - Whether this achievement was newly unlocked (that is, whether the unlock request for the achievement was the first for the player).
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#achievementUnlockResponse`.
+  *   `newlyUnlocked` (*type:* `boolean()`, *default:* `nil`) - Whether this achievement was newly unlocked (that is, whether the unlock
+      request for the achievement was the first for the player).
   """
 
   use GoogleApi.Gax.ModelBase

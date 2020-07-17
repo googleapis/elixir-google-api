@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.Games.V1.Model.PlayerLevel do
   @moduledoc """
-  This is a JSON template for 1P/3P metadata about a user's level.
+  1P/3P metadata about a user's level.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#playerLevel`) - Uniquely identifies the type of this resource. Value is always the fixed string games#playerLevel.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#playerLevel`.
   *   `level` (*type:* `integer()`, *default:* `nil`) - The level for the user.
   *   `maxExperiencePoints` (*type:* `String.t`, *default:* `nil`) - The maximum experience points for this level.
   *   `minExperiencePoints` (*type:* `String.t`, *default:* `nil`) - The minimum experience points for this level.

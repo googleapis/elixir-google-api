@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Games.V1.Model.EventDefinition do
   @moduledoc """
-  This is a JSON template for an event definition resource.
+  An event definition resource.
 
   ## Attributes
 
@@ -26,12 +26,11 @@ defmodule GoogleApi.Games.V1.Model.EventDefinition do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the event.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the event.
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The base URL for the image that represents the event.
-  *   `isDefaultImageUrl` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the icon image being returned is a default image, or is game-provided.
-  *   `kind` (*type:* `String.t`, *default:* `games#eventDefinition`) - Uniquely identifies the type of this resource. Value is always the fixed string games#eventDefinition.
+  *   `isDefaultImageUrl` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the icon image being returned is a default image, or is
+      game-provided.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#eventDefinition`.
   *   `visibility` (*type:* `String.t`, *default:* `nil`) - The visibility of event being tracked in this definition.
-      Possible values are:  
-      - "REVEALED": This event should be visible to all users. 
-      - "HIDDEN": This event should only be shown to users that have recorded this event at least once.
   """
 
   use GoogleApi.Gax.ModelBase

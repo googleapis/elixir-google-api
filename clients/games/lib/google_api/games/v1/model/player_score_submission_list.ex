@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.Games.V1.Model.PlayerScoreSubmissionList do
   @moduledoc """
-  This is a JSON template for a list of score submission requests
+  A list of score submission requests.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#playerScoreSubmissionList`) - Uniquely identifies the type of this resource. Value is always the fixed string games#playerScoreSubmissionList.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#playerScoreSubmissionList`.
   *   `scores` (*type:* `list(GoogleApi.Games.V1.Model.ScoreSubmission.t)`, *default:* `nil`) - The score submissions.
   """
 

@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.Games.V1.Model.EventChild do
   @moduledoc """
-  This is a JSON template for an event child relationship resource.
+  An event child relationship resource.
 
   ## Attributes
 
   *   `childId` (*type:* `String.t`, *default:* `nil`) - The ID of the child event.
-  *   `kind` (*type:* `String.t`, *default:* `games#eventChild`) - Uniquely identifies the type of this resource. Value is always the fixed string games#eventChild.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#eventChild`.
   """
 
   use GoogleApi.Gax.ModelBase

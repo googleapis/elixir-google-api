@@ -17,23 +17,23 @@
 
 defmodule GoogleApi.Games.V1.Model.PlayerLeaderboardScore do
   @moduledoc """
-  This is a JSON template for a player leaderboard score object.
+  A player leaderboard score object.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `games#playerLeaderboardScore`) - Uniquely identifies the type of this resource. Value is always the fixed string games#playerLeaderboardScore.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Uniquely identifies the type of this resource. Value is always the fixed
+      string `games#playerLeaderboardScore`.
   *   `leaderboard_id` (*type:* `String.t`, *default:* `nil`) - The ID of the leaderboard this score is in.
-  *   `publicRank` (*type:* `GoogleApi.Games.V1.Model.LeaderboardScoreRank.t`, *default:* `nil`) - The public rank of the score in this leaderboard. This object will not be present if the user is not sharing their scores publicly.
+  *   `publicRank` (*type:* `GoogleApi.Games.V1.Model.LeaderboardScoreRank.t`, *default:* `nil`) - The public rank of the score in this leaderboard. This object will not be
+      present if the user is not sharing their scores publicly.
   *   `scoreString` (*type:* `String.t`, *default:* `nil`) - The formatted value of this score.
-  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about the score. Values must contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986.
+  *   `scoreTag` (*type:* `String.t`, *default:* `nil`) - Additional information about the score.  Values must contain no more than
+      64 URI-safe characters as defined by section 2.3 of RFC 3986.
   *   `scoreValue` (*type:* `String.t`, *default:* `nil`) - The numerical value of this score.
   *   `socialRank` (*type:* `GoogleApi.Games.V1.Model.LeaderboardScoreRank.t`, *default:* `nil`) - The social rank of the score in this leaderboard.
   *   `timeSpan` (*type:* `String.t`, *default:* `nil`) - The time span of this score.
-      Possible values are:  
-      - "ALL_TIME" - The score is an all-time score. 
-      - "WEEKLY" - The score is a weekly score. 
-      - "DAILY" - The score is a daily score.
-  *   `writeTimestamp` (*type:* `String.t`, *default:* `nil`) - The timestamp at which this score was recorded, in milliseconds since the epoch in UTC.
+  *   `writeTimestamp` (*type:* `String.t`, *default:* `nil`) - The timestamp at which this score was recorded, in milliseconds since the
+      epoch in UTC.
   """
 
   use GoogleApi.Gax.ModelBase
