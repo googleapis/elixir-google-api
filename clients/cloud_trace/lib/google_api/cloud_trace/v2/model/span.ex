@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
   *   `childSpanCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of child spans that were generated while this span
       was active. If set, allows implementation to detect missing child spans.
   *   `displayName` (*type:* `GoogleApi.CloudTrace.V2.Model.TruncatableString.t`, *default:* `nil`) - Required. A description of the span's operation (up to 128 bytes).
-      Stackdriver Trace displays the description in the
+      Trace displays the description in the
       Google Cloud Platform Console.
       For example, the display name can be a qualified method name or a file name
       and a line number where the operation is called. A best practice is to use
@@ -47,13 +47,13 @@ defmodule GoogleApi.CloudTrace.V2.Model.Span do
       it is a 32-character hexadecimal encoding of a 16-byte array.
 
       [SPAN_ID] is a unique identifier for a span within a trace; it
-      is a 16-character hexadecimal encoding of an 8-byte array.
+      is a 16-character hexadecimal encoding of an 8-byte array. It should not
+      be zero.
   *   `parentSpanId` (*type:* `String.t`, *default:* `nil`) - The [SPAN_ID] of this span's parent span. If this is a root span,
       then this field must be empty.
   *   `sameProcessAsParentSpan` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this parameter to indicate whether this span is in
       the same process as its parent. If you do not set this parameter,
-      Stackdriver Trace is unable to take advantage of this helpful
-      information.
+      Trace is unable to take advantage of this helpful information.
   *   `spanId` (*type:* `String.t`, *default:* `nil`) - Required. The [SPAN_ID] portion of the span's resource name.
   *   `spanKind` (*type:* `String.t`, *default:* `nil`) - Optional. Distinguishes between spans generated in a particular context. For example,
       two spans with the same name may be distinguished using `CLIENT` (caller)

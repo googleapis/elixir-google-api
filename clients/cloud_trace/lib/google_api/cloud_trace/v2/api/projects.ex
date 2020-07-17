@@ -108,7 +108,8 @@ defmodule GoogleApi.CloudTrace.V2.Api.Projects do
       it is a 32-character hexadecimal encoding of a 16-byte array.
 
       [SPAN_ID] is a unique identifier for a span within a trace; it
-      is a 16-character hexadecimal encoding of an 8-byte array.
+      is a 16-character hexadecimal encoding of an 8-byte array. It should not
+      be zero.
   *   `traces_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `spans_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
