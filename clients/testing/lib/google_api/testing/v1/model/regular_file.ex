@@ -23,10 +23,10 @@ defmodule GoogleApi.Testing.V1.Model.RegularFile do
 
   *   `content` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - Required. The source file.
   *   `devicePath` (*type:* `String.t`, *default:* `nil`) - Required. Where to put the content on the device. Must be an absolute,
-      whitelisted path. If the file exists, it will be replaced.
+      allowlisted path. If the file exists, it will be replaced.
       The following device-side directories and any of their subdirectories are
-      whitelisted:
-      <p>${EXTERNAL_STORAGE}, or /sdcard</p>
+      allowlisted:
+      <p>${EXTERNAL_STORAGE}, /sdcard, or /storage</p>
       <p>${ANDROID_DATA}/local/tmp, or /data/local/tmp</p>
       <p>Specifying a path outside of these directory trees is invalid.
 
