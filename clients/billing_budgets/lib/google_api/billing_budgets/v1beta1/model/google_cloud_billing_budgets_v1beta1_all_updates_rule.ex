@@ -17,12 +17,19 @@
 
 defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1AllUpdatesRule do
   @moduledoc """
-  AllUpdatesRule defines notifications that are sent on every update to the
-  billing account's spend, regardless of the thresholds defined using
-  threshold rules.
+  AllUpdatesRule defines notifications that are sent based on budget spend
+  and thresholds.
 
   ## Attributes
 
+  *   `monitoringNotificationChannels` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Targets to send notifications to when a threshold is exceeded. This is in
+      addition to default recipients who have billing account roles.
+      The value is the full REST resource name of a monitoring notification
+      channel with the form
+      `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+      channels are allowed. See
+      https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
+      for more details.
   *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Cloud Pub/Sub topic where budget related messages will be
       published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
       are sent at regular intervals to the topic.
@@ -32,20 +39,22 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
       Caller is expected to have
       `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
       budget, otherwise, the API call will fail with PERMISSION_DENIED. See
-      https://cloud.google.com/pubsub/docs/access-control for more details on
-      Pub/Sub roles and permissions.
-  *   `schemaVersion` (*type:* `String.t`, *default:* `nil`) - Required. The schema version of the notification.
+      https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
+      for more details on Pub/Sub roles and permissions.
+  *   `schemaVersion` (*type:* `String.t`, *default:* `nil`) - Required. The schema version of the notification sent to `pubsub_topic`.
       Only "1.0" is accepted. It represents the JSON schema as defined in
-      https://cloud.google.com/billing/docs/how-to/budgets#notification_format
+      https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :monitoringNotificationChannels => list(String.t()),
           :pubsubTopic => String.t(),
           :schemaVersion => String.t()
         }
 
+  field(:monitoringNotificationChannels, type: :list)
   field(:pubsubTopic)
   field(:schemaVersion)
 end

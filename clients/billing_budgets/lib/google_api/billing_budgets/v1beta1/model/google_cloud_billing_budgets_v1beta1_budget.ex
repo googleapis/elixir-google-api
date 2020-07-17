@@ -25,8 +25,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
 
   ## Attributes
 
-  *   `allUpdatesRule` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1AllUpdatesRule.t`, *default:* `nil`) - Optional. Rules to apply to all updates to the actual spend, regardless
-      of the thresholds set in `threshold_rules`.
+  *   `allUpdatesRule` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1AllUpdatesRule.t`, *default:* `nil`) - Optional. Rules to apply to notifications sent based on budget spend and thresholds.
   *   `amount` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1BudgetAmount.t`, *default:* `nil`) - Required. Budgeted amount.
   *   `budgetFilter` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1Filter.t`, *default:* `nil`) - Optional. Filters that define which resources are used to compute
       the actual spend against the budget.

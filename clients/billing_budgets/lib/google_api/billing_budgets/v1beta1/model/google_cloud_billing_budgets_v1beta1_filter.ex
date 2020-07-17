@@ -23,9 +23,9 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
 
   *   `creditTypesTreatment` (*type:* `String.t`, *default:* `nil`) - Optional. If not set, default behavior is `INCLUDE_ALL_CREDITS`.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A single label and value pair specifying that usage from only this set of
-      labeled resources should be included in the budget. Multiple entries or
-      multiple values per entry are not allowed. If omitted, the report will
-      include all labeled and unlabeled usage.
+      labeled resources should be included in the budget. Currently, multiple
+      entries or multiple values per entry are not allowed. If omitted, the
+      report will include all labeled and unlabeled usage.
   *   `projects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of projects of the form `projects/{project}`,
       specifying that usage from only this set of projects should be
       included in the budget. If omitted, the report will include all usage for
@@ -39,9 +39,10 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
       https://cloud.google.com/billing/v1/how-tos/catalog-api.
   *   `subaccounts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
       that usage from only this set of subaccounts should be included in the
-      budget. If a subaccount is set to the name of the master account, usage
-      from the master account will be included. If omitted, the report will
-      include usage from the master account and all subaccounts, if they exist.
+      budget. If a subaccount is set to the name of the parent account,
+      usage from the parent account will be included. If omitted, the
+      report will include usage from the parent account and all
+      subaccounts, if they exist.
   """
 
   use GoogleApi.Gax.ModelBase
