@@ -36,9 +36,9 @@ defmodule GoogleApi.Gmail.V1.Model.SendAs do
       situations such as composing a new message or sending a vacation
       auto-reply.  Every Gmail account has exactly one default send-as address,
       so the only legal value that clients may write to this field is
-      <code>true</code>.  Changing this from <code>false</code> to
-      <code>true</code> for an address will result in this field becoming
-      <code>false</code> for the other previous default address.
+      `true`.  Changing this from `false` to
+      `true` for an address will result in this field becoming
+      `false` for the other previous default address.
   *   `isPrimary` (*type:* `boolean()`, *default:* `nil`) - Whether this address is the primary address used to login to the account.
       Every Gmail account has exactly one primary address, and it cannot be
       deleted from the collection of send-as aliases.  This field is read-only.

@@ -21,10 +21,10 @@ defmodule GoogleApi.Gmail.V1.Model.MessagePartHeader do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the header before the <code>:</code> separator. For
-      example, <code>To</code>.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the header after the <code>:</code> separator. For example,
-      <code>someuser@example.com</code>.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the header before the `:` separator. For
+      example, `To`.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the header after the `:` separator. For example,
+      `someuser@example.com`.
   """
 
   use GoogleApi.Gax.ModelBase

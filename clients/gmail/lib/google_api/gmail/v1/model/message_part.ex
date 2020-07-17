@@ -27,13 +27,13 @@ defmodule GoogleApi.Gmail.V1.Model.MessagePart do
       represents an attachment.
   *   `headers` (*type:* `list(GoogleApi.Gmail.V1.Model.MessagePartHeader.t)`, *default:* `nil`) - List of headers on this message part. For the top-level message part,
       representing the entire message payload, it will contain the standard
-      RFC 2822 email headers such as <code>To</code>, <code>From</code>, and
-      <code>Subject</code>.
+      RFC 2822 email headers such as `To`, `From`, and
+      `Subject`.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the message part.
   *   `partId` (*type:* `String.t`, *default:* `nil`) - The immutable ID of the message part.
   *   `parts` (*type:* `list(GoogleApi.Gmail.V1.Model.MessagePart.t)`, *default:* `nil`) - The child MIME message parts of this part. This only applies to container
-      MIME message parts, for example <code>multipart/*</code>. For non-
-      container MIME message part types, such as <code>text/plain</code>, this
+      MIME message parts, for example `multipart/*`. For non-
+      container MIME message part types, such as `text/plain`, this
       field is empty. For more information, see
       <a href="http://www.ietf.org/rfc/rfc1521.txt">RFC 1521</a>.
   """
