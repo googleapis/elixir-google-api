@@ -21,9 +21,22 @@ defmodule GoogleApi.CloudAsset.V1.Model.ExportAssetsRequest do
 
   ## Attributes
 
-  *   `assetTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of asset types of which to take a snapshot for. Example:
-      "compute.googleapis.com/Disk". If specified, only matching assets will be
-      returned. See [Introduction to Cloud Asset
+  *   `assetTypes` (*type:* `list(String.t)`, *default:* `nil`) - A list of asset types to take a snapshot for. For example:
+      "compute.googleapis.com/Disk".
+
+      Regular expressions are also supported. For example:
+
+      * "compute.googleapis.com.*" snapshots resources whose asset type starts
+      with "compute.googleapis.com".
+      * ".*Instance" snapshots resources whose asset type ends with "Instance".
+      * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+
+      See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+      regular expression syntax. If the regular expression does not match any
+      supported asset type, an INVALID_ARGUMENT error will be returned.
+
+      If specified, only matching assets will be returned, otherwise, it will
+      snapshot all asset types. See [Introduction to Cloud Asset
       Inventory](https://cloud.google.com/asset-inventory/docs/overview)
       for all supported asset types.
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Asset content type. If not specified, no content but the asset name will be
