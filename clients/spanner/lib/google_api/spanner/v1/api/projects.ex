@@ -3217,6 +3217,12 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   reasons. If `Commit` returns `ABORTED`, the caller should re-attempt
   the transaction from the beginning, re-using the same session.
 
+  On very rare occasions, `Commit` might return `UNKNOWN`. This can happen,
+  for example, if the client job experiences a 1+ hour networking failure.
+  At that point, Cloud Spanner has lost track of the transaction outcome and
+  we recommend that you perform another read from the database to see the
+  state of things as they are now.
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
