@@ -99,8 +99,6 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
   end
 
   @doc """
-  Updates an existing inventory source.
-  Returns the updated inventory source if successful.
   Gets a channel for a partner or advertiser.
 
   ## Parameters
