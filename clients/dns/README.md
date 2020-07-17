@@ -1,8 +1,8 @@
 # GoogleApi.DNS
 
-Google Cloud DNS API client library.
+Cloud DNS API client library.
 
-Configures and serves authoritative DNS records.
+
 
 ## Installation
 
@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_dns, "~> 0.15"}]
+  [{:google_api_dns, "~> 0.16"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/cloud-dns](https://developers.google.com/cloud-dns).
+Product documentation is available at [http://developers.google.com/cloud-dns](http://developers.google.com/cloud-dns).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_dns](https://hexdocs.pm/google_api_dns).

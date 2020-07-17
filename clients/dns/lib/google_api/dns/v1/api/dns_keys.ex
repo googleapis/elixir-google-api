@@ -26,24 +26,33 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-
+  Fetch the representation of an existing DnsKey.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - 
-  *   `managed_zone` (*type:* `String.t`) - 
-  *   `dns_key_id` (*type:* `String.t`) - 
+  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed
+      zone name or id.
+  *   `dns_key_id` (*type:* `String.t`) - The identifier of the requested DnsKey.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:clientOperationId` (*type:* `String.t`) - 
-      *   `:digestType` (*type:* `String.t`) - 
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:clientOperationId` (*type:* `String.t`) - For mutating operation requests only. An optional identifier
+          specified by the client. Must be unique for operation resources in the
+          Operations collection.
+      *   `:digestType` (*type:* `String.t`) - An optional comma-separated list of digest types to compute and display
+          for key signing keys. If omitted, the recommended digest type will be
+          computed and displayed.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -68,13 +77,17 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :clientOperationId => :query,
       :digestType => :query
     }
@@ -82,11 +95,14 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/managedZones/{managedZone}/dnsKeys/{dnsKeyId}", %{
-        "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1),
-        "dnsKeyId" => URI.encode(dns_key_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/dns/v1/projects/{project}/managedZones/{managedZone}/dnsKeys/{dnsKeyId}",
+        %{
+          "project" => URI.encode(project, &URI.char_unreserved?/1),
+          "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1),
+          "dnsKeyId" => URI.encode(dns_key_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -96,24 +112,33 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
   end
 
   @doc """
-
+  Enumerate DnsKeys to a ResourceRecordSet collection.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - 
-  *   `managed_zone` (*type:* `String.t`) - 
+  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed
+      zone name or id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:digestType` (*type:* `String.t`) - 
-      *   `:maxResults` (*type:* `integer()`) - 
-      *   `:pageToken` (*type:* `String.t`) - 
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:digestType` (*type:* `String.t`) - An optional comma-separated list of digest types to compute and display
+          for key signing keys. If omitted, the recommended digest type will be
+          computed and displayed.
+      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the
+          server will decide how many results to return.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated.
+          Use this parameter to continue a previous list request.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -127,13 +152,17 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
           | {:error, any()}
   def dns_dns_keys_list(connection, project, managed_zone, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :digestType => :query,
       :maxResults => :query,
       :pageToken => :query
@@ -142,7 +171,7 @@ defmodule GoogleApi.DNS.V1.Api.DnsKeys do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/managedZones/{managedZone}/dnsKeys", %{
+      |> Request.url("/dns/v1/projects/{project}/managedZones/{managedZone}/dnsKeys", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1)
       })

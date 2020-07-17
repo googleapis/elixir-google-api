@@ -26,25 +26,34 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-
+  Enumerate ResourceRecordSets that have been created but not yet deleted.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `project` (*type:* `String.t`) - 
-  *   `managed_zone` (*type:* `String.t`) - 
+  *   `project` (*type:* `String.t`) - Identifies the project addressed by this request.
+  *   `managed_zone` (*type:* `String.t`) - Identifies the managed zone addressed by this request. Can be the managed
+      zone name or id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - 
-      *   `:name` (*type:* `String.t`) - 
-      *   `:pageToken` (*type:* `String.t`) - 
-      *   `:type` (*type:* `String.t`) - 
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:maxResults` (*type:* `integer()`) - Optional. Maximum number of results to be returned. If unspecified, the
+          server will decide how many results to return.
+      *   `:name` (*type:* `String.t`) - Restricts the list to return only records with this fully qualified domain
+          name.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A tag returned by a previous list request that was truncated.
+          Use this parameter to continue a previous list request.
+      *   `:type` (*type:* `String.t`) - Restricts the list to return only records of this type. If present, the
+          "name" parameter must also be present.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -70,13 +79,17 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :maxResults => :query,
       :name => :query,
       :pageToken => :query,
@@ -86,7 +99,7 @@ defmodule GoogleApi.DNS.V1.Api.ResourceRecordSets do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/{project}/managedZones/{managedZone}/rrsets", %{
+      |> Request.url("/dns/v1/projects/{project}/managedZones/{managedZone}/rrsets", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "managedZone" => URI.encode(managed_zone, &URI.char_unreserved?/1)
       })

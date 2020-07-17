@@ -21,7 +21,7 @@ defmodule GoogleApi.DNS.V1.Model.ManagedZoneReverseLookupConfig do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneReverseLookupConfig`) - Identifies what kind of resource this is. Value: the fixed string "dns#managedZoneReverseLookupConfig".
+  *   `kind` (*type:* `String.t`, *default:* `dns#managedZoneReverseLookupConfig`) - 
   """
 
   use GoogleApi.Gax.ModelBase
