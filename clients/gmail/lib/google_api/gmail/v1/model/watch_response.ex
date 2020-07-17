@@ -22,7 +22,7 @@ defmodule GoogleApi.Gmail.V1.Model.WatchResponse do
   ## Attributes
 
   *   `expiration` (*type:* `String.t`, *default:* `nil`) - When Gmail will stop sending notifications for mailbox updates
-      (epoch millis). Call <code>watch</code> again before this time to renew
+      (epoch millis). Call `watch` again before this time to renew
       the watch.
   *   `historyId` (*type:* `String.t`, *default:* `nil`) - The ID of the mailbox's current history record.
   """

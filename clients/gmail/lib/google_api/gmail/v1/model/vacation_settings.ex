@@ -26,16 +26,16 @@ defmodule GoogleApi.Gmail.V1.Model.VacationSettings do
   *   `enableAutoReply` (*type:* `boolean()`, *default:* `nil`) - Flag that controls whether Gmail automatically replies to messages.
   *   `endTime` (*type:* `String.t`, *default:* `nil`) - An optional end time for sending auto-replies (epoch ms).
       When this is specified, Gmail will automatically reply only to messages
-      that it receives before the end time.  If both <code>startTime</code> and
-      <code>endTime</code> are specified, <code>startTime</code> must precede
-      <code>endTime</code>.
+      that it receives before the end time.  If both `startTime` and
+      `endTime` are specified, `startTime` must precede
+      `endTime`.
   *   `responseBodyHtml` (*type:* `String.t`, *default:* `nil`) - Response body in HTML format.  Gmail will sanitize the HTML before
-      storing it. If both <code>response_body_plain_text</code> and
-      <code>response_body_html</code> are specified,
-      <code>response_body_html</code> will be used.
+      storing it. If both `response_body_plain_text` and
+      `response_body_html` are specified,
+      `response_body_html` will be used.
   *   `responseBodyPlainText` (*type:* `String.t`, *default:* `nil`) - Response body in plain text format. If both
-      <code>response_body_plain_text</code> and <code>response_body_html</code>
-      are specified, <code>response_body_html</code> will be used.
+      `response_body_plain_text` and `response_body_html`
+      are specified, `response_body_html` will be used.
   *   `responseSubject` (*type:* `String.t`, *default:* `nil`) - Optional text to prepend to the subject line in vacation responses.  In
       order to enable auto-replies, either the response subject or the response
       body must be nonempty.
@@ -46,9 +46,9 @@ defmodule GoogleApi.Gmail.V1.Model.VacationSettings do
       users.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - An optional start time for sending auto-replies (epoch ms).
       When this is specified, Gmail will automatically reply only to messages
-      that it receives after the start time.  If both <code>startTime</code> and
-      <code>endTime</code> are specified, <code>startTime</code> must precede
-      <code>endTime</code>.
+      that it receives after the start time.  If both `startTime` and
+      `endTime` are specified, `startTime` must precede
+      `endTime`.
   """
 
   use GoogleApi.Gax.ModelBase

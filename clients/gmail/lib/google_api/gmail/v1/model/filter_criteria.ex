@@ -26,12 +26,12 @@ defmodule GoogleApi.Gmail.V1.Model.FilterCriteria do
   *   `hasAttachment` (*type:* `boolean()`, *default:* `nil`) - Whether the message has any attachment.
   *   `negatedQuery` (*type:* `String.t`, *default:* `nil`) - Only return messages not matching the specified query. Supports the same
       query format as the Gmail search box. For example,
-      <code>"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
-      is:unread"</code>.
+      `"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
+      is:unread"`.
   *   `query` (*type:* `String.t`, *default:* `nil`) - Only return messages matching the specified query. Supports the same
       query format as the Gmail search box. For example,
-      <code>"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
-      is:unread"</code>.
+      `"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
+      is:unread"`.
   *   `size` (*type:* `integer()`, *default:* `nil`) - The size of the entire RFC822 message in bytes, including all headers and
       attachments.
   *   `sizeComparison` (*type:* `String.t`, *default:* `nil`) - How the message size in bytes should be in relation to the size field.

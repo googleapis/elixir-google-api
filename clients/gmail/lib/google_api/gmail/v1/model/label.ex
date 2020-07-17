@@ -23,7 +23,7 @@ defmodule GoogleApi.Gmail.V1.Model.Label do
   ## Attributes
 
   *   `color` (*type:* `GoogleApi.Gmail.V1.Model.LabelColor.t`, *default:* `nil`) - The color to assign to the label. Color is only available for labels that
-      have their <code>type</code> set to <code>user</code>.
+      have their `type` set to `user`.
       @mutable gmail.users.labels.create gmail.users.labels.update
   *   `id` (*type:* `String.t`, *default:* `nil`) - The immutable ID of the label.
   *   `labelListVisibility` (*type:* `String.t`, *default:* `nil`) - The visibility of the label in the label list in the Gmail web interface.
@@ -43,9 +43,9 @@ defmodule GoogleApi.Gmail.V1.Model.Label do
       added, modified, or deleted. System labels may be able to be applied to or
       removed from messages and threads under some circumstances but this is
       not guaranteed. For example, users can apply and remove the
-      <code>INBOX</code> and <code>UNREAD</code> labels from messages and
-      threads, but cannot apply or remove the <code>DRAFTS</code> or
-      <code>SENT</code> labels from messages or threads.
+      `INBOX` and `UNREAD` labels from messages and
+      threads, but cannot apply or remove the `DRAFTS` or
+      `SENT` labels from messages or threads.
   """
 
   use GoogleApi.Gax.ModelBase

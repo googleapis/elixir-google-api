@@ -22,8 +22,8 @@ defmodule GoogleApi.Gmail.V1.Model.ListLabelsResponse do
   ## Attributes
 
   *   `labels` (*type:* `list(GoogleApi.Gmail.V1.Model.Label.t)`, *default:* `nil`) - List of labels. Note that each label resource only contains an
-      <code>id</code>, <code>name</code>, <code>messageListVisibility</code>,
-      <code>labelListVisibility</code>, and <code>type</code>. The
+      `id`, `name`, `messageListVisibility`,
+      `labelListVisibility`, and `type`. The
       <a href="/gmail/api/v1/reference/users/labels/get">labels.get</a> method
       can fetch additional label details.
   """

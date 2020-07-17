@@ -25,8 +25,8 @@ defmodule GoogleApi.Gmail.V1.Model.LanguageSettings do
 
   *   `displayLanguage` (*type:* `String.t`, *default:* `nil`) - The language to display Gmail in, formatted as an
       <a href="https://www.w3.org/International/articles/language-tags/">RFC 3066
-      Language Tag</a> (for example <code>en-GB</code>, <code>fr</code> or
-      <code>ja</code> for British English, French, or Japanese respectively).
+      Language Tag</a> (for example `en-GB`, `fr` or
+      `ja` for British English, French, or Japanese respectively).
 
       The set of languages supported by Gmail evolves over time, so please refer
       to the "Language" dropdown in the

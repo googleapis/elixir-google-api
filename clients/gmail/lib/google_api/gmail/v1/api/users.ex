@@ -31,7 +31,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -89,7 +89,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -147,7 +147,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -204,12 +204,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a new draft with the <code>DRAFT</code> label.
+  Creates a new draft with the `DRAFT` label.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -264,12 +264,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a new draft with the <code>DRAFT</code> label.
+  Creates a new draft with the `DRAFT` label.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
@@ -343,12 +343,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a new draft with the <code>DRAFT</code> label.
+  Creates a new draft with the `DRAFT` label.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -416,12 +416,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Creates a new draft with the <code>DRAFT</code> label.
+  Creates a new draft with the `DRAFT` label.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
@@ -501,7 +501,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -566,7 +566,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -628,7 +628,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -642,14 +642,14 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:includeSpamTrash` (*type:* `boolean()`) - Include drafts from <code>SPAM</code> and <code>TRASH</code>
+      *   `:includeSpamTrash` (*type:* `boolean()`) - Include drafts from `SPAM` and `TRASH`
           in the results.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of drafts to return.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:q` (*type:* `String.t`) - Only return draft messages matching the specified query. Supports the same
           query format as the Gmail search box. For example,
-          <code>"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
-          is:unread"</code>.
+          `"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
+          is:unread"`.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -696,12 +696,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Sends the specified, existing draft to the recipients in the
-  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
+  `To`, `Cc`, and `Bcc` headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -757,12 +757,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Sends the specified, existing draft to the recipients in the
-  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
+  `To`, `Cc`, and `Bcc` headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
@@ -837,12 +837,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Sends the specified, existing draft to the recipients in the
-  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
+  `To`, `Cc`, and `Bcc` headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -911,12 +911,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Sends the specified, existing draft to the recipients in the
-  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
+  `To`, `Cc`, and `Bcc` headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Draft.t`) - object metadata
@@ -995,7 +995,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1062,7 +1062,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to update.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
@@ -1145,7 +1145,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to update.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
@@ -1222,7 +1222,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the draft to update.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
@@ -1301,12 +1301,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Lists the history of all changes to the given mailbox. History results are
-  returned in chronological order (increasing <code>historyId</code>).
+  returned in chronological order (increasing `historyId`).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1325,18 +1325,18 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:maxResults` (*type:* `integer()`) - The maximum number of history records to return.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:startHistoryId` (*type:* `String.t`) - Required. Returns history records after the specified
-          <code>startHistoryId</code>. The supplied <code>startHistoryId</code>
-          should be obtained from the <code>historyId</code> of a message, thread, or
-          previous <code>list</code> response. History IDs increase
+          `startHistoryId`. The supplied `startHistoryId`
+          should be obtained from the `historyId` of a message, thread, or
+          previous `list` response. History IDs increase
           chronologically but are not contiguous with random gaps in between valid
-          IDs. Supplying an invalid or out of date <code>startHistoryId</code>
-          typically returns an <code>HTTP 404</code> error code. A
-          <code>historyId</code> is typically valid for at least a week, but in some
+          IDs. Supplying an invalid or out of date `startHistoryId`
+          typically returns an `HTTP 404` error code. A
+          `historyId` is typically valid for at least a week, but in some
           rare circumstances may be valid for only a few hours. If you receive an
-          <code>HTTP 404</code> error response, your  application should perform a
-          full sync. If you receive no <code>nextPageToken</code> in the response,
+          `HTTP 404` error response, your  application should perform a
+          full sync. If you receive no `nextPageToken` in the response,
           there are no updates to retrieve and you can store the returned
-          <code>historyId</code> for a future request.
+          `historyId` for a future request.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1388,7 +1388,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1449,7 +1449,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the label to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1514,7 +1514,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the label to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1574,7 +1574,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1634,7 +1634,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the label to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1696,7 +1696,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the label to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1764,7 +1764,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1824,7 +1824,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1880,12 +1880,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Immediately and permanently deletes the specified message. This operation
-  cannot be undone.  Prefer <code>messages.trash</code> instead.
+  cannot be undone.  Prefer `messages.trash` instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1950,7 +1950,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2016,7 +2016,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2091,7 +2091,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
@@ -2185,7 +2185,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2273,7 +2273,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
@@ -2361,13 +2361,13 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Directly inserts a message into only this user's mailbox similar to
-  <code>IMAP APPEND</code>, bypassing most scanning and classification.
+  `IMAP APPEND`, bypassing most scanning and classification.
   Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2430,13 +2430,13 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Directly inserts a message into only this user's mailbox similar to
-  <code>IMAP APPEND</code>, bypassing most scanning and classification.
+  `IMAP APPEND`, bypassing most scanning and classification.
   Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
@@ -2518,13 +2518,13 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Directly inserts a message into only this user's mailbox similar to
-  <code>IMAP APPEND</code>, bypassing most scanning and classification.
+  `IMAP APPEND`, bypassing most scanning and classification.
   Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2600,13 +2600,13 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Directly inserts a message into only this user's mailbox similar to
-  <code>IMAP APPEND</code>, bypassing most scanning and classification.
+  `IMAP APPEND`, bypassing most scanning and classification.
   Does not send a message.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
@@ -2692,7 +2692,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2706,15 +2706,15 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:includeSpamTrash` (*type:* `boolean()`) - Include messages from <code>SPAM</code> and <code>TRASH</code>
+      *   `:includeSpamTrash` (*type:* `boolean()`) - Include messages from `SPAM` and `TRASH`
           in the results.
       *   `:labelIds` (*type:* `list(String.t)`) - Only return messages with labels that match all of the specified label IDs.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of messages to return.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:q` (*type:* `String.t`) - Only return messages matching the specified query. Supports the same
           query format as the Gmail search box. For example,
-          <code>"from:someuser@example.com rfc822msgid:&lt;somemsgid@example.com&gt;
-          is:unread"</code>. Parameter cannot be used when accessing the api
+          `"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
+          is:unread"`. Parameter cannot be used when accessing the api
           using the gmail.metadata scope.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2767,7 +2767,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to modify.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2830,12 +2830,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Sends the specified message to the recipients in the
-  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
+  `To`, `Cc`, and `Bcc` headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2891,12 +2891,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Sends the specified message to the recipients in the
-  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
+  `To`, `Cc`, and `Bcc` headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
@@ -2971,12 +2971,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Sends the specified message to the recipients in the
-  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
+  `To`, `Cc`, and `Bcc` headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3045,12 +3045,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Sends the specified message to the recipients in the
-  <code>To</code>, <code>Cc</code>, and <code>Bcc</code> headers.
+  `To`, `Cc`, and `Bcc` headers.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - object metadata
@@ -3129,7 +3129,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to Trash.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3194,7 +3194,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the message to remove from Trash.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3259,7 +3259,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `message_id` (*type:* `String.t`) - The ID of the message containing the attachment.
   *   `id` (*type:* `String.t`) - The ID of the attachment.
@@ -3780,9 +3780,9 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @doc """
   Updates language settings.
 
-  If successful, the return object contains the <code>displayLanguage</code>
+  If successful, the return object contains the `displayLanguage`
   that was saved for the user, which may differ from the value passed into
-  the request. This is because the requested <code>displayLanguage</code> may
+  the request. This is because the requested `displayLanguage` may
   not be directly supported by Gmail but have a close variant that is, and so
   the variant may be chosen and saved instead.
 
@@ -3969,7 +3969,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Adds a delegate with its verification status set directly to
-  <code>accepted</code>, without sending any verification email.  The
+  `accepted`, without sending any verification email.  The
   delegate user must be a member of the same G Suite organization as the
   delegator user.
 
@@ -4531,8 +4531,8 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   @doc """
   Creates a forwarding address.  If ownership verification is required, a
   message will be sent to the recipient and the resource's verification
-  status will be set to <code>pending</code>; otherwise, the resource will be
-  created with verification status set to <code>accepted</code>.
+  status will be set to `pending`; otherwise, the resource will be
+  created with verification status set to `accepted`.
 
   This method is only available to service account clients that have been
   delegated domain-wide authority.
@@ -4832,9 +4832,9 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   will attempt to connect to the SMTP service to validate the configuration
   before creating the alias.  If ownership verification is required for the
   alias, a message will be sent to the email address and the resource's
-  verification status will be set to <code>pending</code>; otherwise, the
+  verification status will be set to `pending`; otherwise, the
   resource will be created with verification status set to
-  <code>accepted</code>.  If a signature is provided, Gmail will sanitize the
+  `accepted`.  If a signature is provided, Gmail will sanitize the
   HTML before saving it with the alias.
 
   This method is only available to service account clients that have been
@@ -5259,7 +5259,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Sends a verification email to the specified send-as alias address.
-  The verification status must be <code>pending</code>.
+  The verification status must be `pending`.
 
   This method is only available to service account clients that have been
   delegated domain-wide authority.
@@ -5338,7 +5338,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
       this alias.
@@ -5414,7 +5414,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
       this alias.
@@ -5492,7 +5492,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
       this alias.
@@ -5567,7 +5567,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
       this alias.
@@ -5642,7 +5642,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `send_as_email` (*type:* `String.t`) - The email address that appears in the "From:" header for mail sent using
       this alias.
@@ -5717,12 +5717,12 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
 
   @doc """
   Immediately and permanently deletes the specified thread. This operation
-  cannot be undone. Prefer <code>threads.trash</code> instead.
+  cannot be undone. Prefer `threads.trash` instead.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - ID of the Thread to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -5787,7 +5787,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the thread to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -5851,7 +5851,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -5865,15 +5865,15 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:includeSpamTrash` (*type:* `boolean()`) - Include threads from <code>SPAM</code> and <code>TRASH</code>
+      *   `:includeSpamTrash` (*type:* `boolean()`) - Include threads from `SPAM` and `TRASH`
           in the results.
       *   `:labelIds` (*type:* `list(String.t)`) - Only return threads with labels that match all of the specified label IDs.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of threads to return.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:q` (*type:* `String.t`) - Only return threads matching the specified query. Supports the same
           query format as the Gmail search box. For example,
-          <code>"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
-          is:unread"</code>. Parameter cannot be used when accessing the api
+          `"from:someuser@example.com rfc822msgid:<somemsgid@example.com>
+          is:unread"`. Parameter cannot be used when accessing the api
           using the gmail.metadata scope.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -5927,7 +5927,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the thread to modify.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -5994,7 +5994,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the thread to Trash.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -6059,7 +6059,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
-  *   `user_id` (*type:* `String.t`) - The user's email address. The special value <code>me</code>
+  *   `user_id` (*type:* `String.t`) - The user's email address. The special value `me`
       can be used to indicate the authenticated user.
   *   `id` (*type:* `String.t`) - The ID of the thread to remove from Trash.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

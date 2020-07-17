@@ -22,7 +22,7 @@ defmodule GoogleApi.Gmail.V1.Model.MessagePartBody do
   ## Attributes
 
   *   `attachmentId` (*type:* `String.t`, *default:* `nil`) - When present, contains the ID of an external attachment that can be
-      retrieved in a separate <code>messages.attachments.get</code> request.
+      retrieved in a separate `messages.attachments.get` request.
       When not present, the entire content of the message part body is
       contained in the data field.
   *   `data` (*type:* `String.t`, *default:* `nil`) - The body data of a MIME message part as a base64url encoded string.

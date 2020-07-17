@@ -22,7 +22,7 @@ defmodule GoogleApi.Gmail.V1.Model.ListMessagesResponse do
   ## Attributes
 
   *   `messages` (*type:* `list(GoogleApi.Gmail.V1.Model.Message.t)`, *default:* `nil`) - List of messages. Note that each message resource contains only an
-      <code>id</code> and a <code>threadId</code>. Additional message details can
+      `id` and a `threadId`. Additional message details can
       be fetched using the
       <a href="/gmail/api/v1/reference/users/messages/get">messages.get</a>
       method.
