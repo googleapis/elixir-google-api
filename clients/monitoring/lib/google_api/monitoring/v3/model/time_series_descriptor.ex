@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.TimeSeriesDescriptor do
   @moduledoc """
-  A descriptor for the labels and points in a timeseries.
+  A descriptor for the labels and points in a time series.
 
   ## Attributes
 

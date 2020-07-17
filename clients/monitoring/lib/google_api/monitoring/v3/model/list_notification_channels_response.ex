@@ -23,17 +23,20 @@ defmodule GoogleApi.Monitoring.V3.Model.ListNotificationChannelsResponse do
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there may be more results that match the request. Use the value in the page_token field in a subsequent request to fetch the next set of results. If empty, all results have been returned.
   *   `notificationChannels` (*type:* `list(GoogleApi.Monitoring.V3.Model.NotificationChannel.t)`, *default:* `nil`) - The notification channels defined for the specified project.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of notification channels in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nextPageToken => String.t(),
-          :notificationChannels => list(GoogleApi.Monitoring.V3.Model.NotificationChannel.t())
+          :notificationChannels => list(GoogleApi.Monitoring.V3.Model.NotificationChannel.t()),
+          :totalSize => integer()
         }
 
   field(:nextPageToken)
   field(:notificationChannels, as: GoogleApi.Monitoring.V3.Model.NotificationChannel, type: :list)
+  field(:totalSize)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Monitoring.V3.Model.ListNotificationChannelsResponse do
