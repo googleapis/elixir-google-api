@@ -646,7 +646,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
   end
 
   @doc """
-  Lists all errors thrown by actions on instances for a given regional managed instance group.
+  Lists all errors thrown by actions on instances for a given regional managed instance group. The filter and orderBy query parameters are not supported.
 
   ## Parameters
 
@@ -739,7 +739,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionInstanceGroupManagers do
   end
 
   @doc """
-  Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances.
+  Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances. The orderBy query parameter is not supported.
 
   ## Parameters
 
