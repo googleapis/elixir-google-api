@@ -1051,6 +1051,7 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Api.Sites do
 
   @doc """
   Adds content files to a version.
+  Each file must be under 2 GB.
 
   ## Parameters
 

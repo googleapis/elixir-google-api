@@ -17,18 +17,17 @@
 
 defmodule GoogleApi.FirebaseHosting.V1beta1.Model.Rewrite do
   @moduledoc """
-  A [`rewrite`](/docs/hosting/full-config#rewrites) represents an internal
-  content rewrite on the version. If the pattern matches, the request will be
-  handled as if it were to the destination path specified in the
-  configuration.
+  A [`rewrite`](/docs/hosting/full-config#rewrites) object specifies a URL
+  pattern that, if matched to the request URL path, triggers Hosting to
+  respond as if the service were given the specified destination URL.
 
   ## Attributes
 
   *   `dynamicLinks` (*type:* `boolean()`, *default:* `nil`) - The request will be forwarded to Firebase Dynamic Links.
   *   `function` (*type:* `String.t`, *default:* `nil`) - The function to proxy requests to. Must match the exported function
       name exactly.
-  *   `glob` (*type:* `String.t`, *default:* `nil`) - The user-supplied [glob
-      pattern](/docs/hosting/full-config#glob_pattern_matching) to match
+  *   `glob` (*type:* `String.t`, *default:* `nil`) - The user-supplied
+      [glob](/docs/hosting/full-config#glob_pattern_matching) to match
       against the request URL path.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The URL path to rewrite the request to.
   *   `regex` (*type:* `String.t`, *default:* `nil`) - The user-supplied RE2 regular expression to match against the request
