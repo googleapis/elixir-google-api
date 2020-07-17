@@ -308,7 +308,11 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
           * `"e"`: exclude
 
           * `"i"`: include
-      *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results.
+      *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results. The sort parameter specifies
+          that the results be sorted according to the specified expression i.e. sort
+          by date.
+          [Example:
+          sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
       *   `:start` (*type:* `integer()`) - The index of the first result to return. The default number of results per
           page is 10, so `&start=11` would start at the top of the second page of
           results. **Note**: The JSON API will never return more than 100 results,
@@ -668,7 +672,11 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
           * `"e"`: exclude
 
           * `"i"`: include
-      *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results.
+      *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results. The sort parameter specifies
+          that the results be sorted according to the specified expression i.e. sort
+          by date.
+          [Example:
+          sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
       *   `:start` (*type:* `integer()`) - The index of the first result to return. The default number of results per
           page is 10, so `&start=11` would start at the top of the second page of
           results. **Note**: The JSON API will never return more than 100 results,
