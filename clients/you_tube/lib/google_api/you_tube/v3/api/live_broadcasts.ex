@@ -252,7 +252,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveBroadcasts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
-  *   `id` (*type:* `String.t`) - 
+  *   `id` (*type:* `String.t`) - Broadcast to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
