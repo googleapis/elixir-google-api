@@ -6792,6 +6792,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     [R4](https://hl7.org/fhir/R4/compartmentdefinition-patient.html)), which
     details the eligible resource types and referencing search parameters.
 
+  For samples that show how to call `Patient-everything`, see
+  [Getting all patient compartment
+  resources](/healthcare/docs/how-tos/fhir-resources#getting_all_patient_compartment_resources).
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -6820,6 +6824,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           or "next".
 
           Omit `page_token` if no previous request has been made.
+      *   `:_since` (*type:* `String.t`) - If provided, only resources updated after this time are
+          exported. The time uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz.
+          For example, `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`.
+          The time must be specified to the second and include a time zone.
+      *   `:_type` (*type:* `String.t`) - String of comma-delimited FHIR resource types. If provided, only resources
+          of the specified resource type(s) are returned.
       *   `:end` (*type:* `String.t`) - The response includes records prior to the end date. If no end date is
           provided, all records subsequent to the start date are in scope.
       *   `:start` (*type:* `String.t`) - The response includes records subsequent to the start date. If no start
@@ -6868,6 +6878,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
       :upload_protocol => :query,
       :_count => :query,
       :_page_token => :query,
+      :_since => :query,
+      :_type => :query,
       :end => :query,
       :start => :query
     }
@@ -6899,6 +6911,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   delete the current version and then call this method.
 
   This is not a FHIR standard operation.
+
+  For samples that show how to call `Resource-purge`, see
+  [Deleting historical versions of a FHIR
+  resource](/healthcare/docs/how-tos/fhir-resources#deleting_historical_versions_of_a_fhir_resource).
 
   ## Parameters
 
@@ -7111,6 +7127,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   This method requires the`healthcare.fhirStores.searchResources` and
   `healthcare.fhirResources.delete` permissions on the parent FHIR store.
 
+  For samples that show how to call `conditionalDelete`, see
+  [Conditionally deleting a FHIR
+  resource](/healthcare/docs/how-tos/fhir-resources#conditionally_deleting_a_fhir_resource).
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -7231,6 +7251,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   This method requires the`healthcare.fhirStores.searchResources` permission
   on the parent FHIR store and the `healthcare.fhirResources.patch`
   permission on the requested FHIR store resource.
+
+  For samples that show how to call `conditionalPatch`, see
+  [Conditionally patching a FHIR
+  resource](/healthcare/docs/how-tos/fhir-resources#conditionally_patching_a_fhir_resource).
 
   ## Parameters
 
@@ -7358,6 +7382,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   This method requires the`healthcare.fhirStores.searchResources` and
   `healthcare.fhirResources.update` permissions on the parent FHIR store.
 
+  For samples that show how to call `conditionalUpdate`, see
+  [Conditionally updating a FHIR
+  resource](/healthcare/docs/how-tos/fhir-resources#conditionally_updating_a_fhir_resource).
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -7478,6 +7506,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
 
+  For samples that show how to call `create`, see
+  [Creating a FHIR
+  resource](/healthcare/docs/how-tos/fhir-resources#creating_a_fhir_resource).
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -7584,6 +7616,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   repository that can still be retrieved through vread
   and related methods, unless they are removed by the
   purge method.
+
+  For samples that show how to call `delete`, see
+  [Deleting a FHIR
+  resource](/healthcare/docs/how-tos/fhir-resources#deleting_a_fhir_resource).
 
   ## Parameters
 
@@ -7713,6 +7749,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
 
   Logging is available for the `executeBundle` permission.
 
+  For samples that show how to call `executeBundle`, see
+  [Managing FHIR resources using FHIR
+  bundles](/healthcare/docs/how-tos/fhir-bundles).
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -7812,6 +7852,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
+
+  For samples that show how to call `history`, see
+  [Listing FHIR resource
+  versions](/healthcare/docs/how-tos/fhir-resources#listing_fhir_resource_versions).
 
   ## Parameters
 
@@ -7950,6 +7994,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
 
+  For samples that show how to call `patch`, see
+  [Patching a FHIR
+  resource](/healthcare/docs/how-tos/fhir-resources#patching_a_fhir_resource).
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -8062,6 +8110,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
+
+  For samples that show how to call `read`, see
+  [Getting a FHIR
+  resource](/healthcare/docs/how-tos/fhir-resources#getting_a_fhir_resource).
 
   ## Parameters
 
@@ -8213,6 +8265,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   delay between the time a resource is created or changes and when the change
   is reflected in search results.
 
+  For samples and detailed information, see [Searching for FHIR
+  resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search
+  features](/healthcare/docs/how-tos/fhir-advanced-search).
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -8321,6 +8377,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
 
+  For samples that show how to call `update`, see
+  [Updating a FHIR
+  resource](/healthcare/docs/how-tos/fhir-resources#updating_a_fhir_resource).
+
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
@@ -8427,6 +8487,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   `OperationOutcome` resource describing the reason for the error. If the
   request cannot be mapped to a valid API method on a FHIR store, a generic
   GCP error might be returned instead.
+
+  For samples that show how to call `vread`, see
+  [Retrieving a FHIR resource
+  version](/healthcare/docs/how-tos/fhir-resources#retrieving_a_fhir_resource_version).
 
   ## Parameters
 
