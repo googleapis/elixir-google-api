@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudTrace.V1.Model.Trace do
   *   `spans` (*type:* `list(GoogleApi.CloudTrace.V1.Model.TraceSpan.t)`, *default:* `nil`) - Collection of spans in the trace.
   *   `traceId` (*type:* `String.t`, *default:* `nil`) - Globally unique identifier for the trace. This identifier is a 128-bit
       numeric value formatted as a 32-byte hex string. For example,
-      `382d4f4c6b7bb2f4a972559d9085001d`.
+      `382d4f4c6b7bb2f4a972559d9085001d`. The numeric value should not be zero.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -65,8 +65,7 @@ defmodule GoogleApi.CloudTrace.V1.Model.TraceSpan do
       *   `/stacktrace`
       *   `/tid`
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the span. Must be less than 128 bytes. The span name is sanitized
-      and displayed in the Stackdriver Trace tool in the
-      Google Cloud Platform Console.
+      and displayed in the Trace tool in the Google Cloud Platform Console.
       The name may be a method name or some other per-call site name.
       For the same executable and the same call point, a best practice is
       to use a consistent name, which makes it easier to correlate
