@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.CustomList do
   @moduledoc """
-  Describes a custom list entity, such as a custom affinity or custom intent
-  audience list.
+  Describes a custom list entity, such as a custom affinity or custom intent audience list.
 
   ## Attributes
 
   *   `customListId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the custom list. Assigned by the system.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the custom list.
-      .
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the custom list. .
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the custom list.
   """
 

@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.AgeRangeTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable age range. This will be populated in the
-  age_range_details field when
-  targeting_type is
-  `TARGETING_TYPE_AGE_RANGE`.
+  Represents a targetable age range. This will be populated in the age_range_details field when targeting_type is `TARGETING_TYPE_AGE_RANGE`.
 
   ## Attributes
 

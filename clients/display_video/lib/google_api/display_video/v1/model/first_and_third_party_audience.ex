@@ -17,86 +17,25 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience do
   @moduledoc """
-  Describes a first or third party audience list used for targeting.
-  First party audiences are created via usage of client data.
-  Third party audiences are provided by Third Party data providers and can only
-  be licensed to customers.
+  Describes a first or third party audience list used for targeting. First party audiences are created via usage of client data. Third party audiences are provided by Third Party data providers and can only be licensed to customers.
 
   ## Attributes
 
-  *   `activeDisplayAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for the Display network in the past month.
-
-      If the size is less than 1000, the number will be hidden and 0 will be
-      returned due to privacy reasons. Otherwise, the number will be rounded off
-      to two significant digits.
-
-      Only returned in GET request.
+  *   `activeDisplayAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for the Display network in the past month. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only returned in GET request.
   *   `audienceSource` (*type:* `String.t`, *default:* `nil`) - Output only. The source of the audience.
   *   `audienceType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the audience.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The user-provided description of the audience.
-
-      Only applicable to first party audiences.
-  *   `displayAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for the Display network.
-
-      If the size is less than 1000, the number will be hidden and 0 will be
-      returned due to privacy reasons. Otherwise, the number will be rounded off
-      to two significant digits.
-
-      Only returned in GET request.
-  *   `displayDesktopAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated desktop audience size in Display network.
-
-      If the size is less than 1000, the number will be hidden and 0 will be
-      returned due to privacy reasons. Otherwise, the number will be rounded off
-      to two significant digits.
-
-      Only applicable to first party audiences.
-
-      Only returned in GET request.
-  *   `displayMobileAppAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated mobile app audience size in Display network.
-
-      If the size is less than 1000, the number will be hidden and 0 will be
-      returned due to privacy reasons. Otherwise, the number will be rounded off
-      to two significant digits.
-
-      Only applicable to first party audiences.
-
-      Only returned in GET request.
-  *   `displayMobileWebAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated mobile web audience size in Display network.
-
-      If the size is less than 1000, the number will be hidden and 0 will be
-      returned due to privacy reasons. Otherwise, the number will be rounded off
-      to two significant digits.
-
-      Only applicable to first party audiences.
-
-      Only returned in GET request.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The user-provided description of the audience. Only applicable to first party audiences.
+  *   `displayAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for the Display network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only returned in GET request.
+  *   `displayDesktopAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated desktop audience size in Display network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
+  *   `displayMobileAppAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated mobile app audience size in Display network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
+  *   `displayMobileWebAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated mobile web audience size in Display network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the first and third party audience.
-  *   `firstAndThirdPartyAudienceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the first and third party audience. Assigned by the
-      system.
+  *   `firstAndThirdPartyAudienceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the first and third party audience. Assigned by the system.
   *   `firstAndThirdPartyAudienceType` (*type:* `String.t`, *default:* `nil`) - Output only. Whether the audience is a first or third party audience.
-  *   `gmailAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for Gmail network.
-
-      If the size is less than 1000, the number will be hidden and 0 will be
-      returned due to privacy reasons. Otherwise, the number will be rounded off
-      to two significant digits.
-
-      Only applicable to first party audiences.
-
-      Only returned in GET request.
-  *   `membershipDurationDays` (*type:* `String.t`, *default:* `nil`) - The duration in days that an entry remains in the audience after the
-      qualifying event.
-
-      Only applicable to first party audiences.
+  *   `gmailAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for Gmail network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
+  *   `membershipDurationDays` (*type:* `String.t`, *default:* `nil`) - The duration in days that an entry remains in the audience after the qualifying event. Only applicable to first party audiences.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the first and third party audience.
-  *   `youtubeAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for YouTube network.
-
-      If the size is less than 1000, the number will be hidden and 0 will be
-      returned due to privacy reasons. Otherwise, the number will be rounded off
-      to two significant digits.
-
-      Only applicable to first party audiences.
-
-      Only returned in GET request.
+  *   `youtubeAudienceSize` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated audience size for YouTube network. If the size is less than 1000, the number will be hidden and 0 will be returned due to privacy reasons. Otherwise, the number will be rounded off to two significant digits. Only applicable to first party audiences. Only returned in GET request.
   """
 
   use GoogleApi.Gax.ModelBase

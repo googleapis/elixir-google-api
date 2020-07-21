@@ -44,8 +44,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CombinedAudiences do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the fetched combined
-          audience.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the fetched combined audience.
       *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the fetched combined audience.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -95,10 +94,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CombinedAudiences do
   end
 
   @doc """
-  Lists combined audiences.
-
-  The order is defined by the
-  order_by parameter.
+  Lists combined audiences. The order is defined by the order_by parameter.
 
   ## Parameters
 
@@ -115,42 +111,11 @@ defmodule GoogleApi.DisplayVideo.V1.Api.CombinedAudiences do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the fetched combined
-          audiences.
-      *   `:filter` (*type:* `String.t`) - Allows filtering by combined audience fields.
-
-          Supported syntax:
-
-          * Filter expressions for combined audiences currently can only contain at
-          most one restriction.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `CONTAINS (:)`.
-          * Supported fields:
-              - `displayName`
-
-          Examples:
-
-          * All combined audiences for which the display name contains "Google":
-          `displayName : "Google"`.
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `combinedAudienceId` (default)
-          * `displayName`
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListCombinedAudiences` method.
-          If not specified, the first page of results will be returned.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the fetched combined audiences.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by combined audience fields. Supported syntax: * Filter expressions for combined audiences currently can only contain at most one restriction. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)`. * Supported fields: - `displayName` Examples: * All combined audiences for which the display name contains "Google": `displayName : "Google"`. The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `combinedAudienceId` (default) * `displayName` The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListCombinedAudiences` method. If not specified, the first page of results will be returned.
       *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the fetched combined audiences.
   *   `opts` (*type:* `keyword()`) - Call options
 

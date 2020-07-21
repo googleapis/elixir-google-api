@@ -21,14 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListAdvertisersResponse do
 
   ## Attributes
 
-  *   `advertisers` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Advertiser.t)`, *default:* `nil`) - The list of advertisers.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      page_token
-      field in the subsequent call to `ListAdvertisers` method to retrieve the
-      next page of results.
+  *   `advertisers` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Advertiser.t)`, *default:* `nil`) - The list of advertisers. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListAdvertisers` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,14 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceTargetingSet
 
   ## Attributes
 
-  *   `firstAndThirdPartyAudienceId` (*type:* `String.t`, *default:* `nil`) - Required. First and third party audience id of the first and third party audience
-      targeting setting. This id is
-      first_and_third_party_audience_id.
-  *   `recency` (*type:* `String.t`, *default:* `nil`) - The recency of the first and third party audience targeting setting.
-      Only applicable to first party audiences, otherwise
-      will be ignored. For more info, refer to
-      https://support.google.com/displayvideo/answer/2949947#recency
-      When unspecified, no recency limit will be used.
+  *   `firstAndThirdPartyAudienceId` (*type:* `String.t`, *default:* `nil`) - Required. First and third party audience id of the first and third party audience targeting setting. This id is first_and_third_party_audience_id.
+  *   `recency` (*type:* `String.t`, *default:* `nil`) - The recency of the first and third party audience targeting setting. Only applicable to first party audiences, otherwise will be ignored. For more info, refer to https://support.google.com/displayvideo/answer/2949947#recency When unspecified, no recency limit will be used.
   """
 
   use GoogleApi.Gax.ModelBase

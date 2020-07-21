@@ -21,9 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AdvertiserDataAccessConfig do
 
   ## Attributes
 
-  *   `sdfConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.AdvertiserSdfConfig.t`, *default:* `nil`) - Structured Data Files (SDF) settings for the advertiser.
-
-      If not specified, the SDF settings of the parent partner are used.
+  *   `sdfConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.AdvertiserSdfConfig.t`, *default:* `nil`) - Structured Data Files (SDF) settings for the advertiser. If not specified, the SDF settings of the parent partner are used.
   """
 
   use GoogleApi.Gax.ModelBase

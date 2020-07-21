@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.DeviceTypeTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable device type. This will be populated in the
-  device_type_details field of a
-  TargetingOption when targeting_type is
-  `TARGETING_TYPE_DEVICE_TYPE`.
+  Represents a targetable device type. This will be populated in the device_type_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_DEVICE_TYPE`.
 
   ## Attributes
 

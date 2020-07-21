@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   @moduledoc """
-  Represents a single targeting option, which is a targetable concept in
-  DV360.
+  Represents a single targeting option, which is a targetable concept in DV360.
 
   ## Attributes
 
@@ -45,8 +44,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TargetingOption do
   *   `parentalStatusDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.ParentalStatusTargetingOptionDetails.t`, *default:* `nil`) - Parental status details.
   *   `sensitiveCategoryDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetails.t`, *default:* `nil`) - Sensitive Category details.
   *   `subExchangeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.SubExchangeTargetingOptionDetails.t`, *default:* `nil`) - Sub-exchange details.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Output only. A unique identifier for this targeting option. The tuple
-      {`targeting_type`, `targeting_option_id`} will be unique.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Output only. A unique identifier for this targeting option. The tuple {`targeting_type`, `targeting_option_id`} will be unique.
   *   `targetingType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of this targeting option.
   *   `userRewardedContentDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.UserRewardedContentTargetingOptionDetails.t`, *default:* `nil`) - User rewarded content details.
   *   `videoPlayerSizeDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.VideoPlayerSizeTargetingOptionDetails.t`, *default:* `nil`) - Video player size details.

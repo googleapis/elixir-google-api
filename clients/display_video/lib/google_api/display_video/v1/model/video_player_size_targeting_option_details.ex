@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.VideoPlayerSizeTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable video player size. This will be populated in the
-  video_player_size_details
-  field when targeting_type is
-  `TARGETING_TYPE_VIDEO_PLAYER_SIZE`.
+  Represents a targetable video player size. This will be populated in the video_player_size_details field when targeting_type is `TARGETING_TYPE_VIDEO_PLAYER_SIZE`.
 
   ## Attributes
 

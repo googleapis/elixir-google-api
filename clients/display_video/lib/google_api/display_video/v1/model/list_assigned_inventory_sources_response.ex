@@ -17,20 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListAssignedInventorySourcesResponse do
   @moduledoc """
-  Response message for
-  AssignedInventorySourceService.ListAssignedInventorySources.
+  Response message for AssignedInventorySourceService.ListAssignedInventorySources.
 
   ## Attributes
 
-  *   `assignedInventorySources` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t)`, *default:* `nil`) - The list of assigned inventory sources.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-
-      Pass this value in the
-      page_token field
-      in the subsequent call to `ListAssignedInventorySources` method to
-      retrieve the next page of results.
+  *   `assignedInventorySources` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t)`, *default:* `nil`) - The list of assigned inventory sources. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListAssignedInventorySources` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

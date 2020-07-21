@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable content outstream position, which could be used by
-  display and video ads. This will be populated in the
-  content_outstream_position_details
-  field when targeting_type is
-  `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
+  Represents a targetable content outstream position, which could be used by display and video ads. This will be populated in the content_outstream_position_details field when targeting_type is `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
 
   ## Attributes
 

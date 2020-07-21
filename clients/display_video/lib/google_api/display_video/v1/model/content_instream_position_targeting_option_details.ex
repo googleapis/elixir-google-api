@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ContentInstreamPositionTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable content instream position, which could be used by
-  video and audio ads. This will be populated in the
-  content_instream_position_details
-  field when targeting_type is
-  `TARGETING_TYPE_CONTENT_INSTREAM_POSITION`.
+  Represents a targetable content instream position, which could be used by video and audio ads. This will be populated in the content_instream_position_details field when targeting_type is `TARGETING_TYPE_CONTENT_INSTREAM_POSITION`.
 
   ## Attributes
 

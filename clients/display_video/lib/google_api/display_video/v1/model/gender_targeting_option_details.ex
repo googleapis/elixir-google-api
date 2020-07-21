@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.GenderTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable gender. This will be populated in the
-  gender_details field of a TargetingOption
-  when targeting_type is
-  `TARGETING_TYPE_GENDER`.
+  Represents a targetable gender. This will be populated in the gender_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_GENDER`.
 
   ## Attributes
 

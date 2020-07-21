@@ -44,10 +44,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FirstAndThirdPartyAudiences do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the fetched first and
-          third party audience.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the fetched first and
-          third party audience.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the fetched first and third party audience.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the fetched first and third party audience.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -104,10 +102,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FirstAndThirdPartyAudiences do
   end
 
   @doc """
-  Lists first and third party audiences.
-
-  The order is defined by the
-  order_by parameter.
+  Lists first and third party audiences. The order is defined by the order_by parameter.
 
   ## Parameters
 
@@ -124,44 +119,12 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FirstAndThirdPartyAudiences do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the fetched first and
-          third party audiences.
-      *   `:filter` (*type:* `String.t`) - Allows filtering by first and third party audience fields.
-
-          Supported syntax:
-
-          * Filter expressions for first and third party audiences currently can
-          only contain at most one restriction.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `CONTAINS (:)`.
-          * Supported fields:
-              - `displayName`
-
-          Examples:
-
-          * All first and third party audiences for which the display name contains
-          "Google": `displayName : "Google"`.
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `firstAndThirdPartyAudienceId` (default)
-          * `displayName`
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListFirstAndThirdPartyAudiences`
-          method. If not specified, the first page of results will be returned.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the fetched first and
-          third party audiences.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the fetched first and third party audiences.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by first and third party audience fields. Supported syntax: * Filter expressions for first and third party audiences currently can only contain at most one restriction. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)`. * Supported fields: - `displayName` Examples: * All first and third party audiences for which the display name contains "Google": `displayName : "Google"`. The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `firstAndThirdPartyAudienceId` (default) * `displayName` The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListFirstAndThirdPartyAudiences` method. If not specified, the first page of results will be returned.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the fetched first and third party audiences.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

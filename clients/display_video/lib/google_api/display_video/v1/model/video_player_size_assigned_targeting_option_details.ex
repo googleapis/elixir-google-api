@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.VideoPlayerSizeAssignedTargetingOptionDetails do
   @moduledoc """
-  Video player size targeting option details. This will be populated in the
-  video_player_size_details
-  field when targeting_type is
-  `TARGETING_TYPE_VIDEO_PLAYER_SIZE`.
-  Explicitly targeting all options is not supported. Remove all video player
-  size targeting options to achieve this effect.
+  Video player size targeting option details. This will be populated in the video_player_size_details field when targeting_type is `TARGETING_TYPE_VIDEO_PLAYER_SIZE`. Explicitly targeting all options is not supported. Remove all video player size targeting options to achieve this effect.
 
   ## Attributes
 
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when
-      targeting_type is
-      `TARGETING_TYPE_VIDEO_PLAYER_SIZE`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_VIDEO_PLAYER_SIZE`.
   *   `videoPlayerSize` (*type:* `String.t`, *default:* `nil`) - Output only. The video player size.
   """
 

@@ -17,12 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.UserRewardedContentTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable user rewarded content status for video ads only. This
-  will be populated in the
-  user_rewarded_content_details
-  field when
-  targeting_type is
-  `TARGETING_TYPE_USER_REWARDED_CONTENT`.
+  Represents a targetable user rewarded content status for video ads only. This will be populated in the user_rewarded_content_details field when targeting_type is `TARGETING_TYPE_USER_REWARDED_CONTENT`.
 
   ## Attributes
 

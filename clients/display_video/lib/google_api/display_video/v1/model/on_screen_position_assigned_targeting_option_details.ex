@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.OnScreenPositionAssignedTargetingOptionDetails do
   @moduledoc """
-  On screen position targeting option details. This will be
-  populated in the
-  on_screen_position_details
-  field when
-  targeting_type is
-  `TARGETING_TYPE_ON_SCREEN_POSITION`.
+  On screen position targeting option details. This will be populated in the on_screen_position_details field when targeting_type is `TARGETING_TYPE_ON_SCREEN_POSITION`.
 
   ## Attributes
 
   *   `onScreenPosition` (*type:* `String.t`, *default:* `nil`) - Output only. The on screen position.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when
-      targeting_type is
-      `TARGETING_TYPE_ON_SCREEN_POSITION`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_ON_SCREEN_POSITION`.
   """
 
   use GoogleApi.Gax.ModelBase

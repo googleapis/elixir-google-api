@@ -22,23 +22,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySource do
   ## Attributes
 
   *   `commitment` (*type:* `String.t`, *default:* `nil`) - Whether the inventory source has a guaranteed or non-guaranteed delivery.
-  *   `creativeConfigs` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CreativeConfig.t)`, *default:* `nil`) - The creative requirements of the inventory source.
-
-      Not applicable for auction packages.
-  *   `dealId` (*type:* `String.t`, *default:* `nil`) - The ID in the exchange space that uniquely identifies the inventory source.
-
-      Must be unique across buyers within each exchange but not necessarily
-      unique across exchanges.
-  *   `deliveryMethod` (*type:* `String.t`, *default:* `nil`) - The delivery method of the inventory source.
-
-      * For non-guaranteed inventory sources, the only acceptable value is
-      `INVENTORY_SOURCE_DELIVERY_METHOD_PROGRAMMATIC`.
-      * For guaranteed inventory sources, acceptable values are
-      `INVENTORY_SOURCE_DELIVERY_METHOD_TAG` and
-      `INVENTORY_SOURCE_DELIVERY_METHOD_PROGRAMMATIC`.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the inventory source.
-
-      Must be UTF-8 encoded with a maximum size of 240 bytes.
+  *   `creativeConfigs` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CreativeConfig.t)`, *default:* `nil`) - The creative requirements of the inventory source. Not applicable for auction packages.
+  *   `dealId` (*type:* `String.t`, *default:* `nil`) - The ID in the exchange space that uniquely identifies the inventory source. Must be unique across buyers within each exchange but not necessarily unique across exchanges.
+  *   `deliveryMethod` (*type:* `String.t`, *default:* `nil`) - The delivery method of the inventory source. * For non-guaranteed inventory sources, the only acceptable value is `INVENTORY_SOURCE_DELIVERY_METHOD_PROGRAMMATIC`. * For guaranteed inventory sources, acceptable values are `INVENTORY_SOURCE_DELIVERY_METHOD_TAG` and `INVENTORY_SOURCE_DELIVERY_METHOD_PROGRAMMATIC`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the inventory source. Must be UTF-8 encoded with a maximum size of 240 bytes.
   *   `exchange` (*type:* `String.t`, *default:* `nil`) - The exchange to which the inventory source belongs.
   *   `inventorySourceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the inventory source. Assigned by the system.
   *   `inventorySourceType` (*type:* `String.t`, *default:* `nil`) - Denotes the type of the inventory source.
@@ -47,8 +34,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySource do
   *   `rateDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.RateDetails.t`, *default:* `nil`) - Required. The rate details of the inventory source.
   *   `status` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceStatus.t`, *default:* `nil`) - The status settings of the inventory source.
   *   `timeRange` (*type:* `GoogleApi.DisplayVideo.V1.Model.TimeRange.t`, *default:* `nil`) - The time range when this inventory source starts and stops serving.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the inventory source was last updated. Assigned by the
-      system.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the inventory source was last updated. Assigned by the system.
   """
 
   use GoogleApi.Gax.ModelBase

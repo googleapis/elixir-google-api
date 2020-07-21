@@ -17,12 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable sensitive category. This will be
-  populated in the
-  sensitive_category_details
-  field of the TargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`.
+  Represents a targetable sensitive category. This will be populated in the sensitive_category_details field of the TargetingOption when targeting_type is `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`.
 
   ## Attributes
 

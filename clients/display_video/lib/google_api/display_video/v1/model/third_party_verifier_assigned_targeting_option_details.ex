@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ThirdPartyVerifierAssignedTargetingOptionDetails do
   @moduledoc """
-  Assigned third party verifier targeting option details. This will be
-  populated in the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_THIRD_PARTY_VERIFIER`.
+  Assigned third party verifier targeting option details. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_THIRD_PARTY_VERIFIER`.
 
   ## Attributes
 

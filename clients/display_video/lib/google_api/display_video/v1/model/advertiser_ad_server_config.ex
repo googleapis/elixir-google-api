@@ -21,10 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AdvertiserAdServerConfig do
 
   ## Attributes
 
-  *   `cmHybridConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.CmHybridConfig.t`, *default:* `nil`) - The configuration for advertisers that use both Campaign Manager (CM) and
-      third-party ad servers.
-  *   `thirdPartyOnlyConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.ThirdPartyOnlyConfig.t`, *default:* `nil`) - The configuration for advertisers that use third-party ad servers
-      only.
+  *   `cmHybridConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.CmHybridConfig.t`, *default:* `nil`) - The configuration for advertisers that use both Campaign Manager (CM) and third-party ad servers.
+  *   `thirdPartyOnlyConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.ThirdPartyOnlyConfig.t`, *default:* `nil`) - The configuration for advertisers that use third-party ad servers only.
   """
 
   use GoogleApi.Gax.ModelBase

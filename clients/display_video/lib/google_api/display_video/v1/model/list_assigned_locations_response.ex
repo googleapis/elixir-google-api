@@ -17,20 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListAssignedLocationsResponse do
   @moduledoc """
-  Response message for
-  AssignedLocationService.ListAssignedLocations.
+  Response message for AssignedLocationService.ListAssignedLocations.
 
   ## Attributes
 
-  *   `assignedLocations` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedLocation.t)`, *default:* `nil`) - The list of assigned locations.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-
-      Pass this value in the
-      page_token field
-      in the subsequent call to `ListAssignedLocations` method to
-      retrieve the next page of results.
+  *   `assignedLocations` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedLocation.t)`, *default:* `nil`) - The list of assigned locations. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListAssignedLocations` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

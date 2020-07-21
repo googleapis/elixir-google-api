@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.DigitalContentLabelAssignedTargetingOptionDetails do
   @moduledoc """
-  Targeting details for digital content label. This will be
-  populated in the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION`.
+  Targeting details for digital content label. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION`.
 
   ## Attributes
 

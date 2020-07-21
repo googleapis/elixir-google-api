@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.CarrierAndIspTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable carrier or ISP. This will be populated in the
-  carrier_and_isp_details field of
-  a TargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_CARRIER_AND_ISP`.
+  Represents a targetable carrier or ISP. This will be populated in the carrier_and_isp_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_CARRIER_AND_ISP`.
 
   ## Attributes
 

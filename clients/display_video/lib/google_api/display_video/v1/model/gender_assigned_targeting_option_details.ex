@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.GenderAssignedTargetingOptionDetails do
   @moduledoc """
-  Details for assigned gender targeting option. This will be populated in
-  the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARTGETING_TYPE_GENDER`.
+  Details for assigned gender targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARTGETING_TYPE_GENDER`.
 
   ## Attributes
 
   *   `gender` (*type:* `String.t`, *default:* `nil`) - Output only. The gender of the audience.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a
-      TargetingOption of type `TARGETING_TYPE_GENDER`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_GENDER`.
   """
 
   use GoogleApi.Gax.ModelBase

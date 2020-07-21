@@ -21,8 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DoubleVerifyVideoViewability do
 
   ## Attributes
 
-  *   `playerImpressionRate` (*type:* `String.t`, *default:* `nil`) - Target inventory to maximize impressions with 400x300 or greater player
-      size.
+  *   `playerImpressionRate` (*type:* `String.t`, *default:* `nil`) - Target inventory to maximize impressions with 400x300 or greater player size.
   *   `videoIab` (*type:* `String.t`, *default:* `nil`) - Target web inventory to maximize IAB viewable rate.
   *   `videoViewableRate` (*type:* `String.t`, *default:* `nil`) - Target web inventory to maximize fully viewable rate.
   """

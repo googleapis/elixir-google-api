@@ -21,9 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedInventorySourcesRespon
 
   ## Attributes
 
-  *   `assignedInventorySources` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t)`, *default:* `nil`) - The list of assigned inventory sources that have been successfully created.
-
-      This list will be absent if empty.
+  *   `assignedInventorySources` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t)`, *default:* `nil`) - The list of assigned inventory sources that have been successfully created. This list will be absent if empty.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -25,17 +25,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Campaign do
   *   `campaignFlight` (*type:* `GoogleApi.DisplayVideo.V1.Model.CampaignFlight.t`, *default:* `nil`) - Required. The planned spend and duration of the campaign.
   *   `campaignGoal` (*type:* `GoogleApi.DisplayVideo.V1.Model.CampaignGoal.t`, *default:* `nil`) - Required. The goal of the campaign.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the campaign. Assigned by the system.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the campaign.
-
-      Must be UTF-8 encoded with a maximum size of 240 bytes.
-  *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not the insertion orders under this campaign
-      can spend their budgets and bid on inventory.
-
-      * Accepted values are `ENTITY_STATUS_ACTIVE`, `ENTITY_STATUS_ARCHIVED`, and
-      `ENTITY_STATUS_PAUSED`.
-      * For
-      CreateCampaign method,
-      `ENTITY_STATUS_ARCHIVED` is not allowed.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the campaign. Must be UTF-8 encoded with a maximum size of 240 bytes.
+  *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not the insertion orders under this campaign can spend their budgets and bid on inventory. * Accepted values are `ENTITY_STATUS_ACTIVE`, `ENTITY_STATUS_ARCHIVED`, and `ENTITY_STATUS_PAUSED`. * For CreateCampaign method, `ENTITY_STATUS_ARCHIVED` is not allowed.
   *   `frequencyCap` (*type:* `GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t`, *default:* `nil`) - Required. The frequency cap setting of the campaign.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the campaign.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the campaign was last updated. Assigned by the system.

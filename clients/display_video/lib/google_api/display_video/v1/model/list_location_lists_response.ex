@@ -21,15 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListLocationListsResponse do
 
   ## Attributes
 
-  *   `locationLists` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.LocationList.t)`, *default:* `nil`) - The list of location lists.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-
-      Pass this value in the
-      page_token
-      field in the subsequent call to `ListLocationLists` method to retrieve the
-      next page of results.
+  *   `locationLists` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.LocationList.t)`, *default:* `nil`) - The list of location lists. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListLocationLists` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

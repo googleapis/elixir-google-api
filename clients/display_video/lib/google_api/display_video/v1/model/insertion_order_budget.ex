@@ -21,15 +21,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudget do
 
   ## Attributes
 
-  *   `automationType` (*type:* `String.t`, *default:* `nil`) - The type of automation used to manage bid and budget for
-      the insertion order.
-
-      If this field is unspecified in creation, the value defaults to
-      `INSERTION_ORDER_AUTOMATION_TYPE_NONE`.
-  *   `budgetSegments` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudgetSegment.t)`, *default:* `nil`) - Required. The list of budget segments. Use a budget segment to specify
-      a specific budget for a given period of time an insertion order is running.
-  *   `budgetUnit` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The budget unit specifies whether the budget is currency based or
-      impression based.
+  *   `automationType` (*type:* `String.t`, *default:* `nil`) - The type of automation used to manage bid and budget for the insertion order. If this field is unspecified in creation, the value defaults to `INSERTION_ORDER_AUTOMATION_TYPE_NONE`.
+  *   `budgetSegments` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudgetSegment.t)`, *default:* `nil`) - Required. The list of budget segments. Use a budget segment to specify a specific budget for a given period of time an insertion order is running.
+  *   `budgetUnit` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The budget unit specifies whether the budget is currency based or impression based.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ExchangeTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable exchange. This will be populated in the
-  exchange_details field
-  of a TargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_EXCHANGE`.
+  Represents a targetable exchange. This will be populated in the exchange_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_EXCHANGE`.
 
   ## Attributes
 

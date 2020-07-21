@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.SdfDownloadTask do
   @moduledoc """
-  Type for the response returned
-  by [SdfDownloadTaskService.CreateSdfDownloadTask].
+  Type for the response returned by [SdfDownloadTaskService.CreateSdfDownloadTask].
 
   ## Attributes
 
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - A resource name to be used in
-      media.download to Download the prepared
-      files. Resource names have the format
-      `download/sdfdownloadtasks/media/{media_id}`. `media_id` will be made
-      available by the long running operation service once the task status is
-      done.
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - A resource name to be used in media.download to Download the prepared files. Resource names have the format `download/sdfdownloadtasks/media/{media_id}`. `media_id` will be made available by the long running operation service once the task status is done.
   """
 
   use GoogleApi.Gax.ModelBase

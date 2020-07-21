@@ -21,14 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListCreativesResponse do
 
   ## Attributes
 
-  *   `creatives` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Creative.t)`, *default:* `nil`) - The list of creatives.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the page_token field
-      in the subsequent call to `ListCreativesRequest` method to retrieve the
-      next page of results.
-      If this field is null, it means this is the last page.
+  *   `creatives` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Creative.t)`, *default:* `nil`) - The list of creatives. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListCreativesRequest` method to retrieve the next page of results. If this field is null, it means this is the last page.
   """
 
   use GoogleApi.Gax.ModelBase

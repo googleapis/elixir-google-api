@@ -21,18 +21,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedInventorySourcesReques
 
   ## Attributes
 
-  *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - The ID of the advertiser that owns the parent inventory source group.
-
-      The parent partner does not have access to these assigned inventory
-      sources.
-  *   `createdAssignedInventorySources` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t)`, *default:* `nil`) - The assigned inventory sources to create in bulk, specified as a list of
-      AssignedInventorySources.
-  *   `deletedAssignedInventorySources` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the assigned inventory sources to delete in bulk, specified as a
-      list of
-      assigned_inventory_source_ids.
-  *   `partnerId` (*type:* `String.t`, *default:* `nil`) - The ID of the partner that owns the inventory source group.
-
-      Only this partner has write access to these assigned inventory sources.
+  *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - The ID of the advertiser that owns the parent inventory source group. The parent partner does not have access to these assigned inventory sources.
+  *   `createdAssignedInventorySources` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t)`, *default:* `nil`) - The assigned inventory sources to create in bulk, specified as a list of AssignedInventorySources.
+  *   `deletedAssignedInventorySources` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the assigned inventory sources to delete in bulk, specified as a list of assigned_inventory_source_ids.
+  *   `partnerId` (*type:* `String.t`, *default:* `nil`) - The ID of the partner that owns the inventory source group. Only this partner has write access to these assigned inventory sources.
   """
 
   use GoogleApi.Gax.ModelBase

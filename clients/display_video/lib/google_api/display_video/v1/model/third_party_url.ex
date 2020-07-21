@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ThirdPartyUrl do
   @moduledoc """
-  Tracking URLs from third parties to track interactions with an audio or a
-  video creative.
+  Tracking URLs from third parties to track interactions with an audio or a video creative.
 
   ## Attributes
 
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of interaction needs to be tracked by the tracking URL
-  *   `url` (*type:* `String.t`, *default:* `nil`) - Tracking URL used to track the interaction.
-
-      Provide a URL with optional path or query string, beginning with `https:`.
-      For example, https://www.example.com/path
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Tracking URL used to track the interaction. Provide a URL with optional path or query string, beginning with `https:`. For example, https://www.example.com/path
   """
 
   use GoogleApi.Gax.ModelBase

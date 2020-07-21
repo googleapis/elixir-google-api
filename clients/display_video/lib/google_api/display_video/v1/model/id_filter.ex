@@ -21,30 +21,12 @@ defmodule GoogleApi.DisplayVideo.V1.Model.IdFilter do
 
   ## Attributes
 
-  *   `adGroupAdIds` (*type:* `list(String.t)`, *default:* `nil`) - TrueView Ads to download by ID. All IDs must belong to the same
-      Advertiser or
-      Partner specified in
-      CreateSdfDownloadTaskRequest.
-  *   `adGroupIds` (*type:* `list(String.t)`, *default:* `nil`) - TrueView Ad Groups to download by ID. All IDs must belong to the same
-      Advertiser or
-      Partner specified in
-      CreateSdfDownloadTaskRequest.
-  *   `campaignIds` (*type:* `list(String.t)`, *default:* `nil`) - Campaigns to download by ID. All IDs must belong to the same
-      Advertiser or
-      Partner specified in
-      CreateSdfDownloadTaskRequest.
-  *   `insertionOrderIds` (*type:* `list(String.t)`, *default:* `nil`) - Insertion Orders to download by ID. All IDs must belong to the same
-      Advertiser or
-      Partner specified in
-      CreateSdfDownloadTaskRequest.
-  *   `lineItemIds` (*type:* `list(String.t)`, *default:* `nil`) - Line Items to download by ID. All IDs must belong to the same
-      Advertiser or
-      Partner specified in
-      CreateSdfDownloadTaskRequest.
-  *   `mediaProductIds` (*type:* `list(String.t)`, *default:* `nil`) - Media Products to download by ID. All IDs must belong to the same
-      Advertiser or
-      Partner specified in
-      CreateSdfDownloadTaskRequest.
+  *   `adGroupAdIds` (*type:* `list(String.t)`, *default:* `nil`) - YouTube Ads to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
+  *   `adGroupIds` (*type:* `list(String.t)`, *default:* `nil`) - YouTube Ad Groups to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
+  *   `campaignIds` (*type:* `list(String.t)`, *default:* `nil`) - Campaigns to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
+  *   `insertionOrderIds` (*type:* `list(String.t)`, *default:* `nil`) - Insertion Orders to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
+  *   `lineItemIds` (*type:* `list(String.t)`, *default:* `nil`) - Line Items to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
+  *   `mediaProductIds` (*type:* `list(String.t)`, *default:* `nil`) - Media Products to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
   """
 
   use GoogleApi.Gax.ModelBase

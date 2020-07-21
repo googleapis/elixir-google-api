@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup do
   @moduledoc """
-  Details of Google audience group.
-  All Google audience targeting settings are logically ‘OR’ of each other.
+  Details of Google audience group. All Google audience targeting settings are logically ‘OR’ of each other.
 
   ## Attributes
 
-  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.GoogleAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All Google audience targeting settings in Google audience group.
-      Repeated settings with same id will be ignored.
+  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.GoogleAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All Google audience targeting settings in Google audience group. Repeated settings with same id will be ignored.
   """
 
   use GoogleApi.Gax.ModelBase

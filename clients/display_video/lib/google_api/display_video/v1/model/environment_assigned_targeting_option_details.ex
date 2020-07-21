@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.EnvironmentAssignedTargetingOptionDetails do
   @moduledoc """
-  Assigned environment targeting option details. This will be populated
-  in the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_ENVIRONMENT`.
+  Assigned environment targeting option details. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_ENVIRONMENT`.
 
   ## Attributes
 
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Output only. The serving environment.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a
-      TargetingOption of type `TARGETING_TYPE_ENVIRONMENT` (e.g., "508010"
-      for targeting the `ENVIRONMENT_WEB_OPTIMIZED` option).
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_ENVIRONMENT` (e.g., "508010" for targeting the `ENVIRONMENT_WEB_OPTIMIZED` option).
   """
 
   use GoogleApi.Gax.ModelBase

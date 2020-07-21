@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.SubExchangeTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable sub-exchange. This will be populated in the
-  sub_exchange_details field
-  of a TargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_SUB_EXCHANGE`.
+  Represents a targetable sub-exchange. This will be populated in the sub_exchange_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_SUB_EXCHANGE`.
 
   ## Attributes
 

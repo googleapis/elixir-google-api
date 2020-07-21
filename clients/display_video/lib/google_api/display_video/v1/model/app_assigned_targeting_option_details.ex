@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.AppAssignedTargetingOptionDetails do
   @moduledoc """
-  Details for assigned app targeting option. This will be populated in the
-  details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_APP`.
+  Details for assigned app targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_APP`.
 
   ## Attributes
 
-  *   `appId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the app.
-
-      Android's Play store app uses bundle ID, for example
-      `com.google.android.gm`. Apple's App store app ID uses 9 digit string, for
-      example `422689480`.
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the app. Android's Play store app uses bundle ID, for example `com.google.android.gm`. Apple's App store app ID uses 9 digit string, for example `422689480`.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the app.
   *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted.
   """

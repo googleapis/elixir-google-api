@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.DeviceTypeAssignedTargetingOptionDetails do
   @moduledoc """
-  Targeting details for device type. This will be
-  populated in the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_DEVICE_TYPE`.
+  Targeting details for device type. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_DEVICE_TYPE`.
 
   ## Attributes
 

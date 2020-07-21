@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.CategoryAssignedTargetingOptionDetails do
   @moduledoc """
-  Assigned category targeting option details. This will be populated in the
-  category_details field when
-  targeting_type is
-  `TARGETING_TYPE_CATEGORY`.
+  Assigned category targeting option details. This will be populated in the category_details field when targeting_type is `TARGETING_TYPE_CATEGORY`.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the category.
   *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when
-      targeting_type is
-      `TARGETING_TYPE_CATEGORY`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_CATEGORY`.
   """
 
   use GoogleApi.Gax.ModelBase

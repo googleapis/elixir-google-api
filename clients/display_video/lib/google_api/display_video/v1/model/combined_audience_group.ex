@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.CombinedAudienceGroup do
   @moduledoc """
-  Details of combined audience group.
-  All combined audience targeting settings are logically ‘OR’ of each other.
+  Details of combined audience group. All combined audience targeting settings are logically ‘OR’ of each other.
 
   ## Attributes
 
-  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CombinedAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All combined audience targeting settings in combined audience group.
-      Repeated settings with same id will be ignored.
-      The number of combined audience settings should be no more than five, error
-      will be thrown otherwise.
+  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CombinedAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All combined audience targeting settings in combined audience group. Repeated settings with same id will be ignored. The number of combined audience settings should be no more than five, error will be thrown otherwise.
   """
 
   use GoogleApi.Gax.ModelBase

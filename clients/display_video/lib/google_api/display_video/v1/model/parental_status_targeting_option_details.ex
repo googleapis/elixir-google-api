@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ParentalStatusTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable parental status. This will be populated in the
-  parental_status_details field of a
-  TargetingOption when targeting_type is
-  `TARGETING_TYPE_PARENTAL_STATUS`.
+  Represents a targetable parental status. This will be populated in the parental_status_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_PARENTAL_STATUS`.
 
   ## Attributes
 

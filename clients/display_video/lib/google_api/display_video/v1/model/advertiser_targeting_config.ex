@@ -21,8 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig do
 
   ## Attributes
 
-  *   `exemptTvFromViewabilityTargeting` (*type:* `boolean()`, *default:* `nil`) - Whether or not connected TV devices are exempt from viewability targeting
-      for all video line items under the advertiser.
+  *   `exemptTvFromViewabilityTargeting` (*type:* `boolean()`, *default:* `nil`) - Whether or not connected TV devices are exempt from viewability targeting for all video line items under the advertiser.
   """
 
   use GoogleApi.Gax.ModelBase

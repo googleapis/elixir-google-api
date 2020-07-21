@@ -21,18 +21,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.RateDetails do
 
   ## Attributes
 
-  *   `inventorySourceRateType` (*type:* `String.t`, *default:* `nil`) - The rate type.
-
-      Acceptable values are `INVENTORY_SOURCE_RATE_TYPE_CPM_FIXED`,
-      `INVENTORY_SOURCE_RATE_TYPE_CPM_FLOOR`, and
-      `INVENTORY_SOURCE_RATE_TYPE_CPD`.
-  *   `minimumSpend` (*type:* `GoogleApi.DisplayVideo.V1.Model.Money.t`, *default:* `nil`) - Output only. The amount that the buyer has committed to spending on the inventory source
-      up front.
-
-      Only applicable for guaranteed inventory sources.
+  *   `inventorySourceRateType` (*type:* `String.t`, *default:* `nil`) - The rate type. Acceptable values are `INVENTORY_SOURCE_RATE_TYPE_CPM_FIXED`, `INVENTORY_SOURCE_RATE_TYPE_CPM_FLOOR`, and `INVENTORY_SOURCE_RATE_TYPE_CPD`.
+  *   `minimumSpend` (*type:* `GoogleApi.DisplayVideo.V1.Model.Money.t`, *default:* `nil`) - Output only. The amount that the buyer has committed to spending on the inventory source up front. Only applicable for guaranteed inventory sources.
   *   `rate` (*type:* `GoogleApi.DisplayVideo.V1.Model.Money.t`, *default:* `nil`) - The rate for the inventory source.
-  *   `unitsPurchased` (*type:* `String.t`, *default:* `nil`) - Required for guaranteed inventory sources.
-      The number of impressions guaranteed by the seller.
+  *   `unitsPurchased` (*type:* `String.t`, *default:* `nil`) - Required for guaranteed inventory sources. The number of impressions guaranteed by the seller.
   """
 
   use GoogleApi.Gax.ModelBase

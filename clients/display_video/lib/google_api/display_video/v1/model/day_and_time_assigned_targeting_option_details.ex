@@ -17,20 +17,14 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.DayAndTimeAssignedTargetingOptionDetails do
   @moduledoc """
-  Representation of a segment of time defined on a specific day of the week and
-  with a start and end time.
-  The time represented by `start_hour` must be before the time represented by
-  `end_hour`.
+  Representation of a segment of time defined on a specific day of the week and with a start and end time. The time represented by `start_hour` must be before the time represented by `end_hour`.
 
   ## Attributes
 
   *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - Required. The day of the week for this day and time targeting setting.
-  *   `endHour` (*type:* `integer()`, *default:* `nil`) - Required. The end hour for day and time targeting. Must be between 1 (1 hour after
-      start of day) and 24 (end of day).
-  *   `startHour` (*type:* `integer()`, *default:* `nil`) - Required. The start hour for day and time targeting. Must be between 0 (start of day)
-      and 23 (1 hour before end of day).
-  *   `timeZoneResolution` (*type:* `String.t`, *default:* `nil`) - Required. The mechanism used to determine which timezone to use for this day and time
-      targeting setting.
+  *   `endHour` (*type:* `integer()`, *default:* `nil`) - Required. The end hour for day and time targeting. Must be between 1 (1 hour after start of day) and 24 (end of day).
+  *   `startHour` (*type:* `integer()`, *default:* `nil`) - Required. The start hour for day and time targeting. Must be between 0 (start of day) and 23 (1 hour before end of day).
+  *   `timeZoneResolution` (*type:* `String.t`, *default:* `nil`) - Required. The mechanism used to determine which timezone to use for this day and time targeting setting.
   """
 
   use GoogleApi.Gax.ModelBase

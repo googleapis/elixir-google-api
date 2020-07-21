@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.HouseholdIncomeAssignedTargetingOptionDetails do
   @moduledoc """
-  Details for assigned household income targeting option. This will be
-  populated in the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_HOUSEHOLD_INCOME`.
+  Details for assigned household income targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_HOUSEHOLD_INCOME`.
 
   ## Attributes
 
   *   `householdIncome` (*type:* `String.t`, *default:* `nil`) - Output only. The household income of the audience.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a
-      TargetingOption of type `TARGETING_TYPE_HOUSEHOLD_INCOME`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_HOUSEHOLD_INCOME`.
   """
 
   use GoogleApi.Gax.ModelBase

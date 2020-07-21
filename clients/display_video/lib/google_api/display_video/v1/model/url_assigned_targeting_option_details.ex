@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.UrlAssignedTargetingOptionDetails do
   @moduledoc """
-  Details for assigned URL targeting option. This will be populated in the
-  details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_URL`.
+  Details for assigned URL targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_URL`.
 
   ## Attributes
 
   *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - Required. The URL, for example `example.com`.
-
-      DV360 supports two levels of subdirectory targeting, for example
-      `www.example.com/one-subdirectory-level/second-level`, and five levels of
-      subdomain targeting, for example `five.four.three.two.one.example.com`.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Required. The URL, for example `example.com`. DV360 supports two levels of subdirectory targeting, for example `www.example.com/one-subdirectory-level/second-level`, and five levels of subdomain targeting, for example `five.four.three.two.one.example.com`.
   """
 
   use GoogleApi.Gax.ModelBase

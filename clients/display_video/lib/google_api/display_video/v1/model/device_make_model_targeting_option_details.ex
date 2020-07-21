@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.DeviceMakeModelTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable device make and model. This will be populated in the
-  device_make_model_details
-  field of a TargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_DEVICE_MAKE_MODEL`.
+  Represents a targetable device make and model. This will be populated in the device_make_model_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_DEVICE_MAKE_MODEL`.
 
   ## Attributes
 

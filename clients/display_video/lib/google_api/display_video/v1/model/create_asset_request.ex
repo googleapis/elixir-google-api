@@ -21,9 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CreateAssetRequest do
 
   ## Attributes
 
-  *   `filename` (*type:* `String.t`, *default:* `nil`) - Required. The filename of the asset, including the file extension.
-
-      The filename must be UTF-8 encoded with a maximum size of 240 bytes.
+  *   `filename` (*type:* `String.t`, *default:* `nil`) - Required. The filename of the asset, including the file extension. The filename must be UTF-8 encoded with a maximum size of 240 bytes.
   """
 
   use GoogleApi.Gax.ModelBase

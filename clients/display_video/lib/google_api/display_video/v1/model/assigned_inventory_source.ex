@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource do
   @moduledoc """
-  An assignment between a targetable inventory source and an inventory source
-  group.
+  An assignment between a targetable inventory source and an inventory source group.
 
   ## Attributes
 
-  *   `assignedInventorySourceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the assigned inventory source. The ID is only
-      unique within a given inventory source group. It may be reused in other
-      contexts.
+  *   `assignedInventorySourceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the assigned inventory source. The ID is only unique within a given inventory source group. It may be reused in other contexts.
   *   `inventorySourceId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the inventory source entity being targeted.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the assigned inventory source.
   """

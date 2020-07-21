@@ -22,12 +22,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.TrackingFloodlightActivityConfig do
   ## Attributes
 
   *   `floodlightActivityId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the Floodlight activity.
-  *   `postClickLookbackWindowDays` (*type:* `integer()`, *default:* `nil`) - Required. The number of days after an ad has been clicked in which a
-      conversion may be counted.
-      Must be between 0 and 90 inclusive.
-  *   `postViewLookbackWindowDays` (*type:* `integer()`, *default:* `nil`) - Required. The number of days after an ad has been viewed in which a
-      conversion may be counted.
-      Must be between 0 and 90 inclusive.
+  *   `postClickLookbackWindowDays` (*type:* `integer()`, *default:* `nil`) - Required. The number of days after an ad has been clicked in which a conversion may be counted. Must be between 0 and 90 inclusive.
+  *   `postViewLookbackWindowDays` (*type:* `integer()`, *default:* `nil`) - Required. The number of days after an ad has been viewed in which a conversion may be counted. Must be between 0 and 90 inclusive.
   """
 
   use GoogleApi.Gax.ModelBase

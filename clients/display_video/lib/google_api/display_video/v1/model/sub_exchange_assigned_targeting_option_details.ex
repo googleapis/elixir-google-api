@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.SubExchangeAssignedTargetingOptionDetails do
   @moduledoc """
-  Details for assigned sub-exchange targeting option. This will be populated in
-  the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_SUB_EXCHANGE`.
+  Details for assigned sub-exchange targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_SUB_EXCHANGE`.
 
   ## Attributes
 
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a
-      TargetingOption of type `TARGETING_TYPE_SUB_EXCHANGE`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_SUB_EXCHANGE`.
   """
 
   use GoogleApi.Gax.ModelBase

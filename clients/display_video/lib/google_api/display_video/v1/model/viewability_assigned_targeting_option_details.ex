@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ViewabilityAssignedTargetingOptionDetails do
   @moduledoc """
-  Assigned viewability targeting option details. This will be populated in the
-  viewability_details field of
-  an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_VIEWABILITY`.
+  Assigned viewability targeting option details. This will be populated in the viewability_details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_VIEWABILITY`.
 
   ## Attributes
 
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a
-      TargetingOption of type `TARGETING_TYPE_VIEWABILITY` (e.g., "509010"
-      for targeting the `VIEWABILITY_10_PERCENT_OR_MORE` option).
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_VIEWABILITY` (e.g., "509010" for targeting the `VIEWABILITY_10_PERCENT_OR_MORE` option).
   *   `viewability` (*type:* `String.t`, *default:* `nil`) - Output only. The predicted viewability percentage.
   """
 

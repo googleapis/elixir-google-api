@@ -22,18 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CampaignGoal do
   ## Attributes
 
   *   `campaignGoalType` (*type:* `String.t`, *default:* `nil`) - Required. The type of the campaign goal.
-  *   `performanceGoal` (*type:* `GoogleApi.DisplayVideo.V1.Model.PerformanceGoal.t`, *default:* `nil`) - Required. The performance goal of the campaign.
-
-      Acceptable values for
-      performance_goal_type are:
-
-      * `PERFORMANCE_GOAL_TYPE_CPM`
-      * `PERFORMANCE_GOAL_TYPE_CPC`
-      * `PERFORMANCE_GOAL_TYPE_CPA`
-      * `PERFORMANCE_GOAL_TYPE_CPIAVC`
-      * `PERFORMANCE_GOAL_TYPE_CTR`
-      * `PERFORMANCE_GOAL_TYPE_VIEWABILITY`
-      * `PERFORMANCE_GOAL_TYPE_OTHER`
+  *   `performanceGoal` (*type:* `GoogleApi.DisplayVideo.V1.Model.PerformanceGoal.t`, *default:* `nil`) - Required. The performance goal of the campaign. Acceptable values for performance_goal_type are: * `PERFORMANCE_GOAL_TYPE_CPM` * `PERFORMANCE_GOAL_TYPE_CPC` * `PERFORMANCE_GOAL_TYPE_CPA` * `PERFORMANCE_GOAL_TYPE_CPIAVC` * `PERFORMANCE_GOAL_TYPE_CTR` * `PERFORMANCE_GOAL_TYPE_VIEWABILITY` * `PERFORMANCE_GOAL_TYPE_OTHER`
   """
 
   use GoogleApi.Gax.ModelBase

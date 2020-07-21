@@ -21,12 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Asset do
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - The asset content.
-      For uploaded assets, the content is the serving path.
-  *   `mediaId` (*type:* `String.t`, *default:* `nil`) - Media ID of the uploaded asset. This is a unique identifier for the asset.
-      This ID can be passed to other API calls, e.g.
-      CreateCreative to associate
-      the asset with a creative.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The asset content. For uploaded assets, the content is the serving path.
+  *   `mediaId` (*type:* `String.t`, *default:* `nil`) - Media ID of the uploaded asset. This is a unique identifier for the asset. This ID can be passed to other API calls, e.g. CreateCreative to associate the asset with a creative.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,12 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.OnScreenPositionTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable on screen position, which could be used by display
-  and video ads. This will be populated in the
-  on_screen_position_details
-  field when
-  targeting_type is
-  `TARGETING_TYPE_ON_SCREEN_POSITION`.
+  Represents a targetable on screen position, which could be used by display and video ads. This will be populated in the on_screen_position_details field when targeting_type is `TARGETING_TYPE_ON_SCREEN_POSITION`.
 
   ## Attributes
 

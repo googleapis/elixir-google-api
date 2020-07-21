@@ -21,13 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListCampaignsResponse do
 
   ## Attributes
 
-  *   `campaigns` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Campaign.t)`, *default:* `nil`) - The list of campaigns.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the page_token field
-      in the subsequent call to `ListCampaigns` method to retrieve the next page
-      of results.
+  *   `campaigns` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Campaign.t)`, *default:* `nil`) - The list of campaigns. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListCampaigns` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

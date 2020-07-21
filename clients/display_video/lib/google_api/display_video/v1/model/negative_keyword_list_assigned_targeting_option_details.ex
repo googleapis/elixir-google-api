@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.NegativeKeywordListAssignedTargetingOptionDetails do
   @moduledoc """
-  Targeting details for negative keyword list. This will be populated in the
-  details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_NEGATIVE_KEYWORD_LIST`.
+  Targeting details for negative keyword list. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_NEGATIVE_KEYWORD_LIST`.
 
   ## Attributes
 
-  *   `negativeKeywordListId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the negative keyword list. Should refer to the
-      negative_keyword_list_id
-      field of a NegativeKeywordList resource.
+  *   `negativeKeywordListId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the negative keyword list. Should refer to the negative_keyword_list_id field of a NegativeKeywordList resource.
   """
 
   use GoogleApi.Gax.ModelBase

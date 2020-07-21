@@ -21,14 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.IntegrationDetails do
 
   ## Attributes
 
-  *   `details` (*type:* `String.t`, *default:* `nil`) - Additional details of the entry in string format.
-
-      Must be UTF-8 encoded with a length of no more than 1000 characters.
-  *   `integrationCode` (*type:* `String.t`, *default:* `nil`) - An external identifier to be associated with the entry.
-      The integration code will show up together with the entry in many
-      places in the system, for example, reporting.
-
-      Must be UTF-8 encoded with a length of no more than 500 characters.
+  *   `details` (*type:* `String.t`, *default:* `nil`) - Additional details of the entry in string format. Must be UTF-8 encoded with a length of no more than 1000 characters.
+  *   `integrationCode` (*type:* `String.t`, *default:* `nil`) - An external identifier to be associated with the entry. The integration code will show up together with the entry in many places in the system, for example, reporting. Must be UTF-8 encoded with a length of no more than 500 characters.
   """
 
   use GoogleApi.Gax.ModelBase

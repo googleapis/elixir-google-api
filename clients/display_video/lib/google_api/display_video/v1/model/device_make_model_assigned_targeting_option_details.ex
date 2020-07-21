@@ -17,20 +17,13 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.DeviceMakeModelAssignedTargetingOptionDetails do
   @moduledoc """
-  Assigned device make and model targeting option details. This will be
-  populated in the
-  device_make_model_details
-  field when
-  targeting_type is
-  `TARGETING_TYPE_DEVICE_MAKE_MODEL`.
+  Assigned device make and model targeting option details. This will be populated in the device_make_model_details field when targeting_type is `TARGETING_TYPE_DEVICE_MAKE_MODEL`.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the device make and model.
   *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when
-      targeting_type is
-      `TARGETING_TYPE_DEVICE_MAKE_MODEL`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_DEVICE_MAKE_MODEL`.
   """
 
   use GoogleApi.Gax.ModelBase

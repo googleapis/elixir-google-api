@@ -17,37 +17,16 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.AudienceGroupAssignedTargetingOptionDetails do
   @moduledoc """
-  Assigned audience group targeting option details. This will be populated in
-  the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_AUDIENCE_GROUP`.
-  The relation between each group is UNION, except for
-  excluded_first_and_third_party_audience_group and
-  excluded_google_audience_group, of which COMPLEMENT is UNION'ed with other
-  groups.
+  Assigned audience group targeting option details. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_AUDIENCE_GROUP`. The relation between each group is UNION, except for excluded_first_and_third_party_audience_group and excluded_google_audience_group, of which COMPLEMENT is UNION'ed with other groups.
 
   ## Attributes
 
-  *   `excludedFirstAndThirdPartyAudienceGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceGroup.t`, *default:* `nil`) - The first and third party audience ids and recencies of the excluded
-      first and third party audience group. Used for negative targeting. Its
-      COMPLEMENT is used to UNION other audience groups.
-  *   `excludedGoogleAudienceGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup.t`, *default:* `nil`) - The Google audience ids of the excluded Google audience group.
-      Used for negative targeting. It's COMPLEMENT is used to UNION other
-      audience groups.
-      Only contains Affinity, In-market and Installed-apps type Google audiences.
-      All items are logically ‘OR’ of each other.
-  *   `includedCombinedAudienceGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.CombinedAudienceGroup.t`, *default:* `nil`) - The combined audience ids of the included combined audience group.
-      Contains combined audience ids only.
-  *   `includedCustomListGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.CustomListGroup.t`, *default:* `nil`) - The custom list ids of the included custom list group.
-      Contains custom list ids only.
-  *   `includedFirstAndThirdPartyAudienceGroups` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceGroup.t)`, *default:* `nil`) - The first and third party audience ids and recencies of included first
-      and third party audience groups. Each first and third party audience group
-      contains first and third party audience ids only.
-      The relation between each first and third party audience group is
-      INTERSECTION, and the result is UNION'ed with other audience groups.
-      Repeated groups with same settings will be ignored.
-  *   `includedGoogleAudienceGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup.t`, *default:* `nil`) - The Google audience ids of the included Google audience group.
-      Contains Google audience ids only.
+  *   `excludedFirstAndThirdPartyAudienceGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceGroup.t`, *default:* `nil`) - The first and third party audience ids and recencies of the excluded first and third party audience group. Used for negative targeting. Its COMPLEMENT is used to UNION other audience groups.
+  *   `excludedGoogleAudienceGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup.t`, *default:* `nil`) - The Google audience ids of the excluded Google audience group. Used for negative targeting. It's COMPLEMENT is used to UNION other audience groups. Only contains Affinity, In-market and Installed-apps type Google audiences. All items are logically ‘OR’ of each other.
+  *   `includedCombinedAudienceGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.CombinedAudienceGroup.t`, *default:* `nil`) - The combined audience ids of the included combined audience group. Contains combined audience ids only.
+  *   `includedCustomListGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.CustomListGroup.t`, *default:* `nil`) - The custom list ids of the included custom list group. Contains custom list ids only.
+  *   `includedFirstAndThirdPartyAudienceGroups` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudienceGroup.t)`, *default:* `nil`) - The first and third party audience ids and recencies of included first and third party audience groups. Each first and third party audience group contains first and third party audience ids only. The relation between each first and third party audience group is INTERSECTION, and the result is UNION'ed with other audience groups. Repeated groups with same settings will be ignored.
+  *   `includedGoogleAudienceGroup` (*type:* `GoogleApi.DisplayVideo.V1.Model.GoogleAudienceGroup.t`, *default:* `nil`) - The Google audience ids of the included Google audience group. Contains Google audience ids only.
   """
 
   use GoogleApi.Gax.ModelBase

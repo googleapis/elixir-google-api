@@ -21,8 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GoogleAudienceTargetingSetting do
 
   ## Attributes
 
-  *   `googleAudienceId` (*type:* `String.t`, *default:* `nil`) - Required. Google audience id of the Google audience targeting setting.
-      This id is google_audience_id.
+  *   `googleAudienceId` (*type:* `String.t`, *default:* `nil`) - Required. Google audience id of the Google audience targeting setting. This id is google_audience_id.
   """
 
   use GoogleApi.Gax.ModelBase

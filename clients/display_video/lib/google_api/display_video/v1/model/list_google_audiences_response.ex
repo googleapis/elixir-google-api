@@ -21,14 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListGoogleAudiencesResponse do
 
   ## Attributes
 
-  *   `googleAudiences` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.GoogleAudience.t)`, *default:* `nil`) - The list of Google audiences.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      page_token
-      field in the subsequent call to `ListGoogleAudiences` method to retrieve
-      the next page of results.
+  *   `googleAudiences` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.GoogleAudience.t)`, *default:* `nil`) - The list of Google audiences. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListGoogleAudiences` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.UniversalAdId do
   @moduledoc """
-  A creative identifier provided by a registry that is unique across all
-  platforms. This is part of the VAST 4.0 standard.
+  A creative identifier provided by a registry that is unique across all platforms. This is part of the VAST 4.0 standard.
 
   ## Attributes
 

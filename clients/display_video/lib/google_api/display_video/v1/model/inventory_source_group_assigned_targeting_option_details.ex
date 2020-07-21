@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceGroupAssignedTargetingOptionDetails do
   @moduledoc """
-  Targeting details for inventory source group. This will be
-  populated in the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_INVENTORY_SOURCE_GROUP`.
+  Targeting details for inventory source group. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_INVENTORY_SOURCE_GROUP`.
 
   ## Attributes
 
-  *   `inventorySourceGroupId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the inventory source group. Should refer to the
-      inventory_source_group_id
-      field of an InventorySourceGroup resource.
+  *   `inventorySourceGroupId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the inventory source group. Should refer to the inventory_source_group_id field of an InventorySourceGroup resource.
   """
 
   use GoogleApi.Gax.ModelBase

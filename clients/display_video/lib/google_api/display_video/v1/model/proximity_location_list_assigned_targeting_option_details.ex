@@ -17,25 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ProximityLocationListAssignedTargetingOptionDetails do
   @moduledoc """
-  Targeting details for proximity location list. This will be
-  populated in the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_PROXIMITY_LOCATION_LIST`.
+  Targeting details for proximity location list. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_PROXIMITY_LOCATION_LIST`.
 
   ## Attributes
 
-  *   `proximityLocationListId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the proximity location list. Should refer to the
-      location_list_id field of a
-      LocationList resource whose type is
-      `TARGETING_LOCATION_TYPE_PROXIMITY`.
-  *   `proximityRadiusRange` (*type:* `String.t`, *default:* `nil`) - Required. Radius range for proximity location list.
-      This represents the size of the area around a chosen location that will be
-      targeted.
-
-      `All` proximity location targeting under a single line item must have the
-      same radius range value. Set this value to match any existing targeting.
-      If updated, this field will change the radius range for all proximity
-      targeting under the line item.
+  *   `proximityLocationListId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the proximity location list. Should refer to the location_list_id field of a LocationList resource whose type is `TARGETING_LOCATION_TYPE_PROXIMITY`.
+  *   `proximityRadiusRange` (*type:* `String.t`, *default:* `nil`) - Required. Radius range for proximity location list. This represents the size of the area around a chosen location that will be targeted. `All` proximity location targeting under a single line item must have the same radius range value. Set this value to match any existing targeting. If updated, this field will change the radius range for all proximity targeting under the line item.
   """
 
   use GoogleApi.Gax.ModelBase
