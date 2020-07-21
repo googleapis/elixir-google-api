@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.CreateTenancyUnitRequest 
 
   ## Attributes
 
-  *   `tenancyUnitId` (*type:* `String.t`, *default:* `nil`) - Optional service producer-provided identifier of the tenancy unit.
+  *   `tenancyUnitId` (*type:* `String.t`, *default:* `nil`) - Optional. Optional service producer-provided identifier of the tenancy unit.
       Must be no longer than 40 characters and preferably URI friendly.
       If it isn't provided, a UID for the tenancy unit is automatically
       generated. The identifier must be unique across a managed service.
