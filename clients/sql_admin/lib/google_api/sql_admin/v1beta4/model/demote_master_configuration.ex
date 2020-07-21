@@ -21,12 +21,12 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#demoteMasterConfiguration</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#demoteMasterConfiguration</b>.
   *   `mysqlReplicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterMySqlReplicaConfiguration.t`, *default:* `nil`) - MySQL specific configuration when replicating from a MySQL on-premises
       master. Replication configuration information such as the username,
       password, certificates, and keys are not stored in the instance metadata.
       The configuration information is used only to set up the replication
-      connection and is stored by MySQL in a file named <code>master.info</code>
+      connection and is stored by MySQL in a file named <b>master.info</b>
       in the data directory.
   """
 

@@ -21,13 +21,13 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterContext do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#demoteMasterContext</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#demoteMasterContext</b>.
   *   `masterInstanceName` (*type:* `String.t`, *default:* `nil`) - The name of the instance which will act as on-premises master in the
       replication setup.
   *   `replicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterConfiguration.t`, *default:* `nil`) - Configuration specific to read-replicas replicating from the on-premises
       master.
   *   `verifyGtidConsistency` (*type:* `boolean()`, *default:* `nil`) - Verify GTID consistency for demote operation. Default value:
-      <code>True</code>. Second Generation instances only.  Setting this flag to
+      <b>True</b>. Second Generation instances only.  Setting this flag to
       false enables you to bypass GTID consistency check between on-premises
       master and Cloud SQL instance during the demotion operation but also
       exposes you to the risk of future replication failures. Change the value

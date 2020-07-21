@@ -25,7 +25,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
       source instance should be cloned. If not specified, the source instance is
       cloned up to the most recent binary log coordinates.
   *   `destinationInstanceName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud SQL instance to be created as a clone.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#cloneContext</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#cloneContext</b>.
   *   `pitrTimestampMs` (*type:* `String.t`, *default:* `nil`) - Reserved for future use.
   *   `pointInTime` (*type:* `DateTime.t`, *default:* `nil`) - Reserved for future use.
   """

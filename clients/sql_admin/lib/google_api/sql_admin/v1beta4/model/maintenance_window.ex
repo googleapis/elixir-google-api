@@ -24,9 +24,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow do
 
   *   `day` (*type:* `integer()`, *default:* `nil`) - day of week (1-7), starting on Monday.
   *   `hour` (*type:* `integer()`, *default:* `nil`) - hour of day - 0 to 23.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#maintenanceWindow</code>.
-  *   `updateTrack` (*type:* `String.t`, *default:* `nil`) - Maintenance timing setting: <code>canary</code> (Earlier) or
-      <code>stable</code> (Later). <br /><a
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#maintenanceWindow</b>.
+  *   `updateTrack` (*type:* `String.t`, *default:* `nil`) - Maintenance timing setting: <b>canary</b> (Earlier) or
+      <b>stable</b> (Later). <br /><a
       href="/sql/docs/db_path/instance-settings#maintenance-timing-2ndgen">
       Learn more</a>.
   """

@@ -21,12 +21,12 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Database do
 
   ## Attributes
 
-  *   `charset` (*type:* `String.t`, *default:* `nil`) - The MySQL charset value.
-  *   `collation` (*type:* `String.t`, *default:* `nil`) - The MySQL collation value.
+  *   `charset` (*type:* `String.t`, *default:* `nil`) - The Cloud SQL charset value.
+  *   `collation` (*type:* `String.t`, *default:* `nil`) - The Cloud SQL collation value.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the
       API.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud SQL instance. This does not include the project ID.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#database</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#database</b>.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the database in the Cloud SQL instance. This does not include
       the project ID or instance name.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL database. The Google

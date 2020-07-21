@@ -24,7 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext do
 
   *   `backupRunId` (*type:* `String.t`, *default:* `nil`) - The ID of the backup run to restore from.
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - The ID of the instance that the backup was taken from.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#restoreBackupContext</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#restoreBackupContext</b>.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The full project ID of the source instance.
   """
 

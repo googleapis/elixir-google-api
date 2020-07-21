@@ -26,12 +26,12 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SslCert do
   *   `commonName` (*type:* `String.t`, *default:* `nil`) - User supplied name.  Constrained to [a-zA-Z.-_ ]+.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the certificate was created in <a
       href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-      <code>2012-11-15T16:19:00.094Z</code>
+      <b>2012-11-15T16:19:00.094Z</b>
   *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the certificate expires in <a
       href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-      <code>2012-11-15T16:19:00.094Z</code>.
+      <b>2012-11-15T16:19:00.094Z</b>.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - Name of the database instance.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#sslCert</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#sslCert</b>.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `sha1Fingerprint` (*type:* `String.t`, *default:* `nil`) - Sha1 Fingerprint.
   """

@@ -26,7 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DemoteMasterMySqlReplicaConfiguration
   *   `clientKey` (*type:* `String.t`, *default:* `nil`) - PEM representation of the slave's private key. The corresponsing public key
       is encoded in the client's certificate. The format of the slave's private
       key can be either PKCS #1 or PKCS #8.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#demoteMasterMysqlReplicaConfiguration</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#demoteMasterMysqlReplicaConfiguration</b>.
   *   `password` (*type:* `String.t`, *default:* `nil`) - The password for the replication connection.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The username for the replication connection.
   """

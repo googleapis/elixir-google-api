@@ -21,6 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
 
   ## Attributes
 
+  *   `backupKind` (*type:* `String.t`, *default:* `nil`) - Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this run, only applicable to on-demand backups.
   *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Encryption configuration specific to a backup.
       Applies only to Second Generation instances.
@@ -28,31 +29,32 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
       Applies only to Second Generation instances.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation completed in UTC timezone in <a
       href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-      <code>2012-11-15T16:19:00.094Z</code>.
+      <b>2012-11-15T16:19:00.094Z</b>.
   *   `enqueuedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the run was enqueued in UTC timezone in <a
       href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-      <code>2012-11-15T16:19:00.094Z</code>.
+      <b>2012-11-15T16:19:00.094Z</b>.
   *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationError.t`, *default:* `nil`) - Information about why the backup operation failed. This is only present if
       the run has the FAILED status.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier for this backup run. Unique only for a specific Cloud SQL
       instance.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - Name of the database instance.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#backupRun</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#backupRun</b>.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the backups.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation actually started in UTC timezone in <a
       href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-      <code>2012-11-15T16:19:00.094Z</code>.
+      <b>2012-11-15T16:19:00.094Z</b>.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of this run.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this run; can be either "AUTOMATED" or "ON_DEMAND".
   *   `windowStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the backup window during which this the backup was
       attempted in <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>
-      format, for example <code>2012-11-15T16:19:00.094Z</code>.
+      format, for example <b>2012-11-15T16:19:00.094Z</b>.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :backupKind => String.t(),
           :description => String.t(),
           :diskEncryptionConfiguration =>
             GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t(),
@@ -71,6 +73,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
           :windowStartTime => DateTime.t()
         }
 
+  field(:backupKind)
   field(:description)
 
   field(:diskEncryptionConfiguration,
