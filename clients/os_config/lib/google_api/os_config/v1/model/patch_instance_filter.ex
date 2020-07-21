@@ -32,7 +32,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchInstanceFilter do
       labels, this is another way to group VMs when targeting configs, for
       example prefix="prod-".
   *   `instances` (*type:* `list(String.t)`, *default:* `nil`) - Targets any of the VM instances specified. Instances are specified by their
-      URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME],
+      URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`,
       `projects/[PROJECT_ID]/zones/[ZONE]/instances/[INSTANCE_NAME]`, or
       `https://www.googleapis.com/compute/v1/projects/[PROJECT_ID]/zones/[ZONE]/instances/[INSTANCE_NAME]`
   *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - Targets VM instances in ANY of these zones. Leave empty to target VM

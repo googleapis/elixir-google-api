@@ -20,7 +20,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJob do
   A high level representation of a patch job that is either in progress
   or has completed.
 
-  Instances details are not included in the job. To paginate through instance
+  Instance details are not included in the job. To paginate through instance
   details, use ListPatchJobInstanceDetails.
 
   For more information about patch jobs, see
@@ -47,7 +47,8 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJob do
   *   `patchDeployment` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the patch deployment that created this patch job.
   *   `percentComplete` (*type:* `float()`, *default:* `nil`) - Reflects the overall progress of the patch job in the range of
       0.0 being no progress to 100.0 being complete.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the PatchJob .
+  *   `rollout` (*type:* `GoogleApi.OSConfig.V1.Model.PatchRollout.t`, *default:* `nil`) - Rollout strategy being applied.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the PatchJob.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time this patch job was updated.
   """
 
@@ -67,6 +68,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJob do
           :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t(),
           :patchDeployment => String.t(),
           :percentComplete => float(),
+          :rollout => GoogleApi.OSConfig.V1.Model.PatchRollout.t(),
           :state => String.t(),
           :updateTime => DateTime.t()
         }
@@ -83,6 +85,7 @@ defmodule GoogleApi.OSConfig.V1.Model.PatchJob do
   field(:patchConfig, as: GoogleApi.OSConfig.V1.Model.PatchConfig)
   field(:patchDeployment)
   field(:percentComplete)
+  field(:rollout, as: GoogleApi.OSConfig.V1.Model.PatchRollout)
   field(:state)
   field(:updateTime, as: DateTime)
 end
