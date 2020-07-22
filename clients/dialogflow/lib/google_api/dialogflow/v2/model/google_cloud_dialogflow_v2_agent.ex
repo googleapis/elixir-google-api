@@ -25,8 +25,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Agent do
   conversations required for your system.
 
   For more information about agents, see the
-  [Agents
-  documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
+  [Agent guide](https://cloud.google.com/dialogflow/docs/agents-overview).
 
   ## Attributes
 

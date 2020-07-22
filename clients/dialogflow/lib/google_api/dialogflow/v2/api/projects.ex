@@ -1748,6 +1748,9 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       `User Id`. They can be a random number or some type of user and session
       identifiers (preferably hashed). The length of the `Session ID` and
       `User ID` must not exceed 36 characters.
+
+      For more information, see the [API interactions
+      guide](https://cloud.google.com/dialogflow/docs/api-overview).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3280,6 +3283,9 @@ defmodule GoogleApi.Dialogflow.V2.Api.Projects do
       `User Id`. They can be a random number or some type of user and session
       identifiers (preferably hashed). The length of the `Session ID` and
       `User ID` must not exceed 36 characters.
+
+      For more information, see the [API interactions
+      guide](https://cloud.google.com/dialogflow/docs/api-overview).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

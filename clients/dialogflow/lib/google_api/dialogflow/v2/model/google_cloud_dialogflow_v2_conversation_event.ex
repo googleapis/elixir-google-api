@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationEvent do
   @moduledoc """
-  Represents a notification sent to Cloud Pub/Sub subscribers for conversation
+  Represents a notification sent to Pub/Sub subscribers for conversation
   lifecycle events.
 
   ## Attributes
