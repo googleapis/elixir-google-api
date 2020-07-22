@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.Books.V1.Model.VolumeUserInfo do
   @moduledoc """
-  User specific information related to this volume. (e.g. page this user last
-  read or whether they purchased this book)
+  User specific information related to this volume. (e.g. page this user last read or whether they purchased this book)
 
   ## Attributes
 
-  *   `acquiredTime` (*type:* `String.t`, *default:* `nil`) - Timestamp when this volume was acquired by the user. (RFC 3339 UTC
-      date-time format) Acquiring includes purchase, user upload, receiving
-      family sharing, etc.
+  *   `acquiredTime` (*type:* `String.t`, *default:* `nil`) - Timestamp when this volume was acquired by the user. (RFC 3339 UTC date-time format) Acquiring includes purchase, user upload, receiving family sharing, etc.
   *   `acquisitionType` (*type:* `integer()`, *default:* `nil`) - How this volume was acquired.
   *   `copy` (*type:* `GoogleApi.Books.V1.Model.VolumeUserInfoCopy.t`, *default:* `nil`) - Copy/Paste accounting information.
   *   `entitlementType` (*type:* `integer()`, *default:* `nil`) - Whether this volume is purchased, sample, pd download etc.
@@ -34,19 +31,14 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfo do
   *   `isFamilySharingAllowed` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Replaced by familySharing.
   *   `isFamilySharingDisabledByFop` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Replaced by familySharing.
   *   `isInMyBooks` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume is currently in "my books."
-  *   `isPreordered` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume was pre-ordered by the authenticated user
-      making the request. (In LITE projection.)
-  *   `isPurchased` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume was purchased by the authenticated user making
-      the request. (In LITE projection.)
+  *   `isPreordered` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume was pre-ordered by the authenticated user making the request. (In LITE projection.)
+  *   `isPurchased` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume was purchased by the authenticated user making the request. (In LITE projection.)
   *   `isUploaded` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume was user uploaded.
-  *   `readingPosition` (*type:* `GoogleApi.Books.V1.Model.ReadingPosition.t`, *default:* `nil`) - The user's current reading position in the volume, if one is available.
-      (In LITE projection.)
+  *   `readingPosition` (*type:* `GoogleApi.Books.V1.Model.ReadingPosition.t`, *default:* `nil`) - The user's current reading position in the volume, if one is available. (In LITE projection.)
   *   `rentalPeriod` (*type:* `GoogleApi.Books.V1.Model.VolumeUserInfoRentalPeriod.t`, *default:* `nil`) - Period during this book is/was a valid rental.
   *   `rentalState` (*type:* `String.t`, *default:* `nil`) - Whether this book is an active or an expired rental.
   *   `review` (*type:* `GoogleApi.Books.V1.Model.Review.t`, *default:* `nil`) - This user's review of this volume, if one exists.
-  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp when this volume was last modified by a user action, such as a
-      reading position update, volume purchase or writing a review. (RFC 3339
-      UTC date-time format).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp when this volume was last modified by a user action, such as a reading position update, volume purchase or writing a review. (RFC 3339 UTC date-time format).
   *   `userUploadedVolumeInfo` (*type:* `GoogleApi.Books.V1.Model.VolumeUserInfoUserUploadedVolumeInfo.t`, *default:* `nil`) - 
   """
 

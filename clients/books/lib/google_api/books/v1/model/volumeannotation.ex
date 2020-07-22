@@ -33,8 +33,7 @@ defmodule GoogleApi.Books.V1.Model.Volumeannotation do
   *   `pageIds` (*type:* `list(String.t)`, *default:* `nil`) - Pages the annotation spans.
   *   `selectedText` (*type:* `String.t`, *default:* `nil`) - Excerpt from the volume.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource.
-  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp for the last time this anntoation was updated. (RFC 3339 UTC
-      date-time format).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp for the last time this anntoation was updated. (RFC 3339 UTC date-time format).
   *   `volumeId` (*type:* `String.t`, *default:* `nil`) - The Volume this annotation is for.
   """
 

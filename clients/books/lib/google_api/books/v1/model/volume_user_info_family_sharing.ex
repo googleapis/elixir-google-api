@@ -22,11 +22,8 @@ defmodule GoogleApi.Books.V1.Model.VolumeUserInfoFamilySharing do
   ## Attributes
 
   *   `familyRole` (*type:* `String.t`, *default:* `nil`) - The role of the user in the family.
-  *   `isSharingAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume can be shared with the family by the user.
-      This includes sharing eligibility of both the volume and the user. If
-      the value is true, the user can initiate a family sharing action.
-  *   `isSharingDisabledByFop` (*type:* `boolean()`, *default:* `nil`) - Whether or not sharing this volume is temporarily disabled due to
-      issues with the Family Wallet.
+  *   `isSharingAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume can be shared with the family by the user. This includes sharing eligibility of both the volume and the user. If the value is true, the user can initiate a family sharing action.
+  *   `isSharingDisabledByFop` (*type:* `boolean()`, *default:* `nil`) - Whether or not sharing this volume is temporarily disabled due to issues with the Family Wallet.
   """
 
   use GoogleApi.Gax.ModelBase

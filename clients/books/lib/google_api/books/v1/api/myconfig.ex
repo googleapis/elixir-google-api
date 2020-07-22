@@ -166,8 +166,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:cpksver` (*type:* `String.t`) - The device/version ID from which to request the restrictions.
-      *   `:licenseTypes` (*type:* `String.t`) - The type of access license to request. If not specified, the default is
-          BOTH.
+      *   `:licenseTypes` (*type:* `String.t`) - The type of access license to request. If not specified, the default is BOTH.
       *   `:locale` (*type:* `String.t`) - ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.
       *   `:nonce` (*type:* `String.t`) - The client nonce value.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
@@ -217,8 +216,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   end
 
   @doc """
-  Request downloaded content access for specified volumes on the My eBooks
-  shelf.
+  Request downloaded content access for specified volumes on the My eBooks shelf.
 
   ## Parameters
 
@@ -288,9 +286,7 @@ defmodule GoogleApi.Books.V1.Api.Myconfig do
   end
 
   @doc """
-  Sets the settings for the user. If a sub-object is specified, it will
-  overwrite the existing sub-object stored in the server. Unspecified
-  sub-objects will retain the existing value.
+  Sets the settings for the user. If a sub-object is specified, it will overwrite the existing sub-object stored in the server. Unspecified sub-objects will retain the existing value.
 
   ## Parameters
 

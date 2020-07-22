@@ -31,11 +31,8 @@ defmodule GoogleApi.Books.V1.Model.Layersummary do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource Type
   *   `layerId` (*type:* `String.t`, *default:* `nil`) - The layer id for this summary.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL to this resource.
-  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp for the last time an item in this layer was updated. (RFC 3339
-      UTC date-time format).
-  *   `volumeAnnotationsVersion` (*type:* `String.t`, *default:* `nil`) - The current version of this layer's volume annotations. Note that this
-      version applies only to the data in the books.layers.volumeAnnotations.*
-      responses. The actual annotation data is versioned separately.
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp for the last time an item in this layer was updated. (RFC 3339 UTC date-time format).
+  *   `volumeAnnotationsVersion` (*type:* `String.t`, *default:* `nil`) - The current version of this layer's volume annotations. Note that this version applies only to the data in the books.layers.volumeAnnotations.* responses. The actual annotation data is versioned separately.
   *   `volumeId` (*type:* `String.t`, *default:* `nil`) - The volume id this resource is for.
   """
 

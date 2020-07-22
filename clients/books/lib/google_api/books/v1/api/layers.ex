@@ -180,14 +180,11 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowWebDefinitions` (*type:* `boolean()`) - For the dictionary layer. Whether or not to allow web definitions.
       *   `:contentVersion` (*type:* `String.t`) - The content version for the volume you are trying to retrieve.
-      *   `:h` (*type:* `integer()`) - The requested pixel height for any images. If height is provided width must
-          also be provided.
-      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1
-          country code. Ex: 'en_US'.
+      *   `:h` (*type:* `integer()`) - The requested pixel height for any images. If height is provided width must also be provided.
+      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
       *   `:scale` (*type:* `integer()`) - The requested scale for the image.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:w` (*type:* `integer()`) - The requested pixel width for any images. If width is provided height must
-          also be provided.
+      *   `:w` (*type:* `integer()`) - The requested pixel width for any images. If width is provided height must also be provided.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -271,23 +268,17 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:annotationDataId` (*type:* `list(String.t)`) - The list of Annotation Data Ids to retrieve. Pagination is ignored if this
-          is set.
+      *   `:annotationDataId` (*type:* `list(String.t)`) - The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.
       *   `:contentVersion` (*type:* `String.t`) - The content version for the requested volume.
-      *   `:h` (*type:* `integer()`) - The requested pixel height for any images. If height is provided width must
-          also be provided.
-      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1
-          country code. Ex: 'en_US'.
+      *   `:h` (*type:* `integer()`) - The requested pixel height for any images. If height is provided width must also be provided.
+      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
       *   `:pageToken` (*type:* `String.t`) - The value of the nextToken from the previous page.
       *   `:scale` (*type:* `integer()`) - The requested scale for the image.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:updatedMax` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated prior to this timestamp
-          (exclusive).
-      *   `:updatedMin` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated since this timestamp
-          (inclusive).
-      *   `:w` (*type:* `integer()`) - The requested pixel width for any images. If width is provided height must
-          also be provided.
+      *   `:updatedMax` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
+      *   `:updatedMin` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
+      *   `:w` (*type:* `integer()`) - The requested pixel width for any images. If width is provided height must also be provided.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -373,8 +364,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1
-          country code. Ex: 'en_US'.
+      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -460,19 +450,15 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       *   `:contentVersion` (*type:* `String.t`) - The content version for the requested volume.
       *   `:endOffset` (*type:* `String.t`) - The end offset to end retrieving data from.
       *   `:endPosition` (*type:* `String.t`) - The end position to end retrieving data from.
-      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1
-          country code. Ex: 'en_US'.
+      *   `:locale` (*type:* `String.t`) - The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
       *   `:pageToken` (*type:* `String.t`) - The value of the nextToken from the previous page.
-      *   `:showDeleted` (*type:* `boolean()`) - Set to true to return deleted annotations. updatedMin must be in the
-          request to use this. Defaults to false.
+      *   `:showDeleted` (*type:* `boolean()`) - Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
       *   `:startOffset` (*type:* `String.t`) - The start offset to start retrieving data from.
       *   `:startPosition` (*type:* `String.t`) - The start position to start retrieving data from.
-      *   `:updatedMax` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated prior to this timestamp
-          (exclusive).
-      *   `:updatedMin` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated since this timestamp
-          (inclusive).
+      *   `:updatedMax` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
+      *   `:updatedMin` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
       *   `:volumeAnnotationsVersion` (*type:* `String.t`) - The version of the volume annotations that you are requesting.
   *   `opts` (*type:* `keyword()`) - Call options
 

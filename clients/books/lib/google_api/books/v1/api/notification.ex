@@ -43,8 +43,7 @@ defmodule GoogleApi.Books.V1.Api.Notification do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for
-          generating notification title and body.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating notification title and body.
       *   `:notification_id` (*type:* `String.t`) - String to identify the notification.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
   *   `opts` (*type:* `keyword()`) - Call options

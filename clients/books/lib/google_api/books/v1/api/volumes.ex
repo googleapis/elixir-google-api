@@ -48,7 +48,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       *   `:includeNonComicsSeries` (*type:* `boolean()`) - Set to true to include non-comics series. Defaults to false.
       *   `:partner` (*type:* `String.t`) - Brand results for partner ID.
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
-      *   `:source` (*type:* `String.t`) - string  to identify the originator of this request.
+      *   `:source` (*type:* `String.t`) - string to identify the originator of this request.
       *   `:user_library_consistent_read` (*type:* `boolean()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -116,8 +116,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       *   `:filter` (*type:* `String.t`) - Filter search results.
       *   `:langRestrict` (*type:* `String.t`) - Restrict results to books with this language code.
       *   `:libraryRestrict` (*type:* `String.t`) - Restrict search to this user's library.
-      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with
-          a higher maturity rating are filtered out.
+      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:orderBy` (*type:* `String.t`) - Sort search results.
       *   `:partner` (*type:* `String.t`) - Restrict and brand results for partner ID.
@@ -197,10 +196,8 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:association` (*type:* `String.t`) - Association type.
-      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for
-          generating recommendations.
-      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with
-          a higher maturity rating are filtered out.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
+      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -264,11 +261,9 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:acquireMethod` (*type:* `list(String.t)`) - How the book was acquired
       *   `:country` (*type:* `String.t`) - ISO-3166-1 code to override the IP-based location.
-      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex:'en_US'. Used for
-          generating recommendations.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex:'en_US'. Used for generating recommendations.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
-      *   `:processingState` (*type:* `list(String.t)`) - The processing state of the user uploaded volumes to be returned.
-          Applicable only if the UPLOADED is specified in the acquireMethod.
+      *   `:processingState` (*type:* `list(String.t)`) - The processing state of the user uploaded volumes to be returned. Applicable only if the UPLOADED is specified in the acquireMethod.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
       *   `:startIndex` (*type:* `integer()`) - Index of the first result to return (starts at 0)
   *   `opts` (*type:* `keyword()`) - Call options
@@ -332,10 +327,8 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for
-          generating recommendations.
-      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with
-          a higher maturity rating are filtered out.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
+      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned recommendations. Books with a higher maturity rating are filtered out.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -394,8 +387,7 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for
-          generating recommendations.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
       *   `:rating` (*type:* `String.t`) - Rating to be given to the volume.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
       *   `:volumeId` (*type:* `String.t`) - ID of the source volume.
@@ -461,14 +453,12 @@ defmodule GoogleApi.Books.V1.Api.Volumes do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for
-          generating recommendations.
+      *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:processingState` (*type:* `list(String.t)`) - The processing state of the user uploaded volumes to be returned.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
       *   `:startIndex` (*type:* `integer()`) - Index of the first result to return (starts at 0)
-      *   `:volumeId` (*type:* `list(String.t)`) - The ids of the volumes to be returned. If not specified all that match the
-          processingState are returned.
+      *   `:volumeId` (*type:* `list(String.t)`) - The ids of the volumes to be returned. If not specified all that match the processingState are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

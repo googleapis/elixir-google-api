@@ -26,8 +26,7 @@ defmodule GoogleApi.Books.V1.Model.ReadingPosition do
   *   `gbTextPosition` (*type:* `String.t`, *default:* `nil`) - Position in a volume for text-based content.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type for a reading position.
   *   `pdfPosition` (*type:* `String.t`, *default:* `nil`) - Position in a PDF file.
-  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp when this reading position was last updated (formatted UTC
-      timestamp with millisecond resolution).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp when this reading position was last updated (formatted UTC timestamp with millisecond resolution).
   *   `volumeId` (*type:* `String.t`, *default:* `nil`) - Volume id associated with this reading position.
   """
 

@@ -25,8 +25,7 @@ defmodule GoogleApi.Books.V1.Model.GeolayerdataCommon do
   *   `previewImageUrl` (*type:* `String.t`, *default:* `nil`) - The URL for the preview image information.
   *   `snippet` (*type:* `String.t`, *default:* `nil`) - The description for this location.
   *   `snippetUrl` (*type:* `String.t`, *default:* `nil`) - The URL for information for this location. Ex: wikipedia link.
-  *   `title` (*type:* `String.t`, *default:* `nil`) - The display title and localized canonical name to use when searching for
-      this entity on Google search.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - The display title and localized canonical name to use when searching for this entity on Google search.
   """
 
   use GoogleApi.Gax.ModelBase
