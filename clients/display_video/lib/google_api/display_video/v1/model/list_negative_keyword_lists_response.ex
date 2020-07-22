@@ -21,15 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListNegativeKeywordListsResponse do
 
   ## Attributes
 
-  *   `negativeKeywordLists` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList.t)`, *default:* `nil`) - The list of negative keyword lists.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-
-      Pass this value in the
-      page_token
-      field in the subsequent call to `ListNegativeKeywordLists` method to
-      retrieve the next page of results.
+  *   `negativeKeywordLists` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList.t)`, *default:* `nil`) - The list of negative keyword lists. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListNegativeKeywordLists` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

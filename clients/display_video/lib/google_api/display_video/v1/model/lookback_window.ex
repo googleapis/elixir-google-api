@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.LookbackWindow do
   @moduledoc """
-  Specifies how many days into the past to look when determining whether to
-  record a conversion.
+  Specifies how many days into the past to look when determining whether to record a conversion.
 
   ## Attributes
 
-  *   `clickDays` (*type:* `integer()`, *default:* `nil`) - Lookback window, in days, from the last time a given user clicked on one of
-      your ads.
-  *   `impressionDays` (*type:* `integer()`, *default:* `nil`) - Lookback window, in days, from the last time a given user viewed one of
-      your ads.
+  *   `clickDays` (*type:* `integer()`, *default:* `nil`) - Lookback window, in days, from the last time a given user clicked on one of your ads.
+  *   `impressionDays` (*type:* `integer()`, *default:* `nil`) - Lookback window, in days, from the last time a given user viewed one of your ads.
   """
 
   use GoogleApi.Gax.ModelBase

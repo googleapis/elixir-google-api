@@ -21,8 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CombinedAudienceTargetingSetting do
 
   ## Attributes
 
-  *   `combinedAudienceId` (*type:* `String.t`, *default:* `nil`) - Required. Combined audience id of combined audience targeting setting.
-      This id is combined_audience_id.
+  *   `combinedAudienceId` (*type:* `String.t`, *default:* `nil`) - Required. Combined audience id of combined audience targeting setting. This id is combined_audience_id.
   """
 
   use GoogleApi.Gax.ModelBase

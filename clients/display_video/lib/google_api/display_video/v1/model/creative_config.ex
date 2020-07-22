@@ -22,12 +22,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CreativeConfig do
   ## Attributes
 
   *   `creativeType` (*type:* `String.t`, *default:* `nil`) - The type of creative that can be assigned to the inventory source.
-  *   `displayCreativeConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceDisplayCreativeConfig.t`, *default:* `nil`) - The configuration for display creatives.
-      Applicable when creative_type is
-      `CREATIVE_TYPE_STANDARD`.
-  *   `videoCreativeConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceVideoCreativeConfig.t`, *default:* `nil`) - The configuration for video creatives.
-      Applicable when creative_type is
-      `CREATIVE_TYPE_VIDEO`.
+  *   `displayCreativeConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceDisplayCreativeConfig.t`, *default:* `nil`) - The configuration for display creatives. Applicable when creative_type is `CREATIVE_TYPE_STANDARD`.
+  *   `videoCreativeConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceVideoCreativeConfig.t`, *default:* `nil`) - The configuration for video creatives. Applicable when creative_type is `CREATIVE_TYPE_VIDEO`.
   """
 
   use GoogleApi.Gax.ModelBase

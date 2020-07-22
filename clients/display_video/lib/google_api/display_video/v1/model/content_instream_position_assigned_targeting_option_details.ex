@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ContentInstreamPositionAssignedTargetingOptionDetails do
   @moduledoc """
-  Assigned content instream position targeting option details. This will be
-  populated in the
-  content_instream_position_details
-  field when
-  targeting_type is
-  `TARGETING_TYPE_CONTENT_INSTREAM_POSITION`.
+  Assigned content instream position targeting option details. This will be populated in the content_instream_position_details field when targeting_type is `TARGETING_TYPE_CONTENT_INSTREAM_POSITION`.
 
   ## Attributes
 
   *   `contentInstreamPosition` (*type:* `String.t`, *default:* `nil`) - Output only. The content instream position for video or audio ads.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when
-      targeting_type is
-      `TARGETING_TYPE_CONTENT_INSTREAM_POSITION`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_CONTENT_INSTREAM_POSITION`.
   """
 
   use GoogleApi.Gax.ModelBase

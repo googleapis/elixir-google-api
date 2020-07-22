@@ -17,18 +17,14 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.GeoRegionAssignedTargetingOptionDetails do
   @moduledoc """
-  Details for assigned geographic region targeting option. This will be
-  populated in the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_GEO_REGION`.
+  Details for assigned geographic region targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_GEO_REGION`.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the geographic region (e.g., "Ontario, Canada").
   *   `geoRegionType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of geographic region targeting.
   *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a
-      TargetingOption of type `TARGETING_TYPE_GEO_REGION`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_GEO_REGION`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -193,40 +193,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the channels.
-      *   `:filter` (*type:* `String.t`) - Allows filtering by channel fields.
-
-          Supported syntax:
-
-          * Filter expressions for channel currently can only contain at most one
-          * restriction.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `CONTAINS (:)`.
-          * Supported fields:
-              - `displayName`
-
-          Examples:
-
-          * All channels for which the display name contains "google":
-          `displayName : "google"`.
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `displayName` (default)
-          * `channelId`
-
-          The default sorting order is ascending. To specify descending order for a
-          field, a suffix " desc" should be added to the field name. Example:
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token returned from the
-          previous call to `ListChannels` method. If not specified, the first page
-          of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by channel fields. Supported syntax: * Filter expressions for channel currently can only contain at most one * restriction. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)`. * Supported fields: - `displayName` Examples: * All channels for which the display name contains "google": `displayName : "google"`. The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `displayName` (default) * `channelId` The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be added to the field name. Example: `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListChannels` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -357,11 +327,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
   end
 
   @doc """
-  Bulk edits sites under a single channel.
-
-  The operation will delete the sites provided in
-  BulkEditSitesRequest.deleted_sites and then create the sites
-  provided in BulkEditSitesRequest.created_sites.
+  Bulk edits sites under a single channel. The operation will delete the sites provided in BulkEditSitesRequest.deleted_sites and then create the sites provided in BulkEditSitesRequest.created_sites.
 
   ## Parameters
 
@@ -610,38 +576,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Partners do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent channel.
-      *   `:filter` (*type:* `String.t`) - Allows filtering by site fields.
-
-          Supported syntax:
-
-          * Filter expressions for site currently can only contain at most one
-          * restriction.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `CONTAINS (:)`.
-          * Supported fields:
-              - `urlOrAppId`
-
-          Examples:
-
-          * All sites for which the URL or app ID contains "google":
-          `urlOrAppId : "google"`
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `urlOrAppId` (default)
-
-          The default sorting order is ascending. To specify descending order for a
-          field, a suffix " desc" should be added to the field name. Example:
-          `urlOrAppId desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-
-          Typically, this is the value of
-          next_page_token returned from the
-          previous call to `ListSites` method. If not specified, the first page
-          of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by site fields. Supported syntax: * Filter expressions for site currently can only contain at most one * restriction. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)`. * Supported fields: - `urlOrAppId` Examples: * All sites for which the URL or app ID contains "google": `urlOrAppId : "google"`
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `urlOrAppId` (default) The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be added to the field name. Example: `urlOrAppId desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListSites` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

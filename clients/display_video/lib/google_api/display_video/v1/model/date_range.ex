@@ -21,10 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.DateRange do
 
   ## Attributes
 
-  *   `endDate` (*type:* `GoogleApi.DisplayVideo.V1.Model.Date.t`, *default:* `nil`) - The upper bound of the date range, inclusive. Must specify a positive value
-      for `year`, `month`, and `day`.
-  *   `startDate` (*type:* `GoogleApi.DisplayVideo.V1.Model.Date.t`, *default:* `nil`) - The lower bound of the date range, inclusive. Must specify a positive value
-      for `year`, `month`, and `day`.
+  *   `endDate` (*type:* `GoogleApi.DisplayVideo.V1.Model.Date.t`, *default:* `nil`) - The upper bound of the date range, inclusive. Must specify a positive value for `year`, `month`, and `day`.
+  *   `startDate` (*type:* `GoogleApi.DisplayVideo.V1.Model.Date.t`, *default:* `nil`) - The lower bound of the date range, inclusive. Must specify a positive value for `year`, `month`, and `day`.
   """
 
   use GoogleApi.Gax.ModelBase

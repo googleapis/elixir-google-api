@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.DeleteAssignedTargetingOptionsRequest do
   @moduledoc """
-  A request listing which assigned targeting options of a given targeting type
-  should be deleted.
+  A request listing which assigned targeting options of a given targeting type should be deleted.
 
   ## Attributes
 

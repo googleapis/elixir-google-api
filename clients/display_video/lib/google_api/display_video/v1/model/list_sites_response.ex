@@ -21,14 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListSitesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-
-      Pass this value in the page_token field
-      in the subsequent call to `ListSites` method to retrieve the next page
-      of results.
-  *   `sites` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Site.t)`, *default:* `nil`) - The list of sites.
-
-      This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListSites` method to retrieve the next page of results.
+  *   `sites` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Site.t)`, *default:* `nil`) - The list of sites. This list will be absent if empty.
   """
 
   use GoogleApi.Gax.ModelBase

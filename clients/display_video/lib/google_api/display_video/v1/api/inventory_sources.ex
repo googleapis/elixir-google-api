@@ -44,8 +44,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySources do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:partnerId` (*type:* `String.t`) - Required. The ID of the DV360 partner to which the fetched inventory source
-          is permissioned.
+      *   `:partnerId` (*type:* `String.t`) - Required. The ID of the DV360 partner to which the fetched inventory source is permissioned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -93,14 +92,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySources do
   end
 
   @doc """
-  Lists inventory sources that are accessible to the current user.
-
-  The order is defined by the
-  order_by parameter.
-  If a filter by
-  entity_status is not
-  specified, inventory sources with entity status `ENTITY_STATUS_ARCHIVED`
-  will not be included in the results.
+  Lists inventory sources that are accessible to the current user. The order is defined by the order_by parameter. If a filter by entity_status is not specified, inventory sources with entity status `ENTITY_STATUS_ARCHIVED` will not be included in the results.
 
   ## Parameters
 
@@ -118,45 +110,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySources do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the inventory source.
-      *   `:filter` (*type:* `String.t`) - Allows filtering by inventory source properties.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by `AND` or `OR` logical operators. A
-          sequence of restrictions implicitly uses `AND`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `status.entityStatus`
-              - `commitment`
-              - `deliveryMethod`
-              - `rateDetails.rateType`
-              - `exchange`
-
-          Examples:
-
-          * All active inventory sources:
-          `status.entityStatus="ENTITY_STATUS_ACTIVE"`
-          * Inventory sources belonging to Google Ad Manager or Rubicon exchanges:
-          `exchange="EXCHANGE_GOOGLE_AD_MANAGER" OR exchange="EXCHANGE_RUBICON"`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `displayName` (default)
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. For example,
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListInventorySources` method.
-          If not specified, the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by inventory source properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `status.entityStatus` - `commitment` - `deliveryMethod` - `rateDetails.rateType` - `exchange` Examples: * All active inventory sources: `status.entityStatus="ENTITY_STATUS_ACTIVE"` * Inventory sources belonging to Google Ad Manager or Rubicon exchanges: `exchange="EXCHANGE_GOOGLE_AD_MANAGER" OR exchange="EXCHANGE_RUBICON"` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `displayName` (default) The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. For example, `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListInventorySources` method. If not specified, the first page of results will be returned.
       *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the inventory source.
   *   `opts` (*type:* `keyword()`) - Call options
 

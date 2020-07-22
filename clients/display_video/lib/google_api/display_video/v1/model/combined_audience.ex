@@ -22,8 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CombinedAudience do
   ## Attributes
 
   *   `combinedAudienceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the combined audience. Assigned by the system.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the combined audience.
-      .
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the combined audience. .
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the combined audience.
   """
 

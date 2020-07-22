@@ -17,19 +17,13 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.BrowserAssignedTargetingOptionDetails do
   @moduledoc """
-  Details for assigned browser targeting option. This will be populated in
-  the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_BROWSER`.
+  Details for assigned browser targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_BROWSER`.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the browser.
-  *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted. All assigned browser
-      targeting options on the same line item must have the same value for this
-      field.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a
-      TargetingOption of type `TARGETING_TYPE_BROWSER`.
+  *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted. All assigned browser targeting options on the same line item must have the same value for this field.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_BROWSER`.
   """
 
   use GoogleApi.Gax.ModelBase

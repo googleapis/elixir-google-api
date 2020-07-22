@@ -17,21 +17,13 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.OperatingSystemAssignedTargetingOptionDetails do
   @moduledoc """
-  Assigned operating system targeting option details. This will be
-  populated in the
-  operating_system_details
-  field when
-  targeting_type is
-  `TARGETING_TYPE_OPERATING_SYSTEM`.
+  Assigned operating system targeting option details. This will be populated in the operating_system_details field when targeting_type is `TARGETING_TYPE_OPERATING_SYSTEM`.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the operating system.
   *   `negative` (*type:* `boolean()`, *default:* `nil`) - Indicates if this option is being negatively targeted.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting option ID populated in
-      targeting_option_id field when
-      targeting_type is
-      `TARGETING_TYPE_OPERATING_SYSTEM`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting option ID populated in targeting_option_id field when targeting_type is `TARGETING_TYPE_OPERATING_SYSTEM`.
   """
 
   use GoogleApi.Gax.ModelBase

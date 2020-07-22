@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.CreateAssignedTargetingOptionsRequest do
   @moduledoc """
-  A request listing which assigned targeting options of a given targeting type
-  should be created and added.
+  A request listing which assigned targeting options of a given targeting type should be created and added.
 
   ## Attributes
 

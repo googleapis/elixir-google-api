@@ -21,9 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedLocationsResponse do
 
   ## Attributes
 
-  *   `assignedLocations` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedLocation.t)`, *default:* `nil`) - The list of assigned locations that have been successfully created.
-
-      This list will be absent if empty.
+  *   `assignedLocations` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedLocation.t)`, *default:* `nil`) - The list of assigned locations that have been successfully created. This list will be absent if empty.
   """
 
   use GoogleApi.Gax.ModelBase

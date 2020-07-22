@@ -26,11 +26,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Bulk edits targeting options under a single advertiser.
-  The operation will delete the assigned targeting options provided in
-  BulkEditAdvertiserAssignedTargetingOptionsRequest.delete_requests and
-  then create the assigned targeting options provided in
-  BulkEditAdvertiserAssignedTargetingOptionsRequest.create_requests .
+  Bulk edits targeting options under a single advertiser. The operation will delete the assigned targeting options provided in BulkEditAdvertiserAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditAdvertiserAssignedTargetingOptionsRequest.create_requests .
 
   ## Parameters
 
@@ -129,40 +125,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned targeting option properties.
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by the logical operator `OR`..
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `targetingType`
-
-          Examples:
-
-          * targetingType with value TARGETING_TYPE_CHANNEL
-          `targetingType="TARGETING_TYPE_CHANNEL"`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `targetingType` (default)
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `targetingType desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size.
-          The size must be an integer between `1` and `5000`. If unspecified,
-          the default is '5000'. Returns error code `INVALID_ARGUMENT` if an invalid
-          value is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token that lets the client fetch the next page of results.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to
-          `BulkListAdvertiserAssignedTargetingOptions` method.
-          If not specified, the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned targeting option properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by the logical operator `OR`.. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `targetingType` Examples: * targetingType with value TARGETING_TYPE_CHANNEL `targetingType="TARGETING_TYPE_CHANNEL"` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `targetingType` (default) The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `targetingType desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The size must be an integer between `1` and `5000`. If unspecified, the default is '5000'. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token that lets the client fetch the next page of results. Typically, this is the value of next_page_token returned from the previous call to `BulkListAdvertiserAssignedTargetingOptions` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -228,9 +194,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Creates a new advertiser.
-  Returns the newly created advertiser if successful.
-  This method can take up to 180 seconds to complete.
+  Creates a new advertiser. Returns the newly created advertiser if successful. This method can take up to 180 seconds to complete.
 
   ## Parameters
 
@@ -288,10 +252,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Deletes an advertiser.
-  Deleting an advertiser will delete all of its child resources, for example,
-  campaigns, insertion orders and line items.
-  A deleted advertiser cannot be recovered.
+  Deletes an advertiser. Deleting an advertiser will delete all of its child resources, for example, campaigns, insertion orders and line items. A deleted advertiser cannot be recovered.
 
   ## Parameters
 
@@ -414,13 +375,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Lists advertisers that are accessible to the current user.
-
-  The order is defined by the order_by
-  parameter.
-
-  A single partner_id is required.
-  Cross-partner listing is not supported.
+  Lists advertisers that are accessible to the current user. The order is defined by the order_by parameter. A single partner_id is required. Cross-partner listing is not supported.
 
   ## Parameters
 
@@ -437,42 +392,11 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by advertiser properties.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by `AND` or `OR` logical operators. A
-          sequence of restrictions implicitly uses `AND`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `entityStatus`
-
-          Examples:
-
-          * All active advertisers under a partner:
-          `entityStatus="ENTITY_STATUS_ACTIVE"`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `displayName` (default)
-          * `entityStatus`
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. For example,
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListAdvertisers` method.
-          If not specified, the first page of results will be returned.
-      *   `:partnerId` (*type:* `String.t`) - Required. The ID of the partner that the fetched advertisers should all belong to.
-          The system only supports listing advertisers for one partner at a time.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by advertiser properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `entityStatus` Examples: * All active advertisers under a partner: `entityStatus="ENTITY_STATUS_ACTIVE"` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `displayName` (default) * `entityStatus` The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. For example, `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListAdvertisers` method. If not specified, the first page of results will be returned.
+      *   `:partnerId` (*type:* `String.t`) - Required. The ID of the partner that the fetched advertisers should all belong to. The system only supports listing advertisers for one partner at a time.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -519,8 +443,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Updates an existing advertiser.
-  Returns the updated advertiser if successful.
+  Updates an existing advertiser. Returns the updated advertiser if successful.
 
   ## Parameters
 
@@ -583,10 +506,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Uploads an asset.
-  Returns the ID of the newly uploaded asset if successful.
-  The asset file size should be no more than 10 MB for images, 200 MB for
-  ZIP files, and 1 GB for videos.
+  Uploads an asset. Returns the ID of the newly uploaded asset if successful. The asset file size should be no more than 10 MB for images, 200 MB for ZIP files, and 1 GB for videos.
 
   ## Parameters
 
@@ -657,10 +577,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Uploads an asset.
-  Returns the ID of the newly uploaded asset if successful.
-  The asset file size should be no more than 10 MB for images, 200 MB for
-  ZIP files, and 1 GB for videos.
+  Uploads an asset. Returns the ID of the newly uploaded asset if successful. The asset file size should be no more than 10 MB for images, 200 MB for ZIP files, and 1 GB for videos.
 
   ## Parameters
 
@@ -741,10 +658,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Uploads an asset.
-  Returns the ID of the newly uploaded asset if successful.
-  The asset file size should be no more than 10 MB for images, 200 MB for
-  ZIP files, and 1 GB for videos.
+  Uploads an asset. Returns the ID of the newly uploaded asset if successful. The asset file size should be no more than 10 MB for images, 200 MB for ZIP files, and 1 GB for videos.
 
   ## Parameters
 
@@ -825,8 +739,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Creates a new campaign.
-  Returns the newly created campaign if successful.
+  Creates a new campaign. Returns the newly created campaign if successful.
 
   ## Parameters
 
@@ -897,10 +810,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Permanently deletes a campaign. A deleted campaign cannot be recovered.
-  The campaign should be archived first, i.e. set
-  entity_status to `ENTITY_STATUS_ARCHIVED`, to be
-  able to delete it.
+  Permanently deletes a campaign. A deleted campaign cannot be recovered. The campaign should be archived first, i.e. set entity_status to `ENTITY_STATUS_ARCHIVED`, to be able to delete it.
 
   ## Parameters
 
@@ -1046,13 +956,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Lists campaigns in an advertiser.
-
-  The order is defined by the order_by
-  parameter.
-  If a filter by
-  entity_status is not specified, campaigns with
-  `ENTITY_STATUS_ARCHIVED` will not be included in the results.
+  Lists campaigns in an advertiser. The order is defined by the order_by parameter. If a filter by entity_status is not specified, campaigns with `ENTITY_STATUS_ARCHIVED` will not be included in the results.
 
   ## Parameters
 
@@ -1070,42 +974,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by campaign properties.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by `AND` or `OR` logical operators. A
-          sequence of restrictions implicitly uses `AND`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `entityStatus`
-
-          Examples:
-
-          * All `ENTITY_STATUS_ACTIVE` or `ENTITY_STATUS_PAUSED` campaigns under an
-          advertiser:
-          `(entityStatus="ENTITY_STATUS_ACTIVE" OR
-          entityStatus="ENTITY_STATUS_PAUSED")`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `displayName` (default)
-          * `entityStatus`
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token returned from the
-          previous call to `ListCampaigns` method. If not specified, the first page
-          of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by campaign properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `entityStatus` Examples: * All `ENTITY_STATUS_ACTIVE` or `ENTITY_STATUS_PAUSED` campaigns under an advertiser: `(entityStatus="ENTITY_STATUS_ACTIVE" OR entityStatus="ENTITY_STATUS_PAUSED")` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `displayName` (default) * `entityStatus` The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListCampaigns` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1161,8 +1033,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Updates an existing campaign.
-  Returns the updated campaign if successful.
+  Updates an existing campaign. Returns the updated campaign if successful.
 
   ## Parameters
 
@@ -1405,40 +1276,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by channel fields.
-
-          Supported syntax:
-
-          * Filter expressions for channel currently can only contain at most one
-          * restriction.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `CONTAINS (:)`.
-          * Supported fields:
-              - `displayName`
-
-          Examples:
-
-          * All channels for which the display name contains "google":
-          `displayName : "google"`.
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `displayName` (default)
-          * `channelId`
-
-          The default sorting order is ascending. To specify descending order for a
-          field, a suffix " desc" should be added to the field name. Example:
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token returned from the
-          previous call to `ListChannels` method. If not specified, the first page
-          of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by channel fields. Supported syntax: * Filter expressions for channel currently can only contain at most one * restriction. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)`. * Supported fields: - `displayName` Examples: * All channels for which the display name contains "google": `displayName : "google"`. The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `displayName` (default) * `channelId` The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be added to the field name. Example: `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListChannels` method. If not specified, the first page of results will be returned.
       *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the channels.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1575,11 +1416,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Bulk edits sites under a single channel.
-
-  The operation will delete the sites provided in
-  BulkEditSitesRequest.deleted_sites and then create the sites
-  provided in BulkEditSitesRequest.created_sites.
+  Bulk edits sites under a single channel. The operation will delete the sites provided in BulkEditSitesRequest.deleted_sites and then create the sites provided in BulkEditSitesRequest.created_sites.
 
   ## Parameters
 
@@ -1830,38 +1667,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by site fields.
-
-          Supported syntax:
-
-          * Filter expressions for site currently can only contain at most one
-          * restriction.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `CONTAINS (:)`.
-          * Supported fields:
-              - `urlOrAppId`
-
-          Examples:
-
-          * All sites for which the URL or app ID contains "google":
-          `urlOrAppId : "google"`
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `urlOrAppId` (default)
-
-          The default sorting order is ascending. To specify descending order for a
-          field, a suffix " desc" should be added to the field name. Example:
-          `urlOrAppId desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-
-          Typically, this is the value of
-          next_page_token returned from the
-          previous call to `ListSites` method. If not specified, the first page
-          of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by site fields. Supported syntax: * Filter expressions for site currently can only contain at most one * restriction. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)`. * Supported fields: - `urlOrAppId` Examples: * All sites for which the URL or app ID contains "google": `urlOrAppId : "google"`
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `urlOrAppId` (default) The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be added to the field name. Example: `urlOrAppId desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListSites` method. If not specified, the first page of results will be returned.
       *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent channel.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1922,8 +1731,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Creates a new creative.
-  Returns the newly created creative if successful.
+  Creates a new creative. Returns the newly created creative if successful.
 
   ## Parameters
 
@@ -1994,11 +1802,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Deletes a creative.
-  Returns error code `NOT_FOUND` if the creative does not exist.
-  The creative should be archived first, i.e. set
-  entity_status to `ENTITY_STATUS_ARCHIVED`, before
-  it can be deleted.
+  Deletes a creative. Returns error code `NOT_FOUND` if the creative does not exist. The creative should be archived first, i.e. set entity_status to `ENTITY_STATUS_ARCHIVED`, before it can be deleted.
 
   ## Parameters
 
@@ -2144,13 +1948,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Lists creatives in an advertiser.
-
-  The order is defined by the order_by
-  parameter.
-  If a filter by
-  entity_status is not specified, creatives with
-  `ENTITY_STATUS_ARCHIVED` will not be included in the results.
+  Lists creatives in an advertiser. The order is defined by the order_by parameter. If a filter by entity_status is not specified, creatives with `ENTITY_STATUS_ARCHIVED` will not be included in the results.
 
   ## Parameters
 
@@ -2168,76 +1966,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by creative properties.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restriction for the same field must be combined by `OR`.
-          * Restriction for different fields must be combined by `AND`.
-          * Between `(` and `)` there can only be restrictions combined by `OR`
-          for the same field.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)` for the following fields:
-              - `entityStatus`
-              - `creativeType`.
-              - `dimensions`
-              - `minDuration`
-              - `maxDuration`
-              - `approvalStatus`
-              - `exchangeReviewStatus`
-              - `dynamic`
-              - `creativeId`
-          * The operator must be `HAS (:)` for the following fields:
-              - `lineItemIds`
-          * For `entityStatus`, `minDuration`, `maxDuration`, and `dynamic` there may
-          be at most one restriction.
-          * For `dimensions`, the value is in the form of `"{width}x{height}"`.
-          * For `exchangeReviewStatus`, the value is in the form of
-          `{exchange}-{reviewStatus}`.
-          * For `minDuration` and `maxDuration`, the value is in the form of
-          `"{duration}s"`. Only seconds are supported with millisecond granularity.
-          * There may be multiple `lineItemIds` restrictions in order to search
-          against multiple possible line item IDs.
-          * There may be multiple `creativeId` restrictions in order to search
-          against multiple possible creative IDs.
-
-          Examples:
-
-          * All native creatives: `creativeType="CREATIVE_TYPE_NATIVE"`
-          * All active creatives with 300x400 or 50x100 dimensions:
-          `entityStatus="ENTITY_STATUS_ACTIVE" AND (dimensions="300x400"
-          OR dimensions="50x100")`
-          * All dynamic creatives that are approved by AdX or
-          AppNexus, with a minimum duration of 5 seconds and 200ms.
-          `dynamic="true" AND minDuration="5.2s" AND
-          (exchangeReviewStatus="EXCHANGE_GOOGLE_AD_MANAGER-REVIEW_STATUS_APPROVED"
-          OR exchangeReviewStatus="EXCHANGE_APPNEXUS-REVIEW_STATUS_APPROVED")`
-          * All video creatives that are associated with line item ID 1 or 2:
-          `creativeType="CREATIVE_TYPE_VIDEO" AND (lineItemIds:1 OR lineItemIds:2)`
-          * Find creatives by multiple creative IDs:
-          `creativeId=1 OR creativeId=2`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `creativeId` (default)
-          * `createTime`
-          * `mediaDuration`
-          * `dimensions` (sorts by width first, then by height)
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name.
-          Example: `createTime desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListCreatives` method.
-          If not specified, the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by creative properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restriction for the same field must be combined by `OR`. * Restriction for different fields must be combined by `AND`. * Between `(` and `)` there can only be restrictions combined by `OR` for the same field. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)` for the following fields: - `entityStatus` - `creativeType`. - `dimensions` - `minDuration` - `maxDuration` - `approvalStatus` - `exchangeReviewStatus` - `dynamic` - `creativeId` * The operator must be `HAS (:)` for the following fields: - `lineItemIds` * For `entityStatus`, `minDuration`, `maxDuration`, and `dynamic` there may be at most one restriction. * For `dimensions`, the value is in the form of `"{width}x{height}"`. * For `exchangeReviewStatus`, the value is in the form of `{exchange}-{reviewStatus}`. * For `minDuration` and `maxDuration`, the value is in the form of `"{duration}s"`. Only seconds are supported with millisecond granularity. * There may be multiple `lineItemIds` restrictions in order to search against multiple possible line item IDs. * There may be multiple `creativeId` restrictions in order to search against multiple possible creative IDs. Examples: * All native creatives: `creativeType="CREATIVE_TYPE_NATIVE"` * All active creatives with 300x400 or 50x100 dimensions: `entityStatus="ENTITY_STATUS_ACTIVE" AND (dimensions="300x400" OR dimensions="50x100")` * All dynamic creatives that are approved by AdX or AppNexus, with a minimum duration of 5 seconds and 200ms. `dynamic="true" AND minDuration="5.2s" AND (exchangeReviewStatus="EXCHANGE_GOOGLE_AD_MANAGER-REVIEW_STATUS_APPROVED" OR exchangeReviewStatus="EXCHANGE_APPNEXUS-REVIEW_STATUS_APPROVED")` * All video creatives that are associated with line item ID 1 or 2: `creativeType="CREATIVE_TYPE_VIDEO" AND (lineItemIds:1 OR lineItemIds:2)` * Find creatives by multiple creative IDs: `creativeId=1 OR creativeId=2` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `creativeId` (default) * `createTime` * `mediaDuration` * `dimensions` (sorts by width first, then by height) The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `createTime desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListCreatives` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2293,8 +2025,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Updates an existing creative.
-  Returns the updated creative if successful.
+  Updates an existing creative. Returns the updated creative if successful.
 
   ## Parameters
 
@@ -2371,8 +2102,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Creates a new insertion order.
-  Returns the newly created insertion order if successful.
+  Creates a new insertion order. Returns the newly created insertion order if successful.
 
   ## Parameters
 
@@ -2443,11 +2173,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Deletes an insertion order.
-  Returns error code `NOT_FOUND` if the insertion order does not exist.
-  The insertion order should be archived first, i.e. set
-  entity_status to `ENTITY_STATUS_ARCHIVED`,
-  to be able to delete it.
+  Deletes an insertion order. Returns error code `NOT_FOUND` if the insertion order does not exist. The insertion order should be archived first, i.e. set entity_status to `ENTITY_STATUS_ARCHIVED`, to be able to delete it.
 
   ## Parameters
 
@@ -2520,8 +2246,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Gets an insertion order.
-  Returns error code `NOT_FOUND` if the insertion order does not exist.
+  Gets an insertion order. Returns error code `NOT_FOUND` if the insertion order does not exist.
 
   ## Parameters
 
@@ -2594,13 +2319,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Lists insertion orders in an advertiser.
-
-  The order is defined by the order_by
-  parameter.
-  If a filter by
-  entity_status is not specified, insertion
-  orders with `ENTITY_STATUS_ARCHIVED` will not be included in the results.
+  Lists insertion orders in an advertiser. The order is defined by the order_by parameter. If a filter by entity_status is not specified, insertion orders with `ENTITY_STATUS_ARCHIVED` will not be included in the results.
 
   ## Parameters
 
@@ -2618,45 +2337,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by insertion order properties.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by `AND` or `OR` logical operators. A
-          sequence of restrictions implicitly uses `AND`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `campaignId`
-              - `entityStatus`
-
-          Examples:
-
-          * All insertion orders under a campaign: `campaignId="1234"`
-          * All `ENTITY_STATUS_ACTIVE` or `ENTITY_STATUS_PAUSED` insertion orders
-          under an advertiser:
-          `(entityStatus="ENTITY_STATUS_ACTIVE" OR
-          entityStatus="ENTITY_STATUS_PAUSED")`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * "displayName" (default)
-          * "entityStatus"
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token returned
-          from the previous call to `ListInsertionOrders` method. If not specified,
-          the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by insertion order properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `campaignId` - `entityStatus` Examples: * All insertion orders under a campaign: `campaignId="1234"` * All `ENTITY_STATUS_ACTIVE` or `ENTITY_STATUS_PAUSED` insertion orders under an advertiser: `(entityStatus="ENTITY_STATUS_ACTIVE" OR entityStatus="ENTITY_STATUS_PAUSED")` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * "displayName" (default) * "entityStatus" The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListInsertionOrders` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2714,8 +2398,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Updates an existing insertion order.
-  Returns the updated insertion order if successful.
+  Updates an existing insertion order. Returns the updated insertion order if successful.
 
   ## Parameters
 
@@ -2792,11 +2475,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Bulk edits targeting options under a single line item.
-  The operation will delete the assigned targeting options provided in
-  BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and
-  then create the assigned targeting options provided in
-  BulkEditLineItemAssignedTargetingOptionsRequest.create_requests .
+  Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests .
 
   ## Parameters
 
@@ -2900,47 +2579,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned targeting option properties.
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by the logical operator `OR` on the same
-          field.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `targetingType`
-              - `inheritance`
-
-          Examples:
-
-          * AssignedTargetingOptions of targeting type
-          TARGETING_TYPE_PROXIMITY_LOCATION_LIST or TARGETING_TYPE_CHANNEL
-          `targetingType="TARGETING_TYPE_PROXIMITY_LOCATION_LIST" OR
-          targetingType="TARGETING_TYPE_CHANNEL"`
-          * AssignedTargetingOptions with inheritance status of NOT_INHERITED or
-            INHERITED_FROM_PARTNER
-          `inheritance="NOT_INHERITED" OR inheritance="INHERITED_FROM_PARTNER"`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `targetingType` (default)
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `targetingType desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size.
-          The size must be an integer between `1` and `5000`. If unspecified,
-          the default is '5000'. Returns error code `INVALID_ARGUMENT` if an invalid
-          value is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token that lets the client fetch the next page of results.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to
-          `BulkListLineItemAssignedTargetingOptions` method.
-          If not specified, the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned targeting option properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by the logical operator `OR` on the same field. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `targetingType` - `inheritance` Examples: * AssignedTargetingOptions of targeting type TARGETING_TYPE_PROXIMITY_LOCATION_LIST or TARGETING_TYPE_CHANNEL `targetingType="TARGETING_TYPE_PROXIMITY_LOCATION_LIST" OR targetingType="TARGETING_TYPE_CHANNEL"` * AssignedTargetingOptions with inheritance status of NOT_INHERITED or INHERITED_FROM_PARTNER `inheritance="NOT_INHERITED" OR inheritance="INHERITED_FROM_PARTNER"` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `targetingType` (default) The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `targetingType desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. The size must be an integer between `1` and `5000`. If unspecified, the default is '5000'. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token that lets the client fetch the next page of results. Typically, this is the value of next_page_token returned from the previous call to `BulkListLineItemAssignedTargetingOptions` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3009,8 +2651,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Creates a new line item.
-  Returns the newly created line item if successful.
+  Creates a new line item. Returns the newly created line item if successful.
 
   ## Parameters
 
@@ -3081,11 +2722,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Deletes a line item.
-  Returns error code `NOT_FOUND` if the line item does not exist.
-  The line item should be archived first, i.e. set
-  entity_status to `ENTITY_STATUS_ARCHIVED`, to be
-  able to delete it.
+  Deletes a line item. Returns error code `NOT_FOUND` if the line item does not exist. The line item should be archived first, i.e. set entity_status to `ENTITY_STATUS_ARCHIVED`, to be able to delete it.
 
   ## Parameters
 
@@ -3231,13 +2868,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Lists line items in an advertiser.
-
-  The order is defined by the order_by
-  parameter.
-  If a filter by
-  entity_status is not specified, line items with
-  `ENTITY_STATUS_ARCHIVED` will not be included in the results.
+  Lists line items in an advertiser. The order is defined by the order_by parameter. If a filter by entity_status is not specified, line items with `ENTITY_STATUS_ARCHIVED` will not be included in the results.
 
   ## Parameters
 
@@ -3255,49 +2886,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by line item properties.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by `AND` or `OR` logical operators. A
-          sequence of restrictions implicitly uses `AND`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `campaignId`
-              - `insertionOrderId`
-              - `entityStatus`
-              - `lineItemType`
-
-          Examples:
-
-          * All line items under an insertion order: `insertionOrderId="1234"`
-          * All `ENTITY_STATUS_ACTIVE` or `ENTITY_STATUS_PAUSED`
-          and `LINE_ITEM_TYPE_DISPLAY_DEFAULT` line items under an advertiser:
-          `(entityStatus="ENTITY_STATUS_ACTIVE" OR
-          entityStatus="ENTITY_STATUS_PAUSED") AND
-          lineItemType="LINE_ITEM_TYPE_DISPLAY_DEFAULT"`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * "displayName" (default)
-          * "entityStatus"
-          * “flight.dateRange.endDate”
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListLineItems` method.
-          If not specified, the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by line item properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `campaignId` - `insertionOrderId` - `entityStatus` - `lineItemType` Examples: * All line items under an insertion order: `insertionOrderId="1234"` * All `ENTITY_STATUS_ACTIVE` or `ENTITY_STATUS_PAUSED` and `LINE_ITEM_TYPE_DISPLAY_DEFAULT` line items under an advertiser: `(entityStatus="ENTITY_STATUS_ACTIVE" OR entityStatus="ENTITY_STATUS_PAUSED") AND lineItemType="LINE_ITEM_TYPE_DISPLAY_DEFAULT"` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * "displayName" (default) * "entityStatus" * “flight.dateRange.endDate” The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListLineItems` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3353,8 +2945,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Updates an existing line item.
-  Returns the updated line item if successful.
+  Updates an existing line item. Returns the updated line item if successful.
 
   ## Parameters
 
@@ -3431,8 +3022,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Assigns a targeting option to a line item.
-  Returns the assigned targeting option if successful.
+  Assigns a targeting option to a line item. Returns the assigned targeting option if successful.
 
   ## Parameters
 
@@ -3609,8 +3199,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the advertiser the line item belongs to.
   *   `line_item_id` (*type:* `String.t`) - Required. The ID of the line item the assigned targeting option belongs to.
   *   `targeting_type` (*type:* `String.t`) - Required. Identifies the type of this assigned targeting option.
-  *   `assigned_targeting_option_id` (*type:* `String.t`) - Required. An identifier unique to the targeting type in this line item that
-      identifies the assigned targeting option being requested.
+  *   `assigned_targeting_option_id` (*type:* `String.t`) - Required. An identifier unique to the targeting type in this line item that identifies the assigned targeting option being requested.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3709,43 +3298,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned targeting option properties.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by the logical operator `OR`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `assignedTargetingOptionId`
-              - `inheritance`
-
-          Examples:
-
-          * AssignedTargetingOptions with ID 1 or 2
-          `assignedTargetingOptionId="1" OR assignedTargetingOptionId="2"`
-          * AssignedTargetingOptions with inheritance status of NOT_INHERITED or
-            INHERITED_FROM_PARTNER
-          `inheritance="NOT_INHERITED" OR inheritance="INHERITED_FROM_PARTNER"`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `assignedTargetingOptionId` (default)
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `assignedTargetingOptionId desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListLineItemAssignedTargetingOptions`
-          method. If not specified, the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned targeting option properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by the logical operator `OR`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `assignedTargetingOptionId` - `inheritance` Examples: * AssignedTargetingOptions with ID 1 or 2 `assignedTargetingOptionId="1" OR assignedTargetingOptionId="2"` * AssignedTargetingOptions with inheritance status of NOT_INHERITED or INHERITED_FROM_PARTNER `inheritance="NOT_INHERITED" OR inheritance="INHERITED_FROM_PARTNER"` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `assignedTargetingOptionId` (default) The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `assignedTargetingOptionId desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListLineItemAssignedTargetingOptions` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3813,8 +3369,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Creates a new location list. Returns the newly created location list if
-  successful.
+  Creates a new location list. Returns the newly created location list if successful.
 
   ## Parameters
 
@@ -3976,42 +3531,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by location list fields.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by `AND` or `OR` logical operators. A
-          sequence of restrictions implicitly uses `AND`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `locationType`
-
-          Examples:
-
-          * All regional location list:
-          `locationType="TARGETING_LOCATION_TYPE_REGIONAL"`
-          * All proximity location list:
-          `locationType="TARGETING_LOCATION_TYPE_PROXIMITY"`
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `locationListId` (default)
-          * `displayName`
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`.
-          Defaults to `100` if not set. Returns error code `INVALID_ARGUMENT` if an
-          invalid value is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListLocationLists` method.
-          If not specified, the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by location list fields. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `locationType` Examples: * All regional location list: `locationType="TARGETING_LOCATION_TYPE_REGIONAL"` * All proximity location list: `locationType="TARGETING_LOCATION_TYPE_PROXIMITY"`
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `locationListId` (default) * `displayName` The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. Defaults to `100` if not set. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListLocationLists` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4146,13 +3669,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Bulk edits multiple assignments between locations and a single location
-  list.
-
-  The operation will delete the assigned locations provided in
-  BulkEditAssignedLocationsRequest.deleted_assigned_locations and then
-  create the assigned locations provided in
-  BulkEditAssignedLocationsRequest.created_assigned_locations.
+  Bulk edits multiple assignments between locations and a single location list. The operation will delete the assigned locations provided in BulkEditAssignedLocationsRequest.deleted_assigned_locations and then create the assigned locations provided in BulkEditAssignedLocationsRequest.created_assigned_locations.
 
   ## Parameters
 
@@ -4409,35 +3926,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by location list assignment fields.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by the logical operator `OR`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `assignedLocationId`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `assignedLocationId` (default)
-
-          The default sorting order is ascending. To specify descending order for a
-          field, a suffix " desc" should be added to the field name. Example:
-          `assignedLocationId desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListAssignedLocations`
-          method. If not specified, the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by location list assignment fields. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by the logical operator `OR`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `assignedLocationId` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `assignedLocationId` (default) The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be added to the field name. Example: `assignedLocationId desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListAssignedLocations` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4501,14 +3993,12 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Creates a new negative keyword list. Returns the newly created negative
-  keyword list if successful.
+  Creates a new negative keyword list. Returns the newly created negative keyword list if successful.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the negative keyword list will
-      belong.
+  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the negative keyword list will belong.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4574,8 +4064,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Deletes a negative keyword list given an advertiser ID and a negative
-  keyword list ID.
+  Deletes a negative keyword list given an advertiser ID and a negative keyword list ID.
 
   ## Parameters
 
@@ -4651,14 +4140,12 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Gets a negative keyword list given an advertiser ID and a negative keyword
-  list ID.
+  Gets a negative keyword list given an advertiser ID and a negative keyword list ID.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the fetched negative keyword list
-      belongs.
+  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the fetched negative keyword list belongs.
   *   `negative_keyword_list_id` (*type:* `String.t`) - Required. The ID of the negative keyword list to fetch.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4734,8 +4221,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the fetched negative keyword lists
-      belong.
+  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the fetched negative keyword lists belong.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4748,15 +4234,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`.
-          Defaults to `100` if not set. Returns error code `INVALID_ARGUMENT` if an
-          invalid value is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListNegativeKeywordLists` method.
-          If not specified, the first page of results will be returned.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. Defaults to `100` if not set. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListNegativeKeywordLists` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4812,8 +4291,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Updates a negative keyword list. Returns the updated negative keyword list
-  if successful.
+  Updates a negative keyword list. Returns the updated negative keyword list if successful.
 
   ## Parameters
 
@@ -4893,23 +4371,13 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Bulk edits negative keywords in a single negative keyword list.
-
-  The operation will delete the negative keywords provided in
-  BulkEditNegativeKeywordsRequest.deleted_negative_keywords and then
-  create the negative keywords provided in
-  BulkEditNegativeKeywordsRequest.created_negative_keywords.
-
-  This operation is guaranteed to be atomic and will never result in a
-  partial success or partial failure.
+  Bulk edits negative keywords in a single negative keyword list. The operation will delete the negative keywords provided in BulkEditNegativeKeywordsRequest.deleted_negative_keywords and then create the negative keywords provided in BulkEditNegativeKeywordsRequest.created_negative_keywords. This operation is guaranteed to be atomic and will never result in a partial success or partial failure.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the parent negative keyword list
-      belongs.
-  *   `negative_keyword_list_id` (*type:* `String.t`) - Required. The ID of the parent negative keyword list to which the negative keywords
-      belong.
+  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the parent negative keyword list belongs.
+  *   `negative_keyword_list_id` (*type:* `String.t`) - Required. The ID of the parent negative keyword list to which the negative keywords belong.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4988,10 +4456,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the parent negative keyword list
-      belongs.
-  *   `negative_keyword_list_id` (*type:* `String.t`) - Required. The ID of the parent negative keyword list in which the negative keyword
-      will be created.
+  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the parent negative keyword list belongs.
+  *   `negative_keyword_list_id` (*type:* `String.t`) - Required. The ID of the parent negative keyword list in which the negative keyword will be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5068,10 +4534,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the parent negative keyword list
-      belongs.
-  *   `negative_keyword_list_id` (*type:* `String.t`) - Required. The ID of the parent negative keyword list to which the negative keyword
-      belongs.
+  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the parent negative keyword list belongs.
+  *   `negative_keyword_list_id` (*type:* `String.t`) - Required. The ID of the parent negative keyword list to which the negative keyword belongs.
   *   `keyword_value` (*type:* `String.t`) - Required. The keyword value of the negative keyword to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -5151,10 +4615,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the parent negative keyword list
-      belongs.
-  *   `negative_keyword_list_id` (*type:* `String.t`) - Required. The ID of the parent negative keyword list to which the requested negative
-      keywords belong.
+  *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the DV360 advertiser to which the parent negative keyword list belongs.
+  *   `negative_keyword_list_id` (*type:* `String.t`) - Required. The ID of the parent negative keyword list to which the requested negative keywords belong.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5167,39 +4629,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by negative keyword fields.
-
-          Supported syntax:
-
-          * Filter expressions for negative keyword currently can only contain at
-          most one
-          * restriction.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `CONTAINS (:)`.
-          * Supported fields:
-              - `keywordValue`
-
-          Examples:
-
-          * All negative keywords for which the keyword value contains "google":
-          `keywordValue : "google"`
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `keywordValue` (default)
-
-          The default sorting order is ascending. To specify descending order for a
-          field, a suffix " desc" should be added to the field name. Example:
-          `keywordValue desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-
-          Typically, this is the value of
-          next_page_token returned
-          from the previous call to `ListNegativeKeywords` method. If not specified,
-          the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by negative keyword fields. Supported syntax: * Filter expressions for negative keyword currently can only contain at most one * restriction. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)`. * Supported fields: - `keywordValue` Examples: * All negative keywords for which the keyword value contains "google": `keywordValue : "google"`
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `keywordValue` (default) The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be added to the field name. Example: `keywordValue desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListNegativeKeywords` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5263,8 +4696,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   end
 
   @doc """
-  Assigns a targeting option to an advertiser.
-  Returns the assigned targeting option if successful.
+  Assigns a targeting option to an advertiser. Returns the assigned targeting option if successful.
 
   ## Parameters
 
@@ -5432,8 +4864,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
   *   `advertiser_id` (*type:* `String.t`) - Required. The ID of the advertiser.
   *   `targeting_type` (*type:* `String.t`) - Required. Identifies the type of this assigned targeting option.
-  *   `assigned_targeting_option_id` (*type:* `String.t`) - Required. An identifier unique to the targeting type in this advertiser that
-      identifies the assigned targeting option being requested.
+  *   `assigned_targeting_option_id` (*type:* `String.t`) - Required. An identifier unique to the targeting type in this advertiser that identifies the assigned targeting option being requested.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5528,39 +4959,10 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Advertisers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned targeting option properties.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by the logical operator `OR`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `assignedTargetingOptionId`
-
-          Examples:
-
-          * AssignedTargetingOption with ID 123456
-          `assignedTargetingOptionId="123456"`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `assignedTargetingOptionId` (default)
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. Example:
-          `assignedTargetingOptionId desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListAdvertiserAssignedTargetingOptions`
-          method. If not specified, the first page of results will be returned.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned targeting option properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by the logical operator `OR`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `assignedTargetingOptionId` Examples: * AssignedTargetingOption with ID 123456 `assignedTargetingOptionId="123456"` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `assignedTargetingOptionId` (default) The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. Example: `assignedTargetingOptionId desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListAdvertiserAssignedTargetingOptions` method. If not specified, the first page of results will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

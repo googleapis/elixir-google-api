@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ContentOutstreamPositionAssignedTargetingOptionDetails do
   @moduledoc """
-  Assigned content outstream position targeting option details. This will be
-  populated in the
-  content_outstream_position_details
-  field when
-  targeting_type is
-  `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
+  Assigned content outstream position targeting option details. This will be populated in the content_outstream_position_details field when targeting_type is `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
 
   ## Attributes
 
   *   `contentOutstreamPosition` (*type:* `String.t`, *default:* `nil`) - Output only. The content outstream position.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when
-      targeting_type is
-      `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
   """
 
   use GoogleApi.Gax.ModelBase

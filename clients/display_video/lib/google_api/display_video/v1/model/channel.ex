@@ -23,8 +23,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Channel do
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - The ID of the advertiser that owns the channel.
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the channel. Assigned by the system.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the channel.
-      Must be UTF-8 encoded with a maximum length of 240 bytes.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the channel. Must be UTF-8 encoded with a maximum length of 240 bytes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the channel.
   *   `partnerId` (*type:* `String.t`, *default:* `nil`) - The ID of the partner that owns the channel.
   """

@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.BrowserTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable browser. This will be populated in the
-  browser_details field when
-  targeting_type is
-  `TARGETING_TYPE_BROWSER`.
+  Represents a targetable browser. This will be populated in the browser_details field when targeting_type is `TARGETING_TYPE_BROWSER`.
 
   ## Attributes
 

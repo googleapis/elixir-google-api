@@ -17,25 +17,14 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.CmHybridConfig do
   @moduledoc """
-  Settings for advertisers that use both Campaign Manager (CM) and third-party
-  ad servers.
+  Settings for advertisers that use both Campaign Manager (CM) and third-party ad servers.
 
   ## Attributes
 
-  *   `cmAccountId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Account ID of the CM Floodlight configuration linked with the DV360
-      advertiser.
+  *   `cmAccountId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Account ID of the CM Floodlight configuration linked with the DV360 advertiser.
   *   `cmFloodlightConfigId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. ID of the CM Floodlight configuration linked with the DV360 advertiser.
-  *   `cmFloodlightLinkingAuthorized` (*type:* `boolean()`, *default:* `nil`) - Required. Immutable. By setting this field to `true`, you, on behalf of your company,
-      authorize the sharing of information from the given Floodlight
-      configuration to this Display & Video 360 advertiser.
-  *   `cmSyncableSiteIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of CM sites whose placements will be synced to DV360 as creatives.
-
-      If absent or empty in
-      CreateAdvertiser method, the system
-      will automatically create a CM site.
-
-      Removing sites from this list may cause DV360 creatives synced from CM to
-      be deleted. At least one site must be specified.
+  *   `cmFloodlightLinkingAuthorized` (*type:* `boolean()`, *default:* `nil`) - Required. Immutable. By setting this field to `true`, you, on behalf of your company, authorize the sharing of information from the given Floodlight configuration to this Display & Video 360 advertiser.
+  *   `cmSyncableSiteIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of CM sites whose placements will be synced to DV360 as creatives. If absent or empty in CreateAdvertiser method, the system will automatically create a CM site. Removing sites from this list may cause DV360 creatives synced from CM to be deleted. At least one site must be specified.
   *   `dv360ToCmCostReportingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not to report DV360 cost to CM.
   *   `dv360ToCmDataSharingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not to include DV360 data in CM data transfer reports.
   """

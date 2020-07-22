@@ -21,10 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Transcode do
 
   ## Attributes
 
-  *   `audioBitRateKbps` (*type:* `String.t`, *default:* `nil`) - The bit rate for the audio stream of the transcoded video, or the bit rate
-      for the transcoded audio, in kilobits per second.
-  *   `audioSampleRateHz` (*type:* `String.t`, *default:* `nil`) - The sample rate for the audio stream of the transcoded video, or the sample
-      rate for the transcoded audio, in hertz.
+  *   `audioBitRateKbps` (*type:* `String.t`, *default:* `nil`) - The bit rate for the audio stream of the transcoded video, or the bit rate for the transcoded audio, in kilobits per second.
+  *   `audioSampleRateHz` (*type:* `String.t`, *default:* `nil`) - The sample rate for the audio stream of the transcoded video, or the sample rate for the transcoded audio, in hertz.
   *   `bitRateKbps` (*type:* `String.t`, *default:* `nil`) - The transcoding bit rate of the transcoded video, in kilobits per second.
   *   `dimensions` (*type:* `GoogleApi.DisplayVideo.V1.Model.Dimensions.t`, *default:* `nil`) - The dimensions of the transcoded video.
   *   `fileSizeBytes` (*type:* `String.t`, *default:* `nil`) - The size of the transcoded file, in bytes.

@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditLineItemAssignedTargetingOptionsRequest do
   @moduledoc """
-  Request message for
-  BulkEditLineItemAssignedTargetingOptions.
+  Request message for BulkEditLineItemAssignedTargetingOptions.
 
   ## Attributes
 
-  *   `createRequests` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CreateAssignedTargetingOptionsRequest.t)`, *default:* `nil`) - The assigned targeting options to create in batch, specified as a list of
-      `CreateAssignedTargetingOptionsRequest`.
-  *   `deleteRequests` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.DeleteAssignedTargetingOptionsRequest.t)`, *default:* `nil`) - The assigned targeting options to delete in batch, specified as a list of
-      `DeleteAssignedTargetingOptionsRequest`.
+  *   `createRequests` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CreateAssignedTargetingOptionsRequest.t)`, *default:* `nil`) - The assigned targeting options to create in batch, specified as a list of `CreateAssignedTargetingOptionsRequest`.
+  *   `deleteRequests` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.DeleteAssignedTargetingOptionsRequest.t)`, *default:* `nil`) - The assigned targeting options to delete in batch, specified as a list of `DeleteAssignedTargetingOptionsRequest`.
   """
 
   use GoogleApi.Gax.ModelBase

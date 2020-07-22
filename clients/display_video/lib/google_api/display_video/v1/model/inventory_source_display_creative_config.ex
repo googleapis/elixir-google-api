@@ -21,8 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceDisplayCreativeConfig d
 
   ## Attributes
 
-  *   `creativeSize` (*type:* `GoogleApi.DisplayVideo.V1.Model.Dimensions.t`, *default:* `nil`) - The size requirements for display creatives that can be assigned to the
-      inventory source.
+  *   `creativeSize` (*type:* `GoogleApi.DisplayVideo.V1.Model.Dimensions.t`, *default:* `nil`) - The size requirements for display creatives that can be assigned to the inventory source.
   """
 
   use GoogleApi.Gax.ModelBase

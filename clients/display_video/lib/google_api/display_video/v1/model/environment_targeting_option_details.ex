@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.EnvironmentTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable environment. This will be populated in the
-  environment_details field of a
-  TargetingOption when targeting_type is
-  `TARGETING_TYPE_ENVIRONMENT`.
+  Represents a targetable environment. This will be populated in the environment_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_ENVIRONMENT`.
 
   ## Attributes
 

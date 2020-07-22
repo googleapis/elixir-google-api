@@ -17,18 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.UserRewardedContentAssignedTargetingOptionDetails do
   @moduledoc """
-  User rewarded content targeting option details. This will be populated in
-  the
-  user_rewarded_content_details
-  field when
-  targeting_type is
-  `TARGETING_TYPE_USER_REWARDED_CONTENT`.
+  User rewarded content targeting option details. This will be populated in the user_rewarded_content_details field when targeting_type is `TARGETING_TYPE_USER_REWARDED_CONTENT`.
 
   ## Attributes
 
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when
-      targeting_type is
-      `TARGETING_TYPE_USER_REWARDED_CONTENT`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_USER_REWARDED_CONTENT`.
   *   `userRewardedContent` (*type:* `String.t`, *default:* `nil`) - Output only. User rewarded content status for video ads.
   """
 

@@ -21,8 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomListTargetingSetting do
 
   ## Attributes
 
-  *   `customListId` (*type:* `String.t`, *default:* `nil`) - Required. Custom id of custom list targeting setting.
-      This id is custom_list_id.
+  *   `customListId` (*type:* `String.t`, *default:* `nil`) - Required. Custom id of custom list targeting setting. This id is custom_list_id.
   """
 
   use GoogleApi.Gax.ModelBase

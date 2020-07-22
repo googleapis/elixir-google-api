@@ -21,10 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedLocationsRequest do
 
   ## Attributes
 
-  *   `createdAssignedLocations` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedLocation.t)`, *default:* `nil`) - The assigned locations to create in bulk, specified as a list of
-      AssignedLocations.
-  *   `deletedAssignedLocations` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the assigned locations to delete in bulk, specified as a list of
-      assigned_location_ids.
+  *   `createdAssignedLocations` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedLocation.t)`, *default:* `nil`) - The assigned locations to create in bulk, specified as a list of AssignedLocations.
+  *   `deletedAssignedLocations` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the assigned locations to delete in bulk, specified as a list of assigned_location_ids.
   """
 
   use GoogleApi.Gax.ModelBase

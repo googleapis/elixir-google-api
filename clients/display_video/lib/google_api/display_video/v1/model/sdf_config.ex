@@ -21,8 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.SdfConfig do
 
   ## Attributes
 
-  *   `adminEmail` (*type:* `String.t`, *default:* `nil`) - An administrator email address to which the SDF processing status reports
-      will be sent.
+  *   `adminEmail` (*type:* `String.t`, *default:* `nil`) - An administrator email address to which the SDF processing status reports will be sent.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Required. The version of SDF being used.
   """
 

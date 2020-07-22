@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.SdfDownloadTaskMetadata do
   @moduledoc """
-  Type for the metadata returned
-  by [SdfDownloadTaskService.CreateSdfDownloadTask].
+  Type for the metadata returned by [SdfDownloadTaskService.CreateSdfDownloadTask].
 
   ## Attributes
 

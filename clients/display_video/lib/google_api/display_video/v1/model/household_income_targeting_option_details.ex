@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.HouseholdIncomeTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable household income. This will be populated in the
-  household_income_details field of
-  a TargetingOption when targeting_type is
-  `TARGETING_TYPE_HOUSEHOLD_INCOME`.
+  Represents a targetable household income. This will be populated in the household_income_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_HOUSEHOLD_INCOME`.
 
   ## Attributes
 

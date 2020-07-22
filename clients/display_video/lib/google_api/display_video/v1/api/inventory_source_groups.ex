@@ -26,8 +26,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a new inventory source group. Returns the newly created inventory
-  source group if successful.
+  Creates a new inventory source group. Returns the newly created inventory source group if successful.
 
   ## Parameters
 
@@ -44,14 +43,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the inventory source group.
-
-          The parent partner will not have access to this group.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the inventory source group.
-
-          Only this partner will have write access to this group. Only advertisers
-          to which this group is explicitly shared will have read access to this
-          group.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the inventory source group. The parent partner will not have access to this group.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the inventory source group. Only this partner will have write access to this group. Only advertisers to which this group is explicitly shared will have read access to this group.
       *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -113,12 +106,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the inventory source group.
-
-          The parent partner does not have access to this group.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the inventory source group.
-
-          Only this partner has write access to this group.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the inventory source group. The parent partner does not have access to this group.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the inventory source group. Only this partner has write access to this group.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -190,13 +179,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the inventory source group.
-
-          If an inventory source group is partner-owned, only advertisers to which
-          the group is explicitly shared can access the group.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the inventory source group.
-
-          A partner cannot access an advertiser-owned inventory source group.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the inventory source group. If an inventory source group is partner-owned, only advertisers to which the group is explicitly shared can access the group.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the inventory source group. A partner cannot access an advertiser-owned inventory source group.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -250,10 +234,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   end
 
   @doc """
-  Lists inventory source groups that are accessible to the current user.
-
-  The order is defined by the
-  order_by parameter.
+  Lists inventory source groups that are accessible to the current user. The order is defined by the order_by parameter.
 
   ## Parameters
 
@@ -270,41 +251,12 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the inventory source group.
-
-          If an inventory source group is partner-owned, only advertisers to which
-          the group is explicitly shared can access the group.
-      *   `:filter` (*type:* `String.t`) - Allows filtering by inventory source group properties.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by the logical operator `OR`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `inventorySourceGroupId`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `displayName` (default)
-          * `inventorySourceGroupId`
-
-          The default sorting order is ascending. To specify descending order for
-          a field, a suffix "desc" should be added to the field name. For example,
-          `displayName desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListInventorySources` method.
-          If not specified, the first page of results will be returned.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the inventory source group.
-
-          A partner cannot access advertiser-owned inventory source groups.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the inventory source group. If an inventory source group is partner-owned, only advertisers to which the group is explicitly shared can access the group.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by inventory source group properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by the logical operator `OR`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `inventorySourceGroupId` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `displayName` (default) * `inventorySourceGroupId` The default sorting order is ascending. To specify descending order for a field, a suffix "desc" should be added to the field name. For example, `displayName desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListInventorySources` method. If not specified, the first page of results will be returned.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the inventory source group. A partner cannot access advertiser-owned inventory source groups.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -352,8 +304,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   end
 
   @doc """
-  Updates an inventory source group. Returns the updated inventory source
-  group if successful.
+  Updates an inventory source group. Returns the updated inventory source group if successful.
 
   ## Parameters
 
@@ -371,12 +322,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the inventory source group.
-
-          The parent partner does not have access to this group.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the inventory source group.
-
-          Only this partner has write access to this group.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the inventory source group. The parent partner does not have access to this group.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the inventory source group. Only this partner has write access to this group.
       *   `:updateMask` (*type:* `String.t`) - Required. The mask to control which fields to update.
       *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -434,19 +381,12 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   end
 
   @doc """
-  Bulk edits multiple assignments between inventory sources and a single
-  inventory source group.
-
-  The operation will delete the assigned inventory sources provided in
-  BulkEditAssignedInventorySourcesRequest.deleted_assigned_inventory_sources
-  and then create the assigned inventory sources provided in
-  BulkEditAssignedInventorySourcesRequest.created_assigned_inventory_sources.
+  Bulk edits multiple assignments between inventory sources and a single inventory source group. The operation will delete the assigned inventory sources provided in BulkEditAssignedInventorySourcesRequest.deleted_assigned_inventory_sources and then create the assigned inventory sources provided in BulkEditAssignedInventorySourcesRequest.created_assigned_inventory_sources.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which the assignments are
-      assigned.
+  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which the assignments are assigned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -519,14 +459,12 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   end
 
   @doc """
-  Creates an assignment between an inventory source and an inventory source
-  group.
+  Creates an assignment between an inventory source and an inventory source group.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which the assignment will be
-      assigned.
+  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which the assignment will be assigned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -539,14 +477,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent inventory source group.
-
-          The parent partner will not have access to this assigned inventory
-          source.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent inventory source group.
-
-          Only this partner will have write access to this assigned inventory
-          source.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent inventory source group. The parent partner will not have access to this assigned inventory source.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent inventory source group. Only this partner will have write access to this assigned inventory source.
       *   `:body` (*type:* `GoogleApi.DisplayVideo.V1.Model.AssignedInventorySource.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -608,8 +540,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   end
 
   @doc """
-  Deletes the assignment between an inventory source and an inventory source
-  group.
+  Deletes the assignment between an inventory source and an inventory source group.
 
   ## Parameters
 
@@ -628,13 +559,8 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent inventory source group.
-
-          The parent partner does not have access to this assigned inventory
-          source.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent inventory source group.
-
-          Only this partner has write access to this assigned inventory source.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that owns the parent inventory source group. The parent partner does not have access to this assigned inventory source.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that owns the parent inventory source group. Only this partner has write access to this assigned inventory source.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -701,8 +627,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which these assignments are
-      assigned.
+  *   `inventory_source_group_id` (*type:* `String.t`) - Required. The ID of the inventory source group to which these assignments are assigned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -715,44 +640,12 @@ defmodule GoogleApi.DisplayVideo.V1.Api.InventorySourceGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the assignment.
-
-          If the parent inventory source group is partner-owned, only advertisers
-          to which the parent group is explicitly shared can access the assigned
-          inventory source.
-      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned inventory source fields.
-
-          Supported syntax:
-
-          * Filter expressions are made up of one or more restrictions.
-          * Restrictions can be combined by the logical operator `OR`.
-          * A restriction has the form of `{field} {operator} {value}`.
-          * The operator must be `EQUALS (=)`.
-          * Supported fields:
-              - `assignedInventorySourceId`
-
-          The length of this field should be no more than 500 characters.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list.
-          Acceptable values are:
-
-          * `assignedInventorySourceId` (default)
-
-          The default sorting order is ascending. To specify descending order for a
-          field, a suffix " desc" should be added to the field name. Example:
-          `assignedInventorySourceId desc`.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will
-          default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-          is specified.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
-
-          Typically, this is the value of
-          next_page_token
-          returned from the previous call to `ListAssignedInventorySources`
-          method. If not specified, the first page of results will be returned.
-      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the assignment.
-
-          If the parent inventory source group is advertiser-owned, the assignment
-          cannot be accessed via a partner.
+      *   `:advertiserId` (*type:* `String.t`) - The ID of the advertiser that has access to the assignment. If the parent inventory source group is partner-owned, only advertisers to which the parent group is explicitly shared can access the assigned inventory source.
+      *   `:filter` (*type:* `String.t`) - Allows filtering by assigned inventory source fields. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by the logical operator `OR`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `assignedInventorySourceId` The length of this field should be no more than 500 characters.
+      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the list. Acceptable values are: * `assignedInventorySourceId` (default) The default sorting order is ascending. To specify descending order for a field, a suffix " desc" should be added to the field name. Example: `assignedInventorySourceId desc`.
+      *   `:pageSize` (*type:* `integer()`) - Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListAssignedInventorySources` method. If not specified, the first page of results will be returned.
+      *   `:partnerId` (*type:* `String.t`) - The ID of the partner that has access to the assignment. If the parent inventory source group is advertiser-owned, the assignment cannot be accessed via a partner.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ParentalStatusAssignedTargetingOptionDetails do
   @moduledoc """
-  Details for assigned parental status targeting option. This will be
-  populated in the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARTGETING_TYPE_PARENTAL_STATUS`.
+  Details for assigned parental status targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARTGETING_TYPE_PARENTAL_STATUS`.
 
   ## Attributes
 
   *   `parentalStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The parental status of the audience.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a
-      TargetingOption of type `TARGETING_TYPE_PARENTAL_STATUS`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_PARENTAL_STATUS`.
   """
 
   use GoogleApi.Gax.ModelBase

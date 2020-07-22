@@ -21,10 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditNegativeKeywordsRequest do
 
   ## Attributes
 
-  *   `createdNegativeKeywords` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.NegativeKeyword.t)`, *default:* `nil`) - The negative keywords to create in batch, specified as a list of
-      NegativeKeywords.
-  *   `deletedNegativeKeywords` (*type:* `list(String.t)`, *default:* `nil`) - The negative keywords to delete in batch, specified as a list of
-      keyword_values.
+  *   `createdNegativeKeywords` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.NegativeKeyword.t)`, *default:* `nil`) - The negative keywords to create in batch, specified as a list of NegativeKeywords.
+  *   `deletedNegativeKeywords` (*type:* `list(String.t)`, *default:* `nil`) - The negative keywords to delete in batch, specified as a list of keyword_values.
   """
 
   use GoogleApi.Gax.ModelBase

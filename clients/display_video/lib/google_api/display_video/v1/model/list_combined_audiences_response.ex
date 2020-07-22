@@ -21,14 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListCombinedAudiencesResponse do
 
   ## Attributes
 
-  *   `combinedAudiences` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CombinedAudience.t)`, *default:* `nil`) - The list of combined audiences.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      page_token
-      field in the subsequent call to `ListCombinedAudiences` method to retrieve
-      the next page of results.
+  *   `combinedAudiences` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CombinedAudience.t)`, *default:* `nil`) - The list of combined audiences. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListCombinedAudiences` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

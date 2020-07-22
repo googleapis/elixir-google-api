@@ -25,22 +25,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.Advertiser do
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the advertiser. Assigned by the system.
   *   `creativeConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.AdvertiserCreativeConfig.t`, *default:* `nil`) - Required. Creative related settings of the advertiser.
   *   `dataAccessConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.AdvertiserDataAccessConfig.t`, *default:* `nil`) - Settings that control how advertiser data may be accessed.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the advertiser.
-
-      Must be UTF-8 encoded with a maximum size of 240 bytes.
-  *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not insertion orders and line items of the
-      advertiser can spend their budgets and bid on inventory.
-
-      * Accepted values are `ENTITY_STATUS_ACTIVE` and
-      `ENTITY_STATUS_SCHEDULED_FOR_DELETION`.
-      * If set to
-      `ENTITY_STATUS_SCHEDULED_FOR_DELETION`, the advertiser will be deleted 30
-      days from when it was first scheduled for deletion.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the advertiser. Must be UTF-8 encoded with a maximum size of 240 bytes.
+  *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not insertion orders and line items of the advertiser can spend their budgets and bid on inventory. * Accepted values are `ENTITY_STATUS_ACTIVE` and `ENTITY_STATUS_SCHEDULED_FOR_DELETION`. * If set to `ENTITY_STATUS_SCHEDULED_FOR_DELETION`, the advertiser will be deleted 30 days from when it was first scheduled for deletion.
   *   `generalConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.AdvertiserGeneralConfig.t`, *default:* `nil`) - Required. General settings of the advertiser.
-  *   `integrationDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t`, *default:* `nil`) - Integration details of the advertiser.
-      Only integrationCode is currently
-      applicable to advertiser. Other fields of IntegrationDetails are not
-      supported and will be ignored if provided.
+  *   `integrationDetails` (*type:* `GoogleApi.DisplayVideo.V1.Model.IntegrationDetails.t`, *default:* `nil`) - Integration details of the advertiser. Only integrationCode is currently applicable to advertiser. Other fields of IntegrationDetails are not supported and will be ignored if provided.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the advertiser.
   *   `partnerId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique ID of the partner that the advertiser belongs to.
   *   `servingConfig` (*type:* `GoogleApi.DisplayVideo.V1.Model.AdvertiserTargetingConfig.t`, *default:* `nil`) - Targeting settings related to ad serving of the advertiser.

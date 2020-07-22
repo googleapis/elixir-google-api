@@ -21,8 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceVideoCreativeConfig do
 
   ## Attributes
 
-  *   `duration` (*type:* `String.t`, *default:* `nil`) - The duration requirements for the video creatives that can be assigned to
-      the inventory source.
+  *   `duration` (*type:* `String.t`, *default:* `nil`) - The duration requirements for the video creatives that can be assigned to the inventory source.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.NegativeKeywordList do
   ## Attributes
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the advertiser the negative keyword list belongs to.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the negative keyword list.
-      Must be UTF-8 encoded with a maximum size of 255 bytes.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the negative keyword list. Must be UTF-8 encoded with a maximum size of 255 bytes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the negative keyword list.
   *   `negativeKeywordListId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the negative keyword list. Assigned by the system.
   """

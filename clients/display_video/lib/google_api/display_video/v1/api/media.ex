@@ -26,15 +26,12 @@ defmodule GoogleApi.DisplayVideo.V1.Api.Media do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Downloads media. Download is supported on the URI `/download/{resource_name=**}?alt=media.`
-
-  **Note**: Download requests will not be successful without including `alt=media` query string.
+  Downloads media. Download is supported on the URI `/download/{resource_name=**}?alt=media.` **Note**: Download requests will not be successful without including `alt=media` query string.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DisplayVideo.V1.Connection.t`) - Connection to server
-  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded.  See
-      ReadRequest.resource_name.
+  *   `resource_name` (*type:* `String.t`) - Name of the media that is being downloaded. See ReadRequest.resource_name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

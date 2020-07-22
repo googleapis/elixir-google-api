@@ -17,11 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable authorized seller status. This will be populated in
-  the
-  authorized_seller_status_details
-  field when targeting_type is
-  `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS`.
+  Represents a targetable authorized seller status. This will be populated in the authorized_seller_status_details field when targeting_type is `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS`.
 
   ## Attributes
 

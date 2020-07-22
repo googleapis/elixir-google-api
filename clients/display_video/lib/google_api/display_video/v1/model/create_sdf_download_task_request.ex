@@ -24,14 +24,9 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CreateSdfDownloadTaskRequest do
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - The ID of the advertiser to download SDF for.
   *   `idFilter` (*type:* `GoogleApi.DisplayVideo.V1.Model.IdFilter.t`, *default:* `nil`) - Filters on entities by their entity IDs.
   *   `inventorySourceFilter` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceFilter.t`, *default:* `nil`) - Filters on Inventory Sources by their IDs.
-  *   `parentEntityFilter` (*type:* `GoogleApi.DisplayVideo.V1.Model.ParentEntityFilter.t`, *default:* `nil`) - Filters on selected file types. The entities in each file are filtered
-       by a chosen set of filter entities. The filter entities must be the same
-       type as, or a parent type of, the selected file types.
+  *   `parentEntityFilter` (*type:* `GoogleApi.DisplayVideo.V1.Model.ParentEntityFilter.t`, *default:* `nil`) - Filters on selected file types. The entities in each file are filtered by a chosen set of filter entities. The filter entities must be the same type as, or a parent type of, the selected file types.
   *   `partnerId` (*type:* `String.t`, *default:* `nil`) - The ID of the partner to download SDF for.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Required. The SDF version of the downloaded file. If set to
-      `SDF_VERSION_UNSPECIFIED`, this will default to the version specified by
-      the advertiser or partner identified by `root_id`. An advertiser inherits
-      its SDF version from its partner unless configured otherwise.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Required. The SDF version of the downloaded file. If set to `SDF_VERSION_UNSPECIFIED`, this will default to the version specified by the advertiser or partner identified by `root_id`. An advertiser inherits its SDF version from its partner unless configured otherwise.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ThirdPartyOnlyConfig do
 
   ## Attributes
 
-  *   `pixelOrderIdReportingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not order ID reporting for pixels is enabled.
-      This value cannot be changed once set to `true`.
+  *   `pixelOrderIdReportingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not order ID reporting for pixels is enabled. This value cannot be changed once set to `true`.
   """
 
   use GoogleApi.Gax.ModelBase

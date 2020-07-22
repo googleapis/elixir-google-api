@@ -22,26 +22,10 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ActiveViewVideoViewabilityMetricConfig
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the custom metric.
-  *   `minimumDuration` (*type:* `String.t`, *default:* `nil`) - The minimum visible video duration required (in seconds) in order for an
-      impression to be recorded.
-
-      You must specify
-      minimum_duration,
-      minimum_quartile
-      or both. If both are specified, an impression meets the metric criteria if
-      either requirement is met (whichever happens first).
-  *   `minimumQuartile` (*type:* `String.t`, *default:* `nil`) - The minimum visible video duration required, based on the video quartiles,
-      in order for an impression to be recorded.
-
-      You must specify
-      minimum_duration,
-      minimum_quartile
-      or both. If both are specified, an impression meets the metric criteria if
-      either requirement is met (whichever happens first).
-  *   `minimumViewability` (*type:* `String.t`, *default:* `nil`) - Required. The minimum percentage of the video ad's pixels visible on the screen in
-      order for an impression to be recorded.
-  *   `minimumVolume` (*type:* `String.t`, *default:* `nil`) - Required. The minimum percentage of the video ad's volume required in order for an
-      impression to be recorded.
+  *   `minimumDuration` (*type:* `String.t`, *default:* `nil`) - The minimum visible video duration required (in seconds) in order for an impression to be recorded. You must specify minimum_duration, minimum_quartile or both. If both are specified, an impression meets the metric criteria if either requirement is met (whichever happens first).
+  *   `minimumQuartile` (*type:* `String.t`, *default:* `nil`) - The minimum visible video duration required, based on the video quartiles, in order for an impression to be recorded. You must specify minimum_duration, minimum_quartile or both. If both are specified, an impression meets the metric criteria if either requirement is met (whichever happens first).
+  *   `minimumViewability` (*type:* `String.t`, *default:* `nil`) - Required. The minimum percentage of the video ad's pixels visible on the screen in order for an impression to be recorded.
+  *   `minimumVolume` (*type:* `String.t`, *default:* `nil`) - Required. The minimum percentage of the video ad's volume required in order for an impression to be recorded.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.GeoRegionTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable geographic region. This will be populated in the
-  geo_region_details field when
-  targeting_type is
-  `TARGETING_TYPE_GEO_REGION`.
+  Represents a targetable geographic region. This will be populated in the geo_region_details field when targeting_type is `TARGETING_TYPE_GEO_REGION`.
 
   ## Attributes
 

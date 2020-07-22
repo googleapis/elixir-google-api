@@ -21,11 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ReviewStatusInfo do
 
   ## Attributes
 
-  *   `approvalStatus` (*type:* `String.t`, *default:* `nil`) - Represents the basic approval needed for a creative to begin serving.
-      Summary of
-      creative_and_landing_page_review_status
-      and
-      content_and_policy_review_status.
+  *   `approvalStatus` (*type:* `String.t`, *default:* `nil`) - Represents the basic approval needed for a creative to begin serving. Summary of creative_and_landing_page_review_status and content_and_policy_review_status.
   *   `contentAndPolicyReviewStatus` (*type:* `String.t`, *default:* `nil`) - Content and policy review status for the creative.
   *   `creativeAndLandingPageReviewStatus` (*type:* `String.t`, *default:* `nil`) - Creative and landing page review status for the creative.
   *   `exchangeReviewStatuses` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.ExchangeReviewStatus.t)`, *default:* `nil`) - Exchange review statuses for the creative.

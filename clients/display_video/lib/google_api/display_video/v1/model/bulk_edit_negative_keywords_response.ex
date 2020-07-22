@@ -21,9 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditNegativeKeywordsResponse do
 
   ## Attributes
 
-  *   `negativeKeywords` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.NegativeKeyword.t)`, *default:* `nil`) - The list of negative keywords that have been successfully created.
-
-      This list will be absent if empty.
+  *   `negativeKeywords` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.NegativeKeyword.t)`, *default:* `nil`) - The list of negative keywords that have been successfully created. This list will be absent if empty.
   """
 
   use GoogleApi.Gax.ModelBase

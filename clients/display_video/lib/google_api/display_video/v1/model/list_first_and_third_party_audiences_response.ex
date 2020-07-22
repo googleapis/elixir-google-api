@@ -21,15 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListFirstAndThirdPartyAudiencesRespons
 
   ## Attributes
 
-  *   `firstAndThirdPartyAudiences` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience.t)`, *default:* `nil`) - The list of first and third party audiences. Audience size properties will
-      not be included.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      page_token
-      field in the subsequent call to `ListFirstAndThirdPartyAudiences` method to
-      retrieve the next page of results.
+  *   `firstAndThirdPartyAudiences` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.FirstAndThirdPartyAudience.t)`, *default:* `nil`) - The list of first and third party audiences. Audience size properties will not be included. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListFirstAndThirdPartyAudiences` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

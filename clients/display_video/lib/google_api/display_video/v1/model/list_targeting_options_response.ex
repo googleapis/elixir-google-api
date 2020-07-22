@@ -17,19 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListTargetingOptionsResponse do
   @moduledoc """
-  Response message for
-  ListTargetingOptions.
+  Response message for ListTargetingOptions.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      page_token
-      field in the subsequent call to `ListTargetingOptions` method to retrieve
-      the next page of results.
-  *   `targetingOptions` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.TargetingOption.t)`, *default:* `nil`) - The list of targeting options.
-
-      This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListTargetingOptions` method to retrieve the next page of results.
+  *   `targetingOptions` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.TargetingOption.t)`, *default:* `nil`) - The list of targeting options. This list will be absent if empty.
   """
 
   use GoogleApi.Gax.ModelBase

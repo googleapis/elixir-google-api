@@ -17,21 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListAdvertiserAssignedTargetingOptionsResponse do
   @moduledoc """
-  Response message for
-  ListAdvertiserAssignedTargetingOptions.
+  Response message for ListAdvertiserAssignedTargetingOptions.
 
   ## Attributes
 
-  *   `assignedTargetingOptions` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t)`, *default:* `nil`) - The list of assigned targeting options.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token identifying the next page of results. This value should be
-      specified as the
-      pageToken in a
-      subsequent ListAdvertiserAssignedTargetingOptionsRequest to fetch the
-      next page of results. This token will be absent if there are no more
-      assigned_targeting_options
-      to return.
+  *   `assignedTargetingOptions` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedTargetingOption.t)`, *default:* `nil`) - The list of assigned targeting options. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token identifying the next page of results. This value should be specified as the pageToken in a subsequent ListAdvertiserAssignedTargetingOptionsRequest to fetch the next page of results. This token will be absent if there are no more assigned_targeting_options to return.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ParentEntityFilter do
   @moduledoc """
-  A filtering option that filters on selected file types belonging to a chosen
-  set of filter entities.
+  A filtering option that filters on selected file types belonging to a chosen set of filter entities.
 
   ## Attributes
 
   *   `fileType` (*type:* `list(String.t)`, *default:* `nil`) - Required. File types that will be returned.
-  *   `filterIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the specified filter type. This is used to filter entities to
-      fetch. If filter type is not `FILTER_TYPE_NONE`, at least one ID must be
-      specified.
+  *   `filterIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the specified filter type. This is used to filter entities to fetch. If filter type is not `FILTER_TYPE_NONE`, at least one ID must be specified.
   *   `filterType` (*type:* `String.t`, *default:* `nil`) - Required. Filter type used to filter fetched entities.
   """
 

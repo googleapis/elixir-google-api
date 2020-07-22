@@ -23,8 +23,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditSitesRequest do
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - The ID of the advertiser that owns the parent channel.
   *   `createdSites` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Site.t)`, *default:* `nil`) - The sites to create in batch, specified as a list of Sites.
-  *   `deletedSites` (*type:* `list(String.t)`, *default:* `nil`) - The sites to delete in batch, specified as a list of site
-      url_or_app_ids.
+  *   `deletedSites` (*type:* `list(String.t)`, *default:* `nil`) - The sites to delete in batch, specified as a list of site url_or_app_ids.
   *   `partnerId` (*type:* `String.t`, *default:* `nil`) - The ID of the partner that owns the parent channel.
   """
 

@@ -92,8 +92,7 @@ defmodule GoogleApi.DisplayVideo.V1.Api.FloodlightGroups do
   end
 
   @doc """
-  Updates an existing Floodlight group.
-  Returns the updated Floodlight group if successful.
+  Updates an existing Floodlight group. Returns the updated Floodlight group if successful.
 
   ## Parameters
 

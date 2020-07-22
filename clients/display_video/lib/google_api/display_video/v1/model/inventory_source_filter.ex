@@ -21,11 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySourceFilter do
 
   ## Attributes
 
-  *   `inventorySourceIds` (*type:* `list(String.t)`, *default:* `nil`) - Inventory Sources to download by ID. All IDs must belong to the same
-      Advertiser or
-      Partner specified in
-      CreateSdfDownloadTaskRequest. Leave empty to download all Inventory
-      Sources for the selected Advertiser or Partner.
+  *   `inventorySourceIds` (*type:* `list(String.t)`, *default:* `nil`) - Inventory Sources to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest. Leave empty to download all Inventory Sources for the selected Advertiser or Partner.
   """
 
   use GoogleApi.Gax.ModelBase

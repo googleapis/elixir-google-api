@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.CustomListGroup do
   @moduledoc """
-  Details of custom list group.
-  All custom list targeting settings are logically ‘OR’ of each other.
+  Details of custom list group. All custom list targeting settings are logically ‘OR’ of each other.
 
   ## Attributes
 
-  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CustomListTargetingSetting.t)`, *default:* `nil`) - Required. All custom list targeting settings in custom list group.
-      Repeated settings with same id will be ignored.
+  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.CustomListTargetingSetting.t)`, *default:* `nil`) - Required. All custom list targeting settings in custom list group. Repeated settings with same id will be ignored.
   """
 
   use GoogleApi.Gax.ModelBase

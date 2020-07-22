@@ -21,29 +21,14 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ObaIcon do
 
   ## Attributes
 
-  *   `clickTrackingUrl` (*type:* `String.t`, *default:* `nil`) - Required. The click tracking URL of the OBA icon.
-
-      Only URLs of the following domains are allowed:
-
-      * https://info.evidon.com
-      * https://l.betrad.com
+  *   `clickTrackingUrl` (*type:* `String.t`, *default:* `nil`) - Required. The click tracking URL of the OBA icon. Only URLs of the following domains are allowed: * https://info.evidon.com * https://l.betrad.com
   *   `dimensions` (*type:* `GoogleApi.DisplayVideo.V1.Model.Dimensions.t`, *default:* `nil`) - The dimensions of the OBA icon.
-  *   `landingPageUrl` (*type:* `String.t`, *default:* `nil`) - Required. The landing page URL of the OBA icon.
-
-      Only URLs of the following domains are allowed:
-
-      * https://info.evidon.com
-      * https://l.betrad.com
+  *   `landingPageUrl` (*type:* `String.t`, *default:* `nil`) - Required. The landing page URL of the OBA icon. Only URLs of the following domains are allowed: * https://info.evidon.com * https://l.betrad.com
   *   `position` (*type:* `String.t`, *default:* `nil`) - The position of the OBA icon on the creative.
   *   `program` (*type:* `String.t`, *default:* `nil`) - The program of the OBA icon. For example: “AdChoices”.
   *   `resourceMimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the OBA icon resource.
   *   `resourceUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the OBA icon resource.
-  *   `viewTrackingUrl` (*type:* `String.t`, *default:* `nil`) - Required. The view tracking URL of the OBA icon.
-
-      Only URLs of the following domains are allowed:
-
-      * https://info.evidon.com
-      * https://l.betrad.com
+  *   `viewTrackingUrl` (*type:* `String.t`, *default:* `nil`) - Required. The view tracking URL of the OBA icon. Only URLs of the following domains are allowed: * https://info.evidon.com * https://l.betrad.com
   """
 
   use GoogleApi.Gax.ModelBase

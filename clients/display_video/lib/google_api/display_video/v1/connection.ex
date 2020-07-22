@@ -27,6 +27,9 @@ defmodule GoogleApi.DisplayVideo.V1.Connection do
       # Create, see, edit, and permanently delete your Display & Video 360 entities and reports
       "https://www.googleapis.com/auth/display-video",
 
+      # Create, see, and edit Display & Video 360 Campaign entities and see billing invoices
+      "https://www.googleapis.com/auth/display-video-mediaplanning",
+
       # View and manage your reports in DoubleClick Bid Manager
       "https://www.googleapis.com/auth/doubleclickbidmanager"
     ],

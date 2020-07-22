@@ -27,20 +27,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LineItem do
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the campaign that the line item belongs to.
   *   `conversionCounting` (*type:* `GoogleApi.DisplayVideo.V1.Model.ConversionCountingConfig.t`, *default:* `nil`) - The conversion tracking setting of the line item.
   *   `creativeIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the creatives associated with the line item.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the line item.
-
-      Must be UTF-8 encoded with a maximum size of 240 bytes.
-  *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not the line item can spend its budget and
-      bid on inventory.
-
-      * For CreateLineItem method, only
-      `ENTITY_STATUS_DRAFT` is allowed. To activate a line item, use
-      UpdateLineItem method and update the
-      status to `ENTITY_STATUS_ACTIVE` after creation.
-      * A line item cannot be changed back to `ENTITY_STATUS_DRAFT` status from
-      any other status.
-      * If the line item's parent insertion order is not active, the line item
-      can't spend its budget even if its own status is `ENTITY_STATUS_ACTIVE`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the line item. Must be UTF-8 encoded with a maximum size of 240 bytes.
+  *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not the line item can spend its budget and bid on inventory. * For CreateLineItem method, only `ENTITY_STATUS_DRAFT` is allowed. To activate a line item, use UpdateLineItem method and update the status to `ENTITY_STATUS_ACTIVE` after creation. * A line item cannot be changed back to `ENTITY_STATUS_DRAFT` status from any other status. * If the line item's parent insertion order is not active, the line item can't spend its budget even if its own status is `ENTITY_STATUS_ACTIVE`.
   *   `flight` (*type:* `GoogleApi.DisplayVideo.V1.Model.LineItemFlight.t`, *default:* `nil`) - Required. The start and end time of the line item's flight.
   *   `frequencyCap` (*type:* `GoogleApi.DisplayVideo.V1.Model.FrequencyCap.t`, *default:* `nil`) - Required. The frequency capping setting of the line item.
   *   `insertionOrderId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique ID of the insertion order that the line item belongs to.
@@ -50,11 +38,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LineItem do
   *   `lineItemType` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The type of the line item.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the line item.
   *   `pacing` (*type:* `GoogleApi.DisplayVideo.V1.Model.Pacing.t`, *default:* `nil`) - Required. The budget spending speed setting of the line item.
-  *   `partnerCosts` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t)`, *default:* `nil`) - The partner costs associated with the line item.
-
-      If absent or empty in CreateLineItem
-      method, the newly created line item will inherit partner costs from its
-      parent insertion order.
+  *   `partnerCosts` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.PartnerCost.t)`, *default:* `nil`) - The partner costs associated with the line item. If absent or empty in CreateLineItem method, the newly created line item will inherit partner costs from its parent insertion order.
   *   `partnerRevenueModel` (*type:* `GoogleApi.DisplayVideo.V1.Model.PartnerRevenueModel.t`, *default:* `nil`) - Required. The partner revenue model setting of the line item.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the line item was last updated. Assigned by the system.
   """

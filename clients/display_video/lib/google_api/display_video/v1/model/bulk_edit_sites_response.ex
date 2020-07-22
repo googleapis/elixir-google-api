@@ -21,9 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditSitesResponse do
 
   ## Attributes
 
-  *   `sites` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Site.t)`, *default:* `nil`) - The list of sites that have been successfully created.
-
-      This list will be absent if empty.
+  *   `sites` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.Site.t)`, *default:* `nil`) - The list of sites that have been successfully created. This list will be absent if empty.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,8 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.LocationList do
   ## Attributes
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique ID of the advertiser the location list belongs to.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the location list.
-      Must be UTF-8 encoded with a maximum size of 240 bytes.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the location list. Must be UTF-8 encoded with a maximum size of 240 bytes.
   *   `locationListId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the location list. Assigned by the system.
   *   `locationType` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The type of location. All locations in the list will share this type.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the location list.

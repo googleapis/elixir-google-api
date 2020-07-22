@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusAssignedTargetingOptionDetails do
   @moduledoc """
-  Represents an assigned authorized seller status. This will be populated in
-  the details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS`.
+  Represents an assigned authorized seller status. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS`.
 
   ## Attributes
 
   *   `authorizedSellerStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The authorized seller status to target.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a
-      TargetingOption of type `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS`.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ViewabilityTargetingOptionDetails do
   @moduledoc """
-  Represents a targetable viewability. This will be populated in the
-  viewability_details field of a
-  TargetingOption when targeting_type is
-  `TARGETING_TYPE_VIEWABILITY`.
+  Represents a targetable viewability. This will be populated in the viewability_details field of a TargetingOption when targeting_type is `TARGETING_TYPE_VIEWABILITY`.
 
   ## Attributes
 

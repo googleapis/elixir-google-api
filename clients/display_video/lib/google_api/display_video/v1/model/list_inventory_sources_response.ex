@@ -21,14 +21,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ListInventorySourcesResponse do
 
   ## Attributes
 
-  *   `inventorySources` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.InventorySource.t)`, *default:* `nil`) - The list of inventory sources.
-
-      This list will be absent if empty.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results.
-      Pass this value in the
-      page_token
-      field in the subsequent call to `ListInventorySources` method to retrieve
-      the next page of results.
+  *   `inventorySources` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.InventorySource.t)`, *default:* `nil`) - The list of inventory sources. This list will be absent if empty.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListInventorySources` method to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase

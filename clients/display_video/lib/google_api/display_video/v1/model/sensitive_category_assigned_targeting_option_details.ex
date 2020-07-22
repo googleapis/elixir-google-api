@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.SensitiveCategoryAssignedTargetingOptionDetails do
   @moduledoc """
-  Targeting details for sensitive category. This will be populated in the
-  details field of an AssignedTargetingOption when
-  targeting_type is
-  `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`.
+  Targeting details for sensitive category. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`.
 
   ## Attributes
 

@@ -17,16 +17,13 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.GoogleAudience do
   @moduledoc """
-  Describes a Google audience resource.
-  Includes Google audience lists.
+  Describes a Google audience resource. Includes Google audience lists.
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the Google audience.
-      .
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the Google audience. .
   *   `googleAudienceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the Google audience. Assigned by the system.
-  *   `googleAudienceType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of Google audience.
-      .
+  *   `googleAudienceType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of Google audience. .
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the google audience.
   """
 
