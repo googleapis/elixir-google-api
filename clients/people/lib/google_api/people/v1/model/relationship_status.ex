@@ -17,26 +17,13 @@
 
 defmodule GoogleApi.People.V1.Model.RelationshipStatus do
   @moduledoc """
-  **DEPRECATED**: No data will be returned
-  A person's relationship status.
+  **DEPRECATED**: No data will be returned A person's relationship status.
 
   ## Attributes
 
-  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - Output only. The value of the relationship status translated and formatted in
-      the viewer's account locale or the `Accept-Language` HTTP header locale.
+  *   `formattedValue` (*type:* `String.t`, *default:* `nil`) - Output only. The value of the relationship status translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the relationship status.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The relationship status. The value can be custom or one of these
-      predefined values:
-
-      * `single`
-      * `inARelationship`
-      * `engaged`
-      * `married`
-      * `itsComplicated`
-      * `openRelationship`
-      * `widowed`
-      * `inDomesticPartnership`
-      * `inCivilUnion`
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The relationship status. The value can be custom or one of these predefined values: * `single` * `inARelationship` * `engaged` * `married` * `itsComplicated` * `openRelationship` * `widowed` * `inDomesticPartnership` * `inCivilUnion`
   """
 
   use GoogleApi.Gax.ModelBase

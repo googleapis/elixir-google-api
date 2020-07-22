@@ -21,21 +21,10 @@ defmodule GoogleApi.People.V1.Model.PersonMetadata do
 
   ## Attributes
 
-  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the person resource has been deleted. Populated only for
-      [`connections.list`](/people/api/rest/v1/people.connections/list) requests
-      that include a sync token.
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the person resource has been deleted. Populated only for [`connections.list`](/people/api/rest/v1/people.connections/list) requests that include a sync token.
   *   `linkedPeopleResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Resource names of people linked to this resource.
-  *   `objectType` (*type:* `String.t`, *default:* `nil`) - Output only. **DEPRECATED** (Please use
-      `person.metadata.sources.profileMetadata.objectType` instead)
-
-      The type of the person object.
-  *   `previousResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Any former resource names this person has had. Populated only for
-      [`connections.list`](/people/api/rest/v1/people.connections/list) requests
-      that include a sync token.
-
-      The resource name may change when adding or removing fields that link a
-      contact and profile such as a verified email, verified phone number, or
-      profile URL.
+  *   `objectType` (*type:* `String.t`, *default:* `nil`) - Output only. **DEPRECATED** (Please use `person.metadata.sources.profileMetadata.objectType` instead) The type of the person object.
+  *   `previousResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Any former resource names this person has had. Populated only for [`connections.list`](/people/api/rest/v1/people.connections/list) requests that include a sync token. The resource name may change when adding or removing fields that link a contact and profile such as a verified email, verified phone number, or profile URL.
   *   `sources` (*type:* `list(GoogleApi.People.V1.Model.Source.t)`, *default:* `nil`) - The sources of data for the person.
   """
 

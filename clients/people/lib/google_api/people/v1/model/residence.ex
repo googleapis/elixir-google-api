@@ -21,8 +21,7 @@ defmodule GoogleApi.People.V1.Model.Residence do
 
   ## Attributes
 
-  *   `current` (*type:* `boolean()`, *default:* `nil`) - True if the residence is the person's current residence;
-      false if the residence is a past residence.
+  *   `current` (*type:* `boolean()`, *default:* `nil`) - True if the residence is the person's current residence; false if the residence is a past residence.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the residence.
   *   `value` (*type:* `String.t`, *default:* `nil`) - The address of the residence.
   """

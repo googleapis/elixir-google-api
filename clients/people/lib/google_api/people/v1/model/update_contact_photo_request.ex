@@ -17,45 +17,13 @@
 
 defmodule GoogleApi.People.V1.Model.UpdateContactPhotoRequest do
   @moduledoc """
-  A request to update an existing contact's photo.
-  All requests must have a valid photo format: JPEG or PNG.
+  A request to update an existing contact's photo. All requests must have a valid photo format: JPEG or PNG.
 
   ## Attributes
 
-  *   `personFields` (*type:* `String.t`, *default:* `nil`) - Optional. A field mask to restrict which fields on the person are returned. Multiple
-      fields can be specified by separating them with commas. Defaults to empty
-      if not set, which will skip the post mutate get. Valid values are:
-
-      * addresses
-      * ageRanges
-      * biographies
-      * birthdays
-      * coverPhotos
-      * emailAddresses
-      * events
-      * genders
-      * imClients
-      * interests
-      * locales
-      * memberships
-      * metadata
-      * names
-      * nicknames
-      * occupations
-      * organizations
-      * phoneNumbers
-      * photos
-      * relations
-      * residences
-      * sipAddresses
-      * skills
-      * urls
-      * userDefined
+  *   `personFields` (*type:* `String.t`, *default:* `nil`) - Optional. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Defaults to empty if not set, which will skip the post mutate get. Valid values are: * addresses * ageRanges * biographies * birthdays * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
   *   `photoBytes` (*type:* `String.t`, *default:* `nil`) - Required. Raw photo bytes
-  *   `sources` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A mask of what source types to return. Defaults to
-      ReadSourceType.CONTACT and
-      ReadSourceType.PROFILE if not
-      set.
+  *   `sources` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A mask of what source types to return. Defaults to ReadSourceType.CONTACT and ReadSourceType.PROFILE if not set.
   """
 
   use GoogleApi.Gax.ModelBase

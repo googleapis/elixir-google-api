@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.People.V1.Model.ModifyContactGroupMembersRequest do
   @moduledoc """
-  A request to modify an existing contact group's members. Contacts can be
-  removed from any group but they can only be added to a user group or
-  "myContacts" or "starred" system groups.
+  A request to modify an existing contact group's members. Contacts can be removed from any group but they can only be added to a user group or "myContacts" or "starred" system groups.
 
   ## Attributes
 
-  *   `resourceNamesToAdd` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The resource names of the contact people to add in the form of
-      `people/{person_id}`.
-  *   `resourceNamesToRemove` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The resource names of the contact people to remove in the form of
-      `people/{person_id}`.
+  *   `resourceNamesToAdd` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The resource names of the contact people to add in the form of `people/{person_id}`.
+  *   `resourceNamesToRemove` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The resource names of the contact people to remove in the form of `people/{person_id}`.
   """
 
   use GoogleApi.Gax.ModelBase

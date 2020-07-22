@@ -21,11 +21,8 @@ defmodule GoogleApi.People.V1.Model.ListDirectoryPeopleResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page.
-      If this field is omitted, there are no subsequent pages.
-  *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `sync_token` to retrieve changes since the
-      last request. Request must set `request_sync_token` to return the sync
-      token.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
+  *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `sync_token` to retrieve changes since the last request. Request must set `request_sync_token` to return the sync token.
   *   `people` (*type:* `list(GoogleApi.People.V1.Model.Person.t)`, *default:* `nil`) - The list of people in the domain directory.
   """
 

@@ -21,8 +21,7 @@ defmodule GoogleApi.People.V1.Model.ModifyContactGroupMembersResponse do
 
   ## Attributes
 
-  *   `canNotRemoveLastContactGroupResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - The contact people resource names that cannot be removed from their
-      last contact group.
+  *   `canNotRemoveLastContactGroupResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - The contact people resource names that cannot be removed from their last contact group.
   *   `notFoundResourceNames` (*type:* `list(String.t)`, *default:* `nil`) - The contact people resource names that were not found.
   """
 

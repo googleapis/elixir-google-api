@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.People.V1.Model.CoverPhoto do
   @moduledoc """
-  A person's cover photo. A large image shown on the person's
-  profile page that represents who they are or what they care about.
+  A person's cover photo. A large image shown on the person's profile page that represents who they are or what they care about.
 
   ## Attributes
 
-  *   `default` (*type:* `boolean()`, *default:* `nil`) - True if the cover photo is the default cover photo;
-      false if the cover photo is a user-provided cover photo.
+  *   `default` (*type:* `boolean()`, *default:* `nil`) - True if the cover photo is the default cover photo; false if the cover photo is a user-provided cover photo.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the cover photo.
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the cover photo.
   """

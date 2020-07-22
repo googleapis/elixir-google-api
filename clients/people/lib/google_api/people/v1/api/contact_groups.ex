@@ -26,8 +26,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Get a list of contact groups owned by the authenticated user by specifying
-  a list of contact group resource names.
+  Get a list of contact groups owned by the authenticated user by specifying a list of contact group resource names.
 
   ## Parameters
 
@@ -44,8 +43,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxMembers` (*type:* `integer()`) - Optional. Specifies the maximum number of members to return for each group. Defaults
-          to 0 if not set, which will return zero members.
+      *   `:maxMembers` (*type:* `integer()`) - Optional. Specifies the maximum number of members to return for each group. Defaults to 0 if not set, which will return zero members.
       *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the contact groups to get.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -148,8 +146,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Delete an existing contact group owned by the authenticated user by
-  specifying a contact group resource name.
+  Delete an existing contact group owned by the authenticated user by specifying a contact group resource name.
 
   ## Parameters
 
@@ -213,8 +210,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Get a specific contact group owned by the authenticated user by specifying
-  a contact group resource name.
+  Get a specific contact group owned by the authenticated user by specifying a contact group resource name.
 
   ## Parameters
 
@@ -232,8 +228,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:maxMembers` (*type:* `integer()`) - Optional. Specifies the maximum number of members to return. Defaults to 0 if not
-          set, which will return zero members.
+      *   `:maxMembers` (*type:* `integer()`) - Optional. Specifies the maximum number of members to return. Defaults to 0 if not set, which will return zero members.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -276,8 +271,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  List all contact groups owned by the authenticated user. Members of the
-  contact groups are not populated.
+  List all contact groups owned by the authenticated user. Members of the contact groups are not populated.
 
   ## Parameters
 
@@ -294,13 +288,9 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of resources to return. Valid values are between 1 and
-          1000, inclusive. Defaults to 30 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous call to
-          [ListContactGroups](/people/api/rest/v1/contactgroups/list).
-          Requests the next page of resources.
-      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, returned by a previous call to `contactgroups.list`.
-          Only resources changed since the sync token was created will be returned.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of resources to return. Valid values are between 1 and 1000, inclusive. Defaults to 30 if not set or set to 0.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The next_page_token value returned from a previous call to [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the next page of resources.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, returned by a previous call to `contactgroups.list`. Only resources changed since the sync token was created will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -343,14 +333,12 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Update the name of an existing contact group owned by the authenticated
-  user.
+  Update the name of an existing contact group owned by the authenticated user.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `contact_groups_id` (*type:* `String.t`) - Part of `contactGroup.resourceName`. The resource name for the contact group, assigned by the server. An ASCII
-      string, in the form of `contactGroups/{contact_group_id}`.
+  *   `contact_groups_id` (*type:* `String.t`) - Part of `contactGroup.resourceName`. The resource name for the contact group, assigned by the server. An ASCII string, in the form of `contactGroups/{contact_group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -411,11 +399,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   end
 
   @doc """
-  Modify the members of a contact group owned by the authenticated user.
-
-  The only system contact groups that can have members added are
-  `contactGroups/myContacts` and `contactGroups/starred`. Other system
-  contact groups are deprecated and can only have contacts removed.
+  Modify the members of a contact group owned by the authenticated user. The only system contact groups that can have members added are `contactGroups/myContacts` and `contactGroups/starred`. Other system contact groups are deprecated and can only have contacts removed.
 
   ## Parameters
 

@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.Birthday do
   @moduledoc """
-  A person's birthday. At least one of the `date` and `text` fields are
-  specified. The `date` and `text` fields typically represent the same
-  date, but are not guaranteed to.
+  A person's birthday. At least one of the `date` and `text` fields are specified. The `date` and `text` fields typically represent the same date, but are not guaranteed to.
 
   ## Attributes
 

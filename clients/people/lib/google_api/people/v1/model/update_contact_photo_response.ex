@@ -21,8 +21,7 @@ defmodule GoogleApi.People.V1.Model.UpdateContactPhotoResponse do
 
   ## Attributes
 
-  *   `person` (*type:* `GoogleApi.People.V1.Model.Person.t`, *default:* `nil`) - The updated person, if person_fields is set in the
-      UpdateContactPhotoRequest; otherwise this will be unset.
+  *   `person` (*type:* `GoogleApi.People.V1.Model.Person.t`, *default:* `nil`) - The updated person, if person_fields is set in the UpdateContactPhotoRequest; otherwise this will be unset.
   """
 
   use GoogleApi.Gax.ModelBase

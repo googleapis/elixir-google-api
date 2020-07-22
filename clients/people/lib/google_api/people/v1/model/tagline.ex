@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.Tagline do
   @moduledoc """
-  **DEPRECATED**: No data will be returned
-  A brief one-line description of the person.
+  **DEPRECATED**: No data will be returned A brief one-line description of the person.
 
   ## Attributes
 

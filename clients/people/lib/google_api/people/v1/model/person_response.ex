@@ -21,17 +21,9 @@ defmodule GoogleApi.People.V1.Model.PersonResponse do
 
   ## Attributes
 
-  *   `httpStatusCode` (*type:* `integer()`, *default:* `nil`) - **DEPRECATED** (Please use status instead)
-
-      [HTTP 1.1 status code]
-      (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+  *   `httpStatusCode` (*type:* `integer()`, *default:* `nil`) - **DEPRECATED** (Please use status instead) [HTTP 1.1 status code] (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
   *   `person` (*type:* `GoogleApi.People.V1.Model.Person.t`, *default:* `nil`) - The person.
-  *   `requestedResourceName` (*type:* `String.t`, *default:* `nil`) - The original requested resource name. May be different than the resource
-      name on the returned person.
-
-      The resource name can change when adding or removing fields that link a
-      contact and profile such as a verified email, verified phone number, or a
-      profile URL.
+  *   `requestedResourceName` (*type:* `String.t`, *default:* `nil`) - The original requested resource name. May be different than the resource name on the returned person. The resource name can change when adding or removing fields that link a contact and profile such as a verified email, verified phone number, or a profile URL.
   *   `status` (*type:* `GoogleApi.People.V1.Model.Status.t`, *default:* `nil`) - The status of the response.
   """
 

@@ -17,24 +17,14 @@
 
 defmodule GoogleApi.People.V1.Model.SipAddress do
   @moduledoc """
-  A person's SIP address. Session Initial Protocol addresses are used for VoIP
-  communications to make voice or video calls over the internet.
+  A person's SIP address. Session Initial Protocol addresses are used for VoIP communications to make voice or video calls over the internet.
 
   ## Attributes
 
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the SIP address translated and formatted in the
-      viewer's account locale or the `Accept-Language` HTTP header locale.
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the SIP address translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the SIP address.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the SIP address. The type can be custom or or one of these
-      predefined values:
-
-      * `home`
-      * `work`
-      * `mobile`
-      * `other`
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The SIP address in the
-      [RFC 3261 19.1](https://tools.ietf.org/html/rfc3261#section-19.1) SIP URI
-      format.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the SIP address. The type can be custom or or one of these predefined values: * `home` * `work` * `mobile` * `other`
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The SIP address in the [RFC 3261 19.1](https://tools.ietf.org/html/rfc3261#section-19.1) SIP URI format.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,7 @@ defmodule GoogleApi.People.V1.Model.ListContactGroupsResponse do
 
   ## Attributes
 
-  *   `contactGroups` (*type:* `list(GoogleApi.People.V1.Model.ContactGroup.t)`, *default:* `nil`) - The list of contact groups. Members of the contact groups are not
-      populated.
+  *   `contactGroups` (*type:* `list(GoogleApi.People.V1.Model.ContactGroup.t)`, *default:* `nil`) - The list of contact groups. Members of the contact groups are not populated.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used to retrieve the next page of results.
   *   `nextSyncToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used to retrieve changes since the last request.
   *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of items in the list without pagination.
