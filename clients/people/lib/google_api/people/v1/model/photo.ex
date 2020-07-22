@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.People.V1.Model.Photo do
   @moduledoc """
-  A person's photo. A picture shown next to the person's name to
-  help others recognize the person.
+  A person's photo. A picture shown next to the person's name to help others recognize the person.
 
   ## Attributes
 
-  *   `default` (*type:* `boolean()`, *default:* `nil`) - True if the photo is a default photo;
-      false if the photo is a user-provided photo.
+  *   `default` (*type:* `boolean()`, *default:* `nil`) - True if the photo is a default photo; false if the photo is a user-provided photo.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the photo.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the photo. You can change the desired size by appending a query
-      parameter `sz={size}` at the end of the url, where {size} is the size in
-      pixels. Example:
-      https://lh3.googleusercontent.com/-T_wVWLlmg7w/AAAAAAAAAAI/AAAAAAAABa8/00gzXvDBYqw/s100/photo.jpg?sz=50
+  *   `url` (*type:* `String.t`, *default:* `nil`) - The URL of the photo. You can change the desired size by appending a query parameter `sz={size}` at the end of the url, where {size} is the size in pixels. Example: https://lh3.googleusercontent.com/-T_wVWLlmg7w/AAAAAAAAAAI/AAAAAAAABa8/00gzXvDBYqw/s100/photo.jpg?sz=50
   """
 
   use GoogleApi.Gax.ModelBase

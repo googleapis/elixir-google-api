@@ -17,33 +17,24 @@
 
 defmodule GoogleApi.People.V1.Model.Organization do
   @moduledoc """
-  A person's past or current organization. Overlapping date ranges are
-  permitted.
+  A person's past or current organization. Overlapping date ranges are permitted.
 
   ## Attributes
 
-  *   `current` (*type:* `boolean()`, *default:* `nil`) - True if the organization is the person's current organization;
-      false if the organization is a past organization.
+  *   `current` (*type:* `boolean()`, *default:* `nil`) - True if the organization is the person's current organization; false if the organization is a past organization.
   *   `department` (*type:* `String.t`, *default:* `nil`) - The person's department at the organization.
-  *   `domain` (*type:* `String.t`, *default:* `nil`) - The domain name associated with the organization; for example,
-      `google.com`.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - The domain name associated with the organization; for example, `google.com`.
   *   `endDate` (*type:* `GoogleApi.People.V1.Model.Date.t`, *default:* `nil`) - The end date when the person left the organization.
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the organization translated and formatted in the
-      viewer's account locale or the `Accept-Language` HTTP header locale.
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the organization translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `jobDescription` (*type:* `String.t`, *default:* `nil`) - The person's job description at the organization.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the organization office the person works at.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the organization.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the organization.
   *   `phoneticName` (*type:* `String.t`, *default:* `nil`) - The phonetic name of the organization.
   *   `startDate` (*type:* `GoogleApi.People.V1.Model.Date.t`, *default:* `nil`) - The start date when the person joined the organization.
-  *   `symbol` (*type:* `String.t`, *default:* `nil`) - The symbol associated with the organization; for example, a stock ticker
-      symbol, abbreviation, or acronym.
+  *   `symbol` (*type:* `String.t`, *default:* `nil`) - The symbol associated with the organization; for example, a stock ticker symbol, abbreviation, or acronym.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The person's job title at the organization.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the organization. The type can be custom or  one of these
-      predefined values:
-
-      * `work`
-      * `school`
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the organization. The type can be custom or one of these predefined values: * `work` * `school`
   """
 
   use GoogleApi.Gax.ModelBase

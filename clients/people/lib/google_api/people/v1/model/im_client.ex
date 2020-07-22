@@ -21,29 +21,11 @@ defmodule GoogleApi.People.V1.Model.ImClient do
 
   ## Attributes
 
-  *   `formattedProtocol` (*type:* `String.t`, *default:* `nil`) - Output only. The protocol of the IM client formatted in the viewer's account
-      locale or the `Accept-Language` HTTP header locale.
-  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the IM client translated and formatted in the
-      viewer's account locale or the `Accept-Language` HTTP header locale.
+  *   `formattedProtocol` (*type:* `String.t`, *default:* `nil`) - Output only. The protocol of the IM client formatted in the viewer's account locale or the `Accept-Language` HTTP header locale.
+  *   `formattedType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the IM client translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the IM client.
-  *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol of the IM client. The protocol can be custom or one of these
-      predefined values:
-
-      * `aim`
-      * `msn`
-      * `yahoo`
-      * `skype`
-      * `qq`
-      * `googleTalk`
-      * `icq`
-      * `jabber`
-      * `netMeeting`
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the IM client. The type can be custom or one of these
-      predefined values:
-
-      * `home`
-      * `work`
-      * `other`
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - The protocol of the IM client. The protocol can be custom or one of these predefined values: * `aim` * `msn` * `yahoo` * `skype` * `qq` * `googleTalk` * `icq` * `jabber` * `netMeeting`
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the IM client. The type can be custom or one of these predefined values: * `home` * `work` * `other`
   *   `username` (*type:* `String.t`, *default:* `nil`) - The user name used in the IM client.
   """
 

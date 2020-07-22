@@ -22,8 +22,7 @@ defmodule GoogleApi.People.V1.Model.Locale do
   ## Attributes
 
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.FieldMetadata.t`, *default:* `nil`) - Metadata about the locale.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The well-formed [IETF BCP 47](https://tools.ietf.org/html/bcp47)
-      language tag representing the locale.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The well-formed [IETF BCP 47](https://tools.ietf.org/html/bcp47) language tag representing the locale.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,13 +17,11 @@
 
 defmodule GoogleApi.People.V1.Model.SearchDirectoryPeopleResponse do
   @moduledoc """
-  The response to a request for people in the authenticated user's domain
-  directory that match the specified query.
+  The response to a request for people in the authenticated user's domain directory that match the specified query.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page.
-      If this field is omitted, there are no subsequent pages.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
   *   `people` (*type:* `list(GoogleApi.People.V1.Model.Person.t)`, *default:* `nil`) - The list of people in the domain directory that match the query.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The total number of items in the list without pagination.
   """

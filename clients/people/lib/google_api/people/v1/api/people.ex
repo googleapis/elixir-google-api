@@ -43,39 +43,8 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
-          fields can be specified by separating them with commas. Defaults to all
-          fields if not set. Valid values are:
-
-          * addresses
-          * ageRanges
-          * biographies
-          * birthdays
-          * coverPhotos
-          * emailAddresses
-          * events
-          * genders
-          * imClients
-          * interests
-          * locales
-          * memberships
-          * metadata
-          * names
-          * nicknames
-          * occupations
-          * organizations
-          * phoneNumbers
-          * photos
-          * relations
-          * residences
-          * sipAddresses
-          * skills
-          * urls
-          * userDefined
-      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
-          ReadSourceType.CONTACT and
-          ReadSourceType.PROFILE if not
-          set.
+      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are: * addresses * ageRanges * biographies * birthdays * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to ReadSourceType.CONTACT and ReadSourceType.PROFILE if not set.
       *   `:body` (*type:* `GoogleApi.People.V1.Model.Person.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -192,39 +161,8 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:personFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on the person are returned. Multiple
-          fields can be specified by separating them with commas. Defaults to empty
-          if not set, which will skip the post mutate get. Valid values are:
-
-          * addresses
-          * ageRanges
-          * biographies
-          * birthdays
-          * coverPhotos
-          * emailAddresses
-          * events
-          * genders
-          * imClients
-          * interests
-          * locales
-          * memberships
-          * metadata
-          * names
-          * nicknames
-          * occupations
-          * organizations
-          * phoneNumbers
-          * photos
-          * relations
-          * residences
-          * sipAddresses
-          * skills
-          * urls
-          * userDefined
-      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
-          ReadSourceType.CONTACT and
-          ReadSourceType.PROFILE if not
-          set.
+      *   `:personFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Defaults to empty if not set, which will skip the post mutate get. Valid values are: * addresses * ageRanges * biographies * birthdays * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to ReadSourceType.CONTACT and ReadSourceType.PROFILE if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -268,22 +206,12 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides information about a person by specifying a resource name. Use
-  `people/me` to indicate the authenticated user.
-
-  The request throws a 400 error if 'personFields' is not specified.
+  Provides information about a person by specifying a resource name. Use `people/me` to indicate the authenticated user. The request throws a 400 error if 'personFields' is not specified.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the person to provide information about.
-
-      - To get information about the authenticated user, specify `people/me`.
-      - To get information about a google account, specify
-       `people/{account_id}`.
-      - To get information about a contact, specify the resource name that
-        identifies the contact as returned by
-      [`people.connections.list`](/people/api/rest/v1/people.connections/list).
+  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the person to provide information about. - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by [`people.connections.list`](/people/api/rest/v1/people.connections/list).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -296,42 +224,9 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on the person are returned. Multiple
-          fields can be specified by separating them with commas. Valid values are:
-
-          * addresses
-          * ageRanges
-          * biographies
-          * birthdays
-          * coverPhotos
-          * emailAddresses
-          * events
-          * genders
-          * imClients
-          * interests
-          * locales
-          * memberships
-          * metadata
-          * names
-          * nicknames
-          * occupations
-          * organizations
-          * phoneNumbers
-          * photos
-          * relations
-          * residences
-          * sipAddresses
-          * skills
-          * urls
-          * userDefined
-      *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
-          path should start with `person.`: for example, `person.names` or
-          `person.photos`.
-      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
-          ReadSourceType.PROFILE
-          and
-          ReadSourceType.CONTACT
-          if not set.
+      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
+      *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each path should start with `person.`: for example, `person.names` or `person.photos`.
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to ReadSourceType.PROFILE and ReadSourceType.CONTACT if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -374,11 +269,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides information about a list of specific people by specifying a list
-  of requested resource names. Use `people/me` to indicate the authenticated
-  user.
-
-  The request throws a 400 error if 'personFields' is not specified.
+  Provides information about a list of specific people by specifying a list of requested resource names. Use `people/me` to indicate the authenticated user. The request throws a 400 error if 'personFields' is not specified.
 
   ## Parameters
 
@@ -395,52 +286,10 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
-          fields can be specified by separating them with commas. Valid values are:
-
-          * addresses
-          * ageRanges
-          * biographies
-          * birthdays
-          * coverPhotos
-          * emailAddresses
-          * events
-          * genders
-          * imClients
-          * interests
-          * locales
-          * memberships
-          * metadata
-          * names
-          * nicknames
-          * occupations
-          * organizations
-          * phoneNumbers
-          * photos
-          * relations
-          * residences
-          * sipAddresses
-          * skills
-          * urls
-          * userDefined
-      *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
-          path should start with `person.`: for example, `person.names` or
-          `person.photos`.
-      *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the people to provide information about.
-
-          - To get information about the authenticated user, specify `people/me`.
-          - To get information about a google account, specify
-            `people/{account_id}`.
-          - To get information about a contact, specify the resource name that
-            identifies the contact as returned by
-          [`people.connections.list`](/people/api/rest/v1/people.connections/list).
-
-          You can include up to 50 resource names in one request.
-      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
-          ReadSourceType.CONTACT
-          and
-          ReadSourceType.PROFILE
-          if not set.
+      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
+      *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each path should start with `person.`: for example, `person.names` or `person.photos`.
+      *   `:resourceNames` (*type:* `list(String.t)`) - Required. The resource names of the people to provide information about. - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by [`people.connections.list`](/people/api/rest/v1/people.connections/list). You can include up to 50 resource names in one request.
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to ReadSourceType.CONTACT and ReadSourceType.PROFILE if not set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -484,8 +333,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides a list of domain profiles and domain contacts in the authenticated
-  user's domain directory.
+  Provides a list of domain profiles and domain contacts in the authenticated user's domain directory.
 
   ## Parameters
 
@@ -502,52 +350,13 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:mergeSources` (*type:* `list(String.t)`) - Optional. Additional data to merge into the directory sources if they are connected
-          through verified join keys such as email addresses or phone numbers.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The number of people to include in the response. Valid values are
-          between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListDirectoryPeople` call.
-          Provide this to retrieve the subsequent page.
-
-          When paginating, all other parameters provided to `ListDirectoryPeople`
-          must match the call that provided the page token.
-      *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
-          fields can be specified by separating them with commas. Valid values are:
-
-          * addresses
-          * ageRanges
-          * biographies
-          * birthdays
-          * coverPhotos
-          * emailAddresses
-          * events
-          * genders
-          * imClients
-          * interests
-          * locales
-          * memberships
-          * metadata
-          * names
-          * nicknames
-          * occupations
-          * organizations
-          * phoneNumbers
-          * photos
-          * relations
-          * residences
-          * sipAddresses
-          * skills
-          * urls
-          * userDefined
-      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include `next_sync_token`, which can be used to
-          get all changes since the last request. For subsequent sync requests use
-          the `sync_token` param instead.
+      *   `:mergeSources` (*type:* `list(String.t)`) - Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of people to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListDirectoryPeople` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDirectoryPeople` must match the call that provided the page token.
+      *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
+      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include `next_sync_token`, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead.
       *   `:sources` (*type:* `list(String.t)`) - Required. Directory sources to return.
-      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListDirectoryPeople` call.
-          Provide this to retrieve only the resources changed since the last request.
-
-          When syncing, all other parameters provided to `ListDirectoryPeople`
-          must match the call that provided the sync token.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListDirectoryPeople` call. Provide this to retrieve only the resources changed since the last request. When syncing, all other parameters provided to `ListDirectoryPeople` must match the call that provided the sync token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -594,8 +403,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides a list of domain profiles and domain contacts in the authenticated
-  user's domain directory that match the search query.
+  Provides a list of domain profiles and domain contacts in the authenticated user's domain directory that match the search query.
 
   ## Parameters
 
@@ -612,45 +420,11 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:mergeSources` (*type:* `list(String.t)`) - Optional. Additional data to merge into the directory sources if they are connected
-          through verified join keys such as email addresses or phone numbers.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The number of people to include in the response. Valid values are
-          between 1 and 500, inclusive. Defaults to 100 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `SearchDirectoryPeople` call.
-          Provide this to retrieve the subsequent page.
-
-          When paginating, all other parameters provided to `SearchDirectoryPeople`
-          must match the call that provided the page token.
-      *   `:query` (*type:* `String.t`) - Required. Prefix query that matches fields in the person. Does NOT use the
-          read_mask for determining what fields to match.
-      *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
-          fields can be specified by separating them with commas. Valid values are:
-
-          * addresses
-          * ageRanges
-          * biographies
-          * birthdays
-          * coverPhotos
-          * emailAddresses
-          * events
-          * genders
-          * imClients
-          * interests
-          * locales
-          * memberships
-          * metadata
-          * names
-          * nicknames
-          * occupations
-          * organizations
-          * phoneNumbers
-          * photos
-          * relations
-          * residences
-          * sipAddresses
-          * skills
-          * urls
-          * userDefined
+      *   `:mergeSources` (*type:* `list(String.t)`) - Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of people to include in the response. Valid values are between 1 and 500, inclusive. Defaults to 100 if not set or set to 0.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `SearchDirectoryPeople` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchDirectoryPeople` must match the call that provided the page token.
+      *   `:query` (*type:* `String.t`) - Required. Prefix query that matches fields in the person. Does NOT use the read_mask for determining what fields to match.
+      *   `:readMask` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
       *   `:sources` (*type:* `list(String.t)`) - Required. Directory sources to return.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -699,26 +473,12 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Update contact data for an existing contact person. Any non-contact data
-  will not be modified.
-
-  The request throws a 400 error if `updatePersonFields` is not specified.
-
-  The request throws a 400 error if `person.metadata.sources` is not
-  specified for the contact to be updated.
-
-  The request throws a 400 error with an error with reason
-  `"failedPrecondition"` if `person.metadata.sources.etag` is different than
-  the contact's etag, which indicates the contact has changed since its data
-  was read. Clients should get the latest person and re-apply their updates
-  to the latest person.
+  Update contact data for an existing contact person. Any non-contact data will not be modified. The request throws a 400 error if `updatePersonFields` is not specified. The request throws a 400 error if `person.metadata.sources` is not specified for the contact to be updated. The request throws a 400 error with an error with reason `"failedPrecondition"` if `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed since its data was read. Clients should get the latest person and re-apply their updates to the latest person.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `person.resourceName`. The resource name for the person, assigned by the server. An ASCII string
-      with a max length of 27 characters, in the form of
-      `people/{person_id}`.
+  *   `people_id` (*type:* `String.t`) - Part of `person.resourceName`. The resource name for the person, assigned by the server. An ASCII string with a max length of 27 characters, in the form of `people/{person_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -731,63 +491,9 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:personFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on each person are returned. Multiple
-          fields can be specified by separating them with commas. Defaults to all
-          fields if not set. Valid values are:
-
-          * addresses
-          * ageRanges
-          * biographies
-          * birthdays
-          * coverPhotos
-          * emailAddresses
-          * events
-          * genders
-          * imClients
-          * interests
-          * locales
-          * memberships
-          * metadata
-          * names
-          * nicknames
-          * occupations
-          * organizations
-          * phoneNumbers
-          * photos
-          * relations
-          * residences
-          * sipAddresses
-          * skills
-          * urls
-          * userDefined
-      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
-          ReadSourceType.CONTACT and
-          ReadSourceType.PROFILE if not
-          set.
-      *   `:updatePersonFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on the person are updated. Multiple
-          fields can be specified by separating them with commas.
-          All updated fields will be replaced. Valid values are:
-
-          * addresses
-          * biographies
-          * birthdays
-          * emailAddresses
-          * events
-          * genders
-          * imClients
-          * interests
-          * locales
-          * memberships
-          * names
-          * nicknames
-          * occupations
-          * organizations
-          * phoneNumbers
-          * relations
-          * residences
-          * sipAddresses
-          * urls
-          * userDefined
+      *   `:personFields` (*type:* `String.t`) - Optional. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Defaults to all fields if not set. Valid values are: * addresses * ageRanges * biographies * birthdays * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to ReadSourceType.CONTACT and ReadSourceType.PROFILE if not set.
+      *   `:updatePersonFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on the person are updated. Multiple fields can be specified by separating them with commas. All updated fields will be replaced. Valid values are: * addresses * biographies * birthdays * emailAddresses * events * genders * imClients * interests * locales * memberships * names * nicknames * occupations * organizations * phoneNumbers * relations * residences * sipAddresses * urls * userDefined
       *   `:body` (*type:* `GoogleApi.People.V1.Model.Person.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -893,9 +599,7 @@ defmodule GoogleApi.People.V1.Api.People do
   end
 
   @doc """
-  Provides a list of the authenticated user's contacts.
-
-  The request throws a 400 error if 'personFields' is not specified.
+  Provides a list of the authenticated user's contacts. The request throws a 400 error if 'personFields' is not specified.
 
   ## Parameters
 
@@ -913,61 +617,14 @@ defmodule GoogleApi.People.V1.Api.People do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The number of connections to include in the response. Valid values are
-          between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
-      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListConnections` call.
-          Provide this to retrieve the subsequent page.
-
-          When paginating, all other parameters provided to `ListConnections`
-          must match the call that provided the page token.
-      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple
-          fields can be specified by separating them with commas. Valid values are:
-
-          * addresses
-          * ageRanges
-          * biographies
-          * birthdays
-          * coverPhotos
-          * emailAddresses
-          * events
-          * genders
-          * imClients
-          * interests
-          * locales
-          * memberships
-          * metadata
-          * names
-          * nicknames
-          * occupations
-          * organizations
-          * phoneNumbers
-          * photos
-          * relations
-          * residences
-          * sipAddresses
-          * skills
-          * urls
-          * userDefined
-      *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each
-          path should start with `person.`: for example, `person.names` or
-          `person.photos`.
-      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include `next_sync_token`, which can be used to
-          get all changes since the last request. For subsequent sync requests use
-          the `sync_token` param instead. Initial sync requests that specify
-          `request_sync_token` have an additional rate limit.
-      *   `:sortOrder` (*type:* `String.t`) - Optional. The order in which the connections should be sorted. Defaults to
-          `LAST_MODIFIED_ASCENDING`.
-      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to
-          ReadSourceType.CONTACT
-          and
-          ReadSourceType.PROFILE if not
-          set.
-      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListConnections` call.
-          Provide this to retrieve only the resources changed since the last request.
-          Sync requests that specify `sync_token` have an additional rate limit.
-
-          When syncing, all other parameters provided to `ListConnections`
-          must match the call that provided the sync token.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of connections to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListConnections` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListConnections` must match the call that provided the page token.
+      *   `:personFields` (*type:* `String.t`) - Required. A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas. Valid values are: * addresses * ageRanges * biographies * birthdays * coverPhotos * emailAddresses * events * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
+      *   `:"requestMask.includeField"` (*type:* `String.t`) - Required. Comma-separated list of person fields to be included in the response. Each path should start with `person.`: for example, `person.names` or `person.photos`.
+      *   `:requestSyncToken` (*type:* `boolean()`) - Optional. Whether the response should include `next_sync_token`, which can be used to get all changes since the last request. For subsequent sync requests use the `sync_token` param instead. Initial sync requests that specify `request_sync_token` have an additional rate limit.
+      *   `:sortOrder` (*type:* `String.t`) - Optional. The order in which the connections should be sorted. Defaults to `LAST_MODIFIED_ASCENDING`.
+      *   `:sources` (*type:* `list(String.t)`) - Optional. A mask of what source types to return. Defaults to ReadSourceType.CONTACT and ReadSourceType.PROFILE if not set.
+      *   `:syncToken` (*type:* `String.t`) - Optional. A sync token, received from a previous `ListConnections` call. Provide this to retrieve only the resources changed since the last request. Sync requests that specify `sync_token` have an additional rate limit. When syncing, all other parameters provided to `ListConnections` must match the call that provided the sync token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

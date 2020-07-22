@@ -21,11 +21,8 @@ defmodule GoogleApi.People.V1.Model.Name do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name formatted according to the locale specified by
-      the viewer's account or the `Accept-Language` HTTP header.
-  *   `displayNameLastFirst` (*type:* `String.t`, *default:* `nil`) - Output only. The display name with the last name first formatted according to
-      the locale specified by the viewer's account or the
-      `Accept-Language` HTTP header.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name formatted according to the locale specified by the viewer's account or the `Accept-Language` HTTP header.
+  *   `displayNameLastFirst` (*type:* `String.t`, *default:* `nil`) - Output only. The display name with the last name first formatted according to the locale specified by the viewer's account or the `Accept-Language` HTTP header.
   *   `familyName` (*type:* `String.t`, *default:* `nil`) - The family name.
   *   `givenName` (*type:* `String.t`, *default:* `nil`) - The given name.
   *   `honorificPrefix` (*type:* `String.t`, *default:* `nil`) - The honorific prefixes, such as `Mrs.` or `Dr.`

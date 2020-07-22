@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.Membership do
   @moduledoc """
-  A person's membership in a group. Only contact group memberships can be
-  modified.
+  A person's membership in a group. Only contact group memberships can be modified.
 
   ## Attributes
 

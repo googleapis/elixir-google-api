@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.People.V1.Model.UpdateContactGroupRequest do
   @moduledoc """
-  A request to update an existing user contact group. All updated fields will
-  be replaced.
+  A request to update an existing user contact group. All updated fields will be replaced.
 
   ## Attributes
 
