@@ -99,6 +99,10 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
       <code>minCpuPlatform: &quot;Intel Sandy Bridge&quot;</code>. For more
       information, read [how to specify min CPU
       platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+  *   `nodeGroup` (*type:* `String.t`, *default:* `nil`) - Setting this field will assign instances of this
+      pool to run on the specified node group. This is useful for running
+      workloads on [sole tenant
+      nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
   *   `oauthScopes` (*type:* `list(String.t)`, *default:* `nil`) - The set of Google API scopes to be made available on all of the
       node VMs under the "default" service account.
 
@@ -150,6 +154,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :machineType => String.t(),
           :metadata => map(),
           :minCpuPlatform => String.t(),
+          :nodeGroup => String.t(),
           :oauthScopes => list(String.t()),
           :preemptible => boolean(),
           :reservationAffinity => GoogleApi.Container.V1.Model.ReservationAffinity.t(),
@@ -171,6 +176,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:machineType)
   field(:metadata, type: :map)
   field(:minCpuPlatform)
+  field(:nodeGroup)
   field(:oauthScopes, type: :list)
   field(:preemptible)
   field(:reservationAffinity, as: GoogleApi.Container.V1.Model.ReservationAffinity)
