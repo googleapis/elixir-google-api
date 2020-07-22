@@ -23,8 +23,7 @@ defmodule GoogleApi.Books.V1.Model.Annotationsdata do
 
   *   `items` (*type:* `list(GoogleApi.Books.V1.Model.GeoAnnotationdata.t)`, *default:* `nil`) - A list of Annotation Data.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource type
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to pass in for pagination for the next page. This will not be present
-      if this request does not have more results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to pass in for pagination for the next page. This will not be present if this request does not have more results.
   *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of volume annotations found.
   """
 

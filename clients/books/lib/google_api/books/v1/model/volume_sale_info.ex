@@ -17,29 +17,18 @@
 
 defmodule GoogleApi.Books.V1.Model.VolumeSaleInfo do
   @moduledoc """
-  Any information about a volume related to the eBookstore and/or
-  purchaseability. This information can depend on the country where the
-  request originates from (i.e. books may not be for sale in certain
-  countries).
+  Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries).
 
   ## Attributes
 
-  *   `buyLink` (*type:* `String.t`, *default:* `nil`) - URL to purchase this volume on the Google Books site. (In LITE
-      projection)
-  *   `country` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO_3166-1 country code for which this sale information is
-      valid. (In LITE projection.)
-  *   `isEbook` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume is an eBook (can be added to the My eBooks
-      shelf).
+  *   `buyLink` (*type:* `String.t`, *default:* `nil`) - URL to purchase this volume on the Google Books site. (In LITE projection)
+  *   `country` (*type:* `String.t`, *default:* `nil`) - The two-letter ISO_3166-1 country code for which this sale information is valid. (In LITE projection.)
+  *   `isEbook` (*type:* `boolean()`, *default:* `nil`) - Whether or not this volume is an eBook (can be added to the My eBooks shelf).
   *   `listPrice` (*type:* `GoogleApi.Books.V1.Model.VolumeSaleInfoListPrice.t`, *default:* `nil`) - Suggested retail price. (In LITE projection.)
   *   `offers` (*type:* `list(GoogleApi.Books.V1.Model.VolumeSaleInfoOffers.t)`, *default:* `nil`) - Offers available for this volume (sales and rentals).
   *   `onSaleDate` (*type:* `String.t`, *default:* `nil`) - The date on which this book is available for sale.
-  *   `retailPrice` (*type:* `GoogleApi.Books.V1.Model.VolumeSaleInfoRetailPrice.t`, *default:* `nil`) - The actual selling price of the book. This is the same as the suggested
-      retail or list price unless there are offers or discounts on this volume.
-      (In LITE projection.)
-  *   `saleability` (*type:* `String.t`, *default:* `nil`) - Whether or not this book is available for sale or offered for free in the
-      Google eBookstore for the country listed above. Possible values are
-      FOR_SALE, FOR_RENTAL_ONLY, FOR_SALE_AND_RENTAL, FREE, NOT_FOR_SALE, or
-      FOR_PREORDER.
+  *   `retailPrice` (*type:* `GoogleApi.Books.V1.Model.VolumeSaleInfoRetailPrice.t`, *default:* `nil`) - The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.)
+  *   `saleability` (*type:* `String.t`, *default:* `nil`) - Whether or not this book is available for sale or offered for free in the Google eBookstore for the country listed above. Possible values are FOR_SALE, FOR_RENTAL_ONLY, FOR_SALE_AND_RENTAL, FREE, NOT_FOR_SALE, or FOR_PREORDER.
   """
 
   use GoogleApi.Gax.ModelBase

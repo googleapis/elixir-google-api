@@ -101,8 +101,7 @@ defmodule GoogleApi.Books.V1.Api.Onboarding do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:categoryId` (*type:* `list(String.t)`) - List of category ids requested.
       *   `:locale` (*type:* `String.t`) - ISO-639-1 language and ISO-3166-1 country code. Default is en-US if unset.
-      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned volumes. Books with a
-          higher maturity rating are filtered out.
+      *   `:maxAllowedMaturityRating` (*type:* `String.t`) - The maximum allowed maturity rating of returned volumes. Books with a higher maturity rating are filtered out.
       *   `:pageSize` (*type:* `integer()`) - Number of maximum results per page to be included in the response.
       *   `:pageToken` (*type:* `String.t`) - The value of the nextToken from the previous page.
   *   `opts` (*type:* `keyword()`) - Call options

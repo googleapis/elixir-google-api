@@ -17,9 +17,7 @@
 
 defmodule GoogleApi.Books.V1.Model.VolumeSaleInfoRetailPrice do
   @moduledoc """
-  The actual selling price of the book. This is the same as the suggested
-  retail or list price unless there are offers or discounts on this volume.
-  (In LITE projection.)
+  The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.)
 
   ## Attributes
 

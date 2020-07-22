@@ -109,8 +109,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:annotationId` (*type:* `String.t`) - The ID for the annotation to insert.
       *   `:country` (*type:* `String.t`) - ISO-3166-1 code to override the IP-based location.
-      *   `:showOnlySummaryInResponse` (*type:* `boolean()`) - Requests that only the summary of the specified layer be provided in the
-          response.
+      *   `:showOnlySummaryInResponse` (*type:* `boolean()`) - Requests that only the summary of the specified layer be provided in the response.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
       *   `:body` (*type:* `GoogleApi.Books.V1.Model.Annotation.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -177,13 +176,10 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       *   `:layerIds` (*type:* `list(String.t)`) - The layer ID(s) to limit annotation by.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
       *   `:pageToken` (*type:* `String.t`) - The value of the nextToken from the previous page.
-      *   `:showDeleted` (*type:* `boolean()`) - Set to true to return deleted annotations. updatedMin must be in the
-          request to use this. Defaults to false.
+      *   `:showDeleted` (*type:* `boolean()`) - Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
-      *   `:updatedMax` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated prior to this timestamp
-          (exclusive).
-      *   `:updatedMin` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated since this timestamp
-          (inclusive).
+      *   `:updatedMax` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).
+      *   `:updatedMin` (*type:* `String.t`) - RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).
       *   `:volumeId` (*type:* `String.t`) - The volume to restrict annotations to.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -493,8 +489,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
   end
 
   @doc """
-  Retrieves metadata for a specific bookshelf belonging to the authenticated
-  user.
+  Retrieves metadata for a specific bookshelf belonging to the authenticated user.
 
   ## Parameters
 
@@ -629,8 +624,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:source` (*type:* `String.t`) - String to identify the originator of this request.
       *   `:volumeId` (*type:* `String.t`) - ID of volume to move.
-      *   `:volumePosition` (*type:* `integer()`) - Position on shelf to move the item (0 puts the item before the current
-          first item, 1 puts it between the first and the second and so on.)
+      *   `:volumePosition` (*type:* `integer()`) - Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

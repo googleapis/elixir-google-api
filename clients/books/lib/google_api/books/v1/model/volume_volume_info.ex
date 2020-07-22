@@ -22,27 +22,19 @@ defmodule GoogleApi.Books.V1.Model.VolumeVolumeInfo do
   ## Attributes
 
   *   `allowAnonLogging` (*type:* `boolean()`, *default:* `nil`) - Whether anonymous logging should be allowed.
-  *   `authors` (*type:* `list(String.t)`, *default:* `nil`) - The names of the authors and/or editors for this volume. (In LITE
-      projection)
+  *   `authors` (*type:* `list(String.t)`, *default:* `nil`) - The names of the authors and/or editors for this volume. (In LITE projection)
   *   `averageRating` (*type:* `float()`, *default:* `nil`) - The mean review rating for this volume. (min = 1.0, max = 5.0)
   *   `canonicalVolumeLink` (*type:* `String.t`, *default:* `nil`) - Canonical URL for a volume. (In LITE projection.)
   *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - A list of subject categories, such as "Fiction", "Suspense", etc.
   *   `comicsContent` (*type:* `boolean()`, *default:* `nil`) - Whether the volume has comics content.
-  *   `contentVersion` (*type:* `String.t`, *default:* `nil`) - An identifier for the version of the volume content (text & images). (In
-      LITE projection)
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A synopsis of the volume. The text of the description is formatted in
-      HTML and includes simple formatting elements, such as b, i, and br tags.
-      (In LITE projection.)
+  *   `contentVersion` (*type:* `String.t`, *default:* `nil`) - An identifier for the version of the volume content (text & images). (In LITE projection)
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A synopsis of the volume. The text of the description is formatted in HTML and includes simple formatting elements, such as b, i, and br tags. (In LITE projection.)
   *   `dimensions` (*type:* `GoogleApi.Books.V1.Model.VolumeVolumeInfoDimensions.t`, *default:* `nil`) - Physical dimensions of this volume.
-  *   `imageLinks` (*type:* `GoogleApi.Books.V1.Model.VolumeVolumeInfoImageLinks.t`, *default:* `nil`) - A list of image links for all the sizes that are available. (In LITE
-      projection.)
+  *   `imageLinks` (*type:* `GoogleApi.Books.V1.Model.VolumeVolumeInfoImageLinks.t`, *default:* `nil`) - A list of image links for all the sizes that are available. (In LITE projection.)
   *   `industryIdentifiers` (*type:* `list(GoogleApi.Books.V1.Model.VolumeVolumeInfoIndustryIdentifiers.t)`, *default:* `nil`) - Industry standard identifiers for this volume.
-  *   `infoLink` (*type:* `String.t`, *default:* `nil`) - URL to view information about this volume on the Google Books site. (In
-      LITE projection)
-  *   `language` (*type:* `String.t`, *default:* `nil`) - Best language for this volume (based on content). It is the two-letter
-      ISO 639-1 code such as 'fr', 'en', etc.
-  *   `mainCategory` (*type:* `String.t`, *default:* `nil`) - The main category to which this volume belongs. It will be the category
-      from the categories list returned below that has the highest weight.
+  *   `infoLink` (*type:* `String.t`, *default:* `nil`) - URL to view information about this volume on the Google Books site. (In LITE projection)
+  *   `language` (*type:* `String.t`, *default:* `nil`) - Best language for this volume (based on content). It is the two-letter ISO 639-1 code such as 'fr', 'en', etc.
+  *   `mainCategory` (*type:* `String.t`, *default:* `nil`) - The main category to which this volume belongs. It will be the category from the categories list returned below that has the highest weight.
   *   `maturityRating` (*type:* `String.t`, *default:* `nil`) - 
   *   `pageCount` (*type:* `integer()`, *default:* `nil`) - Total number of pages as per publisher metadata.
   *   `panelizationSummary` (*type:* `GoogleApi.Books.V1.Model.VolumeVolumeInfoPanelizationSummary.t`, *default:* `nil`) - A top-level summary of the panelization info in this volume.

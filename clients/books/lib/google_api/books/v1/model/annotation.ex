@@ -21,10 +21,8 @@ defmodule GoogleApi.Books.V1.Model.Annotation do
 
   ## Attributes
 
-  *   `afterSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text after excerpt. For requests, if the user bookmarked a screen
-      that has no flowing text on it, then this field should be empty.
-  *   `beforeSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text before excerpt. For requests, if the user bookmarked a screen
-      that has no flowing text on it, then this field should be empty.
+  *   `afterSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text after excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty.
+  *   `beforeSelectedText` (*type:* `String.t`, *default:* `nil`) - Anchor text before excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty.
   *   `clientVersionRanges` (*type:* `GoogleApi.Books.V1.Model.AnnotationClientVersionRanges.t`, *default:* `nil`) - Selection ranges sent from the client.
   *   `created` (*type:* `String.t`, *default:* `nil`) - Timestamp for the created time of this annotation.
   *   `currentVersionRanges` (*type:* `GoogleApi.Books.V1.Model.AnnotationCurrentVersionRanges.t`, *default:* `nil`) - Selection ranges for the most recent content version.

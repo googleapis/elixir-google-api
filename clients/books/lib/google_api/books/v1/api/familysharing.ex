@@ -82,8 +82,7 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
   end
 
   @doc """
-  Initiates sharing of the content with the user's family. Empty response
-  indicates success.
+  Initiates sharing of the content with the user's family. Empty response indicates success.
 
   ## Parameters
 
@@ -143,8 +142,7 @@ defmodule GoogleApi.Books.V1.Api.Familysharing do
   end
 
   @doc """
-  Initiates revoking content that has already been shared with the user's
-  family. Empty response indicates success.
+  Initiates revoking content that has already been shared with the user's family. Empty response indicates success.
 
   ## Parameters
 

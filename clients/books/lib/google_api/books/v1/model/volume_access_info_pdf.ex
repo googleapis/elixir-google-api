@@ -23,8 +23,7 @@ defmodule GoogleApi.Books.V1.Model.VolumeAccessInfoPdf do
 
   *   `acsTokenLink` (*type:* `String.t`, *default:* `nil`) - URL to retrieve ACS token for pdf download. (In LITE projection.)
   *   `downloadLink` (*type:* `String.t`, *default:* `nil`) - URL to download pdf. (In LITE projection.)
-  *   `isAvailable` (*type:* `boolean()`, *default:* `nil`) - Is a scanned image pdf available either as public domain or for
-      purchase. (In LITE projection.)
+  *   `isAvailable` (*type:* `boolean()`, *default:* `nil`) - Is a scanned image pdf available either as public domain or for purchase. (In LITE projection.)
   """
 
   use GoogleApi.Gax.ModelBase

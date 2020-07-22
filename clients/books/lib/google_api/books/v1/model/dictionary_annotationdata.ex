@@ -22,16 +22,13 @@ defmodule GoogleApi.Books.V1.Model.DictionaryAnnotationdata do
   ## Attributes
 
   *   `annotationType` (*type:* `String.t`, *default:* `nil`) - The type of annotation this data is for.
-  *   `data` (*type:* `GoogleApi.Books.V1.Model.Dictlayerdata.t`, *default:* `nil`) - JSON encoded data for this dictionary annotation data.
-      Emitted with name 'data' in JSON output. Either this or geo_data will
-      be populated.
+  *   `data` (*type:* `GoogleApi.Books.V1.Model.Dictlayerdata.t`, *default:* `nil`) - JSON encoded data for this dictionary annotation data. Emitted with name 'data' in JSON output. Either this or geo_data will be populated.
   *   `encodedData` (*type:* `String.t`, *default:* `nil`) - Base64 encoded data for this annotation data.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique id for this annotation data.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Resource Type
   *   `layerId` (*type:* `String.t`, *default:* `nil`) - The Layer id for this data. *
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL for this resource. *
-  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp for the last time this data was updated. (RFC 3339 UTC date-time
-      format).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Timestamp for the last time this data was updated. (RFC 3339 UTC date-time format).
   *   `volumeId` (*type:* `String.t`, *default:* `nil`) - The volume id for this data. *
   """
 
