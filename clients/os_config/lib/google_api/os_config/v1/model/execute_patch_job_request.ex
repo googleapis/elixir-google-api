@@ -33,6 +33,7 @@ defmodule GoogleApi.OSConfig.V1.Model.ExecutePatchJobRequest do
       as zone or labels.
   *   `patchConfig` (*type:* `GoogleApi.OSConfig.V1.Model.PatchConfig.t`, *default:* `nil`) - Patch configuration being applied. If omitted, instances are
       patched using the default configurations.
+  *   `rollout` (*type:* `GoogleApi.OSConfig.V1.Model.PatchRollout.t`, *default:* `nil`) - Rollout strategy of the patch job.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +44,8 @@ defmodule GoogleApi.OSConfig.V1.Model.ExecutePatchJobRequest do
           :dryRun => boolean(),
           :duration => String.t(),
           :instanceFilter => GoogleApi.OSConfig.V1.Model.PatchInstanceFilter.t(),
-          :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t()
+          :patchConfig => GoogleApi.OSConfig.V1.Model.PatchConfig.t(),
+          :rollout => GoogleApi.OSConfig.V1.Model.PatchRollout.t()
         }
 
   field(:description)
@@ -52,6 +54,7 @@ defmodule GoogleApi.OSConfig.V1.Model.ExecutePatchJobRequest do
   field(:duration)
   field(:instanceFilter, as: GoogleApi.OSConfig.V1.Model.PatchInstanceFilter)
   field(:patchConfig, as: GoogleApi.OSConfig.V1.Model.PatchConfig)
+  field(:rollout, as: GoogleApi.OSConfig.V1.Model.PatchRollout)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.OSConfig.V1.Model.ExecutePatchJobRequest do
