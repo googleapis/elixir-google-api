@@ -26,8 +26,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseFlags do
       specified with underscores, not hyphens. For more information, see <a
       href="/sql/docs/mysql/flags">Configuring Database Flags</a> in the Cloud
       SQL documentation.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the flag. Booleans should be set to <code>on</code> for true
-      and <code>off</code> for false. This field must be omitted if the flag
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the flag. Booleans should be set to <b>on</b> for true
+      and <b>off</b> for false. This field must be omitted if the flag
       doesn't take a value.
   """
 

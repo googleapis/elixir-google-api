@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesVerifyExternalSyncSetting
   ## Attributes
 
   *   `errors` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError.t)`, *default:* `nil`) - List of migration violations.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#migrationSettingErrorList</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#migrationSettingErrorList</b>.
   """
 
   use GoogleApi.Gax.ModelBase

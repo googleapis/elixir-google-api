@@ -23,23 +23,23 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Flag do
 
   *   `allowedIntValues` (*type:* `list(String.t)`, *default:* `nil`) - Use this field if only certain integers are accepted. Can be combined
       with min_value and max_value to add additional values.
-  *   `allowedStringValues` (*type:* `list(String.t)`, *default:* `nil`) - For <code>STRING</code> flags, a list of strings that the value can be set
+  *   `allowedStringValues` (*type:* `list(String.t)`, *default:* `nil`) - For <b>STRING</b> flags, a list of strings that the value can be set
       to.
-  *   `appliesTo` (*type:* `list(String.t)`, *default:* `nil`) - The database version this flag applies to. Can be <code>MYSQL_5_5</code>,
-      <code>MYSQL_5_6</code>, or <code>MYSQL_5_7</code>. <code>MYSQL_5_7</code>
+  *   `appliesTo` (*type:* `list(String.t)`, *default:* `nil`) - The database version this flag applies to. Can be <b>MYSQL_5_5</b>,
+      <b>MYSQL_5_6</b>, or <b>MYSQL_5_7</b>. <b>MYSQL_5_7</b>
       is applicable only to Second Generation instances.
   *   `inBeta` (*type:* `boolean()`, *default:* `nil`) - Whether or not the flag is considered in beta.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#flag</code>.
-  *   `maxValue` (*type:* `String.t`, *default:* `nil`) - For <code>INTEGER</code> flags, the maximum allowed value.
-  *   `minValue` (*type:* `String.t`, *default:* `nil`) - For <code>INTEGER</code> flags, the minimum allowed value.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#flag</b>.
+  *   `maxValue` (*type:* `String.t`, *default:* `nil`) - For <b>INTEGER</b> flags, the maximum allowed value.
+  *   `minValue` (*type:* `String.t`, *default:* `nil`) - For <b>INTEGER</b> flags, the minimum allowed value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - This is the name of the flag. Flag names always use underscores, not
-      hyphens, e.g. <code>max_allowed_packet</code>
+      hyphens, e.g. <b>max_allowed_packet</b>
   *   `requiresRestart` (*type:* `boolean()`, *default:* `nil`) - Indicates whether changing this flag will trigger a database restart. Only
       applicable to Second Generation instances.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the flag. Flags are typed to being <code>BOOLEAN</code>,
-      <code>STRING</code>, <code>INTEGER</code> or <code>NONE</code>.
-      <code>NONE</code> is used for flags which do not take a value, such as
-      <code>skip_grant_tables</code>.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the flag. Flags are typed to being <b>BOOLEAN</b>,
+      <b>STRING</b>, <b>INTEGER</b> or <b>NONE</b>.
+      <b>NONE</b> is used for flags which do not take a value, such as
+      <b>skip_grant_tables</b>.
   """
 
   use GoogleApi.Gax.ModelBase

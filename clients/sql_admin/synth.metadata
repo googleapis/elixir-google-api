@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/elixir-google-api.git",
-        "sha": "e55b2907c9dfaac4747bef399ccbf9792834827b"
+        "sha": "9e855689a6c4d6ff55a050f14ba038c0fea49f97"
       }
     }
   ]

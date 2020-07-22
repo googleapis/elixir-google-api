@@ -22,7 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlExternalSyncSettingError do
   ## Attributes
 
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Additional information about the error encountered.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <code>sql#migrationSettingError</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always <b>sql#migrationSettingError</b>.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Identifies the specific error that occurred.
   """
 
