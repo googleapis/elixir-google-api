@@ -22,6 +22,7 @@ defmodule GoogleApi.Testing.V1.Model.TestEnvironmentCatalog do
   ## Attributes
 
   *   `androidDeviceCatalog` (*type:* `GoogleApi.Testing.V1.Model.AndroidDeviceCatalog.t`, *default:* `nil`) - Supported Android devices.
+  *   `deviceIpBlockCatalog` (*type:* `GoogleApi.Testing.V1.Model.DeviceIpBlockCatalog.t`, *default:* `nil`) - The IP blocks used by devices in the test environment.
   *   `iosDeviceCatalog` (*type:* `GoogleApi.Testing.V1.Model.IosDeviceCatalog.t`, *default:* `nil`) - Supported iOS devices.
   *   `networkConfigurationCatalog` (*type:* `GoogleApi.Testing.V1.Model.NetworkConfigurationCatalog.t`, *default:* `nil`) - Supported network configurations.
   *   `softwareCatalog` (*type:* `GoogleApi.Testing.V1.Model.ProvidedSoftwareCatalog.t`, *default:* `nil`) - The software test environment provided by TestExecutionService.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Testing.V1.Model.TestEnvironmentCatalog do
 
   @type t :: %__MODULE__{
           :androidDeviceCatalog => GoogleApi.Testing.V1.Model.AndroidDeviceCatalog.t(),
+          :deviceIpBlockCatalog => GoogleApi.Testing.V1.Model.DeviceIpBlockCatalog.t(),
           :iosDeviceCatalog => GoogleApi.Testing.V1.Model.IosDeviceCatalog.t(),
           :networkConfigurationCatalog =>
             GoogleApi.Testing.V1.Model.NetworkConfigurationCatalog.t(),
@@ -38,6 +40,7 @@ defmodule GoogleApi.Testing.V1.Model.TestEnvironmentCatalog do
         }
 
   field(:androidDeviceCatalog, as: GoogleApi.Testing.V1.Model.AndroidDeviceCatalog)
+  field(:deviceIpBlockCatalog, as: GoogleApi.Testing.V1.Model.DeviceIpBlockCatalog)
   field(:iosDeviceCatalog, as: GoogleApi.Testing.V1.Model.IosDeviceCatalog)
   field(:networkConfigurationCatalog, as: GoogleApi.Testing.V1.Model.NetworkConfigurationCatalog)
   field(:softwareCatalog, as: GoogleApi.Testing.V1.Model.ProvidedSoftwareCatalog)
