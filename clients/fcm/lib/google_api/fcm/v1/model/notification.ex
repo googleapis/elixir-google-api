@@ -22,14 +22,7 @@ defmodule GoogleApi.FCM.V1.Model.Notification do
   ## Attributes
 
   *   `body` (*type:* `String.t`, *default:* `nil`) - The notification's body text.
-  *   `image` (*type:* `String.t`, *default:* `nil`) - Contains the URL of an image that is going to be downloaded on the device
-      and displayed in a notification.
-      JPEG, PNG, BMP have full support across platforms. Animated GIF and video
-      only work on iOS. WebP and HEIF have varying levels of support across
-      platforms and platform versions.
-      Android has 1MB image size limit.
-      Quota usage and implications/costs for hosting image on Firebase Storage:
-      https://firebase.google.com/pricing
+  *   `image` (*type:* `String.t`, *default:* `nil`) - Contains the URL of an image that is going to be downloaded on the device and displayed in a notification. JPEG, PNG, BMP have full support across platforms. Animated GIF and video only work on iOS. WebP and HEIF have varying levels of support across platforms and platform versions. Android has 1MB image size limit. Quota usage and implications/costs for hosting image on Firebase Storage: https://firebase.google.com/pricing
   *   `title` (*type:* `String.t`, *default:* `nil`) - The notification's title.
   """
 

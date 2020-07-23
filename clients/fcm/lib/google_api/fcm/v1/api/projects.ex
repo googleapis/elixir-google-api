@@ -26,16 +26,12 @@ defmodule GoogleApi.FCM.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Send a message to specified target (a registration token, topic
-  or condition).
+  Send a message to specified target (a registration token, topic or condition).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FCM.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. It contains the Firebase project id (i.e. the unique identifier
-      for your Firebase project), in the format of `projects/{project_id}`.
-      For legacy support, the numeric project number with no padding is also
-      supported in the format of `projects/{project_number}`.
+  *   `parent` (*type:* `String.t`) - Required. It contains the Firebase project id (i.e. the unique identifier for your Firebase project), in the format of `projects/{project_id}`. For legacy support, the numeric project number with no padding is also supported in the format of `projects/{project_number}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

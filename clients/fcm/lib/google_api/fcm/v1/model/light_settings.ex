@@ -21,14 +21,9 @@ defmodule GoogleApi.FCM.V1.Model.LightSettings do
 
   ## Attributes
 
-  *   `color` (*type:* `GoogleApi.FCM.V1.Model.Color.t`, *default:* `nil`) - Required. Set `color` of the LED with
-      [google.type.Color](https://github.com/googleapis/googleapis/blob/master/google/type/color.proto).
-  *   `lightOffDuration` (*type:* `String.t`, *default:* `nil`) - Required. Along with `light_on_duration `, define the blink rate of LED
-      flashes. Resolution defined by
-      [proto.Duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.Duration)
-  *   `lightOnDuration` (*type:* `String.t`, *default:* `nil`) - Required. Along with `light_off_duration`, define the blink rate of LED
-      flashes. Resolution defined by
-      [proto.Duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.Duration)
+  *   `color` (*type:* `GoogleApi.FCM.V1.Model.Color.t`, *default:* `nil`) - Required. Set `color` of the LED with [google.type.Color](https://github.com/googleapis/googleapis/blob/master/google/type/color.proto).
+  *   `lightOffDuration` (*type:* `String.t`, *default:* `nil`) - Required. Along with `light_on_duration `, define the blink rate of LED flashes. Resolution defined by [proto.Duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.Duration)
+  *   `lightOnDuration` (*type:* `String.t`, *default:* `nil`) - Required. Along with `light_off_duration`, define the blink rate of LED flashes. Resolution defined by [proto.Duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.Duration)
   """
 
   use GoogleApi.Gax.ModelBase

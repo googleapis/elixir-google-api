@@ -17,37 +17,18 @@
 
 defmodule GoogleApi.FCM.V1.Model.AndroidConfig do
   @moduledoc """
-  Android specific options for messages sent through
-  [FCM connection server](https://goo.gl/4GLdUl).
+  Android specific options for messages sent through [FCM connection server](https://goo.gl/4GLdUl).
 
   ## Attributes
 
-  *   `collapseKey` (*type:* `String.t`, *default:* `nil`) - An identifier of a group of messages that can be collapsed, so that only
-      the last message gets sent when delivery can be resumed. A maximum of 4
-      different collapse keys is allowed at any given time.
-  *   `data` (*type:* `map()`, *default:* `nil`) - Arbitrary key/value payload. If present, it will override
-      google.firebase.fcm.v1.Message.data.
-  *   `directBootOk` (*type:* `boolean()`, *default:* `nil`) - If set to true, messages will be allowed to be delivered to the app while
-      the device is in direct boot mode. See [Support Direct Boot
-      mode](https://developer.android.com/training/articles/direct-boot).
+  *   `collapseKey` (*type:* `String.t`, *default:* `nil`) - An identifier of a group of messages that can be collapsed, so that only the last message gets sent when delivery can be resumed. A maximum of 4 different collapse keys is allowed at any given time.
+  *   `data` (*type:* `map()`, *default:* `nil`) - Arbitrary key/value payload. If present, it will override google.firebase.fcm.v1.Message.data.
+  *   `directBootOk` (*type:* `boolean()`, *default:* `nil`) - If set to true, messages will be allowed to be delivered to the app while the device is in direct boot mode. See [Support Direct Boot mode](https://developer.android.com/training/articles/direct-boot).
   *   `fcmOptions` (*type:* `GoogleApi.FCM.V1.Model.AndroidFcmOptions.t`, *default:* `nil`) - Options for features provided by the FCM SDK for Android.
   *   `notification` (*type:* `GoogleApi.FCM.V1.Model.AndroidNotification.t`, *default:* `nil`) - Notification to send to android devices.
-  *   `priority` (*type:* `String.t`, *default:* `nil`) - Message priority. Can take "normal" and "high" values.
-      For more information, see [Setting the priority of a
-      message](https://goo.gl/GjONJv).
-  *   `restrictedPackageName` (*type:* `String.t`, *default:* `nil`) - Package name of the application where the registration token must match in
-      order to receive the message.
-  *   `ttl` (*type:* `String.t`, *default:* `nil`) - How long (in seconds) the message should be kept in FCM storage if the
-      device is offline. The maximum time to live supported is 4 weeks, and the
-      default value is 4 weeks if not set. Set it to 0 if want to send the
-      message immediately.
-      In JSON format, the Duration type is encoded as a string rather than an
-      object, where the string ends in the suffix "s" (indicating seconds) and
-      is preceded by the number of seconds, with nanoseconds expressed as
-      fractional seconds. For example, 3 seconds with 0 nanoseconds should be
-      encoded in JSON format as "3s", while 3 seconds and 1 nanosecond should
-      be expressed in JSON format as "3.000000001s". The ttl will be rounded down
-      to the nearest second.
+  *   `priority` (*type:* `String.t`, *default:* `nil`) - Message priority. Can take "normal" and "high" values. For more information, see [Setting the priority of a message](https://goo.gl/GjONJv).
+  *   `restrictedPackageName` (*type:* `String.t`, *default:* `nil`) - Package name of the application where the registration token must match in order to receive the message.
+  *   `ttl` (*type:* `String.t`, *default:* `nil`) - How long (in seconds) the message should be kept in FCM storage if the device is offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks if not set. Set it to 0 if want to send the message immediately. In JSON format, the Duration type is encoded as a string rather than an object, where the string ends in the suffix "s" (indicating seconds) and is preceded by the number of seconds, with nanoseconds expressed as fractional seconds. For example, 3 seconds with 0 nanoseconds should be encoded in JSON format as "3s", while 3 seconds and 1 nanosecond should be expressed in JSON format as "3.000000001s". The ttl will be rounded down to the nearest second.
   """
 
   use GoogleApi.Gax.ModelBase

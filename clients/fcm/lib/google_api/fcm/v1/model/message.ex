@@ -21,24 +21,16 @@ defmodule GoogleApi.FCM.V1.Model.Message do
 
   ## Attributes
 
-  *   `android` (*type:* `GoogleApi.FCM.V1.Model.AndroidConfig.t`, *default:* `nil`) - Input only. Android specific options for messages sent through
-      [FCM connection server](https://goo.gl/4GLdUl).
-  *   `apns` (*type:* `GoogleApi.FCM.V1.Model.ApnsConfig.t`, *default:* `nil`) - Input only. [Apple Push Notification Service](https://goo.gl/MXRTPa)
-      specific options.
-  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition to send a message to,
-      e.g. "'foo' in topics && 'bar' in topics".
-  *   `data` (*type:* `map()`, *default:* `nil`) - Input only. Arbitrary key/value payload. The key should not be a reserved
-      word ("from", "message_type", or any word starting with "google" or "gcm").
-  *   `fcmOptions` (*type:* `GoogleApi.FCM.V1.Model.FcmOptions.t`, *default:* `nil`) - Input only. Template for FCM SDK feature options to use across all
-      platforms.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output Only. The identifier of the message sent, in the format of
-      `projects/*/messages/{message_id}`.
+  *   `android` (*type:* `GoogleApi.FCM.V1.Model.AndroidConfig.t`, *default:* `nil`) - Input only. Android specific options for messages sent through [FCM connection server](https://goo.gl/4GLdUl).
+  *   `apns` (*type:* `GoogleApi.FCM.V1.Model.ApnsConfig.t`, *default:* `nil`) - Input only. [Apple Push Notification Service](https://goo.gl/MXRTPa) specific options.
+  *   `condition` (*type:* `String.t`, *default:* `nil`) - Condition to send a message to, e.g. "'foo' in topics && 'bar' in topics".
+  *   `data` (*type:* `map()`, *default:* `nil`) - Input only. Arbitrary key/value payload. The key should not be a reserved word ("from", "message_type", or any word starting with "google" or "gcm").
+  *   `fcmOptions` (*type:* `GoogleApi.FCM.V1.Model.FcmOptions.t`, *default:* `nil`) - Input only. Template for FCM SDK feature options to use across all platforms.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output Only. The identifier of the message sent, in the format of `projects/*/messages/{message_id}`.
   *   `notification` (*type:* `GoogleApi.FCM.V1.Model.Notification.t`, *default:* `nil`) - Input only. Basic notification template to use across all platforms.
   *   `token` (*type:* `String.t`, *default:* `nil`) - Registration token to send a message to.
-  *   `topic` (*type:* `String.t`, *default:* `nil`) - Topic name to send a message to, e.g. "weather".
-      Note: "/topics/" prefix should not be provided.
-  *   `webpush` (*type:* `GoogleApi.FCM.V1.Model.WebpushConfig.t`, *default:* `nil`) - Input only. [Webpush protocol](https://tools.ietf.org/html/rfc8030)
-      options.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - Topic name to send a message to, e.g. "weather". Note: "/topics/" prefix should not be provided.
+  *   `webpush` (*type:* `GoogleApi.FCM.V1.Model.WebpushConfig.t`, *default:* `nil`) - Input only. [Webpush protocol](https://tools.ietf.org/html/rfc8030) options.
   """
 
   use GoogleApi.Gax.ModelBase
