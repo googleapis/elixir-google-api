@@ -17,24 +17,12 @@
 
 defmodule GoogleApi.Run.V1.Model.HTTPHeader do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  HTTPHeader describes a custom header to be used in HTTP probes
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported HTTPHeader describes a custom header to be used in HTTP probes
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The header field name
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The header field value
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The header field name
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The header field value
   """
 
   use GoogleApi.Gax.ModelBase

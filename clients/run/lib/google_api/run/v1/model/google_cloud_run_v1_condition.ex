@@ -26,11 +26,7 @@ defmodule GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition do
   *   `reason` (*type:* `String.t`, *default:* `nil`) - Optional. One-word CamelCase reason for the condition's last transition.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - Optional. How to interpret failures of this condition, one of Error, Warning, Info
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the condition, one of True, False, Unknown.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - type is used to communicate the status of the reconciliation process.
-      See also:
-      https://github.com/knative/serving/blob/master/docs/spec/errors.md#error-conditions-and-reporting
-      Types common to all resources include:
-      * "Ready": True when the Resource is ready.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/master/docs/spec/errors.md#error-conditions-and-reporting Types common to all resources include: * "Ready": True when the Resource is ready.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,25 +17,13 @@
 
 defmodule GoogleApi.Run.V1.Model.Volume do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  Volume represents a named volume in a container.
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported Volume represents a named volume in a container.
 
   ## Attributes
 
-  *   `configMap` (*type:* `GoogleApi.Run.V1.Model.ConfigMapVolumeSource.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Volume's name.
-  *   `secret` (*type:* `GoogleApi.Run.V1.Model.SecretVolumeSource.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
+  *   `configMap` (*type:* `GoogleApi.Run.V1.Model.ConfigMapVolumeSource.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported Volume's name.
+  *   `secret` (*type:* `GoogleApi.Run.V1.Model.SecretVolumeSource.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported
   """
 
   use GoogleApi.Gax.ModelBase

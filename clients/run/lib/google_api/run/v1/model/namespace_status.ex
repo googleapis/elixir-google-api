@@ -17,16 +17,11 @@
 
 defmodule GoogleApi.Run.V1.Model.NamespaceStatus do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run on GKE: supported
-
-  NamespaceStatus is information about the current status of a Namespace.
+  Cloud Run fully managed: not supported Cloud Run on GKE: supported NamespaceStatus is information about the current status of a Namespace.
 
   ## Attributes
 
-  *   `phase` (*type:* `String.t`, *default:* `nil`) - Phase is the current lifecycle phase of the namespace.
-      More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
+  *   `phase` (*type:* `String.t`, *default:* `nil`) - Phase is the current lifecycle phase of the namespace. More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
   """
 
   use GoogleApi.Gax.ModelBase

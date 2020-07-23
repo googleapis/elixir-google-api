@@ -17,32 +17,13 @@
 
 defmodule GoogleApi.Run.V1.Model.ConfigMapEnvSource do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  ConfigMapEnvSource selects a ConfigMap to populate the environment
-  variables with.
-
-  The contents of the target ConfigMap's Data field will represent the
-  key-value pairs as environment variables.
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported ConfigMapEnvSource selects a ConfigMap to populate the environment variables with. The contents of the target ConfigMap's Data field will represent the key-value pairs as environment variables.
 
   ## Attributes
 
-  *   `localObjectReference` (*type:* `GoogleApi.Run.V1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined
-      directly into the message. Use the "name" field instead.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The ConfigMap to select from.
-  *   `optional` (*type:* `boolean()`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Specify whether the ConfigMap must be defined
+  *   `localObjectReference` (*type:* `GoogleApi.Run.V1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined directly into the message. Use the "name" field instead.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The ConfigMap to select from.
+  *   `optional` (*type:* `boolean()`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Specify whether the ConfigMap must be defined
   """
 
   use GoogleApi.Gax.ModelBase

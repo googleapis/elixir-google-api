@@ -21,34 +21,10 @@ defmodule GoogleApi.Run.V1.Model.RevisionSpec do
 
   ## Attributes
 
-  *   `containerConcurrency` (*type:* `integer()`, *default:* `nil`) - (Optional)
-
-      ContainerConcurrency specifies the maximum allowed in-flight (concurrent)
-      requests per container instance of the Revision.
-
-      Cloud Run fully managed: supported, defaults to 80
-
-      Cloud Run for Anthos: supported, defaults to 0, which means concurrency
-      to the application is not limited, and the system decides the
-      target concurrency for the autoscaler.
-  *   `containers` (*type:* `list(GoogleApi.Run.V1.Model.Container.t)`, *default:* `nil`) - Containers holds the single container that defines the unit of execution
-      for this Revision. In the context of a Revision, we disallow a number of
-      fields on this Container, including: name and lifecycle.
-      In Cloud Run, only a single container may be provided.
-      The runtime contract is documented here:
-      https://github.com/knative/serving/blob/master/docs/runtime-contract.md
-  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the revision
-      of the service. The service account represents the identity of the
-      running revision, and determines what permissions the revision has. If
-      not provided, the revision will use the project's default service account.
-  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - TimeoutSeconds holds the max duration the instance is allowed for
-      responding to a request.
-
-      Cloud Run fully managed: defaults to 300 seconds (5 minutes). Maximum
-      allowed value is 900 seconds (15 minutes).
-
-      Cloud Run for Anthos: defaults to 300 seconds (5 minutes). Maximum allowed
-      value is configurable by the cluster operator.
+  *   `containerConcurrency` (*type:* `integer()`, *default:* `nil`) - (Optional) ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container instance of the Revision. Cloud Run fully managed: supported, defaults to 80 Cloud Run for Anthos: supported, defaults to 0, which means concurrency to the application is not limited, and the system decides the target concurrency for the autoscaler.
+  *   `containers` (*type:* `list(GoogleApi.Run.V1.Model.Container.t)`, *default:* `nil`) - Containers holds the single container that defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of fields on this Container, including: name and lifecycle. In Cloud Run, only a single container may be provided. The runtime contract is documented here: https://github.com/knative/serving/blob/master/docs/runtime-contract.md
+  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project's default service account.
+  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - TimeoutSeconds holds the max duration the instance is allowed for responding to a request. Cloud Run fully managed: defaults to 300 seconds (5 minutes). Maximum allowed value is 900 seconds (15 minutes). Cloud Run for Anthos: defaults to 300 seconds (5 minutes). Maximum allowed value is configurable by the cluster operator.
   *   `volumes` (*type:* `list(GoogleApi.Run.V1.Model.Volume.t)`, *default:* `nil`) - 
   """
 

@@ -173,9 +173,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the configuration to retrieve.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the configuration to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `configurations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -253,9 +251,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the configurations should be listed.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the configurations should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -270,17 +266,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
-      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
-          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
-          Not currently used by Cloud Run.
+      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
-      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
-          =, !=, exists, in, and notIn.
+      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
       *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
-      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
-          start. Not currently used by Cloud Run.
-      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
-          Not currently used by Cloud Run.
+      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
+      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -347,9 +338,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the domain mapping should be created.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -422,9 +411,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to delete.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -441,10 +428,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores
-          this setting, and deletes in the background. Please see
-          kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for
-          more information.
+      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -510,9 +494,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to retrieve.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -590,9 +572,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the domain mappings should be listed.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -607,17 +587,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
-      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
-          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
-          Not currently used by Cloud Run.
+      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
-      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
-          =, !=, exists, in, and notIn.
+      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
       *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
-      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
-          start. Not currently used by Cloud Run.
-      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
-          Not currently used by Cloud Run.
+      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
+      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -684,8 +659,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the namespace being retrieved. If needed, replace
-      {namespace_id} with the project ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the namespace being retrieved. If needed, replace {namespace_id} with the project ID.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `namespaces_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -762,8 +736,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the namespace being retrieved. If needed, replace
-      {namespace_id} with the project ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the namespace being retrieved. If needed, replace {namespace_id} with the project ID.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `namespaces_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -778,8 +751,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Indicates which fields in the provided namespace to update.
-          This field is currently unused.
+      *   `:updateMask` (*type:* `String.t`) - Required. Indicates which fields in the provided namespace to update. This field is currently unused.
       *   `:body` (*type:* `GoogleApi.Run.V1.Model.Namespace.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -845,9 +817,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the revision to delete.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the revision to delete. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -864,10 +834,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores
-          this setting, and deletes in the background. Please see
-          kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for
-          more information.
+      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -933,9 +900,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the revision to retrieve.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the revision to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1012,9 +977,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the revisions should be listed.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the revisions should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1029,17 +992,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
-      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
-          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
-          Not currently used by Cloud Run.
+      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
-      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
-          =, !=, exists, in, and notIn.
+      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
       *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
-      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
-          start. Not currently used by Cloud Run.
-      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
-          Not currently used by Cloud Run.
+      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
+      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1106,9 +1064,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the route to retrieve.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the route to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `routes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1182,9 +1138,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the routes should be listed.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the routes should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1199,17 +1153,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
-      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
-          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
-          Not currently used by Cloud Run.
+      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
-      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
-          =, !=, exists, in, and notIn.
+      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
       *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
-      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
-          start. Not currently used by Cloud Run.
-      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
-          Not currently used by Cloud Run.
+      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
+      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1276,8 +1225,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project ID or project number in which this secret should
-      be created.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project ID or project number in which this secret should be created.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1349,8 +1297,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the secret being retrieved. If needed, replace
-      {namespace_id} with the project ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the secret being retrieved. If needed, replace {namespace_id} with the project ID.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1419,20 +1366,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   end
 
   @doc """
-  Rpc to replace a secret.
-
-  Only the spec and metadata labels and annotations are modifiable. After
-  the Update request, Cloud Run will work to make the 'status'
-  match the requested 'spec'.
-
-  May provide metadata.resourceVersion to enforce update from last read for
-  optimistic concurrency control.
+  Rpc to replace a secret. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the secret being retrieved. If needed, replace
-      {namespace_id} with the project ID.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the secret being retrieved. If needed, replace {namespace_id} with the project ID.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1508,9 +1447,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the service should be created.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the service should be created. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1577,16 +1514,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   end
 
   @doc """
-  Delete a service.
-  This will cause the Service to stop serving traffic and will delete the
-  child entities like Routes, Configurations and Revisions.
+  Delete a service. This will cause the Service to stop serving traffic and will delete the child entities like Routes, Configurations and Revisions.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service to delete.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service to delete. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1603,10 +1536,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores
-          this setting, and deletes in the background. Please see
-          kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for
-          more information.
+      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1669,9 +1599,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service to retrieve.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service to retrieve. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1740,14 +1668,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   end
 
   @doc """
-  Get the IAM Access Control policy currently in effect for the given
-  Cloud Run service. This result does not include any inherited policies.
+  Get the IAM Access Control policy currently in effect for the given Cloud Run service. This result does not include any inherited policies.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1762,18 +1688,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1837,9 +1752,7 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the services should be listed.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the services should be listed. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1854,17 +1767,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:continue` (*type:* `String.t`) - Optional encoded string to continue paging.
-      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name.
-          Send this in a query string format. i.e. 'metadata.name%3Dlorem'.
-          Not currently used by Cloud Run.
+      *   `:fieldSelector` (*type:* `String.t`) - Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.
       *   `:includeUninitialized` (*type:* `boolean()`) - Not currently used by Cloud Run.
-      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are
-          =, !=, exists, in, and notIn.
+      *   `:labelSelector` (*type:* `String.t`) - Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
       *   `:limit` (*type:* `integer()`) - The maximum number of records that should be returned.
-      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should
-          start. Not currently used by Cloud Run.
-      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well.
-          Not currently used by Cloud Run.
+      *   `:resourceVersion` (*type:* `String.t`) - The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
+      *   `:watch` (*type:* `boolean()`) - Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1926,21 +1834,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   end
 
   @doc """
-  Replace a service.
-
-  Only the spec and metadata labels and annotations are modifiable. After
-  the Update request, Cloud Run will work to make the 'status'
-  match the requested 'spec'.
-
-  May provide metadata.resourceVersion to enforce update from last read for
-  optimistic concurrency control.
+  Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service being replaced.
-      For Cloud Run (fully managed), replace {namespace_id} with the project ID
-      or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the service being replaced. For Cloud Run (fully managed), replace {namespace_id} with the project ID or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2011,14 +1910,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   end
 
   @doc """
-  Sets the IAM Access control policy for the specified Service. Overwrites
-  any existing policy.
+  Sets the IAM Access control policy for the specified Service. Overwrites any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2092,15 +1989,12 @@ defmodule GoogleApi.Run.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified Project.
-
-  There are no permissions required for making this API call.
+  Returns permissions that a caller has on the specified Project. There are no permissions required for making this API call.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

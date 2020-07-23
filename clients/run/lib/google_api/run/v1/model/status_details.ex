@@ -17,36 +17,16 @@
 
 defmodule GoogleApi.Run.V1.Model.StatusDetails do
   @moduledoc """
-  StatusDetails is a set of additional properties that MAY be set by the
-  server to provide additional information about a response. The Reason
-  field of a Status object defines what attributes will be set. Clients
-  must ignore fields that do not match the defined type of each attribute,
-  and should assume that any attribute may be empty, invalid, or under
-  defined.
+  StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.
 
   ## Attributes
 
-  *   `causes` (*type:* `list(GoogleApi.Run.V1.Model.StatusCause.t)`, *default:* `nil`) - The Causes array includes more details associated with the StatusReason
-      failure. Not all StatusReasons may provide detailed causes.
-      +optional
-  *   `group` (*type:* `String.t`, *default:* `nil`) - The group attribute of the resource associated with the status
-      StatusReason. +optional
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind attribute of the resource associated with the status StatusReason.
-      On some operations may differ from the requested resource Kind.
-      More info:
-      https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
-      +optional
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name attribute of the resource associated with the status StatusReason
-      (when there is a single name which can be described).
-      +optional
-  *   `retryAfterSeconds` (*type:* `integer()`, *default:* `nil`) - If specified, the time in seconds before the operation should be retried.
-      Some errors may indicate the client must take an alternate action - for
-      those errors this field may indicate how long to wait before taking the
-      alternate action. +optional
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - UID of the resource.
-      (when there is a single resource which can be described).
-      More info: http://kubernetes.io/docs/user-guide/identifiers#uids
-      +optional
+  *   `causes` (*type:* `list(GoogleApi.Run.V1.Model.StatusCause.t)`, *default:* `nil`) - The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes. +optional
+  *   `group` (*type:* `String.t`, *default:* `nil`) - The group attribute of the resource associated with the status StatusReason. +optional
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds +optional
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described). +optional
+  *   `retryAfterSeconds` (*type:* `integer()`, *default:* `nil`) - If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action. +optional
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - UID of the resource. (when there is a single resource which can be described). More info: http://kubernetes.io/docs/user-guide/identifiers#uids +optional
   """
 
   use GoogleApi.Gax.ModelBase

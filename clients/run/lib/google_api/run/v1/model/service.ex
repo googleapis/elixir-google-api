@@ -17,29 +17,15 @@
 
 defmodule GoogleApi.Run.V1.Model.Service do
   @moduledoc """
-  Service acts as a top-level container that manages a set of Routes and
-  Configurations which implement a network service. Service exists to provide a
-  singular abstraction which can be access controlled, reasoned about, and
-  which encapsulates software lifecycle decisions such as rollout policy and
-  team resource ownership. Service acts only as an orchestrator of the
-  underlying Routes and Configurations (much as a kubernetes Deployment
-  orchestrates ReplicaSets).
-
-  The Service's controller will track the statuses of its owned Configuration
-  and Route, reflecting their statuses and conditions as its own.
-
-  See also:
-  https://github.com/knative/serving/blob/master/docs/spec/overview.md#service
+  Service acts as a top-level container that manages a set of Routes and Configurations which implement a network service. Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates software lifecycle decisions such as rollout policy and team resource ownership. Service acts only as an orchestrator of the underlying Routes and Configurations (much as a kubernetes Deployment orchestrates ReplicaSets). The Service's controller will track the statuses of its owned Configuration and Route, reflecting their statuses and conditions as its own. See also: https://github.com/knative/serving/blob/master/docs/spec/overview.md#service
 
   ## Attributes
 
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "serving.knative.dev/v1".
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "Service".
-  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Service, including name, namespace, labels,
-      and annotations.
+  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Service, including name, namespace, labels, and annotations.
   *   `spec` (*type:* `GoogleApi.Run.V1.Model.ServiceSpec.t`, *default:* `nil`) - Spec holds the desired state of the Service (from the client).
-  *   `status` (*type:* `GoogleApi.Run.V1.Model.ServiceStatus.t`, *default:* `nil`) - Status communicates the observed state of the Service (from the
-      controller).
+  *   `status` (*type:* `GoogleApi.Run.V1.Model.ServiceStatus.t`, *default:* `nil`) - Status communicates the observed state of the Service (from the controller).
   """
 
   use GoogleApi.Gax.ModelBase
