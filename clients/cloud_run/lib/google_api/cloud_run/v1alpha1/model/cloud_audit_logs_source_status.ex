@@ -17,18 +17,13 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSourceStatus do
   @moduledoc """
-  CloudAuditLogsSourceStatus represents the current state of a
-  CloudAuditLogsSource.
+  CloudAuditLogsSourceStatus represents the current state of a CloudAuditLogsSource.
 
   ## Attributes
 
-  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Condition.t)`, *default:* `nil`) - Array of observed CloudAuditLogsSourceConditions, indicating the current
-      state of the CloudAuditLogsSource.
-  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the CloudAuditLogsSource that
-      was last processed by the controller.
-  *   `sinkUri` (*type:* `String.t`, *default:* `nil`) - SinkURI is the current active sink URI that has been configured for the
-      Source.
-      +optional
+  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Condition.t)`, *default:* `nil`) - Array of observed CloudAuditLogsSourceConditions, indicating the current state of the CloudAuditLogsSource.
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the CloudAuditLogsSource that was last processed by the controller.
+  *   `sinkUri` (*type:* `String.t`, *default:* `nil`) - SinkURI is the current active sink URI that has been configured for the Source. +optional
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,12 +21,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Destination do
 
   ## Attributes
 
-  *   `ref` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectReference.t`, *default:* `nil`) - ObjectReference points to an Addressable.
-      + optional
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI is for direct URI Designations or used with the resulting URL from
-      Addressable ObjectReference. If used with an ObjectReference, will be
-      appended to the path of the resulting URL from the Addressable.
-      + optional
+  *   `ref` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectReference.t`, *default:* `nil`) - ObjectReference points to an Addressable. + optional
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI is for direct URI Designations or used with the resulting URL from Addressable ObjectReference. If used with an ObjectReference, will be appended to the path of the resulting URL from the Addressable. + optional
   """
 
   use GoogleApi.Gax.ModelBase

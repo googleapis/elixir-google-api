@@ -25,8 +25,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSource do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "CloudStorageSource".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this CloudStorageSource.
   *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSourceSpec.t`, *default:* `nil`) - Spec defines the desired state of the CloudStorageSource.
-  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSourceStatus.t`, *default:* `nil`) - Status represents the current state of the CloudStorageSource. This data
-      may be out of date.
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSourceStatus.t`, *default:* `nil`) - Status represents the current state of the CloudStorageSource. This data may be out of date.
   """
 
   use GoogleApi.Gax.ModelBase

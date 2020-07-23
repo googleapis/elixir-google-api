@@ -21,14 +21,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerSpec do
 
   ## Attributes
 
-  *   `broker` (*type:* `String.t`, *default:* `nil`) - Broker is the broker that this trigger receives events from. If not
-      specified, will default to 'default'.
-
-      Not currently supported by Cloud Run.
-  *   `filter` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t`, *default:* `nil`) - Optional. Filter is the filter to apply against all events from the Broker. Only
-      events that pass this filter will be sent to the Subscriber.
-      Note that filter is optional in knative and is only required in fully
-      managed due to different broker implementation.
+  *   `broker` (*type:* `String.t`, *default:* `nil`) - Broker is the broker that this trigger receives events from. If not specified, will default to 'default'. Not currently supported by Cloud Run.
+  *   `filter` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.TriggerFilter.t`, *default:* `nil`) - Optional. Filter is the filter to apply against all events from the Broker. Only events that pass this filter will be sent to the Subscriber. Note that filter is optional in knative and is only required in fully managed due to different broker implementation.
   *   `subscriber` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is the addressable that will receive events.
   """
 

@@ -21,24 +21,11 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.DomainMappingStatus do
 
   ## Attributes
 
-  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.DomainMappingCondition.t)`, *default:* `nil`) - Array of observed DomainMappingConditions, indicating the current state
-      of the DomainMapping.
+  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.DomainMappingCondition.t)`, *default:* `nil`) - Array of observed DomainMappingConditions, indicating the current state of the DomainMapping.
   *   `mappedRouteName` (*type:* `String.t`, *default:* `nil`) - The name of the route that the mapping currently points to.
-  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the DomainMapping that
-      was last processed by the controller.
-
-      Clients polling for completed reconciliation should poll until
-      observedGeneration = metadata.generation and the Ready condition's status
-      is True or False.
-  *   `resourceRecords` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.ResourceRecord.t)`, *default:* `nil`) - The resource records required to configure this domain mapping. These
-      records must be added to the domain's DNS configuration in order to
-      serve the application via this domain mapping.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run on GKE: supported
-
-      Holds the URL that will serve the traffic of the DomainMapping.
-      +optional
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the DomainMapping that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False.
+  *   `resourceRecords` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.ResourceRecord.t)`, *default:* `nil`) - The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run on GKE: supported Holds the URL that will serve the traffic of the DomainMapping. +optional
   """
 
   use GoogleApi.Gax.ModelBase

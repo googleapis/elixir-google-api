@@ -22,21 +22,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.EnvVar do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the environment variable. Must be a C_IDENTIFIER.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Variable references $(VAR_NAME) are expanded
-      using the previous defined environment variables in the container and
-      any route environment variables. If a variable cannot be resolved,
-      the reference in the input string will be unchanged. The $(VAR_NAME)
-      syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped
-      references will never be expanded, regardless of whether the variable
-      exists or not.
-      Defaults to "".
-      +optional
-  *   `valueFrom` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.EnvVarSource.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run on GKE: supported
-
-      Source for the environment variable's value. Cannot be used if value is not
-      empty. +optional
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any route environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "". +optional
+  *   `valueFrom` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.EnvVarSource.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run on GKE: supported Source for the environment variable's value. Cannot be used if value is not empty. +optional
   """
 
   use GoogleApi.Gax.ModelBase

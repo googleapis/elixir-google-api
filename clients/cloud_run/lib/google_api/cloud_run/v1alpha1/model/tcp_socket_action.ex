@@ -21,11 +21,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TCPSocketAction do
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - Optional: Host name to connect to, defaults to the pod IP.
-      +optional
-  *   `port` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t`, *default:* `nil`) - Number or name of the port to access on the container.
-      Number must be in the range 1 to 65535.
-      Name must be an IANA_SVC_NAME.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Optional: Host name to connect to, defaults to the pod IP. +optional
+  *   `port` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.IntOrString.t`, *default:* `nil`) - Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   """
 
   use GoogleApi.Gax.ModelBase

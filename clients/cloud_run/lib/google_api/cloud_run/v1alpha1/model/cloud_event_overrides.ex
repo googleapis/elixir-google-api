@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudEventOverrides do
   @moduledoc """
-  CloudEventOverrides defines arguments for a Source that control the output
-  format of the CloudEvents produced by the Source.
+  CloudEventOverrides defines arguments for a Source that control the output format of the CloudEvents produced by the Source.
 
   ## Attributes
 
-  *   `extensions` (*type:* `map()`, *default:* `nil`) - Extensions specify what attribute are added or overridden on the outbound
-      event. Each `Extensions` key-value pair are set on the event as an
-      attribute extension independently.
-      +optional
+  *   `extensions` (*type:* `map()`, *default:* `nil`) - Extensions specify what attribute are added or overridden on the outbound event. Each `Extensions` key-value pair are set on the event as an attribute extension independently. +optional
   """
 
   use GoogleApi.Gax.ModelBase

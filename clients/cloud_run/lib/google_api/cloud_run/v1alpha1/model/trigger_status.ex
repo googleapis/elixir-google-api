@@ -21,10 +21,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.TriggerStatus do
 
   ## Attributes
 
-  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition.t)`, *default:* `nil`) - Array of observed TriggerConditions, indicating the current state
-      of the Trigger.
-  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Trigger that
-      was last processed by the controller.
+  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TriggerCondition.t)`, *default:* `nil`) - Array of observed TriggerConditions, indicating the current state of the Trigger.
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Trigger that was last processed by the controller.
   *   `subscriberUri` (*type:* `String.t`, *default:* `nil`) - SubscriberURI is the resolved URI of the receiver for this Trigger.
   """
 

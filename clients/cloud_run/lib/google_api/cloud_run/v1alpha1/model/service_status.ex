@@ -21,38 +21,14 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceStatus do
 
   ## Attributes
 
-  *   `address` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Addressable.t`, *default:* `nil`) - From RouteStatus.
-      Similar to url, information on where the service is available on HTTP.
-  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition.t)`, *default:* `nil`) - Conditions communicates information about ongoing/complete
-      reconciliation processes that bring the "spec" inline with the observed
-      state of the world.
-  *   `domain` (*type:* `String.t`, *default:* `nil`) - From RouteStatus.
-      Domain holds the top-level domain that will distribute traffic over the
-      provided targets. It generally has the form
-      https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
-  *   `latestCreatedRevisionName` (*type:* `String.t`, *default:* `nil`) - From ConfigurationStatus.
-      LatestCreatedRevisionName is the last revision that was created from this
-      Service's Configuration. It might not be ready yet, for that use
-      LatestReadyRevisionName.
-  *   `latestReadyRevisionName` (*type:* `String.t`, *default:* `nil`) - From ConfigurationStatus.
-      LatestReadyRevisionName holds the name of the latest Revision stamped out
-      from this Service's Configuration that has had its "Ready" condition become
-      "True".
-  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Route that
-      was last processed by the controller.
-
-      Clients polling for completed reconciliation should poll until
-      observedGeneration = metadata.generation and the Ready condition's status
-      is True or False.
-  *   `traffic` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t)`, *default:* `nil`) - From RouteStatus.
-      Traffic holds the configured traffic distribution.
-      These entries will always contain RevisionName references.
-      When ConfigurationName appears in the spec, this will hold the
-      LatestReadyRevisionName that we last observed.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - From RouteStatus.
-      URL holds the url that will distribute traffic over the provided traffic
-      targets. It generally has the form
-      https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
+  *   `address` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Addressable.t`, *default:* `nil`) - From RouteStatus. Similar to url, information on where the service is available on HTTP.
+  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.ServiceCondition.t)`, *default:* `nil`) - Conditions communicates information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - From RouteStatus. Domain holds the top-level domain that will distribute traffic over the provided targets. It generally has the form https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
+  *   `latestCreatedRevisionName` (*type:* `String.t`, *default:* `nil`) - From ConfigurationStatus. LatestCreatedRevisionName is the last revision that was created from this Service's Configuration. It might not be ready yet, for that use LatestReadyRevisionName.
+  *   `latestReadyRevisionName` (*type:* `String.t`, *default:* `nil`) - From ConfigurationStatus. LatestReadyRevisionName holds the name of the latest Revision stamped out from this Service's Configuration that has had its "Ready" condition become "True".
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False.
+  *   `traffic` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t)`, *default:* `nil`) - From RouteStatus. Traffic holds the configured traffic distribution. These entries will always contain RevisionName references. When ConfigurationName appears in the spec, this will hold the LatestReadyRevisionName that we last observed.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - From RouteStatus. URL holds the url that will distribute traffic over the provided traffic targets. It generally has the form https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
   """
 
   use GoogleApi.Gax.ModelBase

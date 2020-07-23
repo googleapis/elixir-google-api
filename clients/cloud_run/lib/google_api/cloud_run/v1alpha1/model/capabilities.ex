@@ -21,10 +21,8 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.Capabilities do
 
   ## Attributes
 
-  *   `add` (*type:* `list(String.t)`, *default:* `nil`) - Added capabilities
-      +optional
-  *   `drop` (*type:* `list(String.t)`, *default:* `nil`) - Removed capabilities
-      +optional
+  *   `add` (*type:* `list(String.t)`, *default:* `nil`) - Added capabilities +optional
+  *   `drop` (*type:* `list(String.t)`, *default:* `nil`) - Removed capabilities +optional
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,10 +17,7 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecManualType do
   @moduledoc """
-  ServiceSpecManualType contains the options for configuring a manual service.
-  See ServiceSpec for more details.
-
-  Not currently supported by Cloud Run.
+  ServiceSpecManualType contains the options for configuring a manual service. See ServiceSpec for more details. Not currently supported by Cloud Run.
 
   ## Attributes
 

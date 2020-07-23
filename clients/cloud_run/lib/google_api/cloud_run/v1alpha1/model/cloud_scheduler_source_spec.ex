@@ -21,22 +21,14 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSourceSpec do
 
   ## Attributes
 
-  *   `ceOverrides` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudEventOverrides.t`, *default:* `nil`) - CloudEventOverrides defines overrides to control the output format and
-      modifications of the event sent to the sink.
+  *   `ceOverrides` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudEventOverrides.t`, *default:* `nil`) - CloudEventOverrides defines overrides to control the output format and modifications of the event sent to the sink.
   *   `data` (*type:* `String.t`, *default:* `nil`) - Data to send in the payload of the Event.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location to create the Scheduler job in.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - Project is the ID of the Google Cloud Project that the CloudPubSubSource
-      Topic exists in. If omitted, defaults to same as the cluster.
-  *   `pubsubSecret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - CloudPubSubSourceSecret is the credential to use to create
-      Topic / PullSubscription resources. If omitted, uses Secret.
-  *   `schedule` (*type:* `String.t`, *default:* `nil`) - Schedule in cron format, for example: "* * * * *" would be run
-      every minute.
-  *   `secret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - Secret is the credential to use to create the Scheduler Job.
-      If not specified, defaults to:
-      Name: google-cloud-key
-      Key: key.json
-  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is a reference to an object that will resolve to a domain name or a
-      URI directly to use as the sink.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - Project is the ID of the Google Cloud Project that the CloudPubSubSource Topic exists in. If omitted, defaults to same as the cluster.
+  *   `pubsubSecret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - CloudPubSubSourceSecret is the credential to use to create Topic / PullSubscription resources. If omitted, uses Secret.
+  *   `schedule` (*type:* `String.t`, *default:* `nil`) - Schedule in cron format, for example: "* * * * *" would be run every minute.
+  *   `secret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - Secret is the credential to use to create the Scheduler Job. If not specified, defaults to: Name: google-cloud-key Key: key.json
+  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is a reference to an object that will resolve to a domain name or a URI directly to use as the sink.
   """
 
   use GoogleApi.Gax.ModelBase

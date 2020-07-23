@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest do
   @moduledoc """
-  ServiceSpecRunLatest contains the options for always having a route to the
-  latest configuration. See ServiceSpec for more details.
+  ServiceSpecRunLatest contains the options for always having a route to the latest configuration. See ServiceSpec for more details.
 
   ## Attributes
 

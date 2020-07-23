@@ -17,31 +17,14 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionStatus do
   @moduledoc """
-  RevisionStatus communicates the observed state of the Revision (from the
-  controller).
+  RevisionStatus communicates the observed state of the Revision (from the controller).
 
   ## Attributes
 
-  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.RevisionCondition.t)`, *default:* `nil`) - Conditions communicates information about ongoing/complete
-      reconciliation processes that bring the "spec" inline with the observed
-      state of the world.
-
-      As a Revision is being prepared, it will incrementally
-      update conditions "ResourcesAvailable", "ContainerHealthy", and "Active",
-      which contribute to the overall "Ready" condition.
-  *   `imageDigest` (*type:* `String.t`, *default:* `nil`) - ImageDigest holds the resolved digest for the image specified
-      within .Spec.Container.Image. The digest is resolved during the creation
-      of Revision. This field holds the digest value regardless of whether
-      a tag or digest was originally specified in the Container object.
-  *   `logUrl` (*type:* `String.t`, *default:* `nil`) - Specifies the generated logging url for this particular revision
-      based on the revision url template specified in the controller's config.
-      +optional
-  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Revision that
-      was last processed by the controller.
-
-      Clients polling for completed reconciliation should poll until
-      observedGeneration = metadata.generation, and the Ready condition's status
-      is True or False.
+  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.RevisionCondition.t)`, *default:* `nil`) - Conditions communicates information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world. As a Revision is being prepared, it will incrementally update conditions "ResourcesAvailable", "ContainerHealthy", and "Active", which contribute to the overall "Ready" condition.
+  *   `imageDigest` (*type:* `String.t`, *default:* `nil`) - ImageDigest holds the resolved digest for the image specified within .Spec.Container.Image. The digest is resolved during the creation of Revision. This field holds the digest value regardless of whether a tag or digest was originally specified in the Container object.
+  *   `logUrl` (*type:* `String.t`, *default:* `nil`) - Specifies the generated logging url for this particular revision based on the revision url template specified in the controller's config. +optional
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Revision that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False.
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - Not currently used by Cloud Run.
   """
 

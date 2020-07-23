@@ -17,27 +17,13 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.SecretEnvSource do
   @moduledoc """
-  SecretEnvSource selects a Secret to populate the environment
-  variables with.
-
-  The contents of the target Secret's Data field will represent the
-  key-value pairs as environment variables.
+  SecretEnvSource selects a Secret to populate the environment variables with. The contents of the target Secret's Data field will represent the key-value pairs as environment variables.
 
   ## Attributes
 
-  *   `localObjectReference` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined
-      directly into the message. Use the "name" field instead.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The Secret to select from.
-  *   `optional` (*type:* `boolean()`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Specify whether the Secret must be defined
-      +optional
+  *   `localObjectReference` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined directly into the message. Use the "name" field instead.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The Secret to select from.
+  *   `optional` (*type:* `boolean()`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported Specify whether the Secret must be defined +optional
   """
 
   use GoogleApi.Gax.ModelBase

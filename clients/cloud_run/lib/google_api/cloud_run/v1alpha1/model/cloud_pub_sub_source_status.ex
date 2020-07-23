@@ -21,13 +21,9 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSourceStatus do
 
   ## Attributes
 
-  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Condition.t)`, *default:* `nil`) - Array of observed CloudPubSubSourceConditions, indicating the current state
-      of the CloudPubSubSource.
-  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the CloudPubSubSource that
-      was last processed by the controller.
-  *   `sinkUri` (*type:* `String.t`, *default:* `nil`) - SinkURI is the current active sink URI that has been configured for the
-      Source.
-      +optional
+  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Condition.t)`, *default:* `nil`) - Array of observed CloudPubSubSourceConditions, indicating the current state of the CloudPubSubSource.
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the CloudPubSubSource that was last processed by the controller.
+  *   `sinkUri` (*type:* `String.t`, *default:* `nil`) - SinkURI is the current active sink URI that has been configured for the Source. +optional
   """
 
   use GoogleApi.Gax.ModelBase

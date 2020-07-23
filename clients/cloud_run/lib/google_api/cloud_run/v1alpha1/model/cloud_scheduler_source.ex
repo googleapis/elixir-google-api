@@ -25,8 +25,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSource do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "CloudSchedulerSource".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this CloudSchedulerSource.
   *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSourceSpec.t`, *default:* `nil`) - Spec defines the desired state of the CloudSchedulerSource.
-  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSourceStatus.t`, *default:* `nil`) - Status represents the current state of the CloudSchedulerSource. This data
-      may be out of date.
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSourceStatus.t`, *default:* `nil`) - Status represents the current state of the CloudSchedulerSource. This data may be out of date.
   """
 
   use GoogleApi.Gax.ModelBase

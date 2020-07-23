@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.AuthorizedDomain do
   @moduledoc """
-  A domain that a user has been authorized to administer. To authorize use
-  of a domain, verify ownership via
-  [Webmaster Central](https://www.google.com/webmasters/verification/home).
+  A domain that a user has been authorized to administer. To authorize use of a domain, verify ownership via [Webmaster Central](https://www.google.com/webmasters/verification/home).
 
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the domain authorized for use. Example: `example.com`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Read only. Full path to the `AuthorizedDomain` resource in the API.
-      Example: `apps/myapp/authorizedDomains/example.com`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Read only. Full path to the `AuthorizedDomain` resource in the API. Example: `apps/myapp/authorizedDomains/example.com`.
   """
 
   use GoogleApi.Gax.ModelBase

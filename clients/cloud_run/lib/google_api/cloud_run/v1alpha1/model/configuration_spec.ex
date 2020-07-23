@@ -17,26 +17,12 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec do
   @moduledoc """
-  ConfigurationSpec holds the desired state of the Configuration (from the
-  client).
+  ConfigurationSpec holds the desired state of the Configuration (from the client).
 
   ## Attributes
 
-  *   `generation` (*type:* `integer()`, *default:* `nil`) - Deprecated and not currently populated by Cloud Run. See
-      metadata.generation instead, which is the sequence number containing the
-      latest generation of the desired state.
-
-      Read-only.
-  *   `revisionTemplate` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t`, *default:* `nil`) - RevisionTemplate holds the latest specification for the Revision to
-      be stamped out. The template references the container image, and may also
-      include labels and annotations that should be attached to the Revision.
-      To correlate a Revision, and/or to force a Revision to be created when the
-      spec doesn't otherwise change, a nonce label may be provided in the
-      template metadata. For more details, see:
-      https://github.com/knative/serving/blob/master/docs/client-conventions.md#associate-modifications-with-revisions
-
-      Cloud Run does not currently support referencing a build that is
-      responsible for materializing the container image from source.
+  *   `generation` (*type:* `integer()`, *default:* `nil`) - Deprecated and not currently populated by Cloud Run. See metadata.generation instead, which is the sequence number containing the latest generation of the desired state. Read-only.
+  *   `revisionTemplate` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t`, *default:* `nil`) - RevisionTemplate holds the latest specification for the Revision to be stamped out. The template references the container image, and may also include labels and annotations that should be attached to the Revision. To correlate a Revision, and/or to force a Revision to be created when the spec doesn't otherwise change, a nonce label may be provided in the template metadata. For more details, see: https://github.com/knative/serving/blob/master/docs/client-conventions.md#associate-modifications-with-revisions Cloud Run does not currently support referencing a build that is responsible for materializing the container image from source.
   *   `template` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t`, *default:* `nil`) - Template holds the latest specification for the Revision to be stamped out.
   """
 
