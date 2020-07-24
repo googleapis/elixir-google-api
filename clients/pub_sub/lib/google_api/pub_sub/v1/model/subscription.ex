@@ -49,6 +49,10 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
       parent project (i.e.,
       service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have
       permission to Acknowledge() messages on this subscription.
+  *   `enableMessageOrdering` (*type:* `boolean()`, *default:* `nil`) - If true, messages published with the same `ordering_key` in `PubsubMessage`
+      will be delivered to the subscribers in the order in which they
+      are received by the Pub/Sub system. Otherwise, they may be delivered in
+      any order.
   *   `expirationPolicy` (*type:* `GoogleApi.PubSub.V1.Model.ExpirationPolicy.t`, *default:* `nil`) - A policy that specifies the conditions for this subscription's expiration.
       A subscription is considered active as long as any connected subscriber is
       successfully consuming messages from the subscription or is issuing
@@ -100,6 +104,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
   @type t :: %__MODULE__{
           :ackDeadlineSeconds => integer(),
           :deadLetterPolicy => GoogleApi.PubSub.V1.Model.DeadLetterPolicy.t(),
+          :enableMessageOrdering => boolean(),
           :expirationPolicy => GoogleApi.PubSub.V1.Model.ExpirationPolicy.t(),
           :filter => String.t(),
           :labels => map(),
@@ -113,6 +118,7 @@ defmodule GoogleApi.PubSub.V1.Model.Subscription do
 
   field(:ackDeadlineSeconds)
   field(:deadLetterPolicy, as: GoogleApi.PubSub.V1.Model.DeadLetterPolicy)
+  field(:enableMessageOrdering)
   field(:expirationPolicy, as: GoogleApi.PubSub.V1.Model.ExpirationPolicy)
   field(:filter)
   field(:labels, type: :map)

@@ -37,6 +37,12 @@ defmodule GoogleApi.PubSub.V1.Model.PubsubMessage do
       Guaranteed to be unique within the topic. This value may be read by a
       subscriber that receives a `PubsubMessage` via a `Pull` call or a push
       delivery. It must not be populated by the publisher in a `Publish` call.
+  *   `orderingKey` (*type:* `String.t`, *default:* `nil`) - If non-empty, identifies related messages for which publish order should be
+      respected. If a `Subscription` has `enable_message_ordering` set to `true`,
+      messages published with the same non-empty `ordering_key` value will be
+      delivered to subscribers in the order in which they are received by the
+      Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
+      must specify the same `ordering_key` value.
   *   `publishTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the message was published, populated by the server when
       it receives the `Publish` call. It must not be populated by the
       publisher in a `Publish` call.
@@ -48,12 +54,14 @@ defmodule GoogleApi.PubSub.V1.Model.PubsubMessage do
           :attributes => map(),
           :data => String.t(),
           :messageId => String.t(),
+          :orderingKey => String.t(),
           :publishTime => DateTime.t()
         }
 
   field(:attributes, type: :map)
   field(:data)
   field(:messageId)
+  field(:orderingKey)
   field(:publishTime, as: DateTime)
 end
 
