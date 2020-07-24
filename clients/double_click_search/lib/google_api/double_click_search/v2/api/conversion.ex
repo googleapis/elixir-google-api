@@ -36,8 +36,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   *   `engine_account_id` (*type:* `String.t`) - Numeric ID of the engine account.
   *   `end_date` (*type:* `integer()`) - Last date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
   *   `row_count` (*type:* `integer()`) - The number of conversions to return per call.
-  *   `start_date` (*type:* `integer()`) - First date (inclusive) on which to retrieve conversions. Format is
-      yyyymmdd.
+  *   `start_date` (*type:* `integer()`) - First date (inclusive) on which to retrieve conversions. Format is yyyymmdd.
   *   `start_row` (*type:* `integer()`) - The 0-based starting index for retrieving conversions results.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -247,8 +246,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Api.Conversion do
   end
 
   @doc """
-  Updates the availabilities of a batch of floodlight activities in
-  DoubleClick Search.
+  Updates the availabilities of a batch of floodlight activities in DoubleClick Search.
 
   ## Parameters
 

@@ -22,8 +22,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.ConversionList do
   ## Attributes
 
   *   `conversion` (*type:* `list(GoogleApi.DoubleClickSearch.V2.Model.Conversion.t)`, *default:* `nil`) - The conversions being requested.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies this as a ConversionList resource. Value: the fixed string
-      <code>doubleclicksearch#conversionList</code>.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies this as a ConversionList resource. Value: the fixed string doubleclicksearch#conversionList.
   """
 
   use GoogleApi.Gax.ModelBase
