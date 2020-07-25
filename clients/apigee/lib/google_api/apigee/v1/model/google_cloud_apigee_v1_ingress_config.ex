@@ -21,14 +21,13 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IngressConfig do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time at which the IngressConfig was created.
   *   `environmentGroups` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig.t)`, *default:* `nil`) - List of environment groups in the organization.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource in the following format:
       `organizations/{org}/deployedIngressConfig`.
+  *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Time at which the IngressConfig revision was created.
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision id that defines the ordering on IngressConfig resources.
       The higher the revision, the more recently the configuration
       was deployed.
-  *   `sequenceNumber` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: Use revision_id
   *   `uid` (*type:* `String.t`, *default:* `nil`) - A unique id for the ingress config that will only change if the
       organization is deleted and recreated.
   """
@@ -36,16 +35,13 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IngressConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :createTime => DateTime.t(),
           :environmentGroups =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig.t()),
           :name => String.t(),
+          :revisionCreateTime => DateTime.t(),
           :revisionId => String.t(),
-          :sequenceNumber => String.t(),
           :uid => String.t()
         }
-
-  field(:createTime, as: DateTime)
 
   field(:environmentGroups,
     as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig,
@@ -53,8 +49,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IngressConfig do
   )
 
   field(:name)
+  field(:revisionCreateTime, as: DateTime)
   field(:revisionId)
-  field(:sequenceNumber)
   field(:uid)
 end
 

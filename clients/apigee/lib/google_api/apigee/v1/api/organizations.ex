@@ -160,7 +160,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the deployed configuration for the organization in the following
+  *   `name` (*type:* `String.t`) - Required. Name of the deployed configuration for the organization in the following
       format: 'organizations/{org}/deployedIngressConfig'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -7292,6 +7292,15 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:sequencedRollout` (*type:* `boolean()`) - If true, a best-effort attempt will be made to remove the environment group
+          routing rules corresponding to this deployment before removing the
+          deployment from the runtime. This is likely to be a rare use case; it is
+          only needed when the intended effect of undeploying this proxy is to cause
+          the traffic it currently handles to be rerouted to some other existing
+          proxy in the environment group. The GenerateUndeployChangeReport API may be
+          used to examine routing changes before issuing the undeployment request,
+          and its response will indicate if a sequenced rollout is recommended for
+          the undeployment.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7325,7 +7334,8 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :sequencedRollout => :query
     }
 
     request =
@@ -11100,7 +11110,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the instance. Use the following structure in your request:
+  *   `name` (*type:* `String.t`) - Required. Name of the instance. Use the following structure in your request:
         `organizations/{org}/instance/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -11167,7 +11177,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of the instance. Use the following structure in your request:
+  *   `name` (*type:* `String.t`) - Required. Name of the instance. Use the following structure in your request:
         `organizations/{org}/instances/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -11229,7 +11239,7 @@ defmodule GoogleApi.Apigee.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Apigee.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Name of the organization. Use the following structure in your request:
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization. Use the following structure in your request:
         `organizations/{org}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
