@@ -26,8 +26,8 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns metadata about the search performed, metadata about the custom
-  search engine used for the search, and the search results.
+  Returns metadata about the search performed, metadata about the
+  engine used for the search, and the search results.
 
   ## Parameters
 
@@ -67,7 +67,7 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
           See the [Country Parameter
           Values](https://developers.google.com/custom-search/docs/xml_results_appendices#countryCollections)
           page for a list of valid values for this parameter.
-      *   `:cx` (*type:* `String.t`) - The custom search engine ID to use for this request.
+      *   `:cx` (*type:* `String.t`) - The Programmable Search Engine ID to use for this request.
       *   `:dateRestrict` (*type:* `String.t`) - Restricts results to URLs based on date. Supported values include:
 
           * `d[number]`: requests results from the specified number of past days.
@@ -389,8 +389,8 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
   end
 
   @doc """
-  Returns metadata about the search performed, metadata about the custom
-  search engine used for the search, and the search results. Uses a small set
+  Returns metadata about the search performed, metadata about the
+  engine used for the search, and the search results. Uses a small set
   of url patterns.
 
   ## Parameters
@@ -431,7 +431,7 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
           See the [Country Parameter
           Values](https://developers.google.com/custom-search/docs/xml_results_appendices#countryCollections)
           page for a list of valid values for this parameter.
-      *   `:cx` (*type:* `String.t`) - The custom search engine ID to use for this request.
+      *   `:cx` (*type:* `String.t`) - The Programmable Search Engine ID to use for this request.
       *   `:dateRestrict` (*type:* `String.t`) - Restricts results to URLs based on date. Supported values include:
 
           * `d[number]`: requests results from the specified number of past days.
