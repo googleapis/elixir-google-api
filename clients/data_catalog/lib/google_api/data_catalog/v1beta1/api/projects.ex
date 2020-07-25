@@ -26,23 +26,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  A maximum of 10,000 entry groups may be created per organization across all
-  locations.
-
-  Users should enable the Data Catalog API in the project identified by
-  the `parent` parameter (see [Data Catalog Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
+  A maximum of 10,000 entry groups may be created per organization across all locations. Users should enable the Data Catalog API in the project identified by the `parent` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project this entry group is in. Example:
-
-      * projects/{project_id}/locations/{location}
-
-      Note that this EntryGroup and its child resources may not actually be
-      stored in the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project this entry group is in. Example: * projects/{project_id}/locations/{location} Note that this EntryGroup and its child resources may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -56,9 +45,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:entryGroupId` (*type:* `String.t`) - Required. The id of the entry group to create.
-          The id must begin with a letter or underscore, contain only English
-          letters, numbers and underscores, and be at most 64 characters.
+      *   `:entryGroupId` (*type:* `String.t`) - Required. The id of the entry group to create. The id must begin with a letter or underscore, contain only English letters, numbers and underscores, and be at most 64 characters.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -119,17 +106,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes an EntryGroup. Only entry groups that do not contain entries can be
-  deleted. Users should enable the Data Catalog API in the project
-  identified by the `name` parameter (see [Data Catalog Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
+  Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users should enable the Data Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry group. For example,
-      `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry group. For example, `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -211,8 +193,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry group. For example,
-      `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry group. For example, `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -292,28 +273,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource. A `NOT_FOUND` error
-  is returned if the resource does not exist. An empty policy is returned
-  if the resource exists but does not have a policy set on it.
-
-  Supported resources are:
-    - Tag templates.
-    - Entries.
-    - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-  and any external Google Cloud Platform resources synced to Data Catalog.
-
-  Callers must have following Google IAM permission
-    - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
-      templates.
-    - `datacatalog.entries.getIamPolicy` to get policies on entries.
-    - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+  Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if the resource exists but does not have a policy set on it. Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -395,10 +360,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the location that contains the entry groups, which can be
-      provided in URL format. Example:
-
-      * projects/{project_id}/locations/{location}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the location that contains the entry groups, which can be provided in URL format. Example: * projects/{project_id}/locations/{location}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -412,10 +374,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. Default is 10. Max limit is 1000.
-          Throws an invalid argument for `page_size > 1000`.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Token that specifies which page is requested. If empty, the first page is
-          returned.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. Default is 10. Max limit is 1000. Throws an invalid argument for `page_size > 1000`.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Token that specifies which page is requested. If empty, the first page is returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -479,21 +439,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates an EntryGroup. The user should enable the Data Catalog API in the
-  project identified by the `entry_group.name` parameter (see [Data Catalog
-  Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
+  Updates an EntryGroup. The user should enable the Data Catalog API in the project identified by the `entry_group.name` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `entryGroup.name`. The resource name of the entry group in URL format. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-
-      Note that this EntryGroup and its child resources may not actually be
-      stored in the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `entryGroup.name`. The resource name of the entry group in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} Note that this EntryGroup and its child resources may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `entryGroup.name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `entryGroup.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -508,8 +459,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The fields to update on the entry group. If absent or empty, all modifiable
-          fields are updated.
+      *   `:updateMask` (*type:* `String.t`) - The fields to update on the entry group. If absent or empty, all modifiable fields are updated.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1EntryGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -576,26 +526,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy for a resource. Replaces any existing
-  policy.
-  Supported resources are:
-    - Tag templates.
-    - Entries.
-    - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-  and any external Google Cloud Platform resources synced to Data Catalog.
-
-  Callers must have following Google IAM permission
-    - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
-      templates.
-    - `datacatalog.entries.setIamPolicy` to set policies on entries.
-    - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
+  Sets the access control policy for a resource. Replaces any existing policy. Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. Callers must have following Google IAM permission - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates. - `datacatalog.entries.setIamPolicy` to set policies on entries. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -672,25 +608,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns the caller's permissions on a resource.
-  If the resource does not exist, an empty set of permissions is returned
-  (We don't return a `NOT_FOUND` error).
-
-  Supported resources are:
-    - Tag templates.
-    - Entries.
-    - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-  and any external Google Cloud Platform resources synced to Data Catalog.
-
-  A caller is not required to have Google IAM permission to make this
-  request.
+  Returns the caller's permissions on a resource. If the resource does not exist, an empty set of permissions is returned (We don't return a `NOT_FOUND` error). Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. A caller is not required to have Google IAM permission to make this request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -769,25 +692,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates an entry. Only entries of 'FILESET' type or user-specified type can
-  be created.
-
-  Users should enable the Data Catalog API in the project identified by
-  the `parent` parameter (see [Data Catalog Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
-
-  A maximum of 100,000 entries may be created per entry group.
+  Creates an entry. Only entries of 'FILESET' type or user-specified type can be created. Users should enable the Data Catalog API in the project identified by the `parent` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information). A maximum of 100,000 entries may be created per entry group.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the entry group this entry is in. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-
-      Note that this Entry and its child resources may not actually be stored in
-      the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the entry group this entry is in. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -868,20 +778,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes an existing entry. Only entries created through
-  CreateEntry
-  method can be deleted.
-  Users should enable the Data Catalog API in the project identified by
-  the `name` parameter (see [Data Catalog Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
+  Deletes an existing entry. Only entries created through CreateEntry method can be deleted. Users should enable the Data Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -965,9 +867,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1048,28 +948,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource. A `NOT_FOUND` error
-  is returned if the resource does not exist. An empty policy is returned
-  if the resource exists but does not have a policy set on it.
-
-  Supported resources are:
-    - Tag templates.
-    - Entries.
-    - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-  and any external Google Cloud Platform resources synced to Data Catalog.
-
-  Callers must have following Google IAM permission
-    - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
-      templates.
-    - `datacatalog.entries.getIamPolicy` to get policies on entries.
-    - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+  Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if the resource exists but does not have a policy set on it. Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1155,10 +1039,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the entry group that contains the entries, which can
-      be provided in URL format. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the entry group that contains the entries, which can be provided in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1173,14 +1054,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. Default is 10. Max limit is 1000.
-          Throws an invalid argument for `page_size > 1000`.
-      *   `:pageToken` (*type:* `String.t`) - Token that specifies which page is requested. If empty, the first page is
-          returned.
-      *   `:readMask` (*type:* `String.t`) - The fields to return for each Entry. If not set or empty, all
-          fields are returned.
-          For example, setting read_mask to contain only one path "name" will cause
-          ListEntries to return a list of Entries with only "name" field.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. Default is 10. Max limit is 1000. Throws an invalid argument for `page_size > 1000`.
+      *   `:pageToken` (*type:* `String.t`) - Token that specifies which page is requested. If empty, the first page is returned.
+      *   `:readMask` (*type:* `String.t`) - The fields to return for each Entry. If not set or empty, all fields are returned. For example, setting read_mask to contain only one path "name" will cause ListEntries to return a list of Entries with only "name" field.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1251,21 +1127,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates an existing entry.
-  Users should enable the Data Catalog API in the project identified by
-  the `entry.name` parameter (see [Data Catalog Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
+  Updates an existing entry. Users should enable the Data Catalog API in the project identified by the `entry.name` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `entry.name`. The Data Catalog resource name of the entry in URL format. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-
-      Note that this Entry and its child resources may not actually be stored in
-      the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `entry.name`. The Data Catalog resource name of the entry in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
@@ -1281,26 +1148,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The fields to update on the entry. If absent or empty, all modifiable
-          fields are updated.
-
-          The following fields are modifiable:
-          * For entries with type `DATA_STREAM`:
-             * `schema`
-          * For entries with type `FILESET`
-             * `schema`
-             * `display_name`
-             * `description`
-             * `gcs_fileset_spec`
-             * `gcs_fileset_spec.file_patterns`
-          * For entries with `user_specified_type`
-             * `schema`
-             * `display_name`
-             * `description`
-             * user_specified_type
-             * user_specified_system
-             * linked_resource
-             * source_system_timestamps
+      *   `:updateMask` (*type:* `String.t`) - The fields to update on the entry. If absent or empty, all modifiable fields are updated. The following fields are modifiable: * For entries with type `DATA_STREAM`: * `schema` * For entries with type `FILESET` * `schema` * `display_name` * `description` * `gcs_fileset_spec` * `gcs_fileset_spec.file_patterns` * For entries with `user_specified_type` * `schema` * `display_name` * `description` * user_specified_type * user_specified_system * linked_resource * source_system_timestamps
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1369,25 +1217,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns the caller's permissions on a resource.
-  If the resource does not exist, an empty set of permissions is returned
-  (We don't return a `NOT_FOUND` error).
-
-  Supported resources are:
-    - Tag templates.
-    - Entries.
-    - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-  and any external Google Cloud Platform resources synced to Data Catalog.
-
-  A caller is not required to have Google IAM permission to make this
-  request.
+  Returns the caller's permissions on a resource. If the resource does not exist, an empty set of permissions is returned (We don't return a `NOT_FOUND` error). Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. A caller is not required to have Google IAM permission to make this request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -1470,24 +1305,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a tag on an Entry.
-  Note: The project identified by the `parent` parameter for the
-  [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
-  and the
-  [tag
-  template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
-  used to create the tag must be from the same organization.
+  Creates a tag on an Entry. Note: The project identified by the `parent` parameter for the [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters) and the [tag template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters) used to create the tag must be from the same organization.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the resource to attach this tag to. Tags can be attached to
-      Entries. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-
-      Note that this Tag and its child resources may not actually be stored in
-      the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the resource to attach this tag to. Tags can be attached to Entries. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Tag and its child resources may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -1575,9 +1398,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag to delete. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag to delete. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1665,14 +1486,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Data Catalog resource to list the tags of. The resource
-      could be an Entry or an
-      EntryGroup.
-
-      Examples:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Data Catalog resource to list the tags of. The resource could be an Entry or an EntryGroup. Examples: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -1689,8 +1503,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of tags to return. Default is 10. Max limit is 1000.
-      *   `:pageToken` (*type:* `String.t`) - Token that specifies which page is requested. If empty, the first page is
-          returned.
+      *   `:pageToken` (*type:* `String.t`) - Token that specifies which page is requested. If empty, the first page is returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1768,12 +1581,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. The resource name of the tag in URL format. Example:
-
-      * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
-
-      where `tag_id` is a system-generated identifier.
-      Note that this Tag may not actually be stored in the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. The resource name of the tag in URL format. Example: * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id} where `tag_id` is a system-generated identifier. Note that this Tag may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
@@ -1790,8 +1598,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The fields to update on the Tag. If absent or empty, all modifiable fields
-          are updated. Currently the only modifiable field is the field `fields`.
+      *   `:updateMask` (*type:* `String.t`) - The fields to update on the Tag. If absent or empty, all modifiable fields are updated. Currently the only modifiable field is the field `fields`.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1863,24 +1670,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a tag on an Entry.
-  Note: The project identified by the `parent` parameter for the
-  [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
-  and the
-  [tag
-  template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
-  used to create the tag must be from the same organization.
+  Creates a tag on an Entry. Note: The project identified by the `parent` parameter for the [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters) and the [tag template](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters) used to create the tag must be from the same organization.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the resource to attach this tag to. Tags can be attached to
-      Entries. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-
-      Note that this Tag and its child resources may not actually be stored in
-      the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the resource to attach this tag to. Tags can be attached to Entries. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Tag and its child resources may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1964,9 +1759,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag to delete. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag to delete. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tags_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -2050,14 +1843,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Data Catalog resource to list the tags of. The resource
-      could be an Entry or an
-      EntryGroup.
-
-      Examples:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Data Catalog resource to list the tags of. The resource could be an Entry or an EntryGroup. Examples: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2073,8 +1859,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of tags to return. Default is 10. Max limit is 1000.
-      *   `:pageToken` (*type:* `String.t`) - Token that specifies which page is requested. If empty, the first page is
-          returned.
+      *   `:pageToken` (*type:* `String.t`) - Token that specifies which page is requested. If empty, the first page is returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2149,12 +1934,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. The resource name of the tag in URL format. Example:
-
-      * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
-
-      where `tag_id` is a system-generated identifier.
-      Note that this Tag may not actually be stored in the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. The resource name of the tag in URL format. Example: * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id} where `tag_id` is a system-generated identifier. Note that this Tag may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
   *   `tags_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
@@ -2170,8 +1950,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The fields to update on the Tag. If absent or empty, all modifiable fields
-          are updated. Currently the only modifiable field is the field `fields`.
+      *   `:updateMask` (*type:* `String.t`) - The fields to update on the Tag. If absent or empty, all modifiable fields are updated. Currently the only modifiable field is the field `fields`.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2240,21 +2019,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a tag template. The user should enable the Data Catalog API in
-  the project identified by the `parent` parameter (see [Data Catalog
-  Resource
-  Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-  for more information).
+  Creates a tag template. The user should enable the Data Catalog API in the project identified by the `parent` parameter (see [Data Catalog Resource Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location
-      [region](https://cloud.google.com/data-catalog/docs/concepts/regions.
-
-      Example:
-
-      * projects/{project_id}/locations/us-central1
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location [region](https://cloud.google.com/data-catalog/docs/concepts/regions. Example: * projects/{project_id}/locations/us-central1
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2329,18 +2099,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes a tag template and all tags using the template.
-  Users should enable the Data Catalog API in the project identified by
-  the `name` parameter (see [Data Catalog Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
+  Deletes a tag template and all tags using the template. Users should enable the Data Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template to delete. Example:
-
-      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template to delete. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2355,9 +2119,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:force` (*type:* `boolean()`) - Required. Currently, this field must always be set to `true`.
-          This confirms the deletion of any possible tags using this template.
-          `force = false` will be supported in the future.
+      *   `:force` (*type:* `boolean()`) - Required. Currently, this field must always be set to `true`. This confirms the deletion of any possible tags using this template. `force = false` will be supported in the future.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2424,9 +2186,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template. Example:
-
-      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2504,28 +2264,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource. A `NOT_FOUND` error
-  is returned if the resource does not exist. An empty policy is returned
-  if the resource exists but does not have a policy set on it.
-
-  Supported resources are:
-    - Tag templates.
-    - Entries.
-    - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-  and any external Google Cloud Platform resources synced to Data Catalog.
-
-  Callers must have following Google IAM permission
-    - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
-      templates.
-    - `datacatalog.entries.getIamPolicy` to get policies on entries.
-    - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+  Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if the resource exists but does not have a policy set on it. Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2602,23 +2346,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates a tag template. This method cannot be used to update the fields of
-  a template. The tag template fields are represented as separate resources
-  and should be updated using their own create/update/delete methods.
-  Users should enable the Data Catalog API in the project identified by
-  the `tag_template.name` parameter (see [Data Catalog Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
+  Updates a tag template. This method cannot be used to update the fields of a template. The tag template fields are represented as separate resources and should be updated using their own create/update/delete methods. Users should enable the Data Catalog API in the project identified by the `tag_template.name` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tagTemplate.name`. The resource name of the tag template in URL format. Example:
-
-      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-
-      Note that this TagTemplate and its child resources may not actually be
-      stored in the location in this name.
+  *   `projects_id` (*type:* `String.t`) - Part of `tagTemplate.name`. The resource name of the tag template in URL format. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id} Note that this TagTemplate and its child resources may not actually be stored in the location in this name.
   *   `locations_id` (*type:* `String.t`) - Part of `tagTemplate.name`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `tagTemplate.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2633,13 +2366,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The field mask specifies the parts of the template to overwrite.
-
-          Allowed fields:
-
-            * `display_name`
-
-          If absent or empty, all of the allowed fields above will be updated.
+      *   `:updateMask` (*type:* `String.t`) - The field mask specifies the parts of the template to overwrite. Allowed fields: * `display_name` If absent or empty, all of the allowed fields above will be updated.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplate.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2706,26 +2433,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy for a resource. Replaces any existing
-  policy.
-  Supported resources are:
-    - Tag templates.
-    - Entries.
-    - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-  and any external Google Cloud Platform resources synced to Data Catalog.
-
-  Callers must have following Google IAM permission
-    - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
-      templates.
-    - `datacatalog.entries.setIamPolicy` to set policies on entries.
-    - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
+  Sets the access control policy for a resource. Replaces any existing policy. Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. Callers must have following Google IAM permission - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates. - `datacatalog.entries.setIamPolicy` to set policies on entries. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2802,25 +2515,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns the caller's permissions on a resource.
-  If the resource does not exist, an empty set of permissions is returned
-  (We don't return a `NOT_FOUND` error).
-
-  Supported resources are:
-    - Tag templates.
-    - Entries.
-    - Entry groups.
-  Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-  and any external Google Cloud Platform resources synced to Data Catalog.
-
-  A caller is not required to have Google IAM permission to make this
-  request.
+  Returns the caller's permissions on a resource. If the resource does not exist, an empty set of permissions is returned (We don't return a `NOT_FOUND` error). Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced to Data Catalog. A caller is not required to have Google IAM permission to make this request.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2899,21 +2599,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a field in a tag template. The user should enable the Data Catalog
-  API in the project identified by the `parent` parameter (see
-  [Data Catalog Resource
-  Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-  for more information).
+  Creates a field in a tag template. The user should enable the Data Catalog API in the project identified by the `parent` parameter (see [Data Catalog Resource Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location
-      [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-
-      Example:
-
-      * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location [region](https://cloud.google.com/data-catalog/docs/concepts/regions). Example: * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2928,11 +2619,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:tagTemplateFieldId` (*type:* `String.t`) - Required. The ID of the tag template field to create.
-          Field ids can contain letters (both uppercase and lowercase), numbers
-          (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
-          character long and at most 128 characters long. Field IDs must also be
-          unique within their template.
+      *   `:tagTemplateFieldId` (*type:* `String.t`) - Required. The ID of the tag template field to create. Field ids can contain letters (both uppercase and lowercase), numbers (0-9), underscores (_) and dashes (-). Field IDs must be at least 1 character long and at most 128 characters long. Field IDs must also be unique within their template.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3003,18 +2690,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes a field in a tag template and all uses of that field.
-  Users should enable the Data Catalog API in the project identified by
-  the `name` parameter (see [Data Catalog Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
+  Deletes a field in a tag template and all uses of that field. Users should enable the Data Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template field to delete. Example:
-
-      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template field to delete. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fields_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -3030,9 +2711,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:force` (*type:* `boolean()`) - Required. Currently, this field must always be set to `true`.
-          This confirms the deletion of this field from any tags using this field.
-          `force = false` will be supported in the future.
+      *   `:force` (*type:* `boolean()`) - Required. Currently, this field must always be set to `true`. This confirms the deletion of this field from any tags using this field. `force = false` will be supported in the future.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3097,18 +2776,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates a field in a tag template. This method cannot be used to update the
-  field type. Users should enable the Data Catalog API in the project
-  identified by the `name` parameter (see [Data Catalog Resource Project]
-  (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-  more information).
+  Updates a field in a tag template. This method cannot be used to update the field type. Users should enable the Data Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template field. Example:
-
-      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template field. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fields_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -3124,20 +2797,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Optional. The field mask specifies the parts of the template to be updated.
-          Allowed fields:
-
-            * `display_name`
-            * `type.enum_type`
-            * `is_required`
-
-          If `update_mask` is not set or empty, all of the allowed fields above will
-          be updated.
-
-          When updating an enum type, the provided values will be merged with the
-          existing values. Therefore, enum values can only be added, existing enum
-          values cannot be deleted nor renamed. Updating a template field from
-          optional to required is NOT allowed.
+      *   `:updateMask` (*type:* `String.t`) - Optional. The field mask specifies the parts of the template to be updated. Allowed fields: * `display_name` * `type.enum_type` * `is_required` If `update_mask` is not set or empty, all of the allowed fields above will be updated. When updating an enum type, the provided values will be merged with the existing values. Therefore, enum values can only be added, existing enum values cannot be deleted nor renamed. Updating a template field from optional to required is NOT allowed.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3211,18 +2871,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Renames a field in a tag template. The user should enable the Data Catalog
-  API in the project identified by the `name` parameter (see [Data Catalog
-  Resource
-  Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-  for more information).
+  Renames a field in a tag template. The user should enable the Data Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template. Example:
-
-      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fields_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -3310,16 +2964,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Renames an enum value in a tag template. The enum values have to be unique
-  within one enum field. Thus, an enum value cannot be renamed with a name
-  used in any other enum value within the same enum field.
+  Renames an enum value in a tag template. The enum values have to be unique within one enum field. Thus, an enum value cannot be renamed with a name used in any other enum value within the same enum field.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the enum field value. Example:
-
-      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the enum field value. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fields_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -3489,14 +3139,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes a taxonomy. This operation will also delete all
-  policy tags in this taxonomy along with their associated policies.
+  Deletes a taxonomy. This operation will also delete all policy tags in this taxonomy along with their associated policies.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the taxonomy to be deleted. All policy tags in
-      this taxonomy will also be deleted.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the taxonomy to be deleted. All policy tags in this taxonomy will also be deleted.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3571,16 +3219,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Exports all taxonomies and their policy tags in a project.
-
-  This method generates SerializedTaxonomy protos with nested policy tags
-  that can be used as an input for future ImportTaxonomies calls.
+  Exports all taxonomies and their policy tags in a project. This method generates SerializedTaxonomy protos with nested policy tags that can be used as an input for future ImportTaxonomies calls.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the project that taxonomies to be exported
-      will share.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the project that taxonomies to be exported will share.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3750,8 +3394,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -3828,11 +3471,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Imports all taxonomies and their policy tags to a project as new
-  taxonomies.
-
-  This method provides a bulk taxonomy / policy tag creation using nested
-  proto structure.
+  Imports all taxonomies and their policy tags to a project as new taxonomies. This method provides a bulk taxonomy / policy tag creation using nested proto structure.
 
   ## Parameters
 
@@ -3917,8 +3556,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists all taxonomies in a project in a particular location that the caller
-  has permission to view.
+  Lists all taxonomies in a project in a particular location that the caller has permission to view.
 
   ## Parameters
 
@@ -3937,10 +3575,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. Must be a value between 1 and 1000.
-          If not set, defaults to 50.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any. If
-          not set, defaults to an empty string.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. Must be a value between 1 and 1000. If not set, defaults to 50.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any. If not set, defaults to an empty string.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4009,8 +3645,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `taxonomy.name`. Output only. Resource name of this taxonomy, whose format is:
-      "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `taxonomy.name`. Output only. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
   *   `locations_id` (*type:* `String.t`) - Part of `taxonomy.name`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `taxonomy.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4025,10 +3660,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition,
-          see
-          https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-          If not set, defaults to all of the fields that are allowed to update.
+      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask If not set, defaults to all of the fields that are allowed to update.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4100,8 +3732,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4178,14 +3809,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns the permissions that a caller has on the specified taxonomy or
-  policy tag.
+  Returns the permissions that a caller has on the specified taxonomy or policy tag.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4354,8 +3983,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the policy tag to be deleted. All of its descendant
-      policy tags will also be deleted.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the policy tag to be deleted. All of its descendant policy tags will also be deleted.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `policy_tags_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -4526,8 +4154,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `policy_tags_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -4628,10 +4255,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. Must be a value between 1 and 1000.
-          If not set, defaults to 50.
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any. If
-          not set, defaults to an empty string.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. Must be a value between 1 and 1000. If not set, defaults to 50.
+      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous List request, if any. If not set, defaults to an empty string.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4706,8 +4331,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `policyTag.name`. Output only. Resource name of this policy tag, whose format is:
-      "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `policyTag.name`. Output only. Resource name of this policy tag, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
   *   `locations_id` (*type:* `String.t`) - Part of `policyTag.name`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `policyTag.name`. See documentation of `projectsId`.
   *   `policy_tags_id` (*type:* `String.t`) - Part of `policyTag.name`. See documentation of `projectsId`.
@@ -4723,13 +4347,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. Only display_name, description and
-          parent_policy_tag can be updated and thus can be listed in the mask. If
-          update_mask is not provided, all allowed fields (i.e. display_name,
-          description and parent) will be updated. For more information including the
-          `FieldMask` definition, see
-          https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-          If not set, defaults to all of the fields that are allowed to update.
+      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. Only display_name, description and parent_policy_tag can be updated and thus can be listed in the mask. If update_mask is not provided, all allowed fields (i.e. display_name, description and parent) will be updated. For more information including the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask If not set, defaults to all of the fields that are allowed to update.
       *   `:body` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1PolicyTag.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4804,8 +4422,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `policy_tags_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -4886,14 +4503,12 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns the permissions that a caller has on the specified taxonomy or
-  policy tag.
+  Returns the permissions that a caller has on the specified taxonomy or policy tag.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `policy_tags_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.

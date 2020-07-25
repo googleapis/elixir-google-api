@@ -22,13 +22,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Seria
   ## Attributes
 
   *   `childPolicyTags` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SerializedPolicyTag.t)`, *default:* `nil`) - Children of the policy tag if any.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the serialized policy tag. The length of the
-      description is limited to 2000 bytes when encoded in UTF-8. If not set,
-      defaults to an empty description.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the serialized policy tag. The length of the description is limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an empty description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
-  *   `policyTag` (*type:* `String.t`, *default:* `nil`) - Resource name of the policy tag.
-
-      This field will be ignored when calling ImportTaxonomies.
+  *   `policyTag` (*type:* `String.t`, *default:* `nil`) - Resource name of the policy tag. This field will be ignored when calling ImportTaxonomies.
   """
 
   use GoogleApi.Gax.ModelBase

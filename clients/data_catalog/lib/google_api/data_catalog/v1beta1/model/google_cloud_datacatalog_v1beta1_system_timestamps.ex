@@ -22,8 +22,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Syste
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the resource within the given system.
-  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The expiration time of the resource within the given system.
-      Currently only apllicable to BigQuery resources.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The expiration time of the resource within the given system. Currently only apllicable to BigQuery resources.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The last-modified time of the resource within the given system.
   """
 

@@ -22,10 +22,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQu
   ## Attributes
 
   *   `tableSourceType` (*type:* `String.t`, *default:* `nil`) - Output only. The table source type.
-  *   `tableSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TableSpec.t`, *default:* `nil`) - Spec of a BigQuery table. This field should only be populated if
-      `table_source_type` is `BIGQUERY_TABLE`.
-  *   `viewSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ViewSpec.t`, *default:* `nil`) - Table view specification. This field should only be populated if
-      `table_source_type` is `BIGQUERY_VIEW`.
+  *   `tableSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TableSpec.t`, *default:* `nil`) - Spec of a BigQuery table. This field should only be populated if `table_source_type` is `BIGQUERY_TABLE`.
+  *   `viewSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ViewSpec.t`, *default:* `nil`) - Table view specification. This field should only be populated if `table_source_type` is `BIGQUERY_VIEW`.
   """
 
   use GoogleApi.Gax.ModelBase

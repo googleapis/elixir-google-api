@@ -17,73 +17,23 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry do
   @moduledoc """
-  Entry Metadata. 
-  A Data Catalog Entry resource represents another resource in Google
-  Cloud Platform (such as a BigQuery dataset or a Pub/Sub topic), or
-  outside of Google Cloud Platform. Clients can use the `linked_resource` field
-  in the Entry resource to refer to the original resource ID of the source
-  system.
-
-  An Entry resource contains resource details, such as its schema. An Entry can
-  also be used to attach flexible metadata, such as a
-  Tag.
+  Entry Metadata. A Data Catalog Entry resource represents another resource in Google Cloud Platform (such as a BigQuery dataset or a Pub/Sub topic), or outside of Google Cloud Platform. Clients can use the `linked_resource` field in the Entry resource to refer to the original resource ID of the source system. An Entry resource contains resource details, such as its schema. An Entry can also be used to attach flexible metadata, such as a Tag.
 
   ## Attributes
 
-  *   `bigqueryDateShardedSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQueryDateShardedSpec.t`, *default:* `nil`) - Specification for a group of BigQuery tables with name pattern
-      `[prefix]YYYYMMDD`. Context:
-      https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
-  *   `bigqueryTableSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQueryTableSpec.t`, *default:* `nil`) - Specification that applies to a BigQuery table. This is only valid on
-      entries of type `TABLE`.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Entry description, which can consist of several sentences or paragraphs
-      that describe entry contents. Default value is an empty string.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display information such as title and description. A short name to identify
-      the entry, for example, "Analytics Data - Jan 2011". Default value is an
-      empty string.
-  *   `gcsFilesetSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1GcsFilesetSpec.t`, *default:* `nil`) - Specification that applies to a Cloud Storage fileset. This is only valid
-      on entries of type FILESET.
-  *   `integratedSystem` (*type:* `String.t`, *default:* `nil`) - Output only. This field indicates the entry's source system that Data Catalog
-      integrates with, such as BigQuery or Pub/Sub.
-  *   `linkedResource` (*type:* `String.t`, *default:* `nil`) - The resource this metadata entry refers to.
-
-      For Google Cloud Platform resources, `linked_resource` is the [full name of
-      the
-      resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
-      For example, the `linked_resource` for a table resource from BigQuery is:
-
-      * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-
-      Output only when Entry is of type in the EntryType enum. For entries with
-      user_specified_type, this field is optional and defaults to an empty
-      string.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The Data Catalog resource name of the entry in URL format. Example:
-
-      * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-
-      Note that this Entry and its child resources may not actually be stored in
-      the location in this name.
+  *   `bigqueryDateShardedSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQueryDateShardedSpec.t`, *default:* `nil`) - Specification for a group of BigQuery tables with name pattern `[prefix]YYYYMMDD`. Context: https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+  *   `bigqueryTableSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1BigQueryTableSpec.t`, *default:* `nil`) - Specification that applies to a BigQuery table. This is only valid on entries of type `TABLE`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Entry description, which can consist of several sentences or paragraphs that describe entry contents. Default value is an empty string.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display information such as title and description. A short name to identify the entry, for example, "Analytics Data - Jan 2011". Default value is an empty string.
+  *   `gcsFilesetSpec` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1GcsFilesetSpec.t`, *default:* `nil`) - Specification that applies to a Cloud Storage fileset. This is only valid on entries of type FILESET.
+  *   `integratedSystem` (*type:* `String.t`, *default:* `nil`) - Output only. This field indicates the entry's source system that Data Catalog integrates with, such as BigQuery or Pub/Sub.
+  *   `linkedResource` (*type:* `String.t`, *default:* `nil`) - The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the [full name of the resource](https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId Output only when Entry is of type in the EntryType enum. For entries with user_specified_type, this field is optional and defaults to an empty string.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The Data Catalog resource name of the entry in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
   *   `schema` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Schema.t`, *default:* `nil`) - Schema of the entry. An entry might not have any schema attached to it.
-  *   `sourceSystemTimestamps` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t`, *default:* `nil`) - Output only. Timestamps about the underlying resource, not about this Data Catalog
-      entry. Output only when Entry is of type in the EntryType enum. For entries
-      with user_specified_type, this field is optional and defaults to an empty
-      timestamp.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the entry.
-      Only used for Entries with types in the EntryType enum.
-  *   `userSpecifiedSystem` (*type:* `String.t`, *default:* `nil`) - This field indicates the entry's source system that Data Catalog does not
-      integrate with. `user_specified_system` strings must begin with a letter
-      or underscore and can only contain letters, numbers, and underscores; are
-      case insensitive; must be at least 1 character and at most 64 characters
-      long.
-  *   `userSpecifiedType` (*type:* `String.t`, *default:* `nil`) - Entry type if it does not fit any of the input-allowed values listed in
-      `EntryType` enum above. When creating an entry, users should check the
-      enum values first, if nothing matches the entry to be created, then
-      provide a custom value, for example "my_special_type".
-      `user_specified_type` strings must begin with a letter or underscore and
-      can only contain letters, numbers, and underscores; are case insensitive;
-      must be at least 1 character and at most 64 characters long.
-
-      Currently, only FILESET enum value is allowed. All other entries created
-      through Data Catalog must use `user_specified_type`.
+  *   `sourceSystemTimestamps` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t`, *default:* `nil`) - Output only. Timestamps about the underlying resource, not about this Data Catalog entry. Output only when Entry is of type in the EntryType enum. For entries with user_specified_type, this field is optional and defaults to an empty timestamp.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the entry. Only used for Entries with types in the EntryType enum.
+  *   `userSpecifiedSystem` (*type:* `String.t`, *default:* `nil`) - This field indicates the entry's source system that Data Catalog does not integrate with. `user_specified_system` strings must begin with a letter or underscore and can only contain letters, numbers, and underscores; are case insensitive; must be at least 1 character and at most 64 characters long.
+  *   `userSpecifiedType` (*type:* `String.t`, *default:* `nil`) - Entry type if it does not fit any of the input-allowed values listed in `EntryType` enum above. When creating an entry, users should check the enum values first, if nothing matches the entry to be created, then provide a custom value, for example "my_special_type". `user_specified_type` strings must begin with a letter or underscore and can only contain letters, numbers, and underscores; are case insensitive; must be at least 1 character and at most 64 characters long. Currently, only FILESET enum value is allowed. All other entries created through Data Catalog must use `user_specified_type`.
   """
 
   use GoogleApi.Gax.ModelBase
