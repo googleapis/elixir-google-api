@@ -24,6 +24,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightActivity do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this floodlight activity. This is a read-only field that can be left blank.
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Advertiser ID of this floodlight activity. If this field is left blank, the value will be copied over either from the activity group's advertiser or the existing activity's advertiser.
   *   `advertiserIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V34.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.
+  *   `attributionEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the activity is enabled for attribution.
   *   `cacheBustingType` (*type:* `String.t`, *default:* `nil`) - Code type used for cache busting in the generated tag. Applicable only when floodlightActivityGroupType is COUNTER and countingMethod is STANDARD_COUNTING or UNIQUE_COUNTING.
   *   `countingMethod` (*type:* `String.t`, *default:* `nil`) - Counting method for conversions for this floodlight activity. This is a required field.
   *   `defaultTags` (*type:* `list(GoogleApi.DFAReporting.V34.Model.FloodlightActivityDynamicTag.t)`, *default:* `nil`) - Dynamic floodlight tags.
@@ -58,6 +59,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightActivity do
           :accountId => String.t(),
           :advertiserId => String.t(),
           :advertiserIdDimensionValue => GoogleApi.DFAReporting.V34.Model.DimensionValue.t(),
+          :attributionEnabled => boolean(),
           :cacheBustingType => String.t(),
           :countingMethod => String.t(),
           :defaultTags => list(GoogleApi.DFAReporting.V34.Model.FloodlightActivityDynamicTag.t()),
@@ -90,6 +92,7 @@ defmodule GoogleApi.DFAReporting.V34.Model.FloodlightActivity do
   field(:accountId)
   field(:advertiserId)
   field(:advertiserIdDimensionValue, as: GoogleApi.DFAReporting.V34.Model.DimensionValue)
+  field(:attributionEnabled)
   field(:cacheBustingType)
   field(:countingMethod)
 
