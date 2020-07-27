@@ -23,11 +23,11 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
 
   ## Attributes
 
+  *   `arimaForecastingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics.t`, *default:* `nil`) - Populated for ARIMA models.
   *   `binaryClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics.t`, *default:* `nil`) - Populated for binary classification/classifier models.
   *   `clusteringMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t`, *default:* `nil`) - Populated for clustering models.
   *   `multiClassClassificationMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.MultiClassClassificationMetrics.t`, *default:* `nil`) - Populated for multi-class classification/classifier models.
-  *   `rankingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RankingMetrics.t`, *default:* `nil`) - [Alpha] Populated for implicit feedback type matrix factorization
-      models.
+  *   `rankingMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RankingMetrics.t`, *default:* `nil`) - Populated for implicit feedback type matrix factorization models.
   *   `regressionMetrics` (*type:* `GoogleApi.BigQuery.V2.Model.RegressionMetrics.t`, *default:* `nil`) - Populated for regression models and explicit feedback type matrix
       factorization models.
   """
@@ -35,6 +35,7 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :arimaForecastingMetrics => GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics.t(),
           :binaryClassificationMetrics =>
             GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics.t(),
           :clusteringMetrics => GoogleApi.BigQuery.V2.Model.ClusteringMetrics.t(),
@@ -44,6 +45,7 @@ defmodule GoogleApi.BigQuery.V2.Model.EvaluationMetrics do
           :regressionMetrics => GoogleApi.BigQuery.V2.Model.RegressionMetrics.t()
         }
 
+  field(:arimaForecastingMetrics, as: GoogleApi.BigQuery.V2.Model.ArimaForecastingMetrics)
   field(:binaryClassificationMetrics, as: GoogleApi.BigQuery.V2.Model.BinaryClassificationMetrics)
   field(:clusteringMetrics, as: GoogleApi.BigQuery.V2.Model.ClusteringMetrics)
 

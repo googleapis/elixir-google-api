@@ -44,10 +44,11 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   *   `requirePartitionFilter` (*type:* `boolean()`, *default:* `false`) - [Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - [Optional] Describes the schema of this table.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output-only] A URL that can be used to access this resource again.
+  *   `snapshotDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.SnapshotDefinition.t`, *default:* `nil`) - [Output-only] Snapshot definition.
   *   `streamingBuffer` (*type:* `GoogleApi.BigQuery.V2.Model.Streamingbuffer.t`, *default:* `nil`) - [Output-only] Contains information regarding this table's streaming buffer, if one is present. This field will be absent if the table is not being streamed to or if there is no data in the streaming buffer.
   *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] Reference describing the ID of this table.
   *   `timePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.TimePartitioning.t`, *default:* `nil`) - Time-based partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - [Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. [TrustedTester] MATERIALIZED_VIEW: SQL query whose result is persisted. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - [Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. [TrustedTester] SNAPSHOT: An immutable, read-only table that is a copy of another table. [TrustedTester] MATERIALIZED_VIEW: SQL query whose result is persisted. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE.
   *   `view` (*type:* `GoogleApi.BigQuery.V2.Model.ViewDefinition.t`, *default:* `nil`) - [Optional] The view definition.
   """
 
@@ -77,6 +78,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
           :requirePartitionFilter => boolean(),
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t(),
           :selfLink => String.t(),
+          :snapshotDefinition => GoogleApi.BigQuery.V2.Model.SnapshotDefinition.t(),
           :streamingBuffer => GoogleApi.BigQuery.V2.Model.Streamingbuffer.t(),
           :tableReference => GoogleApi.BigQuery.V2.Model.TableReference.t(),
           :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t(),
@@ -107,6 +109,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   field(:requirePartitionFilter)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
   field(:selfLink)
+  field(:snapshotDefinition, as: GoogleApi.BigQuery.V2.Model.SnapshotDefinition)
   field(:streamingBuffer, as: GoogleApi.BigQuery.V2.Model.Streamingbuffer)
   field(:tableReference, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:timePartitioning, as: GoogleApi.BigQuery.V2.Model.TimePartitioning)

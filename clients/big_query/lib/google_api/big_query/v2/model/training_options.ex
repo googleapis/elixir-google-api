@@ -23,8 +23,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
 
   *   `subsample` (*type:* `float()`, *default:* `nil`) - Subsample fraction of the training data to grow tree to prevent
       overfitting for boosted tree models.
+  *   `horizon` (*type:* `String.t`, *default:* `nil`) - The number of periods ahead that need to be forecasted.
   *   `modelUri` (*type:* `String.t`, *default:* `nil`) - [Beta] Google Cloud Storage URI from which the model was imported. Only
       applicable for imported models.
+  *   `includeDrift` (*type:* `boolean()`, *default:* `nil`) - Include drift when fitting an ARIMA model.
+  *   `autoArima` (*type:* `boolean()`, *default:* `nil`) - Whether to enable auto ARIMA or not.
   *   `learnRateStrategy` (*type:* `String.t`, *default:* `nil`) - The strategy to determine learn rate for the current iteration.
   *   `labelClassWeights` (*type:* `map()`, *default:* `nil`) - Weights associated with each label class, for rebalancing the
       training data. Only applicable for classification models.
@@ -38,6 +41,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
       of data will be used as training data. The format should be double.
       Accurate to two decimal places.
       Default value is 0.2.
+  *   `dataFrequency` (*type:* `String.t`, *default:* `nil`) - The data frequency of a time series.
   *   `dataSplitColumn` (*type:* `String.t`, *default:* `nil`) - The column to split data with. This column won't be used as a
       feature.
       1. When data_split_method is CUSTOM, the corresponding column should
@@ -55,6 +59,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
       training algorithms.
   *   `dropout` (*type:* `float()`, *default:* `nil`) - Dropout probability for dnn models.
   *   `l1Regularization` (*type:* `float()`, *default:* `nil`) - L1 regularization coefficient.
+  *   `timeSeriesDataColumn` (*type:* `String.t`, *default:* `nil`) - Column to be designated as time series data for ARIMA model.
+  *   `timeSeriesTimestampColumn` (*type:* `String.t`, *default:* `nil`) - Column to be designated as time series timestamp for ARIMA model.
   *   `kmeansInitializationColumn` (*type:* `String.t`, *default:* `nil`) - The column used to provide the initial centroids for kmeans algorithm
       when kmeans_initialization_method is CUSTOM.
   *   `minRelativeProgress` (*type:* `float()`, *default:* `nil`) - When early_stop is true, stops training when accuracy improvement is
@@ -62,6 +68,9 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
       algorithms.
   *   `dataSplitMethod` (*type:* `String.t`, *default:* `nil`) - The data split type for training and evaluation, e.g. RANDOM.
   *   `minSplitLoss` (*type:* `float()`, *default:* `nil`) - Minimum split loss for boosted tree models.
+  *   `holidayRegion` (*type:* `String.t`, *default:* `nil`) - The geographical region based on which the holidays are considered in
+      time series modeling. If a valid value is specified, then holiday
+      effects modeling is enabled.
   *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - Whether to train a model from the last checkpoint.
   *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
   *   `preserveInputStructs` (*type:* `boolean()`, *default:* `nil`) - Whether to preserve the input structs in output feature names.
@@ -73,6 +82,11 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `distanceType` (*type:* `String.t`, *default:* `nil`) - Distance type for clustering models.
   *   `maxTreeDepth` (*type:* `String.t`, *default:* `nil`) - Maximum depth of a tree for boosted tree models.
   *   `inputLabelColumns` (*type:* `list(String.t)`, *default:* `nil`) - Name of input label columns in training data.
+  *   `timeSeriesIdColumn` (*type:* `String.t`, *default:* `nil`) - The id column that will be used to indicate different time series to
+      forecast in parallel.
+  *   `nonSeasonalOrder` (*type:* `GoogleApi.BigQuery.V2.Model.ArimaOrder.t`, *default:* `nil`) - A specification of the non-seasonal part of the ARIMA model: the three
+      components (p, d, q) are the AR order, the degree of differencing, and
+      the MA order.
   *   `numClusters` (*type:* `String.t`, *default:* `nil`) - Number of clusters for clustering models.
   *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Batch size for dnn models.
   *   `kmeansInitializationMethod` (*type:* `String.t`, *default:* `nil`) - The method used to initialize the centroids for kmeans algorithm.
@@ -87,7 +101,10 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
 
   @type t :: %__MODULE__{
           :subsample => float(),
+          :horizon => String.t(),
           :modelUri => String.t(),
+          :includeDrift => boolean(),
+          :autoArima => boolean(),
           :learnRateStrategy => String.t(),
           :labelClassWeights => map(),
           :l2Regularization => float(),
@@ -97,15 +114,19 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :hiddenUnits => list(String.t()),
           :numFactors => String.t(),
           :dataSplitEvalFraction => float(),
+          :dataFrequency => String.t(),
           :dataSplitColumn => String.t(),
           :walsAlpha => float(),
           :earlyStop => boolean(),
           :dropout => float(),
           :l1Regularization => float(),
+          :timeSeriesDataColumn => String.t(),
+          :timeSeriesTimestampColumn => String.t(),
           :kmeansInitializationColumn => String.t(),
           :minRelativeProgress => float(),
           :dataSplitMethod => String.t(),
           :minSplitLoss => float(),
+          :holidayRegion => String.t(),
           :warmStart => boolean(),
           :optimizationStrategy => String.t(),
           :preserveInputStructs => boolean(),
@@ -113,6 +134,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :distanceType => String.t(),
           :maxTreeDepth => String.t(),
           :inputLabelColumns => list(String.t()),
+          :timeSeriesIdColumn => String.t(),
+          :nonSeasonalOrder => GoogleApi.BigQuery.V2.Model.ArimaOrder.t(),
           :numClusters => String.t(),
           :batchSize => String.t(),
           :kmeansInitializationMethod => String.t(),
@@ -122,7 +145,10 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
         }
 
   field(:subsample)
+  field(:horizon)
   field(:modelUri)
+  field(:includeDrift)
+  field(:autoArima)
   field(:learnRateStrategy)
   field(:labelClassWeights, type: :map)
   field(:l2Regularization)
@@ -132,15 +158,19 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:hiddenUnits, type: :list)
   field(:numFactors)
   field(:dataSplitEvalFraction)
+  field(:dataFrequency)
   field(:dataSplitColumn)
   field(:walsAlpha)
   field(:earlyStop)
   field(:dropout)
   field(:l1Regularization)
+  field(:timeSeriesDataColumn)
+  field(:timeSeriesTimestampColumn)
   field(:kmeansInitializationColumn)
   field(:minRelativeProgress)
   field(:dataSplitMethod)
   field(:minSplitLoss)
+  field(:holidayRegion)
   field(:warmStart)
   field(:optimizationStrategy)
   field(:preserveInputStructs)
@@ -148,6 +178,8 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:distanceType)
   field(:maxTreeDepth)
   field(:inputLabelColumns, type: :list)
+  field(:timeSeriesIdColumn)
+  field(:nonSeasonalOrder, as: GoogleApi.BigQuery.V2.Model.ArimaOrder)
   field(:numClusters)
   field(:batchSize)
   field(:kmeansInitializationMethod)
