@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Games.V1.Model.AchievementUpdateMultipleResponse do
   @moduledoc """
-
+  Response message for UpdateMultipleAchievements rpc.
 
   ## Attributes
 
