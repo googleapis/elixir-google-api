@@ -28,5 +28,5 @@ defmodule GoogleApi.GamesConfiguration.V1configuration.Connection do
       "https://www.googleapis.com/auth/androidpublisher"
     ],
     otp_app: :google_api_games_configuration,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://gamesconfiguration.googleapis.com/"
 end
