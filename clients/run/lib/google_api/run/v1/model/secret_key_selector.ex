@@ -17,33 +17,14 @@
 
 defmodule GoogleApi.Run.V1.Model.SecretKeySelector do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  SecretKeySelector selects a key of a Secret.
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported SecretKeySelector selects a key of a Secret.
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The key of the secret to select from.  Must be a valid secret key.
-  *   `localObjectReference` (*type:* `GoogleApi.Run.V1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined
-      directly into the message. Use the "name" field instead.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The name of the secret in the pod's namespace to select from.
-  *   `optional` (*type:* `boolean()`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Specify whether the Secret or its key must be defined
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The key of the secret to select from. Must be a valid secret key.
+  *   `localObjectReference` (*type:* `GoogleApi.Run.V1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined directly into the message. Use the "name" field instead.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The name of the secret in the pod's namespace to select from.
+  *   `optional` (*type:* `boolean()`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Specify whether the Secret or its key must be defined
   """
 
   use GoogleApi.Gax.ModelBase

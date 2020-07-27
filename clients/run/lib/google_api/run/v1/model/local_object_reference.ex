@@ -17,24 +17,11 @@
 
 defmodule GoogleApi.Run.V1.Model.LocalObjectReference do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  LocalObjectReference contains enough information to let you locate the
-  referenced object inside the same namespace.
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Name of the referent.
-      More info:
-      https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+  *   `name` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   """
 
   use GoogleApi.Gax.ModelBase

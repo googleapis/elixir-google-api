@@ -17,33 +17,14 @@
 
 defmodule GoogleApi.Run.V1.Model.ConfigMapKeySelector do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  Selects a key from a ConfigMap.
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported Selects a key from a ConfigMap.
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The key to select.
-  *   `localObjectReference` (*type:* `GoogleApi.Run.V1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined
-      directly into the message. Use the "name" field instead.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The ConfigMap to select from.
-  *   `optional` (*type:* `boolean()`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Specify whether the ConfigMap or its key must be defined
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The key to select.
+  *   `localObjectReference` (*type:* `GoogleApi.Run.V1.Model.LocalObjectReference.t`, *default:* `nil`) - This field should not be used directly as it is meant to be inlined directly into the message. Use the "name" field instead.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The ConfigMap to select from.
+  *   `optional` (*type:* `boolean()`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Specify whether the ConfigMap or its key must be defined
   """
 
   use GoogleApi.Gax.ModelBase

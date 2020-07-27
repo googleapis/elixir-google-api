@@ -17,24 +17,13 @@
 
 defmodule GoogleApi.Run.V1.Model.Namespace do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run on GKE: supported
-
-  Namespace provides a scope for Names.
-  Use of multiple namespaces is optional.
+  Cloud Run fully managed: not supported Cloud Run on GKE: supported Namespace provides a scope for Names. Use of multiple namespaces is optional.
 
   ## Attributes
 
-  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Standard object's metadata.
-      More info:
-      https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
-  *   `spec` (*type:* `GoogleApi.Run.V1.Model.NamespaceSpec.t`, *default:* `nil`) - Spec defines the behavior of the Namespace.
-      More info:
-      https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
-  *   `status` (*type:* `GoogleApi.Run.V1.Model.NamespaceStatus.t`, *default:* `nil`) - Status describes the current status of a Namespace.
-      More info:
-      https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+  *   `spec` (*type:* `GoogleApi.Run.V1.Model.NamespaceSpec.t`, *default:* `nil`) - Spec defines the behavior of the Namespace. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+  *   `status` (*type:* `GoogleApi.Run.V1.Model.NamespaceStatus.t`, *default:* `nil`) - Status describes the current status of a Namespace. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
   """
 
   use GoogleApi.Gax.ModelBase

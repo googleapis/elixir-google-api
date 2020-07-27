@@ -17,27 +17,13 @@
 
 defmodule GoogleApi.Run.V1.Model.Secret do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run on GKE: supported
-
-  Secret holds secret data of a certain type. The total bytes of the values in
-  the Data field must be less than MaxSecretSize bytes.
+  Cloud Run fully managed: not supported Cloud Run on GKE: supported Secret holds secret data of a certain type. The total bytes of the values in the Data field must be less than MaxSecretSize bytes.
 
   ## Attributes
 
-  *   `data` (*type:* `map()`, *default:* `nil`) - Data contains the secret data. Each key must consist of alphanumeric
-      characters, '-', '_' or '.'. The serialized form of the secret data is a
-      base64 encoded string, representing the arbitrary (possibly non-string)
-      data value here. Described in https://tools.ietf.org/html/rfc4648#section-4
-  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Standard object's metadata.
-      More info:
-      https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
-  *   `stringData` (*type:* `map()`, *default:* `nil`) - stringData allows specifying non-binary secret data in string form.
-      It is provided as a write-only convenience method.
-      All keys and values are merged into the data field on write, overwriting
-      any existing values. It is never output when reading from the API.
-      +k8s:conversion-gen=false
+  *   `data` (*type:* `map()`, *default:* `nil`) - Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here. Described in https://tools.ietf.org/html/rfc4648#section-4
+  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+  *   `stringData` (*type:* `map()`, *default:* `nil`) - stringData allows specifying non-binary secret data in string form. It is provided as a write-only convenience method. All keys and values are merged into the data field on write, overwriting any existing values. It is never output when reading from the API. +k8s:conversion-gen=false
   *   `type` (*type:* `String.t`, *default:* `nil`) - Used to facilitate programmatic handling of secret data.
   """
 

@@ -21,26 +21,9 @@ defmodule GoogleApi.Run.V1.Model.ContainerPort do
 
   ## Attributes
 
-  *   `containerPort` (*type:* `integer()`, *default:* `nil`) - (Optional)
-
-      Port number the container listens on.
-      This must be a valid port number, 0 < x < 65536.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      If specified, used to specify which protocol to use.
-      Allowed values are "http1" and "h2c".
-  *   `protocol` (*type:* `String.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Protocol for port. Must be "TCP".
-      Defaults to "TCP".
+  *   `containerPort` (*type:* `integer()`, *default:* `nil`) - (Optional) Port number the container listens on. This must be a valid port number, 0 < x < 65536.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c".
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Protocol for port. Must be "TCP". Defaults to "TCP".
   """
 
   use GoogleApi.Gax.ModelBase

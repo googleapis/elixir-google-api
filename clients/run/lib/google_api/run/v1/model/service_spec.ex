@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.Run.V1.Model.ServiceSpec do
   @moduledoc """
-  ServiceSpec holds the desired state of the Route (from the client), which
-  is used to manipulate the underlying Route and Configuration(s).
+  ServiceSpec holds the desired state of the Route (from the client), which is used to manipulate the underlying Route and Configuration(s).
 
   ## Attributes
 
-  *   `template` (*type:* `GoogleApi.Run.V1.Model.RevisionTemplate.t`, *default:* `nil`) - Template holds the latest specification for the Revision to
-      be stamped out.
-  *   `traffic` (*type:* `list(GoogleApi.Run.V1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic specifies how to distribute traffic over a collection of Knative
-      Revisions and Configurations.
+  *   `template` (*type:* `GoogleApi.Run.V1.Model.RevisionTemplate.t`, *default:* `nil`) - Template holds the latest specification for the Revision to be stamped out.
+  *   `traffic` (*type:* `list(GoogleApi.Run.V1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic specifies how to distribute traffic over a collection of Knative Revisions and Configurations.
   """
 
   use GoogleApi.Gax.ModelBase

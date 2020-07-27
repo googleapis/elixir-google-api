@@ -17,41 +17,14 @@
 
 defmodule GoogleApi.Run.V1.Model.VolumeMount do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  VolumeMount describes a mounting of a Volume within a container.
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported VolumeMount describes a mounting of a Volume within a container.
 
   ## Attributes
 
-  *   `mountPath` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Path within the container at which the volume should be mounted.  Must
-      not contain ':'.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      This must match the Name of a Volume.
-  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Only true is accepted.
-      Defaults to true.
-  *   `subPath` (*type:* `String.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Path within the volume from which the container's volume should be mounted.
-      Defaults to "" (volume's root).
+  *   `mountPath` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported Path within the container at which the volume should be mounted. Must not contain ':'.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported This must match the Name of a Volume.
+  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Only true is accepted. Defaults to true.
+  *   `subPath` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   """
 
   use GoogleApi.Gax.ModelBase

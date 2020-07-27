@@ -17,22 +17,15 @@
 
 defmodule GoogleApi.Run.V1.Model.Configuration do
   @moduledoc """
-  Configuration represents the "floating HEAD" of a linear history of
-  Revisions, and optionally how the containers those revisions reference are
-  built. Users create new Revisions by updating the Configuration's spec. The
-  "latest created" revision's name is available under status, as is the "latest
-  ready" revision's name. See also:
-  https://github.com/knative/serving/blob/master/docs/spec/overview.md#configuration
+  Configuration represents the "floating HEAD" of a linear history of Revisions, and optionally how the containers those revisions reference are built. Users create new Revisions by updating the Configuration's spec. The "latest created" revision's name is available under status, as is the "latest ready" revision's name. See also: https://github.com/knative/serving/blob/master/docs/spec/overview.md#configuration
 
   ## Attributes
 
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "serving.knative.dev/v1".
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case always "Configuration".
-  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Configuration, including name, namespace,
-      labels, and annotations.
+  *   `metadata` (*type:* `GoogleApi.Run.V1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Configuration, including name, namespace, labels, and annotations.
   *   `spec` (*type:* `GoogleApi.Run.V1.Model.ConfigurationSpec.t`, *default:* `nil`) - Spec holds the desired state of the Configuration (from the client).
-  *   `status` (*type:* `GoogleApi.Run.V1.Model.ConfigurationStatus.t`, *default:* `nil`) - Status communicates the observed state of the Configuration (from the
-      controller).
+  *   `status` (*type:* `GoogleApi.Run.V1.Model.ConfigurationStatus.t`, *default:* `nil`) - Status communicates the observed state of the Configuration (from the controller).
   """
 
   use GoogleApi.Gax.ModelBase

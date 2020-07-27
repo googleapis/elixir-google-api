@@ -17,37 +17,13 @@
 
 defmodule GoogleApi.Run.V1.Model.KeyToPath do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  Maps a string key to a path within a volume.
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported Maps a string key to a path within a volume.
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The key to project.
-  *   `mode` (*type:* `integer()`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Mode bits to use on this file, must be a value between 0 and 0777. If not
-      specified, the volume defaultMode will be used. This might be in conflict
-      with other options that affect the file mode, like fsGroup, and the result
-      can be other mode bits set.
-  *   `path` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The relative path of the file to map the key to.
-      May not be an absolute path.
-      May not contain the path element '..'.
-      May not start with the string '..'.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The key to project.
+  *   `mode` (*type:* `integer()`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - Cloud Run fully managed: not supported Cloud Run for Anthos: supported The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
   """
 
   use GoogleApi.Gax.ModelBase

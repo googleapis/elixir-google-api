@@ -21,9 +21,7 @@ defmodule GoogleApi.Run.V1.Model.RouteSpec do
 
   ## Attributes
 
-  *   `traffic` (*type:* `list(GoogleApi.Run.V1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic specifies how to distribute traffic over a collection of Knative
-      Revisions and Configurations.
-      Cloud Run currently supports a single configurationName.
+  *   `traffic` (*type:* `list(GoogleApi.Run.V1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic specifies how to distribute traffic over a collection of Knative Revisions and Configurations. Cloud Run currently supports a single configurationName.
   """
 
   use GoogleApi.Gax.ModelBase

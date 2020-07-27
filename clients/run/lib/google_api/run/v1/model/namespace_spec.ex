@@ -17,17 +17,11 @@
 
 defmodule GoogleApi.Run.V1.Model.NamespaceSpec do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run on GKE: supported
-
-  NamespaceSpec describes the attributes on a Namespace.
+  Cloud Run fully managed: not supported Cloud Run on GKE: supported NamespaceSpec describes the attributes on a Namespace.
 
   ## Attributes
 
-  *   `finalizers` (*type:* `list(String.t)`, *default:* `nil`) - Finalizers is an opaque list of values that must be empty to permanently
-      remove object from storage. More info:
-      https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
+  *   `finalizers` (*type:* `list(String.t)`, *default:* `nil`) - Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
   """
 
   use GoogleApi.Gax.ModelBase

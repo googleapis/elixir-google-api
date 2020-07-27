@@ -17,36 +17,13 @@
 
 defmodule GoogleApi.Run.V1.Model.EnvFromSource do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  EnvFromSource represents the source of a set of ConfigMaps
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported EnvFromSource represents the source of a set of ConfigMaps
 
   ## Attributes
 
-  *   `configMapRef` (*type:* `GoogleApi.Run.V1.Model.ConfigMapEnvSource.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The ConfigMap to select from
-  *   `prefix` (*type:* `String.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      An optional identifier to prepend to each key in the ConfigMap. Must be a
-      C_IDENTIFIER.
-  *   `secretRef` (*type:* `GoogleApi.Run.V1.Model.SecretEnvSource.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      The Secret to select from
+  *   `configMapRef` (*type:* `GoogleApi.Run.V1.Model.ConfigMapEnvSource.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported The ConfigMap to select from
+  *   `prefix` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported An optional identifier to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
+  *   `secretRef` (*type:* `GoogleApi.Run.V1.Model.SecretEnvSource.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported The Secret to select from
   """
 
   use GoogleApi.Gax.ModelBase

@@ -31,8 +31,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the namespace being retrieved. If needed, replace
-      {namespace_id} with the project ID.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the namespace being retrieved. If needed, replace {namespace_id} with the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -89,8 +88,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the namespace being retrieved. If needed, replace
-      {namespace_id} with the project ID.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the namespace being retrieved. If needed, replace {namespace_id} with the project ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -103,8 +101,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Indicates which fields in the provided namespace to update.
-          This field is currently unused.
+      *   `:updateMask` (*type:* `String.t`) - Required. Indicates which fields in the provided namespace to update. This field is currently unused.
       *   `:body` (*type:* `GoogleApi.Run.V1.Model.Namespace.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -152,8 +149,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The project ID or project number in which this secret should
-      be created.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The project ID or project number in which this secret should be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -217,8 +213,7 @@ defmodule GoogleApi.Run.V1.Api.Api do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the secret being retrieved. If needed, replace
-      {namespace_id} with the project ID.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the secret being retrieved. If needed, replace {namespace_id} with the project ID.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -283,20 +278,12 @@ defmodule GoogleApi.Run.V1.Api.Api do
   end
 
   @doc """
-  Rpc to replace a secret.
-
-  Only the spec and metadata labels and annotations are modifiable. After
-  the Update request, Cloud Run will work to make the 'status'
-  match the requested 'spec'.
-
-  May provide metadata.resourceVersion to enforce update from last read for
-  optimistic concurrency control.
+  Rpc to replace a secret. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the secret being retrieved. If needed, replace
-      {namespace_id} with the project ID.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the secret being retrieved. If needed, replace {namespace_id} with the project ID.
   *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

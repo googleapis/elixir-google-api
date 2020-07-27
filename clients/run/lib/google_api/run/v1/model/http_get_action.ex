@@ -17,44 +17,14 @@
 
 defmodule GoogleApi.Run.V1.Model.HTTPGetAction do
   @moduledoc """
-  Cloud Run fully managed: not supported
-
-  Cloud Run for Anthos: supported
-
-  HTTPGetAction describes an action based on HTTP Get requests.
+  Cloud Run fully managed: not supported Cloud Run for Anthos: supported HTTPGetAction describes an action based on HTTP Get requests.
 
   ## Attributes
 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Host name to connect to, defaults to the pod IP. You probably want to set
-      "Host" in httpHeaders instead.
-  *   `httpHeaders` (*type:* `list(GoogleApi.Run.V1.Model.HTTPHeader.t)`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Custom headers to set in the request. HTTP allows repeated headers.
-  *   `path` (*type:* `String.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Path to access on the HTTP server.
-  *   `scheme` (*type:* `String.t`, *default:* `nil`) - (Optional)
-
-      Cloud Run fully managed: not supported
-
-      Cloud Run for Anthos: supported
-
-      Scheme to use for connecting to the host.
-      Defaults to HTTP.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
+  *   `httpHeaders` (*type:* `list(GoogleApi.Run.V1.Model.HTTPHeader.t)`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Custom headers to set in the request. HTTP allows repeated headers.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Path to access on the HTTP server.
+  *   `scheme` (*type:* `String.t`, *default:* `nil`) - (Optional) Cloud Run fully managed: not supported Cloud Run for Anthos: supported Scheme to use for connecting to the host. Defaults to HTTP.
   """
 
   use GoogleApi.Gax.ModelBase
