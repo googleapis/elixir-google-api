@@ -21,10 +21,8 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.SearchFoldersResponse do
 
   ## Attributes
 
-  *   `folders` (*type:* `list(GoogleApi.CloudResourceManager.V2.Model.Folder.t)`, *default:* `nil`) - A possibly paginated folder search results.
-      the specified parent resource.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to `SearchFolders`
-      that indicates from where searching should continue.
+  *   `folders` (*type:* `list(GoogleApi.CloudResourceManager.V2.Model.Folder.t)`, *default:* `nil`) - A possibly paginated folder search results. the specified parent resource.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to `SearchFolders` that indicates from where searching should continue.
   """
 
   use GoogleApi.Gax.ModelBase

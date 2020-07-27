@@ -21,9 +21,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.MoveFolderRequest do
 
   ## Attributes
 
-  *   `destinationParent` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the Folder or Organization to reparent
-      the folder under.
-      Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+  *   `destinationParent` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the Folder or Organization to reparent the folder under. Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
   """
 
   use GoogleApi.Gax.ModelBase

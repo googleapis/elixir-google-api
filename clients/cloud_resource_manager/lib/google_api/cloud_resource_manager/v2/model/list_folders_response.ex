@@ -21,10 +21,8 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.ListFoldersResponse do
 
   ## Attributes
 
-  *   `folders` (*type:* `list(GoogleApi.CloudResourceManager.V2.Model.Folder.t)`, *default:* `nil`) - A possibly paginated list of Folders that are direct descendants of
-      the specified parent resource.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to `ListFolders`
-      that indicates from where listing should continue.
+  *   `folders` (*type:* `list(GoogleApi.CloudResourceManager.V2.Model.Folder.t)`, *default:* `nil`) - A possibly paginated list of Folders that are direct descendants of the specified parent resource.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token returned from a previous call to `ListFolders` that indicates from where listing should continue.
   """
 
   use GoogleApi.Gax.ModelBase
