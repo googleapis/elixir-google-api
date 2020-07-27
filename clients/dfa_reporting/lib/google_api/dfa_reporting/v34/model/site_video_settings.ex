@@ -23,6 +23,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.SiteVideoSettings do
 
   *   `companionSettings` (*type:* `GoogleApi.DFAReporting.V34.Model.SiteCompanionSetting.t`, *default:* `nil`) - Settings for the companion creatives of video creatives served to this site.
   *   `kind` (*type:* `String.t`, *default:* `dfareporting#siteVideoSettings`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteVideoSettings".
+  *   `obaEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether OBA icons are enabled for this placement.
+  *   `obaSettings` (*type:* `GoogleApi.DFAReporting.V34.Model.ObaIcon.t`, *default:* `nil`) - Settings for the OBA icon of video creatives served to this site. This will act as default for new placements created under this site.
   *   `orientation` (*type:* `String.t`, *default:* `nil`) - Orientation of a site template used for video. This will act as default for new placements created under this site.
   *   `skippableSettings` (*type:* `GoogleApi.DFAReporting.V34.Model.SiteSkippableSetting.t`, *default:* `nil`) - Settings for the skippability of video creatives served to this site. This will act as default for new placements created under this site.
   *   `transcodeSettings` (*type:* `GoogleApi.DFAReporting.V34.Model.SiteTranscodeSetting.t`, *default:* `nil`) - Settings for the transcodes of video creatives served to this site. This will act as default for new placements created under this site.
@@ -33,6 +35,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.SiteVideoSettings do
   @type t :: %__MODULE__{
           :companionSettings => GoogleApi.DFAReporting.V34.Model.SiteCompanionSetting.t(),
           :kind => String.t(),
+          :obaEnabled => boolean(),
+          :obaSettings => GoogleApi.DFAReporting.V34.Model.ObaIcon.t(),
           :orientation => String.t(),
           :skippableSettings => GoogleApi.DFAReporting.V34.Model.SiteSkippableSetting.t(),
           :transcodeSettings => GoogleApi.DFAReporting.V34.Model.SiteTranscodeSetting.t()
@@ -40,6 +44,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.SiteVideoSettings do
 
   field(:companionSettings, as: GoogleApi.DFAReporting.V34.Model.SiteCompanionSetting)
   field(:kind)
+  field(:obaEnabled)
+  field(:obaSettings, as: GoogleApi.DFAReporting.V34.Model.ObaIcon)
   field(:orientation)
   field(:skippableSettings, as: GoogleApi.DFAReporting.V34.Model.SiteSkippableSetting)
   field(:transcodeSettings, as: GoogleApi.DFAReporting.V34.Model.SiteTranscodeSetting)

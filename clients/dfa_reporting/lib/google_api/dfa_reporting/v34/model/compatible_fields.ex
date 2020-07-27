@@ -24,6 +24,8 @@ defmodule GoogleApi.DFAReporting.V34.Model.CompatibleFields do
   *   `crossDimensionReachReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V34.Model.CrossDimensionReachReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "CROSS_DIMENSION_REACH".
   *   `floodlightReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V34.Model.FloodlightReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "FLOODLIGHT".
   *   `kind` (*type:* `String.t`, *default:* `dfareporting#compatibleFields`) - The kind of resource this is, in this case dfareporting#compatibleFields.
+  *   `pathAttributionReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "PATH_ATTRIBUTION".
+  *   `pathReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "PATH".
   *   `pathToConversionReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V34.Model.PathToConversionReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "PATH_TO_CONVERSION".
   *   `reachReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V34.Model.ReachReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "REACH".
   *   `reportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V34.Model.ReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "STANDARD".
@@ -37,6 +39,10 @@ defmodule GoogleApi.DFAReporting.V34.Model.CompatibleFields do
           :floodlightReportCompatibleFields =>
             GoogleApi.DFAReporting.V34.Model.FloodlightReportCompatibleFields.t(),
           :kind => String.t(),
+          :pathAttributionReportCompatibleFields =>
+            GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields.t(),
+          :pathReportCompatibleFields =>
+            GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields.t(),
           :pathToConversionReportCompatibleFields =>
             GoogleApi.DFAReporting.V34.Model.PathToConversionReportCompatibleFields.t(),
           :reachReportCompatibleFields =>
@@ -53,6 +59,14 @@ defmodule GoogleApi.DFAReporting.V34.Model.CompatibleFields do
   )
 
   field(:kind)
+
+  field(:pathAttributionReportCompatibleFields,
+    as: GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields
+  )
+
+  field(:pathReportCompatibleFields,
+    as: GoogleApi.DFAReporting.V34.Model.PathReportCompatibleFields
+  )
 
   field(:pathToConversionReportCompatibleFields,
     as: GoogleApi.DFAReporting.V34.Model.PathToConversionReportCompatibleFields
