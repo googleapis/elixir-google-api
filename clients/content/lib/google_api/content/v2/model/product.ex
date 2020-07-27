@@ -97,7 +97,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
       - "`petite`" 
       - "`plus`" 
       - "`regular`"
-  *   `mobileLink` (*type:* `String.t`, *default:* `nil`) - Link to a mobile-optimized version of the landing page.
+  *   `mobileLink` (*type:* `String.t`, *default:* `nil`) - URL for the mobile-optimized version of your item's landing page.
   *   `isBundle` (*type:* `boolean()`, *default:* `nil`) - Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.
   *   `googleProductCategory` (*type:* `String.t`, *default:* `nil`) - Google's category of the item (see Google product taxonomy).
   *   `material` (*type:* `String.t`, *default:* `nil`) - The material of which the item is made.
@@ -157,7 +157,7 @@ defmodule GoogleApi.Content.V2.Model.Product do
       - "`out of stock`" 
       - "`preorder`"
   *   `availabilityDate` (*type:* `String.t`, *default:* `nil`) - The day a pre-ordered product becomes available for delivery, in ISO 8601 format.
-  *   `canonicalLink` (*type:* `String.t`, *default:* `nil`) - Link to the canonical version of the landing page.
+  *   `canonicalLink` (*type:* `String.t`, *default:* `nil`) - URL for the canonical version of your item's landing page.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the item.
   *   `maxEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
 

@@ -25,6 +25,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The ID of the targeted account. Only defined if the method is not `insert`.
   *   `batchId` (*type:* `integer()`, *default:* `nil`) - An entry ID, unique within the batch request.
   *   `force` (*type:* `boolean()`, *default:* `nil`) - Whether the account should be deleted if the account has offers. Only applicable if the method is `delete`.
+  *   `labelIds` (*type:* `list(String.t)`, *default:* `nil`) - Label IDs for the 'updatelabels' request.
   *   `linkRequest` (*type:* `GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest.t`, *default:* `nil`) - Details about the `link` request.
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The ID of the managing account.
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the batch entry.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
           :accountId => String.t(),
           :batchId => integer(),
           :force => boolean(),
+          :labelIds => list(String.t()),
           :linkRequest =>
             GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest.t(),
           :merchantId => String.t(),
@@ -57,6 +59,7 @@ defmodule GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntry do
   field(:accountId)
   field(:batchId)
   field(:force)
+  field(:labelIds, type: :list)
   field(:linkRequest, as: GoogleApi.Content.V21.Model.AccountsCustomBatchRequestEntryLinkRequest)
   field(:merchantId)
   field(:method)
