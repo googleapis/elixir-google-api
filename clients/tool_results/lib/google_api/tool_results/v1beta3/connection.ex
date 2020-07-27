@@ -28,5 +28,5 @@ defmodule GoogleApi.ToolResults.V1beta3.Connection do
       "https://www.googleapis.com/auth/cloud-platform"
     ],
     otp_app: :google_api_tool_results,
-    base_url: "https://www.googleapis.com/"
+    base_url: "https://toolresults.googleapis.com/"
 end
