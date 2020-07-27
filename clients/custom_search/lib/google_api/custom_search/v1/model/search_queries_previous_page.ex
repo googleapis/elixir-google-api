@@ -207,9 +207,10 @@ defmodule GoogleApi.CustomSearch.V1.Model.SearchQueriesPreviousPage do
   *   `searchTerms` (*type:* `String.t`, *default:* `nil`) - The search terms entered by the user.
   *   `exactTerms` (*type:* `String.t`, *default:* `nil`) - Identifies a phrase that all documents in the search results must
       contain.
-  *   `cx` (*type:* `String.t`, *default:* `nil`) - The identifier of a custom search engine created using the Custom Search
-      [Control Panel](https://cse.google.com/). This is a custom property not
-      defined in the OpenSearch spec. This parameter is **required**.
+  *   `cx` (*type:* `String.t`, *default:* `nil`) - The identifier of an engine created using the Programmable Search Engine
+      [Control Panel](https://programmablesearchengine.google.com/). This is a
+      custom property not defined in the OpenSearch spec. This parameter is
+      **required**.
   *   `title` (*type:* `String.t`, *default:* `nil`) - A description of the query.
   *   `dateRestrict` (*type:* `String.t`, *default:* `nil`) - Restricts results to URLs based on date. Supported values include:
 
