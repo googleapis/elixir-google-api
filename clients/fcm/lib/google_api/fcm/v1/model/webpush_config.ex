@@ -21,18 +21,10 @@ defmodule GoogleApi.FCM.V1.Model.WebpushConfig do
 
   ## Attributes
 
-  *   `data` (*type:* `map()`, *default:* `nil`) - Arbitrary key/value payload. If present, it will override
-      google.firebase.fcm.v1.Message.data.
+  *   `data` (*type:* `map()`, *default:* `nil`) - Arbitrary key/value payload. If present, it will override google.firebase.fcm.v1.Message.data.
   *   `fcmOptions` (*type:* `GoogleApi.FCM.V1.Model.WebpushFcmOptions.t`, *default:* `nil`) - Options for features provided by the FCM SDK for Web.
-  *   `headers` (*type:* `map()`, *default:* `nil`) - HTTP headers defined in webpush protocol. Refer to
-      [Webpush protocol](https://tools.ietf.org/html/rfc8030#section-5) for
-      supported headers, e.g. "TTL": "15".
-  *   `notification` (*type:* `map()`, *default:* `nil`) - Web Notification options as a JSON object. Supports Notification instance
-      properties as defined in [Web Notification
-      API](https://developer.mozilla.org/en-US/docs/Web/API/Notification). If
-      present, "title" and "body" fields override
-      [google.firebase.fcm.v1.Notification.title] and
-      [google.firebase.fcm.v1.Notification.body].
+  *   `headers` (*type:* `map()`, *default:* `nil`) - HTTP headers defined in webpush protocol. Refer to [Webpush protocol](https://tools.ietf.org/html/rfc8030#section-5) for supported headers, e.g. "TTL": "15".
+  *   `notification` (*type:* `map()`, *default:* `nil`) - Web Notification options as a JSON object. Supports Notification instance properties as defined in [Web Notification API](https://developer.mozilla.org/en-US/docs/Web/API/Notification). If present, "title" and "body" fields override [google.firebase.fcm.v1.Notification.title] and [google.firebase.fcm.v1.Notification.body].
   """
 
   use GoogleApi.Gax.ModelBase

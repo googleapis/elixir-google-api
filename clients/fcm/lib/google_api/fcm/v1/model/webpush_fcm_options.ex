@@ -22,8 +22,7 @@ defmodule GoogleApi.FCM.V1.Model.WebpushFcmOptions do
   ## Attributes
 
   *   `analyticsLabel` (*type:* `String.t`, *default:* `nil`) - Label associated with the message's analytics data.
-  *   `link` (*type:* `String.t`, *default:* `nil`) - The link to open when the user clicks on the notification.
-      For all URL values, HTTPS is required.
+  *   `link` (*type:* `String.t`, *default:* `nil`) - The link to open when the user clicks on the notification. For all URL values, HTTPS is required.
   """
 
   use GoogleApi.Gax.ModelBase
