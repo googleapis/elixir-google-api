@@ -22,26 +22,15 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudStorageSourceSpec do
   ## Attributes
 
   *   `bucket` (*type:* `String.t`, *default:* `nil`) - Bucket to subscribe to.
-  *   `ceOverrides` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudEventOverrides.t`, *default:* `nil`) - CloudEventOverrides defines overrides to control the output format and
-      modifications of the event sent to the sink.
+  *   `ceOverrides` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudEventOverrides.t`, *default:* `nil`) - CloudEventOverrides defines overrides to control the output format and modifications of the event sent to the sink.
   *   `eventTypes` (*type:* `list(String.t)`, *default:* `nil`) - EventTypes to subscribe to. If unspecified, then subscribe to all events.
   *   `objectNamePrefix` (*type:* `String.t`, *default:* `nil`) - ObjectNamePrefix limits the notifications to objects with this prefix.
-  *   `payloadFormat` (*type:* `String.t`, *default:* `nil`) - PayloadFormat specifies the contents of the message payload.
-      See https://cloud.google.com/storage/docs/pubsub-notifications#payload.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - Project is the ID of the Google Cloud Project that the PubSub Topic exists
-      in. If omitted, defaults to same as the cluster.
-  *   `pubsubSecret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - PubSubSecret is the credential to use to create
-      Topic / PullSubscription resources. If omitted, uses Secret.
-  *   `secret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - Secret is the credential to use to create the Scheduler Job.
-      If not specified, defaults to:
-      Name: google-cloud-key
-      Key: key.json
-  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - ServiceAccountName holds the name of the Kubernetes service account
-      as which the underlying K8s resources should be run. If unspecified
-      this will default to the "default" service account for the namespace
-      in which the GCS exists.
-  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is a reference to an object that will resolve to a domain name or a
-      URI directly to use as the sink.
+  *   `payloadFormat` (*type:* `String.t`, *default:* `nil`) - PayloadFormat specifies the contents of the message payload. See https://cloud.google.com/storage/docs/pubsub-notifications#payload.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - Project is the ID of the Google Cloud Project that the PubSub Topic exists in. If omitted, defaults to same as the cluster.
+  *   `pubsubSecret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - PubSubSecret is the credential to use to create Topic / PullSubscription resources. If omitted, uses Secret.
+  *   `secret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - Secret is the credential to use to create the Scheduler Job. If not specified, defaults to: Name: google-cloud-key Key: key.json
+  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - ServiceAccountName holds the name of the Kubernetes service account as which the underlying K8s resources should be run. If unspecified this will default to the "default" service account for the namespace in which the GCS exists.
+  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is a reference to an object that will resolve to a domain name or a URI directly to use as the sink.
   """
 
   use GoogleApi.Gax.ModelBase

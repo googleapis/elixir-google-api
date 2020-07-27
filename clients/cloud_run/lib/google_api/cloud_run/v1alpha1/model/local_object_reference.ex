@@ -17,14 +17,11 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.LocalObjectReference do
   @moduledoc """
-  LocalObjectReference contains enough information to let you locate the
-  referenced object inside the same namespace.
+  LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the referent.
-      More info:
-      https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,48 +21,14 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec do
 
   ## Attributes
 
-  *   `concurrencyModel` (*type:* `String.t`, *default:* `nil`) - ConcurrencyModel specifies the desired concurrency model
-      (Single or Multi) for the Revision. Defaults to Multi.
-      Deprecated in favor of ContainerConcurrency.
-      +optional
-  *   `container` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Container.t`, *default:* `nil`) - Container defines the unit of execution for this Revision.
-      In the context of a Revision, we disallow a number of the fields of
-      this Container, including: name, ports, and volumeMounts.
-      The runtime contract is documented here:
-      https://github.com/knative/serving/blob/master/docs/runtime-contract.md
-  *   `containerConcurrency` (*type:* `integer()`, *default:* `nil`) - (Optional)
-
-      ContainerConcurrency specifies the maximum allowed in-flight (concurrent)
-      requests per container instance of the Revision.
-
-      Cloud Run fully managed: supported, defaults to 80
-
-      Cloud Run on GKE: supported, defaults to 0, which means concurrency
-      to the application is not limited, and the system decides the
-      target concurrency for the autoscaler.
-  *   `containers` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Container.t)`, *default:* `nil`) - Containers holds the single container that defines the unit of execution
-      for this Revision. In the context of a Revision, we disallow a number of
-      fields on this Container, including: name and lifecycle.
-      In Cloud Run, only a single container may be provided.
-  *   `generation` (*type:* `integer()`, *default:* `nil`) - Deprecated and not currently populated by Cloud Run. See
-      metadata.generation instead, which is the sequence number containing the
-      latest generation of the desired state.
-
-      Read-only.
-  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the revision
-      of the service. The service account represents the identity of the
-      running revision, and determines what permissions the revision has. If
-      not provided, the revision will use the project's default service account.
-  *   `servingState` (*type:* `String.t`, *default:* `nil`) - ServingState holds a value describing the state the resources
-      are in for this Revision.
-      Users must not specify this when creating a revision. It is expected
-      that the system will manipulate this based on routability and load.
-
-      Populated by the system.
-      Read-only.
-  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - TimeoutSeconds holds the max duration the instance is allowed for
-      responding to a request.
-      Not currently used by Cloud Run.
+  *   `concurrencyModel` (*type:* `String.t`, *default:* `nil`) - ConcurrencyModel specifies the desired concurrency model (Single or Multi) for the Revision. Defaults to Multi. Deprecated in favor of ContainerConcurrency. +optional
+  *   `container` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Container.t`, *default:* `nil`) - Container defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of the fields of this Container, including: name, ports, and volumeMounts. The runtime contract is documented here: https://github.com/knative/serving/blob/master/docs/runtime-contract.md
+  *   `containerConcurrency` (*type:* `integer()`, *default:* `nil`) - (Optional) ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container instance of the Revision. Cloud Run fully managed: supported, defaults to 80 Cloud Run on GKE: supported, defaults to 0, which means concurrency to the application is not limited, and the system decides the target concurrency for the autoscaler.
+  *   `containers` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Container.t)`, *default:* `nil`) - Containers holds the single container that defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of fields on this Container, including: name and lifecycle. In Cloud Run, only a single container may be provided.
+  *   `generation` (*type:* `integer()`, *default:* `nil`) - Deprecated and not currently populated by Cloud Run. See metadata.generation instead, which is the sequence number containing the latest generation of the desired state. Read-only.
+  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project's default service account.
+  *   `servingState` (*type:* `String.t`, *default:* `nil`) - ServingState holds a value describing the state the resources are in for this Revision. Users must not specify this when creating a revision. It is expected that the system will manipulate this based on routability and load. Populated by the system. Read-only.
+  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - TimeoutSeconds holds the max duration the instance is allowed for responding to a request. Not currently used by Cloud Run.
   *   `volumes` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Volume.t)`, *default:* `nil`) - 
   """
 

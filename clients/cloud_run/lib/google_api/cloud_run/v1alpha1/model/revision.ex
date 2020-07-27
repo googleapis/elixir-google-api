@@ -17,25 +17,15 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.Revision do
   @moduledoc """
-  Revision is an immutable snapshot of code and configuration.  A revision
-  references a container image. Revisions are created by updates to a
-  Configuration.
-
-  Cloud Run does not currently support referencing a build that is responsible
-  for materializing the container image from source.
-
-  See also:
-  https://github.com/knative/serving/blob/master/docs/spec/overview.md#revision
+  Revision is an immutable snapshot of code and configuration. A revision references a container image. Revisions are created by updates to a Configuration. Cloud Run does not currently support referencing a build that is responsible for materializing the container image from source. See also: https://github.com/knative/serving/blob/master/docs/spec/overview.md#revision
 
   ## Attributes
 
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "serving.knative.dev/v1alpha1".
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case "Revision".
-  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Revision, including name, namespace, labels,
-      and annotations.
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Revision, including name, namespace, labels, and annotations.
   *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionSpec.t`, *default:* `nil`) - Spec holds the desired state of the Revision (from the client).
-  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionStatus.t`, *default:* `nil`) - Status communicates the observed state of the Revision (from the
-      controller).
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionStatus.t`, *default:* `nil`) - Status communicates the observed state of the Revision (from the controller).
   """
 
   use GoogleApi.Gax.ModelBase

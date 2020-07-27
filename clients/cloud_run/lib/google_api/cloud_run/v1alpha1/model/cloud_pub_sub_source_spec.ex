@@ -21,37 +21,15 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSourceSpec do
 
   ## Attributes
 
-  *   `ackDeadline` (*type:* `String.t`, *default:* `nil`) - AckDeadline is the default maximum time after a subscriber receives a
-      message before the subscriber should acknowledge the message. Defaults
-      to 30 seconds ('30s').
-      +optional
-  *   `ceOverrides` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudEventOverrides.t`, *default:* `nil`) - CloudEventOverrides defines overrides to control the output format and
-      modifications of the event sent to the sink.
-      +optional
-  *   `project` (*type:* `String.t`, *default:* `nil`) - Project is the ID of the Google Cloud Project that the CloudPubSubSource
-      Topic exists in. If omitted, defaults to same as the cluster. +optional
-  *   `pubsubSecret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - CloudPubSubSourceSecret is the credential to use to create
-      Topic / PullSubscription resources. If omitted, uses Secret.
-  *   `retainAckedMessages` (*type:* `boolean()`, *default:* `nil`) - RetainAckedMessages defines whether to retain acknowledged messages. If
-      true, acknowledged messages will not be expunged until they fall out of
-      the RetentionDuration window.
-  *   `retentionDuration` (*type:* `String.t`, *default:* `nil`) - RetentionDuration defines how long to retain messages in backlog, from
-      the time of publish. If RetainAckedMessages is true, this duration
-      affects the retention of acknowledged messages, otherwise only
-      unacknowledged messages are retained. Cannot be longer than 7 days or
-      shorter than 10 minutes. Defaults to 7 days ('7d').
-      +optional
-  *   `secret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - Secret is the credential to use to create the Scheduler Job.
-      If not specified, defaults to:
-      Name: google-cloud-key
-      Key: key.json
-      +optional
-  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is a reference to an object that will resolve to a domain name or a
-      URI directly to use as the sink.
-  *   `topic` (*type:* `String.t`, *default:* `nil`) - Topic is the ID of the CloudPubSubSource Topic to Subscribe to. It must
-      be in the form of the unique identifier within the project, not the
-      entire name. E.g. it must be 'laconia', not
-      'projects/my-proj/topics/laconia'.
+  *   `ackDeadline` (*type:* `String.t`, *default:* `nil`) - AckDeadline is the default maximum time after a subscriber receives a message before the subscriber should acknowledge the message. Defaults to 30 seconds ('30s'). +optional
+  *   `ceOverrides` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudEventOverrides.t`, *default:* `nil`) - CloudEventOverrides defines overrides to control the output format and modifications of the event sent to the sink. +optional
+  *   `project` (*type:* `String.t`, *default:* `nil`) - Project is the ID of the Google Cloud Project that the CloudPubSubSource Topic exists in. If omitted, defaults to same as the cluster. +optional
+  *   `pubsubSecret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - CloudPubSubSourceSecret is the credential to use to create Topic / PullSubscription resources. If omitted, uses Secret.
+  *   `retainAckedMessages` (*type:* `boolean()`, *default:* `nil`) - RetainAckedMessages defines whether to retain acknowledged messages. If true, acknowledged messages will not be expunged until they fall out of the RetentionDuration window.
+  *   `retentionDuration` (*type:* `String.t`, *default:* `nil`) - RetentionDuration defines how long to retain messages in backlog, from the time of publish. If RetainAckedMessages is true, this duration affects the retention of acknowledged messages, otherwise only unacknowledged messages are retained. Cannot be longer than 7 days or shorter than 10 minutes. Defaults to 7 days ('7d'). +optional
+  *   `secret` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.SecretKeySelector.t`, *default:* `nil`) - Secret is the credential to use to create the Scheduler Job. If not specified, defaults to: Name: google-cloud-key Key: key.json +optional
+  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is a reference to an object that will resolve to a domain name or a URI directly to use as the sink.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - Topic is the ID of the CloudPubSubSource Topic to Subscribe to. It must be in the form of the unique identifier within the project, not the entire name. E.g. it must be 'laconia', not 'projects/my-proj/topics/laconia'.
   """
 
   use GoogleApi.Gax.ModelBase

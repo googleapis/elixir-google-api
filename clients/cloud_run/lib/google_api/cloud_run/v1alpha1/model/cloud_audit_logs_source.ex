@@ -25,8 +25,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSource do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "CloudAuditLogsSource".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this CloudAuditLogsSource.
   *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSourceSpec.t`, *default:* `nil`) - Spec defines the desired state of the CloudAuditLogsSource.
-  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSourceStatus.t`, *default:* `nil`) - Status represents the current state of the CloudAuditLogsSource. This data
-      may be out of date. +optional
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSourceStatus.t`, *default:* `nil`) - Status represents the current state of the CloudAuditLogsSource. This data may be out of date. +optional
   """
 
   use GoogleApi.Gax.ModelBase

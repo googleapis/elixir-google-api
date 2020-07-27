@@ -17,17 +17,13 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudSchedulerSourceStatus do
   @moduledoc """
-  CloudSchedulerSourceStatus represents the current state of a
-  CloudSchedulerSource.
+  CloudSchedulerSourceStatus represents the current state of a CloudSchedulerSource.
 
   ## Attributes
 
-  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Condition.t)`, *default:* `nil`) - Array of observed CloudSchedulerSourceConditions, indicating the current
-      state of the CloudSchedulerSource.
-  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the CloudSchedulerSource that
-      was last processed by the controller.
-  *   `sinkUri` (*type:* `String.t`, *default:* `nil`) - SinkURI is the current active sink URI that has been configured for the
-      Source.
+  *   `conditions` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.Condition.t)`, *default:* `nil`) - Array of observed CloudSchedulerSourceConditions, indicating the current state of the CloudSchedulerSource.
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the CloudSchedulerSource that was last processed by the controller.
+  *   `sinkUri` (*type:* `String.t`, *default:* `nil`) - SinkURI is the current active sink URI that has been configured for the Source.
   """
 
   use GoogleApi.Gax.ModelBase

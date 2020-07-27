@@ -21,24 +21,12 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudAuditLogsSourceSpec do
 
   ## Attributes
 
-  *   `ceOverrides` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudEventOverrides.t`, *default:* `nil`) - CloudEventOverrides defines overrides to control the output format and
-      modifications of the event sent to the sink.
-      +optional
-  *   `methodName` (*type:* `String.t`, *default:* `nil`) - Required. The method name at the service API. This must match "methodName" in Cloud
-      Audit Logs. Regex or Wildcards (*) are not supported.
-      Example: "google.cloud.bigquery.job.create".
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Optional. The resource specification. This must match "methodName"
-      in Cloud Audit Logs. Regex or Wildcards (*) are not supported.
-      Example: "projects/my-project/jobs/foo".
-  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - Optional. Email address of the IAM service account associated with the source. The
-      service account represents the identity of the source, and determines what
-      permissions the source has. If not provided, the source will use the
-      project's default service account.
-  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - Required. The GCP service name. This must match "serviceName" in Cloud Audit Logs.
-      Regex or Wildcards (*) are not supported.
-      Example: "bigquery.googleapis.com".
-  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is a reference to an object that will resolve to a domain name or a
-      URI directly to use as the sink.
+  *   `ceOverrides` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudEventOverrides.t`, *default:* `nil`) - CloudEventOverrides defines overrides to control the output format and modifications of the event sent to the sink. +optional
+  *   `methodName` (*type:* `String.t`, *default:* `nil`) - Required. The method name at the service API. This must match "methodName" in Cloud Audit Logs. Regex or Wildcards (*) are not supported. Example: "google.cloud.bigquery.job.create".
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Optional. The resource specification. This must match "methodName" in Cloud Audit Logs. Regex or Wildcards (*) are not supported. Example: "projects/my-project/jobs/foo".
+  *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - Optional. Email address of the IAM service account associated with the source. The service account represents the identity of the source, and determines what permissions the source has. If not provided, the source will use the project's default service account.
+  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - Required. The GCP service name. This must match "serviceName" in Cloud Audit Logs. Regex or Wildcards (*) are not supported. Example: "bigquery.googleapis.com".
+  *   `sink` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.Destination.t`, *default:* `nil`) - Sink is a reference to an object that will resolve to a domain name or a URI directly to use as the sink.
   """
 
   use GoogleApi.Gax.ModelBase

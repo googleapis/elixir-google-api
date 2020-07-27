@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecPinnedType do
   @moduledoc """
-  ServiceSpecPinnedType Pins this service to a specific revision name. The
-  revision must be owned by the configuration provided.
-
-  Deprecated and not supported by Cloud Run.
+  ServiceSpecPinnedType Pins this service to a specific revision name. The revision must be owned by the configuration provided. Deprecated and not supported by Cloud Run.
 
   ## Attributes
 
   *   `configuration` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ConfigurationSpec.t`, *default:* `nil`) - The configuration for this service.
-  *   `revisionName` (*type:* `String.t`, *default:* `nil`) - The revision name to pin this service to until changed
-      to a different service type.
+  *   `revisionName` (*type:* `String.t`, *default:* `nil`) - The revision name to pin this service to until changed to a different service type.
   """
 
   use GoogleApi.Gax.ModelBase

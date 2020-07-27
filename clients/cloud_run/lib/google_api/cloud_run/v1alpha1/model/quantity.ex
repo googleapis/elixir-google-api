@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.Quantity do
   @moduledoc """
-  The view model of a single quantity, e.g. "800 MiB". Corresponds to
-  https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/generated.proto
+  The view model of a single quantity, e.g. "800 MiB". Corresponds to https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/generated.proto
 
   ## Attributes
 

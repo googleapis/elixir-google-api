@@ -17,23 +17,13 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.Route do
   @moduledoc """
-  Route is responsible for configuring ingress over a collection of Revisions.
-  Some of the Revisions a Route distributes traffic over may be specified by
-  referencing the Configuration responsible for creating them; in these cases
-  the Route is additionally responsible for monitoring the Configuration for
-  "latest ready" revision changes, and smoothly rolling out latest revisions.
-  See also:
-  https://github.com/knative/serving/blob/master/docs/spec/overview.md#route
-
-  Cloud Run currently supports referencing a single Configuration to
-  automatically deploy the "latest ready" Revision from that Configuration.
+  Route is responsible for configuring ingress over a collection of Revisions. Some of the Revisions a Route distributes traffic over may be specified by referencing the Configuration responsible for creating them; in these cases the Route is additionally responsible for monitoring the Configuration for "latest ready" revision changes, and smoothly rolling out latest revisions. See also: https://github.com/knative/serving/blob/master/docs/spec/overview.md#route Cloud Run currently supports referencing a single Configuration to automatically deploy the "latest ready" Revision from that Configuration.
 
   ## Attributes
 
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API version for this call such as "serving.knative.dev/v1alpha1".
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of this resource, in this case always "Route".
-  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Route, including name, namespace, labels,
-      and annotations.
+  *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this Route, including name, namespace, labels, and annotations.
   *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RouteSpec.t`, *default:* `nil`) - Spec holds the desired state of the Route (from the client).
   *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RouteStatus.t`, *default:* `nil`) - Status communicates the observed state of the Route (from the controller).
   """

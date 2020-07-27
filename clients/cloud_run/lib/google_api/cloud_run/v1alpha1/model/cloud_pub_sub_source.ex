@@ -25,8 +25,7 @@ defmodule GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSource do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource, in this case "CloudPubSubSource".
   *   `metadata` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ObjectMeta.t`, *default:* `nil`) - Metadata associated with this CloudPubSubSource.
   *   `spec` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSourceSpec.t`, *default:* `nil`) - Spec defines the desired state of the CloudPubSubSource.
-  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSourceStatus.t`, *default:* `nil`) - Status represents the current state of the CloudPubSubSource. This data may
-      be out of date. +optional
+  *   `status` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.CloudPubSubSourceStatus.t`, *default:* `nil`) - Status represents the current state of the CloudPubSubSource. This data may be out of date. +optional
   """
 
   use GoogleApi.Gax.ModelBase

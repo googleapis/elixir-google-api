@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.ListCloudSchedulerSourcesResponse do
   @moduledoc """
-  ListCloudSchedulerSourcesResponse is a list of CloudSchedulerSource
-  resources.
+  ListCloudSchedulerSourcesResponse is a list of CloudSchedulerSource resources.
 
   ## Attributes
 

@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.ListCloudAuditLogsSourcesResponse do
   @moduledoc """
-  ListCloudAuditLogsSourcesResponse is a list of CloudAuditLogsSource
-  resources.
+  ListCloudAuditLogsSourcesResponse is a list of CloudAuditLogsSource resources.
 
   ## Attributes
 

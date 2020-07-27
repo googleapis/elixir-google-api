@@ -17,38 +17,17 @@
 
 defmodule GoogleApi.CloudRun.V1alpha1.Model.ServiceSpec do
   @moduledoc """
-  ServiceSpec holds the desired state of the Route (from the client), which
-  is used to manipulate the underlying Route and Configuration(s).
+  ServiceSpec holds the desired state of the Route (from the client), which is used to manipulate the underlying Route and Configuration(s).
 
   ## Attributes
 
-  *   `generation` (*type:* `integer()`, *default:* `nil`) - Deprecated and not currently populated by Cloud Run. See
-      metadata.generation instead, which is the sequence number containing the
-      latest generation of the desired state.
-
-      Read-only.
-  *   `manual` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecManualType.t`, *default:* `nil`) - Manual contains the options for configuring a manual service. See
-      ServiceSpec for more details.
-
-      Not currently supported by Cloud Run.
-  *   `pinned` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecPinnedType.t`, *default:* `nil`) - Pins this service to a specific revision name. The revision must
-      be owned by the configuration provided.
-
-      Deprecated and not supported by Cloud Run.
-      +optional
-  *   `release` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecReleaseType.t`, *default:* `nil`) - Release enables gradual promotion of new revisions by allowing traffic
-      to be split between two revisions. This type replaces the deprecated
-      Pinned type.
-
-      Not currently supported by Cloud Run.
-  *   `runLatest` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest.t`, *default:* `nil`) - RunLatest defines a simple Service. It will automatically
-      configure a route that keeps the latest ready revision
-      from the supplied configuration running.
-      +optional
-  *   `template` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t`, *default:* `nil`) - Template holds the latest specification for the Revision to
-      be stamped out.
-  *   `traffic` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic specifies how to distribute traffic over a collection of Knative
-      Revisions and Configurations.
+  *   `generation` (*type:* `integer()`, *default:* `nil`) - Deprecated and not currently populated by Cloud Run. See metadata.generation instead, which is the sequence number containing the latest generation of the desired state. Read-only.
+  *   `manual` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecManualType.t`, *default:* `nil`) - Manual contains the options for configuring a manual service. See ServiceSpec for more details. Not currently supported by Cloud Run.
+  *   `pinned` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecPinnedType.t`, *default:* `nil`) - Pins this service to a specific revision name. The revision must be owned by the configuration provided. Deprecated and not supported by Cloud Run. +optional
+  *   `release` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecReleaseType.t`, *default:* `nil`) - Release enables gradual promotion of new revisions by allowing traffic to be split between two revisions. This type replaces the deprecated Pinned type. Not currently supported by Cloud Run.
+  *   `runLatest` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.ServiceSpecRunLatest.t`, *default:* `nil`) - RunLatest defines a simple Service. It will automatically configure a route that keeps the latest ready revision from the supplied configuration running. +optional
+  *   `template` (*type:* `GoogleApi.CloudRun.V1alpha1.Model.RevisionTemplate.t`, *default:* `nil`) - Template holds the latest specification for the Revision to be stamped out.
+  *   `traffic` (*type:* `list(GoogleApi.CloudRun.V1alpha1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic specifies how to distribute traffic over a collection of Knative Revisions and Configurations.
   """
 
   use GoogleApi.Gax.ModelBase
