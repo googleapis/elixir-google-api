@@ -28,8 +28,8 @@ defmodule GoogleApi.Gmail.V1.Model.Label do
   *   `id` (*type:* `String.t`, *default:* `nil`) - The immutable ID of the label.
   *   `labelListVisibility` (*type:* `String.t`, *default:* `nil`) - The visibility of the label in the label list in the Gmail web interface.
       @mutable gmail.users.labels.create gmail.users.labels.update
-  *   `messageListVisibility` (*type:* `String.t`, *default:* `nil`) - The visibility of the label in the message list in the
-      Gmail web interface.
+  *   `messageListVisibility` (*type:* `String.t`, *default:* `nil`) - The visibility of messages with this label in the message list
+      in the Gmail web interface.
       @mutable gmail.users.labels.create gmail.users.labels.update
   *   `messagesTotal` (*type:* `integer()`, *default:* `nil`) - The total number of messages with the label.
   *   `messagesUnread` (*type:* `integer()`, *default:* `nil`) - The number of unread messages with the label.

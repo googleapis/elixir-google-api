@@ -1966,7 +1966,8 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:format` (*type:* `String.t`) - The format to return the message in.
-      *   `:metadataHeaders` (*type:* `list(String.t)`) - When given and format is METADATA, only include headers specified.
+      *   `:metadataHeaders` (*type:* `list(String.t)`) - When given and format is `METADATA`, only include headers
+          specified.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
