@@ -378,7 +378,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Api.Services do
   Creates a tenancy unit with no tenant resources.
   If tenancy unit already exists, it will be returned,
   however, in this case, returned TenancyUnit does not have tenant_resources
-  field set and ListTenancyUnit has to be used to get a complete
+  field set and ListTenancyUnits has to be used to get a complete
   TenancyUnit with all fields populated.
 
   ## Parameters
