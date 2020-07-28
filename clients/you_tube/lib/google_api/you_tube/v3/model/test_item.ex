@@ -21,6 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.TestItem do
 
   ## Attributes
 
+  *   `gaia` (*type:* `String.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - 
   *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.TestItemTestItemSnippet.t`, *default:* `nil`) - 
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.YouTube.V3.Model.TestItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :gaia => String.t(),
           :id => String.t(),
           :snippet => GoogleApi.YouTube.V3.Model.TestItemTestItemSnippet.t()
         }
 
+  field(:gaia)
   field(:id)
   field(:snippet, as: GoogleApi.YouTube.V3.Model.TestItemTestItemSnippet)
 end
