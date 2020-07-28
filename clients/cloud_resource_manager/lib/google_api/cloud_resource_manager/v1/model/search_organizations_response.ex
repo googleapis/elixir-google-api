@@ -21,13 +21,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.SearchOrganizationsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token to be used to retrieve the next page of results. If the
-      result is too large to fit within the page size specified in the request,
-      this field will be set with a token that can be used to fetch the next page
-      of results. If this field is empty, it indicates that this response
-      contains the last page of results.
-  *   `organizations` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.Organization.t)`, *default:* `nil`) - The list of Organizations that matched the search query, possibly
-      paginated.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A pagination token to be used to retrieve the next page of results. If the result is too large to fit within the page size specified in the request, this field will be set with a token that can be used to fetch the next page of results. If this field is empty, it indicates that this response contains the last page of results.
+  *   `organizations` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.Organization.t)`, *default:* `nil`) - The list of Organizations that matched the search query, possibly paginated.
   """
 
   use GoogleApi.Gax.ModelBase

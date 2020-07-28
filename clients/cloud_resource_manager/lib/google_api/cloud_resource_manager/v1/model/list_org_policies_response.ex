@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.ListOrgPoliciesResponse do
   @moduledoc """
-  The response returned from the `ListOrgPolicies` method. It will be empty
-  if no `Policies` are set on the resource.
+  The response returned from the `ListOrgPolicies` method. It will be empty if no `Policies` are set on the resource.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token used to retrieve the next page. This is currently not used, but
-      the server may at any point start supplying a valid token.
-  *   `policies` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t)`, *default:* `nil`) - The `Policies` that are set on the resource. It will be empty if no
-      `Policies` are set.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token used to retrieve the next page. This is currently not used, but the server may at any point start supplying a valid token.
+  *   `policies` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.OrgPolicy.t)`, *default:* `nil`) - The `Policies` that are set on the resource. It will be empty if no `Policies` are set.
   """
 
   use GoogleApi.Gax.ModelBase

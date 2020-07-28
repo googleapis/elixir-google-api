@@ -97,11 +97,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
   end
 
   @doc """
-  Gets the effective `Policy` on a resource. This is the result of merging
-  `Policies` in the resource hierarchy. The returned `Policy` will not have
-  an `etag`set because it is a computed `Policy` across multiple resources.
-  Subtrees of Resource Manager resource hierarchy with 'under:' prefix will
-  not be expanded.
+  Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the resource hierarchy. The returned `Policy` will not have an `etag`set because it is a computed `Policy` across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded.
 
   ## Parameters
 
@@ -172,12 +168,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
   end
 
   @doc """
-  Gets a `Policy` on a resource.
-
-  If no `Policy` is set on the resource, a `Policy` is returned with default
-  values including `POLICY_TYPE_NOT_SET` for the `policy_type oneof`. The
-  `etag` value can be used with `SetOrgPolicy()` to create or update a
-  `Policy` during read-modify-write.
+  Gets a `Policy` on a resource. If no `Policy` is set on the resource, a `Policy` is returned with default values including `POLICY_TYPE_NOT_SET` for the `policy_type oneof`. The `etag` value can be used with `SetOrgPolicy()` to create or update a `Policy` during read-modify-write.
 
   ## Parameters
 
@@ -399,11 +390,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
   end
 
   @doc """
-  Updates the specified `Policy` on the resource. Creates a new `Policy` for
-  that `Constraint` on the resource if one does not exist.
-
-  Not supplying an `etag` on the request `Policy` results in an unconditional
-  write of the `Policy`.
+  Updates the specified `Policy` on the resource. Creates a new `Policy` for that `Constraint` on the resource if one does not exist. Not supplying an `etag` on the request `Policy` results in an unconditional write of the `Policy`.
 
   ## Parameters
 

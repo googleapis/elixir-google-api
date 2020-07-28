@@ -17,17 +17,12 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.ResourceId do
   @moduledoc """
-  A container to reference an id for any resource type. A `resource` in Google
-  Cloud Platform is a generic term for something you (a developer) may want to
-  interact with through one of our API's. Some examples are an App Engine app,
-  a Compute Engine instance, a Cloud SQL database, and so on.
+  A container to reference an id for any resource type. A `resource` in Google Cloud Platform is a generic term for something you (a developer) may want to interact with through one of our API's. Some examples are an App Engine app, a Compute Engine instance, a Cloud SQL database, and so on.
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required field for the type-specific id. This should correspond to the id
-      used in the type-specific API's.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required field representing the resource type this id is for.
-      At present, the valid types are: "organization", "folder", and "project".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required field for the type-specific id. This should correspond to the id used in the type-specific API's.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required field representing the resource type this id is for. At present, the valid types are: "organization", "folder", and "project".
   """
 
   use GoogleApi.Gax.ModelBase

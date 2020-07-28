@@ -26,13 +26,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Create a Lien which applies to the resource denoted by the `parent` field.
-
-  Callers of this method will require permission on the `parent` resource.
-  For example, applying to `projects/1234` requires permission
-  `resourcemanager.projects.updateLiens`.
-
-  NOTE: Some resources may limit the number of Liens which may be applied.
+  Create a Lien which applies to the resource denoted by the `parent` field. Callers of this method will require permission on the `parent` resource. For example, applying to `projects/1234` requires permission `resourcemanager.projects.updateLiens`. NOTE: Some resources may limit the number of Liens which may be applied.
 
   ## Parameters
 
@@ -90,11 +84,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   end
 
   @doc """
-  Delete a Lien by `name`.
-
-  Callers of this method will require permission on the `parent` resource.
-  For example, a Lien with a `parent` of `projects/1234` requires permission
-  `resourcemanager.projects.updateLiens`.
+  Delete a Lien by `name`. Callers of this method will require permission on the `parent` resource. For example, a Lien with a `parent` of `projects/1234` requires permission `resourcemanager.projects.updateLiens`.
 
   ## Parameters
 
@@ -153,12 +143,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   end
 
   @doc """
-  Retrieve a Lien by `name`.
-
-  Callers of this method will require permission on the `parent` resource.
-  For example, a Lien with a `parent` of `projects/1234` requires permission
-  requires permission `resourcemanager.projects.get` or
-  `resourcemanager.projects.updateLiens`.
+  Retrieve a Lien by `name`. Callers of this method will require permission on the `parent` resource. For example, a Lien with a `parent` of `projects/1234` requires permission requires permission `resourcemanager.projects.get` or `resourcemanager.projects.updateLiens`.
 
   ## Parameters
 
@@ -217,11 +202,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   end
 
   @doc """
-  List all Liens applied to the `parent` resource.
-
-  Callers of this method will require permission on the `parent` resource.
-  For example, a Lien with a `parent` of `projects/1234` requires permission
-  `resourcemanager.projects.get`.
+  List all Liens applied to the `parent` resource. Callers of this method will require permission on the `parent` resource. For example, a Lien with a `parent` of `projects/1234` requires permission `resourcemanager.projects.get`.
 
   ## Parameters
 
@@ -240,12 +221,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. This is a suggestion for the server.
       *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous List request, if any.
-      *   `:parent` (*type:* `String.t`) - Required. The name of the resource to list all attached Liens.
-          For example, `projects/1234`.
-
-          (google.api.field_policy).resource_type annotation is not set since the
-          parent depends on the meta api implementation. This field could be a
-          project or other sub project resources.
+      *   `:parent` (*type:* `String.t`) - Required. The name of the resource to list all attached Liens. For example, `projects/1234`. (google.api.field_policy).resource_type annotation is not set since the parent depends on the meta api implementation. This field could be a project or other sub project resources.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

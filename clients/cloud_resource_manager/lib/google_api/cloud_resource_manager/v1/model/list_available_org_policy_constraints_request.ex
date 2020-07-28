@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.ListAvailableOrgPolicyConstraintsRequest do
   @moduledoc """
-  The request sent to the `ListAvailableOrgPolicyConstraints` method on the
-  project, folder, or organization.
+  The request sent to the `ListAvailableOrgPolicyConstraints` method on the project, folder, or organization.
 
   ## Attributes
 
-  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Size of the pages to be returned. This is currently unsupported and will
-      be ignored. The server may at any point start using this field to limit
-      page size.
-  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Page token used to retrieve the next page. This is currently unsupported
-      and will be ignored. The server may at any point start using this field.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Size of the pages to be returned. This is currently unsupported and will be ignored. The server may at any point start using this field to limit page size.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Page token used to retrieve the next page. This is currently unsupported and will be ignored. The server may at any point start using this field.
   """
 
   use GoogleApi.Gax.ModelBase
