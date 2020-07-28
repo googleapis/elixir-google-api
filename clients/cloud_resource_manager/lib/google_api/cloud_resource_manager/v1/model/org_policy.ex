@@ -17,42 +17,16 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.OrgPolicy do
   @moduledoc """
-  Defines a Cloud Organization `Policy` which is used to specify `Constraints`
-  for configurations of Cloud Platform resources.
+  Defines a Cloud Organization `Policy` which is used to specify `Constraints` for configurations of Cloud Platform resources.
 
   ## Attributes
 
   *   `booleanPolicy` (*type:* `GoogleApi.CloudResourceManager.V1.Model.BooleanPolicy.t`, *default:* `nil`) - For boolean `Constraints`, whether to enforce the `Constraint` or not.
-  *   `constraint` (*type:* `String.t`, *default:* `nil`) - The name of the `Constraint` the `Policy` is configuring, for example,
-      `constraints/serviceuser.services`.
-
-      A [list of available
-      constraints](/resource-manager/docs/organization-policy/org-policy-constraints)
-      is available.
-
-      Immutable after creation.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - An opaque tag indicating the current version of the `Policy`, used for
-      concurrency control.
-
-      When the `Policy` is returned from either a `GetPolicy` or a
-      `ListOrgPolicy` request, this `etag` indicates the version of the current
-      `Policy` to use when executing a read-modify-write loop.
-
-      When the `Policy` is returned from a `GetEffectivePolicy` request, the
-      `etag` will be unset.
-
-      When the `Policy` is used in a `SetOrgPolicy` method, use the `etag` value
-      that was returned from a `GetOrgPolicy` request as part of a
-      read-modify-write loop for concurrency control. Not setting the `etag`in a
-      `SetOrgPolicy` request will result in an unconditional write of the
-      `Policy`.
+  *   `constraint` (*type:* `String.t`, *default:* `nil`) - The name of the `Constraint` the `Policy` is configuring, for example, `constraints/serviceuser.services`. A [list of available constraints](/resource-manager/docs/organization-policy/org-policy-constraints) is available. Immutable after creation.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - An opaque tag indicating the current version of the `Policy`, used for concurrency control. When the `Policy` is returned from either a `GetPolicy` or a `ListOrgPolicy` request, this `etag` indicates the version of the current `Policy` to use when executing a read-modify-write loop. When the `Policy` is returned from a `GetEffectivePolicy` request, the `etag` will be unset. When the `Policy` is used in a `SetOrgPolicy` method, use the `etag` value that was returned from a `GetOrgPolicy` request as part of a read-modify-write loop for concurrency control. Not setting the `etag`in a `SetOrgPolicy` request will result in an unconditional write of the `Policy`.
   *   `listPolicy` (*type:* `GoogleApi.CloudResourceManager.V1.Model.ListPolicy.t`, *default:* `nil`) - List of values either allowed or disallowed.
-  *   `restoreDefault` (*type:* `GoogleApi.CloudResourceManager.V1.Model.RestoreDefault.t`, *default:* `nil`) - Restores the default behavior of the constraint; independent of
-      `Constraint` type.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time stamp the `Policy` was previously updated. This is set by the
-      server, not specified by the caller, and represents the last time a call to
-      `SetOrgPolicy` was made for that `Policy`. Any value set by the client will
-      be ignored.
+  *   `restoreDefault` (*type:* `GoogleApi.CloudResourceManager.V1.Model.RestoreDefault.t`, *default:* `nil`) - Restores the default behavior of the constraint; independent of `Constraint` type.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time stamp the `Policy` was previously updated. This is set by the server, not specified by the caller, and represents the last time a call to `SetOrgPolicy` was made for that `Policy`. Any value set by the client will be ignored.
   *   `version` (*type:* `integer()`, *default:* `nil`) - Version of the `Policy`. Default version is 0;
   """
 

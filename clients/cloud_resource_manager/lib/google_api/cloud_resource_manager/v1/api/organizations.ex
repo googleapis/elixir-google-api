@@ -102,9 +102,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. The resource name of the Organization to fetch. This is the organization's
-      relative path in the API, formatted as "organizations/[organizationId]".
-      For example, "organizations/1234".
+  *   `organizations_id` (*type:* `String.t`) - Part of `name`. The resource name of the Organization to fetch. This is the organization's relative path in the API, formatted as "organizations/[organizationId]". For example, "organizations/1234".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -168,11 +166,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the effective `Policy` on a resource. This is the result of merging
-  `Policies` in the resource hierarchy. The returned `Policy` will not have
-  an `etag`set because it is a computed `Policy` across multiple resources.
-  Subtrees of Resource Manager resource hierarchy with 'under:' prefix will
-  not be expanded.
+  Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the resource hierarchy. The returned `Policy` will not have an `etag`set because it is a computed `Policy` across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded.
 
   ## Parameters
 
@@ -243,18 +237,12 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   end
 
   @doc """
-  Gets the access control policy for an Organization resource. May be empty
-  if no such policy or resource exists. The `resource` field should be the
-  organization's resource name, e.g. "organizations/123".
-
-  Authorization requires the Google IAM permission
-  `resourcemanager.organizations.getIamPolicy` on the specified organization
+  Gets the access control policy for an Organization resource. May be empty if no such policy or resource exists. The `resource` field should be the organization's resource name, e.g. "organizations/123". Authorization requires the Google IAM permission `resourcemanager.organizations.getIamPolicy` on the specified organization
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -320,12 +308,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   end
 
   @doc """
-  Gets a `Policy` on a resource.
-
-  If no `Policy` is set on the resource, a `Policy` is returned with default
-  values including `POLICY_TYPE_NOT_SET` for the `policy_type oneof`. The
-  `etag` value can be used with `SetOrgPolicy()` to create or update a
-  `Policy` during read-modify-write.
+  Gets a `Policy` on a resource. If no `Policy` is set on the resource, a `Policy` is returned with default values including `POLICY_TYPE_NOT_SET` for the `policy_type oneof`. The `etag` value can be used with `SetOrgPolicy()` to create or update a `Policy` during read-modify-write.
 
   ## Parameters
 
@@ -547,13 +530,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   end
 
   @doc """
-  Searches Organization resources that are visible to the user and satisfy
-  the specified filter. This method returns Organizations in an unspecified
-  order. New Organizations do not necessarily appear at the end of the
-  results.
-
-  Search will only return organizations on which the user has the permission
-  `resourcemanager.organizations.get`
+  Searches Organization resources that are visible to the user and satisfy the specified filter. This method returns Organizations in an unspecified order. New Organizations do not necessarily appear at the end of the results. Search will only return organizations on which the user has the permission `resourcemanager.organizations.get`
 
   ## Parameters
 
@@ -613,18 +590,12 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   end
 
   @doc """
-  Sets the access control policy on an Organization resource. Replaces any
-  existing policy. The `resource` field should be the organization's resource
-  name, e.g. "organizations/123".
-
-  Authorization requires the Google IAM permission
-  `resourcemanager.organizations.setIamPolicy` on the specified organization
+  Sets the access control policy on an Organization resource. Replaces any existing policy. The `resource` field should be the organization's resource name, e.g. "organizations/123". Authorization requires the Google IAM permission `resourcemanager.organizations.setIamPolicy` on the specified organization
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -690,11 +661,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   end
 
   @doc """
-  Updates the specified `Policy` on the resource. Creates a new `Policy` for
-  that `Constraint` on the resource if one does not exist.
-
-  Not supplying an `etag` on the request `Policy` results in an unconditional
-  write of the `Policy`.
+  Updates the specified `Policy` on the resource. Creates a new `Policy` for that `Constraint` on the resource if one does not exist. Not supplying an `etag` on the request `Policy` results in an unconditional write of the `Policy`.
 
   ## Parameters
 
@@ -765,17 +732,12 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified Organization.
-  The `resource` field should be the organization's resource name,
-  e.g. "organizations/123".
-
-  There are no permissions required for making this API call.
+  Returns permissions that a caller has on the specified Organization. The `resource` field should be the organization's resource name, e.g. "organizations/123". There are no permissions required for making this API call.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

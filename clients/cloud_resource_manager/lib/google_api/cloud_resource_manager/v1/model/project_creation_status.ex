@@ -17,16 +17,12 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.ProjectCreationStatus do
   @moduledoc """
-  A status object which is used as the `metadata` field for the Operation
-  returned by CreateProject. It provides insight for when significant phases of
-  Project creation have completed.
+  A status object which is used as the `metadata` field for the Operation returned by CreateProject. It provides insight for when significant phases of Project creation have completed.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation time of the project creation workflow.
-  *   `gettable` (*type:* `boolean()`, *default:* `nil`) - True if the project can be retrieved using GetProject. No other operations
-      on the project are guaranteed to work until the project creation is
-      complete.
+  *   `gettable` (*type:* `boolean()`, *default:* `nil`) - True if the project can be retrieved using GetProject. No other operations on the project are guaranteed to work until the project creation is complete.
   *   `ready` (*type:* `boolean()`, *default:* `nil`) - True if the project creation process is complete.
   """
 

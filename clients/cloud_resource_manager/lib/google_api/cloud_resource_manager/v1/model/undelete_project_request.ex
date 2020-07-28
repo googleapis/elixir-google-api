@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.UndeleteProjectRequest do
   @moduledoc """
-  The request sent to the UndeleteProject
-  method.
+  The request sent to the UndeleteProject method.
 
   ## Attributes
 

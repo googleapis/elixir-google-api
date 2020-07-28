@@ -17,15 +17,11 @@
 
 defmodule GoogleApi.CloudResourceManager.V1.Model.GetAncestryResponse do
   @moduledoc """
-  Response from the
-  projects.getAncestry
-  method.
+  Response from the projects.getAncestry method.
 
   ## Attributes
 
-  *   `ancestor` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.Ancestor.t)`, *default:* `nil`) - Ancestors are ordered from bottom to top of the resource hierarchy. The
-      first ancestor is the project itself, followed by the project's parent,
-      etc..
+  *   `ancestor` (*type:* `list(GoogleApi.CloudResourceManager.V1.Model.Ancestor.t)`, *default:* `nil`) - Ancestors are ordered from bottom to top of the resource hierarchy. The first ancestor is the project itself, followed by the project's parent, etc..
   """
 
   use GoogleApi.Gax.ModelBase
