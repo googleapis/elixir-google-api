@@ -21,9 +21,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FinalizeDefaultLocationRequest do
 
   ## Attributes
 
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the default GCP resource location for the Project. The location
-      must be one of the available
-      [GCP resource
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location must be
+      one of the available [GCP resource
       locations](https://firebase.google.com/docs/projects/locations).
   """
 

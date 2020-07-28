@@ -21,10 +21,24 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ShaCertificate do
 
   ## Attributes
 
-  *   `certType` (*type:* `String.t`, *default:* `nil`) - The SHA certificate type.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the `sha-key`, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/androidApps/<var>APP_ID</var>/sha/<var>SHA_ID</var></code>
-  *   `shaHash` (*type:* `String.t`, *default:* `nil`) - The certificate hash for the App.
+  *   `certType` (*type:* `String.t`, *default:* `nil`) - The type of SHA certificate encoded in the hash.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the ShaCertificate for the AndroidApp,
+      in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var>/sha/<var>SHA_HASH</var></code>
+      * <var>PROJECT_IDENTIFIER</var>: the parent Project's
+        [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number)
+        ***(recommended)***
+        or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id).
+        Learn more about using project identifiers in
+        Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510).
+        <br>Note that the value for <var>PROJECT_IDENTIFIER</var> in any
+        response body will be the `ProjectId`.
+      * <var>APP_ID</var>: the globally unique, Firebase-assigned identifier
+        for the App
+        (see [`appId`](../projects.androidApps#AndroidApp.FIELDS.app_id)).
+      * <var>SHA_HASH</var>: the certificate hash for the App (see
+        [`shaHash`](../projects.androidApps.sha#ShaCertificate.FIELDS.sha_hash)).
+  *   `shaHash` (*type:* `String.t`, *default:* `nil`) - The certificate hash for the `AndroidApp`.
   """
 
   use GoogleApi.Gax.ModelBase

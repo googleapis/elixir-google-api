@@ -21,7 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ListShaCertificatesResponse do
 
   ## Attributes
 
-  *   `certificates` (*type:* `list(GoogleApi.Firebase.V1beta1.Model.ShaCertificate.t)`, *default:* `nil`) - The list of SHA certificates associated with the App.
+  *   `certificates` (*type:* `list(GoogleApi.Firebase.V1beta1.Model.ShaCertificate.t)`, *default:* `nil`) - The list of each `ShaCertificate` associated with the `AndroidApp`.
   """
 
   use GoogleApi.Gax.ModelBase

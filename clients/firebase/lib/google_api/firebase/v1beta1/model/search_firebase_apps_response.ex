@@ -24,11 +24,11 @@ defmodule GoogleApi.Firebase.V1beta1.Model.SearchFirebaseAppsResponse do
   *   `apps` (*type:* `list(GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo.t)`, *default:* `nil`) - One page of results from a call to `SearchFirebaseApps`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the result list is too large to fit in a single response, then a token
       is returned.
-      <br>
-      <br>This token can be used in a subsequent calls to `SearchFirebaseApps`
+
+      This token can be used in a subsequent calls to `SearchFirebaseApps`
       to find the next group of Apps.
-      <br>If the string is empty, then this response is the last page of results.
-      <br>Page tokens are short-lived and should not be persisted.
+
+      Page tokens are short-lived and should not be persisted.
   """
 
   use GoogleApi.Gax.ModelBase

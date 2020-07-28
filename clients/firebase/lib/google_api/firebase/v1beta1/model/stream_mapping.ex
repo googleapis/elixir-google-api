@@ -21,25 +21,29 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StreamMapping do
 
   ## Attributes
 
-  *   `app` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the Firebase App associated with the
+  *   `app` (*type:* `String.t`, *default:* `nil`) - The resource name of the Firebase App associated with the
       Google Analytics data stream, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/androidApps/<var>APP_ID</var></code>
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var></code>
       or
-      <code>projects/<var>PROJECT_NUMBER</var>/iosApps/<var>APP_ID</var></code>
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/iosApps/<var>APP_ID</var></code>
       or
-      <code>projects/<var>PROJECT_NUMBER</var>/webApps/<var>APP_ID</var></code>
-  *   `measurementId` (*type:* `String.t`, *default:* `nil`) - Applicable for Firebase Web Apps only.<br>
-      <br>The unique Google-assigned identifier of the Google Analytics web
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/webApps/<var>APP_ID</var></code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
+  *   `measurementId` (*type:* `String.t`, *default:* `nil`) - Applicable for Firebase Web Apps only.
+
+      The unique Google-assigned identifier of the Google Analytics web
       stream associated with the Firebase Web App. Firebase SDKs use this ID to
       interact with Google Analytics APIs.
-      <br>
-      <br>Learn more about this ID and Google Analytics web streams in the
+
+      Learn more about this ID and Google Analytics web streams in the
       [Analytics
       documentation](https://support.google.com/analytics/topic/9303475).
   *   `streamId` (*type:* `String.t`, *default:* `nil`) - The unique Google-assigned identifier of the Google Analytics data stream
       associated with the Firebase App.
-      <br>
-      <br>Learn more about Google Analytics data streams in the
+
+      Learn more about Google Analytics data streams in the
       [Analytics
       documentation](https://support.google.com/analytics/answer/9303323).
   """

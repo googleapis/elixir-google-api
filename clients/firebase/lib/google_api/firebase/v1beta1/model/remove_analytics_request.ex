@@ -25,10 +25,12 @@ defmodule GoogleApi.Firebase.V1beta1.Model.RemoveAnalyticsRequest do
       specified `FirebaseProject`.
       <ul>
       <li>If not set, then the Google Analytics property that is currently
-      associated with the specified `FirebaseProject` is removed.</li>
+        associated with the specified `FirebaseProject` is removed.
+      </li>
       <li>If set, and the specified `FirebaseProject` is currently associated
-      with a <em>different</em> Google Analytics property, then the response is a
-      `412 Precondition Failed` error.</li>
+        with a *different* Google Analytics property, then the response
+        is a `412 Precondition Failed` error.
+      </li>
       </ul>
   """
 

@@ -26,19 +26,22 @@ defmodule GoogleApi.Firebase.V1beta1.Api.AvailableProjects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns a list of [Google Cloud Platform (GCP) `Projects`]
+  Lists each [Google Cloud Platform (GCP) `Project`]
   (https://cloud.google.com/resource-manager/reference/rest/v1/projects)
-  that are available to have Firebase resources added to them.
-  <br>
-  <br>A GCP `Project` will only be returned if:
-  <ol>
-    <li><p>The caller has sufficient
-           [Google IAM](https://cloud.google.com/iam) permissions to call
-           AddFirebase.</p></li>
-    <li><p>The GCP `Project` is not already a FirebaseProject.</p></li>
-    <li><p>The GCP `Project` is not in an Organization which has policies
-           that prevent Firebase resources from being added.</p></li>
-  </ol>
+  that can have Firebase resources added to it.
+
+  A Project will only be listed if:
+  <ul>
+  <li>The caller has sufficient
+    [Google IAM](https://cloud.google.com/iam) permissions to call
+    AddFirebase.
+  </li>
+  <li>The Project is not already a FirebaseProject.
+  </li>
+  <li>The Project is not in an Organization which has policies
+    that prevent Firebase resources from being added.
+  </li>
+  </ul>
 
   ## Parameters
 
@@ -55,15 +58,15 @@ defmodule GoogleApi.Firebase.V1beta1.Api.AvailableProjects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of GCP `Projects` to return in the response.
-          <br>
-          <br>The server may return fewer than this value at its discretion.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of Projects to return in the response.
+
+          The server may return fewer than this value at its discretion.
           If no value is specified (or too large a value is specified), the server
           will impose its own limit.
-          <br>
-          <br>This value cannot be negative.
+
+          This value cannot be negative.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListAvailableProjects`
-          indicating where in the set of GCP `Projects` to resume listing.
+          indicating where in the set of Projects to resume listing.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

@@ -21,24 +21,25 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebAppConfig do
 
   ## Attributes
 
-  *   `apiKey` (*type:* `String.t`, *default:* `nil`) - The API key associated with the web App.
-  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier of the App.
+  *   `apiKey` (*type:* `String.t`, *default:* `nil`) - The API key associated with the `WebApp`.
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the
+      `WebApp`.
   *   `authDomain` (*type:* `String.t`, *default:* `nil`) - The domain Firebase Auth configures for OAuth redirects, in the format:
-      <br><code><var>projectId</var>.firebaseapp.com</code>
+      <code><var>PROJECT_ID</var>.firebaseapp.com</code>
   *   `databaseURL` (*type:* `String.t`, *default:* `nil`) - The default Firebase Realtime Database URL.
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the project's default GCP resource location. The location is one
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one
       of the available
       [GCP resource
-      locations](https://firebase.google.com/docs/projects/locations). <br>
-      <br>This field is omitted if the default GCP resource location has not been
-      finalized yet. To set your project's default GCP resource location,
+      locations](https://firebase.google.com/docs/projects/locations).
+
+      This field is omitted if the default GCP resource location has not been
+      finalized yet. To set a Project's default GCP resource location,
       call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize)
-      after you add Firebase services to your project.
+      after you add Firebase resources to the Project.
   *   `measurementId` (*type:* `String.t`, *default:* `nil`) - This field will no longer be provided here. Instead, use
       `GetAnalyticsDetails`
   *   `messagingSenderId` (*type:* `String.t`, *default:* `nil`) - The sender ID for use with Firebase Cloud Messaging.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, user-assigned project ID of the parent
-      Project for the App.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier for the `FirebaseProject`.
   *   `storageBucket` (*type:* `String.t`, *default:* `nil`) - The default Cloud Storage for Firebase storage bucket name.
   """
 

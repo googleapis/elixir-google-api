@@ -21,15 +21,18 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseAppInfo do
 
   ## Attributes
 
-  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier of the App.
-      <br>
-      <br>This identifier should be treated as an opaque token, as the data
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the
+      `WebApp`.
+
+      This identifier should be treated as an opaque token, as the data
       format is not specified.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the Firebase App.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the Firebase App, in the format:
-      <br><code>projects/<var>projectId</var>/iosApps/<var>appId</var></code>
-      or <br><code>projects/<var>projectId</var>/androidApps/<var>appId</var>
-      </code>
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Firebase App, in the format:
+      <code>projects/<var>PROJECT_ID</var>/iosApps/<var>APP_ID</var></code>
+      or
+      <code>projects/<var>PROJECT_ID</var>/androidApps/<var>APP_ID</var></code>
+      or
+      <code>projects/<var>PROJECT_ID</var>/webApps/<var>APP_ID</var></code>
   *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform of the Firebase App.
   """
 

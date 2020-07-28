@@ -21,20 +21,23 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ProjectInfo do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the GCP `Project`, for example:
-      <code>My App</code>
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the project's default GCP resource location. The location is one
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the GCP `Project`, for example: `My App`
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one
       of the available
       [GCP resource
-      locations](https://firebase.google.com/docs/projects/locations). <br> <br>
-      Not all projects will have this field populated. If it is not populated, it
-      means that the project does not yet have a default GCP resource location.
-      To set your project's default GCP resource location, call
+      locations](https://firebase.google.com/docs/projects/locations).
+
+      Not all Projects will have this field populated. If it is not populated, it
+      means that the Project does not yet have a default GCP resource location.
+      To set a Project's default GCP resource location, call
       [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize) after you
-      add Firebase resources to your project.
+      add Firebase resources to the Project.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The resource name of the GCP `Project` to which Firebase resources can be
       added, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   """
 
   use GoogleApi.Gax.ModelBase

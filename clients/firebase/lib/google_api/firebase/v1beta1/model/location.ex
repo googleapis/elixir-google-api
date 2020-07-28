@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firebase.V1beta1.Model.Location do
   @moduledoc """
-  A GCP resource location that can be selected for a Project.
+  A GCP resource location that can be selected for a FirebaseProject.
 
   ## Attributes
 

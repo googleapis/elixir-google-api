@@ -21,15 +21,15 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ListIosAppsResponse do
 
   ## Attributes
 
-  *   `apps` (*type:* `list(GoogleApi.Firebase.V1beta1.Model.IosApp.t)`, *default:* `nil`) - List of each IosApp that is in the parent Firebase Project.
+  *   `apps` (*type:* `list(GoogleApi.Firebase.V1beta1.Model.IosApp.t)`, *default:* `nil`) - List of each `IosApp` associated with the specified `FirebaseProject`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the result list is too large to fit in a single response, then a token
       is returned. If the string is empty, then this response is the last page of
       results.
-      <br>
-      <br>This token can be used in a subsequent call to `ListIosApps` to find
+
+      This token can be used in a subsequent call to `ListIosApps` to find
       the next group of Apps.
-      <br>
-      <br>Page tokens are short-lived and should not be persisted.
+
+      Page tokens are short-lived and should not be persisted.
   """
 
   use GoogleApi.Gax.ModelBase
