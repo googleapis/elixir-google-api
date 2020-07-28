@@ -24,12 +24,9 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Availability do
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - DS advertiser ID.
   *   `agencyId` (*type:* `String.t`, *default:* `nil`) - DS agency ID.
   *   `availabilityTimestamp` (*type:* `String.t`, *default:* `nil`) - The time by which all conversions have been uploaded, in epoch millis UTC.
-  *   `segmentationId` (*type:* `String.t`, *default:* `nil`) - The numeric segmentation identifier (for example, DoubleClick Search
-      Floodlight activity ID).
-  *   `segmentationName` (*type:* `String.t`, *default:* `nil`) - The friendly segmentation identifier (for example, DoubleClick Search
-      Floodlight activity name).
-  *   `segmentationType` (*type:* `String.t`, *default:* `nil`) - The segmentation type that this availability is for (its default value is
-      `FLOODLIGHT`).
+  *   `segmentationId` (*type:* `String.t`, *default:* `nil`) - The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID).
+  *   `segmentationName` (*type:* `String.t`, *default:* `nil`) - The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name).
+  *   `segmentationType` (*type:* `String.t`, *default:* `nil`) - The segmentation type that this availability is for (its default value is `FLOODLIGHT`).
   """
 
   use GoogleApi.Gax.ModelBase
