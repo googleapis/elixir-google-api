@@ -24,11 +24,11 @@ defmodule GoogleApi.Firebase.V1beta1.Model.ListAvailableProjectsResponse do
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the result list is too large to fit in a single response, then a token
       is returned. If the string is empty, then this response is the last page of
       results.
-      <br>
-      <br>This token can be used in a subsequent calls to `ListAvailableProjects`
-      to find the next group of GCP `Projects`.
-      <br>
-      <br>Page tokens are short-lived and should not be persisted.
+
+      This token can be used in a subsequent calls to `ListAvailableProjects`
+      to find the next group of Projects.
+
+      Page tokens are short-lived and should not be persisted.
   *   `projectInfo` (*type:* `list(GoogleApi.Firebase.V1beta1.Model.ProjectInfo.t)`, *default:* `nil`) - The list of GCP `Projects` which can have Firebase resources added to them.
   """
 

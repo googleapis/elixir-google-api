@@ -21,28 +21,29 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AddFirebaseRequest do
 
   ## Attributes
 
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Instead, to set your project's default GCP resource location,
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Instead, to set a Project's default GCP resource location,
       call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize)
-      after you add Firebase resources to your project.
-      <br>
-      <br>The ID of the project's default GCP resource location. The location
-      must be one of the available
-      [GCP resource
+      after you add Firebase resources to the GCP `Project`.
+
+      The ID of the Project's default GCP resource location. The location
+      must be one of the available [GCP resource
       locations](https://firebase.google.com/docs/projects/locations).
-  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Deprecated. Instead, to link your Project with a Google Analytics account,
-      call [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics)
-      after you add Firebase resources to your Project.
-      <br>
-      <br>The region code (CLDR) that the account will use for Firebase Analytics
-      data.
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Deprecated. Instead, to link a Project with a Google Analytics
+      account, call
+      [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics)
+      after you add Firebase resources to the GCP `Project`.
+
+      The region code (CLDR) that the account will use for Google Analytics
+      data
       <br>For example: US, GB, or DE
-      <br>
-      <br>In Java, use `com.google.i18n.identifiers.RegionCode`.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Deprecated. Instead, to link your Project with a Google Analytics account,
-      call [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics)
-      after you add Firebase resources to your Project.
-      <br>
-      <br>The time zone that the account will use for Firebase Analytics data.
+
+      In Java, use `com.google.i18n.identifiers.RegionCode`.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Deprecated. Instead, to link a Project with a Google Analytics
+      account, call
+      [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics)
+      after you add Firebase resources to the GCP `Project`.
+
+      The time zone that the account will use for Google Analytics data.
       <br>For example: America/Los_Angeles or Africa/Abidjan
   """
 

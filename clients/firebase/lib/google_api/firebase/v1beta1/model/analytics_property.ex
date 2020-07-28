@@ -25,10 +25,10 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AnalyticsProperty do
       specified `FirebaseProject`.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The globally unique, Google-assigned identifier of the Google Analytics
       property associated with the specified `FirebaseProject`.
-      <br>
-      <br>If you called
+
+      If you called
       [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics) to link
-      your `FirebaseProject` with a Google Analytics account, the value in this
+      the `FirebaseProject` with a Google Analytics account, the value in this
       `id` field is the same as the ID of the property either specified or
       provisioned with that call to `AddGoogleAnalytics`.
   """

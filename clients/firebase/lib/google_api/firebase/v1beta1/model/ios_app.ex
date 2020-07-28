@@ -21,18 +21,30 @@ defmodule GoogleApi.Firebase.V1beta1.Model.IosApp do
 
   ## Attributes
 
-  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier of the App.
-      <br>
-      <br>This identifier should be treated as an opaque token, as the data
+  *   `appId` (*type:* `String.t`, *default:* `nil`) - Immutable. The globally unique, Firebase-assigned identifier for the
+      `IosApp`.
+
+      This identifier should be treated as an opaque token, as the data
       format is not specified.
-  *   `appStoreId` (*type:* `String.t`, *default:* `nil`) - The automatically generated Apple ID assigned to the App by Apple in the
-      iOS App Store.
-  *   `bundleId` (*type:* `String.t`, *default:* `nil`) - The canonical bundle ID of the iOS App as it would appear in the iOS
-      AppStore.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the App.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the App, in the format:
-      <br><code>projects/<var>projectId</var>/iosApps/<var>appId</var></code>
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The globally unique, user-assigned ID of the parent Project for the App.
+  *   `appStoreId` (*type:* `String.t`, *default:* `nil`) - The automatically generated Apple ID assigned to the iOS app by Apple in
+      the iOS App Store.
+  *   `bundleId` (*type:* `String.t`, *default:* `nil`) - Immutable. The canonical bundle ID of the iOS app as it would appear in the
+      iOS AppStore.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name for the `IosApp`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the IosApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/iosApps/<var>APP_ID</var></code>
+      * <var>PROJECT_IDENTIFIER</var>: the parent Project's
+        [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number)
+        ***(recommended)***
+        or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id).
+        Learn more about using project identifiers in
+        Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510).
+        <br>Note that the value for <var>PROJECT_IDENTIFIER</var> in any
+        response body will be the `ProjectId`.
+      * <var>APP_ID</var>: the globally unique, Firebase-assigned identifier
+        for the App (see [`appId`](../projects.iosApps#IosApp.FIELDS.app_id)).
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier of the parent
+      FirebaseProject for the `IosApp`.
   """
 
   use GoogleApi.Gax.ModelBase

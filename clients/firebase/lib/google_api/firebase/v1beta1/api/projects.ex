@@ -29,12 +29,12 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   Adds Firebase resources to the specified existing
   [Google Cloud Platform (GCP) `Project`]
   (https://cloud.google.com/resource-manager/reference/rest/v1/projects).
-  <br>
-  <br>Since a FirebaseProject is actually also a GCP `Project`, a
-  `FirebaseProject` uses underlying GCP identifiers (most importantly,
-  the `PROJECT_NUMBER`) as its own for easy interop with GCP APIs.
-  <br>
-  <br>The result of this call is an [`Operation`](../../v1beta1/operations).
+
+  Since a FirebaseProject is actually also a GCP `Project`, a
+  `FirebaseProject` has the same underlying GCP identifiers (`projectNumber`
+  and `projectId`). This allows for easy interop with Google APIs.
+
+  The result of this call is an [`Operation`](../../v1beta1/operations).
   Poll the `Operation` to track the provisioning process by calling
   GetOperation until
   [`done`](../../v1beta1/operations#Operation.FIELDS.done) is `true`. When
@@ -46,11 +46,11 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   google.rpc.Status. The `Operation` is automatically deleted after
   completion, so there is no need to call
   DeleteOperation.
-  <br>
-  <br>This method does not modify any billing account information on the
+
+  This method does not modify any billing account information on the
   underlying GCP `Project`.
-  <br>
-  <br>To call `AddFirebase`, a project member or service account must have
+
+  To call `AddFirebase`, a project member or service account must have
   the following permissions (the IAM roles of Editor and Owner contain these
   permissions):
   `firebase.projects.update`, `resourcemanager.projects.get`,
@@ -61,10 +61,17 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - The resource name of the GCP `Project` to which Firebase resources will be
       added, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
-      After calling `AddFirebase`, the
-      [`project_id`](https://cloud.google.com/resource-manager/reference/rest/v1/projects#Project.FIELDS.project_id)
-      of the GCP `Project` is also the `project_id` of the FirebaseProject.
+      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
+
+      After calling `AddFirebase`, the unique Project identifiers (
+      [`projectNumber`](https://cloud.google.com/resource-manager/reference/rest/v1/projects#Project.FIELDS.project_number)
+      and
+      [`projectId`](https://cloud.google.com/resource-manager/reference/rest/v1/projects#Project.FIELDS.project_id))
+      of the underlying GCP `Project` are also the identifiers of the
+      FirebaseProject.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -120,38 +127,39 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Links a FirebaseProject with an existing
+  Links the specified FirebaseProject with an existing
   [Google Analytics account](http://www.google.com/analytics/).
-  <br>
-  <br>Using this call, you can either:
+
+  Using this call, you can either:
   <ul>
   <li>Specify an `analyticsAccountId` to provision a new Google Analytics
-  property within the specified account and associate the new property with
-  your `FirebaseProject`.</li>
+    property within the specified account and associate the new property with
+    the `FirebaseProject`.
   <li>Specify an existing `analyticsPropertyId` to associate the property
-  with your `FirebaseProject`.</li>
+    with the `FirebaseProject`.
   </ul>
-  <br>
+
   Note that when you call `AddGoogleAnalytics`:
   <ol>
   <li>The first check determines if any existing data streams in the
-  Google Analytics property correspond to any existing Firebase Apps in your
-  `FirebaseProject` (based on the `packageName` or `bundleId` associated with
-  the data stream). Then, as applicable, the data streams and apps are
-  linked. Note that this auto-linking only applies to Android Apps and iOS
-  Apps.</li>
-  <li>If no corresponding data streams are found for your Firebase Apps,
-  new data streams are provisioned in the Google Analytics property
-  for each of your Firebase Apps. Note that a new data stream is always
-  provisioned for a Web App even if it was previously associated with a
-  data stream in your Analytics property.</li>
+    Google Analytics property correspond to any existing Firebase Apps in the
+    `FirebaseProject` (based on the `packageName` or `bundleId` associated
+    with the data stream). Then, as applicable, the data streams and apps are
+    linked. Note that this auto-linking only applies to `AndroidApps` and
+    `IosApps`.
+  <li>If no corresponding data streams are found for the Firebase Apps, new
+    data streams are provisioned in the Google Analytics property for each of
+    the Firebase Apps. Note that a new data stream is always provisioned for
+    a Web App even if it was previously associated with a data stream in the
+    Analytics property.
   </ol>
+
   Learn more about the hierarchy and structure of Google Analytics
   accounts in the
   [Analytics
   documentation](https://support.google.com/analytics/answer/9303323).
-  <br>
-  <br>The result of this call is an [`Operation`](../../v1beta1/operations).
+
+  The result of this call is an [`Operation`](../../v1beta1/operations).
   Poll the `Operation` to track the provisioning process by calling
   GetOperation until
   [`done`](../../v1beta1/operations#Operation.FIELDS.done) is `true`. When
@@ -161,13 +169,13 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   an AnalyticsDetails; if the `Operation` failed, its
   [`error`](../../v1beta1/operations#Operation.FIELDS.error) is set to a
   google.rpc.Status.
-  <br>
-  <br>To call `AddGoogleAnalytics`, a member must be an Owner for
+
+  To call `AddGoogleAnalytics`, a project member must be an Owner for
   the existing `FirebaseProject` and have the
   [`Edit` permission](https://support.google.com/analytics/answer/2884495)
   for the Google Analytics account.
-  <br>
-  <br>If a `FirebaseProject` already has Google Analytics enabled, and you
+
+  If the `FirebaseProject` already has Google Analytics enabled, and you
   call `AddGoogleAnalytics` using an `analyticsPropertyId` that's different
   from the currently associated property, then the call will fail. Analytics
   may have already been enabled in the Firebase console or by specifying
@@ -177,9 +185,12 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent `FirebaseProject` to link to an existing Google Analytics
-      account, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The resource name of the FirebaseProject to link to an existing Google
+      Analytics account, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -245,13 +256,16 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the FirebaseProject identified by the specified resource name.
+  Gets the specified FirebaseProject.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the Project, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `name` (*type:* `String.t`) - The resource name of the FirebaseProject, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -305,17 +319,22 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the configuration artifact used by servers to simplify initialization.
-  <br>
-  <br>Typically, this configuration is used with the Firebase Admin SDK
+  Gets the configuration artifact associated with the specified
+  FirebaseProject, which can be used by servers to simplify
+  initialization.
+
+  Typically, this configuration is used with the Firebase Admin SDK
   [initializeApp](https://firebase.google.com/docs/admin/setup#initialize_the_sdk)
   command.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the Project, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/adminSdkConfig</code>
+  *   `name` (*type:* `String.t`) - The resource name of the FirebaseProject, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/adminSdkConfig</code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -374,17 +393,20 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the Google Analytics details currently associated with a
+  Gets the Google Analytics details currently associated with the specified
   FirebaseProject.
-  <br>
-  <br>If the `FirebaseProject` is not yet linked to Google Analytics, then
-  the response to `GetAnalyticsDetails` is NOT_FOUND.
+
+  If the `FirebaseProject` is not yet linked to Google Analytics, then
+  the response to `GetAnalyticsDetails` is `NOT_FOUND`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/analyticsDetails</code>
+  *   `name` (*type:* `String.t`) - The resource name of the FirebaseProject, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/analyticsDetails</code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -444,17 +466,18 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
 
   @doc """
   Lists each FirebaseProject accessible to the caller.
-  <br>
-  <br>The elements are returned in no particular order, but they will be a
+
+
+  The elements are returned in no particular order, but they will be a
   consistent view of the Projects when additional requests are made with a
   `pageToken`.
-  <br>
-  <br>This method is eventually consistent with Project mutations, which
+
+  This method is eventually consistent with Project mutations, which
   means newly provisioned Projects and recent modifications to existing
   Projects might not be reflected in the set of Projects. The list will
   include only ACTIVE Projects.
-  <br>
-  <br>Use
+
+  Use
   GetFirebaseProject
   for consistent reads as well as for additional Project details.
 
@@ -474,12 +497,12 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Projects to return in the response.
-          <br>
-          <br>The server may return fewer than this at its discretion.
+
+          The server may return fewer than this at its discretion.
           If no value is specified (or too large a value is specified), the server
           will impose its own limit.
-          <br>
-          <br>This value cannot be negative.
+
+          This value cannot be negative.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListFirebaseProjects` indicating
           where in the set of Projects to resume listing.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -525,16 +548,23 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates the attributes of the FirebaseProject identified by the
-  specified resource name.
-  <br>
-  <br>All [query parameters](#query-parameters) are required.
+  Updates the attributes of the specified FirebaseProject.
+
+  All [query parameters](#query-parameters) are required.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the Project, in the format:
-      <br><code>projects/<var>projectId</var></code>
+  *   `name` (*type:* `String.t`) - The resource name of the Project, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
+      <var>PROJECT_IDENTIFIER</var>: the Project's
+      [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number)
+      ***(recommended)***
+      or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id).
+      <br>Learn more about using project identifiers in
+      Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510).
+      <br>Note that the value for <var>PROJECT_IDENTIFIER</var> in any
+      response body will be the `ProjectId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -548,9 +578,10 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Specifies which fields to update.
-          <br>
-          <br>If this list is empty, then no state will be updated.
-          <br>Note that the fields `name`, `project_id`, and `project_number` are all
+
+          If this list is empty, then no state will be updated.
+
+          Note that the fields `name`, `projectId`, and `projectNumber` are all
           immutable.
       *   `:body` (*type:* `GoogleApi.Firebase.V1beta1.Model.FirebaseProject.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -596,30 +627,33 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Unlinks the specified `FirebaseProject` from its Google Analytics account.
-  <br>
-  <br>This call removes the association of the specified `FirebaseProject`
+  Unlinks the specified FirebaseProject from its Google Analytics
+  account.
+
+  This call removes the association of the specified `FirebaseProject`
   with its current Google Analytics property. However, this call does not
   delete the Google Analytics resources, such as the Google Analytics
   property or any data streams.
-  <br>
-  <br>These resources may be re-associated later to the `FirebaseProject` by
+
+  These resources may be re-associated later to the `FirebaseProject` by
   calling
   [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics) and
   specifying the same `analyticsPropertyId`. For Android Apps and iOS Apps,
   this call re-links data streams with their corresponding apps. However,
-  for Web Apps, this call provisions a <em>new</em> data stream for each Web
-  App.
-  <br>
-  <br>To call `RemoveAnalytics`, a member must be an Owner for
+  for Web Apps, this call provisions a *new* data stream for each Web App.
+
+  To call `RemoveAnalytics`, a project member must be an Owner for
   the `FirebaseProject`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent `FirebaseProject` to unlink from its Google Analytics account,
-      in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The resource name of the FirebaseProject to unlink from its Google
+      Analytics account, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -675,18 +709,20 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  A convenience method that lists all available Apps for the specified
-  FirebaseProject.
-  <br>
-  <br>Typically, interaction with an App should be done using the
-  platform-specific service, but some tool use-cases require a summary of all
-  known Apps (such as for App selector interfaces).
+  Lists all available Apps for the specified FirebaseProject.
+
+  This is a convenience method. Typically, interaction with an App should
+  be done using the platform-specific service, but some tool use-cases
+  require a summary of all known Apps (such as for App selector interfaces).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project for which to list Apps, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The parent FirebaseProject for which to list Apps, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -700,12 +736,12 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Apps to return in the response.
-          <br>
-          <br>The server may return fewer than this value at its discretion.
+
+          The server may return fewer than this value at its discretion.
           If no value is specified (or too large a value is specified), then the
           server will impose its own limit.
-          <br>
-          <br>This value cannot be negative.
+
+          This value cannot be negative.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `SearchFirebaseApps` indicating
           where in the set of Apps to resume listing.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -753,17 +789,22 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Requests that a new AndroidApp be created.
-  <br>
-  <br>The result of this call is an `Operation` which can be used to track
+  Requests the creation of a new AndroidApp in the specified
+  FirebaseProject.
+
+  The result of this call is an `Operation` which can be used to track
   the provisioning process. The `Operation` is automatically deleted after
   completion, so there is no need to call `DeleteOperation`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project in which to create an App, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The resource name of the parent FirebaseProject in which to create an
+      AndroidApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps</code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -824,16 +865,21 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the AndroidApp identified by the specified resource name.
+  Gets the specified AndroidApp.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the App, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/androidApps/<var>APP_ID</var></code>
-      <br>As an <var>APP_ID</var> is a unique identifier, the Unique Resource
+  *   `name` (*type:* `String.t`) - The resource name of the AndroidApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var></code>
+      <br>
+      Since an <var>APP_ID</var> is a unique identifier, the Unique Resource
       from Sub-Collection access pattern may be used here, in the format:
-      <br><code>projects/-/androidApps/<var>APP_ID</var></code>
+      <code>projects/-/androidApps/<var>APP_ID</var></code>
+      <br>
+      Refer to the `AndroidApp`
+      [`name`](../projects.androidApps#AndroidApp.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> and <var>APP_ID</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -893,11 +939,17 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the App configuration to download, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/androidApps/<var>APP_ID</var>/config</code>
-      <br>As an <var>APP_ID</var> is a unique identifier, the Unique Resource
+  *   `name` (*type:* `String.t`) - The resource name of the AndroidApp configuration to download, in the
+      format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var>/config</code>
+      <br>
+      Since an <var>APP_ID</var> is a unique identifier, the Unique Resource
       from Sub-Collection access pattern may be used here, in the format:
-      <br><code>projects/-/androidApps/<var>APP_ID</var></code>
+      <code>projects/-/androidApps/<var>APP_ID</var></code>
+      <br>
+      Refer to the `AndroidApp`
+      [`name`](../projects.androidApps#AndroidApp.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> and <var>APP_ID</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -961,17 +1013,22 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists each AndroidApp associated with the specified parent Project.
-  <br>
-  <br>The elements are returned in no particular order, but will be a
+  Lists each AndroidApp associated with the specified
+  FirebaseProject.
+
+  The elements are returned in no particular order, but will be a
   consistent view of the Apps when additional requests are made with a
   `pageToken`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project for which to list Apps, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The resource name of the parent FirebaseProject for which to list each
+      associated AndroidApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps</code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -985,8 +1042,8 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Apps to return in the response.
-          <br>
-          <br>The server may return fewer than this at its discretion.
+
+          The server may return fewer than this at its discretion.
           If no value is specified (or too large a value is specified), then the
           server will impose its own limit.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListAndroidApps` indicating where
@@ -1036,14 +1093,24 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates the attributes of the AndroidApp identified by the specified
-  resource name.
+  Updates the attributes of the specified AndroidApp.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the App, in the format:
-      <br><code>projects/<var>projectId</var>/androidApps/<var>appId</var></code>
+  *   `name` (*type:* `String.t`) - The resource name of the AndroidApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var></code>
+      * <var>PROJECT_IDENTIFIER</var>: the parent Project's
+        [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number)
+        ***(recommended)***
+        or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id).
+        Learn more about using project identifiers in
+        Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510).
+        <br>Note that the value for <var>PROJECT_IDENTIFIER</var> in any
+        response body will be the `ProjectId`.
+      * <var>APP_ID</var>: the globally unique, Firebase-assigned identifier
+        for the App
+        (see [`appId`](../projects.androidApps#AndroidApp.FIELDS.app_id)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1057,7 +1124,8 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Specifies which fields to update.
-          <br>Note that the fields `name`, `app_id`, `project_id`, and `package_name`
+
+          Note that the fields `name`, `app_id`, `project_id`, and `package_name`
           are all immutable.
       *   `:body` (*type:* `GoogleApi.Firebase.V1beta1.Model.AndroidApp.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1103,16 +1171,22 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Adds a SHA certificate to the specified AndroidApp.
+  Adds a ShaCertificate to the specified AndroidApp.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent App to which a SHA certificate will be added, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/androidApps/<var>APP_ID</var></code>
-      <br>As an <var>APP_ID</var> is a unique identifier, the Unique Resource
+  *   `parent` (*type:* `String.t`) - The resource name of the parent AndroidApp to which to add a
+      ShaCertificate, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var></code>
+      <br>
+      Since an <var>APP_ID</var> is a unique identifier, the Unique Resource
       from Sub-Collection access pattern may be used here, in the format:
-      <br><code>projects/-/androidApps/<var>APP_ID</var></code>
+      <code>projects/-/androidApps/<var>APP_ID</var></code>
+      <br>
+      Refer to the `AndroidApp`
+      [`name`](../projects.androidApps#AndroidApp.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> and <var>APP_ID</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1178,16 +1252,22 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Removes a SHA certificate from the specified AndroidApp.
+  Removes a ShaCertificate from the specified AndroidApp.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the `sha-key`, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/androidApps/<var>APP_ID</var>/sha/<var>SHA_ID</var></code>
-      <br>You can obtain the full name from the response of
-      [`ListShaCertificates`](../projects.androidApps.sha/list) or the original
-      [`CreateShaCertificate`](../projects.androidApps.sha/create).
+  *   `name` (*type:* `String.t`) - The resource name of the ShaCertificate to remove from the parent
+      AndroidApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var>/sha/<var>SHA_HASH</var></code>
+      Refer to the `ShaCertificate`
+      [`name`](../projects.androidApps.sha#ShaCertificate.FIELDS.name) field for
+      details about <var>PROJECT_IDENTIFIER</var>, <var>APP_ID</var>, and
+      <var>SHA_HASH</var> values.
+
+      You can obtain the full resource name of the `ShaCertificate` from the
+      response of [`ListShaCertificates`](../projects.androidApps.sha/list) or
+      the original [`CreateShaCertificate`](../projects.androidApps.sha/create).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1251,17 +1331,22 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns the list of SHA-1 and SHA-256 certificates for the specified
-  AndroidApp.
+  Lists the SHA-1 and SHA-256 certificates for the specified AndroidApp.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent App for which to list SHA certificates, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/androidApps/<var>APP_ID</var></code>
-      <br>As an <var>APP_ID</var> is a unique identifier, the Unique Resource
+  *   `parent` (*type:* `String.t`) - The resource name of the parent AndroidApp for which to list each
+      associated ShaCertificate, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/androidApps/<var>APP_ID</var></code>
+      <br>
+      Since an <var>APP_ID</var> is a unique identifier, the Unique Resource
       from Sub-Collection access pattern may be used here, in the format:
-      <br><code>projects/-/androidApps/<var>APP_ID</var></code>
+      <code>projects/-/androidApps/<var>APP_ID</var></code>
+      <br>
+      Refer to the `AndroidApp`
+      [`name`](../projects.androidApps#AndroidApp.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> and <var>APP_ID</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1327,35 +1412,42 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Returns a list of valid Google Cloud Platform (GCP) resource locations for
+  Lists the valid Google Cloud Platform (GCP) resource locations for
   the specified Project (including a FirebaseProject).
-  <br>
-  <br>One of these locations can be selected as the Project's [_default_ GCP
+
+  One of these locations can be selected as the Project's [_default_ GCP
   resource location](https://firebase.google.com/docs/projects/locations),
-  which is the geographical location where project resources, such as Cloud
-  Firestore, will be provisioned by default. However, if the default GCP
-  resource location has already been set for the Project, then this setting
-  cannot be changed.
-  <br>
-  <br>This call checks for any possible
+  which is the geographical location where the Project's resources, such as
+  Cloud Firestore, will be provisioned by default. However, if the default
+  GCP resource location has already been set for the Project, then this
+  setting cannot be changed.
+
+  This call checks for any possible
   [location
   restrictions](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations)
   for the specified Project and, thus, might return a subset of all possible
   GCP resource locations. To list all GCP resource locations (regardless of
-  any restrictions), call the endpoint without specifying a `PROJECT_NUMBER`
-  (that is, `/v1beta1/{parent=projects/-}/listAvailableLocations`). <br>
-  <br>To call `ListAvailableLocations` with a specified project, a member
-  must be at minimum a Viewer of the project. Calls without a specified
-  project do not require any specific project permissions.
+  any restrictions), call the endpoint without specifying a unique project
+  identifier (that is,
+  `/v1beta1/{parent=projects/-}/listAvailableLocations`).
+
+  To call `ListAvailableLocations` with a specified project, a member must be
+  at minimum a Viewer of the Project. Calls without a specified project do
+  not require any specific project permissions.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The Project for which to list GCP resource locations, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
-      <br>If no project is specified (that is, `projects/-`), the returned list
-      does not take into account org-specific or project-specific location
-      restrictions.
+  *   `parent` (*type:* `String.t`) - The FirebaseProject for which to list GCP resource locations,
+      in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
+
+      If no unique project identifier is specified (that is, `projects/-`),
+      the returned list does not take into account org-specific or
+      project-specific location restrictions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1369,12 +1461,12 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of locations to return in the response.
-          <br>
-          <br>The server may return fewer than this value at its discretion.
+
+          The server may return fewer than this value at its discretion.
           If no value is specified (or too large a value is specified), then the
           server will impose its own limit.
-          <br>
-          <br>This value cannot be negative.
+
+          This value cannot be negative.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListAvailableLocations` indicating
           where in the list of locations to resume listing.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1434,29 +1526,30 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   @doc """
   Sets the default Google Cloud Platform (GCP) resource location for the
   specified FirebaseProject.
-  <br>
-  <br>This method creates an App Engine application with a
+
+  This method creates an App Engine application with a
   [default Cloud Storage
   bucket](https://cloud.google.com/appengine/docs/standard/python/googlecloudstorageclient/setting-up-cloud-storage#activating_a_cloud_storage_bucket),
   located in the specified
-  [`location_id`](#body.request_body.FIELDS.location_id).
+  [`locationId`](#body.request_body.FIELDS.location_id).
   This location must be one of the available
   [GCP resource
-  locations](https://firebase.google.com/docs/projects/locations). <br>
-  <br>After the default GCP resource location is finalized, or if it was
+  locations](https://firebase.google.com/docs/projects/locations).
+
+  After the default GCP resource location is finalized, or if it was
   already set, it cannot be changed. The default GCP resource location for
-  the specified FirebaseProject might already be set because either the
-  GCP `Project` already has an App Engine application or
+  the specified `FirebaseProject` might already be set because either the
+  underlying GCP `Project` already has an App Engine application or
   `FinalizeDefaultLocation` was previously called with a specified
-  `location_id`. Any new calls to `FinalizeDefaultLocation` with a
-  <em>different</em> specified `location_id` will return a 409 error.
-  <br>
-  <br>The result of this call is an [`Operation`](../../v1beta1/operations),
+  `locationId`. Any new calls to `FinalizeDefaultLocation` with a
+  *different* specified `locationId` will return a 409 error.
+
+  The result of this call is an [`Operation`](../../v1beta1/operations),
   which can be used to track the provisioning process. The
   [`response`](../../v1beta1/operations#Operation.FIELDS.response) type of
   the `Operation` is google.protobuf.Empty.
-  <br>
-  <br>The `Operation` can be polled by its `name` using
+
+  The `Operation` can be polled by its `name` using
   GetOperation until `done` is
   true. When `done` is true, the `Operation` has either succeeded or failed.
   If the `Operation` has succeeded, its
@@ -1465,18 +1558,21 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   `error` will be set to a google.rpc.Status. The `Operation` is
   automatically deleted after completion, so there is no need to call
   DeleteOperation.
-  <br>
-  <br>All fields listed in the [request body](#request-body) are required.
-  <br>
-  <br>To call `FinalizeDefaultLocation`, a member must be an Owner
-  of the project.
+
+  All fields listed in the [request body](#request-body) are required.
+
+  To call `FinalizeDefaultLocation`, a member must be an Owner
+  of the Project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The resource name of the Project for which the default GCP resource
-      location will be set, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The resource name of the FirebaseProject for which the default GCP
+      resource location will be set, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var></code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1542,17 +1638,22 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Requests that a new IosApp be created.
-  <br>
-  <br>The result of this call is an `Operation` which can be used to track
+  Requests the creation of a new IosApp in the specified
+  FirebaseProject.
+
+  The result of this call is an `Operation` which can be used to track
   the provisioning process. The `Operation` is automatically deleted after
   completion, so there is no need to call `DeleteOperation`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project in which to create an App, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The resource name of the parent FirebaseProject in which to create an
+      IosApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/iosApps</code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1608,16 +1709,21 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the IosApp identified by the specified resource name.
+  Gets the specified IosApp.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the App, in the format:
-      <code>projects/<var>PROJECT_NUMBER</var>/iosApps/<var>APP_ID</var></code>
-      <br>As an <var>APP_ID</var> is a unique identifier, the Unique Resource
+  *   `name` (*type:* `String.t`) - The resource name of the IosApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/iosApps/<var>APP_ID</var></code>
+      <br>
+      Since an <var>APP_ID</var> is a unique identifier, the Unique Resource
       from Sub-Collection access pattern may be used here, in the format:
-      <br><code>projects/-/iosApps/<var>APP_ID</var></code>
+      <code>projects/-/iosApps/<var>APP_ID</var></code>
+      <br>
+      Refer to the `IosApp`
+      [`name`](../projects.iosApps#IosApp.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> and <var>APP_ID</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1677,10 +1783,15 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
   *   `name` (*type:* `String.t`) - The resource name of the App configuration to download, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/iosApps/<var>APP_ID</var>/config</code>
-      <br>As an <var>APP_ID</var> is a unique identifier, the Unique Resource
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/iosApps/<var>APP_ID</var>/config</code>
+      <br>
+      Since an <var>APP_ID</var> is a unique identifier, the Unique Resource
       from Sub-Collection access pattern may be used here, in the format:
-      <br><code>projects/-/iosApps/<var>APP_ID</var></code>
+      <code>projects/-/iosApps/<var>APP_ID</var></code>
+      <br>
+      Refer to the `IosApp`
+      [`name`](../projects.iosApps#IosApp.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> and <var>APP_ID</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1739,17 +1850,21 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists each IosApp associated with the specified parent Project.
-  <br>
-  <br>The elements are returned in no particular order, but will be a
+  Lists each IosApp associated with the specified FirebaseProject.
+
+  The elements are returned in no particular order, but will be a
   consistent view of the Apps when additional requests are made with a
   `pageToken`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project for which to list Apps, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The resource name of the parent FirebaseProject for which to list each
+      associated IosApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/iosApps</code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1763,8 +1878,8 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Apps to return in the response.
-          <br>
-          <br>The server may return fewer than this at its discretion.
+
+          The server may return fewer than this at its discretion.
           If no value is specified (or too large a value is specified), the server
           will impose its own limit.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListIosApps` indicating where in
@@ -1812,14 +1927,23 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates the attributes of the IosApp identified by the specified
-  resource name.
+  Updates the attributes of the specified IosApp.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the App, in the format:
-      <br><code>projects/<var>projectId</var>/iosApps/<var>appId</var></code>
+  *   `name` (*type:* `String.t`) - The resource name of the IosApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/iosApps/<var>APP_ID</var></code>
+      * <var>PROJECT_IDENTIFIER</var>: the parent Project's
+        [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number)
+        ***(recommended)***
+        or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id).
+        Learn more about using project identifiers in
+        Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510).
+        <br>Note that the value for <var>PROJECT_IDENTIFIER</var> in any
+        response body will be the `ProjectId`.
+      * <var>APP_ID</var>: the globally unique, Firebase-assigned identifier
+        for the App (see [`appId`](../projects.iosApps#IosApp.FIELDS.app_id)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1833,7 +1957,8 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Specifies which fields to update.
-          <br>Note that the fields `name`, `appId`, `projectId`, and `bundleId`
+
+          Note that the fields `name`, `appId`, `projectId`, and `bundleId`
           are all immutable.
       *   `:body` (*type:* `GoogleApi.Firebase.V1beta1.Model.IosApp.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1879,17 +2004,22 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Requests that a new WebApp be created.
-  <br>
-  <br>The result of this call is an `Operation` which can be used to track
+  Requests the creation of a new WebApp in the specified
+  FirebaseProject.
+
+  The result of this call is an `Operation` which can be used to track
   the provisioning process. The `Operation` is automatically deleted after
   completion, so there is no need to call `DeleteOperation`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project in which to create an App, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The resource name of the parent FirebaseProject in which to create a
+      WebApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/webApps</code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1945,16 +2075,21 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets the WebApp identified by the specified resource name.
+  Gets the specified WebApp.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the App, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/webApps/<var>APP_ID</var></code>
-      <br>As an <var>APP_ID</var> is a unique identifier, the Unique Resource
+  *   `name` (*type:* `String.t`) - The resource name of the WebApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/webApps/<var>APP_ID</var></code>
+      <br>
+      Since an <var>APP_ID</var> is a unique identifier, the Unique Resource
       from Sub-Collection access pattern may be used here, in the format:
-      <br><code>projects/-/webApps/<var>APP_ID</var></code>
+      <code>projects/-/webApps/<var>APP_ID</var></code>
+      <br>
+      Refer to the `WebApp`
+      [`name`](../projects.webApps#WebApp.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> and <var>APP_ID</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2013,11 +2148,17 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The resource name of the App configuration to download, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var>/webApps/<var>APP_ID</var>/config</code>
-      <br>As an <var>APP_ID</var> is a unique identifier, the Unique Resource
+  *   `name` (*type:* `String.t`) - The resource name of the WebApp configuration to download,
+      in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/webApps/<var>APP_ID</var>/config</code>
+      <br>
+      Since an <var>APP_ID</var> is a unique identifier, the Unique Resource
       from Sub-Collection access pattern may be used here, in the format:
-      <br><code>projects/-/webApps/<var>APP_ID</var></code>
+      <code>projects/-/webApps/<var>APP_ID</var></code>
+      <br>
+      Refer to the `WebApp`
+      [`name`](../projects.webApps#WebApp.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> and <var>APP_ID</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2076,17 +2217,21 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists each WebApp associated with the specified parent Project.
-  <br>
-  <br>The elements are returned in no particular order, but will be a
+  Lists each WebApp associated with the specified FirebaseProject.
+
+  The elements are returned in no particular order, but will be a
   consistent view of the Apps when additional requests are made with a
   `pageToken`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent Project for which to list Apps, in the format:
-      <br><code>projects/<var>PROJECT_NUMBER</var></code>
+  *   `parent` (*type:* `String.t`) - The resource name of the parent FirebaseProject for which to list each
+      associated WebApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/webApps</code>
+      Refer to the `FirebaseProject`
+      [`name`](../projects#FirebaseProject.FIELDS.name) field for details
+      about <var>PROJECT_IDENTIFIER</var> values.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2100,8 +2245,8 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of Apps to return in the response.
-          <br>
-          <br>The server may return fewer than this value at its discretion.
+
+          The server may return fewer than this value at its discretion.
           If no value is specified (or too large a value is specified), then the
           server will impose its own limit.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to `ListWebApps` indicating where in
@@ -2149,14 +2294,23 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates the attributes of the WebApp identified by the specified
-  resource name.
+  Updates the attributes of the specified WebApp.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firebase.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The fully qualified resource name of the App, for example:
-      <br><code>projects/<var>projectId</var>/webApps/<var>appId</var></code>
+  *   `name` (*type:* `String.t`) - The resource name of the WebApp, in the format:
+      <code>projects/<var>PROJECT_IDENTIFIER</var>/webApps/<var>APP_ID</var></code>
+      * <var>PROJECT_IDENTIFIER</var>: the parent Project's
+        [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number)
+        ***(recommended)***
+        or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id).
+        Learn more about using project identifiers in
+        Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510).
+        <br>Note that the value for <var>PROJECT_IDENTIFIER</var> in any
+        response body will be the `ProjectId`.
+      * <var>APP_ID</var>: the globally unique, Firebase-assigned identifier
+        for the App (see [`appId`](../projects.webApps#WebApp.FIELDS.app_id)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2170,8 +2324,8 @@ defmodule GoogleApi.Firebase.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Specifies which fields to update.
-          <br>Note that the fields `name`, `appId`, and `projectId` are all
-          immutable.
+
+          Note that the fields `name`, `appId`, and `projectId` are all immutable.
       *   `:body` (*type:* `GoogleApi.Firebase.V1beta1.Model.WebApp.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

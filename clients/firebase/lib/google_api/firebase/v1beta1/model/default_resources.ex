@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Firebase.V1beta1.Model.DefaultResources do
   @moduledoc """
-  The default resources associated with a `FirebaseProject`.
+  The default resources associated with the Project.
 
   ## Attributes
 
   *   `hostingSite` (*type:* `String.t`, *default:* `nil`) - The default Firebase Hosting site name, in the format:
-      <br><code><var>projectId</var></code>
-      <br>Though rare, your `projectId` might already be used as the name for an
+      <code><var>PROJECT_ID</var></code>
+      Though rare, your `projectId` might already be used as the name for an
       existing Hosting site in another project (learn more about creating
       non-default,
       [additional sites](https://firebase.google.com/docs/hosting/multisites)).
@@ -31,18 +31,19 @@ defmodule GoogleApi.Firebase.V1beta1.Model.DefaultResources do
       alphanumeric characters to create your default Hosting site name. For
       example, if your `projectId` is `myproject123`, your default Hosting site
       name might be:
-      <br><code>myproject123-a5c16</code>
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the project's default GCP resource location. The location is one
+      `myproject123-a5c16`
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one
       of the available
       [GCP resource
-      locations](https://firebase.google.com/docs/projects/locations). <br>
-      <br>This field is omitted if the default GCP resource location has not been
-      finalized yet. To set your project's default GCP resource location,
+      locations](https://firebase.google.com/docs/projects/locations).
+
+      This field is omitted if the default GCP resource location has not been
+      finalized yet. To set a Project's default GCP resource location,
       call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize)
-      after you add Firebase services to your project.
+      after you add Firebase resources to the Project.
   *   `realtimeDatabaseInstance` (*type:* `String.t`, *default:* `nil`) - The default Firebase Realtime Database instance name, in the format:
-      <br><code><var>projectId</var></code>
-      <br>Though rare, your `projectId` might already be used as the name for an
+      <code><var>PROJECT_ID</var></code>
+      Though rare, your `projectId` might already be used as the name for an
       existing Realtime Database instance in another project (learn more about
       [database
       sharding](https://firebase.google.com/docs/database/usage/sharding)). In
@@ -50,9 +51,9 @@ defmodule GoogleApi.Firebase.V1beta1.Model.DefaultResources do
       alphanumeric characters to create your default Realtime Database instance
       name. For example, if your `projectId` is `myproject123`, your default
       database instance name might be:
-      <br><code>myproject123-a5c16</code>
+      `myproject123-a5c16`
   *   `storageBucket` (*type:* `String.t`, *default:* `nil`) - The default Cloud Storage for Firebase storage bucket, in the format:
-      <br><code><var>projectId</var>.appspot.com</code>
+      <code><var>PROJECT_ID</var>.appspot.com</code>
   """
 
   use GoogleApi.Gax.ModelBase

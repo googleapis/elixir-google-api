@@ -23,13 +23,13 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AddGoogleAnalyticsRequest do
 
   *   `analyticsAccountId` (*type:* `String.t`, *default:* `nil`) - The ID for the existing
       [Google Analytics account](http://www.google.com/analytics/) that you
-      want to link with your `FirebaseProject`.
-      <br>
-      <br>Specifying this field will provision a new Google Analytics
+      want to link with the `FirebaseProject`.
+
+      Specifying this field will provision a new Google Analytics
       property in your Google Analytics account and associate the new property
-      with your `FirebaseProject`.
+      with the `FirebaseProject`.
   *   `analyticsPropertyId` (*type:* `String.t`, *default:* `nil`) - The ID for the existing Google Analytics property that you want to
-      associate with your `FirebaseProject`.
+      associate with the `FirebaseProject`.
   """
 
   use GoogleApi.Gax.ModelBase
