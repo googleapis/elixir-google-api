@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1RenameTagTemplateFieldRequest do
   @moduledoc """
-  Request message for
-  RenameTagTemplateField.
+  Request message for RenameTagTemplateField.
 
   ## Attributes
 

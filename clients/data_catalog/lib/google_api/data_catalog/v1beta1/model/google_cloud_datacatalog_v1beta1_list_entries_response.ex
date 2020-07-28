@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListEntriesResponse do
   @moduledoc """
-  Response message for
-  ListEntries.
+  Response message for ListEntries.
 
   ## Attributes
 
   *   `entries` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Entry.t)`, *default:* `nil`) - Entry details.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results. It is set to empty if no items
-      remain in results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results. It is set to empty if no items remain in results.
   """
 
   use GoogleApi.Gax.ModelBase

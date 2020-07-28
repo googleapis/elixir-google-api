@@ -17,24 +17,14 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy do
   @moduledoc """
-  A taxonomy is a collection of policy tags that classify data along a common
-  axis. For instance a data *sensitivity* taxonomy could contain policy tags
-  denoting PII such as age, zipcode, and SSN. A data *origin* taxonomy could
-  contain policy tags to distinguish user data, employee data, partner data,
-  public data.
+  A taxonomy is a collection of policy tags that classify data along a common axis. For instance a data *sensitivity* taxonomy could contain policy tags denoting PII such as age, zipcode, and SSN. A data *origin* taxonomy could contain policy tags to distinguish user data, employee data, partner data, public data.
 
   ## Attributes
 
-  *   `activatedPolicyTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of policy types that are activated for this taxonomy. If not set,
-      defaults to an empty list.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of this taxonomy. It must: contain only unicode characters,
-      tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
-      long when encoded in UTF-8. If not set, defaults to an empty description.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. User defined name of this taxonomy. It must: contain only unicode letters,
-      numbers, underscores, dashes and spaces; not start or end with spaces; and
-      be at most 200 bytes long when encoded in UTF-8.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this taxonomy, whose format is:
-      "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
+  *   `activatedPolicyTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of policy types that are activated for this taxonomy. If not set, defaults to an empty list.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of this taxonomy. It must: contain only unicode characters, tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes long when encoded in UTF-8. If not set, defaults to an empty description.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. User defined name of this taxonomy. It must: contain only unicode letters, numbers, underscores, dashes and spaces; not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
   """
 
   use GoogleApi.Gax.ModelBase

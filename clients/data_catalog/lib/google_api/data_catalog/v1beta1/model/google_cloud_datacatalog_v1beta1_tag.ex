@@ -17,36 +17,14 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag do
   @moduledoc """
-  Tags are used to attach custom metadata to Data Catalog resources. Tags
-  conform to the specifications within their tag template.
-
-  See [Data Catalog
-  IAM](https://cloud.google.com/data-catalog/docs/concepts/iam) for information
-  on the permissions needed to create or view tags.
+  Tags are used to attach custom metadata to Data Catalog resources. Tags conform to the specifications within their tag template. See [Data Catalog IAM](https://cloud.google.com/data-catalog/docs/concepts/iam) for information on the permissions needed to create or view tags.
 
   ## Attributes
 
-  *   `column` (*type:* `String.t`, *default:* `nil`) - Resources like Entry can have schemas associated with them. This scope
-      allows users to attach tags to an individual column based on that schema.
-
-      For attaching a tag to a nested column, use `.` to separate the column
-      names. Example:
-
-      * `outer_column.inner_column`
-  *   `fields` (*type:* `%{optional(String.t) => GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagField.t}`, *default:* `nil`) - Required. This maps the ID of a tag field to the value of and additional information
-      about that field. Valid field IDs are defined by the tag's template. A tag
-      must have at least 1 field and at most 500 fields.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the tag in URL format. Example:
-
-      * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
-
-      where `tag_id` is a system-generated identifier.
-      Note that this Tag may not actually be stored in the location in this name.
-  *   `template` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the tag template that this tag uses. Example:
-
-      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-
-      This field cannot be modified after creation.
+  *   `column` (*type:* `String.t`, *default:* `nil`) - Resources like Entry can have schemas associated with them. This scope allows users to attach tags to an individual column based on that schema. For attaching a tag to a nested column, use `.` to separate the column names. Example: * `outer_column.inner_column`
+  *   `fields` (*type:* `%{optional(String.t) => GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagField.t}`, *default:* `nil`) - Required. This maps the ID of a tag field to the value of and additional information about that field. Valid field IDs are defined by the tag's template. A tag must have at least 1 field and at most 500 fields.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the tag in URL format. Example: * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id} where `tag_id` is a system-generated identifier. Note that this Tag may not actually be stored in the location in this name.
+  *   `template` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the tag template that this tag uses. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id} This field cannot be modified after creation.
   *   `templateDisplayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the tag template.
   """
 

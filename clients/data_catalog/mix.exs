@@ -18,7 +18,7 @@
 defmodule GoogleApi.DataCatalog.Mixfile do
   use Mix.Project
 
-  @version "0.15.0"
+  @version "0.16.0"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.DataCatalog.Mixfile do
 
   defp description() do
     """
-    Google Cloud Data Catalog API client library. A fully managed and highly scalable data discovery and metadata management service.
-
+    Google Cloud Data Catalog API client library. A fully managed and highly scalable data discovery and metadata management service. 
     """
   end
 
