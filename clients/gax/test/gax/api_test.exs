@@ -20,7 +20,7 @@ defmodule Gax.ApiTest do
   @pets_json """
   {
     "pets": [
-      {"id": "pet1", "category": {"id": 1, "name": "Dogs"}, "name": "Fido", "tags": [], "status": "available"}
+      {"id": "pet1", "category": {"id": 1, "name": "Dogs"}, "name": "Fido", "tags": [{"id": 1, "name": "blue"}], "tagGroups": [[{"id": 2, "name": "green"}]], "status": "available"}
     ]
   }
   """
@@ -48,6 +48,8 @@ defmodule Gax.ApiTest do
 
     assert Enum.all?(pets.pets, fn pet ->
              assert %TestClient.Model.Pet{} = pet
+             assert [%TestClient.Model.Tag{}] = pet.tags
+             assert [[%TestClient.Model.Tag{}]] = pet.tagGroups
            end)
   end
 

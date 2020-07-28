@@ -19,6 +19,7 @@ defmodule TestClient.Model.Pet do
   field(:category, as: TestClient.Model.Category)
   field(:name)
   field(:tags, as: TestClient.Model.Tag, type: :list)
+  field(:tagGroups, as: TestClient.Model.Tag, type: :listlist)
   field(:status)
 end
 

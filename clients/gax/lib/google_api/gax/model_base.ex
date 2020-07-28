@@ -71,13 +71,17 @@ defmodule GoogleApi.Gax.ModelBase do
   @doc """
   Helper to decode model fields
   """
-  @spec decode(struct(), :list | :map | :primitive, nil | module()) :: struct()
+  @spec decode(struct(), :list | :listlist | :map | :primitive, nil | module()) :: struct()
   def decode(nil, _, _) do
     nil
   end
 
   def decode(value, _, nil) do
     value
+  end
+
+  def decode(value, :listlist, module) do
+    Enum.map(value, &(decode(&1, :list, module)))
   end
 
   def decode(value, :list, DateTime) do
