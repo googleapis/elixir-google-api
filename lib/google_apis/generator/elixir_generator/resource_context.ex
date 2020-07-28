@@ -16,10 +16,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
   @type t :: %__MODULE__{
           :namespace => String.t(),
           :property => String.t(),
-          :base_path => String.t()
+          :base_path => String.t(),
+          :models_by_name => map()
         }
 
-  defstruct namespace: "Default Namespace", property: nil, base_path: ""
+  defstruct namespace: "Default Namespace", property: nil, base_path: "", models_by_name: %{}
 
   @doc """
   Return the default struct name for this context.
@@ -98,6 +99,13 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
   """
   def with_base_path(context, base_path) do
     Map.put(context, :base_path, path(context, base_path))
+  end
+
+  @doc """
+  Returns a new ResourceContext with models by name map
+  """
+  def with_models_by_name(context, models_by_name) do
+    Map.put(context, :models_by_name, models_by_name)
   end
 
   @doc """

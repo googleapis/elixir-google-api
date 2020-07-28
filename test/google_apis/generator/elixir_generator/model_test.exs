@@ -285,6 +285,41 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
   }
   """
 
+  @array_resource_schema """
+  {
+    "id": "ArrayResource",
+    "type": "array",
+    "description": "Resource of array type",
+    "items": {
+      "type": "object",
+      "description": "An item in an ArrayResource",
+      "properties": {
+        "field1": {
+          "type": "string",
+          "description": "String value in an ArrayResource item"
+        }
+      }
+    }
+  }
+  """
+
+  @array_resource_referencer_schema """
+  {
+    "id": "ArrayResourceReferencer",
+    "type": "object",
+    "description": "Schema that references an ArrayResource",
+    "properties": {
+      "references": {
+        "type": "array",
+        "description": "Array of references to ArrayResource",
+        "items": {
+          "$ref": "ArrayResource"
+        }
+      }
+    }
+  }
+  """
+
   test "loads nested schemas" do
     schema = Poison.decode!(@test_schema, as: %JsonSchema{})
 
@@ -321,6 +356,16 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
     assert 3 == length(models)
 
     assert ["Volume", "VolumeAccessInfo", "VolumeAccessInfoEpub"] == Enum.map(models, & &1.name)
+  end
+
+  test "loads array resource schemas" do
+    array_resource_schema = Poison.decode!(@array_resource_schema, as: %JsonSchema{})
+    referencer_schema = Poison.decode!(@array_resource_referencer_schema, as: %JsonSchema{})
+    models = Model.from_schemas(%{"ArrayResource" => array_resource_schema, "Referencer" => referencer_schema})
+
+    assert [array_resource_model, referencer_model] = models
+    assert array_resource_model.is_array == true
+    assert referencer_model.is_array == nil
   end
 
   test "loads map types" do
@@ -405,7 +450,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.ModelTest do
     assert 1 == length(model.properties)
     property = List.first(model.properties)
 
-    assert nil == property.type.struct
+    assert "My.Namespace.Model.NestedContainerRows" == property.type.struct
+    assert "arrayarray" == property.type.name
     assert "list(list(My.Namespace.Model.NestedContainerRows.t))" == property.type.typespec
   end
 end

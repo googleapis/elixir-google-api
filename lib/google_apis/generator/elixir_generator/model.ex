@@ -22,10 +22,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
           :filename => String.t(),
           :description => String.t(),
           :properties => list(Property.t()),
-          :schema => JsonSchema.t()
+          :schema => JsonSchema.t(),
+          :is_array => boolean()
         }
 
-  defstruct [:name, :filename, :description, :properties, :schema]
+  defstruct [:name, :filename, :description, :properties, :schema, :is_array]
 
   alias GoogleApi.Discovery.V1.Model.JsonSchema
   alias GoogleApis.Generator.ElixirGenerator.{Property, ResourceContext}
@@ -94,7 +95,10 @@ defmodule GoogleApis.Generator.ElixirGenerator.Model do
   end
 
   defp from_schema(name, %JsonSchema{type: "array", items: items}, context) do
-    from_schema(name, items, context)
+    case from_schema(name, items, context) do
+      [model | property_models] -> [%__MODULE__{model | is_array: true} | property_models]
+      [] -> []
+    end
   end
 
   defp from_schema(_, _, _), do: []

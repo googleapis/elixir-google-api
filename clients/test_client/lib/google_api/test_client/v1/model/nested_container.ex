@@ -30,7 +30,7 @@ defmodule GoogleApi.TestClient.V1.Model.NestedContainer do
           :rows => list(list(GoogleApi.TestClient.V1.Model.NestedContainerRows.t()))
         }
 
-  field(:rows, type: :list)
+  field(:rows, as: GoogleApi.TestClient.V1.Model.NestedContainerRows, type: :listlist)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.TestClient.V1.Model.NestedContainer do

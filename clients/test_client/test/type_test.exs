@@ -20,7 +20,9 @@ defmodule Gax.TypeTest do
     ContainerObjectVal,
     DateContainer,
     GenericContainer,
-    NestedContainer
+    NestedContainer,
+    NestedContainerRows,
+    NestedContainerRowsNestedArrayValue
   }
 
   test "decodes strings" do
@@ -331,7 +333,12 @@ defmodule Gax.TypeTest do
     assert 2 == Enum.count(rows)
     assert Enum.all?(rows, fn row ->
       assert 2 == Enum.count(row)
-      # TODO: ensure this deeply nested struct is generated and decoded
+      assert Enum.all?(row, fn elem ->
+        assert %NestedContainerRows{nestedArrayValue: nested_array} = elem
+        assert Enum.all?(nested_array, fn nested_array_value ->
+          assert %NestedContainerRowsNestedArrayValue{} = nested_array_value
+        end)
+      end)
     end)
   end
 end

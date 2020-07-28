@@ -124,10 +124,11 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   end
 
   defp update_model_properties(token) do
+    context = ResourceContext.with_models_by_name(token.resource_context, token.models_by_name)
     Map.update!(token, :models, fn models ->
       models
       |> Enum.map(fn model ->
-        Model.update_properties(model, token.resource_context)
+        Model.update_properties(model, context)
       end)
     end)
   end
