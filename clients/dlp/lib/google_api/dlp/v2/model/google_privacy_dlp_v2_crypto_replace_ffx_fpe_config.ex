@@ -62,6 +62,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig do
       Number of characters must be in the range [2, 95].
       This must be encoded as ASCII.
       The order of characters does not matter.
+      The full list of allowed characters is:
+      <code>0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+      ~`!@#$%^&*()_-+={[}]|\\:;"'<,>.?/</code>
   *   `radix` (*type:* `integer()`, *default:* `nil`) - The native way to select the alphabet. Must be in the range [2, 95].
   *   `surrogateInfoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - The custom infoType to annotate the surrogate with.
       This annotation will be applied to the surrogate by prefixing it with

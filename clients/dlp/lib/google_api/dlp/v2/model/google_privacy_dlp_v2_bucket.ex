@@ -24,8 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Bucket do
   *   `max` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Upper bound of the range, exclusive; type must match min.
   *   `min` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Lower bound of the range, inclusive. Type should be the same as max if
       used.
-  *   `replacementValue` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Replacement value for this bucket. If not provided
-      the default behavior will be to hyphenate the min-max range.
+  *   `replacementValue` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t`, *default:* `nil`) - Required. Replacement value for this bucket.
   """
 
   use GoogleApi.Gax.ModelBase
