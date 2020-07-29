@@ -49,6 +49,9 @@ defmodule GoogleApi.HomeGraph.V1.Model.ReportStateAndNotificationRequest do
   *   `agentUserId` (*type:* `String.t`, *default:* `nil`) - Required. Third-party user ID.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Unique identifier per event (for example, a doorbell press).
   *   `followUpToken` (*type:* `String.t`, *default:* `nil`) - Token to maintain state in the follow up notification response.
+      Deprecated. See the [notifications
+      guide](https://developers.google.com/assistant/smarthome/develop/notifications)
+      for details on implementing follow up notifications.
   *   `payload` (*type:* `GoogleApi.HomeGraph.V1.Model.StateAndNotificationPayload.t`, *default:* `nil`) - Required. State of devices to update and notification metadata for devices.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Request ID used for debugging.
   """
