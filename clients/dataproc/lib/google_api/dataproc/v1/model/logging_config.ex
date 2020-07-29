@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.LoggingConfig do
 
   ## Attributes
 
-  *   `driverLogLevels` (*type:* `map()`, *default:* `nil`) - The per-package log levels for the driver. This may include "root" package name to configure rootLogger. Examples:  'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+  *   `driverLogLevels` (*type:* `map()`, *default:* `nil`) - The per-package log levels for the driver. This may include "root" package name to configure rootLogger. Examples: 'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
   """
 
   use GoogleApi.Gax.ModelBase

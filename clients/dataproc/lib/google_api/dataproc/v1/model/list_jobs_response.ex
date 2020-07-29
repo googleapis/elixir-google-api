@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ListJobsResponse do
   ## Attributes
 
   *   `jobs` (*type:* `list(GoogleApi.Dataproc.V1.Model.Job.t)`, *default:* `nil`) - Output only. Jobs list.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent <code>ListJobsRequest</code>.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Optional. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent ListJobsRequest.
   """
 
   use GoogleApi.Gax.ModelBase

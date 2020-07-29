@@ -21,17 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.QueryList do
 
   ## Attributes
 
-  *   `queries` (*type:* `list(String.t)`, *default:* `nil`) - Required. The queries to execute. You do not need to terminate a query with a semicolon. Multiple queries can be specified in one string by separating each with a semicolon. Here is an example of an Cloud Dataproc API snippet that uses a QueryList to specify a HiveJob:
-      "hiveJob": {
-        "queryList": {
-          "queries": [
-            "query1",
-            "query2",
-            "query3;query4",
-          ]
-        }
-      }
-
+  *   `queries` (*type:* `list(String.t)`, *default:* `nil`) - Required. The queries to execute. You do not need to terminate a query with a semicolon. Multiple queries can be specified in one string by separating each with a semicolon. Here is an example of an Cloud Dataproc API snippet that uses a QueryList to specify a HiveJob: "hiveJob": { "queryList": { "queries": [ "query1", "query2", "query3;query4", ] } } 
   """
 
   use GoogleApi.Gax.ModelBase

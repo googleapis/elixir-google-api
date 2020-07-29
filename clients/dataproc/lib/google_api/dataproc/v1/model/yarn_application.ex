@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.YarnApplication do
   @moduledoc """
-  A YARN application created by a job. Application information is a subset of <code>org.apache.hadoop.yarn.proto.YarnProtos.ApplicationReportProto</code>.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
+  A YARN application created by a job. Application information is a subset of org.apache.hadoop.yarn.proto.YarnProtos.ApplicationReportProto.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
 
   ## Attributes
 
