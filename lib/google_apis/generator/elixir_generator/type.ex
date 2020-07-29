@@ -60,14 +60,15 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
   def from_schema(%{type: "array", items: items}, context) do
     t = from_schema(items, context)
 
-    struct =
+    {struct, name} =
       case t.name do
-        "array" -> nil
-        _ -> t.struct
+        "arrayarray" -> {nil, "arrayarray"}
+        "array" -> {t.struct, "arrayarray"}
+        _ -> {t.struct, "array"}
       end
 
     %__MODULE__{
-      name: "array",
+      name: name,
       struct: struct,
       typespec: "list(#{t.typespec})"
     }
@@ -93,11 +94,22 @@ defmodule GoogleApis.Generator.ElixirGenerator.Type do
   end
 
   def from_schema(%{"$ref": ref}, context) when not is_nil(ref) do
-    %__MODULE__{
-      name: "object",
-      struct: ResourceContext.struct_name(context, ref),
-      typespec: ResourceContext.typespec(context, ref)
-    }
+    model = Map.get(context.models_by_name, ref)
+    type_struct = ResourceContext.struct_name(context, ref)
+    type_spec = ResourceContext.typespec(context, ref)
+    if model == nil || !model.is_array do
+      %__MODULE__{
+        name: "object",
+        struct: type_struct,
+        typespec: type_spec
+      }
+    else
+      %__MODULE__{
+        name: "array",
+        struct: type_struct,
+        typespec: "list(#{type_spec})"
+      }
+    end
   end
 
   def from_schema(%{type: int}, _context) when int in ["int", "integer"] do
