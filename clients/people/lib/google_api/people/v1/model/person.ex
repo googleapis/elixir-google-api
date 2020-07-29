@@ -22,13 +22,14 @@ defmodule GoogleApi.People.V1.Model.Person do
   ## Attributes
 
   *   `relationshipStatuses` (*type:* `list(GoogleApi.People.V1.Model.RelationshipStatus.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned The person's relationship statuses.
-  *   `genders` (*type:* `list(GoogleApi.People.V1.Model.Gender.t)`, *default:* `nil`) - The person's genders.
-  *   `biographies` (*type:* `list(GoogleApi.People.V1.Model.Biography.t)`, *default:* `nil`) - The person's biographies.
+  *   `genders` (*type:* `list(GoogleApi.People.V1.Model.Gender.t)`, *default:* `nil`) - The person's genders. This field is a singleton for contact sources.
+  *   `biographies` (*type:* `list(GoogleApi.People.V1.Model.Biography.t)`, *default:* `nil`) - The person's biographies. This field is a singleton for contact sources.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the resource. Used for web cache validation.
-  *   `names` (*type:* `list(GoogleApi.People.V1.Model.Name.t)`, *default:* `nil`) - The person's names.
+  *   `names` (*type:* `list(GoogleApi.People.V1.Model.Name.t)`, *default:* `nil`) - The person's names. This field is a singleton for contact sources.
   *   `taglines` (*type:* `list(GoogleApi.People.V1.Model.Tagline.t)`, *default:* `nil`) - Output only. **DEPRECATED**: No data will be returned The person's taglines.
   *   `residences` (*type:* `list(GoogleApi.People.V1.Model.Residence.t)`, *default:* `nil`) - The person's residences.
   *   `sipAddresses` (*type:* `list(GoogleApi.People.V1.Model.SipAddress.t)`, *default:* `nil`) - The person's SIP addresses.
+  *   `externalIds` (*type:* `list(GoogleApi.People.V1.Model.ExternalId.t)`, *default:* `nil`) - The person's external IDs.
   *   `metadata` (*type:* `GoogleApi.People.V1.Model.PersonMetadata.t`, *default:* `nil`) - Output only. Metadata about the person.
   *   `occupations` (*type:* `list(GoogleApi.People.V1.Model.Occupation.t)`, *default:* `nil`) - The person's occupations.
   *   `imClients` (*type:* `list(GoogleApi.People.V1.Model.ImClient.t)`, *default:* `nil`) - The person's instant messaging clients.
@@ -38,7 +39,8 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `relations` (*type:* `list(GoogleApi.People.V1.Model.Relation.t)`, *default:* `nil`) - The person's relations.
   *   `ageRanges` (*type:* `list(GoogleApi.People.V1.Model.AgeRangeType.t)`, *default:* `nil`) - Output only. The person's age ranges.
   *   `coverPhotos` (*type:* `list(GoogleApi.People.V1.Model.CoverPhoto.t)`, *default:* `nil`) - Output only. The person's cover photos.
-  *   `birthdays` (*type:* `list(GoogleApi.People.V1.Model.Birthday.t)`, *default:* `nil`) - The person's birthdays.
+  *   `birthdays` (*type:* `list(GoogleApi.People.V1.Model.Birthday.t)`, *default:* `nil`) - The person's birthdays. This field is a singleton for contact sources.
+  *   `calendarUrls` (*type:* `list(GoogleApi.People.V1.Model.CalendarUrl.t)`, *default:* `nil`) - The person's calendar URLs.
   *   `locales` (*type:* `list(GoogleApi.People.V1.Model.Locale.t)`, *default:* `nil`) - The person's locale preferences.
   *   `interests` (*type:* `list(GoogleApi.People.V1.Model.Interest.t)`, *default:* `nil`) - The person's interests.
   *   `nicknames` (*type:* `list(GoogleApi.People.V1.Model.Nickname.t)`, *default:* `nil`) - The person's nicknames.
@@ -67,6 +69,7 @@ defmodule GoogleApi.People.V1.Model.Person do
           :taglines => list(GoogleApi.People.V1.Model.Tagline.t()),
           :residences => list(GoogleApi.People.V1.Model.Residence.t()),
           :sipAddresses => list(GoogleApi.People.V1.Model.SipAddress.t()),
+          :externalIds => list(GoogleApi.People.V1.Model.ExternalId.t()),
           :metadata => GoogleApi.People.V1.Model.PersonMetadata.t(),
           :occupations => list(GoogleApi.People.V1.Model.Occupation.t()),
           :imClients => list(GoogleApi.People.V1.Model.ImClient.t()),
@@ -77,6 +80,7 @@ defmodule GoogleApi.People.V1.Model.Person do
           :ageRanges => list(GoogleApi.People.V1.Model.AgeRangeType.t()),
           :coverPhotos => list(GoogleApi.People.V1.Model.CoverPhoto.t()),
           :birthdays => list(GoogleApi.People.V1.Model.Birthday.t()),
+          :calendarUrls => list(GoogleApi.People.V1.Model.CalendarUrl.t()),
           :locales => list(GoogleApi.People.V1.Model.Locale.t()),
           :interests => list(GoogleApi.People.V1.Model.Interest.t()),
           :nicknames => list(GoogleApi.People.V1.Model.Nickname.t()),
@@ -102,6 +106,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   field(:taglines, as: GoogleApi.People.V1.Model.Tagline, type: :list)
   field(:residences, as: GoogleApi.People.V1.Model.Residence, type: :list)
   field(:sipAddresses, as: GoogleApi.People.V1.Model.SipAddress, type: :list)
+  field(:externalIds, as: GoogleApi.People.V1.Model.ExternalId, type: :list)
   field(:metadata, as: GoogleApi.People.V1.Model.PersonMetadata)
   field(:occupations, as: GoogleApi.People.V1.Model.Occupation, type: :list)
   field(:imClients, as: GoogleApi.People.V1.Model.ImClient, type: :list)
@@ -112,6 +117,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   field(:ageRanges, as: GoogleApi.People.V1.Model.AgeRangeType, type: :list)
   field(:coverPhotos, as: GoogleApi.People.V1.Model.CoverPhoto, type: :list)
   field(:birthdays, as: GoogleApi.People.V1.Model.Birthday, type: :list)
+  field(:calendarUrls, as: GoogleApi.People.V1.Model.CalendarUrl, type: :list)
   field(:locales, as: GoogleApi.People.V1.Model.Locale, type: :list)
   field(:interests, as: GoogleApi.People.V1.Model.Interest, type: :list)
   field(:nicknames, as: GoogleApi.People.V1.Model.Nickname, type: :list)
