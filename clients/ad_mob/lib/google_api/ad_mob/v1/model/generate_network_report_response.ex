@@ -27,8 +27,8 @@ defmodule GoogleApi.AdMob.V1.Model.GenerateNetworkReportResponse do
         "header": {
           "dateRange": {
             "startDate": {"year": 2018, "month": 9, "day": 1},
-            "endDate": {"year": 2018, "month": 9, "day": 30}
-          }
+            "endDate": {"year": 2018, "month": 9, "day": 1}
+          },
           "localizationSettings": {
             "currencyCode": "USD",
             "languageCode": "en-US"
@@ -49,9 +49,8 @@ defmodule GoogleApi.AdMob.V1.Model.GenerateNetworkReportResponse do
           }
         }
       },
-      ...
       {
-        "footer": {"matchingRowCount": 5}
+        "footer": {"matchingRowCount": 1}
       }]
 
   ## Attributes

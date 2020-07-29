@@ -27,8 +27,8 @@ defmodule GoogleApi.AdMob.V1.Model.GenerateMediationReportResponse do
         "header": {
           "date_range": {
             "start_date": {"year": 2018, "month": 9, "day": 1},
-            "end_date": {"year": 2018, "month": 9, "day": 30}
-          }
+            "end_date": {"year": 2018, "month": 9, "day": 1}
+          },
           "localization_settings": {
             "currency_code": "USD",
             "language_code": "en-US"
