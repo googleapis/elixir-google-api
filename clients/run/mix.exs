@@ -18,7 +18,7 @@
 defmodule GoogleApi.Run.Mixfile do
   use Mix.Project
 
-  @version "0.14.1"
+  @version "0.15.0"
 
   def project() do
     [
@@ -40,7 +40,7 @@ defmodule GoogleApi.Run.Mixfile do
 
   defp deps() do
     [
-      {:google_gax, "~> 0.2"},
+      {:google_gax, "~> 0.4"},
 
       {:ex_doc, "~> 0.16", only: :dev}
     ]
