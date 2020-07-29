@@ -73,7 +73,7 @@ defmodule GoogleApi.Analytics.V3.Model.GaData do
   field(:previousLink)
   field(:profileInfo, as: GoogleApi.Analytics.V3.Model.GaDataProfileInfo)
   field(:query, as: GoogleApi.Analytics.V3.Model.GaDataQuery)
-  field(:rows, type: :list)
+  field(:rows, type: :listlist)
   field(:sampleSize)
   field(:sampleSpace)
   field(:selfLink)

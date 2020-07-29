@@ -67,7 +67,7 @@ defmodule GoogleApi.Analytics.V3.Model.McfData do
   field(:previousLink)
   field(:profileInfo, as: GoogleApi.Analytics.V3.Model.McfDataProfileInfo)
   field(:query, as: GoogleApi.Analytics.V3.Model.McfDataQuery)
-  field(:rows, type: :list)
+  field(:rows, as: GoogleApi.Analytics.V3.Model.McfDataRows, type: :listlist)
   field(:sampleSize)
   field(:sampleSpace)
   field(:selfLink)
