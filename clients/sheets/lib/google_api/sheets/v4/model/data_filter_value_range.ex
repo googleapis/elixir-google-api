@@ -39,7 +39,7 @@ defmodule GoogleApi.Sheets.V4.Model.DataFilterValueRange do
 
   field(:dataFilter, as: GoogleApi.Sheets.V4.Model.DataFilter)
   field(:majorDimension)
-  field(:values, type: :list)
+  field(:values, type: :listlist)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.DataFilterValueRange do

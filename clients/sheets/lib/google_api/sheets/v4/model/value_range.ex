@@ -61,7 +61,7 @@ defmodule GoogleApi.Sheets.V4.Model.ValueRange do
 
   field(:majorDimension)
   field(:range)
-  field(:values, type: :list)
+  field(:values, type: :listlist)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Sheets.V4.Model.ValueRange do
