@@ -21,16 +21,16 @@ defmodule GoogleApi.Translate.V2.Model.DetectionsListResponse do
 
   ## Attributes
 
-  *   `detections` (*type:* `list(GoogleApi.Translate.V2.Model.DetectionsResource.t)`, *default:* `nil`) - A detections contains detection results of several text
+  *   `detections` (*type:* `list(list(GoogleApi.Translate.V2.Model.DetectionsResource.t))`, *default:* `nil`) - A detections contains detection results of several text
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :detections => list(GoogleApi.Translate.V2.Model.DetectionsResource.t())
+          :detections => list(list(GoogleApi.Translate.V2.Model.DetectionsResource.t()))
         }
 
-  field(:detections, as: GoogleApi.Translate.V2.Model.DetectionsResource, type: :list)
+  field(:detections, as: GoogleApi.Translate.V2.Model.DetectionsResource, type: :listlist)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V2.Model.DetectionsListResponse do
