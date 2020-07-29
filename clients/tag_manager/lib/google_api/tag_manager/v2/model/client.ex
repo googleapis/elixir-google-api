@@ -32,6 +32,7 @@ defmodule GoogleApi.TagManager.V2.Model.Client do
   *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The client's parameters.
       @mutable tagmanager.accounts.containers.workspaces.clients.create
       @mutable tagmanager.accounts.containers.workspaces.clients.update
+  *   `parentFolderId` (*type:* `String.t`, *default:* `nil`) - Parent folder id.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM client's API relative path.
   *   `priority` (*type:* `integer()`, *default:* `nil`) - Priority determines relative firing order.
       @mutable tagmanager.accounts.containers.workspaces.clients.create
@@ -52,6 +53,7 @@ defmodule GoogleApi.TagManager.V2.Model.Client do
           :fingerprint => String.t(),
           :name => String.t(),
           :parameter => list(GoogleApi.TagManager.V2.Model.Parameter.t()),
+          :parentFolderId => String.t(),
           :path => String.t(),
           :priority => integer(),
           :tagManagerUrl => String.t(),
@@ -65,6 +67,7 @@ defmodule GoogleApi.TagManager.V2.Model.Client do
   field(:fingerprint)
   field(:name)
   field(:parameter, as: GoogleApi.TagManager.V2.Model.Parameter, type: :list)
+  field(:parentFolderId)
   field(:path)
   field(:priority)
   field(:tagManagerUrl)
