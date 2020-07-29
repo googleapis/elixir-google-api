@@ -29,7 +29,7 @@ defmodule GoogleApi.PolicyTroubleshooter.V1beta.Model.GoogleIamV1AuditLogConfig 
             ]
           },
           {
-            "log_type": "DATA_WRITE",
+            "log_type": "DATA_WRITE"
           }
         ]
       }
