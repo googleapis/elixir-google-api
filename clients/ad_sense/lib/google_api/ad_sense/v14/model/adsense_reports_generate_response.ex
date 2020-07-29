@@ -55,7 +55,7 @@ defmodule GoogleApi.AdSense.V14.Model.AdsenseReportsGenerateResponse do
   )
 
   field(:kind)
-  field(:rows, type: :list)
+  field(:rows, type: :listlist)
   field(:startDate)
   field(:totalMatchedRows)
   field(:totals, type: :list)
