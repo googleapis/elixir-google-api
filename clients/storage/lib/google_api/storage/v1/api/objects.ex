@@ -298,6 +298,11 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   @spec storage_objects_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Storage.V1.Model.Object.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def storage_objects_get(connection, bucket, object, optional_params \\ [], opts \\ []) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :alt => :query,
       :fields => :query,
