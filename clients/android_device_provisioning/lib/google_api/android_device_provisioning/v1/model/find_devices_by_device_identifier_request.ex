@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.FindDevicesByDeviceIdenti
 
   ## Attributes
 
-  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. The device identifier to search for.
+  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. Required. The device identifier to search for.
   *   `limit` (*type:* `String.t`, *default:* `nil`) - Required. The maximum number of devices to show in a page of results. Must
       be between 1 and 100 inclusive.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A token specifying which result page to return.
