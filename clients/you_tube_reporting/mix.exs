@@ -18,7 +18,7 @@
 defmodule GoogleApi.YouTubeReporting.Mixfile do
   use Mix.Project
 
-  @version "0.11.2"
+  @version "0.12.0"
 
   def project() do
     [
@@ -40,7 +40,7 @@ defmodule GoogleApi.YouTubeReporting.Mixfile do
 
   defp deps() do
     [
-      {:google_gax, "~> 0.2"},
+      {:google_gax, "~> 0.4"},
 
       {:ex_doc, "~> 0.16", only: :dev}
     ]

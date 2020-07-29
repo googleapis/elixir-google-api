@@ -62,6 +62,11 @@ defmodule GoogleApi.YouTubeReporting.V1.Api.Media do
         optional_params \\ [],
         opts \\ []
       ) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
