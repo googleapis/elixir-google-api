@@ -22,7 +22,7 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Instance do
   ## Attributes
 
   *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - The full name of the Google Compute Engine
-      [network](/compute/docs/networks-and-firewalls#networks) to which the
+      [network](https://cloud.google.com/vpc/docs/vpc) to which the
       instance is connected. If left unspecified, the `default` network
       will be used.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
