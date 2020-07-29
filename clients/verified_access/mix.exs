@@ -18,7 +18,7 @@
 defmodule GoogleApi.VerifiedAccess.Mixfile do
   use Mix.Project
 
-  @version "0.5.0"
+  @version "0.6.0"
 
   def project() do
     [
@@ -40,7 +40,7 @@ defmodule GoogleApi.VerifiedAccess.Mixfile do
 
   defp deps() do
     [
-      {:google_gax, "~> 0.2"},
+      {:google_gax, "~> 0.4"},
 
       {:ex_doc, "~> 0.16", only: :dev}
     ]
