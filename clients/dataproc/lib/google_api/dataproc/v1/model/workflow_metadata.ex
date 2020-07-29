@@ -30,9 +30,7 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowMetadata do
   *   `parameters` (*type:* `map()`, *default:* `nil`) - Map from parameter names to values that were used for those parameters.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Workflow start time.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The workflow state.
-  *   `template` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the workflow template as described in https://cloud.google.com/apis/design/resource_names.
-      For projects.regions.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
-      For projects.locations.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
+  *   `template` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the workflow template as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
   *   `version` (*type:* `integer()`, *default:* `nil`) - Output only. The version of template at the time of workflow instantiation.
   """
 

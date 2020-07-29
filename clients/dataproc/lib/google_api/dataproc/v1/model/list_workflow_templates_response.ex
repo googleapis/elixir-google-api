@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Output only. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent <code>ListWorkflowTemplatesRequest</code>.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Output only. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent ListWorkflowTemplatesRequest.
   *   `templates` (*type:* `list(GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t)`, *default:* `nil`) - Output only. WorkflowTemplates list.
   """
 

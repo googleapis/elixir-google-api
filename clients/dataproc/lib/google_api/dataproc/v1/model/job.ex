@@ -32,12 +32,12 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   *   `placement` (*type:* `GoogleApi.Dataproc.V1.Model.JobPlacement.t`, *default:* `nil`) - Required. Job information, including how, when, and where to run the job.
   *   `prestoJob` (*type:* `GoogleApi.Dataproc.V1.Model.PrestoJob.t`, *default:* `nil`) - Optional. Job is a Presto job.
   *   `pysparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.PySparkJob.t`, *default:* `nil`) - Optional. Job is a PySpark job.
-  *   `reference` (*type:* `GoogleApi.Dataproc.V1.Model.JobReference.t`, *default:* `nil`) - Optional. The fully qualified reference to the job, which can be used to obtain the equivalent REST path of the job resource. If this property is not specified when a job is created, the server generates a <code>job_id</code>.
+  *   `reference` (*type:* `GoogleApi.Dataproc.V1.Model.JobReference.t`, *default:* `nil`) - Optional. The fully qualified reference to the job, which can be used to obtain the equivalent REST path of the job resource. If this property is not specified when a job is created, the server generates a job_id.
   *   `scheduling` (*type:* `GoogleApi.Dataproc.V1.Model.JobScheduling.t`, *default:* `nil`) - Optional. Job scheduling configuration.
   *   `sparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkJob.t`, *default:* `nil`) - Optional. Job is a Spark job.
   *   `sparkRJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkRJob.t`, *default:* `nil`) - Optional. Job is a SparkR job.
   *   `sparkSqlJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkSqlJob.t`, *default:* `nil`) - Optional. Job is a SparkSql job.
-  *   `status` (*type:* `GoogleApi.Dataproc.V1.Model.JobStatus.t`, *default:* `nil`) - Output only. The job status. Additional application-specific status information may be contained in the <code>type_job</code> and <code>yarn_applications</code> fields.
+  *   `status` (*type:* `GoogleApi.Dataproc.V1.Model.JobStatus.t`, *default:* `nil`) - Output only. The job status. Additional application-specific status information may be contained in the type_job and yarn_applications fields.
   *   `statusHistory` (*type:* `list(GoogleApi.Dataproc.V1.Model.JobStatus.t)`, *default:* `nil`) - Output only. The previous job status.
   *   `yarnApplications` (*type:* `list(GoogleApi.Dataproc.V1.Model.YarnApplication.t)`, *default:* `nil`) - Output only. The collection of YARN applications spun up by this job.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
   """
