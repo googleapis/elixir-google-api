@@ -48,7 +48,7 @@ defmodule GoogleApi.Spanner.V1.Model.Write do
 
   field(:columns, type: :list)
   field(:table)
-  field(:values, type: :list)
+  field(:values, type: :listlist)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.Write do

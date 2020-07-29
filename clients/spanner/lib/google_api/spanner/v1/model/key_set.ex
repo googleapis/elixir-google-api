@@ -47,7 +47,7 @@ defmodule GoogleApi.Spanner.V1.Model.KeySet do
         }
 
   field(:all)
-  field(:keys, type: :list)
+  field(:keys, type: :listlist)
   field(:ranges, as: GoogleApi.Spanner.V1.Model.KeyRange, type: :list)
 end
 

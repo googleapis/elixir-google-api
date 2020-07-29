@@ -48,7 +48,7 @@ defmodule GoogleApi.Spanner.V1.Model.ResultSet do
         }
 
   field(:metadata, as: GoogleApi.Spanner.V1.Model.ResultSetMetadata)
-  field(:rows, type: :list)
+  field(:rows, type: :listlist)
   field(:stats, as: GoogleApi.Spanner.V1.Model.ResultSetStats)
 end
 
