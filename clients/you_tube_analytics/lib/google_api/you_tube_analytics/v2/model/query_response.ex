@@ -63,7 +63,7 @@ defmodule GoogleApi.YouTubeAnalytics.V2.Model.QueryResponse do
 
   field(:errors, as: GoogleApi.YouTubeAnalytics.V2.Model.Errors)
   field(:kind)
-  field(:rows, type: :list)
+  field(:rows, type: :listlist)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTubeAnalytics.V2.Model.QueryResponse do
