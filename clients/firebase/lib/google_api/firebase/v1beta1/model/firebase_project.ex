@@ -56,6 +56,10 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
       Use this identifier when configuring integrations and/or
       making API calls to Firebase or third-party services.
   *   `resources` (*type:* `GoogleApi.Firebase.V1beta1.Model.DefaultResources.t`, *default:* `nil`) - The default Firebase resources associated with the Project.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the Project.
+      Updates to the state must be performed via
+      com.google.cloudresourcemanager.v1.Projects.DeleteProject and
+      com.google.cloudresourcemanager.v1.Projects.UndeleteProject
   """
 
   use GoogleApi.Gax.ModelBase
@@ -65,7 +69,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
           :name => String.t(),
           :projectId => String.t(),
           :projectNumber => String.t(),
-          :resources => GoogleApi.Firebase.V1beta1.Model.DefaultResources.t()
+          :resources => GoogleApi.Firebase.V1beta1.Model.DefaultResources.t(),
+          :state => String.t()
         }
 
   field(:displayName)
@@ -73,6 +78,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
   field(:projectId)
   field(:projectNumber)
   field(:resources, as: GoogleApi.Firebase.V1beta1.Model.DefaultResources)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firebase.V1beta1.Model.FirebaseProject do
