@@ -29,7 +29,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.AuditLogConfig do
             ]
           },
           {
-            "log_type": "DATA_WRITE",
+            "log_type": "DATA_WRITE"
           }
         ]
       }
