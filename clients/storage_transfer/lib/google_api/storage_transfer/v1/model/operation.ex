@@ -26,7 +26,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.Operation do
       If `true`, the operation is completed, and either `error` or `response` is
       available.
   *   `error` (*type:* `GoogleApi.StorageTransfer.V1.Model.Status.t`, *default:* `nil`) - The error result of the operation in case of failure or cancellation.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Represents the transfer operation object.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Represents the transfer operation object. To request a TransferOperation object, use transferOperations.get.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should have the format of `transferOperations/some/unique/name`.
   *   `response` (*type:* `map()`, *default:* `nil`) - The normal response of the operation in case of success.  If the original
       method returns no data on success, such as `Delete`, the response is
