@@ -24,8 +24,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.MetricDescriptor do
   The following are specific rules for service defined Monitoring metric
   descriptors:
 
-  * `type`, `metric_kind`, `value_type`, `description`, `display_name`,
-    `launch_stage` fields are all required. The `unit` field must be specified
+  * `type`, `metric_kind`, `value_type` and `description`
+    fields are all required. The `unit` field must be specified
     if the `value_type` is any of DOUBLE, INT64, DISTRIBUTION.
   * Maximum of default 500 metric descriptors per service is allowed.
   * Maximum of default 10 labels per metric descriptor is allowed.
