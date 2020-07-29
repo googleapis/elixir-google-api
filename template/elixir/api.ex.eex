@@ -44,6 +44,9 @@ defmodule <%= namespace %>.Api.<%= api.name %> do
   """
   @spec <%= endpoint.typespec %>
   def <%= endpoint.name %>(connection, <%= for parameter <- endpoint.required_parameters do %><%= parameter.variable_name %>, <% end %>optional_params \\ [], opts \\ []) do
+    <%= if endpoint.is_download do %>
+    opts = if Keyword.get(optional_params, :alt) == "media", do: Keyword.put_new(opts, :decode, false), else: opts
+    <% end %>
     optional_params_config = %{
     <%= for parameter <- global_optional_parameters do %>
       :"<%= parameter.name%>" => :"<%= parameter.location %>",
