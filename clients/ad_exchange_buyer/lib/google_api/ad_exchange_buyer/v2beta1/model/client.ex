@@ -35,6 +35,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Client do
   *   `entityId` (*type:* `String.t`, *default:* `nil`) - Numerical identifier of the client entity.
       The entity can be an advertiser, a brand, or an agency.
       This identifier is unique among all the entities with the same type.
+      The value of this field is ignored if the entity type is not provided.
 
       A list of all known advertisers with their identifiers is available in the
       [advertisers.txt](https://storage.googleapis.com/adx-rtb-dictionaries/advertisers.txt)
@@ -50,7 +51,8 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.Client do
   *   `entityName` (*type:* `String.t`, *default:* `nil`) - The name of the entity. This field is automatically fetched based on
       the type and ID.
       The value of this field is ignored in create and update operations.
-  *   `entityType` (*type:* `String.t`, *default:* `nil`) - The type of the client entity: `ADVERTISER`, `BRAND`, or `AGENCY`.
+  *   `entityType` (*type:* `String.t`, *default:* `nil`) - An optional field for specifying the type of the client entity:
+      `ADVERTISER`, `BRAND`, or `AGENCY`.
   *   `partnerClientId` (*type:* `String.t`, *default:* `nil`) - Optional arbitrary unique identifier of this client buyer from the
       standpoint of its Ad Exchange sponsor buyer.
 
