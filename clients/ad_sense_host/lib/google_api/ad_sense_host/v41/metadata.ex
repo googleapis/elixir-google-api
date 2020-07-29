@@ -20,7 +20,7 @@ defmodule GoogleApi.AdSenseHost.V41 do
   API client metadata for GoogleApi.AdSenseHost.V41.
   """
 
-  @discovery_revision "20200512"
+  @discovery_revision "20200729"
 
   def discovery_revision(), do: @discovery_revision
 end

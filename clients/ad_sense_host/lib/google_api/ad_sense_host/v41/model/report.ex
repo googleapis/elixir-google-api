@@ -45,7 +45,7 @@ defmodule GoogleApi.AdSenseHost.V41.Model.Report do
   field(:averages, type: :list)
   field(:headers, as: GoogleApi.AdSenseHost.V41.Model.ReportHeaders, type: :list)
   field(:kind)
-  field(:rows, type: :list)
+  field(:rows, type: :listlist)
   field(:totalMatchedRows)
   field(:totals, type: :list)
   field(:warnings, type: :list)
