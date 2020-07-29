@@ -46,7 +46,7 @@ defmodule GoogleApi.Datastore.V1.Model.Value do
   *   `nullValue` (*type:* `String.t`, *default:* `nil`) - A null value.
   *   `stringValue` (*type:* `String.t`, *default:* `nil`) - A UTF-8 encoded string value.
       When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
-      Otherwise, may be set to at least 1,000,000 bytes.
+      Otherwise, may be set to at most 1,000,000 bytes.
   *   `timestampValue` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp value.
       When stored in the Datastore, precise only to microseconds;
       any additional precision is rounded down.
