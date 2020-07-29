@@ -36,8 +36,8 @@ defmodule GoogleApi.CloudTasks.V2.Model.Task do
       is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
       task according to the RetryConfig.
 
-      Note that when the request is cancelled, Cloud Tasks will stop listing for
-      the response, but whether the worker stops processing depends on the
+      Note that when the request is cancelled, Cloud Tasks will stop listening
+      for the response, but whether the worker stops processing depends on the
       worker. For example, if the worker is stuck, it may not react to cancelled
       requests.
 

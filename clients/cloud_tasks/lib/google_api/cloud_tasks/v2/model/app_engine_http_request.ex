@@ -46,8 +46,9 @@ defmodule GoogleApi.CloudTasks.V2.Model.AppEngineHttpRequest do
   delivered to can be set at the queue-level or task-level:
 
   * If app_engine_routing_override is set on the
-    queue, this value is used for all
-    tasks in the queue, no matter what the setting is for the task-level
+    queue, this value
+    is used for all tasks in the queue, no matter what the setting is for the
+    task-level
     app_engine_routing.
 
 
@@ -83,8 +84,9 @@ defmodule GoogleApi.CloudTasks.V2.Model.AppEngineHttpRequest do
   *   `appEngineRouting` (*type:* `GoogleApi.CloudTasks.V2.Model.AppEngineRouting.t`, *default:* `nil`) - Task-level setting for App Engine routing.
 
       * If app_engine_routing_override is set on the
-        queue, this value is used for all
-        tasks in the queue, no matter what the setting is for the task-level
+        queue, this
+        value is used for all tasks in the queue, no matter what the setting is
+        for the task-level
         app_engine_routing.
   *   `body` (*type:* `String.t`, *default:* `nil`) - HTTP request body.
 
