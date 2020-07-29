@@ -23,6 +23,9 @@ defmodule GoogleApi.Slides.V1.Model.PageElement do
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the page element. Combined with title to display alt
       text.
+
+      The field is not supported for Group
+      elements.
   *   `elementGroup` (*type:* `GoogleApi.Slides.V1.Model.Group.t`, *default:* `nil`) - A collection of page elements joined as a single unit.
   *   `image` (*type:* `GoogleApi.Slides.V1.Model.Image.t`, *default:* `nil`) - An image page element.
   *   `line` (*type:* `GoogleApi.Slides.V1.Model.Line.t`, *default:* `nil`) - A line page element.
@@ -36,6 +39,9 @@ defmodule GoogleApi.Slides.V1.Model.PageElement do
   *   `table` (*type:* `GoogleApi.Slides.V1.Model.Table.t`, *default:* `nil`) - A table page element.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the page element. Combined with description to display alt
       text.
+
+      The field is not supported for Group
+      elements.
   *   `transform` (*type:* `GoogleApi.Slides.V1.Model.AffineTransform.t`, *default:* `nil`) - The transform of the page element.
 
       The visual appearance of the page element is determined by its absolute
