@@ -31,6 +31,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
           :typespec => String.t(),
           :return => Type.t(),
           :method => String.t(),
+          :is_download => boolean(),
           :path => String.t()
         }
 
@@ -43,6 +44,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
     :typespec,
     :return,
     :method,
+    :is_download,
     :path
   ]
 
@@ -81,6 +83,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Endpoint do
       optional_parameters: optional_parameters,
       path_parameters: Enum.filter(required_parameters, fn p -> p.location == "path" end),
       typespec: typespec(name, required_parameters, ret),
+      is_download: method.supportsMediaDownload,
       return: ret
     } | endpoints]
   end
