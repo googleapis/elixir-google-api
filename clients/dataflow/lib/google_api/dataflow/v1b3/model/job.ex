@@ -104,7 +104,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
       service.
   *   `steps` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Step.t)`, *default:* `nil`) - Exactly one of step or steps_location should be specified.
 
-      The top-level steps that constitute the entire job.
+      The top-level steps that constitute the entire job. Only retrieved with
+      JOB_VIEW_ALL.
   *   `stepsLocation` (*type:* `String.t`, *default:* `nil`) - The GCS location where the steps are stored.
   *   `tempFiles` (*type:* `list(String.t)`, *default:* `nil`) - A set of files the system should be aware of that are used
       for temporary storage. These temporary files will be
