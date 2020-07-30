@@ -30,7 +30,7 @@ defmodule GoogleApi.CloudSearch.V1.Model.SearchRequest do
   *   `query` (*type:* `String.t`, *default:* `nil`) - The raw query string.
       See supported search operators in the [Cloud search
       Cheat
-      Sheet](https://gsuite.google.com/learning-center/products/cloudsearch/cheat-sheet/)
+      Sheet](https://support.google.com/a/users/answer/9299929)
   *   `queryInterpretationOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.QueryInterpretationOptions.t`, *default:* `nil`) - Options to interpret the user query.
   *   `requestOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.RequestOptions.t`, *default:* `nil`) - Request options, such as the search application and user timezone.
   *   `sortOptions` (*type:* `GoogleApi.CloudSearch.V1.Model.SortOptions.t`, *default:* `nil`) - The options for sorting the search results
