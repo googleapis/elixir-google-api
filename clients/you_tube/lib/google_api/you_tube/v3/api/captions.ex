@@ -140,6 +140,11 @@ defmodule GoogleApi.YouTube.V3.Api.Captions do
   @spec youtube_captions_download(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def youtube_captions_download(connection, id, optional_params \\ [], opts \\ []) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
