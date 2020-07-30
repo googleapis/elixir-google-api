@@ -51,7 +51,7 @@ defmodule GoogleApi.Analytics.V3.Model.RealtimeData do
   field(:kind)
   field(:profileInfo, as: GoogleApi.Analytics.V3.Model.RealtimeDataProfileInfo)
   field(:query, as: GoogleApi.Analytics.V3.Model.RealtimeDataQuery)
-  field(:rows, type: :list)
+  field(:rows, type: :listlist)
   field(:selfLink)
   field(:totalResults)
   field(:totalsForAllResults, type: :map)
