@@ -34,8 +34,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuditLog do
       For API calls, this should be the name of the API method.
       For example,
 
-          "google.datastore.v1.Datastore.RunQuery"
-          "google.logging.v1.LoggingService.DeleteLog"
+          "google.cloud.bigquery.v2.TableService.InsertTable"
+          "google.logging.v2.ConfigServiceV2.CreateSink"
   *   `numResponseItems` (*type:* `String.t`, *default:* `nil`) - The number of items returned from a List or Query API method,
       if applicable.
   *   `request` (*type:* `map()`, *default:* `nil`) - The operation request. This may not include all request parameters,
@@ -50,8 +50,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuditLog do
       The name is a scheme-less URI, not including the API service name.
       For example:
 
-          "shelves/SHELF_ID/books"
-          "shelves/SHELF_ID/books/BOOK_ID"
+          "projects/PROJECT_ID/zones/us-central1-a/instances"
+          "projects/PROJECT_ID/datasets/DATASET_ID"
   *   `resourceOriginalState` (*type:* `map()`, *default:* `nil`) - The resource's original state before mutation. Present only for
       operations which have successfully modified the targeted resource(s).
       In general, this field should contain all changed fields, except those
@@ -65,11 +65,11 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuditLog do
       It should never include user-generated data, such as file contents.
       When the JSON object represented here has a proto equivalent, the proto
       name will be indicated in the `@type` property.
-  *   `serviceData` (*type:* `map()`, *default:* `nil`) - Deprecated, use `metadata` field instead.
+  *   `serviceData` (*type:* `map()`, *default:* `nil`) - Deprecated. Use the `metadata` field instead.
       Other service-specific data about the request, response, and other
       activities.
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - The name of the API service performing the operation. For example,
-      `"datastore.googleapis.com"`.
+      `"compute.googleapis.com"`.
   *   `status` (*type:* `GoogleApi.ServiceControl.V1.Model.Status.t`, *default:* `nil`) - The status of the overall operation.
   """
 
