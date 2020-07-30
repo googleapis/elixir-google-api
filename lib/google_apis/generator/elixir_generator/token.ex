@@ -103,26 +103,27 @@ defmodule GoogleApis.Generator.ElixirGenerator.Token do
   end
 
   defp determine_base_paths(rest_description) do
-    if supports_media_upload?(rest_description.resources) do
+    if any_resource_has_absolute_paths?(rest_description.resources) do
       {rest_description.rootUrl, rest_description.servicePath}
     else
-      {rest_description.baseUrl, ""}
+      {URI.merge(rest_description.rootUrl, rest_description.servicePath), ""}
     end
   end
 
-  defp supports_media_upload?(nil), do: false
+  defp any_resource_has_absolute_paths?(nil), do: false
 
-  defp supports_media_upload?(resources) do
+  defp any_resource_has_absolute_paths?(resources) do
     Enum.any?(resources, fn {_name, resource} ->
-      supports_media_upload?(resource.resources) || has_media_upload_method?(resource.methods)
+      any_resource_has_absolute_paths?(resource.resources) || any_method_has_absolute_paths?(resource.methods)
     end)
   end
 
-  defp has_media_upload_method?(nil), do: false
+  defp any_method_has_absolute_paths?(nil), do: false
 
-  defp has_media_upload_method?(methods) do
-    Enum.any?(methods, fn {_name, method} ->
-      method.supportsMediaUpload
+  defp any_method_has_absolute_paths?(methods) do
+    Enum.any?(methods, fn
+      {_name, %{path: "/" <> _}} -> true
+      {_name, method} -> method.supportsMediaUpload
     end)
   end
 

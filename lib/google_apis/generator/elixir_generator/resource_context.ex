@@ -119,6 +119,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContext do
   @doc """
   Return a full endpoint path given the provided context
   """
+  def path(_, "/" <> path_suffix), do: path_suffix
+
   def path(%{base_path: nil}, path_suffix), do: path_suffix
 
   def path(%{base_path: base_path}, path_suffix), do: Path.join([base_path, path_suffix])

@@ -60,6 +60,6 @@ defmodule GoogleApis.Generator.ElixirGenerator.ResourceContextTest do
       |> ResourceContext.with_base_path("/v1/storage")
 
     assert "v1/storage/foo/bar" == ResourceContext.path(context, "foo/bar")
-    assert "v1/storage/foo/bar" == ResourceContext.path(context, "/foo/bar")
+    assert "foo/bar" == ResourceContext.path(context, "/foo/bar")
   end
 end
