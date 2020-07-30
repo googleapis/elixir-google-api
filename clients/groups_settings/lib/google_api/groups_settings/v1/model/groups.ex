@@ -237,7 +237,7 @@ defmodule GoogleApi.GroupsSettings.V1.Model.Groups do
       - OWNERS_AND_MANAGERS 
       - OWNERS_ONLY 
       - NONE
-  *   `replyTo` (*type:* `String.t`, *default:* `nil`) - Specifies who should the default reply go to. Possible values are:  
+  *   `replyTo` (*type:* `String.t`, *default:* `nil`) - Specifies who receives the default reply. Possible values are:  
       - REPLY_TO_CUSTOM: For replies to messages, use the group's custom email address.
       When the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property holds the custom email address used when replying to a message. If the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property must have a value. Otherwise an error is returned.
        
