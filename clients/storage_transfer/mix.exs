@@ -18,7 +18,7 @@
 defmodule GoogleApi.StorageTransfer.Mixfile do
   use Mix.Project
 
-  @version "0.19.2"
+  @version "0.20.0"
 
   def project() do
     [
@@ -40,7 +40,7 @@ defmodule GoogleApi.StorageTransfer.Mixfile do
 
   defp deps() do
     [
-      {:google_gax, "~> 0.2"},
+      {:google_gax, "~> 0.4"},
 
       {:ex_doc, "~> 0.16", only: :dev}
     ]
