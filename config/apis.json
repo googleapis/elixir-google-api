@@ -100,11 +100,6 @@
     "name": "AndroidManagement"
   },
   {
-    "version": "v2",
-    "url": "https://www.googleapis.com/discovery/v1/apis/androidpublisher/v2/rest",
-    "name": "AndroidPublisher"
-  },
-  {
     "version": "v3",
     "url": "https://www.googleapis.com/discovery/v1/apis/androidpublisher/v3/rest",
     "name": "AndroidPublisher"
