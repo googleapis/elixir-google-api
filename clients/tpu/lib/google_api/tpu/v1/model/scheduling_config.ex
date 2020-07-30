@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.TPU.V1.Model.SchedulingConfig do
   @moduledoc """
-
+  Sets the scheduling options for this node.
 
   ## Attributes
 
-  *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - Defines whether the node is preemptible.
   *   `reserved` (*type:* `boolean()`, *default:* `nil`) - Whether the node is created under a reservation.
   """
 
