@@ -29,7 +29,7 @@ defmodule GoogleApi.Memcache.V1beta2.Model.AuditLogConfig do
             ]
           },
           {
-            "log_type": "DATA_WRITE",
+            "log_type": "DATA_WRITE"
           }
         ]
       }
