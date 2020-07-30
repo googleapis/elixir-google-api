@@ -497,6 +497,11 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   @spec drive_files_export(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_export(connection, file_id, mime_type, optional_params \\ [], opts \\ []) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :alt => :query,
       :fields => :query,
@@ -602,6 +607,11 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   @spec drive_files_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Drive.V3.Model.File.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_get(connection, file_id, optional_params \\ [], opts \\ []) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :alt => :query,
       :fields => :query,
@@ -1049,6 +1059,11 @@ defmodule GoogleApi.Drive.V3.Api.Files do
   @spec drive_files_watch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Drive.V3.Model.Channel.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_files_watch(connection, file_id, optional_params \\ [], opts \\ []) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :alt => :query,
       :fields => :query,

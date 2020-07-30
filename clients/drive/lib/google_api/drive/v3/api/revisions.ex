@@ -103,6 +103,11 @@ defmodule GoogleApi.Drive.V3.Api.Revisions do
   @spec drive_revisions_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Drive.V3.Model.Revision.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def drive_revisions_get(connection, file_id, revision_id, optional_params \\ [], opts \\ []) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :alt => :query,
       :fields => :query,
