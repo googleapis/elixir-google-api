@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1Index do
   @moduledoc """
-  A minimal index definition.
+  Datastore composite index definition.
 
   ## Attributes
 
