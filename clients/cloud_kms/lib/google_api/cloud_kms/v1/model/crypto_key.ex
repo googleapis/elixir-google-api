@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKey do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKey was created.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels with user-defined metadata. For more information, see
-      [Labeling Keys](/kms/docs/labeling-keys).
+      [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CryptoKey in the format
       `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   *   `nextRotationTime` (*type:* `DateTime.t`, *default:* `nil`) - At next_rotation_time, the Key Management Service will automatically:
