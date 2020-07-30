@@ -22,7 +22,10 @@ defmodule GoogleApi.AdMob.V1.Model.ReportFooter do
 
   ## Attributes
 
-  *   `matchingRowCount` (*type:* `String.t`, *default:* `nil`) - Total number of rows that did match the request.
+  *   `matchingRowCount` (*type:* `String.t`, *default:* `nil`) - Total number of rows that matched the request.
+
+      Warning: This count does NOT always match the number of rows in the
+      response. Do not make that assumption when processing the response.
   *   `warnings` (*type:* `list(GoogleApi.AdMob.V1.Model.ReportWarning.t)`, *default:* `nil`) - Warnings associated with generation of the report.
   """
 
