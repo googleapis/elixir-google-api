@@ -21,7 +21,7 @@ defmodule GoogleApi.Drive.V3.Model.ContentRestriction do
 
   ## Attributes
 
-  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - Whether the content of the file is read-only.
+  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - Whether the content of the file is read-only. If a file is read-only, a new revision of the file may not be added, comments may not be added or modified, and the title of the file may not be modified.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - Reason for why the content of the file is restricted. This is only mutable on requests that also set readOnly=true.
   *   `restrictingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The user who set the content restriction. Only populated if readOnly is true.
   *   `restrictionTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the content restriction was set (formatted RFC 3339 timestamp). Only populated if readOnly is true.
