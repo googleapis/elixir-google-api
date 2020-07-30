@@ -56,6 +56,11 @@ defmodule GoogleApi.Chat.V1.Api.Media do
   @spec chat_media_download(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Chat.V1.Model.Media.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
   def chat_media_download(connection, resource_name, optional_params \\ [], opts \\ []) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
