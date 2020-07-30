@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildTrigger do
   *   `build` (*type:* `GoogleApi.CloudBuild.V1.Model.Build.t`, *default:* `nil`) - Contents of the build template.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the trigger was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human-readable description of this trigger.
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, the trigger will never result in a build.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, the trigger will never automatically execute a build.
   *   `filename` (*type:* `String.t`, *default:* `nil`) - Path, from the source root, to a file whose contents is used for the
       template.
   *   `github` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig.t`, *default:* `nil`) - GitHubEventsConfig describes the configuration of a trigger that creates
