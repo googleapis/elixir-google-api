@@ -33,6 +33,7 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
   *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename used to create this revision. This is only applicable to files with binary content in Drive.
   *   `publishAuto` (*type:* `boolean()`, *default:* `nil`) - Whether subsequent revisions will be automatically republished. This is only applicable to Google Docs.
   *   `published` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published. This is only applicable to Google Docs.
+  *   `publishedLink` (*type:* `String.t`, *default:* `nil`) - A link to the published revision.
   *   `publishedOutsideDomain` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published outside the domain. This is only applicable to Google Docs.
   *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the revision's content in bytes. This is only applicable to files with binary content in Drive.
   """
@@ -51,6 +52,7 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
           :originalFilename => String.t(),
           :publishAuto => boolean(),
           :published => boolean(),
+          :publishedLink => String.t(),
           :publishedOutsideDomain => boolean(),
           :size => String.t()
         }
@@ -66,6 +68,7 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
   field(:originalFilename)
   field(:publishAuto)
   field(:published)
+  field(:publishedLink)
   field(:publishedOutsideDomain)
   field(:size)
 end
