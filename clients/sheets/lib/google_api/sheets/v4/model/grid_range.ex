@@ -19,7 +19,7 @@ defmodule GoogleApi.Sheets.V4.Model.GridRange do
   @moduledoc """
   A range on a sheet.
   All indexes are zero-based.
-  Indexes are half open, e.g the start index is inclusive
+  Indexes are half open, i.e. the start index is inclusive
   and the end index is exclusive -- [start_index, end_index).
   Missing indexes indicate the range is unbounded on that side.
 
