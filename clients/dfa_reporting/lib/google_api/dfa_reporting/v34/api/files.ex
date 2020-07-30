@@ -53,6 +53,11 @@ defmodule GoogleApi.DFAReporting.V34.Api.Files do
           | {:ok, Tesla.Env.t()}
           | {:error, any()}
   def dfareporting_files_get(connection, report_id, file_id, optional_params \\ [], opts \\ []) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :alt => :query,
       :fields => :query,

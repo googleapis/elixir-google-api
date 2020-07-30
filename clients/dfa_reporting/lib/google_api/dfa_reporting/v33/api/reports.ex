@@ -564,6 +564,11 @@ defmodule GoogleApi.DFAReporting.V33.Api.Reports do
         optional_params \\ [],
         opts \\ []
       ) do
+    opts =
+      if Keyword.get(optional_params, :alt) == "media",
+        do: Keyword.put_new(opts, :decode, false),
+        else: opts
+
     optional_params_config = %{
       :alt => :query,
       :fields => :query,
