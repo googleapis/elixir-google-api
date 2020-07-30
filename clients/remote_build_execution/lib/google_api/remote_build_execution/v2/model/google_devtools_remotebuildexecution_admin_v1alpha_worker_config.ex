@@ -52,7 +52,7 @@ defmodule GoogleApi.RemoteBuildExecution.V2.Model.GoogleDevtoolsRemotebuildexecu
       on-demand VM and therefore won't be preempted).
       See [Preemptible VMs](https://cloud.google.com/preemptible-vms/) for more
       details.
-  *   `vmImage` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the image used by each VM.
+  *   `vmImage` (*type:* `String.t`, *default:* `nil`) - The name of the image used by each VM.
   """
 
   use GoogleApi.Gax.ModelBase
