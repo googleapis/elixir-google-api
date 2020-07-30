@@ -29,7 +29,7 @@ defmodule GoogleApi.MachineLearning.V1.Model.GoogleIamV1_AuditLogConfig do
             ]
           },
           {
-            "log_type": "DATA_WRITE",
+            "log_type": "DATA_WRITE"
           }
         ]
       }
