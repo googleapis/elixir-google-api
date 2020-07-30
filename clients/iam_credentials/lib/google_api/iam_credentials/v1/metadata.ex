@@ -20,7 +20,7 @@ defmodule GoogleApi.IAMCredentials.V1 do
   API client metadata for GoogleApi.IAMCredentials.V1.
   """
 
-  @discovery_revision "20200612"
+  @discovery_revision "20200717"
 
   def discovery_revision(), do: @discovery_revision
 end
