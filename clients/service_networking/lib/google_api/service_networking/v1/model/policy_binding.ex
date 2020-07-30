@@ -30,6 +30,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.PolicyBinding do
       granularity. The role must be one of the following:
         - 'roles/container.hostServiceAgentUser' applied on the shared VPC host
           project
+        - 'roles/compute.securityAdmin' applied on the shared VPC host project
   """
 
   use GoogleApi.Gax.ModelBase
