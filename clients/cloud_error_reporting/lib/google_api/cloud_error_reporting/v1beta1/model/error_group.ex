@@ -25,6 +25,9 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup do
       occurs in different service contexts, it will receive the same group ID.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The group resource name.
       Example: <code>projects/my-project-123/groups/CNSgkpnppqKCUw</code>
+  *   `resolutionStatus` (*type:* `String.t`, *default:* `nil`) - Error group's resolution status.
+
+      An unspecified resolution status will be interpreted as OPEN
   *   `trackingIssues` (*type:* `list(GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue.t)`, *default:* `nil`) - Associated tracking issues.
   """
 
@@ -33,11 +36,13 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup do
   @type t :: %__MODULE__{
           :groupId => String.t(),
           :name => String.t(),
+          :resolutionStatus => String.t(),
           :trackingIssues => list(GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue.t())
         }
 
   field(:groupId)
   field(:name)
+  field(:resolutionStatus)
 
   field(:trackingIssues,
     as: GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue,

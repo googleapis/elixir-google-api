@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudErrorReporting.Mixfile do
   use Mix.Project
 
-  @version "0.16.0"
+  @version "0.17.0"
 
   def project() do
     [
