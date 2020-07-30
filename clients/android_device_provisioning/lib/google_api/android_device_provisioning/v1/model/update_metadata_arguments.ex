@@ -21,8 +21,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.UpdateMetadataArguments d
 
   ## Attributes
 
-  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Device ID of the device.
-  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Device identifier.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Required. Device ID of the device.
+  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. Device identifier.
   *   `deviceMetadata` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t`, *default:* `nil`) - Required. The metadata to update.
   """
 

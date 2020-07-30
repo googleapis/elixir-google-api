@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim do
   ## Attributes
 
   *   `customerId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the customer for whom the device is being claimed.
-  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. Device identifier of the device.
+  *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. Required. Device identifier of the device.
   *   `deviceMetadata` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t`, *default:* `nil`) - Required. The metadata to attach to the device at claim.
   *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Required. The section type of the device's provisioning record.
   """

@@ -26,7 +26,8 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceReference do
 
   Methods that operate on devices take a `DeviceReference` as a parameter type
   because it's more flexible for the caller. To learn more about device
-  identifiers, read [Identifiers](/zero-touch/guides/identifiers).
+  identifiers, read
+  [Identifiers](https://developers.google.com/zero-touch/guides/identifiers).
 
   ## Attributes
 
