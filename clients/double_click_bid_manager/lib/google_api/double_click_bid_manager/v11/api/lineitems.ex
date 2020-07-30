@@ -26,7 +26,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Lineitems do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieves line items in CSV format. TrueView line items are not supported.
+  Retrieves line items in CSV format. YouTube & partners line items are not supported.
 
   ## Parameters
 
@@ -86,7 +86,7 @@ defmodule GoogleApi.DoubleClickBidManager.V11.Api.Lineitems do
   end
 
   @doc """
-  Uploads line items in CSV format. TrueView line items are not supported.
+  Uploads line items in CSV format. YouTube & partners line items are not supported.
 
   ## Parameters
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V1.Model.DownloadRequest do
   @moduledoc """
-  Request to fetch stored inventory sources, campaigns, insertion orders, line items, TrueView ad groups and ads.
+  Request to fetch stored inventory sources, campaigns, insertion orders, line items, YouTube ad groups and ads.
 
   ## Attributes
 
