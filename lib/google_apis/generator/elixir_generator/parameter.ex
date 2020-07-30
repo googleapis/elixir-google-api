@@ -22,10 +22,11 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
           :variable_name => String.t(),
           :description => String.t(),
           :type => Type.t(),
-          :location => String.t()
+          :location => String.t(),
+          :is_path_trailer => boolean()
         }
 
-  defstruct [:name, :variable_name, :description, :type, :location]
+  defstruct [:name, :variable_name, :description, :type, :location, :is_path_trailer]
 
   alias GoogleApi.Discovery.V1.Model.{JsonSchema, RestMethod}
   alias GoogleApis.Generator.ElixirGenerator.{ResourceContext, Type}
@@ -44,7 +45,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
     do: {[], [body_param(request, context)]}
 
   def from_discovery_method(
-        %RestMethod{parameters: parameters, parameterOrder: order, request: request},
+        %RestMethod{parameters: parameters, parameterOrder: order, request: request, path: path},
         context
       ) do
     {required, optional} =
@@ -55,7 +56,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
 
     required_by_name =
       Enum.reduce(required, %{}, fn {name, schema}, acc ->
-        Map.put(acc, name, from_json_schema(name, schema, context))
+        Map.put(acc, name, from_json_schema(name, schema, context, path))
       end)
 
     required = Enum.map(order || [], fn name -> required_by_name[name] end)
@@ -82,7 +83,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
       variable_name: "body",
       description: nil,
       type: Type.from_schema(request, context),
-      location: "body"
+      location: "body",
+      is_path_trailer: false
     }
   end
 
@@ -92,7 +94,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
       variable_name: "body",
       description: nil,
       type: Type.from_schema(request, context),
-      location: "body"
+      location: "body",
+      is_path_trailer: false
     }
   end
 
@@ -100,7 +103,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
   Build a Parameter from the parameter name and JsonSchema
   """
   @spec from_json_schema(String.t(), JsonSchema.t(), ResourceContext.t()) :: t
-  def from_json_schema(name, schema, context) do
+  def from_json_schema(name, schema, context, path \\ "") do
     variable_name =
       name
       |> Macro.underscore()
@@ -111,7 +114,8 @@ defmodule GoogleApis.Generator.ElixirGenerator.Parameter do
       variable_name: variable_name,
       description: schema.description,
       type: Type.from_schema(schema, context),
-      location: schema.location
+      location: schema.location,
+      is_path_trailer: schema.location == "path" && String.ends_with?(path, "{#{name}}")
     }
   end
 end
