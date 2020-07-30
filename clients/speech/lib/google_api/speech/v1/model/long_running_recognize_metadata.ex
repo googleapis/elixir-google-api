@@ -28,7 +28,7 @@ defmodule GoogleApi.Speech.V1.Model.LongRunningRecognizeMetadata do
       when the audio is fully processed and the results are available.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the request was received.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the audio file being transcribed. Empty if the audio was sent
-      as byte content. 
+      as byte content.
   """
 
   use GoogleApi.Gax.ModelBase
