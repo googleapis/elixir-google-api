@@ -94,7 +94,7 @@ defmodule GoogleApi.TestClient.V1.Api.Objects do
       |> Request.method(:delete)
       |> Request.url("/test/v1/b/{bucket}/o/{object}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "object" => URI.encode(object, &URI.char_unreserved?/1)
+        "object" => URI.encode(object, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
