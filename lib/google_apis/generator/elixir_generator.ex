@@ -271,6 +271,7 @@ defmodule GoogleApis.Generator.ElixirGenerator do
   defp api_title_for(%{title: title}) when is_binary(title), do: title
 
   defp docs_link_for(%{documentationLink: "/admin-sdk/" <> _ = link}), do: "https://developers.google.com#{link}"
+  defp docs_link_for(%{documentationLink: ""}), do: "https://cloud.google.com/"
   defp docs_link_for(%{documentationLink: link}) when is_binary(link), do: link
   defp docs_link_for(_), do: "https://cloud.google.com/"
 
