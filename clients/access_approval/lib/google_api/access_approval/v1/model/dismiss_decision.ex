@@ -22,15 +22,20 @@ defmodule GoogleApi.AccessApproval.V1.Model.DismissDecision do
   ## Attributes
 
   *   `dismissTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the approval request was dismissed.
+  *   `implicit` (*type:* `boolean()`, *default:* `nil`) - This field will be true if the ApprovalRequest was implcitly dismissed due
+      to inaction by the access approval approvers (the request is not acted
+      on by the approvers before the exiration time).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dismissTime => DateTime.t()
+          :dismissTime => DateTime.t(),
+          :implicit => boolean()
         }
 
   field(:dismissTime, as: DateTime)
+  field(:implicit)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessApproval.V1.Model.DismissDecision do
