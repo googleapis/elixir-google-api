@@ -22,7 +22,7 @@ defmodule GoogleApi.Run.V1.Model.AuthorizedDomain do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the domain authorized for use. Example: `example.com`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Read only. Full path to the `AuthorizedDomain` resource in the API. Example: `apps/myapp/authorizedDomains/example.com`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Deprecated Read only. Full path to the `AuthorizedDomain` resource in the API. Example: `projects/myproject/authorizedDomains/example.com`.
   """
 
   use GoogleApi.Gax.ModelBase
