@@ -75,7 +75,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/customer/{customerId}/orgunits{/orgUnitPath*}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits{/orgUnitPath*}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "orgUnitPath" => org_unit_path
       })
@@ -140,7 +140,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customerId}/orgunits{/orgUnitPath*}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits{/orgUnitPath*}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "orgUnitPath" => org_unit_path
       })
@@ -194,7 +194,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customerId}/orgunits", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -249,7 +249,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customerId}/orgunits", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -315,7 +315,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/customer/{customerId}/orgunits{/orgUnitPath*}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits{/orgUnitPath*}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "orgUnitPath" => org_unit_path
       })
@@ -382,7 +382,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Orgunits do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/customer/{customerId}/orgunits{/orgUnitPath*}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/orgunits{/orgUnitPath*}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "orgUnitPath" => org_unit_path
       })

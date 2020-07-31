@@ -70,7 +70,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Domains do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/customer/{customer}/domains/{domainName}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/domains/{domainName}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "domainName" => URI.encode(domain_name, &URI.char_unreserved?/1)
       })
@@ -123,7 +123,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Domains do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/domains/{domainName}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/domains/{domainName}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "domainName" => URI.encode(domain_name, &URI.char_unreserved?/1)
       })
@@ -177,7 +177,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Domains do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customer}/domains", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/domains", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -228,7 +228,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Domains do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/domains", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/domains", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

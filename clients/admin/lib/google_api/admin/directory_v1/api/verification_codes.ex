@@ -72,7 +72,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.VerificationCodes do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/users/{userKey}/verificationCodes/generate", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/verificationCodes/generate", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -130,7 +130,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.VerificationCodes do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/users/{userKey}/verificationCodes/invalidate", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/verificationCodes/invalidate", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -181,7 +181,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.VerificationCodes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/users/{userKey}/verificationCodes", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/verificationCodes", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

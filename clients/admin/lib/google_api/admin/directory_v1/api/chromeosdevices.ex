@@ -77,10 +77,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customerId}/devices/chromeos/{resourceId}/action", %{
-        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customerId}/devices/chromeos/{resourceId}/action",
+        %{
+          "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+          "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -144,7 +147,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customerId}/devices/chromeos/{deviceId}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
@@ -210,7 +213,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customerId}/devices/chromeos", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/devices/chromeos", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -273,9 +276,12 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customerId}/devices/chromeos/moveDevicesToOu", %{
-        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customerId}/devices/chromeos/moveDevicesToOu",
+        %{
+          "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_param(:query, :orgUnitPath, org_unit_path)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -342,7 +348,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/customer/{customerId}/devices/chromeos/{deviceId}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })
@@ -411,7 +417,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/customer/{customerId}/devices/chromeos/{deviceId}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1)
       })

@@ -70,7 +70,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/customer/{customerId}/schemas/{schemaKey}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/schemas/{schemaKey}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "schemaKey" => URI.encode(schema_key, &URI.char_unreserved?/1)
       })
@@ -129,7 +129,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customerId}/schemas/{schemaKey}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/schemas/{schemaKey}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "schemaKey" => URI.encode(schema_key, &URI.char_unreserved?/1)
       })
@@ -183,7 +183,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customerId}/schemas", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/schemas", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -234,7 +234,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customerId}/schemas", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/schemas", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -294,7 +294,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/customer/{customerId}/schemas/{schemaKey}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/schemas/{schemaKey}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "schemaKey" => URI.encode(schema_key, &URI.char_unreserved?/1)
       })
@@ -355,7 +355,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Schemas do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/customer/{customerId}/schemas/{schemaKey}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/schemas/{schemaKey}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "schemaKey" => URI.encode(schema_key, &URI.char_unreserved?/1)
       })

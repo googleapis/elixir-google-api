@@ -75,10 +75,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/customer/{customer}/resources/buildings/{buildingId}", %{
-        "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "buildingId" => URI.encode(building_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}",
+        %{
+          "customer" => URI.encode(customer, &URI.char_unreserved?/1),
+          "buildingId" => URI.encode(building_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -140,10 +143,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/resources/buildings/{buildingId}", %{
-        "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "buildingId" => URI.encode(building_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}",
+        %{
+          "customer" => URI.encode(customer, &URI.char_unreserved?/1),
+          "buildingId" => URI.encode(building_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -201,7 +207,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customer}/resources/buildings", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/buildings", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -256,7 +262,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/resources/buildings", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/buildings", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -324,10 +330,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/customer/{customer}/resources/buildings/{buildingId}", %{
-        "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "buildingId" => URI.encode(building_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}",
+        %{
+          "customer" => URI.encode(customer, &URI.char_unreserved?/1),
+          "buildingId" => URI.encode(building_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -393,10 +402,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/customer/{customer}/resources/buildings/{buildingId}", %{
-        "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "buildingId" => URI.encode(building_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}",
+        %{
+          "customer" => URI.encode(customer, &URI.char_unreserved?/1),
+          "buildingId" => URI.encode(building_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -455,10 +467,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/customer/{customer}/resources/calendars/{calendarResourceId}", %{
-        "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "calendarResourceId" => URI.encode(calendar_resource_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}",
+        %{
+          "customer" => URI.encode(customer, &URI.char_unreserved?/1),
+          "calendarResourceId" => URI.encode(calendar_resource_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -520,10 +535,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/resources/calendars/{calendarResourceId}", %{
-        "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "calendarResourceId" => URI.encode(calendar_resource_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}",
+        %{
+          "customer" => URI.encode(customer, &URI.char_unreserved?/1),
+          "calendarResourceId" => URI.encode(calendar_resource_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -579,7 +597,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customer}/resources/calendars", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/calendars", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -638,7 +656,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/resources/calendars", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/calendars", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -706,10 +724,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/customer/{customer}/resources/calendars/{calendarResourceId}", %{
-        "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "calendarResourceId" => URI.encode(calendar_resource_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}",
+        %{
+          "customer" => URI.encode(customer, &URI.char_unreserved?/1),
+          "calendarResourceId" => URI.encode(calendar_resource_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -775,10 +796,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/customer/{customer}/resources/calendars/{calendarResourceId}", %{
-        "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "calendarResourceId" => URI.encode(calendar_resource_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}",
+        %{
+          "customer" => URI.encode(customer, &URI.char_unreserved?/1),
+          "calendarResourceId" => URI.encode(calendar_resource_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -837,7 +861,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/customer/{customer}/resources/features/{featureKey}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/features/{featureKey}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "featureKey" => URI.encode(feature_key, &URI.char_unreserved?/1)
       })
@@ -902,7 +926,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/resources/features/{featureKey}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/features/{featureKey}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "featureKey" => URI.encode(feature_key, &URI.char_unreserved?/1)
       })
@@ -956,7 +980,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customer}/resources/features", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/features", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1011,7 +1035,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/resources/features", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/features", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1077,7 +1101,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/customer/{customer}/resources/features/{featureKey}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/features/{featureKey}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "featureKey" => URI.encode(feature_key, &URI.char_unreserved?/1)
       })
@@ -1141,10 +1165,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customer}/resources/features/{oldName}/rename", %{
-        "customer" => URI.encode(customer, &URI.char_unreserved?/1),
-        "oldName" => URI.encode(old_name, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customer}/resources/features/{oldName}/rename",
+        %{
+          "customer" => URI.encode(customer, &URI.char_unreserved?/1),
+          "oldName" => URI.encode(old_name, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1208,7 +1235,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Resources do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/customer/{customer}/resources/features/{featureKey}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/resources/features/{featureKey}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "featureKey" => URI.encode(feature_key, &URI.char_unreserved?/1)
       })

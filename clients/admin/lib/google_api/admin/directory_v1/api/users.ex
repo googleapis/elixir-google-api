@@ -63,7 +63,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/users/{userKey}", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -120,7 +120,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/users/{userKey}", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -172,7 +172,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/users", %{})
+      |> Request.url("/admin/directory/v1/users", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -244,7 +244,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/users", %{})
+      |> Request.url("/admin/directory/v1/users", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -293,7 +293,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/users/{userKey}/makeAdmin", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/makeAdmin", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -346,7 +346,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/users/{userKey}", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -397,7 +397,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/users/{userKey}/undelete", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/undelete", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -450,7 +450,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/users/{userKey}", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -526,7 +526,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/users/watch", %{})
+      |> Request.url("/admin/directory/v1/users/watch", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -585,7 +585,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/users/{userKey}/aliases/{alias}", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/aliases/{alias}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
         "alias" => URI.encode(alias, &URI.char_unreserved?/1)
       })
@@ -639,7 +639,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/users/{userKey}/aliases", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/aliases", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -692,7 +692,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/users/{userKey}/aliases", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/aliases", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -747,7 +747,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/users/{userKey}/aliases/watch", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/aliases/watch", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -796,7 +796,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/users/{userKey}/photos/thumbnail", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/photos/thumbnail", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -847,7 +847,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/users/{userKey}/photos/thumbnail", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/photos/thumbnail", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -900,7 +900,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/users/{userKey}/photos/thumbnail", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/photos/thumbnail", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -953,7 +953,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/users/{userKey}/photos/thumbnail", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/photos/thumbnail", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
