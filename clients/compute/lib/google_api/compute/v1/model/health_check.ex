@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
 
   * [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) * [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
 
-  Internal HTTP(S) load balancers use regional health checks. All other types of GCP load balancers and managed instance group auto-healing use global health checks. For more information, read Health Check Concepts.
+  Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load balancers can use either regional or global health checks. All other types of GCP load balancers and managed instance group auto-healing must use global health checks. For more information, read Health Check Concepts.
 
   To perform health checks on network load balancers, you must use either httpHealthChecks or httpsHealthChecks.
 
@@ -39,7 +39,6 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   *   `httpsHealthCheck` (*type:* `GoogleApi.Compute.V1.Model.HTTPSHealthCheck.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#healthCheck`) - Type of the resource.
-  *   `logConfig` (*type:* `GoogleApi.Compute.V1.Model.HealthCheckLogConfig.t`, *default:* `nil`) - Configure logging on this health check.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] Region where the health check resides. Not applicable to global health checks.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
@@ -63,7 +62,6 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
           :httpsHealthCheck => GoogleApi.Compute.V1.Model.HTTPSHealthCheck.t(),
           :id => String.t(),
           :kind => String.t(),
-          :logConfig => GoogleApi.Compute.V1.Model.HealthCheckLogConfig.t(),
           :name => String.t(),
           :region => String.t(),
           :selfLink => String.t(),
@@ -84,7 +82,6 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   field(:httpsHealthCheck, as: GoogleApi.Compute.V1.Model.HTTPSHealthCheck)
   field(:id)
   field(:kind)
-  field(:logConfig, as: GoogleApi.Compute.V1.Model.HealthCheckLogConfig)
   field(:name)
   field(:region)
   field(:selfLink)
