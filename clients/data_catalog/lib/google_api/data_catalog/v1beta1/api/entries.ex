@@ -26,7 +26,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Entries do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Get an entry by target resource name. This method allows clients to use the resource name from the source Google Cloud Platform service to get the Data Catalog Entry.
+  Get an entry by target resource name. This method allows clients to use
+  the resource name from the source Google Cloud Platform service to get the
+  Data Catalog Entry.
 
   ## Parameters
 
@@ -43,8 +45,27 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Entries do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:linkedResource` (*type:* `String.t`) - The full name of the Google Cloud Platform resource the Data Catalog entry represents. See: https://cloud.google.com/apis/design/resource_names#full_resource_name. Full names are case-sensitive. Examples: * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId * //pubsub.googleapis.com/projects/projectId/topics/topicId
-      *   `:sqlResource` (*type:* `String.t`) - The SQL name of the entry. SQL names are case-sensitive. Examples: * `pubsub.project_id.topic_id` * ``pubsub.project_id.`topic.id.with.dots` `` * `bigquery.table.project_id.dataset_id.table_id` * `bigquery.dataset.project_id.dataset_id` * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id` `*_id`s shoud satisfy the standard SQL rules for identifiers. https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+      *   `:linkedResource` (*type:* `String.t`) - The full name of the Google Cloud Platform resource the Data Catalog
+          entry represents. See:
+          https://cloud.google.com/apis/design/resource_names#full_resource_name.
+          Full names are case-sensitive.
+
+          Examples:
+
+           * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+           * //pubsub.googleapis.com/projects/projectId/topics/topicId
+      *   `:sqlResource` (*type:* `String.t`) - The SQL name of the entry. SQL names are case-sensitive.
+
+          Examples:
+
+            * `pubsub.project_id.topic_id`
+            * ``pubsub.project_id.`topic.id.with.dots` ``
+            * `bigquery.table.project_id.dataset_id.table_id`
+            * `bigquery.dataset.project_id.dataset_id`
+            * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
+
+          `*_id`s shoud satisfy the standard SQL rules for identifiers.
+          https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

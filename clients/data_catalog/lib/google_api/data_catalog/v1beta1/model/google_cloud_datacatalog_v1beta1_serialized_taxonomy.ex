@@ -17,11 +17,14 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SerializedTaxonomy do
   @moduledoc """
-  Message capturing a taxonomy and its policy tag hierarchy as a nested proto. Used for taxonomy import/export and mutation.
+  Message capturing a taxonomy and its policy tag hierarchy as a nested proto.
+  Used for taxonomy import/export and mutation.
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the serialized taxonomy. The length of the description is limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an empty description.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the serialized taxonomy. The length of the
+      description is limited to 2000 bytes when encoded in UTF-8. If not set,
+      defaults to an empty description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
   *   `policyTags` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SerializedPolicyTag.t)`, *default:* `nil`) - Top level policy tags associated with the taxonomy if any.
   """

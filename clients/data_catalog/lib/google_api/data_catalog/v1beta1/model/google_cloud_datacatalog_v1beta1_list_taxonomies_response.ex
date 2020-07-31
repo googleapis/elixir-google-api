@@ -17,11 +17,13 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTaxonomiesResponse do
   @moduledoc """
-  Response message for ListTaxonomies.
+  Response message for
+  ListTaxonomies.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to retrieve the next page of results, or empty if there are no more results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token used to retrieve the next page of results, or empty if there are no
+      more results in the list.
   *   `taxonomies` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxonomy.t)`, *default:* `nil`) - Taxonomies that the project contains.
   """
 
