@@ -17,15 +17,21 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagField do
   @moduledoc """
-  Contains the value and supporting information for a field within a Tag.
+  Contains the value and supporting information for a field within
+  a Tag.
 
   ## Attributes
 
   *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Holds the value for a tag field with boolean type.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of this field.
   *   `doubleValue` (*type:* `float()`, *default:* `nil`) - Holds the value for a tag field with double type.
-  *   `enumValue` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagFieldEnumValue.t`, *default:* `nil`) - Holds the value for a tag field with enum type. This value must be one of the allowed values in the definition of this enum.
-  *   `order` (*type:* `integer()`, *default:* `nil`) - Output only. The order of this field with respect to other fields in this tag. It can be set in Tag. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order, and field orders within a tag do not have to be sequential.
+  *   `enumValue` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagFieldEnumValue.t`, *default:* `nil`) - Holds the value for a tag field with enum type. This value must be
+      one of the allowed values in the definition of this enum.
+  *   `order` (*type:* `integer()`, *default:* `nil`) - Output only. The order of this field with respect to other fields in this tag. It can be
+      set in Tag. For
+      example, a higher value can indicate a more important field. The value can
+      be negative. Multiple fields can have the same order, and field orders
+      within a tag do not have to be sequential.
   *   `stringValue` (*type:* `String.t`, *default:* `nil`) - Holds the value for a tag field with string type.
   *   `timestampValue` (*type:* `DateTime.t`, *default:* `nil`) - Holds the value for a tag field with timestamp type.
   """

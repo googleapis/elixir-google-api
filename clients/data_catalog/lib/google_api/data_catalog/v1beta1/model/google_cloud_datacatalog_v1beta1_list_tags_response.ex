@@ -17,11 +17,13 @@
 
 defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1ListTagsResponse do
   @moduledoc """
-  Response message for ListTags.
+  Response message for
+  ListTags.
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results. It is set to empty if no items remain in results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results. It is set to empty if no items
+      remain in results.
   *   `tags` (*type:* `list(GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Tag.t)`, *default:* `nil`) - Tag details.
   """
 

@@ -2,7 +2,8 @@
 
 Google Cloud Data Catalog API client library.
 
-A fully managed and highly scalable data discovery and metadata management service. 
+A fully managed and highly scalable data discovery and metadata management service.
+
 
 ## Installation
 
@@ -11,7 +12,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_data_catalog, "~> 0.17"}]
+  [{:google_api_data_catalog, "~> 0.18"}]
 end
 ```
 
