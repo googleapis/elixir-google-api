@@ -30,6 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
   *   `maxNumReplicas` (*type:* `integer()`, *default:* `nil`) - The maximum number of instances that the autoscaler can scale up to. This is required when creating or updating an autoscaler. The maximum number of replicas should not be lower than minimal number of replicas.
   *   `minNumReplicas` (*type:* `integer()`, *default:* `nil`) - The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Defines operating mode for this policy.
+  *   `scaleInControl` (*type:* `GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +44,8 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
             GoogleApi.Compute.V1.Model.AutoscalingPolicyLoadBalancingUtilization.t(),
           :maxNumReplicas => integer(),
           :minNumReplicas => integer(),
-          :mode => String.t()
+          :mode => String.t(),
+          :scaleInControl => GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl.t()
         }
 
   field(:coolDownPeriodSec)
@@ -61,6 +63,7 @@ defmodule GoogleApi.Compute.V1.Model.AutoscalingPolicy do
   field(:maxNumReplicas)
   field(:minNumReplicas)
   field(:mode)
+  field(:scaleInControl, as: GoogleApi.Compute.V1.Model.AutoscalingPolicyScaleInControl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.AutoscalingPolicy do

@@ -1522,6 +1522,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:optionsRequestedPolicyVersion` (*type:* `integer()`) - Requested IAM Policy version.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1552,7 +1553,8 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :optionsRequestedPolicyVersion => :query
     }
 
     request =
@@ -2349,7 +2351,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:forceAttach` (*type:* `boolean()`) - Whether to force attach the disk even if it's currently attached to another instance.
+      *   `:forceAttach` (*type:* `boolean()`) - Whether to force attach the regional disk even if it's currently attached to another instance.
       *   `:requestId` (*type:* `String.t`) - An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
 
           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
@@ -2796,7 +2798,7 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
   *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID for this request.
   *   `zone` (*type:* `String.t`) - The name of the zone for this request.
-  *   `instance` (*type:* `String.t`) - Name of the instance scoping this request.
+  *   `instance` (*type:* `String.t`) - Name of the instance for this request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -2806,7 +2808,11 @@ defmodule GoogleApi.Compute.V1.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:port` (*type:* `integer()`) - Specifies which COM or serial port to retrieve data from.
-      *   `:start` (*type:* `String.t`) - Returns output starting from a specific byte position. Use this to page through output when the output is too large to return in a single request. For the initial request, leave this field unspecified. For subsequent calls, this field should be set to the next value returned in the previous call.
+      *   `:start` (*type:* `String.t`) - Specifies the starting byte position of the output to return. To start with the first byte of output to the specified port, omit this field or set it to `0`.
+
+          If the output for that byte position is available, this field matches the `start` parameter sent with the request. If the amount of serial console output exceeds the size of the buffer (1 MB), the oldest output is discarded and is no longer available. If the requested start position refers to discarded output, the start position is adjusted to the oldest output still available, and the adjusted start position is returned as the `start` property value.
+
+          You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

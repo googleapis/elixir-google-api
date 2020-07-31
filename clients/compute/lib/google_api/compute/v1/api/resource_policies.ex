@@ -267,6 +267,7 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:optionsRequestedPolicyVersion` (*type:* `integer()`) - Requested IAM Policy version.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -297,7 +298,8 @@ defmodule GoogleApi.Compute.V1.Api.ResourcePolicies do
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :userIp => :query,
+      :optionsRequestedPolicyVersion => :query
     }
 
     request =

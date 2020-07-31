@@ -22,15 +22,18 @@ defmodule GoogleApi.Compute.V1.Model.FirewallLogConfig do
   ## Attributes
 
   *   `enable` (*type:* `boolean()`, *default:* `nil`) - This field denotes whether to enable logging for a particular firewall rule.
+  *   `metadata` (*type:* `String.t`, *default:* `nil`) - This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enable => boolean()
+          :enable => boolean(),
+          :metadata => String.t()
         }
 
   field(:enable)
+  field(:metadata)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.FirewallLogConfig do
