@@ -31,7 +31,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Application resource. Example: `apps/myapp`.
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Project resource. Example: `projects/myproject`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
