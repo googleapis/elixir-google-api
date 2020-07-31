@@ -23,6 +23,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ValueDescriptor do
 
   *   `key` (*type:* `String.t`, *default:* `nil`) - The value key.
   *   `metricKind` (*type:* `String.t`, *default:* `nil`) - The value stream kind.
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - The unit in which time_series point values are reported. unit follows the UCUM format for units as seen in https://unitsofmeasure.org/ucum.html. unit is only valid if value_type is INTEGER, DOUBLE, DISTRIBUTION.
   *   `valueType` (*type:* `String.t`, *default:* `nil`) - The value type.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Monitoring.V3.Model.ValueDescriptor do
   @type t :: %__MODULE__{
           :key => String.t(),
           :metricKind => String.t(),
+          :unit => String.t(),
           :valueType => String.t()
         }
 
   field(:key)
   field(:metricKind)
+  field(:unit)
   field(:valueType)
 end
 
