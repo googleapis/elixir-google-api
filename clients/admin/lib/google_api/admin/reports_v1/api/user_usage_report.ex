@@ -103,7 +103,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.UserUsageReport do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/usage/users/{userKey}/dates/{date}", %{
+      |> Request.url("/admin/reports/v1/usage/users/{userKey}/dates/{date}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
         "date" => URI.encode(date, &URI.char_unreserved?/1)
       })

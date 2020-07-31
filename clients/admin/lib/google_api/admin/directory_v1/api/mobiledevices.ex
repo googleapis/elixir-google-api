@@ -77,10 +77,13 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/customer/{customerId}/devices/mobile/{resourceId}/action", %{
-        "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
-        "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
-      })
+      |> Request.url(
+        "/admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}/action",
+        %{
+          "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
+          "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -139,7 +142,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/customer/{customerId}/devices/mobile/{resourceId}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
       })
@@ -206,7 +209,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customerId}/devices/mobile/{resourceId}", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1),
         "resourceId" => URI.encode(resource_id, &URI.char_unreserved?/1)
       })
@@ -270,7 +273,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Mobiledevices do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customerId}/devices/mobile", %{
+      |> Request.url("/admin/directory/v1/customer/{customerId}/devices/mobile", %{
         "customerId" => URI.encode(customer_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

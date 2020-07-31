@@ -65,7 +65,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Privileges do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/roles/ALL/privileges", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/roles/ALL/privileges", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

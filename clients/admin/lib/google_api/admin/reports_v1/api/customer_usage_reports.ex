@@ -76,7 +76,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.CustomerUsageReports do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/usage/dates/{date}", %{
+      |> Request.url("/admin/reports/v1/usage/dates/{date}", %{
         "date" => URI.encode(date, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

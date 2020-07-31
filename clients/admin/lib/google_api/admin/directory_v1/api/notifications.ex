@@ -75,7 +75,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/customer/{customer}/notifications/{notificationId}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/notifications/{notificationId}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "notificationId" => URI.encode(notification_id, &URI.char_unreserved?/1)
       })
@@ -140,7 +140,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/notifications/{notificationId}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/notifications/{notificationId}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "notificationId" => URI.encode(notification_id, &URI.char_unreserved?/1)
       })
@@ -198,7 +198,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/customer/{customer}/notifications", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/notifications", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -264,7 +264,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/customer/{customer}/notifications/{notificationId}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/notifications/{notificationId}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "notificationId" => URI.encode(notification_id, &URI.char_unreserved?/1)
       })
@@ -331,7 +331,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Notifications do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/customer/{customer}/notifications/{notificationId}", %{
+      |> Request.url("/admin/directory/v1/customer/{customer}/notifications/{notificationId}", %{
         "customer" => URI.encode(customer, &URI.char_unreserved?/1),
         "notificationId" => URI.encode(notification_id, &URI.char_unreserved?/1)
       })

@@ -70,7 +70,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/groups/{groupKey}/members/{memberKey}", %{
+      |> Request.url("/admin/directory/v1/groups/{groupKey}/members/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
         "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
       })
@@ -123,7 +123,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/groups/{groupKey}/members/{memberKey}", %{
+      |> Request.url("/admin/directory/v1/groups/{groupKey}/members/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
         "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
       })
@@ -188,7 +188,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/groups/{groupKey}/hasMember/{memberKey}", %{
+      |> Request.url("/admin/directory/v1/groups/{groupKey}/hasMember/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
         "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
       })
@@ -242,7 +242,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/groups/{groupKey}/members", %{
+      |> Request.url("/admin/directory/v1/groups/{groupKey}/members", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -301,7 +301,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/groups/{groupKey}/members", %{
+      |> Request.url("/admin/directory/v1/groups/{groupKey}/members", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -361,7 +361,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/groups/{groupKey}/members/{memberKey}", %{
+      |> Request.url("/admin/directory/v1/groups/{groupKey}/members/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
         "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
       })
@@ -422,7 +422,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Members do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/groups/{groupKey}/members/{memberKey}", %{
+      |> Request.url("/admin/directory/v1/groups/{groupKey}/members/{memberKey}", %{
         "groupKey" => URI.encode(group_key, &URI.char_unreserved?/1),
         "memberKey" => URI.encode(member_key, &URI.char_unreserved?/1)
       })

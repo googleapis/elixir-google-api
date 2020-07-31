@@ -64,7 +64,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Asps do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/users/{userKey}/asps/{codeId}", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/asps/{codeId}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
         "codeId" => code_id
       })
@@ -117,7 +117,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Asps do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/users/{userKey}/asps/{codeId}", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/asps/{codeId}", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1),
         "codeId" => code_id
       })
@@ -169,7 +169,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Asps do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/users/{userKey}/asps", %{
+      |> Request.url("/admin/directory/v1/users/{userKey}/asps", %{
         "userKey" => URI.encode(user_key, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
