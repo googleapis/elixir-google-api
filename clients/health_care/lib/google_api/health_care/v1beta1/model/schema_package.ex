@@ -28,7 +28,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SchemaPackage do
       match the incoming message. Schema configs present in higher indices
       override those in lower indices with the same message type and trigger
       event if their VersionSources all match an incoming message.
-  *   `schematizedParsingType` (*type:* `String.t`, *default:* `nil`) - Determines how messages that don't parse successfully are handled.
+  *   `schematizedParsingType` (*type:* `String.t`, *default:* `nil`) - Determines how messages that fail to parse are handled.
   *   `types` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Hl7TypesConfig.t)`, *default:* `nil`) - Schema type definitions that are layered based on their VersionSources
       that match the incoming message. Type definitions present in higher indices
       override those in lower indices with the same type name if their

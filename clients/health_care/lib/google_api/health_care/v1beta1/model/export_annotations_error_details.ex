@@ -17,8 +17,8 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.ExportAnnotationsErrorDetails do
   @moduledoc """
-  Response for failed annotation export operations. This structure is
-  included in error
+  Response for failed annotation export operations. This structure
+  is included in error
   details upon operation completion.
 
   ## Attributes

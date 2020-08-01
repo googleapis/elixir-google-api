@@ -17,14 +17,13 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomBigQueryDestination do
   @moduledoc """
-  The BigQuery table where the server writes the output.
+  The BigQuery table where the server writes output.
 
   ## Attributes
 
-  *   `force` (*type:* `boolean()`, *default:* `nil`) - If the destination table already exists and this flag is `TRUE`, the table
-      is overwritten by the contents of the DICOM store. If the flag is not
-      set and the destination table already exists, the export call returns an
-      error.
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - This flag is being replaced by write_disposition which provides additional
+      options. force=false is equivalent to WRITE_EMPTY and force=true is
+      equivalent to WRITE_TRUNCATE.
   *   `tableUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to a table, up to 2000 characters long, in the format
       `bq://projectId.bqDatasetId.tableId`
   """
