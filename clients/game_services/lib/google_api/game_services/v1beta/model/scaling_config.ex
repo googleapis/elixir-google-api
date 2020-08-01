@@ -21,13 +21,10 @@ defmodule GoogleApi.GameServices.V1beta.Model.ScalingConfig do
 
   ## Attributes
 
-  *   `fleetAutoscalerSpec` (*type:* `String.t`, *default:* `nil`) - Required. Agones fleet autoscaler spec. Example spec:
-      https://agones.dev/site/docs/reference/fleetautoscaler/
+  *   `fleetAutoscalerSpec` (*type:* `String.t`, *default:* `nil`) - Required. Agones fleet autoscaler spec. Example spec: https://agones.dev/site/docs/reference/fleetautoscaler/
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Scaling Config
   *   `schedules` (*type:* `list(GoogleApi.GameServices.V1beta.Model.Schedule.t)`, *default:* `nil`) - The schedules to which this Scaling Config applies.
-  *   `selectors` (*type:* `list(GoogleApi.GameServices.V1beta.Model.LabelSelector.t)`, *default:* `nil`) - Labels used to identify the game server clusters to which this Agones
-      scaling config applies. A game server cluster is subject to this Agones
-      scaling config if its labels match any of the selector entries.
+  *   `selectors` (*type:* `list(GoogleApi.GameServices.V1beta.Model.LabelSelector.t)`, *default:* `nil`) - Labels used to identify the game server clusters to which this Agones scaling config applies. A game server cluster is subject to this Agones scaling config if its labels match any of the selector entries.
   """
 
   use GoogleApi.Gax.ModelBase

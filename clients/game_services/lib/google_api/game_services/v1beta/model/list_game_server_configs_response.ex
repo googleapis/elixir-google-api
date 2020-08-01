@@ -22,8 +22,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.ListGameServerConfigsResponse do
   ## Attributes
 
   *   `gameServerConfigs` (*type:* `list(GoogleApi.GameServices.V1beta.Model.GameServerConfig.t)`, *default:* `nil`) - The list of game server configs.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more
-      results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - List of locations that could not be reached.
   """
 

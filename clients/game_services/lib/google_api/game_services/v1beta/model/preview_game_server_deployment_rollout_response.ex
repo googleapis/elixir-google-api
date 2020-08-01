@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.PreviewGameServerDeploymentRolloutResponse do
   @moduledoc """
-  Response message for PreviewGameServerDeploymentRollout.
-  This has details about the Agones fleet and autoscaler to be actuated.
+  Response message for PreviewGameServerDeploymentRollout. This has details about the Agones fleet and autoscaler to be actuated.
 
   ## Attributes
 

@@ -17,17 +17,14 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.DeployedFleetStatus do
   @moduledoc """
-  DeployedFleetStatus has details about the Agones fleets such as how many
-  are running, how many allocated, and so on.
+  DeployedFleetStatus has details about the Agones fleets such as how many are running, how many allocated, and so on.
 
   ## Attributes
 
   *   `allocatedReplicas` (*type:* `String.t`, *default:* `nil`) - The number of GameServer replicas in the ALLOCATED state in this fleet.
   *   `readyReplicas` (*type:* `String.t`, *default:* `nil`) - The number of GameServer replicas in the READY state in this fleet.
   *   `replicas` (*type:* `String.t`, *default:* `nil`) - The total number of current GameServer replicas in this fleet.
-  *   `reservedReplicas` (*type:* `String.t`, *default:* `nil`) - The number of GameServer replicas in the RESERVED state in this fleet.
-      Reserved instances won't be deleted on scale down, but won't cause
-      an autoscaler to scale up.
+  *   `reservedReplicas` (*type:* `String.t`, *default:* `nil`) - The number of GameServer replicas in the RESERVED state in this fleet. Reserved instances won't be deleted on scale down, but won't cause an autoscaler to scale up.
   """
 
   use GoogleApi.Gax.ModelBase

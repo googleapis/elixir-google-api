@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.PreviewDeleteGameServerClusterResponse do
   @moduledoc """
-  Response message for
-  GameServerClustersService.PreviewDeleteGameServerCluster.
+  Response message for GameServerClustersService.PreviewDeleteGameServerCluster.
 
   ## Attributes
 

@@ -22,8 +22,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.TargetFleetAutoscaler do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Agones autoscaler.
-  *   `specSource` (*type:* `GoogleApi.GameServices.V1beta.Model.SpecSource.t`, *default:* `nil`) - Encapsulates the source of the Agones fleet spec.
-      Details about the Agones autoscaler spec.
+  *   `specSource` (*type:* `GoogleApi.GameServices.V1beta.Model.SpecSource.t`, *default:* `nil`) - Encapsulates the source of the Agones fleet spec. Details about the Agones autoscaler spec.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,10 +23,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.DeployedFleet do
 
   *   `fleet` (*type:* `String.t`, *default:* `nil`) - The name of the Agones fleet.
   *   `fleetSpec` (*type:* `String.t`, *default:* `nil`) - The fleet spec retrieved from the Agones fleet.
-  *   `specSource` (*type:* `GoogleApi.GameServices.V1beta.Model.SpecSource.t`, *default:* `nil`) - The source spec that is used to create the Agones fleet.
-      The GameServerConfig resource may no longer exist in the system.
-  *   `status` (*type:* `GoogleApi.GameServices.V1beta.Model.DeployedFleetStatus.t`, *default:* `nil`) - The current status of the Agones fleet.
-      Includes count of game servers in various states.
+  *   `specSource` (*type:* `GoogleApi.GameServices.V1beta.Model.SpecSource.t`, *default:* `nil`) - The source spec that is used to create the Agones fleet. The GameServerConfig resource may no longer exist in the system.
+  *   `status` (*type:* `GoogleApi.GameServices.V1beta.Model.DeployedFleetStatus.t`, *default:* `nil`) - The current status of the Agones fleet. Includes count of game servers in various states.
   """
 
   use GoogleApi.Gax.ModelBase

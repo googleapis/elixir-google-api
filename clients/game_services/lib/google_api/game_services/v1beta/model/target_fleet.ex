@@ -22,8 +22,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.TargetFleet do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Agones fleet.
-  *   `specSource` (*type:* `GoogleApi.GameServices.V1beta.Model.SpecSource.t`, *default:* `nil`) - Encapsulates the source of the Agones fleet spec.
-      The Agones fleet spec source.
+  *   `specSource` (*type:* `GoogleApi.GameServices.V1beta.Model.SpecSource.t`, *default:* `nil`) - Encapsulates the source of the Agones fleet spec. The Agones fleet spec source.
   """
 
   use GoogleApi.Gax.ModelBase

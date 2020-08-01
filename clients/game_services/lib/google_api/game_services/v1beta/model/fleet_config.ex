@@ -21,8 +21,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.FleetConfig do
 
   ## Attributes
 
-  *   `fleetSpec` (*type:* `String.t`, *default:* `nil`) - Agones fleet spec. Example spec:
-      `https://agones.dev/site/docs/reference/fleet/`.
+  *   `fleetSpec` (*type:* `String.t`, *default:* `nil`) - Agones fleet spec. Example spec: `https://agones.dev/site/docs/reference/fleet/`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the FleetConfig.
   """
 

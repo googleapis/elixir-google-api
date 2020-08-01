@@ -22,12 +22,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.TargetDetails do
   ## Attributes
 
   *   `fleetDetails` (*type:* `list(GoogleApi.GameServices.V1beta.Model.TargetFleetDetails.t)`, *default:* `nil`) - Agones fleet details for game server clusters and game server deployments.
-  *   `gameServerClusterName` (*type:* `String.t`, *default:* `nil`) - The game server cluster name. Uses the form:
-
-      `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
-  *   `gameServerDeploymentName` (*type:* `String.t`, *default:* `nil`) - The game server deployment name. Uses the form:
-
-      `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
+  *   `gameServerClusterName` (*type:* `String.t`, *default:* `nil`) - The game server cluster name. Uses the form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
+  *   `gameServerDeploymentName` (*type:* `String.t`, *default:* `nil`) - The game server deployment name. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
   """
 
   use GoogleApi.Gax.ModelBase
