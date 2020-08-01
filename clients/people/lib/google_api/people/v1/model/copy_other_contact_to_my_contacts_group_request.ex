@@ -22,7 +22,7 @@ defmodule GoogleApi.People.V1.Model.CopyOtherContactToMyContactsGroupRequest do
   ## Attributes
 
   *   `copyMask` (*type:* `String.t`, *default:* `nil`) - Required. A field mask to restrict which fields are copied into the new contact. Valid values are: * emailAddresses * names * phoneNumbers
-  *   `readMask` (*type:* `String.t`, *default:* `nil`) - Optional. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Defaults to the copy mask with metadata and membership fields if not set. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
+  *   `readMask` (*type:* `String.t`, *default:* `nil`) - Optional. A field mask to restrict which fields on the person are returned. Multiple fields can be specified by separating them with commas. Defaults to the copy mask with metadata and membership fields if not set. Valid values are: * addresses * ageRanges * biographies * birthdays * calendarUrls * coverPhotos * emailAddresses * events * externalIds * genders * imClients * interests * locales * memberships * metadata * miscKeywords * names * nicknames * occupations * organizations * phoneNumbers * photos * relations * residences * sipAddresses * skills * urls * userDefined
   *   `sources` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A mask of what source types to return. Defaults to ReadSourceType.CONTACT and ReadSourceType.PROFILE if not set.
   """
 
