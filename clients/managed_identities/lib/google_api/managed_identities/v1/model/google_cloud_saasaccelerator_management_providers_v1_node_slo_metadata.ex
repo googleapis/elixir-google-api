@@ -17,21 +17,13 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata do
   @moduledoc """
-  Node information for custom per-node SLO implementations.
-  SSA does not support per-node SLO, but producers can populate per-node
-  information in SloMetadata for custom precomputations.
-  SSA Eligibility Exporter will emit per-node metric based on this information.
+  Node information for custom per-node SLO implementations. SSA does not support per-node SLO, but producers can populate per-node information in SloMetadata for custom precomputations. SSA Eligibility Exporter will emit per-node metric based on this information.
 
   ## Attributes
 
-  *   `exclusions` (*type:* `list(GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion.t)`, *default:* `nil`) - By default node is eligible if instance is eligible.
-      But individual node might be excluded from SLO by adding entry here.
-      For semantic see SloMetadata.exclusions.
-      If both instance and node level exclusions are present for time period,
-      the node level's reason will be reported by Eligibility Exporter.
+  *   `exclusions` (*type:* `list(GoogleApi.ManagedIdentities.V1.Model.GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion.t)`, *default:* `nil`) - By default node is eligible if instance is eligible. But individual node might be excluded from SLO by adding entry here. For semantic see SloMetadata.exclusions. If both instance and node level exclusions are present for time period, the node level's reason will be reported by Eligibility Exporter.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the node, if different from instance location.
-  *   `nodeId` (*type:* `String.t`, *default:* `nil`) - The id of the node.
-      This should be equal to SaasInstanceNode.node_id.
+  *   `nodeId` (*type:* `String.t`, *default:* `nil`) - The id of the node. This should be equal to SaasInstanceNode.node_id.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,14 +17,12 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.ListDomainsResponse do
   @moduledoc """
-  Response message for
-  ListDomains
+  Response message for ListDomains
 
   ## Attributes
 
   *   `domains` (*type:* `list(GoogleApi.ManagedIdentities.V1.Model.Domain.t)`, *default:* `nil`) - A list of Managed Identities Service domains in the project.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results, or empty if there are no more
-      results in the list.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results, or empty if there are no more results in the list.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - A list of locations that could not be reached.
   """
 

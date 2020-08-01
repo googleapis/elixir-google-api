@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.ValidateTrustRequest do
   @moduledoc """
-  Request message for
-  ValidateTrust
+  Request message for ValidateTrust
 
   ## Attributes
 

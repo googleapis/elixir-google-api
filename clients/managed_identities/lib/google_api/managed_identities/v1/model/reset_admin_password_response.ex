@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.ResetAdminPasswordResponse do
   @moduledoc """
-  Response message for
-  ResetAdminPassword
+  Response message for ResetAdminPassword
 
   ## Attributes
 

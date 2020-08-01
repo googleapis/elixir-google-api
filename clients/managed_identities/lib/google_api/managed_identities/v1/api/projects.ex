@@ -114,8 +114,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The standard list filter.
-      *   `:includeUnrevealedLocations` (*type:* `boolean()`) - If true, the returned list will include locations which are not yet
-          revealed.
+      *   `:includeUnrevealedLocations` (*type:* `boolean()`) - If true, the returned list will include locations which are not yet revealed.
       *   `:pageSize` (*type:* `integer()`) - The standard list page size.
       *   `:pageToken` (*type:* `String.t`) - The standard list page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -180,8 +179,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource domain name, project name and location using the form:
-      `projects/{project_id}/locations/global/domains/{domain_name}`
+  *   `name` (*type:* `String.t`) - Required. The resource domain name, project name and location using the form: `projects/{project_id}/locations/global/domains/{domain_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -252,8 +250,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource project name and location using the form:
-      `projects/{project_id}/locations/global`
+  *   `parent` (*type:* `String.t`) - Required. The resource project name and location using the form: `projects/{project_id}/locations/global`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -266,18 +263,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:domainName` (*type:* `String.t`) - Required. The fully qualified domain name.
-          e.g. mydomain.myorganization.com, with the following restrictions:
-
-           * Must contain only lowercase letters, numbers, periods and hyphens.
-           * Must start with a letter.
-           * Must contain between 2-64 characters.
-           * Must end with a number or a letter.
-           * Must not start with period.
-           * First segement length (mydomain form example above) shouldn't exceed
-             15 chars.
-           * The last segment cannot be fully numeric.
-           * Must be unique within the customer project.
+      *   `:domainName` (*type:* `String.t`) - Required. The fully qualified domain name. e.g. mydomain.myorganization.com, with the following restrictions: * Must contain only lowercase letters, numbers, periods and hyphens. * Must start with a letter. * Must contain between 2-64 characters. * Must end with a number or a letter. * Must not start with period. * First segement length (mydomain form example above) shouldn't exceed 15 chars. * The last segment cannot be fully numeric. * Must be unique within the customer project.
       *   `:body` (*type:* `GoogleApi.ManagedIdentities.V1.Model.Domain.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -337,8 +323,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The domain resource name using the form:
-      `projects/{project_id}/locations/global/domains/{domain_name}`
+  *   `name` (*type:* `String.t`) - Required. The domain resource name using the form: `projects/{project_id}/locations/global/domains/{domain_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -407,8 +392,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource domain name, project name, and location using the form:
-      `projects/{project_id}/locations/global/domains/{domain_name}`
+  *   `name` (*type:* `String.t`) - Required. The resource domain name, project name, and location using the form: `projects/{project_id}/locations/global/domains/{domain_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -479,8 +463,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The domain resource name using the form:
-      `projects/{project_id}/locations/global/domains/{domain_name}`
+  *   `name` (*type:* `String.t`) - Required. The domain resource name using the form: `projects/{project_id}/locations/global/domains/{domain_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -544,15 +527,12 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a resource.
-  Returns an empty policy if the resource exists and does not have a policy
-  set.
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -565,18 +545,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned.
-
-          Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-          rejected.
-
-          Requests for policies with any conditional bindings must specify version 3.
-          Policies without any conditional bindings may specify any valid value or
-          leave the field unset.
-
-          To learn which resources support conditions in their IAM policies, see the
-          [IAM
-          documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The policy format version to be returned. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -634,8 +603,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the domain location using the form:
-      `projects/{project_id}/locations/global`
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the domain location using the form: `projects/{project_id}/locations/global`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -648,20 +616,10 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. A filter specifying constraints of a list operation.
-          For example, `Domain.fqdn="mydomain.myorginization"`.
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results. See
-          [Sorting
-          order](https://cloud.google.com/apis/design/design_patterns#sorting_order)
-          for more information.
-      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return.
-          If not specified, a default value of 1000 will be used.
-          Regardless of the page_size value, the response may include a partial list.
-          Callers should rely on a response's
-          next_page_token
-          to determine if there are additional results to list.
-      *   `:pageToken` (*type:* `String.t`) - Optional. The `next_page_token` value returned from a previous ListDomainsRequest
-          request, if any.
+      *   `:filter` (*type:* `String.t`) - Optional. A filter specifying constraints of a list operation. For example, `Domain.fqdn="mydomain.myorginization"`.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results. See [Sorting order](https://cloud.google.com/apis/design/design_patterns#sorting_order) for more information.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of items to return. If not specified, a default value of 1000 will be used. Regardless of the page_size value, the response may include a partial list. Callers should rely on a response's next_page_token to determine if there are additional results to list.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The `next_page_token` value returned from a previous ListDomainsRequest request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -724,8 +682,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The unique name of the domain using the form:
-      `projects/{project_id}/locations/global/domains/{domain_name}`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the domain using the form: `projects/{project_id}/locations/global/domains/{domain_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -738,12 +695,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this
-          field. The elements of the repeated paths field may only include
-          fields from Domain:
-           * `labels`
-           * `locations`
-           * `authorized_networks`
+      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. The elements of the repeated paths field may only include fields from Domain: * `labels` * `locations` * `authorized_networks`
       *   `:body` (*type:* `GoogleApi.ManagedIdentities.V1.Model.Domain.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -803,8 +755,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource domain name, project name and location using the form:
-      `projects/{project_id}/locations/global/domains/{domain_name}`
+  *   `name` (*type:* `String.t`) - Required. The resource domain name, project name and location using the form: `projects/{project_id}/locations/global/domains/{domain_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -875,8 +826,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The domain resource name using the form:
-      `projects/{project_id}/locations/global/domains/{domain_name}`
+  *   `name` (*type:* `String.t`) - Required. The domain resource name using the form: `projects/{project_id}/locations/global/domains/{domain_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -944,16 +894,12 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on the specified resource. Replaces any
-  existing policy.
-
-  Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1019,19 +965,12 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   end
 
   @doc """
-  Returns permissions that a caller has on the specified resource.
-  If the resource does not exist, this will return an empty set of
-  permissions, not a `NOT_FOUND` error.
-
-  Note: This operation is designed to be used for building permission-aware
-  UIs and command-line tools, not for authorization checking. This operation
-  may "fail open" without warning.
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested.
-      See the operation documentation for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1099,14 +1038,12 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   end
 
   @doc """
-  Validates a trust state, that the target domain is reachable, and that the
-  target domain is able to accept incoming trust requests.
+  Validates a trust state, that the target domain is reachable, and that the target domain is able to accept incoming trust requests.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ManagedIdentities.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource domain name, project name, and location using the form:
-      `projects/{project_id}/locations/global/domains/{domain_name}`
+  *   `name` (*type:* `String.t`) - Required. The resource domain name, project name, and location using the form: `projects/{project_id}/locations/global/domains/{domain_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1172,16 +1109,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation.  The server
-  makes a best effort to cancel the operation, but success is not
-  guaranteed.  If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
-  Operations.GetOperation or
-  other methods to check whether the cancellation succeeded or whether the
-  operation completed despite cancellation. On successful cancellation,
-  the operation is not deleted; instead, it becomes an operation with
-  an Operation.error value with a google.rpc.Status.code of 1,
-  corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -1252,10 +1180,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a long-running operation. This method indicates that the client is
-  no longer interested in the operation result. It does not cancel the
-  operation. If the server doesn't support this method, it returns
-  `google.rpc.Code.UNIMPLEMENTED`.
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -1324,9 +1249,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   end
 
   @doc """
-  Gets the latest state of a long-running operation.  Clients can use this
-  method to poll the operation result at intervals as recommended by the API
-  service.
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
 
@@ -1395,16 +1318,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the
-  server doesn't support this method, it returns `UNIMPLEMENTED`.
-
-  NOTE: the `name` binding allows API services to override the binding
-  to use different resource name schemes, such as `users/*/operations`. To
-  override the binding, API services can add a binding such as
-  `"/v1/{name=users/*}/operations"` to their service configuration.
-  For backwards compatibility, the default name includes the operations
-  collection id, however overriding users must ensure the name binding
-  is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
 
   ## Parameters
 

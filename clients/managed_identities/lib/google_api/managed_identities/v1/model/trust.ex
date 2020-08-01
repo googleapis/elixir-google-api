@@ -17,26 +17,19 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.Trust do
   @moduledoc """
-  Represents a relationship between two domains. This allows a controller in
-  one domain to authenticate a user in another domain.
+  Represents a relationship between two domains. This allows a controller in one domain to authenticate a user in another domain.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
   *   `lastTrustHeartbeatTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last heartbeat time when the trust was known to be connected.
-  *   `selectiveAuthentication` (*type:* `boolean()`, *default:* `nil`) - Optional. The trust authentication type, which decides whether the trusted side has
-      forest/domain wide access or selective access to an approved set of
-      resources.
+  *   `selectiveAuthentication` (*type:* `boolean()`, *default:* `nil`) - Optional. The trust authentication type, which decides whether the trusted side has forest/domain wide access or selective access to an approved set of resources.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the trust.
   *   `stateDescription` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current state of the trust, if available.
-  *   `targetDnsIpAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Required. The target DNS server IP addresses which can resolve the remote domain
-      involved in the trust.
-  *   `targetDomainName` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified target domain name which will be in trust with the
-      current domain.
-  *   `trustDirection` (*type:* `String.t`, *default:* `nil`) - Required. The trust direction, which decides if the current domain is trusted,
-      trusting, or both.
-  *   `trustHandshakeSecret` (*type:* `String.t`, *default:* `nil`) - Required. The trust secret used for the handshake with the target domain. This will
-      not be stored.
+  *   `targetDnsIpAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Required. The target DNS server IP addresses which can resolve the remote domain involved in the trust.
+  *   `targetDomainName` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified target domain name which will be in trust with the current domain.
+  *   `trustDirection` (*type:* `String.t`, *default:* `nil`) - Required. The trust direction, which decides if the current domain is trusted, trusting, or both.
+  *   `trustHandshakeSecret` (*type:* `String.t`, *default:* `nil`) - Required. The trust secret used for the handshake with the target domain. This will not be stored.
   *   `trustType` (*type:* `String.t`, *default:* `nil`) - Required. The type of trust represented by the trust resource.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update time.
   """
