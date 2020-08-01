@@ -23,7 +23,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ExportAnnotationsResponse do
 
   ## Attributes
 
-  *   `annotationStore` (*type:* `String.t`, *default:* `nil`) - The annotation_store used for the export operation, in the format of
+  *   `annotationStore` (*type:* `String.t`, *default:* `nil`) - The annotation_store used for the export operation,
+      in the format of
       `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `successCount` (*type:* `String.t`, *default:* `nil`) - The total number of annotations successfully exported.
   """
