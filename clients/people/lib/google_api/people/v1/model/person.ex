@@ -55,6 +55,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `ageRange` (*type:* `String.t`, *default:* `nil`) - Output only. **DEPRECATED** (Please use `person.ageRanges` instead) The person's age range.
   *   `urls` (*type:* `list(GoogleApi.People.V1.Model.Url.t)`, *default:* `nil`) - The person's associated URLs.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the person, assigned by the server. An ASCII string with a max length of 27 characters, in the form of `people/{person_id}`.
+  *   `miscKeywords` (*type:* `list(GoogleApi.People.V1.Model.MiscKeyword.t)`, *default:* `nil`) - The person's miscellaneous keywords.
   *   `organizations` (*type:* `list(GoogleApi.People.V1.Model.Organization.t)`, *default:* `nil`) - The person's past or current organizations.
   """
 
@@ -95,6 +96,7 @@ defmodule GoogleApi.People.V1.Model.Person do
           :ageRange => String.t(),
           :urls => list(GoogleApi.People.V1.Model.Url.t()),
           :resourceName => String.t(),
+          :miscKeywords => list(GoogleApi.People.V1.Model.MiscKeyword.t()),
           :organizations => list(GoogleApi.People.V1.Model.Organization.t())
         }
 
@@ -132,6 +134,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   field(:ageRange)
   field(:urls, as: GoogleApi.People.V1.Model.Url, type: :list)
   field(:resourceName)
+  field(:miscKeywords, as: GoogleApi.People.V1.Model.MiscKeyword, type: :list)
   field(:organizations, as: GoogleApi.People.V1.Model.Organization, type: :list)
 end
 
