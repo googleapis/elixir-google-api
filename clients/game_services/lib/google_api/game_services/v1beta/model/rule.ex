@@ -22,20 +22,12 @@ defmodule GoogleApi.GameServices.V1beta.Model.Rule do
   ## Attributes
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - Required
-  *   `conditions` (*type:* `list(GoogleApi.GameServices.V1beta.Model.Condition.t)`, *default:* `nil`) - Additional restrictions that must be met. All conditions must pass for the
-      rule to match.
+  *   `conditions` (*type:* `list(GoogleApi.GameServices.V1beta.Model.Condition.t)`, *default:* `nil`) - Additional restrictions that must be met. All conditions must pass for the rule to match.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human-readable description of the rule.
-  *   `in` (*type:* `list(String.t)`, *default:* `nil`) - If one or more 'in' clauses are specified, the rule matches if
-      the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
-  *   `logConfig` (*type:* `list(GoogleApi.GameServices.V1beta.Model.LogConfig.t)`, *default:* `nil`) - The config returned to callers of tech.iam.IAM.CheckPolicy for any entries
-      that match the LOG action.
-  *   `notIn` (*type:* `list(String.t)`, *default:* `nil`) - If one or more 'not_in' clauses are specified, the rule matches
-      if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
-      The format for in and not_in entries can be found at in the Local IAM
-      documentation (see go/local-iam#features).
-  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - A permission is a string of form '<service>.<resource type>.<verb>'
-      (e.g., 'storage.buckets.list'). A value of '*' matches all permissions,
-      and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+  *   `in` (*type:* `list(String.t)`, *default:* `nil`) - If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+  *   `logConfig` (*type:* `list(GoogleApi.GameServices.V1beta.Model.LogConfig.t)`, *default:* `nil`) - The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+  *   `notIn` (*type:* `list(String.t)`, *default:* `nil`) - If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries. The format for in and not_in entries can be found at in the Local IAM documentation (see go/local-iam#features).
+  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,14 +24,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.OperationMetadata do
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - Output only. API version used to start the operation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation finished running.
-  *   `operationStatus` (*type:* `%{optional(String.t) => GoogleApi.GameServices.V1beta.Model.OperationStatus.t}`, *default:* `nil`) - Output only. Operation status for Game Services API operations. Operation status is in
-      the form of key-value pairs where keys are resource IDs and the values show
-      the status of the operation. In case of failures, the value includes an
-      error code and error message.
-  *   `requestedCancellation` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the user has requested cancellation
-      of the operation. Operations that have successfully been cancelled
-      have Operation.error value with a google.rpc.Status.code of 1,
-      corresponding to `Code.CANCELLED`.
+  *   `operationStatus` (*type:* `%{optional(String.t) => GoogleApi.GameServices.V1beta.Model.OperationStatus.t}`, *default:* `nil`) - Output only. Operation status for Game Services API operations. Operation status is in the form of key-value pairs where keys are resource IDs and the values show the status of the operation. In case of failures, the value includes an error code and error message.
+  *   `requestedCancellation` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable status of the operation, if any.
   *   `target` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined resource path for the target of the operation.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of Locations that could not be reached.

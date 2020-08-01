@@ -22,8 +22,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.DeployedClusterState do
   ## Attributes
 
   *   `cluster` (*type:* `String.t`, *default:* `nil`) - The name of the cluster.
-  *   `fleetDetails` (*type:* `list(GoogleApi.GameServices.V1beta.Model.DeployedFleetDetails.t)`, *default:* `nil`) - The details about the Agones fleets and autoscalers created in the
-      game server cluster.
+  *   `fleetDetails` (*type:* `list(GoogleApi.GameServices.V1beta.Model.DeployedFleetDetails.t)`, *default:* `nil`) - The details about the Agones fleets and autoscalers created in the game server cluster.
   """
 
   use GoogleApi.Gax.ModelBase

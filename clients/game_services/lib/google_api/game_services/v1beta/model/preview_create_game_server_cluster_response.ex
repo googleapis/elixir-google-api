@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.PreviewCreateGameServerClusterResponse do
   @moduledoc """
-  Response message for
-  GameServerClustersService.PreviewCreateGameServerCluster.
+  Response message for GameServerClustersService.PreviewCreateGameServerCluster.
 
   ## Attributes
 

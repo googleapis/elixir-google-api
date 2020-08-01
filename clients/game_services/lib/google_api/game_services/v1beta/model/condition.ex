@@ -24,8 +24,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.Condition do
   *   `iam` (*type:* `String.t`, *default:* `nil`) - Trusted attributes supplied by the IAM system.
   *   `op` (*type:* `String.t`, *default:* `nil`) - An operator to apply the subject with.
   *   `svc` (*type:* `String.t`, *default:* `nil`) - Trusted attributes discharged by the service.
-  *   `sys` (*type:* `String.t`, *default:* `nil`) - Trusted attributes supplied by any service that owns resources and uses
-      the IAM system for access control.
+  *   `sys` (*type:* `String.t`, *default:* `nil`) - Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
   *   `values` (*type:* `list(String.t)`, *default:* `nil`) - The objects of the condition.
   """
 

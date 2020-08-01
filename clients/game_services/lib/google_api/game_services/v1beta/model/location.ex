@@ -21,16 +21,11 @@ defmodule GoogleApi.GameServices.V1beta.Model.Location do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The friendly name for this location, typically a nearby city name.
-      For example, "Tokyo".
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Cross-service attributes for the location. For example
-
-          {"cloud.googleapis.com/region": "us-east1"}
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The friendly name for this location, typically a nearby city name. For example, "Tokyo".
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Cross-service attributes for the location. For example {"cloud.googleapis.com/region": "us-east1"}
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The canonical id for this location. For example: `"us-east1"`.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Service-specific metadata. For example the available capacity at the given
-      location.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for the location, which may vary between implementations.
-      For example: `"projects/example-project/locations/us-east1"`
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Service-specific metadata. For example the available capacity at the given location.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for the location, which may vary between implementations. For example: `"projects/example-project/locations/us-east1"`
   """
 
   use GoogleApi.Gax.ModelBase

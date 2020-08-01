@@ -22,9 +22,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo do
   ## Attributes
 
   *   `gkeClusterReference` (*type:* `GoogleApi.GameServices.V1beta.Model.GkeClusterReference.t`, *default:* `nil`) - Reference to the GKE cluster where the game servers are installed.
-  *   `namespace` (*type:* `String.t`, *default:* `nil`) - Namespace designated on the game server cluster where the Agones game
-      server instances will be created. Existence of the namespace will be
-      validated during creation.
+  *   `namespace` (*type:* `String.t`, *default:* `nil`) - Namespace designated on the game server cluster where the Agones game server instances will be created. Existence of the namespace will be validated during creation.
   """
 
   use GoogleApi.Gax.ModelBase

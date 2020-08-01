@@ -21,11 +21,8 @@ defmodule GoogleApi.GameServices.V1beta.Model.SpecSource do
 
   ## Attributes
 
-  *   `gameServerConfigName` (*type:* `String.t`, *default:* `nil`) - The game server config resource. Uses the form:
-
-      `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}/configs/{config_id}`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Agones leet config or Agones scaling config used to derive
-      the Agones fleet or Agones autoscaler spec.
+  *   `gameServerConfigName` (*type:* `String.t`, *default:* `nil`) - The game server config resource. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}/configs/{config_id}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Agones leet config or Agones scaling config used to derive the Agones fleet or Agones autoscaler spec.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,8 +23,7 @@ defmodule GoogleApi.GameServices.V1beta.Model.DeployedFleetAutoscaler do
 
   *   `autoscaler` (*type:* `String.t`, *default:* `nil`) - The name of the Agones autoscaler.
   *   `fleetAutoscalerSpec` (*type:* `String.t`, *default:* `nil`) - The autoscaler spec retrieved from Agones.
-  *   `specSource` (*type:* `GoogleApi.GameServices.V1beta.Model.SpecSource.t`, *default:* `nil`) - The source spec that is used to create the autoscaler.
-      The GameServerConfig resource may no longer exist in the system.
+  *   `specSource` (*type:* `GoogleApi.GameServices.V1beta.Model.SpecSource.t`, *default:* `nil`) - The source spec that is used to create the autoscaler. The GameServerConfig resource may no longer exist in the system.
   """
 
   use GoogleApi.Gax.ModelBase

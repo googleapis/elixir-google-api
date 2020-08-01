@@ -17,22 +17,12 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.Schedule do
   @moduledoc """
-  The schedule of a recurring or one time event. The event's time span is
-  specified by start_time and end_time. If the scheduled event's timespan is
-  larger than the cron_spec + cron_job_duration, the event will be recurring.
-  If only cron_spec + cron_job_duration are specified, the event is effective
-  starting at the local time specified by cron_spec, and is recurring.
-
-    start_time|-------[cron job]-------[cron job]-------[cron job]---|end_time
-    cron job: cron spec start time + duration
+  The schedule of a recurring or one time event. The event's time span is specified by start_time and end_time. If the scheduled event's timespan is larger than the cron_spec + cron_job_duration, the event will be recurring. If only cron_spec + cron_job_duration are specified, the event is effective starting at the local time specified by cron_spec, and is recurring. start_time|-------[cron job]-------[cron job]-------[cron job]---|end_time cron job: cron spec start time + duration
 
   ## Attributes
 
-  *   `cronJobDuration` (*type:* `String.t`, *default:* `nil`) - The duration for the cron job event. The duration of the event is effective
-      after the cron job's start time.
-  *   `cronSpec` (*type:* `String.t`, *default:* `nil`) - The cron definition of the scheduled event. See
-      https://en.wikipedia.org/wiki/Cron. Cron spec specifies the local time as
-      defined by the realm.
+  *   `cronJobDuration` (*type:* `String.t`, *default:* `nil`) - The duration for the cron job event. The duration of the event is effective after the cron job's start time.
+  *   `cronSpec` (*type:* `String.t`, *default:* `nil`) - The cron definition of the scheduled event. See https://en.wikipedia.org/wiki/Cron. Cron spec specifies the local time as defined by the realm.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time of the event.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The start time of the event.
   """

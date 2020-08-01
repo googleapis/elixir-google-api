@@ -17,26 +17,15 @@
 
 defmodule GoogleApi.GameServices.V1beta.Model.GameServerDeploymentRollout do
   @moduledoc """
-  The game server deployment rollout which represents the desired rollout
-  state.
+  The game server deployment rollout which represents the desired rollout state.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
-  *   `defaultGameServerConfig` (*type:* `String.t`, *default:* `nil`) - The default game server config is applied to all realms unless overridden
-      in the rollout. For example,
-
-      `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
+  *   `defaultGameServerConfig` (*type:* `String.t`, *default:* `nil`) - The default game server config is applied to all realms unless overridden in the rollout. For example, `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `gameServerConfigOverrides` (*type:* `list(GoogleApi.GameServices.V1beta.Model.GameServerConfigOverride.t)`, *default:* `nil`) - Contains the game server config rollout overrides. Overrides are processed
-      in the order they are listed. Once a match is found for a realm, the rest
-      of the list is not processed.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the game server deployment rollout. Uses the form:
-
-      `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
-      For example,
-
-      `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
+  *   `gameServerConfigOverrides` (*type:* `list(GoogleApi.GameServices.V1beta.Model.GameServerConfigOverride.t)`, *default:* `nil`) - Contains the game server config rollout overrides. Overrides are processed in the order they are listed. Once a match is found for a realm, the rest of the list is not processed.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the game server deployment rollout. Uses the form: `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`. For example, `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
   """
 

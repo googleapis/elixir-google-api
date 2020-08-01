@@ -21,19 +21,12 @@ defmodule GoogleApi.GameServices.V1beta.Model.GameServerCluster do
 
   ## Attributes
 
-  *   `connectionInfo` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo.t`, *default:* `nil`) - The game server cluster connection information. This information is used to
-      manage game server clusters.
+  *   `connectionInfo` (*type:* `GoogleApi.GameServices.V1beta.Model.GameServerClusterConnectionInfo.t`, *default:* `nil`) - The game server cluster connection information. This information is used to manage game server clusters.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Human readable description of the cluster.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this game server cluster. Each label is a
-      key-value pair.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the game server cluster. Uses the form:
-
-      `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
-      For example,
-
-      `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this game server cluster. Each label is a key-value pair.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the game server cluster. Uses the form: `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`. For example, `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
   """
 
