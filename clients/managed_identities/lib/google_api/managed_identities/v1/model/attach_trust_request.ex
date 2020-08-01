@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.AttachTrustRequest do
   @moduledoc """
-  Request message for
-  AttachTrust
+  Request message for AttachTrust
 
   ## Attributes
 

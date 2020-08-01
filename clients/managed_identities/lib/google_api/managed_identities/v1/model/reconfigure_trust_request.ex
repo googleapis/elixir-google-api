@@ -17,15 +17,12 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.ReconfigureTrustRequest do
   @moduledoc """
-  Request message for
-  ReconfigureTrust
+  Request message for ReconfigureTrust
 
   ## Attributes
 
-  *   `targetDnsIpAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Required. The target DNS server IP addresses to resolve the remote domain involved
-      in the trust.
-  *   `targetDomainName` (*type:* `String.t`, *default:* `nil`) - Required. The fully-qualified target domain name which will be in trust with current
-      domain.
+  *   `targetDnsIpAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Required. The target DNS server IP addresses to resolve the remote domain involved in the trust.
+  *   `targetDomainName` (*type:* `String.t`, *default:* `nil`) - Required. The fully-qualified target domain name which will be in trust with current domain.
   """
 
   use GoogleApi.Gax.ModelBase

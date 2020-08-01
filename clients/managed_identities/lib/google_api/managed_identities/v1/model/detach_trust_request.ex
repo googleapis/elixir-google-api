@@ -17,8 +17,7 @@
 
 defmodule GoogleApi.ManagedIdentities.V1.Model.DetachTrustRequest do
   @moduledoc """
-  Request message for
-  DetachTrust
+  Request message for DetachTrust
 
   ## Attributes
 
