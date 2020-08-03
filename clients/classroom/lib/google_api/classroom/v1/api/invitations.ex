@@ -217,7 +217,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/invitations/{id}", %{
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -282,7 +282,7 @@ defmodule GoogleApi.Classroom.V1.Api.Invitations do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/invitations/{id}", %{
-        "id" => URI.encode(id, &URI.char_unreserved?/1)
+        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
