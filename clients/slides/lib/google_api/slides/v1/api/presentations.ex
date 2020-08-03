@@ -294,7 +294,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
       |> Request.method(:get)
       |> Request.url("/v1/presentations/{presentationId}/pages/{pageObjectId}", %{
         "presentationId" => URI.encode(presentation_id, &URI.char_unreserved?/1),
-        "pageObjectId" => URI.encode(page_object_id, &URI.char_unreserved?/1)
+        "pageObjectId" => URI.encode(page_object_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
