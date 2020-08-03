@@ -81,7 +81,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
-        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
+        "tableId" => URI.encode(table_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -149,7 +149,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
-        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
+        "tableId" => URI.encode(table_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -387,7 +387,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
-        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
+        "tableId" => URI.encode(table_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -577,7 +577,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
-        "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
+        "tableId" => URI.encode(table_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

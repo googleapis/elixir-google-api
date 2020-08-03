@@ -74,7 +74,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
       |> Request.method(:delete)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
+        "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -125,7 +125,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
+        "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -294,7 +294,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
       |> Request.method(:patch)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
+        "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -353,7 +353,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
       |> Request.method(:put)
       |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
+        "datasetId" => URI.encode(dataset_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

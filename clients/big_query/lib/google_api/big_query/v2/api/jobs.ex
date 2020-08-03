@@ -123,7 +123,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects/{projectId}/jobs/{jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -198,7 +198,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
       |> Request.method(:get)
       |> Request.url("/bigquery/v2/projects/{projectId}/queries/{jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
+        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
