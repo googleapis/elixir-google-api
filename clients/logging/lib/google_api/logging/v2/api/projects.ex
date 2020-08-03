@@ -161,7 +161,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v2/projects/{projectsId}/exclusions/{exclusionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
+        "exclusionsId" => URI.encode(exclusions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -239,7 +239,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/exclusions/{exclusionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
+        "exclusionsId" => URI.encode(exclusions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -389,7 +389,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v2/projects/{projectsId}/exclusions/{exclusionsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "exclusionsId" => URI.encode(exclusions_id, &URI.char_unreserved?/1)
+        "exclusionsId" => URI.encode(exclusions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -469,7 +469,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.url("/v2/projects/{projectsId}/locations/{locationsId}/buckets/{bucketsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+        "bucketsId" => URI.encode(buckets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -635,7 +635,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.url("/v2/projects/{projectsId}/locations/{locationsId}/buckets/{bucketsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+        "bucketsId" => URI.encode(buckets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -710,7 +710,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v2/projects/{projectsId}/logs/{logsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "logsId" => URI.encode(logs_id, &URI.char_unreserved?/1)
+        "logsId" => URI.encode(logs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -911,7 +911,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v2/projects/{projectsId}/metrics/{metricsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "metricsId" => URI.encode(metrics_id, &URI.char_unreserved?/1)
+        "metricsId" => URI.encode(metrics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -984,7 +984,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/metrics/{metricsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "metricsId" => URI.encode(metrics_id, &URI.char_unreserved?/1)
+        "metricsId" => URI.encode(metrics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1124,7 +1124,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v2/projects/{projectsId}/metrics/{metricsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "metricsId" => URI.encode(metrics_id, &URI.char_unreserved?/1)
+        "metricsId" => URI.encode(metrics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1265,7 +1265,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v2/projects/{projectsId}/sinks/{sinksId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
+        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1341,7 +1341,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v2/projects/{projectsId}/sinks/{sinksId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
+        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1494,7 +1494,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v2/projects/{projectsId}/sinks/{sinksId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
+        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1579,7 +1579,7 @@ defmodule GoogleApi.Logging.V2.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v2/projects/{projectsId}/sinks/{sinksId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &URI.char_unreserved?/1)
+        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

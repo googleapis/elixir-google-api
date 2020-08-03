@@ -99,7 +99,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
         "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
         "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+        "bucketsId" => URI.encode(buckets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -273,7 +273,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
         "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
         "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
         "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+        "bucketsId" => URI.encode(buckets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
