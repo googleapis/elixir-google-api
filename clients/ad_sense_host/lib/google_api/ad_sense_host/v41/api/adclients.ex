@@ -66,7 +66,7 @@ defmodule GoogleApi.AdSenseHost.V41.Api.Adclients do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/adclients/{adClientId}", %{
-        "adClientId" => URI.encode(ad_client_id, &URI.char_unreserved?/1)
+        "adClientId" => URI.encode(ad_client_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
