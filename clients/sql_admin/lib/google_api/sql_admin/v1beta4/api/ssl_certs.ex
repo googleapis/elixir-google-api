@@ -173,7 +173,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-          "sha1Fingerprint" => URI.encode(sha1_fingerprint, &URI.char_unreserved?/1)
+          "sha1Fingerprint" =>
+            URI.encode(sha1_fingerprint, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -255,7 +256,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.SslCerts do
         %{
           "project" => URI.encode(project, &URI.char_unreserved?/1),
           "instance" => URI.encode(instance, &URI.char_unreserved?/1),
-          "sha1Fingerprint" => URI.encode(sha1_fingerprint, &URI.char_unreserved?/1)
+          "sha1Fingerprint" =>
+            URI.encode(sha1_fingerprint, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
