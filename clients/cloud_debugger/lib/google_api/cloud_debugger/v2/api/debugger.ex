@@ -157,7 +157,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       |> Request.method(:delete)
       |> Request.url("/v2/debugger/debuggees/{debuggeeId}/breakpoints/{breakpointId}", %{
         "debuggeeId" => URI.encode(debuggee_id, &URI.char_unreserved?/1),
-        "breakpointId" => URI.encode(breakpoint_id, &URI.char_unreserved?/1)
+        "breakpointId" => URI.encode(breakpoint_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -233,7 +233,7 @@ defmodule GoogleApi.CloudDebugger.V2.Api.Debugger do
       |> Request.method(:get)
       |> Request.url("/v2/debugger/debuggees/{debuggeeId}/breakpoints/{breakpointId}", %{
         "debuggeeId" => URI.encode(debuggee_id, &URI.char_unreserved?/1),
-        "breakpointId" => URI.encode(breakpoint_id, &URI.char_unreserved?/1)
+        "breakpointId" => URI.encode(breakpoint_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
