@@ -80,7 +80,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       |> Request.method(:get)
       |> Request.url("/books/v1/volumes/{volumeId}/layersummary/{summaryId}", %{
         "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
-        "summaryId" => URI.encode(summary_id, &URI.char_unreserved?/1)
+        "summaryId" => URI.encode(summary_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -238,7 +238,8 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       |> Request.url("/books/v1/volumes/{volumeId}/layers/{layerId}/data/{annotationDataId}", %{
         "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
         "layerId" => URI.encode(layer_id, &URI.char_unreserved?/1),
-        "annotationDataId" => URI.encode(annotation_data_id, &URI.char_unreserved?/1)
+        "annotationDataId" =>
+          URI.encode(annotation_data_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -416,7 +417,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
         %{
           "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
           "layerId" => URI.encode(layer_id, &URI.char_unreserved?/1),
-          "annotationId" => URI.encode(annotation_id, &URI.char_unreserved?/1)
+          "annotationId" => URI.encode(annotation_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -516,7 +517,7 @@ defmodule GoogleApi.Books.V1.Api.Layers do
       |> Request.method(:get)
       |> Request.url("/books/v1/volumes/{volumeId}/layers/{layerId}", %{
         "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1),
-        "layerId" => URI.encode(layer_id, &URI.char_unreserved?/1)
+        "layerId" => URI.encode(layer_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

@@ -79,7 +79,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/books/v1/mylibrary/annotations/{annotationId}", %{
-        "annotationId" => URI.encode(annotation_id, &URI.char_unreserved?/1)
+        "annotationId" => URI.encode(annotation_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -343,7 +343,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/books/v1/mylibrary/annotations/{annotationId}", %{
-        "annotationId" => URI.encode(annotation_id, &URI.char_unreserved?/1)
+        "annotationId" => URI.encode(annotation_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -537,7 +537,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/books/v1/mylibrary/bookshelves/{shelf}", %{
-        "shelf" => URI.encode(shelf, &URI.char_unreserved?/1)
+        "shelf" => URI.encode(shelf, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -885,7 +885,7 @@ defmodule GoogleApi.Books.V1.Api.Mylibrary do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/books/v1/mylibrary/readingpositions/{volumeId}", %{
-        "volumeId" => URI.encode(volume_id, &URI.char_unreserved?/1)
+        "volumeId" => URI.encode(volume_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
