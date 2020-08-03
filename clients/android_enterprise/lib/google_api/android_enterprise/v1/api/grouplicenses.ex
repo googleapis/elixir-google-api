@@ -91,7 +91,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Grouplicenses do
         "/androidenterprise/v1/enterprises/{enterpriseId}/groupLicenses/{groupLicenseId}",
         %{
           "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-          "groupLicenseId" => URI.encode(group_license_id, &URI.char_unreserved?/1)
+          "groupLicenseId" =>
+            URI.encode(group_license_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

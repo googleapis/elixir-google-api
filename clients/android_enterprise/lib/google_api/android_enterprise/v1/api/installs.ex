@@ -98,7 +98,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
           "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
-          "installId" => URI.encode(install_id, &URI.char_unreserved?/1)
+          "installId" => URI.encode(install_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -183,7 +183,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
           "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
-          "installId" => URI.encode(install_id, &URI.char_unreserved?/1)
+          "installId" => URI.encode(install_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -354,7 +354,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
           "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
           "deviceId" => URI.encode(device_id, &URI.char_unreserved?/1),
-          "installId" => URI.encode(install_id, &URI.char_unreserved?/1)
+          "installId" => URI.encode(install_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

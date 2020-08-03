@@ -91,7 +91,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
         %{
           "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-          "entitlementId" => URI.encode(entitlement_id, &URI.char_unreserved?/1)
+          "entitlementId" => URI.encode(entitlement_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -171,7 +171,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
         %{
           "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-          "entitlementId" => URI.encode(entitlement_id, &URI.char_unreserved?/1)
+          "entitlementId" => URI.encode(entitlement_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -336,7 +336,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Entitlements do
         %{
           "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
           "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
-          "entitlementId" => URI.encode(entitlement_id, &URI.char_unreserved?/1)
+          "entitlementId" => URI.encode(entitlement_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

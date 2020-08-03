@@ -85,7 +85,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       |> Request.method(:delete)
       |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -242,7 +242,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       |> Request.method(:get)
       |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -705,7 +705,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Users do
       |> Request.method(:put)
       |> Request.url("/androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}", %{
         "enterpriseId" => URI.encode(enterprise_id, &URI.char_unreserved?/1),
-        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+        "userId" => URI.encode(user_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
