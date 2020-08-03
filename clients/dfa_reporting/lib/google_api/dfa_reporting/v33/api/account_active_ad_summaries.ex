@@ -82,7 +82,8 @@ defmodule GoogleApi.DFAReporting.V33.Api.AccountActiveAdSummaries do
         "/dfareporting/v3.3/userprofiles/{profileId}/accountActiveAdSummaries/{summaryAccountId}",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "summaryAccountId" => URI.encode(summary_account_id, &URI.char_unreserved?/1)
+          "summaryAccountId" =>
+            URI.encode(summary_account_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

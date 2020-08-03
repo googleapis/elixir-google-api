@@ -73,7 +73,7 @@ defmodule GoogleApi.DFAReporting.V33.Api.Files do
       |> Request.method(:get)
       |> Request.url("/dfareporting/v3.3/reports/{reportId}/files/{fileId}", %{
         "reportId" => URI.encode(report_id, &URI.char_unreserved?/1),
-        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
+        "fileId" => URI.encode(file_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

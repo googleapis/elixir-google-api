@@ -86,7 +86,7 @@ defmodule GoogleApi.DFAReporting.V34.Api.InventoryItems do
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-          "id" => URI.encode(id, &URI.char_unreserved?/1)
+          "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
