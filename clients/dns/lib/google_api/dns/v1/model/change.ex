@@ -35,7 +35,7 @@ defmodule GoogleApi.DNS.V1.Model.Change do
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - The time that this operation was started by the server (output only). This
       is in RFC3339 text format.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the operation (output only). A status of "done" means that the
-      request to update the authoritative servers has been sent, but the
+      request to update the authoritative servers has been sent but the
       servers might not be updated yet.
   """
 
