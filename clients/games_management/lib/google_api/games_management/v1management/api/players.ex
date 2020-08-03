@@ -89,7 +89,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
         "/games/v1management/applications/{applicationId}/players/hidden/{playerId}",
         %{
           "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1),
-          "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
+          "playerId" => URI.encode(player_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -164,7 +164,7 @@ defmodule GoogleApi.GamesManagement.V1management.Api.Players do
         "/games/v1management/applications/{applicationId}/players/hidden/{playerId}",
         %{
           "applicationId" => URI.encode(application_id, &URI.char_unreserved?/1),
-          "playerId" => URI.encode(player_id, &URI.char_unreserved?/1)
+          "playerId" => URI.encode(player_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
