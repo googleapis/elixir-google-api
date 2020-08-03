@@ -258,7 +258,7 @@ defmodule GoogleApi.People.V1.Api.People do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/people/{peopleId}", %{
-        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
+        "peopleId" => URI.encode(people_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

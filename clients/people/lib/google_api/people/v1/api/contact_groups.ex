@@ -199,7 +199,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       Request.new()
       |> Request.method(:delete)
       |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
-        "contactGroupsId" => URI.encode(contact_groups_id, &URI.char_unreserved?/1)
+        "contactGroupsId" =>
+          URI.encode(contact_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -260,7 +261,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
-        "contactGroupsId" => URI.encode(contact_groups_id, &URI.char_unreserved?/1)
+        "contactGroupsId" =>
+          URI.encode(contact_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -388,7 +390,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
       Request.new()
       |> Request.method(:put)
       |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
-        "contactGroupsId" => URI.encode(contact_groups_id, &URI.char_unreserved?/1)
+        "contactGroupsId" =>
+          URI.encode(contact_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
