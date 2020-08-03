@@ -205,7 +205,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
       |> Request.method(:delete)
       |> Request.url("/v1/organizations/{organizationsId}/roles/{rolesId}", %{
         "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
+        "rolesId" => URI.encode(roles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -301,7 +301,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
       |> Request.method(:get)
       |> Request.url("/v1/organizations/{organizationsId}/roles/{rolesId}", %{
         "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
+        "rolesId" => URI.encode(roles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -498,7 +498,7 @@ defmodule GoogleApi.IAM.V1.Api.Organizations do
       |> Request.method(:patch)
       |> Request.url("/v1/organizations/{organizationsId}/roles/{rolesId}", %{
         "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
+        "rolesId" => URI.encode(roles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

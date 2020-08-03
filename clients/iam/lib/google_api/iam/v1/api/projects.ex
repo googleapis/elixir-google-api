@@ -200,7 +200,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/roles/{rolesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
+        "rolesId" => URI.encode(roles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -285,7 +285,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/roles/{rolesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
+        "rolesId" => URI.encode(roles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -472,7 +472,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/roles/{rolesId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "rolesId" => URI.encode(roles_id, &URI.char_unreserved?/1)
+        "rolesId" => URI.encode(roles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -718,7 +718,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.method(:delete)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
+        "serviceAccountsId" =>
+          URI.encode(service_accounts_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -969,7 +970,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.method(:get)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
+        "serviceAccountsId" =>
+          URI.encode(service_accounts_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1233,7 +1235,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.method(:patch)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
+        "serviceAccountsId" =>
+          URI.encode(service_accounts_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1769,7 +1772,8 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
       |> Request.method(:put)
       |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}", %{
         "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
+        "serviceAccountsId" =>
+          URI.encode(service_accounts_id, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1928,7 +1932,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1),
-          "keysId" => URI.encode(keys_id, &URI.char_unreserved?/1)
+          "keysId" => URI.encode(keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2016,7 +2020,7 @@ defmodule GoogleApi.IAM.V1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1),
-          "keysId" => URI.encode(keys_id, &URI.char_unreserved?/1)
+          "keysId" => URI.encode(keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
