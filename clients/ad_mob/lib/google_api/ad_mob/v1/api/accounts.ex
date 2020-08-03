@@ -31,8 +31,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdMob.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the publisher account to retrieve.
-      Example: accounts/pub-9876543210987654
+  *   `name` (*type:* `String.t`) - Resource name of the publisher account to retrieve. Example: accounts/pub-9876543210987654
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -86,8 +85,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
   end
 
   @doc """
-  Lists the AdMob publisher account accessible with the client credential.
-  Currently, all credentials have access to at most one AdMob account.
+  Lists the AdMob publisher account accessible with the client credential. Currently, all credentials have access to at most one AdMob account.
 
   ## Parameters
 
@@ -105,9 +103,7 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of accounts to return.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListPublisherAccountsResponse`; indicates
-          that this is a continuation of a prior `ListPublisherAccounts` call, and
-          that the system should return the next page of data.
+      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListPublisherAccountsResponse`; indicates that this is a continuation of a prior `ListPublisherAccounts` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -151,14 +147,12 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
   end
 
   @doc """
-  Generates an AdMob Mediation report based on the provided report
-  specification.
+  Generates an AdMob Mediation report based on the provided report specification.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdMob.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Resource name of the account to generate the report for.
-      Example: accounts/pub-9876543210987654
+  *   `parent` (*type:* `String.t`) - Resource name of the account to generate the report for. Example: accounts/pub-9876543210987654
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -226,14 +220,12 @@ defmodule GoogleApi.AdMob.V1.Api.Accounts do
   end
 
   @doc """
-  Generates an AdMob Network report based on the provided report
-  specification.
+  Generates an AdMob Network report based on the provided report specification.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdMob.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Resource name of the account to generate the report for.
-      Example: accounts/pub-9876543210987654
+  *   `parent` (*type:* `String.t`) - Resource name of the account to generate the report for. Example: accounts/pub-9876543210987654
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

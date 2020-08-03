@@ -22,9 +22,7 @@ defmodule GoogleApi.AdMob.V1.Model.ReportRow do
   ## Attributes
 
   *   `dimensionValues` (*type:* `%{optional(String.t) => GoogleApi.AdMob.V1.Model.ReportRowDimensionValue.t}`, *default:* `nil`) - Map of dimension values in a row, with keys as enum name of the dimensions.
-  *   `metricValues` (*type:* `%{optional(String.t) => GoogleApi.AdMob.V1.Model.ReportRowMetricValue.t}`, *default:* `nil`) - Map of metric values in a row, with keys as enum name of the metrics. If
-      a metric being requested has no value returned, the map will not include
-      it.
+  *   `metricValues` (*type:* `%{optional(String.t) => GoogleApi.AdMob.V1.Model.ReportRowMetricValue.t}`, *default:* `nil`) - Map of metric values in a row, with keys as enum name of the metrics. If a metric being requested has no value returned, the map will not include it.
   """
 
   use GoogleApi.Gax.ModelBase

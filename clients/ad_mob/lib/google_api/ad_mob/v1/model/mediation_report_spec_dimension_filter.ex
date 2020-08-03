@@ -22,8 +22,7 @@ defmodule GoogleApi.AdMob.V1.Model.MediationReportSpecDimensionFilter do
   ## Attributes
 
   *   `dimension` (*type:* `String.t`, *default:* `nil`) - Applies the filter criterion to the specified dimension.
-  *   `matchesAny` (*type:* `GoogleApi.AdMob.V1.Model.StringList.t`, *default:* `nil`) - Matches a row if its value for the specified dimension is in one of the
-      values specified in this condition.
+  *   `matchesAny` (*type:* `GoogleApi.AdMob.V1.Model.StringList.t`, *default:* `nil`) - Matches a row if its value for the specified dimension is in one of the values specified in this condition.
   """
 
   use GoogleApi.Gax.ModelBase

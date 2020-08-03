@@ -2,8 +2,7 @@
 
 AdMob API client library.
 
-The Google AdMob API lets you programmatically get reports on earnings.
-
+The Google AdMob API lets you programmatically get reports on earnings. 
 
 ## Installation
 

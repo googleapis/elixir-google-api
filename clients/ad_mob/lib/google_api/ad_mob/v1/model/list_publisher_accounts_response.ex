@@ -22,8 +22,7 @@ defmodule GoogleApi.AdMob.V1.Model.ListPublisherAccountsResponse do
   ## Attributes
 
   *   `account` (*type:* `list(GoogleApi.AdMob.V1.Model.PublisherAccount.t)`, *default:* `nil`) - Publisher that the client credentials can access.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there might be more accounts for the request;
-      you must pass this value in a new `ListPublisherAccountsRequest`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If not empty, indicates that there might be more accounts for the request; you must pass this value in a new `ListPublisherAccountsRequest`.
   """
 
   use GoogleApi.Gax.ModelBase

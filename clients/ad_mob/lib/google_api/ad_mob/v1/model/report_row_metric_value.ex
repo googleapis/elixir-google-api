@@ -23,9 +23,7 @@ defmodule GoogleApi.AdMob.V1.Model.ReportRowMetricValue do
 
   *   `doubleValue` (*type:* `float()`, *default:* `nil`) - Double precision (approximate) decimal values. Rates are from 0 to 1.
   *   `integerValue` (*type:* `String.t`, *default:* `nil`) - Metric integer value.
-  *   `microsValue` (*type:* `String.t`, *default:* `nil`) - Amount in micros. One million is equivalent to one unit. Currency value
-      is in the unit (USD, EUR or other) specified by the request.
-      For example, $6.50 whould be represented as 6500000 micros.
+  *   `microsValue` (*type:* `String.t`, *default:* `nil`) - Amount in micros. One million is equivalent to one unit. Currency value is in the unit (USD, EUR or other) specified by the request. For example, $6.50 whould be represented as 6500000 micros.
   """
 
   use GoogleApi.Gax.ModelBase

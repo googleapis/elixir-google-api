@@ -21,10 +21,8 @@ defmodule GoogleApi.AdMob.V1.Model.ReportRowDimensionValue do
 
   ## Attributes
 
-  *   `displayLabel` (*type:* `String.t`, *default:* `nil`) - The localized string representation of the value. If unspecified, the
-      display label should be derived from the value.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Dimension value in the format specified in the report's spec Dimension
-      enum.
+  *   `displayLabel` (*type:* `String.t`, *default:* `nil`) - The localized string representation of the value. If unspecified, the display label should be derived from the value.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Dimension value in the format specified in the report's spec Dimension enum.
   """
 
   use GoogleApi.Gax.ModelBase
