@@ -194,7 +194,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
+          "entryGroupsId" => URI.encode(entry_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -277,7 +277,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
+          "entryGroupsId" => URI.encode(entry_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -561,7 +561,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
+          "entryGroupsId" => URI.encode(entry_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -948,7 +948,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1)
+          "entriesId" => URI.encode(entries_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1034,7 +1034,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1)
+          "entriesId" => URI.encode(entries_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1355,7 +1355,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1)
+          "entriesId" => URI.encode(entries_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1648,7 +1648,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
           "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1),
-          "tagsId" => URI.encode(tags_id, &URI.char_unreserved?/1)
+          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1849,7 +1849,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
           "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1),
-          "tagsId" => URI.encode(tags_id, &URI.char_unreserved?/1)
+          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2033,7 +2033,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "tagsId" => URI.encode(tags_id, &URI.char_unreserved?/1)
+          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2226,7 +2226,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "tagsId" => URI.encode(tags_id, &URI.char_unreserved?/1)
+          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2407,7 +2407,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1)
+          "tagTemplatesId" =>
+            URI.encode(tag_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2489,7 +2490,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1)
+          "tagTemplatesId" =>
+            URI.encode(tag_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2691,7 +2693,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1)
+          "tagTemplatesId" =>
+            URI.encode(tag_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3085,7 +3088,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1),
-          "fieldsId" => URI.encode(fields_id, &URI.char_unreserved?/1)
+          "fieldsId" => URI.encode(fields_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3193,7 +3196,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1),
-          "fieldsId" => URI.encode(fields_id, &URI.char_unreserved?/1)
+          "fieldsId" => URI.encode(fields_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3559,7 +3562,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1)
+          "taxonomiesId" => URI.encode(taxonomies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -3730,7 +3733,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1)
+          "taxonomiesId" => URI.encode(taxonomies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4080,7 +4083,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
         %{
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1)
+          "taxonomiesId" => URI.encode(taxonomies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4422,7 +4425,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1),
-          "policyTagsId" => URI.encode(policy_tags_id, &URI.char_unreserved?/1)
+          "policyTagsId" => URI.encode(policy_tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4506,7 +4509,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1),
-          "policyTagsId" => URI.encode(policy_tags_id, &URI.char_unreserved?/1)
+          "policyTagsId" => URI.encode(policy_tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -4784,7 +4787,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1),
-          "policyTagsId" => URI.encode(policy_tags_id, &URI.char_unreserved?/1)
+          "policyTagsId" => URI.encode(policy_tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
