@@ -21,42 +21,22 @@ defmodule GoogleApi.TPU.V1.Model.Node do
 
   ## Attributes
 
-  *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - The type of hardware accelerators associated with this node.
-      Required.
-  *   `cidrBlock` (*type:* `String.t`, *default:* `nil`) - The CIDR block that the TPU node will use when selecting an IP address.
-      This CIDR block must be a /29 block; the Compute Engine networks API
-      forbids a smaller block, and using a larger block would be wasteful (a
-      node can only consume one IP address). Errors will occur if the CIDR block
-      has already been used for a currently existing TPU node, the CIDR block
-      conflicts with any subnetworks in the user's provided network, or the
-      provided network is peered with another network that is using that CIDR
-      block.
+  *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - The type of hardware accelerators associated with this node. Required.
+  *   `cidrBlock` (*type:* `String.t`, *default:* `nil`) - The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must be a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger block would be wasteful (a node can only consume one IP address). Errors will occur if the CIDR block has already been used for a currently existing TPU node, the CIDR block conflicts with any subnetworks in the user's provided network, or the provided network is peered with another network that is using that CIDR block.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the node was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The user-supplied description of the TPU. Maximum of 512 characters.
   *   `health` (*type:* `String.t`, *default:* `nil`) - The health status of the TPU node.
-  *   `healthDescription` (*type:* `String.t`, *default:* `nil`) - Output only. If this field is populated, it contains a description of why the TPU Node
-      is unhealthy.
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Output only. DEPRECATED! Use network_endpoints instead.
-      The network address for the TPU Node as visible to Compute Engine
-      instances.
+  *   `healthDescription` (*type:* `String.t`, *default:* `nil`) - Output only. If this field is populated, it contains a description of why the TPU Node is unhealthy.
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Output only. DEPRECATED! Use network_endpoints instead. The network address for the TPU Node as visible to Compute Engine instances.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user-provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The immutable name of the TPU
-  *   `network` (*type:* `String.t`, *default:* `nil`) - The name of a network they wish to peer the TPU node to. It must be a
-      preexisting Compute Engine network inside of the project on which this API
-      has been activated. If none is provided, "default" will be used.
-  *   `networkEndpoints` (*type:* `list(GoogleApi.TPU.V1.Model.NetworkEndpoint.t)`, *default:* `nil`) - Output only. The network endpoints where TPU workers can be accessed and
-      sent work. It is recommended that Tensorflow clients of the node reach out
-      to the 0th entry in this map first.
-  *   `port` (*type:* `String.t`, *default:* `nil`) - Output only. DEPRECATED! Use network_endpoints instead.
-      The network port for the TPU Node as visible to Compute Engine instances.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - The name of a network they wish to peer the TPU node to. It must be a preexisting Compute Engine network inside of the project on which this API has been activated. If none is provided, "default" will be used.
+  *   `networkEndpoints` (*type:* `list(GoogleApi.TPU.V1.Model.NetworkEndpoint.t)`, *default:* `nil`) - Output only. The network endpoints where TPU workers can be accessed and sent work. It is recommended that Tensorflow clients of the node reach out to the 0th entry in this map first.
+  *   `port` (*type:* `String.t`, *default:* `nil`) - Output only. DEPRECATED! Use network_endpoints instead. The network port for the TPU Node as visible to Compute Engine instances.
   *   `schedulingConfig` (*type:* `GoogleApi.TPU.V1.Model.SchedulingConfig.t`, *default:* `nil`) - 
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. The service account used to run the tensor flow services within the node.
-      To share resources, including Google Cloud Storage data, with the
-      Tensorflow job running in the Node, this account must have permissions to
-      that data.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. The service account used to run the tensor flow services within the node. To share resources, including Google Cloud Storage data, with the Tensorflow job running in the Node, this account must have permissions to that data.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state for the TPU Node.
-  *   `tensorflowVersion` (*type:* `String.t`, *default:* `nil`) - The version of Tensorflow running in the Node.
-      Required.
+  *   `tensorflowVersion` (*type:* `String.t`, *default:* `nil`) - The version of Tensorflow running in the Node. Required.
   """
 
   use GoogleApi.Gax.ModelBase
