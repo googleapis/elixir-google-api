@@ -84,7 +84,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Manifests do
       |> Request.url("/{project}/global/deployments/{deployment}/manifests/{manifest}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
         "deployment" => URI.encode(deployment, &URI.char_unreserved?/1),
-        "manifest" => URI.encode(manifest, &URI.char_unreserved?/1)
+        "manifest" => URI.encode(manifest, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

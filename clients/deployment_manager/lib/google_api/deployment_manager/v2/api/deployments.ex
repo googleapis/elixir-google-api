@@ -149,7 +149,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       |> Request.method(:delete)
       |> Request.url("/{project}/global/deployments/{deployment}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
+        "deployment" => URI.encode(deployment, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -214,7 +214,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       |> Request.method(:get)
       |> Request.url("/{project}/global/deployments/{deployment}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
+        "deployment" => URI.encode(deployment, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -480,7 +480,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       |> Request.method(:patch)
       |> Request.url("/{project}/global/deployments/{deployment}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
+        "deployment" => URI.encode(deployment, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -756,7 +756,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       |> Request.method(:put)
       |> Request.url("/{project}/global/deployments/{deployment}", %{
         "project" => URI.encode(project, &URI.char_unreserved?/1),
-        "deployment" => URI.encode(deployment, &URI.char_unreserved?/1)
+        "deployment" => URI.encode(deployment, &(URI.char_unreserved?(&1) || &1 == ?/))
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
